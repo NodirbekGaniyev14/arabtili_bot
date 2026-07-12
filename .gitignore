@@ -1,0 +1,17 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.db
+*.sqlite3
+
+# Node
+node_modules/
+webapp/dist/
+
+# Misc
+*.log
+.DS_Store

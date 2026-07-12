@@ -1,0 +1,11 @@
+.env
+.venv/
+webapp/node_modules/
+webapp/dist/
+__pycache__/
+*.pyc
+*.db
+scripts/cloudflared.exe
+.git/
+.claude/
+*.log

@@ -1,0 +1,14 @@
+[Unit]
+Description=Arabiy — Telegram arab tili boti (FastAPI + aiogram)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/arabiy/backend
+ExecStart=/opt/arabiy/.venv/bin/python -m uvicorn main:app --host 127.0.0.1 --port 8000
+Restart=always
+RestartSec=5
+# Log'lar journald'ga tushadi: journalctl -u arabiy -f
+
+[Install]
+WantedBy=multi-user.target

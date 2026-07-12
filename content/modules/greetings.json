@@ -1,0 +1,98 @@
+{
+  "id": "greetings",
+  "title": "Salomlashish",
+  "arabic_title": "التَّحِيَّات",
+  "lessons": [
+    {
+      "id": "greetings-1",
+      "title": "Assalomu alaykum",
+      "new_items": [
+        { "kind": "phrase", "ar": "السَّلامُ عَلَيْكُم", "translit": "as-salāmu alaykum", "uz": "Assalomu alaykum", "audio": "salam.mp3" },
+        { "kind": "phrase", "ar": "وَعَلَيْكُمُ السَّلام", "translit": "va alaykumus-salām", "uz": "Va alaykum assalom (javob)", "audio": "vsalam.mp3" },
+        { "kind": "word", "ar": "مَرْحَبًا", "translit": "marhaban", "uz": "Salom!", "audio": "marhaban.mp3" },
+        { "kind": "word", "ar": "أَهْلًا", "translit": "ahlan", "uz": "Salom! / Xush kelibsiz", "audio": "ahlan.mp3" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "«السَّلامُ عَلَيْكُم» ma'nosi nima?", "arabic": "السَّلامُ عَلَيْكُم", "options": ["Assalomu alaykum", "Xayr", "Rahmat", "Qalaysiz?"] },
+        { "type": "listen", "prompt": "Eshiting va toping", "audio": "marhaban.mp3", "options": ["مَرْحَبًا", "أَهْلًا", "السَّلامُ عَلَيْكُم", "وَعَلَيْكُمُ السَّلام"] },
+        { "type": "choice", "prompt": "«السَّلامُ عَلَيْكُم»ga qanday javob beriladi?", "options": ["وَعَلَيْكُمُ السَّلام", "مَرْحَبًا", "شُكْرًا", "مَعَ السَّلامَة"] },
+        { "type": "match", "prompt": "Juftlarini toping", "pairs": [["السَّلامُ عَلَيْكُم", "Assalomu alaykum"], ["مَرْحَبًا", "Salom!"], ["أَهْلًا", "Xush kelibsiz"]] },
+        { "type": "assemble", "prompt": "Jumlani yig'ing: «Assalomu alaykum»", "words": ["السَّلامُ", "عَلَيْكُم"], "extra": ["مَرْحَبًا"], "audio": "salam.mp3" },
+        { "type": "choice", "prompt": "Do'stingizga qisqa salom bermoqchisiz. Qaysi so'z mos?", "options": ["مَرْحَبًا", "وَعَلَيْكُمُ السَّلام", "مَعَ السَّلامَة", "نَعَمْ"] }
+      ]
+    },
+    {
+      "id": "greetings-2",
+      "title": "Xayrli tong va kech",
+      "new_items": [
+        { "kind": "phrase", "ar": "صَبَاحُ الخَيْر", "translit": "sabāhul-xayr", "uz": "Xayrli tong", "audio": "sabah.mp3" },
+        { "kind": "phrase", "ar": "صَبَاحُ النُّور", "translit": "sabāhun-nūr", "uz": "Xayrli tong (javob)", "audio": "sabahnur.mp3" },
+        { "kind": "phrase", "ar": "مَسَاءُ الخَيْر", "translit": "masā'ul-xayr", "uz": "Xayrli kech", "audio": "masa.mp3" },
+        { "kind": "phrase", "ar": "مَسَاءُ النُّور", "translit": "masā'un-nūr", "uz": "Xayrli kech (javob)", "audio": "masanur.mp3" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "Ertalab qanday salomlashamiz?", "options": ["صَبَاحُ الخَيْر", "مَسَاءُ الخَيْر", "مَعَ السَّلامَة", "أَهْلًا"] },
+        { "type": "listen", "prompt": "Eshiting va toping", "audio": "masa.mp3", "options": ["مَسَاءُ الخَيْر", "صَبَاحُ الخَيْر", "مَسَاءُ النُّور", "صَبَاحُ النُّور"] },
+        { "type": "choice", "prompt": "«صَبَاحُ الخَيْر»ga javob qaysi?", "arabic": "صَبَاحُ الخَيْر", "options": ["صَبَاحُ النُّور", "مَسَاءُ النُّور", "وَعَلَيْكُمُ السَّلام", "شُكْرًا"] },
+        { "type": "match", "prompt": "Juftlarini toping", "pairs": [["صَبَاحُ الخَيْر", "Xayrli tong"], ["مَسَاءُ الخَيْر", "Xayrli kech"], ["صَبَاحُ النُّور", "Tong javobi"], ["مَسَاءُ النُّور", "Kech javobi"]] },
+        { "type": "assemble", "prompt": "Jumlani yig'ing: «Xayrli kech»", "words": ["مَسَاءُ", "الخَيْر"], "extra": ["الصَّبَاح"], "audio": "masa.mp3" },
+        { "type": "type", "prompt": "«Xayrli tong»ni lotin harflarida yozing (arabchasini)", "arabic": "صَبَاحُ الخَيْر", "audio": "sabah.mp3", "answers": ["sabahul-xayr", "sabahulxayr", "sabahul xayr", "sabah al-xayr", "sabah alxayr", "sabahul-hayr", "sabahul hayr"] }
+      ]
+    },
+    {
+      "id": "greetings-3",
+      "title": "Qalaysiz?",
+      "new_items": [
+        { "kind": "phrase", "ar": "كَيْفَ حَالُك؟", "translit": "kayfa hāluk?", "uz": "Qalaysiz?", "audio": "kayfahal.mp3" },
+        { "kind": "phrase", "ar": "أَنَا بِخَيْر", "translit": "ana bixayr", "uz": "Men yaxshiman", "audio": "anabixayr.mp3" },
+        { "kind": "word", "ar": "وَأَنْتَ؟", "translit": "va anta?", "uz": "O'zingiz-chi? (erkakka)", "audio": "vaanta.mp3" },
+        { "kind": "word", "ar": "تَمَام", "translit": "tamām", "uz": "Zo'r / hammasi joyida", "audio": "tamam.mp3" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "«Qalaysiz?» arabchada qanday?", "options": ["كَيْفَ حَالُك؟", "أَنَا بِخَيْر", "مَنْ أَنْتَ؟", "مَا هٰذَا؟"] },
+        { "type": "listen", "prompt": "Eshiting va toping", "audio": "anabixayr.mp3", "options": ["أَنَا بِخَيْر", "كَيْفَ حَالُك؟", "تَمَام", "وَأَنْتَ؟"] },
+        { "type": "choice", "prompt": "«كَيْفَ حَالُك؟»ga mos javob qaysi?", "arabic": "كَيْفَ حَالُك؟", "options": ["أَنَا بِخَيْر، شُكْرًا", "مَعَ السَّلامَة", "صَبَاحُ النُّور", "أَهْلًا وَسَهْلًا"] },
+        { "type": "match", "prompt": "Juftlarini toping", "pairs": [["كَيْفَ حَالُك؟", "Qalaysiz?"], ["أَنَا بِخَيْر", "Yaxshiman"], ["تَمَام", "Zo'r"], ["وَأَنْتَ؟", "O'zingiz-chi?"]] },
+        { "type": "assemble", "prompt": "Suhbatni yig'ing: «Qalaysiz?» — «Men yaxshiman»", "words": ["كَيْفَ", "حَالُك؟", "أَنَا", "بِخَيْر"], "extra": ["تَمَام"], "audio": "kayfahal.mp3" },
+        { "type": "choice", "prompt": "Kimdir «تَمَام» desa, nimani bildiradi?", "options": ["Hammasi joyida", "Xafa", "Charchagan", "Ketyapti"] }
+      ]
+    },
+    {
+      "id": "greetings-4",
+      "title": "Rahmat va iltimos",
+      "new_items": [
+        { "kind": "word", "ar": "شُكْرًا", "translit": "shukran", "uz": "Rahmat", "audio": "shukran.mp3" },
+        { "kind": "word", "ar": "عَفْوًا", "translit": "afvan", "uz": "Arzimaydi", "audio": "afvan.mp3" },
+        { "kind": "phrase", "ar": "مِنْ فَضْلِك", "translit": "min fadlik", "uz": "Iltimos / marhamat", "audio": "minfadlik.mp3" },
+        { "kind": "word", "ar": "نَعَمْ", "translit": "na'am", "uz": "Ha", "audio": "naam.mp3" },
+        { "kind": "word", "ar": "لا", "translit": "lā", "uz": "Yo'q", "audio": "la.mp3" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "«Rahmat» arabchada qanday?", "options": ["شُكْرًا", "عَفْوًا", "نَعَمْ", "مِنْ فَضْلِك"] },
+        { "type": "listen", "prompt": "Eshiting va toping", "audio": "afvan.mp3", "options": ["عَفْوًا", "شُكْرًا", "لا", "نَعَمْ"] },
+        { "type": "choice", "prompt": "«شُكْرًا»ga qanday javob beriladi?", "arabic": "شُكْرًا", "options": ["عَفْوًا", "نَعَمْ", "لا", "مَرْحَبًا"] },
+        { "type": "match", "prompt": "Juftlarini toping", "pairs": [["شُكْرًا", "Rahmat"], ["عَفْوًا", "Arzimaydi"], ["نَعَمْ", "Ha"], ["لا", "Yo'q"]] },
+        { "type": "type", "prompt": "«Rahmat»ni lotin harflarida yozing (arabchasini)", "arabic": "شُكْرًا", "audio": "shukran.mp3", "answers": ["shukran", "shukron", "sukran"] },
+        { "type": "choice", "prompt": "Biror narsa so'raganda qaysi ibora qo'shiladi?", "options": ["مِنْ فَضْلِك", "مَعَ السَّلامَة", "تَمَام", "أَهْلًا"] }
+      ]
+    },
+    {
+      "id": "greetings-5",
+      "title": "Xayrlashish",
+      "new_items": [
+        { "kind": "phrase", "ar": "مَعَ السَّلامَة", "translit": "ma'as-salāma", "uz": "Xayr (eson-omon boring)", "audio": "maasalama.mp3" },
+        { "kind": "phrase", "ar": "إِلَى اللِّقَاء", "translit": "ilal-liqā'", "uz": "Ko'rishguncha", "audio": "ilalliqa.mp3" },
+        { "kind": "phrase", "ar": "أَرَاكَ غَدًا", "translit": "arāka g'adan", "uz": "Ertaga ko'rishamiz", "audio": "araka.mp3" },
+        { "kind": "phrase", "ar": "تُصْبِحُ عَلَى خَيْر", "translit": "tusbihu alā xayr", "uz": "Xayrli tun", "audio": "tusbih.mp3" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "«Xayr» (ketayotganda) arabchada qanday?", "options": ["مَعَ السَّلامَة", "السَّلامُ عَلَيْكُم", "صَبَاحُ الخَيْر", "شُكْرًا"] },
+        { "type": "listen", "prompt": "Eshiting va toping", "audio": "ilalliqa.mp3", "options": ["إِلَى اللِّقَاء", "مَعَ السَّلامَة", "أَرَاكَ غَدًا", "تُصْبِحُ عَلَى خَيْر"] },
+        { "type": "choice", "prompt": "Uxlashdan oldin nima deyiladi?", "options": ["تُصْبِحُ عَلَى خَيْر", "صَبَاحُ الخَيْر", "كَيْفَ حَالُك؟", "عَفْوًا"] },
+        { "type": "match", "prompt": "Juftlarini toping", "pairs": [["مَعَ السَّلامَة", "Xayr"], ["إِلَى اللِّقَاء", "Ko'rishguncha"], ["أَرَاكَ غَدًا", "Ertaga ko'rishamiz"], ["تُصْبِحُ عَلَى خَيْر", "Xayrli tun"]] },
+        { "type": "assemble", "prompt": "Jumlani yig'ing: «Ertaga ko'rishamiz»", "words": ["أَرَاكَ", "غَدًا"], "extra": ["اليَوْم"], "audio": "araka.mp3" },
+        { "type": "choice", "prompt": "To'liq suhbat tartibini tanlang", "options": ["Salom → suhbat → xayrlashish", "Xayrlashish → salom → suhbat", "Suhbat → salom → xayr", "Salom → xayr → suhbat"] }
+      ]
+    }
+  ]
+}

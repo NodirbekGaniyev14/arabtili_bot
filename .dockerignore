@@ -1,0 +1,16 @@
+# Sirlar — hech qachon image ichiga kirmasin
+.env
+
+# Lokal muhitlar
+.venv/
+webapp/node_modules/
+webapp/dist/
+__pycache__/
+*.pyc
+
+# Lokal ma'lumotlar va vositalar
+*.db
+scripts/cloudflared.exe
+.git/
+.claude/
+*.log

@@ -1,0 +1,170 @@
+{
+  "id": "alphabet",
+  "title": "Alifbo",
+  "arabic_title": "الحُرُوف",
+  "lessons": [
+    {
+      "id": "alphabet-1",
+      "title": "Alif, Bā, Tā, Sā",
+      "new_items": [
+        { "kind": "letter", "ar": "ا", "translit": "alif", "uz": "cho'ziq «aa» tovushi", "audio": "alif.mp3", "audio_text": "أَلِف" },
+        { "kind": "letter", "ar": "ب", "translit": "bā", "uz": "«b» tovushi", "audio": "ba.mp3", "audio_text": "بَاء" },
+        { "kind": "letter", "ar": "ت", "translit": "tā", "uz": "«t» tovushi", "audio": "ta.mp3", "audio_text": "تَاء" },
+        { "kind": "letter", "ar": "ث", "translit": "sā", "uz": "inglizcha «th» (three) kabi", "audio": "sa.mp3", "audio_text": "ثَاء" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "Bu qaysi harf?", "arabic": "ب", "options": ["bā (b)", "tā (t)", "alif", "sā (th)"] },
+        { "type": "choice", "prompt": "«t» tovushini beradigan harfni toping", "options": ["ت", "ب", "ث", "ا"] },
+        { "type": "listen", "prompt": "Eshiting va harfni toping", "audio": "ba.mp3", "options": ["ب", "ت", "ث", "ا"] },
+        { "type": "choice", "prompt": "Nuqtalari USTIDA bo'lgan «t» harfi qaysi?", "options": ["ت", "ب", "ي", "ن"] },
+        { "type": "match", "prompt": "Harf va nomini juftlang", "pairs": [["ا", "alif"], ["ب", "bā"], ["ت", "tā"], ["ث", "sā"]] },
+        { "type": "listen", "prompt": "Eshiting va harfni toping", "audio": "sa.mp3", "options": ["ث", "ت", "ب", "ا"] }
+      ]
+    },
+    {
+      "id": "alphabet-2",
+      "title": "Jim, Hā, Xā",
+      "new_items": [
+        { "kind": "letter", "ar": "ج", "translit": "jim", "uz": "«j» tovushi", "audio": "jim.mp3", "audio_text": "جِيم" },
+        { "kind": "letter", "ar": "ح", "translit": "hā", "uz": "bo'g'izdan chiqadigan yumshoq «h»", "audio": "ha7.mp3", "audio_text": "حَاء" },
+        { "kind": "letter", "ar": "خ", "translit": "xā", "uz": "«x» tovushi (xona)", "audio": "xa.mp3", "audio_text": "خَاء" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "Bu qaysi harf?", "arabic": "ج", "options": ["jim (j)", "hā (h)", "xā (x)", "bā (b)"] },
+        { "type": "choice", "prompt": "«x» tovushini beradigan harf qaysi? (nuqtasi ustida)", "options": ["خ", "ح", "ج", "ع"] },
+        { "type": "listen", "prompt": "Eshiting va harfni toping", "audio": "jim.mp3", "options": ["ج", "ح", "خ", "ز"] },
+        { "type": "match", "prompt": "Harf va nomini juftlang", "pairs": [["ج", "jim"], ["ح", "hā"], ["خ", "xā"]] },
+        { "type": "choice", "prompt": "Uchala harfning shakli bir xil. Ularni nima farqlaydi?", "options": ["Nuqtalar soni va o'rni", "Harf kattaligi", "Yozilish yo'nalishi", "Rangi"] },
+        { "type": "listen", "prompt": "Eshiting va harfni toping", "audio": "ha7.mp3", "options": ["ح", "خ", "ج", "ه"] }
+      ]
+    },
+    {
+      "id": "alphabet-3",
+      "title": "Dal, Zal, Rā, Zay",
+      "new_items": [
+        { "kind": "letter", "ar": "د", "translit": "dal", "uz": "«d» tovushi", "audio": "dal.mp3", "audio_text": "دَال" },
+        { "kind": "letter", "ar": "ذ", "translit": "zal", "uz": "inglizcha «th» (this) kabi", "audio": "zal.mp3", "audio_text": "ذَال" },
+        { "kind": "letter", "ar": "ر", "translit": "rā", "uz": "«r» tovushi", "audio": "ra.mp3", "audio_text": "رَاء" },
+        { "kind": "letter", "ar": "ز", "translit": "zay", "uz": "«z» tovushi", "audio": "zay.mp3", "audio_text": "زَاي" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "Bu qaysi harf?", "arabic": "ر", "options": ["rā (r)", "zay (z)", "dal (d)", "vov (v)"] },
+        { "type": "choice", "prompt": "«z» tovushini beradigan harf qaysi?", "options": ["ز", "ر", "ذ", "د"] },
+        { "type": "listen", "prompt": "Eshiting va harfni toping", "audio": "dal.mp3", "options": ["د", "ذ", "ر", "ز"] },
+        { "type": "match", "prompt": "Harf va nomini juftlang", "pairs": [["د", "dal"], ["ذ", "zal"], ["ر", "rā"], ["ز", "zay"]] },
+        { "type": "choice", "prompt": "«ز» va «ر» harflarini nima farqlaydi?", "options": ["Ustidagi bitta nuqta", "Ostidagi nuqta", "Shakli butunlay boshqa", "Hech narsa"] },
+        { "type": "listen", "prompt": "Eshiting va harfni toping", "audio": "zal.mp3", "options": ["ذ", "ز", "د", "ر"] }
+      ]
+    },
+    {
+      "id": "alphabet-4",
+      "title": "Sin, Shin, Sod, Dod",
+      "new_items": [
+        { "kind": "letter", "ar": "س", "translit": "sin", "uz": "«s» tovushi", "audio": "sin.mp3", "audio_text": "سِين" },
+        { "kind": "letter", "ar": "ش", "translit": "shin", "uz": "«sh» tovushi", "audio": "shin.mp3", "audio_text": "شِين" },
+        { "kind": "letter", "ar": "ص", "translit": "sod", "uz": "qattiq (do'rildoq) «s»", "audio": "sod.mp3", "audio_text": "صَاد" },
+        { "kind": "letter", "ar": "ض", "translit": "dod", "uz": "qattiq «d» — faqat arabchada bor", "audio": "dod.mp3", "audio_text": "ضَاد" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "Bu qaysi harf?", "arabic": "ش", "options": ["shin (sh)", "sin (s)", "sod (s)", "sā (th)"] },
+        { "type": "choice", "prompt": "«sh» tovushini beradigan harf qaysi?", "options": ["ش", "س", "ص", "ث"] },
+        { "type": "listen", "prompt": "Eshiting va harfni toping", "audio": "sod.mp3", "options": ["ص", "س", "ش", "ض"] },
+        { "type": "match", "prompt": "Harf va nomini juftlang", "pairs": [["س", "sin"], ["ش", "shin"], ["ص", "sod"], ["ض", "dod"]] },
+        { "type": "choice", "prompt": "«س» va «ش» ni nima farqlaydi?", "options": ["Ustidagi uchta nuqta", "Ostidagi nuqta", "Dumining shakli", "Hech narsa"] },
+        { "type": "listen", "prompt": "Eshiting va harfni toping", "audio": "shin.mp3", "options": ["ش", "س", "ص", "ج"] }
+      ]
+    },
+    {
+      "id": "alphabet-5",
+      "title": "To, Zo, Ayn, G'ayn",
+      "new_items": [
+        { "kind": "letter", "ar": "ط", "translit": "to", "uz": "qattiq «t»", "audio": "to.mp3", "audio_text": "طَاء" },
+        { "kind": "letter", "ar": "ظ", "translit": "zo", "uz": "qattiq «z» (til tishga tegadi)", "audio": "zo.mp3", "audio_text": "ظَاء" },
+        { "kind": "letter", "ar": "ع", "translit": "ayn", "uz": "bo'g'iz tovushi — arabchaning belgisi", "audio": "ayn.mp3", "audio_text": "عَيْن" },
+        { "kind": "letter", "ar": "غ", "translit": "g'ayn", "uz": "«g'» tovushi (g'oz)", "audio": "gayn.mp3", "audio_text": "غَيْن" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "Bu qaysi harf?", "arabic": "ع", "options": ["ayn", "g'ayn", "hā", "xā"] },
+        { "type": "choice", "prompt": "«g'» tovushini beradigan harf qaysi?", "options": ["غ", "ع", "خ", "ق"] },
+        { "type": "listen", "prompt": "Eshiting va harfni toping", "audio": "ayn.mp3", "options": ["ع", "غ", "ح", "ء"] },
+        { "type": "match", "prompt": "Harf va nomini juftlang", "pairs": [["ط", "to"], ["ظ", "zo"], ["ع", "ayn"], ["غ", "g'ayn"]] },
+        { "type": "choice", "prompt": "«ظ» harfi «ط» dan qanday farq qiladi?", "options": ["Ustida bitta nuqta bor", "Ostida nuqta bor", "Kichikroq yoziladi", "Farqi yo'q"] },
+        { "type": "listen", "prompt": "Eshiting va harfni toping", "audio": "gayn.mp3", "options": ["غ", "ع", "ق", "خ"] }
+      ]
+    },
+    {
+      "id": "alphabet-6",
+      "title": "Fā, Qof, Kaf, Lam",
+      "new_items": [
+        { "kind": "letter", "ar": "ف", "translit": "fā", "uz": "«f» tovushi", "audio": "fa.mp3", "audio_text": "فَاء" },
+        { "kind": "letter", "ar": "ق", "translit": "qof", "uz": "«q» tovushi (qalam)", "audio": "qof.mp3", "audio_text": "قَاف" },
+        { "kind": "letter", "ar": "ك", "translit": "kaf", "uz": "«k» tovushi", "audio": "kaf.mp3", "audio_text": "كَاف" },
+        { "kind": "letter", "ar": "ل", "translit": "lam", "uz": "«l» tovushi", "audio": "lam.mp3", "audio_text": "لَام" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "Bu qaysi harf?", "arabic": "ق", "options": ["qof (q)", "fā (f)", "kaf (k)", "g'ayn"] },
+        { "type": "choice", "prompt": "«ف» va «ق» ni nima farqlaydi?", "options": ["Nuqtalar soni (1 va 2)", "Shakli butunlay boshqa", "Rangi", "Kattaligi"] },
+        { "type": "listen", "prompt": "Eshiting va harfni toping", "audio": "kaf.mp3", "options": ["ك", "ق", "ل", "ف"] },
+        { "type": "match", "prompt": "Harf va nomini juftlang", "pairs": [["ف", "fā"], ["ق", "qof"], ["ك", "kaf"], ["ل", "lam"]] },
+        { "type": "choice", "prompt": "«l» tovushini beradigan harf qaysi?", "options": ["ل", "ك", "ا", "ن"] },
+        { "type": "listen", "prompt": "Eshiting va harfni toping", "audio": "qof.mp3", "options": ["ق", "ك", "غ", "ف"] }
+      ]
+    },
+    {
+      "id": "alphabet-7",
+      "title": "Mim, Nun, Hā, Vov, Yā",
+      "new_items": [
+        { "kind": "letter", "ar": "م", "translit": "mim", "uz": "«m» tovushi", "audio": "mim.mp3", "audio_text": "مِيم" },
+        { "kind": "letter", "ar": "ن", "translit": "nun", "uz": "«n» tovushi", "audio": "nun.mp3", "audio_text": "نُون" },
+        { "kind": "letter", "ar": "ه", "translit": "hā", "uz": "yengil «h» (havo)", "audio": "ha.mp3", "audio_text": "هَاء" },
+        { "kind": "letter", "ar": "و", "translit": "vov", "uz": "«v» yoki cho'ziq «uu»", "audio": "vov.mp3", "audio_text": "وَاو" },
+        { "kind": "letter", "ar": "ي", "translit": "yā", "uz": "«y» yoki cho'ziq «ii»", "audio": "ya.mp3", "audio_text": "يَاء" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "Bu qaysi harf?", "arabic": "م", "options": ["mim (m)", "nun (n)", "vov (v)", "hā (h)"] },
+        { "type": "choice", "prompt": "«n» tovushini beradigan harf qaysi? (nuqtasi ustida)", "options": ["ن", "ب", "ت", "ي"] },
+        { "type": "listen", "prompt": "Eshiting va harfni toping", "audio": "vov.mp3", "options": ["و", "ي", "ر", "ز"] },
+        { "type": "match", "prompt": "Harf va nomini juftlang", "pairs": [["م", "mim"], ["ن", "nun"], ["ه", "hā"], ["ي", "yā"]] },
+        { "type": "choice", "prompt": "«ي» harfining ostida nechta nuqta bor?", "options": ["2 ta", "1 ta", "3 ta", "Nuqtasi yo'q"] },
+        { "type": "listen", "prompt": "Eshiting va harfni toping", "audio": "mim.mp3", "options": ["م", "ن", "ه", "و"] }
+      ]
+    },
+    {
+      "id": "alphabet-8",
+      "title": "Harakatlar: a, i, u",
+      "new_items": [
+        { "kind": "letter", "ar": "بَ", "translit": "ba", "uz": "fatha — ustidagi chiziqcha «a» beradi", "audio": "fatha.mp3", "audio_text": "بَ" },
+        { "kind": "letter", "ar": "بِ", "translit": "bi", "uz": "kasra — ostidagi chiziqcha «i» beradi", "audio": "kasra.mp3", "audio_text": "بِ" },
+        { "kind": "letter", "ar": "بُ", "translit": "bu", "uz": "damma — ustidagi kichik vov «u» beradi", "audio": "damma.mp3", "audio_text": "بُ" },
+        { "kind": "letter", "ar": "بْ", "translit": "b", "uz": "sukun — unli yo'q, faqat undosh", "audio": "sukun.mp3", "audio_text": "اَبْ" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "Bu qanday o'qiladi?", "arabic": "بَ", "options": ["ba", "bi", "bu", "b"] },
+        { "type": "choice", "prompt": "Bu qanday o'qiladi?", "arabic": "تِ", "options": ["ti", "ta", "tu", "t"] },
+        { "type": "choice", "prompt": "Bu qanday o'qiladi?", "arabic": "مُ", "options": ["mu", "ma", "mi", "m"] },
+        { "type": "match", "prompt": "Belgini nomi bilan juftlang", "pairs": [["بَ", "ba (fatha)"], ["بِ", "bi (kasra)"], ["بُ", "bu (damma)"], ["بْ", "b (sukun)"]] },
+        { "type": "choice", "prompt": "«i» tovushini beradigan harakat qayerda turadi?", "options": ["Harf ostida", "Harf ustida", "Harf ichida", "Harfdan keyin"] },
+        { "type": "choice", "prompt": "Bu qanday o'qiladi?", "arabic": "لُ", "options": ["lu", "la", "li", "l"] }
+      ]
+    },
+    {
+      "id": "alphabet-9",
+      "title": "Birinchi so'zlar",
+      "new_items": [
+        { "kind": "word", "ar": "بَاب", "translit": "bāb", "uz": "eshik", "audio": "bab.mp3" },
+        { "kind": "word", "ar": "بَيْت", "translit": "bayt", "uz": "uy", "audio": "bayt.mp3" },
+        { "kind": "word", "ar": "كِتَاب", "translit": "kitāb", "uz": "kitob", "audio": "kitab.mp3" },
+        { "kind": "word", "ar": "قَلَم", "translit": "qalam", "uz": "qalam", "audio": "qalam.mp3" },
+        { "kind": "word", "ar": "مَاء", "translit": "mā'", "uz": "suv", "audio": "maa.mp3" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "Bu so'zni o'qing", "arabic": "بَاب", "options": ["bāb — eshik", "bayt — uy", "kitāb — kitob", "qalam"] },
+        { "type": "listen", "prompt": "Eshiting va so'zni toping", "audio": "kitab.mp3", "options": ["كِتَاب", "قَلَم", "بَيْت", "مَاء"] },
+        { "type": "choice", "prompt": "«suv» arabchada qanday?", "options": ["مَاء", "بَاب", "قَلَم", "بَيْت"] },
+        { "type": "match", "prompt": "So'z va ma'nosini juftlang", "pairs": [["بَاب", "eshik"], ["بَيْت", "uy"], ["كِتَاب", "kitob"], ["قَلَم", "qalam"]] },
+        { "type": "assemble", "prompt": "Harflardan «بَاب» (eshik) so'zini yig'ing", "words": ["بَـ", "ـا", "ب"], "extra": ["تَـ"], "audio": "bab.mp3" },
+        { "type": "type", "prompt": "Bu so'zni lotin harflarida yozing", "arabic": "قَلَم", "audio": "qalam.mp3", "answers": ["qalam", "kalam", "qalem"] }
+      ]
+    }
+  ]
+}
