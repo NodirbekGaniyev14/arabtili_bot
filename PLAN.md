@@ -1,5 +1,8 @@
 # 🕌 ARABIY — Telegram orqali arab tilini o'rgatuvchi bot (Mini App)
 
+> ✅ **Bu reja (v1) to'liq bajarilgan va bot jonli:** https://arabiy.digitalcfo.uz
+> 🚀 **Keyingi katta bosqich:** [CURRICULUM_PLAN.md](CURRICULUM_PLAN.md) — 160 darslik to'liq o'quv dasturi (spec: [docs/ARABIY_CURRICULUM.md](docs/ARABIY_CURRICULUM.md))
+
 > Ish nomi: **Arabiy** (logo: yashil kvadrat ichida **ع**), bot: `@ArabiyTiliBot` (nom band bo'lsa o'zgartiramiz).
 > Maskot: **Jamal** 🐪 — shaxsiy arab tili murabbiyi (Hanyu botdagi panda o'rniga tuya).
 > Reference: HanyuXitoyBot (9 ta skrinshot tahlil qilindi) — oqim va tuzilishni undan olamiz, dizayn esa to'liq arabcha atmosferada bo'ladi.
