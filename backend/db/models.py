@@ -93,6 +93,15 @@ class XpLog(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
 
 
+class Meta(Base):
+    """Oddiy kalit-qiymat saqlash (deploy versiyasi va h.k.)."""
+
+    __tablename__ = "meta"
+
+    key: Mapped[str] = mapped_column(String(64), primary_key=True)
+    value: Mapped[str] = mapped_column(String(256), default="")
+
+
 class Achievement(Base):
     """Foydalanuvchi qo'lga kiritgan yutuqlar (badge'lar)."""
 

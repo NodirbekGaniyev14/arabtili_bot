@@ -9,11 +9,10 @@ from config import BASE_DIR
 CONTENT_DIR = BASE_DIR / "content" / "modules"
 
 # Kanonik tartib (yangi modul qo'shilsa shu yerga yoziladi)
-CANONICAL_ORDER = ["alphabet", "greetings"]
+CANONICAL_ORDER = ["alphabet", "greetings", "introduction"]
 
 # Rejada bo'lishi mumkin, lekin hali yozilmagan modullar (UI'da "tez orada")
 PLANNED_TITLES = {
-    "introduction": "Tanishish",
     "family": "Oila",
     "numbers": "Sonlar 1-10",
     "colors": "Ranglar va sifatlar",

@@ -1,0 +1,98 @@
+{
+  "id": "introduction",
+  "title": "Tanishish",
+  "arabic_title": "التَّعَارُف",
+  "lessons": [
+    {
+      "id": "introduction-1",
+      "title": "Ismim...",
+      "new_items": [
+        { "kind": "phrase", "ar": "مَا اسْمُك؟", "translit": "masmuk?", "uz": "Ismingiz nima?", "audio": "intro_masmuk.mp3" },
+        { "kind": "phrase", "ar": "اِسْمِي أَحْمَد", "translit": "ismī Ahmad", "uz": "Mening ismim Ahmad", "audio": "intro_ismi.mp3" },
+        { "kind": "word", "ar": "تَشَرَّفْنَا", "translit": "tasharrafnā", "uz": "Tanishganimdan xursandman", "audio": "intro_tasharrafna.mp3" },
+        { "kind": "phrase", "ar": "وَأَنَا كَذٰلِك", "translit": "va anā kazālik", "uz": "Men ham (xuddi shunday)", "audio": "intro_kazalik.mp3" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "«Ismingiz nima?» arabchada qanday?", "options": ["مَا اسْمُك؟", "مِنْ أَيْنَ أَنْتَ؟", "كَيْفَ حَالُك؟", "مَا مِهْنَتُك؟"] },
+        { "type": "listen", "prompt": "Eshiting va toping", "audio": "intro_ismi.mp3", "options": ["اِسْمِي أَحْمَد", "مَا اسْمُك؟", "تَشَرَّفْنَا", "وَأَنَا كَذٰلِك"] },
+        { "type": "choice", "prompt": "«تَشَرَّفْنَا» ma'nosi?", "arabic": "تَشَرَّفْنَا", "options": ["Tanishganimdan xursandman", "Xayr", "Rahmat", "Qalaysiz?"] },
+        { "type": "match", "prompt": "Juftlarini toping", "pairs": [["مَا اسْمُك؟", "Ismingiz nima?"], ["اِسْمِي", "Mening ismim"], ["تَشَرَّفْنَا", "Xursandman"]] },
+        { "type": "assemble", "prompt": "Jumlani yig'ing: «Mening ismim Ahmad»", "words": ["اِسْمِي", "أَحْمَد"], "extra": ["مَا"], "audio": "intro_ismi.mp3" },
+        { "type": "choice", "prompt": "Kimdir «تَشَرَّفْنَا» desa, javoban nima deysiz?", "options": ["وَأَنَا كَذٰلِك", "لا", "مَعَ السَّلامَة", "مِنْ فَضْلِك"] }
+      ]
+    },
+    {
+      "id": "introduction-2",
+      "title": "Qayerdanman",
+      "new_items": [
+        { "kind": "phrase", "ar": "مِنْ أَيْنَ أَنْتَ؟", "translit": "min ayna anta?", "uz": "Qayerdansiz?", "audio": "intro_minayna.mp3" },
+        { "kind": "phrase", "ar": "أَنَا مِنْ أُوزْبَكِستَان", "translit": "anā min Uzbakistān", "uz": "Men O'zbekistondanman", "audio": "intro_uzbakistan.mp3" },
+        { "kind": "phrase", "ar": "أَيْنَ تَسْكُن؟", "translit": "ayna taskun?", "uz": "Qayerda yashaysiz?", "audio": "intro_aynataskun.mp3" },
+        { "kind": "phrase", "ar": "أَسْكُنُ فِي طَشْقَنْد", "translit": "askunu fī Tashqand", "uz": "Toshkentda yashayman", "audio": "intro_tashqand.mp3" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "«Qayerdansiz?» arabchada qanday?", "options": ["مِنْ أَيْنَ أَنْتَ؟", "مَا اسْمُك؟", "أَيْنَ تَسْكُن؟", "كَمْ عُمْرُك؟"] },
+        { "type": "listen", "prompt": "Eshiting va toping", "audio": "intro_uzbakistan.mp3", "options": ["أَنَا مِنْ أُوزْبَكِستَان", "أَسْكُنُ فِي طَشْقَنْد", "مِنْ أَيْنَ أَنْتَ؟", "أَيْنَ تَسْكُن؟"] },
+        { "type": "choice", "prompt": "«أَيْنَ تَسْكُن؟» nimani so'rayapti?", "arabic": "أَيْنَ تَسْكُن؟", "options": ["Qayerda yashaysiz?", "Ismingiz nima?", "Necha yoshdasiz?", "Kasbingiz nima?"] },
+        { "type": "match", "prompt": "Juftlarini toping", "pairs": [["مِنْ أَيْنَ؟", "Qayerdan?"], ["أُوزْبَكِستَان", "O'zbekiston"], ["أَسْكُنُ", "Yashayman"], ["طَشْقَنْد", "Toshkent"]] },
+        { "type": "assemble", "prompt": "Jumlani yig'ing: «Men O'zbekistondanman»", "words": ["أَنَا", "مِنْ", "أُوزْبَكِستَان"], "extra": ["فِي"], "audio": "intro_uzbakistan.mp3" },
+        { "type": "type", "prompt": "«Toshkent»ni lotin harflarida yozing (arabchasini)", "arabic": "طَشْقَنْد", "audio": "intro_tashqand.mp3", "answers": ["tashqand", "toshkent", "tashkent", "tashqand"] }
+      ]
+    },
+    {
+      "id": "introduction-3",
+      "title": "Kasbim",
+      "new_items": [
+        { "kind": "phrase", "ar": "مَا مِهْنَتُك؟", "translit": "mā mihnatuk?", "uz": "Kasbingiz nima?", "audio": "intro_mihna.mp3" },
+        { "kind": "word", "ar": "طَالِب", "translit": "tālib", "uz": "talaba", "audio": "intro_talib.mp3" },
+        { "kind": "word", "ar": "مُعَلِّم", "translit": "mu'allim", "uz": "o'qituvchi", "audio": "intro_muallim.mp3" },
+        { "kind": "word", "ar": "طَبِيب", "translit": "tabīb", "uz": "shifokor", "audio": "intro_tabib.mp3" },
+        { "kind": "word", "ar": "مُهَنْدِس", "translit": "muhandis", "uz": "muhandis", "audio": "intro_muhandis.mp3" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "«Kasbingiz nima?» arabchada qanday?", "options": ["مَا مِهْنَتُك؟", "مَا اسْمُك؟", "مِنْ أَيْنَ أَنْتَ؟", "كَيْفَ حَالُك؟"] },
+        { "type": "choice", "prompt": "«talaba» arabchada qanday?", "options": ["طَالِب", "مُعَلِّم", "طَبِيب", "مُهَنْدِس"] },
+        { "type": "listen", "prompt": "Eshiting va toping", "audio": "intro_muallim.mp3", "options": ["مُعَلِّم", "طَالِب", "طَبِيب", "مُهَنْدِس"] },
+        { "type": "match", "prompt": "Kasblarni juftlang", "pairs": [["طَالِب", "talaba"], ["مُعَلِّم", "o'qituvchi"], ["طَبِيب", "shifokor"], ["مُهَنْدِس", "muhandis"]] },
+        { "type": "choice", "prompt": "«shifokor»ni tanlang", "options": ["طَبِيب", "طَالِب", "مُهَنْدِس", "مُعَلِّم"] },
+        { "type": "assemble", "prompt": "Jumlani yig'ing: «Men talabaman»", "words": ["أَنَا", "طَالِب"], "extra": ["طَبِيب"], "audio": "intro_talib.mp3" }
+      ]
+    },
+    {
+      "id": "introduction-4",
+      "title": "Tilni bilish",
+      "new_items": [
+        { "kind": "phrase", "ar": "هَلْ تَتَكَلَّمُ العَرَبِيَّة؟", "translit": "hal tatakallamu-l-arabiyya?", "uz": "Arabcha gapirasizmi?", "audio": "intro_halarabi.mp3" },
+        { "kind": "phrase", "ar": "نَعَمْ، قَلِيلًا", "translit": "na'am, qalīlan", "uz": "Ha, ozgina", "audio": "intro_qalilan.mp3" },
+        { "kind": "phrase", "ar": "لا أَفْهَم", "translit": "lā afham", "uz": "Tushunmayapman", "audio": "intro_lafham.mp3" },
+        { "kind": "phrase", "ar": "أَعِدْ مِنْ فَضْلِك", "translit": "a'id min fadlik", "uz": "Iltimos, qaytaring", "audio": "intro_aid.mp3" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "«Arabcha gapirasizmi?» qaysi?", "options": ["هَلْ تَتَكَلَّمُ العَرَبِيَّة؟", "مَا مِهْنَتُك؟", "أَيْنَ تَسْكُن؟", "كَمْ عُمْرُك؟"] },
+        { "type": "listen", "prompt": "Eshiting va toping", "audio": "intro_lafham.mp3", "options": ["لا أَفْهَم", "نَعَمْ، قَلِيلًا", "أَعِدْ مِنْ فَضْلِك", "تَشَرَّفْنَا"] },
+        { "type": "choice", "prompt": "«نَعَمْ، قَلِيلًا» ma'nosi?", "arabic": "نَعَمْ، قَلِيلًا", "options": ["Ha, ozgina", "Yo'q, umuman", "Ha, yaxshi", "Tushunmadim"] },
+        { "type": "match", "prompt": "Juftlarini toping", "pairs": [["نَعَمْ", "Ha"], ["قَلِيلًا", "Ozgina"], ["لا أَفْهَم", "Tushunmayapman"], ["أَعِدْ", "Qaytaring"]] },
+        { "type": "choice", "prompt": "Kimningdir gapini tushunmasangiz nima deysiz?", "options": ["لا أَفْهَم", "تَشَرَّفْنَا", "مَعَ السَّلامَة", "نَعَمْ"] },
+        { "type": "assemble", "prompt": "Jumlani yig'ing: «Ha, ozgina»", "words": ["نَعَمْ", "قَلِيلًا"], "extra": ["لا"], "audio": "intro_qalilan.mp3" }
+      ]
+    },
+    {
+      "id": "introduction-5",
+      "title": "Yosh va oila",
+      "new_items": [
+        { "kind": "phrase", "ar": "كَمْ عُمْرُك؟", "translit": "kam 'umruk?", "uz": "Necha yoshdasiz?", "audio": "intro_umruk.mp3" },
+        { "kind": "phrase", "ar": "هٰذِهِ عَائِلَتِي", "translit": "hādhihi 'ā'ilatī", "uz": "Bu mening oilam", "audio": "intro_aila.mp3" },
+        { "kind": "phrase", "ar": "عِنْدِي أَخ", "translit": "'indī akh", "uz": "Mening akam bor", "audio": "intro_indiakh.mp3" },
+        { "kind": "phrase", "ar": "أَنَا مُتَزَوِّج", "translit": "anā mutazawwij", "uz": "Men uylanganman", "audio": "intro_mutazawwij.mp3" }
+      ],
+      "exercises": [
+        { "type": "choice", "prompt": "«Necha yoshdasiz?» qaysi?", "options": ["كَمْ عُمْرُك؟", "مَا اسْمُك؟", "مِنْ أَيْنَ أَنْتَ؟", "مَا مِهْنَتُك؟"] },
+        { "type": "listen", "prompt": "Eshiting va toping", "audio": "intro_aila.mp3", "options": ["هٰذِهِ عَائِلَتِي", "عِنْدِي أَخ", "كَمْ عُمْرُك؟", "أَنَا مُتَزَوِّج"] },
+        { "type": "choice", "prompt": "«عِنْدِي أَخ» ma'nosi?", "arabic": "عِنْدِي أَخ", "options": ["Mening akam bor", "Bu mening oilam", "Men yolg'izman", "Uylanganman"] },
+        { "type": "match", "prompt": "Juftlarini toping", "pairs": [["كَمْ عُمْرُك؟", "Necha yoshda?"], ["عَائِلَتِي", "Oilam"], ["أَخ", "Aka/uka"], ["مُتَزَوِّج", "Uylangan"]] },
+        { "type": "assemble", "prompt": "Jumlani yig'ing: «Bu mening oilam»", "words": ["هٰذِهِ", "عَائِلَتِي"], "extra": ["أَخ"], "audio": "intro_aila.mp3" },
+        { "type": "type", "prompt": "«oilam» so'zini lotin harflarida yozing", "arabic": "عَائِلَتِي", "audio": "intro_aila.mp3", "answers": ["ailati", "aailati", "oilam", "a'ilati", "ailatii"] }
+      ]
+    }
+  ]
+}

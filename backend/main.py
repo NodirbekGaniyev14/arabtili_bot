@@ -74,6 +74,10 @@ async def lifespan(app: FastAPI):
         )
         # Kunlik eslatma fon vazifasi
         reminder_task = asyncio.create_task(reminder_loop(bot))
+        # Deploy xabari — versiya o'zgargan bo'lsa foydalanuvchilarga bildiradi
+        from services.deploy_notify import notify_if_updated
+
+        asyncio.create_task(notify_if_updated(bot))
         print("🤖 Bot polling boshlandi")
     else:
         print("⚠️  BOT_TOKEN yo'q — bot ishga tushmadi (.env faylini to'ldiring)")
