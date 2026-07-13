@@ -18,6 +18,8 @@ class Settings(BaseSettings):
     dev_auth: bool = False
     # Prod'da doimiy disk yo'li (masalan /data/arabiy.db); bo'sh = loyiha ildizi
     db_path: str = ""
+    # Admin Telegram ID — faqat shu foydalanuvchi admin buyruqlaridan foydalanadi
+    admin_id: int = 0
 
 
 settings = Settings()

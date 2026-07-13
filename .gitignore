@@ -10,7 +10,7 @@ __pycache__/
 
 # Node
 node_modules/
-webapp/dist/
+# webapp/dist — commit qilinadi (serverda git pull → build shart emas)
 
 # Misc
 *.log

@@ -1,0 +1,14 @@
+# Shell skriptlar Linux'da LF bo'lishi shart (CRLF bash'ni buzadi)
+*.sh text eol=lf
+
+# Matn fayllar avtomatik normalizatsiya
+* text=auto
+
+# Binar fayllar — git tegmaydi
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.mp3 binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
