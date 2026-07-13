@@ -52,24 +52,21 @@ async def notify_if_updated(bot: Bot) -> None:
             await session.execute(select(Meta).where(Meta.key == VERSION_KEY))
         ).scalar_one_or_none()
 
-        # Birinchi ishga tushish — versiyani saqlaymiz, xabar yubormaymiz
-        if row is None:
-            session.add(Meta(key=VERSION_KEY, value=version))
-            await session.commit()
-            return
+        if row is not None and row.value == version:
+            return  # o'zgarish yo'q — xabar yubormaymiz
 
-        if row.value == version:
-            return  # o'zgarish yo'q
-
-        # Versiya o'zgardi → barcha haqiqiy foydalanuvchilarga xabar
+        # Birinchi ishga tushish yoki versiya o'zgardi → xabar yuboramiz
         ids = (
             await session.execute(
                 select(User.tg_id).where(User.is_demo == 0)
             )
         ).scalars().all()
 
-        row.value = version
-        session.add(row)
+        if row is None:
+            session.add(Meta(key=VERSION_KEY, value=version))
+        else:
+            row.value = version
+            session.add(row)
         await session.commit()
 
     kb = None
