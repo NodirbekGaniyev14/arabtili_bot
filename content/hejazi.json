@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "note": "MSA ↔ Hijoziy juftliklar (spec §4). Alohida SRS deck — MSA bilan aralashtirilmaydi.",
+  "phrases": [
+    { "msa_ar": "ماذا؟", "hejazi_ar": "إيش؟", "translit": "esh", "uz": "nima?", "audio": "hj/esh.mp3" },
+    { "msa_ar": "أين؟", "hejazi_ar": "وين؟", "translit": "wen", "uz": "qayerda?", "audio": "hj/wen.mp3" },
+    { "msa_ar": "لماذا؟", "hejazi_ar": "ليش؟", "translit": "lesh", "uz": "nega?", "audio": "hj/lesh.mp3" },
+    { "msa_ar": "أُريدُ", "hejazi_ar": "أبغى", "translit": "abgha", "uz": "xohlayman", "audio": "hj/abgha.mp3" },
+    { "msa_ar": "هل تُريد؟", "hejazi_ar": "تبغى؟", "translit": "tabgha", "uz": "xohlaysanmi?", "audio": "hj/tabgha.mp3" },
+    { "msa_ar": "الآن", "hejazi_ar": "دحين", "translit": "dahin", "uz": "hozir", "audio": "hj/dahin.mp3" },
+    { "msa_ar": "نعم", "hejazi_ar": "أيوه", "translit": "aywa", "uz": "ha", "audio": "hj/aywa.mp3" },
+    { "msa_ar": "لا يوجد", "hejazi_ar": "ما فيه", "translit": "ma fih", "uz": "yo'q", "audio": "hj/mafih.mp3" },
+    { "msa_ar": "جيّد", "hejazi_ar": "زين", "translit": "zen", "uz": "yaxshi", "audio": "hj/zen.mp3" },
+    { "msa_ar": "قليلاً", "hejazi_ar": "شوي", "translit": "shwayya", "uz": "ozgina", "audio": "hj/shwayya.mp3" },
+    { "msa_ar": "مباشرةً", "hejazi_ar": "على طول", "translit": "ala tul", "uz": "to'g'riga / darhol", "audio": "hj/alatul.mp3" },
+    { "msa_ar": "هيّا بنا", "hejazi_ar": "يالله", "translit": "yalla", "uz": "qani, ketdik", "audio": "hj/yalla.mp3" },
+    { "msa_ar": "اِنتهى", "hejazi_ar": "خلاص", "translit": "khalas", "uz": "tamom / bo'ldi", "audio": "hj/khalas.mp3" },
+    { "msa_ar": "لا بأس", "hejazi_ar": "معليش", "translit": "malesh", "uz": "zarari yo'q", "audio": "hj/malesh.mp3" },
+    { "msa_ar": "كم الثمن؟", "hejazi_ar": "بكم؟", "translit": "bikam", "uz": "qanchaga?", "audio": "hj/bikam.mp3" }
+  ]
+}

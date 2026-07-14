@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "patterns": [
+    { "id": "faala", "ar": "فَعَلَ", "kind": "verb", "level": "A1", "meaning_uz": "asosiy fe'l (I bob, o'tgan zamon)", "example_ar": "كَتَبَ", "example_uz": "yozdi", "uz_cognates": [] },
+    { "id": "fail", "ar": "فاعِل", "kind": "noun", "level": "A1", "meaning_uz": "bajaruvchi (kim qiladi)", "example_ar": "كاتِب", "example_uz": "yozuvchi", "uz_cognates": ["kotib", "olim", "hokim", "shoir"] },
+    { "id": "maful", "ar": "مَفْعول", "kind": "noun", "level": "A1", "meaning_uz": "bajarilgan (nima qilingan)", "example_ar": "مَكْتوب", "example_uz": "yozilgan", "uz_cognates": ["maktub", "mashhur", "ma'lum", "mahbub"] },
+    { "id": "mafal", "ar": "مَفْعَل", "kind": "noun", "level": "A1", "meaning_uz": "JOY vazni (qayerda qilinadi)", "example_ar": "مَكْتَب", "example_uz": "ish stoli / ofis", "uz_cognates": ["maktab", "masjid", "manzil", "mahkama"] },
+    { "id": "mafala", "ar": "مَفْعَلة", "kind": "noun", "level": "A1", "meaning_uz": "joy (kengroq)", "example_ar": "مَكْتَبة", "example_uz": "kutubxona", "uz_cognates": ["madrasa", "mahkama"] },
+    { "id": "fial", "ar": "فِعال", "kind": "noun", "level": "A1", "meaning_uz": "narsa / predmet", "example_ar": "كِتاب", "example_uz": "kitob", "uz_cognates": ["kitob", "hisob", "nizom", "salom"] },
+
+    { "id": "bab2", "ar": "فَعَّلَ", "kind": "verb_form", "form": "II", "level": "A2", "meaning_uz": "kuchaytirish / sababiyat (o'rgatmoq kabi)", "masdar_ar": "تَفْعيل", "ism_fail_ar": "مُفَعِّل", "example_ar": "عَلَّمَ", "example_uz": "o'rgatdi", "uz_cognates": ["ta'lim", "mudarris", "muallim"] },
+    { "id": "bab3", "ar": "فاعَلَ", "kind": "verb_form", "form": "III", "level": "A2", "meaning_uz": "o'zaro harakat (birga qilish)", "masdar_ar": "مُفاعَلة", "ism_fail_ar": "مُفاعِل", "example_ar": "شاهَدَ", "example_uz": "tomosha qildi", "uz_cognates": ["mushohada", "muomala", "musobaqa"] },
+    { "id": "bab4", "ar": "أَفْعَلَ", "kind": "verb_form", "form": "IV", "level": "A2", "meaning_uz": "sababiyat (qildirmoq)", "masdar_ar": "إِفْعال", "ism_fail_ar": "مُفْعِل", "example_ar": "أَسْلَمَ", "example_uz": "musulmon bo'ldi", "uz_cognates": ["islom", "muslim", "e'lon", "ehson"] },
+    { "id": "bab5", "ar": "تَفَعَّلَ", "kind": "verb_form", "form": "V", "level": "A2", "meaning_uz": "II bobning qaytimi (o'zi qilmoq)", "masdar_ar": "تَفَعُّل", "ism_fail_ar": "مُتَفَعِّل", "example_ar": "تَعَلَّمَ", "example_uz": "o'rgandi", "uz_cognates": ["tashakkur", "tafakkur", "taraqqiyot"] },
+    { "id": "bab6", "ar": "تَفاعَلَ", "kind": "verb_form", "form": "VI", "level": "A2", "meaning_uz": "o'zaro (bir-biriga)", "masdar_ar": "تَفاعُل", "ism_fail_ar": "مُتَفاعِل", "example_ar": "تَعاوَنَ", "example_uz": "hamkorlik qildi", "uz_cognates": ["taovun", "tavoze"] },
+    { "id": "bab7", "ar": "اِنْفَعَلَ", "kind": "verb_form", "form": "VII", "level": "A2", "meaning_uz": "majhul ma'no / o'z-o'zidan bo'lish", "masdar_ar": "اِنْفِعال", "ism_fail_ar": "مُنْفَعِل", "example_ar": "اِنْكَسَرَ", "example_uz": "sindi", "uz_cognates": ["inqilob"] },
+    { "id": "bab8", "ar": "اِفْتَعَلَ", "kind": "verb_form", "form": "VIII", "level": "A2", "meaning_uz": "qaytim / o'zi uchun qilish", "masdar_ar": "اِفْتِعال", "ism_fail_ar": "مُفْتَعِل", "example_ar": "اِجْتَمَعَ", "example_uz": "yig'ildi", "uz_cognates": ["ijtimoiy", "ehtirom", "intizor", "e'tibor"] },
+    { "id": "bab10", "ar": "اِسْتَفْعَلَ", "kind": "verb_form", "form": "X", "level": "A2", "meaning_uz": "talab qilish / so'rash", "masdar_ar": "اِسْتِفْعال", "ism_fail_ar": "مُسْتَفْعِل", "example_ar": "اِسْتَغْفَرَ", "example_uz": "kechirim so'radi", "uz_cognates": ["istiqlol", "mustaqbal", "istig'for", "iste'mol", "istiqbol"] }
+  ]
+}

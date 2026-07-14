@@ -22,6 +22,10 @@ _MIGRATIONS = {
         "notified_date": "VARCHAR(10) DEFAULT ''",
         "is_demo": "INTEGER DEFAULT 0",
     },
+    "user_words": {
+        "card_type": "VARCHAR(16) DEFAULT 'word'",
+        "deck": "VARCHAR(8) DEFAULT 'msa'",
+    },
 }
 
 

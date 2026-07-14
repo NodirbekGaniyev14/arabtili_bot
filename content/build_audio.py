@@ -14,19 +14,28 @@ import edge_tts
 VOICE = "ar-SA-HamedNeural"
 RATE = "-20%"  # o'rganuvchilar uchun sekinroq talaffuz
 
-CONTENT_DIR = Path(__file__).parent / "modules"
+CONTENT_DIR = Path(__file__).parent
 OUT_DIR = Path(__file__).parent.parent / "webapp" / "public" / "audio"
+
+# Bu fayllarda audio maydonlari yo'q — o'tkazib yuboriladi
+SKIP_FILES = {"curriculum.json"}
 
 
 def collect_tasks() -> dict[str, str]:
-    """audio fayl nomi -> aytiladigan matn"""
+    """audio fayl yo'li (ichki papka bo'lishi mumkin) -> aytiladigan matn"""
     tasks: dict[str, str] = {}
 
     def scan(obj):
         if isinstance(obj, dict):
             audio = obj.get("audio")
             if audio:
-                text = obj.get("audio_text") or obj.get("ar") or obj.get("arabic")
+                text = (
+                    obj.get("audio_text")
+                    or obj.get("ar")
+                    or obj.get("arabic")
+                    or obj.get("hejazi_ar")
+                    or obj.get("root")
+                )
                 if text:
                     tasks.setdefault(audio, text)
             for v in obj.values():
@@ -35,7 +44,10 @@ def collect_tasks() -> dict[str, str]:
             for v in obj:
                 scan(v)
 
-    for f in sorted(CONTENT_DIR.glob("*.json")):
+    # v1 (modules/*.json) + v2 (modules/{a0..}/*.json, roots/patterns/hejazi.json)
+    for f in sorted(CONTENT_DIR.rglob("*.json")):
+        if f.name in SKIP_FILES:
+            continue
         scan(json.loads(f.read_text(encoding="utf-8")))
     return tasks
 
@@ -50,6 +62,7 @@ async def main():
 
     for filename, text in tasks.items():
         out = OUT_DIR / filename
+        out.parent.mkdir(parents=True, exist_ok=True)  # a0/, hj/, roots/ kabi
         if out.exists() and out.stat().st_size > 0:
             skipped += 1
             continue

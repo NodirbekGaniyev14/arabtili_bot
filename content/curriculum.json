@@ -1,0 +1,2564 @@
+{
+ "version": "1.0",
+ "source": "docs/ARABIY_CURRICULUM.md",
+ "counts": {
+  "A0": 25,
+  "A1": 40,
+  "A2": 45,
+  "B1": 50
+ },
+ "lessons": [
+  {
+   "id": "a0-01",
+   "level": "A0",
+   "module": "letters",
+   "order": 1,
+   "title_uz": "Arab alifbosi",
+   "topic": "O'ngdan chapga yozuv, 28 harf bilan umumiy tanishuv",
+   "words_target": 5,
+   "note": "Motivatsiya: o'zbekchadagi arabcha so'zlar",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": []
+  },
+  {
+   "id": "a0-02",
+   "level": "A0",
+   "module": "letters",
+   "order": 2,
+   "title_uz": "Harf oilasi 1: ب ت ث ن ي",
+   "topic": "Nuqta farqi bilan ajratish",
+   "words_target": 6,
+   "note": "Birinchi o'qiladigan so'z: بَيْت",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-01"
+   ]
+  },
+  {
+   "id": "a0-03",
+   "level": "A0",
+   "module": "letters",
+   "order": 3,
+   "title_uz": "Harf oilasi 2: ج ح خ",
+   "topic": "خ tovushi o'zbekda bor (x)",
+   "words_target": 6,
+   "note": "باب · بِنْت",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-02"
+   ]
+  },
+  {
+   "id": "a0-04",
+   "level": "A0",
+   "module": "letters",
+   "order": 4,
+   "title_uz": "Harf oilasi 3: د ذ ر ز",
+   "topic": "Ulanmaydigan harflar bilan tanishuv",
+   "words_target": 6,
+   "note": "دَرْس · وَرْد",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-03"
+   ]
+  },
+  {
+   "id": "a0-05",
+   "level": "A0",
+   "module": "letters",
+   "order": 5,
+   "title_uz": "Harf oilasi 4: س ش ص ض",
+   "topic": "Qalin (emfatik) harflar kirish",
+   "words_target": 6,
+   "note": "شَمْس",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-04"
+   ]
+  },
+  {
+   "id": "a0-06",
+   "level": "A0",
+   "module": "letters",
+   "order": 6,
+   "title_uz": "Harf oilasi 5: ط ظ ع غ",
+   "topic": "ع — eng qiyin tovush; غ o'zbekda bor (g')",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-05"
+   ]
+  },
+  {
+   "id": "a0-07",
+   "level": "A0",
+   "module": "letters",
+   "order": 7,
+   "title_uz": "Harf oilasi 6: ف ق ك ل م ه و",
+   "topic": "ق tovushi o'zbekda bor (q)",
+   "words_target": 8,
+   "note": "قَلَم · كِتاب",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-06"
+   ]
+  },
+  {
+   "id": "a0-08",
+   "level": "A0",
+   "module": "letters",
+   "order": 8,
+   "title_uz": "Ulanish shakllari",
+   "topic": "Harfning boshi / o'rtasi / oxiri shakllari",
+   "words_target": 6,
+   "note": "Interaktiv mashqlar",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-07"
+   ]
+  },
+  {
+   "id": "a0-09",
+   "level": "A0",
+   "module": "letters",
+   "order": 9,
+   "title_uz": "Ulanmaydigan 6 harf",
+   "topic": "ا د ذ ر ز و dan keyin uzilish",
+   "words_target": 6,
+   "note": "So'z ichida bo'linish",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-08"
+   ]
+  },
+  {
+   "id": "a0-10",
+   "level": "A0",
+   "module": "harakat",
+   "order": 10,
+   "title_uz": "Qisqa unlilar",
+   "topic": "Fatha · kasra · damma",
+   "words_target": 8,
+   "note": "كَتَبَ / كُتُب farqi",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-09"
+   ]
+  },
+  {
+   "id": "a0-11",
+   "level": "A0",
+   "module": "harakat",
+   "order": 11,
+   "title_uz": "Sukun",
+   "topic": "Harakatsiz harf",
+   "words_target": 6,
+   "note": "مَكْتَب",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-10"
+   ]
+  },
+  {
+   "id": "a0-12",
+   "level": "A0",
+   "module": "harakat",
+   "order": 12,
+   "title_uz": "Shadda",
+   "topic": "Ikkilangan harf",
+   "words_target": 6,
+   "note": "مُدَرِّس",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-11"
+   ]
+  },
+  {
+   "id": "a0-13",
+   "level": "A0",
+   "module": "harakat",
+   "order": 13,
+   "title_uz": "Tanvin",
+   "topic": "ً ٍ ٌ — noaniqlik belgisi",
+   "words_target": 6,
+   "note": "كِتابٌ",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-12"
+   ]
+  },
+  {
+   "id": "a0-14",
+   "level": "A0",
+   "module": "harakat",
+   "order": 14,
+   "title_uz": "Cho'ziq unlilar (madd)",
+   "topic": "ا و ي cho'zish vazifasida",
+   "words_target": 8,
+   "note": "كِتاب · نور · بيت",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-13"
+   ]
+  },
+  {
+   "id": "a0-15",
+   "level": "A0",
+   "module": "harakat",
+   "order": 15,
+   "title_uz": "Ta marbuta (ة)",
+   "topic": "Muannaslik belgisi",
+   "words_target": 6,
+   "note": "مَدْرَسة",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-14"
+   ]
+  },
+  {
+   "id": "a0-16",
+   "level": "A0",
+   "module": "harakat",
+   "order": 16,
+   "title_uz": "Hamza",
+   "topic": "ء أ إ ؤ ئ shakllari",
+   "words_target": 6,
+   "note": "أَب · إِسْلام",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-15"
+   ]
+  },
+  {
+   "id": "a0-17",
+   "level": "A0",
+   "module": "harakat",
+   "order": 17,
+   "title_uz": "Alif maqsura (ى)",
+   "topic": "ى va ي farqi",
+   "words_target": 5,
+   "note": "مُوسى",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-16"
+   ]
+  },
+  {
+   "id": "a0-18",
+   "level": "A0",
+   "module": "reading",
+   "order": 18,
+   "title_uz": "Quyosh va oy harflari",
+   "topic": "ال artikli assimilyatsiyasi: الشَّمْس vs القَمَر",
+   "words_target": 8,
+   "note": "Aniqlik artikli",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-17"
+   ]
+  },
+  {
+   "id": "a0-19",
+   "level": "A0",
+   "module": "pronunciation",
+   "order": 19,
+   "title_uz": "Talaffuz 1: ع ح",
+   "topic": "O'zbekda YO'Q tovushlar ustaxonasi",
+   "words_target": 0,
+   "note": "Audio + ovozli takrorlash (shadowing)",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-18"
+   ]
+  },
+  {
+   "id": "a0-20",
+   "level": "A0",
+   "module": "pronunciation",
+   "order": 20,
+   "title_uz": "Talaffuz 2: ص ض ط ظ",
+   "topic": "Qalin harflar: س/ص · ت/ط solishtiruv",
+   "words_target": 0,
+   "note": "Minimal juftliklar",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-19"
+   ]
+  },
+  {
+   "id": "a0-21",
+   "level": "A0",
+   "module": "pronunciation",
+   "order": 21,
+   "title_uz": "Talaffuz 3: ق خ غ",
+   "topic": "O'zbekda BOR tovushlar — motivatsion dars",
+   "words_target": 0,
+   "note": "qalam=قلم, xabar=خبر, g'oya kabi ko'priklar",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-20"
+   ]
+  },
+  {
+   "id": "a0-22",
+   "level": "A0",
+   "module": "roots-intro",
+   "order": 22,
+   "title_uz": "O'zak (جذر) tushunchasi",
+   "topic": "3 harfli o'zak tizimi kirish",
+   "words_target": 10,
+   "note": "O'zbekcha ko'prik jadvali: kitob-maktab-kotib",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-21"
+   ]
+  },
+  {
+   "id": "a0-23",
+   "level": "A0",
+   "module": "workshop",
+   "order": 23,
+   "title_uz": "O'qish ustaxonasi",
+   "topic": "50 so'zni ravon o'qish",
+   "words_target": 15,
+   "note": "Vaqtli o'qish mashqi",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-22"
+   ]
+  },
+  {
+   "id": "a0-24",
+   "level": "A0",
+   "module": "workshop",
+   "order": 24,
+   "title_uz": "Qo'lda yozish",
+   "topic": "Harf yozish tartibi (yo'nalishlar)",
+   "words_target": 0,
+   "note": "Ko'rsatma + mashq varaqlari",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a0-23"
+   ]
+  },
+  {
+   "id": "a0-25",
+   "level": "A0",
+   "module": "exam",
+   "order": 25,
+   "title_uz": "A0 IMTIHONI",
+   "topic": "4 ko'nikma bo'yicha yakuniy imtihon",
+   "words_target": 0,
+   "note": "80% → Sertifikat A0",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "exam",
+   "prerequisites": [
+    "a0-24"
+   ]
+  },
+  {
+   "id": "a1-01",
+   "level": "A1",
+   "module": "nominal-sentence",
+   "order": 1,
+   "title_uz": "Oddiy tasdiq gap tuzaman",
+   "topic": "Ismli gap: مُبْتَدَأ + خَبَر",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": []
+  },
+  {
+   "id": "a1-02",
+   "level": "A1",
+   "module": "nominal-sentence",
+   "order": 2,
+   "title_uz": "Kim haqida gapirayotganimni aytaman",
+   "topic": "Kishilik olmoshlari (munfasil)",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-01"
+   ]
+  },
+  {
+   "id": "a1-03",
+   "level": "A1",
+   "module": "nominal-sentence",
+   "order": 3,
+   "title_uz": "«Bu / anavi» deb ko'rsataman",
+   "topic": "هذا · هذه · ذلك · تلك",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-02"
+   ]
+  },
+  {
+   "id": "a1-04",
+   "level": "A1",
+   "module": "nominal-sentence",
+   "order": 4,
+   "title_uz": "Aniq va noaniqni farqlayman",
+   "topic": "ال vs tanvin",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-03"
+   ]
+  },
+  {
+   "id": "a1-05",
+   "level": "A1",
+   "module": "nominal-sentence",
+   "order": 5,
+   "title_uz": "Erkak/ayol so'zni ajrataman",
+   "topic": "Muzakkar / muannas (ة)",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-04"
+   ]
+  },
+  {
+   "id": "a1-06",
+   "level": "A1",
+   "module": "nominal-sentence",
+   "order": 6,
+   "title_uz": "Narsani tasvirlayman",
+   "topic": "Sifat va moslashuv (النَّعْت)",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-05"
+   ]
+  },
+  {
+   "id": "a1-07",
+   "level": "A1",
+   "module": "nominal-sentence",
+   "order": 7,
+   "title_uz": "Savol beraman",
+   "topic": "ما · مَن · أين · كيف · هل · أ",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-06"
+   ]
+  },
+  {
+   "id": "a1-08",
+   "level": "A1",
+   "module": "nominal-sentence",
+   "order": 8,
+   "title_uz": "Salomlashaman, tanishaman",
+   "topic": "Amaliy muloqot darsi",
+   "words_target": 10,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-07"
+   ]
+  },
+  {
+   "id": "a1-09",
+   "level": "A1",
+   "module": "past-tense",
+   "order": 9,
+   "title_uz": "«U yozdi / u (ayol) yozdi»",
+   "topic": "Ma'zi: هو / هي — كَتَبَ / كَتَبَتْ",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-08"
+   ]
+  },
+  {
+   "id": "a1-10",
+   "level": "A1",
+   "module": "past-tense",
+   "order": 10,
+   "title_uz": "«Sen yozding»",
+   "topic": "Ma'zi: أنتَ / أنتِ — كَتَبْتَ / كَتَبْتِ",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-09"
+   ]
+  },
+  {
+   "id": "a1-11",
+   "level": "A1",
+   "module": "past-tense",
+   "order": 11,
+   "title_uz": "«Men yozdim / biz yozdik»",
+   "topic": "Ma'zi: أنا / نحن — كَتَبْتُ / كَتَبْنا",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-10"
+   ]
+  },
+  {
+   "id": "a1-12",
+   "level": "A1",
+   "module": "past-tense",
+   "order": 12,
+   "title_uz": "Ko'plikda gapiraman",
+   "topic": "Ma'zi: هم / هنّ / أنتم — كَتَبوا",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-11"
+   ]
+  },
+  {
+   "id": "a1-13",
+   "level": "A1",
+   "module": "past-tense",
+   "order": 13,
+   "title_uz": "Ma'zi to'liq jadval",
+   "topic": "14 shakl + intensiv drill",
+   "words_target": 8,
+   "note": "Konjugatsiya drill",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-12"
+   ]
+  },
+  {
+   "id": "a1-14",
+   "level": "A1",
+   "module": "past-tense",
+   "order": 14,
+   "title_uz": "Kim nima qilganini aytaman",
+   "topic": "Fe'lli gap: فِعْل + فاعِل + مَفْعول",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-13"
+   ]
+  },
+  {
+   "id": "a1-15",
+   "level": "A1",
+   "module": "past-tense",
+   "order": 15,
+   "title_uz": "«Qilmadim»",
+   "topic": "Inkor: ما + ma'zi",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-14"
+   ]
+  },
+  {
+   "id": "a1-16",
+   "level": "A1",
+   "module": "past-tense",
+   "order": 16,
+   "title_uz": "Bir o'zakdan 5 so'z yasayman",
+   "topic": "فَعَلَ → فاعِل → مَفْعول → مَفْعَل",
+   "words_target": 10,
+   "note": "O'zak-vazn ustaxonasi",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-15"
+   ]
+  },
+  {
+   "id": "a1-17",
+   "level": "A1",
+   "module": "present-tense",
+   "order": 17,
+   "title_uz": "Muzori' prefikslarini bilaman",
+   "topic": "أ ت ي ن — «ATIN» qoidasi",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-16"
+   ]
+  },
+  {
+   "id": "a1-18",
+   "level": "A1",
+   "module": "present-tense",
+   "order": 18,
+   "title_uz": "«U yozadi»",
+   "topic": "Muzori': يَكْتُبُ / تَكْتُبُ",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-17"
+   ]
+  },
+  {
+   "id": "a1-19",
+   "level": "A1",
+   "module": "present-tense",
+   "order": 19,
+   "title_uz": "«Sen yozasan»",
+   "topic": "Muzori': أنتَ / أنتِ",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-18"
+   ]
+  },
+  {
+   "id": "a1-20",
+   "level": "A1",
+   "module": "present-tense",
+   "order": 20,
+   "title_uz": "«Men yozaman / biz yozamiz»",
+   "topic": "Muzori': أنا / نحن",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-19"
+   ]
+  },
+  {
+   "id": "a1-21",
+   "level": "A1",
+   "module": "present-tense",
+   "order": 21,
+   "title_uz": "Muzori' to'liq jadval",
+   "topic": "14 shakl + drill",
+   "words_target": 8,
+   "note": "Konjugatsiya drill",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-20"
+   ]
+  },
+  {
+   "id": "a1-22",
+   "level": "A1",
+   "module": "present-tense",
+   "order": 22,
+   "title_uz": "«Qilmayapman»",
+   "topic": "Inkor: لا + muzori'",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-21"
+   ]
+  },
+  {
+   "id": "a1-23",
+   "level": "A1",
+   "module": "present-tense",
+   "order": 23,
+   "title_uz": "Kelasi zamon",
+   "topic": "سَـ / سَوْفَ",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-22"
+   ]
+  },
+  {
+   "id": "a1-24",
+   "level": "A1",
+   "module": "present-tense",
+   "order": 24,
+   "title_uz": "Ma'zi vs Muzori'",
+   "topic": "Aralash solishtirma drill",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-23"
+   ]
+  },
+  {
+   "id": "a1-25",
+   "level": "A1",
+   "module": "noun-system",
+   "order": 25,
+   "title_uz": "Ikkita narsa haqida gapiraman",
+   "topic": "Ikkilik son (المُثَنّى): كِتابان",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-24"
+   ]
+  },
+  {
+   "id": "a1-26",
+   "level": "A1",
+   "module": "noun-system",
+   "order": 26,
+   "title_uz": "Ko'plik yasayman",
+   "topic": "Sog'lom ko'plik: مُعَلِّمون / مُعَلِّمات",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-25"
+   ]
+  },
+  {
+   "id": "a1-27",
+   "level": "A1",
+   "module": "noun-system",
+   "order": 27,
+   "title_uz": "Notekis ko'plikni tanib olaman",
+   "topic": "Singan ko'plik — asosiy vaznlar",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-26"
+   ]
+  },
+  {
+   "id": "a1-28",
+   "level": "A1",
+   "module": "noun-system",
+   "order": 28,
+   "title_uz": "«Kimningdir kitobi»",
+   "topic": "Idafa (الإضافة)",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-27"
+   ]
+  },
+  {
+   "id": "a1-29",
+   "level": "A1",
+   "module": "noun-system",
+   "order": 29,
+   "title_uz": "«Mening kitobim»",
+   "topic": "Ulangan olmoshlar: كِتابي · كِتابُكَ",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-28"
+   ]
+  },
+  {
+   "id": "a1-30",
+   "level": "A1",
+   "module": "noun-system",
+   "order": 30,
+   "title_uz": "Joyni ko'rsataman",
+   "topic": "Predloglar: في · على · من · إلى · مع · عن · بـ · لـ",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-29"
+   ]
+  },
+  {
+   "id": "a1-31",
+   "level": "A1",
+   "module": "noun-system",
+   "order": 31,
+   "title_uz": "So'z oxiridagi harakatni tushunaman",
+   "topic": "I'rob kirish: رَفْع / نَصْب / جَرّ",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-30"
+   ]
+  },
+  {
+   "id": "a1-32",
+   "level": "A1",
+   "module": "noun-system",
+   "order": 32,
+   "title_uz": "Turli inkorni bilaman",
+   "topic": "لَيْسَ · ما · لا · لَمْ · لَنْ",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-31"
+   ]
+  },
+  {
+   "id": "a1-33",
+   "level": "A1",
+   "module": "daily-life",
+   "order": 33,
+   "title_uz": "Oilam haqida gapiraman",
+   "topic": "Oila va qarindoshlik so'zlari",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-32"
+   ]
+  },
+  {
+   "id": "a1-34",
+   "level": "A1",
+   "module": "daily-life",
+   "order": 34,
+   "title_uz": "1–10 sanayman",
+   "topic": "Sonlar 1-10 + qutbiylik kirish",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-33"
+   ]
+  },
+  {
+   "id": "a1-35",
+   "level": "A1",
+   "module": "daily-life",
+   "order": 35,
+   "title_uz": "Narx va yoshni aytaman",
+   "topic": "Sonlar 11-100",
+   "words_target": 10,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-34"
+   ]
+  },
+  {
+   "id": "a1-36",
+   "level": "A1",
+   "module": "daily-life",
+   "order": 36,
+   "title_uz": "Vaqtni aytaman",
+   "topic": "Soat, hafta kunlari, oylar, namoz vaqtlari",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-35"
+   ]
+  },
+  {
+   "id": "a1-37",
+   "level": "A1",
+   "module": "daily-life",
+   "order": 37,
+   "title_uz": "Ovqat buyurtma qilaman",
+   "topic": "Restoran leksikasi va muloqoti",
+   "words_target": 12,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-36"
+   ]
+  },
+  {
+   "id": "a1-38",
+   "level": "A1",
+   "module": "daily-life",
+   "order": 38,
+   "title_uz": "Yo'l so'rayman",
+   "topic": "Yo'nalish va transport",
+   "words_target": 12,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-37"
+   ]
+  },
+  {
+   "id": "a1-39",
+   "level": "A1",
+   "module": "daily-life",
+   "order": 39,
+   "title_uz": "Takrorlash",
+   "topic": "O'zak/vazn ustaxonasi — A1 materiallari",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "lesson",
+   "prerequisites": [
+    "a1-38"
+   ]
+  },
+  {
+   "id": "a1-40",
+   "level": "A1",
+   "module": "exam",
+   "order": 40,
+   "title_uz": "A1 IMTIHONI",
+   "topic": "4 ko'nikma bo'yicha yakuniy imtihon",
+   "words_target": 0,
+   "note": "80% → Sertifikat A1",
+   "hejazi": false,
+   "harakat_level": "full",
+   "type": "exam",
+   "prerequisites": [
+    "a1-39"
+   ]
+  },
+  {
+   "id": "a2-01",
+   "level": "A2",
+   "module": "verb-forms",
+   "order": 1,
+   "title_uz": "Fe'l boblari: umumiy ko'rinish",
+   "topic": "I-X tizimi — bitta o'zakdan 10 xil ma'no",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": []
+  },
+  {
+   "id": "a2-02",
+   "level": "A2",
+   "module": "verb-forms",
+   "order": 2,
+   "title_uz": "II bob: kuchaytirish",
+   "topic": "فَعَّلَ — عَلَّمَ (o'rgatdi)",
+   "words_target": 10,
+   "note": "muallim · ta'lim · mudarris ko'prigi",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-01"
+   ]
+  },
+  {
+   "id": "a2-03",
+   "level": "A2",
+   "module": "verb-forms",
+   "order": 3,
+   "title_uz": "III bob: o'zaro harakat",
+   "topic": "فاعَلَ — شاهَدَ",
+   "words_target": 10,
+   "note": "mushohada",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-02"
+   ]
+  },
+  {
+   "id": "a2-04",
+   "level": "A2",
+   "module": "verb-forms",
+   "order": 4,
+   "title_uz": "IV bob: sababiyat",
+   "topic": "أَفْعَلَ — أَسْلَمَ",
+   "words_target": 10,
+   "note": "islom · muslim · e'lon",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-03"
+   ]
+  },
+  {
+   "id": "a2-05",
+   "level": "A2",
+   "module": "verb-forms",
+   "order": 5,
+   "title_uz": "V bob: II ning qaytimi",
+   "topic": "تَفَعَّلَ — تَعَلَّمَ (o'rgandi)",
+   "words_target": 10,
+   "note": "tashakkur · tafakkur",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-04"
+   ]
+  },
+  {
+   "id": "a2-06",
+   "level": "A2",
+   "module": "verb-forms",
+   "order": 6,
+   "title_uz": "VI bob: o'zaro",
+   "topic": "تَفاعَلَ — تَعاوَنَ",
+   "words_target": 10,
+   "note": "taovun",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-05"
+   ]
+  },
+  {
+   "id": "a2-07",
+   "level": "A2",
+   "module": "verb-forms",
+   "order": 7,
+   "title_uz": "VII bob: majhul/qaytim",
+   "topic": "اِنْفَعَلَ — اِنْكَسَرَ",
+   "words_target": 10,
+   "note": "inqilob",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-06"
+   ]
+  },
+  {
+   "id": "a2-08",
+   "level": "A2",
+   "module": "verb-forms",
+   "order": 8,
+   "title_uz": "VIII bob: qaytim",
+   "topic": "اِفْتَعَلَ — اِجْتَمَعَ",
+   "words_target": 10,
+   "note": "ijtimoiy · ehtirom · intizor",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-07"
+   ]
+  },
+  {
+   "id": "a2-09",
+   "level": "A2",
+   "module": "verb-forms",
+   "order": 9,
+   "title_uz": "X bob: talab qilish",
+   "topic": "اِسْتَفْعَلَ — اِسْتَغْفَرَ",
+   "words_target": 10,
+   "note": "istiqlol · mustaqbal · istig'for",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-08"
+   ]
+  },
+  {
+   "id": "a2-10",
+   "level": "A2",
+   "module": "verb-forms",
+   "order": 10,
+   "title_uz": "Masdar",
+   "topic": "Har bob uchun masdar vazni: تَفْعيل · إِفْعال · اِسْتِفْعال",
+   "words_target": 10,
+   "note": "ta'lim · islom · istiqlol",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-09"
+   ]
+  },
+  {
+   "id": "a2-11",
+   "level": "A2",
+   "module": "verb-forms",
+   "order": 11,
+   "title_uz": "Ism fo'il / maf'ul",
+   "topic": "مُعَلِّم / مُعَلَّم — bajaruvchi/bajarilgan",
+   "words_target": 10,
+   "note": "muallim · muslim · mustaqbal",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-10"
+   ]
+  },
+  {
+   "id": "a2-12",
+   "level": "A2",
+   "module": "verb-forms",
+   "order": 12,
+   "title_uz": "BOB USTAXONASI",
+   "topic": "Bitta o'zakdan 12 so'z: ع-ل-م",
+   "words_target": 12,
+   "note": "Interaktiv wow-dars",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-11"
+   ]
+  },
+  {
+   "id": "a2-13",
+   "level": "A2",
+   "module": "weak-verbs",
+   "order": 13,
+   "title_uz": "Illatli fe'l nima?",
+   "topic": "Turlari bilan umumiy tanishuv",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-12"
+   ]
+  },
+  {
+   "id": "a2-14",
+   "level": "A2",
+   "module": "weak-verbs",
+   "order": 14,
+   "title_uz": "Misol fe'llar",
+   "topic": "مِثال (boshi و/ي): وَصَلَ · وَجَدَ",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-13"
+   ]
+  },
+  {
+   "id": "a2-15",
+   "level": "A2",
+   "module": "weak-verbs",
+   "order": 15,
+   "title_uz": "Ajvaf fe'llar",
+   "topic": "أَجْوَف (o'rtasi و/ي): قالَ · كانَ · زارَ",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-14"
+   ]
+  },
+  {
+   "id": "a2-16",
+   "level": "A2",
+   "module": "weak-verbs",
+   "order": 16,
+   "title_uz": "Naqis fe'llar",
+   "topic": "ناقِص (oxiri و/ي): مَشى · دَعا · بَنى",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-15"
+   ]
+  },
+  {
+   "id": "a2-17",
+   "level": "A2",
+   "module": "weak-verbs",
+   "order": 17,
+   "title_uz": "Muzoaf va mahmuz",
+   "topic": "مُضاعَف: مَرَّ · رَدَّ / مَهْموز: سَأَلَ · قَرَأَ",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-16"
+   ]
+  },
+  {
+   "id": "a2-18",
+   "level": "A2",
+   "module": "weak-verbs",
+   "order": 18,
+   "title_uz": "Illatli fe'llar drilli",
+   "topic": "Aralash mashqlar",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-17"
+   ]
+  },
+  {
+   "id": "a2-19",
+   "level": "A2",
+   "module": "grammar-ext",
+   "order": 19,
+   "title_uz": "«Edi / bo'ldi»",
+   "topic": "كانَ va opa-singillari",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-18"
+   ]
+  },
+  {
+   "id": "a2-20",
+   "level": "A2",
+   "module": "grammar-ext",
+   "order": 20,
+   "title_uz": "Ta'kid bilan gapiraman",
+   "topic": "إنَّ va opa-singillari",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-19"
+   ]
+  },
+  {
+   "id": "a2-21",
+   "level": "A2",
+   "module": "grammar-ext",
+   "order": 21,
+   "title_uz": "Buyruq beraman",
+   "topic": "Amr (الأمر): اُكْتُبْ!",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-20"
+   ]
+  },
+  {
+   "id": "a2-22",
+   "level": "A2",
+   "module": "grammar-ext",
+   "order": 22,
+   "title_uz": "«Yozildi» deyman",
+   "topic": "Majhul nisbat — kirish",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-21"
+   ]
+  },
+  {
+   "id": "a2-23",
+   "level": "A2",
+   "module": "grammar-ext",
+   "order": 23,
+   "title_uz": "Solishtiraman",
+   "topic": "أَفْعَل مِن / الأَفْعَل",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-22"
+   ]
+  },
+  {
+   "id": "a2-24",
+   "level": "A2",
+   "module": "grammar-ext",
+   "order": 24,
+   "title_uz": "Katta sonlarni aytaman",
+   "topic": "100-1000 + to'liq qutbiylik qoidasi",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-23"
+   ]
+  },
+  {
+   "id": "a2-25",
+   "level": "A2",
+   "module": "grammar-ext",
+   "order": 25,
+   "title_uz": "Tartibni aytaman",
+   "topic": "الأوّل · الثاني · الثالث",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-24"
+   ]
+  },
+  {
+   "id": "a2-26",
+   "level": "A2",
+   "module": "grammar-ext",
+   "order": 26,
+   "title_uz": "Vaqt/joyni aniqlayman",
+   "topic": "Zarf (ظرف الزمان والمكان)",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-25"
+   ]
+  },
+  {
+   "id": "a2-27",
+   "level": "A2",
+   "module": "saudi",
+   "order": 27,
+   "title_uz": "Aeroport",
+   "topic": "Pasport, viza, bojxona muloqoti",
+   "words_target": 12,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-26"
+   ]
+  },
+  {
+   "id": "a2-28",
+   "level": "A2",
+   "module": "saudi",
+   "order": 28,
+   "title_uz": "Transport",
+   "topic": "Taksi, Haramayn poyezdi, avtobus",
+   "words_target": 12,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-27"
+   ]
+  },
+  {
+   "id": "a2-29",
+   "level": "A2",
+   "module": "saudi",
+   "order": 29,
+   "title_uz": "Mehmonxona",
+   "topic": "Bron, check-in, muammo hal qilish",
+   "words_target": 12,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-28"
+   ]
+  },
+  {
+   "id": "a2-30",
+   "level": "A2",
+   "module": "saudi",
+   "order": 30,
+   "title_uz": "Restoran",
+   "topic": "Buyurtma, halol, hisob",
+   "words_target": 12,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-29"
+   ]
+  },
+  {
+   "id": "a2-31",
+   "level": "A2",
+   "module": "saudi",
+   "order": 31,
+   "title_uz": "Xarid",
+   "topic": "Bozor, savdolashish, narx",
+   "words_target": 12,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-30"
+   ]
+  },
+  {
+   "id": "a2-32",
+   "level": "A2",
+   "module": "saudi",
+   "order": 32,
+   "title_uz": "Dorixona / shifokor",
+   "topic": "Og'riq, dori, favqulodda tibbiy holat",
+   "words_target": 12,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-31"
+   ]
+  },
+  {
+   "id": "a2-33",
+   "level": "A2",
+   "module": "saudi",
+   "order": 33,
+   "title_uz": "Bank / to'lov",
+   "topic": "Valyuta, karta, mada tizimi",
+   "words_target": 12,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-32"
+   ]
+  },
+  {
+   "id": "a2-34",
+   "level": "A2",
+   "module": "saudi",
+   "order": 34,
+   "title_uz": "Umra lug'ati",
+   "topic": "إحرام · طواف · سعي · تلبية",
+   "words_target": 12,
+   "note": "Diniy atamalar aniq va hurmatli",
+   "hejazi": true,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-33"
+   ]
+  },
+  {
+   "id": "a2-35",
+   "level": "A2",
+   "module": "saudi",
+   "order": 35,
+   "title_uz": "Masjid odobi",
+   "topic": "Namoz vaqti, azon, iqoma, safar namozi",
+   "words_target": 12,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-34"
+   ]
+  },
+  {
+   "id": "a2-36",
+   "level": "A2",
+   "module": "saudi",
+   "order": 36,
+   "title_uz": "Makka va Madina",
+   "topic": "Joylar, yo'nalishlar, belgilar",
+   "words_target": 12,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-35"
+   ]
+  },
+  {
+   "id": "a2-37",
+   "level": "A2",
+   "module": "saudi",
+   "order": 37,
+   "title_uz": "Favqulodda holat",
+   "topic": "Politsiya, kasalxona, yo'qotish",
+   "words_target": 12,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-36"
+   ]
+  },
+  {
+   "id": "a2-38",
+   "level": "A2",
+   "module": "saudi",
+   "order": 38,
+   "title_uz": "Hijoziy ustaxonasi",
+   "topic": "Eng kerakli 100 ibora — intensiv",
+   "words_target": 15,
+   "note": "Hijoziy deck SRS",
+   "hejazi": true,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-37"
+   ]
+  },
+  {
+   "id": "a2-39",
+   "level": "A2",
+   "module": "skills",
+   "order": 39,
+   "title_uz": "O'qish: belgi va menyu",
+   "topic": "Real fotosuratlardan o'qish",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-38"
+   ]
+  },
+  {
+   "id": "a2-40",
+   "level": "A2",
+   "module": "skills",
+   "order": 40,
+   "title_uz": "O'qish: qisqa hikoya",
+   "topic": "Harakat kamayadi",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-39"
+   ]
+  },
+  {
+   "id": "a2-41",
+   "level": "A2",
+   "module": "skills",
+   "order": 41,
+   "title_uz": "Tinglash: real suhbat",
+   "topic": "Sekin → normal tezlik",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-40"
+   ]
+  },
+  {
+   "id": "a2-42",
+   "level": "A2",
+   "module": "skills",
+   "order": 42,
+   "title_uz": "Yozish: xabar va xat",
+   "topic": "Qisqa xat, tavsif",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-41"
+   ]
+  },
+  {
+   "id": "a2-43",
+   "level": "A2",
+   "module": "skills",
+   "order": 43,
+   "title_uz": "Gapirish: rol o'yinlari",
+   "topic": "AI bilan 10 vaziyat",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-42"
+   ]
+  },
+  {
+   "id": "a2-44",
+   "level": "A2",
+   "module": "skills",
+   "order": 44,
+   "title_uz": "Umumiy takrorlash",
+   "topic": "A2 materiallari bo'ylab",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "lesson",
+   "prerequisites": [
+    "a2-43"
+   ]
+  },
+  {
+   "id": "a2-45",
+   "level": "A2",
+   "module": "exam",
+   "order": 45,
+   "title_uz": "A2 IMTIHONI",
+   "topic": "4 ko'nikma bo'yicha yakuniy imtihon",
+   "words_target": 0,
+   "note": "80% → Sertifikat A2",
+   "hejazi": false,
+   "harakat_level": "new_words_only",
+   "type": "exam",
+   "prerequisites": [
+    "a2-44"
+   ]
+  },
+  {
+   "id": "b1-01",
+   "level": "B1",
+   "module": "adv-grammar",
+   "order": 1,
+   "title_uz": "Majhul nisbat — to'liq",
+   "topic": "Har bob uchun majhul shakllar",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": []
+  },
+  {
+   "id": "b1-02",
+   "level": "B1",
+   "module": "adv-grammar",
+   "order": 2,
+   "title_uz": "Nisbiy olmoshlar",
+   "topic": "الذي · التي · الذين · اللاتي",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-01"
+   ]
+  },
+  {
+   "id": "b1-03",
+   "level": "B1",
+   "module": "adv-grammar",
+   "order": 3,
+   "title_uz": "Sifatlovchi gap",
+   "topic": "Noaniq ot bilan sifat gap",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-02"
+   ]
+  },
+  {
+   "id": "b1-04",
+   "level": "B1",
+   "module": "adv-grammar",
+   "order": 4,
+   "title_uz": "Shart gap 1",
+   "topic": "إذا (real shart)",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-03"
+   ]
+  },
+  {
+   "id": "b1-05",
+   "level": "B1",
+   "module": "adv-grammar",
+   "order": 5,
+   "title_uz": "Shart gap 2",
+   "topic": "إنْ · مَنْ · ما",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-04"
+   ]
+  },
+  {
+   "id": "b1-06",
+   "level": "B1",
+   "module": "adv-grammar",
+   "order": 6,
+   "title_uz": "Shart gap 3",
+   "topic": "لَوْ (noreal shart)",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-05"
+   ]
+  },
+  {
+   "id": "b1-07",
+   "level": "B1",
+   "module": "adv-grammar",
+   "order": 7,
+   "title_uz": "Hol",
+   "topic": "الحال konstruksiyasi",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-06"
+   ]
+  },
+  {
+   "id": "b1-08",
+   "level": "B1",
+   "module": "adv-grammar",
+   "order": 8,
+   "title_uz": "Tamyiz",
+   "topic": "التمييز konstruksiyasi",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-07"
+   ]
+  },
+  {
+   "id": "b1-09",
+   "level": "B1",
+   "module": "adv-grammar",
+   "order": 9,
+   "title_uz": "Istisno",
+   "topic": "إلّا · غير · سوى",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-08"
+   ]
+  },
+  {
+   "id": "b1-10",
+   "level": "B1",
+   "module": "adv-grammar",
+   "order": 10,
+   "title_uz": "Maf'ul mutlaq",
+   "topic": "Ta'kid uchun masdar",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-09"
+   ]
+  },
+  {
+   "id": "b1-11",
+   "level": "B1",
+   "module": "adv-grammar",
+   "order": 11,
+   "title_uz": "Maf'ul li-ajlih",
+   "topic": "Sabab holati",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-10"
+   ]
+  },
+  {
+   "id": "b1-12",
+   "level": "B1",
+   "module": "adv-grammar",
+   "order": 12,
+   "title_uz": "Muzori' mansub",
+   "topic": "أنْ · لَنْ · كَيْ · حتّى",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-11"
+   ]
+  },
+  {
+   "id": "b1-13",
+   "level": "B1",
+   "module": "adv-grammar",
+   "order": 13,
+   "title_uz": "Muzori' majzum",
+   "topic": "لَمْ · لا الناهية",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-12"
+   ]
+  },
+  {
+   "id": "b1-14",
+   "level": "B1",
+   "module": "adv-grammar",
+   "order": 14,
+   "title_uz": "To'liq i'rob ustaxonasi",
+   "topic": "Gap tahlili amaliyoti",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-13"
+   ]
+  },
+  {
+   "id": "b1-15",
+   "level": "B1",
+   "module": "vocab",
+   "order": 15,
+   "title_uz": "Singan ko'pliklar — tizimli",
+   "topic": "Asosiy 20 vazn",
+   "words_target": 15,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-14"
+   ]
+  },
+  {
+   "id": "b1-16",
+   "level": "B1",
+   "module": "vocab",
+   "order": 16,
+   "title_uz": "Ish va kasb",
+   "topic": "Mavzuviy lug'at",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-15"
+   ]
+  },
+  {
+   "id": "b1-17",
+   "level": "B1",
+   "module": "vocab",
+   "order": 17,
+   "title_uz": "Ta'lim",
+   "topic": "Mavzuviy lug'at",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-16"
+   ]
+  },
+  {
+   "id": "b1-18",
+   "level": "B1",
+   "module": "vocab",
+   "order": 18,
+   "title_uz": "Salomatlik",
+   "topic": "Mavzuviy lug'at",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-17"
+   ]
+  },
+  {
+   "id": "b1-19",
+   "level": "B1",
+   "module": "vocab",
+   "order": 19,
+   "title_uz": "Biznes",
+   "topic": "Mavzuviy lug'at",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-18"
+   ]
+  },
+  {
+   "id": "b1-20",
+   "level": "B1",
+   "module": "vocab",
+   "order": 20,
+   "title_uz": "Texnologiya",
+   "topic": "Mavzuviy lug'at",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-19"
+   ]
+  },
+  {
+   "id": "b1-21",
+   "level": "B1",
+   "module": "vocab",
+   "order": 21,
+   "title_uz": "OAV",
+   "topic": "Mavzuviy lug'at",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-20"
+   ]
+  },
+  {
+   "id": "b1-22",
+   "level": "B1",
+   "module": "vocab",
+   "order": 22,
+   "title_uz": "Iqtisod",
+   "topic": "Mavzuviy lug'at",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-21"
+   ]
+  },
+  {
+   "id": "b1-23",
+   "level": "B1",
+   "module": "vocab",
+   "order": 23,
+   "title_uz": "Sayohat — kengaytirilgan",
+   "topic": "Mavzuviy lug'at",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-22"
+   ]
+  },
+  {
+   "id": "b1-24",
+   "level": "B1",
+   "module": "vocab",
+   "order": 24,
+   "title_uz": "Tabiat",
+   "topic": "Mavzuviy lug'at",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-23"
+   ]
+  },
+  {
+   "id": "b1-25",
+   "level": "B1",
+   "module": "vocab",
+   "order": 25,
+   "title_uz": "Sport",
+   "topic": "Mavzuviy lug'at",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-24"
+   ]
+  },
+  {
+   "id": "b1-26",
+   "level": "B1",
+   "module": "vocab",
+   "order": 26,
+   "title_uz": "Hissiyot",
+   "topic": "Mavzuviy lug'at",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-25"
+   ]
+  },
+  {
+   "id": "b1-27",
+   "level": "B1",
+   "module": "quran-hadith",
+   "order": 27,
+   "title_uz": "Qur'on tili",
+   "topic": "MSA'dan farqlari",
+   "words_target": 10,
+   "note": "Diniy kontent — aniq va hurmatli",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-26"
+   ]
+  },
+  {
+   "id": "b1-28",
+   "level": "B1",
+   "module": "quran-hadith",
+   "order": 28,
+   "title_uz": "100 Qur'oniy so'z",
+   "topic": "Eng ko'p uchraydigan so'zlar (matnning ~40%)",
+   "words_target": 15,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-27"
+   ]
+  },
+  {
+   "id": "b1-29",
+   "level": "B1",
+   "module": "quran-hadith",
+   "order": 29,
+   "title_uz": "Qisqa suralar tahlili 1",
+   "topic": "So'zma-so'z, o'zak bilan",
+   "words_target": 10,
+   "note": "Sura/oyat raqamlari aniq",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-28"
+   ]
+  },
+  {
+   "id": "b1-30",
+   "level": "B1",
+   "module": "quran-hadith",
+   "order": 30,
+   "title_uz": "Qisqa suralar tahlili 2",
+   "topic": "So'zma-so'z, o'zak bilan",
+   "words_target": 10,
+   "note": "Sura/oyat raqamlari aniq",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-29"
+   ]
+  },
+  {
+   "id": "b1-31",
+   "level": "B1",
+   "module": "quran-hadith",
+   "order": 31,
+   "title_uz": "Hadis matni tuzilishi",
+   "topic": "Isnod + matn",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-30"
+   ]
+  },
+  {
+   "id": "b1-32",
+   "level": "B1",
+   "module": "quran-hadith",
+   "order": 32,
+   "title_uz": "Arba'in namunalari",
+   "topic": "an-Nawawiy to'plamidan",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-31"
+   ]
+  },
+  {
+   "id": "b1-33",
+   "level": "B1",
+   "module": "quran-hadith",
+   "order": 33,
+   "title_uz": "Duo va zikr matnlari",
+   "topic": "Grammatik tahlil",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-32"
+   ]
+  },
+  {
+   "id": "b1-34",
+   "level": "B1",
+   "module": "quran-hadith",
+   "order": 34,
+   "title_uz": "Diniy atamalar lug'ati",
+   "topic": "Asosiy terminlar",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-33"
+   ]
+  },
+  {
+   "id": "b1-35",
+   "level": "B1",
+   "module": "skills",
+   "order": 35,
+   "title_uz": "O'qish: yangilik 1",
+   "topic": "Soddalashtirilgan maqola",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-34"
+   ]
+  },
+  {
+   "id": "b1-36",
+   "level": "B1",
+   "module": "skills",
+   "order": 36,
+   "title_uz": "O'qish: yangilik 2",
+   "topic": "Soddalashtirilgan → original",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-35"
+   ]
+  },
+  {
+   "id": "b1-37",
+   "level": "B1",
+   "module": "skills",
+   "order": 37,
+   "title_uz": "O'qish: yangilik 3",
+   "topic": "Original maqola",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-36"
+   ]
+  },
+  {
+   "id": "b1-38",
+   "level": "B1",
+   "module": "skills",
+   "order": 38,
+   "title_uz": "O'qish: yangilik 4",
+   "topic": "Original maqola + tahlil",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-37"
+   ]
+  },
+  {
+   "id": "b1-39",
+   "level": "B1",
+   "module": "skills",
+   "order": 39,
+   "title_uz": "Tinglash: podkast",
+   "topic": "Parcha + savollar",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-38"
+   ]
+  },
+  {
+   "id": "b1-40",
+   "level": "B1",
+   "module": "skills",
+   "order": 40,
+   "title_uz": "Tinglash: intervyu",
+   "topic": "Parcha + savollar",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-39"
+   ]
+  },
+  {
+   "id": "b1-41",
+   "level": "B1",
+   "module": "skills",
+   "order": 41,
+   "title_uz": "Tinglash: xabar",
+   "topic": "Yangiliklar formati",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-40"
+   ]
+  },
+  {
+   "id": "b1-42",
+   "level": "B1",
+   "module": "skills",
+   "order": 42,
+   "title_uz": "Yozish: rasmiy xat",
+   "topic": "Format va iboralar",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-41"
+   ]
+  },
+  {
+   "id": "b1-43",
+   "level": "B1",
+   "module": "skills",
+   "order": 43,
+   "title_uz": "Yozish: insho",
+   "topic": "Fikr bayoni",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-42"
+   ]
+  },
+  {
+   "id": "b1-44",
+   "level": "B1",
+   "module": "skills",
+   "order": 44,
+   "title_uz": "Yozish: xulosa",
+   "topic": "Matnni qisqartirish",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-43"
+   ]
+  },
+  {
+   "id": "b1-45",
+   "level": "B1",
+   "module": "skills",
+   "order": 45,
+   "title_uz": "Gapirish: taqdimot",
+   "topic": "AI bilan mashq",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-44"
+   ]
+  },
+  {
+   "id": "b1-46",
+   "level": "B1",
+   "module": "skills",
+   "order": 46,
+   "title_uz": "Gapirish: munozara",
+   "topic": "Fikr bildirish, AI bilan",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-45"
+   ]
+  },
+  {
+   "id": "b1-47",
+   "level": "B1",
+   "module": "review",
+   "order": 47,
+   "title_uz": "Takrorlash: grammatika",
+   "topic": "B1 grammatikasi bo'ylab",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-46"
+   ]
+  },
+  {
+   "id": "b1-48",
+   "level": "B1",
+   "module": "review",
+   "order": 48,
+   "title_uz": "Takrorlash: lug'at + o'zak",
+   "topic": "B1 lug'ati bo'ylab",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-47"
+   ]
+  },
+  {
+   "id": "b1-49",
+   "level": "B1",
+   "module": "review",
+   "order": 49,
+   "title_uz": "Sinov imtihoni",
+   "topic": "Mashq rejimidagi to'liq imtihon",
+   "words_target": 0,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b1-48"
+   ]
+  },
+  {
+   "id": "b1-50",
+   "level": "B1",
+   "module": "exam",
+   "order": 50,
+   "title_uz": "B1 IMTIHONI",
+   "topic": "4 ko'nikma bo'yicha yakuniy imtihon",
+   "words_target": 0,
+   "note": "80% → Sertifikat B1",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "exam",
+   "prerequisites": [
+    "b1-49"
+   ]
+  }
+ ]
+}

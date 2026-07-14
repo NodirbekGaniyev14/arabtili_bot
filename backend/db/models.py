@@ -63,7 +63,10 @@ class Progress(Base):
 
 
 class UserWord(Base):
-    """SRS kartotekasi — o'rganilgan har bir harf/so'z/ibora."""
+    """SRS kartotekasi — o'rganilgan har bir harf/so'z/ibora.
+
+    v2: card_type (word/root/pattern/phrase) va deck (msa/hejazi) qo'shildi.
+    """
 
     __tablename__ = "user_words"
     __table_args__ = (UniqueConstraint("user_id", "ar", name="uq_user_word"),)
@@ -75,12 +78,30 @@ class UserWord(Base):
     uz: Mapped[str] = mapped_column(String(256), default="")
     audio: Mapped[str] = mapped_column(String(64), default="")
     kind: Mapped[str] = mapped_column(String(16), default="word")
+    card_type: Mapped[str] = mapped_column(String(16), default="word")
+    deck: Mapped[str] = mapped_column(String(8), default="msa")
     ease: Mapped[float] = mapped_column(Float, default=2.5)
     interval_days: Mapped[int] = mapped_column(Integer, default=0)
     due_date: Mapped[str] = mapped_column(String(10), index=True)  # YYYY-MM-DD
     reps: Mapped[int] = mapped_column(Integer, default=0)
     lapses: Mapped[int] = mapped_column(Integer, default=0)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
+
+
+class RootProgress(Base):
+    """O'zak bo'yicha progress (Root Lab + darslardagi uchrashuvlar)."""
+
+    __tablename__ = "root_progress"
+    __table_args__ = (
+        UniqueConstraint("user_id", "root", name="uq_user_root"),
+    )
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    root: Mapped[str] = mapped_column(String(16))
+    seen_count: Mapped[int] = mapped_column(Integer, default=0)
+    mastered: Mapped[int] = mapped_column(Integer, default=0)
+    last_seen: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
 
 
 class XpLog(Base):

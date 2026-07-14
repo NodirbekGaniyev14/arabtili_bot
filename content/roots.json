@@ -1,0 +1,47 @@
+{
+  "version": "0.1-k0-namuna",
+  "note": "K0: format namunasi (3 o'zak). K1 da spec §3.2 dagi 20 o'zak to'liq kiritiladi.",
+  "roots": [
+    {
+      "root": "ك ت ب",
+      "meaning_uz": "yozmoq",
+      "uz_cognates": ["kitob", "maktab", "kotib", "maktub", "kutubxona"],
+      "audio": "roots/ktb.mp3",
+      "derived": [
+        { "ar": "كَتَبَ", "uz": "yozdi", "pattern": "فَعَلَ", "audio": "roots/kataba.mp3" },
+        { "ar": "كِتاب", "uz": "kitob", "pattern": "فِعال", "audio": "roots/kitab_r.mp3", "uz_cognate": "kitob" },
+        { "ar": "كاتِب", "uz": "yozuvchi, kotib", "pattern": "فاعِل", "audio": "roots/katib.mp3", "uz_cognate": "kotib" },
+        { "ar": "مَكْتوب", "uz": "yozilgan, xat", "pattern": "مَفْعول", "audio": "roots/maktub.mp3", "uz_cognate": "maktub" },
+        { "ar": "مَكْتَب", "uz": "ish stoli, ofis", "pattern": "مَفْعَل", "audio": "roots/maktab_r.mp3", "uz_cognate": "maktab" },
+        { "ar": "مَكْتَبة", "uz": "kutubxona", "pattern": "مَفْعَلة", "audio": "roots/maktaba.mp3", "uz_cognate": "kutubxona" }
+      ]
+    },
+    {
+      "root": "د ر س",
+      "meaning_uz": "o'qimoq, o'rganmoq",
+      "uz_cognates": ["dars", "mudarris", "madrasa", "tadris"],
+      "audio": "roots/drs.mp3",
+      "derived": [
+        { "ar": "دَرَسَ", "uz": "o'qidi", "pattern": "فَعَلَ", "audio": "roots/darasa.mp3" },
+        { "ar": "دَرْس", "uz": "dars", "pattern": "فَعْل", "audio": "roots/dars_r.mp3", "uz_cognate": "dars" },
+        { "ar": "مُدَرِّس", "uz": "o'qituvchi", "pattern": "مُفَعِّل", "audio": "roots/mudarris.mp3", "uz_cognate": "mudarris" },
+        { "ar": "مَدْرَسة", "uz": "maktab", "pattern": "مَفْعَلة", "audio": "roots/madrasa.mp3", "uz_cognate": "madrasa" },
+        { "ar": "تَدْريس", "uz": "o'qitish", "pattern": "تَفْعيل", "audio": "roots/tadris.mp3", "uz_cognate": "tadris" }
+      ]
+    },
+    {
+      "root": "ع ل م",
+      "meaning_uz": "bilmoq",
+      "uz_cognates": ["ilm", "olim", "muallim", "ta'lim", "ma'lumot"],
+      "audio": "roots/3lm.mp3",
+      "derived": [
+        { "ar": "عَلِمَ", "uz": "bildi", "pattern": "فَعِلَ", "audio": "roots/alima.mp3" },
+        { "ar": "عِلْم", "uz": "ilm, fan", "pattern": "فِعْل", "audio": "roots/ilm.mp3", "uz_cognate": "ilm" },
+        { "ar": "عالِم", "uz": "olim", "pattern": "فاعِل", "audio": "roots/alim.mp3", "uz_cognate": "olim" },
+        { "ar": "مُعَلِّم", "uz": "o'qituvchi", "pattern": "مُفَعِّل", "audio": "roots/muallim.mp3", "uz_cognate": "muallim" },
+        { "ar": "تَعْليم", "uz": "ta'lim", "pattern": "تَفْعيل", "audio": "roots/talim.mp3", "uz_cognate": "ta'lim" },
+        { "ar": "مَعْلومات", "uz": "ma'lumotlar", "pattern": "مَفْعولات", "audio": "roots/malumat.mp3", "uz_cognate": "ma'lumot" }
+      ]
+    }
+  ]
+}
