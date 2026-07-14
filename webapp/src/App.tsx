@@ -9,6 +9,7 @@ import Onboarding from "./pages/onboarding/Onboarding";
 import Profile from "./pages/Profile";
 import Rating from "./pages/Rating";
 import Review from "./pages/Review";
+import RootLab from "./pages/RootLab";
 
 type Phase = "boot" | "onboarding" | "app";
 
@@ -28,6 +29,7 @@ export default function App() {
   const [tgName, setTgName] = useState("");
   const [me, setMe] = useState<MeResponse | null>(null);
   const [activeLesson, setActiveLesson] = useState<string | null>(null);
+  const [showRootLab, setShowRootLab] = useState(false);
 
   useEffect(() => {
     const tg = window.Telegram?.WebApp;
@@ -108,6 +110,7 @@ export default function App() {
             stats={stats}
             onStartLesson={setActiveLesson}
             onGoReview={() => setTab("review")}
+            onOpenRootLab={() => setShowRootLab(true)}
           />
         )}
         {tab === "lessons" && (
@@ -127,6 +130,8 @@ export default function App() {
           onFinish={handleLessonFinish}
         />
       )}
+
+      {showRootLab && <RootLab onClose={() => setShowRootLab(false)} />}
     </div>
   );
 }

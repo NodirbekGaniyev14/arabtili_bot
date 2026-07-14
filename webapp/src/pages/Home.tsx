@@ -8,14 +8,8 @@ interface HomeProps {
   stats: Stats;
   onStartLesson: (lessonId: string) => void;
   onGoReview: () => void;
+  onOpenRootLab: () => void;
 }
-
-const MODES: Array<{ ar: string; label: string; desc: string }> = [
-  { ar: "حروف", label: "Alifbo mashqi", desc: "Harflar" },
-  { ar: "استمع", label: "Tinglash", desc: "Talaffuz" },
-  { ar: "بطاقات", label: "Lug'at kartalari", desc: "So'zlar" },
-  { ar: "تكرار", label: "Tez takror", desc: "5 daqiqa" },
-];
 
 function greeting(): string {
   const h = new Date().getHours();
@@ -31,6 +25,7 @@ export default function Home({
   stats,
   onStartLesson,
   onGoReview,
+  onOpenRootLab,
 }: HomeProps) {
   const next = stats.next_lesson;
   const remaining = Math.max(xpGoal - stats.xp_today, 0);
@@ -128,11 +123,34 @@ export default function Home({
         <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft mb-2">
           REJIMLAR
         </div>
+
+        {/* O'zak laboratoriyasi — flagman funksiya */}
+        <button
+          onClick={onOpenRootLab}
+          className="w-full flex items-center gap-3 rounded-2xl bg-gradient-to-br from-emerald-deep to-emerald-dark p-3.5 mb-3 text-left text-white active:scale-[0.98] transition-transform shadow-md"
+        >
+          <div className="w-12 h-12 shrink-0 rounded-xl bg-white/15 flex items-center justify-center text-2xl">
+            🔬
+          </div>
+          <div className="min-w-0 flex-1">
+            <div className="text-[14px] font-extrabold leading-tight">
+              O'zak laboratoriyasi
+            </div>
+            <div className="text-[11px] text-gold-soft font-semibold">
+              1 o'zak → o'nlab so'z. Ko'pini bilasiz!
+            </div>
+          </div>
+          <span className="font-arabic text-2xl text-white/40">جذر</span>
+        </button>
+
         <div className="grid grid-cols-2 gap-3">
-          {MODES.map((m) => (
-            <button
+          {[
+            { ar: "استمع", label: "Tinglash" },
+            { ar: "بطاقات", label: "Lug'at" },
+          ].map((m) => (
+            <div
               key={m.label}
-              className="flex items-center gap-3 rounded-2xl bg-card border border-cardline p-3 text-left active:scale-95 transition-transform opacity-70"
+              className="flex items-center gap-3 rounded-2xl bg-card border border-cardline p-3 opacity-60"
             >
               <div className="w-11 h-11 shrink-0 rounded-xl bg-gold-soft flex items-center justify-center">
                 <span className="font-arabic text-lg text-emerald-dark leading-none pt-0.5">
@@ -143,11 +161,11 @@ export default function Home({
                 <div className="text-[13px] font-extrabold leading-tight">
                   {m.label}
                 </div>
-                <div className="text-[11px] text-ink-soft font-semibold truncate">
+                <div className="text-[11px] text-ink-soft font-semibold">
                   Tez orada
                 </div>
               </div>
-            </button>
+            </div>
           ))}
         </div>
       </section>

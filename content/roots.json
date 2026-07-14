@@ -1,47 +1,223 @@
 {
-  "version": "0.1-k0-namuna",
-  "note": "K0: format namunasi (3 o'zak). K1 da spec §3.2 dagi 20 o'zak to'liq kiritiladi.",
-  "roots": [
-    {
-      "root": "ك ت ب",
-      "meaning_uz": "yozmoq",
-      "uz_cognates": ["kitob", "maktab", "kotib", "maktub", "kutubxona"],
-      "audio": "roots/ktb.mp3",
-      "derived": [
-        { "ar": "كَتَبَ", "uz": "yozdi", "pattern": "فَعَلَ", "audio": "roots/kataba.mp3" },
-        { "ar": "كِتاب", "uz": "kitob", "pattern": "فِعال", "audio": "roots/kitab_r.mp3", "uz_cognate": "kitob" },
-        { "ar": "كاتِب", "uz": "yozuvchi, kotib", "pattern": "فاعِل", "audio": "roots/katib.mp3", "uz_cognate": "kotib" },
-        { "ar": "مَكْتوب", "uz": "yozilgan, xat", "pattern": "مَفْعول", "audio": "roots/maktub.mp3", "uz_cognate": "maktub" },
-        { "ar": "مَكْتَب", "uz": "ish stoli, ofis", "pattern": "مَفْعَل", "audio": "roots/maktab_r.mp3", "uz_cognate": "maktab" },
-        { "ar": "مَكْتَبة", "uz": "kutubxona", "pattern": "مَفْعَلة", "audio": "roots/maktaba.mp3", "uz_cognate": "kutubxona" }
-      ]
-    },
-    {
-      "root": "د ر س",
-      "meaning_uz": "o'qimoq, o'rganmoq",
-      "uz_cognates": ["dars", "mudarris", "madrasa", "tadris"],
-      "audio": "roots/drs.mp3",
-      "derived": [
-        { "ar": "دَرَسَ", "uz": "o'qidi", "pattern": "فَعَلَ", "audio": "roots/darasa.mp3" },
-        { "ar": "دَرْس", "uz": "dars", "pattern": "فَعْل", "audio": "roots/dars_r.mp3", "uz_cognate": "dars" },
-        { "ar": "مُدَرِّس", "uz": "o'qituvchi", "pattern": "مُفَعِّل", "audio": "roots/mudarris.mp3", "uz_cognate": "mudarris" },
-        { "ar": "مَدْرَسة", "uz": "maktab", "pattern": "مَفْعَلة", "audio": "roots/madrasa.mp3", "uz_cognate": "madrasa" },
-        { "ar": "تَدْريس", "uz": "o'qitish", "pattern": "تَفْعيل", "audio": "roots/tadris.mp3", "uz_cognate": "tadris" }
-      ]
-    },
-    {
-      "root": "ع ل م",
-      "meaning_uz": "bilmoq",
-      "uz_cognates": ["ilm", "olim", "muallim", "ta'lim", "ma'lumot"],
-      "audio": "roots/3lm.mp3",
-      "derived": [
-        { "ar": "عَلِمَ", "uz": "bildi", "pattern": "فَعِلَ", "audio": "roots/alima.mp3" },
-        { "ar": "عِلْم", "uz": "ilm, fan", "pattern": "فِعْل", "audio": "roots/ilm.mp3", "uz_cognate": "ilm" },
-        { "ar": "عالِم", "uz": "olim", "pattern": "فاعِل", "audio": "roots/alim.mp3", "uz_cognate": "olim" },
-        { "ar": "مُعَلِّم", "uz": "o'qituvchi", "pattern": "مُفَعِّل", "audio": "roots/muallim.mp3", "uz_cognate": "muallim" },
-        { "ar": "تَعْليم", "uz": "ta'lim", "pattern": "تَفْعيل", "audio": "roots/talim.mp3", "uz_cognate": "ta'lim" },
-        { "ar": "مَعْلومات", "uz": "ma'lumotlar", "pattern": "مَفْعولات", "audio": "roots/malumat.mp3", "uz_cognate": "ma'lumot" }
-      ]
-    }
-  ]
+ "version": "1.0",
+ "note": "Spec §3.2 — birinchi 20 o'zak, o'zbekcha ko'priklar bilan. Root Lab yadrosi.",
+ "roots": [
+  {
+   "root": "ك ت ب", "meaning_uz": "yozmoq", "audio": "roots/ktb.mp3",
+   "uz_cognates": ["kitob", "maktab", "kotib", "maktub", "kutubxona"],
+   "derived": [
+    {"ar": "كَتَبَ", "uz": "yozdi", "pattern": "فَعَلَ", "audio": "roots/kataba.mp3"},
+    {"ar": "كِتاب", "uz": "kitob", "pattern": "فِعال", "audio": "roots/kitab.mp3", "uz_cognate": "kitob"},
+    {"ar": "كاتِب", "uz": "yozuvchi, kotib", "pattern": "فاعِل", "audio": "roots/katib.mp3", "uz_cognate": "kotib"},
+    {"ar": "مَكْتوب", "uz": "yozilgan, xat", "pattern": "مَفْعول", "audio": "roots/maktub.mp3", "uz_cognate": "maktub"},
+    {"ar": "مَكْتَب", "uz": "ish stoli, ofis", "pattern": "مَفْعَل", "audio": "roots/maktab.mp3", "uz_cognate": "maktab"},
+    {"ar": "مَكْتَبة", "uz": "kutubxona", "pattern": "مَفْعَلة", "audio": "roots/maktaba.mp3", "uz_cognate": "kutubxona"}
+   ]
+  },
+  {
+   "root": "د ر س", "meaning_uz": "o'qimoq", "audio": "roots/drs.mp3",
+   "uz_cognates": ["dars", "mudarris", "madrasa", "tadris"],
+   "derived": [
+    {"ar": "دَرَسَ", "uz": "o'qidi", "pattern": "فَعَلَ", "audio": "roots/darasa.mp3"},
+    {"ar": "دَرْس", "uz": "dars", "pattern": "فَعْل", "audio": "roots/dars.mp3", "uz_cognate": "dars"},
+    {"ar": "مُدَرِّس", "uz": "o'qituvchi", "pattern": "مُفَعِّل", "audio": "roots/mudarris.mp3", "uz_cognate": "mudarris"},
+    {"ar": "مَدْرَسة", "uz": "maktab", "pattern": "مَفْعَلة", "audio": "roots/madrasa.mp3", "uz_cognate": "madrasa"},
+    {"ar": "تَدْريس", "uz": "o'qitish", "pattern": "تَفْعيل", "audio": "roots/tadris.mp3", "uz_cognate": "tadris"}
+   ]
+  },
+  {
+   "root": "ع ل م", "meaning_uz": "bilmoq", "audio": "roots/3lm.mp3",
+   "uz_cognates": ["ilm", "olim", "muallim", "ta'lim", "ma'lumot"],
+   "derived": [
+    {"ar": "عَلِمَ", "uz": "bildi", "pattern": "فَعِلَ", "audio": "roots/alima.mp3"},
+    {"ar": "عِلْم", "uz": "ilm, fan", "pattern": "فِعْل", "audio": "roots/ilm.mp3", "uz_cognate": "ilm"},
+    {"ar": "عالِم", "uz": "olim", "pattern": "فاعِل", "audio": "roots/alim.mp3", "uz_cognate": "olim"},
+    {"ar": "مُعَلِّم", "uz": "muallim", "pattern": "مُفَعِّل", "audio": "roots/muallim.mp3", "uz_cognate": "muallim"},
+    {"ar": "تَعْليم", "uz": "ta'lim", "pattern": "تَفْعيل", "audio": "roots/talim.mp3", "uz_cognate": "ta'lim"},
+    {"ar": "مَعْلومات", "uz": "ma'lumotlar", "pattern": "مَفْعولات", "audio": "roots/malumat.mp3", "uz_cognate": "ma'lumot"}
+   ]
+  },
+  {
+   "root": "ح ك م", "meaning_uz": "hukm qilmoq", "audio": "roots/hkm.mp3",
+   "uz_cognates": ["hukm", "hokim", "hikmat", "mahkama", "hukumat"],
+   "derived": [
+    {"ar": "حَكَمَ", "uz": "hukm qildi", "pattern": "فَعَلَ", "audio": "roots/hakama.mp3"},
+    {"ar": "حُكْم", "uz": "hukm, qaror", "pattern": "فُعْل", "audio": "roots/hukm.mp3", "uz_cognate": "hukm"},
+    {"ar": "حاكِم", "uz": "hokim, hukmdor", "pattern": "فاعِل", "audio": "roots/hakim.mp3", "uz_cognate": "hokim"},
+    {"ar": "حِكْمة", "uz": "hikmat, donolik", "pattern": "فِعْلة", "audio": "roots/hikma.mp3", "uz_cognate": "hikmat"},
+    {"ar": "مَحْكَمة", "uz": "sud, mahkama", "pattern": "مَفْعَلة", "audio": "roots/mahkama.mp3", "uz_cognate": "mahkama"},
+    {"ar": "حُكومة", "uz": "hukumat", "pattern": "فُعولة", "audio": "roots/hukuma.mp3", "uz_cognate": "hukumat"}
+   ]
+  },
+  {
+   "root": "س ل م", "meaning_uz": "omon bo'lmoq", "audio": "roots/slm.mp3",
+   "uz_cognates": ["salom", "islom", "muslim", "salomatlik"],
+   "derived": [
+    {"ar": "سَلِمَ", "uz": "omon qoldi", "pattern": "فَعِلَ", "audio": "roots/salima.mp3"},
+    {"ar": "سَلام", "uz": "salom, tinchlik", "pattern": "فَعال", "audio": "roots/salam2.mp3", "uz_cognate": "salom"},
+    {"ar": "إِسْلام", "uz": "islom", "pattern": "إِفْعال", "audio": "roots/islam.mp3", "uz_cognate": "islom"},
+    {"ar": "مُسْلِم", "uz": "musulmon", "pattern": "مُفْعِل", "audio": "roots/muslim.mp3", "uz_cognate": "muslim"},
+    {"ar": "سَلامة", "uz": "salomatlik, omonlik", "pattern": "فَعالة", "audio": "roots/salama.mp3", "uz_cognate": "salomatlik"}
+   ]
+  },
+  {
+   "root": "ع م ل", "meaning_uz": "ishlamoq", "audio": "roots/3ml.mp3",
+   "uz_cognates": ["amal", "omil", "muomala", "iste'mol"],
+   "derived": [
+    {"ar": "عَمِلَ", "uz": "ishladi, qildi", "pattern": "فَعِلَ", "audio": "roots/amila.mp3"},
+    {"ar": "عَمَل", "uz": "ish, amal", "pattern": "فَعَل", "audio": "roots/amal.mp3", "uz_cognate": "amal"},
+    {"ar": "عامِل", "uz": "ishchi, omil", "pattern": "فاعِل", "audio": "roots/amil.mp3", "uz_cognate": "omil"},
+    {"ar": "مُعامَلة", "uz": "muomala, munosabat", "pattern": "مُفاعَلة", "audio": "roots/muamala.mp3", "uz_cognate": "muomala"},
+    {"ar": "اِسْتِعْمال", "uz": "iste'mol, foydalanish", "pattern": "اِسْتِفْعال", "audio": "roots/istimal.mp3", "uz_cognate": "iste'mol"}
+   ]
+  },
+  {
+   "root": "ف ك ر", "meaning_uz": "fikrlamoq", "audio": "roots/fkr.mp3",
+   "uz_cognates": ["fikr", "mutafakkir", "tafakkur"],
+   "derived": [
+    {"ar": "فَكَّرَ", "uz": "o'yladi, fikrladi", "pattern": "فَعَّلَ", "audio": "roots/fakkara.mp3"},
+    {"ar": "فِكْر", "uz": "fikr, tafakkur", "pattern": "فِعْل", "audio": "roots/fikr.mp3", "uz_cognate": "fikr"},
+    {"ar": "مُفَكِّر", "uz": "mutafakkir", "pattern": "مُفَعِّل", "audio": "roots/mufakkir.mp3", "uz_cognate": "mutafakkir"},
+    {"ar": "تَفْكير", "uz": "o'ylash, fikrlash", "pattern": "تَفْعيل", "audio": "roots/tafkir.mp3"},
+    {"ar": "تَفَكُّر", "uz": "tafakkur, chuqur o'ylash", "pattern": "تَفَعُّل", "audio": "roots/tafakkur.mp3", "uz_cognate": "tafakkur"}
+   ]
+  },
+  {
+   "root": "ش ك ر", "meaning_uz": "shukr qilmoq", "audio": "roots/shkr.mp3",
+   "uz_cognates": ["shukr", "shokir", "tashakkur"],
+   "derived": [
+    {"ar": "شَكَرَ", "uz": "shukr qildi, minnatdor bo'ldi", "pattern": "فَعَلَ", "audio": "roots/shakara.mp3"},
+    {"ar": "شُكْر", "uz": "shukr, minnatdorlik", "pattern": "فُعْل", "audio": "roots/shukr.mp3", "uz_cognate": "shukr"},
+    {"ar": "شاكِر", "uz": "shukr qiluvchi, shokir", "pattern": "فاعِل", "audio": "roots/shakir.mp3", "uz_cognate": "shokir"},
+    {"ar": "تَشَكُّر", "uz": "minnatdorlik bildirish", "pattern": "تَفَعُّل", "audio": "roots/tashakkur.mp3", "uz_cognate": "tashakkur"}
+   ]
+  },
+  {
+   "root": "ق ب ل", "meaning_uz": "qabul qilmoq", "audio": "roots/qbl.mp3",
+   "uz_cognates": ["qabul", "qibla", "istiqbol", "mustaqbal"],
+   "derived": [
+    {"ar": "قَبِلَ", "uz": "qabul qildi", "pattern": "فَعِلَ", "audio": "roots/qabila.mp3"},
+    {"ar": "قَبول", "uz": "qabul", "pattern": "فَعول", "audio": "roots/qabul.mp3", "uz_cognate": "qabul"},
+    {"ar": "قِبْلة", "uz": "qibla", "pattern": "فِعْلة", "audio": "roots/qibla.mp3", "uz_cognate": "qibla"},
+    {"ar": "اِسْتِقْبال", "uz": "kutib olish, istiqbol", "pattern": "اِسْتِفْعال", "audio": "roots/istiqbal.mp3", "uz_cognate": "istiqbol"},
+    {"ar": "مُسْتَقْبَل", "uz": "kelajak, mustaqbal", "pattern": "مُسْتَفْعَل", "audio": "roots/mustaqbal.mp3", "uz_cognate": "mustaqbal"}
+   ]
+  },
+  {
+   "root": "ط ل ب", "meaning_uz": "so'ramoq, talab qilmoq", "audio": "roots/tlb.mp3",
+   "uz_cognates": ["talab", "tolib", "matlab"],
+   "derived": [
+    {"ar": "طَلَبَ", "uz": "so'radi, talab qildi", "pattern": "فَعَلَ", "audio": "roots/talaba.mp3"},
+    {"ar": "طَلَب", "uz": "talab, so'rov", "pattern": "فَعَل", "audio": "roots/talab.mp3", "uz_cognate": "talab"},
+    {"ar": "طالِب", "uz": "talaba, tolib", "pattern": "فاعِل", "audio": "roots/talib.mp3", "uz_cognate": "tolib"},
+    {"ar": "مَطْلَب", "uz": "maqsad, matlab", "pattern": "مَفْعَل", "audio": "roots/matlab.mp3", "uz_cognate": "matlab"}
+   ]
+  },
+  {
+   "root": "خ ب ر", "meaning_uz": "xabar bermoq", "audio": "roots/khbr.mp3",
+   "uz_cognates": ["xabar", "muxbir", "axborot", "imtihon"],
+   "derived": [
+    {"ar": "خَبَرَ", "uz": "bildi, sinab ko'rdi", "pattern": "فَعَلَ", "audio": "roots/khabara.mp3"},
+    {"ar": "خَبَر", "uz": "xabar", "pattern": "فَعَل", "audio": "roots/khabar.mp3", "uz_cognate": "xabar"},
+    {"ar": "مُخْبِر", "uz": "xabar beruvchi, muxbir", "pattern": "مُفْعِل", "audio": "roots/mukhbir.mp3", "uz_cognate": "muxbir"},
+    {"ar": "إِخْبار", "uz": "xabar berish, axborot", "pattern": "إِفْعال", "audio": "roots/ikhbar.mp3", "uz_cognate": "axborot"},
+    {"ar": "اِخْتِبار", "uz": "sinov, imtihon", "pattern": "اِفْتِعال", "audio": "roots/ikhtibar.mp3"}
+   ]
+  },
+  {
+   "root": "ج م ع", "meaning_uz": "to'plamoq", "audio": "roots/jm3.mp3",
+   "uz_cognates": ["jam", "jome", "majmua", "ijtimoiy", "jamiyat"],
+   "derived": [
+    {"ar": "جَمَعَ", "uz": "to'pladi", "pattern": "فَعَلَ", "audio": "roots/jamaa.mp3"},
+    {"ar": "جَمْع", "uz": "to'plash, jam", "pattern": "فَعْل", "audio": "roots/jam.mp3", "uz_cognate": "jam"},
+    {"ar": "جامِع", "uz": "jome masjid", "pattern": "فاعِل", "audio": "roots/jami.mp3", "uz_cognate": "jome"},
+    {"ar": "مَجْموعة", "uz": "guruh, majmua", "pattern": "مَفْعولة", "audio": "roots/majmua.mp3", "uz_cognate": "majmua"},
+    {"ar": "اِجْتِماع", "uz": "yig'ilish, ijtimoiy", "pattern": "اِفْتِعال", "audio": "roots/ijtima.mp3", "uz_cognate": "ijtimoiy"},
+    {"ar": "جامِعة", "uz": "universitet", "pattern": "فاعِلة", "audio": "roots/jamia.mp3"}
+   ]
+  },
+  {
+   "root": "ح س ب", "meaning_uz": "hisoblamoq", "audio": "roots/hsb.mp3",
+   "uz_cognates": ["hisob", "muhosib", "hisobot"],
+   "derived": [
+    {"ar": "حَسَبَ", "uz": "hisobladi", "pattern": "فَعَلَ", "audio": "roots/hasaba.mp3"},
+    {"ar": "حِساب", "uz": "hisob", "pattern": "فِعال", "audio": "roots/hisab.mp3", "uz_cognate": "hisob"},
+    {"ar": "مُحاسِب", "uz": "buxgalter, muhosib", "pattern": "مُفاعِل", "audio": "roots/muhasib.mp3", "uz_cognate": "muhosib"},
+    {"ar": "حاسوب", "uz": "kompyuter", "pattern": "فاعول", "audio": "roots/hasub.mp3"}
+   ]
+  },
+  {
+   "root": "ن ظ ر", "meaning_uz": "qaramoq", "audio": "roots/nzr.mp3",
+   "uz_cognates": ["nazar", "manzara", "nazariya", "intizor"],
+   "derived": [
+    {"ar": "نَظَرَ", "uz": "qaradi", "pattern": "فَعَلَ", "audio": "roots/nazara.mp3"},
+    {"ar": "نَظَر", "uz": "nazar, qarash", "pattern": "فَعَل", "audio": "roots/nazar.mp3", "uz_cognate": "nazar"},
+    {"ar": "مَنْظَر", "uz": "manzara, ko'rinish", "pattern": "مَفْعَل", "audio": "roots/manzar.mp3", "uz_cognate": "manzara"},
+    {"ar": "نَظَرِيّة", "uz": "nazariya", "pattern": "فَعَلِيّة", "audio": "roots/nazariya.mp3", "uz_cognate": "nazariya"},
+    {"ar": "اِنْتِظار", "uz": "kutish, intizorlik", "pattern": "اِفْتِعال", "audio": "roots/intizar.mp3", "uz_cognate": "intizor"}
+   ]
+  },
+  {
+   "root": "ح ر ر", "meaning_uz": "ozod qilmoq", "audio": "roots/hrr.mp3",
+   "uz_cognates": ["hurriyat", "muharrir", "tahrir"],
+   "derived": [
+    {"ar": "حَرَّرَ", "uz": "ozod qildi, tahrir qildi", "pattern": "فَعَّلَ", "audio": "roots/harrara.mp3"},
+    {"ar": "حُرِّيّة", "uz": "erkinlik, hurriyat", "pattern": "فُعِّيّة", "audio": "roots/hurriya.mp3", "uz_cognate": "hurriyat"},
+    {"ar": "مُحَرِّر", "uz": "muharrir, tahrirchi", "pattern": "مُفَعِّل", "audio": "roots/muharrir.mp3", "uz_cognate": "muharrir"},
+    {"ar": "تَحْرير", "uz": "tahrir, ozod qilish", "pattern": "تَفْعيل", "audio": "roots/tahrir.mp3", "uz_cognate": "tahrir"}
+   ]
+  },
+  {
+   "root": "ع د ل", "meaning_uz": "adolatli bo'lmoq", "audio": "roots/3dl.mp3",
+   "uz_cognates": ["adl", "odil", "adolat"],
+   "derived": [
+    {"ar": "عَدَلَ", "uz": "adolatli bo'ldi", "pattern": "فَعَلَ", "audio": "roots/adala.mp3"},
+    {"ar": "عَدْل", "uz": "adolat, adl", "pattern": "فَعْل", "audio": "roots/adl.mp3", "uz_cognate": "adl"},
+    {"ar": "عادِل", "uz": "adolatli, odil", "pattern": "فاعِل", "audio": "roots/adil.mp3", "uz_cognate": "odil"},
+    {"ar": "عَدالة", "uz": "adolat", "pattern": "فَعالة", "audio": "roots/adala2.mp3", "uz_cognate": "adolat"}
+   ]
+  },
+  {
+   "root": "ن ظ م", "meaning_uz": "tartibga solmoq", "audio": "roots/nzm.mp3",
+   "uz_cognates": ["nizom", "muntazam", "tanzim", "nazm"],
+   "derived": [
+    {"ar": "نَظَّمَ", "uz": "tartibga soldi", "pattern": "فَعَّلَ", "audio": "roots/nazzama.mp3"},
+    {"ar": "نِظام", "uz": "tizim, nizom", "pattern": "فِعال", "audio": "roots/nizam.mp3", "uz_cognate": "nizom"},
+    {"ar": "مُنَظَّم", "uz": "tartibli, muntazam", "pattern": "مُفَعَّل", "audio": "roots/munazzam.mp3", "uz_cognate": "muntazam"},
+    {"ar": "تَنْظيم", "uz": "tashkil qilish, tanzim", "pattern": "تَفْعيل", "audio": "roots/tanzim.mp3", "uz_cognate": "tanzim"},
+    {"ar": "نَظْم", "uz": "nazm, she'r", "pattern": "فَعْل", "audio": "roots/nazm.mp3", "uz_cognate": "nazm"}
+   ]
+  },
+  {
+   "root": "ش ه د", "meaning_uz": "guvohlik bermoq", "audio": "roots/shhd.mp3",
+   "uz_cognates": ["shohid", "shahodat", "shahid"],
+   "derived": [
+    {"ar": "شَهِدَ", "uz": "guvohlik berdi", "pattern": "فَعِلَ", "audio": "roots/shahida.mp3"},
+    {"ar": "شاهِد", "uz": "guvoh, shohid", "pattern": "فاعِل", "audio": "roots/shahid2.mp3", "uz_cognate": "shohid"},
+    {"ar": "شَهادة", "uz": "guvohlik, shahodat, diplom", "pattern": "فَعالة", "audio": "roots/shahada.mp3", "uz_cognate": "shahodat"},
+    {"ar": "شَهيد", "uz": "shahid", "pattern": "فَعيل", "audio": "roots/shahid.mp3", "uz_cognate": "shahid"}
+   ]
+  },
+  {
+   "root": "ق ر أ", "meaning_uz": "o'qimoq", "audio": "roots/qr2.mp3",
+   "uz_cognates": ["qiroat", "Qur'on", "qori"],
+   "derived": [
+    {"ar": "قَرَأَ", "uz": "o'qidi", "pattern": "فَعَلَ", "audio": "roots/qaraa.mp3"},
+    {"ar": "قِراءة", "uz": "o'qish, qiroat", "pattern": "فِعالة", "audio": "roots/qiraa.mp3", "uz_cognate": "qiroat"},
+    {"ar": "قُرْآن", "uz": "Qur'on", "pattern": "فُعْلان", "audio": "roots/quran.mp3", "uz_cognate": "Qur'on"},
+    {"ar": "قارِئ", "uz": "o'quvchi, qori", "pattern": "فاعِل", "audio": "roots/qari.mp3", "uz_cognate": "qori"}
+   ]
+  },
+  {
+   "root": "س ف ر", "meaning_uz": "sayohat qilmoq", "audio": "roots/sfr.mp3",
+   "uz_cognates": ["safar", "musofir", "safir", "elchixona"],
+   "derived": [
+    {"ar": "سافَرَ", "uz": "sayohat qildi", "pattern": "فاعَلَ", "audio": "roots/safara.mp3"},
+    {"ar": "سَفَر", "uz": "safar, sayohat", "pattern": "فَعَل", "audio": "roots/safar.mp3", "uz_cognate": "safar"},
+    {"ar": "مُسافِر", "uz": "sayohatchi, musofir", "pattern": "مُفاعِل", "audio": "roots/musafir.mp3", "uz_cognate": "musofir"},
+    {"ar": "سَفير", "uz": "elchi, safir", "pattern": "فَعيل", "audio": "roots/safir.mp3", "uz_cognate": "safir"},
+    {"ar": "سِفارة", "uz": "elchixona", "pattern": "فِعالة", "audio": "roots/sifara.mp3", "uz_cognate": "elchixona"}
+   ]
+  }
+ ]
 }

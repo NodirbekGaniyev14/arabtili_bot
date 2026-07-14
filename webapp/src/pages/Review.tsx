@@ -10,6 +10,8 @@ const KIND_LABEL: Record<string, string> = {
   letter: "HARF",
   word: "SO'Z",
   phrase: "IBORA",
+  root: "O'ZAK",
+  pattern: "VAZN",
 };
 
 const GRADE_BUTTONS: Array<{

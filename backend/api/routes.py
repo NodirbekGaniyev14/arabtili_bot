@@ -6,6 +6,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from db.models import Placement, Plan, Progress, User, UserWord, XpLog
+from services import roots as roots_svc
 from db.session import get_session
 from services.ai import generate_plan
 from services.content import (
@@ -291,6 +292,93 @@ async def achievements_route(
     session: AsyncSession = Depends(get_session),
 ):
     return await list_achievements(session, user.id)
+
+
+# ─────────────────────── Root Lab (o'zak-vazn) ───────────────────────
+
+
+@router.get("/roots")
+async def roots_list(
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    seen = await roots_svc.seen_roots(session, user.id)
+    items = roots_svc.roots_summary()
+    for it in items:
+        it["seen"] = it["root"] in seen
+    return {"roots": items, "seen_count": len(seen), "total": len(items)}
+
+
+@router.get("/roots/{root:path}")
+async def root_detail(
+    root: str,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    detail = roots_svc.root_detail(root)
+    if detail is None:
+        raise HTTPException(status_code=404, detail="O'zak topilmadi")
+    await roots_svc.record_seen(session, user.id, root)
+    return detail
+
+
+class AddRootCardsBody(BaseModel):
+    root: str
+
+
+@router.post("/roots/add-to-srs")
+async def add_root_to_srs(
+    body: AddRootCardsBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """O'zak + uning so'zlarini SRS kartotekasiga qo'shadi (Root Lab'dan)."""
+    detail = roots_svc.root_detail(body.root)
+    if detail is None:
+        raise HTTPException(status_code=404, detail="O'zak topilmadi")
+
+    from services.stats import _today
+
+    existing = set(
+        (
+            await session.execute(
+                select(UserWord.ar).where(UserWord.user_id == user.id)
+            )
+        ).scalars()
+    )
+    today = _today().isoformat()
+    added = 0
+
+    # O'zak kartasi
+    cognates = ", ".join(detail.get("uz_cognates", [])[:5])
+    root_back = f"{detail['meaning_uz']} → {cognates}"
+    if detail["root"] not in existing:
+        session.add(
+            UserWord(
+                user_id=user.id, ar=detail["root"], uz=root_back,
+                audio=detail.get("audio", ""), kind="root",
+                card_type="root", deck="msa", due_date=today,
+            )
+        )
+        existing.add(detail["root"])
+        added += 1
+
+    # Yasalgan so'zlar
+    for d in detail.get("derived", []):
+        if d["ar"] in existing:
+            continue
+        session.add(
+            UserWord(
+                user_id=user.id, ar=d["ar"], translit=d.get("uz_cognate", ""),
+                uz=d["uz"], audio=d.get("audio", ""), kind="word",
+                card_type="word", deck="msa", due_date=today,
+            )
+        )
+        existing.add(d["ar"])
+        added += 1
+
+    await session.commit()
+    return {"added": added}
 
 
 @router.get("/profile")

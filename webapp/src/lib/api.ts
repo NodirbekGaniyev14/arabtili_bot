@@ -156,6 +156,30 @@ export interface AchievementsData {
   badges: Badge[];
 }
 
+export interface RootSummary {
+  root: string;
+  meaning_uz: string;
+  uz_cognates: string[];
+  count: number;
+  seen: boolean;
+}
+
+export interface DerivedWord {
+  ar: string;
+  uz: string;
+  pattern: string;
+  audio?: string;
+  uz_cognate?: string;
+}
+
+export interface RootDetail {
+  root: string;
+  meaning_uz: string;
+  uz_cognates: string[];
+  audio?: string;
+  derived: DerivedWord[];
+}
+
 export interface ProfileData {
   name: string;
   username: string;
@@ -221,4 +245,15 @@ export const api = {
       "/api/settings/goal",
       { method: "POST", body: JSON.stringify({ daily_minutes: dailyMinutes }) }
     ),
+  getRoots: () =>
+    request<{ roots: RootSummary[]; seen_count: number; total: number }>(
+      "/api/roots"
+    ),
+  getRoot: (root: string) =>
+    request<RootDetail>(`/api/roots/${encodeURIComponent(root)}`),
+  addRootToSrs: (root: string) =>
+    request<{ added: number }>("/api/roots/add-to-srs", {
+      method: "POST",
+      body: JSON.stringify({ root }),
+    }),
 };
