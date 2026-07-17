@@ -392,6 +392,48 @@ async def profile_route(
     extras = await profile_extras(session, user.id)
     achievements = await list_achievements(session, user.id)
 
+    # Imtihon statistikasi (Hanyu uslubidagi STATISTIKA bo'limi uchun)
+    from sqlalchemy import func
+
+    from db.models import ExamAttempt
+
+    exam_rows = (
+        await session.execute(
+            select(ExamAttempt).where(
+                ExamAttempt.user_id == user.id,
+                ExamAttempt.finished_at.isnot(None),
+            )
+        )
+    ).scalars().all()
+    exams_passed = sum(1 for a in exam_rows if a.passed)
+    best_exam = max((a.total_score for a in exam_rows), default=0)
+
+    cards_total = (
+        await session.execute(
+            select(func.count()).select_from(UserWord).where(UserWord.user_id == user.id)
+        )
+    ).scalar_one()
+    # "Joriy xatolar" — kamida bir marta adashilgan va hozir takrori kelganlar
+    mistakes_now = (
+        await session.execute(
+            select(func.count()).select_from(UserWord).where(
+                UserWord.user_id == user.id,
+                UserWord.lapses > 0,
+                UserWord.due_date <= _today().isoformat(),
+            )
+        )
+    ).scalar_one()
+
+    # Onboarding'dagi maqsad (sabab) — oxirgi placementdan
+    goal = ""
+    pl = (
+        await session.execute(
+            select(Placement).where(Placement.user_id == user.id).order_by(Placement.id.desc()).limit(1)
+        )
+    ).scalar_one_or_none()
+    if pl:
+        goal = json.loads(pl.answers_json or "{}").get("goal", "")
+
     return {
         "name": user.name,
         "username": user.username,
@@ -400,10 +442,96 @@ async def profile_route(
         "target_date": plan.target_date if plan else "",
         "daily_minutes": plan.daily_minutes if plan else 20,
         "daily_xp_goal": plan.daily_xp_goal if plan else 30,
+        "goal": goal,
+        "exams_passed": exams_passed,
+        "best_exam": best_exam,
+        "cards_total": cards_total,
+        "mistakes_now": mistakes_now,
         "stats": stats,
         **extras,
         "achievements": achievements,
     }
+
+
+@router.post("/settings/reset-plan")
+async def reset_plan(
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Rejani tozalash — foydalanuvchi onboardingdan qayta o'tadi.
+    XP/streak/progress/SRS saqlanadi."""
+    from sqlalchemy import delete
+
+    await session.execute(delete(Plan).where(Plan.user_id == user.id))
+    await session.execute(delete(Placement).where(Placement.user_id == user.id))
+    await session.commit()
+    return {"ok": True}
+
+
+@router.get("/practice/weak")
+async def practice_weak(
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Zaif so'zlar testi — eng ko'p adashilgan/kechikkan kartalardan mcq."""
+    import random as _random
+
+    rows = (
+        await session.execute(
+            select(UserWord)
+            .where(UserWord.user_id == user.id, UserWord.card_type.in_(["word", "phrase"]))
+            .order_by(UserWord.lapses.desc(), UserWord.due_date)
+            .limit(30)
+        )
+    ).scalars().all()
+
+    if len(rows) < 4:
+        return {"items": [], "reason": "kam_soz"}
+
+    picked = rows[:10]
+    all_uz = [w.uz.split("·")[0].strip() for w in rows if w.uz]
+    items = []
+    for w in picked:
+        correct = w.uz.split("·")[0].strip()
+        distractors = [u for u in all_uz if u and u != correct]
+        _random.shuffle(distractors)
+        items.append(
+            {
+                "type": "mcq",
+                "q_uz": "Bu so'zning ma'nosi?",
+                "q_ar": w.ar,
+                "audio": w.audio or "",
+                "options": [correct, *distractors[:3]],
+                "answer": correct,
+                "explain_uz": "",
+                "root": "",
+                "pattern": "",
+                "words": [],
+            }
+        )
+    _random.shuffle(items)
+    return {"items": items}
+
+
+class WeakCompleteBody(BaseModel):
+    correct: int = Field(ge=0)
+    total: int = Field(ge=1)
+    wrong_words: list[str] = Field(default_factory=list)
+
+
+@router.post("/practice/weak/complete")
+async def practice_weak_complete(
+    body: WeakCompleteBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    from services.srs import reset_words
+
+    xp = max(1, body.correct)
+    session.add(XpLog(user_id=user.id, amount=xp, source="practice:weak"))
+    await session.commit()
+    await reset_words(session, user.id, body.wrong_words)
+    return {"xp_earned": xp}
 
 
 class GoalBody(BaseModel):

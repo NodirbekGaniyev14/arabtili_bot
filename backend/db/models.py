@@ -114,6 +114,43 @@ class XpLog(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
 
 
+class ExamAttempt(Base):
+    """Daraja imtihoni urinishlari (spec §12)."""
+
+    __tablename__ = "exam_attempts"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    level: Mapped[str] = mapped_column(String(4))
+    started_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
+    finished_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    score_reading: Mapped[int] = mapped_column(Integer, default=0)
+    score_listening: Mapped[int] = mapped_column(Integer, default=0)
+    score_writing: Mapped[int] = mapped_column(Integer, default=0)
+    score_speaking: Mapped[int] = mapped_column(Integer, default=0)
+    total_score: Mapped[int] = mapped_column(Integer, default=0)
+    passed: Mapped[int] = mapped_column(Integer, default=0)
+    questions_json: Mapped[str] = mapped_column(Text, default="{}")
+
+
+class Certificate(Base):
+    """Berilgan sertifikatlar (QR bilan tekshiriladi)."""
+
+    __tablename__ = "certificates"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    cert_id: Mapped[str] = mapped_column(String(24), unique=True, index=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    level: Mapped[str] = mapped_column(String(4))
+    score: Mapped[int] = mapped_column(Integer)
+    scores_json: Mapped[str] = mapped_column(Text, default="{}")
+    holder_name: Mapped[str] = mapped_column(String(128), default="")
+    issued_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
+    png_path: Mapped[str] = mapped_column(String(256), default="")
+    pdf_path: Mapped[str] = mapped_column(String(256), default="")
+    revoked: Mapped[int] = mapped_column(Integer, default=0)
+
+
 class Meta(Base):
     """Oddiy kalit-qiymat saqlash (deploy versiyasi va h.k.)."""
 

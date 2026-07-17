@@ -307,11 +307,62 @@ export interface ProfileData {
   target_date: string;
   daily_minutes: number;
   daily_xp_goal: number;
+  goal: string;
+  exams_passed: number;
+  best_exam: number;
+  cards_total: number;
+  mistakes_now: number;
   stats: Stats;
   total_xp: number;
   longest_streak: number;
   member_since: string;
   achievements: AchievementsData;
+}
+
+/* ─────────────── Imtihon (K3) ─────────────── */
+
+export interface ExamInfo {
+  level: string;
+  available: boolean;
+  already_passed: boolean;
+  cooldown_until: string | null;
+  minutes: number;
+  counts: Record<string, number>;
+}
+
+export interface ExamWriting {
+  task_uz: string;
+}
+
+export interface ExamSpeaking {
+  q_ar: string;
+  audio: string;
+}
+
+export interface ExamData {
+  attempt_id: number;
+  level: string;
+  minutes: number;
+  reading: MicroTestItem[];
+  listening: MicroTestItem[];
+  writing: ExamWriting[];
+  speaking: ExamSpeaking[];
+}
+
+export interface ExamResult {
+  reading: number;
+  listening: number;
+  writing: number;
+  speaking: number;
+  total: number;
+  passed: boolean;
+  timed_out: boolean;
+  xp_earned: number;
+  certificate: {
+    cert_id: string;
+    png_url: string;
+    verify_code: string;
+  } | null;
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
@@ -407,5 +458,31 @@ export const api = {
     request<{ ai: boolean; feedback_uz: string }>("/api/v2/eval/writing", {
       method: "POST",
       body: JSON.stringify({ lesson_id: lessonId, text }),
+    }),
+  getExamInfo: () => request<ExamInfo>("/api/exam/info"),
+  startExam: () => request<ExamData>("/api/exam/start", { method: "POST", body: "{}" }),
+  submitExam: (payload: {
+    attempt_id: number;
+    reading_correct: number;
+    listening_correct: number;
+    writing_score: number;
+    speaking_score: number;
+    holder_name: string;
+  }) =>
+    request<ExamResult>("/api/exam/submit", {
+      method: "POST",
+      body: JSON.stringify(payload),
+    }),
+  getWeakPractice: () =>
+    request<{ items: MicroTestItem[]; reason?: string }>("/api/practice/weak"),
+  completeWeakPractice: (correct: number, total: number, wrongWords: string[]) =>
+    request<{ xp_earned: number }>("/api/practice/weak/complete", {
+      method: "POST",
+      body: JSON.stringify({ correct, total, wrong_words: wrongWords }),
+    }),
+  resetPlan: () =>
+    request<{ ok: boolean }>("/api/settings/reset-plan", {
+      method: "POST",
+      body: "{}",
     }),
 };

@@ -10,6 +10,8 @@ import Profile from "./pages/Profile";
 import Rating from "./pages/Rating";
 import Review from "./pages/Review";
 import RootLab from "./pages/RootLab";
+import Exam from "./pages/Exam";
+import WeakPractice from "./pages/WeakPractice";
 import LessonPlayerV2 from "./pages/v2/LessonPlayerV2";
 
 type Phase = "boot" | "onboarding" | "app";
@@ -36,6 +38,8 @@ export default function App() {
     return m ? m[1] : null;
   });
   const [showRootLab, setShowRootLab] = useState(false);
+  const [showExam, setShowExam] = useState(false);
+  const [showWeak, setShowWeak] = useState(false);
 
   useEffect(() => {
     const tg = window.Telegram?.WebApp;
@@ -117,6 +121,9 @@ export default function App() {
             onStartLesson={setActiveLesson}
             onGoReview={() => setTab("review")}
             onOpenRootLab={() => setShowRootLab(true)}
+            onOpenExam={() => setShowExam(true)}
+            onOpenWeak={() => setShowWeak(true)}
+            onGoLessons={() => setTab("lessons")}
           />
         )}
         {tab === "lessons" && (
@@ -138,6 +145,24 @@ export default function App() {
       )}
 
       {showRootLab && <RootLab onClose={() => setShowRootLab(false)} />}
+
+      {showExam && (
+        <Exam
+          onClose={() => {
+            setShowExam(false);
+            api.getMe().then(setMe).catch(() => {});
+          }}
+        />
+      )}
+
+      {showWeak && (
+        <WeakPractice
+          onClose={() => {
+            setShowWeak(false);
+            api.getMe().then(setMe).catch(() => {});
+          }}
+        />
+      )}
 
       {activeLessonV2 && (
         <LessonPlayerV2

@@ -9,6 +9,9 @@ interface HomeProps {
   onStartLesson: (lessonId: string) => void;
   onGoReview: () => void;
   onOpenRootLab: () => void;
+  onOpenExam: () => void;
+  onOpenWeak: () => void;
+  onGoLessons: () => void;
 }
 
 function greeting(): string {
@@ -26,6 +29,9 @@ export default function Home({
   onStartLesson,
   onGoReview,
   onOpenRootLab,
+  onOpenExam,
+  onOpenWeak,
+  onGoLessons,
 }: HomeProps) {
   const next = stats.next_lesson;
   const remaining = Math.max(xpGoal - stats.xp_today, 0);
@@ -144,31 +150,74 @@ export default function Home({
         </button>
 
         <div className="grid grid-cols-2 gap-3">
-          {[
-            { ar: "استمع", label: "Tinglash" },
-            { ar: "بطاقات", label: "Lug'at" },
-          ].map((m) => (
-            <div
-              key={m.label}
-              className="flex items-center gap-3 rounded-2xl bg-card border border-cardline p-3 opacity-60"
-            >
-              <div className="w-11 h-11 shrink-0 rounded-xl bg-gold-soft flex items-center justify-center">
-                <span className="font-arabic text-lg text-emerald-dark leading-none pt-0.5">
-                  {m.ar}
-                </span>
-              </div>
-              <div className="min-w-0">
-                <div className="text-[13px] font-extrabold leading-tight">
-                  {m.label}
-                </div>
-                <div className="text-[11px] text-ink-soft font-semibold">
-                  Tez orada
-                </div>
-              </div>
-            </div>
-          ))}
+          <ModeCard
+            ar="امتحان"
+            label="Imtihon"
+            desc="4 bo'lim · vaqtli"
+            onClick={onOpenExam}
+          />
+          <ModeCard
+            ar="ضعيف"
+            label="Zaif so'zlar"
+            desc="maxsus test"
+            onClick={onOpenWeak}
+          />
+          <ModeCard
+            ar="درس"
+            label="Darslar"
+            desc={
+              stats.next_lesson
+                ? `${stats.next_lesson.pos}/${stats.next_lesson.count}`
+                : "yo'l xaritasi"
+            }
+            onClick={onGoLessons}
+          />
+          <ModeCard
+            ar="كرر"
+            label="Takror"
+            desc={stats.due_count > 0 ? `${stats.due_count} ta karta` : "SRS"}
+            onClick={onGoReview}
+          />
+          <ModeCard ar="استمع" label="Tinglash" desc="Tez orada" disabled />
+          <ModeCard ar="قواعد" label="Grammatika" desc="Tez orada" disabled />
         </div>
       </section>
     </div>
+  );
+}
+
+function ModeCard({
+  ar,
+  label,
+  desc,
+  onClick,
+  disabled,
+}: {
+  ar: string;
+  label: string;
+  desc: string;
+  onClick?: () => void;
+  disabled?: boolean;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={`flex items-center gap-3 rounded-2xl bg-card border border-cardline p-3 text-left transition-transform ${
+        disabled ? "opacity-60" : "active:scale-95"
+      }`}
+    >
+      <div className="w-11 h-11 shrink-0 rounded-xl bg-gold-soft flex items-center justify-center">
+        <span className="font-arabic text-lg text-emerald-dark leading-none pt-0.5">
+          {ar}
+        </span>
+      </div>
+      <div className="min-w-0">
+        <div className="text-[13px] font-extrabold leading-tight">{label}</div>
+        <div className="text-[11px] text-ink-soft font-semibold truncate">
+          {desc}
+        </div>
+      </div>
+    </button>
   );
 }
