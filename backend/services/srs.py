@@ -63,6 +63,73 @@ async def seed_user_words(session: AsyncSession, user_id: int) -> None:
         await session.commit()
 
 
+async def seed_from_srs_cards(
+    session: AsyncSession, user_id: int, cards: list[dict]
+) -> int:
+    """v2 dars srs_cards ro'yxatidan kartoteka to'ldiradi. Qo'shilganlar sonini qaytaradi."""
+    if not cards:
+        return 0
+    existing = set(
+        (
+            await session.execute(
+                select(UserWord.ar).where(UserWord.user_id == user_id)
+            )
+        ).scalars()
+    )
+    today = _today().isoformat()
+    added = 0
+    for c in cards:
+        front = c.get("front", "").strip()
+        if not front or front in existing:
+            continue
+        existing.add(front)
+        session.add(
+            UserWord(
+                user_id=user_id,
+                ar=front,
+                uz=c.get("back", ""),
+                kind=c.get("type", "word"),
+                card_type=c.get("type", "word"),
+                deck=c.get("deck", "msa"),
+                due_date=today,
+            )
+        )
+        added += 1
+    if added:
+        await session.commit()
+    return added
+
+
+async def reset_words(
+    session: AsyncSession, user_id: int, ar_list: list[str]
+) -> int:
+    """Xato javob berilgan so'zlarning SRS intervalini qayta boshlaydi (spec §11)."""
+    if not ar_list:
+        return 0
+    rows = (
+        (
+            await session.execute(
+                select(UserWord).where(
+                    UserWord.user_id == user_id, UserWord.ar.in_(ar_list)
+                )
+            )
+        )
+        .scalars()
+        .all()
+    )
+    today = _today().isoformat()
+    for w in rows:
+        w.reps = 0
+        w.lapses += 1
+        w.interval_days = 0
+        w.due_date = today
+        w.ease = max(MIN_EASE, w.ease - 0.2)
+        session.add(w)
+    if rows:
+        await session.commit()
+    return len(rows)
+
+
 def apply_grade(word: UserWord, grade: str) -> None:
     """Kartani bahoga qarab keyingi sanaga suradi (SM-2 soddalashtirilgan)."""
     if grade == "again":

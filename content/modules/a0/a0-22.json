@@ -93,6 +93,7 @@
   {"type": "mcq", "q_uz": "«مُدَرِّس» (o'qituvchi) qaysi o'zakdan?", "options": ["د ر س", "ك ت ب", "ع ل م", "س ل م"], "answer": "د ر س", "explain_uz": "Dars, madrasa bilan bir o'zak — د-ر-س."},
   {"type": "translate_ar_uz", "q_ar": "مَكْتَبة", "answer": "kutubxona"},
   {"type": "build_word", "root": "ك ت ب", "pattern": "فاعِل", "answer": "كاتِب"},
+  {"type": "dictation", "q_uz": "Eshiting va yozing", "audio": "a0/madrasa.mp3", "answer": "مَدْرَسة"},
   {"type": "mcq", "q_uz": "Arabcha o'zak odatda nechta harfdan iborat?", "options": ["2", "3", "5", "7"], "answer": "3", "explain_uz": "Ko'pchilik so'zlar 3 harfli o'zakka asoslanadi."}
  ],
  "srs_cards": [

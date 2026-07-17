@@ -20,6 +20,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from api.routes import router as api_router
+from api.v2 import router as api_v2_router
 from bot.admin import router as admin_router
 from bot.handlers import router as bot_router
 from config import settings
@@ -99,6 +100,7 @@ app.add_middleware(
 )
 
 app.include_router(api_router)
+app.include_router(api_v2_router)
 
 if WEBAPP_DIST.exists():
     app.mount("/", StaticFiles(directory=WEBAPP_DIST, html=True), name="webapp")

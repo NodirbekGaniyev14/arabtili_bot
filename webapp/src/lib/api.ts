@@ -180,6 +180,125 @@ export interface RootDetail {
   derived: DerivedWord[];
 }
 
+/* ─────────────── Curriculum v2 (yangi dars playeri) ─────────────── */
+
+export interface V2GrammarRow {
+  ar: string;
+  uz: string;
+  form: string;
+}
+
+export interface V2Grammar {
+  point_ar: string;
+  explanation_uz: string;
+  table: V2GrammarRow[];
+  common_mistakes_uz: string[];
+}
+
+export interface V2RootEntry {
+  root: string;
+  meaning_uz: string;
+  uz_cognates: string[];
+  derived: { ar: string; uz: string; pattern: string }[];
+}
+
+export interface V2VocabItem {
+  ar: string;
+  translit: string;
+  uz: string;
+  root: string;
+  pattern: string;
+  pos: string;
+  audio: string;
+  example_ar: string;
+  example_uz: string;
+  srs: boolean;
+}
+
+export interface V2HejaziItem {
+  msa_ar: string;
+  hejazi_ar: string;
+  translit: string;
+  uz: string;
+  audio: string;
+}
+
+export interface V2SkillQuestion {
+  q_uz: string;
+  a: string;
+}
+
+export interface V2Skills {
+  reading: { text_ar: string; questions: V2SkillQuestion[] };
+  listening: { audio: string; transcript_ar: string; questions: V2SkillQuestion[] };
+  speaking: { task_uz: string; target_ar: string[]; eval: string };
+  writing: { task_uz: string; eval: string };
+}
+
+export type MicroTestType =
+  | "mcq"
+  | "fill_blank"
+  | "translate_uz_ar"
+  | "translate_ar_uz"
+  | "harakat"
+  | "dictation"
+  | "match_root"
+  | "build_word"
+  | "shadowing"
+  | "order_words";
+
+export interface MicroTestItem {
+  type: MicroTestType;
+  q_uz: string;
+  q_ar: string;
+  options: string[];
+  answer: string;
+  explain_uz: string;
+  audio: string;
+  root: string;
+  pattern: string;
+  words: string[];
+}
+
+export interface LessonV2Data {
+  id: string;
+  level: string;
+  module: string;
+  order: number;
+  title_uz: string;
+  title_ar: string;
+  can_do_uz: string;
+  harakat_level: string;
+  hook_uz: string;
+  grammar: V2Grammar;
+  roots: V2RootEntry[];
+  vocabulary: V2VocabItem[];
+  hejazi: V2HejaziItem[];
+  skills: V2Skills;
+  micro_test: MicroTestItem[];
+  srs_cards: { type: string; front: string; back: string; deck: string }[];
+  meta: { title_uz: string; level: string; order: number; module: string };
+}
+
+export interface CompleteV2Response {
+  xp_earned: number;
+  perfect: boolean;
+  score: number;
+  passed: boolean;
+  first_time: boolean;
+  srs_added: number;
+  srs_reset: number;
+  stats: Stats;
+  new_badges: Badge[];
+  checkpoint_available: boolean;
+}
+
+export interface CheckpointData {
+  lesson_ids: string[];
+  pass_percent: number;
+  questions: MicroTestItem[];
+}
+
 export interface ProfileData {
   name: string;
   username: string;
@@ -255,5 +374,38 @@ export const api = {
     request<{ added: number }>("/api/roots/add-to-srs", {
       method: "POST",
       body: JSON.stringify({ root }),
+    }),
+  getLessonV2: (id: string) => request<LessonV2Data>(`/api/v2/lessons/${id}`),
+  completeLessonV2: (
+    id: string,
+    correct: number,
+    total: number,
+    wrongWords: string[]
+  ) =>
+    request<CompleteV2Response>(`/api/v2/lessons/${id}/complete`, {
+      method: "POST",
+      body: JSON.stringify({ correct, total, wrong_words: wrongWords }),
+    }),
+  getCheckpoint: (lessonId: string) =>
+    request<CheckpointData>(`/api/v2/checkpoint/${lessonId}`),
+  completeCheckpoint: (
+    lessonId: string,
+    correct: number,
+    total: number,
+    wrongWords: string[]
+  ) =>
+    request<{
+      score: number;
+      passed: boolean;
+      xp_earned: number;
+      srs_reset: number;
+    }>(`/api/v2/checkpoint/${lessonId}/complete`, {
+      method: "POST",
+      body: JSON.stringify({ correct, total, wrong_words: wrongWords }),
+    }),
+  evalWriting: (lessonId: string, text: string) =>
+    request<{ ai: boolean; feedback_uz: string }>("/api/v2/eval/writing", {
+      method: "POST",
+      body: JSON.stringify({ lesson_id: lessonId, text }),
     }),
 };

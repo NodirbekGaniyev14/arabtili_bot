@@ -10,6 +10,7 @@ import Profile from "./pages/Profile";
 import Rating from "./pages/Rating";
 import Review from "./pages/Review";
 import RootLab from "./pages/RootLab";
+import LessonPlayerV2 from "./pages/v2/LessonPlayerV2";
 
 type Phase = "boot" | "onboarding" | "app";
 
@@ -29,6 +30,11 @@ export default function App() {
   const [tgName, setTgName] = useState("");
   const [me, setMe] = useState<MeResponse | null>(null);
   const [activeLesson, setActiveLesson] = useState<string | null>(null);
+  const [activeLessonV2, setActiveLessonV2] = useState<string | null>(() => {
+    // Dev/deep-link kirish: #lesson=a0-22
+    const m = window.location.hash.match(/#lesson=([a-b]\d-\d{2})/);
+    return m ? m[1] : null;
+  });
   const [showRootLab, setShowRootLab] = useState(false);
 
   useEffect(() => {
@@ -132,6 +138,17 @@ export default function App() {
       )}
 
       {showRootLab && <RootLab onClose={() => setShowRootLab(false)} />}
+
+      {activeLessonV2 && (
+        <LessonPlayerV2
+          lessonId={activeLessonV2}
+          onClose={() => setActiveLessonV2(null)}
+          onFinish={(stats) => {
+            setMe((m) => (m ? { ...m, stats } : m));
+            setActiveLessonV2(null);
+          }}
+        />
+      )}
     </div>
   );
 }
