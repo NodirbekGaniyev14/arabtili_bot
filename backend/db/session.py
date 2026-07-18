@@ -26,6 +26,9 @@ _MIGRATIONS = {
         "card_type": "VARCHAR(16) DEFAULT 'word'",
         "deck": "VARCHAR(8) DEFAULT 'msa'",
     },
+    "plans": {
+        "start_lesson": "VARCHAR(12) DEFAULT 'a0-01'",
+    },
 }
 
 

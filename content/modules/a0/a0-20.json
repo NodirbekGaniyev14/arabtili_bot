@@ -1,0 +1,272 @@
+{
+ "id": "a0-20",
+ "level": "A0",
+ "module": "pronunciation",
+ "order": 20,
+ "title_uz": "Talaffuz 2: ص ض ط ظ",
+ "title_ar": "الحُروف المُفَخَّمة",
+ "can_do_uz": "Qalin (emfatik) harflar ص ض ط ظ ni yupqa juftlaridan (س ت ذ) ajrata olaman va minimal juftlarni to'g'ri talaffuz qila olaman.",
+ "duration_min": 30,
+ "prerequisites": [
+  "a0-19"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "O'zbekcha \"soat\" so'zini eslang — undagi \"s\" yumshoq. Endi og'zingizni to'ldirib, \"qalin\" s aytib ko'ring: bu arabcha ص. Xuddi shu ص \"soat\" (السَّاعة emas, balki يُصَلّي — namoz o'qish) so'zlarida ishlatiladi. Bugun 4 ta \"qalin\" tovushni yupqa juftidan ajratamiz.",
+ "grammar": {
+  "point_ar": "ص ض ط ظ",
+  "explanation_uz": "Arab tilida bir xil ko'rinadigan, lekin biri \"yupqa\" (yumshoq), ikkinchisi \"qalin\" (emfatik) bo'lgan tovushlar bor. Qalin tovushni aytganda tilingizning orqa qismi tanglaykka ko'tariladi va ovoz \"to'la\" chiqadi. So'zning ma'nosi shu farq bilan o'zgaradi! Juftliklar: س (yumshoq s) ↔ ص (qalin s); ت (yumshoq t) ↔ ط (qalin t); د (yumshoq d) ↔ ض (qalin d); ذ/ز (yumshoq z) ↔ ظ (qalin z).",
+  "table": [
+   {
+    "ar": "س",
+    "uz": "yumshoq \"s\" (o'zbekcha \"soz\" dagi s)",
+    "form": "yupqa"
+   },
+   {
+    "ar": "ص",
+    "uz": "qalin \"s\" — og'iz to'la, ovoz orqadan",
+    "form": "qalin"
+   },
+   {
+    "ar": "ت",
+    "uz": "yumshoq \"t\" (o'zbekcha \"tosh\" dagi t)",
+    "form": "yupqa"
+   },
+   {
+    "ar": "ط",
+    "uz": "qalin \"t\" — kuchli, orqadan",
+    "form": "qalin"
+   },
+   {
+    "ar": "ض",
+    "uz": "qalin \"d\" — o'zbekda yo'q, kuchli d",
+    "form": "qalin"
+   },
+   {
+    "ar": "ظ",
+    "uz": "qalin \"z\" — til tishlar orasida, orqadan",
+    "form": "qalin"
+   }
+  ],
+  "common_mistakes_uz": [
+   "ص ni oddiy س deb o'qish — bu so'z ma'nosini buzadi (masalan صَيْف = yoz, سَيْف = qilich).",
+   "ط ni oddiy ت deb aytish — qalinlik yo'qolib qoladi.",
+   "ض va ظ ni chalkashtirish — ض qalin \"d\", ظ qalin \"z\".",
+   "Qalin harfdan keyingi unlini ham \"qalin\" (orqadan) aytishni unutish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ص ي ف",
+   "meaning_uz": "yoz (fasl)",
+   "uz_cognates": [],
+   "derived": [
+    {
+     "ar": "صَيْف",
+     "uz": "yoz",
+     "pattern": ""
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "صَيْف",
+   "translit": "sayf",
+   "uz": "yoz (fasl)",
+   "root": "ص ي ف",
+   "pattern": "",
+   "pos": "ism",
+   "audio": "a0/sayf.mp3",
+   "example_ar": "الصَّيْف حارّ",
+   "example_uz": "Yoz issiq",
+   "srs": true
+  },
+  {
+   "ar": "طَيِّب",
+   "translit": "tayyib",
+   "uz": "yaxshi, mazali",
+   "root": "ط ي ب",
+   "pattern": "",
+   "pos": "sifat",
+   "audio": "a0/tayyib.mp3",
+   "example_ar": "هذا طَيِّب",
+   "example_uz": "Bu yaxshi",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "الصَّيْف حارّ. هذا طَعام طَيِّب. أنا في السَّاعة الطَّويلة.",
+   "questions": [
+    {
+     "q_uz": "\"Yoz issiq\" jumlasini toping va ص harfini o'qing.",
+     "a": "الصَّيْف حارّ"
+    },
+    {
+     "q_uz": "\"Bu mazali taom\" jumlasidagi qalin ط harfli so'zni ayting.",
+     "a": "طَعام / طَيِّب"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/pron_sad_ta.mp3",
+   "transcript_ar": "سَيْف — صَيْف — تين — طين",
+   "questions": [
+    {
+     "q_uz": "Birinchi juftda qaysi so'zda qalin ص bor?",
+     "a": "صَيْف (yoz)"
+    },
+    {
+     "q_uz": "Ikkinchi juftda qalin ط qaysi so'zda?",
+     "a": "طين (loy)"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Quyidagi minimal juftliklarni ovoz chiqarib, yupqa va qalinni ajratib ayting: سَيْف / صَيْف, تين / طين, دَلّ / ضَلّ.",
+   "target_ar": [
+    "سَيْف",
+    "صَيْف",
+    "تين",
+    "طين"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "صَيْف va طَيِّب so'zlarini bir marta ko'chirib yozing va har biridagi qalin harfning ostiga chiziq torting.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi so'z \"yoz\" ma'nosini beradi (qalin ص bilan)?",
+   "q_ar": "",
+   "options": [
+    "سَيْف",
+    "صَيْف",
+    "سيف",
+    "تين"
+   ],
+   "answer": "صَيْف",
+   "explain_uz": "صَيْف = yoz (qalin ص). سَيْف = qilich (yumshoq س).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "ط qanday tovush?",
+   "q_ar": "",
+   "options": [
+    "Yumshoq t",
+    "Qalin (emfatik) t",
+    "Yumshoq s",
+    "Qalin z"
+   ],
+   "answer": "Qalin (emfatik) t",
+   "explain_uz": "ط — bu ت ning qalin (emfatik) juftidir.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshitilgan so'zni yozing (qalin harfga e'tibor bering).",
+   "q_ar": "",
+   "options": [],
+   "answer": "طَيِّب",
+   "explain_uz": "طَيِّب — qalin ط bilan boshlanadi.",
+   "audio": "a0/tayyib.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "ض va ظ farqi nimada?",
+   "q_ar": "",
+   "options": [
+    "ض qalin \"d\", ظ qalin \"z\"",
+    "ض qalin \"z\", ظ qalin \"d\"",
+    "Ikkalasi ham \"s\"",
+    "Farqi yo'q"
+   ],
+   "answer": "ض qalin \"d\", ظ qalin \"z\"",
+   "explain_uz": "ض — qalin d tovushi, ظ — qalin z tovushi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi juftlik to'g'ri: yumshoq ↔ qalin?",
+   "q_ar": "",
+   "options": [
+    "س ↔ ص",
+    "ب ↔ ص",
+    "ج ↔ ط",
+    "ك ↔ ظ"
+   ],
+   "answer": "س ↔ ص",
+   "explain_uz": "س (yumshoq s) va ص (qalin s) o'zaro juft.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "صَيْف so'zining o'zagini tanlang.",
+   "q_ar": "",
+   "options": [
+    "ص ي ف",
+    "س ي ف",
+    "ص و ف",
+    "ط ي ب"
+   ],
+   "answer": "ص ي ف",
+   "explain_uz": "صَيْف so'zi ص ي ف o'zagidan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "harakat",
+   "q_uz": "\"tayyib\" so'zini to'g'ri harakatlang.",
+   "q_ar": "طيب",
+   "options": [],
+   "answer": "طَيِّب",
+   "explain_uz": "ط + fatha, ي shadda + kasra, ب. Talaffuzi: tayyib.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "word",
+   "front": "صَيْف",
+   "back": "yoz (fasl) — qalin ص",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "طَيِّب",
+   "back": "yaxshi, mazali — qalin ط",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "ص ي ف",
+   "back": "yoz ma'nosi (صَيْف)",
+   "deck": "msa"
+  }
+ ]
+}

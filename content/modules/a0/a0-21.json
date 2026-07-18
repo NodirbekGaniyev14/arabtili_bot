@@ -1,0 +1,277 @@
+{
+ "id": "a0-21",
+ "level": "A0",
+ "module": "pronunciation",
+ "order": 21,
+ "title_uz": "Talaffuz 3: ق خ غ",
+ "title_ar": "ق · خ · غ",
+ "can_do_uz": "O'zbek tilida allaqachon bor bo'lgan uchta arab tovushini — ق (q), خ (x), غ (g') — ishonch bilan aniqlab, to'g'ri talaffuz qila olaman.",
+ "duration_min": 25,
+ "prerequisites": [
+  "a0-20"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "Xushxabar: bugungi uchta tovush sizga allaqachon tanish! «Qalam» dagi Q — bu ق, «Xabar» dagi X — bu خ, «G'oya» dagi G' esa غ. Ya'ni siz o'zbekcha gapirganda har kuni arab tovushlarini ishlatasiz.",
+ "grammar": {
+  "point_ar": "ق · خ · غ",
+  "explanation_uz": "Oldingi darslarda o'zbekda YO'Q tovushlarni (ع ح ص ض ط ظ) qiynalib o'rgandik. Endi bir dam olamiz: bu uchta harf o'zbek tilida BOR. Ular kirish so'zlar orqali (qalam, xabar, g'oya) sizga tanish. Faqat harf shaklini tovush bilan bog'lab olsangiz — tamom.",
+  "table": [
+   {
+    "ar": "ق",
+    "uz": "«Q» tovushi — «qalam», «qand» dagidek. Til tomog'ning orqasiga tegadi.",
+    "form": "qalam → قَلَم"
+   },
+   {
+    "ar": "خ",
+    "uz": "«X» tovushi — «xabar», «xat» dagidek. Tomoqdan ishqalanib chiqadi.",
+    "form": "xabar → خَبَر"
+   },
+   {
+    "ar": "غ",
+    "uz": "«G'» tovushi — «g'oya», «bog'» dagidek. خ ning jarangli (ovozli) jufti.",
+    "form": "lug'at → لُغَة"
+   }
+  ],
+  "common_mistakes_uz": [
+   "ق ni oddiy «k» deb aytish. ق chuqurroq, tomoqning orqasidan chiqadi — «qand» dagi Q kabi.",
+   "خ va غ ni aralashtirish. خ — jarangsiz (xat), غ — jarangli, tomoq bo'g'ilib jaranglaydi (g'oya).",
+   "غ ni oddiy «g» (gul) deb o'qish. Yo'q, u «g'» — bog', tog' dagidek."
+  ]
+ },
+ "roots": [
+  {
+   "root": "خ ب ر",
+   "meaning_uz": "xabar berish, bilish",
+   "uz_cognates": [
+    "xabar",
+    "axborot"
+   ],
+   "derived": [
+    {
+     "ar": "خَبَر",
+     "uz": "xabar, yangilik",
+     "pattern": ""
+    },
+    {
+     "ar": "أَخْبار",
+     "uz": "xabarlar, yangiliklar",
+     "pattern": ""
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "قَلَم",
+   "translit": "qalam",
+   "uz": "qalam (o'zbekcha «qalam» aynan shu so'zdan)",
+   "root": "ق ل م",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/qalam.mp3",
+   "example_ar": "هٰذَا قَلَم.",
+   "example_uz": "Bu qalam.",
+   "srs": true
+  },
+  {
+   "ar": "خَبَر",
+   "translit": "xabar",
+   "uz": "xabar, yangilik (o'zbekcha «xabar» shundan)",
+   "root": "خ ب ر",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/xabar.mp3",
+   "example_ar": "هٰذَا خَبَر.",
+   "example_uz": "Bu xabar.",
+   "srs": true
+  },
+  {
+   "ar": "لُغَة",
+   "translit": "lug'a",
+   "uz": "til (o'zbekcha «lug'at» shu o'zakdan)",
+   "root": "ل غ و",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/lugha.mp3",
+   "example_ar": "اللُّغَةُ العَرَبِيَّة.",
+   "example_uz": "Arab tili.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "قَلَم · خَبَر · لُغَة. هٰذَا قَلَم وَهٰذَا خَبَر.",
+   "questions": [
+    {
+     "q_uz": "«قَلَم» so'zidagi birinchi harf qaysi tovush?",
+     "a": "Q tovushi (ق)"
+    },
+    {
+     "q_uz": "«خَبَر» so'zi o'zbekchada qanday eshitiladi?",
+     "a": "Xabar"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/lesson21_listen.mp3",
+   "transcript_ar": "قَلَم · خَبَر · لُغَة",
+   "questions": [
+    {
+     "q_uz": "Qaysi so'zda «g'» (غ) tovushi bor?",
+     "a": "لُغَة (lug'a)"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uchta so'zni ovoz chiqarib o'qing va o'zbekcha ko'prigini ayting: قَلَم (qalam), خَبَر (xabar), لُغَة (lug'at).",
+   "target_ar": [
+    "قَلَم",
+    "خَبَر",
+    "لُغَة"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "قَلَم, خَبَر, لُغَة so'zlarini ko'chirib yozing va har birining ostiga o'zbekcha tovushini (q / x / g') belgilang.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«qalam» so'zidagi Q tovushi qaysi arab harfiga to'g'ri keladi?",
+   "q_ar": "",
+   "options": [
+    "ق",
+    "ك",
+    "ح",
+    "ع"
+   ],
+   "answer": "ق",
+   "explain_uz": "Q tovushi — ق. «Qalam» = قَلَم.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«xabar» so'zidagi X tovushi qaysi harf?",
+   "q_ar": "",
+   "options": [
+    "خ",
+    "ح",
+    "ه",
+    "غ"
+   ],
+   "answer": "خ",
+   "explain_uz": "X tovushi — خ. Diqqat: ح boshqa (o'zbekda yo'q) tovush.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«g'oya», «bog'» dagi G' tovushi qaysi harf?",
+   "q_ar": "",
+   "options": [
+    "غ",
+    "ج",
+    "ق",
+    "ك"
+   ],
+   "answer": "غ",
+   "explain_uz": "G' tovushi — غ. U خ ning jarangli jufti.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshitilgan so'zni yozing (o'zbekcha «lug'at» bilan bog'liq).",
+   "q_ar": "",
+   "options": [],
+   "answer": "لُغَة",
+   "explain_uz": "لُغَة = til. غ = «g'» tovushi.",
+   "audio": "a0/lugha.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«خَبَر» so'zining o'zagini tanlang.",
+   "q_ar": "",
+   "options": [
+    "خ ب ر",
+    "ق ل م",
+    "ل غ و",
+    "ك ت ب"
+   ],
+   "answer": "خ ب ر",
+   "explain_uz": "خَبَر (xabar) → o'zak خ ب ر.",
+   "audio": "",
+   "root": "خ ب ر",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "Tarjima qiling: قَلَم",
+   "q_ar": "",
+   "options": [],
+   "answer": "qalam",
+   "explain_uz": "قَلَم = qalam. O'zbekcha bilan bir xil.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "harakat",
+   "q_uz": "Bu so'zga to'g'ri harakat qo'yilganini tanlang: «xabar».",
+   "q_ar": "",
+   "options": [
+    "خَبَر",
+    "خُبُر",
+    "خِبِر",
+    "خَبِر"
+   ],
+   "answer": "خَبَر",
+   "explain_uz": "«xabar» → خَبَر: fatha–fatha–fatha.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "word",
+   "front": "قَلَم",
+   "back": "qalam",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "خَبَر",
+   "back": "xabar, yangilik",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "لُغَة",
+   "back": "til (o'zbekcha «lug'at»)",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "خ ب ر",
+   "back": "xabar berish, bilish (خَبَر, أَخْبار)",
+   "deck": "msa"
+  }
+ ]
+}

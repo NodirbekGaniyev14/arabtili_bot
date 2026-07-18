@@ -1,0 +1,352 @@
+{
+ "id": "a0-08",
+ "level": "A0",
+ "module": "letters",
+ "order": 8,
+ "title_uz": "Ulanish shakllari",
+ "title_ar": "أَشْكَالُ الْحُرُوف",
+ "can_do_uz": "Harfning so'z boshida, o'rtasida va oxirida qanday shaklga kirishini taniy olaman va ulanadigan/ulanmaydigan harflarni ajrata olaman.",
+ "duration_min": 30,
+ "prerequisites": [
+  "a0-07"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "O'zbekcha yozuvda 'a' harfi hamma joyda bir xil. Arabchada esa bitta harf so'zning boshi, o'rtasi yoki oxirida turli shaklga kiradi — xuddi bir odam turli kiyimda! 'Maktab' so'zini eslang: shu 'kitob' o'zagi arabchada ham bor, endi uni ulangan holda ko'ramiz.",
+ "grammar": {
+  "point_ar": "أَوَّل · وَسَط · آخِر",
+  "explanation_uz": "Arab harflarining ko'pchiligi o'zidan keyingi harfga qo'lyozmada ULANADI. Shu sabab bitta harf 4 xil ko'rinishga ega bo'ladi: alohida, so'z boshida, o'rtasida va oxirida. Ammo 6 ta harf — ا د ذ ر ز و — faqat o'ngdan ulanadi, chapga ULANMAYDI. Ular o'zidan keyingi harfni 'yolg'iz' qoldiradi.",
+  "table": [
+   {
+    "ar": "كـ",
+    "uz": "so'z boshi (avval)",
+    "form": "بوش"
+   },
+   {
+    "ar": "ـكـ",
+    "uz": "so'z o'rtasi (vasat)",
+    "form": "o'rta"
+   },
+   {
+    "ar": "ـك",
+    "uz": "so'z oxiri (oxir)",
+    "form": "oxir"
+   },
+   {
+    "ar": "ك",
+    "uz": "alohida (yolg'iz)",
+    "form": "alohida"
+   },
+   {
+    "ar": "بـ ـبـ ـب ب",
+    "uz": "ب harfining 4 shakli",
+    "form": "misol"
+   },
+   {
+    "ar": "د ذ ر ز و ا",
+    "uz": "chapga ulanmaydigan 6 harf",
+    "form": "ulanmas"
+   }
+  ],
+  "common_mistakes_uz": [
+   "ا د ذ ر ز و harflaridan keyin qalamni uzmasdan davom ettirish — noto'g'ri. Ulardan keyin yangi harf alohida boshlanadi.",
+   "So'z oxiridagi harfning 'dumini' (masalan ـن, ـم) tushirib qoldirish.",
+   "Harfning o'rta shaklini so'z boshida ishlatib yuborish — har pozitsiyaning o'z shakli bor."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ك ت ب",
+   "meaning_uz": "yozish bilan bog'liq",
+   "uz_cognates": [
+    "kitob",
+    "maktab",
+    "kotib"
+   ],
+   "derived": [
+    {
+     "ar": "كَتَبَ",
+     "uz": "u yozdi",
+     "pattern": ""
+    },
+    {
+     "ar": "مَكْتَب",
+     "uz": "idora / ish stoli",
+     "pattern": ""
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "بَيْت",
+   "translit": "bayt",
+   "uz": "uy",
+   "root": "ب ي ت",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/bayt.mp3",
+   "example_ar": "بَيْت",
+   "example_uz": "uy",
+   "srs": true
+  },
+  {
+   "ar": "مَكْتَب",
+   "translit": "maktab",
+   "uz": "idora / ish stoli (o'zbekcha 'maktab' shu o'zakdan)",
+   "root": "ك ت ب",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/maktab.mp3",
+   "example_ar": "مَكْتَب",
+   "example_uz": "idora",
+   "srs": true
+  },
+  {
+   "ar": "قَلَم",
+   "translit": "qalam",
+   "uz": "ruchka / qalam (o'zbekcha 'qalam')",
+   "root": "ق ل م",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/qalam.mp3",
+   "example_ar": "قَلَم",
+   "example_uz": "qalam",
+   "srs": true
+  },
+  {
+   "ar": "جَمَل",
+   "translit": "jamal",
+   "uz": "tuya",
+   "root": "ج م ل",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/jamal.mp3",
+   "example_ar": "جَمَل",
+   "example_uz": "tuya",
+   "srs": true
+  },
+  {
+   "ar": "كَتَبَ",
+   "translit": "kataba",
+   "uz": "u yozdi",
+   "root": "ك ت ب",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a0/kataba.mp3",
+   "example_ar": "كَتَبَ",
+   "example_uz": "u yozdi",
+   "srs": true
+  },
+  {
+   "ar": "سَكَن",
+   "translit": "sakan",
+   "uz": "u yashadi / turdi",
+   "root": "س ك ن",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a0/sakan.mp3",
+   "example_ar": "سَكَن",
+   "example_uz": "u yashadi",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "بَيْت. قَلَم. جَمَل. مَكْتَب. كَتَبَ.",
+   "questions": [
+    {
+     "q_uz": "'مَكْتَب' so'zida ت harfi qaysi pozitsiyada — boshi, o'rtasi yoki oxiri?",
+     "a": "O'rtasida (ـتـ)"
+    },
+    {
+     "q_uz": "'قَلَم' so'zida qaysi harf oxirida turibdi?",
+     "a": "م (ـم)"
+    },
+    {
+     "q_uz": "'بَيْت' so'zi qaysi harf bilan boshlanadi?",
+     "a": "ب (بـ)"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/a0-08-listen.mp3",
+   "transcript_ar": "بَيْت. مَكْتَب. قَلَم.",
+   "questions": [
+    {
+     "q_uz": "Eshitgan birinchi so'zingiz nima?",
+     "a": "بَيْت (uy)"
+    },
+    {
+     "q_uz": "'maktab' so'zi nechanchi bo'lib eshitildi?",
+     "a": "Ikkinchi"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Quyidagi so'zlarni ovoz chiqarib o'qing va har birida oxirgi harfni alohida ayting: بَيْت، قَلَم، جَمَل.",
+   "target_ar": [
+    "بَيْت",
+    "قَلَم",
+    "جَمَل"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "'ك ت ب' o'zagidan hosil bo'lgan 'مَكْتَب' so'zini ulangan holda yozing va ت harfi o'rtada qanday shaklga kirganini yozib izohlang.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Quyidagi harflardan qaysi biri o'zidan keyingi harfga ULANMAYDI?",
+   "q_ar": "",
+   "options": [
+    "ب",
+    "ت",
+    "ر",
+    "ك"
+   ],
+   "answer": "ر",
+   "explain_uz": "ر — ا د ذ ر ز و oilasidan; ular chapga ulanmaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "'ـكـ' shakli harfning qaysi pozitsiyasini bildiradi?",
+   "q_ar": "",
+   "options": [
+    "So'z boshi",
+    "So'z o'rtasi",
+    "So'z oxiri",
+    "Alohida"
+   ],
+   "answer": "So'z o'rtasi",
+   "explain_uz": "Ikki tomondan chiziq bo'lsa — harf so'z o'rtasida turibdi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "'uy' so'zini arabcha yozing.",
+   "q_ar": "",
+   "options": [],
+   "answer": "بَيْت",
+   "explain_uz": "بَيْت — o'zagi ب ي ت.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "'قَلَم' so'zining o'zbekcha ma'nosi?",
+   "q_ar": "قَلَم",
+   "options": [],
+   "answer": "qalam / ruchka",
+   "explain_uz": "O'zbekcha 'qalam' shu so'zdan olingan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "Qaysi so'z 'ك ت ب' o'zagiga tegishli?",
+   "q_ar": "",
+   "options": [
+    "مَكْتَب",
+    "قَلَم",
+    "جَمَل"
+   ],
+   "answer": "مَكْتَب",
+   "explain_uz": "مَكْتَب va كَتَبَ — ikkalasi ham ك ت ب o'zagidan.",
+   "audio": "",
+   "root": "ك ت ب",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Harflarni to'g'ri tartibda ulab so'z tuzing (o'ngdan chapga): ت + ي + ب",
+   "q_ar": "",
+   "options": [],
+   "answer": "بَيْت",
+   "explain_uz": "ب boshi, ي o'rtasi, ت oxiri = بَيْت (uy).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": [
+    "بـ",
+    "ـيـ",
+    "ـت"
+   ]
+  },
+  {
+   "type": "mcq",
+   "q_uz": "'جَمَل' so'zida ج harfi qaysi pozitsiyada?",
+   "q_ar": "",
+   "options": [
+    "So'z boshida",
+    "So'z oxirida",
+    "Alohida"
+   ],
+   "answer": "So'z boshida",
+   "explain_uz": "جـ — so'z boshi shakli.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "word",
+   "front": "بَيْت",
+   "back": "uy",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "مَكْتَب",
+   "back": "idora / ish stoli (uz: maktab)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "قَلَم",
+   "back": "qalam / ruchka",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "جَمَل",
+   "back": "tuya",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "كَتَبَ",
+   "back": "u yozdi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "سَكَن",
+   "back": "u yashadi / turdi",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "ك ت ب",
+   "back": "yozish bilan bog'liq (kitob, maktab, kotib)",
+   "deck": "msa"
+  }
+ ]
+}

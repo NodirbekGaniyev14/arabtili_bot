@@ -7,6 +7,7 @@ Natija: content/modules/{level}/{id}.json + avtomatik validatsiya.
 import json
 
 from anthropic import AsyncAnthropic
+from pydantic import ValidationError
 
 from config import settings
 from services.curriculum import (
@@ -32,7 +33,7 @@ KONTEKST:
 
 QAT'IY QOIDALAR:
 1. Faqat o'quvchi allaqachon bilgan grammatikani ishlat. Kelajakdagi mavzuni ISHLATMA.
-2. harakat_level="{harakat_level}" — shunga mos harakat qo'y. "full" bo'lsa HAR BIR arabcha so'z to'liq harakatlangan bo'lsin.
+2. harakat_level="{harakat_level}" — shunga mos harakat qo'y. "full" bo'lsa HAR BIR arabcha so'zning HAR BIR undoshiga harakat (fatha/kasra/damma/sukun) qo'y — hatto keng tarqalgan so'zlarda ham. MASALAN: "باب" EMAS → "بَاب"; "ماء" EMAS → "مَاء"; "ساعة" EMAS → "سَاعَة"; "بيت" EMAS → "بَيْت". Harakatsiz bitta so'z ham dars validatsiyadan o'tmaydi.
 3. Har bir yangi so'zning O'ZAGINI ko'rsat (root maydoni, "ك ت ب" formatida, bo'shliq bilan).
 4. So'zning o'zbekcha o'zlashma varianti bo'lsa (kitob, maktab, ilm...) — uni uz maydonida yoki hook'da MAJBURIY eslat.
 5. Tushuntirish tili: o'zbek (lotin alifbosi). Arabcha faqat misollarda.
@@ -85,7 +86,11 @@ def build_prompt(lesson_id: str) -> str:
         previous_topics="; ".join(_topics_before(lesson_id)) or "hech narsa (birinchi dars)",
         not_yet_taught="; ".join(_topics_after(lesson_id)),
         harakat_level=meta["harakat_level"],
-        words_target=meta.get("words_target") or 8,
+        words_target=(
+            meta["words_target"]
+            if meta.get("words_target")
+            else "0 (yangi so'z SHART EMAS — bu talaffuz/mashq darsi, ko'pi bilan 2-3 misol so'z)"
+        ),
         hejazi_rule=hejazi_rule,
         audio_prefix=level_dir,
         module=meta["module"],
@@ -93,10 +98,39 @@ def build_prompt(lesson_id: str) -> str:
     )
 
 
+def _extract_json(text: str) -> str:
+    """Model javobidan JSON obyektni ajratib oladi (```fence yoki xom matn)."""
+    text = text.strip()
+    if "```" in text:
+        # ```json ... ``` yoki ``` ... ``` ichidan
+        parts = text.split("```")
+        for part in parts:
+            p = part.strip()
+            if p.startswith("json"):
+                p = p[4:].strip()
+            if p.startswith("{"):
+                text = p
+                break
+    start = text.find("{")
+    end = text.rfind("}")
+    if start == -1 or end == -1:
+        return text
+    return text[start : end + 1]
+
+
+# Model javobini yo'naltirish uchun sxema (strict grammar emas — matnli ko'rsatma)
+_SCHEMA_HINT = json.dumps(LessonV2.model_json_schema(), ensure_ascii=False)
+
+
 async def generate_lesson(
     lesson_id: str, save: bool = True
 ) -> tuple[dict | None, list[str], list[str]]:
-    """Darsni generatsiya qiladi. Qaytaradi: (dars, errors, warnings)."""
+    """Darsni generatsiya qiladi. Qaytaradi: (dars, errors, warnings).
+
+    Eslatma: strict `output_format` (messages.parse) SXEMA JUDA KATTA bo'lgani
+    uchun "compiled grammar too large" xatosini beradi. Shu sabab oddiy
+    messages.create + JSON parse ishlatamiz; validatsiya lokal (bepul) qoladi.
+    """
     meta = load_curriculum().get(lesson_id)
     if not meta:
         return None, [f"curriculum'da yo'q: {lesson_id}"], []
@@ -105,23 +139,37 @@ async def generate_lesson(
 
     client = AsyncAnthropic(api_key=settings.anthropic_api_key)
 
-    response = await client.messages.parse(
+    user_msg = (
+        f"{lesson_id} darsini to'liq yarat.\n\n"
+        f"JAVOB FORMATI: FAQAT bitta JSON obyekt qaytar (izohsiz, markdown "
+        f"belgisisiz). U quyidagi JSON Schema'ga to'liq mos bo'lsin:\n\n"
+        f"{_SCHEMA_HINT}"
+    )
+
+    response = await client.messages.create(
         model=MODEL,
         max_tokens=16000,
         thinking={"type": "adaptive"},
         system=build_prompt(lesson_id),
-        messages=[
-            {
-                "role": "user",
-                "content": f"{lesson_id} darsini to'liq yarat. Faqat sxemaga mos JSON.",
-            }
-        ],
-        output_format=LessonV2,
+        messages=[{"role": "user", "content": user_msg}],
     )
 
-    lesson = response.parsed_output
-    if lesson is None:
-        return None, ["AI javobini sxemaga o'girib bo'lmadi"], []
+    text = "".join(
+        block.text for block in response.content if block.type == "text"
+    ).strip()
+    if not text:
+        return None, ["AI matnli javob qaytarmadi (bo'sh)"], []
+
+    try:
+        raw = json.loads(_extract_json(text))
+    except json.JSONDecodeError as e:
+        return None, [f"JSON parse xatosi: {e}"], []
+
+    try:
+        lesson = LessonV2.model_validate(raw)
+    except ValidationError as e:
+        msgs = [f"{'.'.join(str(x) for x in err['loc'])}: {err['msg']}" for err in e.errors()[:8]]
+        return None, ["Sxemaga mos emas:"] + msgs, []
 
     data = lesson.model_dump()
     errors, warnings = validate_lesson(

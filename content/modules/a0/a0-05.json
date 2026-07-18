@@ -1,0 +1,341 @@
+{
+ "id": "a0-05",
+ "level": "A0",
+ "module": "letters",
+ "order": 5,
+ "title_uz": "Harf oilasi 4: س ش ص ض",
+ "title_ar": "س ش ص ض",
+ "can_do_uz": "س, ش, ص, ض harflarini shakli va tovushi bo'yicha ajrata olaman va qalin (emfatik) tovush nima ekanini tushunaman.",
+ "duration_min": 30,
+ "prerequisites": [
+  "a0-04"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "O'zbekchada aytadigan 'sabr' so'zi aslida arabchadan kelgan — u صَبْر deb yoziladi va ichida yangi 'qalin s' (ص) harfi bor. Bu darsda oddiy s bilan qalin s ning farqini his qilasiz.",
+ "grammar": {
+  "point_ar": "س ش ص ض",
+  "explanation_uz": "Bu oila ikki shakl guruhiga bo'linadi. Birinchi guruh: س (nuqtasiz) va ش (uch nuqtali) — asosiy shakli 'tishli'. Ikkinchi guruh: ص (nuqtasiz) va ض (bitta nuqtali) — asosiy shakli 'halqali'. Muhim yangilik: ص va ض — qalin (emfatik) tovushlar. Ularni aytishda tilning orqasi tanglayga ko'tariladi va tovush 'to'la, yo'g'on' chiqadi. س yumshoq oddiy 's', ص esa yo'g'on 's'. ض o'zbekda mos tovush yo'q — u qalin 'd'.",
+  "table": [
+   {
+    "ar": "س",
+    "uz": "yumshoq oddiy 's' (nuqtasiz, tishli)",
+    "form": "sīn"
+   },
+   {
+    "ar": "ش",
+    "uz": "'sh' — o'zbekcha 'sh' bilan bir xil (uch nuqtali)",
+    "form": "shīn"
+   },
+   {
+    "ar": "ص",
+    "uz": "qalin, yo'g'on 's' (nuqtasiz, halqali)",
+    "form": "ṣād"
+   },
+   {
+    "ar": "ض",
+    "uz": "qalin, yo'g'on 'd' (bitta nuqtali, halqali)",
+    "form": "ḍād"
+   }
+  ],
+  "common_mistakes_uz": [
+   "ص ni oddiy س (yumshoq s) deb o'qib yuborish — ص har doim yo'g'on aytiladi.",
+   "ش (uch nuqta) bilan س (nuqtasiz) ni chalkashtirish — nuqta soniga qarang.",
+   "ض tovushini oddiy 'd' deb aytish — u qalin, tildan chiqadigan yo'g'on tovush.",
+   "ص va ض ni shakli o'xshash deb bir xil o'qish — ض da bitta nuqta bor, ص da nuqta yo'q."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ص ب ر",
+   "meaning_uz": "sabr qilmoq, chidamli bo'lmoq",
+   "uz_cognates": [
+    "sabr",
+    "sobir (sabrli)"
+   ],
+   "derived": [
+    {
+     "ar": "صَبْر",
+     "uz": "sabr, chidam",
+     "pattern": ""
+    },
+    {
+     "ar": "صَابِر",
+     "uz": "sabrli, chidamli",
+     "pattern": ""
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "شَمْس",
+   "translit": "shams",
+   "uz": "quyosh",
+   "root": "ش م س",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/shams.mp3",
+   "example_ar": "شَمْس",
+   "example_uz": "quyosh",
+   "srs": true
+  },
+  {
+   "ar": "صَبْر",
+   "translit": "sabr",
+   "uz": "sabr, chidam (o'zbekcha 'sabr' shu so'zdan)",
+   "root": "ص ب ر",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/sabr.mp3",
+   "example_ar": "صَبْر",
+   "example_uz": "sabr",
+   "srs": true
+  },
+  {
+   "ar": "صَدْر",
+   "translit": "sadr",
+   "uz": "ko'krak",
+   "root": "ص د ر",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/sadr.mp3",
+   "example_ar": "صَدْر",
+   "example_uz": "ko'krak",
+   "srs": true
+  },
+  {
+   "ar": "شَجَر",
+   "translit": "shajar",
+   "uz": "daraxt(lar)",
+   "root": "ش ج ر",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/shajar.mp3",
+   "example_ar": "شَجَر",
+   "example_uz": "daraxt",
+   "srs": true
+  },
+  {
+   "ar": "سَرِير",
+   "translit": "sarīr",
+   "uz": "karavot, to'shak",
+   "root": "س ر ر",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/sarir.mp3",
+   "example_ar": "سَرِير",
+   "example_uz": "karavot",
+   "srs": true
+  },
+  {
+   "ar": "شَرِبَ",
+   "translit": "shariba",
+   "uz": "ichdi",
+   "root": "ش ر ب",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a0/shariba.mp3",
+   "example_ar": "شَرِبَ",
+   "example_uz": "u ichdi",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "شَمْس. شَجَر. صَبْر. صَدْر. سَرِير.",
+   "questions": [
+    {
+     "q_uz": "Qaysi so'z 'quyosh' degani?",
+     "a": "شَمْس"
+    },
+    {
+     "q_uz": "Qaysi so'z o'zbekchadagi 'sabr' bilan bir xil?",
+     "a": "صَبْر"
+    },
+    {
+     "q_uz": "'daraxt' qaysi so'z?",
+     "a": "شَجَر"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/shams.mp3",
+   "transcript_ar": "شَمْس",
+   "questions": [
+    {
+     "q_uz": "Eshitgan so'zingizni o'zbekchaga o'giring.",
+     "a": "quyosh"
+    },
+    {
+     "q_uz": "So'zning birinchi harfi qaysi (س yoki ش)?",
+     "a": "ش"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Quyidagi so'zlarni ovoz chiqarib ayting. ص va ض harflarini yo'g'on (qalin), س ni yumshoq talaffuz qilishga e'tibor bering.",
+   "target_ar": [
+    "شَمْس",
+    "صَبْر",
+    "صَدْر",
+    "سَرِير"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "شَمْس va صَبْر so'zlarini o'ngdan chapga daftaringizga uch martadan ko'chiring. ص ning halqasini va ش ning uch nuqtasini to'g'ri chizing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi harf 'qalin (yo'g'on) s' tovushini beradi?",
+   "q_ar": "",
+   "options": [
+    "س",
+    "ش",
+    "ص",
+    "ض"
+   ],
+   "answer": "ص",
+   "explain_uz": "ص — qalin, emfatik 's'. س esa yumshoq oddiy 's'.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "O'zbekcha 'sh' tovushi qaysi harfga to'g'ri keladi?",
+   "q_ar": "",
+   "options": [
+    "س",
+    "ش",
+    "ص",
+    "ض"
+   ],
+   "answer": "ش",
+   "explain_uz": "ش (uch nuqtali) = 'sh'.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi harfda bitta nuqta bor va u 'qalin d' tovushini beradi?",
+   "q_ar": "",
+   "options": [
+    "ص",
+    "ض",
+    "س",
+    "ش"
+   ],
+   "answer": "ض",
+   "explain_uz": "ض — bitta nuqtali, qalin 'd'. O'zbekda bunday tovush yo'q.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "Bu so'zni o'zbekchaga o'giring:",
+   "q_ar": "شَمْس",
+   "options": [],
+   "answer": "quyosh",
+   "explain_uz": "شَمْس = quyosh.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "صَبْر so'zi o'zbekchada qaysi so'z bilan bir xil ildizdan?",
+   "q_ar": "",
+   "options": [
+    "sabr",
+    "shakar",
+    "sadr",
+    "safar"
+   ],
+   "answer": "sabr",
+   "explain_uz": "صَبْر → o'zbekcha 'sabr' (chidam).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshitilgan so'zni yozing (quyosh).",
+   "q_ar": "",
+   "options": [],
+   "answer": "شَمْس",
+   "explain_uz": "ش + م + س = شَمْس.",
+   "audio": "a0/shams.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "'ko'krak' so'zini arabcha yozing.",
+   "q_ar": "",
+   "options": [],
+   "answer": "صَدْر",
+   "explain_uz": "صَدْر — ص (qalin s) bilan boshlanadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "word",
+   "front": "شَمْس",
+   "back": "quyosh (shams)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "صَبْر",
+   "back": "sabr, chidam",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "صَدْر",
+   "back": "ko'krak (sadr)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "شَجَر",
+   "back": "daraxt (shajar)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "سَرِير",
+   "back": "karavot, to'shak (sarīr)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "شَرِبَ",
+   "back": "u ichdi (shariba)",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "ص ب ر",
+   "back": "sabr qilmoq, chidam — صَبْر (sabr), صَابِر (sabrli)",
+   "deck": "msa"
+  }
+ ]
+}

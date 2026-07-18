@@ -1,0 +1,351 @@
+{
+ "id": "a0-15",
+ "level": "A0",
+ "module": "harakat",
+ "order": 15,
+ "title_uz": "Ta marbuta (ة)",
+ "title_ar": "التَّاء المَرْبُوطة",
+ "can_do_uz": "Muannaslik belgisi bo'lgan ta marbuta (ة) harfini tanib, so'z oxirida to'g'ri o'qiy olaman.",
+ "duration_min": 30,
+ "prerequisites": [
+  "a0-14"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "O'zbekchada \"maktab\" so'zi arabchadan kelgan — مَدْرَسة. So'z oxiridagi mana shu dumaloq harf — ة (ta marbuta) — bu narsaning \"ayol jinsi\" (muannas) ekanini bildiradi. Uni tanib olsangiz, arabcha so'zlarning yarmi ochiladi!",
+ "grammar": {
+  "point_ar": "التَّاء المَرْبُوطة",
+  "explanation_uz": "Ta marbuta (ة) — \"bog'langan ta\" degani. Bu ه harfiga ikkita nuqta qo'yilgan shakl (ة). U faqat so'z OXIRIDA keladi va odatda so'zning ayol jinsida (muannas) ekanini bildiradi. Oldida deyarli har doim fatha (a) tovushi bo'ladi. To'xtab o'qiganda \"h\" yoki deyarli jimgina, davom etib o'qiganda esa \"t\" bo'lib eshitiladi. Boshlang'ich darajada uni oddiygina qisqa \"a\" deb o'qishingiz kifoya: مَدْرَسة = madrasa.",
+  "table": [
+   {
+    "ar": "ة",
+    "uz": "so'z oxirida (ulangan shakl)",
+    "form": "oxiri"
+   },
+   {
+    "ar": "ـة",
+    "uz": "oldingi harfga ulanadi",
+    "form": "ulangan"
+   },
+   {
+    "ar": "مَدْرَسة",
+    "uz": "maktab (madrasa)",
+    "form": "misol"
+   },
+   {
+    "ar": "سَاعة",
+    "uz": "soat",
+    "form": "misol"
+   },
+   {
+    "ar": "مَدِينة",
+    "uz": "shahar",
+    "form": "misol"
+   }
+  ],
+  "common_mistakes_uz": [
+   "ة ni oddiy ت (ta) deb o'qib yuborish — u so'z oxirida yumshoq \"a/h\" bo'ladi.",
+   "ة ni ه (ha) bilan chalkashtirish — ta marbutada ustida IKKITA nuqta bor.",
+   "ة ni so'z o'rtasida yozish — u FAQAT so'z oxirida keladi.",
+   "Oldidagi fatha (a) ni unutish — ta marbutadan oldin deyarli doim \"a\" tovushi bo'ladi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "د ر س",
+   "meaning_uz": "o'qish, dars berish",
+   "uz_cognates": [
+    "dars",
+    "madrasa",
+    "mudarris"
+   ],
+   "derived": [
+    {
+     "ar": "مَدْرَسة",
+     "uz": "maktab, madrasa",
+     "pattern": "مَفْعَلة"
+    },
+    {
+     "ar": "دَرْس",
+     "uz": "dars",
+     "pattern": "فَعْل"
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "مَدْرَسة",
+   "translit": "madrasa",
+   "uz": "maktab, madrasa (o'zbekcha \"maktab\" ham arabchadan)",
+   "root": "د ر س",
+   "pattern": "مَفْعَلة",
+   "pos": "ot",
+   "audio": "a0/madrasa.mp3",
+   "example_ar": "هٰذِهِ مَدْرَسة.",
+   "example_uz": "Bu maktab.",
+   "srs": true
+  },
+  {
+   "ar": "سَاعة",
+   "translit": "saa'a",
+   "uz": "soat",
+   "root": "س و ع",
+   "pattern": "فَاعِلة",
+   "pos": "ot",
+   "audio": "a0/saaa.mp3",
+   "example_ar": "هٰذِهِ سَاعة.",
+   "example_uz": "Bu soat.",
+   "srs": true
+  },
+  {
+   "ar": "مَدِينة",
+   "translit": "madiina",
+   "uz": "shahar (Madina shahri nomi ham shundan)",
+   "root": "م د ن",
+   "pattern": "فَعِيلة",
+   "pos": "ot",
+   "audio": "a0/madiina.mp3",
+   "example_ar": "مَكّة مَدِينة.",
+   "example_uz": "Makka — shahar.",
+   "srs": true
+  },
+  {
+   "ar": "طَالِبة",
+   "translit": "taaliba",
+   "uz": "talaba (qiz)",
+   "root": "ط ل ب",
+   "pattern": "فَاعِلة",
+   "pos": "ot",
+   "audio": "a0/taaliba.mp3",
+   "example_ar": "هٰذِهِ طَالِبة.",
+   "example_uz": "Bu talaba (qiz).",
+   "srs": true
+  },
+  {
+   "ar": "كَبِيرة",
+   "translit": "kabiira",
+   "uz": "katta (muannas shakli)",
+   "root": "ك ب ر",
+   "pattern": "فَعِيلة",
+   "pos": "sifat",
+   "audio": "a0/kabiira.mp3",
+   "example_ar": "مَدِينة كَبِيرة.",
+   "example_uz": "Katta shahar.",
+   "srs": true
+  },
+  {
+   "ar": "غُرْفة",
+   "translit": "g'urfa",
+   "uz": "xona",
+   "root": "غ ر ف",
+   "pattern": "فُعْلة",
+   "pos": "ot",
+   "audio": "a0/gurfa.mp3",
+   "example_ar": "هٰذِهِ غُرْفة كَبِيرة.",
+   "example_uz": "Bu katta xona.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "هٰذِهِ مَدِينة كَبِيرة. فِي المَدِينة مَدْرَسة. المَدْرَسة كَبِيرة. فِي المَدْرَسة غُرْفة. الطَّالِبة فِي الغُرْفة.",
+   "questions": [
+    {
+     "q_uz": "Shahar qanday? (matndan arabcha so'z toping)",
+     "a": "كَبِيرة"
+    },
+    {
+     "q_uz": "Maktab qayerda joylashgan?",
+     "a": "المَدِينة — shaharda"
+    },
+    {
+     "q_uz": "Talaba (qiz) qayerda?",
+     "a": "الغُرْفة — xonada"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/madrasa.mp3",
+   "transcript_ar": "مَدْرَسة، سَاعة، مَدِينة، طَالِبة، غُرْفة",
+   "questions": [
+    {
+     "q_uz": "Eshitgan so'zlaringizning oxirida qaysi harf takrorlanadi?",
+     "a": "ة (ta marbuta)"
+    },
+    {
+     "q_uz": "\"Soat\" so'zi qaysi?",
+     "a": "سَاعة"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Quyidagi so'zlarni baland ovozda ayting va ta marbutani (ة) qisqa \"a\" bilan tugating: مَدْرَسة، مَدِينة، سَاعة.",
+   "target_ar": [
+    "مَدْرَسة",
+    "مَدِينة",
+    "سَاعة"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "مَدْرَسة so'zini ko'chirib yozing va oxiridagi ta marbuta (ة) ustida ikkita nuqtani unutmang. So'ngra سَاعة so'zini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Ta marbuta (ة) so'zning qaysi qismida keladi?",
+   "q_ar": "",
+   "options": [
+    "boshida",
+    "o'rtasida",
+    "oxirida",
+    "istalgan joyda"
+   ],
+   "answer": "oxirida",
+   "explain_uz": "Ta marbuta faqat so'z oxirida keladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "ة harfi ustida nechta nuqta bor?",
+   "q_ar": "",
+   "options": [
+    "nuqta yo'q",
+    "bitta",
+    "ikkita",
+    "uchta"
+   ],
+   "answer": "ikkita",
+   "explain_uz": "ة = ه ustiga ikkita nuqta qo'yilgan shakl.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "",
+   "q_ar": "مَدْرَسة",
+   "options": [],
+   "answer": "maktab (madrasa)",
+   "explain_uz": "O'zbekcha \"maktab\" ham arabchadan olingan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "soat",
+   "q_ar": "",
+   "options": [],
+   "answer": "سَاعة",
+   "explain_uz": "Oxirida ta marbuta (ة) bor.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "مَدْرَسة so'zining o'zagini tanlang.",
+   "q_ar": "",
+   "options": [
+    "د ر س",
+    "م د ن",
+    "ك ب ر"
+   ],
+   "answer": "د ر س",
+   "explain_uz": "\"dars\" va \"madrasa\" bir o'zakdan (د ر س).",
+   "audio": "",
+   "root": "د ر س",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "fill_blank",
+   "q_uz": "Bo'sh joyni to'ldiring: مَدِين_ (shahar)",
+   "q_ar": "",
+   "options": [],
+   "answer": "ة",
+   "explain_uz": "Muannas ot oxirida ta marbuta keladi: مَدِينة.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "ة dan oldin odatda qaysi harakat keladi?",
+   "q_ar": "",
+   "options": [
+    "fatha (a)",
+    "kasra (i)",
+    "damma (u)",
+    "sukun"
+   ],
+   "answer": "fatha (a)",
+   "explain_uz": "Ta marbutadan oldin deyarli doim fatha (a) tovushi bo'ladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "word",
+   "front": "مَدْرَسة",
+   "back": "maktab, madrasa (o'zak: د ر س)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "سَاعة",
+   "back": "soat",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "مَدِينة",
+   "back": "shahar (Madina)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "طَالِبة",
+   "back": "talaba (qiz)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "كَبِيرة",
+   "back": "katta (muannas)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "غُرْفة",
+   "back": "xona",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "د ر س",
+   "back": "o'qish, dars berish → دَرْس (dars), مَدْرَسة (maktab)",
+   "deck": "msa"
+  },
+  {
+   "type": "pattern",
+   "front": "مَفْعَلة",
+   "back": "joy oti vazni (muannas): مَدْرَسة (maktab)",
+   "deck": "msa"
+  }
+ ]
+}

@@ -1,0 +1,345 @@
+{
+ "id": "a0-02",
+ "level": "A0",
+ "module": "letters",
+ "order": 2,
+ "title_uz": "Harf oilasi 1: ب ت ث ن ي",
+ "title_ar": "عائلة الحروف: ب ت ث ن ي",
+ "can_do_uz": "Bir xil shaklga ega bo'lgan ب ت ث ن ي harflarini faqat nuqtalari soni va joyi bo'yicha ajrata olaman va بَيْت so'zini o'qiy olaman.",
+ "duration_min": 30,
+ "prerequisites": [
+  "a0-01"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "Arab yozuvida ba'zi harflar bir tuxumga o'xshaydi — farqi faqat nuqtalarda! Xuddi o'zbekcha 'g' va 'g'' kabi. Bugun 'uy' degan so'zni — بَيْت (bayt) — o'qib chiqasiz. Aytmoqchi, mustahkam degan arabcha ثَابِت so'zi o'zbekchadagi 'sobit' so'zining bobosidir.",
+ "grammar": {
+  "point_ar": "ب ت ث ن ي",
+  "explanation_uz": "Bu beshta harfning tanasi (asosi) deyarli bir xil — pastga qayrilgan kichkina qayiqcha. Ularni bir-biridan faqat NUQTALAR ajratib turadi: nuqta soni (1, 2 yoki 3 ta) va nuqta joyi (tepada yoki pastda). Shuning uchun ularni 'bitta oila' deymiz.",
+  "table": [
+   {
+    "ar": "ب",
+    "uz": "b — pastda 1 ta nuqta",
+    "form": "ba"
+   },
+   {
+    "ar": "ت",
+    "uz": "t — tepada 2 ta nuqta",
+    "form": "ta"
+   },
+   {
+    "ar": "ث",
+    "uz": "s (tishlararo) — tepada 3 ta nuqta",
+    "form": "sa"
+   },
+   {
+    "ar": "ن",
+    "uz": "n — tepada 1 ta nuqta",
+    "form": "nun"
+   },
+   {
+    "ar": "ي",
+    "uz": "y/i — pastda 2 ta nuqta",
+    "form": "ya"
+   }
+  ],
+  "common_mistakes_uz": [
+   "ب va ن ni chalkashtirish: ب da nuqta PASTDA, ن da nuqta TEPADA.",
+   "ت va ث ni chalkashtirish: ت da 2 ta, ث da 3 ta nuqta bor.",
+   "ي ning nuqtalari PASTDA va 2 ta ekanini unutish.",
+   "ث harfini 's' emas, 't' deb o'qib yuborish — u tishlararo yumshoq 's' tovushi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ب ي ت",
+   "meaning_uz": "uy, turar joy bilan bog'liq o'zak",
+   "uz_cognates": [
+    "bayt (she'rning bir bandi — arabchadan)"
+   ],
+   "derived": [
+    {
+     "ar": "بَيْت",
+     "uz": "uy",
+     "pattern": "فَعْل"
+    },
+    {
+     "ar": "بُيُوت",
+     "uz": "uylar",
+     "pattern": "فُعُول"
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "بَيْت",
+   "translit": "bayt",
+   "uz": "uy",
+   "root": "ب ي ت",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "a0/bayt.mp3",
+   "example_ar": "بَيْت كَبِير",
+   "example_uz": "katta uy (misol; كبير keyingi darslarda)",
+   "srs": true
+  },
+  {
+   "ar": "بَاب",
+   "translit": "bāb",
+   "uz": "eshik",
+   "root": "ب و ب",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/bab.mp3",
+   "example_ar": "بَاب البَيْت",
+   "example_uz": "uyning eshigi",
+   "srs": true
+  },
+  {
+   "ar": "بِنْت",
+   "translit": "bint",
+   "uz": "qiz (farzand)",
+   "root": "ب ن ت",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/bint.mp3",
+   "example_ar": "بِنْت صَغِيرَة",
+   "example_uz": "kichkina qiz (misol)",
+   "srs": true
+  },
+  {
+   "ar": "تِين",
+   "translit": "tīn",
+   "uz": "anjir",
+   "root": "ت ي ن",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/tin.mp3",
+   "example_ar": "تِين وَعِنَب",
+   "example_uz": "anjir va uzum (Qur'onda ذ«التِّين» surasi bor)",
+   "srs": true
+  },
+  {
+   "ar": "نَبِيّ",
+   "translit": "nabiyy",
+   "uz": "payg'ambar",
+   "root": "ن ب أ",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/nabiy.mp3",
+   "example_ar": "مُحَمَّد نَبِيّ",
+   "example_uz": "Muhammad payg'ambar (a.s.)",
+   "srs": true
+  },
+  {
+   "ar": "ثَابِت",
+   "translit": "thābit",
+   "uz": "barqaror, mustahkam (o'zbekcha 'sobit')",
+   "root": "ث ب ت",
+   "pattern": "",
+   "pos": "sifat",
+   "audio": "a0/thabit.mp3",
+   "example_ar": "بَيْت ثَابِت",
+   "example_uz": "mustahkam uy",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "بَيْت. بَاب. بِنْت. تِين. نَبِيّ. ثَابِت.",
+   "questions": [
+    {
+     "q_uz": "Qaysi so'z 'uy' degani?",
+     "a": "بَيْت"
+    },
+    {
+     "q_uz": "Qaysi so'z 'eshik' degani?",
+     "a": "بَاب"
+    },
+    {
+     "q_uz": "'anjir' so'zini toping.",
+     "a": "تِين"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/a0-02-listen.mp3",
+   "transcript_ar": "بَيْت — بِنْت — تِين — نَبِيّ",
+   "questions": [
+    {
+     "q_uz": "Birinchi eshitilgan so'z nima?",
+     "a": "بَيْت"
+    },
+    {
+     "q_uz": "'payg'ambar' so'zi nechanchi bo'lib eshitildi?",
+     "a": "to'rtinchi (نَبِيّ)"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Quyidagi so'zlarni ovoz chiqarib, sekin o'qing va o'zingizni tekshiring: بَيْت، بَاب، بِنْت، تِين. Har birida qaysi harf boshida turganini ayting.",
+   "target_ar": [
+    "بَيْت",
+    "بَاب",
+    "بِنْت",
+    "تِين"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Daftaringizga ب، ت، ث، ن، ي harflarini qatorlab yozing va har birining tagiga nuqtasi soni va joyini (tepa/past) belgilang. Keyin بَيْت so'zini ko'chirib yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi harfda nuqta PASTDA va 1 ta?",
+   "q_ar": "",
+   "options": [
+    "ب",
+    "ت",
+    "ن",
+    "ث"
+   ],
+   "answer": "ب",
+   "explain_uz": "ب — pastda bitta nuqta. ن da nuqta tepada bo'ladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi harfda tepada 3 ta nuqta bor?",
+   "q_ar": "",
+   "options": [
+    "ت",
+    "ث",
+    "ن",
+    "ي"
+   ],
+   "answer": "ث",
+   "explain_uz": "ث — tepada uchta nuqta, tishlararo yumshoq 's' tovushi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "Bu so'zni o'zbekchaga o'giring.",
+   "q_ar": "بَيْت",
+   "options": [],
+   "answer": "uy",
+   "explain_uz": "بَيْت (bayt) — uy.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "'eshik' so'zini arabcha yozing.",
+   "q_ar": "",
+   "options": [],
+   "answer": "بَاب",
+   "explain_uz": "بَاب (bāb) — eshik.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "Qaysi so'z ب ي ت o'zagidan?",
+   "q_ar": "",
+   "options": [
+    "بَيْت",
+    "تِين",
+    "نَبِيّ",
+    "ثَابِت"
+   ],
+   "answer": "بَيْت",
+   "explain_uz": "بَيْت — ب ي ت o'zagidan yasalgan.",
+   "audio": "",
+   "root": "ب ي ت",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshitilgan so'zni yozing.",
+   "q_ar": "",
+   "options": [],
+   "answer": "تِين",
+   "explain_uz": "تِين (tīn) — anjir. Boshida ت (tepada 2 nuqta).",
+   "audio": "a0/tin.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "ن va ب orasidagi asosiy farq nima?",
+   "q_ar": "",
+   "options": [
+    "nuqta joyi (ن-tepada, ب-pastda)",
+    "nuqta soni",
+    "tanasi shakli",
+    "hech qanday farq yo'q"
+   ],
+   "answer": "nuqta joyi (ن-tepada, ب-pastda)",
+   "explain_uz": "Ikkalasida ham 1 ta nuqta, farqi joyida: ن tepada, ب pastda.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "word",
+   "front": "بَيْت",
+   "back": "uy (bayt)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "بَاب",
+   "back": "eshik (bāb)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "بِنْت",
+   "back": "qiz, farzand (bint)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "تِين",
+   "back": "anjir (tīn)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "نَبِيّ",
+   "back": "payg'ambar (nabiyy)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "ثَابِت",
+   "back": "barqaror, mustahkam — o'zbekcha 'sobit' (thābit)",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "ب ي ت",
+   "back": "uy o'zagi: بَيْت (uy), بُيُوت (uylar)",
+   "deck": "msa"
+  }
+ ]
+}

@@ -191,4 +191,6 @@ class Plan(Base):
     module_order_json: Mapped[str] = mapped_column(Text, default="[]")
     weekly_schedule_json: Mapped[str] = mapped_column(Text, default="[]")
     motivation: Mapped[str] = mapped_column(Text, default="")
+    # v2 curriculum: foydalanuvchi kursni qaysi darsdan boshlaydi
+    start_lesson: Mapped[str] = mapped_column(String(12), default="a0-01")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)

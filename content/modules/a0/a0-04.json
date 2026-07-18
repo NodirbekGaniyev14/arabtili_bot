@@ -1,0 +1,342 @@
+{
+ "id": "a0-04",
+ "level": "A0",
+ "module": "letters",
+ "order": 4,
+ "title_uz": "Harf oilasi 3: د ذ ر ز",
+ "title_ar": "د ذ ر ز",
+ "can_do_uz": "د, ذ, ر, ز harflarini bir-biridan nuqtasi bilan ajrata olaman va ularni so'zlarda taniy olaman.",
+ "duration_min": 30,
+ "prerequisites": [
+  "a0-03"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "Bu darsni arabcha \"دَرْس\" deb ataymiz — o'zbekchadagi \"dars\" so'zi aynan shu yerdan kelgan! Endi \"dars\" so'zini o'zining ona tilida — arabchada o'qishni o'rganamiz.",
+ "grammar": {
+  "point_ar": "د ذ ر ز",
+  "explanation_uz": "Bu to'rt harf shakli jihatidan juda o'xshash va faqat NUQTA bilan farqlanadi. د va ر — nuqtasiz; ذ va ز — ustida bitta nuqta bilan. Yana bir muhim xususiyati: bu harflar o'zidan KEYINGI harfga ulanmaydi (shuning uchun ularni \"ulanmaydigan harflar\" deb ataymiz). Hozircha ularni tanib olishga e'tibor beramiz.",
+  "table": [
+   {
+    "ar": "د",
+    "uz": "\"d\" tovushi, nuqtasiz",
+    "form": "دَرْس"
+   },
+   {
+    "ar": "ذ",
+    "uz": "tishlararo \"z\" (inglizcha 'the' dagi kabi), ustida 1 nuqta",
+    "form": "ذَهَب"
+   },
+   {
+    "ar": "ر",
+    "uz": "\"r\" tovushi, nuqtasiz",
+    "form": "وَرْد"
+   },
+   {
+    "ar": "ز",
+    "uz": "\"z\" tovushi, ustida 1 nuqta",
+    "form": "زَيْت"
+   }
+  ],
+  "common_mistakes_uz": [
+   "د va ذ ni aralashtirib yuborish — farqi faqat ustidagi nuqta (ذ da nuqta bor).",
+   "ر va ز ni aralashtirish — ز ning ustida nuqta bor, ر da yo'q.",
+   "ذ ni oddiy \"z\" deb o'qish — aslida u tishlararo, yumshoqroq tovush.",
+   "Bu harflardan keyingi harfni ularga ulab yozishga urinish — ular keyingisiga ulanmaydi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "د ر س",
+   "meaning_uz": "o'rganish, dars berish",
+   "uz_cognates": [
+    "dars",
+    "madrasa",
+    "mudarris"
+   ],
+   "derived": [
+    {
+     "ar": "دَرْس",
+     "uz": "dars",
+     "pattern": ""
+    },
+    {
+     "ar": "مُدَرِّس",
+     "uz": "o'qituvchi (mudarris)",
+     "pattern": ""
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "دَرْس",
+   "translit": "dars",
+   "uz": "dars (o'zbekcha \"dars\" shu so'zdan)",
+   "root": "د ر س",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/dars.mp3",
+   "example_ar": "دَرْس جَديد",
+   "example_uz": "yangi dars",
+   "srs": true
+  },
+  {
+   "ar": "وَرْد",
+   "translit": "ward",
+   "uz": "gul, atirgul",
+   "root": "و ر د",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/ward.mp3",
+   "example_ar": "وَرْد جَميل",
+   "example_uz": "chiroyli gul",
+   "srs": true
+  },
+  {
+   "ar": "بَرْد",
+   "translit": "bard",
+   "uz": "sovuq",
+   "root": "ب ر د",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/bard.mp3",
+   "example_ar": "بَرْد",
+   "example_uz": "sovuq",
+   "srs": true
+  },
+  {
+   "ar": "جَديد",
+   "translit": "jadiid",
+   "uz": "yangi",
+   "root": "ج د د",
+   "pattern": "",
+   "pos": "sifat",
+   "audio": "a0/jadiid.mp3",
+   "example_ar": "دَرْس جَديد",
+   "example_uz": "yangi dars",
+   "srs": true
+  },
+  {
+   "ar": "زَيْت",
+   "translit": "zayt",
+   "uz": "yog', moy (zaytun moyi \"zayt\")",
+   "root": "ز ي ت",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/zayt.mp3",
+   "example_ar": "زَيْت",
+   "example_uz": "yog'",
+   "srs": true
+  },
+  {
+   "ar": "ذَهَب",
+   "translit": "dhahab",
+   "uz": "oltin",
+   "root": "ذ ه ب",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/dhahab.mp3",
+   "example_ar": "ذَهَب",
+   "example_uz": "oltin",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "دَرْس جَديد. وَرْد وَ ذَهَب. بَرْد.",
+   "questions": [
+    {
+     "q_uz": "Matndagi \"دَرْس\" so'zi qanday o'qiladi?",
+     "a": "dars"
+    },
+    {
+     "q_uz": "\"ذَهَب\" so'zi nimani bildiradi?",
+     "a": "oltin"
+    },
+    {
+     "q_uz": "Matnda \"sovuq\" ma'nosini bergan so'zni toping.",
+     "a": "بَرْد"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/lesson04_listen.mp3",
+   "transcript_ar": "دَرْس · وَرْد · بَرْد · زَيْت",
+   "questions": [
+    {
+     "q_uz": "Birinchi eshitilgan so'z nima?",
+     "a": "dars"
+    },
+    {
+     "q_uz": "Oxirgi eshitilgan so'z nima?",
+     "a": "zayt (yog')"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Quyidagi so'zlarni ovoz chiqarib o'qing va د/ذ hamda ر/ز tovushlarini aniq ajrating.",
+   "target_ar": [
+    "دَرْس",
+    "وَرْد",
+    "ذَهَب",
+    "زَيْت"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "د, ذ, ر, ز harflarini alohida yozing, so'ng \"دَرْس\" va \"وَرْد\" so'zlarini ko'chirib yozing. Bu harflar keyingi harfga ulanmasligini eslang.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi harf \"r\" tovushini beradi?",
+   "q_ar": "",
+   "options": [
+    "د",
+    "ر",
+    "ز",
+    "ذ"
+   ],
+   "answer": "ر",
+   "explain_uz": "ر — nuqtasiz \"r\" tovushi. Ustida nuqta bo'lsa u ز (z) bo'ladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "د va ذ orasidagi farq nimada?",
+   "q_ar": "",
+   "options": [
+    "Shaklida",
+    "Ustidagi nuqtada (ذ da nuqta bor)",
+    "Kattaligida",
+    "Hech qanday farq yo'q"
+   ],
+   "answer": "Ustidagi nuqtada (ذ da nuqta bor)",
+   "explain_uz": "د nuqtasiz, ذ ustida bitta nuqta bilan yoziladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "Bu so'zni o'zbekchaga tarjima qiling.",
+   "q_ar": "دَرْس",
+   "options": [],
+   "answer": "dars",
+   "explain_uz": "\"دَرْس\" — o'zbekchadagi \"dars\" so'zining asli.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "\"دَرْس\" so'zining o'zagini tanlang.",
+   "q_ar": "دَرْس",
+   "options": [
+    "د ر س",
+    "و ر د",
+    "ب ر د",
+    "ز ي ت"
+   ],
+   "answer": "د ر س",
+   "explain_uz": "دَرْس so'zi د-ر-س o'zagidan yasalgan (madrasa, mudarris ham shundan).",
+   "audio": "",
+   "root": "د ر س",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshitilgan so'zni yozing.",
+   "q_ar": "",
+   "options": [],
+   "answer": "وَرْد",
+   "explain_uz": "وَرْد — gul, atirgul.",
+   "audio": "a0/ward.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Ustida nuqta bo'lgan, \"z\" tovushini beruvchi harf qaysi?",
+   "q_ar": "",
+   "options": [
+    "ر",
+    "د",
+    "ز",
+    "ب"
+   ],
+   "answer": "ز",
+   "explain_uz": "ز — ustida nuqtali \"z\". Nuqtasi olib tashlansa ر (r) bo'ladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "\"sovuq\" so'zini arabcha yozing.",
+   "q_ar": "",
+   "options": [],
+   "answer": "بَرْد",
+   "explain_uz": "بَرْد — sovuq. Ichida ر va د harflari bor.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "word",
+   "front": "دَرْس",
+   "back": "dars",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "وَرْد",
+   "back": "gul, atirgul",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "بَرْد",
+   "back": "sovuq",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "جَديد",
+   "back": "yangi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "زَيْت",
+   "back": "yog', moy",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "ذَهَب",
+   "back": "oltin",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "د ر س",
+   "back": "o'rganish, dars berish (dars, madrasa, mudarris)",
+   "deck": "msa"
+  }
+ ]
+}

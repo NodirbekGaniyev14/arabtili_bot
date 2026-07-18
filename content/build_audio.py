@@ -34,6 +34,7 @@ def collect_tasks() -> dict[str, str]:
                     or obj.get("ar")
                     or obj.get("arabic")
                     or obj.get("hejazi_ar")
+                    or obj.get("transcript_ar")
                     or obj.get("root")
                 )
                 if text:

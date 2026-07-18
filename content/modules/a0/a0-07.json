@@ -1,0 +1,411 @@
+{
+ "id": "a0-07",
+ "level": "A0",
+ "module": "letters",
+ "order": 7,
+ "title_uz": "Harf oilasi 6: ف ق ك ل م ه و",
+ "title_ar": "ف ق ك ل م ه و",
+ "can_do_uz": "Men ف ق ك ل م ه و harflarini taniy olaman va ق tovushini o'zbekcha 'q' bilan bog'lab talaffuz qila olaman.",
+ "duration_min": 30,
+ "prerequisites": [
+  "a0-06"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "Qo'lingizdagi 'qalam' so'zi aslida arabcha — قَلَم! Bugun o'rganadigan ق harfi o'zbekchadagi 'q' tovushining aynan o'zi, shuning uchun sizga oson bo'ladi.",
+ "grammar": {
+  "point_ar": "ف ق ك ل م ه و",
+  "explanation_uz": "Bu darsda 7 ta harf bilan tanishamiz. Ularning aksariyat tovushlari o'zbekchada bor, shuning uchun eslab qolish oson. Eng muhimi — ق harfi: bu o'zbekcha 'q' tovushidir (qalam, qadam, qishloq). Uni ك (k) bilan aralashtirmang: ق tomoqning chuqurroq qismidan, ك esa yumshoqroq, oldingi qismidan chiqadi.",
+  "table": [
+   {
+    "ar": "ف",
+    "uz": "f — 'fil' dagi 'f'",
+    "form": "fa"
+   },
+   {
+    "ar": "ق",
+    "uz": "q — 'qalam' dagi 'q' (chuqur, tomoqdan)",
+    "form": "qof"
+   },
+   {
+    "ar": "ك",
+    "uz": "k — 'kitob' dagi 'k' (yumshoq)",
+    "form": "kaf"
+   },
+   {
+    "ar": "ل",
+    "uz": "l — 'lola' dagi 'l'",
+    "form": "lam"
+   },
+   {
+    "ar": "م",
+    "uz": "m — 'meva' dagi 'm'",
+    "form": "mim"
+   },
+   {
+    "ar": "ه",
+    "uz": "h — 'havo' dagi 'h' (yengil)",
+    "form": "ha"
+   },
+   {
+    "ar": "و",
+    "uz": "w/u — 'vov' (ingliz 'w' ga o'xshash)",
+    "form": "vov"
+   }
+  ],
+  "common_mistakes_uz": [
+   "ق (q) va ك (k) ni aralashtirish — ق chuqur tomoqdan, ك yumshoq va oldindan chiqadi.",
+   "و ni o'zbekcha 'v' kabi qattiq aytish — arabchada u yumshoqroq, ingliz 'w' ga yaqin.",
+   "ه (yengil h) ni ح (kuchli h) bilan aralashtirish — ه ancha yengil talaffuz qilinadi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ك ت ب",
+   "meaning_uz": "yozish bilan bog'liq",
+   "uz_cognates": [
+    "kitob",
+    "maktab",
+    "kotib"
+   ],
+   "derived": [
+    {
+     "ar": "كِتاب",
+     "uz": "kitob",
+     "pattern": ""
+    },
+    {
+     "ar": "كاتِب",
+     "uz": "yozuvchi, kotib",
+     "pattern": ""
+    }
+   ]
+  },
+  {
+   "root": "ق ل م",
+   "meaning_uz": "qalam bilan bog'liq",
+   "uz_cognates": [
+    "qalam"
+   ],
+   "derived": [
+    {
+     "ar": "قَلَم",
+     "uz": "qalam",
+     "pattern": ""
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "قَلَم",
+   "translit": "qalam",
+   "uz": "qalam (o'zbekcha 'qalam' shu so'zdan)",
+   "root": "ق ل م",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/qalam.mp3",
+   "example_ar": "هَذَا قَلَم",
+   "example_uz": "Bu qalam",
+   "srs": true
+  },
+  {
+   "ar": "كِتاب",
+   "translit": "kitab",
+   "uz": "kitob (o'zbekcha 'kitob' shu so'zdan)",
+   "root": "ك ت ب",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/kitab.mp3",
+   "example_ar": "هَذَا كِتاب",
+   "example_uz": "Bu kitob",
+   "srs": true
+  },
+  {
+   "ar": "قَمَر",
+   "translit": "qamar",
+   "uz": "oy (osmondagi)",
+   "root": "ق م ر",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/qamar.mp3",
+   "example_ar": "هَذَا قَمَر",
+   "example_uz": "Bu oy",
+   "srs": true
+  },
+  {
+   "ar": "مَلِك",
+   "translit": "malik",
+   "uz": "podshoh, shoh",
+   "root": "م ل ك",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/malik.mp3",
+   "example_ar": "هُوَ مَلِك",
+   "example_uz": "U podshoh",
+   "srs": true
+  },
+  {
+   "ar": "وَلَد",
+   "translit": "walad",
+   "uz": "bola, o'g'il",
+   "root": "و ل د",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/walad.mp3",
+   "example_ar": "هُوَ وَلَد",
+   "example_uz": "U bola",
+   "srs": true
+  },
+  {
+   "ar": "فَم",
+   "translit": "fam",
+   "uz": "og'iz",
+   "root": "ف م و",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/fam.mp3",
+   "example_ar": "هَذَا فَم",
+   "example_uz": "Bu og'iz",
+   "srs": true
+  },
+  {
+   "ar": "هُوَ",
+   "translit": "huwa",
+   "uz": "u (erkak kishi haqida)",
+   "root": "",
+   "pattern": "",
+   "pos": "olmosh",
+   "audio": "a0/huwa.mp3",
+   "example_ar": "هُوَ مَلِك",
+   "example_uz": "U podshoh",
+   "srs": true
+  },
+  {
+   "ar": "لَوْن",
+   "translit": "lawn",
+   "uz": "rang",
+   "root": "ل و ن",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/lawn.mp3",
+   "example_ar": "هَذَا لَوْن",
+   "example_uz": "Bu rang",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "هُوَ وَلَد. هَذَا قَلَم وَ كِتاب. هُوَ مَلِك.",
+   "questions": [
+    {
+     "q_uz": "'هُوَ وَلَد' nima ma'noni bildiradi?",
+     "a": "U bola"
+    },
+    {
+     "q_uz": "Matnda qanday ikkita narsa (buyum) tilga olingan?",
+     "a": "Qalam va kitob (قَلَم وَ كِتاب)"
+    },
+    {
+     "q_uz": "'مَلِك' so'zi nimani anglatadi?",
+     "a": "Podshoh"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/a0-07-listen.mp3",
+   "transcript_ar": "قَلَم. كِتاب. قَمَر. مَلِك.",
+   "questions": [
+    {
+     "q_uz": "Birinchi eshitilgan so'z qaysi? (o'zbekcha ma'nosi)",
+     "a": "Qalam"
+    },
+    {
+     "q_uz": "Oxirgi eshitilgan so'zning ma'nosi nima?",
+     "a": "Podshoh (malik)"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Quyidagi so'zlarni ovoz chiqarib ayting va ق (q) ni ك (k) dan farqlashga e'tibor bering.",
+   "target_ar": [
+    "قَلَم",
+    "كِتاب",
+    "قَمَر",
+    "مَلِك"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "قَلَم va كِتاب so'zlarini o'ngdan chapga qarab daftaringizga 3 martadan ko'chiring.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi harf o'zbekcha 'q' tovushini beradi?",
+   "q_ar": "",
+   "options": [
+    "ك",
+    "ق",
+    "ف",
+    "م"
+   ],
+   "answer": "ق",
+   "explain_uz": "ق — o'zbekcha 'qalam' dagi 'q' tovushi, tomoqning chuqur qismidan chiqadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi harf yumshoq 'k' tovushini beradi?",
+   "q_ar": "",
+   "options": [
+    "ق",
+    "ك",
+    "ه",
+    "و"
+   ],
+   "answer": "ك",
+   "explain_uz": "ك — 'kitob' dagi yumshoq 'k'. ق dan farqli, oldingi qismdan chiqadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "",
+   "q_ar": "قَلَم",
+   "options": [],
+   "answer": "qalam",
+   "explain_uz": "قَلَم — o'zbekchadagi 'qalam' shu so'zdan olingan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "kitob",
+   "q_ar": "",
+   "options": [],
+   "answer": "كِتاب",
+   "explain_uz": "كِتاب — o'zak ك ت ب, 'yozish' ma'nosidan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "كِتاب so'zining o'zagi qaysi?",
+   "q_ar": "",
+   "options": [
+    "ق ل م",
+    "ك ت ب",
+    "م ل ك"
+   ],
+   "answer": "ك ت ب",
+   "explain_uz": "كِتاب, كاتِب, مَكْتَب — hammasi ك ت ب o'zagidan.",
+   "audio": "",
+   "root": "ك ت ب",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshitilgan so'zni yozing (podshoh ma'nosida).",
+   "q_ar": "",
+   "options": [],
+   "answer": "مَلِك",
+   "explain_uz": "مَلِك — 'podshoh, shoh'.",
+   "audio": "a0/malik.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "'هُوَ' so'zi nimani bildiradi?",
+   "q_ar": "",
+   "options": [
+    "u (erkak)",
+    "bu",
+    "va",
+    "og'iz"
+   ],
+   "answer": "u (erkak)",
+   "explain_uz": "هُوَ — 'u' (erkak kishi haqida).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "word",
+   "front": "قَلَم",
+   "back": "qalam",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "كِتاب",
+   "back": "kitob",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "قَمَر",
+   "back": "oy",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "مَلِك",
+   "back": "podshoh, shoh",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "وَلَد",
+   "back": "bola, o'g'il",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "فَم",
+   "back": "og'iz",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "هُوَ",
+   "back": "u (erkak)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "لَوْن",
+   "back": "rang",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "ك ت ب",
+   "back": "yozish (kitob, maktab, kotib)",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "ق ل م",
+   "back": "qalam bilan bog'liq (qalam)",
+   "deck": "msa"
+  }
+ ]
+}

@@ -5,8 +5,8 @@ from datetime import date, datetime, timedelta, timezone
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.models import Progress, UserWord, XpLog
-from services.content import count_words, flattened_lessons, lesson_index
+from db.models import Plan, Progress, UserWord, XpLog
+from services.course import count_vocab, next_lesson as course_next_lesson
 
 TASHKENT_OFFSET = timedelta(hours=5)
 
@@ -63,10 +63,17 @@ async def profile_extras(session: AsyncSession, user_id: int) -> dict:
 
 
 async def user_stats(
-    session: AsyncSession, user_id: int, plan_order: list[str] | None
+    session: AsyncSession, user_id: int, plan_order: list[str] | None = None
 ) -> dict:
     done = await completed_lesson_ids(session, user_id)
-    idx = lesson_index()
+
+    # Foydalanuvchi rejasi — v2 kurs yo'lini boshlash nuqtasi
+    plan = (
+        await session.execute(
+            select(Plan).where(Plan.user_id == user_id).order_by(Plan.id.desc()).limit(1)
+        )
+    ).scalar_one_or_none()
+    start_lesson = plan.start_lesson if plan else "a0-01"
 
     # Aniqlik
     rows = (
@@ -76,8 +83,14 @@ async def user_stats(
     correct_answers = sum(p.correct for p in rows)
     accuracy = round(100 * correct_answers / total_answers) if total_answers else 0
 
-    # So'zlar (tugatilgan darslardagi harf bo'lmagan elementlar)
-    words = sum(count_words(idx[lid]["lesson"]) for lid in done if lid in idx)
+    # Faqat v2 kurs darslarini sanaymiz (eski v1 progress statistikani shishirmasin)
+    from services.curriculum import load_curriculum
+
+    v2_ids = load_curriculum()
+    v2_done = [lid for lid in done if lid in v2_ids]
+
+    # So'zlar (tugatilgan v2 darslardagi yangi so'zlar)
+    words = sum(count_vocab(lid) for lid in v2_done)
 
     # XP va streak
     xp_rows = (
@@ -103,26 +116,14 @@ async def user_stats(
     )
     due_count = len(due_rows.scalars().all())
 
-    # Keyingi dars (chiziqli yo'l bo'yicha birinchi tugatilmagani)
-    next_lesson = None
-    for lid in flattened_lessons(plan_order):
-        if lid not in done:
-            info = idx[lid]
-            next_lesson = {
-                "id": lid,
-                "title": info["lesson"]["title"],
-                "module_title": info["module_title"],
-                "module_ar": info["module_ar"],
-                "pos": info["pos"],
-                "count": info["count"],
-            }
-            break
+    # Keyingi dars — v2 kurs yo'li bo'yicha (yozilgan darslardan)
+    next_lesson = course_next_lesson(done, start_lesson)
 
     return {
         "streak": streak,
         "xp_today": xp_today,
         "words": words,
-        "lessons": len(done),
+        "lessons": len(v2_done),
         "accuracy": accuracy,
         "due_count": due_count,
         "next_lesson": next_lesson,

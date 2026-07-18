@@ -1,0 +1,344 @@
+{
+ "id": "a0-16",
+ "level": "A0",
+ "module": "harakat",
+ "order": 16,
+ "title_uz": "Hamza",
+ "title_ar": "الهَمْزَة",
+ "can_do_uz": "Hamzaning turli shakllarini (ء أ إ ؤ ئ) tanib, ularni to'g'ri o'qiy olaman.",
+ "duration_min": 30,
+ "prerequisites": [
+  "a0-15"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "«Islom» so'zi arabchada إِسْلام deb yoziladi — boshidagi kichkina belgi «hamza». Bu tovush o'zbekchada ham bor: «sa'at», «ma'no» so'zlaridagi uzilishga o'xshaydi. Hamza — bir qisqa, keskin to'xtash tovushi.",
+ "grammar": {
+  "point_ar": "الهَمْزَة",
+  "explanation_uz": "Hamza (ء) — bir undosh tovush bo'lib, tomoqda havoni bir lahzaga to'xtatib qo'yadigan «uzilish» tovushidir. U yolg'iz (ء) ham, yoki bir «kursi» (tayanch harf) ustida ham yoziladi: أ va إ (alif ustida/ostida), ؤ (vov ustida), ئ (yo ustida — nuqtasiz). Qaysi shaklda yozilishi hamzaning so'zdagi o'rniga va yonidagi harakatlarga bog'liq. Hozircha eng muhimi — bu shakllarning HAMMASI bitta tovush ekanini bilish.",
+  "table": [
+   {
+    "ar": "ء",
+    "uz": "yolg'iz hamza (kursisiz)",
+    "form": "مَاء"
+   },
+   {
+    "ar": "أ",
+    "uz": "alif ustida hamza (fatha yoki damma bilan)",
+    "form": "أَب"
+   },
+   {
+    "ar": "إ",
+    "uz": "alif ostida hamza (kasra bilan)",
+    "form": "إِسْلام"
+   },
+   {
+    "ar": "ؤ",
+    "uz": "vov ustida hamza",
+    "form": "سُؤَال"
+   },
+   {
+    "ar": "ئ",
+    "uz": "yo (nuqtasiz) ustida hamza",
+    "form": "بِئْر"
+   }
+  ],
+  "common_mistakes_uz": [
+   "أ va إ ni oddiy alif (cho'ziq unli) deb o'qish — yo'q, bular hamza (undosh tovush).",
+   "ؤ ni «v» tovushi deb o'qish — bu yerda vov faqat kursi, o'qilishi hamza.",
+   "ئ ostidagi tayanch nuqtasiz — uni «y» deb o'qimang, bu ham hamza.",
+   "Hamzani butunlay tashlab ketish — u albatta talaffuz qilinadi (qisqa to'xtash)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ء ب و",
+   "meaning_uz": "ota (ab) bilan bog'liq o'zak",
+   "uz_cognates": [],
+   "derived": [
+    {
+     "ar": "أَب",
+     "uz": "ota",
+     "pattern": ""
+    },
+    {
+     "ar": "أَبَوَان",
+     "uz": "ota-ona",
+     "pattern": ""
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "أَب",
+   "translit": "ab",
+   "uz": "ota",
+   "root": "ء ب و",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/ab.mp3",
+   "example_ar": "هٰذَا أَب.",
+   "example_uz": "Bu — ota.",
+   "srs": true
+  },
+  {
+   "ar": "إِسْلام",
+   "translit": "islaam",
+   "uz": "Islom",
+   "root": "س ل م",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/islam.mp3",
+   "example_ar": "الإِسْلام دِين.",
+   "example_uz": "Islom — din.",
+   "srs": true
+  },
+  {
+   "ar": "مَاء",
+   "translit": "maa'",
+   "uz": "suv",
+   "root": "م و ه",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/maa.mp3",
+   "example_ar": "هٰذَا مَاء.",
+   "example_uz": "Bu — suv.",
+   "srs": true
+  },
+  {
+   "ar": "سُؤَال",
+   "translit": "su'aal",
+   "uz": "savol",
+   "root": "س ء ل",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/sual.mp3",
+   "example_ar": "هٰذَا سُؤَال.",
+   "example_uz": "Bu — savol.",
+   "srs": true
+  },
+  {
+   "ar": "بِئْر",
+   "translit": "bi'r",
+   "uz": "quduq",
+   "root": "ب ء ر",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/bir.mp3",
+   "example_ar": "هٰذَا بِئْر.",
+   "example_uz": "Bu — quduq.",
+   "srs": true
+  },
+  {
+   "ar": "أُم",
+   "translit": "umm",
+   "uz": "ona",
+   "root": "ء م م",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/umm.mp3",
+   "example_ar": "هٰذِهِ أُم.",
+   "example_uz": "Bu — ona.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "هٰذَا أَب وَهٰذِهِ أُم. هٰذَا مَاء. هٰذَا سُؤَال. الإِسْلام دِين.",
+   "questions": [
+    {
+     "q_uz": "«أَب» so'zi nimani bildiradi?",
+     "a": "Ota"
+    },
+    {
+     "q_uz": "«مَاء» so'zi nimani bildiradi?",
+     "a": "Suv"
+    },
+    {
+     "q_uz": "Matnda qaysi din tilga olingan?",
+     "a": "Islom (الإِسْلام)"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/hamza_listen.mp3",
+   "transcript_ar": "أَب. إِسْلام. مَاء. سُؤَال. بِئْر. أُم.",
+   "questions": [
+    {
+     "q_uz": "Nechta so'z eshitdingiz?",
+     "a": "Olti"
+    },
+    {
+     "q_uz": "«suv» so'zini eshitib topding — arabchasi qanday?",
+     "a": "مَاء"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Har bir hamza shaklini ovoz chiqarib o'qing: أَب, إِسْلام, مَاء, سُؤَال, بِئْر. Hamzani qisqa to'xtash bilan aytishga harakat qiling.",
+   "target_ar": [
+    "أَب",
+    "إِسْلام",
+    "مَاء",
+    "سُؤَال",
+    "بِئْر"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Quyidagi so'zlardan hamza shakli boshqacha bo'lganlarini ajrating va daftaringizga ko'chiring: أَب, مَاء, إِسْلام. Har birida hamza qaysi kursida ekanini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«أَب» so'zi nimani bildiradi?",
+   "q_ar": "",
+   "options": [
+    "Ota",
+    "Ona",
+    "Suv",
+    "Savol"
+   ],
+   "answer": "Ota",
+   "explain_uz": "أَب — «ota» degani.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi shakl «alif ostida hamza» (kasra bilan)?",
+   "q_ar": "",
+   "options": [
+    "أ",
+    "إ",
+    "ؤ",
+    "ئ"
+   ],
+   "answer": "إ",
+   "explain_uz": "إ — hamza alif ostida yoziladi, masalan إِسْلام.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "",
+   "q_ar": "مَاء",
+   "options": [],
+   "answer": "suv",
+   "explain_uz": "مَاء — «suv», oxirida yolg'iz hamza (ء) turadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "savol",
+   "q_ar": "",
+   "options": [],
+   "answer": "سُؤَال",
+   "explain_uz": "سُؤَال — vov ustida hamza (ؤ) bor.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "harakat",
+   "q_uz": "«ata» (ota) so'ziga to'g'ri harakat qo'ying:",
+   "q_ar": "اب",
+   "options": [],
+   "answer": "أَب",
+   "explain_uz": "Boshida alif ustida hamza + fatha: أَب.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«أَب» so'zining o'zagini toping:",
+   "q_ar": "",
+   "options": [
+    "ء ب و",
+    "ب و ب",
+    "أ ب ت",
+    "ء م م"
+   ],
+   "answer": "ء ب و",
+   "explain_uz": "«ota» ma'nosidagi o'zak — ء ب و.",
+   "audio": "",
+   "root": "ء ب و",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«ئ» shakli qanday kursi ustida yoziladi?",
+   "q_ar": "",
+   "options": [
+    "nuqtasiz yo (ي)",
+    "vov (و)",
+    "alif (ا)",
+    "kursisiz"
+   ],
+   "answer": "nuqtasiz yo (ي)",
+   "explain_uz": "ئ — nuqtasiz yo ustidagi hamza, masalan بِئْر.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "word",
+   "front": "أَب",
+   "back": "ota",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "إِسْلام",
+   "back": "Islom",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "مَاء",
+   "back": "suv",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "سُؤَال",
+   "back": "savol",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "بِئْر",
+   "back": "quduq",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "أُم",
+   "back": "ona",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "ء ب و",
+   "back": "ota bilan bog'liq o'zak (أَب — ota)",
+   "deck": "msa"
+  }
+ ]
+}

@@ -1,0 +1,352 @@
+{
+ "id": "a0-12",
+ "level": "A0",
+ "module": "harakat",
+ "order": 12,
+ "title_uz": "Shadda",
+ "title_ar": "الشَّدَّة",
+ "can_do_uz": "Ikkilangan harfni (shadda) tanib, uni ikki marta talaffuz qila olaman.",
+ "duration_min": 30,
+ "prerequisites": [
+  "a0-11"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "«Mudarris» so'zini eshitgansiz — arabchada u مُدَرِّس bo'lib, o'rtadagi «r» tovushi ikki marta o'qiladi. Buni bir kichkina belgi — shadda (ّ) ko'rsatadi. O'zbekchadagi «dars», «madrasa» so'zlari ham shu o'zakdan.",
+ "grammar": {
+  "point_ar": "الشَّدَّة",
+  "explanation_uz": "Shadda (ّ) — harf ustidagi kichik belgi. U harfni IKKI marta o'qishni bildiradi: birinchisi sukunli (harakatsiz), ikkinchisi harakatli. Masalan مُدَرِّس so'zida ر harfi ustida shadda bor — demak u «r-r» bo'lib o'qiladi: mu-dar-ris. Shadda o'zi bilan birga harakat oladi: fatha va damma shadda USTIDA, kasra esa odatda shadda OSTIDA yoziladi.",
+  "table": [
+   {
+    "ar": "ـّ",
+    "uz": "shadda belgisi — harfni ikki marta o'qi",
+    "form": "belgi"
+   },
+   {
+    "ar": "ـَّ",
+    "uz": "shadda + fatha (masalan: bb + a)",
+    "form": "shadda+fatha"
+   },
+   {
+    "ar": "ـُّ",
+    "uz": "shadda + damma (masalan: bb + u)",
+    "form": "shadda+damma"
+   },
+   {
+    "ar": "ـِّ",
+    "uz": "shadda + kasra (masalan: rr + i)",
+    "form": "shadda+kasra"
+   },
+   {
+    "ar": "جَدّ",
+    "uz": "jadd (bobo) — d harfi ikki marta",
+    "form": "misol"
+   },
+   {
+    "ar": "مُدَرِّس",
+    "uz": "mudarris (o'qituvchi) — r harfi ikki marta",
+    "form": "misol"
+   }
+  ],
+  "common_mistakes_uz": [
+   "Shaddali harfni bir marta o'qib yuborish: «mudaris» emas, «mudarris» — harf cho'zilib, kuchayib chiqadi.",
+   "Kasrani shadda ostiga yozish esdan chiqadi: مُدَرِّس so'zida kasra shadda ostida turadi.",
+   "Shaddani oddiy sukun bilan aralashtirish: sukun harfni harakatsiz qiladi, shadda esa harfni ikkilaydi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "د ر س",
+   "meaning_uz": "o'qish, dars berish/olish",
+   "uz_cognates": [
+    "dars",
+    "mudarris",
+    "madrasa"
+   ],
+   "derived": [
+    {
+     "ar": "مُدَرِّس",
+     "uz": "o'qituvchi",
+     "pattern": "مُفَعِّل"
+    },
+    {
+     "ar": "دَرْس",
+     "uz": "dars",
+     "pattern": "فَعْل"
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "مُدَرِّس",
+   "translit": "mudarris",
+   "uz": "o'qituvchi (o'zbekcha «mudarris»)",
+   "root": "د ر س",
+   "pattern": "مُفَعِّل",
+   "pos": "ism",
+   "audio": "a0/mudarris.mp3",
+   "example_ar": "مُدَرِّس طَيِّب",
+   "example_uz": "yaxshi o'qituvchi",
+   "srs": true
+  },
+  {
+   "ar": "حَجّ",
+   "translit": "hajj",
+   "uz": "haj (o'zbekcha «haj»)",
+   "root": "ح ج ج",
+   "pattern": "",
+   "pos": "ism",
+   "audio": "a0/hajj.mp3",
+   "example_ar": "حَجّ",
+   "example_uz": "haj",
+   "srs": true
+  },
+  {
+   "ar": "جَدّ",
+   "translit": "jadd",
+   "uz": "bobo",
+   "root": "ج د د",
+   "pattern": "",
+   "pos": "ism",
+   "audio": "a0/jadd.mp3",
+   "example_ar": "جَدّ طَيِّب",
+   "example_uz": "yaxshi bobo",
+   "srs": true
+  },
+  {
+   "ar": "سُكَّر",
+   "translit": "sukkar",
+   "uz": "shakar (o'zbekcha «shakar»)",
+   "root": "س ك ر",
+   "pattern": "",
+   "pos": "ism",
+   "audio": "a0/sukkar.mp3",
+   "example_ar": "سُكَّر",
+   "example_uz": "shakar",
+   "srs": true
+  },
+  {
+   "ar": "رَبّ",
+   "translit": "rabb",
+   "uz": "Rabb, Parvardigor",
+   "root": "ر ب ب",
+   "pattern": "",
+   "pos": "ism",
+   "audio": "a0/rabb.mp3",
+   "example_ar": "رَبّ",
+   "example_uz": "Rabb",
+   "srs": true
+  },
+  {
+   "ar": "طَيِّب",
+   "translit": "tayyib",
+   "uz": "yaxshi, pokiza",
+   "root": "ط ي ب",
+   "pattern": "",
+   "pos": "sifat",
+   "audio": "a0/tayyib.mp3",
+   "example_ar": "جَدّ طَيِّب",
+   "example_uz": "yaxshi bobo",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "جَدّ طَيِّب. مُدَرِّس طَيِّب. سُكَّر. حَجّ.",
+   "questions": [
+    {
+     "q_uz": "«مُدَرِّس» so'zida qaysi harf ikki marta o'qiladi?",
+     "a": "ر (r)"
+    },
+    {
+     "q_uz": "«جَدّ» so'zi nimani bildiradi?",
+     "a": "bobo"
+    },
+    {
+     "q_uz": "«طَيِّب» so'zining o'zbekcha ma'nosi nima?",
+     "a": "yaxshi, pokiza"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/mudarris.mp3",
+   "transcript_ar": "مُدَرِّس",
+   "questions": [
+    {
+     "q_uz": "Eshitilgan so'zni yozing (lotin bilan)",
+     "a": "mudarris"
+    },
+    {
+     "q_uz": "Bu so'zda «r» necha marta eshitiladi?",
+     "a": "ikki marta"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Quyidagi shaddali so'zlarni ovoz chiqarib, ikkilangan harfni kuchaytirib o'qing: مُدَرِّس، جَدّ، سُكَّر، حَجّ.",
+   "target_ar": [
+    "مُدَرِّس",
+    "جَدّ",
+    "سُكَّر",
+    "حَجّ"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«jadd» (bobo) va «sukkar» (shakar) so'zlarini shadda belgisi bilan arabcha yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Shadda (ّ) belgisi nimani bildiradi?",
+   "q_ar": "",
+   "options": [
+    "Harfni ikki marta o'qishni",
+    "Harfni harakatsiz o'qishni",
+    "Harfni cho'zib o'qishni",
+    "Harfni o'qimaslikni"
+   ],
+   "answer": "Harfni ikki marta o'qishni",
+   "explain_uz": "Shadda harfni ikkilaydi: birinchisi sukunli, ikkinchisi harakatli.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi so'zda harf ikki marta o'qiladi?",
+   "q_ar": "",
+   "options": [
+    "مُدَرِّس",
+    "دَرْس",
+    "بَيْت",
+    "قَلَم"
+   ],
+   "answer": "مُدَرِّس",
+   "explain_uz": "مُدَرِّس so'zida ر ustida shadda bor: mu-dar-ris.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "Tarjima qiling: جَدّ",
+   "q_ar": "",
+   "options": [],
+   "answer": "bobo",
+   "explain_uz": "جَدّ — bobo. د harfi shaddali (ikki marta).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "Tarjima qiling: shakar",
+   "q_ar": "",
+   "options": [],
+   "answer": "سُكَّر",
+   "explain_uz": "سُكَّر — o'zbekcha «shakar». ك harfi shaddali.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "harakat",
+   "q_uz": "«mudarris» so'ziga to'g'ri harakat va shaddani qo'ying (r ustiga shadda + kasra).",
+   "q_ar": "مدرس",
+   "options": [],
+   "answer": "مُدَرِّس",
+   "explain_uz": "م ustida damma, د ustida fatha, ر ustida shadda + kasra (kasra shadda ostida), س oxirida.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshitilgan so'zni arabcha yozing",
+   "q_ar": "",
+   "options": [],
+   "answer": "حَجّ",
+   "explain_uz": "حَجّ — j harfi shaddali (ikki marta).",
+   "audio": "a0/hajj.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«مُدَرِّس» so'zining o'zagini toping",
+   "q_ar": "",
+   "options": [
+    "د ر س",
+    "ج د د",
+    "ح ج ج",
+    "س ك ر"
+   ],
+   "answer": "د ر س",
+   "explain_uz": "مُدَرِّس so'zi د ر س o'zagidan. Shundan «dars», «madrasa» ham keladi.",
+   "audio": "",
+   "root": "د ر س",
+   "pattern": "",
+   "words": []
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "word",
+   "front": "مُدَرِّس",
+   "back": "o'qituvchi (mudarris)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "حَجّ",
+   "back": "haj (hajj)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "جَدّ",
+   "back": "bobo (jadd)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "سُكَّر",
+   "back": "shakar (sukkar)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "رَبّ",
+   "back": "Rabb, Parvardigor (rabb)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "طَيِّب",
+   "back": "yaxshi, pokiza (tayyib)",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "د ر س",
+   "back": "o'qish/dars berish — dars, mudarris, madrasa",
+   "deck": "msa"
+  },
+  {
+   "type": "pattern",
+   "front": "مُفَعِّل (مُدَرِّس)",
+   "back": "shaddali o'rta harf bilan «bajaruvchi» vazni — mudarris (o'qituvchi)",
+   "deck": "msa"
+  }
+ ]
+}

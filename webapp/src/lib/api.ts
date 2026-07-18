@@ -389,12 +389,6 @@ export const api = {
     request<{ modules: ModuleInfo[]; coming_soon: ComingSoonModule[] }>(
       "/api/modules"
     ),
-  getLesson: (id: string) => request<LessonData>(`/api/lessons/${id}`),
-  completeLesson: (id: string, correct: number, total: number) =>
-    request<CompleteResponse>(`/api/lessons/${id}/complete`, {
-      method: "POST",
-      body: JSON.stringify({ correct, total }),
-    }),
   getReview: () =>
     request<{ cards: ReviewCard[]; total_due: number }>("/api/review"),
   answerReview: (wordId: number, grade: ReviewGrade) =>

@@ -3,7 +3,6 @@ import ArabicBg from "./components/ArabicBg";
 import NavBar, { type Tab } from "./components/NavBar";
 import { api, type MeResponse, type PlanData, type Stats } from "./lib/api";
 import Home from "./pages/Home";
-import LessonPlayer from "./pages/LessonPlayer";
 import Lessons from "./pages/Lessons";
 import Onboarding from "./pages/onboarding/Onboarding";
 import Profile from "./pages/Profile";
@@ -31,7 +30,6 @@ export default function App() {
   const [tab, setTab] = useState<Tab>("home");
   const [tgName, setTgName] = useState("");
   const [me, setMe] = useState<MeResponse | null>(null);
-  const [activeLesson, setActiveLesson] = useState<string | null>(null);
   const [activeLessonV2, setActiveLessonV2] = useState<string | null>(() => {
     // Dev/deep-link kirish: #lesson=a0-22
     const m = window.location.hash.match(/#lesson=([a-b]\d-\d{2})/);
@@ -71,11 +69,6 @@ export default function App() {
     setPhase("app");
     // Statistika va keyingi darsni serverdan olamiz
     api.getMe().then(setMe).catch(() => {});
-  };
-
-  const handleLessonFinish = (stats: Stats) => {
-    setMe((m) => (m ? { ...m, stats } : m));
-    setActiveLesson(null);
   };
 
   const refreshMe = () => {
@@ -118,7 +111,7 @@ export default function App() {
             name={displayName}
             xpGoal={me?.plan?.daily_xp_goal ?? 30}
             stats={stats}
-            onStartLesson={setActiveLesson}
+            onStartLesson={setActiveLessonV2}
             onGoReview={() => setTab("review")}
             onOpenRootLab={() => setShowRootLab(true)}
             onOpenExam={() => setShowExam(true)}
@@ -127,7 +120,7 @@ export default function App() {
           />
         )}
         {tab === "lessons" && (
-          <Lessons key={stats.lessons} onOpen={setActiveLesson} />
+          <Lessons key={stats.lessons} onOpen={setActiveLessonV2} />
         )}
         {tab === "review" && <Review onDone={refreshMe} />}
         {tab === "rating" && <Rating />}
@@ -135,14 +128,6 @@ export default function App() {
       </main>
 
       <NavBar tab={tab} onChange={setTab} reviewBadge={stats.due_count} />
-
-      {activeLesson && (
-        <LessonPlayer
-          lessonId={activeLesson}
-          onClose={() => setActiveLesson(null)}
-          onFinish={handleLessonFinish}
-        />
-      )}
 
       {showRootLab && <RootLab onClose={() => setShowRootLab(false)} />}
 
@@ -167,10 +152,13 @@ export default function App() {
       {activeLessonV2 && (
         <LessonPlayerV2
           lessonId={activeLessonV2}
-          onClose={() => setActiveLessonV2(null)}
+          onClose={() => {
+            setActiveLessonV2(null);
+            // Keyingi dars, modul qulflari va statistikani yangilaymiz
+            api.getMe().then(setMe).catch(() => {});
+          }}
           onFinish={(stats) => {
             setMe((m) => (m ? { ...m, stats } : m));
-            setActiveLessonV2(null);
           }}
         />
       )}

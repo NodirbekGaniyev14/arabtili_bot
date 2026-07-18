@@ -9,13 +9,7 @@ from db.models import Placement, Plan, Progress, User, UserWord, XpLog
 from services import roots as roots_svc
 from db.session import get_session
 from services.ai import generate_plan
-from services.content import (
-    PLANNED_TITLES,
-    flattened_lessons,
-    lesson_index,
-    load_modules,
-    ordered_module_ids,
-)
+from services.course import course_modules, start_lesson_for
 from services.achievements import check_and_award, list_achievements
 from services.ai import XP_BY_MINUTES
 from services.league import leaderboard
@@ -81,119 +75,9 @@ async def modules_list(
     session: AsyncSession = Depends(get_session),
 ):
     plan = await latest_plan(session, user.id)
-    plan_order = json.loads(plan.module_order_json) if plan else None
+    level = plan.level if plan else "A0"
     done = await completed_lesson_ids(session, user.id)
-    flat = flattened_lessons(plan_order)
-
-    all_modules = load_modules()
-    result = []
-    for mid in ordered_module_ids(plan_order):
-        mod = all_modules[mid]
-        lessons = []
-        for lesson in mod["lessons"]:
-            lid = lesson["id"]
-            flat_idx = flat.index(lid)
-            unlocked = flat_idx == 0 or flat[flat_idx - 1] in done
-            lessons.append(
-                {
-                    "id": lid,
-                    "title": lesson["title"],
-                    "done": lid in done,
-                    "unlocked": unlocked or lid in done,
-                }
-            )
-        result.append(
-            {
-                "id": mid,
-                "title": mod["title"],
-                "arabic_title": mod.get("arabic_title", ""),
-                "available": True,
-                "done_count": sum(1 for l in lessons if l["done"]),
-                "lessons": lessons,
-            }
-        )
-
-    # Rejada bor, lekin hali yozilmagan modullar — "tez orada"
-    coming = [
-        {"id": m, "title": PLANNED_TITLES.get(m, m), "available": False}
-        for m in (plan_order or [])
-        if m not in all_modules and m in PLANNED_TITLES
-    ]
-
-    return {"modules": result, "coming_soon": coming}
-
-
-@router.get("/lessons/{lesson_id}")
-async def lesson_detail(
-    lesson_id: str,
-    user: User = Depends(get_current_user),
-):
-    info = lesson_index().get(lesson_id)
-    if not info:
-        raise HTTPException(status_code=404, detail="Dars topilmadi")
-    return {
-        **info["lesson"],
-        "module_title": info["module_title"],
-        "pos": info["pos"],
-        "count": info["count"],
-    }
-
-
-class CompleteBody(BaseModel):
-    correct: int = Field(ge=0)
-    total: int = Field(ge=1)
-
-
-@router.post("/lessons/{lesson_id}/complete")
-async def lesson_complete(
-    lesson_id: str,
-    body: CompleteBody,
-    user: User = Depends(get_current_user),
-    session: AsyncSession = Depends(get_session),
-):
-    if lesson_id not in lesson_index():
-        raise HTTPException(status_code=404, detail="Dars topilmadi")
-
-    correct = min(body.correct, body.total)
-    perfect = correct == body.total
-
-    done_before = await completed_lesson_ids(session, user.id)
-    first_time = lesson_id not in done_before
-
-    if first_time:
-        xp = 10 + 2 * correct + (5 if perfect else 0)
-    else:
-        # Takror mashq — kamaytirilgan XP
-        xp = 5 + correct
-
-    session.add(
-        Progress(
-            user_id=user.id,
-            lesson_id=lesson_id,
-            correct=correct,
-            total=body.total,
-            xp_earned=xp,
-        )
-    )
-    session.add(XpLog(user_id=user.id, amount=xp, source=f"lesson:{lesson_id}"))
-    await session.commit()
-
-    # Yangi o'rganilgan elementlarni SRS kartotekasiga qo'shamiz
-    await seed_user_words(session, user.id)
-
-    plan = await latest_plan(session, user.id)
-    plan_order = json.loads(plan.module_order_json) if plan else None
-    stats = await user_stats(session, user.id, plan_order)
-
-    new_badges = await check_and_award(session, user.id, stats["streak"])
-
-    return {
-        "xp_earned": xp,
-        "perfect": perfect,
-        "first_time": first_time,
-        "stats": stats,
-        "new_badges": new_badges,
-    }
+    return course_modules(level, done)
 
 
 SESSION_LIMIT = 20  # bitta takror sessiyasidagi maksimal kartalar
@@ -607,6 +491,7 @@ async def onboarding(
             [d.model_dump() for d in generated.weekly_schedule], ensure_ascii=False
         ),
         motivation=generated.motivation,
+        start_lesson=start_lesson_for(generated.level),
     )
     session.add(plan)
     await session.commit()

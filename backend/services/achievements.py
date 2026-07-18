@@ -31,9 +31,9 @@ def _public(badge: dict) -> dict:
 
 
 async def _metrics(session: AsyncSession, user_id: int, streak: int) -> dict:
-    from services.content import count_words, lesson_index, load_modules
+    from services.course import count_vocab
+    from services.curriculum import load_curriculum
 
-    idx = lesson_index()
     done = set(
         (
             await session.execute(
@@ -44,7 +44,7 @@ async def _metrics(session: AsyncSession, user_id: int, streak: int) -> dict:
         ).scalars()
     )
 
-    words = sum(count_words(idx[lid]["lesson"]) for lid in done if lid in idx)
+    words = sum(count_vocab(lid) for lid in done)
 
     perfect = (
         await session.execute(
@@ -74,10 +74,13 @@ async def _metrics(session: AsyncSession, user_id: int, streak: int) -> dict:
         )
     ).scalar_one()
 
-    alphabet = load_modules().get("alphabet")
-    alphabet_done = bool(alphabet) and all(
-        lesson["id"] in done for lesson in alphabet["lessons"]
-    )
+    # Alifbo ustasi — A0 "letters" moduli (a0-01..a0-09) to'liq tugatilsa
+    cur = load_curriculum()
+    letters_ids = [
+        lid for lid, m in cur.items()
+        if m["level"] == "A0" and m["module"] == "letters" and m["type"] == "lesson"
+    ]
+    alphabet_done = bool(letters_ids) and all(lid in done for lid in letters_ids)
 
     return {
         "lessons": len(done),

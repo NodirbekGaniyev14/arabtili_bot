@@ -1,0 +1,379 @@
+{
+ "id": "a0-10",
+ "level": "A0",
+ "module": "harakat",
+ "order": 10,
+ "title_uz": "Qisqa unlilar",
+ "title_ar": "الحَرَكات القَصيرة",
+ "can_do_uz": "Fatha, kasra va damma belgilarini taniyman va harflarni to'g'ri o'qiy olaman: a, i, u tovushlari.",
+ "duration_min": 30,
+ "prerequisites": [
+  "a0-09"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "Arab yozuvida unlilar harflar emas — ular kichik belgilar. Bitta so'z «كتب» dan belgilar bilan «kataba» (yozdi) ham, «kutub» (kitoblar) ham chiqadi. O'zbekchadagi «kitob» so'zi ham aynan shu o'zakdan!",
+ "grammar": {
+  "point_ar": "الفَتْحة · الكَسْرة · الضَّمّة",
+  "explanation_uz": "Arab tilida qisqa unlilar (a, i, u) alohida harf emas, balki harf ustiga yoki ostiga qo'yiladigan mayda belgilardir. Uchtasi bor: fatha (kichik chiziq, harf USTIDA) = a; kasra (kichik chiziq, harf OSTIDA) = i; damma (kichik و shakli, harf USTIDA) = u. Bu belgilar so'z ma'nosini butunlay o'zgartiradi: كَتَبَ = «yozdi», كُتُبُ = «kitoblar».",
+  "table": [
+   {
+    "ar": "بَ",
+    "uz": "ba (a tovushi)",
+    "form": "fatha — harf ustida chiziq"
+   },
+   {
+    "ar": "بِ",
+    "uz": "bi (i tovushi)",
+    "form": "kasra — harf ostida chiziq"
+   },
+   {
+    "ar": "بُ",
+    "uz": "bu (u tovushi)",
+    "form": "damma — harf ustida و shakli"
+   },
+   {
+    "ar": "كَتَبَ",
+    "uz": "kataba — yozdi",
+    "form": "uchta fatha"
+   },
+   {
+    "ar": "كُتُبُ",
+    "uz": "kutub — kitoblar",
+    "form": "uchta damma"
+   }
+  ],
+  "common_mistakes_uz": [
+   "Kasrani harf ustiga qo'yish — kasra HAR DOIM harf OSTIDA.",
+   "Fatha (a) va damma (u) ni chalkashtirish — damma kichik «و» shakliga o'xshaydi.",
+   "Harakatlarni o'qimay tashlab ketish — har bir belgi tovush beradi, o'qish shart."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ك ت ب",
+   "meaning_uz": "yozish",
+   "uz_cognates": [
+    "kitob",
+    "maktab",
+    "kotib"
+   ],
+   "derived": [
+    {
+     "ar": "كَتَبَ",
+     "uz": "yozdi",
+     "pattern": ""
+    },
+    {
+     "ar": "كُتُبُ",
+     "uz": "kitoblar",
+     "pattern": ""
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "كَتَبَ",
+   "translit": "kataba",
+   "uz": "yozdi",
+   "root": "ك ت ب",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a0/kataba.mp3",
+   "example_ar": "كَتَبَ.",
+   "example_uz": "U yozdi.",
+   "srs": true
+  },
+  {
+   "ar": "كُتُبُ",
+   "translit": "kutub",
+   "uz": "kitoblar (o'zbekcha «kitob» shundan)",
+   "root": "ك ت ب",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/kutub.mp3",
+   "example_ar": "كُتُبُ.",
+   "example_uz": "Kitoblar.",
+   "srs": true
+  },
+  {
+   "ar": "ذَهَبَ",
+   "translit": "zahaba",
+   "uz": "ketdi, bordi",
+   "root": "ذ ه ب",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a0/zahaba.mp3",
+   "example_ar": "ذَهَبَ.",
+   "example_uz": "U ketdi.",
+   "srs": true
+  },
+  {
+   "ar": "شَرِبَ",
+   "translit": "shariba",
+   "uz": "ichdi",
+   "root": "ش ر ب",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a0/shariba.mp3",
+   "example_ar": "شَرِبَ.",
+   "example_uz": "U ichdi.",
+   "srs": true
+  },
+  {
+   "ar": "فَتَحَ",
+   "translit": "fataha",
+   "uz": "ochdi",
+   "root": "ف ت ح",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a0/fataha.mp3",
+   "example_ar": "فَتَحَ.",
+   "example_uz": "U ochdi.",
+   "srs": true
+  },
+  {
+   "ar": "جَلَسَ",
+   "translit": "jalasa",
+   "uz": "o'tirdi",
+   "root": "ج ل س",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a0/jalasa.mp3",
+   "example_ar": "جَلَسَ.",
+   "example_uz": "U o'tirdi.",
+   "srs": true
+  },
+  {
+   "ar": "سَمِعَ",
+   "translit": "sami'a",
+   "uz": "eshitdi",
+   "root": "س م ع",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a0/samia.mp3",
+   "example_ar": "سَمِعَ.",
+   "example_uz": "U eshitdi.",
+   "srs": true
+  },
+  {
+   "ar": "دَرَسَ",
+   "translit": "darasa",
+   "uz": "o'qidi, o'rgandi (o'zbekcha «dars», «madrasa» shundan)",
+   "root": "د ر س",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a0/darasa.mp3",
+   "example_ar": "دَرَسَ.",
+   "example_uz": "U o'qidi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "دَرَسَ. كَتَبَ. شَرِبَ. ذَهَبَ.",
+   "questions": [
+    {
+     "q_uz": "«كَتَبَ» so'zi qanday o'qiladi va nimani anglatadi?",
+     "a": "kataba — yozdi"
+    },
+    {
+     "q_uz": "«شَرِبَ» so'zida qaysi harakatlar bor?",
+     "a": "fatha, kasra, fatha (sha-ri-ba)"
+    },
+    {
+     "q_uz": "«دَرَسَ» so'zi o'zbekchadagi qaysi so'zga bog'liq?",
+     "a": "dars / madrasa"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/a0-10_listen.mp3",
+   "transcript_ar": "كُتُبُ. جَلَسَ. سَمِعَ.",
+   "questions": [
+    {
+     "q_uz": "Birinchi so'z qaysi harakat bilan boshlanadi (a, i, u)?",
+     "a": "u (damma) — kutub"
+    },
+    {
+     "q_uz": "«جَلَسَ» nimani anglatadi?",
+     "a": "o'tirdi"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Quyidagi so'zlarni ovoz chiqarib, har bir harfning unlisini aniq talaffuz qiling: kataba, kutub, shariba.",
+   "target_ar": [
+    "كَتَبَ",
+    "كُتُبُ",
+    "شَرِبَ"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«ذهب» so'ziga to'g'ri harakatlarni qo'yib, «zahaba» (ketdi) bo'ladigan qilib yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«كَتَبَ» so'zi nimani anglatadi?",
+   "q_ar": "",
+   "options": [
+    "yozdi",
+    "ichdi",
+    "ketdi",
+    "o'tirdi"
+   ],
+   "answer": "yozdi",
+   "explain_uz": "كَتَبَ (kataba) — uchta fatha bilan «yozdi» degani.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi belgi «u» tovushini beradi?",
+   "q_ar": "",
+   "options": [
+    "fatha",
+    "kasra",
+    "damma"
+   ],
+   "answer": "damma",
+   "explain_uz": "Damma — harf ustidagi kichik «و» shakli, «u» tovushini beradi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Kasra belgisi harfning qayeriga qo'yiladi?",
+   "q_ar": "",
+   "options": [
+    "ustiga",
+    "ostiga",
+    "yoniga",
+    "ichiga"
+   ],
+   "answer": "ostiga",
+   "explain_uz": "Kasra har doim harf OSTIGA qo'yiladi va «i» tovushini beradi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "",
+   "q_ar": "شَرِبَ",
+   "options": [],
+   "answer": "ichdi",
+   "explain_uz": "شَرِبَ (shariba) — fatha, kasra, fatha bilan «ichdi».",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "harakat",
+   "q_uz": "«zahaba» (ketdi) bo'lishi uchun harakatlarni qo'ying:",
+   "q_ar": "ذهب",
+   "options": [],
+   "answer": "ذَهَبَ",
+   "explain_uz": "Uchta fatha: za-ha-ba.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshitilgan so'zni yozing:",
+   "q_ar": "",
+   "options": [],
+   "answer": "دَرَسَ",
+   "explain_uz": "دَرَسَ (darasa) — o'qidi/o'rgandi; «dars» so'zi shundan.",
+   "audio": "a0/darasa.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«كُتُبُ» nimani anglatadi? (o'zbekcha «kitob» so'zi shundan)",
+   "q_ar": "",
+   "options": [
+    "kitoblar",
+    "kaliti",
+    "eshik"
+   ],
+   "answer": "kitoblar",
+   "explain_uz": "كُتُبُ (kutub) — uchta damma bilan «kitoblar».",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "root",
+   "front": "ك ت ب",
+   "back": "yozish (kitob, maktab, kotib)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "كَتَبَ",
+   "back": "kataba — yozdi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "كُتُبُ",
+   "back": "kutub — kitoblar",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "ذَهَبَ",
+   "back": "zahaba — ketdi, bordi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "شَرِبَ",
+   "back": "shariba — ichdi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "فَتَحَ",
+   "back": "fataha — ochdi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "جَلَسَ",
+   "back": "jalasa — o'tirdi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "سَمِعَ",
+   "back": "sami'a — eshitdi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "دَرَسَ",
+   "back": "darasa — o'qidi, o'rgandi (dars, madrasa)",
+   "deck": "msa"
+  }
+ ]
+}

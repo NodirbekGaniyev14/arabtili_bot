@@ -1,0 +1,346 @@
+{
+ "id": "a0-06",
+ "level": "A0",
+ "module": "letters",
+ "order": 6,
+ "title_uz": "Harf oilasi 5: ط ظ ع غ",
+ "title_ar": "ط ظ ع غ",
+ "can_do_uz": "ط ظ ع غ harflarini tanib, ularni o'z ichiga olgan so'zlarni o'qiy olaman va eng qiyin ع tovushini talaffuz qila boshlayman.",
+ "duration_min": 30,
+ "prerequisites": [
+  "a0-05"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "O'zbekchada aytadigan 'g'arb', 'ilm', 'olim' so'zlaringiz aslida arabchadan kelgan! Bu darsda o'zbek uchun eng qiyin tovush — ع bilan tanishamiz, غ esa sizga tanish (o'zbekcha g').",
+ "grammar": {
+  "point_ar": "ط ظ ع غ",
+  "explanation_uz": "Bu oilada 4 ta harf bor. غ o'zbekcha 'g'' (g'oz) kabi — sizga oson. ط ظ qalin (emfatik) harflar: ط = qalin 't', ظ = qalin 'z'. ع esa o'zbekchada yo'q: bu tomoqning chuqurida siqib chiqariladigan ovoz. Uni yumshoq 'a'/' i' oldidan tomoqni qisib chiqaring — mashq bilan chiqadi.",
+  "table": [
+   {
+    "ar": "ط",
+    "uz": "Qalin 't' (ط)",
+    "form": "طَ"
+   },
+   {
+    "ar": "ظ",
+    "uz": "Qalin 'z' (ظ)",
+    "form": "ظَ"
+   },
+   {
+    "ar": "ع",
+    "uz": "Tomoqdan chiqadigan ovoz (o'zbekchada yo'q)",
+    "form": "عَ"
+   },
+   {
+    "ar": "غ",
+    "uz": "O'zbekcha 'g'' (غ) — g'oz, g'arb",
+    "form": "غَ"
+   }
+  ],
+  "common_mistakes_uz": [
+   "ع ni oddiy 'a' deb o'qish — u tomoqdan chiqadi, oddiy unli emas.",
+   "ع va غ ni chalkashtirish: غ = g', ع = tomoq ovozi.",
+   "ط ni oddiy 't' deb yozish — u qalin, og'izni to'ldirib aytiladi.",
+   "ظ va ز ni aralashtirish: ظ qalin, ز yupqa."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع ل م",
+   "meaning_uz": "bilmoq, bilim",
+   "uz_cognates": [
+    "ilm",
+    "olim",
+    "muallim"
+   ],
+   "derived": [
+    {
+     "ar": "عِلْم",
+     "uz": "ilm, bilim",
+     "pattern": ""
+    },
+    {
+     "ar": "عَالِم",
+     "uz": "olim, bilimdon",
+     "pattern": ""
+    },
+    {
+     "ar": "مُعَلِّم",
+     "uz": "muallim, o'qituvchi",
+     "pattern": ""
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "عُمْرَة",
+   "translit": "'umra",
+   "uz": "umra",
+   "root": "ع م ر",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/umra.mp3",
+   "example_ar": "عُمْرَة",
+   "example_uz": "umra (kichik ziyorat)",
+   "srs": true
+  },
+  {
+   "ar": "عِلْم",
+   "translit": "'ilm",
+   "uz": "ilm, bilim",
+   "root": "ع ل م",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/ilm.mp3",
+   "example_ar": "عِلْم",
+   "example_uz": "ilm — o'zbekchada ham 'ilm'",
+   "srs": true
+  },
+  {
+   "ar": "طَعَام",
+   "translit": "ta'aam",
+   "uz": "taom, ovqat",
+   "root": "ط ع م",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/taam.mp3",
+   "example_ar": "طَعَام",
+   "example_uz": "ovqat",
+   "srs": true
+  },
+  {
+   "ar": "غَرْب",
+   "translit": "g'arb",
+   "uz": "g'arb",
+   "root": "غ ر ب",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/garb.mp3",
+   "example_ar": "غَرْب",
+   "example_uz": "g'arb — o'zbekchada ham 'g'arb'",
+   "srs": true
+  },
+  {
+   "ar": "ظُهْر",
+   "translit": "zuhr",
+   "uz": "peshin (zuhr namozi)",
+   "root": "ظ ه ر",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/zuhr.mp3",
+   "example_ar": "ظُهْر",
+   "example_uz": "peshin vaqti / zuhr namozi",
+   "srs": true
+  },
+  {
+   "ar": "عَرَبِيّ",
+   "translit": "'arabiy",
+   "uz": "arabcha, arab",
+   "root": "ع ر ب",
+   "pattern": "",
+   "pos": "sifat",
+   "audio": "a0/arabiy.mp3",
+   "example_ar": "عَرَبِيّ",
+   "example_uz": "arabcha",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "عِلْم وَ طَعَام. عُمْرَة عَرَبِيّة. ظُهْر وَ غَرْب.",
+   "questions": [
+    {
+     "q_uz": "Matnda 'ovqat' ma'nosidagi so'z qaysi?",
+     "a": "طَعَام"
+    },
+    {
+     "q_uz": "'Umra' so'zi qaysi harf bilan boshlanadi?",
+     "a": "ع (ayn)"
+    },
+    {
+     "q_uz": "'G'arb' so'zidagi birinchi harf qaysi?",
+     "a": "غ (g'ayn)"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/a0-06-listen.mp3",
+   "transcript_ar": "عِلْم، طَعَام، عُمْرَة، غَرْب",
+   "questions": [
+    {
+     "q_uz": "Nechta so'z eshitdingiz?",
+     "a": "To'rtta"
+    },
+    {
+     "q_uz": "ع tovushi bilan boshlanadigan so'zlarni ayting.",
+     "a": "عِلْم va عُمْرَة"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "ع va غ tovushlarini farqlab talaffuz qiling: عِلْم — غَرْب. So'ngra عُمْرَة so'zini uch marta ayting.",
+   "target_ar": [
+    "عِلْم",
+    "غَرْب",
+    "عُمْرَة"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "ط ظ ع غ harflarining har birini alohida yozing, so'ng عِلْم va غَرْب so'zlarini ko'chirib yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi harf o'zbekcha 'g'' tovushini beradi?",
+   "q_ar": "",
+   "options": [
+    "ع",
+    "غ",
+    "ط",
+    "ظ"
+   ],
+   "answer": "غ",
+   "explain_uz": "غ = g' (g'oz, g'arb). ع esa tomoqdan chiqadigan boshqa tovush.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "O'zbekchada mavjud BO'LMAGAN, eng qiyin tovush qaysi?",
+   "q_ar": "",
+   "options": [
+    "غ",
+    "ط",
+    "ع",
+    "ز"
+   ],
+   "answer": "ع",
+   "explain_uz": "ع tomoqning chuqurida siqib chiqariladi, o'zbekchada bunday tovush yo'q.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "Tarjima qiling:",
+   "q_ar": "طَعَام",
+   "options": [],
+   "answer": "ovqat, taom",
+   "explain_uz": "طَعَام — ط ع م o'zagidan, 'ovqat' degani.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "Arabchaga o'giring: 'ilm'",
+   "q_ar": "",
+   "options": [],
+   "answer": "عِلْم",
+   "explain_uz": "عِلْم — o'zbekcha 'ilm' shu so'zdan kelgan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "Qaysi so'z ع ل م o'zagiga tegishli?",
+   "q_ar": "",
+   "options": [
+    "عِلْم",
+    "طَعَام",
+    "غَرْب",
+    "ظُهْر"
+   ],
+   "answer": "عِلْم",
+   "explain_uz": "عِلْم, عَالِم, مُعَلِّم — hammasi ع ل م o'zagidan.",
+   "audio": "",
+   "root": "ع ل م",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshitilgan so'zni yozing.",
+   "q_ar": "غَرْب",
+   "options": [],
+   "answer": "غَرْب",
+   "explain_uz": "غَرْب — g'arb, غ harfi bilan boshlanadi.",
+   "audio": "a0/garb.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "ظُهْر so'zi nimani anglatadi?",
+   "q_ar": "",
+   "options": [
+    "ertalab",
+    "peshin (zuhr)",
+    "kechqurun",
+    "tun"
+   ],
+   "answer": "peshin (zuhr)",
+   "explain_uz": "ظُهْر — peshin vaqti, zuhr namozi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "word",
+   "front": "عُمْرَة",
+   "back": "umra (kichik ziyorat)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "عِلْم",
+   "back": "ilm, bilim",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "طَعَام",
+   "back": "taom, ovqat",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "غَرْب",
+   "back": "g'arb",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "ظُهْر",
+   "back": "peshin (zuhr namozi)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "عَرَبِيّ",
+   "back": "arabcha, arab",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "ع ل م",
+   "back": "bilmoq, bilim (عِلْم, عَالِم, مُعَلِّم)",
+   "deck": "msa"
+  }
+ ]
+}
