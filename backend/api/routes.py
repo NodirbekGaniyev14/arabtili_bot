@@ -19,7 +19,7 @@ from db.models import (
 from services import roots as roots_svc
 from db.session import get_session
 from services.ai import generate_plan
-from services.course import course_modules, start_lesson_for
+from services.course import course_all_levels, start_lesson_for
 from services.achievements import check_and_award, list_achievements
 from services.ai import XP_BY_MINUTES
 from services.league import leaderboard
@@ -87,7 +87,7 @@ async def modules_list(
     plan = await latest_plan(session, user.id)
     level = plan.level if plan else "A0"
     done = await completed_lesson_ids(session, user.id)
-    return course_modules(level, done)
+    return course_all_levels(done, current_level=level)
 
 
 SESSION_LIMIT = 20  # bitta takror sessiyasidagi maksimal kartalar

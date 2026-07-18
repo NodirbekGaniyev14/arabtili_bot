@@ -13,8 +13,7 @@ from db.models import ExamAttempt
 
 EXAMS_DIR = BASE_DIR / "content" / "exams"
 COOLDOWN_HOURS = 24
-PASS_TOTAL = 80
-PASS_SECTION = 60
+PASS_TOTAL = 80  # yakuniy 80%+ yetarli (bo'lim bo'yicha minimal talab yo'q)
 GRACE_MINUTES = 3
 
 
@@ -125,9 +124,7 @@ def grade(
     s_speaking = max(0, min(100, speaking_score))
 
     total = round((s_reading + s_listening + s_writing + s_speaking) / 4)
-    passed = total >= PASS_TOTAL and all(
-        s >= PASS_SECTION for s in (s_reading, s_listening, s_writing, s_speaking)
-    )
+    passed = total >= PASS_TOTAL  # umumiy 80%+ — bo'lim minimumi olib tashlandi
 
     # Vaqt chegarasi (server tomonda ham)
     limit = exam.get("minutes", 30) + GRACE_MINUTES

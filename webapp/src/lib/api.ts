@@ -72,13 +72,23 @@ export interface ModuleInfo {
   arabic_title: string;
   available: boolean;
   done_count: number;
+  total: number;
   lessons: LessonMeta[];
 }
 
-export interface ComingSoonModule {
-  id: string;
-  title: string;
-  available: false;
+export interface LevelSection {
+  level: string;
+  name: string;
+  available: boolean;
+  done: number;
+  total: number;
+  percent: number;
+  modules: ModuleInfo[];
+}
+
+export interface LevelsResponse {
+  current_level: string;
+  levels: LevelSection[];
 }
 
 export interface NewItem {
@@ -385,10 +395,7 @@ export const api = {
       method: "POST",
       body: JSON.stringify(payload),
     }),
-  getModules: () =>
-    request<{ modules: ModuleInfo[]; coming_soon: ComingSoonModule[] }>(
-      "/api/modules"
-    ),
+  getModules: () => request<LevelsResponse>("/api/modules"),
   getReview: () =>
     request<{ cards: ReviewCard[]; total_due: number }>("/api/review"),
   answerReview: (wordId: number, grade: ReviewGrade) =>

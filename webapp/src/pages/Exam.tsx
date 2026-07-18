@@ -1,4 +1,4 @@
-/** Daraja imtihoni (spec §12): 4 bo'lim, timer, 80/60 qoidasi, sertifikat. */
+/** Daraja imtihoni (spec §12): 4 bo'lim, timer, umumiy 80%+ qoidasi, sertifikat. */
 
 import { useEffect, useRef, useState } from "react";
 import {
@@ -165,7 +165,7 @@ export default function Exam({ onClose }: { onClose: () => void }) {
                   <p>✍️ Yozish: {info.counts.writing} topshiriq · 25%</p>
                   <p>🗣 Gapirish: {info.counts.speaking} topshiriq · 25%</p>
                   <p className="pt-1 text-ink-soft">
-                    O'tish: umumiy <b>80%+</b> va har bo'limda <b>60%+</b>.
+                    O'tish uchun umumiy <b>80%+</b> yetarli.
                     Yiqilsangiz — 24 soatdan keyin yangi savollar bilan.
                   </p>
                 </div>

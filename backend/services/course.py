@@ -139,24 +139,25 @@ def count_vocab(lesson_id: str) -> int:
     return len(data.get("vocabulary", [])) if data else 0
 
 
-def course_modules(level: str, done: set[str]) -> dict:
-    """Lessons sahifasi uchun: darajaning dars modullari va qulf holati.
+def _level_name(level: str) -> str:
+    return {
+        "A0": "Boshlang'ich",
+        "A1": "Elementar",
+        "A2": "O'rta-quyi",
+        "B1": "O'rta",
+    }.get(level, level)
 
-    - Yozilgan darslar: done/unlocked (chiziqli ochiladi).
-    - Yozilmagan darslar: "tez orada" (locked, unavailable).
-    - Imtihon moduli bu ro'yxatga KIRMAYDI — u Asosiy'dagi "Imtihon" kartasida.
-    """
+
+def _level_modules(level: str, done: set[str]) -> list[dict]:
+    """Bitta darajaning dars modullari + qulf holati (imtihonsiz)."""
     cur = load_curriculum()
     order = lesson_order()
     written = written_lesson_ids()
 
-    # Shu darajaning barcha (imtihon bo'lmagan) darslari, tartibda
     level_ids = [
         lid for lid in order
         if cur[lid]["level"] == level and cur[lid]["type"] == "lesson"
     ]
-
-    # Chiziqli ochilish: yozilgan darslar bo'yicha
     written_seq = [lid for lid in level_ids if lid in written]
 
     seen_mods: list[str] = []
@@ -202,27 +203,40 @@ def course_modules(level: str, done: set[str]) -> dict:
                 "lessons": lessons,
             }
         )
+    return modules
 
-    # Boshqa darajalar — "tez orada" (kontent keyingi bosqichlarda)
-    coming = []
+
+def course_all_levels(done: set[str], current_level: str = "A0") -> dict:
+    """Darslar sahifasi — 4 daraja (A0/A1/A2/B1) alohida, har birida progress %.
+
+    Har daraja: modullar, tugatilgan/jami darslar soni, foiz, kontent bor-yo'qligi.
+    Foydalanuvchi qaysi darajada ekanini adashtirmasligi uchun.
+    """
+    cur = load_curriculum()
+    order = lesson_order()
+    written = written_lesson_ids()
+
+    levels_out: list[dict] = []
     for lvl in LEVELS:
-        if lvl == level:
-            continue
-        has_written = any(
-            lid in written for lid in order if cur[lid]["level"] == lvl
+        lvl_lessons = [
+            lid for lid in order
+            if cur[lid]["level"] == lvl and cur[lid]["type"] == "lesson"
+        ]
+        total = len(lvl_lessons)
+        done_n = sum(1 for lid in lvl_lessons if lid in done)
+        has_written = any(lid in written for lid in lvl_lessons)
+        percent = round(100 * done_n / total) if total else 0
+
+        levels_out.append(
+            {
+                "level": lvl,
+                "name": _level_name(lvl),
+                "available": has_written,
+                "done": done_n,
+                "total": total,
+                "percent": percent,
+                "modules": _level_modules(lvl, done) if has_written else [],
+            }
         )
-        if not has_written:
-            coming.append(
-                {"id": lvl, "title": f"{lvl} — {_level_name(lvl)}", "available": False}
-            )
 
-    return {"level": level, "modules": modules, "coming_soon": coming}
-
-
-def _level_name(level: str) -> str:
-    return {
-        "A0": "Boshlang'ich",
-        "A1": "Elementar",
-        "A2": "O'rta-quyi",
-        "B1": "O'rta",
-    }.get(level, level)
+    return {"current_level": current_level, "levels": levels_out}
