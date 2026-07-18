@@ -28,6 +28,26 @@ async def cmd_admin(message: Message):
     await message.answer(text, parse_mode="HTML")
 
 
+@router.message(Command("funnel"))
+async def cmd_funnel(message: Message):
+    if not _is_admin(message):
+        return
+    parts = (message.text or "").split(maxsplit=1)
+    level = parts[1].strip().upper() if len(parts) > 1 else "A0"
+    async with SessionLocal() as session:
+        text = await admin.funnel(session, level)
+    await message.answer(text, parse_mode="HTML")
+
+
+@router.message(Command("ratings"))
+async def cmd_ratings(message: Message):
+    if not _is_admin(message):
+        return
+    async with SessionLocal() as session:
+        text = await admin.ratings_report(session)
+    await message.answer(text, parse_mode="HTML")
+
+
 @router.message(Command("users"))
 async def cmd_users(message: Message):
     if not _is_admin(message):

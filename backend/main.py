@@ -38,6 +38,8 @@ async def _setup_commands(bot: Bot):
         await bot.set_my_commands(
             [
                 BotCommand(command="admin", description="📊 Statistika paneli"),
+                BotCommand(command="funnel", description="📉 Voronka (drop-off)"),
+                BotCommand(command="ratings", description="⭐ Dars baholari va fikrlar"),
                 BotCommand(command="users", description="👥 Oxirgi foydalanuvchilar"),
                 BotCommand(command="user", description="👤 Foydalanuvchi ma'lumoti"),
                 BotCommand(command="broadcast", description="📤 Hammaga xabar"),

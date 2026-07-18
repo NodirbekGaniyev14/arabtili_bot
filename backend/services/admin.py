@@ -5,7 +5,17 @@ from datetime import datetime, timedelta, timezone
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.models import Achievement, Plan, Progress, User, UserWord, XpLog
+from db.models import (
+    Achievement,
+    ExamAttempt,
+    Feedback,
+    LessonRating,
+    Plan,
+    Progress,
+    User,
+    UserWord,
+    XpLog,
+)
 from services.stats import TASHKENT_OFFSET, _local_date, _today
 
 
@@ -234,6 +244,143 @@ async def user_detail(session: AsyncSession, tg_id: int) -> str:
         f"💎 Jami XP: {total_xp}\n"
         f"🏆 Yutuqlar: {badges}"
     )
+
+
+def _bar(frac: float, width: int = 10) -> str:
+    filled = round(frac * width)
+    return "█" * filled + "░" * (width - filled)
+
+
+async def funnel(session: AsyncSession, level: str = "A0") -> str:
+    """Voronka: onboarding→1-dars→daraja yakuni→imtihon + dars drop-off."""
+    from services.curriculum import load_curriculum
+
+    cur = load_curriculum()
+    lvl_ids = [
+        lid for lid, m in cur.items()
+        if m["level"] == level and m["type"] == "lesson"
+    ]
+    lvl_ids.sort(key=lambda x: cur[x]["order"])
+    lvl_set = set(lvl_ids)
+
+    async def scalar(q):
+        return (await session.execute(q)).scalar_one()
+
+    real = User.is_demo == 0
+
+    total = await scalar(select(func.count()).select_from(User).where(real))
+    onboarded = await scalar(
+        select(func.count(func.distinct(Plan.user_id)))
+        .select_from(Plan).join(User, User.id == Plan.user_id).where(real)
+    )
+
+    # Har foydalanuvchi tugatgan (level) darslari
+    rows = (
+        await session.execute(
+            select(Progress.user_id, Progress.lesson_id)
+            .join(User, User.id == Progress.user_id)
+            .where(real, Progress.lesson_id.in_(lvl_set))
+            .distinct()
+        )
+    ).all()
+    done_by_user: dict[int, set[str]] = {}
+    per_lesson: dict[str, int] = {lid: 0 for lid in lvl_ids}
+    for uid, lid in rows:
+        done_by_user.setdefault(uid, set()).add(lid)
+        per_lesson[lid] += 1
+
+    started = len(done_by_user)
+    completed_all = sum(1 for s in done_by_user.values() if lvl_set <= s)
+
+    # Imtihon
+    exam_finished = await scalar(
+        select(func.count(func.distinct(ExamAttempt.user_id)))
+        .select_from(ExamAttempt).join(User, User.id == ExamAttempt.user_id)
+        .where(real, ExamAttempt.level == level, ExamAttempt.finished_at.isnot(None))
+    )
+    exam_passed = await scalar(
+        select(func.count(func.distinct(ExamAttempt.user_id)))
+        .select_from(ExamAttempt).join(User, User.id == ExamAttempt.user_id)
+        .where(real, ExamAttempt.level == level, ExamAttempt.passed == 1)
+    )
+
+    base = max(onboarded, 1)
+    lines = [
+        f"📉 <b>Voronka — {level}</b>\n",
+        f"1️⃣ Ro'yxatdan o'tgan: <b>{onboarded}</b> / {total} jami",
+        f"2️⃣ Darsni boshlagan: <b>{started}</b>  {_bar(started/base)} {round(100*started/base)}%",
+        f"3️⃣ {level} ni tugatgan: <b>{completed_all}</b>  {_bar(completed_all/base)} {round(100*completed_all/base)}%",
+        f"4️⃣ Imtihon topshirgan: <b>{exam_finished}</b> · o'tgan: <b>{exam_passed}</b>",
+    ]
+    if exam_finished:
+        lines.append(f"   Imtihon o'tish foizi: <b>{round(100*exam_passed/exam_finished)}%</b>")
+
+    # Dars bo'yicha drop-off (faqat kimdir yetgan darslar)
+    lines.append("\n📚 <b>Dars bo'yicha yetib borish</b>")
+    peak = max(per_lesson.values()) or 1
+    shown = 0
+    for lid in lvl_ids:
+        n = per_lesson[lid]
+        if n == 0 and shown == 0:
+            continue  # boshidagi 0 larni o'tkazmaymiz
+        title = cur[lid]["title_uz"][:22]
+        lines.append(f"<code>{lid}</code> {_bar(n/peak, 8)} {n} · {title}")
+        shown += 1
+        if shown >= 26:
+            break
+
+    return "\n".join(lines)
+
+
+async def ratings_report(session: AsyncSession) -> str:
+    """Dars baholari (👍/👎) va so'nggi fikrlar."""
+    up = (
+        await session.execute(
+            select(func.count()).select_from(LessonRating).where(LessonRating.rating == 1)
+        )
+    ).scalar_one()
+    down = (
+        await session.execute(
+            select(func.count()).select_from(LessonRating).where(LessonRating.rating == -1)
+        )
+    ).scalar_one()
+
+    lines = [f"⭐ <b>Dars baholari</b>\n👍 {up} · 👎 {down}\n"]
+
+    # Eng ko'p 👎 olgan darslar
+    neg = (
+        await session.execute(
+            select(LessonRating.lesson_id, func.count())
+            .where(LessonRating.rating == -1)
+            .group_by(LessonRating.lesson_id)
+            .order_by(func.count().desc())
+            .limit(8)
+        )
+    ).all()
+    if neg:
+        lines.append("👎 <b>Ko'p shikoyat bo'lgan darslar</b>")
+        for lid, cnt in neg:
+            lines.append(f"<code>{lid}</code> · {cnt} 👎")
+
+    # So'nggi fikrlar
+    fb = (
+        await session.execute(
+            select(Feedback, User.name, User.tg_id)
+            .join(User, User.id == Feedback.user_id)
+            .order_by(Feedback.id.desc())
+            .limit(8)
+        )
+    ).all()
+    if fb:
+        lines.append("\n💬 <b>So'nggi fikrlar</b>")
+        for f, name, tg_id in fb:
+            when = _local_date(f.created_at).isoformat()
+            snippet = f.text[:120].replace("<", "&lt;").replace(">", "&gt;")
+            lines.append(f"• <b>{name or tg_id}</b> ({when}): {snippet}")
+
+    if up == down == 0 and not fb:
+        return "Hozircha baho yoki fikr yo'q."
+    return "\n".join(lines)
 
 
 async def all_real_tg_ids(session: AsyncSession) -> list[int]:

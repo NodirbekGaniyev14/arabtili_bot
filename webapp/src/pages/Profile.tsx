@@ -67,6 +67,22 @@ export default function Profile() {
   const [savingGoal, setSavingGoal] = useState(false);
   const [sound, setSound] = useState(isSoundOn());
   const [resetting, setResetting] = useState(false);
+  const [fb, setFb] = useState("");
+  const [fbState, setFbState] = useState<"idle" | "sending" | "sent">("idle");
+
+  const sendFeedback = async () => {
+    const text = fb.trim();
+    if (!text || fbState === "sending") return;
+    setFbState("sending");
+    try {
+      await api.submitFeedback(text, "profil");
+      setFbState("sent");
+      setFb("");
+      tg()?.HapticFeedback?.notificationOccurred?.("success");
+    } catch {
+      setFbState("idle");
+    }
+  };
 
   const toggleSound = () => {
     const next = !sound;
@@ -293,6 +309,49 @@ export default function Profile() {
             );
           })}
         </div>
+      </section>
+
+      {/* Fikr bildirish */}
+      <section className="rounded-3xl bg-card border border-cardline p-4 space-y-3">
+        <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft">
+          FIKR BILDIRISH
+        </div>
+        {fbState === "sent" ? (
+          <div className="text-center py-3">
+            <div className="text-3xl mb-1">🌟</div>
+            <p className="font-extrabold text-emerald-dark">Rahmat!</p>
+            <p className="text-xs text-ink-soft font-semibold">
+              Fikringiz qabul qilindi
+            </p>
+            <button
+              onClick={() => setFbState("idle")}
+              className="mt-2 text-xs font-bold text-emerald-dark underline"
+            >
+              Yana yozish
+            </button>
+          </div>
+        ) : (
+          <>
+            <p className="text-xs text-ink-soft font-semibold">
+              Taklif, xato yoki nima yoqqani — hammasi botni yaxshilashga yordam
+              beradi.
+            </p>
+            <textarea
+              value={fb}
+              onChange={(e) => setFb(e.target.value.slice(0, 2000))}
+              placeholder="Fikringizni shu yerga yozing..."
+              rows={3}
+              className="w-full rounded-xl bg-sand/60 border border-cardline px-3 py-2.5 text-sm font-semibold resize-none outline-none focus:border-emerald-deep/40"
+            />
+            <button
+              onClick={sendFeedback}
+              disabled={!fb.trim() || fbState === "sending"}
+              className="w-full rounded-xl bg-emerald-deep py-3 text-white font-extrabold active:scale-[0.98] transition-transform disabled:opacity-40"
+            >
+              {fbState === "sending" ? "Yuborilmoqda..." : "✉️ Yuborish"}
+            </button>
+          </>
+        )}
       </section>
 
       {/* Rejani tozalash */}

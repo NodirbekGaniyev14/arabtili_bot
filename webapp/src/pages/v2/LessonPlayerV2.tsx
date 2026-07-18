@@ -51,6 +51,7 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
     xp_earned: number;
   } | null>(null);
   const submitted = useRef(false);
+  const [rated, setRated] = useState<1 | -1 | 0>(0);
 
   useEffect(() => {
     api.getLessonV2(lessonId).then(setLesson).catch(() => setError(true));
@@ -376,6 +377,42 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
                   </div>
                 </div>
               ))}
+              {/* Dars bahosi — 1 bosishli 👍/👎 */}
+              <div className="w-full rounded-2xl bg-card border border-cardline px-4 py-3 flex items-center justify-between">
+                {rated === 0 ? (
+                  <>
+                    <span className="text-sm font-bold text-ink-soft">
+                      Dars yoqdimi?
+                    </span>
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => {
+                          setRated(1);
+                          api.rateLesson(lesson.id, 1).catch(() => {});
+                        }}
+                        className="w-11 h-11 rounded-xl bg-emerald-deep/10 text-2xl active:scale-90 transition-transform"
+                        aria-label="Yoqdi"
+                      >
+                        👍
+                      </button>
+                      <button
+                        onClick={() => {
+                          setRated(-1);
+                          api.rateLesson(lesson.id, -1).catch(() => {});
+                        }}
+                        className="w-11 h-11 rounded-xl bg-terracotta/10 text-2xl active:scale-90 transition-transform"
+                        aria-label="Yoqmadi"
+                      >
+                        👎
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <span className="text-sm font-bold text-emerald-dark mx-auto">
+                    {rated === 1 ? "Rahmat! 🌟" : "Rahmat, yaxshilaymiz! 🛠"}
+                  </span>
+                )}
+              </div>
               {reward.checkpoint_available && (
                 <button
                   onClick={() => {

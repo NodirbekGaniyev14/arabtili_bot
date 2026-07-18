@@ -479,4 +479,19 @@ export const api = {
       method: "POST",
       body: "{}",
     }),
+  rateLesson: (lessonId: string, rating: 1 | -1) =>
+    request<{ ok: boolean }>(`/api/v2/lessons/${lessonId}/rate`, {
+      method: "POST",
+      body: JSON.stringify({ rating }),
+    }),
+  submitFeedback: (text: string, context = "") =>
+    request<{ ok: boolean }>("/api/feedback", {
+      method: "POST",
+      body: JSON.stringify({ text, context }),
+    }),
+  reportClientError: (message: string, context = "") =>
+    request<{ ok: boolean }>("/api/client-error", {
+      method: "POST",
+      body: JSON.stringify({ message, context }),
+    }).catch(() => {}),
 };

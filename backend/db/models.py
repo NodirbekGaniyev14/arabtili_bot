@@ -174,6 +174,48 @@ class Achievement(Base):
     earned_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
 
 
+class Feedback(Base):
+    """Foydalanuvchi fikr-mulohazasi (ilova yoki /fikr orqali)."""
+
+    __tablename__ = "feedback"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    text: Mapped[str] = mapped_column(Text)
+    source: Mapped[str] = mapped_column(String(16), default="app")  # app | bot
+    context: Mapped[str] = mapped_column(String(64), default="")  # sahifa/dars
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
+class LessonRating(Base):
+    """Dars oxiridagi 1-bosishli baho (👍 / 👎)."""
+
+    __tablename__ = "lesson_ratings"
+    __table_args__ = (
+        UniqueConstraint("user_id", "lesson_id", name="uq_user_lesson_rating"),
+    )
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    lesson_id: Mapped[str] = mapped_column(String(16), index=True)
+    rating: Mapped[int] = mapped_column(Integer)  # +1 (👍) yoki -1 (👎)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
+
+
+class ClientError(Base):
+    """Player/ilovada yuz bergan JS xatolari (diagnostika uchun)."""
+
+    __tablename__ = "client_errors"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int | None] = mapped_column(
+        ForeignKey("users.id"), nullable=True, index=True
+    )
+    message: Mapped[str] = mapped_column(Text)
+    context: Mapped[str] = mapped_column(String(128), default="")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
 class Plan(Base):
     """AI tuzgan shaxsiy o'quv reja."""
 

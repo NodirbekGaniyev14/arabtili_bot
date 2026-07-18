@@ -1,11 +1,21 @@
 import json
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel, Field
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.models import Placement, Plan, Progress, User, UserWord, XpLog
+from config import settings
+from db.models import (
+    ClientError,
+    Feedback,
+    Placement,
+    Plan,
+    Progress,
+    User,
+    UserWord,
+    XpLog,
+)
 from services import roots as roots_svc
 from db.session import get_session
 from services.ai import generate_plan
@@ -416,6 +426,65 @@ async def practice_weak_complete(
     await session.commit()
     await reset_words(session, user.id, body.wrong_words)
     return {"xp_earned": xp}
+
+
+class FeedbackBody(BaseModel):
+    text: str = Field(min_length=1, max_length=2000)
+    context: str = Field(default="", max_length=64)
+
+
+@router.post("/feedback")
+async def submit_feedback(
+    body: FeedbackBody,
+    request: Request,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Ilova ichidan yuborilgan fikr — saqlanadi va adminga yetkaziladi."""
+    text = body.text.strip()
+    session.add(
+        Feedback(user_id=user.id, text=text, source="app", context=body.context)
+    )
+    await session.commit()
+
+    bot = getattr(request.app.state, "bot", None)
+    if bot and settings.admin_id:
+        uname = f"@{user.username}" if user.username else "—"
+        safe = text.replace("<", "&lt;").replace(">", "&gt;")
+        ctx = f" · {body.context}" if body.context else ""
+        try:
+            await bot.send_message(
+                settings.admin_id,
+                f"💬 <b>Ilovadan fikr</b> ({user.name}, {uname}, "
+                f"ID <code>{user.tg_id}</code>{ctx})\n\n{safe}",
+                parse_mode="HTML",
+            )
+        except Exception:
+            pass
+    return {"ok": True}
+
+
+class ClientErrorBody(BaseModel):
+    message: str = Field(max_length=2000)
+    context: str = Field(default="", max_length=128)
+
+
+@router.post("/client-error")
+async def report_client_error(
+    body: ClientErrorBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Player/ilovadagi JS xatosini backend logiga yozadi."""
+    msg = (body.message or "").strip()
+    if not msg:
+        return {"ok": False}
+    session.add(
+        ClientError(user_id=user.id, message=msg[:2000], context=body.context[:128])
+    )
+    await session.commit()
+    print(f"⚠️ CLIENT-ERROR [{body.context}] user={user.tg_id}: {msg[:200]}")
+    return {"ok": True}
 
 
 class GoalBody(BaseModel):

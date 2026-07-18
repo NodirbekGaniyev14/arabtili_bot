@@ -11,7 +11,7 @@ from pydantic import BaseModel, Field
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.models import Plan, Progress, User, XpLog
+from db.models import LessonRating, Plan, Progress, User, XpLog
 from db.session import get_session
 from services.achievements import check_and_award
 from services.curriculum import (
@@ -122,6 +122,38 @@ async def complete_v2(
         "new_badges": new_badges,
         "checkpoint_available": len(cp) >= 2,
     }
+
+
+class RateBody(BaseModel):
+    rating: int = Field(ge=-1, le=1)  # +1 (👍) yoki -1 (👎)
+
+
+@router.post("/lessons/{lesson_id}/rate")
+async def rate_lesson(
+    lesson_id: str,
+    body: RateBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Dars oxiridagi 1-bosishli baho (👍/👎). Takror bosilsa yangilanadi."""
+    if body.rating == 0:
+        return {"ok": False}
+    existing = (
+        await session.execute(
+            select(LessonRating).where(
+                LessonRating.user_id == user.id,
+                LessonRating.lesson_id == lesson_id,
+            )
+        )
+    ).scalar_one_or_none()
+    if existing:
+        existing.rating = body.rating
+    else:
+        session.add(
+            LessonRating(user_id=user.id, lesson_id=lesson_id, rating=body.rating)
+        )
+    await session.commit()
+    return {"ok": True}
 
 
 @router.get("/checkpoint/{lesson_id}")
