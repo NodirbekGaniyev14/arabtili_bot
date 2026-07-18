@@ -1,0 +1,104 @@
+{
+ "id": "a2-33",
+ "level": "A2",
+ "module": "saudi",
+ "order": 33,
+ "title_uz": "Bank / to'lov",
+ "title_ar": "البَنْك وَالدَّفْع",
+ "can_do_uz": "Valyuta ayirboshlash, karta va «mada» tizimi orqali to'lov haqida gapira olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-32"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "Saudiyada pul kerak — dollarni riyolga almashtirasiz. «أَبْغَى أَصْرِف فُلُوس» (pul almashtirmoqchiman). Ko'p joyда «مَدَى» kartasi bilan to'laysiz. Bugun bank va to'lov so'zlarini o'rganamiz.",
+ "grammar": {
+  "point_ar": "عِبَارَاتُ البَنْك",
+  "explanation_uz": "Valyuta almashtirish: أُرِيدُ صَرْفَ... (... almashtirmoqchiman), أَيْنَ الصَّرَّافُ؟ (bankomat qayerda?). To'lov usullari: نَقْدًا (naqd), بِالبِطَاقَةِ (karta bilan), yoki Saudiya «مَدَى» tizimi (mahalliy karta). Balans — رَصِيد, o'tkazma — تَحْوِيل. Hijoziyда «pul» — فُلُوس. Bankomatда رَقَم سِرِّيّ (PIN) kiritasiz.",
+  "table": [
+   {"ar": "أَبْغَى أَصْرِف فُلُوس", "uz": "Pul almashtirmoqchiman (hijoziy)", "form": "boshlash"},
+   {"ar": "أَيْنَ الصَّرَّافُ؟", "uz": "Bankomat qayerda?", "form": "savol"},
+   {"ar": "بِالبِطَاقَة أَو نَقْدًا؟", "uz": "Karta bilanmi yoki naqdmi?", "form": "to'lov"},
+   {"ar": "أَدْفَعُ بِمَدَى", "uz": "Mada bilan to'layman", "form": "Saudiya"}
+  ],
+  "common_mistakes_uz": [
+   "صَرْف (ayirboshlash) va صَرَّاف (bankomat/kassir) ni chalkashtirish.",
+   "Kartani ishlatishdan oldin رَقَم سِرِّيّ (PIN) ni tayyorlamaslik.",
+   "Valyuta kursini (سِعْر الصَّرْف) so'ramaslik."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ص ر ف",
+   "meaning_uz": "sarflash, almashtirish",
+   "uz_cognates": ["sarf", "masraf", "sarrof"],
+   "derived": [
+    {"ar": "صَرَّاف", "uz": "kassir, bankomat", "pattern": "فَعَّال"},
+    {"ar": "مَصْرِف", "uz": "bank", "pattern": "مَفْعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "بَنْك", "translit": "bank", "uz": "bank", "root": "", "pattern": "", "pos": "ot", "audio": "a2/bank.mp3", "example_ar": "أَيْنَ البَنْكُ؟", "example_uz": "Bank qayerda?", "srs": true},
+  {"ar": "صَرَّاف", "translit": "ṣarrāf", "uz": "bankomat, kassir", "root": "ص ر ف", "pattern": "فَعَّال", "pos": "ot", "audio": "a2/sarraf.mp3", "example_ar": "الصَّرَّافُ الآلِيُّ هُنَاكَ.", "example_uz": "Bankomat u yerda.", "srs": true},
+  {"ar": "عُمْلَة", "translit": "ʿumla", "uz": "valyuta, pul birligi", "root": "ع م ل", "pattern": "فُعْلَة", "pos": "ot", "audio": "a2/umla.mp3", "example_ar": "أَيُّ عُمْلَةٍ؟", "example_uz": "Qaysi valyuta?", "srs": true},
+  {"ar": "صَرْف", "translit": "ṣarf", "uz": "ayirboshlash", "root": "ص ر ف", "pattern": "فَعْل", "pos": "ot", "audio": "a2/sarf.mp3", "example_ar": "سِعْرُ الصَّرْفِ.", "example_uz": "Valyuta kursi.", "srs": true},
+  {"ar": "بِطَاقَة", "translit": "biṭāqa", "uz": "karta", "root": "", "pattern": "", "pos": "ot", "audio": "a2/bitaqa.mp3", "example_ar": "أَدْفَعُ بِالبِطَاقَةِ.", "example_uz": "Karta bilan to'layman.", "srs": true},
+  {"ar": "رَصِيد", "translit": "raṣīd", "uz": "balans, hisobdagi pul", "root": "ر ص د", "pattern": "فَعِيل", "pos": "ot", "audio": "a2/rasid.mp3", "example_ar": "مَا رَصِيدِي؟", "example_uz": "Balansim qancha?", "srs": true},
+  {"ar": "تَحْوِيل", "translit": "taḥwīl", "uz": "pul o'tkazma", "root": "ح و ل", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/tahwil.mp3", "example_ar": "تَحْوِيلٌ بَنْكِيٌّ.", "example_uz": "Bank o'tkazmasi.", "srs": true},
+  {"ar": "مَدَى", "translit": "madā", "uz": "«mada» — Saudiya to'lov tizimi", "root": "", "pattern": "", "pos": "ot", "audio": "a2/mada.mp3", "example_ar": "أَدْفَعُ بِمَدَى.", "example_uz": "Mada bilan to'layman.", "srs": true},
+  {"ar": "رَقَم سِرِّيّ", "translit": "raqam sirrī", "uz": "PIN kod", "root": "", "pattern": "", "pos": "ibora", "audio": "a2/raqam_sirri.mp3", "example_ar": "أَدْخِلِ الرَّقَمَ السِّرِّيَّ.", "example_uz": "PIN kodni kiriting.", "srs": true},
+  {"ar": "يَدْفَعُ", "translit": "yadfaʿu", "uz": "to'laydi", "root": "د ف ع", "pattern": "يَفْعَل", "pos": "fe'l", "audio": "a2/yadfau.mp3", "example_ar": "يَدْفَعُ الحِسَابَ.", "example_uz": "Hisobni to'laydi.", "srs": true},
+  {"ar": "دُولَار", "translit": "dūlār", "uz": "dollar", "root": "", "pattern": "", "pos": "ot", "audio": "a2/dular.mp3", "example_ar": "صَرَفْتُ الدُّولَارَ.", "example_uz": "Dollarni almashtirдim.", "srs": true},
+  {"ar": "حِسَاب", "translit": "ḥisāb", "uz": "hisob (bank hisobi)", "root": "ح س ب", "pattern": "فِعَال", "pos": "ot", "audio": "a1/hisab.mp3", "example_ar": "حِسَابٌ بَنْكِيٌّ.", "example_uz": "Bank hisobi.", "srs": true}
+ ],
+ "hejazi": [
+  {"msa_ar": "أُرِيدُ صَرْفَ نُقُودٍ", "hejazi_ar": "أَبْغَى أَصْرِف فُلُوس", "translit": "abghā aṣrif fulūs", "uz": "Pul almashtirmoqchiman (hijoziy — fulus)", "audio": "hj/abgha_asrif.mp3"},
+  {"msa_ar": "أَيْنَ الصَّرَّافُ الآلِيُّ؟", "hejazi_ar": "وِين الصَّرَّاف؟", "translit": "wēn aṣ-ṣarrāf?", "uz": "Bankomat qayerda? (hijoziy)", "audio": "hj/wen_sarraf.mp3"},
+  {"msa_ar": "بِالبِطَاقَةِ", "hejazi_ar": "بِالشَّبَكَة / مَدَى", "translit": "bish-shabaka / madā", "uz": "Karta/mada bilan (hijoziy)", "audio": "hj/bishabaka.mp3"}
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "ذَهَبْتُ إِلَى البَنْكِ وَقُلْتُ: أَبْغَى أَصْرِف فُلُوس، عِنْدِي دُولَار. سَأَلْتُ عَنْ سِعْرِ الصَّرْفِ. ثُمَّ فِي المَحَلِّ دَفَعْتُ بِمَدَى لِأَنَّ مَعِي بِطَاقَةٌ سَعُودِيَّةٌ.",
+   "questions": [
+    {"q_uz": "Bankда nima qildi?", "a": "Dollarni riyolga almashtirdi (صَرْف)"},
+    {"q_uz": "Do'konда qanday to'ladi?", "a": "Mada (karta) bilan"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/sarraf.mp3",
+   "transcript_ar": "صَرَّاف",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Bankomat, kassir"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Bankда gaplashing: abghā aṣrif fulūs, wēn aṣ-ṣarrāf? adfaʿu bimadā.",
+   "target_ar": ["أَبْغَى أَصْرِف فُلُوس", "وِين الصَّرَّاف؟", "أَدْفَعُ بِمَدَى"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Bankomat qayerda?» va «Karta bilan to'layman» gaplarini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«bankomat» qaysi?", "q_ar": "", "options": ["صَرَّاف", "صَرْف", "عُمْلَة", "رَصِيد"], "answer": "صَرَّاف", "explain_uz": "صَرَّاف (الآلي) — bankomat/kassir.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَدْفَعُ بِالبِطَاقَةِ", "options": [], "answer": "karta bilan to'layman", "explain_uz": "أَدْفَعُ = to'layman, بِالبِطَاقَة = karta bilan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Saudiya mahalliy to'lov tizimi qaysi?", "q_ar": "", "options": ["مَدَى", "دُولَار", "تَحْوِيل", "رَصِيد"], "answer": "مَدَى", "explain_uz": "مَدَى — Saudiya milliy karta/to'lov tizimi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ص ر ف» o'zagidan?", "q_ar": "", "options": ["صَرَّاف", "بِطَاقَة", "رَصِيد"], "answer": "صَرَّاف", "explain_uz": "«ص ر ف» — sarflash/almashtirish o'zagi: صَرَّاف, صَرْف, masraf.", "audio": "", "root": "ص ر ف", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "valyuta", "q_ar": "", "options": [], "answer": "عُمْلَة", "explain_uz": "عُمْلَة — valyuta/pul birligi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyда «pul» qaysi?", "q_ar": "", "options": ["فُلُوس", "عُمْلَة", "مَدَى", "رَصِيد"], "answer": "فُلُوس", "explain_uz": "فُلُوس — hijoziy/kundalik «pul».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "balans", "q_ar": "", "options": [], "answer": "رَصِيد", "explain_uz": "رَصِيد — hisobdagi balans.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ص ر ف", "back": "sarflash o'zagi (sarf, sarrof=bankomat, masraf)", "deck": "msa"},
+  {"type": "word", "front": "بَنْك", "back": "bank", "deck": "msa"},
+  {"type": "word", "front": "صَرَّاف", "back": "bankomat, kassir", "deck": "msa"},
+  {"type": "word", "front": "عُمْلَة", "back": "valyuta", "deck": "msa"},
+  {"type": "word", "front": "صَرْف", "back": "ayirboshlash", "deck": "msa"},
+  {"type": "word", "front": "رَصِيد", "back": "balans", "deck": "msa"},
+  {"type": "word", "front": "تَحْوِيل", "back": "pul o'tkazma", "deck": "msa"},
+  {"type": "word", "front": "مَدَى", "back": "mada (Saudiya to'lov tizimi)", "deck": "msa"},
+  {"type": "phrase", "front": "أَبْغَى أَصْرِف فُلُوس", "back": "Pul almashtirmoqchiman (hijoziy)", "deck": "hejazi"},
+  {"type": "phrase", "front": "وِين الصَّرَّاف؟", "back": "Bankomat qayerda? (hijoziy)", "deck": "hejazi"}
+ ]
+}

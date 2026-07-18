@@ -1,0 +1,104 @@
+{
+ "id": "a2-32",
+ "level": "A2",
+ "module": "saudi",
+ "order": 32,
+ "title_uz": "Dorixona / shifokor",
+ "title_ar": "الصَّيْدَلِيَّة وَالطَّبِيب",
+ "can_do_uz": "Og'riq va kasallik haqida gapira, dorixonada dori so'ray olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-31"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "Umra safarida kasal bo'lib qolsangiz? Dorixonaga borib: «عِنْدِي صُدَاع» (boshim og'riyapti) yoki «عِنْدِي حُمَّى» (isitmam bor) deysiz. Bugun salomatlik va dori so'zlarini o'rganamiz — kerak bo'lmasin, lekin bilib qo'ygan yaxshi!",
+ "grammar": {
+  "point_ar": "عِبَارَاتُ الصِّحَّة",
+  "explanation_uz": "Kasallikni tushuntirish: عِنْدِي... (menda ... bor) yoki أَشْعُرُ بِـ... (... his qilyapman): عِنْدِي صُدَاع (boshim og'riyapti), عِنْدِي حُمَّى (isitma), يُؤْلِمُنِي بَطْنِي (qornim og'riyapti). Dorixonada: أُرِيدُ دَوَاءً لِـ... (... uchun dori kerak). Retsept — وَصْفَة. Jiddiy holatда: أَيْنَ أَقْرَبُ مُسْتَشْفَى؟ (eng yaqin kasalxona qayerda?), tez yordam — إِسْعَاف. Hijoziyда «kasal/holsiz» — تَعْبَان.",
+  "table": [
+   {"ar": "عِنْدِي صُدَاع", "uz": "Boshim og'riyapti", "form": "shikoyat"},
+   {"ar": "أُرِيدُ دَوَاءً", "uz": "Dori kerak", "form": "so'rov"},
+   {"ar": "أَيْنَ أَقْرَبُ صَيْدَلِيَّة؟", "uz": "Eng yaqin dorixona qayerda?", "form": "savol"},
+   {"ar": "أَنَا تَعْبَان", "uz": "O'zimni yomon his qilyapman (hijoziy)", "form": "hijoziy"}
+  ],
+  "common_mistakes_uz": [
+   "أَلَم (og'riq) va مَرَض (kasallik) so'zlarini chalkashtirish.",
+   "Dorini retseptsiz (وَصْفَة) so'rash — ba'zi dorilar retsept talab qiladi.",
+   "Jiddiy holatда إِسْعَاف (997 — Saudiyada) ni chaqirishni bilmaslik."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ش ف ي",
+   "meaning_uz": "shifo, sog'ayish",
+   "uz_cognates": ["shifo", "mustashfo", "shofiy"],
+   "derived": [
+    {"ar": "مُسْتَشْفَى", "uz": "kasalxona (shifo topiladigan joy)", "pattern": "مُسْتَفْعَل"},
+    {"ar": "شِفَاء", "uz": "shifo, sog'ayish", "pattern": "فِعَال"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "صَيْدَلِيَّة", "translit": "ṣaydaliyya", "uz": "dorixona", "root": "", "pattern": "", "pos": "ot", "audio": "a2/saydaliyya.mp3", "example_ar": "أَيْنَ الصَّيْدَلِيَّةُ؟", "example_uz": "Dorixona qayerda?", "srs": true},
+  {"ar": "دَوَاء", "translit": "dawāʾ", "uz": "dori", "root": "د و ي", "pattern": "فَعَال", "pos": "ot", "audio": "a2/dawa.mp3", "example_ar": "أُرِيدُ دَوَاءً.", "example_uz": "Dori kerak.", "srs": true},
+  {"ar": "أَلَم", "translit": "alam", "uz": "og'riq", "root": "أ ل م", "pattern": "فَعَل", "pos": "ot", "audio": "a2/alam.mp3", "example_ar": "عِنْدِي أَلَمٌ.", "example_uz": "Og'riqim bor.", "srs": true},
+  {"ar": "حُمَّى", "translit": "ḥummā", "uz": "isitma", "root": "ح م م", "pattern": "فُعْلَى", "pos": "ot", "audio": "a2/humma.mp3", "example_ar": "عِنْدِي حُمَّى.", "example_uz": "Isitmam bor.", "srs": true},
+  {"ar": "صُدَاع", "translit": "ṣudāʿ", "uz": "bosh og'rig'i", "root": "ص د ع", "pattern": "فُعَال", "pos": "ot", "audio": "a2/sudaa.mp3", "example_ar": "عِنْدِي صُدَاعٌ.", "example_uz": "Boshim og'riyapti.", "srs": true},
+  {"ar": "وَصْفَة", "translit": "waṣfa", "uz": "retsept", "root": "و ص ف", "pattern": "فَعْلَة", "pos": "ot", "audio": "a2/wasfa.mp3", "example_ar": "هَذِهِ وَصْفَةٌ طِبِّيَّةٌ.", "example_uz": "Bu tibbiy retsept.", "srs": true},
+  {"ar": "مُسْتَشْفَى", "translit": "mustashfā", "uz": "kasalxona", "root": "ش ف ي", "pattern": "مُسْتَفْعَل", "pos": "ot", "audio": "a2/mustashfa.mp3", "example_ar": "أَيْنَ المُسْتَشْفَى؟", "example_uz": "Kasalxona qayerda?", "srs": true},
+  {"ar": "حُبُوب", "translit": "ḥubūb", "uz": "tabletka, dorilar", "root": "ح ب ب", "pattern": "فُعُول", "pos": "ot", "audio": "a2/hubub.mp3", "example_ar": "حُبُوبٌ لِلصُّدَاعِ.", "example_uz": "Bosh og'rig'i uchun tabletka.", "srs": true},
+  {"ar": "إِسْعَاف", "translit": "isʿāf", "uz": "tez yordam", "root": "س ع ف", "pattern": "إِفْعَال", "pos": "ot", "audio": "a2/isaf.mp3", "example_ar": "اِتَّصِلْ بِالإِسْعَافِ!", "example_uz": "Tez yordam chaqir!", "srs": true},
+  {"ar": "مَعِدَة", "translit": "maʿida", "uz": "oshqozon, qorin", "root": "م ع د", "pattern": "فَعِلَة", "pos": "ot", "audio": "a2/maida.mp3", "example_ar": "تُؤْلِمُنِي مَعِدَتِي.", "example_uz": "Oshqozonim og'riyapti.", "srs": true},
+  {"ar": "أَشْعُر", "translit": "ashʿuru", "uz": "his qilaman, sezaman", "root": "ش ع ر", "pattern": "أَفْعُل", "pos": "fe'l", "audio": "a2/ashur.mp3", "example_ar": "أَشْعُرُ بِأَلَمٍ.", "example_uz": "Og'riq his qilyapman.", "srs": true},
+  {"ar": "طَبِيب", "translit": "ṭabīb", "uz": "shifokor (o'zbekcha 'tabib')", "root": "ط ب ب", "pattern": "فَعِيل", "pos": "ot", "audio": "a1/tabib.mp3", "example_ar": "أَحْتَاجُ طَبِيبًا.", "example_uz": "Shifokor kerak.", "srs": true}
+ ],
+ "hejazi": [
+  {"msa_ar": "أَنَا مَرِيض", "hejazi_ar": "أَنَا تَعْبَان", "translit": "anā taʿbān", "uz": "O'zimni yomon his qilyapman (hijoziy)", "audio": "hj/ana_taban.mp3"},
+  {"msa_ar": "أَيْنَ أَقْرَبُ صَيْدَلِيَّة؟", "hejazi_ar": "وِين أَقْرَب صَيْدَلِيَّة؟", "translit": "wēn aqrab ṣaydaliyya?", "uz": "Eng yaqin dorixona qayerda? (hijoziy)", "audio": "hj/wen_saydaliyya.mp3"},
+  {"msa_ar": "عِنْدِي أَلَمٌ هُنَا", "hejazi_ar": "يُوجِعْنِي هِنا", "translit": "yūjiʿnī hina", "uz": "Bu yerim og'riyapti (hijoziy)", "audio": "hj/yujini_hina.mp3"}
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "شَعَرْتُ بِصُدَاعٍ وَحُمَّى فِي مَكَّةَ. ذَهَبْتُ إِلَى أَقْرَبِ صَيْدَلِيَّةٍ وَقُلْتُ: أَنَا تَعْبَان، عِنْدِي صُدَاع. أَعْطَانِي الصَّيْدَلِيُّ حُبُوبًا وَقَالَ: اِشْرَبْ مَاءً كَثِيرًا.",
+   "questions": [
+    {"q_uz": "Qanday kasallik bo'ldi?", "a": "Bosh og'rig'i va isitma (صُدَاع، حُمَّى)"},
+    {"q_uz": "Dorixona nima berdi?", "a": "Tabletka (حُبُوب)"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/dawa.mp3",
+   "transcript_ar": "دَوَاء",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Dori"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Kasallikni tushuntiring: ʿindī ṣudāʿ, anā taʿbān, wēn aqrab ṣaydaliyya?",
+   "target_ar": ["عِنْدِي صُدَاع", "أَنَا تَعْبَان", "أُرِيدُ دَوَاءً"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Isitmam bor» va «Eng yaqin dorixona qayerda?» gaplarini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«dorixona» qaysi?", "q_ar": "", "options": ["صَيْدَلِيَّة", "مُسْتَشْفَى", "وَصْفَة", "دَوَاء"], "answer": "صَيْدَلِيَّة", "explain_uz": "صَيْدَلِيَّة — dorixona; مُسْتَشْفَى — kasalxona.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "عِنْدِي صُدَاع", "options": [], "answer": "boshim og'riyapti", "explain_uz": "عِنْدِي = menda bor, صُدَاع = bosh og'rig'i.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyда «O'zimni yomon his qilyapman» qaysi?", "q_ar": "", "options": ["أَنَا تَعْبَان", "أَنَا بِخَيْر", "أَنَا جُوعَان", "أَنَا هُنَا"], "answer": "أَنَا تَعْبَان", "explain_uz": "تَعْبَان — hijoziyда «charchagan/kasal».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ش ف ي» o'zagidan?", "q_ar": "", "options": ["مُسْتَشْفَى", "دَوَاء", "أَلَم"], "answer": "مُسْتَشْفَى", "explain_uz": "«ش ف ي» — shifo o'zagi: مُسْتَشْفَى (kasalxona), شِفَاء (shifo).", "audio": "", "root": "ش ف ي", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "isitma", "q_ar": "", "options": [], "answer": "حُمَّى", "explain_uz": "حُمَّى — isitma.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«tez yordam» qaysi?", "q_ar": "", "options": ["إِسْعَاف", "وَصْفَة", "حُبُوب", "مَعِدَة"], "answer": "إِسْعَاف", "explain_uz": "إِسْعَاف — tez yordam (Saudiyada 997).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "retsept", "q_ar": "", "options": [], "answer": "وَصْفَة", "explain_uz": "وَصْفَة — tibbiy retsept.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ش ف ي", "back": "shifo o'zagi (shifo, mustashfo=kasalxona, shofiy)", "deck": "msa"},
+  {"type": "word", "front": "صَيْدَلِيَّة", "back": "dorixona", "deck": "msa"},
+  {"type": "word", "front": "دَوَاء", "back": "dori", "deck": "msa"},
+  {"type": "word", "front": "أَلَم", "back": "og'riq", "deck": "msa"},
+  {"type": "word", "front": "حُمَّى", "back": "isitma", "deck": "msa"},
+  {"type": "word", "front": "صُدَاع", "back": "bosh og'rig'i", "deck": "msa"},
+  {"type": "word", "front": "مُسْتَشْفَى", "back": "kasalxona", "deck": "msa"},
+  {"type": "word", "front": "إِسْعَاف", "back": "tez yordam", "deck": "msa"},
+  {"type": "phrase", "front": "أَنَا تَعْبَان", "back": "Yomon his qilyapman (hijoziy)", "deck": "hejazi"},
+  {"type": "phrase", "front": "وِين أَقْرَب صَيْدَلِيَّة؟", "back": "Eng yaqin dorixona qayerda? (hijoziy)", "deck": "hejazi"}
+ ]
+}

@@ -211,6 +211,37 @@ async def checkpoint_complete(
     }
 
 
+# ─────────────────── AI rol o'yini (Saudiya vaziyatlari) ───────────────────
+
+
+@router.get("/roleplay/scenarios")
+async def roleplay_scenarios(user: User = Depends(get_current_user)):
+    from services import roleplay
+
+    return {"scenarios": roleplay.scenario_list()}
+
+
+class RoleplayBody(BaseModel):
+    scenario_id: str
+    history: list[dict] = Field(default_factory=list)
+
+
+@router.post("/roleplay/reply")
+async def roleplay_reply(
+    body: RoleplayBody,
+    user: User = Depends(get_current_user),
+):
+    from services import roleplay
+
+    if not body.history:
+        op = roleplay.opening(body.scenario_id)
+        if op is None:
+            raise HTTPException(status_code=404, detail="Vaziyat topilmadi")
+        return op
+    # Faqat oxirgi 12 xabar (kontekstni cheklaymiz)
+    return await roleplay.reply(body.scenario_id, body.history[-12:])
+
+
 # ─────────────────── AI yozish bahosi (zaxirali) ───────────────────
 
 

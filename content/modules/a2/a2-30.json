@@ -1,0 +1,105 @@
+{
+ "id": "a2-30",
+ "level": "A2",
+ "module": "saudi",
+ "order": 30,
+ "title_uz": "Restoran",
+ "title_ar": "فِي المَطْعَم",
+ "can_do_uz": "Restoranda buyurtma bera, taom halolligini so'ray va hisobni to'lay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-29"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "Saudiyada mashhur «كَبْسَة» (kabsa) — guruch va go'shtli taom! Ofitsiantga: «أَبْغَى أَطْلُب» (buyurtma bermoqchiman). Taomni so'rang: «هَل هُوَ حَارّ؟» (achchiqmi?). Bugun restoran va halol taom so'zlarini o'rganamiz.",
+ "grammar": {
+  "point_ar": "الطَّلَبُ فِي المَطْعَم",
+  "explanation_uz": "Restoran ketma-ketligi: (1) قَائِمَة (menyu) so'rang. (2) Buyurtma: أُرِيدُ... yoki hijoziy أَبْغَى... (3) Halol tekshiruvi: هَل هَذَا حَلَالٌ؟ (bu halolmi?). (4) Fikr: الطَّعَامُ لَذِيذٌ / حَارّ (achchiq). (5) Hisob: الفَاتُورَة لَو سَمَحْت. Saudiya taomlari: كَبْسَة (guruch+go'sht), مَشْوِيّ (kabob). طَازَج — yangi, نَبَاتِيّ — vegetarian.",
+  "table": [
+   {"ar": "أَبْغَى أَطْلُب", "uz": "Buyurtma bermoqchiman", "form": "boshlash"},
+   {"ar": "هَل هَذَا حَلَالٌ؟", "uz": "Bu halolmi?", "form": "tekshiruv"},
+   {"ar": "هَل هُوَ حَارّ؟", "uz": "Bu achchiqmi?", "form": "savol"},
+   {"ar": "الفَاتُورَة لَو سَمَحْت", "uz": "Hisob, iltimos", "form": "yakun"}
+  ],
+  "common_mistakes_uz": [
+   "حِسَاب (hisob) va فَاتُورَة (chek) — ikkalasi ham ishlatiladi, chalkashmang.",
+   "Halolligini so'ramaslik — begona joyda «هَل هَذَا حَلَال؟» muhim.",
+   "طَبَق (taom) va صَحْن (tovoq/likobcha) ni chalkashtirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ط ب خ",
+   "meaning_uz": "pishirish, ovqat",
+   "uz_cognates": ["oshxona (matbax)", "tabbox"],
+   "derived": [
+    {"ar": "مَطْبَخ", "uz": "oshxona", "pattern": "مَفْعَل"},
+    {"ar": "طَبَّاخ", "uz": "oshpaz", "pattern": "فَعَّال"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "حَلَال", "translit": "ḥalāl", "uz": "halol (o'zbekcha 'halol')", "root": "ح ل ل", "pattern": "فَعَال", "pos": "sifat", "audio": "a2/halal.mp3", "example_ar": "هَل هَذَا اللَّحْمُ حَلَالٌ؟", "example_uz": "Bu go'sht halolmi?", "srs": true},
+  {"ar": "طَبَق", "translit": "ṭabaq", "uz": "taom, tovoq (porsiya)", "root": "ط ب ق", "pattern": "فَعَل", "pos": "ot", "audio": "a2/tabaq.mp3", "example_ar": "طَبَقُ اليَوْمِ.", "example_uz": "Kunning taomi.", "srs": true},
+  {"ar": "وَجْبَة", "translit": "wajba", "uz": "ovqat, taom (porsiya)", "root": "و ج ب", "pattern": "فَعْلَة", "pos": "ot", "audio": "a2/wajba.mp3", "example_ar": "وَجْبَةٌ كَامِلَةٌ.", "example_uz": "To'liq ovqat.", "srs": true},
+  {"ar": "نَادِل", "translit": "nādil", "uz": "ofitsiant", "root": "ن د ل", "pattern": "فَاعِل", "pos": "ot", "audio": "a2/nadil.mp3", "example_ar": "طَلَبْتُ مِنَ النَّادِلِ.", "example_uz": "Ofitsiantdan so'radim.", "srs": true},
+  {"ar": "فَاتُورَة", "translit": "fātūra", "uz": "hisob, chek (o'zbekcha 'faktura')", "root": "", "pattern": "", "pos": "ot", "audio": "a2/fatura.mp3", "example_ar": "الفَاتُورَةُ لَو سَمَحْت.", "example_uz": "Hisob, iltimos.", "srs": true},
+  {"ar": "مَشْوِيّ", "translit": "mashwiyy", "uz": "kabob, panjara go'shti", "root": "ش و ي", "pattern": "مَفْعُول", "pos": "ot", "audio": "a2/mashwi.mp3", "example_ar": "لَحْمٌ مَشْوِيٌّ.", "example_uz": "Panjara go'shti.", "srs": true},
+  {"ar": "حَارّ", "translit": "ḥārr", "uz": "achchiq, issiq", "root": "ح ر ر", "pattern": "فَاعّ", "pos": "sifat", "audio": "a2/harr.mp3", "example_ar": "هَذَا الطَّعَامُ حَارٌّ.", "example_uz": "Bu ovqat achchiq.", "srs": true},
+  {"ar": "طَازَج", "translit": "ṭāzaj", "uz": "yangi (mahsulot)", "root": "", "pattern": "", "pos": "sifat", "audio": "a2/tazaj.mp3", "example_ar": "عَصِيرٌ طَازَجٌ.", "example_uz": "Yangi sharbat.", "srs": true},
+  {"ar": "كَبْسَة", "translit": "kabsa", "uz": "kabsa (Saudiya milliy taomi)", "root": "", "pattern": "", "pos": "ot", "audio": "a2/kabsa.mp3", "example_ar": "أَبْغَى كَبْسَةَ دَجَاجٍ.", "example_uz": "Tovuqli kabsa xohlayman.", "srs": true},
+  {"ar": "صَحْن", "translit": "ṣaḥn", "uz": "likobcha, tovoq", "root": "ص ح ن", "pattern": "فَعْل", "pos": "ot", "audio": "a2/sahn.mp3", "example_ar": "صَحْنٌ نَظِيفٌ.", "example_uz": "Toza tovoq.", "srs": true},
+  {"ar": "نَبَاتِيّ", "translit": "nabātiyy", "uz": "vegetarian, o'simlik", "root": "ن ب ت", "pattern": "فَعَالِيّ", "pos": "sifat", "audio": "a2/nabati.mp3", "example_ar": "أَنَا نَبَاتِيٌّ.", "example_uz": "Men vegetarianman.", "srs": true},
+  {"ar": "مَطْبَخ", "translit": "maṭbakh", "uz": "oshxona (o'zbekcha 'matbax')", "root": "ط ب خ", "pattern": "مَفْعَل", "pos": "ot", "audio": "a2/matbakh.mp3", "example_ar": "الطَّعَامُ مِنَ المَطْبَخِ.", "example_uz": "Ovqat oshxonadan.", "srs": true}
+ ],
+ "hejazi": [
+  {"msa_ar": "أُرِيدُ أَنْ أَطْلُبَ", "hejazi_ar": "أَبْغَى أَطْلُب", "translit": "abghā aṭlub", "uz": "Buyurtma bermoqchiman (hijoziy)", "audio": "hj/abgha_atlub.mp3"},
+  {"msa_ar": "الحِسَابُ لَو سَمَحْت", "hejazi_ar": "الفَاتُورَة لَو سَمَحْت", "translit": "al-fātūra law samaḥt", "uz": "Hisob, iltimos (hijoziy)", "audio": "hj/fatura_samaht.mp3"},
+  {"msa_ar": "هَل هُوَ حَارّ؟", "hejazi_ar": "هُوَ حَارّ؟", "translit": "huwa ḥārr?", "uz": "Bu achchiqmi? (hijoziy)", "audio": "hj/huwa_harr.mp3"},
+  {"msa_ar": "لَذِيذ", "hejazi_ar": "زَيْن", "translit": "zayn", "uz": "Mazali, zo'r (hijoziy)", "audio": "hj/zayn.mp3"}
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "دَخَلْتُ مَطْعَمًا فِي مَكَّةَ وَسَأَلْتُ النَّادِلَ: هَل هَذَا حَلَالٌ؟ قَالَ: نَعَمْ، كُلُّ شَيْءٍ حَلَالٌ. طَلَبْتُ كَبْسَةَ دَجَاجٍ وَعَصِيرًا طَازَجًا. الطَّعَامُ كَانَ لَذِيذًا. ثُمَّ قُلْتُ: الفَاتُورَة لَو سَمَحْت.",
+   "questions": [
+    {"q_uz": "U nima so'radi (halollik haqida)?", "a": "هَل هَذَا حَلَالٌ؟ (bu halolmi?)"},
+    {"q_uz": "Nima buyurtma qildi?", "a": "Tovuqli kabsa va yangi sharbat"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/halal.mp3",
+   "transcript_ar": "حَلَال",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Halol"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Restoranда gaplashing: abghā aṭlub, hal hādhā ḥalāl? al-fātūra law samaḥt.",
+   "target_ar": ["أَبْغَى أَطْلُب", "هَل هَذَا حَلَالٌ؟", "الفَاتُورَة لَو سَمَحْت"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Bu go'sht halolmi?» va «Hisob, iltimos» gaplarini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«halol» qaysi?", "q_ar": "", "options": ["حَلَال", "حَارّ", "طَازَج", "مَشْوِيّ"], "answer": "حَلَال", "explain_uz": "حَلَال — halol; savol: هَل هَذَا حَلَالٌ؟", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الفَاتُورَة لَو سَمَحْت", "options": [], "answer": "hisob iltimos", "explain_uz": "فَاتُورَة = hisob/chek, لَو سَمَحْت = iltimos.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Saudiya milliy taomi (guruch+go'sht) qaysi?", "q_ar": "", "options": ["كَبْسَة", "مَشْوِيّ", "وَجْبَة", "صَحْن"], "answer": "كَبْسَة", "explain_uz": "كَبْسَة — Saudiya milliy guruch-go'shtli taomi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ط ب خ» o'zagidan?", "q_ar": "", "options": ["مَطْبَخ", "طَبَق", "نَادِل"], "answer": "مَطْبَخ", "explain_uz": "«ط ب خ» — pishirish o'zagi: مَطْبَخ (oshxona), طَبَّاخ (oshpaz).", "audio": "", "root": "ط ب خ", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ofitsiant", "q_ar": "", "options": [], "answer": "نَادِل", "explain_uz": "نَادِل — ofitsiant.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«achchiq» qaysi?", "q_ar": "", "options": ["حَارّ", "طَازَج", "حَلَال", "نَظِيف"], "answer": "حَارّ", "explain_uz": "حَارّ — achchiq/issiq.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "vegetarian", "q_ar": "", "options": [], "answer": "نَبَاتِيّ", "explain_uz": "نَبَاتِيّ — vegetarian (نبات = o'simlik).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ط ب خ", "back": "pishirish o'zagi (matbax=oshxona, tabbox)", "deck": "msa"},
+  {"type": "word", "front": "حَلَال", "back": "halol", "deck": "msa"},
+  {"type": "word", "front": "طَبَق", "back": "taom, tovoq (porsiya)", "deck": "msa"},
+  {"type": "word", "front": "نَادِل", "back": "ofitsiant", "deck": "msa"},
+  {"type": "word", "front": "فَاتُورَة", "back": "hisob, chek", "deck": "msa"},
+  {"type": "word", "front": "مَشْوِيّ", "back": "kabob, panjara go'shti", "deck": "msa"},
+  {"type": "word", "front": "حَارّ", "back": "achchiq, issiq", "deck": "msa"},
+  {"type": "word", "front": "كَبْسَة", "back": "kabsa (Saudiya taomi)", "deck": "msa"},
+  {"type": "phrase", "front": "أَبْغَى أَطْلُب", "back": "Buyurtma bermoqchiman (hijoziy)", "deck": "hejazi"},
+  {"type": "phrase", "front": "الفَاتُورَة لَو سَمَحْت", "back": "Hisob, iltimos (hijoziy)", "deck": "hejazi"}
+ ]
+}

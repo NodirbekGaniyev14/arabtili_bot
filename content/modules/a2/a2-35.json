@@ -1,0 +1,103 @@
+{
+ "id": "a2-35",
+ "level": "A2",
+ "module": "saudi",
+ "order": 35,
+ "title_uz": "Masjid odobi",
+ "title_ar": "آدَابُ المَسْجِد",
+ "can_do_uz": "Masjidда namoz, jamoat, azon va iqoma bilan bog'liq so'zlarni tushunaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-34"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "Masjidul Haramда namoz — umrichilik xotira! Azon (أَذَان) eshitilganда, jamoat (جَمَاعَة) safga (صَفّ) turadi. Qiblani (قِبْلَة) topasiz, tahorat (وُضُوء) qilasiz. Bugun masjid va namoz so'zlarini o'rganamiz.",
+ "grammar": {
+  "point_ar": "الصَّلَاةُ فِي المَسْجِد",
+  "explanation_uz": "Masjidда namoz tartibi: أَذَان (namozga chaqiruv) → وُضُوء (tahorat) → إِقَامَة (namoz boshlanishi) → صَفّ (saf tuzish) → jamoat namozi (الإِمَام ortida). Har namoz رَكْعَة (rakat) lardan iborat, har rakatда رُكُوع (ruku) va سَجْدَة (sajda) bor. قِبْلَة — Ka'ba tomoni. Musofir namozini qisqartirishi mumkin — قَصْر (masalan, 4 rakat → 2).",
+  "table": [
+   {"ar": "أَذَان → إِقَامَة", "uz": "azon → iqoma", "form": "boshlanish"},
+   {"ar": "وُضُوء → صَلَاة", "uz": "tahorat → namoz", "form": "tayyorgarlik"},
+   {"ar": "الصَّفُّ الأَوَّل", "uz": "birinchi saf", "form": "jamoat"},
+   {"ar": "صَلَاةُ الجَمَاعَة", "uz": "jamoat namozi", "form": "afzallik"}
+  ],
+  "common_mistakes_uz": [
+   "أَذَان (chaqiruv) va إِقَامَة (namoz boshlanishi) ni chalkashtirish.",
+   "Qiblani (قِبْلَة) noto'g'ri topish — masjidда mehrob (مِحْرَاب) ko'rsatadi.",
+   "Katta olomonда safni (صَفّ) buzish — tartibni saqlang."
+  ]
+ },
+ "roots": [
+  {
+   "root": "س ج د",
+   "meaning_uz": "sajda qilish, egilish",
+   "uz_cognates": ["sajda", "masjid", "sujud"],
+   "derived": [
+    {"ar": "مَسْجِد", "uz": "masjid (sajda joyi)", "pattern": "مَفْعِل"},
+    {"ar": "سُجُود", "uz": "sajda holati", "pattern": "فُعُول"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "جَمَاعَة", "translit": "jamāʿa", "uz": "jamoat (o'zbekcha 'jamoat')", "root": "ج م ع", "pattern": "فَعَالَة", "pos": "ot", "audio": "a2/jamaa.mp3", "example_ar": "صَلَاةُ الجَمَاعَةِ.", "example_uz": "Jamoat namozi.", "srs": true},
+  {"ar": "إِمَام", "translit": "imām", "uz": "imom (o'zbekcha 'imom')", "root": "أ م م", "pattern": "فِعَال", "pos": "ot", "audio": "a2/imam.mp3", "example_ar": "الإِمَامُ يَؤُمُّ النَّاسَ.", "example_uz": "Imom odamlarga imomlik qiladi.", "srs": true},
+  {"ar": "صَفّ", "translit": "ṣaff", "uz": "saf, qator", "root": "ص ف ف", "pattern": "فَعْل", "pos": "ot", "audio": "a2/saff.mp3", "example_ar": "الصَّفُّ الأَوَّلُ.", "example_uz": "Birinchi saf.", "srs": true},
+  {"ar": "قِبْلَة", "translit": "qibla", "uz": "qibla (Ka'ba tomoni) (o'zbekcha 'qibla')", "root": "ق ب ل", "pattern": "فِعْلَة", "pos": "ot", "audio": "a2/qibla.mp3", "example_ar": "أَيْنَ القِبْلَةُ؟", "example_uz": "Qibla qaysi tomonda?", "srs": true},
+  {"ar": "وُضُوء", "translit": "wuḍūʾ", "uz": "tahorat, obdast", "root": "و ض أ", "pattern": "فُعُول", "pos": "ot", "audio": "a2/wudu.mp3", "example_ar": "تَوَضَّأْتُ لِلصَّلَاةِ.", "example_uz": "Namoz uchun tahorat oldim.", "srs": true},
+  {"ar": "رَكْعَة", "translit": "rakʿa", "uz": "rakat (namoz qismi)", "root": "ر ك ع", "pattern": "فَعْلَة", "pos": "ot", "audio": "a2/rakaa.mp3", "example_ar": "صَلَاةُ الفَجْرِ رَكْعَتَانِ.", "example_uz": "Bomdod — ikki rakat.", "srs": true},
+  {"ar": "سَجْدَة", "translit": "sajda", "uz": "sajda (o'zbekcha 'sajda')", "root": "س ج د", "pattern": "فَعْلَة", "pos": "ot", "audio": "a2/sajda.mp3", "example_ar": "فِي كُلِّ رَكْعَةٍ سَجْدَتَانِ.", "example_uz": "Har rakatda ikki sajda.", "srs": true},
+  {"ar": "إِقَامَة", "translit": "iqāma", "uz": "iqoma (namoz boshlanish e'loni)", "root": "ق و م", "pattern": "إِفَالَة", "pos": "ot", "audio": "a2/iqama.mp3", "example_ar": "بَعْدَ الإِقَامَةِ تَبْدَأُ الصَّلَاةُ.", "example_uz": "Iqomadan keyin namoz boshlanadi.", "srs": true},
+  {"ar": "مِحْرَاب", "translit": "miḥrāb", "uz": "mehrob (qibla belgisi)", "root": "ح ر ب", "pattern": "مِفْعَال", "pos": "ot", "audio": "a2/mihrab.mp3", "example_ar": "الإِمَامُ أَمَامَ المِحْرَابِ.", "example_uz": "Imom mehrob oldida.", "srs": true},
+  {"ar": "قَصْر", "translit": "qaṣr", "uz": "qasr (safar namozini qisqartirish)", "root": "ق ص ر", "pattern": "فَعْل", "pos": "ot", "audio": "a2/qasr.mp3", "example_ar": "المُسَافِرُ يَقْصُرُ الصَّلَاةَ.", "example_uz": "Musofir namozni qisqartiradi.", "srs": true},
+  {"ar": "مَسْجِد", "translit": "masjid", "uz": "masjid (o'zbekcha 'masjid')", "root": "س ج د", "pattern": "مَفْعِل", "pos": "ot", "audio": "a1/masjid.mp3", "example_ar": "المَسْجِدُ الحَرَامُ كَبِيرٌ.", "example_uz": "Masjidul Haram katta.", "srs": true}
+ ],
+ "hejazi": [
+  {"msa_ar": "أَيْنَ القِبْلَةُ؟", "hejazi_ar": "وِين القِبْلَة؟", "translit": "wēn al-qibla?", "uz": "Qibla qaysi tomonda? (hijoziy)", "audio": "hj/wen_qibla.mp3"},
+  {"msa_ar": "أَيْنَ مَكَانُ الوُضُوءِ؟", "hejazi_ar": "وِين المِيضَة؟", "translit": "wēn al-mīḍa?", "uz": "Tahoratxona qayerda? (hijoziy)", "audio": "hj/wen_mida.mp3"},
+  {"msa_ar": "مَتَى تُقَامُ الصَّلَاةُ؟", "hejazi_ar": "مَتَى الإِقَامَة؟", "translit": "matā al-iqāma?", "uz": "Namoz qachon boshlanadi? (hijoziy)", "audio": "hj/mata_iqama.mp3"}
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "دَخَلْتُ المَسْجِدَ الحَرَامَ وَتَوَضَّأْتُ. سَمِعْتُ الأَذَانَ ثُمَّ الإِقَامَةَ. وَقَفْتُ فِي الصَّفِّ خَلْفَ الإِمَامِ وَصَلَّيْتُ مَعَ الجَمَاعَةِ. كَانَتْ صَلَاةً عَظِيمَةً.",
+   "questions": [
+    {"q_uz": "Namozdan oldin nima qildi?", "a": "Tahorat oldi (تَوَضَّأَ)"},
+    {"q_uz": "Kim bilan namoz o'qidi?", "a": "Jamoat bilan (مَعَ الجَمَاعَة)"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/qibla.mp3",
+   "transcript_ar": "قِبْلَة",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Qibla (Ka'ba tomoni)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Masjid so'zlarini ayting: wēn al-qibla? matā al-iqāma? ṣalāt al-jamāʿa.",
+   "target_ar": ["أَيْنَ القِبْلَةُ؟", "إِقَامَة", "جَمَاعَة"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Qibla qaysi tomonda?» va «Jamoat namozi qachon?» gaplarini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«qibla» qaysi?", "q_ar": "", "options": ["قِبْلَة", "صَفّ", "رَكْعَة", "إِمَام"], "answer": "قِبْلَة", "explain_uz": "قِبْلَة — namoz o'qiladigan tomon (Ka'ba).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "صَلَاةُ الجَمَاعَةِ", "options": [], "answer": "jamoat namozi", "explain_uz": "صَلَاة = namoz, جَمَاعَة = jamoat.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Namoz boshlanish e'loni qaysi?", "q_ar": "", "options": ["إِقَامَة", "أَذَان", "وُضُوء", "قَصْر"], "answer": "إِقَامَة", "explain_uz": "أَذَان — chaqiruv, إِقَامَة — namoz boshlanishi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «س ج د» o'zagidan?", "q_ar": "", "options": ["مَسْجِد", "قِبْلَة", "إِمَام"], "answer": "مَسْجِد", "explain_uz": "«س ج د» — sajda o'zagi: مَسْجِد (sajda joyi), سُجُود, sajda.", "audio": "", "root": "س ج د", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "tahorat", "q_ar": "", "options": [], "answer": "وُضُوء", "explain_uz": "وُضُوء — tahorat/obdast.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Musofir namozni qisqartirishi qaysi?", "q_ar": "", "options": ["قَصْر", "صَفّ", "سَجْدَة", "مِحْرَاب"], "answer": "قَصْر", "explain_uz": "قَصْر — safar namozini qisqartirish (4→2 rakat).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "saf, qator", "q_ar": "", "options": [], "answer": "صَفّ", "explain_uz": "صَفّ — jamoatда saf.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "س ج د", "back": "sajda o'zagi (sajda, masjid, sujud)", "deck": "msa"},
+  {"type": "word", "front": "جَمَاعَة", "back": "jamoat", "deck": "msa"},
+  {"type": "word", "front": "إِمَام", "back": "imom", "deck": "msa"},
+  {"type": "word", "front": "صَفّ", "back": "saf, qator", "deck": "msa"},
+  {"type": "word", "front": "قِبْلَة", "back": "qibla (Ka'ba tomoni)", "deck": "msa"},
+  {"type": "word", "front": "وُضُوء", "back": "tahorat, obdast", "deck": "msa"},
+  {"type": "word", "front": "رَكْعَة", "back": "rakat", "deck": "msa"},
+  {"type": "word", "front": "إِقَامَة", "back": "iqoma", "deck": "msa"},
+  {"type": "phrase", "front": "وِين القِبْلَة؟", "back": "Qibla qaysi tomonda? (hijoziy)", "deck": "hejazi"},
+  {"type": "phrase", "front": "مَتَى الإِقَامَة؟", "back": "Namoz qachon? (hijoziy)", "deck": "hejazi"}
+ ]
+}

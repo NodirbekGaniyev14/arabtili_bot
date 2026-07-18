@@ -95,13 +95,14 @@ SESSION_LIMIT = 20  # bitta takror sessiyasidagi maksimal kartalar
 
 @router.get("/review")
 async def review_cards(
+    deck: str | None = None,
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
     await seed_user_words(session, user.id)
     today = _today().isoformat()
 
-    rows = (
+    all_due = (
         (
             await session.execute(
                 select(UserWord)
@@ -113,6 +114,15 @@ async def review_cards(
         .all()
     )
 
+    # Deck bo'yicha soni (MSA / Hijoziy almashtirgich uchun)
+    msa_due = sum(1 for w in all_due if w.deck != "hejazi")
+    hejazi_due = sum(1 for w in all_due if w.deck == "hejazi")
+
+    # Tanlangan deck bo'yicha filtrlash (bo'lmasa — hammasi)
+    rows = all_due
+    if deck in ("msa", "hejazi"):
+        rows = [w for w in all_due if (w.deck == "hejazi") == (deck == "hejazi")]
+
     cards = [
         {
             "id": w.id,
@@ -121,10 +131,16 @@ async def review_cards(
             "uz": w.uz,
             "audio": w.audio,
             "kind": w.kind,
+            "deck": w.deck,
         }
         for w in rows[:SESSION_LIMIT]
     ]
-    return {"cards": cards, "total_due": len(rows)}
+    return {
+        "cards": cards,
+        "total_due": len(rows),
+        "msa_due": msa_due,
+        "hejazi_due": hejazi_due,
+    }
 
 
 class ReviewAnswerBody(BaseModel):

@@ -27,6 +27,8 @@ const GRADE_BUTTONS: Array<{
 
 const tg = () => window.Telegram?.WebApp;
 
+type Deck = "msa" | "hejazi";
+
 export default function Review({ onDone }: ReviewProps) {
   const [queue, setQueue] = useState<ReviewCard[] | null>(null);
   const [revealed, setRevealed] = useState(false);
@@ -34,14 +36,64 @@ export default function Review({ onDone }: ReviewProps) {
   const [xp, setXp] = useState(0);
   const [finished, setFinished] = useState(false);
   const [error, setError] = useState(false);
+  const [deck, setDeck] = useState<Deck | null>(null); // null = hammasi
+  const [counts, setCounts] = useState({ msa: 0, hejazi: 0 });
   const busy = useRef(false);
 
   useEffect(() => {
     api
-      .getReview()
-      .then((r) => setQueue(r.cards))
+      .getReview(deck ?? undefined)
+      .then((r) => {
+        setQueue(r.cards);
+        setCounts({ msa: r.msa_due, hejazi: r.hejazi_due });
+        setFinished(false);
+        setDoneCount(0);
+        setRevealed(false);
+      })
       .catch(() => setError(true));
-  }, []);
+  }, [deck]);
+
+  const hasHejazi = counts.hejazi > 0;
+
+  const DeckSwitcher = () =>
+    hasHejazi ? (
+      <div className="grid grid-cols-3 gap-2 mb-4 w-full max-w-md">
+        {[
+          { key: null, label: "Hammasi", ar: "" },
+          { key: "msa" as Deck, label: "Fasih", ar: "فصحى" },
+          { key: "hejazi" as Deck, label: "Hijoziy", ar: "🇸🇦" },
+        ].map((d) => {
+          const active = deck === d.key;
+          const n =
+            d.key === "msa"
+              ? counts.msa
+              : d.key === "hejazi"
+                ? counts.hejazi
+                : counts.msa + counts.hejazi;
+          return (
+            <button
+              key={String(d.key)}
+              onClick={() => setDeck(d.key)}
+              className={`rounded-2xl py-2 px-1 text-center border transition-transform active:scale-95 ${
+                active
+                  ? "bg-emerald-deep text-white border-emerald-deep"
+                  : "bg-card text-ink border-cardline"
+              }`}
+            >
+              <div className="text-[13px] font-extrabold leading-tight">
+                {d.ar && <span className="font-arabic mr-1">{d.ar}</span>}
+                {d.label}
+              </div>
+              <div
+                className={`text-[10px] font-bold ${active ? "text-gold-soft" : "text-ink-soft"}`}
+              >
+                {n} ta
+              </div>
+            </button>
+          );
+        })}
+      </div>
+    ) : null;
 
   const current = queue?.[0];
 
@@ -124,13 +176,20 @@ export default function Review({ onDone }: ReviewProps) {
   // Bugunga karta yo'q
   if (!current) {
     return (
-      <div className="min-h-[70vh] flex flex-col items-center justify-center gap-3 px-8 text-center">
+      <div className="min-h-[70vh] flex flex-col items-center justify-center gap-3 px-4 text-center">
+        <DeckSwitcher />
         <div className="w-20 h-20 rounded-3xl bg-gold-soft flex items-center justify-center">
           <span className="font-arabic text-4xl text-emerald-dark leading-none pt-1">
             كرر
           </span>
         </div>
-        <h2 className="text-xl font-extrabold">Bugunga takror yo'q 🎉</h2>
+        <h2 className="text-xl font-extrabold">
+          {deck === "hejazi"
+            ? "Hijoziy takror yo'q 🎉"
+            : deck === "msa"
+              ? "Fasih takror yo'q 🎉"
+              : "Bugunga takror yo'q 🎉"}
+        </h2>
         <p className="text-sm text-ink-soft font-semibold max-w-64">
           Yangi so'zlar darslardan keladi, takrorlash vaqti kelganda shu yerda
           paydo bo'ladi.
@@ -144,6 +203,7 @@ export default function Review({ onDone }: ReviewProps) {
 
   return (
     <div className="px-4 pt-4 pb-8 max-w-md mx-auto">
+      <DeckSwitcher />
       {/* Progress */}
       <div className="flex items-center gap-3">
         <div className="flex-1 h-2.5 rounded-full bg-cardline overflow-hidden">

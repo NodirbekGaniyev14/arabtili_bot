@@ -11,6 +11,7 @@ interface HomeProps {
   onOpenRootLab: () => void;
   onOpenExam: () => void;
   onOpenWeak: () => void;
+  onOpenRolePlay: () => void;
   onGoLessons: () => void;
 }
 
@@ -31,6 +32,7 @@ export default function Home({
   onOpenRootLab,
   onOpenExam,
   onOpenWeak,
+  onOpenRolePlay,
   onGoLessons,
 }: HomeProps) {
   const next = stats.next_lesson;
@@ -178,7 +180,12 @@ export default function Home({
             desc={stats.due_count > 0 ? `${stats.due_count} ta karta` : "SRS"}
             onClick={onGoReview}
           />
-          <ModeCard ar="استمع" label="Tinglash" desc="Tez orada" disabled />
+          <ModeCard
+            ar="حوار"
+            label="Jonli suhbat"
+            desc="🇸🇦 rol o'yini"
+            onClick={onOpenRolePlay}
+          />
           <ModeCard ar="قواعد" label="Grammatika" desc="Tez orada" disabled />
         </div>
       </section>

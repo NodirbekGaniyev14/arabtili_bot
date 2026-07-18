@@ -396,8 +396,13 @@ export const api = {
       body: JSON.stringify(payload),
     }),
   getModules: () => request<LevelsResponse>("/api/modules"),
-  getReview: () =>
-    request<{ cards: ReviewCard[]; total_due: number }>("/api/review"),
+  getReview: (deck?: "msa" | "hejazi") =>
+    request<{
+      cards: ReviewCard[];
+      total_due: number;
+      msa_due: number;
+      hejazi_due: number;
+    }>(`/api/review${deck ? `?deck=${deck}` : ""}`),
   answerReview: (wordId: number, grade: ReviewGrade) =>
     request<{
       xp: number;
@@ -501,4 +506,28 @@ export const api = {
       method: "POST",
       body: JSON.stringify({ message, context }),
     }).catch(() => {}),
+  getRoleplayScenarios: () =>
+    request<{ scenarios: RoleplayScenario[] }>("/api/v2/roleplay/scenarios"),
+  roleplayReply: (
+    scenarioId: string,
+    history: { role: "user" | "assistant"; content: string }[]
+  ) =>
+    request<RoleplayReply>("/api/v2/roleplay/reply", {
+      method: "POST",
+      body: JSON.stringify({ scenario_id: scenarioId, history }),
+    }),
 };
+
+export interface RoleplayScenario {
+  id: string;
+  title_uz: string;
+  emoji: string;
+  desc_uz: string;
+}
+
+export interface RoleplayReply {
+  ar: string;
+  uz: string;
+  ai: boolean;
+  done: boolean;
+}

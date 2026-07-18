@@ -1,0 +1,104 @@
+{
+ "id": "a2-36",
+ "level": "A2",
+ "module": "saudi",
+ "order": 36,
+ "title_uz": "Makka va Madina",
+ "title_ar": "مَكَّة وَالمَدِينَة",
+ "can_do_uz": "Makka va Madinadagi muqaddas joylar, yo'nalishlar va belgilarni tushunaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-35"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "Madinaда Payg'ambar masjidini (المَسْجِد النَّبَوِيّ) ziyorat qilasiz, Rawda (الرَّوْضَة) ga kirasiz. Belgilar (لَافِتَة) yo'l ko'rsatadi: مَدْخَل (kirish), مَخْرَج (chiqish). Bugun muqaddas shaharlar joy nomlarini o'rganamiz.",
+ "grammar": {
+  "point_ar": "المَعَالِمُ وَالاِتِّجَاهَات",
+  "explanation_uz": "Muqaddas joylar: Makkada المَسْجِد الحَرَام, غَار حِرَاء (Hiro g'ori), مِنَى، عَرَفَة. Madinada المَسْجِد النَّبَوِيّ, الرَّوْضَة (Ravza), قُبَاء (Quba masjidi), البَقِيع (qabriston). Yo'l topish uchun belgilarni o'qing: مَدْخَل (kirish), مَخْرَج (chiqish), سَاحَة (maydon). Yo'nalish so'rang: أَيْنَ بَابُ...؟ (... darvozasi qayerda?). Zich olomonда belgi (لَافِتَة) va darvoza raqami muhim.",
+  "table": [
+   {"ar": "المَسْجِدُ النَّبَوِيّ", "uz": "Payg'ambar masjidi (Madina)", "form": "joy"},
+   {"ar": "مَدْخَل / مَخْرَج", "uz": "kirish / chiqish", "form": "belgi"},
+   {"ar": "أَيْنَ بَابُ السَّلَام؟", "uz": "Salom darvozasi qayerda?", "form": "yo'nalish"},
+   {"ar": "سَاحَةُ الحَرَم", "uz": "Haram maydoni", "form": "joy"}
+  ],
+  "common_mistakes_uz": [
+   "مَدْخَل (kirish) va مَخْرَج (chiqish) belgilarini chalkashtirish.",
+   "Zich olomonда o'z darvozangiz raqamini eslab qolmaslik.",
+   "Joy nomlarini noto'g'ri talaffuz qilish — belgidan o'qing."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ز و ر",
+   "meaning_uz": "ziyorat qilish, borish",
+   "uz_cognates": ["ziyorat", "zoir", "mazor"],
+   "derived": [
+    {"ar": "زِيَارَة", "uz": "ziyorat", "pattern": "فِعَالَة"},
+    {"ar": "زَائِر", "uz": "ziyoratchi", "pattern": "فَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "المَسْجِدُ النَّبَوِيّ", "translit": "al-masjid an-nabawī", "uz": "Payg'ambar masjidi (Madina)", "root": "", "pattern": "", "pos": "ibora", "audio": "a2/masjid_nabawi.mp3", "example_ar": "زُرْتُ المَسْجِدَ النَّبَوِيَّ.", "example_uz": "Payg'ambar masjidini ziyorat qildim.", "srs": true},
+  {"ar": "الرَّوْضَة", "translit": "ar-rawḍa", "uz": "Ravza (Nabaviydagi muqaddas joy)", "root": "ر و ض", "pattern": "", "pos": "ot", "audio": "a2/rawda.mp3", "example_ar": "صَلَّيْتُ فِي الرَّوْضَةِ.", "example_uz": "Ravzada namoz o'qidim.", "srs": true},
+  {"ar": "زِيَارَة", "translit": "ziyāra", "uz": "ziyorat (o'zbekcha 'ziyorat')", "root": "ز و ر", "pattern": "فِعَالَة", "pos": "ot", "audio": "a2/ziyara.mp3", "example_ar": "زِيَارَةُ المَدِينَةِ.", "example_uz": "Madina ziyorati.", "srs": true},
+  {"ar": "سَاحَة", "translit": "sāḥa", "uz": "maydon, hovli", "root": "س و ح", "pattern": "فَعْلَة", "pos": "ot", "audio": "a2/saha.mp3", "example_ar": "سَاحَةُ الحَرَمِ وَاسِعَةٌ.", "example_uz": "Haram maydoni keng.", "srs": true},
+  {"ar": "مَدْخَل", "translit": "madkhal", "uz": "kirish (joy)", "root": "د خ ل", "pattern": "مَفْعَل", "pos": "ot", "audio": "a2/madkhal.mp3", "example_ar": "المَدْخَلُ رَقْم وَاحِد.", "example_uz": "1-kirish.", "srs": true},
+  {"ar": "مَخْرَج", "translit": "makhraj", "uz": "chiqish (joy)", "root": "خ ر ج", "pattern": "مَفْعَل", "pos": "ot", "audio": "a2/makhraj.mp3", "example_ar": "أَيْنَ المَخْرَجُ؟", "example_uz": "Chiqish qayerda?", "srs": true},
+  {"ar": "لَافِتَة", "translit": "lāfita", "uz": "belgi, taxta (yo'l ko'rsatkich)", "root": "ل ف ت", "pattern": "فَاعِلَة", "pos": "ot", "audio": "a2/lafita.mp3", "example_ar": "اِقْرَأِ اللَّافِتَةَ.", "example_uz": "Belgini o'qing.", "srs": true},
+  {"ar": "مَعْلَم", "translit": "maʿlam", "uz": "diqqatga sazovor joy, belgi", "root": "ع ل م", "pattern": "مَفْعَل", "pos": "ot", "audio": "a2/malam.mp3", "example_ar": "مَعْلَمٌ مَشْهُورٌ.", "example_uz": "Mashhur joy.", "srs": true},
+  {"ar": "غَار حِرَاء", "translit": "ghār ḥirāʾ", "uz": "Hiro g'ori (Makka)", "root": "", "pattern": "", "pos": "ibora", "audio": "a2/ghar_hira.mp3", "example_ar": "غَارُ حِرَاءَ فِي جَبَلِ النُّورِ.", "example_uz": "Hiro g'ori Nur tog'ida.", "srs": true},
+  {"ar": "قُبَاء", "translit": "qubāʾ", "uz": "Quba (birinchi masjid, Madina)", "root": "", "pattern": "", "pos": "ot", "audio": "a2/quba.mp3", "example_ar": "مَسْجِدُ قُبَاءَ.", "example_uz": "Quba masjidi.", "srs": true},
+  {"ar": "وَاسِع", "translit": "wāsiʿ", "uz": "keng, kata", "root": "و س ع", "pattern": "فَاعِل", "pos": "sifat", "audio": "a2/wasi.mp3", "example_ar": "الحَرَمُ وَاسِعٌ جِدًّا.", "example_uz": "Haram juda keng.", "srs": true},
+  {"ar": "مُزْدَحِم", "translit": "muzdaḥim", "uz": "gavjum, tirband", "root": "ز ح م", "pattern": "مُفْتَعِل", "pos": "sifat", "audio": "a2/muzdahim.mp3", "example_ar": "المَكَانُ مُزْدَحِمٌ.", "example_uz": "Joy gavjum.", "srs": true}
+ ],
+ "hejazi": [
+  {"msa_ar": "أَيْنَ بَابُ السَّلَامِ؟", "hejazi_ar": "وِين بَاب السَّلَام؟", "translit": "wēn bāb as-salām?", "uz": "Salom darvozasi qayerda? (hijoziy)", "audio": "hj/wen_bab_salam.mp3"},
+  {"msa_ar": "المَكَانُ مُزْدَحِمٌ", "hejazi_ar": "المَكَان زَحْمَة", "translit": "al-makān zaḥma", "uz": "Joy tirband (hijoziy)", "audio": "hj/makan_zahma.mp3"},
+  {"msa_ar": "كَيْفَ أَذْهَبُ إِلَى الرَّوْضَةِ؟", "hejazi_ar": "كِيف أَرُوح الرَّوْضَة؟", "translit": "kīf arūḥ ar-rawḍa?", "uz": "Ravzaga qanday boraman? (hijoziy)", "audio": "hj/kif_rawda.mp3"}
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "فِي المَدِينَةِ زُرْتُ المَسْجِدَ النَّبَوِيَّ. كَانَتِ السَّاحَةُ وَاسِعَةً لَكِنَّهَا مُزْدَحِمَةٌ. سَأَلْتُ: وِين بَاب السَّلَام؟ ثُمَّ ذَهَبْتُ إِلَى مَسْجِدِ قُبَاءَ.",
+   "questions": [
+    {"q_uz": "U qaysi masjidni ziyorat qildi?", "a": "Payg'ambar masjidi (النَّبَوِيّ)"},
+    {"q_uz": "Maydon qanday edi?", "a": "Keng, lekin gavjum (وَاسِعَة، مُزْدَحِمَة)"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/ziyara.mp3",
+   "transcript_ar": "زِيَارَة",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Ziyorat"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Yo'nalish so'rang: wēn bāb as-salām? kīf arūḥ ar-rawḍa? al-makān zaḥma.",
+   "target_ar": ["وِين بَاب السَّلَام؟", "المَسْجِد النَّبَوِيّ", "الرَّوْضَة"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Ravzaga qanday boraman?» va «Chiqish qayerda?» gaplarini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«kirish» qaysi?", "q_ar": "", "options": ["مَدْخَل", "مَخْرَج", "سَاحَة", "لَافِتَة"], "answer": "مَدْخَل", "explain_uz": "مَدْخَل — kirish (د خ ل), مَخْرَج — chiqish (خ ر ج).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المَسْجِدُ النَّبَوِيّ", "options": [], "answer": "Payg'ambar masjidi", "explain_uz": "المَسْجِد النَّبَوِيّ — Madinadagi Payg'ambar masjidi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyда «tirband/gavjum» qaysi?", "q_ar": "", "options": ["زَحْمَة", "وَاسِع", "سَاحَة", "مَعْلَم"], "answer": "زَحْمَة", "explain_uz": "زَحْمَة — hijoziyда «tirbandlik, gavjumlik».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ز و ر» o'zagidan?", "q_ar": "", "options": ["زِيَارَة", "سَاحَة", "لَافِتَة"], "answer": "زِيَارَة", "explain_uz": "«ز و ر» — ziyorat o'zagi: زِيَارَة (ziyorat), زَائِر (ziyoratchi), mazor.", "audio": "", "root": "ز و ر", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "chiqish (joy)", "q_ar": "", "options": [], "answer": "مَخْرَج", "explain_uz": "مَخْرَج — chiqish (خ ر ج o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«keng» qaysi?", "q_ar": "", "options": ["وَاسِع", "مُزْدَحِم", "قَرِيب", "بَعِيد"], "answer": "وَاسِع", "explain_uz": "وَاسِع — keng, katta.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "belgi, yo'l ko'rsatkich", "q_ar": "", "options": [], "answer": "لَافِتَة", "explain_uz": "لَافِتَة — yo'l ko'rsatuvchi taxta/belgi.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ز و ر", "back": "ziyorat o'zagi (ziyorat, zoir, mazor)", "deck": "msa"},
+  {"type": "word", "front": "المَسْجِدُ النَّبَوِيّ", "back": "Payg'ambar masjidi (Madina)", "deck": "msa"},
+  {"type": "word", "front": "الرَّوْضَة", "back": "Ravza", "deck": "msa"},
+  {"type": "word", "front": "زِيَارَة", "back": "ziyorat", "deck": "msa"},
+  {"type": "word", "front": "سَاحَة", "back": "maydon, hovli", "deck": "msa"},
+  {"type": "word", "front": "مَدْخَل", "back": "kirish (joy)", "deck": "msa"},
+  {"type": "word", "front": "مَخْرَج", "back": "chiqish (joy)", "deck": "msa"},
+  {"type": "word", "front": "لَافِتَة", "back": "belgi, yo'l ko'rsatkich", "deck": "msa"},
+  {"type": "phrase", "front": "وِين بَاب السَّلَام؟", "back": "Salom darvozasi qayerda? (hijoziy)", "deck": "hejazi"},
+  {"type": "phrase", "front": "المَكَان زَحْمَة", "back": "Joy tirband (hijoziy)", "deck": "hejazi"}
+ ]
+}

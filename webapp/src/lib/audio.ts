@@ -18,3 +18,19 @@ export function playAudio(file?: string) {
   current = new Audio(`/audio/${file}`);
   current.play().catch(() => {});
 }
+
+/** Matnni brauzer TTS bilan aytadi (audio fayl yo'q dinamik matnlar uchun — rol o'yini). */
+export function speakText(text?: string, lang = "ar-SA") {
+  if (!text || !isSoundOn()) return;
+  const synth = window.speechSynthesis;
+  if (!synth) return;
+  try {
+    synth.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = lang;
+    u.rate = 0.85;
+    synth.speak(u);
+  } catch {
+    /* qo'llab-quvvatlanmasa — jim */
+  }
+}

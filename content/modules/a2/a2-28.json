@@ -1,0 +1,105 @@
+{
+ "id": "a2-28",
+ "level": "A2",
+ "module": "saudi",
+ "order": 28,
+ "title_uz": "Transport",
+ "title_ar": "المُوَاصَلَات",
+ "can_do_uz": "Taksi, Haramayn poyezdi va avtobusdan foydalana, haq va yo'nalish haqida gapira olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-27"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "Jiddadan Makkaga qanday borasiz? Taksi, avtobus yoki tez «Haramayn» poyezdida! Taksichi bilan: «بِكَمْ التَّوْصِيلَة؟» (yo'l qancha?). Bugun transport so'zlari va savdolashish iboralarini o'rganamiz.",
+ "grammar": {
+  "point_ar": "عِبَارَاتُ المُوَاصَلَات",
+  "explanation_uz": "Transport tanlash: تَاكْسِي (taksi), حَافِلَة (avtobus), قِطَارُ الحَرَمَيْن (Makka-Madina tez poyezdi). Taksichi bilan muhim iboralar: كَمِ الأُجْرَة؟ (haq qancha?), عَلَى العَدَّاد (hisoblagich bo'yicha), قِفْ هُنَا (shu yerda to'xta). Poyezd/avtobusda: تَذْكَرَة (chipta), رَصِيف (perron), مَقْعَد (o'rindiq). Hijoziyда «yo'l/qatnov» — تَوْصِيلَة.",
+  "table": [
+   {"ar": "كَمِ الأُجْرَةُ إِلَى مَكَّة؟", "uz": "Makkagacha haq qancha?", "form": "savol"},
+   {"ar": "عَلَى العَدَّادِ لَو سَمَحْت", "uz": "Hisoblagich bo'yicha, iltimos", "form": "taksi"},
+   {"ar": "تَذْكَرَةٌ إِلَى المَدِينَة", "uz": "Madinaga chipta", "form": "poyezd"},
+   {"ar": "قِفْ هِنا", "uz": "Shu yerda to'xta (hijoziy)", "form": "hijoziy"}
+  ],
+  "common_mistakes_uz": [
+   "Taksida narxni oldindan kelishmaslik — «بِكَمْ؟» deb so'rang yoki «عَلَى العَدَّاد» talab qiling.",
+   "تَذْكَرَة (chipta) va بِطَاقَة (karta) so'zlarini chalkashtirish.",
+   "Poyezd rasoefini (رَصِيف) topmasdan sarson bo'lish — raqamni so'rang."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ذ ك ر",
+   "meaning_uz": "eslash, zikr",
+   "uz_cognates": ["zikr", "tazkira", "mudhokara"],
+   "derived": [
+    {"ar": "تَذْكَرَة", "uz": "chipta, bilet", "pattern": "تَفْعِلَة"},
+    {"ar": "ذِكْر", "uz": "zikr, eslash", "pattern": "فِعْل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "سَائِق", "translit": "sāʾiq", "uz": "haydovchi", "root": "س و ق", "pattern": "فَاعِل", "pos": "ot", "audio": "a2/saiq.mp3", "example_ar": "السَّائِقُ يَنْتَظِرُ.", "example_uz": "Haydovchi kutyapti.", "srs": true},
+  {"ar": "أُجْرَة", "translit": "ujra", "uz": "haq, kira (yo'l puli)", "root": "أ ج ر", "pattern": "فُعْلَة", "pos": "ot", "audio": "a2/ujra.mp3", "example_ar": "كَمِ الأُجْرَةُ؟", "example_uz": "Haq qancha?", "srs": true},
+  {"ar": "تَذْكَرَة", "translit": "tadhkira", "uz": "chipta, bilet", "root": "ذ ك ر", "pattern": "تَفْعِلَة", "pos": "ot", "audio": "a2/tadhkira.mp3", "example_ar": "تَذْكَرَةٌ وَاحِدَة.", "example_uz": "Bitta chipta.", "srs": true},
+  {"ar": "مَقْعَد", "translit": "maqʿad", "uz": "o'rindiq, joy", "root": "ق ع د", "pattern": "مَفْعَل", "pos": "ot", "audio": "a2/maqad.mp3", "example_ar": "مَقْعَدِي رَقْم عَشَرَة.", "example_uz": "Joyim 10-raqam.", "srs": true},
+  {"ar": "رَصِيف", "translit": "raṣīf", "uz": "perron, platforma", "root": "ر ص ف", "pattern": "فَعِيل", "pos": "ot", "audio": "a2/rasif.mp3", "example_ar": "القِطَارُ عَلَى الرَّصِيفِ.", "example_uz": "Poyezd perronda.", "srs": true},
+  {"ar": "عَدَّاد", "translit": "ʿaddād", "uz": "hisoblagich (taksi schyotchigi)", "root": "ع د د", "pattern": "فَعَّال", "pos": "ot", "audio": "a2/addad.mp3", "example_ar": "شَغِّلِ العَدَّادَ.", "example_uz": "Hisoblagichni yoq.", "srs": true},
+  {"ar": "قِطَارُ الحَرَمَيْن", "translit": "qiṭār al-ḥaramayn", "uz": "Haramayn (Makka-Madina) tez poyezdi", "root": "", "pattern": "", "pos": "ibora", "audio": "a2/qitar_haramayn.mp3", "example_ar": "رَكِبْتُ قِطَارَ الحَرَمَيْنِ.", "example_uz": "Haramayn poyezdiga chiqdim.", "srs": true},
+  {"ar": "نَقْل", "translit": "naql", "uz": "transport, tashish", "root": "ن ق ل", "pattern": "فَعْل", "pos": "ot", "audio": "a2/naql.mp3", "example_ar": "وَسِيلَةُ النَّقْلِ.", "example_uz": "Transport vositasi.", "srs": true},
+  {"ar": "مُبَاشِر", "translit": "mubāshir", "uz": "to'g'ridan-to'g'ri, bevosita", "root": "ب ش ر", "pattern": "مُفَاعِل", "pos": "sifat", "audio": "a2/mubashir.mp3", "example_ar": "قِطَارٌ مُبَاشِرٌ.", "example_uz": "To'g'ri (to'xtovsiz) poyezd.", "srs": true},
+  {"ar": "رَكِبَ", "translit": "rakiba", "uz": "mindi, chiqdi (transportga)", "root": "ر ك ب", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "a2/rakiba.mp3", "example_ar": "رَكِبْتُ التَّاكْسِي.", "example_uz": "Taksiga mindim.", "srs": true},
+  {"ar": "مَحَطَّة", "translit": "maḥaṭṭa", "uz": "bekat, stansiya", "root": "ح ط ط", "pattern": "مَفْعَلَة", "pos": "ot", "audio": "a1/mahatta.mp3", "example_ar": "مَحَطَّةُ القِطَارِ.", "example_uz": "Poyezd bekati.", "srs": true},
+  {"ar": "تَاكْسِي", "translit": "tāksī", "uz": "taksi", "root": "", "pattern": "", "pos": "ot", "audio": "a1/taksi.mp3", "example_ar": "أَبْغَى تَاكْسِي.", "example_uz": "Taksi kerak.", "srs": true}
+ ],
+ "hejazi": [
+  {"msa_ar": "كَمِ الأُجْرَةُ؟", "hejazi_ar": "بِكَمْ التَّوْصِيلَة؟", "translit": "bikam at-tawṣīla?", "uz": "Yo'l qancha turadi? (hijoziy)", "audio": "hj/bikam_tawsila.mp3"},
+  {"msa_ar": "شَغِّلِ العَدَّادَ", "hejazi_ar": "شَغِّل العَدَّاد", "translit": "shaghghil al-ʿaddād", "uz": "Hisoblagichni yoq (hijoziy)", "audio": "hj/shaghghil.mp3"},
+  {"msa_ar": "قِفْ هُنَا", "hejazi_ar": "قِفْ هِنا", "translit": "qif hina", "uz": "Shu yerda to'xta (hijoziy)", "audio": "hj/qif_hina.mp3"},
+  {"msa_ar": "أُرِيدُ الذَّهَابَ إِلَى...", "hejazi_ar": "أَبْغَى أَرُوح...", "translit": "abghā arūḥ...", "uz": "... ga bormoqchiman (hijoziy)", "audio": "hj/abgha_aruh.mp3"}
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "خَرَجْتُ مِنَ المَطَارِ وَرَكِبْتُ تَاكْسِي. قُلْتُ لِلسَّائِقِ: أَبْغَى أَرُوح مَكَّة، شَغِّل العَدَّاد لَو سَمَحْت. بَعْدَ العُمْرَةِ سَأَرْكَبُ قِطَارَ الحَرَمَيْنِ إِلَى المَدِينَةِ.",
+   "questions": [
+    {"q_uz": "U aeroportdan qanday chiqdi?", "a": "Taksida (رَكِبَ تَاكْسِي)"},
+    {"q_uz": "Madinaga qanday boradi?", "a": "Haramayn poyezdida"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/tadhkira.mp3",
+   "transcript_ar": "تَذْكَرَة",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Chipta, bilet"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Taksichi bilan gaplashing: abghā arūḥ makka, shaghghil al-ʿaddād, bikam at-tawṣīla?",
+   "target_ar": ["بِكَمْ التَّوْصِيلَة؟", "شَغِّل العَدَّاد", "قِفْ هِنا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Makkagacha haq qancha?» va «Madinaga bitta chipta» gaplarini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«chipta» qaysi?", "q_ar": "", "options": ["تَذْكَرَة", "أُجْرَة", "مَقْعَد", "رَصِيف"], "answer": "تَذْكَرَة", "explain_uz": "تَذْكَرَة — chipta/bilet (ذكر o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "كَمِ الأُجْرَةُ؟", "options": [], "answer": "haq qancha", "explain_uz": "كَمْ = qancha, أُجْرَة = haq/kira.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyда «Hisoblagichni yoq» qaysi?", "q_ar": "", "options": ["شَغِّل العَدَّاد", "قِفْ هِنا", "بِكَمْ التَّوْصِيلَة؟", "أَبْغَى أَرُوح"], "answer": "شَغِّل العَدَّاد", "explain_uz": "شَغِّل العَدَّاد — hisoblagichni yoq (taksida narx uchun).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ذ ك ر» o'zagidan?", "q_ar": "", "options": ["تَذْكَرَة", "أُجْرَة", "رَصِيف"], "answer": "تَذْكَرَة", "explain_uz": "«ذ ك ر» — eslash o'zagi: تَذْكَرَة (chipta), zikr, tazkira.", "audio": "", "root": "ذ ك ر", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "haydovchi", "q_ar": "", "options": [], "answer": "سَائِق", "explain_uz": "سَائِق — haydovchi (س و ق = haydash o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Makka-Madina tez poyezdi qaysi?", "q_ar": "", "options": ["قِطَارُ الحَرَمَيْن", "الحَافِلَة", "التَّاكْسِي", "الطَّائِرَة"], "answer": "قِطَارُ الحَرَمَيْن", "explain_uz": "قِطَارُ الحَرَمَيْن — ikki Haram (Makka-Madina) o'rtasidagi tez poyezd.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "perron, platforma", "q_ar": "", "options": [], "answer": "رَصِيف", "explain_uz": "رَصِيف — poyezd perroni.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ذ ك ر", "back": "eslash o'zagi (zikr, tazkira=chipta, mudhokara)", "deck": "msa"},
+  {"type": "word", "front": "سَائِق", "back": "haydovchi", "deck": "msa"},
+  {"type": "word", "front": "أُجْرَة", "back": "haq, kira", "deck": "msa"},
+  {"type": "word", "front": "تَذْكَرَة", "back": "chipta, bilet", "deck": "msa"},
+  {"type": "word", "front": "مَقْعَد", "back": "o'rindiq, joy", "deck": "msa"},
+  {"type": "word", "front": "رَصِيف", "back": "perron, platforma", "deck": "msa"},
+  {"type": "word", "front": "عَدَّاد", "back": "hisoblagich (taksi)", "deck": "msa"},
+  {"type": "word", "front": "رَكِبَ", "back": "mindi (transportga)", "deck": "msa"},
+  {"type": "phrase", "front": "بِكَمْ التَّوْصِيلَة؟", "back": "Yo'l qancha? (hijoziy)", "deck": "hejazi"},
+  {"type": "phrase", "front": "قِفْ هِنا", "back": "Shu yerda to'xta (hijoziy)", "deck": "hejazi"}
+ ]
+}

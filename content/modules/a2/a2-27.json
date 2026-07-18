@@ -1,0 +1,105 @@
+{
+ "id": "a2-27",
+ "level": "A2",
+ "module": "saudi",
+ "order": 27,
+ "title_uz": "Aeroport",
+ "title_ar": "فِي المَطَار",
+ "can_do_uz": "Aeroportda pasport, viza va bojxona nazoratidan o'ta olaman, sumkam haqida gapira olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-26"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "Jidda aeroportiga qo'ndingiz — birinchi to'siq: pasport nazorati. «جَوَاز السَّفَر لَو سَمَحْت» (pasport, iltimos) deb so'raydilar. Bugun aeroport so'zlari va Saudiya lahjasidagi iboralarni o'rganamiz — umra safaringizning birinchi qadami!",
+ "grammar": {
+  "point_ar": "عِبَارَاتُ المَطَار",
+  "explanation_uz": "Aeroportda ish ketma-ketligi: (1) جَوَازَات (pasport nazorati) — جَوَاز السَّفَر va تَأْشِيرَة (viza) ko'rsatasiz. (2) اِسْتِلَامُ الحَقَائِب (bagaj olish). (3) جُمْرُك (bojxona) — «هَلْ لَدَيْكَ شَيْءٌ لِلإِعْلَانِ؟» (deklaratsiya qiladigan narsa bormi?). Kerakli savol: أَيْنَ...؟ (qayerda), hijoziyда وِين...؟. Saudiyada «sumka» so'zi — rasmiy حَقِيبَة, hijoziy شَنْطَة.",
+  "table": [
+   {"ar": "الجَوَاز لَو سَمَحْت", "uz": "Pasport, iltimos", "form": "nazorat"},
+   {"ar": "أَيْنَ اسْتِلَامُ الحَقَائِب؟", "uz": "Bagaj qayerdan olinadi?", "form": "savol"},
+   {"ar": "لَيْسَ لَدَيَّ شَيْءٌ لِلإِعْلَان", "uz": "Deklaratsiya narsam yo'q", "form": "bojxona"},
+   {"ar": "وِين البَوَّابَة؟", "uz": "Chiqish darvozasi qayerda? (hijoziy)", "form": "hijoziy"}
+  ],
+  "common_mistakes_uz": [
+   "جَوَاز (pasport) va تَأْشِيرَة (viza) so'zlarini chalkashtirish.",
+   "«sumka» uchun faqat حَقِيبَة ni bilish — Saudiyada شَنْطَة ko'p eshitiladi.",
+   "Rasmiy nazoratда juda tez gapirishga urinish — sekin va aniq ayting."
+  ]
+ },
+ "roots": [
+  {
+   "root": "س ف ر",
+   "meaning_uz": "safar, sayohat",
+   "uz_cognates": ["safar", "musofir", "safir"],
+   "derived": [
+    {"ar": "جَوَازُ السَّفَر", "uz": "pasport (safar hujjati)", "pattern": ""},
+    {"ar": "مُسَافِر", "uz": "yo'lovchi", "pattern": "مُفَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "جَوَاز", "translit": "jawāz", "uz": "pasport (جواز السفر)", "root": "ج و ز", "pattern": "فَعَال", "pos": "ot", "audio": "a2/jawaz.mp3", "example_ar": "الجَوَازُ لَو سَمَحْت.", "example_uz": "Pasport, iltimos.", "srs": true},
+  {"ar": "تَأْشِيرَة", "translit": "taʾshīra", "uz": "viza", "root": "أ ش ر", "pattern": "تَفْعِيلَة", "pos": "ot", "audio": "a2/tashira.mp3", "example_ar": "هَذِهِ تَأْشِيرَةُ عُمْرَةٍ.", "example_uz": "Bu umra vizasi.", "srs": true},
+  {"ar": "جُمْرُك", "translit": "jumruk", "uz": "bojxona", "root": "", "pattern": "", "pos": "ot", "audio": "a2/jumruk.mp3", "example_ar": "أَيْنَ الجُمْرُكُ؟", "example_uz": "Bojxona qayerda?", "srs": true},
+  {"ar": "بَوَّابَة", "translit": "bawwāba", "uz": "darvoza, gate", "root": "ب و ب", "pattern": "فَعَّالَة", "pos": "ot", "audio": "a2/bawwaba.mp3", "example_ar": "بَوَّابَةُ الصُّعُودِ رَقْم خَمْسَة.", "example_uz": "Chiqish darvozasi 5-raqam.", "srs": true},
+  {"ar": "صَالَة", "translit": "ṣāla", "uz": "zal (kutish zali)", "root": "", "pattern": "", "pos": "ot", "audio": "a2/sala.mp3", "example_ar": "صَالَةُ الوُصُولِ هُنَاكَ.", "example_uz": "Kelish zali u yerda.", "srs": true},
+  {"ar": "وُصُول", "translit": "wuṣūl", "uz": "kelish (arrival)", "root": "و ص ل", "pattern": "فُعُول", "pos": "ot", "audio": "a2/wusul.mp3", "example_ar": "صَالَةُ الوُصُولِ.", "example_uz": "Kelish zali.", "srs": true},
+  {"ar": "مُغَادَرَة", "translit": "mughādara", "uz": "jo'nab ketish (departure)", "root": "غ د ر", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "a2/mughadara.mp3", "example_ar": "صَالَةُ المُغَادَرَةِ.", "example_uz": "Jo'nash zali.", "srs": true},
+  {"ar": "مُوَظَّف", "translit": "muwaẓẓaf", "uz": "xodim, ofitser", "root": "و ظ ف", "pattern": "مُفَعَّل", "pos": "ot", "audio": "a2/muwazzaf.mp3", "example_ar": "سَأَلَ المُوَظَّفُ عَنِ الجَوَازِ.", "example_uz": "Xodim pasportni so'radi.", "srs": true},
+  {"ar": "تَفْتِيش", "translit": "taftīsh", "uz": "tekshiruv, kontrol", "root": "ف ت ش", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/taftish.mp3", "example_ar": "تَفْتِيشُ الحَقَائِبِ.", "example_uz": "Sumkalar tekshiruvi.", "srs": true},
+  {"ar": "بِطَاقَةُ الصُّعُود", "translit": "biṭāqat aṣ-ṣuʿūd", "uz": "chiptalash taloni (boarding pass)", "root": "", "pattern": "", "pos": "ibora", "audio": "a2/bitaqa_suud.mp3", "example_ar": "أَيْنَ بِطَاقَةُ الصُّعُودِ؟", "example_uz": "Boarding pass qayerda?", "srs": true},
+  {"ar": "إِعْلَان", "translit": "iʿlān", "uz": "deklaratsiya, e'lon (o'zbekcha 'e'lon')", "root": "ع ل ن", "pattern": "إِفْعَال", "pos": "ot", "audio": "a2/ilan.mp3", "example_ar": "لَا شَيْءَ لِلإِعْلَانِ.", "example_uz": "Deklaratsiya narsam yo'q.", "srs": true},
+  {"ar": "طَائِرَة", "translit": "ṭāʾira", "uz": "samolyot", "root": "ط ي ر", "pattern": "فَاعِلَة", "pos": "ot", "audio": "a1/taira.mp3", "example_ar": "الطَّائِرَةُ وَصَلَتْ.", "example_uz": "Samolyot keldi.", "srs": true}
+ ],
+ "hejazi": [
+  {"msa_ar": "أَيْنَ الجَوَازَاتُ؟", "hejazi_ar": "وِين الجَوَازَات؟", "translit": "wēn al-jawāzāt?", "uz": "Pasport nazorati qayerda? (hijoziy)", "audio": "hj/wen_jawazat.mp3"},
+  {"msa_ar": "هَذِهِ حَقِيبَتِي", "hejazi_ar": "هَذِي شَنْطَتِي", "translit": "hādhī shanṭatī", "uz": "Bu mening sumkam (hijoziy — shanta)", "audio": "hj/shantati.mp3"},
+  {"msa_ar": "أَيْنَ بَوَّابَةُ الصُّعُودِ؟", "hejazi_ar": "وِين البَوَّابَة؟", "translit": "wēn al-bawwāba?", "uz": "Chiqish darvozasi qayerda? (hijoziy)", "audio": "hj/wen_bawwaba.mp3"},
+  {"msa_ar": "مِنْ فَضْلِكَ", "hejazi_ar": "لَو سَمَحْت", "translit": "law samaḥt", "uz": "Iltimos (hijoziy)", "audio": "hj/law_samaht.mp3"}
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "وَصَلَتِ الطَّائِرَةُ إِلَى مَطَارِ جِدَّة. ذَهَبْتُ إِلَى الجَوَازَاتِ وَأَعْطَيْتُ المُوَظَّفَ جَوَازِي وَتَأْشِيرَةَ العُمْرَةِ. ثُمَّ أَخَذْتُ شَنْطَتِي مِنَ الاِسْتِلَامِ وَخَرَجْتُ مِنَ الجُمْرُكِ.",
+   "questions": [
+    {"q_uz": "Samolyot qaysi aeroportga qo'ndi?", "a": "Jidda (جِدَّة)"},
+    {"q_uz": "Xodimga nima berdi?", "a": "Pasport va umra vizasi"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/jawaz.mp3",
+   "transcript_ar": "جَوَاز",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Pasport"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Aeroport iboralarini ayting: al-jawāz law samaḥt, wēn al-jawāzāt? hādhī shanṭatī.",
+   "target_ar": ["الجَوَاز لَو سَمَحْت", "وِين الجَوَازَات؟", "هَذِي شَنْطَتِي"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Pasport nazorati qayerda?» va «Deklaratsiya narsam yo'q» gaplarini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«pasport» qaysi?", "q_ar": "", "options": ["جَوَاز", "تَأْشِيرَة", "بِطَاقَة", "جُمْرُك"], "answer": "جَوَاز", "explain_uz": "جَوَاز (السفر) — pasport. تَأْشِيرَة — viza.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَيْنَ الجُمْرُكُ؟", "options": [], "answer": "bojxona qayerda", "explain_uz": "أَيْنَ = qayerda, جُمْرُك = bojxona.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyда «sumka» qaysi?", "q_ar": "", "options": ["شَنْطَة", "حَقِيبَة", "بَوَّابَة", "صَالَة"], "answer": "شَنْطَة", "explain_uz": "Hijoziy: شَنْطَة (rasmiy: حَقِيبَة).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «س ف ر» o'zagidan?", "q_ar": "", "options": ["جَوَازُ السَّفَر", "جُمْرُك", "صَالَة"], "answer": "جَوَازُ السَّفَر", "explain_uz": "«س ف ر» — safar o'zagi: جواز السفر, musofir, safar.", "audio": "", "root": "س ف ر", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "viza", "q_ar": "", "options": [], "answer": "تَأْشِيرَة", "explain_uz": "تَأْشِيرَة — viza.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«kelish zali» qaysi?", "q_ar": "", "options": ["صَالَةُ الوُصُول", "صَالَةُ المُغَادَرَة", "بَوَّابَة", "جُمْرُك"], "answer": "صَالَةُ الوُصُول", "explain_uz": "وُصُول — kelish; مُغَادَرَة — jo'nash.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "«Pasport, iltimos» iborasini tuzing", "q_ar": "", "options": [], "answer": "الجَوَاز لَو سَمَحْت", "explain_uz": "الجَوَاز (pasport) + لَو سَمَحْت (iltimos).", "audio": "", "root": "", "pattern": "", "words": ["لَو سَمَحْت", "الجَوَاز"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "س ف ر", "back": "safar o'zagi (safar, musofir, jawaz safar=pasport)", "deck": "msa"},
+  {"type": "word", "front": "جَوَاز", "back": "pasport", "deck": "msa"},
+  {"type": "word", "front": "تَأْشِيرَة", "back": "viza", "deck": "msa"},
+  {"type": "word", "front": "جُمْرُك", "back": "bojxona", "deck": "msa"},
+  {"type": "word", "front": "بَوَّابَة", "back": "darvoza, gate", "deck": "msa"},
+  {"type": "word", "front": "وُصُول", "back": "kelish (arrival)", "deck": "msa"},
+  {"type": "word", "front": "مُغَادَرَة", "back": "jo'nash (departure)", "deck": "msa"},
+  {"type": "word", "front": "مُوَظَّف", "back": "xodim, ofitser", "deck": "msa"},
+  {"type": "phrase", "front": "وِين الجَوَازَات؟", "back": "Pasport nazorati qayerda? (hijoziy)", "deck": "hejazi"},
+  {"type": "phrase", "front": "هَذِي شَنْطَتِي", "back": "Bu mening sumkam (hijoziy)", "deck": "hejazi"}
+ ]
+}

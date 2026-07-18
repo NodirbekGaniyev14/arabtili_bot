@@ -11,6 +11,7 @@ import Review from "./pages/Review";
 import RootLab from "./pages/RootLab";
 import Exam from "./pages/Exam";
 import WeakPractice from "./pages/WeakPractice";
+import RolePlay from "./pages/RolePlay";
 import LessonPlayerV2 from "./pages/v2/LessonPlayerV2";
 
 type Phase = "boot" | "onboarding" | "app";
@@ -38,6 +39,7 @@ export default function App() {
   const [showRootLab, setShowRootLab] = useState(false);
   const [showExam, setShowExam] = useState(false);
   const [showWeak, setShowWeak] = useState(false);
+  const [showRolePlay, setShowRolePlay] = useState(false);
 
   useEffect(() => {
     const tg = window.Telegram?.WebApp;
@@ -116,6 +118,7 @@ export default function App() {
             onOpenRootLab={() => setShowRootLab(true)}
             onOpenExam={() => setShowExam(true)}
             onOpenWeak={() => setShowWeak(true)}
+            onOpenRolePlay={() => setShowRolePlay(true)}
             onGoLessons={() => setTab("lessons")}
           />
         )}
@@ -130,6 +133,8 @@ export default function App() {
       <NavBar tab={tab} onChange={setTab} reviewBadge={stats.due_count} />
 
       {showRootLab && <RootLab onClose={() => setShowRootLab(false)} />}
+
+      {showRolePlay && <RolePlay onClose={() => setShowRolePlay(false)} />}
 
       {showExam && (
         <Exam
