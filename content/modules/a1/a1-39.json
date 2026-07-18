@@ -1,0 +1,96 @@
+{
+ "id": "a1-39",
+ "level": "A1",
+ "module": "daily-life",
+ "order": 39,
+ "title_uz": "Takrorlash",
+ "title_ar": "مُرَاجَعَةُ الجُذُور وَالأَوْزَان",
+ "can_do_uz": "A1 davomida o'rgangan o'zak va vaznlarni birlashtirib, yangi so'zlarni taxmin qila olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-38"],
+ "harakat_level": "full",
+ "hook_uz": "A1 ni yakunlaymiz! Endi bilasiz: bitta o'zak — o'nlab so'z. د ر س dan: دَرَسَ (o'qidi), مُدَرِّس (o'qituvchi), مَدْرَسَة (maktab), دِرَاسَة (ta'lim). Vaznni bilsangiz, YANGI so'zni ko'rib ma'nosini taxmin qilasiz — bu arabchaning kaliti!",
+ "grammar": {
+  "point_ar": "نِظَامُ الجَذْر وَالوَزْن",
+  "explanation_uz": "A1 xulosasi: har so'z = JADR (o'zak, 3 undosh) + VAZN (qolib). Asosiy vaznlar: فَعَلَ (fe'l), فَاعِل (bajaruvchi), مَفْعُول (ob'ekt), مَفْعَل/مَفْعَلَة (joy), فَعِيل (sifat), مُفَعِّل (kuchaytirilgan bajaruvchi), فِعَالَة (ish nomi/masdar). Bir o'zakni turli vaznlarga solib, bog'liq so'zlar oilasini yasaysiz. Yangi so'z ko'rsangiz: o'zakni toping → vaznni taning → ma'noni taxmin qiling.",
+  "table": [
+   {"ar": "دَرَسَ", "uz": "o'qidi (fe'l)", "form": "فَعَلَ"},
+   {"ar": "مُدَرِّس / دَارِس", "uz": "o'qituvchi / o'quvchi", "form": "مُفَعِّل / فَاعِل"},
+   {"ar": "مَدْرَسَة", "uz": "maktab (joy)", "form": "مَفْعَلَة"},
+   {"ar": "دِرَاسَة", "uz": "ta'lim (ish nomi)", "form": "فِعَالَة"}
+  ],
+  "common_mistakes_uz": [
+   "O'zak harflarini vazn harflaridan (م، ا، ي، ت) ajrata olmaslik.",
+   "Vaznning ma'nosini emas, faqat so'zni yodlash.",
+   "Yangi so'zni o'zakka bo'lmasdan lug'atга yugurish — avval o'zakni toping."
+  ]
+ },
+ "roots": [
+  {
+   "root": "د ر س",
+   "meaning_uz": "o'qish, o'rganish",
+   "uz_cognates": ["dars", "madrasa", "mudarris", "dirasa"],
+   "derived": [
+    {"ar": "مُدَرِّس", "uz": "o'qituvchi", "pattern": "مُفَعِّل"},
+    {"ar": "مَدْرَسَة", "uz": "maktab", "pattern": "مَفْعَلَة"},
+    {"ar": "دِرَاسَة", "uz": "ta'lim, o'qish", "pattern": "فِعَالَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "دَرْس", "translit": "dars", "uz": "dars (o'zbekcha 'dars')", "root": "د ر س", "pattern": "فَعْل", "pos": "ot", "audio": "a1/dars.mp3", "example_ar": "الدَّرْسُ مُهِمٌّ.", "example_uz": "Dars muhim.", "srs": true},
+  {"ar": "دِرَاسَة", "translit": "dirāsa", "uz": "ta'lim, o'qish (masdar)", "root": "د ر س", "pattern": "فِعَالَة", "pos": "ot", "audio": "a1/dirasa.mp3", "example_ar": "الدِّرَاسَةُ فِي الجَامِعَةِ.", "example_uz": "Ta'lim universitetda.", "srs": true},
+  {"ar": "تِلْمِيذ", "translit": "tilmīdh", "uz": "o'quvchi, shogird", "root": "ت ل م ذ", "pattern": "فِعْلِيل", "pos": "ot", "audio": "a1/tilmidh.mp3", "example_ar": "التِّلْمِيذُ مُجْتَهِدٌ.", "example_uz": "O'quvchi tirishqoq.", "srs": true},
+  {"ar": "مُجْتَهِد", "translit": "mujtahid", "uz": "tirishqoq, harakatchan (o'zbekcha 'mujtahid')", "root": "ج ه د", "pattern": "مُفْتَعِل", "pos": "sifat", "audio": "a1/mujtahid.mp3", "example_ar": "الطَّالِبُ مُجْتَهِدٌ.", "example_uz": "Talaba tirishqoq.", "srs": true},
+  {"ar": "نَشِيط", "translit": "nashīṭ", "uz": "faol, g'ayratli", "root": "ن ش ط", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/nashit.mp3", "example_ar": "الوَلَدُ نَشِيطٌ.", "example_uz": "Bola faol.", "srs": true},
+  {"ar": "عَامِل", "translit": "ʿāmil", "uz": "ishchi (فَاعِل vazni)", "root": "ع م ل", "pattern": "فَاعِل", "pos": "ot", "audio": "a1/amil.mp3", "example_ar": "العَامِلُ مُجْتَهِدٌ.", "example_uz": "Ishchi tirishqoq.", "srs": true},
+  {"ar": "مَكْتُوب", "translit": "maktūb", "uz": "yozilgan (مَفْعُول vazni)", "root": "ك ت ب", "pattern": "مَفْعُول", "pos": "ot", "audio": "a1/maktub.mp3", "example_ar": "هَذَا مَكْتُوبٌ.", "example_uz": "Bu yozilgan.", "srs": true},
+  {"ar": "مُرَاجَعَة", "translit": "murājaʿa", "uz": "takrorlash, ko'rib chiqish", "root": "ر ج ع", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "a1/murajaa.mp3", "example_ar": "المُرَاجَعَةُ مُفِيدَةٌ.", "example_uz": "Takrorlash foydali.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "التِّلْمِيذُ المُجْتَهِدُ يَذْهَبُ إِلَى المَدْرَسَةِ كُلَّ يَوْمٍ. يَدْرُسُ الدَّرْسَ مَعَ المُدَرِّسِ. الدِّرَاسَةُ مُهِمَّةٌ وَالمُرَاجَعَةُ مُفِيدَةٌ.",
+   "questions": [
+    {"q_uz": "Matndagi so'zlarning ko'pi qaysi o'zakdan?", "a": "د ر س (o'qish)"},
+    {"q_uz": "«مَدْرَسَة» qaysi vazn — nima ma'no?", "a": "مَفْعَلَة — joy (maktab)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/dars.mp3",
+   "transcript_ar": "دَرْس",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Dars"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "د ر س oilasini ayting: darasa, mudarris, madrasa, dirāsa, dāris. Har birining vaznini eslang.",
+   "target_ar": ["مُدَرِّس", "مَدْرَسَة", "دِرَاسَة"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Bitta o'zak (masalan ك ت ب yoki ع م ل) tanlab, undan 4 so'z va vaznini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«maktab» (joy vazni) qaysi?", "q_ar": "", "options": ["مَدْرَسَة", "مُدَرِّس", "دِرَاسَة", "دَارِس"], "answer": "مَدْرَسَة", "explain_uz": "مَفْعَلَة vazni — joy: مَدْرَسَة (o'qish joyi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "build_word", "q_uz": "«ك ت ب» o'zagini «فَاعِل» vazniga soling (yozuvchi)", "q_ar": "", "options": [], "answer": "كَاتِب", "explain_uz": "ك ت ب + فَاعِل = كَاتِب (yozuvchi).", "audio": "", "root": "ك ت ب", "pattern": "فَاعِل", "words": []},
+  {"type": "mcq", "q_uz": "«مَكْتُوب» qaysi vazn — nima ma'no?", "q_ar": "", "options": ["مَفْعُول — ob'ekt (yozilgan)", "فَاعِل — bajaruvchi", "مَفْعَل — joy", "فَعِيل — sifat"], "answer": "مَفْعُول — ob'ekt (yozilgan)", "explain_uz": "مَفْعُول vazni — ish tushgan narsa.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «د ر س» o'zagidan?", "q_ar": "", "options": ["دِرَاسَة", "عَامِل", "نَشِيط"], "answer": "دِرَاسَة", "explain_uz": "«د ر س» — o'qish o'zagi: دِرَاسَة, مَدْرَسَة, مُدَرِّس.", "audio": "", "root": "د ر س", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "التِّلْمِيذُ مُجْتَهِدٌ", "options": [], "answer": "o'quvchi tirishqoq", "explain_uz": "تِلْمِيذ = o'quvchi, مُجْتَهِد = tirishqoq.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "takrorlash", "q_ar": "", "options": [], "answer": "مُرَاجَعَة", "explain_uz": "مُرَاجَعَة — takrorlash/ko'rib chiqish (ر ج ع = qaytish o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Yangi so'z ko'rganda birinchi navbatda nima qilamiz?", "q_ar": "", "options": ["o'zakni topamiz", "lug'atga qaraymiz", "yodlaymiz", "tashlab ketamiz"], "answer": "o'zakni topamiz", "explain_uz": "Avval o'zakni (3 undosh) toping → vaznni taning → ma'noni taxmin qiling.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "د ر س", "back": "o'qish o'zagi (dars, madrasa, mudarris, dirasa)", "deck": "msa"},
+  {"type": "pattern", "front": "مَفْعَلَة", "back": "joy vazni (madrasa=maktab, maktaba)", "deck": "msa"},
+  {"type": "pattern", "front": "فِعَالَة", "back": "ish nomi/masdar vazni (dirasa, kitaba)", "deck": "msa"},
+  {"type": "word", "front": "دَرْس", "back": "dars", "deck": "msa"},
+  {"type": "word", "front": "دِرَاسَة", "back": "ta'lim, o'qish", "deck": "msa"},
+  {"type": "word", "front": "تِلْمِيذ", "back": "o'quvchi, shogird", "deck": "msa"},
+  {"type": "word", "front": "مُجْتَهِد", "back": "tirishqoq", "deck": "msa"},
+  {"type": "word", "front": "نَشِيط", "back": "faol, g'ayratli", "deck": "msa"},
+  {"type": "word", "front": "مُرَاجَعَة", "back": "takrorlash", "deck": "msa"}
+ ]
+}

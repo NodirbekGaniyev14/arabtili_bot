@@ -1,0 +1,98 @@
+{
+ "id": "a1-06",
+ "level": "A1",
+ "module": "nominal-sentence",
+ "order": 6,
+ "title_uz": "Narsani tasvirlayman",
+ "title_ar": "النَّعْت (الصِّفَة)",
+ "can_do_uz": "«katta uy», «chiroyli qiz» kabi ot+sifat birikmalarini to'g'ri moslashtirib tuza olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-05"],
+ "harakat_level": "full",
+ "hook_uz": "O'zbekchada sifat OLDINDA: «katta uy». Arabchada esa sifat OTDAN KEYIN keladi va unga moslashadi: بَيْتٌ كَبِيرٌ — «uy katta(si)» = katta uy. Bugun ot va sifatni to'g'ri bog'lashni o'rganamiz.",
+ "grammar": {
+  "point_ar": "المَنْعُوت + النَّعْت",
+  "explanation_uz": "Sifat (النَّعْت) o'zi ta'riflagan otdan KEYIN keladi va unga TO'RT narsada moslashadi: (1) jins — erkak/ayol, (2) son — birlik/ko'plik, (3) aniqlik — ال bormi, (4) holat (raf'/nasb/jarr). Namunalar: بَيْتٌ كَبِيرٌ (katta uy — ikkalasi noaniq), البَيْتُ الكَبِيرُ (o'sha katta uy — ikkalasi aniq), بِنْتٌ جَمِيلَةٌ (chiroyli qiz — ikkalasi ayol). DIQQAT: البَيْتُ كَبِيرٌ (ega aniq, sifat noaniq) — bu GAP («uy katta»), ibora emas.",
+  "table": [
+   {"ar": "بَيْتٌ كَبِيرٌ", "uz": "katta uy (ibora)", "form": "noaniq + noaniq"},
+   {"ar": "البَيْتُ الكَبِيرُ", "uz": "o'sha katta uy", "form": "aniq + aniq"},
+   {"ar": "بِنْتٌ جَمِيلَةٌ", "uz": "chiroyli qiz", "form": "ayol + ayol (ة)"},
+   {"ar": "البَيْتُ كَبِيرٌ", "uz": "Uy katta (GAP!)", "form": "aniq ega + noaniq xabar"}
+  ],
+  "common_mistakes_uz": [
+   "Sifatni OTDAN OLDIN qo'yish (o'zbekchadagidek) — arabchada sifat KEYIN keladi.",
+   "Jinsni moslamaslik: بِنْتٌ جَمِيلٌ (xato) → بِنْتٌ جَمِيلَةٌ (to'g'ri, ة bilan).",
+   "Aniqlikni moslamaslik: البَيْتُ كَبِيرٌ (gap) va البَيْتُ الكَبِيرُ (ibora) ni farqlash."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ق و ي",
+   "meaning_uz": "kuch, quvvat",
+   "uz_cognates": ["quvvat", "taqviyat", "qaviy"],
+   "derived": [
+    {"ar": "قَوِيّ", "uz": "kuchli", "pattern": "فَعِيل"},
+    {"ar": "قُوَّة", "uz": "kuch, quvvat", "pattern": "فُعْلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "نَظِيف", "translit": "naẓīf", "uz": "toza", "root": "ن ظ ف", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/nazif.mp3", "example_ar": "الغُرْفَةُ نَظِيفَةٌ.", "example_uz": "Xona toza.", "srs": true},
+  {"ar": "سَهْل", "translit": "sahl", "uz": "oson", "root": "س ه ل", "pattern": "فَعْل", "pos": "sifat", "audio": "a1/sahl.mp3", "example_ar": "الدَّرْسُ سَهْلٌ.", "example_uz": "Dars oson.", "srs": true},
+  {"ar": "صَعْب", "translit": "ṣaʿb", "uz": "qiyin", "root": "ص ع ب", "pattern": "فَعْل", "pos": "sifat", "audio": "a1/saab.mp3", "example_ar": "السُّؤَالُ صَعْبٌ.", "example_uz": "Savol qiyin.", "srs": true},
+  {"ar": "مُهِمّ", "translit": "muhimm", "uz": "muhim (o'zbekcha 'muhim' shundan)", "root": "ه م م", "pattern": "مُفْعِل", "pos": "sifat", "audio": "a1/muhimm.mp3", "example_ar": "هَذَا دَرْسٌ مُهِمٌّ.", "example_uz": "Bu muhim dars.", "srs": true},
+  {"ar": "قَوِيّ", "translit": "qawiyy", "uz": "kuchli (o'zbekcha 'quvvat' shundan)", "root": "ق و ي", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/qawi.mp3", "example_ar": "الرَّجُلُ قَوِيٌّ.", "example_uz": "Erkak kuchli.", "srs": true},
+  {"ar": "ضَعِيف", "translit": "ḍaʿīf", "uz": "zaif, kuchsiz (o'zbekcha 'zaif' shundan)", "root": "ض ع ف", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/daif.mp3", "example_ar": "القَهْوَةُ ضَعِيفَةٌ.", "example_uz": "Qahva zaif (achchiq emas).", "srs": true},
+  {"ar": "غَنِيّ", "translit": "ghaniyy", "uz": "boy", "root": "غ ن ي", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/ghani.mp3", "example_ar": "الرَّجُلُ غَنِيٌّ.", "example_uz": "Erkak boy.", "srs": true},
+  {"ar": "فَقِير", "translit": "faqīr", "uz": "kambag'al (o'zbekcha 'faqir' shundan)", "root": "ف ق ر", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/faqir.mp3", "example_ar": "الرَّجُلُ فَقِيرٌ.", "example_uz": "Erkak kambag'al.", "srs": true},
+  {"ar": "رَجُل", "translit": "rajul", "uz": "erkak, kishi", "root": "ر ج ل", "pattern": "فَعُل", "pos": "ot", "audio": "a1/rajul.mp3", "example_ar": "هَذَا رَجُلٌ قَوِيٌّ.", "example_uz": "Bu kuchli erkak.", "srs": true},
+  {"ar": "دَرْس", "translit": "dars", "uz": "dars (o'zbekcha 'dars' shundan)", "root": "د ر س", "pattern": "فَعْل", "pos": "ot", "audio": "a1/dars.mp3", "example_ar": "الدَّرْسُ سَهْلٌ.", "example_uz": "Dars oson.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "هَذَا بَيْتٌ كَبِيرٌ وَنَظِيفٌ. الدَّرْسُ سَهْلٌ لَكِنَّ السُّؤَالَ صَعْبٌ. الرَّجُلُ قَوِيٌّ.",
+   "questions": [
+    {"q_uz": "Uy qanday tasvirlangan?", "a": "Katta va toza (كَبِير، نَظِيف)"},
+    {"q_uz": "Nima qiyin?", "a": "Savol (السُّؤَال)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/nazif.mp3",
+   "transcript_ar": "نَظِيف",
+   "questions": [
+    {"q_uz": "Sifat ma'nosi?", "a": "Toza"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Ot+sifat birikmalarini ayting: baytun kabīr, ghurfatun naẓīfa, darsun sahl.",
+   "target_ar": ["بَيْتٌ كَبِيرٌ", "غُرْفَةٌ نَظِيفَةٌ", "دَرْسٌ سَهْلٌ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«chiroyli xona» (غُرْفَة ayol so'z) va «kuchli erkak» iboralarini arabcha yozing — sifatni moslang.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«chiroyli qiz» qaysi (moslashuv to'g'ri)?", "q_ar": "", "options": ["بِنْتٌ جَمِيلَةٌ", "بِنْتٌ جَمِيلٌ", "جَمِيلَةٌ بِنْتٌ", "البِنْتُ جَمِيلَةٌ"], "answer": "بِنْتٌ جَمِيلَةٌ", "explain_uz": "Ayol ot → ayol sifat (ة bilan), sifat otdan keyin. البِنْتُ جَمِيلَةٌ — bu gap («qiz chiroyli»).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«o'sha katta uy» qaysi?", "q_ar": "", "options": ["البَيْتُ الكَبِيرُ", "البَيْتُ كَبِيرٌ", "بَيْتٌ كَبِيرٌ", "الكَبِيرُ البَيْتُ"], "answer": "البَيْتُ الكَبِيرُ", "explain_uz": "Ibora uchun ikkalasi ham aniq (الـ). البَيْتُ كَبِيرٌ — bu gap.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "دَرْسٌ سَهْلٌ", "options": [], "answer": "oson dars", "explain_uz": "دَرْس = dars, سَهْل = oson. Sifat keyin: «oson dars».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ق و ي» o'zagidan?", "q_ar": "", "options": ["قَوِيّ", "فَقِير", "نَظِيف"], "answer": "قَوِيّ", "explain_uz": "«ق و ي» — kuch o'zagi: قَوِيّ (kuchli), قُوَّة (quvvat).", "audio": "", "root": "ق و ي", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Sifatni moslang: «غُرْفَةٌ ____» (toza xona)", "q_ar": "غُرْفَةٌ ____", "options": [], "answer": "نَظِيفَةٌ", "explain_uz": "غُرْفَة ayol so'z → نَظِيفَة (ة bilan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "qiyin", "q_ar": "", "options": [], "answer": "صَعْب", "explain_uz": "صَعْب — qiyin; سَهْل (oson) ning teskarisi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "«kuchli erkak» iborasini tuzing", "q_ar": "", "options": [], "answer": "رَجُلٌ قَوِيٌّ", "explain_uz": "Ot (رَجُلٌ) + sifat (قَوِيٌّ), sifat keyin keladi.", "audio": "", "root": "", "pattern": "", "words": ["قَوِيٌّ", "رَجُلٌ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ق و ي", "back": "kuch o'zagi (qaviy, quvvat, taqviyat)", "deck": "msa"},
+  {"type": "word", "front": "نَظِيف", "back": "toza", "deck": "msa"},
+  {"type": "word", "front": "سَهْل", "back": "oson", "deck": "msa"},
+  {"type": "word", "front": "صَعْب", "back": "qiyin", "deck": "msa"},
+  {"type": "word", "front": "مُهِمّ", "back": "muhim", "deck": "msa"},
+  {"type": "word", "front": "قَوِيّ", "back": "kuchli", "deck": "msa"},
+  {"type": "word", "front": "ضَعِيف", "back": "zaif, kuchsiz", "deck": "msa"},
+  {"type": "word", "front": "غَنِيّ", "back": "boy", "deck": "msa"},
+  {"type": "word", "front": "فَقِير", "back": "kambag'al", "deck": "msa"},
+  {"type": "word", "front": "رَجُل", "back": "erkak, kishi", "deck": "msa"}
+ ]
+}

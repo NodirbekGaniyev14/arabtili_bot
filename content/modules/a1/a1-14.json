@@ -1,0 +1,96 @@
+{
+ "id": "a1-14",
+ "level": "A1",
+ "module": "past-tense",
+ "order": 14,
+ "title_uz": "Kim nima qilganini aytaman",
+ "title_ar": "الجُمْلَةُ الفِعْلِيَّة",
+ "can_do_uz": "«Bola xat yozdi» kabi fe'l + bajaruvchi + ob'ekt tartibidagi to'liq gaplar tuza olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-13"],
+ "harakat_level": "full",
+ "hook_uz": "«Bola xat yozdi» — arabchada avval FE'L keladi: كَتَبَ الوَلَدُ الرِّسَالَةَ (yozdi — bola — xatni). Kim yozdi? Bola (bajaruvchi). Nimani? Xatni (ob'ekt). Bugun to'liq fe'lli gap tuzamiz.",
+ "grammar": {
+  "point_ar": "فِعْل + فَاعِل + مَفْعُول بِه",
+  "explanation_uz": "Fe'lli gap (الجُملة الفعلية) odatda FE'L bilan boshlanadi, keyin فَاعِل (bajaruvchi), keyin مَفْعُول (ob'ekt). MUHIM belgilar: bajaruvchi «raf'» da — oxirida damma (ـُ): الوَلَدُ. Ob'ekt «nasb» da — oxirida fatha (ـَ): الرِّسَالَةَ. Bu oxirgi harakatlar «kim qildi, nimani qildi» ni ko'rsatadi.",
+  "table": [
+   {"ar": "كَتَبَ الوَلَدُ الرِّسَالَةَ", "uz": "Bola xatni yozdi", "form": "fe'l+fоil+ob'ekt"},
+   {"ar": "أَكَلَ الطِّفْلُ الطَّعَامَ", "uz": "Bola ovqatni yedi", "form": "damma / fatha"},
+   {"ar": "قَرَأَتِ البِنْتُ القِصَّةَ", "uz": "Qiz hikoyani o'qidi", "form": "ayol foil"},
+   {"ar": "فَتَحَ الرَّجُلُ البَابَ", "uz": "Erkak eshikni ochdi", "form": "namuna"}
+  ],
+  "common_mistakes_uz": [
+   "Bajaruvchi (فاعِل) va ob'ekt (مَفعُول) harakatini almashtirish: foil — damma (ـُ), ob'ekt — fatha (ـَ).",
+   "Gapni ega bilan boshlash — fe'lli gapda odatda FE'L birinchi keladi.",
+   "Ob'ektga fatha qo'yishni unutish: الرِّسَالَةُ (xato ob'ekt) → الرِّسَالَةَ (to'g'ri)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ط ع م",
+   "meaning_uz": "ovqat, ta'm",
+   "uz_cognates": ["taom", "ta'm", "mat'am"],
+   "derived": [
+    {"ar": "طَعَام", "uz": "ovqat", "pattern": "فَعَال"},
+    {"ar": "مَطْعَم", "uz": "restoran", "pattern": "مَفْعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "طَعَام", "translit": "ṭaʿām", "uz": "ovqat (o'zbekcha 'taom' shundan)", "root": "ط ع م", "pattern": "فَعَال", "pos": "ot", "audio": "a1/taam.mp3", "example_ar": "أَكَلَ الطَّعَامَ.", "example_uz": "U ovqatni yedi.", "srs": true},
+  {"ar": "قِصَّة", "translit": "qiṣṣa", "uz": "hikoya (o'zbekcha 'qissa' shundan)", "root": "ق ص ص", "pattern": "فِعْلَة", "pos": "ot", "audio": "a1/qissa.mp3", "example_ar": "قَرَأَ قِصَّةً.", "example_uz": "U hikoya o'qidi.", "srs": true},
+  {"ar": "طِفْل", "translit": "ṭifl", "uz": "bola, chaqaloq", "root": "ط ف ل", "pattern": "فِعْل", "pos": "ot", "audio": "a1/tifl.mp3", "example_ar": "الطِّفْلُ نَامَ.", "example_uz": "Bola uxladi.", "srs": true},
+  {"ar": "بَاب", "translit": "bāb", "uz": "eshik", "root": "ب و ب", "pattern": "فَعَل", "pos": "ot", "audio": "a0/bab.mp3", "example_ar": "فَتَحَ البَابَ.", "example_uz": "U eshikni ochdi.", "srs": true},
+  {"ar": "سَيَّارَة", "translit": "sayyāra", "uz": "mashina, avtomobil", "root": "س ي ر", "pattern": "فَعَّالَة", "pos": "ot", "audio": "a1/sayyara.mp3", "example_ar": "قَادَ السَّيَّارَةَ.", "example_uz": "U mashina haydadi.", "srs": true},
+  {"ar": "مَطْعَم", "translit": "maṭʿam", "uz": "restoran, oshxona", "root": "ط ع م", "pattern": "مَفْعَل", "pos": "ot", "audio": "a1/matam.mp3", "example_ar": "دَخَلَ المَطْعَمَ.", "example_uz": "U restoranga kirdi.", "srs": true},
+  {"ar": "الوَلَد", "translit": "al-walad", "uz": "bola (foil sifatida: الوَلَدُ)", "root": "و ل د", "pattern": "", "pos": "ot", "audio": "a1/alwalad.mp3", "example_ar": "كَتَبَ الوَلَدُ.", "example_uz": "Bola yozdi.", "srs": true},
+  {"ar": "الرِّسَالَة", "translit": "ar-risāla", "uz": "xat (ob'ekt sifatida: الرِّسَالَةَ)", "root": "ر س ل", "pattern": "", "pos": "ot", "audio": "a1/arrisala.mp3", "example_ar": "كَتَبَ الرِّسَالَةَ.", "example_uz": "U xatni yozdi.", "srs": true},
+  {"ar": "ثُمَّ", "translit": "thumma", "uz": "keyin, so'ng", "root": "", "pattern": "", "pos": "bog'lovchi", "audio": "a1/thumma.mp3", "example_ar": "أَكَلَ ثُمَّ خَرَجَ.", "example_uz": "U yedi, keyin chiqdi.", "srs": true},
+  {"ar": "فِي", "translit": "fī", "uz": "-da, ichida", "root": "", "pattern": "", "pos": "predlog", "audio": "a1/fi.mp3", "example_ar": "دَرَسَ فِي المَدْرَسَةِ.", "example_uz": "U maktabda o'qidi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "دَخَلَ الرَّجُلُ المَطْعَمَ. أَكَلَ الطَّعَامَ ثُمَّ شَرِبَ المَاءَ. بَعْدَ ذَلِكَ قَرَأَ قِصَّةً.",
+   "questions": [
+    {"q_uz": "Erkak restoranda nima qildi?", "a": "Ovqat yedi va suv ichdi"},
+    {"q_uz": "«الطَّعَامَ» da nega fatha bor?", "a": "Chunki u ob'ekt (مَفْعُول)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/taam.mp3",
+   "transcript_ar": "طَعَام",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Ovqat"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Fe'lli gaplar tuzing: kataba al-waladu ar-risālata, akala aṭ-ṭiflu aṭ-ṭaʿāma.",
+   "target_ar": ["كَتَبَ الوَلَدُ الرِّسَالَةَ", "أَكَلَ الطِّفْلُ الطَّعَامَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Erkak eshikni ochdi» gapini fe'lli tartibda yozing (foil damma, ob'ekt fatha).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Bola xatni yozdi» to'g'ri qaysi?", "q_ar": "", "options": ["كَتَبَ الوَلَدُ الرِّسَالَةَ", "كَتَبَ الوَلَدَ الرِّسَالَةُ", "الوَلَدُ الرِّسَالَةَ كَتَبَ", "كَتَبَ الرِّسَالَةُ الوَلَدَ"], "answer": "كَتَبَ الوَلَدُ الرِّسَالَةَ", "explain_uz": "Fe'l + foil (damma الوَلَدُ) + ob'ekt (fatha الرِّسَالَةَ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Fe'lli gapda ob'ekt (مَفْعُول) oxirida qaysi harakat?", "q_ar": "", "options": ["fatha (ـَ)", "damma (ـُ)", "kasra (ـِ)", "sukun (ـْ)"], "answer": "fatha (ـَ)", "explain_uz": "Ob'ekt «nasb» da — fatha. Foil «raf'» da — damma.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَكَلَ الطِّفْلُ الطَّعَامَ", "options": [], "answer": "bola ovqatni yedi", "explain_uz": "أَكَلَ (yedi) + الطِّفْلُ (bola-foil) + الطَّعَامَ (ovqat-ob'ekt).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ط ع م» o'zagidan?", "q_ar": "", "options": ["طَعَام", "قِصَّة", "بَاب"], "answer": "طَعَام", "explain_uz": "«ط ع م» — ovqat o'zagi: طَعَام (ovqat), مَطْعَم (restoran).", "audio": "", "root": "ط ع م", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "«Erkak eshikni ochdi» gapini tuzing", "q_ar": "", "options": [], "answer": "فَتَحَ الرَّجُلُ البَابَ", "explain_uz": "Fe'l (فَتَحَ) + foil (الرَّجُلُ) + ob'ekt (البَابَ).", "audio": "", "root": "", "pattern": "", "words": ["البَابَ", "فَتَحَ", "الرَّجُلُ"]},
+  {"type": "translate_uz_ar", "q_uz": "restoran", "q_ar": "", "options": [], "answer": "مَطْعَم", "explain_uz": "مَطْعَم — restoran (ط ع م = ovqat o'zagidan, «ovqat joyi»).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Ob'ektni to'g'ri harakatlang: «قَرَأَ الوَلَدُ ____» (bola hikoyani o'qidi)", "q_ar": "قَرَأَ الوَلَدُ ____", "options": [], "answer": "القِصَّةَ", "explain_uz": "Ob'ekt fatha bilan: القِصَّةَ.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ط ع م", "back": "ovqat o'zagi (taom, ta'm, mat'am=restoran)", "deck": "msa"},
+  {"type": "word", "front": "طَعَام", "back": "ovqat", "deck": "msa"},
+  {"type": "word", "front": "قِصَّة", "back": "hikoya", "deck": "msa"},
+  {"type": "word", "front": "طِفْل", "back": "bola, chaqaloq", "deck": "msa"},
+  {"type": "word", "front": "سَيَّارَة", "back": "mashina", "deck": "msa"},
+  {"type": "word", "front": "مَطْعَم", "back": "restoran", "deck": "msa"},
+  {"type": "word", "front": "ثُمَّ", "back": "keyin, so'ng", "deck": "msa"},
+  {"type": "word", "front": "فِي", "back": "-da, ichida", "deck": "msa"}
+ ]
+}

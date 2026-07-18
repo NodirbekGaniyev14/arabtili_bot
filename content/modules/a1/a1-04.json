@@ -1,0 +1,95 @@
+{
+ "id": "a1-04",
+ "level": "A1",
+ "module": "nominal-sentence",
+ "order": 4,
+ "title_uz": "Aniq va noaniqni farqlayman",
+ "title_ar": "المَعْرِفَة وَالنَّكِرَة",
+ "can_do_uz": "«bir kitob» (noaniq) va «o'sha kitob» (aniq) farqini bilaman va الـ ni to'g'ri qo'llayman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-03"],
+ "harakat_level": "full",
+ "hook_uz": "«Bozor» — qaysi bozor? Arabchada noaniq bo'lsa oxirida tanvin (سُوقٌ — bir bozor), aniq bo'lsa boshida الـ (السُّوقُ — o'sha bozor). Bugun shu farqni va الـ ning talaffuzini mustahkamlaymiz.",
+ "grammar": {
+  "point_ar": "الـ التَّعْرِيف",
+  "explanation_uz": "Noaniq ot (نَكِرَة) oxirida tanvin bo'ladi: مَدِينَةٌ — «bir shahar». Aniq ot (مَعْرِفَة) boshida الـ oladi va tanvin yo'qoladi: المَدِينَةُ — «o'sha shahar». الـ ning «l» harfi: QUYOSH harflaridan oldin talaffuz qilinmaydi (yutiladi) — الشَّمْس «ash-shams»; OY harflaridan oldin aniq eshitiladi — القَمَر «al-qamar». (Bu a0-18 dagi quyosh/oy harflari qoidasi.)",
+  "table": [
+   {"ar": "مَدِينَةٌ ← المَدِينَةُ", "uz": "bir shahar → o'sha shahar", "form": "noaniq → aniq"},
+   {"ar": "القَمَر", "uz": "oy — «al-qamar» (l eshitiladi)", "form": "oy harfi"},
+   {"ar": "الشَّمْس", "uz": "quyosh — «ash-shams» (l yutiladi)", "form": "quyosh harfi"},
+   {"ar": "المَسْجِدُ كَبِيرٌ", "uz": "Masjid katta", "form": "aniq ega + noaniq xabar"}
+  ],
+  "common_mistakes_uz": [
+   "الـ bilan birga tanvin qo'yish — noto'g'ri: «المَدِينَةٌ». To'g'ri: المَدِينَةُ (tanvinsiz).",
+   "Quyosh harfidan oldin «l» ni talaffuz qilish — الشَّمْس «al-shams» emas, «ash-shams».",
+   "Ega va xabar ikkalasini ham aniq qilish — odatda faqat ega aniq, xabar noaniq."
+  ]
+ },
+ "roots": [
+  {
+   "root": "م د ن",
+   "meaning_uz": "shahar, madaniyat",
+   "uz_cognates": ["Madina", "madaniyat", "tamaddun"],
+   "derived": [
+    {"ar": "مَدِينَة", "uz": "shahar", "pattern": "فَعِيلَة"},
+    {"ar": "مَدَنِيّ", "uz": "shaharlik, fuqaro", "pattern": "فَعَلِيّ"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "مَدِينَة", "translit": "madīna", "uz": "shahar (o'zbekcha 'Madina' shahri shundan)", "root": "م د ن", "pattern": "فَعِيلَة", "pos": "ot", "audio": "a1/madina.mp3", "example_ar": "المَدِينَةُ كَبِيرَةٌ.", "example_uz": "Shahar katta.", "srs": true},
+  {"ar": "مَدْرَسَة", "translit": "madrasa", "uz": "maktab (o'zbekcha 'madrasa' shundan)", "root": "د ر س", "pattern": "مَفْعَلَة", "pos": "ot", "audio": "a1/madrasa.mp3", "example_ar": "المَدْرَسَةُ جَدِيدَةٌ.", "example_uz": "Maktab yangi.", "srs": true},
+  {"ar": "جَامِعَة", "translit": "jāmiʿa", "uz": "universitet (o'zbekcha 'jome' masjidi' shundan)", "root": "ج م ع", "pattern": "فَاعِلَة", "pos": "ot", "audio": "a1/jamia.mp3", "example_ar": "الجَامِعَةُ كَبِيرَةٌ.", "example_uz": "Universitet katta.", "srs": true},
+  {"ar": "سُوق", "translit": "sūq", "uz": "bozor", "root": "س و ق", "pattern": "فُعْل", "pos": "ot", "audio": "a1/suq.mp3", "example_ar": "السُّوقُ قَدِيمٌ.", "example_uz": "Bozor eski.", "srs": true},
+  {"ar": "مَطَار", "translit": "maṭār", "uz": "aeroport", "root": "ط ي ر", "pattern": "مَفْعَال", "pos": "ot", "audio": "a1/matar.mp3", "example_ar": "المَطَارُ جَدِيدٌ.", "example_uz": "Aeroport yangi.", "srs": true},
+  {"ar": "فُنْدُق", "translit": "funduq", "uz": "mehmonxona", "root": "", "pattern": "", "pos": "ot", "audio": "a1/funduq.mp3", "example_ar": "الفُنْدُقُ كَبِيرٌ.", "example_uz": "Mehmonxona katta.", "srs": true},
+  {"ar": "شَارِع", "translit": "shāriʿ", "uz": "ko'cha", "root": "ش ر ع", "pattern": "فَاعِل", "pos": "ot", "audio": "a1/sharia.mp3", "example_ar": "الشَّارِعُ طَوِيلٌ.", "example_uz": "Ko'cha uzun.", "srs": true},
+  {"ar": "مَسْجِد", "translit": "masjid", "uz": "masjid (o'zbekcha 'masjid' shundan)", "root": "س ج د", "pattern": "مَفْعِل", "pos": "ot", "audio": "a1/masjid.mp3", "example_ar": "المَسْجِدُ جَمِيلٌ.", "example_uz": "Masjid chiroyli.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "هَذِهِ مَدِينَةٌ كَبِيرَةٌ. المَسْجِدُ جَمِيلٌ وَالسُّوقُ قَدِيمٌ. المَطَارُ جَدِيدٌ.",
+   "questions": [
+    {"q_uz": "Shahar qanday?", "a": "Katta (كَبِيرَةٌ)"},
+    {"q_uz": "Qaysi bino eski?", "a": "Bozor (السُّوق)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/madina.mp3",
+   "transcript_ar": "مَدِينَة",
+   "questions": [
+    {"q_uz": "Eshitgan so'zingiz ma'nosi?", "a": "Shahar"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Har so'zni noaniq va aniq shaklda ayting: sūq / as-sūq, madīna / al-madīna, masjid / al-masjid.",
+   "target_ar": ["السُّوقُ", "المَدِينَةُ", "المَسْجِدُ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Universitet katta» va «Ko'cha uzun» gaplarini arabcha yozing (ega الـ bilan aniq).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«o'sha shahar» (aniq) qaysi?", "q_ar": "", "options": ["المَدِينَةُ", "مَدِينَةٌ", "المَدِينَةٌ", "مَدِينَةُ"], "answer": "المَدِينَةُ", "explain_uz": "Aniq = الـ bilan, tanvinsiz: المَدِينَةُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«الشَّمْس» qanday talaffuz qilinadi?", "q_ar": "", "options": ["ash-shams", "al-shams", "an-shams", "at-shams"], "answer": "ash-shams", "explain_uz": "ش quyosh harfi — «l» yutiladi, keyingi harf shaddalanadi: ash-shams.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المَسْجِدُ كَبِيرٌ", "options": [], "answer": "masjid katta", "explain_uz": "المَسْجِد = (o'sha) masjid, كَبِير = katta.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «م د ن» o'zagidan?", "q_ar": "", "options": ["مَدِينَة", "مَطَار", "سُوق"], "answer": "مَدِينَة", "explain_uz": "«م د ن» — shahar o'zagi: مَدِينَة (shahar), Madina, madaniyat.", "audio": "", "root": "م د ن", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Noaniq shaklga aylantiring: «السُّوق» → ?", "q_ar": "____", "options": [], "answer": "سُوقٌ", "explain_uz": "الـ ni olib, tanvin qo'shamiz: سُوقٌ («bir bozor»).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "masjid", "q_ar": "", "options": [], "answer": "مَسْجِد", "explain_uz": "مَسْجِد — masjid (سجد=sajda qilish o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Qaysi so'zda «l» aniq eshitiladi (oy harfi)?", "q_ar": "", "options": ["القَمَر", "الشَّمْس", "السُّوق", "الرَّجُل"], "answer": "القَمَر", "explain_uz": "ق oy harfi — «al-qamar», l aniq. Qolganlari quyosh harflari.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "م د ن", "back": "shahar o'zagi (Madina, madaniyat, tamaddun)", "deck": "msa"},
+  {"type": "word", "front": "مَدِينَة", "back": "shahar", "deck": "msa"},
+  {"type": "word", "front": "مَدْرَسَة", "back": "maktab", "deck": "msa"},
+  {"type": "word", "front": "جَامِعَة", "back": "universitet", "deck": "msa"},
+  {"type": "word", "front": "سُوق", "back": "bozor", "deck": "msa"},
+  {"type": "word", "front": "مَطَار", "back": "aeroport", "deck": "msa"},
+  {"type": "word", "front": "فُنْدُق", "back": "mehmonxona", "deck": "msa"},
+  {"type": "word", "front": "شَارِع", "back": "ko'cha", "deck": "msa"},
+  {"type": "word", "front": "مَسْجِد", "back": "masjid", "deck": "msa"}
+ ]
+}

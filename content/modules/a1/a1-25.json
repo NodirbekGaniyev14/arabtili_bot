@@ -1,0 +1,98 @@
+{
+ "id": "a1-25",
+ "level": "A1",
+ "module": "noun-system",
+ "order": 25,
+ "title_uz": "Ikkita narsa haqida gapiraman",
+ "title_ar": "المُثَنَّى",
+ "can_do_uz": "«ikki kitob», «ikki bola» kabi ikkilik sonni yasay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-24"],
+ "harakat_level": "full",
+ "hook_uz": "Arabchada «ikki» uchun maxsus shakl bor — sonni aytish shart emas! Otga ـَانِ qo'shsangiz «ikkita» bo'ladi: كِتَابٌ (kitob) → كِتَابَانِ (ikki kitob). Bu — ikkilik son (المُثَنّى).",
+ "grammar": {
+  "point_ar": "المُثَنَّى: ـَانِ / ـَيْنِ",
+  "explanation_uz": "Ikkita narsa uchun otga qo'shimcha ulanadi: raf' holatida ـَانِ (كِتَابَانِ — ikki kitob), nasb/jarr holatida ـَيْنِ (كِتَابَيْنِ). Ayol so'zga ham qo'shiladi: طَالِبَة → طَالِبَتَانِ (ikki talaba qiz). Diqqat: son (اثْنَانِ) alohida aytilmaydi — qo'shimchaning o'zi «ikki» ni bildiradi.",
+  "table": [
+   {"ar": "كِتَابٌ ← كِتَابَانِ", "uz": "kitob → ikki kitob", "form": "raf' (ـَانِ)"},
+   {"ar": "كِتَابَيْنِ", "uz": "ikki kitobni (ob'ekt)", "form": "nasb/jarr (ـَيْنِ)"},
+   {"ar": "وَلَدَانِ", "uz": "ikki bola", "form": "erkak"},
+   {"ar": "طَالِبَتَانِ", "uz": "ikki talaba qiz", "form": "ayol (ة → تَانِ)"}
+  ],
+  "common_mistakes_uz": [
+   "Ikkilik uchun «اثْنَانِ» sonini takrorlash — qo'shimcha (ـَانِ) o'zi yetarli.",
+   "raf' (ـَانِ) va nasb/jarr (ـَيْنِ) shakllarini chalkashtirish.",
+   "Ayol so'zda ة ni تَانِ ga aylantirishni unutish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ز و ج",
+   "meaning_uz": "juft, er-xotin",
+   "uz_cognates": ["zavj", "zavja", "juft"],
+   "derived": [
+    {"ar": "زَوْج", "uz": "juft, er", "pattern": "فَعْل"},
+    {"ar": "زَوْجَة", "uz": "xotin", "pattern": "فَعْلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "اثْنَانِ", "translit": "ithnāni", "uz": "ikki (2)", "root": "", "pattern": "", "pos": "son", "audio": "a1/ithnani.mp3", "example_ar": "عِنْدِي كِتَابَانِ اثْنَانِ.", "example_uz": "Menda ikkita kitob bor.", "srs": true},
+  {"ar": "كِتَابَانِ", "translit": "kitābāni", "uz": "ikki kitob", "root": "ك ت ب", "pattern": "فِعَالَانِ", "pos": "ot", "audio": "a1/kitabani.mp3", "example_ar": "هَذَانِ كِتَابَانِ.", "example_uz": "Bular ikki kitob.", "srs": true},
+  {"ar": "وَلَدَانِ", "translit": "waladāni", "uz": "ikki bola", "root": "و ل د", "pattern": "فَعَلَانِ", "pos": "ot", "audio": "a1/waladani.mp3", "example_ar": "لَعِبَ وَلَدَانِ.", "example_uz": "Ikki bola o'ynadi.", "srs": true},
+  {"ar": "يَدَانِ", "translit": "yadāni", "uz": "ikki qo'l", "root": "ي د ي", "pattern": "فَعَلَانِ", "pos": "ot", "audio": "a1/yadani.mp3", "example_ar": "لِي يَدَانِ.", "example_uz": "Menda ikki qo'l bor.", "srs": true},
+  {"ar": "عَيْن", "translit": "ʿayn", "uz": "ko'z, buloq (o'zbekcha 'ayn')", "root": "ع ي ن", "pattern": "فَعْل", "pos": "ot", "audio": "a1/ayn.mp3", "example_ar": "العَيْنُ جَمِيلَةٌ.", "example_uz": "Ko'z chiroyli.", "srs": true},
+  {"ar": "عَيْنَانِ", "translit": "ʿaynāni", "uz": "ikki ko'z", "root": "ع ي ن", "pattern": "فَعْلَانِ", "pos": "ot", "audio": "a1/aynani.mp3", "example_ar": "لَهُ عَيْنَانِ.", "example_uz": "Uning ikki ko'zi bor.", "srs": true},
+  {"ar": "زَوْج", "translit": "zawj", "uz": "juft, er (o'zbekcha 'zavj')", "root": "ز و ج", "pattern": "فَعْل", "pos": "ot", "audio": "a1/zawj.mp3", "example_ar": "هَذَا زَوْجُهَا.", "example_uz": "Bu uning eri.", "srs": true},
+  {"ar": "زَوْجَة", "translit": "zawja", "uz": "xotin (o'zbekcha 'zavja')", "root": "ز و ج", "pattern": "فَعْلَة", "pos": "ot", "audio": "a1/zawja.mp3", "example_ar": "هَذِهِ زَوْجَتُهُ.", "example_uz": "Bu uning xotini.", "srs": true},
+  {"ar": "رِجْل", "translit": "rijl", "uz": "oyoq", "root": "ر ج ل", "pattern": "فِعْل", "pos": "ot", "audio": "a1/rijl.mp3", "example_ar": "الرِّجْلُ طَوِيلَةٌ.", "example_uz": "Oyoq uzun.", "srs": true},
+  {"ar": "هَذَانِ", "translit": "hādhāni", "uz": "bu ikkitasi (erkak)", "root": "", "pattern": "", "pos": "ishora", "audio": "a1/hadhani.mp3", "example_ar": "هَذَانِ وَلَدَانِ.", "example_uz": "Bular ikki bola.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "هَذَانِ كِتَابَانِ جَدِيدَانِ. لِلْإِنْسَانِ عَيْنَانِ وَيَدَانِ وَرِجْلَانِ. جَلَسَ وَلَدَانِ عَلَى الكُرْسِيَّيْنِ.",
+   "questions": [
+    {"q_uz": "Insonда nechta ko'z bor (matnга ko'ra)?", "a": "Ikki (عَيْنَانِ)"},
+    {"q_uz": "«كِتَابَانِ» nechta kitob?", "a": "Ikki (ـَانِ qo'shimchasi)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/kitabani.mp3",
+   "transcript_ar": "كِتَابَانِ",
+   "questions": [
+    {"q_uz": "Nechta kitob?", "a": "Ikki"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Ikkilik shakllarni ayting: kitābāni, waladāni, yadāni, ʿaynāni.",
+   "target_ar": ["كِتَابَانِ", "وَلَدَانِ", "عَيْنَانِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«بِنْت» (qiz) va «بَاب» (eshik) so'zlarining ikkilik shaklini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«ikki kitob» qaysi?", "q_ar": "", "options": ["كِتَابَانِ", "كُتُبٌ", "كِتَابٌ", "كِتَابَاتٌ"], "answer": "كِتَابَانِ", "explain_uz": "Ikkilik: ot + ـَانِ = كِتَابَانِ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Ikkilik son uchun raf' holatida qanday qo'shimcha?", "q_ar": "", "options": ["ـَانِ", "ـُونَ", "ـَاتٌ", "ـِينَ"], "answer": "ـَانِ", "explain_uz": "raf' → ـَانِ, nasb/jarr → ـَيْنِ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "وَلَدَانِ", "options": [], "answer": "ikki bola", "explain_uz": "وَلَد + ـَانِ = ikki bola.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ز و ج» o'zagidan?", "q_ar": "", "options": ["زَوْجَة", "عَيْن", "رِجْل"], "answer": "زَوْجَة", "explain_uz": "«ز و ج» — juft o'zagi: زَوْج (er), زَوْجَة (xotin).", "audio": "", "root": "ز و ج", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Ikkilik yasang: «بِنْت» → ? (ikki qiz)", "q_ar": "____", "options": [], "answer": "بِنْتَانِ", "explain_uz": "بِنْت + ـَانِ = بِنْتَانِ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ikki qo'l", "q_ar": "", "options": [], "answer": "يَدَانِ", "explain_uz": "يَد + ـَانِ = يَدَانِ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«اثْنَانِ» nima?", "q_ar": "", "options": ["ikki (2 soni)", "birinchi", "ko'p", "yarim"], "answer": "ikki (2 soni)", "explain_uz": "اثْنَانِ — «ikki» soni. Lekin ikkilikda qo'shimchaning o'zi yetarli.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ز و ج", "back": "juft o'zagi (zavj=er, zavja=xotin, juft)", "deck": "msa"},
+  {"type": "pattern", "front": "ـَانِ / ـَيْنِ", "back": "ikkilik son (mусanna) qo'shimchasi", "deck": "msa"},
+  {"type": "word", "front": "اثْنَانِ", "back": "ikki (2)", "deck": "msa"},
+  {"type": "word", "front": "كِتَابَانِ", "back": "ikki kitob", "deck": "msa"},
+  {"type": "word", "front": "وَلَدَانِ", "back": "ikki bola", "deck": "msa"},
+  {"type": "word", "front": "عَيْن", "back": "ko'z, buloq", "deck": "msa"},
+  {"type": "word", "front": "زَوْج", "back": "juft, er", "deck": "msa"},
+  {"type": "word", "front": "زَوْجَة", "back": "xotin", "deck": "msa"},
+  {"type": "word", "front": "رِجْل", "back": "oyoq", "deck": "msa"},
+  {"type": "word", "front": "عَيْنَانِ", "back": "ikki ko'z", "deck": "msa"}
+ ]
+}

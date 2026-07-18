@@ -1,0 +1,98 @@
+{
+ "id": "a1-34",
+ "level": "A1",
+ "module": "daily-life",
+ "order": 34,
+ "title_uz": "1–10 sanayman",
+ "title_ar": "الأَعْدَاد ١–١٠",
+ "can_do_uz": "1 dan 10 gacha arabcha sanay olaman va narsalar sonini ayta olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-33"],
+ "harakat_level": "full",
+ "hook_uz": "Bozorда «Uchta non bering» demoqchimisiz? Avval 1–10 sonlarini o'rganamiz: وَاحِد (1), اثْنَانِ (2), ثَلاثَة (3)... Bu sonlar oyat va duolarда ham ko'p uchraydi.",
+ "grammar": {
+  "point_ar": "الأَعْدَاد مِنْ ١ إِلَى ١٠",
+  "explanation_uz": "1–10 sonlari: وَاحِد (1), اثْنَانِ (2), ثَلاثَة (3), أَرْبَعَة (4), خَمْسَة (5), سِتَّة (6), سَبْعَة (7), ثَمَانِيَة (8), تِسْعَة (9), عَشَرَة (10). MUHIM «qutbiylik» qoidasi: 3–10 sonlari sanaladigan ot bilan TESKARI jinsda bo'ladi va ot ko'plik-jarr shaklida keladi: ثَلاثَةُ كُتُبٍ (uch kitob). Hozircha sonlarni yodlashga e'tibor bering.",
+  "table": [
+   {"ar": "وَاحِد · اثْنَانِ · ثَلاثَة", "uz": "1 · 2 · 3", "form": "1-3"},
+   {"ar": "أَرْبَعَة · خَمْسَة · سِتَّة", "uz": "4 · 5 · 6", "form": "4-6"},
+   {"ar": "سَبْعَة · ثَمَانِيَة · تِسْعَة · عَشَرَة", "uz": "7 · 8 · 9 · 10", "form": "7-10"},
+   {"ar": "ثَلاثَةُ كُتُبٍ", "uz": "uch kitob", "form": "son + ko'plik-jarr"}
+  ],
+  "common_mistakes_uz": [
+   "3–10 sonlaridan keyin otni birlik qoldirish — ular ko'plik-jarr oladi (ثَلاثَةُ كُتُبٍ).",
+   "Sonlarni o'zbekcha talaffuzda aytish — arabcha shakllarni yodlang.",
+   "خَمْسَة (5) va سِتَّة (6) ni chalkashtirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "و ح د",
+   "meaning_uz": "birlik, yagonalik",
+   "uz_cognates": ["vohid", "tavhid", "ittihod", "ahad"],
+   "derived": [
+    {"ar": "وَاحِد", "uz": "bir, yagona", "pattern": "فَاعِل"},
+    {"ar": "تَوْحِيد", "uz": "birlash, tavhid", "pattern": "تَفْعِيل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "وَاحِد", "translit": "wāḥid", "uz": "bir (1) (o'zbekcha 'vohid')", "root": "و ح د", "pattern": "فَاعِل", "pos": "son", "audio": "a1/wahid.mp3", "example_ar": "كِتَابٌ وَاحِدٌ.", "example_uz": "Bitta kitob.", "srs": true},
+  {"ar": "ثَلاثَة", "translit": "thalātha", "uz": "uch (3)", "root": "ث ل ث", "pattern": "فَعَالَة", "pos": "son", "audio": "a1/thalatha.mp3", "example_ar": "ثَلاثَةُ كُتُبٍ.", "example_uz": "Uchta kitob.", "srs": true},
+  {"ar": "أَرْبَعَة", "translit": "arbaʿa", "uz": "to'rt (4)", "root": "ر ب ع", "pattern": "أَفْعَلَة", "pos": "son", "audio": "a1/arbaa.mp3", "example_ar": "أَرْبَعَةُ أَوْلادٍ.", "example_uz": "To'rtta bola.", "srs": true},
+  {"ar": "خَمْسَة", "translit": "khamsa", "uz": "besh (5)", "root": "خ م س", "pattern": "فَعْلَة", "pos": "son", "audio": "a1/khamsa.mp3", "example_ar": "خَمْسَةُ أَقْلامٍ.", "example_uz": "Beshta qalam.", "srs": true},
+  {"ar": "سِتَّة", "translit": "sitta", "uz": "olti (6)", "root": "س د س", "pattern": "فِعْلَة", "pos": "son", "audio": "a1/sitta.mp3", "example_ar": "سِتَّةُ أَيَّامٍ.", "example_uz": "Olti kun.", "srs": true},
+  {"ar": "سَبْعَة", "translit": "sabʿa", "uz": "yetti (7)", "root": "س ب ع", "pattern": "فَعْلَة", "pos": "son", "audio": "a1/sabaa.mp3", "example_ar": "سَبْعَةُ أَيَّامٍ فِي الأُسْبُوعِ.", "example_uz": "Haftada yetti kun.", "srs": true},
+  {"ar": "ثَمَانِيَة", "translit": "thamāniya", "uz": "sakkiz (8)", "root": "ث م ن", "pattern": "فَعَالِيَة", "pos": "son", "audio": "a1/thamaniya.mp3", "example_ar": "ثَمَانِيَةُ رِجَالٍ.", "example_uz": "Sakkizta erkak.", "srs": true},
+  {"ar": "تِسْعَة", "translit": "tisʿa", "uz": "to'qqiz (9)", "root": "ت س ع", "pattern": "فِعْلَة", "pos": "son", "audio": "a1/tisaa.mp3", "example_ar": "تِسْعَةُ طُلَّابٍ.", "example_uz": "To'qqizta talaba.", "srs": true},
+  {"ar": "عَشَرَة", "translit": "ʿashara", "uz": "o'n (10) (o'zbekcha 'ashur')", "root": "ع ش ر", "pattern": "فَعَلَة", "pos": "son", "audio": "a1/ashara.mp3", "example_ar": "عَشَرَةُ كُتُبٍ.", "example_uz": "O'nta kitob.", "srs": true},
+  {"ar": "عَدَد", "translit": "ʿadad", "uz": "son, raqam (o'zbekcha 'adad')", "root": "ع د د", "pattern": "فَعَل", "pos": "ot", "audio": "a1/adad.mp3", "example_ar": "مَا هَذَا العَدَدُ؟", "example_uz": "Bu qaysi son?", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "فِي الأُسْبُوعِ سَبْعَةُ أَيَّامٍ. عِنْدِي ثَلاثَةُ كُتُبٍ وَخَمْسَةُ أَقْلامٍ. فِي الصَّفِّ عَشَرَةُ طُلَّابٍ.",
+   "questions": [
+    {"q_uz": "Haftada necha kun bor?", "a": "Yetti (سَبْعَة)"},
+    {"q_uz": "Sinfda necha talaba?", "a": "O'n (عَشَرَة)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/khamsa.mp3",
+   "transcript_ar": "خَمْسَة",
+   "questions": [
+    {"q_uz": "Qaysi son?", "a": "Besh (5)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "1 dan 10 gacha sanang: wāḥid, ithnān, thalātha, arbaʿa, khamsa, sitta, sabʿa, thamāniya, tisʿa, ʿashara.",
+   "target_ar": ["ثَلاثَة", "خَمْسَة", "عَشَرَة"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«uch kitob» va «besh qalam» iboralarini son bilan yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«besh» qaysi?", "q_ar": "", "options": ["خَمْسَة", "سِتَّة", "أَرْبَعَة", "سَبْعَة"], "answer": "خَمْسَة", "explain_uz": "خَمْسَة — besh (5).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "سَبْعَةُ أَيَّامٍ", "options": [], "answer": "yetti kun", "explain_uz": "سَبْعَة (7) + أَيَّام (kunlar).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "3–10 sonlaridan keyin ot qaysi shaklda?", "q_ar": "", "options": ["ko'plik-jarr", "birlik-raf'", "ikkilik", "birlik-nasb"], "answer": "ko'plik-jarr", "explain_uz": "3–10 dan keyin ot ko'plik va jarr: ثَلاثَةُ كُتُبٍ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «و ح د» o'zagidan?", "q_ar": "", "options": ["وَاحِد", "عَشَرَة", "عَدَد"], "answer": "وَاحِد", "explain_uz": "«و ح د» — birlik o'zagi: وَاحِد (bir), tavhid, vohid.", "audio": "", "root": "و ح د", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "o'n (10)", "q_ar": "", "options": [], "answer": "عَشَرَة", "explain_uz": "عَشَرَة — o'n (10).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring: «فِي الأُسْبُوعِ ____ أَيَّامٍ» (7 kun)", "q_ar": "فِي الأُسْبُوعِ ____ أَيَّامٍ", "options": [], "answer": "سَبْعَةُ", "explain_uz": "سَبْعَة (7) + ko'plik-jarr: سَبْعَةُ أَيَّامٍ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«تِسْعَة» qaysi son?", "q_ar": "", "options": ["9", "6", "7", "8"], "answer": "9", "explain_uz": "تِسْعَة — to'qqiz (9).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "و ح د", "back": "birlik o'zagi (vohid, tavhid, ittihod, ahad)", "deck": "msa"},
+  {"type": "word", "front": "وَاحِد", "back": "bir (1)", "deck": "msa"},
+  {"type": "word", "front": "ثَلاثَة", "back": "uch (3)", "deck": "msa"},
+  {"type": "word", "front": "أَرْبَعَة", "back": "to'rt (4)", "deck": "msa"},
+  {"type": "word", "front": "خَمْسَة", "back": "besh (5)", "deck": "msa"},
+  {"type": "word", "front": "سِتَّة", "back": "olti (6)", "deck": "msa"},
+  {"type": "word", "front": "سَبْعَة", "back": "yetti (7)", "deck": "msa"},
+  {"type": "word", "front": "ثَمَانِيَة", "back": "sakkiz (8)", "deck": "msa"},
+  {"type": "word", "front": "تِسْعَة", "back": "to'qqiz (9)", "deck": "msa"},
+  {"type": "word", "front": "عَشَرَة", "back": "o'n (10)", "deck": "msa"}
+ ]
+}

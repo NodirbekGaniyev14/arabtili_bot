@@ -1,0 +1,99 @@
+{
+ "id": "a1-16",
+ "level": "A1",
+ "module": "past-tense",
+ "order": 16,
+ "title_uz": "Bir o'zakdan 5 so'z yasayman",
+ "title_ar": "الجَذْرُ وَالأَوْزَان",
+ "can_do_uz": "Bitta o'zakdan turli vaznlar orqali fe'l, bajaruvchi, joy va ish nomini yasay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-15"],
+ "harakat_level": "full",
+ "hook_uz": "Sirni bilasizmi? Arab tilида BITTA o'zak — o'nlab so'z beradi! ك ت ب dan: كَتَبَ (yozdi), كَاتِب (yozuvchi), مَكْتُوب (xat), مَكْتَب (ofis), مَكْتَبَة (kutubxona), كِتَاب (kitob). O'zakni bilsangiz — yangi so'zni «taxmin» qilasiz. Bu arabchaning eng kuchli qurоli!",
+ "grammar": {
+  "point_ar": "الجَذْر + الوَزْن = الكَلِمَة",
+  "explanation_uz": "Har so'z ikki qismdan: JADR (o'zak — 3 undosh, ma'no ildizi) + VAZN (qolip — grammatik ma'no). Bir xil o'zakni turli vaznlarga solsangiz, bog'liq so'zlar chiqadi. Asosiy vaznlar: فَاعِل (bajaruvchi: كَاتِب — yozuvchi), مَفْعُول (ob'ekt/majhul: مَكْتُوب — yozilgan), مَفْعَل (joy: مَكْتَب — ofis), مَفْعَلَة (joy: مَكْتَبَة — kutubxona).",
+  "table": [
+   {"ar": "كَتَبَ", "uz": "yozdi (fe'l)", "form": "فَعَلَ"},
+   {"ar": "كَاتِب", "uz": "yozuvchi (bajaruvchi)", "form": "فَاعِل"},
+   {"ar": "مَكْتُوب", "uz": "yozilgan, xat (ob'ekt)", "form": "مَفْعُول"},
+   {"ar": "مَكْتَب / مَكْتَبَة", "uz": "ofis / kutubxona (joy)", "form": "مَفْعَل / مَفْعَلَة"}
+  ],
+  "common_mistakes_uz": [
+   "O'zak harflarini vazn harflari (م، ا، ي) bilan chalkashtirish — o'zak faqat asosiy 3 undosh.",
+   "فَاعِل (bajaruvchi) va مَفْعُول (ob'ekt) ma'nolarini almashtirish.",
+   "Har vaznning ma'nosini yodlamay, faqat so'zni yodlash — vazn ma'no beradi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع م ل",
+   "meaning_uz": "ish qilish, amal",
+   "uz_cognates": ["amal", "amaliyot", "muomala"],
+   "derived": [
+    {"ar": "عَامِل", "uz": "ishchi (bajaruvchi)", "pattern": "فَاعِل"},
+    {"ar": "مَعْمَل", "uz": "zavod (ish joyi)", "pattern": "مَفْعَل"},
+    {"ar": "عَمَل", "uz": "ish, amal", "pattern": "فَعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "كَاتِب", "translit": "kātib", "uz": "yozuvchi, kotib (o'zbekcha 'kotib')", "root": "ك ت ب", "pattern": "فَاعِل", "pos": "ot", "audio": "a1/katib.mp3", "example_ar": "هُوَ كَاتِبٌ مَشْهُورٌ.", "example_uz": "U mashhur yozuvchi.", "srs": true},
+  {"ar": "مَكْتُوب", "translit": "maktūb", "uz": "yozilgan, xat (o'zbekcha 'maktub')", "root": "ك ت ب", "pattern": "مَفْعُول", "pos": "ot", "audio": "a1/maktub.mp3", "example_ar": "هَذَا مَكْتُوبٌ.", "example_uz": "Bu yozilgan (xat).", "srs": true},
+  {"ar": "مَكْتَب", "translit": "maktab", "uz": "ofis, ish stoli (o'zbekcha 'maktab')", "root": "ك ت ب", "pattern": "مَفْعَل", "pos": "ot", "audio": "a1/maktab.mp3", "example_ar": "أَنَا فِي المَكْتَبِ.", "example_uz": "Men ofisdaman.", "srs": true},
+  {"ar": "مَكْتَبَة", "translit": "maktaba", "uz": "kutubxona (o'zbekcha 'maktaba')", "root": "ك ت ب", "pattern": "مَفْعَلَة", "pos": "ot", "audio": "a1/maktaba.mp3", "example_ar": "المَكْتَبَةُ كَبِيرَةٌ.", "example_uz": "Kutubxona katta.", "srs": true},
+  {"ar": "كِتَابَة", "translit": "kitāba", "uz": "yozuv, yozish (masdar)", "root": "ك ت ب", "pattern": "فِعَالَة", "pos": "ot", "audio": "a1/kitaba.mp3", "example_ar": "الكِتَابَةُ سَهْلَةٌ.", "example_uz": "Yozish oson.", "srs": true},
+  {"ar": "عَامِل", "translit": "ʿāmil", "uz": "ishchi (bajaruvchi)", "root": "ع م ل", "pattern": "فَاعِل", "pos": "ot", "audio": "a1/amil.mp3", "example_ar": "العَامِلُ قَوِيٌّ.", "example_uz": "Ishchi kuchli.", "srs": true},
+  {"ar": "عَمَل", "translit": "ʿamal", "uz": "ish, amal (o'zbekcha 'amal')", "root": "ع م ل", "pattern": "فَعَل", "pos": "ot", "audio": "a1/amal.mp3", "example_ar": "العَمَلُ مُهِمٌّ.", "example_uz": "Ish muhim.", "srs": true},
+  {"ar": "مَعْمَل", "translit": "maʿmal", "uz": "zavod, ustaxona (ish joyi)", "root": "ع م ل", "pattern": "مَفْعَل", "pos": "ot", "audio": "a1/mamal.mp3", "example_ar": "المَعْمَلُ جَدِيدٌ.", "example_uz": "Zavod yangi.", "srs": true},
+  {"ar": "دَارِس", "translit": "dāris", "uz": "o'quvchi, tadqiqotchi", "root": "د ر س", "pattern": "فَاعِل", "pos": "ot", "audio": "a1/daris.mp3", "example_ar": "الدَّارِسُ نَشِيطٌ.", "example_uz": "O'quvchi tirishqoq.", "srs": true},
+  {"ar": "دِرَاسَة", "translit": "dirāsa", "uz": "o'qish, tahsil (masdar)", "root": "د ر س", "pattern": "فِعَالَة", "pos": "ot", "audio": "a1/dirasa.mp3", "example_ar": "الدِّرَاسَةُ مُهِمَّةٌ.", "example_uz": "Ta'lim muhim.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "الكَاتِبُ فِي المَكْتَبِ. كَتَبَ مَكْتُوبًا ثُمَّ ذَهَبَ إِلَى المَكْتَبَةِ. كُلُّ هَذِهِ الكَلِمَاتِ مِنْ جَذْرٍ وَاحِدٍ: ك ت ب.",
+   "questions": [
+    {"q_uz": "Matndagi so'zlar qaysi o'zakdan?", "a": "ك ت ب (yozish)"},
+    {"q_uz": "«مَكْتَبَة» qaysi vazn — nima ma'no?", "a": "مَفْعَلَة — joy (kutubxona)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/katib.mp3",
+   "transcript_ar": "كَاتِب",
+   "questions": [
+    {"q_uz": "So'z ma'nosi va vazni?", "a": "Yozuvchi — فَاعِل (bajaruvchi)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "ك ت ب oilasini ayting: kataba, kātib, maktūb, maktab, maktaba. Har birining ma'nosini eslang.",
+   "target_ar": ["كَاتِب", "مَكْتَب", "مَكْتَبَة"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "ع م ل o'zagidan 3 so'z yozing: ishchi (عَامِل), ish (عَمَل), zavod (مَعْمَل).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«yozuvchi» (bajaruvchi vazni) qaysi?", "q_ar": "", "options": ["كَاتِب", "مَكْتُوب", "مَكْتَب", "كِتَاب"], "answer": "كَاتِب", "explain_uz": "فَاعِل vazni bajaruvchi: كَاتِب (yozuvchi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«kutubxona» (joy vazni) qaysi?", "q_ar": "", "options": ["مَكْتَبَة", "كَاتِب", "كِتَابَة", "مَكْتُوب"], "answer": "مَكْتَبَة", "explain_uz": "مَفْعَلَة vazni — joy: مَكْتَبَة (kutubxona).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "build_word", "q_uz": "«ع م ل» o'zagini «فَاعِل» vazniga soling (ishchi)", "q_ar": "", "options": [], "answer": "عَامِل", "explain_uz": "ع م ل + فَاعِل = عَامِل (ishchi).", "audio": "", "root": "ع م ل", "pattern": "فَاعِل", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ع م ل» o'zagidan EMAS?", "q_ar": "", "options": ["مَكْتَب", "عَامِل", "عَمَل"], "answer": "مَكْتَب", "explain_uz": "مَكْتَب — ك ت ب dan. عَامِل، عَمَل — ع م ل dan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المَعْمَلُ جَدِيدٌ", "options": [], "answer": "zavod yangi", "explain_uz": "مَعْمَل = zavod (ع م ل ish joyi), جَدِيد = yangi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ish, amal", "q_ar": "", "options": [], "answer": "عَمَل", "explain_uz": "عَمَل — ish/amal (o'zbekcha 'amal').", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«مَكْتُوب» qaysi vazn — qanday ma'no?", "q_ar": "", "options": ["مَفْعُول — ob'ekt (yozilgan)", "فَاعِل — bajaruvchi", "مَفْعَل — joy", "فِعَال — masdar"], "answer": "مَفْعُول — ob'ekt (yozilgan)", "explain_uz": "مَفْعُول vazni — ish tushgan narsa: مَكْتُوب (yozilgan).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع م ل", "back": "ish o'zagi (amal, amil=ishchi, ma'mal=zavod)", "deck": "msa"},
+  {"type": "pattern", "front": "فَاعِل", "back": "bajaruvchi vazni (katib=yozuvchi, amil=ishchi)", "deck": "msa"},
+  {"type": "pattern", "front": "مَفْعَل", "back": "joy vazni (maktab, ma'mal=zavod)", "deck": "msa"},
+  {"type": "word", "front": "كَاتِب", "back": "yozuvchi, kotib", "deck": "msa"},
+  {"type": "word", "front": "مَكْتُوب", "back": "yozilgan, xat", "deck": "msa"},
+  {"type": "word", "front": "مَكْتَب", "back": "ofis, ish stoli", "deck": "msa"},
+  {"type": "word", "front": "مَكْتَبَة", "back": "kutubxona", "deck": "msa"},
+  {"type": "word", "front": "عَامِل", "back": "ishchi", "deck": "msa"},
+  {"type": "word", "front": "عَمَل", "back": "ish, amal", "deck": "msa"},
+  {"type": "word", "front": "دِرَاسَة", "back": "o'qish, tahsil", "deck": "msa"}
+ ]
+}

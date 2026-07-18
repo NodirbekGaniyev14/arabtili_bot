@@ -1,0 +1,98 @@
+{
+ "id": "a1-12",
+ "level": "A1",
+ "module": "past-tense",
+ "order": 12,
+ "title_uz": "Ko'plikda gapiraman",
+ "title_ar": "الماضي: الجَمْع",
+ "can_do_uz": "Ko'plik shaxslar haqida o'tgan zamonda gapira olaman: «ular yozdilar», «sizlar bordingiz».",
+ "duration_min": 30,
+ "prerequisites": ["a1-11"],
+ "harakat_level": "full",
+ "hook_uz": "Bir necha kishi haqida gapirmoqchimisiz? «Ular bordilar» — ذَهَبُوا. Ko'plikda uchta asosiy qo'shimcha bor: ـُوا (ular-erkak), ـْنَ (ular-ayol), ـْتُم (sizlar). Bugun ko'plik shakllarini o'rganamiz.",
+ "grammar": {
+  "point_ar": "الماضي: الضَّمَائِرُ الجَمْع",
+  "explanation_uz": "Ko'plik shaxslar: هُمْ (ular-erkak) → ـُوا: كَتَبُوا (diqqat: yozilishda alif qo'shiladi ـوا, lekin talaffuz qilinmaydi). هُنَّ (ular-ayol) → ـْنَ: كَتَبْنَ. أَنْتُمْ (sizlar) → ـْتُمْ: كَتَبْتُمْ. Eng ko'p ishlatiladigani هُمْ shakli (ـُوا).",
+  "table": [
+   {"ar": "كَتَبُوا", "uz": "ular (erkak) yozdilar", "form": "هُمْ — ـُوا"},
+   {"ar": "كَتَبْنَ", "uz": "ular (ayol) yozdilar", "form": "هُنَّ — ـْنَ"},
+   {"ar": "كَتَبْتُمْ", "uz": "sizlar yozdingiz", "form": "أَنْتُمْ — ـْتُمْ"},
+   {"ar": "ذَهَبُوا", "uz": "ular bordilar", "form": "هُمْ"}
+  ],
+  "common_mistakes_uz": [
+   "هُمْ shaklida yozilgan alifni (ـوا) talaffuz qilish — u yozuvda bor, talaffuzda yo'q.",
+   "هُمْ (ـُوا) va نَحْنُ (ـْنَا) ni chalkashtirish.",
+   "أَنْتُمْ uchun ـْتُم o'rniga birlik ـْتَ ishlatish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "و ص ل",
+   "meaning_uz": "yetib borish, ulanish",
+   "uz_cognates": ["vasl", "muvosala", "silai rahm"],
+   "derived": [
+    {"ar": "وَصَلَ", "uz": "yetib bordi", "pattern": "فَعَلَ"},
+    {"ar": "وُصُول", "uz": "yetib kelish", "pattern": "فُعُول"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "كَتَبُوا", "translit": "katabū", "uz": "ular (erkak) yozdilar", "root": "ك ت ب", "pattern": "فَعَلُوا", "pos": "fe'l", "audio": "a1/katabu.mp3", "example_ar": "الطُّلَّابُ كَتَبُوا الدَّرْسَ.", "example_uz": "Talabalar darsni yozdilar.", "srs": true},
+  {"ar": "ذَهَبُوا", "translit": "dhahabū", "uz": "ular bordilar", "root": "ذ ه ب", "pattern": "فَعَلُوا", "pos": "fe'l", "audio": "a1/dhahabu.mp3", "example_ar": "ذَهَبُوا إِلَى المَسْجِدِ.", "example_uz": "Ular masjidga bordilar.", "srs": true},
+  {"ar": "دَرَسُوا", "translit": "darasū", "uz": "ular o'qidilar", "root": "د ر س", "pattern": "فَعَلُوا", "pos": "fe'l", "audio": "a1/darasu.mp3", "example_ar": "دَرَسُوا فِي الجَامِعَةِ.", "example_uz": "Ular universitetda o'qidilar.", "srs": true},
+  {"ar": "كَتَبْتُمْ", "translit": "katabtum", "uz": "sizlar yozdingiz", "root": "ك ت ب", "pattern": "فَعَلْتُمْ", "pos": "fe'l", "audio": "a1/katabtum.mp3", "example_ar": "هَلْ كَتَبْتُمُ الوَاجِبَ؟", "example_uz": "Vazifani yozdingizmi?", "srs": true},
+  {"ar": "كَتَبْنَ", "translit": "katabna", "uz": "ular (ayol) yozdilar", "root": "ك ت ب", "pattern": "فَعَلْنَ", "pos": "fe'l", "audio": "a1/katabna_f.mp3", "example_ar": "الطَّالِبَاتُ كَتَبْنَ.", "example_uz": "Talaba qizlar yozdilar.", "srs": true},
+  {"ar": "وَصَلَ", "translit": "waṣala", "uz": "yetib bordi, keldi", "root": "و ص ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/wasala.mp3", "example_ar": "وَصَلَ إِلَى المَطَارِ.", "example_uz": "U aeroportga yetib bordi.", "srs": true},
+  {"ar": "النَّاس", "translit": "an-nās", "uz": "odamlar, xalq", "root": "ن و س", "pattern": "", "pos": "ot", "audio": "a1/nas.mp3", "example_ar": "ذَهَبَ النَّاسُ إِلَى السُّوقِ.", "example_uz": "Odamlar bozorga bordilar.", "srs": true},
+  {"ar": "أَوْلاد", "translit": "awlād", "uz": "bolalar (walad ko'pligi)", "root": "و ل د", "pattern": "أَفْعَال", "pos": "ot", "audio": "a1/awlad.mp3", "example_ar": "الأَوْلادُ لَعِبُوا.", "example_uz": "Bolalar o'ynadilar.", "srs": true},
+  {"ar": "وَاجِب", "translit": "wājib", "uz": "vazifa (o'zbekcha 'vojib' shundan)", "root": "و ج ب", "pattern": "فَاعِل", "pos": "ot", "audio": "a1/wajib.mp3", "example_ar": "كَتَبْتُ الوَاجِبَ.", "example_uz": "Vazifani yozdim.", "srs": true},
+  {"ar": "لَعِبَ", "translit": "laʿiba", "uz": "o'ynadi", "root": "ل ع ب", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "a1/laiba.mp3", "example_ar": "لَعِبَ الوَلَدُ.", "example_uz": "Bola o'ynadi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "ذَهَبَ الطُّلَّابُ إِلَى الجَامِعَةِ. دَرَسُوا وَكَتَبُوا الوَاجِبَ. ثُمَّ وَصَلُوا إِلَى البَيْتِ.",
+   "questions": [
+    {"q_uz": "Talabalar qayerga bordilar?", "a": "Universitetga (الجَامِعَة)"},
+    {"q_uz": "«دَرَسُوا» qaysi shaxs?", "a": "Ular (هُمْ)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/dhahabu.mp3",
+   "transcript_ar": "ذَهَبُوا",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi?", "a": "Ular bordilar"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Ko'plik shakllarni ayting: katabū, dhahabū, darasū. Keyin sizlar: katabtum.",
+   "target_ar": ["كَتَبُوا", "ذَهَبُوا", "كَتَبْتُمْ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Bolalar o'ynadilar» va «Odamlar bozorga bordilar» gaplarini yozing (لَعِبُوا / ذَهَبَ النَّاسُ).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Ular (erkak) bordilar» qaysi?", "q_ar": "", "options": ["ذَهَبُوا", "ذَهَبْنَا", "ذَهَبْتُمْ", "ذَهَبَ"], "answer": "ذَهَبُوا", "explain_uz": "هُمْ → ـُوا: ذَهَبُوا (alif yozuvda bor, talaffuzsiz).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الطُّلَّابُ دَرَسُوا", "options": [], "answer": "talabalar o'qidilar", "explain_uz": "الطُّلَّاب = talabalar, دَرَسُوا = ular o'qidilar.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Sizlar yozdingiz» qaysi?", "q_ar": "", "options": ["كَتَبْتُمْ", "كَتَبُوا", "كَتَبْتُ", "كَتَبْتَ"], "answer": "كَتَبْتُمْ", "explain_uz": "أَنْتُمْ (sizlar) → ـْتُمْ: كَتَبْتُمْ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «و ص ل» o'zagidan?", "q_ar": "", "options": ["وَصَلَ", "وَاجِب", "لَعِبَ"], "answer": "وَصَلَ", "explain_uz": "«و ص ل» — yetib borish o'zagi: وَصَلَ (keldi), وُصُول (kelish).", "audio": "", "root": "و ص ل", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring: «الأَوْلادُ ____» (bolalar o'ynadilar)", "q_ar": "الأَوْلادُ ____", "options": [], "answer": "لَعِبُوا", "explain_uz": "هُمْ → ـُوا: لَعِبُوا.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "odamlar, xalq", "q_ar": "", "options": [], "answer": "النَّاس", "explain_uz": "النَّاس — odamlar/xalq (ko'plik ma'noda).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "«Talabalar yozdilar» gapini tuzing", "q_ar": "", "options": [], "answer": "الطُّلَّابُ كَتَبُوا", "explain_uz": "Ega (الطُّلَّابُ) + ko'plik fe'l (كَتَبُوا).", "audio": "", "root": "", "pattern": "", "words": ["كَتَبُوا", "الطُّلَّابُ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "و ص ل", "back": "yetib borish o'zagi (vasala=keldi, vusul)", "deck": "msa"},
+  {"type": "word", "front": "كَتَبُوا", "back": "ular (erkak) yozdilar", "deck": "msa"},
+  {"type": "word", "front": "ذَهَبُوا", "back": "ular bordilar", "deck": "msa"},
+  {"type": "word", "front": "دَرَسُوا", "back": "ular o'qidilar", "deck": "msa"},
+  {"type": "word", "front": "كَتَبْتُمْ", "back": "sizlar yozdingiz", "deck": "msa"},
+  {"type": "word", "front": "كَتَبْنَ", "back": "ular (ayol) yozdilar", "deck": "msa"},
+  {"type": "word", "front": "وَصَلَ", "back": "yetib bordi, keldi", "deck": "msa"},
+  {"type": "word", "front": "النَّاس", "back": "odamlar, xalq", "deck": "msa"},
+  {"type": "word", "front": "أَوْلاد", "back": "bolalar", "deck": "msa"},
+  {"type": "word", "front": "وَاجِب", "back": "vazifa", "deck": "msa"}
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "id": "a1-07",
+ "level": "A1",
+ "module": "nominal-sentence",
+ "order": 7,
+ "title_uz": "Savol beraman",
+ "title_ar": "أَدَوَاتُ الاِسْتِفْهَام",
+ "can_do_uz": "«Bu nima?», «Sen kimsan?», «Uy qayerda?» kabi savollarni tuza olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-06"],
+ "harakat_level": "full",
+ "hook_uz": "Sayohatда savol berish shart: «Bu nima?», «Bekat qayerda?». Arabchada savol so'zi gap boshida keladi: مَا هَذَا؟ (bu nima?), أَيْنَ المَطَار؟ (aeroport qayerda?). Bugun asosiy savol so'zlarini o'rganamiz.",
+ "grammar": {
+  "point_ar": "أَدَوَاتُ الاِسْتِفْهَام",
+  "explanation_uz": "Savol so'zlari gap boshida turadi. Asosiylar: مَا (nima — narsalar uchun), مَنْ (kim — odamlar uchun), أَيْنَ (qayerda), كَيْفَ (qanday), مَتَى (qachon), كَمْ (nechta), لِمَاذَا (nega). Ha/yo'q savoli uchun هَلْ yoki أَ gap boldiga qo'yiladi: هَلْ أَنْتَ طَالِبٌ؟ — «sen talabamisan?». Javob: نَعَمْ (ha) yoki لا (yo'q).",
+  "table": [
+   {"ar": "مَا هَذَا؟", "uz": "Bu nima?", "form": "narsa"},
+   {"ar": "مَنْ أَنْتَ؟", "uz": "Sen kimsan?", "form": "odam"},
+   {"ar": "أَيْنَ البَيْتُ؟", "uz": "Uy qayerda?", "form": "joy"},
+   {"ar": "هَلْ أَنْتَ طَالِبٌ؟", "uz": "Sen talabamisan?", "form": "ha/yo'q"}
+  ],
+  "common_mistakes_uz": [
+   "مَا (nima) va مَنْ (kim) ni chalkashtirish — مَا narsaga, مَنْ odamga.",
+   "Savol so'zini gap oxirida qo'yish — arabchada u BOSHDA keladi.",
+   "هَلْ savoliga to'liq javob berishni unutish: نَعَمْ / لا."
+  ]
+ },
+ "roots": [
+  {
+   "root": "س أ ل",
+   "meaning_uz": "so'rash, savol berish",
+   "uz_cognates": ["savol", "mas'ala", "mas'ul"],
+   "derived": [
+    {"ar": "سُؤَال", "uz": "savol", "pattern": "فُعَال"},
+    {"ar": "مَسْأَلَة", "uz": "masala, muammo", "pattern": "مَفْعَلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "مَا", "translit": "mā", "uz": "nima (narsa uchun)", "root": "", "pattern": "", "pos": "savol", "audio": "a1/ma.mp3", "example_ar": "مَا هَذَا؟", "example_uz": "Bu nima?", "srs": true},
+  {"ar": "مَنْ", "translit": "man", "uz": "kim (odam uchun)", "root": "", "pattern": "", "pos": "savol", "audio": "a1/man.mp3", "example_ar": "مَنْ أَنْتَ؟", "example_uz": "Sen kimsan?", "srs": true},
+  {"ar": "أَيْنَ", "translit": "ayna", "uz": "qayerda", "root": "", "pattern": "", "pos": "savol", "audio": "a1/ayna.mp3", "example_ar": "أَيْنَ المَطَارُ؟", "example_uz": "Aeroport qayerda?", "srs": true},
+  {"ar": "كَيْفَ", "translit": "kayfa", "uz": "qanday", "root": "", "pattern": "", "pos": "savol", "audio": "a1/kayfa.mp3", "example_ar": "كَيْفَ حَالُكَ؟", "example_uz": "Ahvoling qanday?", "srs": true},
+  {"ar": "مَتَى", "translit": "matā", "uz": "qachon", "root": "", "pattern": "", "pos": "savol", "audio": "a1/mata.mp3", "example_ar": "مَتَى الدَّرْسُ؟", "example_uz": "Dars qachon?", "srs": true},
+  {"ar": "كَمْ", "translit": "kam", "uz": "nechta, qancha", "root": "", "pattern": "", "pos": "savol", "audio": "a1/kam.mp3", "example_ar": "كَمْ كِتَابًا؟", "example_uz": "Nechta kitob?", "srs": true},
+  {"ar": "لِمَاذَا", "translit": "limādhā", "uz": "nega", "root": "", "pattern": "", "pos": "savol", "audio": "a1/limadha.mp3", "example_ar": "لِمَاذَا أَنْتَ هُنَا؟", "example_uz": "Nega sen bu yerdasan?", "srs": true},
+  {"ar": "هَلْ", "translit": "hal", "uz": "-mi (ha/yo'q savoli)", "root": "", "pattern": "", "pos": "savol", "audio": "a1/hal.mp3", "example_ar": "هَلْ أَنْتَ طَالِبٌ؟", "example_uz": "Sen talabamisan?", "srs": true},
+  {"ar": "نَعَمْ", "translit": "naʿam", "uz": "ha", "root": "", "pattern": "", "pos": "yuklama", "audio": "a1/naam.mp3", "example_ar": "نَعَمْ، أَنَا طَالِبٌ.", "example_uz": "Ha, men talabaman.", "srs": true},
+  {"ar": "سُؤَال", "translit": "suʾāl", "uz": "savol (o'zbekcha 'savol' shundan)", "root": "س أ ل", "pattern": "فُعَال", "pos": "ot", "audio": "a1/sual.mp3", "example_ar": "هَذَا سُؤَالٌ مُهِمٌّ.", "example_uz": "Bu muhim savol.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "مَا هَذَا؟ هَذَا كِتَابٌ. مَنْ أَنْتَ؟ أَنَا طَالِبٌ. أَيْنَ المَدْرَسَةُ؟",
+   "questions": [
+    {"q_uz": "«مَا هَذَا؟» ga qanday javob berilgan?", "a": "هَذَا كِتَابٌ (bu kitob)"},
+    {"q_uz": "«مَنْ» qanday savol so'zi?", "a": "«Kim» — odam haqida"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/ayna.mp3",
+   "transcript_ar": "أَيْنَ",
+   "questions": [
+    {"q_uz": "Savol so'zi ma'nosi?", "a": "Qayerda"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Savollarni ayting: mā hādhā? man anta? ayna al-bayt? kayfa ḥāluk?",
+   "target_ar": ["مَا هَذَا؟", "مَنْ أَنْتَ؟", "أَيْنَ البَيْتُ؟"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Aeroport qayerda?» va «Sen o'qituvchimisan?» savollarini arabcha yozing (أَيْنَ / هَلْ bilan).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Bu nima?» qaysi?", "q_ar": "", "options": ["مَا هَذَا؟", "مَنْ هَذَا؟", "أَيْنَ هَذَا؟", "كَيْفَ هَذَا؟"], "answer": "مَا هَذَا؟", "explain_uz": "مَا = nima (narsa uchun). مَنْ = kim (odam uchun).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Uy qayerda?» qaysi savol so'zi bilan?", "q_ar": "", "options": ["أَيْنَ", "مَتَى", "كَمْ", "مَنْ"], "answer": "أَيْنَ", "explain_uz": "أَيْنَ = qayerda (joy so'raladi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَنْ أَنْتَ؟", "options": [], "answer": "sen kimsan", "explain_uz": "مَنْ = kim, أَنْتَ = sen.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «س أ ل» o'zagidan?", "q_ar": "", "options": ["سُؤَال", "كَيْفَ", "أَيْنَ"], "answer": "سُؤَال", "explain_uz": "«س أ ل» — so'rash o'zagi: سُؤَال (savol), مَسْأَلَة (masala).", "audio": "", "root": "س أ ل", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Savol so'zini qo'ying: «____ حَالُكَ؟» (ahvoling qanday?)", "q_ar": "____ حَالُكَ؟", "options": [], "answer": "كَيْفَ", "explain_uz": "كَيْفَ = qanday. كَيْفَ حَالُكَ — mashhur salomlashuv.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "qachon", "q_ar": "", "options": [], "answer": "مَتَى", "explain_uz": "مَتَى — qachon (vaqt so'raladi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«هَلْ أَنْتَ طَالِبٌ؟» ga «ha» javobi?", "q_ar": "", "options": ["نَعَمْ", "لا", "مَا", "مَنْ"], "answer": "نَعَمْ", "explain_uz": "نَعَمْ = ha. لا = yo'q.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "س أ ل", "back": "so'rash o'zagi (savol, mas'ala, mas'ul)", "deck": "msa"},
+  {"type": "word", "front": "مَا", "back": "nima (narsa)", "deck": "msa"},
+  {"type": "word", "front": "مَنْ", "back": "kim (odam)", "deck": "msa"},
+  {"type": "word", "front": "أَيْنَ", "back": "qayerda", "deck": "msa"},
+  {"type": "word", "front": "كَيْفَ", "back": "qanday", "deck": "msa"},
+  {"type": "word", "front": "مَتَى", "back": "qachon", "deck": "msa"},
+  {"type": "word", "front": "كَمْ", "back": "nechta", "deck": "msa"},
+  {"type": "word", "front": "لِمَاذَا", "back": "nega", "deck": "msa"},
+  {"type": "word", "front": "هَلْ", "back": "-mi (ha/yo'q savoli)", "deck": "msa"},
+  {"type": "word", "front": "سُؤَال", "back": "savol", "deck": "msa"}
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "id": "a1-29",
+ "level": "A1",
+ "module": "noun-system",
+ "order": 29,
+ "title_uz": "«Mening kitobim»",
+ "title_ar": "الضَّمَائِرُ المُتَّصِلَة",
+ "can_do_uz": "«mening kitobim», «sening uying», «uning otasi» kabi egalikni ulangan olmoshlar bilan ifodalayman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-28"],
+ "harakat_level": "full",
+ "hook_uz": "«Mening kitobim» uchun ikki so'z kerak emas — otga qo'shimcha ulaysiz: كِتَاب + ـِي = كِتَابِي. «Sening» uchun ـكَ, «uning» uchun ـهُ. Bu ulangan olmoshlar — juda tez-tez ishlatiladi!",
+ "grammar": {
+  "point_ar": "الضَّمَائِرُ المُتَّصِلَة (المِلْكِيَّة)",
+  "explanation_uz": "Ulangan olmoshlar so'z OXIRIGA ulanadi. Otga ulansa — EGALIK bildiradi: كِتَابِي (kitobim), كِتَابُكَ (kitobing). Asosiy shakllar: ـِي (mening), ـكَ (sening-erkak), ـكِ (sening-ayol), ـهُ (uning-erkak), ـهَا (uning-ayol), ـنَا (bizning), ـكُمْ (sizning), ـهُمْ (ularning). Bu olmoshlar predlog va fe'lga ham ulanadi.",
+  "table": [
+   {"ar": "كِتَابِي", "uz": "mening kitobim", "form": "ـِي"},
+   {"ar": "كِتَابُكَ / كِتَابُكِ", "uz": "sening kitobing (e/a)", "form": "ـكَ / ـكِ"},
+   {"ar": "كِتَابُهُ / كِتَابُهَا", "uz": "uning kitobi (e/a)", "form": "ـهُ / ـهَا"},
+   {"ar": "كِتَابُنَا", "uz": "bizning kitobimiz", "form": "ـنَا"}
+  ],
+  "common_mistakes_uz": [
+   "ـكَ (sening-erkak) va ـكِ (sening-ayol) ni chalkashtirish — oxirgi harakat farqi.",
+   "ـهُ (uning-erkak) va ـهَا (uning-ayol) ni almashtirish.",
+   "Olmoshni alohida so'z sifatida yozish — u so'zga ULANADI."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ص د ق",
+   "meaning_uz": "rostlik, do'stlik",
+   "uz_cognates": ["sodiq", "sadoqat", "sadaqa"],
+   "derived": [
+    {"ar": "صَدِيق", "uz": "do'st", "pattern": "فَعِيل"},
+    {"ar": "صِدْق", "uz": "rostlik, samimiyat", "pattern": "فِعْل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "كِتَابِي", "translit": "kitābī", "uz": "mening kitobim", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a1/kitabi.mp3", "example_ar": "هَذَا كِتَابِي.", "example_uz": "Bu mening kitobim.", "srs": true},
+  {"ar": "كِتَابُكَ", "translit": "kitābuka", "uz": "sening kitobing (erkak)", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a1/kitabuka.mp3", "example_ar": "أَيْنَ كِتَابُكَ؟", "example_uz": "Kitobing qayerda?", "srs": true},
+  {"ar": "كِتَابُكِ", "translit": "kitābuki", "uz": "sening kitobing (ayol)", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a1/kitabuki.mp3", "example_ar": "هَذَا كِتَابُكِ.", "example_uz": "Bu sening kitobing (ayol).", "srs": true},
+  {"ar": "كِتَابُهُ", "translit": "kitābuhu", "uz": "uning kitobi (erkak)", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a1/kitabuhu.mp3", "example_ar": "كِتَابُهُ جَدِيدٌ.", "example_uz": "Uning kitobi yangi.", "srs": true},
+  {"ar": "كِتَابُهَا", "translit": "kitābuhā", "uz": "uning kitobi (ayol)", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a1/kitabuha.mp3", "example_ar": "كِتَابُهَا عَلَى الطَّاوِلَةِ.", "example_uz": "Uning (ayol) kitobi stolda.", "srs": true},
+  {"ar": "بَيْتُنَا", "translit": "baytunā", "uz": "bizning uyimiz", "root": "ب ي ت", "pattern": "", "pos": "ot", "audio": "a1/baytuna.mp3", "example_ar": "بَيْتُنَا كَبِيرٌ.", "example_uz": "Uyimiz katta.", "srs": true},
+  {"ar": "اسْمُكَ", "translit": "ismuka", "uz": "sening isming", "root": "س م و", "pattern": "", "pos": "ot", "audio": "a1/ismuka.mp3", "example_ar": "مَا اسْمُكَ؟", "example_uz": "Isming nima?", "srs": true},
+  {"ar": "أَبِي", "translit": "abī", "uz": "mening otam", "root": "أ ب و", "pattern": "", "pos": "ot", "audio": "a1/abi.mp3", "example_ar": "أَبِي مُهَنْدِسٌ.", "example_uz": "Otam muhandis.", "srs": true},
+  {"ar": "صَدِيق", "translit": "ṣadīq", "uz": "do'st (o'zbekcha 'sodiq' shundan)", "root": "ص د ق", "pattern": "فَعِيل", "pos": "ot", "audio": "a1/sadiq.mp3", "example_ar": "هَذَا صَدِيقِي.", "example_uz": "Bu mening do'stim.", "srs": true},
+  {"ar": "صَدِيقُهُ", "translit": "ṣadīquhu", "uz": "uning do'sti", "root": "ص د ق", "pattern": "", "pos": "ot", "audio": "a1/sadiquhu.mp3", "example_ar": "صَدِيقُهُ طَالِبٌ.", "example_uz": "Uning do'sti talaba.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "هَذَا بَيْتُنَا وَهَذِهِ غُرْفَتِي. كِتَابِي عَلَى الطَّاوِلَةِ وَكِتَابُكَ فِي الحَقِيبَةِ. أَبِي وَأُمِّي فِي المَطْبَخِ.",
+   "questions": [
+    {"q_uz": "Gapiruvchining kitobi qayerda?", "a": "Stolda (عَلَى الطَّاوِلَة)"},
+    {"q_uz": "«أَبِي» ma'nosi?", "a": "Mening otam"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/kitabi.mp3",
+   "transcript_ar": "كِتَابِي",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Mening kitobim"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Egalik shakllarini ayting: kitābī, kitābuka, kitābuhu, baytunā.",
+   "target_ar": ["كِتَابِي", "كِتَابُكَ", "بَيْتُنَا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«بَيْت» so'ziga «mening», «sening», «uning» olmoshlarini ulab yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«mening kitobim» qaysi?", "q_ar": "", "options": ["كِتَابِي", "كِتَابُكَ", "كِتَابُهُ", "كِتَابُنَا"], "answer": "كِتَابِي", "explain_uz": "«mening» → ـِي: كِتَابِي.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«uning kitobi (ayol)» qaysi?", "q_ar": "", "options": ["كِتَابُهَا", "كِتَابُهُ", "كِتَابُكِ", "كِتَابِي"], "answer": "كِتَابُهَا", "explain_uz": "«uning-ayol» → ـهَا: كِتَابُهَا.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "بَيْتُنَا كَبِيرٌ", "options": [], "answer": "uyimiz katta", "explain_uz": "بَيْت + ـنَا (bizning) = uyimiz; كَبِير = katta.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ص د ق» o'zagidan?", "q_ar": "", "options": ["صَدِيق", "كِتَابِي", "أَبِي"], "answer": "صَدِيق", "explain_uz": "«ص د ق» — rostlik/do'stlik o'zagi: صَدِيق (do'st), sodiq, sadoqat.", "audio": "", "root": "ص د ق", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "«sening isming»: «اسْمُ____»", "q_ar": "اسْمُ____", "options": [], "answer": "كَ", "explain_uz": "«sening-erkak» → ـكَ: اسْمُكَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "do'st", "q_ar": "", "options": [], "answer": "صَدِيق", "explain_uz": "صَدِيق — do'st (o'zbekcha 'sodiq').", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "mening otam", "q_ar": "", "options": [], "answer": "أَبِي", "explain_uz": "أَب + ـِي = أَبِي (otam).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ص د ق", "back": "rostlik/do'stlik o'zagi (sodiq, sadoqat, sadaqa)", "deck": "msa"},
+  {"type": "pattern", "front": "ـِي / ـكَ / ـهُ", "back": "ulangan egalik olmoshlari (mening/sening/uning)", "deck": "msa"},
+  {"type": "word", "front": "كِتَابِي", "back": "mening kitobim", "deck": "msa"},
+  {"type": "word", "front": "كِتَابُكَ", "back": "sening kitobing (erkak)", "deck": "msa"},
+  {"type": "word", "front": "كِتَابُهُ", "back": "uning kitobi (erkak)", "deck": "msa"},
+  {"type": "word", "front": "كِتَابُهَا", "back": "uning kitobi (ayol)", "deck": "msa"},
+  {"type": "word", "front": "بَيْتُنَا", "back": "bizning uyimiz", "deck": "msa"},
+  {"type": "word", "front": "أَبِي", "back": "mening otam", "deck": "msa"},
+  {"type": "word", "front": "صَدِيق", "back": "do'st", "deck": "msa"},
+  {"type": "word", "front": "اسْمُكَ", "back": "sening isming", "deck": "msa"}
+ ]
+}

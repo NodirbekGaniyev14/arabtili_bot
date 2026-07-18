@@ -1,0 +1,97 @@
+{
+ "id": "a1-23",
+ "level": "A1",
+ "module": "present-tense",
+ "order": 23,
+ "title_uz": "Kelasi zamon",
+ "title_ar": "المُسْتَقْبَل: سَـ / سَوْفَ",
+ "can_do_uz": "Kelajakdagi ishlar haqida gapira olaman: «boraman», «safar qilamiz».",
+ "duration_min": 30,
+ "prerequisites": ["a1-22"],
+ "harakat_level": "full",
+ "hook_uz": "Rejalaringizni ayting: «Ertaga safarga boraman» — غَدًا سَأُسَافِرُ. Kelasi zamon uchun hozirgi fe'l oldiga سَـ (yaqin kelajak) yoki سَوْفَ (uzoq kelajak) qo'shiladi. Oddiy!",
+ "grammar": {
+  "point_ar": "سَـ / سَوْفَ + المُضَارِع",
+  "explanation_uz": "Kelasi zamon hozirgi zamon fe'lidan yasaladi: yaqin kelajak uchun fe'lga سَـ ULANADI (yozilib): سَيَذْهَبُ (u boradi/borajak). Uzoqroq kelajak uchun oldiga alohida سَوْفَ so'zi keladi: سَوْفَ يَذْهَبُ. Ikkalasi ham «-ajak, boraman» ma'nosini beradi. Fe'l shakli o'zgarmaydi — faqat oldiga qo'shiladi.",
+  "table": [
+   {"ar": "يَذْهَبُ ← سَيَذْهَبُ", "uz": "boradi → borajak", "form": "سَـ ulanadi"},
+   {"ar": "سَوْفَ أَكْتُبُ", "uz": "Yozaman (kelajak)", "form": "سَوْفَ alohida"},
+   {"ar": "غَدًا سَأُسَافِرُ", "uz": "Ertaga safar qilaman", "form": "vaqt + kelajak"},
+   {"ar": "سَنَذْهَبُ إِلَى مَكَّةَ", "uz": "Makkaga boramiz", "form": "namuna"}
+  ],
+  "common_mistakes_uz": [
+   "سَـ ni fe'ldan ajratib yozish — u fe'lga ULANADI (سَيَذْهَبُ).",
+   "سَـ yoki سَوْفَ ni o'tgan zamon fe'liga qo'shish — ular faqat MUZORI' bilan.",
+   "Kelasi zamonda fe'l shaklini o'zgartirishga urinish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "س ف ر",
+   "meaning_uz": "safar, sayohat",
+   "uz_cognates": ["safar", "musofir", "safir"],
+   "derived": [
+    {"ar": "سَفَر", "uz": "safar, sayohat", "pattern": "فَعَل"},
+    {"ar": "مُسَافِر", "uz": "yo'lovchi, sayohatchi", "pattern": "مُفَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "سَيَذْهَبُ", "translit": "sayadhhabu", "uz": "u boradi (kelasi)", "root": "ذ ه ب", "pattern": "سَيَفْعَلُ", "pos": "fe'l", "audio": "a1/sayadhhabu.mp3", "example_ar": "سَيَذْهَبُ غَدًا.", "example_uz": "U ertaga boradi.", "srs": true},
+  {"ar": "سَأَكْتُبُ", "translit": "saʾaktubu", "uz": "men yozaman (kelasi)", "root": "ك ت ب", "pattern": "سَأَفْعُلُ", "pos": "fe'l", "audio": "a1/saaktubu.mp3", "example_ar": "سَأَكْتُبُ رِسَالَةً.", "example_uz": "Xat yozaman.", "srs": true},
+  {"ar": "سَنَذْهَبُ", "translit": "sanadhhabu", "uz": "biz boramiz (kelasi)", "root": "ذ ه ب", "pattern": "سَنَفْعَلُ", "pos": "fe'l", "audio": "a1/sanadhhabu.mp3", "example_ar": "سَنَذْهَبُ إِلَى مَكَّةَ.", "example_uz": "Makkaga boramiz.", "srs": true},
+  {"ar": "سَوْفَ", "translit": "sawfa", "uz": "kelasi zamon so'zi (-ajak)", "root": "", "pattern": "", "pos": "yuklama", "audio": "a1/sawfa.mp3", "example_ar": "سَوْفَ أَدْرُسُ.", "example_uz": "O'qiyman (kelajak).", "srs": true},
+  {"ar": "غَدًا", "translit": "ghadan", "uz": "ertaga", "root": "غ د و", "pattern": "", "pos": "ravish", "audio": "a1/ghadan.mp3", "example_ar": "سَأَذْهَبُ غَدًا.", "example_uz": "Ertaga boraman.", "srs": true},
+  {"ar": "سَفَر", "translit": "safar", "uz": "safar, sayohat (o'zbekcha 'safar')", "root": "س ف ر", "pattern": "فَعَل", "pos": "ot", "audio": "a1/safar.mp3", "example_ar": "السَّفَرُ غَدًا.", "example_uz": "Safar ertaga.", "srs": true},
+  {"ar": "رِحْلَة", "translit": "riḥla", "uz": "sayohat, safar (o'zbekcha 'rihla')", "root": "ر ح ل", "pattern": "فِعْلَة", "pos": "ot", "audio": "a1/rihla.mp3", "example_ar": "الرِّحْلَةُ طَوِيلَةٌ.", "example_uz": "Sayohat uzun.", "srs": true},
+  {"ar": "طَائِرَة", "translit": "ṭāʾira", "uz": "samolyot", "root": "ط ي ر", "pattern": "فَاعِلَة", "pos": "ot", "audio": "a1/taira.mp3", "example_ar": "الطَّائِرَةُ سَرِيعَةٌ.", "example_uz": "Samolyot tez.", "srs": true},
+  {"ar": "مَكَّة", "translit": "makka", "uz": "Makka (shahar)", "root": "", "pattern": "", "pos": "ot", "audio": "a1/makka.mp3", "example_ar": "سَنُسَافِرُ إِلَى مَكَّةَ.", "example_uz": "Makkaga safar qilamiz.", "srs": true},
+  {"ar": "سَرِيع", "translit": "sarīʿ", "uz": "tez, tezkor", "root": "س ر ع", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/sari.mp3", "example_ar": "القِطَارُ سَرِيعٌ.", "example_uz": "Poyezd tez.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "غَدًا سَأُسَافِرُ إِلَى مَكَّةَ. سَأَذْهَبُ بِالطَّائِرَةِ. الرِّحْلَةُ طَوِيلَةٌ لَكِنَّ الطَّائِرَةَ سَرِيعَةٌ. سَنَصِلُ فِي المَسَاءِ.",
+   "questions": [
+    {"q_uz": "U qayerga safar qiladi?", "a": "Makkaga (مَكَّة)"},
+    {"q_uz": "Qachon yetib boradi?", "a": "Kechqurun (فِي المَسَاء)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/sayadhhabu.mp3",
+   "transcript_ar": "سَيَذْهَبُ",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi va zamoni?", "a": "U boradi — kelasi zamon"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Kelasi zamonда ayting: saʾadhhabu ghadan, sanadrusu, sawfa aktubu.",
+   "target_ar": ["سَأَذْهَبُ غَدًا", "سَنَدْرُسُ", "سَوْفَ أَكْتُبُ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Ertaga safar qilaman» va «Biz Makkaga boramiz» gaplarini kelasi zamonda yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«U ertaga boradi» (kelasi) qaysi?", "q_ar": "", "options": ["سَيَذْهَبُ غَدًا", "ذَهَبَ غَدًا", "يَذْهَبُ أَمْسِ", "لا يَذْهَبُ"], "answer": "سَيَذْهَبُ غَدًا", "explain_uz": "سَـ + muzori' = kelasi zamon: سَيَذْهَبُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Kelasi zamon uchun fe'lга nima qo'shiladi?", "q_ar": "", "options": ["سَـ yoki سَوْفَ", "لا yoki مَا", "ـتُ yoki ـنَا", "الـ"], "answer": "سَـ yoki سَوْفَ", "explain_uz": "سَـ (ulanadi) yoki سَوْفَ (alohida) + muzori'.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "سَنَذْهَبُ إِلَى مَكَّةَ", "options": [], "answer": "biz Makkaga boramiz", "explain_uz": "سَنَذْهَبُ = biz boramiz (kelasi), إِلَى مَكَّة = Makkaga.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «س ف ر» o'zagidan?", "q_ar": "", "options": ["سَفَر", "رِحْلَة", "طَائِرَة"], "answer": "سَفَر", "explain_uz": "«س ف ر» — safar o'zagi: سَفَر (safar), مُسَافِر (yo'lovchi), safir.", "audio": "", "root": "س ف ر", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Kelasi zamon qiling: «أَكْتُبُ» → «____أَكْتُبُ» (yozaman-ajak)", "q_ar": "____أَكْتُبُ", "options": [], "answer": "سَ", "explain_uz": "سَـ ulanadi: سَأَكْتُبُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ertaga", "q_ar": "", "options": [], "answer": "غَدًا", "explain_uz": "غَدًا — ertaga (kelasi zamon bilan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "dictation", "q_uz": "Eshitilgan fe'lni yozing", "q_ar": "", "options": [], "answer": "سَيَذْهَبُ", "explain_uz": "سَيَذْهَبُ — u boradi (kelasi).", "audio": "a1/sayadhhabu.mp3", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "س ف ر", "back": "safar o'zagi (safar, musofir, safir)", "deck": "msa"},
+  {"type": "word", "front": "سَيَذْهَبُ", "back": "u boradi (kelasi)", "deck": "msa"},
+  {"type": "word", "front": "سَأَكْتُبُ", "back": "men yozaman (kelasi)", "deck": "msa"},
+  {"type": "word", "front": "سَوْفَ", "back": "kelasi zamon so'zi (-ajak)", "deck": "msa"},
+  {"type": "word", "front": "غَدًا", "back": "ertaga", "deck": "msa"},
+  {"type": "word", "front": "سَفَر", "back": "safar, sayohat", "deck": "msa"},
+  {"type": "word", "front": "رِحْلَة", "back": "sayohat, safar", "deck": "msa"},
+  {"type": "word", "front": "طَائِرَة", "back": "samolyot", "deck": "msa"},
+  {"type": "word", "front": "سَرِيع", "back": "tez, tezkor", "deck": "msa"}
+ ]
+}

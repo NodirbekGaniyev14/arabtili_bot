@@ -1,0 +1,98 @@
+{
+ "id": "a1-26",
+ "level": "A1",
+ "module": "noun-system",
+ "order": 26,
+ "title_uz": "Ko'plik yasayman",
+ "title_ar": "الجَمْعُ السَّالِم",
+ "can_do_uz": "Odamlar uchun sog'lom ko'plik yasay olaman: «o'qituvchilar», «musulmonlar».",
+ "duration_min": 30,
+ "prerequisites": ["a1-25"],
+ "harakat_level": "full",
+ "hook_uz": "Ko'p odam haqida gapirmoqchimisiz? Erkaklar uchun otga ـُونَ qo'shiladi: مُعَلِّم → مُعَلِّمُونَ (o'qituvchilar). Ayollar uchun ـَاتٌ: مُعَلِّمَة → مُعَلِّمَات. Bu — «sog'lom ko'plik».",
+ "grammar": {
+  "point_ar": "جَمْعُ المُذَكَّر / المُؤَنَّث السَّالِم",
+  "explanation_uz": "«Sog'lom ko'plik» (o'zak buzilmasdan qo'shimcha bilan) ikki xil: (1) ERKAK aql egalari uchun ـُونَ (raf') / ـِينَ (nasb/jarr): مُسْلِم → مُسْلِمُونَ. (2) AYOL uchun ـَاتٌ (ة tushadi): مُسْلِمَة → مُسْلِمَات. Diqqat: ـُونَ faqat aqlli erkaklar uchun; narsalar boshqacha ko'plik oladi (keyingi dars).",
+  "table": [
+   {"ar": "مُعَلِّم ← مُعَلِّمُونَ", "uz": "o'qituvchi → o'qituvchilar", "form": "erkak (ـُونَ)"},
+   {"ar": "مُعَلِّمُونَ ← مُعَلِّمِينَ", "uz": "raf' → nasb/jarr", "form": "ـُونَ / ـِينَ"},
+   {"ar": "مُعَلِّمَة ← مُعَلِّمَات", "uz": "o'qituvchi (ayol) → ular", "form": "ayol (ـَاتٌ)"},
+   {"ar": "مُسْلِمُونَ وَمُسْلِمَاتٌ", "uz": "musulmon erkaklar va ayollar", "form": "namuna"}
+  ],
+  "common_mistakes_uz": [
+   "Narsalarga (kitob, uy) ـُونَ qo'shish — u faqat aqlli ERKAKLAR uchun.",
+   "Ayol ko'plikda ة ni tushirmaslik: مُعَلِّمَةَات (xato) → مُعَلِّمَات.",
+   "raf' (ـُونَ) va nasb/jarr (ـِينَ) ni chalkashtirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "أ م ن",
+   "meaning_uz": "ishonch, xavfsizlik, iymon",
+   "uz_cognates": ["iymon", "amin", "omonat", "mo'min"],
+   "derived": [
+    {"ar": "مُؤْمِن", "uz": "mo'min, ishonuvchi", "pattern": "مُفْعِل"},
+    {"ar": "أَمِين", "uz": "ishonchli, amin", "pattern": "فَعِيل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "مُعَلِّم", "translit": "muʿallim", "uz": "o'qituvchi (o'zbekcha 'muallim')", "root": "ع ل م", "pattern": "مُفَعِّل", "pos": "ot", "audio": "a1/muallim.mp3", "example_ar": "هُوَ مُعَلِّمٌ.", "example_uz": "U o'qituvchi.", "srs": true},
+  {"ar": "مُعَلِّمُونَ", "translit": "muʿallimūna", "uz": "o'qituvchilar (erkak)", "root": "ع ل م", "pattern": "مُفَعِّلُونَ", "pos": "ot", "audio": "a1/muallimuna.mp3", "example_ar": "هُمْ مُعَلِّمُونَ.", "example_uz": "Ular o'qituvchilar.", "srs": true},
+  {"ar": "مُعَلِّمَات", "translit": "muʿallimāt", "uz": "o'qituvchilar (ayol)", "root": "ع ل م", "pattern": "مُفَعِّلَات", "pos": "ot", "audio": "a1/muallimat.mp3", "example_ar": "هُنَّ مُعَلِّمَاتٌ.", "example_uz": "Ular (ayollar) o'qituvchilar.", "srs": true},
+  {"ar": "مُسْلِمُونَ", "translit": "muslimūna", "uz": "musulmonlar (erkak)", "root": "س ل م", "pattern": "مُفْعِلُونَ", "pos": "ot", "audio": "a1/muslimuna.mp3", "example_ar": "المُسْلِمُونَ يُصَلُّونَ.", "example_uz": "Musulmonlar namoz o'qiydilar.", "srs": true},
+  {"ar": "مُسْلِمَات", "translit": "muslimāt", "uz": "musulmon ayollar", "root": "س ل م", "pattern": "مُفْعِلَات", "pos": "ot", "audio": "a1/muslimat.mp3", "example_ar": "المُسْلِمَاتُ صَابِرَاتٌ.", "example_uz": "Musulmon ayollar sabrli.", "srs": true},
+  {"ar": "مُهَنْدِس", "translit": "muhandis", "uz": "muhandis (o'zbekcha 'muhandis')", "root": "ه ن د س", "pattern": "مُفَعْلِل", "pos": "ot", "audio": "a1/muhandis.mp3", "example_ar": "أَخِي مُهَنْدِسٌ.", "example_uz": "Akam muhandis.", "srs": true},
+  {"ar": "مُهَنْدِسُونَ", "translit": "muhandisūna", "uz": "muhandislar", "root": "ه ن د س", "pattern": "مُفَعْلِلُونَ", "pos": "ot", "audio": "a1/muhandisuna.mp3", "example_ar": "هُمْ مُهَنْدِسُونَ.", "example_uz": "Ular muhandislar.", "srs": true},
+  {"ar": "مُؤْمِن", "translit": "muʾmin", "uz": "mo'min (o'zbekcha 'mo'min')", "root": "أ م ن", "pattern": "مُفْعِل", "pos": "ot", "audio": "a1/mumin.mp3", "example_ar": "المُؤْمِنُ صَادِقٌ.", "example_uz": "Mo'min rostgo'y.", "srs": true},
+  {"ar": "مُؤْمِنُونَ", "translit": "muʾminūna", "uz": "mo'minlar", "root": "أ م ن", "pattern": "مُفْعِلُونَ", "pos": "ot", "audio": "a1/muminuna.mp3", "example_ar": "المُؤْمِنُونَ إِخْوَةٌ.", "example_uz": "Mo'minlar birodar.", "srs": true},
+  {"ar": "طَالِبَات", "translit": "ṭālibāt", "uz": "talaba qizlar", "root": "ط ل ب", "pattern": "فَاعِلَات", "pos": "ot", "audio": "a1/talibat.mp3", "example_ar": "الطَّالِبَاتُ يَدْرُسْنَ.", "example_uz": "Talaba qizlar o'qiydilar.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "المُعَلِّمُونَ فِي المَدْرَسَةِ وَالطَّالِبَاتُ فِي الجَامِعَةِ. المُسْلِمُونَ وَالمُسْلِمَاتُ يَقْرَؤُونَ القُرْآنَ.",
+   "questions": [
+    {"q_uz": "O'qituvchilar qayerda?", "a": "Maktabda (المَدْرَسَة)"},
+    {"q_uz": "«الطَّالِبَاتُ» erkakmi yoki ayol ko'plik?", "a": "Ayol (ـَاتٌ)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/muallimuna.mp3",
+   "transcript_ar": "مُعَلِّمُونَ",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "O'qituvchilar (erkak ko'plik)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Ko'plik shakllarni ayting: muʿallimūna, muʿallimāt, muslimūna, muslimāt.",
+   "target_ar": ["مُعَلِّمُونَ", "مُعَلِّمَات", "مُسْلِمُونَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«مُؤْمِن» so'zining erkak va ayol ko'plik shakllarini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«o'qituvchilar (erkak)» qaysi?", "q_ar": "", "options": ["مُعَلِّمُونَ", "مُعَلِّمَات", "مُعَلِّمَانِ", "مُعَلِّم"], "answer": "مُعَلِّمُونَ", "explain_uz": "Erkak sog'lom ko'plik: ـُونَ → مُعَلِّمُونَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Ayol sog'lom ko'plik qo'shimchasi?", "q_ar": "", "options": ["ـَاتٌ", "ـُونَ", "ـَانِ", "ـِينَ"], "answer": "ـَاتٌ", "explain_uz": "Ayol: ة tushadi, ـَاتٌ qo'shiladi: مُعَلِّمَات.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المُسْلِمُونَ", "options": [], "answer": "musulmonlar", "explain_uz": "مُسْلِم + ـُونَ = musulmonlar (erkak ko'plik).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «أ م ن» o'zagidan?", "q_ar": "", "options": ["مُؤْمِن", "مُعَلِّم", "مُهَنْدِس"], "answer": "مُؤْمِن", "explain_uz": "«أ م ن» — iymon o'zagi: مُؤْمِن (mo'min), أَمِين (amin), omonat.", "audio": "", "root": "أ م ن", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Ko'plik yasang: «طَالِبَة» → ? (talaba qizlar)", "q_ar": "____", "options": [], "answer": "طَالِبَات", "explain_uz": "ة tushadi, ـَاتٌ: طَالِبَات.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "muhandislar", "q_ar": "", "options": [], "answer": "مُهَنْدِسُونَ", "explain_uz": "مُهَنْدِس + ـُونَ = مُهَنْدِسُونَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«ـُونَ» ko'pligi kimlar uchun?", "q_ar": "", "options": ["aqlli erkaklar", "narsalar", "hayvonlar", "ayollar"], "answer": "aqlli erkaklar", "explain_uz": "Sog'lom erkak ko'plik (ـُونَ) faqat aqlli erkaklar uchun.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "أ م ن", "back": "iymon o'zagi (mo'min, amin, omonat, iymon)", "deck": "msa"},
+  {"type": "pattern", "front": "ـُونَ / ـَاتٌ", "back": "sog'lom ko'plik (erkak / ayol)", "deck": "msa"},
+  {"type": "word", "front": "مُعَلِّم", "back": "o'qituvchi", "deck": "msa"},
+  {"type": "word", "front": "مُعَلِّمُونَ", "back": "o'qituvchilar (erkak)", "deck": "msa"},
+  {"type": "word", "front": "مُعَلِّمَات", "back": "o'qituvchilar (ayol)", "deck": "msa"},
+  {"type": "word", "front": "مُسْلِمُونَ", "back": "musulmonlar", "deck": "msa"},
+  {"type": "word", "front": "مُهَنْدِس", "back": "muhandis", "deck": "msa"},
+  {"type": "word", "front": "مُؤْمِن", "back": "mo'min", "deck": "msa"},
+  {"type": "word", "front": "مُؤْمِنُونَ", "back": "mo'minlar", "deck": "msa"},
+  {"type": "word", "front": "طَالِبَات", "back": "talaba qizlar", "deck": "msa"}
+ ]
+}

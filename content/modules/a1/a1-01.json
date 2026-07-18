@@ -1,0 +1,98 @@
+{
+ "id": "a1-01",
+ "level": "A1",
+ "module": "nominal-sentence",
+ "order": 1,
+ "title_uz": "Oddiy tasdiq gap tuzaman",
+ "title_ar": "الجُمْلَةُ الاِسْمِيَّة",
+ "can_do_uz": "«Uy katta», «Kitob yangi» kabi oddiy ismli gaplarni fe'lsiz tuza olaman.",
+ "duration_min": 30,
+ "prerequisites": [],
+ "harakat_level": "full",
+ "hook_uz": "O'zbekchada «Uy katta» deymiz — «bo'ladi» so'zi shart emas. Arabchada ham xuddi shunday! Ikkita so'zni yonma-yon qo'yasiz: البَيْتُ كَبِيرٌ — «uy katta». Bugun fe'lsiz to'liq gap tuzishni o'rganamiz.",
+ "grammar": {
+  "point_ar": "مُبْتَدَأ + خَبَر",
+  "explanation_uz": "Arab tilida ismli gap (الجُمْلَة الاِسْمِيّة) ikki qismdan iborat: مُبْتَدَأ (ega — kim/nima haqida gapiramiz) va خَبَر (xabar — u haqida nima deymiz). «Bo'ladi/is» fe'li YO'Q. Odatda ega ANIQ bo'ladi (ال bilan), xabar esa NOANIQ (oxirida tanvin ٌ). Ikkalasi ham «raf'» holatida — oxirida damma (ـُ) yoki tanvin damma (ـٌ).",
+  "table": [
+   {"ar": "البَيْتُ كَبِيرٌ", "uz": "Uy katta", "form": "ega aniq + xabar noaniq"},
+   {"ar": "الكِتَابُ جَدِيدٌ", "uz": "Kitob yangi", "form": "ismli gap"},
+   {"ar": "البَابُ قَدِيمٌ", "uz": "Eshik eski", "form": "ismli gap"},
+   {"ar": "الوَلَدُ طَوِيلٌ", "uz": "Bola baland (bo'yli)", "form": "ismli gap"}
+  ],
+  "common_mistakes_uz": [
+   "«bo'ladi / is» ma'nosida qo'shimcha so'z qo'shishga urinish — arabchada kerak EMAS.",
+   "Egani noaniq qoldirish — odatda ega ال bilan aniq bo'ladi (البَيْت), xabar tanvin bilan noaniq (كَبِيرٌ).",
+   "Oxirgi harakatni unutish — ega va xabar «raf'» da: ـُ yoki ـٌ."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ك ب ر",
+   "meaning_uz": "kattalik, ulug'lik",
+   "uz_cognates": ["akbar", "kibr", "takbir"],
+   "derived": [
+    {"ar": "كَبِير", "uz": "katta", "pattern": "فَعِيل"},
+    {"ar": "أَكْبَر", "uz": "eng katta (Allohu akbar)", "pattern": "أَفْعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "كَبِير", "translit": "kabīr", "uz": "katta", "root": "ك ب ر", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/kabir.mp3", "example_ar": "البَيْتُ كَبِيرٌ.", "example_uz": "Uy katta.", "srs": true},
+  {"ar": "صَغِير", "translit": "ṣaghīr", "uz": "kichik", "root": "ص غ ر", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/saghir.mp3", "example_ar": "الوَلَدُ صَغِيرٌ.", "example_uz": "Bola kichkina.", "srs": true},
+  {"ar": "جَدِيد", "translit": "jadīd", "uz": "yangi", "root": "ج د د", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/jadid.mp3", "example_ar": "الكِتَابُ جَدِيدٌ.", "example_uz": "Kitob yangi.", "srs": true},
+  {"ar": "قَدِيم", "translit": "qadīm", "uz": "eski, qadimiy", "root": "ق د م", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/qadim.mp3", "example_ar": "البَابُ قَدِيمٌ.", "example_uz": "Eshik eski.", "srs": true},
+  {"ar": "جَمِيل", "translit": "jamīl", "uz": "chiroyli (o'zbekcha 'Jamila' shundan)", "root": "ج م ل", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/jamil.mp3", "example_ar": "البَيْتُ جَمِيلٌ.", "example_uz": "Uy chiroyli.", "srs": true},
+  {"ar": "طَوِيل", "translit": "ṭawīl", "uz": "uzun, baland", "root": "ط و ل", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/tawil.mp3", "example_ar": "الوَلَدُ طَوِيلٌ.", "example_uz": "Bola baland.", "srs": true},
+  {"ar": "قَصِير", "translit": "qaṣīr", "uz": "kalta, past", "root": "ق ص ر", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/qasir.mp3", "example_ar": "القَلَمُ قَصِيرٌ.", "example_uz": "Qalam kalta.", "srs": true},
+  {"ar": "وَلَد", "translit": "walad", "uz": "bola, o'g'il", "root": "و ل د", "pattern": "فَعَل", "pos": "ot", "audio": "a1/walad.mp3", "example_ar": "الوَلَدُ كَبِيرٌ.", "example_uz": "Bola katta.", "srs": true},
+  {"ar": "بِنْت", "translit": "bint", "uz": "qiz (o'zbekcha 'binti' shundan)", "root": "ب ن ت", "pattern": "فِعْل", "pos": "ot", "audio": "a1/bint.mp3", "example_ar": "البِنْتُ صَغِيرَةٌ.", "example_uz": "Qiz kichkina.", "srs": true},
+  {"ar": "مُدَرِّس", "translit": "mudarris", "uz": "o'qituvchi (o'zbekcha 'mudarris' shundan)", "root": "د ر س", "pattern": "مُفَعِّل", "pos": "ot", "audio": "a1/mudarris.mp3", "example_ar": "المُدَرِّسُ جَدِيدٌ.", "example_uz": "O'qituvchi yangi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "البَيْتُ كَبِيرٌ. البَابُ قَدِيمٌ. الوَلَدُ طَوِيلٌ وَالكِتَابُ جَدِيدٌ.",
+   "questions": [
+    {"q_uz": "Uy qanday?", "a": "Katta (كَبِيرٌ)"},
+    {"q_uz": "Kitob qanday?", "a": "Yangi (جَدِيدٌ)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/kabir.mp3",
+   "transcript_ar": "كَبِير",
+   "questions": [
+    {"q_uz": "Eshitgan sifatingiz ma'nosi?", "a": "Katta"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Quyidagi gaplarni ovoz chiqarib ayting: al-baytu kabīr, al-kitābu jadīd, al-waladu ṭawīl.",
+   "target_ar": ["البَيْتُ كَبِيرٌ", "الكِتَابُ جَدِيدٌ", "الوَلَدُ طَوِيلٌ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Eshik katta» va «O'qituvchi yangi» gaplarini arabcha yozing (ega ال bilan, xabar tanvin bilan).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Uy katta» gapi qaysi?", "q_ar": "", "options": ["البَيْتُ كَبِيرٌ", "بَيْتٌ كَبِيرٌ", "البَيْتُ الكَبِيرُ", "كَبِيرٌ البَيْتُ"], "answer": "البَيْتُ كَبِيرٌ", "explain_uz": "Ega aniq (البَيْت), xabar noaniq (كَبِيرٌ). البَيْتُ الكَبِيرُ — bu «katta uy» (sifat), gap emas.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الكِتَابُ جَدِيدٌ", "options": [], "answer": "kitob yangi", "explain_uz": "الكِتَاب = kitob (ega), جَدِيد = yangi (xabar). «bo'ladi» kerak emas.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«صَغِير» so'zining ma'nosi?", "q_ar": "", "options": ["kichik", "katta", "yangi", "eski"], "answer": "kichik", "explain_uz": "صَغِير — kichik; كَبِير ning teskarisi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Bo'sh joyni to'ldiring: «البَابُ ____» (eshik eski)", "q_ar": "البَابُ ____", "options": [], "answer": "قَدِيمٌ", "explain_uz": "قَدِيم — eski. Xabar noaniq, tanvin bilan: قَدِيمٌ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ك ب ر» o'zagidan?", "q_ar": "", "options": ["كَبِير", "جَدِيد", "صَغِير"], "answer": "كَبِير", "explain_uz": "«ك ب ر» — kattalik o'zagi: كَبِير (katta), أَكْبَر (eng katta).", "audio": "", "root": "ك ب ر", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "So'zlardan «Bola baland» gapini tuzing", "q_ar": "", "options": [], "answer": "الوَلَدُ طَوِيلٌ", "explain_uz": "Ismli gap: ega (الوَلَدُ) + xabar (طَوِيلٌ).", "audio": "", "root": "", "pattern": "", "words": ["طَوِيلٌ", "الوَلَدُ"]},
+  {"type": "translate_uz_ar", "q_uz": "chiroyli", "q_ar": "", "options": [], "answer": "جَمِيل", "explain_uz": "جَمِيل — chiroyli (o'zbekcha 'Jamila' ismi shundan).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ك ب ر", "back": "kattalik o'zagi (kabir=katta, akbar=eng katta)", "deck": "msa"},
+  {"type": "word", "front": "كَبِير", "back": "katta", "deck": "msa"},
+  {"type": "word", "front": "صَغِير", "back": "kichik", "deck": "msa"},
+  {"type": "word", "front": "جَدِيد", "back": "yangi", "deck": "msa"},
+  {"type": "word", "front": "قَدِيم", "back": "eski", "deck": "msa"},
+  {"type": "word", "front": "جَمِيل", "back": "chiroyli", "deck": "msa"},
+  {"type": "word", "front": "طَوِيل", "back": "uzun, baland", "deck": "msa"},
+  {"type": "word", "front": "وَلَد", "back": "bola, o'g'il", "deck": "msa"},
+  {"type": "word", "front": "بِنْت", "back": "qiz", "deck": "msa"},
+  {"type": "word", "front": "مُدَرِّس", "back": "o'qituvchi", "deck": "msa"}
+ ]
+}

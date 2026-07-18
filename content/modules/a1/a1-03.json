@@ -1,0 +1,98 @@
+{
+ "id": "a1-03",
+ "level": "A1",
+ "module": "nominal-sentence",
+ "order": 3,
+ "title_uz": "«Bu / anavi» deb ko'rsataman",
+ "title_ar": "أَسْمَاءُ الإِشَارَة",
+ "can_do_uz": "«Bu kitob», «Bu deraza», «Anavi uy» kabi narsalarni ko'rsatib ayta olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-02"],
+ "harakat_level": "full",
+ "hook_uz": "Do'konda biror narsani ko'rsatmoqchimisiz? «هَذَا» (bu) deysiz: هَذَا كِتَابٌ — «bu kitob». Yaqin narsaga هَذَا/هَذِهِ, uzoqroq narsaga ذَلِكَ/تِلْكَ. Bugun ko'rsatish so'zlarini o'rganamiz.",
+ "grammar": {
+  "point_ar": "اسْمُ الإِشَارَة + المُشَارُ إِلَيْه",
+  "explanation_uz": "Ko'rsatish olmoshlari narsani ishora qiladi. Yaqin uchun: هَذَا (erkak) / هَذِهِ (ayol). Uzoq uchun: ذَلِكَ (erkak) / تِلْكَ (ayol). «هَذَا + noaniq ot» = to'liq gap: هَذَا كِتَابٌ — «bu kitob(dir)». Agar ot aniq bo'lsa (ال bilan), ma'no o'zgaradi: هَذَا الكِتَابُ — «bu kitob» (bir butun ibora, gap emas).",
+  "table": [
+   {"ar": "هَذَا كِتَابٌ", "uz": "Bu kitob", "form": "yaqin, erkak"},
+   {"ar": "هَذِهِ طَاوِلَةٌ", "uz": "Bu stol", "form": "yaqin, ayol"},
+   {"ar": "ذَلِكَ بَيْتٌ", "uz": "Anavi uy", "form": "uzoq, erkak"},
+   {"ar": "تِلْكَ نَافِذَةٌ", "uz": "Anavi deraza", "form": "uzoq, ayol"}
+  ],
+  "common_mistakes_uz": [
+   "هَذَا (erkak so'zga) va هَذِهِ (ayol so'zga) ni chalkashtirish — so'z jinsiga qarab tanlanadi.",
+   "هَذَا كِتَابٌ (bu kitob = gap) va هَذَا الكِتَابُ (bu kitob = ibora) farqini sezmaslik.",
+   "هَذَا yozilishida alifsiz — «ذا» talaffuzda cho'ziq, lekin alif yozilmaydi (هَذَا)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ف ت ح",
+   "meaning_uz": "ochish, ochilish",
+   "uz_cognates": ["fath", "Fotih", "iftitoh"],
+   "derived": [
+    {"ar": "مِفْتَاح", "uz": "kalit (ochuvchi asbob)", "pattern": "مِفْعَال"},
+    {"ar": "مَفْتُوح", "uz": "ochiq", "pattern": "مَفْعُول"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "هَذَا", "translit": "hādhā", "uz": "bu (erkak so'zga)", "root": "", "pattern": "", "pos": "ishora", "audio": "a1/hadha.mp3", "example_ar": "هَذَا كِتَابٌ.", "example_uz": "Bu kitob.", "srs": true},
+  {"ar": "هَذِهِ", "translit": "hādhihi", "uz": "bu (ayol so'zga)", "root": "", "pattern": "", "pos": "ishora", "audio": "a1/hadhihi.mp3", "example_ar": "هَذِهِ طَاوِلَةٌ.", "example_uz": "Bu stol.", "srs": true},
+  {"ar": "ذَلِكَ", "translit": "dhālika", "uz": "anavi (erkak so'zga)", "root": "", "pattern": "", "pos": "ishora", "audio": "a1/dhalika.mp3", "example_ar": "ذَلِكَ بَيْتٌ.", "example_uz": "Anavi uy.", "srs": true},
+  {"ar": "تِلْكَ", "translit": "tilka", "uz": "anavi (ayol so'zga)", "root": "", "pattern": "", "pos": "ishora", "audio": "a1/tilka.mp3", "example_ar": "تِلْكَ نَافِذَةٌ.", "example_uz": "Anavi deraza.", "srs": true},
+  {"ar": "كُرْسِيّ", "translit": "kursiyy", "uz": "stul (o'zbekcha 'kursi' shundan)", "root": "ك ر س", "pattern": "فُعْلِيّ", "pos": "ot", "audio": "a1/kursi.mp3", "example_ar": "هَذَا كُرْسِيٌّ.", "example_uz": "Bu stul.", "srs": true},
+  {"ar": "طَاوِلَة", "translit": "ṭāwila", "uz": "stol", "root": "", "pattern": "", "pos": "ot", "audio": "a1/tawila.mp3", "example_ar": "هَذِهِ طَاوِلَةٌ.", "example_uz": "Bu stol.", "srs": true},
+  {"ar": "نَافِذَة", "translit": "nāfidha", "uz": "deraza", "root": "ن ف ذ", "pattern": "فَاعِلَة", "pos": "ot", "audio": "a1/nafidha.mp3", "example_ar": "تِلْكَ نَافِذَةٌ.", "example_uz": "Anavi deraza.", "srs": true},
+  {"ar": "مِفْتَاح", "translit": "miftāḥ", "uz": "kalit", "root": "ف ت ح", "pattern": "مِفْعَال", "pos": "ot", "audio": "a1/miftah.mp3", "example_ar": "هَذَا مِفْتَاحٌ.", "example_uz": "Bu kalit.", "srs": true},
+  {"ar": "سَرِير", "translit": "sarīr", "uz": "karavot", "root": "س ر ر", "pattern": "فَعِيل", "pos": "ot", "audio": "a1/sarir.mp3", "example_ar": "ذَلِكَ سَرِيرٌ.", "example_uz": "Anavi karavot.", "srs": true},
+  {"ar": "بَاب", "translit": "bāb", "uz": "eshik", "root": "ب و ب", "pattern": "فَعَل", "pos": "ot", "audio": "a0/bab.mp3", "example_ar": "هَذَا بَابٌ.", "example_uz": "Bu eshik.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "هَذَا كُرْسِيٌّ وَهَذِهِ طَاوِلَةٌ. ذَلِكَ بَابٌ وَتِلْكَ نَافِذَةٌ.",
+   "questions": [
+    {"q_uz": "«هَذَا» nimani ko'rsatyapti?", "a": "Stulni (كُرْسِيّ)"},
+    {"q_uz": "«تِلْكَ» nimani ko'rsatyapti?", "a": "Derazani (نَافِذَة)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/hadha.mp3",
+   "transcript_ar": "هَذَا",
+   "questions": [
+    {"q_uz": "Bu ishora so'zi ma'nosi?", "a": "Bu (yaqin, erkak)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Atrofingizdagi narsalarni ko'rsatib ayting: hādhā kitāb, hādhihi ṭāwila, dhālika bāb.",
+   "target_ar": ["هَذَا كِتَابٌ", "هَذِهِ طَاوِلَةٌ", "ذَلِكَ بَابٌ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Bu kalit» va «Anavi karavot» gaplarini arabcha yozing (هَذَا / ذَلِكَ bilan).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Bu kitob» qaysi?", "q_ar": "", "options": ["هَذَا كِتَابٌ", "ذَلِكَ كِتَابٌ", "هَذِهِ كِتَابٌ", "تِلْكَ كِتَابٌ"], "answer": "هَذَا كِتَابٌ", "explain_uz": "كِتَاب erkak so'z, yaqin → هَذَا.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«طَاوِلَة» (stol) ayol so'z. To'g'ri ishora qaysi?", "q_ar": "", "options": ["هَذِهِ طَاوِلَةٌ", "هَذَا طَاوِلَةٌ", "ذَلِكَ طَاوِلَةٌ", "هُوَ طَاوِلَةٌ"], "answer": "هَذِهِ طَاوِلَةٌ", "explain_uz": "Ayol so'z (ة bilan) → هَذِهِ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "ذَلِكَ بَيْتٌ", "options": [], "answer": "anavi uy", "explain_uz": "ذَلِكَ = anavi (uzoq, erkak), بَيْت = uy.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ف ت ح» o'zagidan?", "q_ar": "", "options": ["مِفْتَاح", "كُرْسِيّ", "سَرِير"], "answer": "مِفْتَاح", "explain_uz": "«ف ت ح» — ochish o'zagi: مِفْتَاح (kalit=ochuvchi), مَفْتُوح (ochiq).", "audio": "", "root": "ف ت ح", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Bo'sh joyni to'ldiring: «____ مِفْتَاحٌ» (bu kalit)", "q_ar": "____ مِفْتَاحٌ", "options": [], "answer": "هَذَا", "explain_uz": "مِفْتَاح erkak so'z, yaqin → هَذَا.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "stul", "q_ar": "", "options": [], "answer": "كُرْسِيّ", "explain_uz": "كُرْسِيّ — stul (o'zbekcha 'kursi').", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "«Bu stol» gapini tuzing", "q_ar": "", "options": [], "answer": "هَذِهِ طَاوِلَةٌ", "explain_uz": "Ishora (هَذِهِ) + ayol ot (طَاوِلَةٌ).", "audio": "", "root": "", "pattern": "", "words": ["طَاوِلَةٌ", "هَذِهِ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ف ت ح", "back": "ochish o'zagi (miftah=kalit, maftuh=ochiq, fath)", "deck": "msa"},
+  {"type": "word", "front": "هَذَا", "back": "bu (erkak)", "deck": "msa"},
+  {"type": "word", "front": "هَذِهِ", "back": "bu (ayol)", "deck": "msa"},
+  {"type": "word", "front": "ذَلِكَ", "back": "anavi (erkak)", "deck": "msa"},
+  {"type": "word", "front": "تِلْكَ", "back": "anavi (ayol)", "deck": "msa"},
+  {"type": "word", "front": "كُرْسِيّ", "back": "stul", "deck": "msa"},
+  {"type": "word", "front": "طَاوِلَة", "back": "stol", "deck": "msa"},
+  {"type": "word", "front": "نَافِذَة", "back": "deraza", "deck": "msa"},
+  {"type": "word", "front": "مِفْتَاح", "back": "kalit", "deck": "msa"},
+  {"type": "word", "front": "سَرِير", "back": "karavot", "deck": "msa"}
+ ]
+}

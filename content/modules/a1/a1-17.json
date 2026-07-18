@@ -1,0 +1,379 @@
+{
+ "id": "a1-17",
+ "level": "A1",
+ "module": "present-tense",
+ "order": 17,
+ "title_uz": "Muzori' prefikslarini bilaman",
+ "title_ar": "حُرُوفُ المُضَارَعَة (أَتَيْنَ)",
+ "can_do_uz": "Hozirgi zamon fe'lining boshidagi 4 ta prefiksni (أ ت ي ن) taniyman va ular kim ekanini bilaman.",
+ "duration_min": 30,
+ "prerequisites": [
+  "a1-16"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "O'tgan zamon oxiriga qo'shimcha qo'shsak, hozirgi zamon BOSHIga prefiks qo'shamiz! كَتَبَ (yozdi) → يَكْتُبُ (yozadi). 4 ta prefiks bor: أ، تـ، يـ، نـ — ularni «أَتَيْنَ» (ATAYNA) so'zi bilan yodlaymiz.",
+ "grammar": {
+  "point_ar": "المُضَارِع: أ ت ي ن",
+  "explanation_uz": "Hozirgi/kelasi zamon fe'li (المُضَارِع) fe'l BOSHIGA prefiks qo'shib yasaladi. 4 ta prefiks — «أَتَيْنَ» so'zida jamlangan: أ (men — أَكْتُبُ), نـ (biz — نَكْتُبُ), تـ (sen / u-ayol — تَكْتُبُ), يـ (u-erkak / ular — يَكْتُبُ). Fe'l oxiri odatda damma (ـُ) bilan tugaydi. O'zak o'zgarmaydi, faqat prefiks + ichki unli.",
+  "table": [
+   {
+    "ar": "أَكْتُبُ",
+    "uz": "men yozaman",
+    "form": "أ — أَنَا"
+   },
+   {
+    "ar": "نَكْتُبُ",
+    "uz": "biz yozamiz",
+    "form": "نـ — نَحْنُ"
+   },
+   {
+    "ar": "تَكْتُبُ",
+    "uz": "sen yozasan / u (ayol) yozadi",
+    "form": "تـ — أَنْتَ/هِيَ"
+   },
+   {
+    "ar": "يَكْتُبُ",
+    "uz": "u (erkak) yozadi",
+    "form": "يـ — هُوَ"
+   }
+  ],
+  "common_mistakes_uz": [
+   "Prefiksni fe'l oxiriga qo'shish — muzoriда prefiks BOSHDA keladi.",
+   "تـ prefiksining ikki ma'nosini unutish: «sen (erkak)» ham, «u (ayol)» ham.",
+   "Fe'l oxiridagi dammani (ـُ) tushirib qoldirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع ل م",
+   "meaning_uz": "bilish, ilm",
+   "uz_cognates": [
+    "ilm",
+    "olim",
+    "muallim",
+    "ta'lim"
+   ],
+   "derived": [
+    {
+     "ar": "عَلِمَ",
+     "uz": "bildi",
+     "pattern": "فَعِلَ"
+    },
+    {
+     "ar": "عَالِم",
+     "uz": "olim, bilimdon",
+     "pattern": "فَاعِل"
+    },
+    {
+     "ar": "مُعَلِّم",
+     "uz": "o'qituvchi",
+     "pattern": "مُفَعِّل"
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "يَكْتُبُ",
+   "translit": "yaktubu",
+   "uz": "u (erkak) yozadi",
+   "root": "ك ت ب",
+   "pattern": "يَفْعُلُ",
+   "pos": "fe'l",
+   "audio": "a1/yaktubu.mp3",
+   "example_ar": "هُوَ يَكْتُبُ الدَّرْسَ.",
+   "example_uz": "U darsni yozadi.",
+   "srs": true
+  },
+  {
+   "ar": "تَكْتُبُ",
+   "translit": "taktubu",
+   "uz": "sen yozasan / u (ayol) yozadi",
+   "root": "ك ت ب",
+   "pattern": "تَفْعُلُ",
+   "pos": "fe'l",
+   "audio": "a1/taktubu.mp3",
+   "example_ar": "هِيَ تَكْتُبُ رِسَالَةً.",
+   "example_uz": "U (ayol) xat yozadi.",
+   "srs": true
+  },
+  {
+   "ar": "أَكْتُبُ",
+   "translit": "aktubu",
+   "uz": "men yozaman",
+   "root": "ك ت ب",
+   "pattern": "أَفْعُلُ",
+   "pos": "fe'l",
+   "audio": "a1/aktubu.mp3",
+   "example_ar": "أَنَا أَكْتُبُ الآنَ.",
+   "example_uz": "Men hozir yozaman.",
+   "srs": true
+  },
+  {
+   "ar": "نَكْتُبُ",
+   "translit": "naktubu",
+   "uz": "biz yozamiz",
+   "root": "ك ت ب",
+   "pattern": "نَفْعُلُ",
+   "pos": "fe'l",
+   "audio": "a1/naktubu.mp3",
+   "example_ar": "نَحْنُ نَكْتُبُ الوَاجِبَ.",
+   "example_uz": "Biz vazifani yozamiz.",
+   "srs": true
+  },
+  {
+   "ar": "يَعْلَمُ",
+   "translit": "yaʿlamu",
+   "uz": "u biladi",
+   "root": "ع ل م",
+   "pattern": "يَفْعَلُ",
+   "pos": "fe'l",
+   "audio": "a1/yalamu.mp3",
+   "example_ar": "هُوَ يَعْلَمُ الجَوَابَ.",
+   "example_uz": "U javobni biladi.",
+   "srs": true
+  },
+  {
+   "ar": "يَذْهَبُ",
+   "translit": "yadhhabu",
+   "uz": "u boradi",
+   "root": "ذ ه ب",
+   "pattern": "يَفْعَلُ",
+   "pos": "fe'l",
+   "audio": "a1/yadhhabu.mp3",
+   "example_ar": "يَذْهَبُ إِلَى العَمَلِ.",
+   "example_uz": "U ishga boradi.",
+   "srs": true
+  },
+  {
+   "ar": "الْآنَ",
+   "translit": "al-ān",
+   "uz": "hozir",
+   "root": "",
+   "pattern": "",
+   "pos": "ravish",
+   "audio": "a1/alan.mp3",
+   "example_ar": "أَدْرُسُ الآنَ.",
+   "example_uz": "Hozir o'qiyapman.",
+   "srs": true
+  },
+  {
+   "ar": "دَائِمًا",
+   "translit": "dāʾiman",
+   "uz": "doim, hamisha",
+   "root": "د و م",
+   "pattern": "",
+   "pos": "ravish",
+   "audio": "a1/daiman.mp3",
+   "example_ar": "أَقْرَأُ دَائِمًا.",
+   "example_uz": "Doim o'qiyman.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أَنَا أَكْتُبُ وَأَنْتَ تَكْتُبُ. هُوَ يَذْهَبُ إِلَى العَمَلِ وَنَحْنُ نَذْهَبُ إِلَى المَدْرَسَةِ.",
+   "questions": [
+    {
+     "q_uz": "«أَكْتُبُ» qaysi prefiks — kim?",
+     "a": "أ — men"
+    },
+    {
+     "q_uz": "«نَذْهَبُ» kim haqida?",
+     "a": "Biz (نـ prefiksi)"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a1/yaktubu.mp3",
+   "transcript_ar": "يَكْتُبُ",
+   "questions": [
+    {
+     "q_uz": "Fe'l ma'nosi?",
+     "a": "U yozadi (hozirgi zamon)"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "4 prefiksni ayting: aktubu (men), naktubu (biz), taktubu (sen), yaktubu (u).",
+   "target_ar": [
+    "أَكْتُبُ",
+    "نَكْتُبُ",
+    "يَكْتُبُ"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«U o'qiydi» (يَدْرُسُ) va «Biz o'qiymiz» (نَدْرُسُ) ni yozib, prefikslarni belgilang.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«men yozaman» qaysi prefiks bilan?",
+   "q_ar": "",
+   "options": [
+    "أَكْتُبُ",
+    "يَكْتُبُ",
+    "نَكْتُبُ",
+    "تَكْتُبُ"
+   ],
+   "answer": "أَكْتُبُ",
+   "explain_uz": "«men» → أ prefiksi: أَكْتُبُ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«يـ» prefiksi kimni bildiradi?",
+   "q_ar": "",
+   "options": [
+    "u (erkak)",
+    "men",
+    "biz",
+    "sen"
+   ],
+   "answer": "u (erkak)",
+   "explain_uz": "يـ → هُوَ (u-erkak): يَكْتُبُ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "",
+   "q_ar": "نَذْهَبُ",
+   "options": [],
+   "answer": "biz boramiz",
+   "explain_uz": "نـ (biz) + ذهب = نَذْهَبُ (biz boramiz).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "Qaysi so'z «ع ل م» o'zagidan?",
+   "q_ar": "",
+   "options": [
+    "يَعْلَمُ",
+    "يَكْتُبُ",
+    "يَذْهَبُ"
+   ],
+   "answer": "يَعْلَمُ",
+   "explain_uz": "«ع ل م» — bilish o'zagi: عَلِمَ (bildi), عَالِم (olim), مُعَلِّم.",
+   "audio": "",
+   "root": "ع ل م",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "fill_blank",
+   "q_uz": "Prefiksni to'ldiring: «نَحْنُ ____كْتُبُ» (biz yozamiz)",
+   "q_ar": "نَحْنُ ____كْتُبُ",
+   "options": [],
+   "answer": "نَ",
+   "explain_uz": "«biz» → نـ prefiksi: نَكْتُبُ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "hozir",
+   "q_ar": "",
+   "options": [],
+   "answer": "الآن",
+   "explain_uz": "الآن — hozir (muzori' bilan ko'p ishlatiladi).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Muzori' prefikslari qaysi so'zda jamlangan?",
+   "q_ar": "",
+   "options": [
+    "أَتَيْنَ (أ ت ي ن)",
+    "كَتَبَ",
+    "فَعَلَ",
+    "مَكْتَب"
+   ],
+   "answer": "أَتَيْنَ (أ ت ي ن)",
+   "explain_uz": "أَتَيْنَ — 4 prefiksni yodlash so'zi: أ، ت، ي، ن.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "root",
+   "front": "ع ل م",
+   "back": "bilish o'zagi (ilm, olim, muallim, ta'lim)",
+   "deck": "msa"
+  },
+  {
+   "type": "pattern",
+   "front": "أَتَيْنَ (أ ت ي ن)",
+   "back": "muzori' prefikslari: men/sen/u/biz",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "يَكْتُبُ",
+   "back": "u yozadi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "تَكْتُبُ",
+   "back": "sen yozasan / u (ayol) yozadi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "أَكْتُبُ",
+   "back": "men yozaman",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "نَكْتُبُ",
+   "back": "biz yozamiz",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "يَعْلَمُ",
+   "back": "u biladi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "يَذْهَبُ",
+   "back": "u boradi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "الْآنَ",
+   "back": "hozir",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "دَائِمًا",
+   "back": "doim, hamisha",
+   "deck": "msa"
+  }
+ ]
+}

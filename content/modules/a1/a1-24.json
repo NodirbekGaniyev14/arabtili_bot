@@ -1,0 +1,95 @@
+{
+ "id": "a1-24",
+ "level": "A1",
+ "module": "present-tense",
+ "order": 24,
+ "title_uz": "Ma'zi vs Muzori'",
+ "title_ar": "المَاضِي وَالمُضَارِع",
+ "can_do_uz": "O'tgan, hozirgi va kelasi zamonlarni ajrata olaman va vaqt so'ziga qarab to'g'ri fe'l tanlayman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-23"],
+ "harakat_level": "full",
+ "hook_uz": "Uch zamonni birlashtiramiz! «Kecha yozdim» (كَتَبْتُ), «Bugun yozyapman» (أَكْتُبُ), «Ertaga yozaman» (سَأَكْتُبُ). Vaqt so'zi — أَمْسِ، اليَوْمَ، غَدًا — qaysi zamonni tanlashni aytadi. Bugun uchalasini mashq qilamiz.",
+ "grammar": {
+  "point_ar": "الأَزْمِنَة الثَّلاثَة",
+  "explanation_uz": "Uch zamon farqi: (1) MA'ZI (o'tgan) — qo'shimcha OXIRDA: كَتَبْتُ, ishorasi أَمْسِ (kecha). (2) MUZORI' (hozirgi) — prefiks BOSHDA: أَكْتُبُ, ishorasi الآنَ/اليَوْمَ (hozir/bugun). (3) MUSTAQBAL (kelasi) — سَـ/سَوْفَ + muzori': سَأَكْتُبُ, ishorasi غَدًا (ertaga). Vaqt so'zini ko'rib, to'g'ri zamonni tanlang.",
+  "table": [
+   {"ar": "أَمْسِ كَتَبْتُ", "uz": "Kecha yozdim", "form": "o'tgan"},
+   {"ar": "الآنَ أَكْتُبُ", "uz": "Hozir yozyapman", "form": "hozirgi"},
+   {"ar": "غَدًا سَأَكْتُبُ", "uz": "Ertaga yozaman", "form": "kelasi"},
+   {"ar": "عَادَةً أَدْرُسُ صَبَاحًا", "uz": "Odatda ertalab o'qiyman", "form": "odat (hozirgi)"}
+  ],
+  "common_mistakes_uz": [
+   "Vaqt so'ziga mos kelmaydigan zamon ishlatish (أَمْسِ + muzori').",
+   "O'tgan (oxir qo'shimcha) va hozirgi (bosh prefiks) shakllarini chalkashtirish.",
+   "Odatiy/takroriy ish uchun o'tgan zamon ishlatish — odat MUZORI' bilan beriladi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "و ق ت",
+   "meaning_uz": "vaqt, muddat",
+   "uz_cognates": ["vaqt", "avqot", "muvaqqat"],
+   "derived": [
+    {"ar": "وَقْت", "uz": "vaqt", "pattern": "فَعْل"},
+    {"ar": "مَوْقِت", "uz": "belgilangan vaqt", "pattern": "مَفْعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "وَقْت", "translit": "waqt", "uz": "vaqt (o'zbekcha 'vaqt' shundan)", "root": "و ق ت", "pattern": "فَعْل", "pos": "ot", "audio": "a1/waqt.mp3", "example_ar": "لَيْسَ عِنْدِي وَقْتٌ.", "example_uz": "Vaqtim yo'q.", "srs": true},
+  {"ar": "عَادَةً", "translit": "ʿādatan", "uz": "odatda (o'zbekcha 'odat')", "root": "ع و د", "pattern": "", "pos": "ravish", "audio": "a1/adatan.mp3", "example_ar": "عَادَةً أَدْرُسُ صَبَاحًا.", "example_uz": "Odatda ertalab o'qiyman.", "srs": true},
+  {"ar": "أَحْيَانًا", "translit": "aḥyānan", "uz": "ba'zan", "root": "ح ي ن", "pattern": "", "pos": "ravish", "audio": "a1/ahyanan.mp3", "example_ar": "أَحْيَانًا أَذْهَبُ لَيْلًا.", "example_uz": "Ba'zan kechasi boraman.", "srs": true},
+  {"ar": "صَبَاحًا", "translit": "ṣabāḥan", "uz": "ertalab", "root": "ص ب ح", "pattern": "", "pos": "ravish", "audio": "a1/sabahan.mp3", "example_ar": "أَعْمَلُ صَبَاحًا.", "example_uz": "Ertalab ishlayman.", "srs": true},
+  {"ar": "مَسَاءً", "translit": "masāʾan", "uz": "kechqurun", "root": "م س و", "pattern": "", "pos": "ravish", "audio": "a1/masaan.mp3", "example_ar": "أَرْجِعُ مَسَاءً.", "example_uz": "Kechqurun qaytaman.", "srs": true},
+  {"ar": "يَوْمِيًّا", "translit": "yawmiyyan", "uz": "har kuni, kunlik", "root": "ي و م", "pattern": "", "pos": "ravish", "audio": "a1/yawmiyyan.mp3", "example_ar": "أَقْرَأُ يَوْمِيًّا.", "example_uz": "Har kuni o'qiyman.", "srs": true},
+  {"ar": "المَاضِي", "translit": "al-māḍī", "uz": "o'tgan zamon", "root": "م ض ي", "pattern": "", "pos": "ot", "audio": "a1/almadi.mp3", "example_ar": "هَذَا فِعْلٌ مَاضٍ.", "example_uz": "Bu o'tgan zamon fe'li.", "srs": true},
+  {"ar": "لَيْل", "translit": "layl", "uz": "tun, kecha", "root": "ل ي ل", "pattern": "فَعْل", "pos": "ot", "audio": "a1/layl.mp3", "example_ar": "أَدْرُسُ فِي اللَّيْلِ.", "example_uz": "Kechasi o'qiyman.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أَمْسِ ذَهَبْتُ إِلَى المَكْتَبَةِ وَقَرَأْتُ كِتَابًا. اليَوْمَ أَدْرُسُ فِي البَيْتِ. غَدًا سَأَذْهَبُ إِلَى الجَامِعَةِ.",
+   "questions": [
+    {"q_uz": "Kecha nima qildi?", "a": "Kutubxonaga borib kitob o'qidi (o'tgan zamon)"},
+    {"q_uz": "Ertaga nima qiladi?", "a": "Universitetga boradi (kelasi zamon)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/waqt.mp3",
+   "transcript_ar": "وَقْت",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Vaqt"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch zamonda ayting: amsi katabtu, al-āna aktubu, ghadan saʾaktubu.",
+   "target_ar": ["أَمْسِ كَتَبْتُ", "الآنَ أَكْتُبُ", "غَدًا سَأَكْتُبُ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Bitta fe'lni (ذَهَبَ) uch zamonda yozing: kecha bordim, hozir boryapman, ertaga boraman.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«أَمْسِ ____» (kecha) qaysi fe'l to'g'ri?", "q_ar": "", "options": ["كَتَبْتُ", "أَكْتُبُ", "سَأَكْتُبُ", "لا أَكْتُبُ"], "answer": "كَتَبْتُ", "explain_uz": "أَمْسِ (kecha) → o'tgan zamon: كَتَبْتُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«غَدًا ____» (ertaga) qaysi to'g'ri?", "q_ar": "", "options": ["سَأَذْهَبُ", "ذَهَبْتُ", "أَذْهَبُ أَمْسِ", "مَا ذَهَبْتُ"], "answer": "سَأَذْهَبُ", "explain_uz": "غَدًا (ertaga) → kelasi zamon: سَأَذْهَبُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الآنَ أَدْرُسُ", "options": [], "answer": "hozir o'qiyapman", "explain_uz": "الآنَ = hozir, أَدْرُسُ = o'qiyman (hozirgi zamon).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «و ق ت» o'zagidan?", "q_ar": "", "options": ["وَقْت", "لَيْل", "صَبَاحًا"], "answer": "وَقْت", "explain_uz": "«و ق ت» — vaqt o'zagi: وَقْت (vaqt), avqot, muvaqqat.", "audio": "", "root": "و ق ت", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Zamonni moslang: «اليَوْمَ ____» (bugun o'qiyman)", "q_ar": "اليَوْمَ ____", "options": [], "answer": "أَدْرُسُ", "explain_uz": "اليَوْمَ (bugun) → hozirgi zamon: أَدْرُسُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "har kuni", "q_ar": "", "options": [], "answer": "يَوْمِيًّا", "explain_uz": "يَوْمِيًّا — har kuni, kunlik (يوم = kun).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "«Odatda ertalab o'qiyman» gapini tuzing", "q_ar": "", "options": [], "answer": "عَادَةً أَدْرُسُ صَبَاحًا", "explain_uz": "Ravish (عَادَةً) + fe'l (أَدْرُسُ) + vaqt (صَبَاحًا).", "audio": "", "root": "", "pattern": "", "words": ["صَبَاحًا", "عَادَةً", "أَدْرُسُ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "و ق ت", "back": "vaqt o'zagi (vaqt, avqot, muvaqqat)", "deck": "msa"},
+  {"type": "word", "front": "وَقْت", "back": "vaqt", "deck": "msa"},
+  {"type": "word", "front": "عَادَةً", "back": "odatda", "deck": "msa"},
+  {"type": "word", "front": "أَحْيَانًا", "back": "ba'zan", "deck": "msa"},
+  {"type": "word", "front": "صَبَاحًا", "back": "ertalab", "deck": "msa"},
+  {"type": "word", "front": "مَسَاءً", "back": "kechqurun", "deck": "msa"},
+  {"type": "word", "front": "يَوْمِيًّا", "back": "har kuni, kunlik", "deck": "msa"},
+  {"type": "word", "front": "المَاضِي", "back": "o'tgan zamon", "deck": "msa"},
+  {"type": "word", "front": "لَيْل", "back": "tun, kecha", "deck": "msa"}
+ ]
+}

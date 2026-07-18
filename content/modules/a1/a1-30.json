@@ -1,0 +1,100 @@
+{
+ "id": "a1-30",
+ "level": "A1",
+ "module": "noun-system",
+ "order": 30,
+ "title_uz": "Joyni ko'rsataman",
+ "title_ar": "حُرُوفُ الجَرّ",
+ "can_do_uz": "«uyda», «stol ustida», «bozordan» kabi joy va yo'nalishni predloglar bilan aytaman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-29"],
+ "harakat_level": "full",
+ "hook_uz": "«Kitob stol ustida» — الكِتَابُ عَلَى الطَّاوِلَةِ. Joy va yo'nalishni ko'rsatish uchun predloglar: فِي (ichida), عَلَى (ustida), مِنْ (dan), إِلَى (ga). Ular otni «jarr» holatiga (kasra) qo'yadi.",
+ "grammar": {
+  "point_ar": "حُرُوفُ الجَرّ",
+  "explanation_uz": "Predloglar (حروف الجر) otdan oldin kelib, uni JARR holatiga (oxirida kasra) qo'yadi: فِي البَيْتِ (uyda). Asosiylar: فِي (ichida/-da), عَلَى (ustida), مِنْ (-dan), إِلَى (-ga), عَنْ (haqida/-dan), مَعَ (bilan), بِـ (bilan/vosita), لِـ (uchun/-niki). Joy predloglari: تَحْتَ (ostida), فَوْقَ (tepasida), أَمَامَ (oldida). بِـ va لِـ so'zga ULANADI: بِالقَلَمِ (qalam bilan).",
+  "table": [
+   {"ar": "فِي البَيْتِ", "uz": "uyda", "form": "ichida"},
+   {"ar": "عَلَى الطَّاوِلَةِ", "uz": "stol ustida", "form": "ustida"},
+   {"ar": "مِنَ السُّوقِ إِلَى البَيْتِ", "uz": "bozordan uyga", "form": "-dan / -ga"},
+   {"ar": "تَحْتَ الكُرْسِيِّ", "uz": "stul ostida", "form": "ostida"}
+  ],
+  "common_mistakes_uz": [
+   "Predlogdan keyingi otni jarr (kasra) qilmaslik: فِي البَيْتُ (xato) → فِي البَيْتِ.",
+   "بِـ va لِـ ni alohida yozish — ular so'zga ULANADI (بِالقَلَمِ).",
+   "مِنْ (-dan) va إِلَى (-ga) yo'nalishlarini almashtirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ق ر ب",
+   "meaning_uz": "yaqinlik",
+   "uz_cognates": ["qarib", "aqrabo", "qurbat", "taqrib"],
+   "derived": [
+    {"ar": "قَرِيب", "uz": "yaqin", "pattern": "فَعِيل"},
+    {"ar": "أَقْرِبَاء", "uz": "qarindoshlar", "pattern": "أَفْعِلَاء"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "عَلَى", "translit": "ʿalā", "uz": "ustida, -da", "root": "", "pattern": "", "pos": "predlog", "audio": "a1/ala.mp3", "example_ar": "الكِتَابُ عَلَى الطَّاوِلَةِ.", "example_uz": "Kitob stol ustida.", "srs": true},
+  {"ar": "مِنْ", "translit": "min", "uz": "-dan", "root": "", "pattern": "", "pos": "predlog", "audio": "a1/min.mp3", "example_ar": "خَرَجَ مِنَ البَيْتِ.", "example_uz": "Uydan chiqdi.", "srs": true},
+  {"ar": "إِلَى", "translit": "ilā", "uz": "-ga, tomon", "root": "", "pattern": "", "pos": "predlog", "audio": "a1/ila.mp3", "example_ar": "ذَهَبَ إِلَى السُّوقِ.", "example_uz": "Bozorga bordi.", "srs": true},
+  {"ar": "عَنْ", "translit": "ʿan", "uz": "haqida, -dan", "root": "", "pattern": "", "pos": "predlog", "audio": "a1/an.mp3", "example_ar": "تَكَلَّمَ عَنِ السَّفَرِ.", "example_uz": "Safar haqida gapirdi.", "srs": true},
+  {"ar": "بِـ", "translit": "bi-", "uz": "bilan, vosita (so'zga ulanadi)", "root": "", "pattern": "", "pos": "predlog", "audio": "a1/bi.mp3", "example_ar": "كَتَبَ بِالقَلَمِ.", "example_uz": "Qalam bilan yozdi.", "srs": true},
+  {"ar": "لِـ", "translit": "li-", "uz": "uchun, -niki (so'zga ulanadi)", "root": "", "pattern": "", "pos": "predlog", "audio": "a1/li.mp3", "example_ar": "هَذَا الكِتَابُ لِلْمُعَلِّمِ.", "example_uz": "Bu kitob o'qituvchiniki.", "srs": true},
+  {"ar": "تَحْتَ", "translit": "taḥta", "uz": "ostida", "root": "", "pattern": "", "pos": "predlog", "audio": "a1/tahta.mp3", "example_ar": "الحَقِيبَةُ تَحْتَ الطَّاوِلَةِ.", "example_uz": "Sumka stol ostida.", "srs": true},
+  {"ar": "فَوْقَ", "translit": "fawqa", "uz": "tepasida, ustida", "root": "", "pattern": "", "pos": "predlog", "audio": "a1/fawqa.mp3", "example_ar": "المِصْبَاحُ فَوْقَ البَابِ.", "example_uz": "Chiroq eshik tepasida.", "srs": true},
+  {"ar": "أَمَامَ", "translit": "amāma", "uz": "oldida, ro'parasida", "root": "", "pattern": "", "pos": "predlog", "audio": "a1/amama.mp3", "example_ar": "السَّيَّارَةُ أَمَامَ البَيْتِ.", "example_uz": "Mashina uy oldida.", "srs": true},
+  {"ar": "قَرِيب", "translit": "qarīb", "uz": "yaqin (o'zbekcha 'qarib' shundan)", "root": "ق ر ب", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/qarib.mp3", "example_ar": "المَسْجِدُ قَرِيبٌ.", "example_uz": "Masjid yaqin.", "srs": true},
+  {"ar": "بَعِيد", "translit": "baʿīd", "uz": "uzoq", "root": "ب ع د", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/baid.mp3", "example_ar": "المَطَارُ بَعِيدٌ.", "example_uz": "Aeroport uzoq.", "srs": true},
+  {"ar": "حَقِيبَة", "translit": "ḥaqība", "uz": "sumka, chamadon", "root": "ح ق ب", "pattern": "فَعِيلَة", "pos": "ot", "audio": "a1/haqiba.mp3", "example_ar": "الحَقِيبَةُ ثَقِيلَةٌ.", "example_uz": "Sumka og'ir.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "الكِتَابُ عَلَى الطَّاوِلَةِ وَالحَقِيبَةُ تَحْتَهَا. المَسْجِدُ قَرِيبٌ مِنَ البَيْتِ لَكِنَّ المَطَارَ بَعِيدٌ. ذَهَبْتُ مِنَ البَيْتِ إِلَى السُّوقِ.",
+   "questions": [
+    {"q_uz": "Sumka qayerda?", "a": "Stol ostida (تَحْتَهَا)"},
+    {"q_uz": "Masjid uyga yaqinmi yoki uzoq?", "a": "Yaqin (قَرِيب)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/ala.mp3",
+   "transcript_ar": "عَلَى",
+   "questions": [
+    {"q_uz": "Predlog ma'nosi?", "a": "Ustida, -da"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Joy iboralarini ayting: fī l-bayt, ʿalā ṭ-ṭāwila, taḥta l-kursī, amāma l-bāb.",
+   "target_ar": ["فِي البَيْتِ", "عَلَى الطَّاوِلَةِ", "أَمَامَ البَابِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Mashina uy oldida» va «Kitob sumka ichida» gaplarini predlog bilan yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«stol ustida» qaysi?", "q_ar": "", "options": ["عَلَى الطَّاوِلَةِ", "فِي الطَّاوِلَةِ", "مِنَ الطَّاوِلَةِ", "عَلَى الطَّاوِلَةُ"], "answer": "عَلَى الطَّاوِلَةِ", "explain_uz": "عَلَى (ustida) + jarr (kasra): الطَّاوِلَةِ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Predlogdan keyingi ot qaysi holatda bo'ladi?", "q_ar": "", "options": ["jarr (kasra)", "raf' (damma)", "nasb (fatha)", "sukun"], "answer": "jarr (kasra)", "explain_uz": "Predlog otni jarr (kasra) qiladi: فِي البَيْتِ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "خَرَجَ مِنَ البَيْتِ", "options": [], "answer": "u uydan chiqdi", "explain_uz": "مِنْ = -dan, البَيْت = uy.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ق ر ب» o'zagidan?", "q_ar": "", "options": ["قَرِيب", "بَعِيد", "حَقِيبَة"], "answer": "قَرِيب", "explain_uz": "«ق ر ب» — yaqinlik o'zagi: قَرِيب (yaqin), aqrabo, qurbat.", "audio": "", "root": "ق ر ب", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring: «ذَهَبَ ____ السُّوقِ» (bozorga)", "q_ar": "ذَهَبَ ____ السُّوقِ", "options": [], "answer": "إِلَى", "explain_uz": "إِلَى — -ga, tomon: إِلَى السُّوقِ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ostida", "q_ar": "", "options": [], "answer": "تَحْتَ", "explain_uz": "تَحْتَ — ostida; فَوْقَ (tepasida) ning teskarisi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "«Mashina uy oldida» gapini tuzing", "q_ar": "", "options": [], "answer": "السَّيَّارَةُ أَمَامَ البَيْتِ", "explain_uz": "Ega (السَّيَّارَةُ) + predlog (أَمَامَ) + ot (البَيْتِ).", "audio": "", "root": "", "pattern": "", "words": ["البَيْتِ", "السَّيَّارَةُ", "أَمَامَ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ق ر ب", "back": "yaqinlik o'zagi (qarib, aqrabo, qurbat)", "deck": "msa"},
+  {"type": "word", "front": "عَلَى", "back": "ustida, -da", "deck": "msa"},
+  {"type": "word", "front": "مِنْ", "back": "-dan", "deck": "msa"},
+  {"type": "word", "front": "إِلَى", "back": "-ga, tomon", "deck": "msa"},
+  {"type": "word", "front": "عَنْ", "back": "haqida, -dan", "deck": "msa"},
+  {"type": "word", "front": "تَحْتَ", "back": "ostida", "deck": "msa"},
+  {"type": "word", "front": "فَوْقَ", "back": "tepasida, ustida", "deck": "msa"},
+  {"type": "word", "front": "أَمَامَ", "back": "oldida", "deck": "msa"},
+  {"type": "word", "front": "قَرِيب", "back": "yaqin", "deck": "msa"},
+  {"type": "word", "front": "بَعِيد", "back": "uzoq", "deck": "msa"}
+ ]
+}

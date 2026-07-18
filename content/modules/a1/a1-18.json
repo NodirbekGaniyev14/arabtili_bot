@@ -1,0 +1,96 @@
+{
+ "id": "a1-18",
+ "level": "A1",
+ "module": "present-tense",
+ "order": 18,
+ "title_uz": "«U yozadi»",
+ "title_ar": "المُضَارِع: هُوَ / هِيَ",
+ "can_do_uz": "Uchinchi shaxs haqida hozirgi zamonda gapira olaman va fe'lning o'rta unlisini to'g'ri qo'yaman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-17"],
+ "harakat_level": "full",
+ "hook_uz": "«U har kuni ishlaydi» — هُوَ يَعْمَلُ كُلَّ يَوْمٍ. Uchinchi shaxs uchun يـ (u-erkak) va تـ (u-ayol) prefikslari. Diqqat: fe'l o'rtasidagi unli har fe'lda har xil bo'ladi — يَكْتُبُ (damma), يَشْرَبُ (fatha), يَجْلِسُ (kasra).",
+ "grammar": {
+  "point_ar": "يَفْعُلُ / يَفْعَلُ / يَفْعِلُ",
+  "explanation_uz": "هُوَ (u-erkak) → يـ, هِيَ (u-ayol) → تـ. Prefiksdan keyin o'zak keladi, oxiri damma (ـُ). MUHIM: o'zakning O'RTA unlisи fe'lga qarab uch xil bo'ladi: يَكْتُبُ (damma-u), يَشْرَبُ (fatha-a), يَجْلِسُ (kasra-i). Bu unlini har fe'l bilan birga yodlash kerak (lug'atda ko'rsatiladi).",
+  "table": [
+   {"ar": "يَكْتُبُ / تَكْتُبُ", "uz": "u yozadi (erkak/ayol)", "form": "o'rta damma"},
+   {"ar": "يَشْرَبُ / تَشْرَبُ", "uz": "u ichadi", "form": "o'rta fatha"},
+   {"ar": "يَجْلِسُ / تَجْلِسُ", "uz": "u o'tiradi", "form": "o'rta kasra"},
+   {"ar": "هِيَ تَعْمَلُ", "uz": "U (ayol) ishlaydi", "form": "namuna"}
+  ],
+  "common_mistakes_uz": [
+   "O'rta unlini barcha fe'llarda bir xil qo'yish — u fe'lga qarab o'zgaradi (u/a/i).",
+   "هِيَ (u-ayol) uchun يـ ishlatish — to'g'risi تـ: تَكْتُبُ.",
+   "Fe'l oxiridagi dammani unutish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ش ر ب",
+   "meaning_uz": "ichish",
+   "uz_cognates": ["sharob", "mashrubot", "shurba"],
+   "derived": [
+    {"ar": "يَشْرَبُ", "uz": "ichadi", "pattern": "يَفْعَلُ"},
+    {"ar": "مَشْرُوب", "uz": "ichimlik", "pattern": "مَفْعُول"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "يَشْرَبُ", "translit": "yashrabu", "uz": "u ichadi", "root": "ش ر ب", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a1/yashrabu.mp3", "example_ar": "يَشْرَبُ القَهْوَةَ.", "example_uz": "U qahva ichadi.", "srs": true},
+  {"ar": "يَجْلِسُ", "translit": "yajlisu", "uz": "u o'tiradi", "root": "ج ل س", "pattern": "يَفْعِلُ", "pos": "fe'l", "audio": "a1/yajlisu.mp3", "example_ar": "يَجْلِسُ عَلَى الكُرْسِيِّ.", "example_uz": "U stulga o'tiradi.", "srs": true},
+  {"ar": "يَفْتَحُ", "translit": "yaftaḥu", "uz": "u ochadi", "root": "ف ت ح", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a1/yaftahu.mp3", "example_ar": "يَفْتَحُ البَابَ.", "example_uz": "U eshikni ochadi.", "srs": true},
+  {"ar": "يَعْمَلُ", "translit": "yaʿmalu", "uz": "u ishlaydi", "root": "ع م ل", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a1/yamalu.mp3", "example_ar": "يَعْمَلُ فِي المَعْمَلِ.", "example_uz": "U zavodda ishlaydi.", "srs": true},
+  {"ar": "يَدْرُسُ", "translit": "yadrusu", "uz": "u o'qiydi", "root": "د ر س", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a1/yadrusu.mp3", "example_ar": "يَدْرُسُ فِي الجَامِعَةِ.", "example_uz": "U universitetda o'qiydi.", "srs": true},
+  {"ar": "تَشْرَبُ", "translit": "tashrabu", "uz": "u (ayol) ichadi / sen ichasan", "root": "ش ر ب", "pattern": "تَفْعَلُ", "pos": "fe'l", "audio": "a1/tashrabu.mp3", "example_ar": "هِيَ تَشْرَبُ الشَّايَ.", "example_uz": "U (ayol) choy ichadi.", "srs": true},
+  {"ar": "قَهْوَة", "translit": "qahwa", "uz": "qahva (o'zbekcha 'qahva' shundan)", "root": "ق ه و", "pattern": "فَعْلَة", "pos": "ot", "audio": "a1/qahwa.mp3", "example_ar": "أَشْرَبُ القَهْوَةَ.", "example_uz": "Qahva ichaman.", "srs": true},
+  {"ar": "شَاي", "translit": "shāy", "uz": "choy (o'zbekcha 'choy' shundan)", "root": "", "pattern": "", "pos": "ot", "audio": "a1/shay_tea.mp3", "example_ar": "تَشْرَبُ الشَّايَ.", "example_uz": "U choy ichadi.", "srs": true},
+  {"ar": "كُلَّ يَوْمٍ", "translit": "kulla yawmin", "uz": "har kuni", "root": "", "pattern": "", "pos": "ibora", "audio": "a1/kullayawm.mp3", "example_ar": "يَعْمَلُ كُلَّ يَوْمٍ.", "example_uz": "U har kuni ishlaydi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "هُوَ يَذْهَبُ إِلَى العَمَلِ كُلَّ يَوْمٍ. يَعْمَلُ ثُمَّ يَشْرَبُ القَهْوَةَ. هِيَ تَدْرُسُ وَتَكْتُبُ فِي المَكْتَبَةِ.",
+   "questions": [
+    {"q_uz": "U har kuni qayerga boradi?", "a": "Ishga (العَمَل)"},
+    {"q_uz": "«تَدْرُسُ» kim haqida?", "a": "U (ayol) — تـ prefiksi"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/yashrabu.mp3",
+   "transcript_ar": "يَشْرَبُ",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi?", "a": "U ichadi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "3-shaxs fe'llarini ayting: yaktubu, yashrabu, yajlisu, taʿmalu (u-ayol).",
+   "target_ar": ["يَكْتُبُ", "يَشْرَبُ", "تَعْمَلُ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«U (erkak) qahva ichadi» va «U (ayol) universitetda o'qiydi» gaplarini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«U (ayol) yozadi» qaysi?", "q_ar": "", "options": ["تَكْتُبُ", "يَكْتُبُ", "أَكْتُبُ", "نَكْتُبُ"], "answer": "تَكْتُبُ", "explain_uz": "هِيَ (u-ayol) → تـ: تَكْتُبُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "يَشْرَبُ القَهْوَةَ", "options": [], "answer": "u qahva ichadi", "explain_uz": "يَشْرَبُ = u ichadi, القَهْوَة = qahva (ob'ekt).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«يَجْلِسُ» ning o'rta unlisi qaysi?", "q_ar": "", "options": ["kasra (i)", "damma (u)", "fatha (a)", "sukun"], "answer": "kasra (i)", "explain_uz": "يَجْلِسُ — o'rta kasra (yaFʿILu). Har fe'l o'z unlisiga ega.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ش ر ب» o'zagidan?", "q_ar": "", "options": ["يَشْرَبُ", "يَجْلِسُ", "يَعْمَلُ"], "answer": "يَشْرَبُ", "explain_uz": "«ش ر ب» — ichish o'zagi: يَشْرَبُ (ichadi), مَشْرُوب (ichimlik), sharob.", "audio": "", "root": "ش ر ب", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring: «هِيَ ____عْمَلُ» (u-ayol ishlaydi)", "q_ar": "هِيَ ____عْمَلُ", "options": [], "answer": "تَ", "explain_uz": "هِيَ → تـ prefiksi: تَعْمَلُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "qahva", "q_ar": "", "options": [], "answer": "قَهْوَة", "explain_uz": "قَهْوَة — qahva (o'zbekcha 'qahva').", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "dictation", "q_uz": "Eshitilgan fe'lni yozing", "q_ar": "", "options": [], "answer": "يَشْرَبُ", "explain_uz": "يَشْرَبُ — u ichadi.", "audio": "a1/yashrabu.mp3", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ش ر ب", "back": "ichish o'zagi (sharob, mashrubot, mashrub=ichimlik)", "deck": "msa"},
+  {"type": "word", "front": "يَشْرَبُ", "back": "u ichadi", "deck": "msa"},
+  {"type": "word", "front": "يَجْلِسُ", "back": "u o'tiradi", "deck": "msa"},
+  {"type": "word", "front": "يَفْتَحُ", "back": "u ochadi", "deck": "msa"},
+  {"type": "word", "front": "يَعْمَلُ", "back": "u ishlaydi", "deck": "msa"},
+  {"type": "word", "front": "يَدْرُسُ", "back": "u o'qiydi", "deck": "msa"},
+  {"type": "word", "front": "قَهْوَة", "back": "qahva", "deck": "msa"},
+  {"type": "word", "front": "شَاي", "back": "choy", "deck": "msa"},
+  {"type": "word", "front": "كُلَّ يَوْمٍ", "back": "har kuni", "deck": "msa"}
+ ]
+}

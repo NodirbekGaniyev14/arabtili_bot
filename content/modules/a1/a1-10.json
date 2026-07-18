@@ -1,0 +1,98 @@
+{
+ "id": "a1-10",
+ "level": "A1",
+ "module": "past-tense",
+ "order": 10,
+ "title_uz": "«Sen yozding»",
+ "title_ar": "الماضي: أَنْتَ / أَنْتِ",
+ "can_do_uz": "O'tgan zamonda suhbatdoshimga murojaat qila olaman: «sen yozding», «sen (ayol) bording».",
+ "duration_min": 30,
+ "prerequisites": ["a1-09"],
+ "harakat_level": "full",
+ "hook_uz": "Kimdir bilan gaplashganda «Sen kecha bording» deysiz. Arabchada fe'l oxiriga qo'shimcha qo'shiladi: كَتَبْتَ (sen-erkak yozding), كَتَبْتِ (sen-ayol yozding). Faqat oxirgi harakat farq qiladi!",
+ "grammar": {
+  "point_ar": "الماضي: فَعَلْتَ / فَعَلْتِ",
+  "explanation_uz": "Ikkinchi shaxs (suhbatdosh) uchun fe'l o'zagiga qo'shimcha ulanadi: أَنْتَ (sen-erkak) → ـْتَ: كَتَبْتَ. أَنْتِ (sen-ayol) → ـْتِ: كَتَبْتِ. E'tibor bering: harflar bir xil, faqat OXIRGI HARAKAT farqli — fatha (erkak) yoki kasra (ayol). O'zak uchinchi harfi sukunli bo'ladi (كَتَبْـ).",
+  "table": [
+   {"ar": "كَتَبْتَ", "uz": "sen (erkak) yozding", "form": "أَنْتَ — ـْتَ"},
+   {"ar": "كَتَبْتِ", "uz": "sen (ayol) yozding", "form": "أَنْتِ — ـْتِ"},
+   {"ar": "ذَهَبْتَ", "uz": "sen (erkak) bording", "form": "أَنْتَ"},
+   {"ar": "سَمِعْتِ", "uz": "sen (ayol) eshitding", "form": "أَنْتِ"}
+  ],
+  "common_mistakes_uz": [
+   "أَنْتَ va أَنْتِ shakllarini oxirgi harakat bilan farqlashni unutish (ـتَ / ـتِ).",
+   "O'zak uchinchi harfiga harakat qo'yish: كَتَبَتَ (xato) → كَتَبْتَ (sukun bilan).",
+   "Qo'shimchani noto'g'ri ulash — qo'shimcha fe'l OXIRIGA keladi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ر س ل",
+   "meaning_uz": "yuborish, xabar",
+   "uz_cognates": ["Rasul", "risola", "mursal"],
+   "derived": [
+    {"ar": "رِسَالَة", "uz": "xat, xabar", "pattern": "فِعَالَة"},
+    {"ar": "رَسُول", "uz": "elchi, payg'ambar", "pattern": "فَعُول"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "كَتَبْتَ", "translit": "katabta", "uz": "sen (erkak) yozding", "root": "ك ت ب", "pattern": "فَعَلْتَ", "pos": "fe'l", "audio": "a1/katabta.mp3", "example_ar": "أَنْتَ كَتَبْتَ رِسَالَةً.", "example_uz": "Sen xat yozding.", "srs": true},
+  {"ar": "كَتَبْتِ", "translit": "katabti", "uz": "sen (ayol) yozding", "root": "ك ت ب", "pattern": "فَعَلْتِ", "pos": "fe'l", "audio": "a1/katabti.mp3", "example_ar": "أَنْتِ كَتَبْتِ الدَّرْسَ.", "example_uz": "Sen (ayol) darsni yozding.", "srs": true},
+  {"ar": "ذَهَبْتَ", "translit": "dhahabta", "uz": "sen (erkak) bording", "root": "ذ ه ب", "pattern": "فَعَلْتَ", "pos": "fe'l", "audio": "a1/dhahabta.mp3", "example_ar": "أَيْنَ ذَهَبْتَ؟", "example_uz": "Qayerga bording?", "srs": true},
+  {"ar": "دَرَسْتَ", "translit": "darasta", "uz": "sen (erkak) o'qiding", "root": "د ر س", "pattern": "فَعَلْتَ", "pos": "fe'l", "audio": "a1/darasta.mp3", "example_ar": "هَلْ دَرَسْتَ اليَوْمَ؟", "example_uz": "Bugun o'qidingmi?", "srs": true},
+  {"ar": "سَمِعْتَ", "translit": "samiʿta", "uz": "sen (erkak) eshitding", "root": "س م ع", "pattern": "فَعِلْتَ", "pos": "fe'l", "audio": "a1/samita.mp3", "example_ar": "هَلْ سَمِعْتَ الخَبَرَ؟", "example_uz": "Xabarni eshitdingmi?", "srs": true},
+  {"ar": "رِسَالَة", "translit": "risāla", "uz": "xat, xabar (o'zbekcha 'risola' shundan)", "root": "ر س ل", "pattern": "فِعَالَة", "pos": "ot", "audio": "a1/risala.mp3", "example_ar": "كَتَبْتُ رِسَالَةً.", "example_uz": "Men xat yozdim.", "srs": true},
+  {"ar": "أَمْس", "translit": "ams", "uz": "kecha (kun)", "root": "", "pattern": "", "pos": "ravish", "audio": "a1/ams.mp3", "example_ar": "ذَهَبْتُ أَمْسِ.", "example_uz": "Kecha bordim.", "srs": true},
+  {"ar": "اليَوْم", "translit": "al-yawm", "uz": "bugun", "root": "ي و م", "pattern": "", "pos": "ravish", "audio": "a1/alyawm.mp3", "example_ar": "دَرَسْتُ اليَوْمَ.", "example_uz": "Bugun o'qidim.", "srs": true},
+  {"ar": "خَبَر", "translit": "khabar", "uz": "xabar (o'zbekcha 'xabar' shundan)", "root": "خ ب ر", "pattern": "فَعَل", "pos": "ot", "audio": "a1/khabar.mp3", "example_ar": "سَمِعْتُ خَبَرًا.", "example_uz": "Bir xabar eshitdim.", "srs": true},
+  {"ar": "مَعَ", "translit": "maʿa", "uz": "bilan, birga", "root": "", "pattern": "", "pos": "predlog", "audio": "a1/maa_with.mp3", "example_ar": "ذَهَبْتُ مَعَ أَخِي.", "example_uz": "Akam bilan bordim.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أَيْنَ ذَهَبْتَ أَمْسِ؟ ذَهَبْتُ إِلَى السُّوقِ. هَلْ سَمِعْتَ الخَبَرَ؟ نَعَمْ، سَمِعْتُ.",
+   "questions": [
+    {"q_uz": "Suhbatdosh qayerga borgan?", "a": "Bozorga (السُّوق)"},
+    {"q_uz": "«ذَهَبْتَ» kimga qaratilgan?", "a": "Suhbatdoshga (sen-erkak)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/katabta.mp3",
+   "transcript_ar": "كَتَبْتَ",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi?", "a": "Sen (erkak) yozding"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Suhbatdoshga savol bering: ayna dhahabta? hal darasta al-yawm? Keyin ayol shaklda: katabti.",
+   "target_ar": ["أَيْنَ ذَهَبْتَ؟", "هَلْ دَرَسْتَ؟", "كَتَبْتِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Sen (erkak) kecha bording» va «Sen (ayol) darsni yozding» gaplarini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Sen (ayol) yozding» qaysi?", "q_ar": "", "options": ["كَتَبْتِ", "كَتَبْتَ", "كَتَبَتْ", "كَتَبْتُ"], "answer": "كَتَبْتِ", "explain_uz": "أَنْتِ (ayol) → ـْتِ (kasra): كَتَبْتِ. كَتَبْتَ — erkak.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَيْنَ ذَهَبْتَ؟", "options": [], "answer": "qayerga bording", "explain_uz": "أَيْنَ = qayerda/qayerga, ذَهَبْتَ = sen (erkak) bording.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring: «هَلْ ____ اليَوْمَ؟» (bugun o'qidingmi, erkakka)", "q_ar": "هَلْ ____ اليَوْمَ؟", "options": [], "answer": "دَرَسْتَ", "explain_uz": "أَنْتَ → دَرَسْتَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ر س ل» o'zagidan?", "q_ar": "", "options": ["رِسَالَة", "خَبَر", "أَمْس"], "answer": "رِسَالَة", "explain_uz": "«ر س ل» — yuborish o'zagi: رِسَالَة (xat), رَسُول (elchi).", "audio": "", "root": "ر س ل", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "kecha (kun)", "q_ar": "", "options": [], "answer": "أَمْس", "explain_uz": "أَمْس — kecha; o'tgan zamon bilan ishlatiladi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«كَتَبْتَ» va «كَتَبْتِ» ni nima farqlaydi?", "q_ar": "", "options": ["Oxirgi harakat (fatha/kasra)", "Birinchi harf", "So'z uzunligi", "O'zak"], "answer": "Oxirgi harakat (fatha/kasra)", "explain_uz": "Faqat oxirgi harakat: ـتَ (erkak) / ـتِ (ayol).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "dictation", "q_uz": "Eshitilgan fe'lni yozing", "q_ar": "", "options": [], "answer": "كَتَبْتَ", "explain_uz": "كَتَبْتَ — sen (erkak) yozding.", "audio": "a1/katabta.mp3", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ر س ل", "back": "yuborish o'zagi (risola=xat, Rasul=elchi)", "deck": "msa"},
+  {"type": "word", "front": "كَتَبْتَ", "back": "sen (erkak) yozding", "deck": "msa"},
+  {"type": "word", "front": "كَتَبْتِ", "back": "sen (ayol) yozding", "deck": "msa"},
+  {"type": "word", "front": "ذَهَبْتَ", "back": "sen (erkak) bording", "deck": "msa"},
+  {"type": "word", "front": "دَرَسْتَ", "back": "sen (erkak) o'qiding", "deck": "msa"},
+  {"type": "word", "front": "رِسَالَة", "back": "xat, xabar", "deck": "msa"},
+  {"type": "word", "front": "أَمْس", "back": "kecha", "deck": "msa"},
+  {"type": "word", "front": "اليَوْم", "back": "bugun", "deck": "msa"},
+  {"type": "word", "front": "خَبَر", "back": "xabar", "deck": "msa"},
+  {"type": "word", "front": "مَعَ", "back": "bilan, birga", "deck": "msa"}
+ ]
+}

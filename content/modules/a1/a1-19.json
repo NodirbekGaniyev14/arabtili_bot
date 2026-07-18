@@ -1,0 +1,97 @@
+{
+ "id": "a1-19",
+ "level": "A1",
+ "module": "present-tense",
+ "order": 19,
+ "title_uz": "«Sen yozasan»",
+ "title_ar": "المُضَارِع: أَنْتَ / أَنْتِ",
+ "can_do_uz": "Suhbatdoshimga hozirgi zamonda murojaat qila olaman, jumladan ayolga maxsus shakl bilan.",
+ "duration_min": 30,
+ "prerequisites": ["a1-18"],
+ "harakat_level": "full",
+ "hook_uz": "«Qayerda yashaysan?» — أَيْنَ تَسْكُنُ؟ Suhbatdosh uchun تـ prefiksi. LEKIN ayolga aytilsa oxiriga ـِينَ qo'shiladi: أَنْتِ تَكْتُبِينَ. Bugun 2-shaxs muzori'ni o'rganamiz.",
+ "grammar": {
+  "point_ar": "تَفْعُلُ / تَفْعُلِينَ",
+  "explanation_uz": "Ikkinchi shaxs (suhbatdosh) muzori': أَنْتَ (sen-erkak) → تـ + damma oxir: تَكْتُبُ. أَنْتِ (sen-ayol) → تـ prefiks + oxiriga ـِينَ: تَكْتُبِينَ (taktubīna). Diqqat: تَكْتُبُ ham «sen-erkak yozasan», ham «u-ayol yozadi» — kontekst farqlaydi; lekin أَنْتِ (ayol-sen) uchun HAR DOIM ـِينَ.",
+  "table": [
+   {"ar": "أَنْتَ تَكْتُبُ", "uz": "sen (erkak) yozasan", "form": "تـ + ـُ"},
+   {"ar": "أَنْتِ تَكْتُبِينَ", "uz": "sen (ayol) yozasan", "form": "تـ + ـِينَ"},
+   {"ar": "أَيْنَ تَسْكُنُ؟", "uz": "Qayerda yashaysan?", "form": "savol"},
+   {"ar": "أَنْتِ تَذْهَبِينَ", "uz": "Sen (ayol) borasan", "form": "namuna"}
+  ],
+  "common_mistakes_uz": [
+   "Ayol suhbatdoshga ـِينَ qo'shishni unutish: أَنْتِ تَكْتُبُ (xato) → تَكْتُبِينَ.",
+   "أَنْتَ (sen) va هِيَ (u-ayol) ikkalasi ham تـ olishini chalkashtirish — kontekst farqlaydi.",
+   "ـِينَ oxiridagi nun (ن) ni tushirib qoldirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "س ك ن",
+   "meaning_uz": "yashash, tinchlanish",
+   "uz_cognates": ["maskan", "sukunat", "sokin"],
+   "derived": [
+    {"ar": "يَسْكُنُ", "uz": "yashaydi", "pattern": "يَفْعُلُ"},
+    {"ar": "مَسْكَن", "uz": "turar joy", "pattern": "مَفْعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "تَكْتُبِينَ", "translit": "taktubīna", "uz": "sen (ayol) yozasan", "root": "ك ت ب", "pattern": "تَفْعُلِينَ", "pos": "fe'l", "audio": "a1/taktubina.mp3", "example_ar": "أَنْتِ تَكْتُبِينَ رِسَالَةً.", "example_uz": "Sen (ayol) xat yozasan.", "srs": true},
+  {"ar": "يَسْكُنُ", "translit": "yaskunu", "uz": "u yashaydi", "root": "س ك ن", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a1/yaskunu.mp3", "example_ar": "يَسْكُنُ فِي المَدِينَةِ.", "example_uz": "U shaharda yashaydi.", "srs": true},
+  {"ar": "تَسْكُنُ", "translit": "taskunu", "uz": "sen yashaysan / u (ayol) yashaydi", "root": "س ك ن", "pattern": "تَفْعُلُ", "pos": "fe'l", "audio": "a1/taskunu.mp3", "example_ar": "أَيْنَ تَسْكُنُ؟", "example_uz": "Qayerda yashaysan?", "srs": true},
+  {"ar": "تَذْهَبُ", "translit": "tadhhabu", "uz": "sen borasan / u (ayol) boradi", "root": "ذ ه ب", "pattern": "تَفْعَلُ", "pos": "fe'l", "audio": "a1/tadhhabu.mp3", "example_ar": "هَلْ تَذْهَبُ إِلَى السُّوقِ؟", "example_uz": "Bozorga borasanmi?", "srs": true},
+  {"ar": "تَذْهَبِينَ", "translit": "tadhhabīna", "uz": "sen (ayol) borasan", "root": "ذ ه ب", "pattern": "تَفْعَلِينَ", "pos": "fe'l", "audio": "a1/tadhhabina.mp3", "example_ar": "أَنْتِ تَذْهَبِينَ إِلَى المَدْرَسَةِ.", "example_uz": "Sen (ayol) maktabga borasan.", "srs": true},
+  {"ar": "تَعْمَلُ", "translit": "taʿmalu", "uz": "sen ishlaysan / u (ayol) ishlaydi", "root": "ع م ل", "pattern": "تَفْعَلُ", "pos": "fe'l", "audio": "a1/tamalu.mp3", "example_ar": "أَيْنَ تَعْمَلُ؟", "example_uz": "Qayerda ishlaysan?", "srs": true},
+  {"ar": "تَفْهَمُ", "translit": "tafhamu", "uz": "sen tushunasan / u (ayol) tushunadi", "root": "ف ه م", "pattern": "تَفْعَلُ", "pos": "fe'l", "audio": "a1/tafhamu.mp3", "example_ar": "هَلْ تَفْهَمُ الدَّرْسَ؟", "example_uz": "Darsni tushunasanmi?", "srs": true},
+  {"ar": "مَسْكَن", "translit": "maskan", "uz": "turar joy, uy (o'zbekcha 'maskan')", "root": "س ك ن", "pattern": "مَفْعَل", "pos": "ot", "audio": "a1/maskan.mp3", "example_ar": "هَذَا مَسْكَنِي.", "example_uz": "Bu mening uyim.", "srs": true},
+  {"ar": "بَلَد", "translit": "balad", "uz": "yurt, mamlakat, shahar", "root": "ب ل د", "pattern": "فَعَل", "pos": "ot", "audio": "a1/balad.mp3", "example_ar": "مِنْ أَيِّ بَلَدٍ أَنْتَ؟", "example_uz": "Qaysi yurtdansan?", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أَيْنَ تَسْكُنُ؟ أَسْكُنُ فِي المَدِينَةِ. أَيْنَ تَعْمَلُ؟ أَعْمَلُ فِي المَكْتَبِ. أَنْتِ تَدْرُسِينَ فِي الجَامِعَةِ.",
+   "questions": [
+    {"q_uz": "Suhbatdosh qayerda ishlaydi?", "a": "Ofisda (المَكْتَب)"},
+    {"q_uz": "«تَدْرُسِينَ» kimga qaratilgan?", "a": "Ayolga (sen-ayol, ـِينَ)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/yaskunu.mp3",
+   "transcript_ar": "يَسْكُنُ",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi?", "a": "U yashaydi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Suhbatdoshга savol bering: ayna taskunu? ayna taʿmalu? Keyin ayolga: taktubīna.",
+   "target_ar": ["أَيْنَ تَسْكُنُ؟", "أَيْنَ تَعْمَلُ؟", "تَكْتُبِينَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Sen (ayol) maktabga borasan» gapini yozing (ـِينَ bilan), keyin erkak shaklda.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Sen (ayol) yozasan» qaysi?", "q_ar": "", "options": ["تَكْتُبِينَ", "تَكْتُبُ", "يَكْتُبُ", "أَكْتُبُ"], "answer": "تَكْتُبِينَ", "explain_uz": "أَنْتِ (ayol) → تـ + ـِينَ: تَكْتُبِينَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَيْنَ تَسْكُنُ؟", "options": [], "answer": "qayerda yashaysan", "explain_uz": "أَيْنَ = qayerda, تَسْكُنُ = sen yashaysan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Ayol suhbatdoshga muzori' oxiriga nima qo'shiladi?", "q_ar": "", "options": ["ـِينَ", "ـُونَ", "ـْتِ", "ـَتْ"], "answer": "ـِينَ", "explain_uz": "أَنْتِ → ـِينَ: تَكْتُبِينَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «س ك ن» o'zagidan?", "q_ar": "", "options": ["يَسْكُنُ", "تَذْهَبُ", "تَعْمَلُ"], "answer": "يَسْكُنُ", "explain_uz": "«س ك ن» — yashash o'zagi: يَسْكُنُ (yashaydi), مَسْكَن (turar joy), sukunat.", "audio": "", "root": "س ك ن", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Ayolga aylantiring: «أَنْتَ تَذْهَبُ» → «أَنْتِ ____»", "q_ar": "أَنْتِ ____", "options": [], "answer": "تَذْهَبِينَ", "explain_uz": "ـِينَ qo'shiladi: تَذْهَبِينَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "yurt, mamlakat", "q_ar": "", "options": [], "answer": "بَلَد", "explain_uz": "بَلَد — yurt/mamlakat/shahar.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "«Qayerda ishlaysan?» savolini tuzing", "q_ar": "", "options": [], "answer": "أَيْنَ تَعْمَلُ", "explain_uz": "Savol so'zi (أَيْنَ) + fe'l (تَعْمَلُ).", "audio": "", "root": "", "pattern": "", "words": ["تَعْمَلُ", "أَيْنَ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "س ك ن", "back": "yashash o'zagi (maskan, sukunat, sokin)", "deck": "msa"},
+  {"type": "word", "front": "تَكْتُبِينَ", "back": "sen (ayol) yozasan", "deck": "msa"},
+  {"type": "word", "front": "يَسْكُنُ", "back": "u yashaydi", "deck": "msa"},
+  {"type": "word", "front": "تَسْكُنُ", "back": "sen yashaysan", "deck": "msa"},
+  {"type": "word", "front": "تَذْهَبُ", "back": "sen borasan", "deck": "msa"},
+  {"type": "word", "front": "تَذْهَبِينَ", "back": "sen (ayol) borasan", "deck": "msa"},
+  {"type": "word", "front": "تَعْمَلُ", "back": "sen ishlaysan", "deck": "msa"},
+  {"type": "word", "front": "تَفْهَمُ", "back": "sen tushunasan", "deck": "msa"},
+  {"type": "word", "front": "مَسْكَن", "back": "turar joy, uy", "deck": "msa"},
+  {"type": "word", "front": "بَلَد", "back": "yurt, mamlakat", "deck": "msa"}
+ ]
+}

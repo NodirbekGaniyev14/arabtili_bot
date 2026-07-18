@@ -1,0 +1,101 @@
+{
+ "id": "a1-02",
+ "level": "A1",
+ "module": "nominal-sentence",
+ "order": 2,
+ "title_uz": "Kim haqida gapirayotganimni aytaman",
+ "title_ar": "الضَّمَائِرُ المُنْفَصِلَة",
+ "can_do_uz": "«Men», «sen», «u», «biz» olmoshlari bilan «Men talabaman», «U shifokor» kabi gaplar tuza olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-01"],
+ "harakat_level": "full",
+ "hook_uz": "«Men o'qituvchiman» demoqchimisiz? Arabchada avval olmoshni (أَنَا — men), keyin kasbni aytasiz: أَنَا مُدَرِّسٌ. Bugun 8 ta asosiy olmoshni o'rganamiz — ular bilan o'zingiz va boshqalar haqida gapirasiz.",
+ "grammar": {
+  "point_ar": "الضَّمِيرُ + خَبَر",
+  "explanation_uz": "Ajralgan (munfasil) kishilik olmoshlari mustaqil so'z bo'lib, gapda EGA (مبتدأ) bo'ladi. Olmosh o'zi aniq, undan keyingi xabar noaniq (tanvin bilan): أَنَا طَالِبٌ — «men talabaman». Erkak va ayol shakllari farq qiladi: أَنْتَ (sen-erkak) / أَنْتِ (sen-ayol), هُوَ (u-erkak) / هِيَ (u-ayol).",
+  "table": [
+   {"ar": "أَنَا", "uz": "men", "form": "1-shaxs birlik"},
+   {"ar": "أَنْتَ / أَنْتِ", "uz": "sen (erkak / ayol)", "form": "2-shaxs birlik"},
+   {"ar": "هُوَ / هِيَ", "uz": "u (erkak / ayol)", "form": "3-shaxs birlik"},
+   {"ar": "نَحْنُ", "uz": "biz", "form": "1-shaxs ko'plik"},
+   {"ar": "أَنْتُمْ", "uz": "sizlar", "form": "2-shaxs ko'plik"},
+   {"ar": "هُمْ", "uz": "ular", "form": "3-shaxs ko'plik"},
+   {"ar": "أَنَا طَالِبٌ", "uz": "Men talabaman", "form": "namuna gap"}
+  ],
+  "common_mistakes_uz": [
+   "أَنْتَ (sen-erkak) va أَنْتِ (sen-ayol) ni chalkashtirish — farqi oxirgi harakatda (fatha / kasra).",
+   "Olmoshdan keyin «bo'ladi» qo'shishga urinish — kerak emas.",
+   "هُوَ / هِيَ ni «bu» deb tarjima qilish — ular «u» (3-shaxs)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ط ل ب",
+   "meaning_uz": "talab qilish, izlash",
+   "uz_cognates": ["talaba", "talab", "matlab"],
+   "derived": [
+    {"ar": "طَالِب", "uz": "talaba (izlovchi)", "pattern": "فَاعِل"},
+    {"ar": "مَطْلَب", "uz": "talab, maqsad", "pattern": "مَفْعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "أَنَا", "translit": "anā", "uz": "men", "root": "", "pattern": "", "pos": "olmosh", "audio": "a1/ana.mp3", "example_ar": "أَنَا طَالِبٌ.", "example_uz": "Men talabaman.", "srs": true},
+  {"ar": "أَنْتَ", "translit": "anta", "uz": "sen (erkakka)", "root": "", "pattern": "", "pos": "olmosh", "audio": "a1/anta.mp3", "example_ar": "أَنْتَ مُدَرِّسٌ.", "example_uz": "Sen o'qituvchisan.", "srs": true},
+  {"ar": "أَنْتِ", "translit": "anti", "uz": "sen (ayolga)", "root": "", "pattern": "", "pos": "olmosh", "audio": "a1/anti.mp3", "example_ar": "أَنْتِ طَبِيبَةٌ.", "example_uz": "Sen shifokorsan.", "srs": true},
+  {"ar": "هُوَ", "translit": "huwa", "uz": "u (erkak)", "root": "", "pattern": "", "pos": "olmosh", "audio": "a1/huwa.mp3", "example_ar": "هُوَ طَبِيبٌ.", "example_uz": "U shifokor.", "srs": true},
+  {"ar": "هِيَ", "translit": "hiya", "uz": "u (ayol)", "root": "", "pattern": "", "pos": "olmosh", "audio": "a1/hiya.mp3", "example_ar": "هِيَ طَالِبَةٌ.", "example_uz": "U talaba (ayol).", "srs": true},
+  {"ar": "نَحْنُ", "translit": "naḥnu", "uz": "biz", "root": "", "pattern": "", "pos": "olmosh", "audio": "a1/nahnu.mp3", "example_ar": "نَحْنُ مُسْلِمُونَ.", "example_uz": "Biz musulmonlarmiz.", "srs": true},
+  {"ar": "أَنْتُمْ", "translit": "antum", "uz": "sizlar", "root": "", "pattern": "", "pos": "olmosh", "audio": "a1/antum.mp3", "example_ar": "أَنْتُمْ طُلَّابٌ.", "example_uz": "Sizlar talabalarsiz.", "srs": true},
+  {"ar": "هُمْ", "translit": "hum", "uz": "ular", "root": "", "pattern": "", "pos": "olmosh", "audio": "a1/hum.mp3", "example_ar": "هُمْ مُدَرِّسُونَ.", "example_uz": "Ular o'qituvchilar.", "srs": true},
+  {"ar": "طَالِب", "translit": "ṭālib", "uz": "talaba (o'zbekcha 'talaba' shundan)", "root": "ط ل ب", "pattern": "فَاعِل", "pos": "ot", "audio": "a1/talib.mp3", "example_ar": "أَنَا طَالِبٌ.", "example_uz": "Men talabaman.", "srs": true},
+  {"ar": "طَبِيب", "translit": "ṭabīb", "uz": "shifokor (o'zbekcha 'tabib' shundan)", "root": "ط ب ب", "pattern": "فَعِيل", "pos": "ot", "audio": "a1/tabib.mp3", "example_ar": "هُوَ طَبِيبٌ.", "example_uz": "U shifokor.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أَنَا طَالِبٌ. هُوَ مُدَرِّسٌ. هِيَ طَبِيبَةٌ. نَحْنُ مُسْلِمُونَ.",
+   "questions": [
+    {"q_uz": "Matnda gapiruvchi kim?", "a": "Talaba (أَنَا طَالِبٌ)"},
+    {"q_uz": "«هِيَ» kim haqida?", "a": "Ayol (shifokor) haqida"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/huwa.mp3",
+   "transcript_ar": "هُوَ",
+   "questions": [
+    {"q_uz": "Bu olmosh ma'nosi?", "a": "U (erkak)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "O'zingiz haqingizda ayting: «anā ...» (kasbingiz yoki «ṭālib»). Keyin: huwa ṭabīb, hiya ṭāliba.",
+   "target_ar": ["أَنَا طَالِبٌ", "هُوَ طَبِيبٌ", "هِيَ طَالِبَةٌ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Biz talabalarmiz» va «Ular o'qituvchilar» gaplarini arabcha yozing (نَحْنُ / هُمْ bilan).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Men talabaman» qaysi?", "q_ar": "", "options": ["أَنَا طَالِبٌ", "هُوَ طَالِبٌ", "أَنْتَ طَالِبٌ", "نَحْنُ طَالِبٌ"], "answer": "أَنَا طَالِبٌ", "explain_uz": "أَنَا = men. أَنَا طَالِبٌ — «men talabaman».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Sen (ayolga)» qaysi olmosh?", "q_ar": "", "options": ["أَنْتِ", "أَنْتَ", "هِيَ", "أَنَا"], "answer": "أَنْتِ", "explain_uz": "أَنْتِ (kasra bilan) — ayolga «sen». أَنْتَ (fatha) — erkakka.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "هُوَ طَبِيبٌ", "options": [], "answer": "u shifokor", "explain_uz": "هُوَ = u (erkak), طَبِيب = shifokor.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Bo'sh joyni to'ldiring: «____ مُسْلِمُونَ» (biz musulmonlarmiz)", "q_ar": "____ مُسْلِمُونَ", "options": [], "answer": "نَحْنُ", "explain_uz": "نَحْنُ = biz.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ط ل ب» o'zagidan?", "q_ar": "", "options": ["طَالِب", "طَبِيب", "مُدَرِّس"], "answer": "طَالِب", "explain_uz": "«ط ل ب» — talab/izlash o'zagi: طَالِب (talaba), مَطْلَب (maqsad).", "audio": "", "root": "ط ل ب", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "biz", "q_ar": "", "options": [], "answer": "نَحْنُ", "explain_uz": "نَحْنُ — biz.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "«U shifokor» gapini tuzing", "q_ar": "", "options": [], "answer": "هُوَ طَبِيبٌ", "explain_uz": "Olmosh (هُوَ) + xabar (طَبِيبٌ).", "audio": "", "root": "", "pattern": "", "words": ["طَبِيبٌ", "هُوَ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ط ل ب", "back": "talab/izlash o'zagi (talaba, talab, matlab)", "deck": "msa"},
+  {"type": "word", "front": "أَنَا", "back": "men", "deck": "msa"},
+  {"type": "word", "front": "أَنْتَ", "back": "sen (erkak)", "deck": "msa"},
+  {"type": "word", "front": "أَنْتِ", "back": "sen (ayol)", "deck": "msa"},
+  {"type": "word", "front": "هُوَ", "back": "u (erkak)", "deck": "msa"},
+  {"type": "word", "front": "هِيَ", "back": "u (ayol)", "deck": "msa"},
+  {"type": "word", "front": "نَحْنُ", "back": "biz", "deck": "msa"},
+  {"type": "word", "front": "هُمْ", "back": "ular", "deck": "msa"},
+  {"type": "word", "front": "طَالِب", "back": "talaba", "deck": "msa"},
+  {"type": "word", "front": "طَبِيب", "back": "shifokor", "deck": "msa"}
+ ]
+}

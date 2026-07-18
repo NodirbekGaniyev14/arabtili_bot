@@ -1,0 +1,100 @@
+{
+ "id": "a1-36",
+ "level": "A1",
+ "module": "daily-life",
+ "order": 36,
+ "title_uz": "Vaqtni aytaman",
+ "title_ar": "الوَقْت وَالصَّلَوَات",
+ "can_do_uz": "Soat, hafta kunlari va namoz vaqtlari haqida gapira olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-35"],
+ "harakat_level": "full",
+ "hook_uz": "Saudiyaда vaqt namoz bilan o'lchanadi: الفَجْر (bomdod), الظُّهْر (peshin), المَغْرِب (shom)... «Soat nechada?» — كَمِ السَّاعَةُ؟. Bugun vaqt va namoz vaqtlarini o'rganamiz.",
+ "grammar": {
+  "point_ar": "الوَقْت · أَيَّامُ الأُسْبُوع · الصَّلَوَات",
+  "explanation_uz": "Soat so'rash: كَمِ السَّاعَةُ؟ (soat nechada?) — javob: السَّاعَةُ الثَّالِثَةُ (soat uch) yoki oddiy son bilan. Vaqt birliklari: سَاعَة (soat), دَقِيقَة (daqiqa), نِصْف (yarim). Besh vaqt namoz kun tartibini belgilaydi: الفَجْر (tong), الظُّهْر (peshin), العَصْر (asr), المَغْرِب (shom), العِشَاء (xufton). Juma — يَوْمُ الجُمُعَةِ — muhim kun.",
+  "table": [
+   {"ar": "كَمِ السَّاعَةُ؟", "uz": "Soat nechada?", "form": "vaqt savoli"},
+   {"ar": "الفَجْر · الظُّهْر · العَصْر", "uz": "bomdod · peshin · asr", "form": "namozlar 1-3"},
+   {"ar": "المَغْرِب · العِشَاء", "uz": "shom · xufton", "form": "namozlar 4-5"},
+   {"ar": "يَوْمُ الجُمُعَةِ", "uz": "juma kuni", "form": "hafta kuni"}
+  ],
+  "common_mistakes_uz": [
+   "الظُّهْر (peshin) va العَصْر (asr) namoz vaqtlarini chalkashtirish.",
+   "سَاعَة so'zini «soat asbob» va «vaqt birligi» sifatida farqlamaslik.",
+   "المَغْرِب (namoz) va مَغْرِب (g'arb, joy nomi) ni chalkashtirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ص ل و",
+   "meaning_uz": "namoz, duo",
+   "uz_cognates": ["salot", "musalla", "namoz (fors)"],
+   "derived": [
+    {"ar": "صَلاة", "uz": "namoz", "pattern": "فَعَلَة"},
+    {"ar": "مُصَلَّى", "uz": "namozgoh", "pattern": "مُفَعَّل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "سَاعَة", "translit": "sāʿa", "uz": "soat (vaqt va asbob)", "root": "س و ع", "pattern": "فَاعَة", "pos": "ot", "audio": "a1/saa_hour.mp3", "example_ar": "كَمِ السَّاعَةُ؟", "example_uz": "Soat nechada?", "srs": true},
+  {"ar": "دَقِيقَة", "translit": "daqīqa", "uz": "daqiqa (o'zbekcha 'daqiqa')", "root": "د ق ق", "pattern": "فَعِيلَة", "pos": "ot", "audio": "a1/daqiqa.mp3", "example_ar": "خَمْسُ دَقَائِقَ.", "example_uz": "Besh daqiqa.", "srs": true},
+  {"ar": "شَهْر", "translit": "shahr", "uz": "oy (kalendar)", "root": "ش ه ر", "pattern": "فَعْل", "pos": "ot", "audio": "a1/shahr.mp3", "example_ar": "فِي السَّنَةِ اثْنَا عَشَرَ شَهْرًا.", "example_uz": "Yilda o'n ikki oy.", "srs": true},
+  {"ar": "صَلاة", "translit": "ṣalāt", "uz": "namoz (o'zbekcha 'salot')", "root": "ص ل و", "pattern": "فَعَلَة", "pos": "ot", "audio": "a1/salat.mp3", "example_ar": "الصَّلاةُ خَمْسُ مَرَّاتٍ.", "example_uz": "Namoz besh mahal.", "srs": true},
+  {"ar": "أَذَان", "translit": "adhān", "uz": "azon (o'zbekcha 'azon')", "root": "أ ذ ن", "pattern": "فَعَال", "pos": "ot", "audio": "a1/adhan.mp3", "example_ar": "سَمِعْتُ الأَذَانَ.", "example_uz": "Azonni eshitdim.", "srs": true},
+  {"ar": "الفَجْر", "translit": "al-fajr", "uz": "bomdod (tong namozi) (o'zbekcha 'fajr')", "root": "ف ج ر", "pattern": "", "pos": "ot", "audio": "a1/fajr.mp3", "example_ar": "صَلاةُ الفَجْرِ.", "example_uz": "Bomdod namozi.", "srs": true},
+  {"ar": "الظُّهْر", "translit": "aẓ-ẓuhr", "uz": "peshin namozi", "root": "ظ ه ر", "pattern": "", "pos": "ot", "audio": "a1/zuhr.mp3", "example_ar": "صَلاةُ الظُّهْرِ.", "example_uz": "Peshin namozi.", "srs": true},
+  {"ar": "المَغْرِب", "translit": "al-maghrib", "uz": "shom namozi (o'zbekcha 'mag'rib')", "root": "غ ر ب", "pattern": "", "pos": "ot", "audio": "a1/maghrib.mp3", "example_ar": "صَلاةُ المَغْرِبِ.", "example_uz": "Shom namozi.", "srs": true},
+  {"ar": "العِشَاء", "translit": "al-ʿishāʾ", "uz": "xufton namozi", "root": "ع ش و", "pattern": "", "pos": "ot", "audio": "a1/isha.mp3", "example_ar": "صَلاةُ العِشَاءِ.", "example_uz": "Xufton namozi.", "srs": true},
+  {"ar": "الجُمُعَة", "translit": "al-jumʿa", "uz": "juma (kun va namoz)", "root": "ج م ع", "pattern": "", "pos": "ot", "audio": "a1/jumua.mp3", "example_ar": "يَوْمُ الجُمُعَةِ.", "example_uz": "Juma kuni.", "srs": true},
+  {"ar": "نِصْف", "translit": "niṣf", "uz": "yarim (o'zbekcha 'nisf')", "root": "ن ص ف", "pattern": "فِعْل", "pos": "ot", "audio": "a1/nisf.mp3", "example_ar": "السَّاعَةُ الثَّالِثَةُ وَالنِّصْفُ.", "example_uz": "Soat uch yarim.", "srs": true},
+  {"ar": "مَرَّة", "translit": "marra", "uz": "marta, safar", "root": "م ر ر", "pattern": "فَعْلَة", "pos": "ot", "audio": "a1/marra.mp3", "example_ar": "خَمْسُ مَرَّاتٍ.", "example_uz": "Besh marta.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "الصَّلاةُ خَمْسُ مَرَّاتٍ فِي اليَوْمِ: الفَجْرُ فِي الصَّبَاحِ وَالظُّهْرُ وَالعَصْرُ وَالمَغْرِبُ وَالعِشَاءُ فِي اللَّيْلِ. يَوْمُ الجُمُعَةِ مُهِمٌّ.",
+   "questions": [
+    {"q_uz": "Kunda necha marta namoz?", "a": "Besh (خَمْسُ مَرَّاتٍ)"},
+    {"q_uz": "Qaysi namoz ertalab?", "a": "Bomdod (الفَجْر)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/salat.mp3",
+   "transcript_ar": "صَلاة",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Namoz"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Namoz vaqtlarini ayting: al-fajr, aẓ-ẓuhr, al-ʿaṣr, al-maghrib, al-ʿishāʾ.",
+   "target_ar": ["الفَجْر", "المَغْرِب", "الجُمُعَة"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Soat nechada?» savoli va bugungi namoz vaqtlaridan uchtasini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«bomdod (tong namozi)» qaysi?", "q_ar": "", "options": ["الفَجْر", "المَغْرِب", "العِشَاء", "الظُّهْر"], "answer": "الفَجْر", "explain_uz": "الفَجْر — tong namozi (fajr = tong).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "كَمِ السَّاعَةُ؟", "options": [], "answer": "soat nechada", "explain_uz": "كَمْ = nechta, السَّاعَة = soat.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«shom namozi» qaysi?", "q_ar": "", "options": ["المَغْرِب", "الفَجْر", "العَصْر", "الجُمُعَة"], "answer": "المَغْرِب", "explain_uz": "المَغْرِب — shom namozi (mag'rib = g'arb, quyosh botishi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ص ل و» o'zagidan?", "q_ar": "", "options": ["صَلاة", "أَذَان", "شَهْر"], "answer": "صَلاة", "explain_uz": "«ص ل و» — namoz o'zagi: صَلاة (namoz), مُصَلَّى (namozgoh), salot.", "audio": "", "root": "ص ل و", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "azon", "q_ar": "", "options": [], "answer": "أَذَان", "explain_uz": "أَذَان — azon (namozga chaqiruv).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "juma kuni", "q_ar": "", "options": [], "answer": "يَوْمُ الجُمُعَةِ", "explain_uz": "يَوْمُ الجُمُعَةِ — juma kuni (jam'/gathering o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Kunda necha vaqt namoz o'qiladi?", "q_ar": "", "options": ["besh", "uch", "yetti", "bir"], "answer": "besh", "explain_uz": "Besh vaqt: fajr, zuhr, asr, mag'rib, isho.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ص ل و", "back": "namoz o'zagi (salot, musalla=namozgoh)", "deck": "msa"},
+  {"type": "word", "front": "سَاعَة", "back": "soat", "deck": "msa"},
+  {"type": "word", "front": "دَقِيقَة", "back": "daqiqa", "deck": "msa"},
+  {"type": "word", "front": "شَهْر", "back": "oy (kalendar)", "deck": "msa"},
+  {"type": "word", "front": "صَلاة", "back": "namoz", "deck": "msa"},
+  {"type": "word", "front": "أَذَان", "back": "azon", "deck": "msa"},
+  {"type": "word", "front": "الفَجْر", "back": "bomdod (tong namozi)", "deck": "msa"},
+  {"type": "word", "front": "المَغْرِب", "back": "shom namozi", "deck": "msa"},
+  {"type": "word", "front": "الجُمُعَة", "back": "juma", "deck": "msa"},
+  {"type": "word", "front": "نِصْف", "back": "yarim", "deck": "msa"}
+ ]
+}

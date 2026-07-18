@@ -1,0 +1,95 @@
+{
+ "id": "a1-15",
+ "level": "A1",
+ "module": "past-tense",
+ "order": 15,
+ "title_uz": "«Qilmadim»",
+ "title_ar": "نَفْيُ المَاضِي بِـ (ما)",
+ "can_do_uz": "O'tgan zamonni inkor qila olaman: «bormadim», «u yozmadi».",
+ "duration_min": 30,
+ "prerequisites": ["a1-14"],
+ "harakat_level": "full",
+ "hook_uz": "Biror ish bo'lmaganini aytmoqchimisiz? «Men bormadim» — مَا ذَهَبْتُ. O'tgan zamonni inkor qilish uchun fe'l oldiga مَا qo'yiladi — fe'l o'zgarmaydi. Oddiy!",
+ "grammar": {
+  "point_ar": "ما + الفِعْل المَاضِي",
+  "explanation_uz": "O'tgan zamonni inkor qilishning eng oddiy yo'li — fe'l OLDIGA مَا qo'yish. Fe'l shakli O'ZGARMAYDI: كَتَبَ (yozdi) → مَا كَتَبَ (yozmadi); ذَهَبْتُ (bordim) → مَا ذَهَبْتُ (bormadim). Diqqat: bu مَا «nima» (savol) emas, «inkor» مَا si — kontekst farqlaydi.",
+  "table": [
+   {"ar": "كَتَبَ ← مَا كَتَبَ", "uz": "yozdi → yozmadi", "form": "3-shaxs inkor"},
+   {"ar": "ذَهَبْتُ ← مَا ذَهَبْتُ", "uz": "bordim → bormadim", "form": "1-shaxs inkor"},
+   {"ar": "مَا فَهِمْتُ", "uz": "Tushunmadim", "form": "namuna"},
+   {"ar": "مَا رَأَيْتُ أَحَدًا", "uz": "Hech kimni ko'rmadim", "form": "inkor + ob'ekt"}
+  ],
+  "common_mistakes_uz": [
+   "مَا ni fe'ldan keyin qo'yish — u fe'l OLDIDA turishi kerak.",
+   "Inkorda fe'l shaklini o'zgartirishga urinish — مَا bilan fe'l o'zgarmaydi.",
+   "«inkor مَا» va «savol مَا (nima)» ni kontekstsiz chalkashtirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ق ب ل",
+   "meaning_uz": "oldin, qabul, yuz tutish",
+   "uz_cognates": ["qabul", "istiqbol", "mustaqbal", "qibla"],
+   "derived": [
+    {"ar": "قَبْلَ", "uz": "oldin", "pattern": "فَعْل"},
+    {"ar": "مُسْتَقْبَل", "uz": "kelajak", "pattern": "مُسْتَفْعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "مَا", "translit": "mā", "uz": "inkor: -madi (fe'l oldida)", "root": "", "pattern": "", "pos": "inkor", "audio": "a1/ma_neg.mp3", "example_ar": "مَا ذَهَبْتُ.", "example_uz": "Bormadim.", "srs": true},
+  {"ar": "فَهِمَ", "translit": "fahima", "uz": "tushundi", "root": "ف ه م", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "a1/fahima.mp3", "example_ar": "مَا فَهِمْتُ الدَّرْسَ.", "example_uz": "Darsni tushunmadim.", "srs": true},
+  {"ar": "رَأَى", "translit": "raʾā", "uz": "ko'rdi", "root": "ر أ ي", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/raa.mp3", "example_ar": "مَا رَأَيْتُ أَحَدًا.", "example_uz": "Hech kimni ko'rmadim.", "srs": true},
+  {"ar": "قَبْلَ", "translit": "qabla", "uz": "oldin (o'zbekcha 'qabl' shundan)", "root": "ق ب ل", "pattern": "فَعْل", "pos": "predlog", "audio": "a1/qabla.mp3", "example_ar": "ذَهَبْتُ قَبْلَ الدَّرْسِ.", "example_uz": "Darsdan oldin bordim.", "srs": true},
+  {"ar": "بَعْدَ", "translit": "baʿda", "uz": "keyin, so'ng", "root": "ب ع د", "pattern": "فَعْل", "pos": "predlog", "audio": "a1/bada.mp3", "example_ar": "رَجَعْتُ بَعْدَ الدَّرْسِ.", "example_uz": "Darsdan keyin qaytdim.", "srs": true},
+  {"ar": "لَكِنْ", "translit": "lākin", "uz": "lekin, ammo", "root": "", "pattern": "", "pos": "bog'lovchi", "audio": "a1/lakin.mp3", "example_ar": "دَرَسْتُ لَكِنْ مَا فَهِمْتُ.", "example_uz": "O'qidim, lekin tushunmadim.", "srs": true},
+  {"ar": "أَحَد", "translit": "aḥad", "uz": "kimdir, hech kim (inkorda)", "root": "أ ح د", "pattern": "فَعَل", "pos": "ot", "audio": "a1/ahad.mp3", "example_ar": "مَا رَأَيْتُ أَحَدًا.", "example_uz": "Hech kimni ko'rmadim.", "srs": true},
+  {"ar": "شَيْء", "translit": "shayʾ", "uz": "narsa, biror narsa", "root": "ش ي أ", "pattern": "فَعْل", "pos": "ot", "audio": "a1/shay.mp3", "example_ar": "مَا أَكَلْتُ شَيْئًا.", "example_uz": "Hech narsa yemadim.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "ذَهَبْتُ إِلَى السُّوقِ لَكِنْ مَا اشْتَرَيْتُ شَيْئًا. دَرَسْتُ الدَّرْسَ لَكِنْ مَا فَهِمْتُ كُلَّ شَيْءٍ.",
+   "questions": [
+    {"q_uz": "Bozorda nima sotib oldi?", "a": "Hech narsa (مَا اشْتَرَى شَيْئًا)"},
+    {"q_uz": "Darsni to'liq tushundimi?", "a": "Yo'q (مَا فَهِمْتُ)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/fahima.mp3",
+   "transcript_ar": "فَهِمَ",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi?", "a": "U tushundi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Inkor gaplar ayting: mā dhahabtu, mā fahimtu, mā raʾaytu aḥadan.",
+   "target_ar": ["مَا ذَهَبْتُ", "مَا فَهِمْتُ", "مَا رَأَيْتُ أَحَدًا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Men kecha bormadim» va «U darsni tushunmadi» gaplarini yozing (inkor مَا bilan).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Bormadim» qaysi?", "q_ar": "", "options": ["مَا ذَهَبْتُ", "ذَهَبْتُ مَا", "لا ذَهَبْتُ", "مَا أَذْهَبُ"], "answer": "مَا ذَهَبْتُ", "explain_uz": "Inkor مَا fe'l OLDIDA, fe'l o'zgarmaydi: مَا ذَهَبْتُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَا فَهِمْتُ", "options": [], "answer": "tushunmadim", "explain_uz": "مَا + فَهِمْتُ (tushundim) = tushunmadim.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Inkor qiling: «كَتَبَ» → «____ كَتَبَ» (yozmadi)", "q_ar": "____ كَتَبَ", "options": [], "answer": "مَا", "explain_uz": "Fe'l oldiga مَا qo'yiladi: مَا كَتَبَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ق ب ل» o'zagidan?", "q_ar": "", "options": ["قَبْلَ", "بَعْدَ", "لَكِنْ"], "answer": "قَبْلَ", "explain_uz": "«ق ب ل» — oldin/qabul o'zagi: قَبْلَ (oldin), مُسْتَقْبَل (kelajak), qibla.", "audio": "", "root": "ق ب ل", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "lekin, ammo", "q_ar": "", "options": [], "answer": "لَكِنْ", "explain_uz": "لَكِنْ — lekin (qarama-qarshilik bog'lovchisi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Darsdan keyin» qaysi?", "q_ar": "", "options": ["بَعْدَ الدَّرْسِ", "قَبْلَ الدَّرْسِ", "مَعَ الدَّرْسِ", "فِي الدَّرْسِ"], "answer": "بَعْدَ الدَّرْسِ", "explain_uz": "بَعْدَ = keyin, قَبْلَ = oldin.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "«Hech narsa yemadim» gapini tuzing", "q_ar": "", "options": [], "answer": "مَا أَكَلْتُ شَيْئًا", "explain_uz": "Inkor (مَا) + fe'l (أَكَلْتُ) + ob'ekt (شَيْئًا).", "audio": "", "root": "", "pattern": "", "words": ["شَيْئًا", "مَا", "أَكَلْتُ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ق ب ل", "back": "oldin/qabul o'zagi (qabul, istiqbol, mustaqbal, qibla)", "deck": "msa"},
+  {"type": "word", "front": "مَا", "back": "inkor: -madi (fe'l oldida)", "deck": "msa"},
+  {"type": "word", "front": "فَهِمَ", "back": "u tushundi", "deck": "msa"},
+  {"type": "word", "front": "رَأَى", "back": "u ko'rdi", "deck": "msa"},
+  {"type": "word", "front": "قَبْلَ", "back": "oldin", "deck": "msa"},
+  {"type": "word", "front": "بَعْدَ", "back": "keyin, so'ng", "deck": "msa"},
+  {"type": "word", "front": "لَكِنْ", "back": "lekin, ammo", "deck": "msa"},
+  {"type": "word", "front": "أَحَد", "back": "kimdir, hech kim", "deck": "msa"},
+  {"type": "word", "front": "شَيْء", "back": "narsa", "deck": "msa"}
+ ]
+}

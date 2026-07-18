@@ -1,0 +1,104 @@
+{
+ "id": "a1-38",
+ "level": "A1",
+ "module": "daily-life",
+ "order": 38,
+ "title_uz": "Yo'l so'rayman",
+ "title_ar": "السُّؤَالُ عَنِ الطَّرِيق",
+ "can_do_uz": "Yo'l so'ray, yo'nalish va transport haqida gapira olaman (rasmiy va hijoziy).",
+ "duration_min": 30,
+ "prerequisites": ["a1-37"],
+ "harakat_level": "full",
+ "hook_uz": "Adashib qoldingizmi? «Masjid qayerda?» — أَيْنَ المَسْجِدُ؟ yoki Saudiyaда وِين المَسْجِد؟. Yo'nalish so'zlari (يَمِين — o'ng, يَسَار — chap, مُسْتَقِيم — to'g'ri) va transport bilan yo'l topamiz!",
+ "grammar": {
+  "point_ar": "الاِتِّجَاهَاتُ وَالمُوَاصَلَات",
+  "explanation_uz": "Yo'l so'rash: أَيْنَ...؟ (qayerda) yoki كَيْفَ أَصِلُ إِلَى...؟ (... ga qanday yetaman?). Yo'nalishlar: يَمِين (o'ng), يَسَار (chap), مُسْتَقِيم (to'g'ri), أَمَام (old), وَرَاء (orqa). Transport: سَيَّارَة (mashina), حَافِلَة (avtobus), قِطَار (poyezd), تَاكْسِي (taksi). Saudiyada وِين؟ (qayerda?) va عَلَى طُول (to'g'riga) ko'p eshitiladi.",
+  "table": [
+   {"ar": "أَيْنَ المَحَطَّةُ؟", "uz": "Bekat qayerda?", "form": "savol"},
+   {"ar": "يَمِين · يَسَار · مُسْتَقِيم", "uz": "o'ng · chap · to'g'ri", "form": "yo'nalish"},
+   {"ar": "بِالحَافِلَةِ / بِالقِطَارِ", "uz": "avtobusda / poyezdda", "form": "transport"},
+   {"ar": "كَيْفَ أَصِلُ إِلَى الفُنْدُقِ؟", "uz": "Mehmonxonaga qanday yetaman?", "form": "namuna"}
+  ],
+  "common_mistakes_uz": [
+   "يَمِين (o'ng) va يَسَار (chap) ni chalkashtirish.",
+   "Transport uchun بِـ (vosita) predlogini unutish: بِالسَّيَّارَةِ.",
+   "مُسْتَقِيم (to'g'ri yo'nalish) ni «rost/haqiqat» bilan chalkashtirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "و ج ه",
+   "meaning_uz": "yuz, yo'nalish",
+   "uz_cognates": ["vajh", "jihat", "ittijoh", "muvajaha"],
+   "derived": [
+    {"ar": "اِتِّجَاه", "uz": "yo'nalish", "pattern": "اِفْتِعَال"},
+    {"ar": "وَجْه", "uz": "yuz, tomon", "pattern": "فَعْل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "يَمِين", "translit": "yamīn", "uz": "o'ng (tomon) (o'zbekcha 'yamin')", "root": "ي م ن", "pattern": "فَعِيل", "pos": "ot", "audio": "a1/yamin.mp3", "example_ar": "المَسْجِدُ عَلَى اليَمِينِ.", "example_uz": "Masjid o'ng tomonda.", "srs": true},
+  {"ar": "يَسَار", "translit": "yasār", "uz": "chap (tomon)", "root": "ي س ر", "pattern": "فَعَال", "pos": "ot", "audio": "a1/yasar.mp3", "example_ar": "السُّوقُ عَلَى اليَسَارِ.", "example_uz": "Bozor chap tomonda.", "srs": true},
+  {"ar": "مُسْتَقِيم", "translit": "mustaqīm", "uz": "to'g'ri (yo'nalish) (o'zbekcha 'mustaqim')", "root": "ق و م", "pattern": "مُسْتَفْعِل", "pos": "sifat", "audio": "a1/mustaqim.mp3", "example_ar": "اِمْشِ مُسْتَقِيمًا.", "example_uz": "To'g'riga yur.", "srs": true},
+  {"ar": "وَرَاء", "translit": "warāʾ", "uz": "orqada, ortida", "root": "و ر ي", "pattern": "فَعَال", "pos": "predlog", "audio": "a1/wara.mp3", "example_ar": "الحَدِيقَةُ وَرَاءَ البَيْتِ.", "example_uz": "Bog' uy orqasida.", "srs": true},
+  {"ar": "حَافِلَة", "translit": "ḥāfila", "uz": "avtobus", "root": "ح ف ل", "pattern": "فَاعِلَة", "pos": "ot", "audio": "a1/hafila.mp3", "example_ar": "أَذْهَبُ بِالحَافِلَةِ.", "example_uz": "Avtobusda boraman.", "srs": true},
+  {"ar": "قِطَار", "translit": "qiṭār", "uz": "poyezd", "root": "ق ط ر", "pattern": "فِعَال", "pos": "ot", "audio": "a1/qitar.mp3", "example_ar": "القِطَارُ سَرِيعٌ.", "example_uz": "Poyezd tez.", "srs": true},
+  {"ar": "مَحَطَّة", "translit": "maḥaṭṭa", "uz": "bekat, stansiya", "root": "ح ط ط", "pattern": "مَفْعَلَة", "pos": "ot", "audio": "a1/mahatta.mp3", "example_ar": "أَيْنَ المَحَطَّةُ؟", "example_uz": "Bekat qayerda?", "srs": true},
+  {"ar": "تَاكْسِي", "translit": "tāksī", "uz": "taksi", "root": "", "pattern": "", "pos": "ot", "audio": "a1/taksi.mp3", "example_ar": "أَرْكَبُ التَّاكْسِي.", "example_uz": "Taksiga minaman.", "srs": true},
+  {"ar": "اِتِّجَاه", "translit": "ittijāh", "uz": "yo'nalish (o'zbekcha 'ittijoh')", "root": "و ج ه", "pattern": "اِفْتِعَال", "pos": "ot", "audio": "a1/ittijah.mp3", "example_ar": "أَيُّ اتِّجَاهٍ؟", "example_uz": "Qaysi yo'nalish?", "srs": true},
+  {"ar": "حَدِيقَة", "translit": "ḥadīqa", "uz": "bog', park", "root": "ح د ق", "pattern": "فَعِيلَة", "pos": "ot", "audio": "a1/hadiqa.mp3", "example_ar": "الحَدِيقَةُ جَمِيلَةٌ.", "example_uz": "Bog' chiroyli.", "srs": true},
+  {"ar": "مَوْقِف", "translit": "mawqif", "uz": "to'xtash joyi, bekat", "root": "و ق ف", "pattern": "مَفْعِل", "pos": "ot", "audio": "a1/mawqif.mp3", "example_ar": "مَوْقِفُ الحَافِلَةِ قَرِيبٌ.", "example_uz": "Avtobus bekati yaqin.", "srs": true}
+ ],
+ "hejazi": [
+  {"msa_ar": "أَيْنَ؟", "hejazi_ar": "وِين؟", "translit": "wēn?", "uz": "Qayerda? (hijoziy)", "audio": "hj/wen.mp3"},
+  {"msa_ar": "كَيْفَ أَصِلُ؟", "hejazi_ar": "كِيف أَوْصَل؟", "translit": "kīf awṣal?", "uz": "Qanday yetaman? (hijoziy)", "audio": "hj/kif_awsal.mp3"},
+  {"msa_ar": "مُسْتَقِيم", "hejazi_ar": "عَلَى طُول", "translit": "ʿalā ṭūl", "uz": "To'g'riga (hijoziy)", "audio": "hj/ala_tul.mp3"},
+  {"msa_ar": "اِنْتَظِرْ", "hejazi_ar": "اِسْتَنَّى", "translit": "istannā", "uz": "Kut, sabr qil (hijoziy)", "audio": "hj/istanna.mp3"}
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "سَأَلْتُ رَجُلًا: وِين المَحَطَّة؟ قَالَ: اِمْشِ مُسْتَقِيمًا، ثُمَّ عَلَى اليَمِينِ. المَحَطَّةُ قَرِيبَةٌ. أَذْهَبُ بِالحَافِلَةِ إِلَى الفُنْدُقِ.",
+   "questions": [
+    {"q_uz": "Bekatga qanday boriladi?", "a": "To'g'riga, keyin o'ngga (مُسْتَقِيم، يَمِين)"},
+    {"q_uz": "U qaysi transportda boradi?", "a": "Avtobusda (بِالحَافِلَة)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/mahatta.mp3",
+   "transcript_ar": "مَحَطَّة",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Bekat, stansiya"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Yo'l so'rang: wēn al-maḥaṭṭa? kayfa aṣilu ilā l-funduq? ʿalā l-yamīn.",
+   "target_ar": ["أَيْنَ المَحَطَّةُ؟", "عَلَى اليَمِينِ", "بِالحَافِلَةِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Masjid qayerda?» savoli va «To'g'riga yur, keyin chapga» yo'nalishini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«o'ng (tomon)» qaysi?", "q_ar": "", "options": ["يَمِين", "يَسَار", "وَرَاء", "أَمَام"], "answer": "يَمِين", "explain_uz": "يَمِين — o'ng; يَسَار — chap.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المَسْجِدُ عَلَى اليَمِينِ", "options": [], "answer": "masjid o'ng tomonda", "explain_uz": "عَلَى اليَمِين = o'ng tomonda.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyда «Qayerda?» qaysi?", "q_ar": "", "options": ["وِين؟", "أَيْنَ؟", "عَلَى طُول", "كِيف؟"], "answer": "وِين؟", "explain_uz": "Hijoziy: وِين؟ (rasmiy: أَيْنَ؟).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «و ج ه» o'zagidan?", "q_ar": "", "options": ["اِتِّجَاه", "قِطَار", "حَافِلَة"], "answer": "اِتِّجَاه", "explain_uz": "«و ج ه» — yo'nalish o'zagi: اِتِّجَاه (yo'nalish), وَجْه (yuz), jihat.", "audio": "", "root": "و ج ه", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "avtobus", "q_ar": "", "options": [], "answer": "حَافِلَة", "explain_uz": "حَافِلَة — avtobus.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyда «To'g'riga» qaysi?", "q_ar": "", "options": ["عَلَى طُول", "وِين", "اِسْتَنَّى", "كِيف"], "answer": "عَلَى طُول", "explain_uz": "عَلَى طُول — hijoziyда «to'g'riga».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "poyezd", "q_ar": "", "options": [], "answer": "قِطَار", "explain_uz": "قِطَار — poyezd.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "و ج ه", "back": "yo'nalish o'zagi (vajh, jihat, ittijoh)", "deck": "msa"},
+  {"type": "word", "front": "يَمِين", "back": "o'ng (tomon)", "deck": "msa"},
+  {"type": "word", "front": "يَسَار", "back": "chap (tomon)", "deck": "msa"},
+  {"type": "word", "front": "مُسْتَقِيم", "back": "to'g'ri (yo'nalish)", "deck": "msa"},
+  {"type": "word", "front": "حَافِلَة", "back": "avtobus", "deck": "msa"},
+  {"type": "word", "front": "قِطَار", "back": "poyezd", "deck": "msa"},
+  {"type": "word", "front": "مَحَطَّة", "back": "bekat, stansiya", "deck": "msa"},
+  {"type": "word", "front": "اِتِّجَاه", "back": "yo'nalish", "deck": "msa"},
+  {"type": "phrase", "front": "وِين؟", "back": "Qayerda? (hijoziy)", "deck": "hejazi"},
+  {"type": "phrase", "front": "عَلَى طُول", "back": "To'g'riga (hijoziy)", "deck": "hejazi"}
+ ]
+}

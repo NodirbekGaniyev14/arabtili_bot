@@ -1,0 +1,95 @@
+{
+ "id": "a1-31",
+ "level": "A1",
+ "module": "noun-system",
+ "order": 31,
+ "title_uz": "So'z oxiridagi harakatni tushunaman",
+ "title_ar": "مُقَدِّمَةُ الإِعْرَاب",
+ "can_do_uz": "So'z oxiridagi harakat (damma/fatha/kasra) nega o'zgarishini — uch holatni tushunaman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-30"],
+ "harakat_level": "full",
+ "hook_uz": "Nega goh الوَلَدُ, goh الوَلَدَ, goh الوَلَدِ? Bu — «i'rob»: so'zning gapdagi vazifasiga qarab oxirgi harakat o'zgaradi. Uch holat bor: damma (ega), fatha (ob'ekt), kasra (predlogdan keyin). Bularni birlashtiramiz!",
+ "grammar": {
+  "point_ar": "الرَّفْع · النَّصْب · الجَرّ",
+  "explanation_uz": "I'rob (الإعراب) — so'zning gapdagi o'rniga qarab oxirgi harakati o'zgarishi. Uch asosiy holat: (1) رَفْع (damma ـُ) — EGA/mubtado/xabar: جَاءَ الوَلَدُ (bola keldi). (2) نَصْب (fatha ـَ) — OB'EKT: رَأَيْتُ الوَلَدَ (bolani ko'rdim). (3) جَرّ (kasra ـِ) — PREDLOGdan keyin yoki idafada: مَعَ الوَلَدِ (bola bilan). Siz buni allaqachon ishlatgansiz — endi nomini bilasiz!",
+  "table": [
+   {"ar": "الوَلَدُ (رَفْع)", "uz": "bola (ega — damma)", "form": "raf'"},
+   {"ar": "الوَلَدَ (نَصْب)", "uz": "bolani (ob'ekt — fatha)", "form": "nasb"},
+   {"ar": "الوَلَدِ (جَرّ)", "uz": "bola(dan/ning) (kasra)", "form": "jarr"},
+   {"ar": "قَاعِدَةٌ وَاحِدَةٌ", "uz": "bir qoida — uch holat", "form": "xulosa"}
+  ],
+  "common_mistakes_uz": [
+   "Egaga fatha yoki kasra qo'yish — ega har doim raf' (damma).",
+   "Ob'ektga damma qo'yish — ob'ekt nasb (fatha).",
+   "Predlogdan keyin damma qo'yish — predlogdan keyin jarr (kasra)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ق ع د",
+   "meaning_uz": "o'tirish, asos, qoida",
+   "uz_cognates": ["qoida", "qa'da", "qoidalar"],
+   "derived": [
+    {"ar": "قَاعِدَة", "uz": "qoida, asos", "pattern": "فَاعِلَة"},
+    {"ar": "مَقْعَد", "uz": "o'rindiq", "pattern": "مَفْعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "إِعْرَاب", "translit": "iʿrāb", "uz": "i'rob (so'z oxiri o'zgarishi)", "root": "ع ر ب", "pattern": "إِفْعَال", "pos": "ot", "audio": "a1/irab.mp3", "example_ar": "هَذَا إِعْرَابٌ صَحِيحٌ.", "example_uz": "Bu to'g'ri i'rob.", "srs": true},
+  {"ar": "رَفْع", "translit": "rafʿ", "uz": "raf' holati (damma — ega)", "root": "ر ف ع", "pattern": "فَعْل", "pos": "ot", "audio": "a1/raf.mp3", "example_ar": "الفَاعِلُ فِي حَالَةِ رَفْعٍ.", "example_uz": "Ega raf' holatida.", "srs": true},
+  {"ar": "نَصْب", "translit": "naṣb", "uz": "nasb holati (fatha — ob'ekt)", "root": "ن ص ب", "pattern": "فَعْل", "pos": "ot", "audio": "a1/nasb.mp3", "example_ar": "المَفْعُولُ فِي حَالَةِ نَصْبٍ.", "example_uz": "Ob'ekt nasb holatida.", "srs": true},
+  {"ar": "جَرّ", "translit": "jarr", "uz": "jarr holati (kasra — predlogdan keyin)", "root": "ج ر ر", "pattern": "فَعْل", "pos": "ot", "audio": "a1/jarr.mp3", "example_ar": "بَعْدَ حَرْفِ الجَرِّ.", "example_uz": "Jarr harfidan keyin.", "srs": true},
+  {"ar": "حَرَكَة", "translit": "ḥaraka", "uz": "harakat (unli belgi)", "root": "ح ر ك", "pattern": "فَعَلَة", "pos": "ot", "audio": "a1/haraka.mp3", "example_ar": "الحَرَكَةُ فِي آخِرِ الكَلِمَةِ.", "example_uz": "Harakat so'z oxirida.", "srs": true},
+  {"ar": "عَلَامَة", "translit": "ʿalāma", "uz": "belgi, alomat (o'zbekcha 'alomat')", "root": "ع ل م", "pattern": "فَعَالَة", "pos": "ot", "audio": "a1/alama.mp3", "example_ar": "عَلَامَةُ الرَّفْعِ الضَّمَّةُ.", "example_uz": "Raf' belgisi — damma.", "srs": true},
+  {"ar": "قَاعِدَة", "translit": "qāʿida", "uz": "qoida, asos (o'zbekcha 'qoida')", "root": "ق ع د", "pattern": "فَاعِلَة", "pos": "ot", "audio": "a1/qaida.mp3", "example_ar": "هَذِهِ قَاعِدَةٌ مُهِمَّةٌ.", "example_uz": "Bu muhim qoida.", "srs": true},
+  {"ar": "آخِر", "translit": "ākhir", "uz": "oxir, so'nggi (o'zbekcha 'oxir')", "root": "أ خ ر", "pattern": "فَاعِل", "pos": "ot", "audio": "a1/akhir.mp3", "example_ar": "فِي آخِرِ الكَلِمَةِ.", "example_uz": "So'z oxirida.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "جَاءَ الوَلَدُ إِلَى المَدْرَسَةِ. رَأَيْتُ الوَلَدَ فِي الصَّفِّ. جَلَسْتُ مَعَ الوَلَدِ. الكَلِمَةُ وَاحِدَةٌ لَكِنَّ الحَرَكَةَ تَتَغَيَّرُ.",
+   "questions": [
+    {"q_uz": "«الوَلَدُ» qaysi holatda (birinchi gapda)?", "a": "Raf' (ega, damma)"},
+    {"q_uz": "«الوَلَدِ» nega kasra bilan?", "a": "Predlogdan (مَعَ) keyin — jarr"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/qaida.mp3",
+   "transcript_ar": "قَاعِدَة",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Qoida, asos"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch holatni ayting: al-waladu (raf'), al-walada (nasb), al-waladi (jarr).",
+   "target_ar": ["الوَلَدُ", "الوَلَدَ", "الوَلَدِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«الكِتَاب» so'zini uch holatda yozing: ega, ob'ekt, predlogdan keyin.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "Ega (فَاعِل) qaysi holatda bo'ladi?", "q_ar": "", "options": ["رَفْع (damma)", "نَصْب (fatha)", "جَرّ (kasra)", "sukun"], "answer": "رَفْع (damma)", "explain_uz": "Ega har doim raf' — oxirida damma (ـُ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Predlogdan keyingi ot qaysi holatda?", "q_ar": "", "options": ["جَرّ (kasra)", "رَفْع (damma)", "نَصْب (fatha)", "hech qanday"], "answer": "جَرّ (kasra)", "explain_uz": "Predlogdan keyin jarr — kasra (ـِ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«رَأَيْتُ الوَلَدَ» da «الوَلَدَ» qaysi holatda?", "q_ar": "", "options": ["نَصْب (ob'ekt)", "رَفْع (ega)", "جَرّ", "sukun"], "answer": "نَصْب (ob'ekt)", "explain_uz": "Ob'ekt (ko'rildi) → nasb, fatha (ـَ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ق ع د» o'zagidan?", "q_ar": "", "options": ["قَاعِدَة", "حَرَكَة", "عَلَامَة"], "answer": "قَاعِدَة", "explain_uz": "«ق ع د» — o'tirish/asos o'zagi: قَاعِدَة (qoida), مَقْعَد (o'rindiq).", "audio": "", "root": "ق ع د", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "qoida", "q_ar": "", "options": [], "answer": "قَاعِدَة", "explain_uz": "قَاعِدَة — qoida (o'zbekcha 'qoida').", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "عَلَامَةُ الرَّفْعِ الضَّمَّةُ", "options": [], "answer": "raf' belgisi damma", "explain_uz": "Raf' (ega holati) belgisi — damma (ـُ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Egani to'g'ri harakatlang: «جَاءَ الوَلَد__» (bola keldi)", "q_ar": "جَاءَ الوَلَد__", "options": [], "answer": "ُ", "explain_uz": "Ega raf' — damma (ـُ): الوَلَدُ.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ق ع د", "back": "asos/qoida o'zagi (qoida, maq'ad=o'rindiq)", "deck": "msa"},
+  {"type": "word", "front": "إِعْرَاب", "back": "i'rob (so'z oxiri o'zgarishi)", "deck": "msa"},
+  {"type": "word", "front": "رَفْع", "back": "raf' (damma — ega)", "deck": "msa"},
+  {"type": "word", "front": "نَصْب", "back": "nasb (fatha — ob'ekt)", "deck": "msa"},
+  {"type": "word", "front": "جَرّ", "back": "jarr (kasra — predlogdan keyin)", "deck": "msa"},
+  {"type": "word", "front": "حَرَكَة", "back": "harakat (unli belgi)", "deck": "msa"},
+  {"type": "word", "front": "عَلَامَة", "back": "belgi, alomat", "deck": "msa"},
+  {"type": "word", "front": "قَاعِدَة", "back": "qoida, asos", "deck": "msa"},
+  {"type": "word", "front": "آخِر", "back": "oxir, so'nggi", "deck": "msa"}
+ ]
+}

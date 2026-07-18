@@ -1,0 +1,98 @@
+{
+ "id": "a1-28",
+ "level": "A1",
+ "module": "noun-system",
+ "order": 28,
+ "title_uz": "«Kimningdir kitobi»",
+ "title_ar": "الإِضَافَة",
+ "can_do_uz": "«uy eshigi», «maktab direktori» kabi ikki ot bog'lanmasi (idafa) tuza olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-27"],
+ "harakat_level": "full",
+ "hook_uz": "«Uy eshigi» — بَابُ البَيْتِ. Arabchada egalikni ko'rsatish uchun ikki otni yonma-yon qo'yasiz: birinchisi «narsa», ikkinchisi «egasi». Bu — idafa (إضافة), arabchaning eng ko'p ishlatiladigan tuzilmasi!",
+ "grammar": {
+  "point_ar": "المُضَاف + المُضَاف إِلَيْه",
+  "explanation_uz": "Idafa — ikki otni bog'lab egalik/nisbat ko'rsatadi: بَابُ البَيْتِ («uy eshigi»). QOIDALAR: (1) birinchi ot (المُضاف) — الـ SIZ va tanvin SIZ (bāb, «bābu»). (2) ikkinchi ot (المُضاف إليه) — har doim JARR da (kasra), odatda الـ bilan (al-bayti). Tarjima: «Y ning X i» yoki «X of Y». Masalan: مِفْتَاحُ السَّيَّارَةِ — «mashina kaliti».",
+  "table": [
+   {"ar": "بَابُ البَيْتِ", "uz": "uy eshigi", "form": "mudaf + mudaf ilayh"},
+   {"ar": "كِتَابُ الطَّالِبِ", "uz": "talabaning kitobi", "form": "idafa"},
+   {"ar": "مُدِيرُ المَدْرَسَةِ", "uz": "maktab direktori", "form": "idafa"},
+   {"ar": "عَاصِمَةُ المَمْلَكَةِ", "uz": "davlat poytaxti", "form": "idafa"}
+  ],
+  "common_mistakes_uz": [
+   "Birinchi otga الـ yoki tanvin qo'yish: البَابُ البَيْتِ (xato) → بَابُ البَيْتِ.",
+   "Ikkinchi otni jarr (kasra) qilmaslik: بَابُ البَيْتُ (xato) → بَابُ البَيْتِ.",
+   "So'z tartibini teskari qilish — «egasi» IKKINCHI keladi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "م ل ك",
+   "meaning_uz": "egalik, podshohlik",
+   "uz_cognates": ["malik", "mulk", "mamlakat", "mamluk"],
+   "derived": [
+    {"ar": "مَلِك", "uz": "podshoh, qirol", "pattern": "فَعِل"},
+    {"ar": "مَمْلَكَة", "uz": "qirollik, davlat", "pattern": "مَفْعَلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "مَلِك", "translit": "malik", "uz": "podshoh, qirol (o'zbekcha 'malik')", "root": "م ل ك", "pattern": "فَعِل", "pos": "ot", "audio": "a1/malik.mp3", "example_ar": "مَلِكُ المَمْلَكَةِ.", "example_uz": "Davlat qiroli.", "srs": true},
+  {"ar": "مَمْلَكَة", "translit": "mamlaka", "uz": "qirollik, davlat (o'zbekcha 'mamlakat')", "root": "م ل ك", "pattern": "مَفْعَلَة", "pos": "ot", "audio": "a1/mamlaka.mp3", "example_ar": "المَمْلَكَةُ العَرَبِيَّةُ السُّعُودِيَّةُ.", "example_uz": "Saudiya Arabistoni qirolligi.", "srs": true},
+  {"ar": "عَاصِمَة", "translit": "ʿāṣima", "uz": "poytaxt", "root": "ع ص م", "pattern": "فَاعِلَة", "pos": "ot", "audio": "a1/asima.mp3", "example_ar": "الرِّيَاضُ عَاصِمَةُ السُّعُودِيَّةِ.", "example_uz": "Riyod Saudiya poytaxti.", "srs": true},
+  {"ar": "مُدِير", "translit": "mudīr", "uz": "direktor, boshliq (o'zbekcha 'mudir')", "root": "د و ر", "pattern": "مُفْعِل", "pos": "ot", "audio": "a1/mudir.mp3", "example_ar": "مُدِيرُ المَدْرَسَةِ.", "example_uz": "Maktab direktori.", "srs": true},
+  {"ar": "نَوْم", "translit": "nawm", "uz": "uyqu", "root": "ن و م", "pattern": "فَعْل", "pos": "ot", "audio": "a1/nawm.mp3", "example_ar": "غُرْفَةُ النَّوْمِ.", "example_uz": "Yotoqxona (uyqu xonasi).", "srs": true},
+  {"ar": "بَابُ البَيْتِ", "translit": "bābu l-bayt", "uz": "uy eshigi (idafa)", "root": "", "pattern": "", "pos": "ibora", "audio": "a1/bab_albayt.mp3", "example_ar": "بَابُ البَيْتِ مَفْتُوحٌ.", "example_uz": "Uy eshigi ochiq.", "srs": true},
+  {"ar": "كِتَابُ الطَّالِبِ", "translit": "kitābu ṭ-ṭālib", "uz": "talabaning kitobi (idafa)", "root": "", "pattern": "", "pos": "ibora", "audio": "a1/kitab_attalib.mp3", "example_ar": "كِتَابُ الطَّالِبِ جَدِيدٌ.", "example_uz": "Talabaning kitobi yangi.", "srs": true},
+  {"ar": "غُرْفَةُ النَّوْمِ", "translit": "ghurfatu n-nawm", "uz": "yotoqxona (idafa)", "root": "", "pattern": "", "pos": "ibora", "audio": "a1/ghurfa_nawm.mp3", "example_ar": "غُرْفَةُ النَّوْمِ كَبِيرَةٌ.", "example_uz": "Yotoqxona katta.", "srs": true},
+  {"ar": "مِفْتَاحُ السَّيَّارَةِ", "translit": "miftāḥu s-sayyāra", "uz": "mashina kaliti (idafa)", "root": "", "pattern": "", "pos": "ibora", "audio": "a1/miftah_sayyara.mp3", "example_ar": "أَيْنَ مِفْتَاحُ السَّيَّارَةِ؟", "example_uz": "Mashina kaliti qayerda?", "srs": true},
+  {"ar": "اسْمُ الوَلَدِ", "translit": "ismu l-walad", "uz": "bolaning ismi (idafa)", "root": "", "pattern": "", "pos": "ibora", "audio": "a1/ism_walad.mp3", "example_ar": "مَا اسْمُ الوَلَدِ؟", "example_uz": "Bolaning ismi nima?", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "الرِّيَاضُ عَاصِمَةُ المَمْلَكَةِ العَرَبِيَّةِ السُّعُودِيَّةِ. مُدِيرُ المَدْرَسَةِ فِي مَكْتَبِهِ. بَابُ البَيْتِ مَفْتُوحٌ وَمِفْتَاحُ السَّيَّارَةِ عَلَى الطَّاوِلَةِ.",
+   "questions": [
+    {"q_uz": "Saudiya poytaxti qaysi shahar?", "a": "Riyod (الرِّيَاض)"},
+    {"q_uz": "«بَابُ البَيْتِ» da qaysi so'z «egasi»?", "a": "البَيْت (uy) — mudaf ilayh"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/mamlaka.mp3",
+   "transcript_ar": "مَمْلَكَة",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Qirollik, davlat"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Idafa iboralarini ayting: bābu l-bayt, kitābu ṭ-ṭālib, mudīru l-madrasa.",
+   "target_ar": ["بَابُ البَيْتِ", "كِتَابُ الطَّالِبِ", "مُدِيرُ المَدْرَسَةِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«mashina kaliti» va «maktab eshigi» iboralarini idafa bilan yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«uy eshigi» to'g'ri idafa qaysi?", "q_ar": "", "options": ["بَابُ البَيْتِ", "البَابُ البَيْتِ", "بَابٌ البَيْتُ", "بَابُ بَيْتٌ"], "answer": "بَابُ البَيْتِ", "explain_uz": "Mudaf (بَاب) الـ siz/tanvinsiz, mudaf ilayh (البَيْتِ) jarr da.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Idafada birinchi ot (mudaf) qanday bo'ladi?", "q_ar": "", "options": ["الـ siz va tanvinsiz", "الـ bilan", "tanvin bilan", "ikkilikda"], "answer": "الـ siz va tanvinsiz", "explain_uz": "Mudaf hech qachon الـ yoki tanvin olmaydi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مُدِيرُ المَدْرَسَةِ", "options": [], "answer": "maktab direktori", "explain_uz": "مُدِير (direktor) + المَدْرَسَة (maktab) = maktab direktori.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «م ل ك» o'zagidan?", "q_ar": "", "options": ["مَمْلَكَة", "مُدِير", "عَاصِمَة"], "answer": "مَمْلَكَة", "explain_uz": "«م ل ك» — egalik o'zagi: مَلِك (qirol), مَمْلَكَة (davlat), mulk.", "audio": "", "root": "م ل ك", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Ikkinchi otni to'g'ri holatga qo'ying: «كِتَابُ ____» (talabaning kitobi)", "q_ar": "كِتَابُ ____", "options": [], "answer": "الطَّالِبِ", "explain_uz": "Mudaf ilayh jarr da (kasra): الطَّالِبِ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "poytaxt", "q_ar": "", "options": [], "answer": "عَاصِمَة", "explain_uz": "عَاصِمَة — poytaxt.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "«maktab direktori» idafasini tuzing", "q_ar": "", "options": [], "answer": "مُدِيرُ المَدْرَسَةِ", "explain_uz": "Mudaf (مُدِيرُ) + mudaf ilayh (المَدْرَسَةِ).", "audio": "", "root": "", "pattern": "", "words": ["المَدْرَسَةِ", "مُدِيرُ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "م ل ك", "back": "egalik o'zagi (malik, mulk, mamlakat)", "deck": "msa"},
+  {"type": "word", "front": "مَلِك", "back": "podshoh, qirol", "deck": "msa"},
+  {"type": "word", "front": "مَمْلَكَة", "back": "qirollik, davlat", "deck": "msa"},
+  {"type": "word", "front": "عَاصِمَة", "back": "poytaxt", "deck": "msa"},
+  {"type": "word", "front": "مُدِير", "back": "direktor, boshliq", "deck": "msa"},
+  {"type": "word", "front": "نَوْم", "back": "uyqu", "deck": "msa"},
+  {"type": "word", "front": "بَابُ البَيْتِ", "back": "uy eshigi (idafa)", "deck": "msa"},
+  {"type": "word", "front": "غُرْفَةُ النَّوْمِ", "back": "yotoqxona (idafa)", "deck": "msa"},
+  {"type": "word", "front": "مِفْتَاحُ السَّيَّارَةِ", "back": "mashina kaliti (idafa)", "deck": "msa"},
+  {"type": "word", "front": "مُدِيرُ المَدْرَسَةِ", "back": "maktab direktori (idafa)", "deck": "msa"}
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "id": "a1-11",
+ "level": "A1",
+ "module": "past-tense",
+ "order": 11,
+ "title_uz": "«Men yozdim / biz yozdik»",
+ "title_ar": "الماضي: أَنَا / نَحْنُ",
+ "can_do_uz": "O'zim va guruhim haqida o'tgan zamonda gapira olaman: «men yozdim», «biz o'qidik».",
+ "duration_min": 30,
+ "prerequisites": ["a1-10"],
+ "harakat_level": "full",
+ "hook_uz": "Bugun nima qildingiz? «Men o'qidim» — دَرَسْتُ. «Biz bordik» — ذَهَبْنا. O'zingiz haqingizda gapirish uchun ـْتُ (men) va ـْنا (biz) qo'shimchalarini o'rganamiz.",
+ "grammar": {
+  "point_ar": "الماضي: فَعَلْتُ / فَعَلْنَا",
+  "explanation_uz": "Birinchi shaxs uchun: أَنَا (men) → ـْتُ: كَتَبْتُ (men yozdim). نَحْنُ (biz) → ـْنَا: كَتَبْنَا (biz yozdik). E'tibor: أَنْتَ (sen) da ـْتَ (fatha), أَنَا (men) da ـْتُ (damma) — faqat oxirgi harakat farqi. نَحْنُ har doim ـْنَا oladi.",
+  "table": [
+   {"ar": "كَتَبْتُ", "uz": "men yozdim", "form": "أَنَا — ـْتُ"},
+   {"ar": "كَتَبْنَا", "uz": "biz yozdik", "form": "نَحْنُ — ـْنَا"},
+   {"ar": "قَرَأْتُ", "uz": "men o'qidim", "form": "أَنَا"},
+   {"ar": "ذَهَبْنَا", "uz": "biz bordik", "form": "نَحْنُ"}
+  ],
+  "common_mistakes_uz": [
+   "أَنْتَ (ـتَ) va أَنَا (ـتُ) ni chalkashtirish — men uchun damma (ـتُ).",
+   "نَحْنُ uchun ـْنا o'rniga boshqa qo'shimcha ishlatish.",
+   "قَرَأَ (o'qidi) da hamza (أ) ni tushirib qoldirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ق ر أ",
+   "meaning_uz": "o'qish, qiroat",
+   "uz_cognates": ["Qur'on", "qori", "qiroat"],
+   "derived": [
+    {"ar": "قَرَأَ", "uz": "o'qidi", "pattern": "فَعَلَ"},
+    {"ar": "قُرْآن", "uz": "Qur'on (o'qiladigan)", "pattern": "فُعْلَان"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "كَتَبْتُ", "translit": "katabtu", "uz": "men yozdim", "root": "ك ت ب", "pattern": "فَعَلْتُ", "pos": "fe'l", "audio": "a1/katabtu.mp3", "example_ar": "كَتَبْتُ رِسَالَةً.", "example_uz": "Men xat yozdim.", "srs": true},
+  {"ar": "كَتَبْنَا", "translit": "katabnā", "uz": "biz yozdik", "root": "ك ت ب", "pattern": "فَعَلْنَا", "pos": "fe'l", "audio": "a1/katabna.mp3", "example_ar": "كَتَبْنَا الدَّرْسَ.", "example_uz": "Biz darsni yozdik.", "srs": true},
+  {"ar": "ذَهَبْتُ", "translit": "dhahabtu", "uz": "men bordim", "root": "ذ ه ب", "pattern": "فَعَلْتُ", "pos": "fe'l", "audio": "a1/dhahabtu.mp3", "example_ar": "ذَهَبْتُ إِلَى المَسْجِدِ.", "example_uz": "Masjidga bordim.", "srs": true},
+  {"ar": "ذَهَبْنَا", "translit": "dhahabnā", "uz": "biz bordik", "root": "ذ ه ب", "pattern": "فَعَلْنَا", "pos": "fe'l", "audio": "a1/dhahabna.mp3", "example_ar": "ذَهَبْنَا مَعًا.", "example_uz": "Biz birga bordik.", "srs": true},
+  {"ar": "قَرَأَ", "translit": "qaraʾa", "uz": "o'qidi", "root": "ق ر أ", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/qaraa.mp3", "example_ar": "قَرَأَ الكِتَابَ.", "example_uz": "U kitob o'qidi.", "srs": true},
+  {"ar": "قَرَأْتُ", "translit": "qaraʾtu", "uz": "men o'qidim", "root": "ق ر أ", "pattern": "فَعَلْتُ", "pos": "fe'l", "audio": "a1/qaratu.mp3", "example_ar": "قَرَأْتُ القُرْآنَ.", "example_uz": "Men Qur'on o'qidim.", "srs": true},
+  {"ar": "أَكَلْنَا", "translit": "akalnā", "uz": "biz yedik", "root": "أ ك ل", "pattern": "فَعَلْنَا", "pos": "fe'l", "audio": "a1/akalna.mp3", "example_ar": "أَكَلْنَا الخُبْزَ.", "example_uz": "Biz non yedik.", "srs": true},
+  {"ar": "أُسْبُوع", "translit": "usbūʿ", "uz": "hafta", "root": "س ب ع", "pattern": "أُفْعُول", "pos": "ot", "audio": "a1/usbua.mp3", "example_ar": "دَرَسْتُ أُسْبُوعًا.", "example_uz": "Bir hafta o'qidim.", "srs": true},
+  {"ar": "مَعًا", "translit": "maʿan", "uz": "birga", "root": "", "pattern": "", "pos": "ravish", "audio": "a1/maan.mp3", "example_ar": "ذَهَبْنَا مَعًا.", "example_uz": "Birga bordik.", "srs": true},
+  {"ar": "قُرْآن", "translit": "qurʾān", "uz": "Qur'on (o'zbekcha 'Qur'on')", "root": "ق ر أ", "pattern": "فُعْلَان", "pos": "ot", "audio": "a1/quran.mp3", "example_ar": "قَرَأْتُ القُرْآنَ.", "example_uz": "Qur'on o'qidim.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أَمْسِ ذَهَبْتُ إِلَى المَسْجِدِ وَقَرَأْتُ القُرْآنَ. بَعْدَ ذَلِكَ ذَهَبْنَا إِلَى السُّوقِ مَعًا.",
+   "questions": [
+    {"q_uz": "Gapiruvchi masjidda nima qildi?", "a": "Qur'on o'qidi (قَرَأَ القُرْآن)"},
+    {"q_uz": "«ذَهَبْنَا» kim haqida?", "a": "Biz (nechta kishi)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/katabtu.mp3",
+   "transcript_ar": "كَتَبْتُ",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi?", "a": "Men yozdim"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "O'zingiz haqingizda ayting: katabtu, dhahabtu, qaraʾtu al-qurʾān. Keyin biz: dhahabnā maʿan.",
+   "target_ar": ["كَتَبْتُ", "قَرَأْتُ القُرْآنَ", "ذَهَبْنَا مَعًا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Men kecha o'qidim» va «Biz masjidga bordik» gaplarini yozing (دَرَسْتُ / ذَهَبْنَا).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Men yozdim» qaysi?", "q_ar": "", "options": ["كَتَبْتُ", "كَتَبْتَ", "كَتَبْنَا", "كَتَبَ"], "answer": "كَتَبْتُ", "explain_uz": "أَنَا (men) → ـْتُ (damma): كَتَبْتُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Biz bordik» qaysi?", "q_ar": "", "options": ["ذَهَبْنَا", "ذَهَبْتُ", "ذَهَبْتُم", "ذَهَبَ"], "answer": "ذَهَبْنَا", "explain_uz": "نَحْنُ (biz) → ـْنَا: ذَهَبْنَا.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "قَرَأْتُ القُرْآنَ", "options": [], "answer": "men Qur'on o'qidim", "explain_uz": "قَرَأْتُ = men o'qidim, القُرْآن = Qur'on.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ق ر أ» o'zagidan?", "q_ar": "", "options": ["قُرْآن", "كِتَاب", "خَبَر"], "answer": "قُرْآن", "explain_uz": "«ق ر أ» — o'qish o'zagi: قَرَأَ (o'qidi), قُرْآن (o'qiladigan), qori.", "audio": "", "root": "ق ر أ", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring: «نَحْنُ ____ الخُبْزَ» (biz non yedik)", "q_ar": "نَحْنُ ____ الخُبْزَ", "options": [], "answer": "أَكَلْنَا", "explain_uz": "نَحْنُ → ـْنَا: أَكَلْنَا.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "hafta", "q_ar": "", "options": [], "answer": "أُسْبُوع", "explain_uz": "أُسْبُوع — hafta (7 kun, س ب ع = yetti o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "dictation", "q_uz": "Eshitilgan fe'lni yozing", "q_ar": "", "options": [], "answer": "كَتَبْنَا", "explain_uz": "كَتَبْنَا — biz yozdik.", "audio": "a1/katabna.mp3", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ق ر أ", "back": "o'qish o'zagi (Qur'on, qori, qiroat)", "deck": "msa"},
+  {"type": "word", "front": "كَتَبْتُ", "back": "men yozdim", "deck": "msa"},
+  {"type": "word", "front": "كَتَبْنَا", "back": "biz yozdik", "deck": "msa"},
+  {"type": "word", "front": "ذَهَبْتُ", "back": "men bordim", "deck": "msa"},
+  {"type": "word", "front": "ذَهَبْنَا", "back": "biz bordik", "deck": "msa"},
+  {"type": "word", "front": "قَرَأَ", "back": "u o'qidi", "deck": "msa"},
+  {"type": "word", "front": "قَرَأْتُ", "back": "men o'qidim", "deck": "msa"},
+  {"type": "word", "front": "أُسْبُوع", "back": "hafta", "deck": "msa"},
+  {"type": "word", "front": "قُرْآن", "back": "Qur'on", "deck": "msa"},
+  {"type": "word", "front": "مَعًا", "back": "birga", "deck": "msa"}
+ ]
+}

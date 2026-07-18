@@ -1,0 +1,366 @@
+{
+ "id": "a1-22",
+ "level": "A1",
+ "module": "present-tense",
+ "order": 22,
+ "title_uz": "«Qilmayapman»",
+ "title_ar": "نَفْيُ المُضَارِع بِـ (لا)",
+ "can_do_uz": "Hozirgi zamonni inkor qila olaman: «bilmayman», «u bormaydi».",
+ "duration_min": 30,
+ "prerequisites": [
+  "a1-21"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "Biror ishni qilmasligingizni ayting: «Bilmayman» — لا أَعْرِفُ. Hozirgi zamonni inkor qilish oson: fe'l oldiga لا qo'yasiz, fe'l o'zgarmaydi. (O'tganда مَا edi, hozirda لا.)",
+ "grammar": {
+  "point_ar": "لا + الفِعْل المُضَارِع",
+  "explanation_uz": "Hozirgi zamonni inkor qilish uchun fe'l OLDIGA لا qo'yiladi, fe'l shakli o'zgarmaydi: أَعْرِفُ (bilaman) → لا أَعْرِفُ (bilmayman); يَذْهَبُ (boradi) → لا يَذْهَبُ (bormaydi). ESLATMA: o'tgan zamon inkori مَا bilan (مَا ذَهَبَ), hozirgi zamon inkori لا bilan (لا يَذْهَبُ).",
+  "table": [
+   {
+    "ar": "أَعْرِفُ ← لا أَعْرِفُ",
+    "uz": "bilaman → bilmayman",
+    "form": "1-shaxs inkor"
+   },
+   {
+    "ar": "يَذْهَبُ ← لا يَذْهَبُ",
+    "uz": "boradi → bormaydi",
+    "form": "3-shaxs inkor"
+   },
+   {
+    "ar": "لا أَقْدِرُ",
+    "uz": "Qila olmayman",
+    "form": "namuna"
+   },
+   {
+    "ar": "لا نَفْهَمُ",
+    "uz": "Tushunmaymiz",
+    "form": "namuna"
+   }
+  ],
+  "common_mistakes_uz": [
+   "Hozirgi zamonni مَا bilan inkor qilish — hozirgi uchun لا ishlatiladi.",
+   "لا ni fe'ldan keyin qo'yish — u fe'l OLDIDA turadi.",
+   "Inkorda fe'l shaklini o'zgartirish — لا bilan fe'l o'zgarmaydi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ق د ر",
+   "meaning_uz": "qodir bo'lish, kuch",
+   "uz_cognates": [
+    "qudrat",
+    "qodir",
+    "taqdir",
+    "miqdor"
+   ],
+   "derived": [
+    {
+     "ar": "يَقْدِرُ",
+     "uz": "qila oladi",
+     "pattern": "يَفْعِلُ"
+    },
+    {
+     "ar": "قُدْرَة",
+     "uz": "kuch, imkoniyat",
+     "pattern": "فُعْلَة"
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "لَا",
+   "translit": "lā",
+   "uz": "inkor: -maydi (muzori' oldida)",
+   "root": "",
+   "pattern": "",
+   "pos": "inkor",
+   "audio": "a1/la.mp3",
+   "example_ar": "لا أَعْرِفُ.",
+   "example_uz": "Bilmayman.",
+   "srs": true
+  },
+  {
+   "ar": "يَقْدِرُ",
+   "translit": "yaqdiru",
+   "uz": "qila oladi, qodir",
+   "root": "ق د ر",
+   "pattern": "يَفْعِلُ",
+   "pos": "fe'l",
+   "audio": "a1/yaqdiru.mp3",
+   "example_ar": "لا يَقْدِرُ الآنَ.",
+   "example_uz": "Hozir qila olmaydi.",
+   "srs": true
+  },
+  {
+   "ar": "يَطْلُبُ",
+   "translit": "yaṭlubu",
+   "uz": "so'raydi, talab qiladi",
+   "root": "ط ل ب",
+   "pattern": "يَفْعُلُ",
+   "pos": "fe'l",
+   "audio": "a1/yatlubu.mp3",
+   "example_ar": "يَطْلُبُ المَاءَ.",
+   "example_uz": "U suv so'raydi.",
+   "srs": true
+  },
+  {
+   "ar": "يَقْبَلُ",
+   "translit": "yaqbalu",
+   "uz": "qabul qiladi",
+   "root": "ق ب ل",
+   "pattern": "يَفْعَلُ",
+   "pos": "fe'l",
+   "audio": "a1/yaqbalu.mp3",
+   "example_ar": "يَقْبَلُ الجَوَابَ.",
+   "example_uz": "U javobni qabul qiladi.",
+   "srs": true
+  },
+  {
+   "ar": "قُدْرَة",
+   "translit": "qudra",
+   "uz": "kuch, imkoniyat (o'zbekcha 'qudrat')",
+   "root": "ق د ر",
+   "pattern": "فُعْلَة",
+   "pos": "ot",
+   "audio": "a1/qudra.mp3",
+   "example_ar": "لَهُ قُدْرَةٌ كَبِيرَةٌ.",
+   "example_uz": "Unda katta qudrat bor.",
+   "srs": true
+  },
+  {
+   "ar": "كَثِيرًا",
+   "translit": "kathīran",
+   "uz": "ko'p",
+   "root": "ك ث ر",
+   "pattern": "",
+   "pos": "ravish",
+   "audio": "a1/kathiran.mp3",
+   "example_ar": "يَقْرَأُ كَثِيرًا.",
+   "example_uz": "U ko'p o'qiydi.",
+   "srs": true
+  },
+  {
+   "ar": "قَلِيلًا",
+   "translit": "qalīlan",
+   "uz": "oz, kam",
+   "root": "ق ل ل",
+   "pattern": "",
+   "pos": "ravish",
+   "audio": "a1/qalilan.mp3",
+   "example_ar": "أَفْهَمُ قَلِيلًا.",
+   "example_uz": "Ozgina tushunaman.",
+   "srs": true
+  },
+  {
+   "ar": "جَيِّدًا",
+   "translit": "jayyidan",
+   "uz": "yaxshi (ravish)",
+   "root": "ج و د",
+   "pattern": "",
+   "pos": "ravish",
+   "audio": "a1/jayyidan.mp3",
+   "example_ar": "يَعْمَلُ جَيِّدًا.",
+   "example_uz": "U yaxshi ishlaydi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أَنَا أَفْهَمُ العَرَبِيَّةَ قَلِيلًا لَكِنْ لا أَتَكَلَّمُ كَثِيرًا. هُوَ لا يَذْهَبُ إِلَى العَمَلِ اليَوْمَ لِأَنَّهُ مَرِيضٌ.",
+   "questions": [
+    {
+     "q_uz": "Gapiruvchi arabchani qanchalik tushunadi?",
+     "a": "Ozgina (قَلِيلًا)"
+    },
+    {
+     "q_uz": "Nega u ishga bormaydi?",
+     "a": "Kasal (مَرِيض) bo'lgani uchun"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a1/yaqdiru.mp3",
+   "transcript_ar": "يَقْدِرُ",
+   "questions": [
+    {
+     "q_uz": "Fe'l ma'nosi?",
+     "a": "Qila oladi"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Inkor gaplar ayting: lā aʿrifu, lā afhamu kathīran, lā yaqdiru al-ān.",
+   "target_ar": [
+    "لا أَعْرِفُ",
+    "لا أَفْهَمُ",
+    "لا يَقْدِرُ"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Men ko'p gapirmayman» va «U bugun kelmaydi» gaplarini inkor لا bilan yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«Bilmayman» qaysi?",
+   "q_ar": "",
+   "options": [
+    "لا أَعْرِفُ",
+    "مَا أَعْرِفُ",
+    "لا عَرَفْتُ",
+    "أَعْرِفُ لا"
+   ],
+   "answer": "لا أَعْرِفُ",
+   "explain_uz": "Hozirgi zamon inkori: لا + muzori' = لا أَعْرِفُ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Hozirgi zamonni qaysi so'z bilan inkor qilamiz?",
+   "q_ar": "",
+   "options": [
+    "لا",
+    "مَا",
+    "لَمْ",
+    "لَنْ"
+   ],
+   "answer": "لا",
+   "explain_uz": "Hozirgi zamon uchun لا (o'tgan uchun مَا edi).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "",
+   "q_ar": "لا يَذْهَبُ",
+   "options": [],
+   "answer": "u bormaydi",
+   "explain_uz": "لا + يَذْهَبُ (boradi) = bormaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "Qaysi so'z «ق د ر» o'zagidan?",
+   "q_ar": "",
+   "options": [
+    "يَقْدِرُ",
+    "يَطْلُبُ",
+    "يَقْبَلُ"
+   ],
+   "answer": "يَقْدِرُ",
+   "explain_uz": "«ق د ر» — qodir o'zagi: يَقْدِرُ, قُدْرَة (kuch), qudrat.",
+   "audio": "",
+   "root": "ق د ر",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "fill_blank",
+   "q_uz": "Inkor qiling: «يَفْهَمُ» → «____ يَفْهَمُ» (tushunmaydi)",
+   "q_ar": "____ يَفْهَمُ",
+   "options": [],
+   "answer": "لا",
+   "explain_uz": "Fe'l oldiga لا: لا يَفْهَمُ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "ko'p",
+   "q_ar": "",
+   "options": [],
+   "answer": "كَثِيرًا",
+   "explain_uz": "كَثِيرًا — ko'p (ravish, ك ث ر o'zagidan).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "«Ozgina tushunaman» gapini tuzing",
+   "q_ar": "",
+   "options": [],
+   "answer": "أَفْهَمُ قَلِيلًا",
+   "explain_uz": "Fe'l (أَفْهَمُ) + ravish (قَلِيلًا).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": [
+    "قَلِيلًا",
+    "أَفْهَمُ"
+   ]
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "root",
+   "front": "ق د ر",
+   "back": "qodir o'zagi (qudrat, qodir, taqdir, miqdor)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "لَا",
+   "back": "inkor: -maydi (muzori' oldida)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "يَقْدِرُ",
+   "back": "qila oladi, qodir",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "يَطْلُبُ",
+   "back": "so'raydi, talab qiladi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "يَقْبَلُ",
+   "back": "qabul qiladi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "قُدْرَة",
+   "back": "kuch, imkoniyat",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "كَثِيرًا",
+   "back": "ko'p",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "قَلِيلًا",
+   "back": "oz, kam",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "جَيِّدًا",
+   "back": "yaxshi (ravish)",
+   "deck": "msa"
+  }
+ ]
+}

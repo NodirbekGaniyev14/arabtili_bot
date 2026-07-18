@@ -1,0 +1,100 @@
+{
+ "id": "a1-27",
+ "level": "A1",
+ "module": "noun-system",
+ "order": 27,
+ "title_uz": "Notekis ko'plikni tanib olaman",
+ "title_ar": "جَمْعُ التَّكْسِير",
+ "can_do_uz": "«kitoblar», «uylar», «erkaklar» kabi singan (notekis) ko'plik shakllarini taniyman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-26"],
+ "harakat_level": "full",
+ "hook_uz": "Ba'zi so'zlar ko'plikda «sinadi» — ichki shakli o'zgaradi! كِتَاب (kitob) → كُتُب (kitoblar), بَيْت (uy) → بُيُوت (uylar). Bularni yodlash kerak, lekin vaznlar takrorlanadi — o'rgansangiz taxmin qilasiz.",
+ "grammar": {
+  "point_ar": "جَمْعُ التَّكْسِير",
+  "explanation_uz": "«Singan ko'plik» (جمع التكسير) — so'z ichki tuzilishi o'zgaradi (qo'shimcha emas). Narsalar va ko'p so'zlar shu ko'plikni oladi. Asosiy vaznlar: فُعُل (كِتَاب→كُتُب), فُعُول (بَيْت→بُيُوت), أَفْعَال (وَلَد→أَوْلَاد, قَلَم→أَقْلَام), فِعَال (رَجُل→رِجَال). Har so'zning ko'pligini lug'atdan yodlang — lekin vaznlar tanish bo'lib boradi.",
+  "table": [
+   {"ar": "كِتَاب ← كُتُب", "uz": "kitob → kitoblar", "form": "فُعُل"},
+   {"ar": "بَيْت ← بُيُوت", "uz": "uy → uylar", "form": "فُعُول"},
+   {"ar": "وَلَد ← أَوْلَاد", "uz": "bola → bolalar", "form": "أَفْعَال"},
+   {"ar": "رَجُل ← رِجَال", "uz": "erkak → erkaklar", "form": "فِعَال"}
+  ],
+  "common_mistakes_uz": [
+   "Narsalarga sog'lom ko'plik (ـُونَ) qo'shish — ular ko'pincha singan ko'plik oladi.",
+   "Singan ko'plik vaznini o'zak bilan chalkashtirish — o'zak harflari saqlanadi.",
+   "Har so'zning ko'pligini «qoida» bilan yasashga urinish — ko'pini yodlash kerak."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ج م ع",
+   "meaning_uz": "yig'ish, jamlash",
+   "uz_cognates": ["jam'", "jome'", "jum'a", "majmua"],
+   "derived": [
+    {"ar": "جَمْع", "uz": "ko'plik, yig'in", "pattern": "فَعْل"},
+    {"ar": "جَامِعَة", "uz": "universitet (jam qiluvchi)", "pattern": "فَاعِلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "كُتُب", "translit": "kutub", "uz": "kitoblar (كِتَاب ko'pligi)", "root": "ك ت ب", "pattern": "فُعُل", "pos": "ot", "audio": "a1/kutub.mp3", "example_ar": "الكُتُبُ جَدِيدَةٌ.", "example_uz": "Kitoblar yangi.", "srs": true},
+  {"ar": "بُيُوت", "translit": "buyūt", "uz": "uylar (بَيْت ko'pligi)", "root": "ب ي ت", "pattern": "فُعُول", "pos": "ot", "audio": "a1/buyut.mp3", "example_ar": "البُيُوتُ كَبِيرَةٌ.", "example_uz": "Uylar katta.", "srs": true},
+  {"ar": "أَوْلَاد", "translit": "awlād", "uz": "bolalar (وَلَد ko'pligi)", "root": "و ل د", "pattern": "أَفْعَال", "pos": "ot", "audio": "a1/awlad2.mp3", "example_ar": "الأَوْلَادُ يَلْعَبُونَ.", "example_uz": "Bolalar o'ynaydilar.", "srs": true},
+  {"ar": "رِجَال", "translit": "rijāl", "uz": "erkaklar (رَجُل ko'pligi)", "root": "ر ج ل", "pattern": "فِعَال", "pos": "ot", "audio": "a1/rijal.mp3", "example_ar": "الرِّجَالُ فِي السُّوقِ.", "example_uz": "Erkaklar bozorda.", "srs": true},
+  {"ar": "أَقْلَام", "translit": "aqlām", "uz": "qalamlar (قَلَم ko'pligi)", "root": "ق ل م", "pattern": "أَفْعَال", "pos": "ot", "audio": "a1/aqlam.mp3", "example_ar": "الأَقْلَامُ جَدِيدَةٌ.", "example_uz": "Qalamlar yangi.", "srs": true},
+  {"ar": "طُلَّاب", "translit": "ṭullāb", "uz": "talabalar (طَالِب ko'pligi)", "root": "ط ل ب", "pattern": "فُعَّال", "pos": "ot", "audio": "a1/tullab.mp3", "example_ar": "الطُّلَّابُ يَدْرُسُونَ.", "example_uz": "Talabalar o'qiydilar.", "srs": true},
+  {"ar": "مُدُن", "translit": "mudun", "uz": "shaharlar (مَدِينَة ko'pligi)", "root": "م د ن", "pattern": "فُعُل", "pos": "ot", "audio": "a1/mudun.mp3", "example_ar": "المُدُنُ كَبِيرَةٌ.", "example_uz": "Shaharlar katta.", "srs": true},
+  {"ar": "أَبْوَاب", "translit": "abwāb", "uz": "eshiklar (بَاب ko'pligi)", "root": "ب و ب", "pattern": "أَفْعَال", "pos": "ot", "audio": "a1/abwab.mp3", "example_ar": "الأَبْوَابُ مَفْتُوحَةٌ.", "example_uz": "Eshiklar ochiq.", "srs": true},
+  {"ar": "عُيُون", "translit": "ʿuyūn", "uz": "ko'zlar (عَيْن ko'pligi)", "root": "ع ي ن", "pattern": "فُعُول", "pos": "ot", "audio": "a1/uyun.mp3", "example_ar": "العُيُونُ جَمِيلَةٌ.", "example_uz": "Ko'zlar chiroyli.", "srs": true},
+  {"ar": "أَسْوَاق", "translit": "aswāq", "uz": "bozorlar (سُوق ko'pligi)", "root": "س و ق", "pattern": "أَفْعَال", "pos": "ot", "audio": "a1/aswaq.mp3", "example_ar": "الأَسْوَاقُ قَدِيمَةٌ.", "example_uz": "Bozorlar eski.", "srs": true},
+  {"ar": "أَقْوَام", "translit": "aqwām", "uz": "xalqlar, qavmlar (قَوْم ko'pligi)", "root": "ق و م", "pattern": "أَفْعَال", "pos": "ot", "audio": "a1/aqwam.mp3", "example_ar": "الأَقْوَامُ مُخْتَلِفَةٌ.", "example_uz": "Xalqlar turlicha.", "srs": true},
+  {"ar": "جَمْع", "translit": "jamʿ", "uz": "ko'plik, yig'in (o'zbekcha 'jam'')", "root": "ج م ع", "pattern": "فَعْل", "pos": "ot", "audio": "a1/jam.mp3", "example_ar": "هَذَا جَمْعُ التَّكْسِيرِ.", "example_uz": "Bu singan ko'plik.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "فِي المَدِينَةِ بُيُوتٌ كَبِيرَةٌ وَأَسْوَاقٌ قَدِيمَةٌ. الرِّجَالُ فِي الأَسْوَاقِ وَالأَوْلَادُ فِي المَدَارِسِ. الكُتُبُ فِي المَكْتَبَةِ.",
+   "questions": [
+    {"q_uz": "Shaharда qanday binolar bor?", "a": "Katta uylar va eski bozorlar"},
+    {"q_uz": "«كُتُب» qaysi so'zning ko'pligi?", "a": "كِتَاب (kitob)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/kutub.mp3",
+   "transcript_ar": "كُتُب",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Kitoblar"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Ko'pliklarni ayting: kitāb→kutub, bayt→buyūt, walad→awlād, rajul→rijāl.",
+   "target_ar": ["كُتُب", "بُيُوت", "رِجَال"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«قَلَم» va «بَاب» so'zlarining singan ko'plik shaklini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«kitoblar» qaysi?", "q_ar": "", "options": ["كُتُب", "كِتَابَانِ", "كَاتِبُونَ", "كِتَابَات"], "answer": "كُتُب", "explain_uz": "كِتَاب ning singan ko'pligi: كُتُب (فُعُل vazni).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الرِّجَالُ فِي السُّوقِ", "options": [], "answer": "erkaklar bozorda", "explain_uz": "رِجَال = erkaklar (رَجُل ko'pligi), فِي السُّوق = bozorda.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«بَيْت» ning ko'pligi qaysi?", "q_ar": "", "options": ["بُيُوت", "بُيُوتَانِ", "بَيْتُونَ", "بَيْتَات"], "answer": "بُيُوت", "explain_uz": "بَيْت → بُيُوت (فُعُول vazni).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ج م ع» o'zagidan?", "q_ar": "", "options": ["جَمْع", "كُتُب", "رِجَال"], "answer": "جَمْع", "explain_uz": "«ج م ع» — yig'ish o'zagi: جَمْع (ko'plik), جامعة, jum'a.", "audio": "", "root": "ج م ع", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Ko'plik yozing: «قَلَم» → ? (qalamlar)", "q_ar": "____", "options": [], "answer": "أَقْلَام", "explain_uz": "قَلَم → أَقْلَام (أَفْعَال vazni).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "shaharlar", "q_ar": "", "options": [], "answer": "مُدُن", "explain_uz": "مَدِينَة → مُدُن (singan ko'plik).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Singan ko'plik (جمع التكسير) nima o'zgaradi?", "q_ar": "", "options": ["so'zning ichki shakli", "faqat oxiri", "faqat boshi", "hech narsa"], "answer": "so'zning ichki shakli", "explain_uz": "Singan ko'plikда so'z ichki tuzilishi o'zgaradi (qo'shimcha emas).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ج م ع", "back": "yig'ish o'zagi (jam', jome', jum'a, majmua)", "deck": "msa"},
+  {"type": "word", "front": "كُتُب", "back": "kitoblar", "deck": "msa"},
+  {"type": "word", "front": "بُيُوت", "back": "uylar", "deck": "msa"},
+  {"type": "word", "front": "أَوْلَاد", "back": "bolalar", "deck": "msa"},
+  {"type": "word", "front": "رِجَال", "back": "erkaklar", "deck": "msa"},
+  {"type": "word", "front": "أَقْلَام", "back": "qalamlar", "deck": "msa"},
+  {"type": "word", "front": "طُلَّاب", "back": "talabalar", "deck": "msa"},
+  {"type": "word", "front": "مُدُن", "back": "shaharlar", "deck": "msa"},
+  {"type": "word", "front": "أَبْوَاب", "back": "eshiklar", "deck": "msa"},
+  {"type": "word", "front": "أَسْوَاق", "back": "bozorlar", "deck": "msa"}
+ ]
+}

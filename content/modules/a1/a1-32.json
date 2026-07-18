@@ -1,0 +1,95 @@
+{
+ "id": "a1-32",
+ "level": "A1",
+ "module": "noun-system",
+ "order": 32,
+ "title_uz": "Turli inkorni bilaman",
+ "title_ar": "أَدَوَاتُ النَّفْي",
+ "can_do_uz": "Vaziyatga qarab to'g'ri inkor so'zini tanlayman: لَيْسَ، مَا، لا، لَمْ، لَنْ.",
+ "duration_min": 30,
+ "prerequisites": ["a1-31"],
+ "harakat_level": "full",
+ "hook_uz": "Arabchada «yo'q/emas» uchun bir necha so'z bor, har biri o'z o'rnida: لَيْسَ (emas), مَا (o'tgan), لا (hozirgi), لَنْ (kelasi). To'g'risini tanlashni o'rgansangiz — inkorni mukammal bajarasiz!",
+ "grammar": {
+  "point_ar": "لَيْسَ · ما · لا · لَمْ · لَنْ",
+  "explanation_uz": "Inkor vositalari: (1) لَيْسَ — ismli gapni inkor qiladi («emas»): لَيْسَ الطَّالِبُ حَاضِرًا (talaba hozir emas; xabar nasb bo'ladi). (2) مَا + o'tgan fe'l: مَا ذَهَبَ (bormadi). (3) لا + hozirgi fe'l: لا يَذْهَبُ (bormaydi). (4) لَنْ + hozirgi fe'l: لَنْ يَذْهَبَ (bormaydi — kelasi inkori). (5) لَمْ + hozirgi shakl: لَمْ يَذْهَبْ (bormadi — o'tganning kuchli inkori). Vaqt va gap turiga qarab tanlang.",
+  "table": [
+   {"ar": "لَيْسَ ... حَاضِرًا", "uz": "... hozir emas", "form": "ismli gap"},
+   {"ar": "مَا ذَهَبَ", "uz": "bormadi (o'tgan)", "form": "ما + ma'zi"},
+   {"ar": "لا يَذْهَبُ", "uz": "bormaydi (hozirgi)", "form": "لا + muzori'"},
+   {"ar": "لَنْ يَذْهَبَ", "uz": "bormaydi (kelasi)", "form": "لَنْ + muzori'"}
+  ],
+  "common_mistakes_uz": [
+   "لَيْسَ dan keyin xabarni raf' qoldirish — u nasb (fatha) bo'ladi: حَاضِرًا.",
+   "Kelasi zamonni لا bilan inkor qilish — kelasi uchun لَنْ.",
+   "Har inkor so'zini bir xil deb o'ylash — zamon/gap turi muhim."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ص ح ح",
+   "meaning_uz": "sog'liq, to'g'rilik",
+   "uz_cognates": ["sihat", "sahih", "sihhat"],
+   "derived": [
+    {"ar": "صَحِيح", "uz": "sog', to'g'ri", "pattern": "فَعِيل"},
+    {"ar": "صِحَّة", "uz": "sog'liq", "pattern": "فِعْلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "لَيْسَ", "translit": "laysa", "uz": "emas (ismli gap inkori)", "root": "", "pattern": "", "pos": "inkor", "audio": "a1/laysa.mp3", "example_ar": "لَيْسَ الطَّالِبُ حَاضِرًا.", "example_uz": "Talaba hozir emas.", "srs": true},
+  {"ar": "لَمْ", "translit": "lam", "uz": "-madi (o'tganning kuchli inkori)", "root": "", "pattern": "", "pos": "inkor", "audio": "a1/lam.mp3", "example_ar": "لَمْ يَذْهَبْ.", "example_uz": "U bormadi.", "srs": true},
+  {"ar": "لَنْ", "translit": "lan", "uz": "-mas (kelasi zamon inkori)", "root": "", "pattern": "", "pos": "inkor", "audio": "a1/lan.mp3", "example_ar": "لَنْ يَذْهَبَ.", "example_uz": "U bormaydi (kelasi).", "srs": true},
+  {"ar": "مَرِيض", "translit": "marīḍ", "uz": "kasal, bemor (o'zbekcha 'maraz' shundan)", "root": "م ر ض", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/marid.mp3", "example_ar": "الوَلَدُ مَرِيضٌ.", "example_uz": "Bola kasal.", "srs": true},
+  {"ar": "صَحِيح", "translit": "ṣaḥīḥ", "uz": "sog', to'g'ri (o'zbekcha 'sahih')", "root": "ص ح ح", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/sahih.mp3", "example_ar": "الجَوَابُ صَحِيحٌ.", "example_uz": "Javob to'g'ri.", "srs": true},
+  {"ar": "حَاضِر", "translit": "ḥāḍir", "uz": "hozir, mavjud (o'zbekcha 'hozir')", "root": "ح ض ر", "pattern": "فَاعِل", "pos": "sifat", "audio": "a1/hadir.mp3", "example_ar": "المُعَلِّمُ حَاضِرٌ.", "example_uz": "O'qituvchi hozir.", "srs": true},
+  {"ar": "غَائِب", "translit": "ghāʾib", "uz": "g'oyib, yo'q (o'zbekcha 'g'oyib')", "root": "غ ي ب", "pattern": "فَاعِل", "pos": "sifat", "audio": "a1/ghaib.mp3", "example_ar": "الطَّالِبُ غَائِبٌ.", "example_uz": "Talaba yo'q.", "srs": true},
+  {"ar": "مَوْجُود", "translit": "mawjūd", "uz": "mavjud, bor (o'zbekcha 'mavjud')", "root": "و ج د", "pattern": "مَفْعُول", "pos": "sifat", "audio": "a1/mawjud.mp3", "example_ar": "الكِتَابُ مَوْجُودٌ.", "example_uz": "Kitob bor.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "لَيْسَ الطَّالِبُ حَاضِرًا اليَوْمَ لِأَنَّهُ مَرِيضٌ. مَا ذَهَبَ إِلَى المَدْرَسَةِ وَلَنْ يَذْهَبَ غَدًا. لَكِنَّ الجَوَابَ صَحِيحٌ.",
+   "questions": [
+    {"q_uz": "Talaba bugun hozir bo'ldimi?", "a": "Yo'q (لَيْسَ ... حَاضِرًا)"},
+    {"q_uz": "Ertaga boradimi?", "a": "Yo'q (لَنْ يَذْهَبَ — kelasi inkori)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/laysa.mp3",
+   "transcript_ar": "لَيْسَ",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Emas (inkor)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Inkorlarni ayting: laysa ḥāḍiran, mā dhahaba, lā yadhhabu, lan yadhhaba.",
+   "target_ar": ["لَيْسَ حَاضِرًا", "مَا ذَهَبَ", "لَنْ يَذْهَبَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«U kasal emas» (لَيْسَ) va «Ertaga kelmaydi» (لَنْ) gaplarini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "Ismli gapni («... emas») qaysi so'z inkor qiladi?", "q_ar": "", "options": ["لَيْسَ", "مَا", "لا", "لَنْ"], "answer": "لَيْسَ", "explain_uz": "لَيْسَ — ismli gap inkori: لَيْسَ الطَّالِبُ حَاضِرًا.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Kelasi zamonni qaysi so'z inkor qiladi?", "q_ar": "", "options": ["لَنْ", "لا", "مَا", "لَيْسَ"], "answer": "لَنْ", "explain_uz": "لَنْ + muzori' = kelasi inkori: لَنْ يَذْهَبَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الطَّالِبُ غَائِبٌ", "options": [], "answer": "talaba yo'q", "explain_uz": "غَائِب = g'oyib/yo'q; حَاضِر (hozir) ning teskarisi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ص ح ح» o'zagidan?", "q_ar": "", "options": ["صَحِيح", "مَرِيض", "غَائِب"], "answer": "صَحِيح", "explain_uz": "«ص ح ح» — sog'liq o'zagi: صَحِيح (sog'/to'g'ri), صِحَّة (sog'liq), sihat.", "audio": "", "root": "ص ح ح", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring: «____ يَذْهَبْ أَمْسِ» (kecha bormadi — kuchli inkor)", "q_ar": "____ يَذْهَبْ أَمْسِ", "options": [], "answer": "لَمْ", "explain_uz": "لَمْ + hozirgi shakl = o'tganning inkori: لَمْ يَذْهَبْ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "kasal, bemor", "q_ar": "", "options": [], "answer": "مَرِيض", "explain_uz": "مَرِيض — kasal (o'zbekcha 'maraz' shundan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«مَا ذَهَبَ» qaysi zamon inkori?", "q_ar": "", "options": ["o'tgan zamon", "hozirgi zamon", "kelasi zamon", "ismli gap"], "answer": "o'tgan zamon", "explain_uz": "مَا + o'tgan fe'l = o'tgan zamon inkori.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ص ح ح", "back": "sog'liq o'zagi (sahih, sihhat, sihat)", "deck": "msa"},
+  {"type": "word", "front": "لَيْسَ", "back": "emas (ismli gap inkori)", "deck": "msa"},
+  {"type": "word", "front": "لَمْ", "back": "-madi (o'tganning kuchli inkori)", "deck": "msa"},
+  {"type": "word", "front": "لَنْ", "back": "-mas (kelasi zamon inkori)", "deck": "msa"},
+  {"type": "word", "front": "مَرِيض", "back": "kasal, bemor", "deck": "msa"},
+  {"type": "word", "front": "صَحِيح", "back": "sog', to'g'ri", "deck": "msa"},
+  {"type": "word", "front": "حَاضِر", "back": "hozir, mavjud", "deck": "msa"},
+  {"type": "word", "front": "غَائِب", "back": "g'oyib, yo'q", "deck": "msa"},
+  {"type": "word", "front": "مَوْجُود", "back": "mavjud, bor", "deck": "msa"}
+ ]
+}

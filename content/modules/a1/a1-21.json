@@ -1,0 +1,95 @@
+{
+ "id": "a1-21",
+ "level": "A1",
+ "module": "present-tense",
+ "order": 21,
+ "title_uz": "Muzori' to'liq jadval",
+ "title_ar": "تَصْرِيفُ المُضَارِع الكَامِل",
+ "can_do_uz": "Hozirgi zamon fe'lini barcha shaxslar bo'yicha to'g'ri tuslay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-20"],
+ "harakat_level": "full",
+ "hook_uz": "Endi muzori'ni to'liq birlashtiramiz! يَعْرِفُ dan: أَعْرِفُ، تَعْرِفُ، نَعْرِفُ، يَعْرِفُونَ... Bugun jadvalni mustahkamlab, o'tgan zamonda o'rgangan fe'llaringizni hozirgi zamonga o'giramiz.",
+ "grammar": {
+  "point_ar": "جَدْوَلُ المُضَارِع",
+  "explanation_uz": "Muzori' to'liq jadvali: أَنَا أَفْعَلُ · نَحْنُ نَفْعَلُ · أَنْتَ تَفْعَلُ · أَنْتِ تَفْعَلِينَ · هُوَ يَفْعَلُ · هِيَ تَفْعَلُ · هُمْ يَفْعَلُونَ. Prefiks (أ ت ي ن) BOSHDA, ba'zi shakllarda oxirda qo'shimcha (ـِينَ, ـُونَ). O'tgan zamonda o'rgangan har fe'lni shu qolipga solib, hozirgi zamonga o'girish mumkin.",
+  "table": [
+   {"ar": "يَعْرِفُ / تَعْرِفُ", "uz": "u biladi (erkak/ayol)", "form": "3-shaxs"},
+   {"ar": "أَعْرِفُ / نَعْرِفُ", "uz": "men/biz bilamiz", "form": "1-shaxs"},
+   {"ar": "يَعْرِفُونَ", "uz": "ular biladilar", "form": "هُمْ — ـُونَ"},
+   {"ar": "كَتَبَ ← يَكْتُبُ", "uz": "yozdi → yozadi", "form": "o'tgan→hozirgi"}
+  ],
+  "common_mistakes_uz": [
+   "هُمْ (ular) shaklida ـُونَ qo'shimchasini unutish: يَعْرِفُونَ.",
+   "O'tgan zamon o'zagini hozirgi zamonga noto'g'ri o'tkazish.",
+   "Prefiks va qo'shimchani bir vaqtda chalkashtirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع ر ف",
+   "meaning_uz": "bilish, tanish",
+   "uz_cognates": ["ma'rifat", "ta'rif", "orif"],
+   "derived": [
+    {"ar": "يَعْرِفُ", "uz": "biladi, taniydi", "pattern": "يَفْعِلُ"},
+    {"ar": "مَعْرِفَة", "uz": "bilim, tanish", "pattern": "مَفْعِلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "يَعْرِفُ", "translit": "yaʿrifu", "uz": "u biladi, taniydi", "root": "ع ر ف", "pattern": "يَفْعِلُ", "pos": "fe'l", "audio": "a1/yarifu.mp3", "example_ar": "يَعْرِفُ الطَّرِيقَ.", "example_uz": "U yo'lni biladi.", "srs": true},
+  {"ar": "يَسْمَعُ", "translit": "yasmaʿu", "uz": "u eshitadi", "root": "س م ع", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a1/yasmau.mp3", "example_ar": "يَسْمَعُ الأَذَانَ.", "example_uz": "U azonni eshitadi.", "srs": true},
+  {"ar": "يَنْظُرُ", "translit": "yanẓuru", "uz": "u qaraydi", "root": "ن ظ ر", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a1/yanzuru.mp3", "example_ar": "يَنْظُرُ إِلَى الكِتَابِ.", "example_uz": "U kitobga qaraydi.", "srs": true},
+  {"ar": "يَرْجِعُ", "translit": "yarjiʿu", "uz": "u qaytadi", "root": "ر ج ع", "pattern": "يَفْعِلُ", "pos": "fe'l", "audio": "a1/yarjiu.mp3", "example_ar": "يَرْجِعُ إِلَى البَيْتِ.", "example_uz": "U uyga qaytadi.", "srs": true},
+  {"ar": "يَدْخُلُ", "translit": "yadkhulu", "uz": "u kiradi", "root": "د خ ل", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a1/yadkhulu.mp3", "example_ar": "يَدْخُلُ الغُرْفَةَ.", "example_uz": "U xonaga kiradi.", "srs": true},
+  {"ar": "يَعْرِفُونَ", "translit": "yaʿrifūna", "uz": "ular biladilar", "root": "ع ر ف", "pattern": "يَفْعِلُونَ", "pos": "fe'l", "audio": "a1/yarifuna.mp3", "example_ar": "هُمْ يَعْرِفُونَ العَرَبِيَّةَ.", "example_uz": "Ular arabchani biladilar.", "srs": true},
+  {"ar": "يَدْرُسُونَ", "translit": "yadrusūna", "uz": "ular o'qiydilar", "root": "د ر س", "pattern": "يَفْعُلُونَ", "pos": "fe'l", "audio": "a1/yadrusuna.mp3", "example_ar": "الطُّلَّابُ يَدْرُسُونَ.", "example_uz": "Talabalar o'qiydilar.", "srs": true},
+  {"ar": "طَرِيق", "translit": "ṭarīq", "uz": "yo'l (o'zbekcha 'tariqat' shundan)", "root": "ط ر ق", "pattern": "فَعِيل", "pos": "ot", "audio": "a1/tariq.mp3", "example_ar": "يَعْرِفُ الطَّرِيقَ.", "example_uz": "U yo'lni biladi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "الطُّلَّابُ يَدْرُسُونَ العَرَبِيَّةَ. يَقْرَؤُونَ وَيَكْتُبُونَ كُلَّ يَوْمٍ. هُمْ يَعْرِفُونَ الطَّرِيقَ إِلَى الجَامِعَةِ.",
+   "questions": [
+    {"q_uz": "Talabalar nima o'qiydilar?", "a": "Arab tilini (العَرَبِيَّة)"},
+    {"q_uz": "«يَدْرُسُونَ» qaysi shaxs?", "a": "Ular (هُمْ, ـُونَ)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/yarifu.mp3",
+   "transcript_ar": "يَعْرِفُ",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi?", "a": "U biladi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "«يَعْرِفُ» ni tuslang: aʿrifu, taʿrifu, naʿrifu, yaʿrifūna.",
+   "target_ar": ["أَعْرِفُ", "نَعْرِفُ", "يَعْرِفُونَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«يَسْمَعُ» ni 3 shaxsda yozing: men eshitaman, biz eshitamiz, ular eshitadilar.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Ular biladilar» qaysi?", "q_ar": "", "options": ["يَعْرِفُونَ", "يَعْرِفُ", "نَعْرِفُ", "أَعْرِفُ"], "answer": "يَعْرِفُونَ", "explain_uz": "هُمْ (ular) → يـ + ـُونَ: يَعْرِفُونَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "يَرْجِعُ إِلَى البَيْتِ", "options": [], "answer": "u uyga qaytadi", "explain_uz": "يَرْجِعُ = u qaytadi, إِلَى البَيْت = uyga.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "O'tgandan hozirgiga: «دَخَلَ» → «يَـ____» (u kiradi)", "q_ar": "يَـ____", "options": [], "answer": "دْخُلُ", "explain_uz": "دَخَلَ → يَدْخُلُ (u kiradi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ع ر ف» o'zagidan?", "q_ar": "", "options": ["يَعْرِفُ", "يَسْمَعُ", "يَنْظُرُ"], "answer": "يَعْرِفُ", "explain_uz": "«ع ر ف» — bilish o'zagi: يَعْرِفُ, مَعْرِفَة (bilim), ma'rifat.", "audio": "", "root": "ع ر ف", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "yo'l", "q_ar": "", "options": [], "answer": "طَرِيق", "explain_uz": "طَرِيق — yo'l (o'zbekcha 'tariqat' shundan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«كَتَبَ» ning hozirgi zamon shakli?", "q_ar": "", "options": ["يَكْتُبُ", "كَتَبْتُ", "كَاتِب", "مَكْتُوب"], "answer": "يَكْتُبُ", "explain_uz": "O'tgan كَتَبَ → hozirgi يَكْتُبُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "dictation", "q_uz": "Eshitilgan fe'lni yozing", "q_ar": "", "options": [], "answer": "يَعْرِفُ", "explain_uz": "يَعْرِفُ — u biladi.", "audio": "a1/yarifu.mp3", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع ر ف", "back": "bilish o'zagi (ma'rifat, ta'rif, orif)", "deck": "msa"},
+  {"type": "word", "front": "يَعْرِفُ", "back": "u biladi, taniydi", "deck": "msa"},
+  {"type": "word", "front": "يَسْمَعُ", "back": "u eshitadi", "deck": "msa"},
+  {"type": "word", "front": "يَنْظُرُ", "back": "u qaraydi", "deck": "msa"},
+  {"type": "word", "front": "يَرْجِعُ", "back": "u qaytadi", "deck": "msa"},
+  {"type": "word", "front": "يَدْخُلُ", "back": "u kiradi", "deck": "msa"},
+  {"type": "word", "front": "يَعْرِفُونَ", "back": "ular biladilar", "deck": "msa"},
+  {"type": "word", "front": "يَدْرُسُونَ", "back": "ular o'qiydilar", "deck": "msa"},
+  {"type": "word", "front": "طَرِيق", "back": "yo'l", "deck": "msa"}
+ ]
+}

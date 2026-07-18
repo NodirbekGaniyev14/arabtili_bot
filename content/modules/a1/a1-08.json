@@ -1,0 +1,103 @@
+{
+ "id": "a1-08",
+ "level": "A1",
+ "module": "nominal-sentence",
+ "order": 8,
+ "title_uz": "Salomlashaman, tanishaman",
+ "title_ar": "التَّحِيَّة وَالتَّعَارُف",
+ "can_do_uz": "Salomlasha olaman, ismimni ayta olaman va oddiy tanishuv suhbatini olib bora olaman (rasmiy va hijoziy).",
+ "duration_min": 30,
+ "prerequisites": ["a1-07"],
+ "harakat_level": "full",
+ "hook_uz": "Saudiyaga borganda birinchi so'z — salom! السَّلامُ عَلَيْكُم. Keyin: «Ismingiz nima?» — مَا اسْمُكَ؟. Bugun rasmiy (فصحى) va Saudiya lahjasidagi (hijoziy) salomlashuvni birga o'rganamiz.",
+ "grammar": {
+  "point_ar": "عِبَارَاتُ التَّحِيَّة",
+  "explanation_uz": "Tanishuv suhbati odatda shunday boradi: (1) السَّلامُ عَلَيْكُم — javobi وَعَلَيْكُمُ السَّلام. (2) كَيْفَ حَالُكَ؟ — javobi بِخَيْر، الحَمْدُ لِلَّه. (3) مَا اسْمُكَ؟ — javobi اسْمِي... (4) مِنْ أَيْنَ أَنْتَ؟ — javobi أَنَا مِنْ... Bu iboralar tayyor «bloklar» — yodlab ishlatiladi. Saudiyada kundalik gapda hijoziy shakllar ko'p eshitiladi (كَيْفَك، وِش اسْمَك).",
+  "table": [
+   {"ar": "السَّلامُ عَلَيْكُم", "uz": "Assalomu alaykum", "form": "salom"},
+   {"ar": "وَعَلَيْكُمُ السَّلام", "uz": "Va alaykum assalom", "form": "javob"},
+   {"ar": "مَا اسْمُكَ؟ — اسْمِي...", "uz": "Ismingiz nima? — Ismim...", "form": "tanishuv"},
+   {"ar": "مِنْ أَيْنَ أَنْتَ؟", "uz": "Qayerdansiz?", "form": "kelib chiqish"}
+  ],
+  "common_mistakes_uz": [
+   "السَّلامُ عَلَيْكُم ga javobni teskari aytish — to'g'risi وَعَلَيْكُمُ السَّلام.",
+   "مَا اسْمُكَ (erkakka) va مَا اسْمُكِ (ayolga) farqini unutish — oxirgi harakat (كَ / كِ).",
+   "Rasmiy vaziyatda hijoziy (كَيْفَك) ni ishlatib yuborish — rasmiyda كَيْفَ حَالُكَ yaxshiroq."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ش ك ر",
+   "meaning_uz": "minnatdorchilik, shukr",
+   "uz_cognates": ["shukr", "shukur", "mashkur"],
+   "derived": [
+    {"ar": "شُكْرًا", "uz": "rahmat", "pattern": "فُعْل"},
+    {"ar": "شَاكِر", "uz": "minnatdor", "pattern": "فَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "سَلَام", "translit": "salām", "uz": "salom, tinchlik (o'zbekcha 'salom')", "root": "س ل م", "pattern": "فَعَال", "pos": "ot", "audio": "a0/salam.mp3", "example_ar": "السَّلامُ عَلَيْكُم.", "example_uz": "Assalomu alaykum.", "srs": true},
+  {"ar": "صَبَاح", "translit": "ṣabāḥ", "uz": "tong (صَبَاحُ الخَيْر — xayrli tong)", "root": "ص ب ح", "pattern": "فَعَال", "pos": "ot", "audio": "a1/sabah.mp3", "example_ar": "صَبَاحُ الخَيْرِ.", "example_uz": "Xayrli tong.", "srs": true},
+  {"ar": "مَسَاء", "translit": "masāʾ", "uz": "kech (مَسَاءُ الخَيْر — xayrli kech)", "root": "م س و", "pattern": "فَعَال", "pos": "ot", "audio": "a1/masa.mp3", "example_ar": "مَسَاءُ الخَيْرِ.", "example_uz": "Xayrli kech.", "srs": true},
+  {"ar": "حَال", "translit": "ḥāl", "uz": "ahvol, holat (o'zbekcha 'hol' shundan)", "root": "ح و ل", "pattern": "فَعَال", "pos": "ot", "audio": "a1/hal.mp3", "example_ar": "كَيْفَ حَالُكَ؟", "example_uz": "Ahvoling qanday?", "srs": true},
+  {"ar": "بِخَيْر", "translit": "bikhayr", "uz": "yaxshi (ahvol haqida)", "root": "خ ي ر", "pattern": "", "pos": "ibora", "audio": "a1/bikhayr.mp3", "example_ar": "أَنَا بِخَيْرٍ.", "example_uz": "Men yaxshiman.", "srs": true},
+  {"ar": "شُكْرًا", "translit": "shukran", "uz": "rahmat (o'zbekcha 'shukr' shundan)", "root": "ش ك ر", "pattern": "", "pos": "ibora", "audio": "a1/shukran.mp3", "example_ar": "شُكْرًا جَزِيلًا.", "example_uz": "Katta rahmat.", "srs": true},
+  {"ar": "عَفْوًا", "translit": "ʿafwan", "uz": "arzimaydi, kechirasiz (o'zbekcha 'afu' shundan)", "root": "ع ف و", "pattern": "", "pos": "ibora", "audio": "a1/afwan.mp3", "example_ar": "عَفْوًا، أَيْنَ السُّوقُ؟", "example_uz": "Kechirasiz, bozor qayerda?", "srs": true},
+  {"ar": "اِسْم", "translit": "ism", "uz": "ism, ot (o'zbekcha 'ism' shundan)", "root": "س م و", "pattern": "", "pos": "ot", "audio": "a1/ism.mp3", "example_ar": "مَا اسْمُكَ؟", "example_uz": "Isming nima?", "srs": true},
+  {"ar": "مَرْحَبًا", "translit": "marḥaban", "uz": "salom, xush kelibsiz", "root": "ر ح ب", "pattern": "", "pos": "ibora", "audio": "a1/marhaban.mp3", "example_ar": "مَرْحَبًا! كَيْفَ حَالُكَ؟", "example_uz": "Salom! Qalaysan?", "srs": true},
+  {"ar": "هُنَا", "translit": "hunā", "uz": "bu yerda", "root": "", "pattern": "", "pos": "ravish", "audio": "a1/huna.mp3", "example_ar": "أَنَا هُنَا.", "example_uz": "Men bu yerdaman.", "srs": true}
+ ],
+ "hejazi": [
+  {"msa_ar": "كَيْفَ حَالُكَ؟", "hejazi_ar": "كَيْفَك؟", "translit": "kayfak?", "uz": "Qalaysan? (Saudiya lahjasi)", "audio": "hj/kayfak.mp3"},
+  {"msa_ar": "مَا اسْمُكَ؟", "hejazi_ar": "وِش اسْمَك؟", "translit": "wish ismak?", "uz": "Isming nima? (hijoziy)", "audio": "hj/wish_ismak.mp3"},
+  {"msa_ar": "نَعَمْ", "hejazi_ar": "أَيْوَه", "translit": "aywah", "uz": "Ha (hijoziy)", "audio": "hj/aywah.mp3"},
+  {"msa_ar": "بِخَيْر", "hejazi_ar": "تَمَام", "translit": "tamām", "uz": "Yaxshi, zo'r (hijoziy)", "audio": "hj/tamam.mp3"}
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "السَّلامُ عَلَيْكُم! كَيْفَ حَالُكَ؟ أَنَا بِخَيْرٍ، شُكْرًا. مَا اسْمُكَ؟ اسْمِي أَحْمَد. مِنْ أَيْنَ أَنْتَ؟",
+   "questions": [
+    {"q_uz": "Suhbatdoshning ismi nima?", "a": "Ahmad (أَحْمَد)"},
+    {"q_uz": "«كَيْفَ حَالُكَ؟» ga qanday javob berildi?", "a": "بِخَيْر، شُكْرًا (yaxshi, rahmat)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/shukran.mp3",
+   "transcript_ar": "شُكْرًا",
+   "questions": [
+    {"q_uz": "Eshitgan iborangiz ma'nosi?", "a": "Rahmat"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Tanishuvni ijro qiling: as-salāmu ʿalaykum — kayfa ḥāluk? — mā ismuk? — ismī... Keyin hijoziy: kayfak? tamām!",
+   "target_ar": ["السَّلامُ عَلَيْكُم", "كَيْفَ حَالُكَ؟", "اسْمِي"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Qisqa tanishuv yozing: salom bering, ahvol so'rang, ismingizni ayting (3 gap).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«السَّلامُ عَلَيْكُم» ga to'g'ri javob?", "q_ar": "", "options": ["وَعَلَيْكُمُ السَّلام", "السَّلامُ عَلَيْكُم", "شُكْرًا", "مَعَ السَّلامَة"], "answer": "وَعَلَيْكُمُ السَّلام", "explain_uz": "Salomga javob: وَعَلَيْكُمُ السَّلام.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَا اسْمُكَ؟", "options": [], "answer": "isming nima", "explain_uz": "مَا = nima, اسْم = ism, ـكَ = sening.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Saudiya lahjasida «Qalaysan?» qanday?", "q_ar": "", "options": ["كَيْفَك؟", "كَيْفَ حَالُكَ؟", "وِش اسْمَك؟", "مِنْ أَيْنَ؟"], "answer": "كَيْفَك؟", "explain_uz": "Hijoziy: كَيْفَك؟ (rasmiy: كَيْفَ حَالُكَ؟).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ش ك ر» o'zagidan?", "q_ar": "", "options": ["شُكْرًا", "سَلَام", "حَال"], "answer": "شُكْرًا", "explain_uz": "«ش ك ر» — shukr o'zagi: شُكْرًا (rahmat), شَاكِر (minnatdor).", "audio": "", "root": "ش ك ر", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Javobni to'ldiring: «كَيْفَ حَالُكَ؟» — «أَنَا ____» (yaxshi)", "q_ar": "أَنَا ____", "options": [], "answer": "بِخَيْر", "explain_uz": "بِخَيْر — yaxshi (ahvol).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "rahmat", "q_ar": "", "options": [], "answer": "شُكْرًا", "explain_uz": "شُكْرًا — rahmat (o'zbekcha 'shukr').", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «Yaxshi / zo'r» qaysi?", "q_ar": "", "options": ["تَمَام", "أَيْوَه", "عَفْوًا", "هُنَا"], "answer": "تَمَام", "explain_uz": "تَمَام — hijoziyда «zo'r, yaxshi». أَيْوَه — «ha».", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ش ك ر", "back": "shukr o'zagi (shukran=rahmat, shokir=minnatdor)", "deck": "msa"},
+  {"type": "word", "front": "صَبَاح", "back": "tong (sabahul-xayr)", "deck": "msa"},
+  {"type": "word", "front": "مَسَاء", "back": "kech (masaul-xayr)", "deck": "msa"},
+  {"type": "word", "front": "حَال", "back": "ahvol, holat", "deck": "msa"},
+  {"type": "word", "front": "شُكْرًا", "back": "rahmat", "deck": "msa"},
+  {"type": "word", "front": "عَفْوًا", "back": "arzimaydi, kechirasiz", "deck": "msa"},
+  {"type": "word", "front": "اِسْم", "back": "ism", "deck": "msa"},
+  {"type": "word", "front": "مَرْحَبًا", "back": "salom, xush kelibsiz", "deck": "msa"},
+  {"type": "phrase", "front": "كَيْفَك؟", "back": "Qalaysan? (hijoziy)", "deck": "hejazi"},
+  {"type": "phrase", "front": "تَمَام", "back": "Yaxshi, zo'r (hijoziy)", "deck": "hejazi"}
+ ]
+}

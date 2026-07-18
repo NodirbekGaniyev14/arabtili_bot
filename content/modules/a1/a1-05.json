@@ -1,0 +1,98 @@
+{
+ "id": "a1-05",
+ "level": "A1",
+ "module": "nominal-sentence",
+ "order": 5,
+ "title_uz": "Erkak/ayol so'zni ajrataman",
+ "title_ar": "المُذَكَّر وَالمُؤَنَّث",
+ "can_do_uz": "So'zning erkak (muzakkar) yoki ayol (muannas) ekanini aniqlay olaman va ة belgisini tanийman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-04"],
+ "harakat_level": "full",
+ "hook_uz": "Arabchada har so'z «erkak» yoki «ayol». Ko'pincha oxiridagi ة (ta marbuta) — ayollik belgisi: مُدَرِّس (o'qituvchi-erkak) → مُدَرِّسَة (o'qituvchi-ayol). Lekin ba'zi so'zlar ة siz ham ayol (أُمّ — ona). Bugun shuni ajratamiz.",
+ "grammar": {
+  "point_ar": "عَلَامَةُ التَّأْنِيث (ة)",
+  "explanation_uz": "So'zlar ikki jinsga bo'linadi: مُذَكَّر (erkak, asosiy shakl) va مُؤَنَّث (ayol). Ayollik asosiy belgisi — oxiridagi ة (ta marbuta): طَالِب → طَالِبَة. LEKIN ba'zi so'zlar ة SIZ ham ayol hisoblanadi: أُمّ (ona), بِنْت (qiz), يَد (qo'l), شَمْس (quyosh), أَرْض (yer). Bularni yodlab olish kerak. Bu jins keyingi darslarda sifat va fe'l moslashuvida muhim.",
+  "table": [
+   {"ar": "مُدَرِّس ← مُدَرِّسَة", "uz": "o'qituvchi (erkak → ayol)", "form": "ة qo'shiladi"},
+   {"ar": "طَالِب ← طَالِبَة", "uz": "talaba (erkak → ayol)", "form": "ة qo'shiladi"},
+   {"ar": "أُمّ", "uz": "ona — ayol (ة siz)", "form": "tabiiy muannas"},
+   {"ar": "شَمْس", "uz": "quyosh — ayol (ة siz)", "form": "samoviy muannas"}
+  ],
+  "common_mistakes_uz": [
+   "أُمّ, بِنْت, يَد, شَمْس kabi so'zlarni erkak deb o'ylash — ular ة siz bo'lsa ham AYOL.",
+   "ة ni oddiy «t» (ت) bilan chalkashtirish — ta marbuta so'z oxirida yumaloq: ة.",
+   "Erkak so'zga ayol sifat yoki aksincha ishlatish (keyingi darsda muhim bo'ladi)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ك ل م",
+   "meaning_uz": "so'z, gapirish",
+   "uz_cognates": ["kalom", "kalima", "mutakallim"],
+   "derived": [
+    {"ar": "كَلِمَة", "uz": "so'z", "pattern": "فَعِلَة"},
+    {"ar": "كَلَام", "uz": "nutq, gap", "pattern": "فَعَال"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "أَب", "translit": "ab", "uz": "ota (erkak)", "root": "أ ب و", "pattern": "", "pos": "ot", "audio": "a1/ab.mp3", "example_ar": "هَذَا أَبٌ.", "example_uz": "Bu ota.", "srs": true},
+  {"ar": "أُمّ", "translit": "umm", "uz": "ona (ayol — ة siz)", "root": "أ م م", "pattern": "", "pos": "ot", "audio": "a1/umm.mp3", "example_ar": "هَذِهِ أُمٌّ.", "example_uz": "Bu ona.", "srs": true},
+  {"ar": "أَخ", "translit": "akh", "uz": "aka, uka (erkak)", "root": "أ خ و", "pattern": "", "pos": "ot", "audio": "a1/akh.mp3", "example_ar": "هَذَا أَخِي.", "example_uz": "Bu akam.", "srs": true},
+  {"ar": "أُخْت", "translit": "ukht", "uz": "opa, singil (ayol — ة siz)", "root": "أ خ و", "pattern": "", "pos": "ot", "audio": "a1/ukht.mp3", "example_ar": "هَذِهِ أُخْتِي.", "example_uz": "Bu opam.", "srs": true},
+  {"ar": "يَد", "translit": "yad", "uz": "qo'l (ayol — ة siz)", "root": "ي د ي", "pattern": "", "pos": "ot", "audio": "a1/yad.mp3", "example_ar": "اليَدُ نَظِيفَةٌ.", "example_uz": "Qo'l toza.", "srs": true},
+  {"ar": "شَمْس", "translit": "shams", "uz": "quyosh (ayol — ة siz)", "root": "ش م س", "pattern": "", "pos": "ot", "audio": "a1/shams.mp3", "example_ar": "الشَّمْسُ جَمِيلَةٌ.", "example_uz": "Quyosh chiroyli.", "srs": true},
+  {"ar": "مُدَرِّسَة", "translit": "mudarrisa", "uz": "o'qituvchi (ayol)", "root": "د ر س", "pattern": "مُفَعِّلَة", "pos": "ot", "audio": "a1/mudarrisa.mp3", "example_ar": "هِيَ مُدَرِّسَةٌ.", "example_uz": "U o'qituvchi (ayol).", "srs": true},
+  {"ar": "طَالِبَة", "translit": "ṭāliba", "uz": "talaba (ayol)", "root": "ط ل ب", "pattern": "فَاعِلَة", "pos": "ot", "audio": "a1/taliba.mp3", "example_ar": "أَنْتِ طَالِبَةٌ.", "example_uz": "Sen talabasan (ayol).", "srs": true},
+  {"ar": "غُرْفَة", "translit": "ghurfa", "uz": "xona (ayol)", "root": "غ ر ف", "pattern": "فُعْلَة", "pos": "ot", "audio": "a1/ghurfa.mp3", "example_ar": "الغُرْفَةُ كَبِيرَةٌ.", "example_uz": "Xona katta.", "srs": true},
+  {"ar": "كَلِمَة", "translit": "kalima", "uz": "so'z (o'zbekcha 'kalima' shundan)", "root": "ك ل م", "pattern": "فَعِلَة", "pos": "ot", "audio": "a1/kalima.mp3", "example_ar": "هَذِهِ كَلِمَةٌ جَدِيدَةٌ.", "example_uz": "Bu yangi so'z.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "هَذَا أَبٌ وَهَذِهِ أُمٌّ. الأَبُ طَوِيلٌ وَالأُمُّ جَمِيلَةٌ. الشَّمْسُ كَبِيرَةٌ.",
+   "questions": [
+    {"q_uz": "«أُمّ» erkakmi yoki ayol?", "a": "Ayol (ة siz bo'lsa ham)"},
+    {"q_uz": "Quyosh (شَمْس) qaysi jinsda?", "a": "Ayol (muannas)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/umm.mp3",
+   "transcript_ar": "أُمّ",
+   "questions": [
+    {"q_uz": "Eshitgan so'zingiz ma'nosi va jinsi?", "a": "Ona — ayol"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Erkak/ayol juftlarini ayting: mudarris / mudarrisa, ṭālib / ṭāliba. Keyin: hādhā ab, hādhihi umm.",
+   "target_ar": ["مُدَرِّس وَمُدَرِّسَة", "هَذَا أَبٌ", "هَذِهِ أُمٌّ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«طَالِب» (talaba) so'zining ayol shaklini yozing va u bilan «U talaba (ayol)» gapini tuzing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "Qaysi so'z ة SIZ bo'lsa ham AYOL?", "q_ar": "", "options": ["أُمّ", "كِتَاب", "بَاب", "وَلَد"], "answer": "أُمّ", "explain_uz": "أُمّ (ona) — tabiiy ayol, ة siz. Qolganlari erkak.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "o'qituvchi (ayol)", "q_ar": "", "options": [], "answer": "مُدَرِّسَة", "explain_uz": "مُدَرِّس + ة = مُدَرِّسَة (ayol o'qituvchi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«طَالِب» ning ayol shakli?", "q_ar": "", "options": ["طَالِبَة", "طَالِبُون", "طَبِيبَة", "طَالِبِيّ"], "answer": "طَالِبَة", "explain_uz": "ة qo'shiladi: طَالِب → طَالِبَة.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ك ل م» o'zagidan?", "q_ar": "", "options": ["كَلِمَة", "غُرْفَة", "شَمْس"], "answer": "كَلِمَة", "explain_uz": "«ك ل م» — so'z/gapirish o'zagi: كَلِمَة (so'z), كَلَام (nutq).", "audio": "", "root": "ك ل م", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "هَذِهِ أُخْتِي", "options": [], "answer": "bu opam", "explain_uz": "هَذِهِ = bu (ayol), أُخْت = opa/singil, ـي = mening.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'g'ri ishorani qo'ying: «____ أُمٌّ» (bu ona)", "q_ar": "____ أُمٌّ", "options": [], "answer": "هَذِهِ", "explain_uz": "أُمّ ayol so'z → هَذِهِ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Qaysi so'z ERKAK?", "q_ar": "", "options": ["أَب", "أُخْت", "يَد", "شَمْس"], "answer": "أَب", "explain_uz": "أَب (ota) — erkak. Qolganlari ayol (ة siz bo'lsa ham).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ك ل م", "back": "so'z/gapirish o'zagi (kalima, kalom, mutakallim)", "deck": "msa"},
+  {"type": "word", "front": "أَب", "back": "ota", "deck": "msa"},
+  {"type": "word", "front": "أُمّ", "back": "ona (ayol)", "deck": "msa"},
+  {"type": "word", "front": "أَخ", "back": "aka, uka", "deck": "msa"},
+  {"type": "word", "front": "أُخْت", "back": "opa, singil (ayol)", "deck": "msa"},
+  {"type": "word", "front": "يَد", "back": "qo'l (ayol)", "deck": "msa"},
+  {"type": "word", "front": "شَمْس", "back": "quyosh (ayol)", "deck": "msa"},
+  {"type": "word", "front": "مُدَرِّسَة", "back": "o'qituvchi (ayol)", "deck": "msa"},
+  {"type": "word", "front": "غُرْفَة", "back": "xona", "deck": "msa"},
+  {"type": "word", "front": "كَلِمَة", "back": "so'z", "deck": "msa"}
+ ]
+}

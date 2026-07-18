@@ -1,0 +1,98 @@
+{
+ "id": "a1-20",
+ "level": "A1",
+ "module": "present-tense",
+ "order": 20,
+ "title_uz": "«Men yozaman / biz yozamiz»",
+ "title_ar": "المُضَارِع: أَنَا / نَحْنُ",
+ "can_do_uz": "O'zim va guruhim haqida hozirgi zamonda gapira olaman: «men o'qiyman», «biz yodlaymiz».",
+ "duration_min": 30,
+ "prerequisites": ["a1-19"],
+ "harakat_level": "full",
+ "hook_uz": "«Men arab tilini o'rganaman» — أَتَعَلَّمُ العَرَبِيَّةَ. O'zingiz haqingizda gapirish uchun أ (men) prefiksi, guruh uchun نـ (biz). Bugun 1-shaxs muzori'ni mustahkamlaymiz.",
+ "grammar": {
+  "point_ar": "أَفْعُلُ / نَفْعُلُ",
+  "explanation_uz": "Birinchi shaxs muzori': أَنَا (men) → أ prefiks (fatha bilan): أَكْتُبُ, أَقْرَأُ, أَدْرُسُ. نَحْنُ (biz) → نـ prefiks: نَكْتُبُ, نَدْرُسُ. أ prefiksi «hamza» bilan yoziladi (أَ). Bu shaxslar kundalik gapda ko'p ishlatiladi — o'zingiz haqingizda gapirasiz.",
+  "table": [
+   {"ar": "أَكْتُبُ", "uz": "men yozaman", "form": "أ — أَنَا"},
+   {"ar": "نَكْتُبُ", "uz": "biz yozamiz", "form": "نـ — نَحْنُ"},
+   {"ar": "أَحْفَظُ القُرْآنَ", "uz": "Men Qur'on yodlayman", "form": "namuna"},
+   {"ar": "نَدْرُسُ العَرَبِيَّةَ", "uz": "Biz arab tilini o'qiymiz", "form": "namuna"}
+  ],
+  "common_mistakes_uz": [
+   "أ prefiksini hamzasiz yozish: اكتب (xato) → أَكْتُبُ (hamza bilan).",
+   "أَنَا (أ) va نَحْنُ (نـ) prefikslarini almashtirish.",
+   "Fe'l oxiridagi dammani unutish (أَكْتُبُ)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ح ف ظ",
+   "meaning_uz": "saqlash, yodlash",
+   "uz_cognates": ["hofiz", "mahfuz", "hifz", "muhofaza"],
+   "derived": [
+    {"ar": "يَحْفَظُ", "uz": "yodlaydi, saqlaydi", "pattern": "يَفْعَلُ"},
+    {"ar": "حَافِظ", "uz": "saqlovchi, hofiz", "pattern": "فَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "أَقْرَأُ", "translit": "aqraʾu", "uz": "men o'qiyman", "root": "ق ر أ", "pattern": "أَفْعَلُ", "pos": "fe'l", "audio": "a1/aqrau.mp3", "example_ar": "أَقْرَأُ القُرْآنَ.", "example_uz": "Men Qur'on o'qiyman.", "srs": true},
+  {"ar": "نَدْرُسُ", "translit": "nadrusu", "uz": "biz o'qiymiz", "root": "د ر س", "pattern": "نَفْعُلُ", "pos": "fe'l", "audio": "a1/nadrusu.mp3", "example_ar": "نَدْرُسُ العَرَبِيَّةَ.", "example_uz": "Biz arab tilini o'qiymiz.", "srs": true},
+  {"ar": "أَحْفَظُ", "translit": "aḥfaẓu", "uz": "men yodlayman", "root": "ح ف ظ", "pattern": "أَفْعَلُ", "pos": "fe'l", "audio": "a1/ahfazu.mp3", "example_ar": "أَحْفَظُ الكَلِمَاتِ.", "example_uz": "So'zlarni yodlayman.", "srs": true},
+  {"ar": "يَحْفَظُ", "translit": "yaḥfaẓu", "uz": "u yodlaydi, saqlaydi", "root": "ح ف ظ", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a1/yahfazu.mp3", "example_ar": "يَحْفَظُ القُرْآنَ.", "example_uz": "U Qur'on yodlaydi.", "srs": true},
+  {"ar": "أَفْهَمُ", "translit": "afhamu", "uz": "men tushunaman", "root": "ف ه م", "pattern": "أَفْعَلُ", "pos": "fe'l", "audio": "a1/afhamu.mp3", "example_ar": "أَفْهَمُ العَرَبِيَّةَ.", "example_uz": "Arabchani tushunaman.", "srs": true},
+  {"ar": "نَعْمَلُ", "translit": "naʿmalu", "uz": "biz ishlaymiz", "root": "ع م ل", "pattern": "نَفْعَلُ", "pos": "fe'l", "audio": "a1/namalu.mp3", "example_ar": "نَعْمَلُ مَعًا.", "example_uz": "Biz birga ishlaymiz.", "srs": true},
+  {"ar": "لُغَة", "translit": "lugha", "uz": "til (o'zbekcha 'lug'at' shundan)", "root": "ل غ و", "pattern": "فُعَة", "pos": "ot", "audio": "a1/lugha.mp3", "example_ar": "العَرَبِيَّةُ لُغَةٌ جَمِيلَةٌ.", "example_uz": "Arabcha chiroyli til.", "srs": true},
+  {"ar": "العَرَبِيَّة", "translit": "al-ʿarabiyya", "uz": "arab tili", "root": "ع ر ب", "pattern": "", "pos": "ot", "audio": "a1/arabiyya.mp3", "example_ar": "أَتَعَلَّمُ العَرَبِيَّةَ.", "example_uz": "Arab tilini o'rganaman.", "srs": true},
+  {"ar": "جَوَاب", "translit": "jawāb", "uz": "javob (o'zbekcha 'javob' shundan)", "root": "ج و ب", "pattern": "فَعَال", "pos": "ot", "audio": "a1/jawab.mp3", "example_ar": "أَعْلَمُ الجَوَابَ.", "example_uz": "Javobni bilaman.", "srs": true},
+  {"ar": "حَافِظ", "translit": "ḥāfiẓ", "uz": "hofiz, saqlovchi (o'zbekcha 'hofiz')", "root": "ح ف ظ", "pattern": "فَاعِل", "pos": "ot", "audio": "a1/hafiz.mp3", "example_ar": "هُوَ حَافِظٌ لِلْقُرْآنِ.", "example_uz": "U Qur'on hofizi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أَنَا أَدْرُسُ العَرَبِيَّةَ. أَقْرَأُ كُلَّ يَوْمٍ وَأَحْفَظُ الكَلِمَاتِ. نَحْنُ نَدْرُسُ مَعًا وَنَفْهَمُ الدَّرْسَ.",
+   "questions": [
+    {"q_uz": "Gapiruvchi har kuni nima qiladi?", "a": "O'qiydi va so'zlarni yodlaydi"},
+    {"q_uz": "«نَفْهَمُ» kim haqida?", "a": "Biz (نـ prefiksi)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/ahfazu.mp3",
+   "transcript_ar": "أَحْفَظُ",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi?", "a": "Men yodlayman"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "O'zingiz haqingizda ayting: aqraʾu, adrusu al-ʿarabiyya, aḥfazu al-kalimāt.",
+   "target_ar": ["أَقْرَأُ", "أَدْرُسُ العَرَبِيَّةَ", "أَحْفَظُ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Men arab tilini o'rganaman» va «Biz birga o'qiymiz» gaplarini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«men o'qiyman» qaysi?", "q_ar": "", "options": ["أَقْرَأُ", "يَقْرَأُ", "نَقْرَأُ", "تَقْرَأُ"], "answer": "أَقْرَأُ", "explain_uz": "أَنَا (men) → أ prefiksi: أَقْرَأُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«biz yodlaymiz» qaysi?", "q_ar": "", "options": ["نَحْفَظُ", "أَحْفَظُ", "يَحْفَظُ", "تَحْفَظُ"], "answer": "نَحْفَظُ", "explain_uz": "نَحْنُ (biz) → نـ prefiksi: نَحْفَظُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَدْرُسُ العَرَبِيَّةَ", "options": [], "answer": "men arab tilini o'qiyman", "explain_uz": "أَدْرُسُ = men o'qiyman, العَرَبِيَّة = arab tili.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ح ف ظ» o'zagidan?", "q_ar": "", "options": ["يَحْفَظُ", "يَقْرَأُ", "يَعْمَلُ"], "answer": "يَحْفَظُ", "explain_uz": "«ح ف ظ» — saqlash/yodlash o'zagi: hofiz, mahfuz, hifz.", "audio": "", "root": "ح ف ظ", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring: «نَحْنُ ____فْهَمُ» (biz tushunamiz)", "q_ar": "نَحْنُ ____فْهَمُ", "options": [], "answer": "نَ", "explain_uz": "نَحْنُ → نـ: نَفْهَمُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "til (lug'at)", "q_ar": "", "options": [], "answer": "لُغَة", "explain_uz": "لُغَة — til (o'zbekcha 'lug'at' shundan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "dictation", "q_uz": "Eshitilgan fe'lni yozing", "q_ar": "", "options": [], "answer": "أَحْفَظُ", "explain_uz": "أَحْفَظُ — men yodlayman.", "audio": "a1/ahfazu.mp3", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ح ف ظ", "back": "saqlash/yodlash o'zagi (hofiz, mahfuz, hifz)", "deck": "msa"},
+  {"type": "word", "front": "أَقْرَأُ", "back": "men o'qiyman", "deck": "msa"},
+  {"type": "word", "front": "نَدْرُسُ", "back": "biz o'qiymiz", "deck": "msa"},
+  {"type": "word", "front": "أَحْفَظُ", "back": "men yodlayman", "deck": "msa"},
+  {"type": "word", "front": "يَحْفَظُ", "back": "u yodlaydi, saqlaydi", "deck": "msa"},
+  {"type": "word", "front": "أَفْهَمُ", "back": "men tushunaman", "deck": "msa"},
+  {"type": "word", "front": "لُغَة", "back": "til", "deck": "msa"},
+  {"type": "word", "front": "العَرَبِيَّة", "back": "arab tili", "deck": "msa"},
+  {"type": "word", "front": "جَوَاب", "back": "javob", "deck": "msa"},
+  {"type": "word", "front": "حَافِظ", "back": "hofiz, saqlovchi", "deck": "msa"}
+ ]
+}

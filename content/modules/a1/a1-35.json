@@ -1,0 +1,103 @@
+{
+ "id": "a1-35",
+ "level": "A1",
+ "module": "daily-life",
+ "order": 35,
+ "title_uz": "Narx va yoshni aytaman",
+ "title_ar": "الأَعْدَاد ١١–١٠٠ · السِّعْر وَالعُمْر",
+ "can_do_uz": "11–100 sonlarini ishlatib narx va yoshni ayta va so'ray olaman (rasmiy va hijoziy).",
+ "duration_min": 30,
+ "prerequisites": ["a1-34"],
+ "harakat_level": "full",
+ "hook_uz": "Bozorда «Bu qancha turadi?» — بِكَمْ هَذَا؟. Narxni tushunish uchun kattaroq sonlar kerak: عِشْرُونَ (20), مِئَة (100), رِيَال (riyol). Yoshni ham so'raymiz: كَمْ عُمْرُكَ؟. Saudiya lahjasi so'zlarini ham o'rganamiz!",
+ "grammar": {
+  "point_ar": "الأَعْدَاد ١١–١٠٠",
+  "explanation_uz": "11–19: son + عَشَرَ (أَحَدَ عَشَرَ = 11, اثْنَا عَشَرَ = 12). O'nliklar ـُونَ bilan tugaydi: عِشْرُونَ (20), ثَلاثُونَ (30), أَرْبَعُونَ (40), خَمْسُونَ (50)... مِئَة (100). Narx: العَدَد + رِيَال (bes riyol = خَمْسَةُ رِيَالاتٍ). Yosh: كَمْ عُمْرُكَ؟ — عُمْرِي عِشْرُونَ سَنَةً (yoshim 20). Saudiyada kundalik xaridда بِكَمْ؟ (qancha?) va أَبْغَى (xohlayman) ko'p ishlatiladi.",
+  "table": [
+   {"ar": "أَحَدَ عَشَرَ · اثْنَا عَشَرَ", "uz": "11 · 12", "form": "11-12"},
+   {"ar": "عِشْرُونَ · ثَلاثُونَ · مِئَة", "uz": "20 · 30 · 100", "form": "o'nliklar"},
+   {"ar": "بِكَمْ هَذَا؟", "uz": "Bu qancha?", "form": "narx savoli"},
+   {"ar": "كَمْ عُمْرُكَ؟", "uz": "Yoshingiz nechada?", "form": "yosh savoli"}
+  ],
+  "common_mistakes_uz": [
+   "O'nliklarni (عِشْرُونَ) noto'g'ri talaffuz qilish — ـُونَ bilan tugaydi.",
+   "Narxда رِيَال ni tushirib qoldirish.",
+   "Rasmiy vaziyatда hijoziy (أَبْغَى) ni ishlatib yuborish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع م ر",
+   "meaning_uz": "umr, hayot, obodlik",
+   "uz_cognates": ["umr", "umra", "ma'mur", "imorat"],
+   "derived": [
+    {"ar": "عُمْر", "uz": "yosh, umr", "pattern": "فُعْل"},
+    {"ar": "عُمْرَة", "uz": "umra (ziyorat)", "pattern": "فُعْلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "أَحَدَ عَشَرَ", "translit": "aḥada ʿashara", "uz": "o'n bir (11)", "root": "", "pattern": "", "pos": "son", "audio": "a1/ahadaashar.mp3", "example_ar": "أَحَدَ عَشَرَ كِتَابًا.", "example_uz": "O'n bir kitob.", "srs": true},
+  {"ar": "اثْنَا عَشَرَ", "translit": "ithnā ʿashara", "uz": "o'n ikki (12)", "root": "", "pattern": "", "pos": "son", "audio": "a1/ithnaashar.mp3", "example_ar": "السَّنَةُ اثْنَا عَشَرَ شَهْرًا.", "example_uz": "Yilda o'n ikki oy.", "srs": true},
+  {"ar": "عِشْرُونَ", "translit": "ʿishrūna", "uz": "yigirma (20)", "root": "ع ش ر", "pattern": "فِعْلُونَ", "pos": "son", "audio": "a1/ishruna.mp3", "example_ar": "عُمْرِي عِشْرُونَ سَنَةً.", "example_uz": "Yoshim yigirma.", "srs": true},
+  {"ar": "ثَلاثُونَ", "translit": "thalāthūna", "uz": "o'ttiz (30)", "root": "ث ل ث", "pattern": "فَعَلُونَ", "pos": "son", "audio": "a1/thalathuna.mp3", "example_ar": "ثَلاثُونَ رِيَالًا.", "example_uz": "O'ttiz riyol.", "srs": true},
+  {"ar": "خَمْسُونَ", "translit": "khamsūna", "uz": "ellik (50)", "root": "خ م س", "pattern": "فَعْلُونَ", "pos": "son", "audio": "a1/khamsuna.mp3", "example_ar": "خَمْسُونَ رِيَالًا.", "example_uz": "Ellik riyol.", "srs": true},
+  {"ar": "مِئَة", "translit": "miʾa", "uz": "yuz (100)", "root": "م أ ي", "pattern": "فِعَة", "pos": "son", "audio": "a1/mia.mp3", "example_ar": "مِئَةُ رِيَالٍ.", "example_uz": "Yuz riyol.", "srs": true},
+  {"ar": "رِيَال", "translit": "riyāl", "uz": "riyol (Saudiya puli)", "root": "", "pattern": "", "pos": "ot", "audio": "a1/riyal.mp3", "example_ar": "هَذَا بِخَمْسِينَ رِيَالًا.", "example_uz": "Bu ellik riyol.", "srs": true},
+  {"ar": "ثَمَن", "translit": "thaman", "uz": "narx, qiymat", "root": "ث م ن", "pattern": "فَعَل", "pos": "ot", "audio": "a1/thaman.mp3", "example_ar": "مَا ثَمَنُ هَذَا؟", "example_uz": "Buning narxi qancha?", "srs": true},
+  {"ar": "عُمْر", "translit": "ʿumr", "uz": "yosh, umr (o'zbekcha 'umr')", "root": "ع م ر", "pattern": "فُعْل", "pos": "ot", "audio": "a1/umr.mp3", "example_ar": "كَمْ عُمْرُكَ؟", "example_uz": "Yoshing nechada?", "srs": true},
+  {"ar": "سَنَة", "translit": "sana", "uz": "yil", "root": "س ن و", "pattern": "فَعَة", "pos": "ot", "audio": "a1/sana.mp3", "example_ar": "عُمْرِي عِشْرُونَ سَنَةً.", "example_uz": "Yoshim yigirma yil.", "srs": true}
+ ],
+ "hejazi": [
+  {"msa_ar": "كَمِ الثَّمَنُ؟", "hejazi_ar": "بِكَمْ؟", "translit": "bikam?", "uz": "Qancha? (narx — hijoziy)", "audio": "hj/bikam.mp3"},
+  {"msa_ar": "أُرِيدُ", "hejazi_ar": "أَبْغَى", "translit": "abghā", "uz": "Xohlayman (hijoziy)", "audio": "hj/abgha.mp3"},
+  {"msa_ar": "كَثِير", "hejazi_ar": "وَاجِد", "translit": "wājid", "uz": "Ko'p (hijoziy)", "audio": "hj/wajid.mp3"},
+  {"msa_ar": "غَالٍ", "hejazi_ar": "غَالِي", "translit": "ghālī", "uz": "Qimmat (hijoziy)", "audio": "hj/ghali.mp3"}
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "فِي السُّوقِ سَأَلْتُ: بِكَمْ هَذَا؟ قَالَ البَائِعُ: بِخَمْسِينَ رِيَالًا. قُلْتُ: هَذَا غَالٍ! عُمْرِي عِشْرُونَ سَنَةً.",
+   "questions": [
+    {"q_uz": "Narsaning narxi qancha?", "a": "Ellik riyol (خَمْسِينَ رِيَالًا)"},
+    {"q_uz": "Gapiruvchining yoshi nechada?", "a": "Yigirma (عِشْرُونَ سَنَةً)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/mia.mp3",
+   "transcript_ar": "مِئَة",
+   "questions": [
+    {"q_uz": "Qaysi son?", "a": "Yuz (100)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Narx va yosh so'rang: bikam hādhā? kam ʿumruk? ʿumrī ʿishrūna sana.",
+   "target_ar": ["بِكَمْ هَذَا؟", "كَمْ عُمْرُكَ؟", "عِشْرُونَ رِيَالًا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Buning narxi qancha?» va «Yoshim o'ttiz» gaplarini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«yigirma (20)» qaysi?", "q_ar": "", "options": ["عِشْرُونَ", "عَشَرَة", "مِئَة", "ثَلاثُونَ"], "answer": "عِشْرُونَ", "explain_uz": "عِشْرُونَ — yigirma (20). عَشَرَة — o'n (10).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "كَمْ عُمْرُكَ؟", "options": [], "answer": "yoshing nechada", "explain_uz": "كَمْ = nechta, عُمْر = yosh/umr, ـكَ = sening.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyда «Qancha?» (narx) qaysi?", "q_ar": "", "options": ["بِكَمْ؟", "كَمِ الثَّمَنُ؟", "أَبْغَى", "وَاجِد"], "answer": "بِكَمْ؟", "explain_uz": "Hijoziy: بِكَمْ؟ (rasmiy: كَمِ الثَّمَنُ؟).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ع م ر» o'zagidan?", "q_ar": "", "options": ["عُمْر", "ثَمَن", "رِيَال"], "answer": "عُمْر", "explain_uz": "«ع م ر» — umr o'zagi: عُمْر (yosh), عُمْرَة (umra), imorat.", "audio": "", "root": "ع م ر", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "yuz (100)", "q_ar": "", "options": [], "answer": "مِئَة", "explain_uz": "مِئَة — yuz (100).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyда «Xohlayman» qaysi?", "q_ar": "", "options": ["أَبْغَى", "بِكَمْ", "وَاجِد", "غَالِي"], "answer": "أَبْغَى", "explain_uz": "أَبْغَى — hijoziyда «xohlayman» (rasmiy: أُرِيدُ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring: «عُمْرِي ____ سَنَةً» (yoshim 20)", "q_ar": "عُمْرِي ____ سَنَةً", "options": [], "answer": "عِشْرُونَ", "explain_uz": "عِشْرُونَ — yigirma (20).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع م ر", "back": "umr o'zagi (umr, umra, ma'mur, imorat)", "deck": "msa"},
+  {"type": "word", "front": "عِشْرُونَ", "back": "yigirma (20)", "deck": "msa"},
+  {"type": "word", "front": "ثَلاثُونَ", "back": "o'ttiz (30)", "deck": "msa"},
+  {"type": "word", "front": "خَمْسُونَ", "back": "ellik (50)", "deck": "msa"},
+  {"type": "word", "front": "مِئَة", "back": "yuz (100)", "deck": "msa"},
+  {"type": "word", "front": "رِيَال", "back": "riyol (Saudiya puli)", "deck": "msa"},
+  {"type": "word", "front": "ثَمَن", "back": "narx, qiymat", "deck": "msa"},
+  {"type": "word", "front": "عُمْر", "back": "yosh, umr", "deck": "msa"},
+  {"type": "phrase", "front": "بِكَمْ؟", "back": "Qancha? narx (hijoziy)", "deck": "hejazi"},
+  {"type": "phrase", "front": "أَبْغَى", "back": "Xohlayman (hijoziy)", "deck": "hejazi"}
+ ]
+}

@@ -1,0 +1,103 @@
+{
+ "id": "a1-37",
+ "level": "A1",
+ "module": "daily-life",
+ "order": 37,
+ "title_uz": "Ovqat buyurtma qilaman",
+ "title_ar": "فِي المَطْعَم",
+ "can_do_uz": "Restoranда ovqat buyurtma qila, narx va hisob so'ray olaman (rasmiy va hijoziy).",
+ "duration_min": 30,
+ "prerequisites": ["a1-36"],
+ "harakat_level": "full",
+ "hook_uz": "Saudiya restoraniда: «Iltimos, menyu» — القَائِمَة لَو سَمَحْت. Ovqat so'zlarini (لَحْم — go'sht, أَرُزّ — guruch, عَصِير — sharbat) va buyurtma iboralarini o'rganamiz. Saudiya lahjasi bilan birga!",
+ "grammar": {
+  "point_ar": "الطَّلَبُ فِي المَطْعَم",
+  "explanation_uz": "Restoranда buyurtma ketma-ketligi: (1) القَائِمَة مِنْ فَضْلِكَ (menyu, iltimos). (2) أُرِيدُ... (xohlayman...) yoki hijoziyда أَبْغَى... (3) الحِسَاب مِنْ فَضْلِكَ (hisob, iltimos). Ovqat so'zlari: لَحْم (go'sht), دَجَاج (tovuq), أَرُزّ (guruch), خُضَار (sabzavot), عَصِير (sharbat). Saudiyada لَو سَمَحْت (iltimos) va زَيْن (yaxshi) ko'p eshitiladi.",
+  "table": [
+   {"ar": "القَائِمَة لَو سَمَحْت", "uz": "Menyu, iltimos", "form": "boshlash"},
+   {"ar": "أُرِيدُ دَجَاجًا وَأَرُزًّا", "uz": "Tovuq va guruch xohlayman", "form": "buyurtma"},
+   {"ar": "الحِسَاب مِنْ فَضْلِكَ", "uz": "Hisob, iltimos", "form": "yakun"},
+   {"ar": "الطَّعَامُ لَذِيذٌ", "uz": "Ovqat mazali", "form": "izoh"}
+  ],
+  "common_mistakes_uz": [
+   "«iltimos» ni tushirib qoldirish — مِنْ فَضْلِكَ / لَو سَمَحْت odob belgisi.",
+   "Buyurtmada ob'ektni nasb (fatha) qilmaslik: أُرِيدُ دَجَاجًا.",
+   "Rasmiy joyда faqat hijoziy ishlatib yuborish — ikkalasini bilgan yaxshi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ح س ب",
+   "meaning_uz": "hisoblash, hisob",
+   "uz_cognates": ["hisob", "muhosib", "hisobot"],
+   "derived": [
+    {"ar": "حِسَاب", "uz": "hisob, schyot", "pattern": "فِعَال"},
+    {"ar": "مُحَاسِب", "uz": "hisobchi", "pattern": "مُفَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "قَائِمَة", "translit": "qāʾima", "uz": "menyu, ro'yxat", "root": "ق و م", "pattern": "فَاعِلَة", "pos": "ot", "audio": "a1/qaima.mp3", "example_ar": "القَائِمَةُ مِنْ فَضْلِكَ.", "example_uz": "Menyu, iltimos.", "srs": true},
+  {"ar": "لَحْم", "translit": "laḥm", "uz": "go'sht", "root": "ل ح م", "pattern": "فَعْل", "pos": "ot", "audio": "a1/lahm.mp3", "example_ar": "أُرِيدُ لَحْمًا.", "example_uz": "Go'sht xohlayman.", "srs": true},
+  {"ar": "دَجَاج", "translit": "dajāj", "uz": "tovuq (go'shti)", "root": "د ج ج", "pattern": "فَعَال", "pos": "ot", "audio": "a1/dajaj.mp3", "example_ar": "الدَّجَاجُ لَذِيذٌ.", "example_uz": "Tovuq mazali.", "srs": true},
+  {"ar": "أَرُزّ", "translit": "aruzz", "uz": "guruch, palov", "root": "", "pattern": "", "pos": "ot", "audio": "a1/aruzz.mp3", "example_ar": "أَكَلْتُ أَرُزًّا.", "example_uz": "Guruch yedim.", "srs": true},
+  {"ar": "خُضَار", "translit": "khuḍār", "uz": "sabzavot", "root": "خ ض ر", "pattern": "فُعَال", "pos": "ot", "audio": "a1/khudar.mp3", "example_ar": "الخُضَارُ طَازَجَةٌ.", "example_uz": "Sabzavot yangi.", "srs": true},
+  {"ar": "عَصِير", "translit": "ʿaṣīr", "uz": "sharbat, sok", "root": "ع ص ر", "pattern": "فَعِيل", "pos": "ot", "audio": "a1/asir.mp3", "example_ar": "عَصِيرُ البُرْتُقَالِ.", "example_uz": "Apelsin sharbati.", "srs": true},
+  {"ar": "حَلِيب", "translit": "ḥalīb", "uz": "sut", "root": "ح ل ب", "pattern": "فَعِيل", "pos": "ot", "audio": "a1/halib.mp3", "example_ar": "أَشْرَبُ الحَلِيبَ.", "example_uz": "Sut ichaman.", "srs": true},
+  {"ar": "حِسَاب", "translit": "ḥisāb", "uz": "hisob, schyot (o'zbekcha 'hisob')", "root": "ح س ب", "pattern": "فِعَال", "pos": "ot", "audio": "a1/hisab.mp3", "example_ar": "الحِسَابَ مِنْ فَضْلِكَ.", "example_uz": "Hisob, iltimos.", "srs": true},
+  {"ar": "لَذِيذ", "translit": "ladhīdh", "uz": "mazali, totli", "root": "ل ذ ذ", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/ladhidh.mp3", "example_ar": "الطَّعَامُ لَذِيذٌ.", "example_uz": "Ovqat mazali.", "srs": true},
+  {"ar": "جُوعَان", "translit": "jūʿān", "uz": "och (qorni)", "root": "ج و ع", "pattern": "فُعْلَان", "pos": "sifat", "audio": "a1/juan.mp3", "example_ar": "أَنَا جُوعَانُ.", "example_uz": "Men ochman.", "srs": true}
+ ],
+ "hejazi": [
+  {"msa_ar": "مِنْ فَضْلِكَ", "hejazi_ar": "لَو سَمَحْت", "translit": "law samaḥt", "uz": "Iltimos, marhamat (hijoziy)", "audio": "hj/law_samaht.mp3"},
+  {"msa_ar": "مَاذَا تُرِيدُ؟", "hejazi_ar": "وِش تَبْغَى؟", "translit": "wish tabghā?", "uz": "Nima xohlaysan? (hijoziy)", "audio": "hj/wish_tabgha.mp3"},
+  {"msa_ar": "لَذِيذ / جَيِّد", "hejazi_ar": "زَيْن", "translit": "zayn", "uz": "Yaxshi, zo'r (hijoziy)", "audio": "hj/zayn.mp3"},
+  {"msa_ar": "المَاء", "hejazi_ar": "المَيّ", "translit": "al-mayy", "uz": "Suv (hijoziy talaffuz)", "audio": "hj/almayy.mp3"}
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "دَخَلْتُ المَطْعَمَ وَقُلْتُ: القَائِمَةَ لَو سَمَحْت. أَبْغَى دَجَاجًا وَأَرُزًّا وَعَصِيرًا. الطَّعَامُ لَذِيذٌ. ثُمَّ قُلْتُ: الحِسَابَ مِنْ فَضْلِكَ.",
+   "questions": [
+    {"q_uz": "U nima buyurtma qildi?", "a": "Tovuq, guruch va sharbat"},
+    {"q_uz": "«لَو سَمَحْت» ma'nosi?", "a": "Iltimos (hijoziy)"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/hisab.mp3",
+   "transcript_ar": "حِسَاب",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Hisob, schyot"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Buyurtma bering: al-qāʾima law samaḥt, abghā dajājan, al-ḥisāb min faḍlik.",
+   "target_ar": ["القَائِمَة لَو سَمَحْت", "أُرِيدُ دَجَاجًا", "الحِسَابَ مِنْ فَضْلِكَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Restoran buyurtmasini 3 gapda yozing: menyu so'rang, ovqat tanlang, hisob so'rang.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«go'sht» qaysi?", "q_ar": "", "options": ["لَحْم", "دَجَاج", "أَرُزّ", "خُضَار"], "answer": "لَحْم", "explain_uz": "لَحْم — go'sht.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الطَّعَامُ لَذِيذٌ", "options": [], "answer": "ovqat mazali", "explain_uz": "الطَّعَام = ovqat, لَذِيذ = mazali.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyда «Iltimos» qaysi?", "q_ar": "", "options": ["لَو سَمَحْت", "مِنْ فَضْلِكَ", "زَيْن", "المَيّ"], "answer": "لَو سَمَحْت", "explain_uz": "Hijoziy: لَو سَمَحْت (rasmiy: مِنْ فَضْلِكَ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ح س ب» o'zagidan?", "q_ar": "", "options": ["حِسَاب", "لَحْم", "عَصِير"], "answer": "حِسَاب", "explain_uz": "«ح س ب» — hisoblash o'zagi: حِسَاب (hisob), مُحَاسِب (hisobchi).", "audio": "", "root": "ح س ب", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "sharbat, sok", "q_ar": "", "options": [], "answer": "عَصِير", "explain_uz": "عَصِير — sharbat (ع ص ر = siqish o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyда «yaxshi/zo'r» qaysi?", "q_ar": "", "options": ["زَيْن", "لَو سَمَحْت", "المَيّ", "وِش"], "answer": "زَيْن", "explain_uz": "زَيْن — hijoziyда «yaxshi, zo'r».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "och (qorni)", "q_ar": "", "options": [], "answer": "جُوعَان", "explain_uz": "جُوعَان — och (ج و ع = ochlik o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ح س ب", "back": "hisoblash o'zagi (hisob, muhosib, hisobot)", "deck": "msa"},
+  {"type": "word", "front": "قَائِمَة", "back": "menyu, ro'yxat", "deck": "msa"},
+  {"type": "word", "front": "لَحْم", "back": "go'sht", "deck": "msa"},
+  {"type": "word", "front": "دَجَاج", "back": "tovuq (go'shti)", "deck": "msa"},
+  {"type": "word", "front": "أَرُزّ", "back": "guruch, palov", "deck": "msa"},
+  {"type": "word", "front": "عَصِير", "back": "sharbat, sok", "deck": "msa"},
+  {"type": "word", "front": "حِسَاب", "back": "hisob, schyot", "deck": "msa"},
+  {"type": "word", "front": "لَذِيذ", "back": "mazali, totli", "deck": "msa"},
+  {"type": "phrase", "front": "لَو سَمَحْت", "back": "Iltimos (hijoziy)", "deck": "hejazi"},
+  {"type": "phrase", "front": "زَيْن", "back": "Yaxshi, zo'r (hijoziy)", "deck": "hejazi"}
+ ]
+}

@@ -1,0 +1,100 @@
+{
+ "id": "a1-33",
+ "level": "A1",
+ "module": "daily-life",
+ "order": 33,
+ "title_uz": "Oilam haqida gapiraman",
+ "title_ar": "العَائِلَة",
+ "can_do_uz": "Oila a'zolarim va qarindoshlarim haqida gapira olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a1-32"],
+ "harakat_level": "full",
+ "hook_uz": "Oilangiz haqida so'rashadi: «Bobongiz bormi? Amakingiz nima ish qiladi?» Bugun oila so'zlarini o'rganamiz — جَدّ (bobo), عَمّ (amaki), اِبْن (o'g'il) va boshqalar. Egalik olmoshlari bilan birga ishlatamiz: جَدِّي (bobom).",
+ "grammar": {
+  "point_ar": "أَفْرَادُ العَائِلَة + الضَّمَائِر",
+  "explanation_uz": "Oila a'zolari ko'pincha egalik olmoshi bilan aytiladi (a1-29 dagi ـِي, ـكَ, ـهُ): جَدِّي (bobom), عَمُّكَ (amaking). Arabchada ota tomon (عَمّ — amaki, عَمَّة — amma) va ona tomon (خَال — tog'a, خَالَة — xola) qarindoshlar ALOHIDA nomlanadi — o'zbekchaga o'xshab! اِبْن (o'g'il) va بِنْت/اِبْنَة (qiz) bilan farzandlar aytiladi.",
+  "table": [
+   {"ar": "جَدّ / جَدَّة", "uz": "bobo / buvi", "form": "avlod"},
+   {"ar": "عَمّ / عَمَّة", "uz": "amaki / amma (ota tomon)", "form": "ota tomon"},
+   {"ar": "خَال / خَالَة", "uz": "tog'a / xola (ona tomon)", "form": "ona tomon"},
+   {"ar": "اِبْن / اِبْنَة", "uz": "o'g'il / qiz (farzand)", "form": "farzand"}
+  ],
+  "common_mistakes_uz": [
+   "عَمّ (ota tomon amaki) va خَال (ona tomon tog'a) ni chalkashtirish.",
+   "Oila so'ziga egalik olmoshini ulashni unutish (جَدّ → جَدِّي).",
+   "اِبْن boshidagi hamzatul-vasl (اِ) ni noto'g'ri talaffuz qilish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع و ل",
+   "meaning_uz": "oila, boquv",
+   "uz_cognates": ["oila", "iyol", "ma'ula"],
+   "derived": [
+    {"ar": "عَائِلَة", "uz": "oila", "pattern": "فَاعِلَة"},
+    {"ar": "عَائِل", "uz": "boquvchi", "pattern": "فَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "عَائِلَة", "translit": "ʿāʾila", "uz": "oila (o'zbekcha 'oila' shundan)", "root": "ع و ل", "pattern": "فَاعِلَة", "pos": "ot", "audio": "a1/aila.mp3", "example_ar": "عَائِلَتِي كَبِيرَةٌ.", "example_uz": "Oilam katta.", "srs": true},
+  {"ar": "أُسْرَة", "translit": "usra", "uz": "oila (muqobil so'z)", "root": "أ س ر", "pattern": "فُعْلَة", "pos": "ot", "audio": "a1/usra.mp3", "example_ar": "هَذِهِ أُسْرَتُنَا.", "example_uz": "Bu bizning oilamiz.", "srs": true},
+  {"ar": "جَدّ", "translit": "jadd", "uz": "bobo", "root": "ج د د", "pattern": "فَعْل", "pos": "ot", "audio": "a1/jadd.mp3", "example_ar": "جَدِّي كَبِيرٌ فِي السِّنِّ.", "example_uz": "Bobom keksa.", "srs": true},
+  {"ar": "جَدَّة", "translit": "jadda", "uz": "buvi, momo", "root": "ج د د", "pattern": "فَعْلَة", "pos": "ot", "audio": "a1/jadda.mp3", "example_ar": "جَدَّتِي فِي البَيْتِ.", "example_uz": "Buvim uyda.", "srs": true},
+  {"ar": "عَمّ", "translit": "ʿamm", "uz": "amaki (ota tomon)", "root": "ع م م", "pattern": "فَعْل", "pos": "ot", "audio": "a1/amm.mp3", "example_ar": "عَمِّي مُهَنْدِسٌ.", "example_uz": "Amakim muhandis.", "srs": true},
+  {"ar": "خَال", "translit": "khāl", "uz": "tog'a (ona tomon)", "root": "خ و ل", "pattern": "فَعَل", "pos": "ot", "audio": "a1/khal.mp3", "example_ar": "خَالِي طَبِيبٌ.", "example_uz": "Tog'am shifokor.", "srs": true},
+  {"ar": "اِبْن", "translit": "ibn", "uz": "o'g'il (o'zbekcha 'ibn/bin' shundan)", "root": "ب ن و", "pattern": "فِعْل", "pos": "ot", "audio": "a1/ibn.mp3", "example_ar": "هَذَا ابْنِي.", "example_uz": "Bu o'g'lim.", "srs": true},
+  {"ar": "اِبْنَة", "translit": "ibna", "uz": "qiz (farzand)", "root": "ب ن و", "pattern": "فِعْلَة", "pos": "ot", "audio": "a1/ibna.mp3", "example_ar": "هَذِهِ ابْنَتِي.", "example_uz": "Bu qizim.", "srs": true},
+  {"ar": "حَفِيد", "translit": "ḥafīd", "uz": "nabira", "root": "ح ف د", "pattern": "فَعِيل", "pos": "ot", "audio": "a1/hafid.mp3", "example_ar": "لِجَدِّي حَفِيدٌ.", "example_uz": "Bobomning nabirasi bor.", "srs": true},
+  {"ar": "أَقَارِب", "translit": "aqārib", "uz": "qarindoshlar (o'zbekcha 'aqrabo')", "root": "ق ر ب", "pattern": "أَفَاعِل", "pos": "ot", "audio": "a1/aqarib.mp3", "example_ar": "أَقَارِبِي كَثِيرُونَ.", "example_uz": "Qarindoshlarim ko'p.", "srs": true},
+  {"ar": "سِنّ", "translit": "sinn", "uz": "yosh (necha yoshda)", "root": "س ن ن", "pattern": "فِعْل", "pos": "ot", "audio": "a1/sinn.mp3", "example_ar": "كَمْ سِنُّكَ؟", "example_uz": "Yoshing nechada?", "srs": true},
+  {"ar": "صَغِيرَة", "translit": "ṣaghīra", "uz": "kichkina (ayol)", "root": "ص غ ر", "pattern": "فَعِيلَة", "pos": "sifat", "audio": "a1/saghira.mp3", "example_ar": "أُخْتِي صَغِيرَةٌ.", "example_uz": "Singlim kichkina.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "عَائِلَتِي كَبِيرَةٌ. جَدِّي وَجَدَّتِي يَسْكُنَانِ مَعَنَا. عَمِّي مُهَنْدِسٌ وَخَالِي طَبِيبٌ. لِي أَخٌ كَبِيرٌ وَأُخْتٌ صَغِيرَةٌ.",
+   "questions": [
+    {"q_uz": "Gapiruvchining amakisi kim?", "a": "Muhandis (عَمِّي مُهَنْدِسٌ)"},
+    {"q_uz": "عَمّ va خَال farqi nima?", "a": "عَمّ — ota tomon, خَال — ona tomon"}
+   ]
+  },
+  "listening": {
+   "audio": "a1/aila.mp3",
+   "transcript_ar": "عَائِلَة",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Oila"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Oilangiz haqida ayting: ʿāʾilatī, jaddī, ʿammī, khālī, ibnī.",
+   "target_ar": ["عَائِلَتِي", "جَدِّي", "عَمِّي"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Oilangizni 3 gapda ta'riflang: bobom/buvim, amakim/tog'am, aka-ukalarim.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«amaki (ota tomon)» qaysi?", "q_ar": "", "options": ["عَمّ", "خَال", "جَدّ", "اِبْن"], "answer": "عَمّ", "explain_uz": "عَمّ — ota tomon amaki; خَال — ona tomon tog'a.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "جَدِّي وَجَدَّتِي", "options": [], "answer": "bobom va buvim", "explain_uz": "جَدّ (bobo) + ـِي = bobom; جَدَّة (buvi) + ـِي = buvim.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«tog'a (ona tomon)» qaysi?", "q_ar": "", "options": ["خَال", "عَمّ", "حَفِيد", "جَدّ"], "answer": "خَال", "explain_uz": "خَال — ona tomon tog'a.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ع و ل» o'zagidan?", "q_ar": "", "options": ["عَائِلَة", "أُسْرَة", "حَفِيد"], "answer": "عَائِلَة", "explain_uz": "«ع و ل» — oila/boquv o'zagi: عَائِلَة (oila), oila.", "audio": "", "root": "ع و ل", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "o'g'il", "q_ar": "", "options": [], "answer": "اِبْن", "explain_uz": "اِبْن — o'g'il (o'zbekcha 'ibn/bin' shundan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "«mening qizim»: «____» (اِبْنَة + ـِي)", "q_ar": "____", "options": [], "answer": "اِبْنَتِي", "explain_uz": "اِبْنَة + ـِي = اِبْنَتِي (qizim).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "qarindoshlar", "q_ar": "", "options": [], "answer": "أَقَارِب", "explain_uz": "أَقَارِب — qarindoshlar (o'zbekcha 'aqrabo', ق ر ب o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع و ل", "back": "oila/boquv o'zagi (oila, iyol)", "deck": "msa"},
+  {"type": "word", "front": "عَائِلَة", "back": "oila", "deck": "msa"},
+  {"type": "word", "front": "أُسْرَة", "back": "oila (muqobil)", "deck": "msa"},
+  {"type": "word", "front": "جَدّ", "back": "bobo", "deck": "msa"},
+  {"type": "word", "front": "جَدَّة", "back": "buvi, momo", "deck": "msa"},
+  {"type": "word", "front": "عَمّ", "back": "amaki (ota tomon)", "deck": "msa"},
+  {"type": "word", "front": "خَال", "back": "tog'a (ona tomon)", "deck": "msa"},
+  {"type": "word", "front": "اِبْن", "back": "o'g'il", "deck": "msa"},
+  {"type": "word", "front": "اِبْنَة", "back": "qiz (farzand)", "deck": "msa"},
+  {"type": "word", "front": "أَقَارِب", "back": "qarindoshlar", "deck": "msa"}
+ ]
+}
