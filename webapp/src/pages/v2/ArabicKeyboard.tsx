@@ -55,7 +55,12 @@ export default function ArabicKeyboard({
           ))}
         </div>
       ))}
-      <div className="flex gap-1 justify-center">
+      <div className="flex gap-1 justify-center" dir="rtl">
+        {["أ", "إ", "آ"].map((ch) => (
+          <button key={ch} type="button" onClick={() => onChar(ch)} className={key}>
+            {ch}
+          </button>
+        ))}
         <button
           type="button"
           onClick={() => onChar(" ")}

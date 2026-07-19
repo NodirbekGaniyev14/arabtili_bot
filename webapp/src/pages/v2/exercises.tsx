@@ -11,11 +11,33 @@ import { stripHarakat } from "./ArabicText";
 const tg = () => window.Telegram?.WebApp;
 const isArabic = (s: string) => /[؀-ۿ]/.test(s);
 
+/** Alif variantlari (أ إ آ ٱ) → ا: klaviaturada yakka hamzali alif teriladi,
+ * hamza imlosi esa yuqori darajalarda o'rgatiladi — shuning uchun tenglashtiramiz. */
 const normAr = (s: string) =>
-  stripHarakat(s).replace(/ـ/g, "").replace(/[.,؟!·:؛\s]+/g, " ").trim();
+  stripHarakat(s)
+    .replace(/ـ/g, "")
+    .replace(/[أإآٱ]/g, "ا")
+    .replace(/[.,؟!·:؛\s]+/g, " ")
+    .trim();
 
 const normLat = (s: string) =>
   s.toLowerCase().replace(/[''ʼ’`\-_.]/g, "").replace(/\s+/g, " ").trim();
+
+/** "qalam / ruchka" yoki "ta'til, ruxsat" kabi javoblarda BITTA variant yetarli. */
+const latOk = (answer: string, value: string) => {
+  const nv = normLat(value);
+  if (!nv) return false;
+  const variants = answer
+    .replace(/\(.*?\)/g, " ")
+    .split(/\s*(?:\/|,|;|\byoki\b)\s*/)
+    .map(normLat)
+    .filter(Boolean);
+  return variants.length ? variants.includes(nv) : nv === normLat(answer);
+};
+
+/** harakat mashqi: harakatlar solishtiriladi, lekin alif varianti va bo'shliq farqi kechiriladi. */
+const harakatNorm = (s: string) =>
+  s.replace(/\s+/g, "").replace(/ـ/g, "").replace(/[أإآٱ]/g, "ا");
 
 /* ── Umumiy feedback paneli ── */
 
@@ -541,7 +563,7 @@ function renderExercise(
           arabicBig={item.q_ar}
           audio={item.audio || undefined}
           arabicInput={false}
-          check={(v) => normLat(v) === normLat(item.answer)}
+          check={(v) => latOk(item.answer, v)}
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}
@@ -571,7 +593,7 @@ function renderExercise(
           audio={item.audio || undefined}
           arabicInput
           showHarakatKeys
-          check={(v) => v.replace(/\s+/g, "") === item.answer.replace(/\s+/g, "")}
+          check={(v) => harakatNorm(v) === harakatNorm(item.answer)}
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}

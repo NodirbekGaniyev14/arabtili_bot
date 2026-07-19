@@ -163,7 +163,10 @@ export default function App() {
             api.getMe().then(setMe).catch(() => {});
           }}
           onFinish={(stats) => {
+            // Statistika yangilanadi VA pleyer yopiladi — aks holda
+            // "Davom etish" tugmasi hech narsa qilmayotgandek ko'rinadi
             setMe((m) => (m ? { ...m, stats } : m));
+            setActiveLessonV2(null);
           }}
         />
       )}

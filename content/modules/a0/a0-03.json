@@ -4,334 +4,72 @@
  "module": "letters",
  "order": 3,
  "title_uz": "Harf oilasi 2: ج ح خ",
- "title_ar": "ج ح خ",
- "can_do_uz": "Bir xil shakldagi uch harfni (ج ح خ) nuqtasiga qarab ajrata olaman va ularning tovushlarini to'g'ri aytaman.",
- "duration_min": 30,
- "prerequisites": [
-  "a0-02"
- ],
+ "title_ar": "عائلة الحروف: ج ح خ",
+ "can_do_uz": "ج ح خ harflarini ajrata olaman, ayniqsa chuqur ح bilan o'zbekcha 'x'ga teng خ farqini talaffuzda his qilaman.",
+ "duration_min": 20,
+ "prerequisites": ["a0-02"],
  "harakat_level": "full",
- "hook_uz": "خ tovushi siz uchun yangi emas — o'zbekchadagi 'xat', 'xona', 'xush' so'zlaridagi 'x' aynan shu. Endi bitta 'qozon' shaklga uchta nuqta joylashuvini o'rgansangiz — ج ح خ oilasi qo'lingizda!",
+ "hook_uz": "Ikkinchi oila — «ilgakli» harflar: ج ح خ. Tanasi bir xil ilgak, farqi yana nuqtada! Xushxabar: خ tovushi o'zbekcha 'x' bilan BIR XIL — 'xon', 'xat'dagi x. Siz bu tovushni allaqachon bilasiz!",
  "grammar": {
   "point_ar": "ج ح خ",
-  "explanation_uz": "Bu uchta harf bir xil 'qozon/tovoq' shaklga ega. Ular faqat nuqta bilan farq qiladi: ج — pastda bitta nuqta, ح — nuqtasiz, خ — ustida bitta nuqta. Tovushlari esa butunlay boshqa: ج (j) — o'zbekcha 'jon' dagi 'j'; ح (h) — tomoqning ichidan chiqadigan chuqur, bo'g'iq nafas tovushi (o'zbekchada aniq mos yo'q); خ (x) — o'zbekcha 'xat' dagi 'x'.",
+  "explanation_uz": "Uchala harfning tanasi ilgakka o'xshaydi. ج — ichida 1 nuqta, 'j' tovushi. ح — nuqtasiz, BO'G'IZDAN chuqur 'h' (Muhammad, Rahim so'zlaridagi h — kuchli nafas bilan). خ — tepada 1 nuqta, o'zbekcha 'x'. ح ni to'g'ri chiqarish uchun: xuddi qo'lingizni sovuqda isitayotgandek «hhh» deb kuchli nafas chiqaring.",
   "table": [
-   {
-    "ar": "ج",
-    "uz": "pastda nuqta — 'j' (jon)",
-    "form": "nuqta ostda"
-   },
-   {
-    "ar": "ح",
-    "uz": "nuqtasiz — chuqur, bo'g'iq 'h'",
-    "form": "nuqtasiz"
-   },
-   {
-    "ar": "خ",
-    "uz": "ustida nuqta — 'x' (xat)",
-    "form": "nuqta ustda"
-   }
+   {"ar": "ج", "uz": "jim — 'j' · ichida 1 nuqta", "form": "جـ ـجـ ـج"},
+   {"ar": "ح", "uz": "ho — chuqur 'h' · nuqtasiz", "form": "حـ ـحـ ـح"},
+   {"ar": "خ", "uz": "xo — o'zbekcha 'x' · tepada 1 nuqta", "form": "خـ ـخـ ـخ"}
   ],
   "common_mistakes_uz": [
-   "ح ni oddiy o'zbekcha 'h' (hech) deb o'qish — aslida u tomoqdan chiqadigan kuchliroq, bo'g'iq tovush.",
-   "خ ni ح bilan chalkashtirish: nuqta USTIDA bo'lsa — خ (x), nuqta yo'q bo'lsa — ح.",
-   "ج dagi nuqtani ustiga qo'yib yozish — ج da nuqta doim PASTDA."
+   "ح ni oddiy yengil 'h' deb aytish — u bo'g'izdan, kuchli nafas bilan chiqadi.",
+   "ح va خ ni chalkashtirish: ح toza nafas, خ esa xirillagan o'zbekcha 'x'.",
+   "Nuqta joyini adashtirish: ج da nuqta ICHIDA, خ da TEPADA."
   ]
  },
- "roots": [
-  {
-   "root": "أ خ و",
-   "meaning_uz": "birodarlik, qarindoshlik",
-   "uz_cognates": [
-    "ixvon (birodarlar)"
-   ],
-   "derived": [
-    {
-     "ar": "أَخ",
-     "uz": "aka, uka (erkak birodar)",
-     "pattern": ""
-    },
-    {
-     "ar": "أُخْت",
-     "uz": "opa, singil (ayol birodar)",
-     "pattern": ""
-    }
-   ]
-  }
- ],
+ "roots": [],
  "vocabulary": [
-  {
-   "ar": "جَيْب",
-   "translit": "jayb",
-   "uz": "cho'ntak",
-   "root": "ج ي ب",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/jayb.mp3",
-   "example_ar": "جَيْب",
-   "example_uz": "cho'ntak",
-   "srs": true
-  },
-  {
-   "ar": "حَبِيب",
-   "translit": "habib",
-   "uz": "sevimli, do'st (o'zbekcha 'Habib' ismi shundan)",
-   "root": "ح ب ب",
-   "pattern": "",
-   "pos": "ot/sifat",
-   "audio": "a0/habib.mp3",
-   "example_ar": "حَبِيب",
-   "example_uz": "sevimli / do'st",
-   "srs": true
-  },
-  {
-   "ar": "أَخ",
-   "translit": "ax",
-   "uz": "aka, uka (erkak birodar)",
-   "root": "أ خ و",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/ax.mp3",
-   "example_ar": "أَخ",
-   "example_uz": "aka / uka",
-   "srs": true
-  },
-  {
-   "ar": "أُخْت",
-   "translit": "uxt",
-   "uz": "opa, singil (ayol birodar)",
-   "root": "أ خ و",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/uxt.mp3",
-   "example_ar": "أُخْت",
-   "example_uz": "opa / singil",
-   "srs": true
-  },
-  {
-   "ar": "بِنْت",
-   "translit": "bint",
-   "uz": "qiz (bola)",
-   "root": "ب ن ت",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/bint.mp3",
-   "example_ar": "بِنْت",
-   "example_uz": "qiz",
-   "srs": true
-  },
-  {
-   "ar": "بَاب",
-   "translit": "bab",
-   "uz": "eshik (o'zbekcha 'bob' — kirish/bo'lim shundan)",
-   "root": "ب و ب",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/bab.mp3",
-   "example_ar": "بَاب",
-   "example_uz": "eshik",
-   "srs": true
-  }
+  {"ar": "ج", "translit": "jim (j)", "uz": "«j» tovushi — 'jon'dagi j. Nuqta: 1 ta, ICHIDA", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_jim.mp3", "audio_text": "جِيم", "example_ar": "جـ ـجـ ـج", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
+  {"ar": "ح", "translit": "ho (ḥ)", "uz": "chuqur bo'g'iz «h» — 'Muhammad', 'Rahim'dagi h. Kuchli nafas bilan. Nuqtasiz", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_ha.mp3", "audio_text": "حَاء", "example_ar": "حـ ـحـ ـح", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
+  {"ar": "خ", "translit": "xo (x)", "uz": "o'zbekcha «x» — 'xon', 'xat'dagi x. Siz buni bilasiz! Nuqta: 1 ta, TEPADA", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_kha.mp3", "audio_text": "خَاء", "example_ar": "خـ ـخـ ـخ", "example_uz": "boshida · o'rtasida · oxirida", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "أَخ. أُخْت. بِنْت. بَاب. جَيْب. حَبِيب.",
+   "text_ar": "ج ح خ",
    "questions": [
-    {
-     "q_uz": "'أُخْت' so'zi qaysi tovush bilan boshlanadi (ustida nuqtali harf)?",
-     "a": "خ (x) — ustida nuqta"
-    },
-    {
-     "q_uz": "'جَيْب' so'zining ma'nosi nima?",
-     "a": "cho'ntak"
-    },
-    {
-     "q_uz": "'حَبِيب' so'zidagi birinchi harf — nuqtali yoki nuqtasiz?",
-     "a": "nuqtasiz — ح"
-    }
+    {"q_uz": "Nuqtasiz harf qaysi?", "a": "ح (ho)"},
+    {"q_uz": "O'zbekcha 'x' tovushini beruvchi harf?", "a": "خ (xo)"},
+    {"q_uz": "ج ning nuqtasi qayerda?", "a": "Ichida"}
    ]
   },
   "listening": {
-   "audio": "a0/a0-03-listen.mp3",
-   "transcript_ar": "أَخ. أُخْت. جَيْب.",
+   "audio": "a0/a0-03-harflar.mp3",
+   "transcript_ar": "جِيم. حَاء. خَاء",
    "questions": [
-    {
-     "q_uz": "Nechta so'z eshitdingiz?",
-     "a": "uchta"
-    },
-    {
-     "q_uz": "Oxirgi so'z qaysi harf bilan boshlandi (j tovushi)?",
-     "a": "ج"
-    }
+    {"q_uz": "Nechta harf nomi eshitildi?", "a": "3 ta"},
+    {"q_uz": "Oxirgi eshitilgan harf qaysi?", "a": "خ (xo)"}
    ]
   },
   "speaking": {
-   "task_uz": "Uchta harfning tovushini ketma-ket baland ovozda ayting: ج (jon), ح (chuqur h), خ (xat). So'ng 'أَخ' va 'أُخْت' so'zlarini ayting.",
-   "target_ar": [
-    "ج",
-    "ح",
-    "خ",
-    "أَخ",
-    "أُخْت"
-   ],
+   "task_uz": "Uchala harfni ovoz chiqarib ayting: «jim — j», «ho — h (chuqur)», «xo — x». ح da qo'lingizni og'zingiz oldiga tutib, iliq nafasni his qiling.",
+   "target_ar": ["ج", "ح", "خ"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Uchta harf oilasini o'ngdan chapga yozing: ج (pastda nuqta), ح (nuqtasiz), خ (ustida nuqta). Har birini 3 martadan yozing.",
+   "task_uz": "Daftaringizga ج، ح، خ harflaridan bir qatordan yozing. Ilgak shaklini bir xil chizib, faqat nuqta o'rnini o'zgartiring.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {
-   "type": "mcq",
-   "q_uz": "Qaysi harfning nuqtasi USTIDA?",
-   "q_ar": "",
-   "options": [
-    "ج",
-    "ح",
-    "خ"
-   ],
-   "answer": "خ",
-   "explain_uz": "خ (x) — nuqta ustida. ج — pastda, ح — nuqtasiz.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "'x' (o'zbekcha 'xat') tovushini qaysi harf beradi?",
-   "q_ar": "",
-   "options": [
-    "ج",
-    "ح",
-    "خ"
-   ],
-   "answer": "خ",
-   "explain_uz": "خ = o'zbekcha 'x'. Bu tovush sizga tanish.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_ar_uz",
-   "q_uz": "",
-   "q_ar": "أُخْت",
-   "options": [],
-   "answer": "opa / singil",
-   "explain_uz": "أُخْت — ayol birodar. أ خ و o'zagidan.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_uz_ar",
-   "q_uz": "cho'ntak",
-   "q_ar": "",
-   "options": [],
-   "answer": "جَيْب",
-   "explain_uz": "جَيْب — j bilan boshlanadi (nuqta pastda).",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "match_root",
-   "q_uz": "Qaysi so'z 'أ خ و' o'zagidan? (birodarlik)",
-   "q_ar": "",
-   "options": [
-    "جَيْب",
-    "أَخ",
-    "بَاب"
-   ],
-   "answer": "أَخ",
-   "explain_uz": "أَخ va أُخْت — ikkalasi ham أ خ و o'zagidan.",
-   "audio": "",
-   "root": "أ خ و",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "dictation",
-   "q_uz": "Eshitilgan so'zni yozing (aka/uka).",
-   "q_ar": "",
-   "options": [],
-   "answer": "أَخ",
-   "explain_uz": "أَخ — خ (nuqta ustida) bilan tugaydi.",
-   "audio": "a0/ax.mp3",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "Nuqtasiz harf (tomoqdan chiqadigan bo'g'iq h) qaysi?",
-   "q_ar": "",
-   "options": [
-    "ج",
-    "ح",
-    "خ"
-   ],
-   "answer": "ح",
-   "explain_uz": "ح — nuqtasiz, chuqur/bo'g'iq h tovushi.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  }
+  {"type": "mcq", "q_uz": "Qaysi harf NUQTASIZ?", "q_ar": "", "options": ["ح", "ج", "خ", "ب"], "answer": "ح", "explain_uz": "ح (ho) — bu oilada yagona nuqtasiz harf.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting: bu qaysi harfning nomi?", "q_ar": "", "options": ["خ", "ح", "ج", "ت"], "answer": "خ", "explain_uz": "«Xo» — tepasida nuqtali, o'zbekcha 'x' tovushi.", "audio": "a0/harf_kha.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "O'zbekcha 'xon' so'zidagi 'x' tovushiga mos harf qaysi?", "q_ar": "", "options": ["خ", "ح", "ج", "ه"], "answer": "خ", "explain_uz": "خ = o'zbekcha x. ح esa chuqur toza 'h'.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "dictation", "q_uz": "Eshiting va shu harfni klaviaturadan bosing.", "q_ar": "", "options": [], "answer": "ج", "explain_uz": "«Jim» — ichida nuqtali ج harfi.", "audio": "a0/harf_jim.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "ح harfi so'z BOSHIDA qanday ko'rinadi?", "q_ar": "", "options": ["حـ", "ـحـ", "ـح"], "answer": "حـ", "explain_uz": "So'z boshida: حـ (keyingi harfga ulanadi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "'Muhammad' ismidagi chuqur 'h' qaysi harf?", "q_ar": "", "options": ["ح", "خ", "ج", "ن"], "answer": "ح", "explain_uz": "ح — bo'g'izdan kuchli nafas bilan chiqadigan h.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "shadowing", "q_uz": "Harf nomlarini eshiting va takrorlang", "q_ar": "ج ح خ", "options": [], "answer": "", "explain_uz": "", "audio": "a0/a0-03-harflar.mp3", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {
-   "type": "word",
-   "front": "جَيْب",
-   "back": "cho'ntak (jayb)",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "حَبِيب",
-   "back": "sevimli, do'st (habib)",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "أَخ",
-   "back": "aka, uka (ax)",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "أُخْت",
-   "back": "opa, singil (uxt)",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "بِنْت",
-   "back": "qiz bola (bint)",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "بَاب",
-   "back": "eshik (bab)",
-   "deck": "msa"
-  },
-  {
-   "type": "root",
-   "front": "أ خ و",
-   "back": "birodarlik → أَخ (aka), أُخْت (opa)",
-   "deck": "msa"
-  },
-  {
-   "type": "phrase",
-   "front": "ج ح خ",
-   "back": "Bir shakl, uch harf: ج pastda nuqta (j), ح nuqtasiz (h), خ ustida nuqta (x)",
-   "deck": "msa"
-  }
+  {"type": "word", "front": "ج", "back": "jim — 'j' (nuqta ichida)", "deck": "msa"},
+  {"type": "word", "front": "ح", "back": "ho — chuqur bo'g'iz 'h' (nuqtasiz)", "deck": "msa"},
+  {"type": "word", "front": "خ", "back": "xo — o'zbekcha 'x' (nuqta tepada)", "deck": "msa"}
  ]
 }

@@ -4,357 +4,79 @@
  "module": "letters",
  "order": 9,
  "title_uz": "Ulanmaydigan 6 harf",
- "title_ar": "الحُرُوفُ السِّتَّةُ",
- "can_do_uz": "So'z ichida ا د ذ ر ز و harflaridan keyin uzilishni (bo'shliqsiz kichik 'yoriq') taniy olaman.",
- "duration_min": 30,
- "prerequisites": [
-  "a0-08"
- ],
+ "title_ar": "الحُرُوفُ غَيْرُ المُتَّصِلَة",
+ "can_do_uz": "So'z ichidagi «uzilish»larni ko'rib, ular ا د ذ ر ز و harflaridan keyin bo'lishini tushunaman.",
+ "duration_min": 25,
+ "prerequisites": ["a0-08"],
  "harakat_level": "full",
- "hook_uz": "Arab yozuvida harflar bir-biriga qo'l ushlashib boradi. Lekin 6 ta harf faqat o'ng qo'lini beradi, chap qo'lini bermaydi — shuning uchun ular 'dars' so'zidagidek so'z o'rtasida kichik yoriq (uzilish) hosil qiladi. 'Dars' so'zining o'zi ham shu harflardan tuzilgan!",
+ "hook_uz": "Sirni ochamiz: nega ba'zi so'zlar ichida «yoriq» bor? Chunki OLTITA harf — ا د ذ ر ز و — o'zidan keyingi harfga qo'l bermaydi! Masalan دَرْس (dars) so'zida د dan keyin uzilish bor. Bu yoriqlarni ko'ra olsangiz, so'zlar «rasm»dan tanish shakllarga aylanadi.",
  "grammar": {
   "point_ar": "ا د ذ ر ز و",
-  "explanation_uz": "Arabcha harflarning ko'pi ikki tomonga ulanadi: oldingi harfga ham, keyingi harfga ham. Ammo 6 ta harf — ا د ذ ر ز و — o'zidan KEYINGI harfga ulanmaydi. Ya'ni bu harf yozilgach, keyingi harf yangidan, o'z boshi shakli bilan boshlanadi. Bu bo'shliq EMAS — so'z hali tugamagan, faqat ichida kichik uzilish bor.",
+  "explanation_uz": "Bu 6 harf o'zidan KEYINGI harfga ulanmaydi (oldingisidan qabul qiladi, lekin keyingisiga qo'l uzatmaydi). Shuning uchun so'z ichida ulardan keyin doim kichik UZILISH bo'ladi: دَرْس (д dan keyin), وَرَق (و va ر dan keyin). Uzilish so'z tugadi degani EMAS — bu shunchaki shu 6 harfning xususiyati. Eslab qolish: «Alif, Dol, Zol, Ro, Zo, Vov — olti do'st yolg'iz yuradi».",
   "table": [
-   {
-    "ar": "ا",
-    "uz": "alif — ikki tomon uchun bir xil, keyingiga ulanmaydi",
-    "form": "ـا"
-   },
-   {
-    "ar": "د",
-    "uz": "dol — keyingiga ulanmaydi",
-    "form": "ـد"
-   },
-   {
-    "ar": "ذ",
-    "uz": "zol — keyingiga ulanmaydi",
-    "form": "ـذ"
-   },
-   {
-    "ar": "ر",
-    "uz": "ro — keyingiga ulanmaydi",
-    "form": "ـر"
-   },
-   {
-    "ar": "ز",
-    "uz": "za — keyingiga ulanmaydi",
-    "form": "ـز"
-   },
-   {
-    "ar": "و",
-    "uz": "vov — keyingiga ulanmaydi",
-    "form": "ـو"
-   },
-   {
-    "ar": "دَرْس",
-    "uz": "misol: د keyin uzilish, so'ng رْس",
-    "form": "دَ + رْس"
-   }
+   {"ar": "ا د ذ ر ز و", "uz": "keyingi harfga ulanmaydigan 6 harf", "form": "qoida"},
+   {"ar": "دَرْس", "uz": "د dan keyin uzilish — «d | ars»", "form": "misol"},
+   {"ar": "وَرَق", "uz": "و dan ham, ر dan ham keyin uzilish", "form": "misol"},
+   {"ar": "زَوْج", "uz": "ز dan keyin, و dan keyin uzilish", "form": "misol"}
   ],
   "common_mistakes_uz": [
-   "So'z ichidagi uzilishni yangi so'z deb o'ylash. Yo'q — bu bir so'z, faqat ichida yoriq bor.",
-   "د ذ ر ز و dan keyingi harfni zo'rlab ulashga urinish. Ular hech qachon o'zidan keyingi harfga ulanmaydi.",
-   "Bu harflar oldingi harfga ham ulanmaydi deb o'ylash. Ular o'ngdan (oldingi harfdan) ulanishni QABUL qiladi (ـد ko'rinishi)."
+   "Uzilishni «so'z tugadi» deb o'ylash — so'z davom etadi, faqat harf ulanmagan.",
+   "6 harfni yodlamaslik — ا د ذ ر ز و ni qo'shiq kabi takrorlang.",
+   "Bu harflar OLDINGI harfdan ham ulanmaydi deb o'ylash — ular oldingisiga ulanadi (ـد ـر), faqat keyingisiga emas."
   ]
  },
- "roots": [
-  {
-   "root": "د ر س",
-   "meaning_uz": "o'rganish, dars berish",
-   "uz_cognates": [
-    "dars",
-    "madrasa",
-    "mudarris"
-   ],
-   "derived": [
-    {
-     "ar": "دَرْس",
-     "uz": "dars",
-     "pattern": ""
-    },
-    {
-     "ar": "دَرَسَ",
-     "uz": "u o'rgandi",
-     "pattern": ""
-    }
-   ]
-  }
- ],
+ "roots": [],
  "vocabulary": [
-  {
-   "ar": "دَرْس",
-   "translit": "dars",
-   "uz": "dars (o'zbekcha 'dars' shu so'zdan)",
-   "root": "د ر س",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/dars.mp3",
-   "example_ar": "دَرْس",
-   "example_uz": "Bir dars.",
-   "srs": true
-  },
-  {
-   "ar": "وَرْد",
-   "translit": "ward",
-   "uz": "gul",
-   "root": "و ر د",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/ward.mp3",
-   "example_ar": "وَرْد",
-   "example_uz": "Gul.",
-   "srs": true
-  },
-  {
-   "ar": "بَرْد",
-   "translit": "bard",
-   "uz": "sovuq",
-   "root": "ب ر د",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/bard.mp3",
-   "example_ar": "بَرْد",
-   "example_uz": "Sovuq.",
-   "srs": true
-  },
-  {
-   "ar": "وَرَق",
-   "translit": "waraq",
-   "uz": "qog'oz, varaq (o'zbekcha 'varaq' shu so'zdan)",
-   "root": "و ر ق",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/waraq.mp3",
-   "example_ar": "وَرَق",
-   "example_uz": "Qog'oz.",
-   "srs": true
-  },
-  {
-   "ar": "وَزْن",
-   "translit": "wazn",
-   "uz": "vazn, og'irlik (o'zbekcha 'vazn' shu so'zdan)",
-   "root": "و ز ن",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/wazn.mp3",
-   "example_ar": "وَزْن",
-   "example_uz": "Vazn.",
-   "srs": true
-  },
-  {
-   "ar": "زَوْج",
-   "translit": "zawj",
-   "uz": "er, juft",
-   "root": "ز و ج",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/zawj.mp3",
-   "example_ar": "زَوْج",
-   "example_uz": "Er (juft).",
-   "srs": true
-  }
+  {"ar": "دَرْس", "translit": "dars", "uz": "dars — o'zbekcha 'dars' aynan shu! د dan keyin uzilishni ko'ring", "root": "د ر س", "pattern": "", "pos": "ot", "audio": "a0/dars.mp3", "example_ar": "د + ر + س", "example_uz": "dol | ro | sin — ikki uzilish", "srs": true},
+  {"ar": "وَرْد", "translit": "vard", "uz": "atirgul — و+ر+د, uchala harf ham «yolg'iz yuruvchi»!", "root": "و ر د", "pattern": "", "pos": "ot", "audio": "a0/ward.mp3", "example_ar": "و + ر + د", "example_uz": "vov | ro | dol — hammasi uzuq", "srs": true},
+  {"ar": "وَرَق", "translit": "varaq", "uz": "qog'oz — o'zbekcha 'varaq' shundan!", "root": "و ر ق", "pattern": "", "pos": "ot", "audio": "a0/waraq.mp3", "example_ar": "و + ر + ق", "example_uz": "vov | ro | qof", "srs": true},
+  {"ar": "وَزْن", "translit": "vazn", "uz": "og'irlik, vazn — o'zbekcha 'vazn' shundan!", "root": "و ز ن", "pattern": "", "pos": "ot", "audio": "a0/wazn.mp3", "example_ar": "و + ز + ن", "example_uz": "vov | zo | nun", "srs": true},
+  {"ar": "زَوْج", "translit": "zavj", "uz": "juft, turmush o'rtog'i — 'juft'lik ma'nosi", "root": "ز و ج", "pattern": "", "pos": "ot", "audio": "a0/zawj.mp3", "example_ar": "ز + و + ج", "example_uz": "zo | vov | jim", "srs": true},
+  {"ar": "بَرْد", "translit": "bard", "uz": "sovuq — ب ulanadi, ر va د uzadi", "root": "ب ر د", "pattern": "", "pos": "ot", "audio": "a0/bard.mp3", "example_ar": "بـ + ر + د", "example_uz": "bo (ulangan) | ro | dol", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "دَرْس. وَرْد. بَرْد. وَرَق. وَزْن. زَوْج.",
+   "text_ar": "درس. ورد. ورق",
    "questions": [
-    {
-     "q_uz": "Qaysi so'z 'gul' degani?",
-     "a": "وَرْد"
-    },
-    {
-     "q_uz": "'دَرْس' so'zida uzilish qaysi harfdan keyin?",
-     "a": "د (dol) harfidan keyin"
-    },
-    {
-     "q_uz": "'وَرَق' so'zi o'zbekchada qanday tanish so'zga o'xshaydi?",
-     "a": "varaq"
-    }
+    {"q_uz": "درس so'zida uzilish qayerda?", "a": "د dan keyin (va ر dan keyin)"},
+    {"q_uz": "ورد so'zida nechta harf bor?", "a": "3 ta: و ر د"},
+    {"q_uz": "Nega bu so'zlar «uzuq-uzuq» ko'rinadi?", "a": "Harflari keyingisiga ulanmaydigan harflardan"}
    ]
   },
   "listening": {
-   "audio": "a0/a0-09-listen.mp3",
-   "transcript_ar": "دَرْس. زَوْج. بَرْد.",
+   "audio": "a0/a0-09-suzlar.mp3",
+   "transcript_ar": "دَرْس. وَرْد. وَرَق",
    "questions": [
-    {
-     "q_uz": "Birinchi so'z nima?",
-     "a": "دَرْس (dars)"
-    },
-    {
-     "q_uz": "Uchinchi so'z nimani anglatadi?",
-     "a": "sovuq (بَرْد)"
-    }
+    {"q_uz": "Nechta so'z eshitildi?", "a": "3 ta"},
+    {"q_uz": "'atirgul' nechanchi bo'lib eshitildi?", "a": "Ikkinchi (وَرْد)"}
    ]
   },
   "speaking": {
-   "task_uz": "Ushbu 3 so'zni ovoz chiqarib o'qing va har birida uzilish bo'lgan joyni his qiling: دَرْس، وَرْد، وَزْن.",
-   "target_ar": [
-    "دَرْس",
-    "وَرْد",
-    "وَزْن"
-   ],
+   "task_uz": "Audio ortidan takrorlang: dars, vard, varaq. 6 do'stni qo'shiq kabi ayting: «alif, dol, zol, ro, zo, vov».",
+   "target_ar": ["دَرْس", "وَرْد", "وَرَق"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "'دَرْس' va 'وَرْد' so'zlarini yozing. د va ر harflaridan keyin qalamni ko'tarib, keyingi harfni yangidan boshlang.",
+   "task_uz": "Daftaringizga درس so'zini ko'chiring — د dan keyin ataylab kichik oraliq qoldiring. Keyin 6 harfni yozing: ا د ذ ر ز و.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {
-   "type": "mcq",
-   "q_uz": "Quyidagilardan qaysi biri o'zidan KEYINGI harfga ulanmaydi?",
-   "q_ar": "",
-   "options": [
-    "ب",
-    "ر",
-    "س",
-    "ت"
-   ],
-   "answer": "ر",
-   "explain_uz": "ر (ro) — ulanmaydigan 6 harfdan biri. ب، س، ت ikki tomonga ulanadi.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "'دَرْس' so'zida uzilish (yoriq) qayerda?",
-   "q_ar": "",
-   "options": [
-    "د dan keyin",
-    "ر dan keyin",
-    "س dan keyin",
-    "uzilish yo'q"
-   ],
-   "answer": "د dan keyin",
-   "explain_uz": "د ulanmaydigan harf, shuning uchun undan keyin رْس yangidan boshlanadi.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_ar_uz",
-   "q_uz": "Tarjima qiling:",
-   "q_ar": "وَرْد",
-   "options": [],
-   "answer": "gul",
-   "explain_uz": "وَرْد — gul.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_uz_ar",
-   "q_uz": "Arabchaga o'giring: dars",
-   "q_ar": "",
-   "options": [],
-   "answer": "دَرْس",
-   "explain_uz": "دَرْس — o'zbekcha 'dars' shu so'zdan.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "match_root",
-   "q_uz": "'دَرْس' so'zining o'zagini toping.",
-   "q_ar": "",
-   "options": [
-    "د ر س",
-    "و ر د",
-    "ب ر د",
-    "ز و ج"
-   ],
-   "answer": "د ر س",
-   "explain_uz": "دَرْس so'zi د-ر-س o'zagidan; madrasa, mudarris ham shu o'zakdan.",
-   "audio": "",
-   "root": "د ر س",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "Qaysi so'z o'zbekcha 'vazn' so'ziga to'g'ri keladi?",
-   "q_ar": "",
-   "options": [
-    "وَزْن",
-    "وَرَق",
-    "زَوْج",
-    "بَرْد"
-   ],
-   "answer": "وَزْن",
-   "explain_uz": "وَزْن — vazn, og'irlik.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "So'z ichidagi uzilish (yoriq) nimani anglatadi?",
-   "q_ar": "",
-   "options": [
-    "So'z tugadi",
-    "Bu ikki so'z",
-    "So'z davom etadi, faqat harf ulanmadi",
-    "Xato yozilgan"
-   ],
-   "answer": "So'z davom etadi, faqat harf ulanmadi",
-   "explain_uz": "Uzilish bo'shliq emas; so'z bir butun, shunchaki oldingi harf keyingiga ulanmaydi.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  }
+  {"type": "mcq", "q_uz": "Quyidagilardan qaysi biri o'zidan KEYINGI harfga ulanmaydi?", "q_ar": "", "options": ["ر", "ب", "م", "س"], "answer": "ر", "explain_uz": "ر — 6 «yolg'iz yuruvchi» harfdan biri (ا د ذ ر ز و).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "درس so'zida uzilish (yoriq) qayerda?", "q_ar": "دَرْس", "options": ["د dan keyin", "س dan keyin", "so'z boshida", "uzilish yo'q"], "answer": "د dan keyin", "explain_uz": "د keyingi harfga ulanmaydi — shuning uchun د | رس.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting: bu so'zning ma'nosi nima?", "q_ar": "", "options": ["atirgul", "qog'oz", "dars", "sovuq"], "answer": "atirgul", "explain_uz": "«Vard» — atirgul. Uchala harfi ham ulanmaydigan!", "audio": "a0/ward.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Ulanmaydigan 6 harf qaysilar?", "q_ar": "", "options": ["ا د ذ ر ز و", "ب ت ث ن ي", "ج ح خ ع غ ف", "س ش ص ض ط ظ"], "answer": "ا د ذ ر ز و", "explain_uz": "«Alif, dol, zol, ro, zo, vov — olti do'st yolg'iz yuradi».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "So'z ichidagi uzilish (yoriq) nimani anglatadi?", "q_ar": "", "options": ["So'z davom etadi, faqat harf ulanmagan", "So'z tugadi", "Yangi gap boshlandi", "Xato yozilgan"], "answer": "So'z davom etadi, faqat harf ulanmagan", "explain_uz": "Uzilish — ulanmaydigan harf belgisi, so'z chegarasi emas.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Harflarni ulab ورد (atirgul) so'zini yig'ing (vov, ro, dol)", "q_ar": "", "options": [], "answer": "و ر د", "explain_uz": "و | ر | د — uchala harf ham keyingisiga ulanmaydi.", "audio": "a0/ward.mp3", "root": "", "pattern": "", "words": ["و", "ر", "د"]},
+  {"type": "mcq", "q_uz": "Eshiting: bu so'zning ma'nosi nima?", "q_ar": "", "options": ["qog'oz", "vazn", "juft", "uy"], "answer": "qog'oz", "explain_uz": "«Varaq» — qog'oz. O'zbekcha 'varaq' shundan.", "audio": "a0/waraq.mp3", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {
-   "type": "word",
-   "front": "دَرْس",
-   "back": "dars (o'zak: د ر س)",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "وَرْد",
-   "back": "gul",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "بَرْد",
-   "back": "sovuq",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "وَرَق",
-   "back": "qog'oz, varaq",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "وَزْن",
-   "back": "vazn, og'irlik",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "زَوْج",
-   "back": "er, juft",
-   "deck": "msa"
-  },
-  {
-   "type": "root",
-   "front": "د ر س",
-   "back": "o'rganish, dars berish (dars, madrasa, mudarris)",
-   "deck": "msa"
-  }
+  {"type": "word", "front": "دَرْس", "back": "dars (dars)", "deck": "msa"},
+  {"type": "word", "front": "وَرْد", "back": "atirgul (vard)", "deck": "msa"},
+  {"type": "word", "front": "وَرَق", "back": "qog'oz (varaq)", "deck": "msa"},
+  {"type": "word", "front": "وَزْن", "back": "og'irlik, vazn (vazn)", "deck": "msa"},
+  {"type": "word", "front": "زَوْج", "back": "juft, turmush o'rtog'i (zavj)", "deck": "msa"},
+  {"type": "word", "front": "بَرْد", "back": "sovuq (bard)", "deck": "msa"}
  ]
 }

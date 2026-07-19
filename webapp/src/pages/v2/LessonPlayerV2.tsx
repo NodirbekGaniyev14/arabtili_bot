@@ -241,7 +241,10 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
         const v = lesson.vocabulary[phase.i];
         return (
           <div className="pt-4 text-center">
-            <SectionLabel text={`YANGI SO'Z · ${phase.i + 1}/${lesson.vocabulary.length}`} center />
+            <SectionLabel
+              text={`${v.pos === "harf" ? "YANGI HARF" : "YANGI SO'Z"} · ${phase.i + 1}/${lesson.vocabulary.length}`}
+              center
+            />
             <div className="mt-4 rounded-3xl bg-card border border-cardline p-7">
               <div className="font-arabic text-6xl leading-tight" dir="rtl">{v.ar}</div>
               <div className="mt-3 text-lg font-extrabold text-emerald-deep italic">{v.translit}</div>

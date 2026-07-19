@@ -5,309 +5,84 @@
  "order": 1,
  "title_uz": "Arab alifbosi",
  "title_ar": "الحُرُوفُ العَرَبِيَّة",
- "can_do_uz": "Arab yozuvi o'ngdan chapga yozilishini tushunaman va 28 harf borligini bilaman.",
- "duration_min": 30,
+ "can_do_uz": "Arab yozuvi o'ngdan chapga yozilishini bilaman, 28 harf borligini tushunaman va birinchi harfim — alif (ا) ni taniyman.",
+ "duration_min": 20,
  "prerequisites": [],
  "harakat_level": "full",
- "hook_uz": "Siz arab tilini bilmasangiz ham, allaqachon yuzlab arabcha so'zlarni bilasiz: kitob, maktab, salom, ilm, qalam — bularning hammasi arabchadan kelgan! Bugun ana shu so'zlar yozilgan alifbo bilan tanishamiz.",
+ "hook_uz": "Siz arab tilini bilmasangiz ham, allaqachon yuzlab arabcha so'zlarni bilasiz: kitob, maktab, salom, ilm, qalam — hammasi arabchadan! Bu kursda avval harflarni SEKIN, birma-bir taniymiz, keyin ularni qo'shib o'qishni o'rganamiz. Shoshilmang — harf tanish o'qishning poydevori.",
  "grammar": {
   "point_ar": "الكِتَابَةُ مِنَ اليَمِينِ إِلَى اليَسَار",
-  "explanation_uz": "Arab tilida yozuv O'NGDAN CHAPGA yoziladi (o'zbekchaning aksi). Alifboda 28 ta harf bor. Harflar asosan undosh (tovush) bo'lib, unlilar ko'pincha harf ustidagi/ostidagi kichik belgilar (harakatlar) bilan ko'rsatiladi. Ushbu birinchi darsda faqat umumiy manzarani ko'ramiz — har bir harfni keyingi darslarda batafsil o'rganamiz.",
+  "explanation_uz": "Arab tilida yozuv O'NGDAN CHAPGA yoziladi (o'zbekchaning aksi). Alifboda 28 ta harf bor. Harflar asosan undosh tovushlar; unlilar keyinroq o'rganadigan kichik belgilar (harakatlar) bilan ko'rsatiladi. MUHIM: bu darslarda avval FAQAT harflarni taniymiz va talaffuz qilamiz. So'zlarni mustaqil o'qish — harakatlarni o'rgangandan keyin boshlanadi, hozir so'zlarni faqat QULOQ bilan tanish yetarli.",
   "table": [
-   {
-    "ar": "← ←",
-    "uz": "Yozuv yo'nalishi: o'ngdan chapga",
-    "form": "yo'nalish"
-   },
-   {
-    "ar": "٢٨",
-    "uz": "Alifbodagi harflar soni: 28 ta",
-    "form": "son"
-   },
-   {
-    "ar": "بَيْت",
-    "uz": "'bayt' so'zi — o'ngdagi ب dan chapga o'qiladi",
-    "form": "misol"
-   },
-   {
-    "ar": "كِتَاب",
-    "uz": "'kitob' — o'zbekchaga o'xshash so'z",
-    "form": "misol"
-   }
+   {"ar": "← ←", "uz": "Yozuv yo'nalishi: o'ngdan chapga", "form": "yo'nalish"},
+   {"ar": "٢٨", "uz": "Alifboda 28 ta harf", "form": "son"},
+   {"ar": "ا", "uz": "Birinchi harf — alif: cho'ziq 'aa' tovushi", "form": "harf"},
+   {"ar": "كِتَاب", "uz": "'kitob' — bunday so'zlarni hozircha faqat eshitib taniymiz", "form": "misol"}
   ],
   "common_mistakes_uz": [
-   "So'zni chapdan o'ngga o'qishga urinish — arabchada aksincha, o'ngdan boshlanadi.",
-   "Harflarni lotincha kabi bir xil balandlikda deb o'ylash — arab harflari ustki/ostki belgilarga (nuqta, harakat) ega.",
-   "28 harfning hammasini birinchi darsda yodlashga urinish — hozir faqat tanishamiz, shoshilmang."
+   "So'zni chapdan o'ngga o'qishga urinish — arabchada o'ngdan boshlanadi.",
+   "Birinchi kundanoq so'z o'qishga urinish — avval harflarni puxta taniang, o'qish o'z vaqtida keladi.",
+   "28 harfni bir darsda yodlashga urinish — biz ularni 6 ta kichik oilaga bo'lib, sekin o'rganamiz."
   ]
  },
  "roots": [
   {
    "root": "ك ت ب",
-   "meaning_uz": "yozish bilan bog'liq",
-   "uz_cognates": [
-    "kitob",
-    "maktab",
-    "kotib",
-    "maktub"
-   ],
+   "meaning_uz": "yozish bilan bog'liq (keyinroq batafsil o'rganamiz)",
+   "uz_cognates": ["kitob", "maktab", "kotib", "maktub"],
    "derived": [
-    {
-     "ar": "كِتَاب",
-     "uz": "kitob",
-     "pattern": ""
-    },
-    {
-     "ar": "مَكْتَب",
-     "uz": "maktab / ish stoli",
-     "pattern": ""
-    }
+    {"ar": "كِتَاب", "uz": "kitob", "pattern": ""},
+    {"ar": "مَكْتَب", "uz": "maktab / ish stoli", "pattern": ""}
    ]
   }
  ],
  "vocabulary": [
-  {
-   "ar": "كِتَاب",
-   "translit": "kitāb",
-   "uz": "kitob (o'zbekcha 'kitob' aynan shundan)",
-   "root": "ك ت ب",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/kitab.mp3",
-   "example_ar": "هٰذَا كِتَاب.",
-   "example_uz": "Bu kitob.",
-   "srs": true
-  },
-  {
-   "ar": "بَيْت",
-   "translit": "bayt",
-   "uz": "uy (o'zbekchada 'bayt' — she'r qismi ham shundan)",
-   "root": "ب ي ت",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/bayt.mp3",
-   "example_ar": "هٰذَا بَيْت.",
-   "example_uz": "Bu uy.",
-   "srs": true
-  },
-  {
-   "ar": "بَاب",
-   "translit": "bāb",
-   "uz": "eshik (o'zbekchada 'bob' — kitob bobi shundan)",
-   "root": "ب و ب",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/bab.mp3",
-   "example_ar": "هٰذَا بَاب.",
-   "example_uz": "Bu eshik.",
-   "srs": true
-  },
-  {
-   "ar": "سَلَام",
-   "translit": "salām",
-   "uz": "salom, tinchlik (o'zbekcha 'salom')",
-   "root": "س ل م",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/salam.mp3",
-   "example_ar": "سَلَام.",
-   "example_uz": "Salom.",
-   "srs": true
-  },
-  {
-   "ar": "قَمَر",
-   "translit": "qamar",
-   "uz": "oy (osmondagi)",
-   "root": "ق م ر",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/qamar.mp3",
-   "example_ar": "هٰذَا قَمَر.",
-   "example_uz": "Bu oy.",
-   "srs": true
-  }
+  {"ar": "ا", "translit": "alif (aa)", "uz": "«aa» — cho'ziq unli. Tik tayoqcha, nuqtasiz. Alifboning 1-harfi", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_alif.mp3", "audio_text": "أَلِف", "example_ar": "ا ـا", "example_uz": "yolg'iz · so'z ichida (o'zidan keyingi harfga ulanmaydi)", "srs": true},
+  {"ar": "كِتَاب", "translit": "kitāb", "uz": "kitob — o'zbekcha 'kitob' aynan shundan! (hozircha faqat eshitib taning)", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a0/kitab.mp3", "example_ar": "", "example_uz": "", "srs": true},
+  {"ar": "سَلَام", "translit": "salām", "uz": "salom, tinchlik — o'zbekcha 'salom' shundan", "root": "س ل م", "pattern": "", "pos": "ot", "audio": "a0/salam.mp3", "example_ar": "", "example_uz": "", "srs": true},
+  {"ar": "بَيْت", "translit": "bayt", "uz": "uy — she'rdagi 'bayt' ham shundan", "root": "ب ي ت", "pattern": "", "pos": "ot", "audio": "a0/bayt.mp3", "example_ar": "", "example_uz": "", "srs": true},
+  {"ar": "قَمَر", "translit": "qamar", "uz": "oy (osmondagi) — 'Qamar' ismi shundan", "root": "ق م ر", "pattern": "", "pos": "ot", "audio": "a0/qamar.mp3", "example_ar": "", "example_uz": "", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "هٰذَا بَيْت. هٰذَا بَاب. هٰذَا كِتَاب.",
+   "text_ar": "ا ا ا",
    "questions": [
-    {
-     "q_uz": "Matnda qaysi so'z 'uy' ma'nosini beradi?",
-     "a": "بَيْت"
-    },
-    {
-     "q_uz": "Matn qaysi tomondan o'qiladi?",
-     "a": "O'ngdan chapga"
-    }
+    {"q_uz": "Bu qaysi harf?", "a": "Alif (cho'ziq 'aa')"},
+    {"q_uz": "Arab matni qaysi tomondan o'qiladi?", "a": "O'ngdan chapga"}
    ]
   },
   "listening": {
-   "audio": "a0/salam.mp3",
-   "transcript_ar": "سَلَام",
+   "audio": "a0/a0-01-harflar.mp3",
+   "transcript_ar": "أَلِف. أَلِف. أَلِف",
    "questions": [
-    {
-     "q_uz": "Eshitgan so'zingiz ma'nosi nima?",
-     "a": "Salom / tinchlik"
-    }
+    {"q_uz": "Qaysi harf nomi eshitildi?", "a": "Alif (ا)"}
    ]
   },
   "speaking": {
-   "task_uz": "Quyidagi so'zlarni ovoz chiqarib takrorlang: kitāb, bayt, bāb, salām, qamar.",
-   "target_ar": [
-    "كِتَاب",
-    "بَيْت",
-    "بَاب",
-    "سَلَام",
-    "قَمَر"
-   ],
+   "task_uz": "Alif harfini nomi bilan uch marta ayting: «alif — aa». Keyin tanish so'zlarni audio ortidan takrorlang: kitāb, salām.",
+   "target_ar": ["ا", "كِتَاب", "سَلَام"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Daftaringizga o'ngdan chapga yo'nalishda bir chiziq torting va uning ustiga 'كِتَاب' so'zini ko'chirib yozing.",
+   "task_uz": "Daftaringizga o'ngdan chapga qarab bir qator alif (ا) yozing — tepadan pastga tik tayoqcha. Qo'lingiz yozuv yo'nalishiga o'rgansin.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {
-   "type": "mcq",
-   "q_uz": "Arab tilida yozuv qaysi yo'nalishda yoziladi?",
-   "q_ar": "",
-   "options": [
-    "Chapdan o'ngga",
-    "O'ngdan chapga",
-    "Yuqoridan pastga",
-    "Pastdan yuqoriga"
-   ],
-   "answer": "O'ngdan chapga",
-   "explain_uz": "Arabcha o'zbekchaning aksicha — o'ngdan chapga yoziladi va o'qiladi.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "Arab alifbosida nechta harf bor?",
-   "q_ar": "",
-   "options": [
-    "24",
-    "26",
-    "28",
-    "33"
-   ],
-   "answer": "28",
-   "explain_uz": "Arab alifbosida 28 ta harf mavjud.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_ar_uz",
-   "q_uz": "",
-   "q_ar": "كِتَاب",
-   "options": [],
-   "answer": "kitob",
-   "explain_uz": "O'zbekchadagi 'kitob' so'zi aynan shu arabcha so'zdan.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_uz_ar",
-   "q_uz": "uy",
-   "q_ar": "",
-   "options": [],
-   "answer": "بَيْت",
-   "explain_uz": "'Bayt' — uy degani. O'zbekchada she'r 'bayti' ham shundan.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "match_root",
-   "q_uz": "Qaysi so'z 'ك ت ب' o'zagidan yasalgan?",
-   "q_ar": "",
-   "options": [
-    "كِتَاب",
-    "قَمَر",
-    "سَلَام"
-   ],
-   "answer": "كِتَاب",
-   "explain_uz": "'ك ت ب' yozish o'zagi; kitāb (kitob) va maktab shundan.",
-   "audio": "",
-   "root": "ك ت ب",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "dictation",
-   "q_uz": "Eshitilgan so'zni yozing.",
-   "q_ar": "",
-   "options": [],
-   "answer": "سَلَام",
-   "explain_uz": "'Salām' — salom, tinchlik ma'nosidagi so'z.",
-   "audio": "a0/salam.mp3",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "Quyidagilardan qaysi biri 'oy' (osmondagi) degani?",
-   "q_ar": "",
-   "options": [
-    "بَاب",
-    "قَمَر",
-    "كِتَاب"
-   ],
-   "answer": "قَمَر",
-   "explain_uz": "'Qamar' — osmondagi oy.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  }
+  {"type": "mcq", "q_uz": "Arab tilida yozuv qaysi yo'nalishda yoziladi?", "q_ar": "", "options": ["O'ngdan chapga", "Chapdan o'ngga", "Yuqoridan pastga"], "answer": "O'ngdan chapga", "explain_uz": "Arabcha o'zbekchaning aksi — o'ngdan chapga yoziladi va o'qiladi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Arab alifbosida nechta harf bor?", "q_ar": "", "options": ["24", "26", "28", "33"], "answer": "28", "explain_uz": "Arab alifbosida 28 ta harf mavjud.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting: bu qaysi harfning nomi?", "q_ar": "", "options": ["ا", "ب", "م", "ك"], "answer": "ا", "explain_uz": "«Alif» — tik tayoqcha ا, cho'ziq 'aa' tovushi.", "audio": "a0/harf_alif.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Alif (ا) qanday tovush beradi?", "q_ar": "ا", "options": ["cho'ziq 'aa'", "'b'", "'k'", "'m'"], "answer": "cho'ziq 'aa'", "explain_uz": "Alif — cho'ziq 'aa' unlisi. Masalan kitAAb so'zidagi 'aa'.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting: bu so'zning ma'nosi nima?", "q_ar": "", "options": ["kitob", "salom", "uy", "oy"], "answer": "kitob", "explain_uz": "«Kitāb» — kitob. O'zbekcha 'kitob' shu so'zdan olingan.", "audio": "a0/kitab.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting: bu so'zning ma'nosi nima?", "q_ar": "", "options": ["salom", "kitob", "maktab", "qalam"], "answer": "salom", "explain_uz": "«Salām» — salom, tinchlik.", "audio": "a0/salam.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "shadowing", "q_uz": "Eshiting va baland ovozda takrorlang", "q_ar": "سَلَام", "options": [], "answer": "", "explain_uz": "", "audio": "a0/salam.mp3", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {
-   "type": "root",
-   "front": "ك ت ب",
-   "back": "yozish o'zagi (kitob, maktab, kotib)",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "كِتَاب",
-   "back": "kitob",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "بَيْت",
-   "back": "uy",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "بَاب",
-   "back": "eshik",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "سَلَام",
-   "back": "salom, tinchlik",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "قَمَر",
-   "back": "oy (osmondagi)",
-   "deck": "msa"
-  }
+  {"type": "word", "front": "ا", "back": "alif — cho'ziq 'aa' (nuqtasiz tik tayoqcha)", "deck": "msa"},
+  {"type": "word", "front": "كِتَاب", "back": "kitob (kitāb)", "deck": "msa"},
+  {"type": "word", "front": "سَلَام", "back": "salom, tinchlik (salām)", "deck": "msa"},
+  {"type": "word", "front": "بَيْت", "back": "uy (bayt)", "deck": "msa"},
+  {"type": "word", "front": "قَمَر", "back": "oy — osmondagi (qamar)", "deck": "msa"}
  ]
 }

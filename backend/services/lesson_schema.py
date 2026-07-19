@@ -226,7 +226,8 @@ def validate_lesson(
         if not ARABIC_ANY.search(v.ar):
             errors.append(f"Lug'atda arabcha emas: {v.ar!r}")
             continue
-        if full_harakat and not _has_harakat(v.ar):
+        if full_harakat and not _has_harakat(v.ar) and len(v.ar.strip()) > 1:
+            # Yakka harf kartalari (alifbo darslari) harakatsiz bo'lishi mumkin
             errors.append(f"Harakatsiz so'z (level={lesson.harakat_level}): {v.ar}")
         if v.root and not _is_root_format(v.root):
             errors.append(f"O'zak formati xato: {v.root!r} ({v.ar})")
