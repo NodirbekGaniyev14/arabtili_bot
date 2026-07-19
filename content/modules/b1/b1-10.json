@@ -1,0 +1,100 @@
+{
+ "id": "b1-10",
+ "level": "B1",
+ "module": "adv-grammar",
+ "order": 10,
+ "title_uz": "Maf'ul mutlaq",
+ "title_ar": "المَفْعُولُ المُطْلَق",
+ "can_do_uz": "Fe'lni o'z masdari bilan kuchaytira olaman: فهمتُ الدرسَ فهمًا جيدًا — darsni juda yaxshi tushundim.",
+ "duration_min": 30,
+ "prerequisites": ["b1-09"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Arabcha ta'kidlashning o'ziga xos yo'li: fe'lning O'Z MASDARINI yoniga qo'yish! فرحتُ فرحًا — «xursand bo'ldim ham qanday xursand bo'lish!». Qur'onda ko'p: وَكَلَّمَ اللهُ مُوسَى تَكْلِيمًا — «Alloh Muso bilan (haqiqiy) gaplashish bilan gaplashdi».",
+ "grammar": {
+  "point_ar": "الفِعْل + مَصْدَرُهُ مَنْصُوبًا",
+  "explanation_uz": "MAF'UL MUTLAQ — fe'ldan keyin kelgan O'ZINING masdari, NASB holatida. Uch maqsadi: (1) TA'KID: فهمتُ فهمًا — chindan tushundim; (2) TUR bildirish (masdar + sifat yoki idofa): فهمتُ فهمًا عميقًا — chuqur tushundim; سرتُ سيرَ العقلاءِ — aqllilardek yurdim; (3) SON bildirish: دقَّ البابَ دقَّتَيْنِ — eshikni ikki marta taqilladi. Masdar fe'l bilan bir o'zakdan bo'ladi: فهم→فهمًا, قرأ→قراءةً, كلّم→تكليمًا.",
+  "table": [
+   {"ar": "فهمتُ الدرسَ فهمًا", "uz": "darsni chindan tushundim (ta'kid)", "form": "ta'kid"},
+   {"ar": "فهمتُ فهمًا عميقًا", "uz": "chuqur tushundim (tur)", "form": "tur"},
+   {"ar": "دقَّ البابَ دقتينِ", "uz": "eshikni ikki marta taqilladi (son)", "form": "son"},
+   {"ar": "كلّمهُ تكليمًا", "uz": "u bilan rosa gaplashdi (II bob masdari)", "form": "bob masdari"}
+  ],
+  "common_mistakes_uz": [
+   "Masdarni raf'da qoldirish: فهمًا kerak, فهمٌ emas.",
+   "Boshqa o'zak masdarini qo'yish: فهمتُ قراءةً — mantiqsiz; fe'lning O'Z masdari kerak.",
+   "II bob fe'liga I bob masdarini qo'shish: كلّم uchun كلامًا emas — تكليمًا."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ف ه م",
+   "meaning_uz": "tushunish",
+   "uz_cognates": ["fahm", "fahmlamoq"],
+   "derived": [
+    {"ar": "فَهِمَ", "uz": "tushundi", "pattern": "فَعِلَ"},
+    {"ar": "فَهْم", "uz": "tushunish, fahm", "pattern": "فَعْل"},
+    {"ar": "مَفْهُوم", "uz": "tushuncha", "pattern": "مَفْعُول"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "فَهْمًا", "translit": "fahman", "uz": "tushunish bilan (maf'ul mutlaq, 'fahm')", "root": "ف ه م", "pattern": "فَعْل", "pos": "masdar", "audio": "b1/fahman.mp3", "example_ar": "فهمتُ القاعدةَ فهمًا تامًّا.", "example_uz": "Qoidani to'liq tushundim.", "srs": true},
+  {"ar": "عَمِيق", "translit": "ʿamīq", "uz": "chuqur (o'zbekcha 'amiq — chuqur ma'no')", "root": "ع م ق", "pattern": "فَعِيل", "pos": "sifat", "audio": "b1/amiq.mp3", "example_ar": "فكّرَ تفكيرًا عميقًا.", "example_uz": "Chuqur o'yladi.", "srs": true},
+  {"ar": "تَامّ", "translit": "tāmm", "uz": "to'liq, mukammal (o'zbekcha 'tamom')", "root": "ت م م", "pattern": "فَعْل", "pos": "sifat", "audio": "b1/tamm.mp3", "example_ar": "أنجزَ العملَ إنجازًا تامًّا.", "example_uz": "Ishni to'liq bajardi.", "srs": true},
+  {"ar": "اِحْتِرَامًا", "translit": "iḥtirāman", "uz": "hurmat bilan (VIII bob masdari)", "root": "ح ر م", "pattern": "اِفْتِعَال", "pos": "masdar", "audio": "b1/ihtiraman.mp3", "example_ar": "احترمَهُ احترامًا كبيرًا.", "example_uz": "Uni juda hurmat qildi.", "srs": true},
+  {"ar": "دَقَّ", "translit": "daqqa", "uz": "taqilladi, urdi (muzoaf fe'l)", "root": "د ق ق", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/daqqa.mp3", "example_ar": "دقَّ البابَ دقًّا خفيفًا.", "example_uz": "Eshikni yengil taqilladi.", "srs": true},
+  {"ar": "سَارَ", "translit": "sāra", "uz": "yurdi, harakatlandi (o'zbekcha 'sayr')", "root": "س ي ر", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/sara2.mp3", "example_ar": "سارَ سيرًا حثيثًا.", "example_uz": "Shiddat bilan yurdi.", "srs": true},
+  {"ar": "نَظَرَ", "translit": "naẓara", "uz": "qaradi (o'zbekcha 'nazar')", "root": "ن ظ ر", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/nazara.mp3", "example_ar": "نظرَ إليه نظرةَ إعجابٍ.", "example_uz": "Unga havas nazari bilan qaradi.", "srs": true},
+  {"ar": "إِعْجَاب", "translit": "iʿjāb", "uz": "havas, hayratlanish (o'zbekcha 'ajab' o'zagi)", "root": "ع ج ب", "pattern": "إِفْعَال", "pos": "ot", "audio": "b1/ijab.mp3", "example_ar": "أثارَ الفيلمُ إعجابَ الجميعِ.", "example_uz": "Film hammaning havasini uyg'otdi.", "srs": true},
+  {"ar": "تَفْكِير", "translit": "tafkīr", "uz": "fikrlash (o'zbekcha 'tafakkur'ga yaqin)", "root": "ف ك ر", "pattern": "تَفْعِيل", "pos": "masdar", "audio": "b1/tafkir.mp3", "example_ar": "يحتاجُ الأمرُ تفكيرًا هادئًا.", "example_uz": "Ish sokin fikrlashni talab qiladi.", "srs": true},
+  {"ar": "اِنْتِظَار", "translit": "intiẓār", "uz": "kutish (o'zbekcha 'intizor' aynan shundan)", "root": "ن ظ ر", "pattern": "اِفْتِعَال", "pos": "masdar", "audio": "b1/intizar.mp3", "example_ar": "انتظرَهُ انتظارًا طويلًا.", "example_uz": "Uni uzoq intizorlik bilan kutdi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "اجتهدَ يوسفُ في دراستِهِ اجتهادًا عظيمًا، وفهمَ الدروسَ فهمًا عميقًا. وفي يومِ الامتحانِ دخلَ القاعةَ دخولَ الواثقِ، وأجابَ عن الأسئلةِ إجابةً كاملةً، فنجحَ نجاحًا باهرًا.",
+   "questions": [
+    {"q_uz": "Matnda nechta maf'ul mutlaq bor?", "a": "5 ta: اجتهادًا، فهمًا، دخولَ، إجابةً، نجاحًا"},
+    {"q_uz": "«دخولَ الواثقِ» qanday ma'no beradi?", "a": "Ishonchli odamdek kirdi (tur bildiruvchi)"},
+    {"q_uz": "Yusuf qanday muvaffaq bo'ldi?", "a": "Yorqin muvaffaqiyat bilan (نجاحًا باهرًا)"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/intizar.mp3",
+   "transcript_ar": "اِنْتِظَار",
+   "questions": [
+    {"q_uz": "Eshitilgan masdar ma'nosi va o'zbekcha izdoshi?", "a": "Kutish — 'intizor'"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch gapni ayting: «Chindan tushundim», «Chuqur o'yladi», «Uni juda hurmat qildi».",
+   "target_ar": ["فَهِمْتُ فَهْمًا", "فَكَّرَ تَفْكِيرًا عَمِيقًا", "اِحْتَرَمَهُ اِحْتِرَامًا كَبِيرًا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Maf'ul mutlaq bilan 3 gap yozing: ta'kid (fahman), tur (sifat bilan) va son (marratayni — ikki marta).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Darsni chindan tushundim» to'g'ri qaysi?", "q_ar": "", "options": ["فهمتُ الدرسَ فهمًا", "فهمتُ الدرسَ فهمٌ", "فهمتُ الدرسَ قراءةً", "فهمتُ فهمَ الدرسَ"], "answer": "فهمتُ الدرسَ فهمًا", "explain_uz": "Fe'l + o'z masdari nasbda = ta'kid.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Maf'ul mutlaq nima?", "q_ar": "", "options": ["fe'lning o'z masdari, nasbda", "istalgan ot", "fe'lning ob'ekti", "sifat"], "answer": "fe'lning o'z masdari, nasbda", "explain_uz": "Fe'l bilan bir o'zakdan bo'lgan masdar.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«كلّمَ» (II bob) uchun to'g'ri maf'ul mutlaq?", "q_ar": "", "options": ["تَكْلِيمًا", "كَلَامًا", "كِلْمَةً", "مُكَالَمَةً"], "answer": "تَكْلِيمًا", "explain_uz": "II bob masdari تفعيل: كلّم → تكليمًا.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring (chuqur tushunish): «فهمتُ القاعدةَ فهمًا ____»", "q_ar": "فَهِمْتُ القَاعِدَةَ فَهْمًا ____", "options": [], "answer": "عَمِيقًا", "explain_uz": "Masdar + sifat = tur bildiruvchi maf'ul mutlaq.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«فَهْم، مَفْهُوم» qaysi o'zakdan?", "q_ar": "", "options": ["ف ه م", "ف خ م", "و ه م"], "answer": "ف ه م", "explain_uz": "«ف ه م» — fahm o'zagi.", "audio": "", "root": "ف ه م", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "kutish (intizor)", "q_ar": "", "options": [], "answer": "اِنْتِظَار", "explain_uz": "اِنْتِظَار — kutish; o'zbekcha 'intizor'.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Tartiblang: «Yorqin muvaffaqiyat bilan muvaffaq bo'ldi»", "q_ar": "", "options": [], "answer": "نجحَ نجاحًا باهرًا", "explain_uz": "Fe'l + masdar + sifat.", "audio": "", "root": "", "pattern": "", "words": ["نجحَ", "نجاحًا", "باهرًا"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ف ه م", "back": "fahm o'zagi (fahmlamoq, mafhum)", "deck": "msa"},
+  {"type": "word", "front": "فَهْمًا", "back": "tushunish bilan (ta'kid)", "deck": "msa"},
+  {"type": "word", "front": "عَمِيق", "back": "chuqur", "deck": "msa"},
+  {"type": "word", "front": "تَامّ", "back": "to'liq (tamom)", "deck": "msa"},
+  {"type": "word", "front": "دَقَّ", "back": "taqilladi", "deck": "msa"},
+  {"type": "word", "front": "سَارَ", "back": "yurdi (sayr)", "deck": "msa"},
+  {"type": "word", "front": "نَظَرَ", "back": "qaradi (nazar)", "deck": "msa"},
+  {"type": "word", "front": "إِعْجَاب", "back": "havas, hayrat", "deck": "msa"},
+  {"type": "word", "front": "تَفْكِير", "back": "fikrlash", "deck": "msa"},
+  {"type": "word", "front": "اِنْتِظَار", "back": "kutish (intizor)", "deck": "msa"}
+ ]
+}

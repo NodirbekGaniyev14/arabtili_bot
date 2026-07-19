@@ -1,0 +1,99 @@
+{
+ "id": "b1-02",
+ "level": "B1",
+ "module": "adv-grammar",
+ "order": 2,
+ "title_uz": "Nisbiy olmoshlar",
+ "title_ar": "الأَسْمَاءُ المَوْصُولَة",
+ "can_do_uz": "الذي/التي/الذين bilan «...gan» ma'nosidagi murakkab gaplar tuza olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-01"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«KELGAN odam», «O'QIGAN kitobim» — o'zbekchada «-gan» qo'shimchasi bajaradigan ishni arabchada NISBIY OLMOSHLAR qiladi: الذي (kim/nima ...gan). Bitta so'z bilan gaplaringiz ikki barobar boy bo'ladi: الرجلُ الذي جاءَ — kelgan odam.",
+ "grammar": {
+  "point_ar": "الَّذِي، الَّتِي، الَّذِينَ",
+  "explanation_uz": "Nisbiy olmosh ANIQ (ال li) otdan keyin keladi va sifat gapni boshlaydi: الرجلُ الذي جاء (kelgan odam). Turlari: الَّذِي (erkak birlik), الَّتِي (ayol birlik va jonsiz ko'plik!), الَّذِينَ (erkaklar ko'pligi), اللَّاتِي/اللَّوَاتِي (ayollar ko'pligi). MUHIM: ergash gap ichida asosiy otga qaytuvchi OLMOSH («oid») bo'lishi kerak: الكتابُ الذي قرأتُهُ — men O'QIGANIM kitob (ـه ga e'tibor!).",
+  "table": [
+   {"ar": "الرجلُ الذي جاءَ", "uz": "kelgan odam", "form": "erkak birlik"},
+   {"ar": "المرأةُ التي تعملُ هنا", "uz": "shu yerda ishlaydigan ayol", "form": "ayol birlik"},
+   {"ar": "الطلابُ الذين نجحوا", "uz": "muvaffaqiyat qozongan talabalar", "form": "erkaklar ko'pligi"},
+   {"ar": "الكتابُ الذي قرأتُهُ", "uz": "men o'qigan kitob (ـهُ — oid olmosh)", "form": "oid"}
+  ],
+  "common_mistakes_uz": [
+   "Noaniq otdan keyin الذي ishlatish — رجلٌ الذي emas! Noaniq otda olmoshsiz: رجلٌ جاءَ.",
+   "Jonsiz ko'plikka الذين deyish — jonsiz ko'plik AYOL birlik hisoblanadi: الكتبُ التي.",
+   "Oid olmoshni unutish: الكتاب الذي قرأتُ emas — قرأتُهُ kerak."
+  ]
+ },
+ "roots": [
+  {
+   "root": "و ص ل",
+   "meaning_uz": "ulanish, yetib borish",
+   "uz_cognates": ["vosil", "muvosala", "vasl"],
+   "derived": [
+    {"ar": "مَوْصُول", "uz": "ulangan; nisbiy (olmosh)", "pattern": "مَفْعُول"},
+    {"ar": "صِلَة", "uz": "bog'lam; sifat gap", "pattern": "فِعْلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "الَّذِي", "translit": "alladhī", "uz": "…gan (erkak birlik nisbiy olmoshi)", "root": "", "pattern": "", "pos": "olmosh", "audio": "b1/alladhi.mp3", "example_ar": "هذا هو الكتابُ الذي أحببتُهُ.", "example_uz": "Mana men yaxshi ko'rgan kitob.", "srs": true},
+  {"ar": "الَّتِي", "translit": "allatī", "uz": "…gan (ayol birlik; jonsiz ko'plik)", "root": "", "pattern": "", "pos": "olmosh", "audio": "b1/allati.mp3", "example_ar": "المدينةُ التي زرتُها جميلةٌ.", "example_uz": "Men borgan shahar chiroyli.", "srs": true},
+  {"ar": "الَّذِينَ", "translit": "alladhīna", "uz": "…gan (erkaklar ko'pligi)", "root": "", "pattern": "", "pos": "olmosh", "audio": "b1/alladhina.mp3", "example_ar": "الطلابُ الذين درسوا نجحوا.", "example_uz": "O'qigan talabalar muvaffaq bo'ldi.", "srs": true},
+  {"ar": "جَارٌ", "translit": "jār", "uz": "qo'shni", "root": "ج و ر", "pattern": "", "pos": "ot", "audio": "b1/jar.mp3", "example_ar": "الجارُ الذي يسكنُ بجانبنا طبيبٌ.", "example_uz": "Yonimizda yashaydigan qo'shni — shifokor.", "srs": true},
+  {"ar": "زَارَ", "translit": "zāra", "uz": "ziyorat qildi (o'zbekcha 'ziyorat')", "root": "ز و ر", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/zara.mp3", "example_ar": "البلدُ الذي زرناهُ بعيدٌ.", "example_uz": "Biz borgan mamlakat uzoq.", "srs": true},
+  {"ar": "نَجَحَ", "translit": "najaḥa", "uz": "muvaffaq bo'ldi (o'zbekcha 'najot'ga yaqin his)", "root": "ن ج ح", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/najaha.mp3", "example_ar": "نجحَ الذين اجتهدوا.", "example_uz": "Tirishganlar muvaffaq bo'ldi.", "srs": true},
+  {"ar": "اِخْتَارَ", "translit": "ikhtāra", "uz": "tanladi (VIII bob, o'zbekcha 'ixtiyor')", "root": "خ ي ر", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ikhtara.mp3", "example_ar": "الهديةُ التي اخترتُها بسيطةٌ.", "example_uz": "Men tanlagan sovg'a oddiy.", "srs": true},
+  {"ar": "قِصَّة", "translit": "qiṣṣa", "uz": "hikoya (o'zbekcha 'qissa')", "root": "ق ص ص", "pattern": "فِعْلَة", "pos": "ot", "audio": "b1/qissa.mp3", "example_ar": "القصةُ التي سمعناها مؤثرةٌ.", "example_uz": "Biz eshitgan qissa ta'sirli.", "srs": true},
+  {"ar": "مُؤَثِّر", "translit": "muʾaththir", "uz": "ta'sirli (o'zbekcha 'ta'sir' o'zagi أ ث ر)", "root": "أ ث ر", "pattern": "مُفَعِّل", "pos": "sifat", "audio": "b1/muaththir.mp3", "example_ar": "فيلمٌ مؤثرٌ جدًّا.", "example_uz": "Juda ta'sirli film.", "srs": true},
+  {"ar": "اِجْتَهَدَ", "translit": "ijtahada", "uz": "tirishdi (o'zbekcha 'ijtihod')", "root": "ج ه د", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ijtahada2.mp3", "example_ar": "الطالبُ الذي يجتهدُ ينجحُ.", "example_uz": "Tirishgan talaba muvaffaq bo'ladi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "القريةُ التي وُلِدتُ فيها صغيرةٌ وجميلةٌ. الناسُ الذين يسكنون هناك طيّبون. وما زلتُ أذكرُ المدرسةَ التي تعلّمتُ فيها، والمعلّمَ الذي علّمني القراءةَ.",
+   "questions": [
+    {"q_uz": "Muallif tug'ilgan qishloq qanday?", "a": "Kichkina va chiroyli"},
+    {"q_uz": "Matnda nechta nisbiy olmosh bor?", "a": "4 ta (التي ×2, الذين, الذي)"},
+    {"q_uz": "«U yerda yashaydigan odamlar» qaysi ibora?", "a": "الناسُ الذين يسكنون هناك"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/alladhi.mp3",
+   "transcript_ar": "الَّذِي",
+   "questions": [
+    {"q_uz": "Bu olmosh kim uchun ishlatiladi?", "a": "Erkak birlik uchun"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch iborani ayting: «kelgan odam», «men o'qigan kitob», «muvaffaq bo'lgan talabalar».",
+   "target_ar": ["الرَّجُلُ الَّذِي جَاءَ", "الكِتَابُ الَّذِي قَرَأْتُهُ", "الطُّلَّابُ الَّذِينَ نَجَحُوا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "الذي/التي/الذين bilan uchta gap yozing: sevimli kitobingiz, yashaydigan shahringiz va hurmat qiladigan insonlaringiz haqida.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Men o'qigan kitob» to'g'ri qaysi?", "q_ar": "", "options": ["الكتابُ الذي قرأتُهُ", "الكتابُ الذي قرأتُ", "كتابٌ الذي قرأتُهُ", "الكتابُ التي قرأتُهُ"], "answer": "الكتابُ الذي قرأتُهُ", "explain_uz": "Aniq ot + الذي + oid olmosh (ـهُ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Jonsiz ko'plik (الكُتُب) uchun qaysi olmosh?", "q_ar": "", "options": ["الَّتِي", "الَّذِينَ", "الَّذِي", "اللَّوَاتِي"], "answer": "الَّتِي", "explain_uz": "Jonsiz ko'plik ayol birlik hisoblanadi: الكتبُ التي.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring: «الطلابُ ____ نجحوا» (muvaffaq bo'lgan talabalar)", "q_ar": "الطُّلَّابُ ____ نَجَحُوا", "options": [], "answer": "الَّذِينَ", "explain_uz": "Erkaklar ko'pligi — الَّذِينَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«رجلٌ جاءَ» (noaniq) nega olmoshsiz?", "q_ar": "", "options": ["noaniq otdan keyin nisbiy olmosh kelmaydi", "bu xato gap", "olmosh tushirib qoldirilgan", "faqat she'rda shunday"], "answer": "noaniq otdan keyin nisbiy olmosh kelmaydi", "explain_uz": "Nisbiy olmosh faqat ANIQ (ال li) otdan keyin.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«مَوْصُول، صِلَة» qaysi o'zakdan?", "q_ar": "", "options": ["و ص ل", "و س ل", "ص ل و"], "answer": "و ص ل", "explain_uz": "«و ص ل» — ulanish o'zagi: vosil, muvosala.", "audio": "", "root": "و ص ل", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "tanladi", "q_ar": "", "options": [], "answer": "اِخْتَارَ", "explain_uz": "اِخْتَارَ — VIII bob ('ixtiyor' o'zagi خ ي ر).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Tartiblang: «Shu yerda ishlaydigan ayol — shifokor»", "q_ar": "", "options": [], "answer": "المرأةُ التي تعملُ هنا طبيبةٌ", "explain_uz": "Ot + التي + fe'l + xabar.", "audio": "", "root": "", "pattern": "", "words": ["المرأةُ", "التي", "تعملُ", "هنا", "طبيبةٌ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "و ص ل", "back": "ulanish o'zagi (vosil, mavsul)", "deck": "msa"},
+  {"type": "word", "front": "الَّذِي", "back": "…gan (erkak birlik)", "deck": "msa"},
+  {"type": "word", "front": "الَّتِي", "back": "…gan (ayol birlik / jonsiz ko'plik)", "deck": "msa"},
+  {"type": "word", "front": "الَّذِينَ", "back": "…gan (erkaklar ko'pligi)", "deck": "msa"},
+  {"type": "word", "front": "جَارٌ", "back": "qo'shni", "deck": "msa"},
+  {"type": "word", "front": "زَارَ", "back": "ziyorat qildi", "deck": "msa"},
+  {"type": "word", "front": "نَجَحَ", "back": "muvaffaq bo'ldi", "deck": "msa"},
+  {"type": "word", "front": "اِخْتَارَ", "back": "tanladi", "deck": "msa"},
+  {"type": "word", "front": "قِصَّة", "back": "hikoya, qissa", "deck": "msa"},
+  {"type": "word", "front": "اِجْتَهَدَ", "back": "tirishdi", "deck": "msa"}
+ ]
+}

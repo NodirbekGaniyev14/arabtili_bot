@@ -1,0 +1,99 @@
+{
+ "id": "b1-05",
+ "level": "B1",
+ "module": "adv-grammar",
+ "order": 5,
+ "title_uz": "Shart gap 2: إنْ va jazm",
+ "title_ar": "أُسْلُوبُ الشَّرْط: إِنْ",
+ "can_do_uz": "إنْ bilan shart gap tuzib, ikkala fe'lni majzum (jazm) holatga qo'ya olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-04"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "إذا ning «qattiqqo'l ukasi» — إِنْ. U kelganda ikkala fe'l MAJZUM bo'ladi (oxiri sukun): إنْ تدرسْ تنجحْ. Qur'onda juda ko'p uchraydi: إِنْ تَنْصُرُوا اللهَ يَنْصُرْكُمْ — «Agar Allohga yordam bersangiz, U sizga yordam beradi».",
+ "grammar": {
+  "point_ar": "إِنْ + مَجْزُوم + مَجْزُوم",
+  "explanation_uz": "إِنْ — shart yuklamasi, IKKALA muzori' fe'lni JAZM qiladi: (1) sog'lom fe'lda oxiri SUKUN: تدرسُ→تدرسْ; (2) illatli fe'lda oxirgi illat harfi TUSHADI: تقولُ→تقلْ, تمشي→تمشِ, تدعو→تدعُ; (3) beshta fe'lda (af'olu-l-xamsa) نون tushadi: تدرسون→تدرسوا. إذا bilan farqi: إذا + o'tgan shakl (jazm yo'q), إنْ + muzori' majzum. Ma'no deyarli bir xil, lekin إنْ ehtimoli pastroq shartlarda ishlatiladi.",
+  "table": [
+   {"ar": "إنْ تدرسْ تنجحْ", "uz": "o'qisang — muvaffaq bo'lasan", "form": "sukun"},
+   {"ar": "إنْ تقلِ الحقَّ يحترمْكَ الناسُ", "uz": "haqni gapirsang — odamlar hurmat qiladi", "form": "illat tushdi"},
+   {"ar": "إنْ تزرعوا تحصدوا", "uz": "eksangiz — o'rasiz", "form": "نون tushdi"},
+   {"ar": "إذا درستَ نجحتَ", "uz": "solishtiring: إذا + o'tgan (jazmsiz)", "form": "farq"}
+  ],
+  "common_mistakes_uz": [
+   "Fe'llarni jazm qilmaslik: إنْ تدرسُ تنجحُ — XATO, sukun kerak.",
+   "Faqat birinchi fe'lni jazm qilish — javob fe'li ham majzum bo'ladi.",
+   "Illatli fe'lda harf tushirishni unutish: إنْ تقولْ emas — تقلْ."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ح ص د",
+   "meaning_uz": "o'rim, hosil yig'ish",
+   "uz_cognates": ["hosil (ma'no ko'prigi)"],
+   "derived": [
+    {"ar": "حَصَدَ", "uz": "o'rdi, hosil yig'di", "pattern": "فَعَلَ"},
+    {"ar": "حَصَاد", "uz": "o'rim-yig'im", "pattern": "فَعَال"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "إِنْ", "translit": "in", "uz": "agar (jazm qiluvchi shart yuklamasi)", "root": "", "pattern": "", "pos": "yuklama", "audio": "b1/in.mp3", "example_ar": "إنْ تصدقْ يصدقْكَ الناسُ.", "example_uz": "Rostgo'y bo'lsang, odamlar senga ishonadi.", "srs": true},
+  {"ar": "زَرَعَ", "translit": "zaraʿa", "uz": "ekdi (o'zbekcha 'ziroat')", "root": "ز ر ع", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/zaraa.mp3", "example_ar": "إنْ تزرعْ خيرًا تحصدْ خيرًا.", "example_uz": "Yaxshilik eksang, yaxshilik o'rasan.", "srs": true},
+  {"ar": "حَصَدَ", "translit": "ḥaṣada", "uz": "o'rdi, hosil yig'di", "root": "ح ص د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/hasada.mp3", "example_ar": "مَن زرعَ حصدَ.", "example_uz": "Kim eksa — o'radi.", "srs": true},
+  {"ar": "صَدَقَ", "translit": "ṣadaqa", "uz": "rost gapirdi (o'zbekcha 'sodiq', 'sadoqat')", "root": "ص د ق", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/sadaqa.mp3", "example_ar": "إنْ تصدقْ تنجُ.", "example_uz": "Rost gapirsang — qutulasan.", "srs": true},
+  {"ar": "اِحْتَرَمَ", "translit": "iḥtarama", "uz": "hurmat qildi (o'zbekcha 'hurmat', 'ehtirom')", "root": "ح ر م", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ihtarama.mp3", "example_ar": "إنْ تحترمِ الناسَ يحترموكَ.", "example_uz": "Odamlarni hurmat qilsang, seni hurmat qilishadi.", "srs": true},
+  {"ar": "نَصَرَ", "translit": "naṣara", "uz": "yordam berdi, g'olib qildi (o'zbekcha 'nusrat')", "root": "ن ص ر", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/nasara.mp3", "example_ar": "إنْ تنصرْ أخاكَ ينصرْكَ.", "example_uz": "Birodaringga yordam bersang, u senga yordam beradi.", "srs": true},
+  {"ar": "خَيْر", "translit": "khayr", "uz": "yaxshilik (o'zbekcha 'xayr', 'xayrli')", "root": "خ ي ر", "pattern": "فَعْل", "pos": "ot", "audio": "b1/khayr.mp3", "example_ar": "افعلِ الخيرَ تجدْهُ.", "example_uz": "Yaxshilik qil — uni topasan.", "srs": true},
+  {"ar": "جَزَاء", "translit": "jazāʾ", "uz": "mukofot, jazo (o'zbekcha 'jazo' — arabchada ijobiy ham!)", "root": "ج ز ي", "pattern": "فَعَال", "pos": "ot", "audio": "b1/jazaa.mp3", "example_ar": "لكلِّ عملٍ جزاءٌ.", "example_uz": "Har amalning jazosi (qaytimi) bor.", "srs": true},
+  {"ar": "أَخْلَصَ", "translit": "akhlaṣa", "uz": "ixlos qildi, chin dildan qildi (o'zbekcha 'ixlos')", "root": "خ ل ص", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/akhlasa.mp3", "example_ar": "إنْ تخلصْ في عملِكَ تُوَفَّقْ.", "example_uz": "Ishingda ixlosli bo'lsang, muvaffaq etilasan.", "srs": true},
+  {"ar": "نَجَا", "translit": "najā", "uz": "qutuldi, najot topdi (o'zbekcha 'najot')", "root": "ن ج و", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/naja.mp3", "example_ar": "إنْ تصدقْ تنجُ.", "example_uz": "Rost gapirsang, najot topasan.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "من حِكَمِ العرب: «إنْ تزرعْ خيرًا تحصدْ سعادةً، وإنْ تزرعْ شرًّا تحصدْ ندامةً». وقالوا أيضًا: «إنْ تحترمِ الناسَ يحترموكَ، وإنْ تخلصْ في عملِكَ يُفتحْ لكَ بابُ التوفيقِ».",
+   "questions": [
+    {"q_uz": "Yaxshilik eksang nima o'rasan?", "a": "Baxt (سعادة)"},
+    {"q_uz": "Matndagi majzum fe'llardan 3 tasini toping.", "a": "تزرعْ، تحصدْ، تخلصْ (yoki يُفتحْ)"},
+    {"q_uz": "«يحترموك» da nega ن yo'q?", "a": "Af'olu-l-xamsa jazmda نون ni tushiradi"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/in.mp3",
+   "transcript_ar": "إِنْ",
+   "questions": [
+    {"q_uz": "Bu yuklama fe'llarga qanday ta'sir qiladi?", "a": "Ikkala muzori'ni jazm qiladi (sukun)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch maqolni ayting: «Eksang — o'rasan», «Rost gapirsang — najot topasan», «Hurmat qilsang — hurmat ko'rasan».",
+   "target_ar": ["إِنْ تَزْرَعْ تَحْصُدْ", "إِنْ تَصْدُقْ تَنْجُ", "إِنْ تَحْتَرِمِ النَّاسَ يَحْتَرِمُوكَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "إنْ bilan 3 shart gap yozing — fe'llarni jazm qilishni unutmang (oxiri sukun). Bittasida illatli fe'l ishlating (masalan تقلْ).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«إنْ ____ تنجحْ» — bo'sh joyga qaysi shakl?", "q_ar": "", "options": ["تدرسْ", "تدرسُ", "تدرسَ", "درستَ"], "answer": "تدرسْ", "explain_uz": "إنْ ikkala fe'lni jazm qiladi — oxiri sukun.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«تَقُولُ» jazmda qanday bo'ladi?", "q_ar": "", "options": ["تَقُلْ", "تَقُولْ", "تَقِلْ", "قُلْتَ"], "answer": "تَقُلْ", "explain_uz": "Ajvafda jazm — o'rta illat tushadi: تقلْ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "إذا va إنْ farqi nima?", "q_ar": "", "options": ["إذا + o'tgan shakl, إنْ + muzori' majzum", "farqi yo'q", "إنْ faqat savolda", "إذا faqat she'rda"], "answer": "إذا + o'tgan shakl, إنْ + muzori' majzum", "explain_uz": "إذا jazm qilmaydi; إنْ ikkala muzori'ni jazm qiladi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring (o'rasiz): «إنْ تزرعوا ____»", "q_ar": "إِنْ تَزْرَعُوا ____", "options": [], "answer": "تَحْصُدُوا", "explain_uz": "Af'olu-l-xamsa jazmi: نون tushadi — تحصدوا.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«صَدَقَ، صَادِق» qaysi o'zakdan?", "q_ar": "", "options": ["ص د ق", "س د ق", "ص د ر"], "answer": "ص د ق", "explain_uz": "«ص د ق» — rostlik o'zagi: sodiq, sadoqat.", "audio": "", "root": "ص د ق", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "yaxshilik", "q_ar": "", "options": [], "answer": "خَيْر", "explain_uz": "خَيْر — yaxshilik (xayr).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Tartiblang: «Yaxshilik eksang, yaxshilik o'rasan»", "q_ar": "", "options": [], "answer": "إنْ تزرعْ خيرًا تحصدْ خيرًا", "explain_uz": "إنْ + majzum shart + majzum javob.", "audio": "", "root": "", "pattern": "", "words": ["إنْ", "تزرعْ", "خيرًا", "تحصدْ", "خيرًا"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ح ص د", "back": "o'rim o'zagi (hasada — o'rdi)", "deck": "msa"},
+  {"type": "word", "front": "إِنْ", "back": "agar (jazm qiladi)", "deck": "msa"},
+  {"type": "word", "front": "زَرَعَ", "back": "ekdi (ziroat)", "deck": "msa"},
+  {"type": "word", "front": "حَصَدَ", "back": "o'rdi, hosil yig'di", "deck": "msa"},
+  {"type": "word", "front": "صَدَقَ", "back": "rost gapirdi", "deck": "msa"},
+  {"type": "word", "front": "اِحْتَرَمَ", "back": "hurmat qildi", "deck": "msa"},
+  {"type": "word", "front": "نَصَرَ", "back": "yordam berdi (nusrat)", "deck": "msa"},
+  {"type": "word", "front": "خَيْر", "back": "yaxshilik (xayr)", "deck": "msa"},
+  {"type": "word", "front": "أَخْلَصَ", "back": "ixlos qildi", "deck": "msa"},
+  {"type": "word", "front": "نَجَا", "back": "qutuldi, najot topdi", "deck": "msa"}
+ ]
+}

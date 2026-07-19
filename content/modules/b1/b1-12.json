@@ -1,0 +1,100 @@
+{
+ "id": "b1-12",
+ "level": "B1",
+ "module": "adv-grammar",
+ "order": 12,
+ "title_uz": "Muzori' mansub",
+ "title_ar": "المُضَارِعُ المَنْصُوب",
+ "can_do_uz": "أنْ، لن، حتى، لِـ dan keyin muzori' fe'lni nasb qilib ishlata olaman: أريدُ أنْ أتعلمَ.",
+ "duration_min": 30,
+ "prerequisites": ["b1-11"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«O'rganmoqCHIman», «bormayMAN», «yetguncha», «o'qish UCHUN» — bularning bariga 4 kichik yuklama javob beradi: أَنْ، لَنْ، حَتَّى، لِـ. Ulardan keyin muzori' fe'l oxiri FATHA oladi: أريدُ أنْ أتعلمَ العربيةَ — arab tilini o'rganmoqchiman!",
+ "grammar": {
+  "point_ar": "أَنْ، لَنْ، كَيْ، حَتَّى، لِـ + فَتْحَة",
+  "explanation_uz": "NASB YUKLAMALARI muzori' fe'l oxirini FATHA qiladi: (1) أَنْ «...ish(ni)» — istak/imkon fe'llaridan keyin: أريدُ أنْ أذهبَ (borishni xohlayman); (2) لَنْ — kelasi zamon inkori: لن أنسى (hech unutmayman!); (3) لِـ / كَيْ «uchun»: أدرسُ لِأنجحَ (muvaffaq bo'lish uchun o'qiyman); (4) حَتَّى «...guncha/gacha»: انتظرْ حتى أعودَ (qaytgunimcha kut). Beshta fe'lda (af'olul-xamsa) نون tushadi: تدرسون → أنْ تدرسوا.",
+  "table": [
+   {"ar": "أريدُ أنْ أتعلمَ", "uz": "o'rganishni xohlayman", "form": "أَنْ"},
+   {"ar": "لن أنسى هذا اليومَ", "uz": "bu kunni hech unutmayman", "form": "لَنْ"},
+   {"ar": "أدرسُ لِأنجحَ", "uz": "muvaffaq bo'lish uchun o'qiyman", "form": "لِـ"},
+   {"ar": "انتظرْ حتى أعودَ", "uz": "qaytgunimcha kut", "form": "حَتَّى"}
+  ],
+  "common_mistakes_uz": [
+   "أنْ dan keyin damma qoldirish: أن أذهبُ — XATO, fatha: أذهبَ.",
+   "لن ni o'tgan zamon inkori deb o'ylash — u KELASI zamonni inkor qiladi (hech qachon ...maydi).",
+   "أنْ (nasb) bilan إنْ (shart, jazm) ni adashtirish — harakatiga e'tibor bering."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ر و د",
+   "meaning_uz": "istak, izlash",
+   "uz_cognates": ["irodat, murod, murid"],
+   "derived": [
+    {"ar": "أَرَادَ", "uz": "xohladi, istadi", "pattern": "أَفْعَلَ"},
+    {"ar": "إِرَادَة", "uz": "iroda, istak", "pattern": "إِفْعَالَة"},
+    {"ar": "مُرَاد", "uz": "murod, maqsad", "pattern": "مُفْعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "أَرَادَ أَنْ", "translit": "arāda an", "uz": "…ishni xohladi (o'zbekcha 'iroda', 'murod')", "root": "ر و د", "pattern": "", "pos": "fe'l", "audio": "b1/arada_an.mp3", "example_ar": "أريدُ أنْ أزورَ مكةَ.", "example_uz": "Makkani ziyorat qilishni xohlayman.", "srs": true},
+  {"ar": "لَنْ", "translit": "lan", "uz": "hech, aslo (kelasi inkori, nasb qiladi)", "root": "", "pattern": "", "pos": "yuklama", "audio": "b1/lan.mp3", "example_ar": "لن أتركَ الدراسةَ.", "example_uz": "O'qishni aslo tashlamayman.", "srs": true},
+  {"ar": "حَتَّى", "translit": "ḥattā", "uz": "…guncha, hatto (o'zbekcha 'hatto')", "root": "", "pattern": "", "pos": "yuklama", "audio": "b1/hatta.mp3", "example_ar": "اقرأْ حتى تفهمَ.", "example_uz": "Tushunguningcha o'qi.", "srs": true},
+  {"ar": "اِسْتَطَاعَ أَنْ", "translit": "istaṭāʿa an", "uz": "…ishga qodir bo'ldi, uddaladi", "root": "ط و ع", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "b1/istataa.mp3", "example_ar": "استطاعَ أنْ يحلَّ المسألةَ.", "example_uz": "Masalani yecha oldi.", "srs": true},
+  {"ar": "حَاوَلَ أَنْ", "translit": "ḥāwala an", "uz": "…ishga urindi, harakat qildi", "root": "ح و ل", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "b1/hawala.mp3", "example_ar": "حاولْ أنْ تفهمَ أولًا.", "example_uz": "Avval tushunishga urin.", "srs": true},
+  {"ar": "قَرَّرَ أَنْ", "translit": "qarrara an", "uz": "…ishga qaror qildi (o'zbekcha 'qaror')", "root": "ق ر ر", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/qarrara.mp3", "example_ar": "قرّرتُ أنْ أتغيّرَ.", "example_uz": "O'zgarishga qaror qildim.", "srs": true},
+  {"ar": "تَمَنَّى أَنْ", "translit": "tamannā an", "uz": "…ishni orzu qildi (o'zbekcha 'tamanno')", "root": "م ن ي", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "b1/tamanna.mp3", "example_ar": "أتمنى أنْ أراكَ قريبًا.", "example_uz": "Seni tez orada ko'rishni orzu qilaman.", "srs": true},
+  {"ar": "نَسِيَ", "translit": "nasiya", "uz": "unutdi", "root": "ن س ي", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "b1/nasiya.mp3", "example_ar": "لن أنسى فضلَكَ.", "example_uz": "Yaxshiligingni hech unutmayman.", "srs": true},
+  {"ar": "عَادَ", "translit": "ʿāda", "uz": "qaytdi (o'zbekcha 'avdat', 'mu'od')", "root": "ع و د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/aada.mp3", "example_ar": "انتظرني حتى أعودَ.", "example_uz": "Qaytgunimcha meni kut.", "srs": true},
+  {"ar": "فَضْل", "translit": "faḍl", "uz": "yaxshilik, fazl (o'zbekcha 'fazl', 'afzal')", "root": "ف ض ل", "pattern": "فَعْل", "pos": "ot", "audio": "b1/fadl.mp3", "example_ar": "لهُ فضلٌ كبيرٌ عليَّ.", "example_uz": "Uning menga katta yaxshiligi bor.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "قرّرتْ فاطمةُ أنْ تحفظَ القرآنَ الكريمَ. قالتْ: «لن أتوقفَ حتى أُتِمَّ الحفظَ». كانت تستيقظُ مبكرةً لِتراجعَ وردَها اليوميَّ، وحاولتْ أنْ تفهمَ معاني الآياتِ. وبعدَ ثلاثِ سنواتٍ استطاعتْ أنْ تحققَ حلمَها.",
+   "questions": [
+    {"q_uz": "Fotima nimaga qaror qildi?", "a": "Qur'onni yod olishga (أنْ تحفظَ)"},
+    {"q_uz": "Matndagi mansub fe'llardan 4 tasini toping.", "a": "تحفظَ، أتوقفَ، أُتِمَّ، تراجعَ (تفهمَ، تحققَ ham)"},
+    {"q_uz": "Necha yilda orzusiga yetdi?", "a": "Uch yilda"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/lan.mp3",
+   "transcript_ar": "لَنْ",
+   "questions": [
+    {"q_uz": "Bu yuklama nimani bildiradi?", "a": "Kelasi zamon inkori (aslo ...maydi), fe'lni nasb qiladi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch gapni ayting: «Arab tilini o'rganishni xohlayman», «Hech taslim bo'lmayman», «Tushunish uchun o'qiyman».",
+   "target_ar": ["أُرِيدُ أَنْ أَتَعَلَّمَ العَرَبِيَّةَ", "لَنْ أَسْتَسْلِمَ", "أَقْرَأُ لِأَفْهَمَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "To'rt yuklamaning har biri bilan bittadan gap yozing: أنْ (istak), لن (va'da), لِـ (maqsad), حتى (…guncha).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«أريدُ أنْ ____» — bo'sh joyga qaysi shakl?", "q_ar": "", "options": ["أذهبَ", "أذهبُ", "أذهبْ", "ذهبتُ"], "answer": "أذهبَ", "explain_uz": "أنْ muzori'ni nasb qiladi — oxiri fatha.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "لَنْ nimani bildiradi?", "q_ar": "", "options": ["kelasi zamonning qat'iy inkori", "o'tgan zamon inkori", "buyruq", "savol"], "answer": "kelasi zamonning qat'iy inkori", "explain_uz": "لن أنسى — hech/aslo unutmayman.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Muvaffaq bo'lish uchun o'qiyman» to'g'ri qaysi?", "q_ar": "", "options": ["أدرسُ لِأنجحَ", "أدرسُ لِأنجحُ", "أدرسَ لأنجحَ", "أدرسُ أنجحَ"], "answer": "أدرسُ لِأنجحَ", "explain_uz": "لِـ + mansub fe'l = maqsad.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring (qaytguncha): «انتظرْ حتى ____»", "q_ar": "اِنْتَظِرْ حَتَّى ____", "options": [], "answer": "أَعُودَ", "explain_uz": "حتى + mansub: أعودَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«أنْ تدرسون» to'g'rimi?", "q_ar": "", "options": ["yo'q — أنْ تدرسوا (نون tushadi)", "ha, to'g'ri", "yo'q — أنْ تدرسونَّ", "yo'q — أنْ درستم"], "answer": "yo'q — أنْ تدرسوا (نون tushadi)", "explain_uz": "Af'olul-xamsa nasbda نون ni tushiradi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«أَرَادَ، إِرَادَة، مُرَاد» qaysi o'zakdan?", "q_ar": "", "options": ["ر و د", "ر د د", "و ر د"], "answer": "ر و د", "explain_uz": "«ر و د» — istak o'zagi: iroda, murod, murid.", "audio": "", "root": "ر و د", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Tartiblang: «O'zgarishga qaror qildim»", "q_ar": "", "options": [], "answer": "قرّرتُ أنْ أتغيّرَ", "explain_uz": "Fe'l + أنْ + mansub muzori'.", "audio": "", "root": "", "pattern": "", "words": ["قرّرتُ", "أنْ", "أتغيّرَ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ر و د", "back": "istak o'zagi (iroda, murod, murid)", "deck": "msa"},
+  {"type": "word", "front": "أَرَادَ أَنْ", "back": "…ishni xohladi", "deck": "msa"},
+  {"type": "word", "front": "لَنْ", "back": "aslo …maydi (kelasi inkori)", "deck": "msa"},
+  {"type": "word", "front": "حَتَّى", "back": "…guncha", "deck": "msa"},
+  {"type": "word", "front": "اِسْتَطَاعَ أَنْ", "back": "uddaladi, qodir bo'ldi", "deck": "msa"},
+  {"type": "word", "front": "حَاوَلَ أَنْ", "back": "urindi", "deck": "msa"},
+  {"type": "word", "front": "قَرَّرَ أَنْ", "back": "qaror qildi", "deck": "msa"},
+  {"type": "word", "front": "تَمَنَّى أَنْ", "back": "orzu qildi (tamanno)", "deck": "msa"},
+  {"type": "word", "front": "نَسِيَ", "back": "unutdi", "deck": "msa"},
+  {"type": "word", "front": "فَضْل", "back": "yaxshilik, fazl", "deck": "msa"}
+ ]
+}

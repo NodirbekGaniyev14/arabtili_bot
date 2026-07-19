@@ -1,0 +1,100 @@
+{
+ "id": "b1-07",
+ "level": "B1",
+ "module": "adv-grammar",
+ "order": 7,
+ "title_uz": "Hol (holat tavsifi)",
+ "title_ar": "الحَال",
+ "can_do_uz": "Ish-harakat QANDAY holatda bajarilganini hol bilan ayta olaman: جاء ضاحكًا — kulib keldi.",
+ "duration_min": 30,
+ "prerequisites": ["b1-06"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«U KULIB keldi», «QO'RQIB gapirdi», «YUGURIB chiqdi» — harakat holatini bitta so'z bilan chizish mumkin: جاءَ ضاحِكًا. Bu — الحَال, arab tilining eng chiroyli uslublaridan biri. Formulasi oson: fathali ism fo'il!",
+ "grammar": {
+  "point_ar": "الحَالُ مَنْصُوبٌ",
+  "explanation_uz": "HOL — ega yoki ob'ektning harakat paytidagi HOLATini bildiradi, doim NASB (fathatan) holatida: جاء الولدُ ضاحكًا (bola kulib keldi), شربتُ الماءَ باردًا (suvni sovuq holda ichdim). Uch shakli: (1) BITTA SO'Z — ko'pincha ism fo'il: ضاحكًا، مسرعًا; (2) GAP — واو الحال bilan: جاء وهو يضحكُ (u kulgan holda keldi); (3) muzori' fe'l: جاء يضحكُ. Hol egasi (صاحب الحال) odatda ANIQ bo'ladi.",
+  "table": [
+   {"ar": "جاءَ الولدُ ضاحكًا", "uz": "bola kulib keldi", "form": "1 so'z"},
+   {"ar": "خرجَ مسرعًا", "uz": "shoshilib chiqdi", "form": "ism fo'il"},
+   {"ar": "جاء وهو يبتسمُ", "uz": "jilmaygan holda keldi", "form": "واو + gap"},
+   {"ar": "شربتُ الماءَ باردًا", "uz": "suvni sovuqligida ichdim", "form": "ob'ekt holi"}
+  ],
+  "common_mistakes_uz": [
+   "Holni raf'da qoldirish: جاء ضاحكٌ — XATO, nasb kerak: ضاحكًا.",
+   "Holni sifat bilan adashtirish: الولدُ الضاحكُ (kuluvchi bola — sifat) ≠ جاء ضاحكًا (kulib keldi — hol).",
+   "Hol gapida واو ni unutish: جاء هو يضحك emas — وهو يضحك."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ض ح ك",
+   "meaning_uz": "kulish",
+   "uz_cognates": ["zahar-xanda dagi 'xanda' emas — arabcha zohik"],
+   "derived": [
+    {"ar": "ضَحِكَ", "uz": "kuldi", "pattern": "فَعِلَ"},
+    {"ar": "ضَاحِك", "uz": "kuluvchi, kulib turgan", "pattern": "فَاعِل"},
+    {"ar": "اِبْتَسَمَ", "uz": "jilmaydi (boshqa o'zak: ب س م)", "pattern": ""}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "ضَاحِكًا", "translit": "ḍāḥikan", "uz": "kulib, kulgan holda", "root": "ض ح ك", "pattern": "فَاعِل", "pos": "hol", "audio": "b1/dahikan.mp3", "example_ar": "دخلَ الصفَّ ضاحكًا.", "example_uz": "Sinfga kulib kirdi.", "srs": true},
+  {"ar": "مُسْرِعًا", "translit": "musriʿan", "uz": "shoshilib, tez holda", "root": "س ر ع", "pattern": "مُفْعِل", "pos": "hol", "audio": "b1/musrian.mp3", "example_ar": "خرجَ من البيتِ مسرعًا.", "example_uz": "Uydan shoshilib chiqdi.", "srs": true},
+  {"ar": "مَاشِيًا", "translit": "māshiyan", "uz": "piyoda, yurgan holda", "root": "م ش ي", "pattern": "فَاعِل", "pos": "hol", "audio": "b1/mashiyan.mp3", "example_ar": "ذهبَ إلى العملِ ماشيًا.", "example_uz": "Ishga piyoda bordi.", "srs": true},
+  {"ar": "بَاكِيًا", "translit": "bākiyan", "uz": "yig'lab, yig'lagan holda", "root": "ب ك ي", "pattern": "فَاعِل", "pos": "hol", "audio": "b1/bakiyan.mp3", "example_ar": "عادَ الطفلُ باكيًا.", "example_uz": "Bola yig'lab qaytdi.", "srs": true},
+  {"ar": "مُبْتَسِمًا", "translit": "mubtasiman", "uz": "jilmayib (o'zbekcha 'tabassum' o'zagi)", "root": "ب س م", "pattern": "مُفْتَعِل", "pos": "hol", "audio": "b1/mubtasiman.mp3", "example_ar": "استقبلنا مبتسمًا.", "example_uz": "Bizni jilmayib kutib oldi.", "srs": true},
+  {"ar": "خَائِفًا", "translit": "khāʾifan", "uz": "qo'rqib, qo'rqqan holda (o'zbekcha 'xavf')", "root": "خ و ف", "pattern": "فَاعِل", "pos": "hol", "audio": "b1/khaifan.mp3", "example_ar": "تكلّمَ خائفًا.", "example_uz": "Qo'rqib gapirdi.", "srs": true},
+  {"ar": "فَرِحًا", "translit": "fariḥan", "uz": "xursand holda (o'zbekcha 'farah — shodlik')", "root": "ف ر ح", "pattern": "فَعِل", "pos": "hol", "audio": "b1/farihan.mp3", "example_ar": "استلمَ الجائزةَ فرِحًا.", "example_uz": "Mukofotni xursand holda oldi.", "srs": true},
+  {"ar": "جَائِع", "translit": "jāʾiʿ", "uz": "och (qorni och)", "root": "ج و ع", "pattern": "فَاعِل", "pos": "sifat", "audio": "b1/jai.mp3", "example_ar": "لا تنمْ جائعًا.", "example_uz": "Och holda uxlama.", "srs": true},
+  {"ar": "اِسْتَقْبَلَ", "translit": "istaqbala", "uz": "kutib oldi (X bob, o'zbekcha 'istiqbol')", "root": "ق ب ل", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "b1/istaqbala2.mp3", "example_ar": "استقبلَ الضيوفَ واقفًا.", "example_uz": "Mehmonlarni tik turib kutib oldi.", "srs": true},
+  {"ar": "جَائِزَة", "translit": "jāʾiza", "uz": "mukofot, sovrin", "root": "ج و ز", "pattern": "فَاعِلَة", "pos": "ot", "audio": "b1/jaiza.mp3", "example_ar": "فازَ بالجائزةِ الأولى.", "example_uz": "Birinchi mukofotni qo'lga kiritdi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "عادَ أحمدُ من المدرسةِ مسرعًا، ودخلَ البيتَ ضاحكًا وهو يحملُ ورقةً في يدِهِ. استقبلتْهُ أمُّهُ مبتسمةً وسألتْهُ عن السببِ. قال فرِحًا: «فزتُ بالجائزةِ الأولى في مسابقةِ القراءةِ!»",
+   "questions": [
+    {"q_uz": "Ahmad uyga qanday holatda kirdi?", "a": "Kulib, qo'lida qog'oz ko'targan holda"},
+    {"q_uz": "Matndagi hollardan 3 tasini toping.", "a": "مسرعًا، ضاحكًا، مبتسمةً (فرِحًا ham)"},
+    {"q_uz": "«وهو يحمل ورقة» qanday hol?", "a": "Hol gapi (واو الحال bilan)"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/dahikan.mp3",
+   "transcript_ar": "ضَاحِكًا",
+   "questions": [
+    {"q_uz": "Bu so'z gapda qanday vazifada va holatda?", "a": "Hol — nasb (fathatan)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch gapni ayting: «Kulib keldi», «Shoshilib chiqdi», «Ishga piyoda bordi».",
+   "target_ar": ["جَاءَ ضَاحِكًا", "خَرَجَ مُسْرِعًا", "ذَهَبَ إِلَى العَمَلِ مَاشِيًا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Hol bilan 3 gap yozing (kulib, piyoda, jilmayib). Bittasini واو الحال li gapga aylantiring: جاء وهو يضحك.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Bola kulib keldi» to'g'ri qaysi?", "q_ar": "", "options": ["جاء الولدُ ضاحكًا", "جاء الولدُ ضاحكٌ", "جاء الولدَ ضاحكًا", "جاء الولدُ الضاحكُ"], "answer": "جاء الولدُ ضاحكًا", "explain_uz": "Hol doim nasbda: ضاحكًا.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hol qaysi holatda turadi?", "q_ar": "", "options": ["nasb (fathatan)", "raf' (damma)", "jarr (kasra)", "jazm"], "answer": "nasb (fathatan)", "explain_uz": "الحال منصوبٌ — doim nasb.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«الولدُ الضاحكُ» va «جاء ضاحكًا» farqi?", "q_ar": "", "options": ["birinchisi sifat, ikkinchisi hol", "bir xil", "birinchisi hol", "ikkinchisi xato"], "answer": "birinchisi sifat, ikkinchisi hol", "explain_uz": "Sifat otga ergashadi; hol — harakat holatini bildiradi, nasbda.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring (yig'lab): «عادَ الطفلُ ____»", "q_ar": "عَادَ الطِّفْلُ ____", "options": [], "answer": "بَاكِيًا", "explain_uz": "Hol nasbda: باكيًا.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hol GAPI qanday boshlanadi?", "q_ar": "جَاءَ وَهُوَ يَضْحَكُ", "options": ["واو الحال bilan (وهو...)", "الذي bilan", "إذا bilan", "لَـ bilan"], "answer": "واو الحال bilan (وهو...)", "explain_uz": "جاء وهو يضحك — «u kulgan holda keldi».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "shoshilib (hol shaklida)", "q_ar": "", "options": [], "answer": "مُسْرِعًا", "explain_uz": "مُسْرِعًا — IV bob ism fo'ili, nasbda.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Tartiblang: «Mehmonlarni jilmayib kutib oldi»", "q_ar": "", "options": [], "answer": "استقبلَ الضيوفَ مبتسمًا", "explain_uz": "Fe'l + ob'ekt + hol (nasb).", "audio": "", "root": "", "pattern": "", "words": ["استقبلَ", "الضيوفَ", "مبتسمًا"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ض ح ك", "back": "kulish o'zagi (dahika, dohik)", "deck": "msa"},
+  {"type": "word", "front": "ضَاحِكًا", "back": "kulib (hol)", "deck": "msa"},
+  {"type": "word", "front": "مُسْرِعًا", "back": "shoshilib", "deck": "msa"},
+  {"type": "word", "front": "مَاشِيًا", "back": "piyoda", "deck": "msa"},
+  {"type": "word", "front": "بَاكِيًا", "back": "yig'lab", "deck": "msa"},
+  {"type": "word", "front": "مُبْتَسِمًا", "back": "jilmayib (tabassum)", "deck": "msa"},
+  {"type": "word", "front": "خَائِفًا", "back": "qo'rqib (xavf)", "deck": "msa"},
+  {"type": "word", "front": "فَرِحًا", "back": "xursand holda", "deck": "msa"},
+  {"type": "word", "front": "اِسْتَقْبَلَ", "back": "kutib oldi (istiqbol)", "deck": "msa"},
+  {"type": "word", "front": "جَائِزَة", "back": "mukofot, sovrin", "deck": "msa"}
+ ]
+}

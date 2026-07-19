@@ -1,0 +1,99 @@
+{
+ "id": "b1-14",
+ "level": "B1",
+ "module": "adv-grammar",
+ "order": 14,
+ "title_uz": "To'liq i'rob ustaxonasi",
+ "title_ar": "وَرْشَةُ الإِعْرَاب",
+ "can_do_uz": "Gapni bo'laklarga ajratib, har so'zning holati (raf'/nasb/jarr/jazm) va sababini ayta olaman.",
+ "duration_min": 35,
+ "prerequisites": ["b1-13"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "USTAXONA KUNI! 13 darsda yig'ilgan bilim endi bitta jadvalga tushadi: so'z oxiriga qarab uning gapdagi VAZIFASINI aniqlaymiz. Bu mahorat — i'rob — arab tilining «rentgeni»: gapni ko'rsangiz, suyaklarigacha ko'rasiz.",
+ "grammar": {
+  "point_ar": "الإِعْرَابُ: رَفْعٌ · نَصْبٌ · جَرٌّ · جَزْمٌ",
+  "explanation_uz": "XULOSA JADVALI — kim qaysi holatda? RAF' (damma): ega (فاعل), mubtada, xabar, majhul egasi. NASB (fatha): ob'ekt (مفعول به), kana xabari, inna egasi, HOL, TAMYIZ, maf'ul mutlaq, maf'ul li-ajlih, mansub muzori' (أنْ dan keyin), istisno (tasdiqda). JARR (kasra): predlogdan keyin, idofada ikkinchi so'z. JAZM (sukun): لم/لا الناهية/إنْ dan keyingi muzori'. TARTIB: (1) fe'lmi-otmi? (2) vazifasi nima? (3) holati mos keladimi?",
+  "table": [
+   {"ar": "كتبَ الطالبُ الدرسَ", "uz": "fe'l + ega (raf') + ob'ekt (nasb)", "form": "asos"},
+   {"ar": "إنَّ العلمَ نورٌ", "uz": "inna + ega (nasb!) + xabar (raf')", "form": "إنّ"},
+   {"ar": "ذهبتُ إلى المسجدِ", "uz": "predlog + jarr (kasra)", "form": "jarr"},
+   {"ar": "لم أفهمْ فهمًا تامًّا", "uz": "jazm + maf'ul mutlaq (nasb)", "form": "aralash"}
+  ],
+  "common_mistakes_uz": [
+   "Vazifani aniqlamasdan harakat qo'yish — avval «bu so'z nima ish qilyapti?» deb so'rang.",
+   "إنّ va كان ni adashtirish: كان XABARNI nasb qiladi, إنّ EGANI.",
+   "Idofada birinchi so'zga ال yoki tanvin qo'yish: كتابُ الطالبِ (كتابٌ الطالبِ emas)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع ر ب",
+   "meaning_uz": "arab; ravshan ifodalash",
+   "uz_cognates": ["arab", "i'rob", "arabiy"],
+   "derived": [
+    {"ar": "أَعْرَبَ", "uz": "i'rob qildi; ravshan ifodaladi", "pattern": "أَفْعَلَ"},
+    {"ar": "إِعْرَاب", "uz": "i'rob (gap tahlili)", "pattern": "إِفْعَال"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "إِعْرَاب", "translit": "iʿrāb", "uz": "i'rob — gap tahlili, holatlarni aniqlash", "root": "ع ر ب", "pattern": "إِفْعَال", "pos": "ot", "audio": "b1/irab.mp3", "example_ar": "الإعرابُ مفتاحُ الفهمِ.", "example_uz": "I'rob — tushunish kaliti.", "srs": true},
+  {"ar": "فَاعِل", "translit": "fāʿil", "uz": "ega (ish bajaruvchi) — raf'da", "root": "ف ع ل", "pattern": "فَاعِل", "pos": "atama", "audio": "b1/fail.mp3", "example_ar": "الفاعلُ مرفوعٌ دائمًا.", "example_uz": "Fo'il doim raf'da.", "srs": true},
+  {"ar": "مَفْعُول بِهِ", "translit": "mafʿūl bihi", "uz": "ob'ekt (ish tushgan) — nasbda", "root": "ف ع ل", "pattern": "مَفْعُول", "pos": "atama", "audio": "b1/maful_bihi.mp3", "example_ar": "المفعولُ بهِ منصوبٌ.", "example_uz": "Maf'ul bihi nasbda.", "srs": true},
+  {"ar": "مُبْتَدَأ", "translit": "mubtadaʾ", "uz": "mubtada (ot gap egasi) — raf'da", "root": "ب د أ", "pattern": "مُفْتَعَل", "pos": "atama", "audio": "b1/mubtada.mp3", "example_ar": "المبتدأُ أولُ الجملةِ الاسميةِ.", "example_uz": "Mubtada — ot gapning boshi.", "srs": true},
+  {"ar": "خَبَر", "translit": "khabar", "uz": "xabar (ot gapning ma'lumot qismi, o'zbekcha 'xabar')", "root": "خ ب ر", "pattern": "فَعَل", "pos": "atama", "audio": "b1/khabar.mp3", "example_ar": "الخبرُ يُتِمُّ المعنى.", "example_uz": "Xabar ma'noni to'ldiradi.", "srs": true},
+  {"ar": "مَرْفُوع", "translit": "marfūʿ", "uz": "raf'dagi (damma bilan)", "root": "ر ف ع", "pattern": "مَفْعُول", "pos": "atama", "audio": "b1/marfu.mp3", "example_ar": "الفاعلُ اسمٌ مرفوعٌ.", "example_uz": "Fo'il — raf'dagi ism.", "srs": true},
+  {"ar": "مَنْصُوب", "translit": "manṣūb", "uz": "nasbdagi (fatha bilan)", "root": "ن ص ب", "pattern": "مَفْعُول", "pos": "atama", "audio": "b1/mansub.mp3", "example_ar": "الحالُ منصوبٌ.", "example_uz": "Hol nasbda.", "srs": true},
+  {"ar": "مَجْرُور", "translit": "majrūr", "uz": "jarrdagi (kasra bilan)", "root": "ج ر ر", "pattern": "مَفْعُول", "pos": "atama", "audio": "b1/majrur.mp3", "example_ar": "الاسمُ بعد حرفِ الجرِّ مجرورٌ.", "example_uz": "Predlogdan keyingi ism jarrda.", "srs": true},
+  {"ar": "عَلَامَة", "translit": "ʿalāma", "uz": "belgi, alomat (o'zbekcha 'alomat')", "root": "ع ل م", "pattern": "فَعَالَة", "pos": "ot", "audio": "b1/alama.mp3", "example_ar": "الضمةُ علامةُ الرفعِ.", "example_uz": "Damma — raf' belgisi.", "srs": true},
+  {"ar": "تَحْلِيل", "translit": "taḥlīl", "uz": "tahlil (o'zbekcha 'tahlil' aynan shundan)", "root": "ح ل ل", "pattern": "تَفْعِيل", "pos": "ot", "audio": "b1/tahlil.mp3", "example_ar": "حلّلنا الجملةَ تحليلًا كاملًا.", "example_uz": "Gapni to'liq tahlil qildik.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "لن يفهمَ الطالبُ النصوصَ فهمًا عميقًا إلا إذا تعلّمَ الإعرابَ. فإذا رأى كلمةً مرفوعةً عرفَ أنها فاعلٌ أو مبتدأٌ، وإذا رأى كلمةً منصوبةً بحثَ عن سببِ نصبِها: أهي مفعولٌ به أم حالٌ أم تمييزٌ؟",
+   "questions": [
+    {"q_uz": "Matn bo'yicha chuqur tushunish sharti nima?", "a": "I'robni o'rganish"},
+    {"q_uz": "Raf'dagi so'z nima bo'lishi mumkin?", "a": "Fo'il yoki mubtada"},
+    {"q_uz": "Nasb sabablari sifatida nimalar sanalgan?", "a": "Maf'ul bihi, hol, tamyiz"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/irab.mp3",
+   "transcript_ar": "إِعْرَاب",
+   "questions": [
+    {"q_uz": "Eshitilgan atama nimani anglatadi?", "a": "Gap tahlili — so'z holatlarini aniqlash"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Gapni ovoz chiqarib i'rob qiling: كتبَ الطالبُ الدرسَ — «kataba — fe'l; at-tolibu — fo'il, marfu'; ad-darsa — maf'ul bihi, mansub».",
+   "target_ar": ["كَتَبَ الطَّالِبُ الدَّرْسَ", "الفَاعِلُ مَرْفُوعٌ", "المَفْعُولُ بِهِ مَنْصُوبٌ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Ushbu gapni to'liq i'rob qiling (har so'z vazifasi va holati): إنَّ الطلابَ الذين اجتهدوا نجحوا نجاحًا باهرًا",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«كتبَ الطالبُ الدرسَ» — الطالبُ nima va nega raf'da?", "q_ar": "", "options": ["fo'il (ega) — fo'il doim raf'da", "maf'ul bihi", "mubtada", "hol"], "answer": "fo'il (ega) — fo'il doim raf'da", "explain_uz": "Ish bajaruvchi — fo'il, damma bilan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«إنَّ العلمَ نورٌ» — العلمَ nega nasbda?", "q_ar": "", "options": ["inna egasi nasbda bo'ladi", "u ob'ekt", "u hol", "xato yozilgan"], "answer": "inna egasi nasbda bo'ladi", "explain_uz": "إنّ o'z egasini nasb qiladi, xabari raf'da qoladi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«ذهبتُ إلى المسجدِ» — المسجدِ nega kasrada?", "q_ar": "", "options": ["predlogdan keyin jarr", "u ega", "u ob'ekt", "tanvin tushgan"], "answer": "predlogdan keyin jarr", "explain_uz": "إلى — jarr predlogi, keyingi ism majrur.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«جاء الولدُ ضاحكًا» — ضاحكًا vazifasi?", "q_ar": "", "options": ["hol (nasb)", "tamyiz", "sifat", "xabar"], "answer": "hol (nasb)", "explain_uz": "Harakat holatini bildiradi — hol, nasbda.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«لم أفهمْ» — أفهمْ nega sukunda?", "q_ar": "", "options": ["لم jazm qiladi", "أنْ nasb qiladi", "bu buyruq", "xato"], "answer": "لم jazm qiladi", "explain_uz": "لم — jazm yuklamasi, muzori' oxiri sukun.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring: «Damma — ____ belgisi» (arabcha atama)", "q_ar": "الضَّمَّةُ عَلَامَةُ ____", "options": [], "answer": "الرَّفْعِ", "explain_uz": "Damma raf' belgisidir (idofada jarr: الرفعِ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«إِعْرَاب، أَعْرَبَ» qaysi o'zakdan?", "q_ar": "", "options": ["ع ر ب", "ع ب ر", "غ ر ب"], "answer": "ع ر ب", "explain_uz": "«ع ر ب» — arab/ravshanlik o'zagi.", "audio": "", "root": "ع ر ب", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع ر ب", "back": "arab/i'rob o'zagi", "deck": "msa"},
+  {"type": "word", "front": "إِعْرَاب", "back": "gap tahlili", "deck": "msa"},
+  {"type": "word", "front": "فَاعِل", "back": "ega — raf'da", "deck": "msa"},
+  {"type": "word", "front": "مَفْعُول بِهِ", "back": "ob'ekt — nasbda", "deck": "msa"},
+  {"type": "word", "front": "مُبْتَدَأ", "back": "ot gap egasi", "deck": "msa"},
+  {"type": "word", "front": "خَبَر", "back": "xabar (ma'lumot qismi)", "deck": "msa"},
+  {"type": "word", "front": "مَرْفُوع", "back": "raf'dagi (damma)", "deck": "msa"},
+  {"type": "word", "front": "مَنْصُوب", "back": "nasbdagi (fatha)", "deck": "msa"},
+  {"type": "word", "front": "مَجْرُور", "back": "jarrdagi (kasra)", "deck": "msa"},
+  {"type": "word", "front": "تَحْلِيل", "back": "tahlil", "deck": "msa"}
+ ]
+}

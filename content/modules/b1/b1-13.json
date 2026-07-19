@@ -1,0 +1,100 @@
+{
+ "id": "b1-13",
+ "level": "B1",
+ "module": "adv-grammar",
+ "order": 13,
+ "title_uz": "Muzori' majzum",
+ "title_ar": "المُضَارِعُ المَجْزُوم",
+ "can_do_uz": "لم va لا الناهية bilan fe'lni jazm qilib, o'tgan inkor va taqiqni ayta olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-12"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«BormaDIM» va «BormA!» — ikkalasi ham jazm! لم أذهبْ (bormadim) va لا تذهبْ (borma!). Bitta sukun — ikki katta ma'no. إنْ shartida ko'rgan jazmingiz endi to'liq oilaga aylanadi.",
+ "grammar": {
+  "point_ar": "لَمْ، لَمَّا، لَا النَّاهِيَة، لَامُ الأَمْر",
+  "explanation_uz": "JAZM QILUVCHILAR: (1) لَمْ — o'tgan zamon inkori: لم يذهبْ (bormadi) — ma'no o'tgan, shakl muzori'!; (2) لَمَّا — «hali ...gani yo'q»: لمّا يصلْ (hali yetib kelgani yo'q); (3) لَا النَّاهِيَة — taqiq: لا تخفْ (qo'rqma!); (4) لَامُ الأَمْر — «...sin» buyrug'i: لِيَكْتُبْ (yozsin). JAZM ALOMATLARI: sog'lomda sukun (يذهبْ); illatlida oxirgi harf tushadi (يقولُ→يقلْ, يمشي→يمشِ, يدعو→يدعُ); af'olul-xamsada نون tushadi (يذهبون→لم يذهبوا).",
+  "table": [
+   {"ar": "لم أذهبْ أمسِ", "uz": "kecha bormadim (o'tgan inkor)", "form": "لَمْ"},
+   {"ar": "لمّا يصلِ القطارُ", "uz": "poyezd hali kelgani yo'q", "form": "لَمَّا"},
+   {"ar": "لا تخفْ ولا تحزنْ", "uz": "qo'rqma va xafa bo'lma!", "form": "لا الناهية"},
+   {"ar": "لِيَحْضُرْ كلُّ طالبٍ", "uz": "har bir talaba kelsin", "form": "لام الأمر"}
+  ],
+  "common_mistakes_uz": [
+   "لم bilan o'tgan shaklni qo'yish: لم ذهبَ — XATO; لم + muzori' majzum: لم يذهبْ.",
+   "Illatli fe'lda harfni tushirmaslik: لم يقولْ emas — لم يقلْ.",
+   "لا الناهية (taqiq, jazm) bilan لا النافية (oddiy inkor: لا أعرفُ) ni adashtirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ح ز ن",
+   "meaning_uz": "g'am, xafalik",
+   "uz_cognates": ["hazin (qayg'uli ohang)"],
+   "derived": [
+    {"ar": "حَزِنَ", "uz": "xafa bo'ldi", "pattern": "فَعِلَ"},
+    {"ar": "حُزْن", "uz": "g'am, qayg'u", "pattern": "فُعْل"},
+    {"ar": "حَزِين", "uz": "g'amgin, hazin", "pattern": "فَعِيل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "لَمْ", "translit": "lam", "uz": "…madi (o'tgan inkor, jazm qiladi)", "root": "", "pattern": "", "pos": "yuklama", "audio": "b1/lam.mp3", "example_ar": "لم أفهمْ سؤالَكَ.", "example_uz": "Savolingni tushunmadim.", "srs": true},
+  {"ar": "لَمَّا", "translit": "lammā", "uz": "hali …gani yo'q", "root": "", "pattern": "", "pos": "yuklama", "audio": "b1/lamma.mp3", "example_ar": "لمّا يأتِ الربيعُ.", "example_uz": "Bahor hali kelgani yo'q.", "srs": true},
+  {"ar": "لَا تَخَفْ", "translit": "lā takhaf", "uz": "qo'rqma! (taqiq namunasi)", "root": "خ و ف", "pattern": "", "pos": "ibora", "audio": "b1/la_takhaf.mp3", "example_ar": "لا تخفْ، أنا معكَ.", "example_uz": "Qo'rqma, men sen bilanman.", "srs": true},
+  {"ar": "حَزِنَ", "translit": "ḥazina", "uz": "xafa bo'ldi (o'zbekcha 'hazin')", "root": "ح ز ن", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "b1/hazina.mp3", "example_ar": "لا تحزنْ على ما فاتَ.", "example_uz": "O'tib ketgan narsaga xafa bo'lma.", "srs": true},
+  {"ar": "تَأَخَّرَ", "translit": "taʾakhkhara", "uz": "kechikdi (o'zbekcha 'taxir', 'axir')", "root": "أ خ ر", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "b1/taakhkhara2.mp3", "example_ar": "لا تتأخرْ عن الموعدِ.", "example_uz": "Uchrashuvga kechikma.", "srs": true},
+  {"ar": "يَئِسَ", "translit": "yaʾisa", "uz": "umidsizlandi", "root": "ي أ س", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "b1/yaisa.mp3", "example_ar": "لا تيأسْ من رحمةِ اللهِ.", "example_uz": "Allohning rahmatidan umidsizlanma.", "srs": true},
+  {"ar": "رَحْمَة", "translit": "raḥma", "uz": "rahmat, mehr (o'zbekcha 'rahmat', 'marhamat')", "root": "ر ح م", "pattern": "فَعْلَة", "pos": "ot", "audio": "b1/rahma.mp3", "example_ar": "رحمةُ اللهِ واسعةٌ.", "example_uz": "Allohning rahmati keng.", "srs": true},
+  {"ar": "مَوْعِد", "translit": "mawʿid", "uz": "uchrashuv vaqti (o'zbekcha 'va'da' o'zagi)", "root": "و ع د", "pattern": "مَفْعِل", "pos": "ot", "audio": "b1/mawid.mp3", "example_ar": "حدّدنا موعدًا غدًا.", "example_uz": "Ertaga uchrashuv belgiladik.", "srs": true},
+  {"ar": "أَجَّلَ", "translit": "ajjala", "uz": "kechiktirdi, keyinga surdi", "root": "أ ج ل", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/ajjala.mp3", "example_ar": "لا تؤجلْ عملَ اليومِ إلى الغدِ.", "example_uz": "Bugungi ishni ertaga qoldirma.", "srs": true},
+  {"ar": "قِطَار", "translit": "qiṭār", "uz": "poyezd", "root": "ق ط ر", "pattern": "فِعَال", "pos": "ot", "audio": "b1/qitar.mp3", "example_ar": "لم يصلِ القطارُ بعدُ.", "example_uz": "Poyezd hali kelmadi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "كتبَ الأبُ لابنِهِ المسافرِ: «يا بنيَّ، لا تحزنْ إذا لم تنجحْ من أولِ مرةٍ، ولا تيأسْ إذا تأخّرَ حلمُكَ. لم يصلْ أحدٌ إلى القمةِ بسهولةٍ. اعملْ بجدٍّ، ولا تؤجلْ واجبَكَ، ولْيَكُنِ اللهُ في عونِكَ».",
+   "questions": [
+    {"q_uz": "Ota o'g'liga qanday taqiqlarni aytdi?", "a": "Xafa bo'lma, umidsizlanma, kechiktirma (لا تحزن، لا تيأس، لا تؤجل)"},
+    {"q_uz": "«لم يصلْ أحدٌ» ma'nosi?", "a": "Hech kim (osonlik bilan) yetib bormagan — o'tgan inkor"},
+    {"q_uz": "Matndagi لام الأمر li fe'lni toping.", "a": "ولْيَكُنِ (bo'lsin)"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/lam.mp3",
+   "transcript_ar": "لَمْ",
+   "questions": [
+    {"q_uz": "Bu yuklama qanday ma'no beradi?", "a": "O'tgan zamon inkori (…madi), fe'lni jazm qiladi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch gapni ayting: «Tushunmadim», «Qo'rqma», «Umidsizlanma».",
+   "target_ar": ["لَمْ أَفْهَمْ", "لَا تَخَفْ", "لَا تَيْأَسْ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Uchta gap yozing: لم bilan (nima qilmadingiz), لا الناهية bilan (do'stga taqiq) va لمّا bilan (hali bo'lmagan ish).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Kecha bormadim» to'g'ri qaysi?", "q_ar": "", "options": ["لم أذهبْ أمسِ", "لم ذهبتُ أمسِ", "لن أذهبَ أمسِ", "لا أذهبُ أمسِ"], "answer": "لم أذهبْ أمسِ", "explain_uz": "لم + muzori' majzum = o'tgan inkor.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«لَمْ يَقُولْ» to'g'rimi?", "q_ar": "", "options": ["yo'q — لم يقلْ (illat tushadi)", "ha", "yo'q — لم قالَ", "yo'q — لم يقولُ"], "answer": "yo'q — لم يقلْ (illat tushadi)", "explain_uz": "Ajvaf jazmda o'rta illatni yo'qotadi: يقلْ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "لَمْ va لَنْ farqi?", "q_ar": "", "options": ["لم — o'tgan inkor (jazm), لن — kelasi inkor (nasb)", "bir xil", "لم kelasi uchun", "لن jazm qiladi"], "answer": "لم — o'tgan inkor (jazm), لن — kelasi inkor (nasb)", "explain_uz": "لم يذهبْ (bormadi) / لن يذهبَ (aslo bormaydi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring (xafa bo'lma): «____ على ما فاتَ»", "q_ar": "____ عَلَى مَا فَاتَ", "options": [], "answer": "لَا تَحْزَنْ", "explain_uz": "لا الناهية + majzum: لا تحزنْ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«لا أعرفُ» dagi لا qanaqa?", "q_ar": "", "options": ["oddiy inkor (jazm qilmaydi)", "taqiq", "shart", "nasb qiluvchi"], "answer": "oddiy inkor (jazm qilmaydi)", "explain_uz": "لا النافية faqat inkor qiladi, fe'l raf'da qoladi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«حُزْن، حَزِين» qaysi o'zakdan?", "q_ar": "", "options": ["ح ز ن", "ح س ن", "خ ز ن"], "answer": "ح ز ن", "explain_uz": "«ح ز ن» — g'am o'zagi: hazin.", "audio": "", "root": "ح ز ن", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "uchrashuv vaqti", "q_ar": "", "options": [], "answer": "مَوْعِد", "explain_uz": "مَوْعِد — belgilangan vaqt (va'da o'zagi).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ح ز ن", "back": "g'am o'zagi (hazin, huzn)", "deck": "msa"},
+  {"type": "word", "front": "لَمْ", "back": "…madi (o'tgan inkor)", "deck": "msa"},
+  {"type": "word", "front": "لَمَّا", "back": "hali …gani yo'q", "deck": "msa"},
+  {"type": "word", "front": "لَا تَخَفْ", "back": "qo'rqma!", "deck": "msa"},
+  {"type": "word", "front": "حَزِنَ", "back": "xafa bo'ldi", "deck": "msa"},
+  {"type": "word", "front": "تَأَخَّرَ", "back": "kechikdi", "deck": "msa"},
+  {"type": "word", "front": "يَئِسَ", "back": "umidsizlandi", "deck": "msa"},
+  {"type": "word", "front": "رَحْمَة", "back": "rahmat, mehr", "deck": "msa"},
+  {"type": "word", "front": "مَوْعِد", "back": "uchrashuv vaqti", "deck": "msa"},
+  {"type": "word", "front": "أَجَّلَ", "back": "kechiktirdi", "deck": "msa"}
+ ]
+}

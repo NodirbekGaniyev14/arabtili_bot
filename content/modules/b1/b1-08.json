@@ -1,0 +1,99 @@
+{
+ "id": "b1-08",
+ "level": "B1",
+ "module": "adv-grammar",
+ "order": 8,
+ "title_uz": "Tamyiz (aniqlashtirish)",
+ "title_ar": "التَّمْيِيز",
+ "can_do_uz": "Son, o'lchov va noaniq gaplarni tamyiz bilan aniqlashtira olaman: عشرون طالبًا — yigirma talaba.",
+ "duration_min": 30,
+ "prerequisites": ["b1-07"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«Yigirmata NIMA?» — «Bir kilo NIMA?» — mana shu «nima»ning javobi TAMYIZ deyiladi: عشرون طالبًا (yigirma talaba), كيلو تفاحًا (bir kilo olma). A2 da katta sonlarda ko'rgandingiz — endi to'liq tizim: o'lchov, taqqoslash va «ilmi oshdi» kabi ajoyib iboralar!",
+ "grammar": {
+  "point_ar": "التَّمْيِيزُ مَنْصُوبٌ",
+  "explanation_uz": "TAMYIZ — noaniqlikni ochuvchi ism, NASB holatida: (1) SONLARDA (11–99): ثلاثون كتابًا — o'ttiz kitob; (2) O'LCHOVLARDA: كيلو سكرًا (bir kilo shakar), كوبُ ماءً (bir stakan suv — yoki idofa: كوبُ ماءٍ); (3) NISBATDA (gap tamyizi): ازدادَ الطالبُ علمًا — talabaning ILMI oshdi (so'zma-so'z: talaba ilm jihatidan oshdi); حسُنَ خلقًا — axloqi go'zal. Bu uslub taqqoslashda ham: أكثرُ صبرًا — sabrliroq (sabr jihatidan ko'proq).",
+  "table": [
+   {"ar": "عشرون طالبًا", "uz": "yigirma talaba (son tamyizi)", "form": "son"},
+   {"ar": "كيلو تفاحًا", "uz": "bir kilo olma (o'lchov)", "form": "o'lchov"},
+   {"ar": "ازدادَ علمًا", "uz": "ilmi oshdi (nisbat tamyizi)", "form": "nisbat"},
+   {"ar": "أكثرُ منكَ صبرًا", "uz": "sendan sabrliroq", "form": "taqqoslash"}
+  ],
+  "common_mistakes_uz": [
+   "Tamyizni raf'da qoldirish: عشرون طالبٌ — XATO, nasb: طالبًا.",
+   "11–99 sonlarida ko'plik ishlatish: عشرون طلابًا emas — BIRLIK: طالبًا.",
+   "Tamyiz bilan holni adashtirish: hol — HOLAT (qanday?), tamyiz — JIHAT (nima jihatdan?)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "م ي ز",
+   "meaning_uz": "ajratish, farqlash",
+   "uz_cognates": ["imtiyoz", "mumtoz"],
+   "derived": [
+    {"ar": "مَيَّزَ", "uz": "ajratdi, farqladi", "pattern": "فَعَّلَ"},
+    {"ar": "تَمْيِيز", "uz": "tamyiz, aniqlashtirish", "pattern": "تَفْعِيل"},
+    {"ar": "مُمْتَاز", "uz": "a'lo, mumtoz", "pattern": "مُفْتَعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "تَمْيِيز", "translit": "tamyīz", "uz": "aniqlashtirish (o'zbekcha 'imtiyoz' o'zagi)", "root": "م ي ز", "pattern": "تَفْعِيل", "pos": "ot", "audio": "b1/tamyiz.mp3", "example_ar": "التمييزُ يوضّحُ المقصودَ.", "example_uz": "Tamyiz maqsadni oydinlashtiradi.", "srs": true},
+  {"ar": "اِزْدَادَ", "translit": "izdāda", "uz": "ortdi, ko'paydi (VIII bob, 'ziyoda')", "root": "ز ي د", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/izdada.mp3", "example_ar": "ازدادَ المدينةُ سكانًا.", "example_uz": "Shahar aholisi ko'paydi.", "srs": true},
+  {"ar": "سُكَّان", "translit": "sukkān", "uz": "aholi (yashovchilar, 'maskan' o'zagi)", "root": "س ك ن", "pattern": "فُعَّال", "pos": "ot", "audio": "b1/sukkan.mp3", "example_ar": "كم عددُ سكانِ مدينتِكَ؟", "example_uz": "Shahringiz aholisi qancha?", "srs": true},
+  {"ar": "مُمْتَاز", "translit": "mumtāz", "uz": "a'lo (o'zbekcha 'mumtoz' aynan shundan!)", "root": "م ي ز", "pattern": "مُفْتَعَل", "pos": "sifat", "audio": "b1/mumtaz.mp3", "example_ar": "حصلَ على تقديرٍ ممتازٍ.", "example_uz": "A'lo baho oldi.", "srs": true},
+  {"ar": "صَبْرًا", "translit": "ṣabran", "uz": "sabr jihatidan (tamyiz shakli)", "root": "ص ب ر", "pattern": "", "pos": "tamyiz", "audio": "b1/sabran.mp3", "example_ar": "هو أكثرُ منّي صبرًا.", "example_uz": "U mendan sabrliroq.", "srs": true},
+  {"ar": "كِيلُو", "translit": "kīlū", "uz": "kilogramm", "root": "", "pattern": "", "pos": "ot", "audio": "b1/kilu.mp3", "example_ar": "اشتريتُ كيلو تفاحًا.", "example_uz": "Bir kilo olma sotib oldim.", "srs": true},
+  {"ar": "تُفَّاح", "translit": "tuffāḥ", "uz": "olma (mevasi)", "root": "ت ف ح", "pattern": "فُعَّال", "pos": "ot", "audio": "b1/tuffah.mp3", "example_ar": "التفاحُ مفيدٌ للصحةِ.", "example_uz": "Olma salomatlikka foydali.", "srs": true},
+  {"ar": "لِتْر", "translit": "litr", "uz": "litr", "root": "", "pattern": "", "pos": "ot", "audio": "b1/litr.mp3", "example_ar": "اشترِ لترًا حليبًا.", "example_uz": "Bir litr sut sotib ol.", "srs": true},
+  {"ar": "حَلِيب", "translit": "ḥalīb", "uz": "sut", "root": "ح ل ب", "pattern": "فَعِيل", "pos": "ot", "audio": "b1/halib.mp3", "example_ar": "أشربُ الحليبَ صباحًا.", "example_uz": "Ertalab sut ichaman.", "srs": true},
+  {"ar": "خُلُق", "translit": "khuluq", "uz": "axloq, xulq (o'zbekcha 'xulq' aynan shundan)", "root": "خ ل ق", "pattern": "فُعُل", "pos": "ot", "audio": "b1/khuluq.mp3", "example_ar": "هو حسنُ الخلقِ، طيّبٌ قلبًا.", "example_uz": "U xulqi go'zal, qalbi pok.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "في مدرستِنا ثلاثون معلّمًا وأربعُمئةِ طالبٍ. ازدادتِ المدرسةُ هذا العامَ طلابًا ومكانةً. ومديرُنا رجلٌ ممتازٌ: أكثرُ الناسِ صبرًا وأحسنُهم خلقًا.",
+   "questions": [
+    {"q_uz": "Maktabda nechta o'qituvchi bor?", "a": "O'ttizta (ثلاثون معلمًا)"},
+    {"q_uz": "«ازدادت المدرسة طلابًا» qanday ma'no?", "a": "Maktab talabalari (soni) oshdi — nisbat tamyizi"},
+    {"q_uz": "Direktor qanday tavsiflangan?", "a": "Eng sabrli va eng go'zal xulqli (صبرًا، خلقًا — tamyizlar)"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/mumtaz.mp3",
+   "transcript_ar": "مُمْتَاز",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z ma'nosi va o'zbekcha izdoshi?", "a": "A'lo — o'zbekcha 'mumtoz'"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch gapni ayting: «Yigirma talaba», «Bir kilo olma sotib oldim», «U mendan sabrliroq».",
+   "target_ar": ["عِشْرُونَ طَالِبًا", "اِشْتَرَيْتُ كِيلُو تُفَّاحًا", "هُوَ أَكْثَرُ مِنِّي صَبْرًا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Tamyiz bilan 3 gap yozing: son (30 kitob), o'lchov (litr sut) va taqqoslash (aqlliroq — أكثر ذكاءً).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Yigirma talaba» to'g'ri qaysi?", "q_ar": "", "options": ["عشرون طالبًا", "عشرون طالبٌ", "عشرون طلابًا", "عشرون الطالبَ"], "answer": "عشرون طالبًا", "explain_uz": "Son tamyizi: birlik + nasb.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Tamyiz qaysi holatda turadi?", "q_ar": "", "options": ["nasb", "raf'", "jarr", "jazm"], "answer": "nasb", "explain_uz": "التمييز منصوب — doim nasb.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«ازدادَ الطالبُ علمًا» ma'nosi?", "q_ar": "", "options": ["talabaning ilmi oshdi", "talaba olim bo'ldi", "talaba ilmni oshirdi", "ilm talabani oshirdi"], "answer": "talabaning ilmi oshdi", "explain_uz": "Nisbat tamyizi: «ilm jihatidan oshdi».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring (olma): «اشتريتُ كيلو ____»", "q_ar": "اِشْتَرَيْتُ كِيلُو ____", "options": [], "answer": "تُفَّاحًا", "explain_uz": "O'lchov tamyizi nasbda: تفاحًا.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«تَمْيِيز، مُمْتَاز» qaysi o'zakdan?", "q_ar": "", "options": ["م ي ز", "م ز ج", "ت م ز"], "answer": "م ي ز", "explain_uz": "«م ي ز» — ajratish o'zagi: imtiyoz, mumtoz.", "audio": "", "root": "م ي ز", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hol va tamyiz farqi?", "q_ar": "", "options": ["hol — holat (qanday?), tamyiz — jihat (nima jihatdan?)", "bir xil", "hol raf'da bo'ladi", "tamyiz faqat fe'l"], "answer": "hol — holat (qanday?), tamyiz — jihat (nima jihatdan?)", "explain_uz": "جاء ضاحكًا (qanday keldi?) / ازداد علمًا (nima jihatdan?).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "a'lo (mumtoz)", "q_ar": "", "options": [], "answer": "مُمْتَاز", "explain_uz": "مُمْتَاز — a'lo; o'zbekcha 'mumtoz' shundan.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "م ي ز", "back": "ajratish o'zagi (imtiyoz, mumtoz)", "deck": "msa"},
+  {"type": "word", "front": "تَمْيِيز", "back": "aniqlashtirish, tamyiz", "deck": "msa"},
+  {"type": "word", "front": "اِزْدَادَ", "back": "ortdi, ko'paydi", "deck": "msa"},
+  {"type": "word", "front": "سُكَّان", "back": "aholi", "deck": "msa"},
+  {"type": "word", "front": "مُمْتَاز", "back": "a'lo (mumtoz)", "deck": "msa"},
+  {"type": "word", "front": "تُفَّاح", "back": "olma", "deck": "msa"},
+  {"type": "word", "front": "لِتْر", "back": "litr", "deck": "msa"},
+  {"type": "word", "front": "حَلِيب", "back": "sut", "deck": "msa"},
+  {"type": "word", "front": "خُلُق", "back": "axloq, xulq", "deck": "msa"}
+ ]
+}

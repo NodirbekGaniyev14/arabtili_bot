@@ -1,0 +1,100 @@
+{
+ "id": "b1-06",
+ "level": "B1",
+ "module": "adv-grammar",
+ "order": 6,
+ "title_uz": "Shart gap 3: لَوْ (xayoliy)",
+ "title_ar": "أُسْلُوبُ الشَّرْط: لَوْ",
+ "can_do_uz": "لو bilan amalga oshmagan (xayoliy) shartlarni ayta olaman: «Bilganimda edi — borardim».",
+ "duration_min": 30,
+ "prerequisites": ["b1-05"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«Bilganimda edi, albatta kelardim...» — afsus va orzular grammatikasi! لَوْ o'tib ketgan, endi bo'lmaydigan shartlar uchun: لو درستَ لَنجحتَ — o'qiganingda edi, muvaffaq bo'larding (lekin o'qimading!). Javob boshidagi لَـ — «albatta» ta'kidi.",
+ "grammar": {
+  "point_ar": "لَوْ + مَاضٍ، لَـ + مَاضٍ",
+  "explanation_uz": "لَوْ — XAYOLIY (amalga oshmagan) shart: ikkala fe'l o'tgan zamonda, javob oldiga لَـ qo'shiladi: لو اجتهدتَ لَنجحتَ — tirishganingda edi, (albatta) muvaffaq bo'larding. INKOR sharti: لَوْلَا (bo'lmaganida edi) + ot: لولا الماءُ لَماتَ الزرعُ — suv bo'lmaganida, ekin nobud bo'lardi. TAQQOSLASH: إذا/إنْ — real kelajak; لو — o'tgan, bo'lmagan ish. Orzu ma'nosida ham: لو كنتُ طائرًا — qushcha bo'lganimda edi!",
+  "table": [
+   {"ar": "لو درستَ لَنجحتَ", "uz": "o'qiganingda edi, muvaffaq bo'larding", "form": "لو + لَـ"},
+   {"ar": "لو كنتُ غنيًّا لَساعدتُ الفقراءَ", "uz": "boy bo'lganimda, kambag'allarga yordam berardim", "form": "xayoliy"},
+   {"ar": "لولا الماءُ لَماتَ الزرعُ", "uz": "suv bo'lmaganida, ekin qurirdi", "form": "لولا + ot"},
+   {"ar": "إذا درستَ نجحتَ", "uz": "solishtiring: real shart (bo'lishi mumkin)", "form": "farq"}
+  ],
+  "common_mistakes_uz": [
+   "لو dan keyin muzori' qo'yish: لو تدرس — o'tgan shakl kerak: لو درستَ.",
+   "Javobdagi لَـ ni unutish: لو درستَ نجحتَ — to'g'risi لَنجحتَ.",
+   "لو va إذا ni adashtirish: bo'lishi mumkin ish uchun إذا, bo'lmagan ish uchun لو."
+  ]
+ },
+ "roots": [
+  {
+   "root": "س ع د",
+   "meaning_uz": "baxt, yordam",
+   "uz_cognates": ["saodat", "Said/Saida ismlari", "musoada"],
+   "derived": [
+    {"ar": "سَاعَدَ", "uz": "yordam berdi", "pattern": "فَاعَلَ"},
+    {"ar": "سَعَادَة", "uz": "baxt, saodat", "pattern": "فَعَالَة"},
+    {"ar": "سَعِيد", "uz": "baxtli", "pattern": "فَعِيل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "لَوْ", "translit": "law", "uz": "agar (xayoliy, amalga oshmagan shart)", "root": "", "pattern": "", "pos": "yuklama", "audio": "b1/law.mp3", "example_ar": "لو علمتُ لَجئتُ.", "example_uz": "Bilganimda edi, kelardim.", "srs": true},
+  {"ar": "لَوْلَا", "translit": "lawlā", "uz": "bo'lmaganida edi", "root": "", "pattern": "", "pos": "yuklama", "audio": "b1/lawla.mp3", "example_ar": "لولا العلمُ لَضاعَ الإنسانُ.", "example_uz": "Ilm bo'lmaganida, inson adashardi.", "srs": true},
+  {"ar": "سَاعَدَ", "translit": "sāʿada", "uz": "yordam berdi (o'zbekcha 'musoada')", "root": "س ع د", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "b1/saada.mp3", "example_ar": "لو كنتُ هناك لَساعدتُكَ.", "example_uz": "U yerda bo'lganimda, senga yordam berardim.", "srs": true},
+  {"ar": "غَنِيّ", "translit": "ghaniyy", "uz": "boy (o'zbekcha 'g'ani', 'boy-g'ani')", "root": "غ ن ي", "pattern": "فَعِيل", "pos": "sifat", "audio": "b1/ghaniy.mp3", "example_ar": "لو كانَ غنيًّا لَبنى مدرسةً.", "example_uz": "Boy bo'lganida, maktab qurardi.", "srs": true},
+  {"ar": "فَقِير", "translit": "faqīr", "uz": "kambag'al (o'zbekcha 'faqir')", "root": "ف ق ر", "pattern": "فَعِيل", "pos": "sifat", "audio": "b1/faqir.mp3", "example_ar": "ساعدَ الفقراءَ سرًّا.", "example_uz": "Kambag'allarga yashirincha yordam berdi.", "srs": true},
+  {"ar": "ضَاعَ", "translit": "ḍāʿa", "uz": "yo'qoldi, zoye bo'ldi (o'zbekcha 'zoye')", "root": "ض ي ع", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/daa.mp3", "example_ar": "لولا الخريطةُ لَضاعَ المسافرُ.", "example_uz": "Xarita bo'lmaganida, yo'lovchi adashardi.", "srs": true},
+  {"ar": "نَدِمَ", "translit": "nadima", "uz": "afsuslandi, pushaymon bo'ldi (o'zbekcha 'nadomat')", "root": "ن د م", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "b1/nadima.mp3", "example_ar": "لو سمعَ النصيحةَ لَما ندِمَ.", "example_uz": "Nasihatni eshitganida, afsuslanmasdi.", "srs": true},
+  {"ar": "نَصِيحَة", "translit": "naṣīḥa", "uz": "nasihat (o'zbekcha 'nasihat' aynan shundan)", "root": "ن ص ح", "pattern": "فَعِيلَة", "pos": "ot", "audio": "b1/nasiha.mp3", "example_ar": "قدّمَ لي نصيحةً ثمينةً.", "example_uz": "Menga qimmatli nasihat berdi.", "srs": true},
+  {"ar": "ثَمِين", "translit": "thamīn", "uz": "qimmatbaho (o'zbekcha 'samin emas — qimmat')", "root": "ث م ن", "pattern": "فَعِيل", "pos": "sifat", "audio": "b1/thamin.mp3", "example_ar": "الوقتُ أثمنُ ما نملكُ.", "example_uz": "Vaqt — egalik qilganimizning eng qimmati.", "srs": true},
+  {"ar": "طَائِر", "translit": "ṭāʾir", "uz": "qush (uchuvchi)", "root": "ط ي ر", "pattern": "فَاعِل", "pos": "ot", "audio": "b1/tair.mp3", "example_ar": "لو كنتُ طائرًا لَطرتُ إليكَ.", "example_uz": "Qush bo'lganimda, senga uchib borardim.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "جلسَ الرجلُ نادمًا وقال: «لو سمعتُ نصيحةَ أبي لَما وقعتُ في هذه المشكلةِ. ولو ادّخرتُ مالي لَكنتُ اليومَ مرتاحًا. لولا صبرُ زوجتي لَضاعتْ عائلتُنا». ثم قرّرَ أن يبدأ من جديدٍ.",
+   "questions": [
+    {"q_uz": "Odam nimadan afsuslandi?", "a": "Otasining nasihatini eshitmagani va pul jamg'armagani"},
+    {"q_uz": "Oilani nima saqlab qoldi?", "a": "Xotinining sabri (لولا صبرُ زوجتي)"},
+    {"q_uz": "«لَما وقعتُ» qanday ma'no beradi?", "a": "«Tushmagan bo'lardim» — inkor javob (لَ + ما)"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/law.mp3",
+   "transcript_ar": "لَوْ",
+   "questions": [
+    {"q_uz": "Bu yuklama qanday shart uchun?", "a": "Xayoliy, amalga oshmagan shart"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch xayoliy shartni ayting: «Bilganimda — kelardim», «Boy bo'lganimda — yordam berardim», «Qush bo'lganimda — uchardim».",
+   "target_ar": ["لَوْ عَلِمْتُ لَجِئْتُ", "لَوْ كُنْتُ غَنِيًّا لَسَاعَدْتُ", "لَوْ كُنْتُ طَائِرًا لَطِرْتُ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "لو bilan 2 gap (afsus va orzu haqida) va لولا bilan 1 gap yozing. Javoblarda لَـ ni unutmang.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«O'qiganingda edi, muvaffaq bo'larding» to'g'ri qaysi?", "q_ar": "", "options": ["لو درستَ لَنجحتَ", "إذا درستَ نجحتَ", "إنْ تدرسْ تنجحْ", "لو تدرسُ تنجحُ"], "answer": "لو درستَ لَنجحتَ", "explain_uz": "Xayoliy shart: لو + o'tgan + لَـ javob.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "لو va إذا farqi nima?", "q_ar": "", "options": ["لو — bo'lmagan ish, إذا — bo'lishi mumkin ish", "bir xil", "لو kelajak uchun", "إذا faqat savol"], "answer": "لو — bo'lmagan ish, إذا — bo'lishi mumkin ish", "explain_uz": "لو — afsus/xayol; إذا — real kutilma.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring: «____ الماءُ لَماتَ الزرعُ» (suv bo'lmaganida)", "q_ar": "____ المَاءُ لَمَاتَ الزَّرْعُ", "options": [], "answer": "لَوْلَا", "explain_uz": "لولا + ot — «bo'lmaganida edi».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Javob gapdagi لَـ nimani bildiradi?", "q_ar": "لَنَجَحْتَ", "options": ["ta'kid («albatta»)", "inkor", "savol", "kelasi zamon"], "answer": "ta'kid («albatta»)", "explain_uz": "لَـ — javobni kuchaytiruvchi ta'kid yuklamasi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«سَاعَدَ، سَعَادَة، سَعِيد» qaysi o'zakdan?", "q_ar": "", "options": ["س ع د", "س ع ي", "ص ع د"], "answer": "س ع د", "explain_uz": "«س ع د» — saodat o'zagi: Said, musoada.", "audio": "", "root": "س ع د", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "nasihat", "q_ar": "", "options": [], "answer": "نَصِيحَة", "explain_uz": "نَصِيحَة — nasihat (aynan o'zbekchaga o'tgan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Tartiblang: «Boy bo'lganimda, kambag'allarga yordam berardim»", "q_ar": "", "options": [], "answer": "لو كنتُ غنيًّا لَساعدتُ الفقراءَ", "explain_uz": "لو + كان gap + لَـ javob.", "audio": "", "root": "", "pattern": "", "words": ["لو", "كنتُ", "غنيًّا", "لَساعدتُ", "الفقراءَ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "س ع د", "back": "saodat o'zagi (said, musoada)", "deck": "msa"},
+  {"type": "word", "front": "لَوْ", "back": "agar (xayoliy shart)", "deck": "msa"},
+  {"type": "word", "front": "لَوْلَا", "back": "bo'lmaganida edi", "deck": "msa"},
+  {"type": "word", "front": "سَاعَدَ", "back": "yordam berdi", "deck": "msa"},
+  {"type": "word", "front": "غَنِيّ", "back": "boy", "deck": "msa"},
+  {"type": "word", "front": "فَقِير", "back": "kambag'al", "deck": "msa"},
+  {"type": "word", "front": "نَدِمَ", "back": "afsuslandi (nadomat)", "deck": "msa"},
+  {"type": "word", "front": "نَصِيحَة", "back": "nasihat", "deck": "msa"},
+  {"type": "word", "front": "ثَمِين", "back": "qimmatbaho", "deck": "msa"},
+  {"type": "word", "front": "طَائِر", "back": "qush", "deck": "msa"}
+ ]
+}

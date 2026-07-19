@@ -1,0 +1,99 @@
+{
+ "id": "b1-09",
+ "level": "B1",
+ "module": "adv-grammar",
+ "order": 9,
+ "title_uz": "Istisno (إلا)",
+ "title_ar": "الاِسْتِثْنَاء",
+ "can_do_uz": "إلا bilan istisno gaplar tuza olaman: «Ahmaddan boshqa hamma keldi».",
+ "duration_min": 30,
+ "prerequisites": ["b1-08"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«HAMMA keldi, FAQAT Ahmad kelmadi» — bir og'iz so'z bilan: جاء الطلابُ إلا أحمدَ. Istisno — «faqat, ...dan boshqa» san'ati. Eng mashhur namuna kalimadadir: لَا إِلٰهَ إِلَّا الله — «Allohdan O'ZGA iloh yo'q».",
+ "grammar": {
+  "point_ar": "المُسْتَثْنَى بِإِلَّا",
+  "explanation_uz": "Istisno uch qism: umumiy to'plam (المستثنى منه) + إلا + istisno qilingan (المستثنى). QOIDALAR: (1) TO'LIQ TASDIQ gapda istisno NASB: جاء الطلابُ إلا أحمدَ. (2) INKOR gapda ikki yo'l: ما جاء الطلابُ إلا أحمدُ (badal — asosiy holat) yoki أحمدَ (nasb ham mumkin). (3) BO'SH ISTISNO (مفرّغ) — to'plam aytilmagan inkor: ما جاء إلا أحمدُ (faqat Ahmad keldi) — bunda so'z gapdagi O'Z vazifasi holatida turadi. Bu qolip «faqat» ma'nosini beradi: ما قرأتُ إلا كتابًا — faqat bitta kitob o'qidim.",
+  "table": [
+   {"ar": "جاء الطلابُ إلا أحمدَ", "uz": "Ahmaddan boshqa talabalar keldi", "form": "tasdiq → nasb"},
+   {"ar": "ما جاء الطلابُ إلا أحمدُ", "uz": "talabalardan faqat Ahmad keldi", "form": "inkor → badal"},
+   {"ar": "ما جاء إلا أحمدُ", "uz": "faqat Ahmad keldi (bo'sh istisno)", "form": "مفرّغ"},
+   {"ar": "لا إلٰهَ إلا اللهُ", "uz": "Allohdan o'zga iloh yo'q", "form": "kalima"}
+  ],
+  "common_mistakes_uz": [
+   "Tasdiq gapda istisnoni raf'da qoldirish: إلا أحمدُ — to'g'risi أحمدَ (nasb).",
+   "Bo'sh istisnoda majburan nasb qilish: ما جاء إلا أحمدَ — bu yerda raf' kerak (u — ega).",
+   "إلا ni الا deb yozish — hamzaga e'tibor: إِلَّا."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ث ن ي",
+   "meaning_uz": "ikkilash, chetga burish",
+   "uz_cognates": ["istisno", "musanna (ikkilik)"],
+   "derived": [
+    {"ar": "اِسْتَثْنَى", "uz": "istisno qildi", "pattern": "اِسْتَفْعَلَ"},
+    {"ar": "اِسْتِثْنَاء", "uz": "istisno", "pattern": "اِسْتِفْعَال"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "إِلَّا", "translit": "illā", "uz": "…dan boshqa, faqat (istisno yuklamasi)", "root": "", "pattern": "", "pos": "yuklama", "audio": "b1/illa.mp3", "example_ar": "حضرَ الجميعُ إلا واحدًا.", "example_uz": "Bittadan boshqa hamma keldi.", "srs": true},
+  {"ar": "اِسْتِثْنَاء", "translit": "istithnāʾ", "uz": "istisno (o'zbekcha 'istisno' aynan shundan)", "root": "ث ن ي", "pattern": "اِسْتِفْعَال", "pos": "ot", "audio": "b1/istithna.mp3", "example_ar": "لكلِّ قاعدةٍ استثناءٌ.", "example_uz": "Har qoidaning istisnosi bor.", "srs": true},
+  {"ar": "جَمِيع", "translit": "jamīʿ", "uz": "hamma, barcha (o'zbekcha 'jami')", "root": "ج م ع", "pattern": "فَعِيل", "pos": "ot", "audio": "b1/jami.mp3", "example_ar": "شكرتُ الجميعَ إلا الغائبين.", "example_uz": "Yo'qlardan boshqa hammaga rahmat aytdim.", "srs": true},
+  {"ar": "غَائِب", "translit": "ghāʾib", "uz": "yo'q, kelmagan (o'zbekcha 'g'oyib')", "root": "غ ي ب", "pattern": "فَاعِل", "pos": "sifat", "audio": "b1/ghaib.mp3", "example_ar": "من الغائبُ اليومَ؟", "example_uz": "Bugun kim yo'q?", "srs": true},
+  {"ar": "حَاضِر", "translit": "ḥāḍir", "uz": "bor, kelgan (o'zbekcha 'hozir')", "root": "ح ض ر", "pattern": "فَاعِل", "pos": "sifat", "audio": "b1/hadir.mp3", "example_ar": "الكلُّ حاضرٌ إلا خالدًا.", "example_uz": "Xoliddan boshqa hamma bor.", "srs": true},
+  {"ar": "قَاعِدَة", "translit": "qāʿida", "uz": "qoida (o'zbekcha 'qoida' aynan shundan)", "root": "ق ع د", "pattern": "فَاعِلَة", "pos": "ot", "audio": "b1/qaida.mp3", "example_ar": "احفظِ القاعدةَ ثم الاستثناءَ.", "example_uz": "Avval qoidani, keyin istisnoni yodla.", "srs": true},
+  {"ar": "سِوَى", "translit": "siwā", "uz": "…dan boshqa (إلا ning sinonimi, idofa bilan)", "root": "س و ي", "pattern": "", "pos": "ot", "audio": "b1/siwa.mp3", "example_ar": "ما عندي سوى كتابٍ واحدٍ.", "example_uz": "Bitta kitobdan boshqa hech narsam yo'q.", "srs": true},
+  {"ar": "أَحَد", "translit": "aḥad", "uz": "biror kishi, hech kim (inkorda)", "root": "أ ح د", "pattern": "فَعَل", "pos": "ot", "audio": "b1/ahad.mp3", "example_ar": "ما في البيتِ أحدٌ إلا الجدّةُ.", "example_uz": "Uyda buvidan boshqa hech kim yo'q.", "srs": true},
+  {"ar": "وَاجِب", "translit": "wājib", "uz": "vazifa, majburiyat (o'zbekcha 'vojib')", "root": "و ج ب", "pattern": "فَاعِل", "pos": "ot", "audio": "b1/wajib2.mp3", "example_ar": "أنهيتُ الواجباتِ إلا واحدًا.", "example_uz": "Bittasidan boshqa vazifalarni tugatdim.", "srs": true},
+  {"ar": "أَنْهَى", "translit": "anhā", "uz": "tugatdi, yakunladi (IV bob)", "root": "ن ه ي", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/anha.mp3", "example_ar": "أنهى عملَهُ قبلَ المساءِ.", "example_uz": "Ishini kechgacha tugatdi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "دعا خالدٌ أصدقاءَهُ إلى العشاءِ، فحضرَ الجميعُ إلا عمرَ، لأنه كان مريضًا. وما تركوا من الطعامِ إلا القليلُ. قال خالدٌ ضاحكًا: «لا يغيبُ عن مائدتي إلا من عذرُهُ قويٌّ!»",
+   "questions": [
+    {"q_uz": "Kechki ovqatga kim kelmadi va nega?", "a": "Umar — kasal edi"},
+    {"q_uz": "«فحضر الجميعُ إلا عمرَ» — nega عمرَ nasbda?", "a": "To'liq tasdiq gapda istisno nasb bo'ladi"},
+    {"q_uz": "Ovqatdan qancha qoldi?", "a": "Ozgina (إلا القليلُ)"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/illa.mp3",
+   "transcript_ar": "إِلَّا",
+   "questions": [
+    {"q_uz": "Bu yuklama nimani bildiradi?", "a": "Istisno: «…dan boshqa, faqat»"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch gapni ayting: «Ahmaddan boshqa talabalar keldi», «Faqat Ahmad keldi», va kalimani: لا إلٰه إلا الله.",
+   "target_ar": ["جَاءَ الطُّلَّابُ إِلَّا أَحْمَدَ", "مَا جَاءَ إِلَّا أَحْمَدُ", "لَا إِلٰهَ إِلَّا اللهُ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "إلا bilan 3 gap yozing: tasdiq (nasb bilan), inkor va bo'sh istisno. Holatlarni tekshirib chiqing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Ahmaddan boshqa talabalar keldi» to'g'ri qaysi?", "q_ar": "", "options": ["جاء الطلابُ إلا أحمدَ", "جاء الطلابُ إلا أحمدُ", "جاء الطلابَ إلا أحمدَ", "جاء إلا أحمدَ الطلابُ"], "answer": "جاء الطلابُ إلا أحمدَ", "explain_uz": "Tasdiq gapda istisno nasbda: أحمدَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«ما جاء إلا أحمدُ» ma'nosi?", "q_ar": "", "options": ["faqat Ahmad keldi", "Ahmad kelmadi", "Ahmaddan boshqa keldi", "Ahmad ham keldi"], "answer": "faqat Ahmad keldi", "explain_uz": "Bo'sh istisno: inkor + إلا = «faqat».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Bo'sh istisnoda (ما جاء إلا...) so'z qaysi holatda?", "q_ar": "", "options": ["gapdagi o'z vazifasi holatida", "doim nasb", "doim jarr", "doim jazm"], "answer": "gapdagi o'z vazifasi holatida", "explain_uz": "ما جاء إلا أحمدُ — u ega, shuning uchun raf'.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Kalimani to'ldiring: «لا إلٰهَ ____ الله»", "q_ar": "لَا إِلٰهَ ____ اللهُ", "options": [], "answer": "إِلَّا", "explain_uz": "لا إلٰه إلا الله — istisnoning eng ulug' namunasi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«اِسْتِثْنَاء» qaysi o'zakdan?", "q_ar": "", "options": ["ث ن ي", "س ث ن", "ث ب ت"], "answer": "ث ن ي", "explain_uz": "«ث ن ي» — ikkilash/chetga burish o'zagi (istisno, musanna).", "audio": "", "root": "ث ن ي", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "qoida", "q_ar": "", "options": [], "answer": "قَاعِدَة", "explain_uz": "قَاعِدَة — qoida (aynan o'zbekchaga o'tgan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Tartiblang: «Xoliddan boshqa hamma bor»", "q_ar": "", "options": [], "answer": "الكلُّ حاضرٌ إلا خالدًا", "explain_uz": "Tasdiq → istisno nasbda: خالدًا.", "audio": "", "root": "", "pattern": "", "words": ["الكلُّ", "حاضرٌ", "إلا", "خالدًا"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ث ن ي", "back": "istisno/ikkilash o'zagi", "deck": "msa"},
+  {"type": "word", "front": "إِلَّا", "back": "…dan boshqa, faqat", "deck": "msa"},
+  {"type": "word", "front": "اِسْتِثْنَاء", "back": "istisno", "deck": "msa"},
+  {"type": "word", "front": "جَمِيع", "back": "hamma, barcha (jami)", "deck": "msa"},
+  {"type": "word", "front": "غَائِب", "back": "yo'q, g'oyib", "deck": "msa"},
+  {"type": "word", "front": "حَاضِر", "back": "bor, hozir", "deck": "msa"},
+  {"type": "word", "front": "قَاعِدَة", "back": "qoida", "deck": "msa"},
+  {"type": "word", "front": "سِوَى", "back": "…dan boshqa", "deck": "msa"},
+  {"type": "word", "front": "وَاجِب", "back": "vazifa (vojib)", "deck": "msa"},
+  {"type": "word", "front": "أَنْهَى", "back": "tugatdi", "deck": "msa"}
+ ]
+}

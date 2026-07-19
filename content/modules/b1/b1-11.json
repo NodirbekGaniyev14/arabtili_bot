@@ -1,0 +1,100 @@
+{
+ "id": "b1-11",
+ "level": "B1",
+ "module": "adv-grammar",
+ "order": 11,
+ "title_uz": "Maf'ul li-ajlih (maqsad)",
+ "title_ar": "المَفْعُولُ لِأَجْلِهِ",
+ "can_do_uz": "Harakatning SABABINI masdar bilan ayta olaman: سافرتُ طلبًا للعلم — ilm izlab safar qildim.",
+ "duration_min": 25,
+ "prerequisites": ["b1-10"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "NEGA safar qilding? — Ilm IZLAB. Nega turding? — Ustozni HURMATLAB. Arabcha buni bitta nasbli masdar bilan aytadi: سافرتُ طَلَبًا للعلمِ. Mashhur hikmatdagi kabi: qadrlash uchun turish — قيامًا لَهُ.",
+ "grammar": {
+  "point_ar": "المَفْعُولُ لِأَجْلِهِ مَنْصُوبٌ",
+  "explanation_uz": "MAF'UL LI-AJLIH — «nega? nima maqsadda?» savoliga javob beruvchi QALB FE'LI masdari, NASB holatida: قمتُ احترامًا للمعلمِ (o'qituvchini hurmatlab turdim). Shartlari: (1) masdar bo'lishi; (2) qalb/his fe'li bo'lishi (istak, qo'rquv, hurmat, umid...); (3) asosiy fe'l bilan BIR VAQTDA va BIR EGADA. Ko'p uchraydigan masdarlar: طلبًا لِـ (izlab), خوفًا من (qo'rqib), حبًّا لِـ (sevib), رغبةً في (istab), شكرًا لِـ (minnatdor bo'lib).",
+  "table": [
+   {"ar": "سافرتُ طلبًا للعلمِ", "uz": "ilm izlab safar qildim", "form": "طلبًا لِـ"},
+   {"ar": "سكتَ خوفًا من الخطأِ", "uz": "xatodan qo'rqib jim qoldi", "form": "خوفًا من"},
+   {"ar": "قمتُ احترامًا لهُ", "uz": "uni hurmatlab o'rnimdan turdim", "form": "احترامًا لِـ"},
+   {"ar": "أدرسُ رغبةً في النجاحِ", "uz": "muvaffaqiyatni istab o'qiyman", "form": "رغبةً في"}
+  ],
+  "common_mistakes_uz": [
+   "Masdarni raf'da qoldirish: طلبٌ emas — طلبًا.",
+   "Qalb fe'li bo'lmagan masdarni ishlatish: سافرتُ كتابةً — mantiqsiz.",
+   "Maf'ul mutlaq bilan adashtirish: mutlaq — fe'lning O'Z masdari (ta'kid), li-ajlih — SABAB masdari."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ط ل ب",
+   "meaning_uz": "izlash, talab qilish",
+   "uz_cognates": ["talab", "talaba", "matlab"],
+   "derived": [
+    {"ar": "طَلَبَ", "uz": "izladi, talab qildi", "pattern": "فَعَلَ"},
+    {"ar": "طَلَبًا لِـ", "uz": "…ni izlab", "pattern": "مصدر"},
+    {"ar": "طَالِب", "uz": "talaba (izlovchi)", "pattern": "فَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "طَلَبًا لِـ", "translit": "ṭalaban li-", "uz": "…ni izlab (o'zbekcha 'talab')", "root": "ط ل ب", "pattern": "", "pos": "masdar", "audio": "b1/talaban.mp3", "example_ar": "هاجرَ طلبًا للرزقِ.", "example_uz": "Rizq izlab hijrat qildi.", "srs": true},
+  {"ar": "خَوْفًا مِن", "translit": "khawfan min", "uz": "…dan qo'rqib (o'zbekcha 'xavf')", "root": "خ و ف", "pattern": "", "pos": "masdar", "audio": "b1/khawfan.mp3", "example_ar": "أسرعَ خوفًا من التأخيرِ.", "example_uz": "Kechikishdan qo'rqib shoshildi.", "srs": true},
+  {"ar": "حُبًّا لِـ", "translit": "ḥubban li-", "uz": "…ni sevib (muhabbat bilan)", "root": "ح ب ب", "pattern": "", "pos": "masdar", "audio": "b1/hubban.mp3", "example_ar": "يخدمُ وطنَهُ حبًّا لهُ.", "example_uz": "Vatanini sevib unga xizmat qiladi.", "srs": true},
+  {"ar": "رَغْبَةً فِي", "translit": "raghbatan fī", "uz": "…ni istab (o'zbekcha 'rag'bat')", "root": "ر غ ب", "pattern": "", "pos": "masdar", "audio": "b1/raghbatan.mp3", "example_ar": "يعملُ رغبةً في التقدمِ.", "example_uz": "Taraqqiyotni istab ishlaydi.", "srs": true},
+  {"ar": "شُكْرًا لِـ", "translit": "shukran li-", "uz": "…ga minnatdor bo'lib (shukr)", "root": "ش ك ر", "pattern": "", "pos": "masdar", "audio": "b1/shukran_li.mp3", "example_ar": "سجدَ شكرًا للهِ.", "example_uz": "Allohga shukr qilib sajda qildi.", "srs": true},
+  {"ar": "هَاجَرَ", "translit": "hājara", "uz": "hijrat qildi, ko'chdi (o'zbekcha 'hijrat')", "root": "ه ج ر", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "b1/hajara.mp3", "example_ar": "هاجرتِ العائلةُ إلى المدينةِ.", "example_uz": "Oila shaharga ko'chib ketdi.", "srs": true},
+  {"ar": "رِزْق", "translit": "rizq", "uz": "rizq, nasiba (o'zbekcha 'rizq' aynan shundan)", "root": "ر ز ق", "pattern": "فِعْل", "pos": "ot", "audio": "b1/rizq.mp3", "example_ar": "الرزقُ بيدِ اللهِ.", "example_uz": "Rizq Allohning qo'lida.", "srs": true},
+  {"ar": "تَقَدُّم", "translit": "taqaddum", "uz": "taraqqiyot, oldinga siljish (o'zbekcha 'taqaddum')", "root": "ق د م", "pattern": "تَفَعُّل", "pos": "ot", "audio": "b1/taqaddum.mp3", "example_ar": "التقدمُ يحتاجُ صبرًا.", "example_uz": "Taraqqiyot sabr talab qiladi.", "srs": true},
+  {"ar": "وَطَن", "translit": "waṭan", "uz": "vatan (o'zbekcha 'vatan' aynan shundan)", "root": "و ط ن", "pattern": "فَعَل", "pos": "ot", "audio": "b1/watan.mp3", "example_ar": "حبُّ الوطنِ من الإيمانِ.", "example_uz": "Vatanni sevish iymondandir.", "srs": true},
+  {"ar": "سَجَدَ", "translit": "sajada", "uz": "sajda qildi (o'zbekcha 'sajda')", "root": "س ج د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/sajada.mp3", "example_ar": "سجدَ المصلّونَ خشوعًا.", "example_uz": "Namozxonlar xushu' bilan sajda qildilar.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "تركَ الإمامُ البخاريُّ وطنَهُ بخارى طلبًا للحديثِ الشريفِ، وسافرَ إلى بلادٍ كثيرةٍ رغبةً في العلمِ. كان يكتبُ كلَّ حديثٍ حرصًا على الدقةِ، ويراجعُهُ مراتٍ خوفًا من الخطأِ.",
+   "questions": [
+    {"q_uz": "Imom Buxoriy nega vatanini tark etdi?", "a": "Hadis izlab (طلبًا للحديث)"},
+    {"q_uz": "Matndagi maf'ul li-ajlihlarni toping.", "a": "طلبًا، رغبةً، حرصًا، خوفًا"},
+    {"q_uz": "Nega hadislarni qayta tekshirardi?", "a": "Xatodan qo'rqib (خوفًا من الخطأ)"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/talaban.mp3",
+   "transcript_ar": "طَلَبًا",
+   "questions": [
+    {"q_uz": "Bu masdar qanday ma'no beradi?", "a": "«…ni izlab» — maqsad bildiradi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch gapni ayting: «Ilm izlab safar qildim», «Kechikishdan qo'rqib shoshildim», «Allohga shukr qilib sajda qildi».",
+   "target_ar": ["سَافَرْتُ طَلَبًا لِلْعِلْمِ", "أَسْرَعْتُ خَوْفًا مِنَ التَّأْخِيرِ", "سَجَدَ شُكْرًا لِلَّهِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Maf'ul li-ajlih bilan 3 gap yozing: nega o'qiysiz (طلبًا/رغبةً), nega shoshilasiz (خوفًا) va nega ishlaysiz (حبًّا).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Ilm izlab safar qildim» to'g'ri qaysi?", "q_ar": "", "options": ["سافرتُ طلبًا للعلمِ", "سافرتُ طلبٌ للعلمِ", "سافرتُ الطلبَ للعلمِ", "سافرتُ ليطلبَ العلمَ"], "answer": "سافرتُ طلبًا للعلمِ", "explain_uz": "Maqsad masdari nasbda: طلبًا.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Maf'ul li-ajlih qanday savolga javob beradi?", "q_ar": "", "options": ["nega? nima maqsadda?", "qachon?", "qayerda?", "qanday holatda?"], "answer": "nega? nima maqsadda?", "explain_uz": "U harakatning sababini/maqsadini bildiradi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Maf'ul mutlaq va li-ajlih farqi?", "q_ar": "", "options": ["mutlaq — o'z masdari (ta'kid), li-ajlih — sabab masdari", "bir xil", "li-ajlih raf'da", "mutlaq faqat inkorda"], "answer": "mutlaq — o'z masdari (ta'kid), li-ajlih — sabab masdari", "explain_uz": "فهمتُ فهمًا (ta'kid) / سافرتُ طلبًا (sabab).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring (qo'rqib): «سكتَ ____ من الخطأِ»", "q_ar": "سَكَتَ ____ مِنَ الخَطَأِ", "options": [], "answer": "خَوْفًا", "explain_uz": "خوفًا من — «…dan qo'rqib».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«طَلَب، طَالِب، مَطْلَب» qaysi o'zakdan?", "q_ar": "", "options": ["ط ل ب", "ط ب ل", "ت ل ب"], "answer": "ط ل ب", "explain_uz": "«ط ل ب» — talab o'zagi: talaba, matlab.", "audio": "", "root": "ط ل ب", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "vatan", "q_ar": "", "options": [], "answer": "وَطَن", "explain_uz": "وَطَن — vatan (aynan o'zbekchaga o'tgan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Tartiblang: «Rizq izlab hijrat qildi»", "q_ar": "", "options": [], "answer": "هاجرَ طلبًا للرزقِ", "explain_uz": "Fe'l + maqsad masdari + lil-jarr.", "audio": "", "root": "", "pattern": "", "words": ["هاجرَ", "طلبًا", "للرزقِ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ط ل ب", "back": "talab o'zagi (talaba, matlab)", "deck": "msa"},
+  {"type": "word", "front": "طَلَبًا لِـ", "back": "…ni izlab", "deck": "msa"},
+  {"type": "word", "front": "خَوْفًا مِن", "back": "…dan qo'rqib", "deck": "msa"},
+  {"type": "word", "front": "رَغْبَةً فِي", "back": "…ni istab (rag'bat)", "deck": "msa"},
+  {"type": "word", "front": "شُكْرًا لِـ", "back": "…ga shukr qilib", "deck": "msa"},
+  {"type": "word", "front": "هَاجَرَ", "back": "hijrat qildi", "deck": "msa"},
+  {"type": "word", "front": "رِزْق", "back": "rizq, nasiba", "deck": "msa"},
+  {"type": "word", "front": "تَقَدُّم", "back": "taraqqiyot", "deck": "msa"},
+  {"type": "word", "front": "وَطَن", "back": "vatan", "deck": "msa"},
+  {"type": "word", "front": "سَجَدَ", "back": "sajda qildi", "deck": "msa"}
+ ]
+}

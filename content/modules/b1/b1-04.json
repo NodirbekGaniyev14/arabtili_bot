@@ -1,0 +1,99 @@
+{
+ "id": "b1-04",
+ "level": "B1",
+ "module": "adv-grammar",
+ "order": 4,
+ "title_uz": "Shart gap 1: إذا",
+ "title_ar": "أُسْلُوبُ الشَّرْط: إِذَا",
+ "can_do_uz": "إذا bilan real shart gaplar tuza olaman: «Agar o'qisang — muvaffaq bo'lasan».",
+ "duration_min": 30,
+ "prerequisites": ["b1-03"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«AGAR o'qisang, muvaffaq bo'lasan» — hayotning yarmi shart gaplardan iborat! Arabchada eng ko'p ishlatiladigani إِذَا (agar/qachonki). Qizig'i: إذا dan keyin fe'l ko'pincha O'TGAN zamonda keladi, lekin ma'no KELASI zamon: إذا درستَ نجحتَ — agar o'qisang, muvaffaq bo'lasan.",
+ "grammar": {
+  "point_ar": "إِذَا + مَاضٍ",
+  "explanation_uz": "Shart uslubi 2 qismdan iborat: SHART (إذا درستَ) + JAVOB (نجحتَ). إِذَا — real, kutiladigan shartlar uchun («agar, qachonki»). Odatda ikkala fe'l O'TGAN zamon shaklida, ma'no esa kelasi: إذا جاءَ الصيفُ سافرنا — yoz kelsa, safarga chiqamiz. Javob gap OT GAP yoki buyruq bo'lsa, boshiga فَـ qo'shiladi: إذا نجحتَ فَأنتَ بطلٌ (agar yutsang — sen qahramonsan); إذا وصلتَ فَاتَّصِلْ بي (yetib borsang, menga qo'ng'iroq qil).",
+  "table": [
+   {"ar": "إذا درستَ نجحتَ", "uz": "o'qisang — muvaffaq bo'lasan", "form": "fe'l+fe'l"},
+   {"ar": "إذا جاءَ الصيفُ سافرنا", "uz": "yoz kelsa — safar qilamiz", "form": "real shart"},
+   {"ar": "إذا نجحتَ فأنتَ بطلٌ", "uz": "yutsang — sen qahramonsan", "form": "فـ + ot gap"},
+   {"ar": "إذا وصلتَ فاتصلْ بي", "uz": "yetib borsang — qo'ng'iroq qil", "form": "فـ + buyruq"}
+  ],
+  "common_mistakes_uz": [
+   "إذا dan keyin kelasi zamon qo'yish: إذا سيدرس — XATO; o'tgan shakl kerak: إذا درس.",
+   "Javob ot gap bo'lganda فَـ ni unutish: إذا نجحت أنت بطل emas — فأنت بطل.",
+   "إذا ni «qachon?» so'rog'i (متى) bilan adashtirish — إذا savol emas, shart."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ش ر ط",
+   "meaning_uz": "shart",
+   "uz_cognates": ["shart", "shartnoma"],
+   "derived": [
+    {"ar": "شَرْط", "uz": "shart", "pattern": "فَعْل"},
+    {"ar": "شُرُوط", "uz": "shartlar", "pattern": "فُعُول"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "إِذَا", "translit": "idhā", "uz": "agar, qachonki (real shart)", "root": "", "pattern": "", "pos": "yuklama", "audio": "b1/idha.mp3", "example_ar": "إذا اجتهدتَ وصلتَ إلى هدفِكَ.", "example_uz": "Tirishsang — maqsadingga yetasan.", "srs": true},
+  {"ar": "شَرْط", "translit": "sharṭ", "uz": "shart (o'zbekcha 'shart' aynan shundan)", "root": "ش ر ط", "pattern": "فَعْل", "pos": "ot", "audio": "b1/shart.mp3", "example_ar": "النجاحُ لهُ شروطٌ.", "example_uz": "Muvaffaqiyatning shartlari bor.", "srs": true},
+  {"ar": "هَدَف", "translit": "hadaf", "uz": "maqsad, nishon", "root": "ه د ف", "pattern": "فَعَل", "pos": "ot", "audio": "b1/hadaf.mp3", "example_ar": "حدِّدْ هدفَكَ أوّلًا.", "example_uz": "Avval maqsadingni belgila.", "srs": true},
+  {"ar": "اِتَّصَلَ", "translit": "ittaṣala", "uz": "qo'ng'iroq qildi, bog'landi (VIII bob)", "root": "و ص ل", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ittasala.mp3", "example_ar": "إذا احتجتَ شيئًا فاتصلْ بي.", "example_uz": "Biror narsa kerak bo'lsa, menga qo'ng'iroq qil.", "srs": true},
+  {"ar": "اِحْتَاجَ", "translit": "iḥtāja", "uz": "muhtoj bo'ldi, kerak bo'ldi (o'zbekcha 'ehtiyoj')", "root": "ح و ج", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ihtaja.mp3", "example_ar": "إذا احتجتَ مساعدةً فأخبرْني.", "example_uz": "Yordam kerak bo'lsa, menga ayt.", "srs": true},
+  {"ar": "بَطَل", "translit": "baṭal", "uz": "qahramon", "root": "ب ط ل", "pattern": "فَعَل", "pos": "ot", "audio": "b1/batal.mp3", "example_ar": "إذا صبرتَ فأنتَ بطلٌ.", "example_uz": "Sabr qilsang — sen qahramonsan.", "srs": true},
+  {"ar": "صَيْف", "translit": "ṣayf", "uz": "yoz (fasl)", "root": "ص ي ف", "pattern": "فَعْل", "pos": "ot", "audio": "b1/sayf.mp3", "example_ar": "إذا جاء الصيفُ ذهبنا إلى الجبالِ.", "example_uz": "Yoz kelsa, tog'larga boramiz.", "srs": true},
+  {"ar": "فُرْصَة", "translit": "furṣa", "uz": "imkoniyat, fursat (o'zbekcha 'fursat')", "root": "ف ر ص", "pattern": "فُعْلَة", "pos": "ot", "audio": "b1/fursa.mp3", "example_ar": "إذا جاءتِ الفرصةُ فاغتنمْها.", "example_uz": "Fursat kelsa, undan foydalan.", "srs": true},
+  {"ar": "اِغْتَنَمَ", "translit": "ightanama", "uz": "g'animat bildi, foydalanib qoldi (o'zbekcha 'g'animat')", "root": "غ ن م", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ightanama.mp3", "example_ar": "اغتنمِ الوقتَ قبلَ فواتِهِ.", "example_uz": "Vaqtni o'tib ketmasidan g'animat bil.", "srs": true},
+  {"ar": "نَتِيجَة", "translit": "natīja", "uz": "natija (o'zbekcha 'natija' aynan shundan)", "root": "ن ت ج", "pattern": "فَعِيلَة", "pos": "ot", "audio": "b1/natija.mp3", "example_ar": "إذا عملتَ ظهرتِ النتيجةُ.", "example_uz": "Ishlasang — natija ko'rinadi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "قال لي جدّي: «إذا أردتَ النجاحَ فاعملْ بجدٍّ. وإذا واجهتَ صعوبةً فلا تيأسْ. وإذا حقّقتَ هدفَكَ فاشكرِ اللهَ». هذه الكلماتُ غيّرتْ حياتي.",
+   "questions": [
+    {"q_uz": "Bobo nechta shart gap aytdi?", "a": "3 ta (إذا أردت، إذا واجهت، إذا حققت)"},
+    {"q_uz": "Nega javob gaplar فـ bilan boshlangan?", "a": "Chunki ular buyruq gaplar (فاعمل، فلا تيأس، فاشكر)"},
+    {"q_uz": "Qiyinchilikka duch kelsang nima qil deyilgan?", "a": "Umidsizlanma (لا تيأس)"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/idha.mp3",
+   "transcript_ar": "إِذَا",
+   "questions": [
+    {"q_uz": "Bu yuklama nimani bildiradi?", "a": "Agar, qachonki (real shart)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch shart gapni ayting: «O'qisang — muvaffaq bo'lasan», «Yoz kelsa — safar qilamiz», «Fursat kelsa — foydalan».",
+   "target_ar": ["إِذَا دَرَسْتَ نَجَحْتَ", "إِذَا جَاءَ الصَّيْفُ سَافَرْنَا", "إِذَا جَاءَتِ الفُرْصَةُ فَاغْتَنِمْهَا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "إذا bilan 3 shart gap yozing: o'qish, sog'liq va safar haqida. Bittasining javobini buyruq qiling (فـ bilan).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Agar o'qisang, muvaffaq bo'lasan» to'g'ri qaysi?", "q_ar": "", "options": ["إذا درستَ نجحتَ", "إذا ستدرسُ ستنجحُ", "إذا تدرسْ تنجحْ", "إذا درستَ فنجحتَ"], "answer": "إذا درستَ نجحتَ", "explain_uz": "إذا + o'tgan zamon shakli (ma'no kelasi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Javob gap qachon فَـ bilan boshlanadi?", "q_ar": "", "options": ["ot gap yoki buyruq bo'lganda", "har doim", "hech qachon", "faqat inkorda"], "answer": "ot gap yoki buyruq bo'lganda", "explain_uz": "إذا نجحتَ فأنتَ بطلٌ / فاتصلْ بي.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring: «إذا وصلتَ ____ بي» (qo'ng'iroq qil)", "q_ar": "إِذَا وَصَلْتَ ____ بِي", "options": [], "answer": "فَاتَّصِلْ", "explain_uz": "Buyruq javob — فَـ + اتصلْ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«شَرْط، شُرُوط» qaysi o'zakdan?", "q_ar": "", "options": ["ش ر ط", "ش ر ب", "ص ر ط"], "answer": "ش ر ط", "explain_uz": "«ش ر ط» — shart o'zagi (shartnoma).", "audio": "", "root": "ش ر ط", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "maqsad", "q_ar": "", "options": [], "answer": "هَدَف", "explain_uz": "هَدَف — maqsad, nishon.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "imkoniyat, fursat", "q_ar": "", "options": [], "answer": "فُرْصَة", "explain_uz": "فُرْصَة — fursat (o'zbekchaga o'tgan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Tartiblang: «Yoz kelsa, tog'larga boramiz»", "q_ar": "", "options": [], "answer": "إذا جاء الصيفُ ذهبنا إلى الجبالِ", "explain_uz": "إذا + shart + javob.", "audio": "", "root": "", "pattern": "", "words": ["إذا", "جاء", "الصيفُ", "ذهبنا", "إلى", "الجبالِ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ش ر ط", "back": "shart o'zagi (shart, shartnoma)", "deck": "msa"},
+  {"type": "word", "front": "إِذَا", "back": "agar, qachonki (real shart)", "deck": "msa"},
+  {"type": "word", "front": "شَرْط", "back": "shart", "deck": "msa"},
+  {"type": "word", "front": "هَدَف", "back": "maqsad, nishon", "deck": "msa"},
+  {"type": "word", "front": "اِتَّصَلَ", "back": "qo'ng'iroq qildi, bog'landi", "deck": "msa"},
+  {"type": "word", "front": "اِحْتَاجَ", "back": "muhtoj bo'ldi", "deck": "msa"},
+  {"type": "word", "front": "بَطَل", "back": "qahramon", "deck": "msa"},
+  {"type": "word", "front": "فُرْصَة", "back": "imkoniyat, fursat", "deck": "msa"},
+  {"type": "word", "front": "اِغْتَنَمَ", "back": "g'animat bildi, foydalandi", "deck": "msa"},
+  {"type": "word", "front": "نَتِيجَة", "back": "natija", "deck": "msa"}
+ ]
+}

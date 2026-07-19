@@ -1,0 +1,100 @@
+{
+ "id": "b1-01",
+ "level": "B1",
+ "module": "adv-grammar",
+ "order": 1,
+ "title_uz": "Majhul nisbat — to'liq",
+ "title_ar": "المَبْنِيُّ لِلْمَجْهُول",
+ "can_do_uz": "Majhul fe'lni o'tgan va hozirgi zamonda yasab, gapda ishlata olaman hamda bajaruvchini مِنْ قِبَلِ bilan qo'sha olaman.",
+ "duration_min": 30,
+ "prerequisites": [],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "B1 ga xush kelibsiz! A2 da majhulning o'tgan zamonini ko'rgandik (كُتِبَ — yozildi). Endi TO'LIQ tizim: hozirgi zamon majhuli (يُكْتَبُ — yoziladi), bajaruvchini aytish (مِنْ قِبَلِ — tomonidan) va illatli fe'llar majhuli (قِيلَ — deyildi). Yangiliklar tili aynan shu shaklda gapiradi!",
+ "grammar": {
+  "point_ar": "فُعِلَ / يُفْعَلُ",
+  "explanation_uz": "MAJHUL YASASH: (1) O'tgan zamon: 1-harf DAMMA + o'rtadan oldingi harf KASRA — كَتَبَ→كُتِبَ, فَتَحَ→فُتِحَ. (2) Hozirgi zamon: muzori' prefiksi DAMMA + o'rtadan oldingi harf FATHA — يَكْتُبُ→يُكْتَبُ, يَفْتَحُ→يُفْتَحُ. (3) Bajaruvchi kerak bo'lsa: مِنْ قِبَلِ + ega («tomonidan»). (4) Illatlilar: قَالَ→قِيلَ (deyildi), بَاعَ→بِيعَ (sotildi). Majhulda ASL OB'EKT ega (noibul-foil) bo'lib, raf' holatga o'tadi.",
+  "table": [
+   {"ar": "كُتِبَ الدَّرْسُ", "uz": "dars yozildi (o'tgan majhul)", "form": "فُعِلَ"},
+   {"ar": "يُكْتَبُ الدَّرْسُ", "uz": "dars yoziladi (hozirgi majhul)", "form": "يُفْعَلُ"},
+   {"ar": "بُنِيَ المَسْجِدُ مِنْ قِبَلِ المُهَنْدِسِ", "uz": "masjid muhandis tomonidan qurildi", "form": "من قِبَل"},
+   {"ar": "قِيلَ / بِيعَ", "uz": "deyildi / sotildi (ajvaf majhuli)", "form": "illatli"}
+  ],
+  "common_mistakes_uz": [
+   "Hozirgi majhulda o'rta harakatni kasra qilish — يُكْتَبُ (fatha!), يُكْتِبُ emas.",
+   "Majhuldan keyin ob'ektni nasbda qoldirish — u endi EGA: كُتِبَ الدرسُ (الدرسَ emas).",
+   "قِيلَ ni قُوِلَ deb yasash — ajvafda o'rta illat kasra bilan ي ga aylanadi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ب ن ي",
+   "meaning_uz": "qurish",
+   "uz_cognates": ["bino", "imorat ma'nosidagi 'binokor'"],
+   "derived": [
+    {"ar": "بَنَى", "uz": "qurdi", "pattern": "فَعَلَ"},
+    {"ar": "بُنِيَ", "uz": "qurildi (majhul)", "pattern": "فُعِلَ"},
+    {"ar": "مَبْنَى", "uz": "bino", "pattern": "مَفْعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "بُنِيَ", "translit": "buniya", "uz": "qurildi (o'zbekcha 'bino' o'zagi)", "root": "ب ن ي", "pattern": "فُعِلَ", "pos": "fe'l", "audio": "b1/buniya.mp3", "example_ar": "بُنِيَ المسجدُ قبلَ مئةِ سنةٍ.", "example_uz": "Masjid yuz yil oldin qurilgan.", "srs": true},
+  {"ar": "يُبْنَى", "translit": "yubnā", "uz": "quriladi", "root": "ب ن ي", "pattern": "يُفْعَل", "pos": "fe'l", "audio": "b1/yubna.mp3", "example_ar": "يُبْنَى مستشفًى جديدٌ هنا.", "example_uz": "Bu yerda yangi shifoxona qurilyapti.", "srs": true},
+  {"ar": "مِنْ قِبَلِ", "translit": "min qibali", "uz": "tomonidan (bajaruvchini kiritadi)", "root": "ق ب ل", "pattern": "", "pos": "ibora", "audio": "b1/min_qibali.mp3", "example_ar": "كُتِبَ التقريرُ مِنْ قِبَلِ المديرِ.", "example_uz": "Hisobot direktor tomonidan yozildi.", "srs": true},
+  {"ar": "قِيلَ", "translit": "qīla", "uz": "deyildi, aytildi", "root": "ق و ل", "pattern": "فِيلَ", "pos": "fe'l", "audio": "b1/qila.mp3", "example_ar": "قِيلَ إنَّ الاجتماعَ غدًا.", "example_uz": "Majlis ertaga deyildi.", "srs": true},
+  {"ar": "بِيعَ", "translit": "bīʿa", "uz": "sotildi", "root": "ب ي ع", "pattern": "فِيلَ", "pos": "fe'l", "audio": "b1/bia.mp3", "example_ar": "بِيعَ البيتُ أمسِ.", "example_uz": "Uy kecha sotildi.", "srs": true},
+  {"ar": "تَقْرِير", "translit": "taqrīr", "uz": "hisobot (o'zbekcha 'taqriz'ga yaqin o'zak)", "root": "ق ر ر", "pattern": "تَفْعِيل", "pos": "ot", "audio": "b1/taqrir.mp3", "example_ar": "قُرِئَ التقريرُ في الاجتماعِ.", "example_uz": "Hisobot majlisda o'qildi.", "srs": true},
+  {"ar": "مُسْتَشْفَى", "translit": "mustashfā", "uz": "shifoxona (o'zbekcha 'shifo' o'zagi ش ف ي)", "root": "ش ف ي", "pattern": "مُسْتَفْعَل", "pos": "ot", "audio": "b1/mustashfa.mp3", "example_ar": "أُسِّسَ المستشفى عامَ ألفينِ.", "example_uz": "Shifoxona 2000-yilda tashkil etilgan.", "srs": true},
+  {"ar": "أُسِّسَ", "translit": "ussisa", "uz": "tashkil etildi, asos solindi (o'zbekcha 'asos')", "root": "أ س س", "pattern": "فُعِّلَ", "pos": "fe'l", "audio": "b1/ussisa.mp3", "example_ar": "أُسِّسَتِ الشركةُ حديثًا.", "example_uz": "Kompaniya yaqinda tashkil etildi.", "srs": true},
+  {"ar": "يُقَالُ", "translit": "yuqālu", "uz": "deyiladi", "root": "ق و ل", "pattern": "يُفَالُ", "pos": "fe'l", "audio": "b1/yuqalu.mp3", "example_ar": "يُقَالُ إنَّ الصبرَ مفتاحُ الفرجِ.", "example_uz": "Sabr — najot kaliti, deyiladi.", "srs": true},
+  {"ar": "نُشِرَ", "translit": "nushira", "uz": "nashr etildi (o'zbekcha 'nashr')", "root": "ن ش ر", "pattern": "فُعِلَ", "pos": "fe'l", "audio": "b1/nushira.mp3", "example_ar": "نُشِرَ الخبرُ في الصحيفةِ.", "example_uz": "Xabar gazetada nashr etildi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "افتُتِحَ مستشفًى جديدٌ في المدينةِ أمسِ. بُنِيَ المستشفى مِنْ قِبَلِ شركةٍ محليّةٍ، وقيلَ إنَّ العملَ فيه سيبدأُ الأسبوعَ القادمَ. نُشِرَ الخبرُ في جميعِ الصُّحُفِ.",
+   "questions": [
+    {"q_uz": "Nima ochildi va qachon?", "a": "Yangi shifoxona, kecha (افتُتِحَ أمس)"},
+    {"q_uz": "Shifoxona kim tomonidan qurilgan?", "a": "Mahalliy kompaniya tomonidan (مِنْ قِبَلِ شركةٍ محليّة)"},
+    {"q_uz": "Matndagi majhul fe'llarni toping.", "a": "افتُتِحَ، بُنِيَ، قِيلَ، نُشِرَ"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/qila.mp3",
+   "transcript_ar": "قِيلَ",
+   "questions": [
+    {"q_uz": "Eshitilgan fe'l ma'nosi va nisbati?", "a": "Deyildi — majhul"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch gapni majhulda ovoz chiqarib ayting: «Dars yozildi», «Uy sotildi», «Xabar nashr etildi».",
+   "target_ar": ["كُتِبَ الدَّرْسُ", "بِيعَ البَيْتُ", "نُشِرَ الخَبَرُ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Uch gapni majhulga aylantirib yozing: (1) كتب المديرُ التقريرَ (2) باع الرجلُ السيارةَ (3) يفتحُ العاملُ البابَ. Bajaruvchilardan birini مِنْ قِبَلِ bilan qo'shing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«يَفْتَحُ» ning majhuli qaysi?", "q_ar": "", "options": ["يُفْتَحُ", "يُفْتِحُ", "فُتِحَ", "يَفْتُحُ"], "answer": "يُفْتَحُ", "explain_uz": "Hozirgi majhul: prefiks damma + o'rta fatha — يُفْتَحُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«قَالَ» ning o'tgan zamon majhuli?", "q_ar": "", "options": ["قِيلَ", "قُوِلَ", "قَيَّلَ", "يُقَالُ"], "answer": "قِيلَ", "explain_uz": "Ajvaf majhuli: قِيلَ (o'rta illat ي, birinchi harf kasra).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Hisobot direktor tomonidan yozildi» — to'g'ri gap?", "q_ar": "", "options": ["كُتِبَ التقريرُ مِنْ قِبَلِ المديرِ", "كَتَبَ التقريرُ مِنْ قِبَلِ المديرِ", "كُتِبَ التقريرَ مِنْ قِبَلِ المديرِ", "كُتِبَ التقريرُ المديرُ"], "answer": "كُتِبَ التقريرُ مِنْ قِبَلِ المديرِ", "explain_uz": "Majhul + noibul-foil raf'da + مِنْ قِبَلِ bajaruvchi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "To'ldiring (nashr etildi): «____ الخبرُ في الصحيفة»", "q_ar": "____ الخَبَرُ فِي الصَّحِيفَة", "options": [], "answer": "نُشِرَ", "explain_uz": "نُشِرَ — o'tgan zamon majhuli (1-damma, o'rta kasra).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«بُنِيَ، مَبْنَى» qaysi o'zakdan?", "q_ar": "", "options": ["ب ن ي", "ب ي ن", "ن ب ي"], "answer": "ب ن ي", "explain_uz": "«ب ن ي» — qurish o'zagi: bino, mabno.", "audio": "", "root": "ب ن ي", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "sotildi", "q_ar": "", "options": [], "answer": "بِيعَ", "explain_uz": "بِيعَ — ajvaf fe'l بَاعَ ning majhuli.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Majhul gapda asl ob'ekt nimaga aylanadi?", "q_ar": "", "options": ["egaga (noibul-foil, raf')", "aniqlovchiga", "holga", "o'zgarmaydi"], "answer": "egaga (noibul-foil, raf')", "explain_uz": "Ob'ekt ega o'rnini oladi va raf' holatga o'tadi.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ب ن ي", "back": "qurish o'zagi (bino, mabno)", "deck": "msa"},
+  {"type": "word", "front": "بُنِيَ", "back": "qurildi (majhul)", "deck": "msa"},
+  {"type": "word", "front": "يُبْنَى", "back": "quriladi", "deck": "msa"},
+  {"type": "word", "front": "مِنْ قِبَلِ", "back": "tomonidan", "deck": "msa"},
+  {"type": "word", "front": "قِيلَ", "back": "deyildi", "deck": "msa"},
+  {"type": "word", "front": "بِيعَ", "back": "sotildi", "deck": "msa"},
+  {"type": "word", "front": "تَقْرِير", "back": "hisobot", "deck": "msa"},
+  {"type": "word", "front": "مُسْتَشْفَى", "back": "shifoxona", "deck": "msa"},
+  {"type": "word", "front": "أُسِّسَ", "back": "tashkil etildi", "deck": "msa"},
+  {"type": "word", "front": "نُشِرَ", "back": "nashr etildi", "deck": "msa"}
+ ]
+}
