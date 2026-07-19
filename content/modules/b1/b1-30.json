@@ -1,0 +1,99 @@
+{
+ "id": "b1-30",
+ "level": "B1",
+ "module": "quran-hadith",
+ "order": 30,
+ "title_uz": "Qisqa suralar tahlili 2: Asr",
+ "title_ar": "سُورَةُ العَصْر",
+ "can_do_uz": "Asr surasini so'zma-so'z tushunaman — undagi istisno va ko'plik shakllarini tahlil qila olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-29"],
+ "harakat_level": "full",
+ "hook_uz": "Imom Shofe'iy: «Odamlar faqat shu sura haqida fikr yuritganlarida ham, u ularga yetarli bo'lardi». 3 oyat — butun hayot dasturi! Va qarang: unda siz o'rgangan ISTISNO (إلا) qoidasi bor. Grammatika bilimi endi ma'no ochadi.",
+ "grammar": {
+  "point_ar": "وَالْعَصْرِ. إِنَّ الْإِنْسَانَ لَفِي خُسْرٍ...",
+  "explanation_uz": "TAHLIL: (1) وَالْعَصْرِ — Asr (zamon) bilan qasam — vov qasami, ism jarrda! (2) إِنَّ الْإِنسَانَ لَفِي خُسْرٍ — albatta inson ziyondadir: إنّ + nasb egasi (siz bilasiz!) + لَـ ta'kidi. (3) إِلَّا الَّذِينَ آمَنُوا — istisno (b1-09!): faqat iymon keltirganlar... (4) وَتَوَاصَوْا بِالْحَقِّ — va bir-birlariga haqni vasiyat qilganlar: VI bob (تَفَاعَلَ) — o'zaro ma'no! Bir surada: qasam, inna, istisno, VI bob — hammasini o'qigansiz!",
+  "table": [
+   {"ar": "وَالْعَصْرِ", "uz": "Asrga qasam — vov qasami (jarr)", "form": "qasam"},
+   {"ar": "إِنَّ الإِنْسَانَ", "uz": "albatta inson — inna+nasb", "form": "إنّ"},
+   {"ar": "إِلَّا الَّذِينَ آمَنُوا", "uz": "faqat iymon keltirganlar", "form": "istisno"},
+   {"ar": "تَوَاصَوْا", "uz": "bir-biriga vasiyat qildilar — VI bob", "form": "تفاعل"}
+  ],
+  "common_mistakes_uz": [
+   "عَصْر ni faqat «asr namozi» deb tushunish — bu yerda «zamon/davr» ma'nosi ham bor.",
+   "خُسْر ni «xarajat» deyish — u «ziyon, yutqazish» (xasorat).",
+   "تواصوا ning VI bob ekanini ko'rmaslik — o'zaro vasiyat: bir-birini haqqa chaqirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "و ص ي",
+   "meaning_uz": "vasiyat, tavsiya",
+   "uz_cognates": ["vasiyat", "tavsiya"],
+   "derived": [
+    {"ar": "وَصِيَّة", "uz": "vasiyat", "pattern": "فَعِيلَة"},
+    {"ar": "تَوَاصَى", "uz": "bir-biriga vasiyat qildi", "pattern": "تَفَاعَلَ"},
+    {"ar": "تَوْصِيَة", "uz": "tavsiya", "pattern": "تَفْعِلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "عَصْر", "translit": "ʿaṣr", "uz": "asr, zamon; asr payti (o'zbekcha 'asr')", "root": "ع ص ر", "pattern": "فَعْل", "pos": "ot", "audio": "b1/asr.mp3", "example_ar": "نعيشُ في عصرِ السرعةِ.", "example_uz": "Tezlik asrida yashayapmiz.", "srs": true},
+  {"ar": "إِنْسَان", "translit": "insān", "uz": "inson (o'zbekcha 'inson' aynan shundan)", "root": "أ ن س", "pattern": "فِعْلَان", "pos": "ot", "audio": "b1/insan.mp3", "example_ar": "الإنسانُ مخلوقٌ مكرَّمٌ.", "example_uz": "Inson — mukarram maxluq.", "srs": true},
+  {"ar": "خُسْر", "translit": "khusr", "uz": "ziyon, yutqazish (o'zbekcha 'xasorat' o'zagi)", "root": "خ س ر", "pattern": "فُعْل", "pos": "ot", "audio": "b1/khusr.mp3", "example_ar": "الغفلةُ خسرٌ للعمرِ.", "example_uz": "G'aflat — umr uchun ziyon.", "srs": true},
+  {"ar": "تَوَاصَوْا", "translit": "tawāṣaw", "uz": "bir-birlariga vasiyat qildilar (VI bob)", "root": "و ص ي", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "b1/tawasaw.mp3", "example_ar": "تواصوْا بالحقِّ والصبرِ.", "example_uz": "Bir-birlariga haq va sabrni vasiyat qildilar.", "srs": true},
+  {"ar": "حَقّ", "translit": "ḥaqq", "uz": "haq, haqiqat (o'zbekcha 'haq')", "root": "ح ق ق", "pattern": "فَعْل", "pos": "ot", "audio": "b1/haqq.mp3", "example_ar": "قلِ الحقَّ ولو كانَ مرًّا.", "example_uz": "Achchiq bo'lsa ham haqni ayt.", "srs": true},
+  {"ar": "صَبْر", "translit": "ṣabr", "uz": "sabr (o'zbekcha 'sabr' aynan shundan)", "root": "ص ب ر", "pattern": "فَعْل", "pos": "ot", "audio": "b1/sabr.mp3", "example_ar": "الصبرُ مفتاحُ الفرجِ.", "example_uz": "Sabr — najot kaliti.", "srs": true},
+  {"ar": "قَسَم", "translit": "qasam", "uz": "qasam (o'zbekcha 'qasam' aynan shundan)", "root": "ق س م", "pattern": "فَعَل", "pos": "ot", "audio": "b1/qasam.mp3", "example_ar": "بدأتِ السورةُ بقسمٍ.", "example_uz": "Sura qasam bilan boshlandi.", "srs": true},
+  {"ar": "زَمَن", "translit": "zaman", "uz": "zamon, vaqt (o'zbekcha 'zamon')", "root": "ز م ن", "pattern": "فَعَل", "pos": "ot", "audio": "b1/zaman.mp3", "example_ar": "الزمنُ أغلى من الذهبِ.", "example_uz": "Vaqt oltindan qimmat.", "srs": true},
+  {"ar": "غَفْلَة", "translit": "ghafla", "uz": "g'aflat, beparvolik (o'zbekcha 'g'aflat')", "root": "غ ف ل", "pattern": "فَعْلَة", "pos": "ot", "audio": "b1/ghafla.mp3", "example_ar": "احذرِ الغفلةَ عن الوقتِ.", "example_uz": "Vaqtdan g'ofil bo'lishdan saqlan.", "srs": true},
+  {"ar": "اِسْتَثْمَرَ", "translit": "istathmara", "uz": "samarali ishlatdi, sarmoya qildi (vaqtni ham!)", "root": "ث م ر", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "b1/istathmara.mp3", "example_ar": "استثمرْ وقتَكَ في الخيرِ.", "example_uz": "Vaqtingni yaxshilikka sarfla.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ. وَالْعَصْرِ. إِنَّ الْإِنْسَانَ لَفِي خُسْرٍ. إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ.",
+   "questions": [
+    {"q_uz": "Ziyondan istisno qilinganlarning 4 sifati?", "a": "Iymon, solih amal, haqni vasiyat qilish, sabrni vasiyat qilish"},
+    {"q_uz": "«إِلَّا الَّذِينَ» qaysi qoida?", "a": "Istisno (b1-09) + nisbiy olmosh (b1-02)"},
+    {"q_uz": "تَوَاصَوْا qaysi bob va ma'nosi?", "a": "VI bob (تفاعل) — o'zaro vasiyatlashish"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/sabr.mp3",
+   "transcript_ar": "صَبْر",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z va suradagi o'rni?", "a": "Sabr — oxirgi vasiyat mavzusi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Surani yoddan, ma'nosini his qilib ayting. So'ng 4 najot sifatini o'zbekcha sanang.",
+   "target_ar": ["وَالْعَصْرِ", "إِنَّ الإِنْسَانَ لَفِي خُسْرٍ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Surani ko'chiring va 4 najot shartini (iymon, amal, haq, sabr) alohida ro'yxat qilib o'zbekcha izohlang.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«وَالْعَصْرِ» dagi و nima?", "q_ar": "", "options": ["qasam vovi (ism jarrda)", "bog'lovchi va", "hol vovi", "ko'plik belgisi"], "answer": "qasam vovi (ism jarrda)", "explain_uz": "Vov qasami ismni jarr qiladi: وَالعصرِ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«إِلَّا الَّذِينَ آمَنُوا» qaysi uslub?", "q_ar": "", "options": ["istisno", "shart", "hol", "tamyiz"], "answer": "istisno", "explain_uz": "Umumdan (inson ziyonda) istisno qilinyapti.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "تَوَاصَوْا qaysi bobda?", "q_ar": "", "options": ["VI (تَفَاعَلَ) — o'zaro", "II — kuchaytirish", "X — talab", "IV — sababiyat"], "answer": "VI (تَفَاعَلَ) — o'zaro", "explain_uz": "O'zaro vasiyatlashish — bir-birini chaqirish.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الصَّبْرُ مِفْتَاحُ الفَرَجِ", "options": [], "answer": "sabr najot kaliti", "explain_uz": "Mashhur hikmat — sabr haqida.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«وَصِيَّة، تَوَاصَوْا، تَوْصِيَة» qaysi o'zakdan?", "q_ar": "", "options": ["و ص ي", "و ص ل", "و س ي"], "answer": "و ص ي", "explain_uz": "«و ص ي» — vasiyat o'zagi.", "audio": "", "root": "و ص ي", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "haq, haqiqat", "q_ar": "", "options": [], "answer": "حَقّ", "explain_uz": "حق — haq.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Suradagi najot sifatlari nechta?", "q_ar": "", "options": ["4 ta", "2 ta", "3 ta", "5 ta"], "answer": "4 ta", "explain_uz": "Iymon, solih amal, haq vasiyati, sabr vasiyati.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "و ص ي", "back": "vasiyat o'zagi (tavsiya)", "deck": "msa"},
+  {"type": "word", "front": "عَصْر", "back": "asr, zamon", "deck": "msa"},
+  {"type": "word", "front": "إِنْسَان", "back": "inson", "deck": "msa"},
+  {"type": "word", "front": "خُسْر", "back": "ziyon", "deck": "msa"},
+  {"type": "word", "front": "تَوَاصَوْا", "back": "bir-biriga vasiyat qildilar", "deck": "msa"},
+  {"type": "word", "front": "حَقّ", "back": "haq", "deck": "msa"},
+  {"type": "word", "front": "صَبْر", "back": "sabr", "deck": "msa"},
+  {"type": "word", "front": "قَسَم", "back": "qasam", "deck": "msa"},
+  {"type": "word", "front": "غَفْلَة", "back": "g'aflat", "deck": "msa"}
+ ]
+}

@@ -1,0 +1,108 @@
+{
+ "id": "b1-28",
+ "level": "B1",
+ "module": "quran-hadith",
+ "order": 28,
+ "title_uz": "Eng ko'p uchraydigan Qur'oniy so'zlar",
+ "title_ar": "أَكْثَرُ كَلِمَاتِ القُرْآنِ تَكْرَارًا",
+ "can_do_uz": "Qur'onda eng ko'p takrorlanadigan so'zlarni bilaman — bu matnning katta qismini ochadi.",
+ "duration_min": 30,
+ "prerequisites": ["b1-27"],
+ "harakat_level": "full",
+ "hook_uz": "Ajoyib fakt: Qur'onda eng ko'p takrorlanadigan 100 ta so'z matnning yarmidan ko'pini tashkil qiladi! اللّٰه، رَبّ، يَوْم، أَرْض، سَمَاء... Bugun ana shu «oltin ro'yxat»ning eng muhimlarini o'rganamiz — har biri ochqich!",
+ "grammar": {
+  "point_ar": "كَلِمَاتٌ مُتَكَرِّرَة",
+  "explanation_uz": "Ko'p uchraydigan so'zlarning grammatik sirlari: (1) الَّذِينَ (…ganlar) — Qur'onda minglab marta: الَّذِينَ آمَنُوا (iymon keltirganlar) — siz buni b1-02 da o'rgangansiz! (2) Juftliklar: السَّمَاوَات وَالأَرْض (osmonlar va yer), الدُّنْيَا وَالآخِرَة (dunyo va oxirat). (3) Ismlar ko'pincha idofada: يَوْمُ الدِّينِ (din kuni), رَبُّ العَالَمِينَ. Bu so'zlarni bilish — Qur'on sahifasini ochganda tanish yuzlarni ko'rishdek!",
+  "table": [
+   {"ar": "الَّذِينَ آمَنُوا", "uz": "iymon keltirganlar", "form": "eng ko'p qolip"},
+   {"ar": "السَّمَاوَاتُ وَالأَرْضُ", "uz": "osmonlar va yer", "form": "juftlik"},
+   {"ar": "الدُّنْيَا وَالآخِرَةُ", "uz": "dunyo va oxirat", "form": "juftlik"},
+   {"ar": "يَوْمُ القِيَامَةِ", "uz": "qiyomat kuni", "form": "idofa"}
+  ],
+  "common_mistakes_uz": [
+   "دُنْيَا ni faqat «pul-mol» deb tushunish — u «yaqin hayot» degani.",
+   "آمَنَ (iymon keltirdi) va أَمِنَ (omon bo'ldi) — bog'liq, lekin farqli.",
+   "نَاس (odamlar) ni birlik deb o'ylash — u jamlovchi ko'plik."
+  ]
+ },
+ "roots": [
+  {
+   "root": "أ م ن",
+   "meaning_uz": "iymon, xavfsizlik",
+   "uz_cognates": ["iymon", "omonat", "omon", "mo'min"],
+   "derived": [
+    {"ar": "آمَنَ", "uz": "iymon keltirdi", "pattern": "أَفْعَلَ"},
+    {"ar": "إِيمَان", "uz": "iymon", "pattern": "إِفْعَال"},
+    {"ar": "مُؤْمِن", "uz": "mo'min", "pattern": "مُفْعِل"},
+    {"ar": "أَمَانَة", "uz": "omonat", "pattern": "فَعَالَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "رَبّ", "translit": "rabb", "uz": "Rob, Parvardigor (tarbiyalovchi Ega)", "root": "ر ب ب", "pattern": "", "pos": "ot", "audio": "b1/rabb.mp3", "example_ar": "رَبُّنَا اللهُ.", "example_uz": "Robbimiz — Alloh.", "srs": true},
+  {"ar": "يَوْم", "translit": "yawm", "uz": "kun (Qur'onda 365 marta!)", "root": "ي و م", "pattern": "فَعْل", "pos": "ot", "audio": "b1/yawm.mp3", "example_ar": "يَوْمُ القيامةِ حقٌّ.", "example_uz": "Qiyomat kuni haqdir.", "srs": true},
+  {"ar": "أَرْض", "translit": "arḍ", "uz": "yer (o'zbekcha 'arz' — 'yer yuzi')", "root": "أ ر ض", "pattern": "فَعْل", "pos": "ot", "audio": "b1/ard.mp3", "example_ar": "خلقَ اللهُ السماواتِ والأرضَ.", "example_uz": "Alloh osmonlar va yerni yaratdi.", "srs": true},
+  {"ar": "سَمَاء", "translit": "samāʾ", "uz": "osmon (ko'pligi: سماوات — 'samo')", "root": "س م و", "pattern": "فَعَال", "pos": "ot", "audio": "b1/samaa.mp3", "example_ar": "في السماءِ آياتٌ للمؤمنينَ.", "example_uz": "Osmonda mo'minlar uchun belgilar bor.", "srs": true},
+  {"ar": "نَاس", "translit": "nās", "uz": "odamlar (o'zbekcha 'nos' emas — 'xaloyiq')", "root": "أ ن س", "pattern": "", "pos": "ot", "audio": "b1/nas.mp3", "example_ar": "قُلْ أعوذُ بربِّ الناسِ.", "example_uz": "Ayt: odamlar Robbiga sig'inaman.", "srs": true},
+  {"ar": "آمَنَ", "translit": "āmana", "uz": "iymon keltirdi", "root": "أ م ن", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/amana.mp3", "example_ar": "الذينَ آمنوا وعملوا الصالحاتِ.", "example_uz": "Iymon keltirib, solih amallar qilganlar.", "srs": true},
+  {"ar": "عَمِلَ الصَّالِحَات", "translit": "ʿamila ṣ-ṣāliḥāt", "uz": "solih (yaxshi) amallar qildi", "root": "ص ل ح", "pattern": "", "pos": "ibora", "audio": "b1/salihat.mp3", "example_ar": "منْ آمنَ وعملَ صالحًا فلهُ أجرٌ.", "example_uz": "Kim iymon keltirib yaxshi ish qilsa — ajri bor.", "srs": true},
+  {"ar": "دُنْيَا", "translit": "dunyā", "uz": "dunyo — yaqin hayot (o'zbekcha 'dunyo')", "root": "د ن و", "pattern": "فُعْلَى", "pos": "ot", "audio": "b1/dunya.mp3", "example_ar": "الدنيا دارُ عملٍ.", "example_uz": "Dunyo — amal qilish joyi.", "srs": true},
+  {"ar": "آخِرَة", "translit": "ākhira", "uz": "oxirat (o'zbekcha 'oxirat' aynan shundan)", "root": "أ خ ر", "pattern": "فَاعِلَة", "pos": "ot", "audio": "b1/akhira.mp3", "example_ar": "الآخرةُ خيرٌ وأبقى.", "example_uz": "Oxirat yaxshiroq va boqiyroq.", "srs": true},
+  {"ar": "جَنَّة", "translit": "janna", "uz": "jannat; bog' (o'zbekcha 'jannat')", "root": "ج ن ن", "pattern": "فَعْلَة", "pos": "ot", "audio": "b1/janna.mp3", "example_ar": "الجنةُ تحتَ أقدامِ الأمهاتِ.", "example_uz": "Jannat onalar oyog'i ostidadir.", "srs": true},
+  {"ar": "قَلْب", "translit": "qalb", "uz": "qalb, yurak (o'zbekcha 'qalb')", "root": "ق ل ب", "pattern": "فَعْل", "pos": "ot", "audio": "b1/qalb.mp3", "example_ar": "في القلوبِ إيمانٌ ونورٌ.", "example_uz": "Qalblarda iymon va nur bor.", "srs": true},
+  {"ar": "نُور", "translit": "nūr", "uz": "nur, yorug'lik (o'zbekcha 'nur')", "root": "ن و ر", "pattern": "فُعْل", "pos": "ot", "audio": "b1/nur.mp3", "example_ar": "العلمُ نورٌ.", "example_uz": "Ilm — nur.", "srs": true},
+  {"ar": "صِرَاط مُسْتَقِيم", "translit": "ṣirāṭ mustaqīm", "uz": "to'g'ri yo'l (mustaqim — 'tik turgan')", "root": "ق و م", "pattern": "", "pos": "ibora", "audio": "b1/sirat.mp3", "example_ar": "اهدنا الصراطَ المستقيمَ.", "example_uz": "Bizni to'g'ri yo'lga hidoyat qil.", "srs": true},
+  {"ar": "أَجْر", "translit": "ajr", "uz": "ajr, mukofot (o'zbekcha 'ajr')", "root": "أ ج ر", "pattern": "فَعْل", "pos": "ot", "audio": "b1/ajr.mp3", "example_ar": "لهم أجرُهم عندَ ربِّهم.", "example_uz": "Ular uchun Robbilari huzurida ajrlari bor.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "إِنَّ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ لَهُمْ أَجْرُهُمْ عِنْدَ رَبِّهِمْ. — bu qolip Qur'onda ko'p keladi. Endi tahlil: إنّ (ta'kid) + الذين (…ganlar) + آمنوا (iymon keltirdilar) + عملوا الصالحات (solih amallar qildilar) + لهم أجرهم (ular uchun ajrlari bor) + عند ربهم (Robbilari huzurida).",
+   "questions": [
+    {"q_uz": "الَّذِينَ bu yerda kimlarni bildiradi?", "a": "Iymon keltirgan va solih amal qilganlarni"},
+    {"q_uz": "«عِنْدَ رَبِّهِمْ» qanday tuzilma?", "a": "Joy zarfi + idofa (Robbilari huzurida)"},
+    {"q_uz": "Ushbu qolipdagi va'da nima?", "a": "Ularga ajr (mukofot) borligi"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/nur.mp3",
+   "transcript_ar": "نُور",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z ma'nosi?", "a": "Nur, yorug'lik"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Juftliklarni ayting: dunyo–oxirat, osmon–yer, jannat, qalb–nur. Har birining o'zbekcha ma'nosini qo'shib ayting.",
+   "target_ar": ["الدُّنْيَا وَالآخِرَة", "السَّمَاء وَالأَرْض", "قَلْبٌ فِيهِ نُورٌ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Bugungi so'zlardan 5 tasini tanlab, har biri bilan bittadan sodda gap yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«الَّذِينَ آمَنُوا» ma'nosi?", "q_ar": "", "options": ["iymon keltirganlar", "iymon keltiringlar!", "iymon keltiradi", "iymonlilar emas"], "answer": "iymon keltirganlar", "explain_uz": "الذين + o'tgan fe'l — «…ganlar» (b1-02 qoidasi!).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "دُنْيَا so'zining asl ma'nosi?", "q_ar": "", "options": ["yaqin (hayot)", "pul-mol", "past", "keng"], "answer": "yaqin (hayot)", "explain_uz": "دنيا — «eng yaqin» (د ن و o'zagi): yaqin hayot.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«يَوْمُ القِيَامَةِ» qanday tuzilma?", "q_ar": "", "options": ["idofa (qiyomat kuni)", "sifat", "fe'l gap", "hol"], "answer": "idofa (qiyomat kuni)", "explain_uz": "yawm + al-qiyama — egalik birikmasi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "العِلْمُ نُورٌ", "options": [], "answer": "ilm nur", "explain_uz": "Mashhur hikmat: Ilm — nur.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«إِيمَان، مُؤْمِن، أَمَانَة» qaysi o'zakdan?", "q_ar": "", "options": ["أ م ن", "أ م ر", "م ن ن"], "answer": "أ م ن", "explain_uz": "«أ م ن» — iymon/omonlik o'zagi: mo'min, omonat.", "audio": "", "root": "أ م ن", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "oxirat", "q_ar": "", "options": [], "answer": "آخِرَة", "explain_uz": "آخرة — oxirat (keyingi hayot).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "qalb, yurak", "q_ar": "", "options": [], "answer": "قَلْب", "explain_uz": "قلب — qalb.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«صِرَاط مُسْتَقِيم» ma'nosi?", "q_ar": "", "options": ["to'g'ri yo'l", "keng ko'cha", "uzun safar", "qiyin yo'l"], "answer": "to'g'ri yo'l", "explain_uz": "Fotihada so'raladigan — to'g'ri yo'l.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "أ م ن", "back": "iymon o'zagi (mo'min, omonat)", "deck": "msa"},
+  {"type": "word", "front": "رَبّ", "back": "Rob, Parvardigor", "deck": "msa"},
+  {"type": "word", "front": "أَرْض", "back": "yer", "deck": "msa"},
+  {"type": "word", "front": "سَمَاء", "back": "osmon (samo)", "deck": "msa"},
+  {"type": "word", "front": "نَاس", "back": "odamlar", "deck": "msa"},
+  {"type": "word", "front": "آمَنَ", "back": "iymon keltirdi", "deck": "msa"},
+  {"type": "word", "front": "دُنْيَا", "back": "dunyo (yaqin hayot)", "deck": "msa"},
+  {"type": "word", "front": "آخِرَة", "back": "oxirat", "deck": "msa"},
+  {"type": "word", "front": "جَنَّة", "back": "jannat", "deck": "msa"},
+  {"type": "word", "front": "قَلْب", "back": "qalb", "deck": "msa"},
+  {"type": "word", "front": "نُور", "back": "nur", "deck": "msa"},
+  {"type": "word", "front": "أَجْر", "back": "ajr, mukofot", "deck": "msa"}
+ ]
+}

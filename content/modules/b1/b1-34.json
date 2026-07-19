@@ -1,0 +1,103 @@
+{
+ "id": "b1-34",
+ "level": "B1",
+ "module": "quran-hadith",
+ "order": 34,
+ "title_uz": "Diniy atamalar lug'ati",
+ "title_ar": "المُصْطَلَحَاتُ الدِّينِيَّة",
+ "can_do_uz": "Asosiy diniy atamalarni arabcha asli bilan bilaman va diniy matnlarda taniyman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-33"],
+ "harakat_level": "full",
+ "hook_uz": "Iymon, ihson, taqvo, farz, sunnat, halol, harom... Bu so'zlarni har kuni ishlatasiz — endi ularning arab tilidagi ASL shaklini, o'zagini va aniq ma'nosini bilib oling. Modul yakuni — atamalar xazinasi!",
+ "grammar": {
+  "point_ar": "مُصْطَلَحَات",
+  "explanation_uz": "Atamalarning o'zak sirlari: تَقْوَى (taqvo) — وقى «saqlanish» o'zagidan: Allohdan qo'rqib saqlanish. إِحْسَان (ihson) — حسن «go'zallik»dan: ibodatni go'zal qilish. حَلَال (halol) — «yechilgan, ruxsat etilgan», حَرَام (harom) — «taqiqlangan, daxlsiz» (Haram masjidi ham shu o'zak — hurmati tufayli!). فَرْض — «belgilab qo'yilgan», سُنَّة — «yo'l, odat». Har atama — bir o'zak hikoyasi.",
+  "table": [
+   {"ar": "تَقْوَى ← و ق ي", "uz": "taqvo — saqlanish o'zagidan", "form": "o'zak"},
+   {"ar": "إِحْسَان ← ح س ن", "uz": "ihson — go'zallik o'zagidan", "form": "o'zak"},
+   {"ar": "حَرَام / حَرَم", "uz": "harom va Haram — bir o'zak!", "form": "o'zak"},
+   {"ar": "فَرْض / سُنَّة", "uz": "farz (majburiy) / sunnat (yo'l)", "form": "juftlik"}
+  ],
+  "common_mistakes_uz": [
+   "حَرَام (taqiqlangan) va حَرَم (muqaddas hudud) ni adashtirish — bir o'zak, farqli vazn.",
+   "سُنَّة ni faqat «nafl amal» deyish — asl ma'nosi «yo'l, tutum».",
+   "ثَوَاب (savob) va صَوَاب (to'g'ri) ni chalkashtirish — ikki xil harf!"
+  ]
+ },
+ "roots": [
+  {
+   "root": "و ق ي",
+   "meaning_uz": "saqlanish, himoya",
+   "uz_cognates": ["taqvo", "muttaqiy"],
+   "derived": [
+    {"ar": "وَقَى", "uz": "saqladi", "pattern": "فَعَلَ"},
+    {"ar": "تَقْوَى", "uz": "taqvo (saqlanish)", "pattern": "فَعْلَى"},
+    {"ar": "مُتَّقِي", "uz": "taqvodor", "pattern": "مُفْتَعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "إِيمَان", "translit": "īmān", "uz": "iymon — qalb bilan ishonish", "root": "أ م ن", "pattern": "إِفْعَال", "pos": "ot", "audio": "b1/iman.mp3", "example_ar": "الإيمانُ يزيدُ وينقصُ.", "example_uz": "Iymon ziyoda bo'ladi va kamayadi.", "srs": true},
+  {"ar": "إِحْسَان", "translit": "iḥsān", "uz": "ihson — ibodatni go'zal qilish", "root": "ح س ن", "pattern": "إِفْعَال", "pos": "ot", "audio": "b1/ihsan.mp3", "example_ar": "الإحسانُ أعلى درجاتِ الدينِ.", "example_uz": "Ihson — dinning eng yuqori darajasi.", "srs": true},
+  {"ar": "تَقْوَى", "translit": "taqwā", "uz": "taqvo — Allohdan qo'rqib saqlanish", "root": "و ق ي", "pattern": "فَعْلَى", "pos": "ot", "audio": "b1/taqwa.mp3", "example_ar": "خيرُ الزادِ التقوى.", "example_uz": "Eng yaxshi ozuqa — taqvo.", "srs": true},
+  {"ar": "حَلَال", "translit": "ḥalāl", "uz": "halol — ruxsat etilgan", "root": "ح ل ل", "pattern": "فَعَال", "pos": "sifat", "audio": "b1/halal2.mp3", "example_ar": "اطلبِ الرزقَ الحلالَ.", "example_uz": "Halol rizq izla.", "srs": true},
+  {"ar": "حَرَام", "translit": "ḥarām", "uz": "harom — taqiqlangan", "root": "ح ر م", "pattern": "فَعَال", "pos": "sifat", "audio": "b1/haram2.mp3", "example_ar": "اجتنبِ الحرامَ تكنْ أعبدَ الناسِ.", "example_uz": "Haromdan saqlan — eng obid bo'lasan (ma'noda).", "srs": true},
+  {"ar": "فَرْض", "translit": "farḍ", "uz": "farz — majburiy amal", "root": "ف ر ض", "pattern": "فَعْل", "pos": "ot", "audio": "b1/fard.mp3", "example_ar": "الصلواتُ الخمسُ فرضٌ.", "example_uz": "Besh namoz — farz.", "srs": true},
+  {"ar": "سُنَّة", "translit": "sunna", "uz": "sunnat — Payg'ambar ﷺ yo'li", "root": "س ن ن", "pattern": "فُعْلَة", "pos": "ot", "audio": "b1/sunna.mp3", "example_ar": "اتّبعْ سنةَ النبيِّ ﷺ.", "example_uz": "Payg'ambar ﷺ sunnatiga ergash.", "srs": true},
+  {"ar": "ثَوَاب", "translit": "thawāb", "uz": "savob (o'zbekcha 'savob' aynan shundan)", "root": "ث و ب", "pattern": "فَعَال", "pos": "ot", "audio": "b1/thawab.mp3", "example_ar": "لكلِّ خطوةٍ إلى المسجدِ ثوابٌ.", "example_uz": "Masjidga har qadamda savob bor.", "srs": true},
+  {"ar": "ذَنْب", "translit": "dhanb", "uz": "gunoh (ko'pligi: ذنوب)", "root": "ذ ن ب", "pattern": "فَعْل", "pos": "ot", "audio": "b1/dhanb.mp3", "example_ar": "الاستغفارُ يمحو الذنوبَ.", "example_uz": "Istig'for gunohlarni o'chiradi.", "srs": true},
+  {"ar": "تَوْبَة", "translit": "tawba", "uz": "tavba (o'zbekcha 'tavba' aynan shundan)", "root": "ت و ب", "pattern": "فَعْلَة", "pos": "ot", "audio": "b1/tawba.mp3", "example_ar": "بابُ التوبةِ مفتوحٌ.", "example_uz": "Tavba eshigi ochiq.", "srs": true},
+  {"ar": "أَخْلَاق", "translit": "akhlāq", "uz": "axloq (o'zbekcha 'axloq' aynan shundan)", "root": "خ ل ق", "pattern": "أَفْعَال", "pos": "ot", "audio": "b1/akhlaq.mp3", "example_ar": "بُعثتُ لأتمّمَ مكارمَ الأخلاقِ.", "example_uz": "Go'zal axloqni kamolga yetkazish uchun yuborildim (hadis ma'nosi).", "srs": true},
+  {"ar": "عَقِيدَة", "translit": "ʿaqīda", "uz": "aqiyda — e'tiqod asoslari (o'zbekcha 'aqida')", "root": "ع ق د", "pattern": "فَعِيلَة", "pos": "ot", "audio": "b1/aqida.mp3", "example_ar": "العقيدةُ أساسُ الدينِ.", "example_uz": "Aqiyda — din asosi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "سألَ رجلٌ عالِمًا: «ما الفرقُ بينَ الإيمانِ والإحسانِ؟» قال: «الإيمانُ أنْ تؤمنَ بقلبِكَ، والإحسانُ أنْ تعبدَ اللهَ كأنكَ تراهُ. ومفتاحُهما التقوى: أنْ تجعلَ بينَكَ وبينَ الحرامِ حاجزًا، وتطلبَ الحلالَ، وتتبعَ الفرضَ والسنةَ».",
+   "questions": [
+    {"q_uz": "Ihson qanday ta'riflandi?", "a": "Allohga go'yo Uni ko'rib turgandek ibodat qilish"},
+    {"q_uz": "Taqvo qanday tushuntirildi?", "a": "O'zi bilan harom orasiga to'siq qo'yish"},
+    {"q_uz": "Matnda qaysi juftlik atamalar bor?", "a": "Halol-harom, farz-sunnat, iymon-ihson"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/taqwa.mp3",
+   "transcript_ar": "تَقْوَى",
+   "questions": [
+    {"q_uz": "Eshitilgan atama va o'zagi?", "a": "Taqvo — و ق ي (saqlanish)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch atamani ta'rifi bilan ayting: iymon (qalb ishonchi), ihson (go'zal ibodat), taqvo (saqlanish).",
+   "target_ar": ["الإِيمَانُ تَصْدِيقٌ بِالقَلْبِ", "الإِحْسَانُ إِتْقَانُ العِبَادَةِ", "التَّقْوَى وِقَايَةٌ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "5 atamani tanlab, har birining arabchasi, o'zagi va o'zbekcha ma'nosini jadval qilib yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "تَقْوَى qaysi o'zakdan va asl ma'nosi?", "q_ar": "", "options": ["و ق ي — saqlanish", "ت ق و — kuch", "ق و ي — quvvat", "و ق ت — vaqt"], "answer": "و ق ي — saqlanish", "explain_uz": "Taqvo — gunohdan saqlanish (himoya).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "حَرَام va حَرَم bog'liqligi?", "q_ar": "", "options": ["bir o'zak: taqiq/hurmat-daxlsizlik", "aloqasi yo'q", "biri fe'l, biri harf", "ikkalasi joy nomi"], "answer": "bir o'zak: taqiq/hurmat-daxlsizlik", "explain_uz": "ح ر م — daxlsizlik: harom (taqiq), Haram (muqaddas).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "فَرْض ma'nosi?", "q_ar": "", "options": ["majburiy amal", "ixtiyoriy amal", "taqiqlangan", "makruh"], "answer": "majburiy amal", "explain_uz": "Farz — belgilab qo'yilgan majburiyat.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "ثَوَاب va صَوَاب farqi?", "q_ar": "", "options": ["savob (mukofot) / to'g'ri", "bir xil", "gunoh / savob", "savol / javob"], "answer": "savob (mukofot) / to'g'ri", "explain_uz": "ث bilan — savob; ص bilan — to'g'rilik.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«تَقْوَى، مُتَّقِي، وِقَايَة» qaysi o'zakdan?", "q_ar": "", "options": ["و ق ي", "ت ق ي", "ق و ي"], "answer": "و ق ي", "explain_uz": "«و ق ي» — saqlash o'zagi.", "audio": "", "root": "و ق ي", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "tavba", "q_ar": "", "options": [], "answer": "تَوْبَة", "explain_uz": "توبة — tavba (qaytish).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "axloq", "q_ar": "", "options": [], "answer": "أَخْلَاق", "explain_uz": "أخلاق — xulqlar (axloq).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "بَابُ التَّوْبَةِ مَفْتُوحٌ", "options": [], "answer": "tavba eshigi ochiq", "explain_uz": "Umid beruvchi ibora — mubtada+xabar.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "و ق ي", "back": "saqlanish o'zagi (taqvo)", "deck": "msa"},
+  {"type": "word", "front": "إِيمَان", "back": "iymon", "deck": "msa"},
+  {"type": "word", "front": "إِحْسَان", "back": "ihson", "deck": "msa"},
+  {"type": "word", "front": "تَقْوَى", "back": "taqvo", "deck": "msa"},
+  {"type": "word", "front": "حَلَال / حَرَام", "back": "halol / harom", "deck": "msa"},
+  {"type": "word", "front": "فَرْض / سُنَّة", "back": "farz / sunnat", "deck": "msa"},
+  {"type": "word", "front": "ثَوَاب", "back": "savob", "deck": "msa"},
+  {"type": "word", "front": "ذَنْب", "back": "gunoh", "deck": "msa"},
+  {"type": "word", "front": "تَوْبَة", "back": "tavba", "deck": "msa"},
+  {"type": "word", "front": "عَقِيدَة", "back": "aqiyda", "deck": "msa"}
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "id": "b1-27",
+ "level": "B1",
+ "module": "quran-hadith",
+ "order": 27,
+ "title_uz": "Qur'on tili",
+ "title_ar": "لُغَةُ القُرْآن",
+ "can_do_uz": "Qur'on arabchasining xususiyatlarini bilaman va oddiy oyatlarning tuzilishini tushuna boshlayman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-26"],
+ "harakat_level": "full",
+ "hook_uz": "Siz arab tilini nima uchun o'rganyapsiz? Ko'pchilik uchun javob — QUR'ONNI tushunish. Xushxabar: siz o'rgangan grammatika (fe'l boblari, majhul, inna, nisbiy olmoshlar...) aynan Qur'on tilining kalitlari! Bu modulda ma'no tarjimasi bilan ishlaymiz — chuqur tafsir uchun ustozga murojaat qiling.",
+ "grammar": {
+  "point_ar": "خَصَائِصُ لُغَةِ القُرْآن",
+  "explanation_uz": "Qur'on arabchasi (fus'ha klassikasi) xususiyatlari: (1) TO'LIQ HARAKAT — mushafda hamma belgi qo'yilgan, siz o'qiy olasiz! (2) TA'KID vositalari ko'p: إنَّ، لَـ، قد — إِنَّ اللهَ غَفُورٌ (albatta Alloh mag'firatli). (3) TAKROR — muhim ma'nolar takrorlanadi. (4) QISQA-LO'NDA gaplar — har so'z o'z o'rnida. (5) Siz bilgan qoidalar ishlaydi: الحَمْدُ لِلَّهِ (mubtada+xabar), رَبِّ العَالَمِينَ (idofa), الرَّحْمٰنِ الرَّحِيمِ (sifatlar). ESLATMA: bu darslar ma'no tarjimasi; tafsir alohida ilm.",
+  "table": [
+   {"ar": "بِسْمِ اللهِ", "uz": "Alloh nomi bilan — idofa (siz bilasiz!)", "form": "idofa"},
+   {"ar": "الحَمْدُ لِلَّهِ", "uz": "hamd Allohga xos — mubtada+xabar", "form": "ot gap"},
+   {"ar": "إِنَّ اللهَ غَفُورٌ", "uz": "albatta Alloh mag'firatli — inna qoidasi", "form": "ta'kid"},
+   {"ar": "رَبِّ زِدْنِي عِلْمًا", "uz": "Robbim, ilmimni ziyoda qil — amr+tamyiz", "form": "duo"}
+  ],
+  "common_mistakes_uz": [
+   "Qur'onni oddiy matn kabi tez o'qish — tilovat odob va tajvid bilan bo'ladi; bu darslar faqat MA'NO uchun.",
+   "Bir oyatdan shaxsiy hukm chiqarish — hukm uchun tafsir va ulamolar kerak.",
+   "Qadimiy so'zlarni zamonaviy ma'noda tushunish — kontekst muhim."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ق ر أ",
+   "meaning_uz": "o'qish",
+   "uz_cognates": ["Qur'on", "qiroat", "qori"],
+   "derived": [
+    {"ar": "قُرْآن", "uz": "Qur'on (o'qiladigan)", "pattern": "فُعْلَان"},
+    {"ar": "قِرَاءَة", "uz": "qiroat, o'qish", "pattern": "فِعَالَة"},
+    {"ar": "قَارِئ", "uz": "qori, o'quvchi", "pattern": "فَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "آيَة", "translit": "āya", "uz": "oyat; belgi-mo'jiza (o'zbekcha 'oyat')", "root": "أ ي ي", "pattern": "", "pos": "ot", "audio": "b1/aya.mp3", "example_ar": "في هذه السورةِ أربعُ آياتٍ.", "example_uz": "Bu surada to'rt oyat bor.", "srs": true},
+  {"ar": "سُورَة", "translit": "sūra", "uz": "sura (o'zbekcha 'sura')", "root": "س و ر", "pattern": "فُعْلَة", "pos": "ot", "audio": "b1/sura3.mp3", "example_ar": "حفظتُ سورةً قصيرةً.", "example_uz": "Qisqa surani yod oldim.", "srs": true},
+  {"ar": "تِلَاوَة", "translit": "tilāwa", "uz": "tilovat (o'zbekcha 'tilovat' aynan shundan)", "root": "ت ل و", "pattern": "فِعَالَة", "pos": "ot", "audio": "b1/tilawa.mp3", "example_ar": "أستمعُ إلى التلاوةِ كلَّ صباحٍ.", "example_uz": "Har tong tilovat tinglayman.", "srs": true},
+  {"ar": "تَفْسِير", "translit": "tafsīr", "uz": "tafsir — oyat sharhi (o'zbekcha 'tafsir')", "root": "ف س ر", "pattern": "تَفْعِيل", "pos": "ot", "audio": "b1/tafsir.mp3", "example_ar": "قرأتُ تفسيرَ هذه الآيةِ.", "example_uz": "Bu oyat tafsirini o'qidim.", "srs": true},
+  {"ar": "تَرْجَمَةُ المَعَانِي", "translit": "tarjamatu l-maʿānī", "uz": "ma'nolar tarjimasi", "root": "ت ر ج م", "pattern": "", "pos": "ibora", "audio": "b1/tarjamat_maani.mp3", "example_ar": "هذه ترجمةُ معاني القرآنِ.", "example_uz": "Bu — Qur'on ma'nolarining tarjimasi.", "srs": true},
+  {"ar": "غَفُور", "translit": "ghafūr", "uz": "mag'firatli (ko'p kechiruvchi — 'mag'firat')", "root": "غ ف ر", "pattern": "فَعُول", "pos": "sifat", "audio": "b1/ghafur.mp3", "example_ar": "إنَّ اللهَ غفورٌ رحيمٌ.", "example_uz": "Albatta Alloh mag'firatli, rahmli.", "srs": true},
+  {"ar": "رَحِيم", "translit": "raḥīm", "uz": "rahmli (o'zbekcha 'rahm')", "root": "ر ح م", "pattern": "فَعِيل", "pos": "sifat", "audio": "b1/rahim.mp3", "example_ar": "الرحمٰنُ الرحيمُ.", "example_uz": "Rahmon va Rahim.", "srs": true},
+  {"ar": "عَالَمِين", "translit": "ʿālamīn", "uz": "olamlar (barcha olam — 'olam')", "root": "ع ل م", "pattern": "", "pos": "ot", "audio": "b1/alamin.mp3", "example_ar": "رَبِّ العالمينَ.", "example_uz": "Olamlar Robbi.", "srs": true},
+  {"ar": "هُدًى", "translit": "hudan", "uz": "hidoyat (o'zbekcha 'hidoyat' o'zagi)", "root": "ه د ي", "pattern": "فُعَل", "pos": "ot", "audio": "b1/hudan.mp3", "example_ar": "القرآنُ هدًى للناسِ.", "example_uz": "Qur'on — odamlar uchun hidoyat.", "srs": true},
+  {"ar": "زِدْنِي", "translit": "zidnī", "uz": "meni ziyoda qil (ziyoda o'zagi — duo fe'li)", "root": "ز ي د", "pattern": "", "pos": "fe'l", "audio": "b1/zidni.mp3", "example_ar": "رَبِّ زِدْنِي عِلْمًا.", "example_uz": "Robbim, ilmimni ziyoda qil (Toha, 114).", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ. الحَمْدُ لِلَّهِ رَبِّ العَالَمِينَ. الرَّحْمٰنِ الرَّحِيمِ. مَالِكِ يَوْمِ الدِّينِ.",
+   "questions": [
+    {"q_uz": "«رَبِّ العَالَمِينَ» qanday tuzilma?", "a": "Idofa: olamlar(ning) Robbi"},
+    {"q_uz": "«الحَمْدُ لِلَّهِ» dagi gap turi?", "a": "Ot gap: mubtada (hamd) + xabar (Allohga xos)"},
+    {"q_uz": "Bu qaysi suraning boshi?", "a": "Fotiha surasi (ma'no tarjimasi bilan tanishdik)"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/tilawa.mp3",
+   "transcript_ar": "تِلَاوَة",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z ma'nosi?", "a": "Tilovat — Qur'onni odob bilan o'qish"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Duoni yod ayting: رَبِّ زِدْنِي عِلْمًا (Robbim, ilmimni ziyoda qil). Keyin ma'nosini o'zbekcha ayting. Tilovatni qori audiosidan tinglashni odat qiling.",
+   "target_ar": ["رَبِّ زِدْنِي عِلْمًا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Fotihaning birinchi ikki oyatini xattotlikka rioya qilib ko'chiring va har so'z ostiga o'zbekcha ma'nosini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«رَبِّ العَالَمِينَ» qanday tuzilma?", "q_ar": "", "options": ["idofa (olamlar Robbi)", "fe'l gap", "sifat", "hol"], "answer": "idofa (olamlar Robbi)", "explain_uz": "رب + العالمين — egalik birikmasi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«إِنَّ اللهَ غَفُورٌ» — nega اللهَ nasbda?", "q_ar": "", "options": ["إنّ egasini nasb qiladi", "u ob'ekt", "xato", "duo shakli"], "answer": "إنّ egasini nasb qiladi", "explain_uz": "Siz o'rgangan inna qoidasi Qur'onda ham!", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Bu darslar nimani beradi?", "q_ar": "", "options": ["ma'no tarjimasi bilan tanishtiradi", "tajvid o'rgatadi", "tafsir hukmlarini beradi", "qorilik sanadini beradi"], "answer": "ma'no tarjimasi bilan tanishtiradi", "explain_uz": "Tafsir va tajvid — ustoz bilan o'rganiladigan alohida ilmlar.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "رَبِّ زِدْنِي عِلْمًا", "options": [], "answer": "Robbim ilmimni ziyoda qil", "explain_uz": "Toha surasi 114-oyatdagi duo.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«قُرْآن، قِرَاءَة، قَارِئ» qaysi o'zakdan?", "q_ar": "", "options": ["ق ر أ", "ق ر ب", "ق ر ر"], "answer": "ق ر أ", "explain_uz": "«ق ر أ» — o'qish o'zagi: Qur'on, qori, qiroat.", "audio": "", "root": "ق ر أ", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "sura", "q_ar": "", "options": [], "answer": "سُورَة", "explain_uz": "سورة — sura.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«هُدًى لِلنَّاسِ» ma'nosi?", "q_ar": "", "options": ["odamlar uchun hidoyat", "odamlarning kitobi", "odamlar o'qiydi", "odamlarga sovg'a"], "answer": "odamlar uchun hidoyat", "explain_uz": "هدى — hidoyat, to'g'ri yo'l ko'rsatish.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ق ر أ", "back": "o'qish o'zagi (Qur'on, qori, qiroat)", "deck": "msa"},
+  {"type": "word", "front": "آيَة", "back": "oyat", "deck": "msa"},
+  {"type": "word", "front": "سُورَة", "back": "sura", "deck": "msa"},
+  {"type": "word", "front": "تِلَاوَة", "back": "tilovat", "deck": "msa"},
+  {"type": "word", "front": "تَفْسِير", "back": "tafsir", "deck": "msa"},
+  {"type": "word", "front": "غَفُور", "back": "mag'firatli", "deck": "msa"},
+  {"type": "word", "front": "رَحِيم", "back": "rahmli", "deck": "msa"},
+  {"type": "word", "front": "هُدًى", "back": "hidoyat", "deck": "msa"},
+  {"type": "word", "front": "رَبِّ زِدْنِي عِلْمًا", "back": "Robbim, ilmimni ziyoda qil", "deck": "msa"}
+ ]
+}

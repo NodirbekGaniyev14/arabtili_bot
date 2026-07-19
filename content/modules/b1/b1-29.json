@@ -1,0 +1,98 @@
+{
+ "id": "b1-29",
+ "level": "B1",
+ "module": "quran-hadith",
+ "order": 29,
+ "title_uz": "Qisqa suralar tahlili 1: Ixlos",
+ "title_ar": "سُورَةُ الإِخْلَاص",
+ "can_do_uz": "Ixlos surasini so'zma-so'z tushunaman va grammatik tuzilishini ayta olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-28"],
+ "harakat_level": "full",
+ "hook_uz": "Ixlos surasi — Qur'onning uchdan biriga teng savob (hadisda kelgan), atigi 4 oyat, va SIZ UNI ALLAQACHON YOD BILASIZ! Bugun uni birinchi marta so'zma-so'z TUSHUNIB o'qiysiz. Yod bilgan narsani tushunish — eng shirin kashfiyot.",
+ "grammar": {
+  "point_ar": "قُلْ هُوَ اللهُ أَحَدٌ",
+  "explanation_uz": "SO'ZMA-SO'Z TAHLIL: (1) قُلْ — ayt! (amr, siz o'rgangan buyruq shakli). (2) هُوَ اللهُ أَحَدٌ — U Alloh yagonadir (ot gap). (3) اللهُ الصَّمَدُ — Alloh Samad — hech kimga muhtoj emas, hamma Unga muhtoj. (4) لَمْ يَلِدْ وَلَمْ يُولَدْ — tug'magan va tug'ilmagan — ikkala fe'l لم bilan MAJZUM (b1-13!), ikkinchisi MAJHUL (b1-01!). (5) وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ — va Unga hech kim teng emas. Qarang: jazm, majhul, ot gap — hammasi shu mo''jaz surada!",
+  "table": [
+   {"ar": "قُلْ", "uz": "ayt! — amr (buyruq)", "form": "amr"},
+   {"ar": "لَمْ يَلِدْ", "uz": "tug'magan — lam + majzum", "form": "jazm"},
+   {"ar": "لَمْ يُولَدْ", "uz": "tug'ilmagan — majhul + jazm", "form": "majhul"},
+   {"ar": "كُفُوًا", "uz": "teng, o'xshash — xabar nasbda", "form": "nasb"}
+  ],
+  "common_mistakes_uz": [
+   "أَحَد va وَاحِد farqi: أحد — mutlaq yagona (faqat Alloh haqida shu ma'noda).",
+   "الصَّمَد ni tarjimasiz qoldirish — ma'nosi: hamma Unga muhtoj, U hech kimga muhtoj emas.",
+   "Tahlilni tilovat odobisiz qilish — avval hurmat, keyin grammatika."
+  ]
+ },
+ "roots": [
+  {
+   "root": "خ ل ص",
+   "meaning_uz": "xolislik, sof bo'lish",
+   "uz_cognates": ["ixlos", "xolis", "muxlis"],
+   "derived": [
+    {"ar": "إِخْلَاص", "uz": "ixlos — amalni faqat Alloh uchun qilish", "pattern": "إِفْعَال"},
+    {"ar": "مُخْلِص", "uz": "ixlosli, muxlis", "pattern": "مُفْعِل"},
+    {"ar": "خَالِص", "uz": "sof, xolis", "pattern": "فَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "قُلْ", "translit": "qul", "uz": "ayt! (قال fe'lining buyrug'i)", "root": "ق و ل", "pattern": "", "pos": "fe'l", "audio": "b1/qul.mp3", "example_ar": "قُلْ هوَ اللهُ أحدٌ.", "example_uz": "Ayt: U Alloh yagonadir.", "srs": true},
+  {"ar": "أَحَد", "translit": "aḥad", "uz": "yagona, birgina (mutlaq yakkalik)", "root": "أ ح د", "pattern": "فَعَل", "pos": "ot", "audio": "b1/ahad2.mp3", "example_ar": "اللهُ أحدٌ لا شريكَ لهُ.", "example_uz": "Alloh yagona, sherigi yo'q.", "srs": true},
+  {"ar": "الصَّمَد", "translit": "aṣ-ṣamad", "uz": "Samad — hamma Unga muhtoj, U hech kimga muhtoj emas", "root": "ص م د", "pattern": "فَعَل", "pos": "ot", "audio": "b1/samad.mp3", "example_ar": "اللهُ الصمدُ.", "example_uz": "Alloh — Samad.", "srs": true},
+  {"ar": "وَلَدَ", "translit": "walada", "uz": "tug'di (valad — bola shu o'zakdan)", "root": "و ل د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/walada.mp3", "example_ar": "لم يلدْ ولم يولدْ.", "example_uz": "Tug'magan va tug'ilmagan.", "srs": true},
+  {"ar": "كُفُو", "translit": "kufuw", "uz": "teng, o'xshash", "root": "ك ف أ", "pattern": "فُعُل", "pos": "ot", "audio": "b1/kufuw.mp3", "example_ar": "لم يكنْ لهُ كفوًا أحدٌ.", "example_uz": "Unga hech kim teng bo'lmagan.", "srs": true},
+  {"ar": "شَرِيك", "translit": "sharīk", "uz": "sherik (o'zbekcha 'sherik' aynan shundan)", "root": "ش ر ك", "pattern": "فَعِيل", "pos": "ot", "audio": "b1/sharik.mp3", "example_ar": "لا شريكَ لهُ في الملكِ.", "example_uz": "Mulkda Uning sherigi yo'q.", "srs": true},
+  {"ar": "ثُلُث", "translit": "thuluth", "uz": "uchdan bir (kasr)", "root": "ث ل ث", "pattern": "فُعُل", "pos": "ot", "audio": "b1/thuluth.mp3", "example_ar": "تعدلُ ثلثَ القرآنِ.", "example_uz": "Qur'onning uchdan biriga teng (savobda).", "srs": true},
+  {"ar": "فَضْلُ السُّورَة", "translit": "faḍlu s-sūra", "uz": "suraning fazilati", "root": "ف ض ل", "pattern": "", "pos": "ibora", "audio": "b1/fadl_sura.mp3", "example_ar": "لهذهِ السورةِ فضلٌ عظيمٌ.", "example_uz": "Bu suraning fazilati ulug'.", "srs": true},
+  {"ar": "حَفِظَ", "translit": "ḥafiẓa", "uz": "yod oldi; saqladi (o'zbekcha 'hifz', 'hofiz')", "root": "ح ف ظ", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "b1/hafiza.mp3", "example_ar": "حفظتُ السورةَ وفهمتُها.", "example_uz": "Surani yod oldim va tushundim.", "srs": true},
+  {"ar": "مَعْنًى", "translit": "maʿnan", "uz": "ma'no (o'zbekcha 'ma'no' aynan shundan)", "root": "ع ن ي", "pattern": "مَفْعَل", "pos": "ot", "audio": "b1/mana.mp3", "example_ar": "افهمْ معنى ما تقرأُ.", "example_uz": "O'qiyotganingning ma'nosini tushun.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ. قُلْ هُوَ اللهُ أَحَدٌ. اللهُ الصَّمَدُ. لَمْ يَلِدْ وَلَمْ يُولَدْ. وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ.",
+   "questions": [
+    {"q_uz": "Suradagi ikki majzum fe'lni toping.", "a": "يَلِدْ va يُولَدْ (لم bilan)"},
+    {"q_uz": "«لَمْ يُولَدْ» nega majhul?", "a": "«Tug'ilmagan» — ish bajaruvchisiz shakl"},
+    {"q_uz": "Sura nimaga bag'ishlangan?", "a": "Allohning yagonaligiga (tavhid)"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/qul.mp3",
+   "transcript_ar": "قُلْ",
+   "questions": [
+    {"q_uz": "Bu qanday fe'l shakli?", "a": "Amr (buyruq): «ayt!»"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Surani yoddan ayting (sekin, har so'z ma'nosini o'ylab). Keyin qori tilovatida tinglashni unutmang — talaffuz namunasi o'sha.",
+   "target_ar": ["قُلْ هُوَ اللهُ أَحَدٌ", "اللهُ الصَّمَدُ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Surani ko'chirib yozing va har oyat ostiga o'zbekcha ma'nosini yozing (ma'no tarjimasi).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "قُلْ qanday shakl?", "q_ar": "", "options": ["amr (buyruq): ayt!", "o'tgan zamon", "masdar", "majhul"], "answer": "amr (buyruq): ayt!", "explain_uz": "قال → قُلْ (ajvaf amri, illat tushgan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«لَمْ يَلِدْ» dagi grammatik hodisa?", "q_ar": "", "options": ["lam + majzum (o'tgan inkor)", "lan + mansub", "shart", "amr"], "answer": "lam + majzum (o'tgan inkor)", "explain_uz": "لم fe'lni jazm qiladi — b1-13 qoidasi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "الصَّمَد ma'nosi?", "q_ar": "", "options": ["hamma Unga muhtoj, U hech kimga muhtoj emas", "yaratuvchi", "mehribon", "kechiruvchi"], "answer": "hamma Unga muhtoj, U hech kimga muhtoj emas", "explain_uz": "Samad — behojat Zot, hojatlar Unga ko'tariladi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "لَا شَرِيكَ لَهُ", "options": [], "answer": "uning sherigi yo'q", "explain_uz": "شريك — sherik; la nafiya bilan inkor.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«إِخْلَاص، مُخْلِص، خَالِص» qaysi o'zakdan?", "q_ar": "", "options": ["خ ل ص", "خ ل ق", "ح ل ص"], "answer": "خ ل ص", "explain_uz": "«خ ل ص» — xolislik o'zagi: ixlos, muxlis.", "audio": "", "root": "خ ل ص", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "yod oldi (hifz qildi)", "q_ar": "", "options": [], "answer": "حَفِظَ", "explain_uz": "حفظ — yod olish; hofiz shu o'zakdan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hadisda bu sura nimaga tenglashtirilgan (savobda)?", "q_ar": "", "options": ["Qur'onning uchdan biriga", "yarmiga", "hammasiga", "bir oyatiga"], "answer": "Qur'onning uchdan biriga", "explain_uz": "ثلث القرآن — uchdan bir (savob jihatidan).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "خ ل ص", "back": "ixlos o'zagi (xolis, muxlis)", "deck": "msa"},
+  {"type": "word", "front": "قُلْ", "back": "ayt! (amr)", "deck": "msa"},
+  {"type": "word", "front": "أَحَد", "back": "mutlaq yagona", "deck": "msa"},
+  {"type": "word", "front": "الصَّمَد", "back": "Samad — behojat Zot", "deck": "msa"},
+  {"type": "word", "front": "شَرِيك", "back": "sherik", "deck": "msa"},
+  {"type": "word", "front": "حَفِظَ", "back": "yod oldi (hifz)", "deck": "msa"},
+  {"type": "word", "front": "مَعْنًى", "back": "ma'no", "deck": "msa"},
+  {"type": "word", "front": "ثُلُث", "back": "uchdan bir", "deck": "msa"}
+ ]
+}

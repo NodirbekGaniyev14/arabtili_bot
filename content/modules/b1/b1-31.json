@@ -1,0 +1,99 @@
+{
+ "id": "b1-31",
+ "level": "B1",
+ "module": "quran-hadith",
+ "order": 31,
+ "title_uz": "Hadis matni tuzilishi",
+ "title_ar": "بِنْيَةُ الحَدِيث",
+ "can_do_uz": "Hadisning sanad va matn qismlarini ajrataman hamda «Niyatlar hadisi»ni tushunaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-30"],
+ "harakat_level": "full",
+ "hook_uz": "Har bir hadis ikki qismdan iborat: SANAD (kimdan-kimga yetib kelgani) va MATN (Payg'ambarimiz s.a.v. so'zlari). Bugun Islom ilmining eng mashhur hadisi — «إنما الأعمال بالنيات» (Amallar niyatlarga bog'liq) bilan tanishamiz. Imom Buxoriy o'z kitobini aynan shu hadis bilan boshlagan!",
+ "grammar": {
+  "point_ar": "السَّنَدُ وَالمَتْن",
+  "explanation_uz": "HADIS TUZILISHI: (1) SANAD — roviylar zanjiri: عن عمرَ بنِ الخطابِ رضي الله عنه قال: سمعتُ رسولَ اللهِ ﷺ يقولُ... (Umar r.a.dan: Rasululloh ﷺ ning shunday deganlarini eshitdim...). (2) MATN — hadisning o'zi: إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ (amallar faqat niyatlarga ko'radir). (3) MANBA: رواه البخاري ومسلم (Buxoriy va Muslim rivoyati). GRAMMATIKA: إنّما — «faqat» (cheklash), sizga tanish إنّ ning maxsus shakli. Tarjimada ehtiyot bo'ling — sharh olimlardan o'rganiladi.",
+  "table": [
+   {"ar": "عَنْ عُمَرَ رَضِيَ اللهُ عَنْهُ", "uz": "Umar r.a.dan — sanad boshi", "form": "sanad"},
+   {"ar": "قَالَ رَسُولُ اللهِ ﷺ", "uz": "Rasululloh ﷺ dedilar", "form": "kirish"},
+   {"ar": "إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ", "uz": "amallar faqat niyatlarga ko'radir", "form": "matn"},
+   {"ar": "رَوَاهُ البُخَارِيُّ", "uz": "Buxoriy rivoyat qilgan", "form": "manba"}
+  ],
+  "common_mistakes_uz": [
+   "ﷺ belgisini o'qimay o'tish — u «sallallohu alayhi vasallam» degani.",
+   "إنّما ni oddiy إنّ deb tushunish — إنّما «faqat» ma'nosini beradi (cheklash).",
+   "Hadisdan mustaqil hukm chiqarish — sharh uchun ishonchli ulamolarga murojaat qiling."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ن و ي",
+   "meaning_uz": "niyat qilish",
+   "uz_cognates": ["niyat"],
+   "derived": [
+    {"ar": "نَوَى", "uz": "niyat qildi", "pattern": "فَعَلَ"},
+    {"ar": "نِيَّة", "uz": "niyat", "pattern": "فِعْلَة"},
+    {"ar": "نِيَّات", "uz": "niyatlar", "pattern": ""}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "حَدِيث", "translit": "ḥadīth", "uz": "hadis — Payg'ambar ﷺ so'zi (o'zbekcha 'hadis')", "root": "ح د ث", "pattern": "فَعِيل", "pos": "ot", "audio": "b1/hadith.mp3", "example_ar": "حفظتُ حديثًا جديدًا.", "example_uz": "Yangi hadis yod oldim.", "srs": true},
+  {"ar": "سَنَد", "translit": "sanad", "uz": "sanad — roviylar zanjiri (o'zbekcha 'sanad — hujjat')", "root": "س ن د", "pattern": "فَعَل", "pos": "ot", "audio": "b1/sanad.mp3", "example_ar": "لهذا الحديثِ سندٌ صحيحٌ.", "example_uz": "Bu hadisning sahih sanadi bor.", "srs": true},
+  {"ar": "مَتْن", "translit": "matn", "uz": "matn — hadisning asosiy so'zi (o'zbekcha 'matn')", "root": "م ت ن", "pattern": "فَعْل", "pos": "ot", "audio": "b1/matn.mp3", "example_ar": "احفظِ المتنَ أولًا.", "example_uz": "Avval matnni yod ol.", "srs": true},
+  {"ar": "رَوَى", "translit": "rawā", "uz": "rivoyat qildi (o'zbekcha 'rivoyat')", "root": "ر و ي", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/rawa.mp3", "example_ar": "رواهُ البخاريُّ ومسلمٌ.", "example_uz": "Buxoriy va Muslim rivoyat qilgan.", "srs": true},
+  {"ar": "صَحِيح", "translit": "ṣaḥīḥ", "uz": "sahih — ishonchli (hadis darajasi)", "root": "ص ح ح", "pattern": "فَعِيل", "pos": "sifat", "audio": "b1/sahih.mp3", "example_ar": "هذا حديثٌ صحيحٌ متفقٌ عليه.", "example_uz": "Bu — ittifoq qilingan sahih hadis.", "srs": true},
+  {"ar": "نِيَّة", "translit": "niyya", "uz": "niyat (o'zbekcha 'niyat' aynan shundan)", "root": "ن و ي", "pattern": "فِعْلَة", "pos": "ot", "audio": "b1/niyya.mp3", "example_ar": "أصلحْ نيتَكَ يصلحْ عملُكَ.", "example_uz": "Niyatingni to'g'rila — amaling to'g'ri bo'ladi.", "srs": true},
+  {"ar": "إِنَّمَا", "translit": "innamā", "uz": "faqat, faqatgina (cheklash yuklamasi)", "root": "", "pattern": "", "pos": "yuklama", "audio": "b1/innama.mp3", "example_ar": "إنما الأعمالُ بالنياتِ.", "example_uz": "Amallar faqat niyatlarga ko'radir.", "srs": true},
+  {"ar": "رَاوٍ", "translit": "rāwin", "uz": "roviy — hadis yetkazuvchi", "root": "ر و ي", "pattern": "فَاعِل", "pos": "ot", "audio": "b1/rawin.mp3", "example_ar": "الصحابيُّ أولُ راوٍ للحديثِ.", "example_uz": "Sahoba — hadisning birinchi roviysi.", "srs": true},
+  {"ar": "صَحَابِيّ", "translit": "ṣaḥābī", "uz": "sahoba — Payg'ambar ﷺ hamrohi (o'zbekcha 'sahoba')", "root": "ص ح ب", "pattern": "", "pos": "ot", "audio": "b1/sahabi.mp3", "example_ar": "عمرُ صحابيٌّ جليلٌ.", "example_uz": "Umar — ulug' sahoba.", "srs": true},
+  {"ar": "رَضِيَ اللهُ عَنْهُ", "translit": "raḍiya -llāhu ʿanhu", "uz": "Alloh undan rozi bo'lsin (sahobalar uchun)", "root": "ر ض ي", "pattern": "", "pos": "ibora", "audio": "b1/radiallahu.mp3", "example_ar": "عن أبي هريرةَ رضي اللهُ عنهُ.", "example_uz": "Abu Hurayra r.a.dan.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "عَنْ عُمَرَ بْنِ الخَطَّابِ رَضِيَ اللهُ عَنْهُ قَالَ: سَمِعْتُ رَسُولَ اللهِ ﷺ يَقُولُ: «إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى». رَوَاهُ البُخَارِيُّ وَمُسْلِمٌ.",
+   "questions": [
+    {"q_uz": "Bu hadisning sanad qismi qaysi?", "a": "عن عمرَ بنِ الخطابِ رضي الله عنه قال: سمعتُ رسولَ اللهِ ﷺ"},
+    {"q_uz": "Matn qismining ma'nosi?", "a": "Amallar niyatlarga ko'radir; har kishiga niyat qilgani bordir"},
+    {"q_uz": "Hadisni kimlar rivoyat qilgan?", "a": "Imom Buxoriy va Imom Muslim"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/niyya.mp3",
+   "transcript_ar": "نِيَّة",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z va hadisdagi o'rni?", "a": "Niyat — amallarning o'lchovi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Hadis matnini yoddan ayting: إنما الأعمالُ بالنياتِ — va o'zbekcha ma'nosini qo'shing. ﷺ ni to'liq ayting: sallallohu alayhi vasallam.",
+   "target_ar": ["إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Hadisni sanad-matn-manba qismlarga ajratib yozing va har qismni o'zbekcha izohlang.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "Hadisning ikki asosiy qismi?", "q_ar": "", "options": ["sanad va matn", "oyat va sura", "savol va javob", "boshi va oxiri"], "answer": "sanad va matn", "explain_uz": "Sanad — zanjir, matn — mazmun.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "إِنَّمَا nimani bildiradi?", "q_ar": "", "options": ["faqat (cheklash)", "balki", "yoki", "chunki"], "answer": "faqat (cheklash)", "explain_uz": "إنما — hasr (cheklash): «faqat ...dir».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«رَوَاهُ البُخَارِيُّ» ma'nosi?", "q_ar": "", "options": ["Buxoriy rivoyat qilgan", "Buxoriy yozgan kitob", "Buxoriyga aytilgan", "Buxoriyda yashagan"], "answer": "Buxoriy rivoyat qilgan", "explain_uz": "روى — rivoyat qilmoq; رواه — uni rivoyat qildi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "ﷺ belgisi qanday o'qiladi?", "q_ar": "", "options": ["sallallohu alayhi vasallam", "radiyallohu anhu", "rahimahulloh", "azza va jalla"], "answer": "sallallohu alayhi vasallam", "explain_uz": "Payg'ambarimizga salavot belgisi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«نِيَّة، نَوَى» qaysi o'zakdan?", "q_ar": "", "options": ["ن و ي", "ن ي ل", "ن أ ي"], "answer": "ن و ي", "explain_uz": "«ن و ي» — niyat o'zagi.", "audio": "", "root": "ن و ي", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "niyat", "q_ar": "", "options": [], "answer": "نِيَّة", "explain_uz": "نية — niyat.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ", "options": [], "answer": "amallar niyatlarga bogliq", "explain_uz": "Islomdagi eng mashhur hadislardan biri.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ن و ي", "back": "niyat o'zagi", "deck": "msa"},
+  {"type": "word", "front": "حَدِيث", "back": "hadis", "deck": "msa"},
+  {"type": "word", "front": "سَنَد", "back": "sanad (roviylar zanjiri)", "deck": "msa"},
+  {"type": "word", "front": "مَتْن", "back": "matn", "deck": "msa"},
+  {"type": "word", "front": "رَوَى", "back": "rivoyat qildi", "deck": "msa"},
+  {"type": "word", "front": "صَحِيح", "back": "sahih (ishonchli)", "deck": "msa"},
+  {"type": "word", "front": "نِيَّة", "back": "niyat", "deck": "msa"},
+  {"type": "word", "front": "إِنَّمَا", "back": "faqat (cheklash)", "deck": "msa"},
+  {"type": "word", "front": "صَحَابِيّ", "back": "sahoba", "deck": "msa"}
+ ]
+}

@@ -1,0 +1,100 @@
+{
+ "id": "b1-33",
+ "level": "B1",
+ "module": "quran-hadith",
+ "order": 33,
+ "title_uz": "Duo va zikr matnlari",
+ "title_ar": "الأَدْعِيَةُ وَالأَذْكَار",
+ "can_do_uz": "Kundalik duo va zikrlarning ma'nosini so'zma-so'z tushunaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-32"],
+ "harakat_level": "full",
+ "hook_uz": "SubhanAlloh, Alhamdulillah, Allohu akbar — kuniga necha marta aytasiz? Endi HAR SO'ZINI tushunib ayting! Tushunib aytilgan zikr — qalbga yetib boradigan zikr. Bugun eng go'zal duolarning grammatik mo''jizasini ochamiz.",
+ "grammar": {
+  "point_ar": "صِيَغُ الدُّعَاء",
+  "explanation_uz": "DUO GRAMMATIKASI: (1) NIDO: يَا رَبِّ (ey Robbim), اللَّهُمَّ (Ey Alloh — يا اللهُ ning maxsus shakli). (2) AMR-ILTIJO: اغْفِرْ لِي (meni kechir), ارْحَمْنِي (menga rahm qil) — buyruq shakli, lekin Allohga nisbatan ILTIJO. (3) ZIKR TAHLILI: سُبْحَانَ اللهِ — Alloh pokdir (masdar+idofa, nasbda); الحَمْدُ لِلَّهِ — hamd Allohgadir (mubtada+xabar); اللهُ أَكْبَرُ — Alloh eng buyukdir (afdal-tafdil — b1 solishtirish!). (4) MASHHUR DUO: رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً... — Robbimiz, bizga dunyoda yaxshilik ber...",
+  "table": [
+   {"ar": "سُبْحَانَ اللهِ", "uz": "Alloh (barcha nuqsondan) pokdir", "form": "zikr"},
+   {"ar": "الحَمْدُ لِلَّهِ", "uz": "hamd Allohgadir", "form": "zikr"},
+   {"ar": "اللهُ أَكْبَرُ", "uz": "Alloh eng buyukdir (af'al!)", "form": "zikr"},
+   {"ar": "اللَّهُمَّ اغْفِرْ لِي", "uz": "Ey Alloh, meni kechirgin", "form": "duo"}
+  ],
+  "common_mistakes_uz": [
+   "أَكْبَر ni «katta» deb tarjima qilish — u solishtirma: «eng buyuk».",
+   "اللَّهُمَّ dagi مّ ni alohida so'z deb o'ylash — bu nido shakli.",
+   "Zikrni ma'nosiz takrorlash — tushunish xushu'ni oshiradi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "د ع و",
+   "meaning_uz": "chaqirish, duo qilish",
+   "uz_cognates": ["duo", "da'vat"],
+   "derived": [
+    {"ar": "دَعَا", "uz": "duo qildi; chaqirdi", "pattern": "فَعَلَ"},
+    {"ar": "دُعَاء", "uz": "duo", "pattern": "فُعَال"},
+    {"ar": "دَعْوَة", "uz": "da'vat; taklif", "pattern": "فَعْلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "دُعَاء", "translit": "duʿāʾ", "uz": "duo (o'zbekcha 'duo' aynan shundan)", "root": "د ع و", "pattern": "فُعَال", "pos": "ot", "audio": "b1/dua.mp3", "example_ar": "الدعاءُ مخُّ العبادةِ.", "example_uz": "Duo — ibodatning mag'zi.", "srs": true},
+  {"ar": "ذِكْر", "translit": "dhikr", "uz": "zikr (o'zbekcha 'zikr' aynan shundan)", "root": "ذ ك ر", "pattern": "فِعْل", "pos": "ot", "audio": "b1/dhikr.mp3", "example_ar": "بذكرِ اللهِ تطمئنُّ القلوبُ.", "example_uz": "Alloh zikri bilan qalblar orom topadi.", "srs": true},
+  {"ar": "سُبْحَانَ اللهِ", "translit": "subḥāna -llāh", "uz": "Alloh pokdir (tasbeh)", "root": "س ب ح", "pattern": "", "pos": "ibora", "audio": "b1/subhanallah.mp3", "example_ar": "قلْ: سبحانَ اللهِ وبحمدِهِ.", "example_uz": "Ayt: Alloh hamdi ila pokdir.", "srs": true},
+  {"ar": "اللَّهُمَّ", "translit": "allāhumma", "uz": "Ey Alloh! (duo nidosi)", "root": "", "pattern": "", "pos": "nido", "audio": "b1/allahumma.mp3", "example_ar": "اللهمَّ اهدني وسدّدني.", "example_uz": "Ey Alloh, meni hidoyat qil va to'g'rila.", "srs": true},
+  {"ar": "اِغْفِرْ", "translit": "ighfir", "uz": "kechirgin (mag'firat qil — iltijo)", "root": "غ ف ر", "pattern": "اِفْعِلْ", "pos": "fe'l", "audio": "b1/ighfir.mp3", "example_ar": "ربِّ اغفرْ لي ولوالديَّ.", "example_uz": "Robbim, meni va ota-onamni kechirgin.", "srs": true},
+  {"ar": "اِرْحَمْ", "translit": "irḥam", "uz": "rahm qilgin", "root": "ر ح م", "pattern": "اِفْعَلْ", "pos": "fe'l", "audio": "b1/irham.mp3", "example_ar": "ربِّ ارحمهُما كما ربَّياني صغيرًا.", "example_uz": "Robbim, meni kichikligimda tarbiyalaganlaridek ularga rahm qil.", "srs": true},
+  {"ar": "حَسَنَة", "translit": "ḥasana", "uz": "yaxshilik (dunyoda ham, oxiratda ham)", "root": "ح س ن", "pattern": "فَعَلَة", "pos": "ot", "audio": "b1/hasana.mp3", "example_ar": "ربَّنا آتِنا في الدنيا حسنةً.", "example_uz": "Robbimiz, bizga dunyoda yaxshilik ber.", "srs": true},
+  {"ar": "عَذَاب", "translit": "ʿadhāb", "uz": "azob (o'zbekcha 'azob' aynan shundan)", "root": "ع ذ ب", "pattern": "فَعَال", "pos": "ot", "audio": "b1/adhab.mp3", "example_ar": "وقِنا عذابَ النارِ.", "example_uz": "Va bizni do'zax azobidan saqla.", "srs": true},
+  {"ar": "اِسْتِغْفَار", "translit": "istighfār", "uz": "istig'for — kechirim so'rash (X bob!)", "root": "غ ف ر", "pattern": "اِسْتِفْعَال", "pos": "ot", "audio": "b1/istighfar.mp3", "example_ar": "أكثرْ من الاستغفارِ.", "example_uz": "Istig'forni ko'p ayt.", "srs": true},
+  {"ar": "تَسْبِيح", "translit": "tasbīḥ", "uz": "tasbeh aytish (subhanalloh deyish)", "root": "س ب ح", "pattern": "تَفْعِيل", "pos": "ot", "audio": "b1/tasbih.mp3", "example_ar": "التسبيحُ بعدَ الصلاةِ سنةٌ.", "example_uz": "Namozdan keyingi tasbeh — sunnat.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ. — Tahlil: رَبَّنَا (Robbimiz — nido, nasb), آتِنَا (bizga ber — iltijo amri), حَسَنَةً (yaxshilik — maf'ul, nasb), قِنَا (bizni saqla — وقى fe'lining amri).",
+   "questions": [
+    {"q_uz": "Bu duoda nima so'ralyapti?", "a": "Dunyoda yaxshilik, oxiratda yaxshilik va do'zaxdan saqlanish"},
+    {"q_uz": "آتِنَا qanday shakl?", "a": "Amr-iltijo: «bizga ber» (آتى fe'lidan)"},
+    {"q_uz": "قِنَا ning fe'li nima?", "a": "وَقَى (saqlamoq) — amri: قِ + نا"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/subhanallah.mp3",
+   "transcript_ar": "سُبْحَانَ اللهِ",
+   "questions": [
+    {"q_uz": "Eshitilgan zikr ma'nosi?", "a": "Alloh barcha nuqsondan pokdir"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch zikrni MA'NOSINI O'YLAB ayting: SubhanAlloh (Alloh pok), Alhamdulillah (hamd Allohga), Allohu akbar (Alloh eng buyuk).",
+   "target_ar": ["سُبْحَانَ اللهِ", "الحَمْدُ لِلَّهِ", "اللهُ أَكْبَرُ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Rabbana atina» duosini yozing va uch so'ralgan narsani o'zbekcha ro'yxat qiling.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«اللهُ أَكْبَرُ» dagi أكبر qaysi qolip?", "q_ar": "", "options": ["af'al at-tafdil (eng buyuk)", "oddiy sifat", "fe'l", "masdar"], "answer": "af'al at-tafdil (eng buyuk)", "explain_uz": "أفعل vazni — solishtirish: eng buyuk.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "اللَّهُمَّ nima?", "q_ar": "", "options": ["«Ey Alloh» — nido shakli", "qasam", "savol", "inkor"], "answer": "«Ey Alloh» — nido shakli", "explain_uz": "يا الله o'rnidagi maxsus duo nidosi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "اِسْتِغْفَار qaysi bob masdari?", "q_ar": "", "options": ["X bob (talab: kechirim SO'RASH)", "II bob", "IV bob", "VI bob"], "answer": "X bob (talab: kechirim SO'RASH)", "explain_uz": "استفعل = talab qilish: mag'firat so'rash.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "رَبِّ اغْفِرْ لِي", "options": [], "answer": "robbim meni kechirgin", "explain_uz": "اغفر — mag'firat qil (iltijo amri).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«دُعَاء، دَعْوَة، دَعَا» qaysi o'zakdan?", "q_ar": "", "options": ["د ع و", "د ف ع", "و د ع"], "answer": "د ع و", "explain_uz": "«د ع و» — duo/da'vat o'zagi.", "audio": "", "root": "د ع و", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "zikr", "q_ar": "", "options": [], "answer": "ذِكْر", "explain_uz": "ذكر — zikr, eslash.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«وَقِنَا عَذَابَ النَّارِ» ma'nosi?", "q_ar": "", "options": ["bizni do'zax azobidan saqla", "bizga jannat ber", "bizni kechir", "bizga rizq ber"], "answer": "bizni do'zax azobidan saqla", "explain_uz": "قِنَا — saqla (وقى dan); عذاب النار — do'zax azobi.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "د ع و", "back": "duo/da'vat o'zagi", "deck": "msa"},
+  {"type": "word", "front": "دُعَاء", "back": "duo", "deck": "msa"},
+  {"type": "word", "front": "ذِكْر", "back": "zikr", "deck": "msa"},
+  {"type": "word", "front": "سُبْحَانَ اللهِ", "back": "Alloh pokdir", "deck": "msa"},
+  {"type": "word", "front": "اللَّهُمَّ", "back": "Ey Alloh (nido)", "deck": "msa"},
+  {"type": "word", "front": "اِغْفِرْ", "back": "kechirgin", "deck": "msa"},
+  {"type": "word", "front": "حَسَنَة", "back": "yaxshilik", "deck": "msa"},
+  {"type": "word", "front": "عَذَاب", "back": "azob", "deck": "msa"},
+  {"type": "word", "front": "اِسْتِغْفَار", "back": "istig'for", "deck": "msa"},
+  {"type": "word", "front": "تَسْبِيح", "back": "tasbeh", "deck": "msa"}
+ ]
+}
