@@ -9,10 +9,10 @@
  "duration_min": 30,
  "prerequisites": ["a2-36"],
  "harakat_level": "new_words_only",
- "hook_uz": "Umid qilamiz kerak bo'lmaydi, lekin favqulodda holatда bilish shart: «سَاعِدْنِي!» (yordam bering!), «اِتَّصِلْ بِالشُّرْطَةِ» (politsiyaga qo'ng'iroq qiling). Saudiyada favqulodda raqamlar: 999 (شُرْطَة), 997 (إِسْعَاف). Bugun shu so'zlarni o'rganamiz.",
+ "hook_uz": "Umid qilamiz kerak bo'lmaydi, lekin favqulodda holatda bilish shart: «سَاعِدْنِي!» (yordam bering!), «اِتَّصِلْ بِالشُّرْطَةِ» (politsiyaga qo'ng'iroq qiling). Saudiyada favqulodda raqamlar: 999 (شُرْطَة), 997 (إِسْعَاف). Bugun shu so'zlarni o'rganamiz.",
  "grammar": {
   "point_ar": "طَلَبُ المُسَاعَدَة",
-  "explanation_uz": "Favqulodda holatда aniq va tez gapiring: سَاعِدْنِي! (yordam bering!), أَحْتَاجُ مُسَاعَدَةً (yordam kerak). Muammoni ayting: ضَاعَ جَوَازِي (pasportim yo'qoldi), سُرِقَتْ حَقِيبَتِي (sumkam o'g'irlandi). Xizmatlarga qo'ng'iroq: اِتَّصِلْ بِالشُّرْطَةِ / الإِسْعَافِ. Yo'qolganда سِفَارَة (elchixona) ga murojaat qiling. Saudiya raqamlari: 999 politsiya, 997 tez yordam, 998 yong'in.",
+  "explanation_uz": "Favqulodda holatda aniq va tez gapiring: سَاعِدْنِي! (yordam bering!), أَحْتَاجُ مُسَاعَدَةً (yordam kerak). Muammoni ayting: ضَاعَ جَوَازِي (pasportim yo'qoldi), سُرِقَتْ حَقِيبَتِي (sumkam o'g'irlandi). Xizmatlarga qo'ng'iroq: اِتَّصِلْ بِالشُّرْطَةِ / الإِسْعَافِ. Yo'qolganda سِفَارَة (elchixona) ga murojaat qiling. Saudiya raqamlari: 999 politsiya, 997 tez yordam, 998 yong'in.",
   "table": [
    {"ar": "سَاعِدْنِي!", "uz": "Yordam bering!", "form": "chaqiruv"},
    {"ar": "ضَاعَ جَوَازِي", "uz": "Pasportim yo'qoldi", "form": "yo'qotish"},

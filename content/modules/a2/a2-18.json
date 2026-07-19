@@ -1,0 +1,97 @@
+{
+ "id": "a2-18",
+ "level": "A2",
+ "module": "weak-verbs",
+ "order": 18,
+ "title_uz": "Illatli fe'llar drilli",
+ "title_ar": "تَدْرِيبُ الأَفْعَالِ المُعْتَلَّة",
+ "can_do_uz": "Illatli fe'l turini aniqlab, uni to'g'ri tuslay olaman (aralash mashq).",
+ "duration_min": 30,
+ "prerequisites": ["a2-17"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "Endi hamma turlarni birlashtiramiz! Fe'lni ko'rib turini aniqlang: illat harfi qayerda? boshida (mithal), o'rtasida (ajvaf), oxirida (naqis)? رَأَى (ko'rdi), جَاءَ (keldi), طَارَ (uchdi) — qaysi tur?",
+ "grammar": {
+  "point_ar": "تَمْيِيزُ نَوْعِ المُعْتَلّ",
+  "explanation_uz": "Illatli fe'l turini ANIQLASH qoidasi: (1) illat harfi (و/ي) BOSHIDA → مِثَال (وَقَعَ, hozirda و tushadi). (2) O'RTASIDA → أَجْوَف (طَارَ, o'tganda ا). (3) OXIRIDA → نَاقِص (سَعَى, oxiri ى). Ba'zi fe'llar «qo'sh illatli»: رَأَى (ر أ ي — hamza+naqis), جَاءَ (ج ي أ — ajvaf+mahmuz). Turni bilsangiz, to'g'ri tuslaysiz.",
+  "table": [
+   {"ar": "وَقَعَ → يَقَعُ", "uz": "yuz berdi (mithal, و tushdi)", "form": "mithal"},
+   {"ar": "طَارَ → يَطِيرُ", "uz": "uchdi (ajvaf, ط ي ر)", "form": "ajvaf"},
+   {"ar": "سَعَى → يَسْعَى", "uz": "harakat qildi (naqis, س ع ي)", "form": "naqis"},
+   {"ar": "رَأَى → يَرَى", "uz": "ko'rdi (qo'sh illatli)", "form": "maxsus"}
+  ],
+  "common_mistakes_uz": [
+   "Turni noto'g'ri aniqlab, noto'g'ri tuslash.",
+   "رَأَى, جَاءَ kabi qo'sh illatli fe'llarni oddiy deb o'ylash.",
+   "Hozirgi zamon shakllarini yodlamaslik — ular yodlab olinadi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ح ي ي",
+   "meaning_uz": "hayot, tirik bo'lish",
+   "uz_cognates": ["hayot", "tahiyot", "Yahyo"],
+   "derived": [
+    {"ar": "حَيَاة", "uz": "hayot", "pattern": "فَعَال"},
+    {"ar": "حَيّ", "uz": "tirik, mahalla", "pattern": "فَعّ"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "رَأَى", "translit": "raʾā", "uz": "ko'rdi (qo'sh illatli: ر أ ي)", "root": "ر أ ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a1/raa.mp3", "example_ar": "رَأَى القَمَرَ.", "example_uz": "Oyni ko'rdi.", "srs": true},
+  {"ar": "جَاءَ", "translit": "jāʾa", "uz": "keldi (ajvaf+mahmuz: ج ي أ)", "root": "ج ي أ", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/jaa.mp3", "example_ar": "جَاءَ الضَّيْفُ.", "example_uz": "Mehmon keldi.", "srs": true},
+  {"ar": "طَارَ", "translit": "ṭāra", "uz": "uchdi (ajvaf: ط ي ر)", "root": "ط ي ر", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/tara.mp3", "example_ar": "طَارَ الطَّائِرُ.", "example_uz": "Qush uchdi.", "srs": true},
+  {"ar": "سَعَى", "translit": "saʿā", "uz": "harakat qildi, intildi (naqis: س ع ي)", "root": "س ع ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/saa_v.mp3", "example_ar": "سَعَى إِلَى النَّجَاحِ.", "example_uz": "Muvaffaqiyatga intildi.", "srs": true},
+  {"ar": "وَقَعَ", "translit": "waqaʿa", "uz": "tushdi, yuz berdi (mithal: و ق ع)", "root": "و ق ع", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/waqaa.mp3", "example_ar": "وَقَعَ حَادِثٌ.", "example_uz": "Hodisa yuz berdi.", "srs": true},
+  {"ar": "أَتَى", "translit": "atā", "uz": "keldi (naqis: أ ت ي)", "root": "أ ت ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/ata.mp3", "example_ar": "أَتَى مِنْ بَعِيدٍ.", "example_uz": "Uzoqdan keldi.", "srs": true},
+  {"ar": "حَيَاة", "translit": "ḥayāt", "uz": "hayot (o'zbekcha 'hayot')", "root": "ح ي ي", "pattern": "فَعَال", "pos": "ot", "audio": "a2/hayat.mp3", "example_ar": "الحَيَاةُ جَمِيلَةٌ.", "example_uz": "Hayot go'zal.", "srs": true},
+  {"ar": "طَائِر", "translit": "ṭāʾir", "uz": "qush (fo'il, ط ي ر)", "root": "ط ي ر", "pattern": "فَاعِل", "pos": "ot", "audio": "a2/tair.mp3", "example_ar": "طَائِرٌ صَغِيرٌ.", "example_uz": "Kichkina qush.", "srs": true},
+  {"ar": "نَجَاح", "translit": "najāḥ", "uz": "muvaffaqiyat, yutuq", "root": "ن ج ح", "pattern": "فَعَال", "pos": "ot", "audio": "a2/najah.mp3", "example_ar": "أَتَمَنَّى لَكَ النَّجَاحَ.", "example_uz": "Sizga muvaffaqiyat tilayman.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أَمْسِ رَأَيْتُ طَائِرًا جَمِيلًا طَارَ فَوْقَ الحَدِيقَةِ. جَاءَ صَدِيقِي وَسَعَيْنَا مَعًا إِلَى المَكْتَبَةِ. الحَيَاةُ جَمِيلَةٌ مَعَ الأَصْدِقَاءِ.",
+   "questions": [
+    {"q_uz": "Kecha nima ko'rdi?", "a": "Chiroyli qush (طَائِر)"},
+    {"q_uz": "«طَارَ» qaysi tur?", "a": "Ajvaf (ط ي ر, o'rtasi ي)"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/jaa.mp3",
+   "transcript_ar": "جَاءَ",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi?", "a": "Keldi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Turlarni aniqlab ayting: raʾā (ko'rdi), jāʾa (keldi), ṭāra (uchdi), saʿā (intildi).",
+   "target_ar": ["رَأَى", "جَاءَ", "طَارَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«رَأَى», «طَارَ», «سَعَى» fe'llarining turini (mithal/ajvaf/naqis) yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«طَارَ» qaysi tur (o'rtasi illat)?", "q_ar": "", "options": ["أَجْوَف", "مِثَال", "نَاقِص", "صَحِيح"], "answer": "أَجْوَف", "explain_uz": "طَارَ — o'rtasi ي (ط ي ر), ajvaf.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«سَعَى» qaysi tur (oxiri illat)?", "q_ar": "", "options": ["نَاقِص", "أَجْوَف", "مِثَال", "مُضَاعَف"], "answer": "نَاقِص", "explain_uz": "سَعَى — oxiri ي (س ع ي), naqis.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "جَاءَ الضَّيْفُ", "options": [], "answer": "mehmon keldi", "explain_uz": "جَاءَ = keldi, الضَّيْف = mehmon.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«وَقَعَ» qaysi tur (boshi illat)?", "q_ar": "", "options": ["مِثَال", "أَجْوَف", "نَاقِص", "مَهْمُوز"], "answer": "مِثَال", "explain_uz": "وَقَعَ — boshi و (و ق ع), mithal.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«حَيَاة» qaysi o'zakdan?", "q_ar": "", "options": ["ح ي ي", "ح ي ت", "ح و ي"], "answer": "ح ي ي", "explain_uz": "«ح ي ي» — hayot o'zagi: hayot, tahiyot.", "audio": "", "root": "ح ي ي", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ko'rdi", "q_ar": "", "options": [], "answer": "رَأَى", "explain_uz": "رَأَى — ko'rdi (qo'sh illatli, ر أ ي).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "muvaffaqiyat", "q_ar": "", "options": [], "answer": "نَجَاح", "explain_uz": "نَجَاح — muvaffaqiyat/yutuq.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ح ي ي", "back": "hayot o'zagi (hayot, tahiyot, Yahyo)", "deck": "msa"},
+  {"type": "word", "front": "رَأَى", "back": "ko'rdi (qo'sh illatli)", "deck": "msa"},
+  {"type": "word", "front": "جَاءَ", "back": "keldi (ajvaf+mahmuz)", "deck": "msa"},
+  {"type": "word", "front": "طَارَ", "back": "uchdi (ajvaf)", "deck": "msa"},
+  {"type": "word", "front": "سَعَى", "back": "intildi, sa'y qildi (naqis)", "deck": "msa"},
+  {"type": "word", "front": "وَقَعَ", "back": "yuz berdi (mithal)", "deck": "msa"},
+  {"type": "word", "front": "أَتَى", "back": "keldi (naqis)", "deck": "msa"},
+  {"type": "word", "front": "حَيَاة", "back": "hayot", "deck": "msa"},
+  {"type": "word", "front": "طَائِر", "back": "qush", "deck": "msa"},
+  {"type": "word", "front": "نَجَاح", "back": "muvaffaqiyat", "deck": "msa"}
+ ]
+}

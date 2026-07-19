@@ -9,10 +9,10 @@
  "duration_min": 30,
  "prerequisites": ["a2-35"],
  "harakat_level": "new_words_only",
- "hook_uz": "Madinaда Payg'ambar masjidini (المَسْجِد النَّبَوِيّ) ziyorat qilasiz, Rawda (الرَّوْضَة) ga kirasiz. Belgilar (لَافِتَة) yo'l ko'rsatadi: مَدْخَل (kirish), مَخْرَج (chiqish). Bugun muqaddas shaharlar joy nomlarini o'rganamiz.",
+ "hook_uz": "Madinada Payg'ambar masjidini (المَسْجِد النَّبَوِيّ) ziyorat qilasiz, Rawda (الرَّوْضَة) ga kirasiz. Belgilar (لَافِتَة) yo'l ko'rsatadi: مَدْخَل (kirish), مَخْرَج (chiqish). Bugun muqaddas shaharlar joy nomlarini o'rganamiz.",
  "grammar": {
   "point_ar": "المَعَالِمُ وَالاِتِّجَاهَات",
-  "explanation_uz": "Muqaddas joylar: Makkada المَسْجِد الحَرَام, غَار حِرَاء (Hiro g'ori), مِنَى، عَرَفَة. Madinada المَسْجِد النَّبَوِيّ, الرَّوْضَة (Ravza), قُبَاء (Quba masjidi), البَقِيع (qabriston). Yo'l topish uchun belgilarni o'qing: مَدْخَل (kirish), مَخْرَج (chiqish), سَاحَة (maydon). Yo'nalish so'rang: أَيْنَ بَابُ...؟ (... darvozasi qayerda?). Zich olomonда belgi (لَافِتَة) va darvoza raqami muhim.",
+  "explanation_uz": "Muqaddas joylar: Makkada المَسْجِد الحَرَام, غَار حِرَاء (Hiro g'ori), مِنَى، عَرَفَة. Madinada المَسْجِد النَّبَوِيّ, الرَّوْضَة (Ravza), قُبَاء (Quba masjidi), البَقِيع (qabriston). Yo'l topish uchun belgilarni o'qing: مَدْخَل (kirish), مَخْرَج (chiqish), سَاحَة (maydon). Yo'nalish so'rang: أَيْنَ بَابُ...؟ (... darvozasi qayerda?). Zich olomonda belgi (لَافِتَة) va darvoza raqami muhim.",
   "table": [
    {"ar": "المَسْجِدُ النَّبَوِيّ", "uz": "Payg'ambar masjidi (Madina)", "form": "joy"},
    {"ar": "مَدْخَل / مَخْرَج", "uz": "kirish / chiqish", "form": "belgi"},
@@ -21,7 +21,7 @@
   ],
   "common_mistakes_uz": [
    "مَدْخَل (kirish) va مَخْرَج (chiqish) belgilarini chalkashtirish.",
-   "Zich olomonда o'z darvozangiz raqamini eslab qolmaslik.",
+   "Zich olomonda o'z darvozangiz raqamini eslab qolmaslik.",
    "Joy nomlarini noto'g'ri talaffuz qilish — belgidan o'qing."
   ]
  },
@@ -83,7 +83,7 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«kirish» qaysi?", "q_ar": "", "options": ["مَدْخَل", "مَخْرَج", "سَاحَة", "لَافِتَة"], "answer": "مَدْخَل", "explain_uz": "مَدْخَل — kirish (د خ ل), مَخْرَج — chiqish (خ ر ج).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المَسْجِدُ النَّبَوِيّ", "options": [], "answer": "Payg'ambar masjidi", "explain_uz": "المَسْجِد النَّبَوِيّ — Madinadagi Payg'ambar masjidi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Hijoziyда «tirband/gavjum» qaysi?", "q_ar": "", "options": ["زَحْمَة", "وَاسِع", "سَاحَة", "مَعْلَم"], "answer": "زَحْمَة", "explain_uz": "زَحْمَة — hijoziyда «tirbandlik, gavjumlik».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «tirband/gavjum» qaysi?", "q_ar": "", "options": ["زَحْمَة", "وَاسِع", "سَاحَة", "مَعْلَم"], "answer": "زَحْمَة", "explain_uz": "زَحْمَة — hijoziyda «tirbandlik, gavjumlik».", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ز و ر» o'zagidan?", "q_ar": "", "options": ["زِيَارَة", "سَاحَة", "لَافِتَة"], "answer": "زِيَارَة", "explain_uz": "«ز و ر» — ziyorat o'zagi: زِيَارَة (ziyorat), زَائِر (ziyoratchi), mazor.", "audio": "", "root": "ز و ر", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "chiqish (joy)", "q_ar": "", "options": [], "answer": "مَخْرَج", "explain_uz": "مَخْرَج — chiqish (خ ر ج o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«keng» qaysi?", "q_ar": "", "options": ["وَاسِع", "مُزْدَحِم", "قَرِيب", "بَعِيد"], "answer": "وَاسِع", "explain_uz": "وَاسِع — keng, katta.", "audio": "", "root": "", "pattern": "", "words": []},

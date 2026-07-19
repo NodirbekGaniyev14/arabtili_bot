@@ -65,7 +65,7 @@
    ]
   },
   "speaking": {
-   "task_uz": "Kelasi zamonда ayting: saʾadhhabu ghadan, sanadrusu, sawfa aktubu.",
+   "task_uz": "Kelasi zamonda ayting: saʾadhhabu ghadan, sanadrusu, sawfa aktubu.",
    "target_ar": ["سَأَذْهَبُ غَدًا", "سَنَدْرُسُ", "سَوْفَ أَكْتُبُ"],
    "eval": "self_check"
   },
@@ -76,7 +76,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«U ertaga boradi» (kelasi) qaysi?", "q_ar": "", "options": ["سَيَذْهَبُ غَدًا", "ذَهَبَ غَدًا", "يَذْهَبُ أَمْسِ", "لا يَذْهَبُ"], "answer": "سَيَذْهَبُ غَدًا", "explain_uz": "سَـ + muzori' = kelasi zamon: سَيَذْهَبُ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Kelasi zamon uchun fe'lга nima qo'shiladi?", "q_ar": "", "options": ["سَـ yoki سَوْفَ", "لا yoki مَا", "ـتُ yoki ـنَا", "الـ"], "answer": "سَـ yoki سَوْفَ", "explain_uz": "سَـ (ulanadi) yoki سَوْفَ (alohida) + muzori'.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Kelasi zamon uchun fe'lga nima qo'shiladi?", "q_ar": "", "options": ["سَـ yoki سَوْفَ", "لا yoki مَا", "ـتُ yoki ـنَا", "الـ"], "answer": "سَـ yoki سَوْفَ", "explain_uz": "سَـ (ulanadi) yoki سَوْفَ (alohida) + muzori'.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_ar_uz", "q_uz": "", "q_ar": "سَنَذْهَبُ إِلَى مَكَّةَ", "options": [], "answer": "biz Makkaga boramiz", "explain_uz": "سَنَذْهَبُ = biz boramiz (kelasi), إِلَى مَكَّة = Makkaga.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «س ف ر» o'zagidan?", "q_ar": "", "options": ["سَفَر", "رِحْلَة", "طَائِرَة"], "answer": "سَفَر", "explain_uz": "«س ف ر» — safar o'zagi: سَفَر (safar), مُسَافِر (yo'lovchi), safir.", "audio": "", "root": "س ف ر", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "Kelasi zamon qiling: «أَكْتُبُ» → «____أَكْتُبُ» (yozaman-ajak)", "q_ar": "____أَكْتُبُ", "options": [], "answer": "سَ", "explain_uz": "سَـ ulanadi: سَأَكْتُبُ.", "audio": "", "root": "", "pattern": "", "words": []},

@@ -14,7 +14,7 @@
   "point_ar": "فِعْل + فَاعِل + مَفْعُول بِه",
   "explanation_uz": "Fe'lli gap (الجُملة الفعلية) odatda FE'L bilan boshlanadi, keyin فَاعِل (bajaruvchi), keyin مَفْعُول (ob'ekt). MUHIM belgilar: bajaruvchi «raf'» da — oxirida damma (ـُ): الوَلَدُ. Ob'ekt «nasb» da — oxirida fatha (ـَ): الرِّسَالَةَ. Bu oxirgi harakatlar «kim qildi, nimani qildi» ni ko'rsatadi.",
   "table": [
-   {"ar": "كَتَبَ الوَلَدُ الرِّسَالَةَ", "uz": "Bola xatni yozdi", "form": "fe'l+fоil+ob'ekt"},
+   {"ar": "كَتَبَ الوَلَدُ الرِّسَالَةَ", "uz": "Bola xatni yozdi", "form": "fe'l+fo'il+ob'ekt"},
    {"ar": "أَكَلَ الطِّفْلُ الطَّعَامَ", "uz": "Bola ovqatni yedi", "form": "damma / fatha"},
    {"ar": "قَرَأَتِ البِنْتُ القِصَّةَ", "uz": "Qiz hikoyani o'qidi", "form": "ayol foil"},
    {"ar": "فَتَحَ الرَّجُلُ البَابَ", "uz": "Erkak eshikni ochdi", "form": "namuna"}

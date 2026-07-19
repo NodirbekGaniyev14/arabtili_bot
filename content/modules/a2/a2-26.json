@@ -1,0 +1,98 @@
+{
+ "id": "a2-26",
+ "level": "A2",
+ "module": "grammar-ext",
+ "order": 26,
+ "title_uz": "Vaqt/joyni aniqlayman",
+ "title_ar": "ظَرْفُ الزَّمَانِ وَالمَكَان",
+ "can_do_uz": "Vaqt va joy zarflari bilan «qachon» va «qayerda» ni aniq ayta olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-25"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "«Uy orqasida» — خَلْفَ البَيْتِ. «Dars davomida» — أَثْنَاءَ الدَّرْسِ. Zarflar harakatning QACHON (vaqt) yoki QAYERDA (joy) sodir bo'lganini aniqlaydi: بَيْنَ (orasida), حَوْلَ (atrofida), دَاخِل (ichida).",
+ "grammar": {
+  "point_ar": "الظَّرْف — الزَّمَان وَالمَكَان",
+  "explanation_uz": "Zarf — harakat vaqti yoki o'rnini ko'rsatuvchi so'z, u NASB (fatha) da bo'ladi. VAQT zarflari (ظرف الزمان): قَبْلَ (oldin), بَعْدَ (keyin), عِنْدَ (paytida), أَثْنَاءَ (davomida), صَبَاحًا (ertalab). JOY zarflari (ظرف المكان): فَوْقَ (ustida), تَحْتَ (ostida), أَمَامَ (oldida), خَلْفَ (orqasida), بَيْنَ (orasida), وَسَطَ (o'rtasida), حَوْلَ (atrofida). Ko'pincha idafa bilan: خَلْفَ البَيْتِ.",
+  "table": [
+   {"ar": "خَلْفَ البَيْتِ", "uz": "uy orqasida", "form": "joy zarfi"},
+   {"ar": "بَيْنَ الشَّجَرَتَيْنِ", "uz": "ikki daraxt orasida", "form": "joy"},
+   {"ar": "أَثْنَاءَ الدَّرْسِ", "uz": "dars davomida", "form": "vaqt zarfi"},
+   {"ar": "حَوْلَ الكَعْبَةِ", "uz": "Ka'ba atrofida", "form": "joy"}
+  ],
+  "common_mistakes_uz": [
+   "Zarfni raf' (damma) qilish — zarf NASB (fatha) da bo'ladi.",
+   "بَيْنَ (orasida) va وَسَطَ (o'rtasida) ni chalkashtirish.",
+   "Vaqt va joy zarflarini aralashtirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "و س ط",
+   "meaning_uz": "o'rta, vosita",
+   "uz_cognates": ["o'rta", "vosita", "avsat", "mutavassit"],
+   "derived": [
+    {"ar": "وَسَط", "uz": "o'rta, markaz", "pattern": "فَعَل"},
+    {"ar": "مُتَوَسِّط", "uz": "o'rtacha", "pattern": "مُتَفَعِّل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "عِنْدَ", "translit": "ʿinda", "uz": "-da, huzurida, paytida", "root": "", "pattern": "", "pos": "zarf", "audio": "a2/inda.mp3", "example_ar": "عِنْدَ البَابِ.", "example_uz": "Eshik oldida.", "srs": true},
+  {"ar": "بَيْنَ", "translit": "bayna", "uz": "orasida", "root": "ب ي ن", "pattern": "فَعْل", "pos": "zarf", "audio": "a2/bayna.mp3", "example_ar": "بَيْنَ البَيْتِ وَالمَسْجِدِ.", "example_uz": "Uy va masjid orasida.", "srs": true},
+  {"ar": "خَلْفَ", "translit": "khalfa", "uz": "orqasida, ortida", "root": "خ ل ف", "pattern": "فَعْل", "pos": "zarf", "audio": "a2/khalfa.mp3", "example_ar": "خَلْفَ البَيْتِ حَدِيقَةٌ.", "example_uz": "Uy orqasida bog' bor.", "srs": true},
+  {"ar": "وَسَط", "translit": "wasaṭ", "uz": "o'rta, markaz (o'zbekcha 'o'rta')", "root": "و س ط", "pattern": "فَعَل", "pos": "zarf", "audio": "a2/wasat.mp3", "example_ar": "فِي وَسَطِ المَدِينَةِ.", "example_uz": "Shahar markazida.", "srs": true},
+  {"ar": "حَوْلَ", "translit": "ḥawla", "uz": "atrofida, tevaragida", "root": "ح و ل", "pattern": "فَعْل", "pos": "zarf", "audio": "a2/hawla.mp3", "example_ar": "طَافُوا حَوْلَ الكَعْبَةِ.", "example_uz": "Ka'ba atrofida aylandilar.", "srs": true},
+  {"ar": "دَاخِل", "translit": "dākhil", "uz": "ichida, ichkarida", "root": "د خ ل", "pattern": "فَاعِل", "pos": "zarf", "audio": "a2/dakhil.mp3", "example_ar": "دَاخِلَ الغُرْفَةِ.", "example_uz": "Xona ichida.", "srs": true},
+  {"ar": "خَارِج", "translit": "khārij", "uz": "tashqarida, tashqarisida", "root": "خ ر ج", "pattern": "فَاعِل", "pos": "zarf", "audio": "a2/kharij.mp3", "example_ar": "خَارِجَ المَدِينَةِ.", "example_uz": "Shahar tashqarisida.", "srs": true},
+  {"ar": "بِجَانِب", "translit": "bijānib", "uz": "yonida, yonginasida", "root": "ج ن ب", "pattern": "", "pos": "zarf", "audio": "a2/bijanib.mp3", "example_ar": "بِجَانِبِ المَسْجِدِ.", "example_uz": "Masjid yonida.", "srs": true},
+  {"ar": "أَثْنَاءَ", "translit": "athnāʾa", "uz": "davomida, mobaynida", "root": "ث ن ي", "pattern": "", "pos": "zarf", "audio": "a2/athnaa.mp3", "example_ar": "أَثْنَاءَ السَّفَرِ.", "example_uz": "Safar davomida.", "srs": true},
+  {"ar": "حَالِيًّا", "translit": "ḥāliyyan", "uz": "hozirda, ayni paytda", "root": "ح و ل", "pattern": "", "pos": "ravish", "audio": "a2/haliyyan.mp3", "example_ar": "أَنَا مَشْغُولٌ حَالِيًّا.", "example_uz": "Hozir bandman.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "بَيْتِي فِي وَسَطِ المَدِينَةِ، بِجَانِبِ المَسْجِدِ. خَلْفَ البَيْتِ حَدِيقَةٌ جَمِيلَةٌ. أَثْنَاءَ العُطْلَةِ نَجْلِسُ حَوْلَ الطَّاوِلَةِ فِي الحَدِيقَةِ.",
+   "questions": [
+    {"q_uz": "Uy qayerda joylashgan?", "a": "Shahar markazida, masjid yonida"},
+    {"q_uz": "«خَلْفَ البَيْتِ» ma'nosi?", "a": "Uy orqasida"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/bayna.mp3",
+   "transcript_ar": "بَيْنَ",
+   "questions": [
+    {"q_uz": "Zarf ma'nosi?", "a": "Orasida"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Zarflarni ayting: khalfa l-bayt, bayna...wa..., ḥawla l-kaʿba, athnāʾa s-safar.",
+   "target_ar": ["خَلْفَ البَيْتِ", "بَيْنَ", "حَوْلَ الكَعْبَةِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Masjid yonida» va «Safar davomida» iboralarini zarf bilan yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«orasida» qaysi?", "q_ar": "", "options": ["بَيْنَ", "خَلْفَ", "حَوْلَ", "وَسَط"], "answer": "بَيْنَ", "explain_uz": "بَيْنَ — ikki narsa orasida.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "حَوْلَ الكَعْبَةِ", "options": [], "answer": "Ka'ba atrofida", "explain_uz": "حَوْلَ = atrofida, الكَعْبَة = Ka'ba.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Zarf qaysi holatda bo'ladi?", "q_ar": "", "options": ["nasb (fatha)", "raf' (damma)", "jarr (kasra)", "sukun"], "answer": "nasb (fatha)", "explain_uz": "Zarf mansub — fatha (خَلْفَ, بَيْنَ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«وَسَط، مُتَوَسِّط» qaysi o'zakdan?", "q_ar": "", "options": ["و س ط", "و ص ل", "و س ع"], "answer": "و س ط", "explain_uz": "«و س ط» — o'rta o'zagi: vosita, avsat, mutavassit.", "audio": "", "root": "و س ط", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "orqasida, ortida", "q_ar": "", "options": [], "answer": "خَلْفَ", "explain_uz": "خَلْفَ — orqasida (joy zarfi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«dars davomida» qaysi?", "q_ar": "", "options": ["أَثْنَاءَ الدَّرْسِ", "خَلْفَ الدَّرْسِ", "حَوْلَ الدَّرْسِ", "دَاخِلَ الدَّرْسِ"], "answer": "أَثْنَاءَ الدَّرْسِ", "explain_uz": "أَثْنَاءَ — vaqt zarfi (davomida).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "yonida", "q_ar": "", "options": [], "answer": "بِجَانِب", "explain_uz": "بِجَانِب — yonida (ج ن ب o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "و س ط", "back": "o'rta o'zagi (vosita, avsat, mutavassit)", "deck": "msa"},
+  {"type": "word", "front": "عِنْدَ", "back": "-da, huzurida, paytida", "deck": "msa"},
+  {"type": "word", "front": "بَيْنَ", "back": "orasida", "deck": "msa"},
+  {"type": "word", "front": "خَلْفَ", "back": "orqasida, ortida", "deck": "msa"},
+  {"type": "word", "front": "وَسَط", "back": "o'rta, markaz", "deck": "msa"},
+  {"type": "word", "front": "حَوْلَ", "back": "atrofida", "deck": "msa"},
+  {"type": "word", "front": "دَاخِل", "back": "ichida", "deck": "msa"},
+  {"type": "word", "front": "خَارِج", "back": "tashqarida", "deck": "msa"},
+  {"type": "word", "front": "بِجَانِب", "back": "yonida", "deck": "msa"},
+  {"type": "word", "front": "أَثْنَاءَ", "back": "davomida, mobaynida", "deck": "msa"}
+ ]
+}

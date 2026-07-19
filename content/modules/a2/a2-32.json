@@ -12,7 +12,7 @@
  "hook_uz": "Umra safarida kasal bo'lib qolsangiz? Dorixonaga borib: «عِنْدِي صُدَاع» (boshim og'riyapti) yoki «عِنْدِي حُمَّى» (isitmam bor) deysiz. Bugun salomatlik va dori so'zlarini o'rganamiz — kerak bo'lmasin, lekin bilib qo'ygan yaxshi!",
  "grammar": {
   "point_ar": "عِبَارَاتُ الصِّحَّة",
-  "explanation_uz": "Kasallikni tushuntirish: عِنْدِي... (menda ... bor) yoki أَشْعُرُ بِـ... (... his qilyapman): عِنْدِي صُدَاع (boshim og'riyapti), عِنْدِي حُمَّى (isitma), يُؤْلِمُنِي بَطْنِي (qornim og'riyapti). Dorixonada: أُرِيدُ دَوَاءً لِـ... (... uchun dori kerak). Retsept — وَصْفَة. Jiddiy holatда: أَيْنَ أَقْرَبُ مُسْتَشْفَى؟ (eng yaqin kasalxona qayerda?), tez yordam — إِسْعَاف. Hijoziyда «kasal/holsiz» — تَعْبَان.",
+  "explanation_uz": "Kasallikni tushuntirish: عِنْدِي... (menda ... bor) yoki أَشْعُرُ بِـ... (... his qilyapman): عِنْدِي صُدَاع (boshim og'riyapti), عِنْدِي حُمَّى (isitma), يُؤْلِمُنِي بَطْنِي (qornim og'riyapti). Dorixonada: أُرِيدُ دَوَاءً لِـ... (... uchun dori kerak). Retsept — وَصْفَة. Jiddiy holatda: أَيْنَ أَقْرَبُ مُسْتَشْفَى؟ (eng yaqin kasalxona qayerda?), tez yordam — إِسْعَاف. Hijoziyda «kasal/holsiz» — تَعْبَان.",
   "table": [
    {"ar": "عِنْدِي صُدَاع", "uz": "Boshim og'riyapti", "form": "shikoyat"},
    {"ar": "أُرِيدُ دَوَاءً", "uz": "Dori kerak", "form": "so'rov"},
@@ -22,7 +22,7 @@
   "common_mistakes_uz": [
    "أَلَم (og'riq) va مَرَض (kasallik) so'zlarini chalkashtirish.",
    "Dorini retseptsiz (وَصْفَة) so'rash — ba'zi dorilar retsept talab qiladi.",
-   "Jiddiy holatда إِسْعَاف (997 — Saudiyada) ni chaqirishni bilmaslik."
+   "Jiddiy holatda إِسْعَاف (997 — Saudiyada) ni chaqirishni bilmaslik."
   ]
  },
  "roots": [
@@ -83,7 +83,7 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«dorixona» qaysi?", "q_ar": "", "options": ["صَيْدَلِيَّة", "مُسْتَشْفَى", "وَصْفَة", "دَوَاء"], "answer": "صَيْدَلِيَّة", "explain_uz": "صَيْدَلِيَّة — dorixona; مُسْتَشْفَى — kasalxona.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_ar_uz", "q_uz": "", "q_ar": "عِنْدِي صُدَاع", "options": [], "answer": "boshim og'riyapti", "explain_uz": "عِنْدِي = menda bor, صُدَاع = bosh og'rig'i.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Hijoziyда «O'zimni yomon his qilyapman» qaysi?", "q_ar": "", "options": ["أَنَا تَعْبَان", "أَنَا بِخَيْر", "أَنَا جُوعَان", "أَنَا هُنَا"], "answer": "أَنَا تَعْبَان", "explain_uz": "تَعْبَان — hijoziyда «charchagan/kasal».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «O'zimni yomon his qilyapman» qaysi?", "q_ar": "", "options": ["أَنَا تَعْبَان", "أَنَا بِخَيْر", "أَنَا جُوعَان", "أَنَا هُنَا"], "answer": "أَنَا تَعْبَان", "explain_uz": "تَعْبَان — hijoziyda «charchagan/kasal».", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ش ف ي» o'zagidan?", "q_ar": "", "options": ["مُسْتَشْفَى", "دَوَاء", "أَلَم"], "answer": "مُسْتَشْفَى", "explain_uz": "«ش ف ي» — shifo o'zagi: مُسْتَشْفَى (kasalxona), شِفَاء (shifo).", "audio": "", "root": "ش ف ي", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "isitma", "q_ar": "", "options": [], "answer": "حُمَّى", "explain_uz": "حُمَّى — isitma.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«tez yordam» qaysi?", "q_ar": "", "options": ["إِسْعَاف", "وَصْفَة", "حُبُوب", "مَعِدَة"], "answer": "إِسْعَاف", "explain_uz": "إِسْعَاف — tez yordam (Saudiyada 997).", "audio": "", "root": "", "pattern": "", "words": []},

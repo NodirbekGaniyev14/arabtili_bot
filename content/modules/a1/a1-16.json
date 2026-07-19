@@ -9,7 +9,7 @@
  "duration_min": 30,
  "prerequisites": ["a1-15"],
  "harakat_level": "full",
- "hook_uz": "Sirni bilasizmi? Arab tilида BITTA o'zak — o'nlab so'z beradi! ك ت ب dan: كَتَبَ (yozdi), كَاتِب (yozuvchi), مَكْتُوب (xat), مَكْتَب (ofis), مَكْتَبَة (kutubxona), كِتَاب (kitob). O'zakni bilsangiz — yangi so'zni «taxmin» qilasiz. Bu arabchaning eng kuchli qurоli!",
+ "hook_uz": "Sirni bilasizmi? Arab tilida BITTA o'zak — o'nlab so'z beradi! ك ت ب dan: كَتَبَ (yozdi), كَاتِب (yozuvchi), مَكْتُوب (xat), مَكْتَب (ofis), مَكْتَبَة (kutubxona), كِتَاب (kitob). O'zakni bilsangiz — yangi so'zni «taxmin» qilasiz. Bu arabchaning eng kuchli quroli!",
  "grammar": {
   "point_ar": "الجَذْر + الوَزْن = الكَلِمَة",
   "explanation_uz": "Har so'z ikki qismdan: JADR (o'zak — 3 undosh, ma'no ildizi) + VAZN (qolip — grammatik ma'no). Bir xil o'zakni turli vaznlarga solsangiz, bog'liq so'zlar chiqadi. Asosiy vaznlar: فَاعِل (bajaruvchi: كَاتِب — yozuvchi), مَفْعُول (ob'ekt/majhul: مَكْتُوب — yozilgan), مَفْعَل (joy: مَكْتَب — ofis), مَفْعَلَة (joy: مَكْتَبَة — kutubxona).",

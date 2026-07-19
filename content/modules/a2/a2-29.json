@@ -12,7 +12,7 @@
  "hook_uz": "Makkada mehmonxonaga yetdingiz: «عِنْدِي حَجْز» (menda bron bor) deysiz. Xonada muammo bo'lsa — «المُكَيِّف خَرْبَان» (konditsioner ishlamaydi). Bugun mehmonxona so'zlari va muammo hal qilish iboralarini o'rganamiz.",
  "grammar": {
   "point_ar": "عِبَارَاتُ الفُنْدُق",
-  "explanation_uz": "Ro'yxatdan o'tish (check-in): عِنْدِي حَجْزٌ بِاسْمِ... (menda ... nomiga bron bor), keyin غُرْفَة (xona) va مِفْتَاح (kalit) olasiz. Muammo bo'lsa اِسْتِقْبَال (reception) ga aytasiz: المُكَيِّف لَا يَعْمَل (konditsioner ishlamaydi), أُرِيدُ مِنْشَفَة (sochiq kerak). Xizmat (خِدْمَة) so'rash: خِدْمَةُ الغُرَفِ (xona xizmati). Hijoziyда «buzuq» — خَرْبَان.",
+  "explanation_uz": "Ro'yxatdan o'tish (check-in): عِنْدِي حَجْزٌ بِاسْمِ... (menda ... nomiga bron bor), keyin غُرْفَة (xona) va مِفْتَاح (kalit) olasiz. Muammo bo'lsa اِسْتِقْبَال (reception) ga aytasiz: المُكَيِّف لَا يَعْمَل (konditsioner ishlamaydi), أُرِيدُ مِنْشَفَة (sochiq kerak). Xizmat (خِدْمَة) so'rash: خِدْمَةُ الغُرَفِ (xona xizmati). Hijoziyda «buzuq» — خَرْبَان.",
   "table": [
    {"ar": "عِنْدِي حَجْزٌ", "uz": "Menda bron bor", "form": "check-in"},
    {"ar": "غُرْفَةٌ لِلَيْلَتَيْنِ", "uz": "Ikki kechaga xona", "form": "muddat"},
@@ -84,7 +84,7 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«bron» qaysi?", "q_ar": "", "options": ["حَجْز", "خِدْمَة", "نَزِيل", "طَابِق"], "answer": "حَجْز", "explain_uz": "حَجْز — bron/band qilish.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المُكَيِّفُ لَا يَعْمَل", "options": [], "answer": "konditsioner ishlamaydi", "explain_uz": "مُكَيِّف = konditsioner, لَا يَعْمَل = ishlamaydi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Hijoziyда «buzuq» qaysi?", "q_ar": "", "options": ["خَرْبَان", "نَظِيف", "بَارِد", "قَرِيب"], "answer": "خَرْبَان", "explain_uz": "خَرْبَان — hijoziyда «buzuq, ishlamaydigan».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «buzuq» qaysi?", "q_ar": "", "options": ["خَرْبَان", "نَظِيف", "بَارِد", "قَرِيب"], "answer": "خَرْبَان", "explain_uz": "خَرْبَان — hijoziyda «buzuq, ishlamaydigan».", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «خ د م» o'zagidan?", "q_ar": "", "options": ["خِدْمَة", "حَجْز", "لَيْلَة"], "answer": "خِدْمَة", "explain_uz": "«خ د م» — xizmat o'zagi: خِدْمَة (xizmat), خَادِم (xizmatchi), xodim.", "audio": "", "root": "خ د م", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "sochiq", "q_ar": "", "options": [], "answer": "مِنْشَفَة", "explain_uz": "مِنْشَفَة — sochiq.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«nonushta» qaysi?", "q_ar": "", "options": ["إِفْطَار", "حَمَّام", "مِصْعَد", "خِدْمَة"], "answer": "إِفْطَار", "explain_uz": "إِفْطَار — nonushta (o'zbekcha 'iftor', ف ط ر o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},

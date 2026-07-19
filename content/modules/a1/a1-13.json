@@ -17,7 +17,7 @@
    {"ar": "هُوَ سَأَلَ / هِيَ سَأَلَتْ", "uz": "u so'radi (erkak/ayol)", "form": "3-shaxs"},
    {"ar": "أَنْتَ سَأَلْتَ / أَنَا سَأَلْتُ", "uz": "sen/men so'radim", "form": "1-2 shaxs"},
    {"ar": "نَحْنُ سَأَلْنَا / هُمْ سَأَلُوا", "uz": "biz/ular so'radik", "form": "ko'plik"},
-   {"ar": "دَخَلَ ← دَخَلْتُ ← دَخَلُوا", "uz": "kirdi (yangi fe'lга qo'llash)", "form": "namuna"}
+   {"ar": "دَخَلَ ← دَخَلْتُ ← دَخَلُوا", "uz": "kirdi (yangi fe'lga qo'llash)", "form": "namuna"}
   ],
   "common_mistakes_uz": [
    "Qo'shimchani noto'g'ri shaxsga ulash — jadvalni yodda tutish kerak.",

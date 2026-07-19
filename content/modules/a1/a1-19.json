@@ -64,7 +64,7 @@
    ]
   },
   "speaking": {
-   "task_uz": "Suhbatdoshга savol bering: ayna taskunu? ayna taʿmalu? Keyin ayolga: taktubīna.",
+   "task_uz": "Suhbatdoshga savol bering: ayna taskunu? ayna taʿmalu? Keyin ayolga: taktubīna.",
    "target_ar": ["أَيْنَ تَسْكُنُ؟", "أَيْنَ تَعْمَلُ؟", "تَكْتُبِينَ"],
    "eval": "self_check"
   },

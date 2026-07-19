@@ -1,0 +1,95 @@
+{
+ "id": "a2-13",
+ "level": "A2",
+ "module": "weak-verbs",
+ "order": 13,
+ "title_uz": "Illatli fe'l nima?",
+ "title_ar": "الفِعْلُ المُعْتَلّ",
+ "can_do_uz": "Illatli fe'l tushunchasini va uning turlarini (mithal, ajvaf, naqis) taniyman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-12"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "Ba'zi fe'llar «kasal» (illatli) — ularda و, ي yoki hamza bor va tuslanganda o'zgaradi. قَالَ (dedi) aslida ق-و-ل! كَانَ (edi) ك-و-ن! Bugun bu «illat harflari» qanday ishlashini o'rganamiz.",
+ "grammar": {
+  "point_ar": "أَنْوَاعُ المُعْتَلّ",
+  "explanation_uz": "SOG' fe'l (صَحِيح) — 3 undoshdan iborat, o'zgarmaydi (كَتَبَ). ILLATLI fe'l (مُعْتَلّ) — o'zagida ILLAT HARFI (و، ي، ا) bor va tuslanganda o'zgaradi. Turlari illat harfi O'RNIGA qarab: (1) مِثَال — boshida (وَصَلَ). (2) أَجْوَف («bo'sh») — o'rtasida (قَالَ ← ق و ل). (3) نَاقِص («kam») — oxirida (مَشَى ← م ش ي). Yana مُضَاعَف (ikki bir xil harf: مَدَّ) va مَهْمُوز (hamzali: سَأَلَ).",
+  "table": [
+   {"ar": "وَصَلَ (مِثَال)", "uz": "yetib keldi — و boshida", "form": "mithal"},
+   {"ar": "قَالَ (أَجْوَف)", "uz": "dedi — و o'rtada (ق و ل)", "form": "ajvaf"},
+   {"ar": "مَشَى (نَاقِص)", "uz": "yurdi — ي oxirida (م ش ي)", "form": "naqis"},
+   {"ar": "كَتَبَ (صَحِيح)", "uz": "yozdi — illatsiz", "form": "sog'"}
+  ],
+  "common_mistakes_uz": [
+   "Illatli fe'lni lug'atdagi shakli bilan o'zagini chalkashtirish (قَالَ → ق و ل).",
+   "Turlarni (mithal/ajvaf/naqis) illat harfi o'rniga qarab ajratmaslik.",
+   "Illat harflarini (و ي ا) oddiy harflardan farqlamaslik."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ق و ل",
+   "meaning_uz": "aytish, so'z (ajvaf namunasi)",
+   "uz_cognates": ["qavl", "maqola", "maqolot"],
+   "derived": [
+    {"ar": "قَالَ", "uz": "dedi (o'rtasi و)", "pattern": "فَعَلَ (ajvaf)"},
+    {"ar": "مَقَالَة", "uz": "maqola", "pattern": "مَفْعَلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "مُعْتَلّ", "translit": "muʿtall", "uz": "illatli (weak) fe'l", "root": "ع ل ل", "pattern": "مُفْتَعّ", "pos": "sifat", "audio": "a2/mutall.mp3", "example_ar": "فِعْلٌ مُعْتَلٌّ.", "example_uz": "Illatli fe'l.", "srs": true},
+  {"ar": "صَحِيح", "translit": "ṣaḥīḥ", "uz": "sog' (o'zgarmas) fe'l", "root": "ص ح ح", "pattern": "فَعِيل", "pos": "sifat", "audio": "a1/sahih.mp3", "example_ar": "فِعْلٌ صَحِيحٌ.", "example_uz": "Sog' fe'l.", "srs": true},
+  {"ar": "مِثَال", "translit": "mithāl", "uz": "misol (turi: و/ي boshida)", "root": "م ث ل", "pattern": "فِعَال", "pos": "ot", "audio": "a2/mithal.mp3", "example_ar": "الفِعْلُ المِثَالُ.", "example_uz": "Mithal fe'li.", "srs": true},
+  {"ar": "أَجْوَف", "translit": "ajwaf", "uz": "ajvaf (o'rtasi و/ي)", "root": "ج و ف", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/ajwaf.mp3", "example_ar": "الفِعْلُ الأَجْوَفُ.", "example_uz": "Ajvaf fe'li.", "srs": true},
+  {"ar": "نَاقِص", "translit": "nāqiṣ", "uz": "naqis (oxiri و/ي)", "root": "ن ق ص", "pattern": "فَاعِل", "pos": "sifat", "audio": "a2/naqis.mp3", "example_ar": "الفِعْلُ النَّاقِصُ.", "example_uz": "Naqis fe'li.", "srs": true},
+  {"ar": "قَالَ", "translit": "qāla", "uz": "dedi (ajvaf: ق و ل)", "root": "ق و ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/qala.mp3", "example_ar": "قَالَ الحَقَّ.", "example_uz": "Haqni aytdi.", "srs": true},
+  {"ar": "مَشَى", "translit": "mashā", "uz": "yurdi (naqis: م ش ي)", "root": "م ش ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/masha.mp3", "example_ar": "مَشَى إِلَى البَيْتِ.", "example_uz": "Uyga yurdi.", "srs": true},
+  {"ar": "حَرْفُ العِلَّة", "translit": "ḥarf al-ʿilla", "uz": "illat harfi (و ي ا)", "root": "ع ل ل", "pattern": "", "pos": "ibora", "audio": "a2/harf_illa.mp3", "example_ar": "حُرُوفُ العِلَّةِ ثَلَاثَةٌ.", "example_uz": "Illat harflari uchta.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "بَعْضُ الأَفْعَالِ صَحِيحَةٌ مِثْلَ كَتَبَ، وَبَعْضُهَا مُعْتَلَّةٌ فِيهَا حَرْفُ عِلَّةٍ. قَالَ أَصْلُهُ ق و ل، وَمَشَى أَصْلُهُ م ش ي. عِنْدَ التَّصْرِيفِ يَتَغَيَّرُ حَرْفُ العِلَّةِ.",
+   "questions": [
+    {"q_uz": "«قَالَ» ning asl o'zagi?", "a": "ق و ل"},
+    {"q_uz": "Illatli fe'l tuslanganda nima o'zgaradi?", "a": "Illat harfi (و ي ا)"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/qala.mp3",
+   "transcript_ar": "قَالَ",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi va o'zagi?", "a": "Dedi — ق و ل (ajvaf)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Turlarni ayting: mithāl (waṣala), ajwaf (qāla), nāqiṣ (mashā).",
+   "target_ar": ["قَالَ", "مَشَى", "وَصَلَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«قَالَ» va «مَشَى» ning asl 3 harfli o'zagini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "Illat harflari qaysilar?", "q_ar": "", "options": ["و ي ا", "ب ت ث", "ق ك ل", "س ش ص"], "answer": "و ي ا", "explain_uz": "Illat harflari: و، ي، ا (alif).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«قَالَ» qaysi tur (illat o'rtada)?", "q_ar": "", "options": ["أَجْوَف", "مِثَال", "نَاقِص", "صَحِيح"], "answer": "أَجْوَف", "explain_uz": "Ajvaf — o'rtasida illat (ق و ل).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«مَشَى» qaysi tur (illat oxirda)?", "q_ar": "", "options": ["نَاقِص", "أَجْوَف", "مِثَال", "مُضَاعَف"], "answer": "نَاقِص", "explain_uz": "Naqis — oxirida illat (م ش ي).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«قَالَ، مَقَالَة» qaysi o'zakdan?", "q_ar": "", "options": ["ق و ل", "ق ل ل", "ق ب ل"], "answer": "ق و ل", "explain_uz": "«ق و ل» — aytish o'zagi: qavl, maqola.", "audio": "", "root": "ق و ل", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "فِعْلٌ مُعْتَلٌّ", "options": [], "answer": "illatli fe'l", "explain_uz": "مُعْتَلّ — illat harfi bor fe'l.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "dedi", "q_ar": "", "options": [], "answer": "قَالَ", "explain_uz": "قَالَ — dedi (ajvaf, ق و ل).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«كَتَبَ» qaysi tur?", "q_ar": "", "options": ["صَحِيح (sog')", "أَجْوَف", "نَاقِص", "مِثَال"], "answer": "صَحِيح (sog')", "explain_uz": "كَتَبَ — illat harfi yo'q, sog' fe'l.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ق و ل", "back": "aytish o'zagi (qala=dedi, qavl, maqola) — ajvaf", "deck": "msa"},
+  {"type": "word", "front": "مُعْتَلّ", "back": "illatli (weak) fe'l", "deck": "msa"},
+  {"type": "word", "front": "صَحِيح", "back": "sog' (o'zgarmas) fe'l", "deck": "msa"},
+  {"type": "word", "front": "مِثَال", "back": "mithal (و/ي boshida)", "deck": "msa"},
+  {"type": "word", "front": "أَجْوَف", "back": "ajvaf (o'rtasi و/ي)", "deck": "msa"},
+  {"type": "word", "front": "نَاقِص", "back": "naqis (oxiri و/ي)", "deck": "msa"},
+  {"type": "word", "front": "قَالَ", "back": "dedi (ajvaf)", "deck": "msa"},
+  {"type": "word", "front": "مَشَى", "back": "yurdi (naqis)", "deck": "msa"},
+  {"type": "word", "front": "حَرْفُ العِلَّة", "back": "illat harfi (و ي ا)", "deck": "msa"}
+ ]
+}

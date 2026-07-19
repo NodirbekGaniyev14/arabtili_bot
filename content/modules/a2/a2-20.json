@@ -1,0 +1,98 @@
+{
+ "id": "a2-20",
+ "level": "A2",
+ "module": "grammar-ext",
+ "order": 20,
+ "title_uz": "Ta'kid bilan gapiraman — إنَّ",
+ "title_ar": "إِنَّ وَأَخَوَاتُهَا",
+ "can_do_uz": "إنَّ va uning «opa-singillari» bilan ta'kidlab, «go'yo», «ehtimol» kabi ma'nolarni ayta olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-19"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "«Talaba tirishqoq» — الطَّالِبُ مُجْتَهِدٌ. «HAQIQATAN talaba tirishqoq» — إِنَّ الطَّالِبَ مُجْتَهِدٌ. إنَّ ismli gapga kirib, EGANI mansub qiladi (كانَ ning teskarisi!). لَكِنَّ (lekin), كَأَنَّ (go'yo), لَعَلَّ (ehtimol) — uning opa-singillari.",
+ "grammar": {
+  "point_ar": "إِنَّ وَأَخَوَاتُهَا",
+  "explanation_uz": "إنَّ va opa-singillari ismli gapga kiradi va EGANI («ism إنَّ») NASB ga (fatha) qo'yadi, XABAR esa raf'da qoladi (كانَ ning aksi!): الطَّالِبُ مُجْتَهِدٌ → إِنَّ الطَّالِبَ مُجْتَهِدٌ. Opa-singillar: إِنَّ / أَنَّ (haqiqatan, ...ligini), لَكِنَّ (lekin), كَأَنَّ (go'yo), لَعَلَّ (ehtimol), لَيْتَ (koshki).",
+  "table": [
+   {"ar": "إِنَّ الطَّالِبَ مُجْتَهِدٌ", "uz": "Haqiqatan talaba tirishqoq", "form": "ism nasb"},
+   {"ar": "لَكِنَّ العَمَلَ صَعْبٌ", "uz": "Lekin ish qiyin", "form": "لَكِنَّ"},
+   {"ar": "كَأَنَّ الوَلَدَ أَسَدٌ", "uz": "Go'yo bola sherdek", "form": "كَأَنَّ"},
+   {"ar": "لَعَلَّ الجَوَّ يَتَحَسَّنُ", "uz": "Ehtimol havo yaxshilanadi", "form": "لَعَلَّ"}
+  ],
+  "common_mistakes_uz": [
+   "إنَّ dan keyin egani raf' qoldirish — u NASB (fatha) bo'ladi.",
+   "إنَّ (egani nasb) va كانَ (xabarni nasb) ni chalkashtirish — ular teskari.",
+   "Xabarni nasb qilish — إنَّ dan keyin xabar raf'da qoladi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ح ق ق",
+   "meaning_uz": "haqiqat, haqlik",
+   "uz_cognates": ["haqiqat", "haq", "tahqiq", "huquq"],
+   "derived": [
+    {"ar": "حَقِيقَة", "uz": "haqiqat", "pattern": "فَعِيلَة"},
+    {"ar": "حَقّ", "uz": "haq, huquq", "pattern": "فَعّ"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "إِنَّ", "translit": "inna", "uz": "albatta, haqiqatan (ta'kid)", "root": "", "pattern": "", "pos": "yuklama", "audio": "a2/inna.mp3", "example_ar": "إِنَّ العِلْمَ نُورٌ.", "example_uz": "Haqiqatan, ilm — nur.", "srs": true},
+  {"ar": "أَنَّ", "translit": "anna", "uz": "...ligini (that)", "root": "", "pattern": "", "pos": "yuklama", "audio": "a2/anna.mp3", "example_ar": "أَعْلَمُ أَنَّ الجَوَّ حَارٌّ.", "example_uz": "Havo issiqligini bilaman.", "srs": true},
+  {"ar": "لَكِنَّ", "translit": "lākinna", "uz": "lekin (ta'kid bilan)", "root": "", "pattern": "", "pos": "yuklama", "audio": "a2/lakinna.mp3", "example_ar": "لَكِنَّ العَمَلَ صَعْبٌ.", "example_uz": "Lekin ish qiyin.", "srs": true},
+  {"ar": "كَأَنَّ", "translit": "kaʾanna", "uz": "go'yo, xuddi", "root": "", "pattern": "", "pos": "yuklama", "audio": "a2/kaanna.mp3", "example_ar": "كَأَنَّ الوَلَدَ أَسَدٌ.", "example_uz": "Go'yo bola sherdek.", "srs": true},
+  {"ar": "لَعَلَّ", "translit": "laʿalla", "uz": "ehtimol, shoyad", "root": "", "pattern": "", "pos": "yuklama", "audio": "a2/laalla.mp3", "example_ar": "لَعَلَّهُ يَنْجَحُ.", "example_uz": "Shoyad u muvaffaq bo'lsa.", "srs": true},
+  {"ar": "لَيْتَ", "translit": "layta", "uz": "koshki, qani edi", "root": "", "pattern": "", "pos": "yuklama", "audio": "a2/layta.mp3", "example_ar": "لَيْتَ الشَّبَابَ يَعُودُ.", "example_uz": "Koshki yoshlik qaytsa.", "srs": true},
+  {"ar": "حَقِيقَة", "translit": "ḥaqīqa", "uz": "haqiqat (o'zbekcha 'haqiqat')", "root": "ح ق ق", "pattern": "فَعِيلَة", "pos": "ot", "audio": "a2/haqiqa.mp3", "example_ar": "قُلِ الحَقِيقَةَ.", "example_uz": "Haqiqatni ayt.", "srs": true},
+  {"ar": "أَسَد", "translit": "asad", "uz": "sher, arslon", "root": "أ س د", "pattern": "فَعَل", "pos": "ot", "audio": "a2/asad.mp3", "example_ar": "الأَسَدُ قَوِيٌّ.", "example_uz": "Sher kuchli.", "srs": true},
+  {"ar": "يَنْجَحُ", "translit": "yanjaḥu", "uz": "muvaffaq bo'ladi, o'tadi", "root": "ن ج ح", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a2/yanjahu.mp3", "example_ar": "الطَّالِبُ يَنْجَحُ.", "example_uz": "Talaba muvaffaq bo'ladi.", "srs": true},
+  {"ar": "شَبَاب", "translit": "shabāb", "uz": "yoshlik, yoshlar", "root": "ش ب ب", "pattern": "فَعَال", "pos": "ot", "audio": "a2/shabab.mp3", "example_ar": "الشَّبَابُ قُوَّةٌ.", "example_uz": "Yoshlik — kuch.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "إِنَّ العِلْمَ نُورٌ وَإِنَّ الجَهْلَ ظَلَامٌ. الطَّالِبُ مُجْتَهِدٌ لَكِنَّ الاِمْتِحَانَ صَعْبٌ. لَعَلَّهُ يَنْجَحُ إِنْ شَاءَ اللَّهُ.",
+   "questions": [
+    {"q_uz": "«إِنَّ العِلْمَ» da «العِلْمَ» nega fatha?", "a": "إنَّ egani nasb qiladi"},
+    {"q_uz": "Imtihon qanday?", "a": "Qiyin (لَكِنَّ الاِمْتِحَانَ صَعْبٌ)"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/inna.mp3",
+   "transcript_ar": "إِنَّ",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Albatta, haqiqatan (ta'kid)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "إنَّ opa-singillari bilan ayting: inna l-ʿilma nūr, lākinna l-ʿamala ṣaʿb, laʿallahu yanjaḥu.",
+   "target_ar": ["إِنَّ العِلْمَ نُورٌ", "لَكِنَّ العَمَلَ صَعْبٌ", "لَعَلَّهُ يَنْجَحُ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Haqiqatan talaba tirishqoq» va «Lekin ish qiyin» gaplarini إنَّ/لكنَّ bilan yozing (ega mansub).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Haqiqatan talaba tirishqoq» to'g'ri qaysi?", "q_ar": "", "options": ["إِنَّ الطَّالِبَ مُجْتَهِدٌ", "إِنَّ الطَّالِبُ مُجْتَهِدٌ", "إِنَّ الطَّالِبَ مُجْتَهِدًا", "الطَّالِبَ إِنَّ مُجْتَهِدٌ"], "answer": "إِنَّ الطَّالِبَ مُجْتَهِدٌ", "explain_uz": "إنَّ egani nasb (الطَّالِبَ), xabar raf' (مُجْتَهِدٌ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "إنَّ dan keyin EGA qaysi holatda?", "q_ar": "", "options": ["nasb (fatha)", "raf' (damma)", "jarr (kasra)", "sukun"], "answer": "nasb (fatha)", "explain_uz": "إنَّ egani nasb qiladi (كانَ ning aksi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "كَأَنَّ الوَلَدَ أَسَدٌ", "options": [], "answer": "go'yo bola sherdek", "explain_uz": "كَأَنَّ = go'yo, الوَلَد = bola, أَسَد = sher.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«حَقِيقَة، حَقّ» qaysi o'zakdan?", "q_ar": "", "options": ["ح ق ق", "ح ك م", "ح ق ب"], "answer": "ح ق ق", "explain_uz": "«ح ق ق» — haqiqat o'zagi: haqiqat, haq, huquq.", "audio": "", "root": "ح ق ق", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«ehtimol, shoyad» qaysi?", "q_ar": "", "options": ["لَعَلَّ", "لَيْتَ", "كَأَنَّ", "لَكِنَّ"], "answer": "لَعَلَّ", "explain_uz": "لَعَلَّ — ehtimol/shoyad.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "koshki, qani edi", "q_ar": "", "options": [], "answer": "لَيْتَ", "explain_uz": "لَيْتَ — koshki (orzu-istak).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "haqiqat", "q_ar": "", "options": [], "answer": "حَقِيقَة", "explain_uz": "حَقِيقَة — haqiqat.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ح ق ق", "back": "haqiqat o'zagi (haqiqat, haq, huquq, tahqiq)", "deck": "msa"},
+  {"type": "pattern", "front": "إِنَّ + ism nasb", "back": "inna opa-singillari egani mansub qiladi", "deck": "msa"},
+  {"type": "word", "front": "إِنَّ", "back": "albatta, haqiqatan", "deck": "msa"},
+  {"type": "word", "front": "أَنَّ", "back": "...ligini (that)", "deck": "msa"},
+  {"type": "word", "front": "لَكِنَّ", "back": "lekin", "deck": "msa"},
+  {"type": "word", "front": "كَأَنَّ", "back": "go'yo, xuddi", "deck": "msa"},
+  {"type": "word", "front": "لَعَلَّ", "back": "ehtimol, shoyad", "deck": "msa"},
+  {"type": "word", "front": "لَيْتَ", "back": "koshki", "deck": "msa"},
+  {"type": "word", "front": "حَقِيقَة", "back": "haqiqat", "deck": "msa"},
+  {"type": "word", "front": "أَسَد", "back": "sher, arslon", "deck": "msa"}
+ ]
+}

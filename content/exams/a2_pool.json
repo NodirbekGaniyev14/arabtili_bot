@@ -1,0 +1,57 @@
+{
+ "level": "A2",
+ "config": {"reading": 10, "listening": 8, "writing": 2, "speaking": 3, "minutes": 40},
+ "reading": [
+  {"type": "mcq", "q_uz": "«o'rgatdi» (II bob) qaysi?", "q_ar": "", "options": ["عَلَّمَ", "عَلِمَ", "تَعَلَّمَ", "أَعْلَمَ"], "answer": "عَلَّمَ"},
+  {"type": "mcq", "q_uz": "«o'rgandi» (V bob) qaysi?", "q_ar": "", "options": ["تَعَلَّمَ", "عَلَّمَ", "اِسْتَعْلَمَ", "عَالِم"], "answer": "تَعَلَّمَ"},
+  {"type": "mcq", "q_uz": "IV bob (أَفْعَلَ) ning asosiy ma'nosi?", "q_ar": "", "options": ["sababiyat («-dirmoq»)", "o'zaro", "natija", "talab"], "answer": "sababiyat («-dirmoq»)"},
+  {"type": "mcq", "q_uz": "X bob (اِسْتَفْعَلَ) ning asosiy ma'nosi?", "q_ar": "", "options": ["talab qilish/so'rash", "kuchaytirish", "natija", "o'zaro"], "answer": "talab qilish/so'rash"},
+  {"type": "mcq", "q_uz": "«قَالَ» qaysi illatli tur?", "q_ar": "", "options": ["أَجْوَف (o'rtasi illat)", "مِثَال (boshi illat)", "نَاقِص (oxiri illat)", "صَحِيح"], "answer": "أَجْوَف (o'rtasi illat)"},
+  {"type": "mcq", "q_uz": "«وَصَلَ» ning hozirgi zamoni?", "q_ar": "", "options": ["يَصِلُ", "يَوْصِلُ", "يَصُولُ", "وَاصَلَ"], "answer": "يَصِلُ"},
+  {"type": "mcq", "q_uz": "«Havo chiroyli edi» to'g'ri qaysi?", "q_ar": "", "options": ["كَانَ الجَوُّ جَمِيلًا", "كَانَ الجَوُّ جَمِيلٌ", "كَانَ الجَوَّ جَمِيلٌ", "الجَوُّ جَمِيلًا كَانَ"], "answer": "كَانَ الجَوُّ جَمِيلًا"},
+  {"type": "mcq", "q_uz": "«إِنَّ» dan keyin EGA qaysi holatda?", "q_ar": "", "options": ["nasb (fatha)", "raf' (damma)", "jarr (kasra)", "sukun"], "answer": "nasb (fatha)"},
+  {"type": "mcq", "q_uz": "«يَكْتُبُ» dan buyruq (yoz!) qaysi?", "q_ar": "", "options": ["اُكْتُبْ", "يَكْتُبْ", "كَتَبَ", "مَكْتُوب"], "answer": "اُكْتُبْ"},
+  {"type": "mcq", "q_uz": "«كَتَبَ» ning majhuli (yozildi)?", "q_ar": "", "options": ["كُتِبَ", "كَتَّبَ", "اِنْكَتَبَ", "كَاتَبَ"], "answer": "كُتِبَ"},
+  {"type": "mcq", "q_uz": "«كَبِير» ning solishtirma darajasi?", "q_ar": "", "options": ["أَكْبَر", "كِبَار", "كَبِيرَة", "مَكْبُور"], "answer": "أَكْبَر"},
+  {"type": "mcq", "q_uz": "«مُعَلِّم» va «مُعَلَّم» farqi nima?", "q_ar": "", "options": ["fo'il (o'rgatuvchi) / maf'ul (o'rgatilgan)", "birlik / ko'plik", "erkak / ayol", "hozirgi / o'tgan"], "answer": "fo'il (o'rgatuvchi) / maf'ul (o'rgatilgan)"},
+  {"type": "mcq", "q_uz": "«مَمْنُوع الدُّخُول» belgisi nima degani?", "q_ar": "", "options": ["Kirish taqiqlangan", "Chiqish bu yerda", "Kirish bepul", "Ochiq"], "answer": "Kirish taqiqlangan"},
+  {"type": "mcq", "q_uz": "Umrada Ka'ba atrofida aylanish qaysi?", "q_ar": "", "options": ["طَوَاف", "سَعْي", "إِحْرَام", "حَلْق"], "answer": "طَوَاف"},
+  {"type": "mcq", "q_uz": "Hijoziyda «Qancha? (narx)» qaysi?", "q_ar": "", "options": ["بِكَمْ؟", "وِين؟", "أَبْغَى", "زَيْن"], "answer": "بِكَمْ؟"},
+  {"type": "mcq", "q_uz": "«uchinchi qavat» qaysi?", "q_ar": "", "options": ["الطَّابِقُ الثَّالِثُ", "الطَّابِقُ ثَلَاثَة", "ثَالِثُ الطَّابِقِ", "الثَّالِثُ طَابِقٌ"], "answer": "الطَّابِقُ الثَّالِثُ"},
+  {"type": "mcq", "q_uz": "100 dan keyin sanaladigan ot qaysi shaklda?", "q_ar": "", "options": ["birlik-jarr", "ko'plik-jarr", "ikkilik", "ko'plik-raf'"], "answer": "birlik-jarr"},
+  {"type": "mcq", "q_uz": "«اِجْتَمَعَ» qaysi bob?", "q_ar": "", "options": ["VIII (اِفْتَعَلَ)", "VII (اِنْفَعَلَ)", "X (اِسْتَفْعَلَ)", "IV (أَفْعَلَ)"], "answer": "VIII (اِفْتَعَلَ)"},
+  {"type": "mcq", "q_uz": "«خَلْفَ البَيْتِ» ma'nosi?", "q_ar": "", "options": ["uy orqasida", "uy oldida", "uy ichida", "uy ustida"], "answer": "uy orqasida"},
+  {"type": "mcq", "q_uz": "II bobning masdar vazni?", "q_ar": "", "options": ["تَفْعِيل", "إِفْعَال", "اِسْتِفْعَال", "تَفَاعُل"], "answer": "تَفْعِيل"}
+ ],
+ "listening": [
+  {"type": "mcq", "q_uz": "Eshitgan fe'l ma'nosi?", "audio": "a2/allama.mp3", "options": ["o'rgatdi", "o'rgandi", "bildi", "so'radi"], "answer": "o'rgatdi"},
+  {"type": "mcq", "q_uz": "Eshitgan fe'l ma'nosi?", "audio": "a2/taallama.mp3", "options": ["o'rgandi", "o'rgatdi", "xabar berdi", "bildi"], "answer": "o'rgandi"},
+  {"type": "mcq", "q_uz": "Eshitgan fe'l ma'nosi?", "audio": "a2/qala.mp3", "options": ["dedi", "bordi", "keldi", "uxladi"], "answer": "dedi"},
+  {"type": "mcq", "q_uz": "Eshitgan fe'l ma'nosi?", "audio": "a2/kana.mp3", "options": ["edi, bo'ldi", "dedi", "ko'rdi", "keldi"], "answer": "edi, bo'ldi"},
+  {"type": "mcq", "q_uz": "Eshitgan fe'l ma'nosi?", "audio": "a2/istaghfara.mp3", "options": ["kechirim so'radi", "kutib oldi", "ishlatdi", "dam oldi"], "answer": "kechirim so'radi"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "a2/halal.mp3", "options": ["halol", "harom", "mazali", "yangi"], "answer": "halol"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "a2/jawaz.mp3", "options": ["pasport", "viza", "bojxona", "chipta"], "answer": "pasport"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "a2/tawaf.mp3", "options": ["tavof (Ka'ba atrofida)", "sa'y", "ihrom", "azon"], "answer": "tavof (Ka'ba atrofida)"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "a2/shahada_cert.mp3", "options": ["sertifikat", "imtihon", "daraja", "yutuq"], "answer": "sertifikat"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "a2/hiwar.mp3", "options": ["suhbat, dialog", "rol", "mashq", "vaziyat"], "answer": "suhbat, dialog"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "a2/mamnu.mp3", "options": ["taqiqlangan", "ochiq", "bepul", "yopiq"], "answer": "taqiqlangan"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "a2/ilm.mp3", "options": ["ilm, bilim", "ta'lim", "olim", "dunyo"], "answer": "ilm, bilim"},
+  {"type": "mcq", "q_uz": "Hijoziy iborani eshiting — ma'nosi?", "audio": "hj/abgha.mp3", "options": ["Xohlayman", "Qayerda?", "Ko'p", "Yaxshi"], "answer": "Xohlayman"},
+  {"type": "mcq", "q_uz": "Hijoziy iborani eshiting — ma'nosi?", "audio": "hj/wen.mp3", "options": ["Qayerda?", "Qancha?", "Kut", "Ha"], "answer": "Qayerda?"}
+ ],
+ "writing": [
+  {"task_uz": "«عَلِمَ» o'zagidan (ع ل م) 4 so'z yozing: II bob fe'li, V bob fe'li, ism fo'il va masdar."},
+  {"task_uz": "«Havo sovuq edi» (كانَ bilan) va «Haqiqatan talaba tirishqoq» (إنَّ bilan) gaplarini yozing — holatlarga e'tibor bering."},
+  {"task_uz": "Uch buyruq fe'li yozing (yoz!, o'qi!, eshit!) va bittasini gapda ishlating."},
+  {"task_uz": "Saudiyaga safar haqida 4 gap yozing: aeroport, taksi, mehmonxona, Haram."},
+  {"task_uz": "«كَتَبَ» ni majhulga aylantiring va solishtirma daraja (أَفْعَل) bilan bir gap tuzing."}
+ ],
+ "speaking": [
+  {"q_ar": "عَلَّمَ المُدَرِّسُ الطُّلَّابَ، وَتَعَلَّمَ الطُّلَّابُ.", "audio": "a2/allama.mp3"},
+  {"q_ar": "كَانَ الجَوُّ جَمِيلًا أَمْسِ.", "audio": "a2/kana.mp3"},
+  {"q_ar": "أَبْغَى أَرُوح الحَرَم، بِكَمْ التَّوْصِيلَة؟", "audio": "hj/abgha.mp3"},
+  {"q_ar": "طُفْتُ حَوْلَ الكَعْبَةِ وَسَعَيْتُ بَيْنَ الصَّفَا وَالمَرْوَةِ.", "audio": "a2/tawaf.mp3"},
+  {"q_ar": "اِقْرَأْ وَاُكْتُبْ وَاِسْمَعْ جَيِّدًا.", "audio": "a2/iqra.mp3"},
+  {"q_ar": "حَصَلْتُ عَلَى شَهَادَةِ المُسْتَوَى A2.", "audio": "a2/shahada_cert.mp3"}
+ ]
+}

@@ -9,7 +9,7 @@
  "duration_min": 30,
  "prerequisites": ["a1-37"],
  "harakat_level": "full",
- "hook_uz": "Adashib qoldingizmi? «Masjid qayerda?» — أَيْنَ المَسْجِدُ؟ yoki Saudiyaда وِين المَسْجِد؟. Yo'nalish so'zlari (يَمِين — o'ng, يَسَار — chap, مُسْتَقِيم — to'g'ri) va transport bilan yo'l topamiz!",
+ "hook_uz": "Adashib qoldingizmi? «Masjid qayerda?» — أَيْنَ المَسْجِدُ؟ yoki Saudiyada وِين المَسْجِد؟. Yo'nalish so'zlari (يَمِين — o'ng, يَسَار — chap, مُسْتَقِيم — to'g'ri) va transport bilan yo'l topamiz!",
  "grammar": {
   "point_ar": "الاِتِّجَاهَاتُ وَالمُوَاصَلَات",
   "explanation_uz": "Yo'l so'rash: أَيْنَ...؟ (qayerda) yoki كَيْفَ أَصِلُ إِلَى...؟ (... ga qanday yetaman?). Yo'nalishlar: يَمِين (o'ng), يَسَار (chap), مُسْتَقِيم (to'g'ri), أَمَام (old), وَرَاء (orqa). Transport: سَيَّارَة (mashina), حَافِلَة (avtobus), قِطَار (poyezd), تَاكْسِي (taksi). Saudiyada وِين؟ (qayerda?) va عَلَى طُول (to'g'riga) ko'p eshitiladi.",
@@ -83,10 +83,10 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«o'ng (tomon)» qaysi?", "q_ar": "", "options": ["يَمِين", "يَسَار", "وَرَاء", "أَمَام"], "answer": "يَمِين", "explain_uz": "يَمِين — o'ng; يَسَار — chap.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المَسْجِدُ عَلَى اليَمِينِ", "options": [], "answer": "masjid o'ng tomonda", "explain_uz": "عَلَى اليَمِين = o'ng tomonda.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Hijoziyда «Qayerda?» qaysi?", "q_ar": "", "options": ["وِين؟", "أَيْنَ؟", "عَلَى طُول", "كِيف؟"], "answer": "وِين؟", "explain_uz": "Hijoziy: وِين؟ (rasmiy: أَيْنَ؟).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «Qayerda?» qaysi?", "q_ar": "", "options": ["وِين؟", "أَيْنَ؟", "عَلَى طُول", "كِيف؟"], "answer": "وِين؟", "explain_uz": "Hijoziy: وِين؟ (rasmiy: أَيْنَ؟).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «و ج ه» o'zagidan?", "q_ar": "", "options": ["اِتِّجَاه", "قِطَار", "حَافِلَة"], "answer": "اِتِّجَاه", "explain_uz": "«و ج ه» — yo'nalish o'zagi: اِتِّجَاه (yo'nalish), وَجْه (yuz), jihat.", "audio": "", "root": "و ج ه", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "avtobus", "q_ar": "", "options": [], "answer": "حَافِلَة", "explain_uz": "حَافِلَة — avtobus.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Hijoziyда «To'g'riga» qaysi?", "q_ar": "", "options": ["عَلَى طُول", "وِين", "اِسْتَنَّى", "كِيف"], "answer": "عَلَى طُول", "explain_uz": "عَلَى طُول — hijoziyда «to'g'riga».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «To'g'riga» qaysi?", "q_ar": "", "options": ["عَلَى طُول", "وِين", "اِسْتَنَّى", "كِيف"], "answer": "عَلَى طُول", "explain_uz": "عَلَى طُول — hijoziyda «to'g'riga».", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "poyezd", "q_ar": "", "options": [], "answer": "قِطَار", "explain_uz": "قِطَار — poyezd.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [

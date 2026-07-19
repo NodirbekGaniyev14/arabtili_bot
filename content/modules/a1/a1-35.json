@@ -9,10 +9,10 @@
  "duration_min": 30,
  "prerequisites": ["a1-34"],
  "harakat_level": "full",
- "hook_uz": "Bozorда «Bu qancha turadi?» — بِكَمْ هَذَا؟. Narxni tushunish uchun kattaroq sonlar kerak: عِشْرُونَ (20), مِئَة (100), رِيَال (riyol). Yoshni ham so'raymiz: كَمْ عُمْرُكَ؟. Saudiya lahjasi so'zlarini ham o'rganamiz!",
+ "hook_uz": "Bozorda «Bu qancha turadi?» — بِكَمْ هَذَا؟. Narxni tushunish uchun kattaroq sonlar kerak: عِشْرُونَ (20), مِئَة (100), رِيَال (riyol). Yoshni ham so'raymiz: كَمْ عُمْرُكَ؟. Saudiya lahjasi so'zlarini ham o'rganamiz!",
  "grammar": {
   "point_ar": "الأَعْدَاد ١١–١٠٠",
-  "explanation_uz": "11–19: son + عَشَرَ (أَحَدَ عَشَرَ = 11, اثْنَا عَشَرَ = 12). O'nliklar ـُونَ bilan tugaydi: عِشْرُونَ (20), ثَلاثُونَ (30), أَرْبَعُونَ (40), خَمْسُونَ (50)... مِئَة (100). Narx: العَدَد + رِيَال (bes riyol = خَمْسَةُ رِيَالاتٍ). Yosh: كَمْ عُمْرُكَ؟ — عُمْرِي عِشْرُونَ سَنَةً (yoshim 20). Saudiyada kundalik xaridда بِكَمْ؟ (qancha?) va أَبْغَى (xohlayman) ko'p ishlatiladi.",
+  "explanation_uz": "11–19: son + عَشَرَ (أَحَدَ عَشَرَ = 11, اثْنَا عَشَرَ = 12). O'nliklar ـُونَ bilan tugaydi: عِشْرُونَ (20), ثَلاثُونَ (30), أَرْبَعُونَ (40), خَمْسُونَ (50)... مِئَة (100). Narx: العَدَد + رِيَال (bes riyol = خَمْسَةُ رِيَالاتٍ). Yosh: كَمْ عُمْرُكَ؟ — عُمْرِي عِشْرُونَ سَنَةً (yoshim 20). Saudiyada kundalik xaridda بِكَمْ؟ (qancha?) va أَبْغَى (xohlayman) ko'p ishlatiladi.",
   "table": [
    {"ar": "أَحَدَ عَشَرَ · اثْنَا عَشَرَ", "uz": "11 · 12", "form": "11-12"},
    {"ar": "عِشْرُونَ · ثَلاثُونَ · مِئَة", "uz": "20 · 30 · 100", "form": "o'nliklar"},
@@ -21,8 +21,8 @@
   ],
   "common_mistakes_uz": [
    "O'nliklarni (عِشْرُونَ) noto'g'ri talaffuz qilish — ـُونَ bilan tugaydi.",
-   "Narxда رِيَال ni tushirib qoldirish.",
-   "Rasmiy vaziyatда hijoziy (أَبْغَى) ni ishlatib yuborish."
+   "Narxda رِيَال ni tushirib qoldirish.",
+   "Rasmiy vaziyatda hijoziy (أَبْغَى) ni ishlatib yuborish."
   ]
  },
  "roots": [
@@ -82,10 +82,10 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«yigirma (20)» qaysi?", "q_ar": "", "options": ["عِشْرُونَ", "عَشَرَة", "مِئَة", "ثَلاثُونَ"], "answer": "عِشْرُونَ", "explain_uz": "عِشْرُونَ — yigirma (20). عَشَرَة — o'n (10).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_ar_uz", "q_uz": "", "q_ar": "كَمْ عُمْرُكَ؟", "options": [], "answer": "yoshing nechada", "explain_uz": "كَمْ = nechta, عُمْر = yosh/umr, ـكَ = sening.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Hijoziyда «Qancha?» (narx) qaysi?", "q_ar": "", "options": ["بِكَمْ؟", "كَمِ الثَّمَنُ؟", "أَبْغَى", "وَاجِد"], "answer": "بِكَمْ؟", "explain_uz": "Hijoziy: بِكَمْ؟ (rasmiy: كَمِ الثَّمَنُ؟).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «Qancha?» (narx) qaysi?", "q_ar": "", "options": ["بِكَمْ؟", "كَمِ الثَّمَنُ؟", "أَبْغَى", "وَاجِد"], "answer": "بِكَمْ؟", "explain_uz": "Hijoziy: بِكَمْ؟ (rasmiy: كَمِ الثَّمَنُ؟).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ع م ر» o'zagidan?", "q_ar": "", "options": ["عُمْر", "ثَمَن", "رِيَال"], "answer": "عُمْر", "explain_uz": "«ع م ر» — umr o'zagi: عُمْر (yosh), عُمْرَة (umra), imorat.", "audio": "", "root": "ع م ر", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "yuz (100)", "q_ar": "", "options": [], "answer": "مِئَة", "explain_uz": "مِئَة — yuz (100).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Hijoziyда «Xohlayman» qaysi?", "q_ar": "", "options": ["أَبْغَى", "بِكَمْ", "وَاجِد", "غَالِي"], "answer": "أَبْغَى", "explain_uz": "أَبْغَى — hijoziyда «xohlayman» (rasmiy: أُرِيدُ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «Xohlayman» qaysi?", "q_ar": "", "options": ["أَبْغَى", "بِكَمْ", "وَاجِد", "غَالِي"], "answer": "أَبْغَى", "explain_uz": "أَبْغَى — hijoziyda «xohlayman» (rasmiy: أُرِيدُ).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "To'ldiring: «عُمْرِي ____ سَنَةً» (yoshim 20)", "q_ar": "عُمْرِي ____ سَنَةً", "options": [], "answer": "عِشْرُونَ", "explain_uz": "عِشْرُونَ — yigirma (20).", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [

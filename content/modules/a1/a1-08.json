@@ -86,7 +86,7 @@
   {"type": "match_root", "q_uz": "Qaysi so'z «ش ك ر» o'zagidan?", "q_ar": "", "options": ["شُكْرًا", "سَلَام", "حَال"], "answer": "شُكْرًا", "explain_uz": "«ش ك ر» — shukr o'zagi: شُكْرًا (rahmat), شَاكِر (minnatdor).", "audio": "", "root": "ش ك ر", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "Javobni to'ldiring: «كَيْفَ حَالُكَ؟» — «أَنَا ____» (yaxshi)", "q_ar": "أَنَا ____", "options": [], "answer": "بِخَيْر", "explain_uz": "بِخَيْر — yaxshi (ahvol).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "rahmat", "q_ar": "", "options": [], "answer": "شُكْرًا", "explain_uz": "شُكْرًا — rahmat (o'zbekcha 'shukr').", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Hijoziyda «Yaxshi / zo'r» qaysi?", "q_ar": "", "options": ["تَمَام", "أَيْوَه", "عَفْوًا", "هُنَا"], "answer": "تَمَام", "explain_uz": "تَمَام — hijoziyда «zo'r, yaxshi». أَيْوَه — «ha».", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "Hijoziyda «Yaxshi / zo'r» qaysi?", "q_ar": "", "options": ["تَمَام", "أَيْوَه", "عَفْوًا", "هُنَا"], "answer": "تَمَام", "explain_uz": "تَمَام — hijoziyda «zo'r, yaxshi». أَيْوَه — «ha».", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "root", "front": "ش ك ر", "back": "shukr o'zagi (shukran=rahmat, shokir=minnatdor)", "deck": "msa"},

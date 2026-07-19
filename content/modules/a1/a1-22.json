@@ -11,7 +11,7 @@
   "a1-21"
  ],
  "harakat_level": "full",
- "hook_uz": "Biror ishni qilmasligingizni ayting: «Bilmayman» — لا أَعْرِفُ. Hozirgi zamonni inkor qilish oson: fe'l oldiga لا qo'yasiz, fe'l o'zgarmaydi. (O'tganда مَا edi, hozirda لا.)",
+ "hook_uz": "Biror ishni qilmasligingizni ayting: «Bilmayman» — لا أَعْرِفُ. Hozirgi zamonni inkor qilish oson: fe'l oldiga لا qo'yasiz, fe'l o'zgarmaydi. (O'tganda مَا edi, hozirda لا.)",
  "grammar": {
   "point_ar": "لا + الفِعْل المُضَارِع",
   "explanation_uz": "Hozirgi zamonni inkor qilish uchun fe'l OLDIGA لا qo'yiladi, fe'l shakli o'zgarmaydi: أَعْرِفُ (bilaman) → لا أَعْرِفُ (bilmayman); يَذْهَبُ (boradi) → لا يَذْهَبُ (bormaydi). ESLATMA: o'tgan zamon inkori مَا bilan (مَا ذَهَبَ), hozirgi zamon inkori لا bilan (لا يَذْهَبُ).",

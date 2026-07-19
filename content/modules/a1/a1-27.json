@@ -55,7 +55,7 @@
   "reading": {
    "text_ar": "فِي المَدِينَةِ بُيُوتٌ كَبِيرَةٌ وَأَسْوَاقٌ قَدِيمَةٌ. الرِّجَالُ فِي الأَسْوَاقِ وَالأَوْلَادُ فِي المَدَارِسِ. الكُتُبُ فِي المَكْتَبَةِ.",
    "questions": [
-    {"q_uz": "Shaharда qanday binolar bor?", "a": "Katta uylar va eski bozorlar"},
+    {"q_uz": "Shaharda qanday binolar bor?", "a": "Katta uylar va eski bozorlar"},
     {"q_uz": "«كُتُب» qaysi so'zning ko'pligi?", "a": "كِتَاب (kitob)"}
    ]
   },
@@ -83,7 +83,7 @@
   {"type": "match_root", "q_uz": "Qaysi so'z «ج م ع» o'zagidan?", "q_ar": "", "options": ["جَمْع", "كُتُب", "رِجَال"], "answer": "جَمْع", "explain_uz": "«ج م ع» — yig'ish o'zagi: جَمْع (ko'plik), جامعة, jum'a.", "audio": "", "root": "ج م ع", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "Ko'plik yozing: «قَلَم» → ? (qalamlar)", "q_ar": "____", "options": [], "answer": "أَقْلَام", "explain_uz": "قَلَم → أَقْلَام (أَفْعَال vazni).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "shaharlar", "q_ar": "", "options": [], "answer": "مُدُن", "explain_uz": "مَدِينَة → مُدُن (singan ko'plik).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Singan ko'plik (جمع التكسير) nima o'zgaradi?", "q_ar": "", "options": ["so'zning ichki shakli", "faqat oxiri", "faqat boshi", "hech narsa"], "answer": "so'zning ichki shakli", "explain_uz": "Singan ko'plikда so'z ichki tuzilishi o'zgaradi (qo'shimcha emas).", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "Singan ko'plik (جمع التكسير) nima o'zgaradi?", "q_ar": "", "options": ["so'zning ichki shakli", "faqat oxiri", "faqat boshi", "hech narsa"], "answer": "so'zning ichki shakli", "explain_uz": "Singan ko'plikda so'z ichki tuzilishi o'zgaradi (qo'shimcha emas).", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "root", "front": "ج م ع", "back": "yig'ish o'zagi (jam', jome', jum'a, majmua)", "deck": "msa"},

@@ -1,0 +1,95 @@
+{
+ "id": "a2-40",
+ "level": "A2",
+ "module": "skills",
+ "order": 40,
+ "title_uz": "O'qish: qisqa hikoya",
+ "title_ar": "قِرَاءَة: قِصَّةٌ قَصِيرَة",
+ "can_do_uz": "Harakatsiz qisqa hikoyani o'qib, mazmunini tushuna olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-39"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "Endi haqiqiy matn o'qiymiz — harakatsiz, kitobdagidek! Hikoya so'zlari yordam beradi: فَجْأَة (to'satdan), بَيْنَمَا (...ayotganda), أَخِيرًا (nihoyat). Kontekstdan tushunish — eng muhim ko'nikma.",
+ "grammar": {
+  "point_ar": "رَوَابِطُ السَّرْد",
+  "explanation_uz": "Hikoyani bog'lovchi so'zlar voqealar tartibini ko'rsatadi: فِي البِدَايَة (boshida), ثُمَّ (keyin), بَيْنَمَا (...ayotganda), فَجْأَة (to'satdan), بَعْدَ ذَلِكَ (shundan keyin), أَخِيرًا (nihoyat), فِي النِّهَايَة (oxirida). Bularni tanisangiz, harakatsiz matnni ham osongina kuzatasiz. Noma'lum so'zni KONTEKSTDAN taxmin qiling — har so'zni lug'atdan izlamang.",
+  "table": [
+   {"ar": "فِي البِدَايَة", "uz": "boshida", "form": "boshlanish"},
+   {"ar": "بَيْنَمَا · فَجْأَةً", "uz": "...ayotganda · to'satdan", "form": "o'rta"},
+   {"ar": "بَعْدَ ذَلِكَ", "uz": "shundan keyin", "form": "ketma-ketlik"},
+   {"ar": "أَخِيرًا · فِي النِّهَايَة", "uz": "nihoyat · oxirida", "form": "yakun"}
+  ],
+  "common_mistakes_uz": [
+   "Har noma'lum so'zda to'xtash — avval umumiy mazmunni tushuning.",
+   "Bog'lovchi so'zlarga e'tibor bermaslik — ular voqea tartibini beradi.",
+   "Harakatsiz matnni o'qishdan qo'rqish — mashq bilan osonlashadi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ح د ث",
+   "meaning_uz": "yuz berish, so'zlash",
+   "uz_cognates": ["hadis", "hodisa", "muhaddis"],
+   "derived": [
+    {"ar": "حَدَثَ", "uz": "yuz berdi", "pattern": "فَعَلَ"},
+    {"ar": "حَادِثَة", "uz": "hodisa", "pattern": "فَاعِلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "حَدَثَ", "translit": "ḥadatha", "uz": "yuz berdi, sodir bo'ldi", "root": "ح د ث", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/hadatha.mp3", "example_ar": "مَاذَا حَدَثَ؟", "example_uz": "Nima bo'ldi?", "srs": true},
+  {"ar": "فَجْأَةً", "translit": "fajʾatan", "uz": "to'satdan, birdan", "root": "ف ج أ", "pattern": "", "pos": "ravish", "audio": "a2/fajatan.mp3", "example_ar": "فَجْأَةً سَمِعْنَا صَوْتًا.", "example_uz": "To'satdan ovoz eshitdik.", "srs": true},
+  {"ar": "بَيْنَمَا", "translit": "baynamā", "uz": "...ayotganda, shu paytda", "root": "ب ي ن", "pattern": "", "pos": "bog'lovchi", "audio": "a2/baynama.mp3", "example_ar": "بَيْنَمَا كُنْتُ أَقْرَأُ.", "example_uz": "Men o'qiyotganimda.", "srs": true},
+  {"ar": "أَخِيرًا", "translit": "akhīran", "uz": "nihoyat, oxir-oqibat", "root": "أ خ ر", "pattern": "", "pos": "ravish", "audio": "a2/akhiran.mp3", "example_ar": "أَخِيرًا وَصَلْنَا.", "example_uz": "Nihoyat yetib keldik.", "srs": true},
+  {"ar": "بِدَايَة", "translit": "bidāya", "uz": "boshlanish (o'zbekcha 'ibtido')", "root": "ب د أ", "pattern": "فِعَالَة", "pos": "ot", "audio": "a2/bidaya.mp3", "example_ar": "فِي البِدَايَةِ.", "example_uz": "Boshida.", "srs": true},
+  {"ar": "بَطَل", "translit": "baṭal", "uz": "qahramon", "root": "ب ط ل", "pattern": "فَعَل", "pos": "ot", "audio": "a2/batal.mp3", "example_ar": "بَطَلُ القِصَّةِ.", "example_uz": "Hikoya qahramoni.", "srs": true},
+  {"ar": "صَوْت", "translit": "ṣawt", "uz": "ovoz, tovush (o'zbekcha 'savt')", "root": "ص و ت", "pattern": "فَعْل", "pos": "ot", "audio": "a2/sawt.mp3", "example_ar": "سَمِعْتُ صَوْتًا.", "example_uz": "Ovoz eshitdim.", "srs": true},
+  {"ar": "حَادِثَة", "translit": "ḥāditha", "uz": "hodisa, voqea (o'zbekcha 'hodisa')", "root": "ح د ث", "pattern": "فَاعِلَة", "pos": "ot", "audio": "a2/haditha.mp3", "example_ar": "حَادِثَةٌ غَرِيبَةٌ.", "example_uz": "G'alati hodisa.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "في البداية كان الولد يمشي إلى المدرسة كل يوم. وبينما كان يمشي، سمع صوتًا غريبًا. فجأة رأى قطة صغيرة تحت الشجرة. أخذها الولد إلى بيته وأطعمها. أخيرًا صارت القطة صديقته.",
+   "questions": [
+    {"q_uz": "Bola nima eshitdi?", "a": "G'alati ovoz (صوتًا غريبًا)"},
+    {"q_uz": "Hikoya oxirida nima bo'ldi?", "a": "Mushuk uning do'sti bo'ldi"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/hadatha.mp3",
+   "transcript_ar": "حَدَثَ",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi?", "a": "Yuz berdi, sodir bo'ldi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Hikoya bog'lovchilarini ayting: fī l-bidāya, baynamā, fajʾatan, akhīran.",
+   "target_ar": ["فِي البِدَايَة", "فَجْأَةً", "أَخِيرًا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Bog'lovchilardan foydalanib 3 gapli qisqa hikoya yozing (boshida... keyin... nihoyat).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«فَجْأَةً» ma'nosi?", "q_ar": "", "options": ["to'satdan", "nihoyat", "boshida", "keyin"], "answer": "to'satdan", "explain_uz": "فَجْأَةً — to'satdan, birdan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«أَخِيرًا» ma'nosi?", "q_ar": "", "options": ["nihoyat", "to'satdan", "shu paytda", "boshida"], "answer": "nihoyat", "explain_uz": "أَخِيرًا — nihoyat, oxir-oqibat.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَاذَا حَدَثَ؟", "options": [], "answer": "nima bo'ldi", "explain_uz": "مَاذَا = nima, حَدَثَ = yuz berdi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«حَدَثَ، حَادِثَة» qaysi o'zakdan?", "q_ar": "", "options": ["ح د ث", "ح د د", "ح ذ ر"], "answer": "ح د ث", "explain_uz": "«ح د ث» — yuz berish o'zagi: hadis, hodisa, muhaddis.", "audio": "", "root": "ح د ث", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ovoz, tovush", "q_ar": "", "options": [], "answer": "صَوْت", "explain_uz": "صَوْت — ovoz (o'zbekcha 'savt').", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "qahramon", "q_ar": "", "options": [], "answer": "بَطَل", "explain_uz": "بَطَل — qahramon.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Noma'lum so'z uchrasa nima qilish kerak?", "q_ar": "", "options": ["kontekstdan taxmin qilish", "darrov lug'atga qarash", "o'qishni to'xtatish", "gapni tashlab ketish"], "answer": "kontekstdan taxmin qilish", "explain_uz": "Avval umumiy mazmunni tushuning, kontekstdan taxmin qiling.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ح د ث", "back": "yuz berish o'zagi (hadis, hodisa, muhaddis)", "deck": "msa"},
+  {"type": "word", "front": "حَدَثَ", "back": "yuz berdi", "deck": "msa"},
+  {"type": "word", "front": "فَجْأَةً", "back": "to'satdan", "deck": "msa"},
+  {"type": "word", "front": "بَيْنَمَا", "back": "...ayotganda", "deck": "msa"},
+  {"type": "word", "front": "أَخِيرًا", "back": "nihoyat", "deck": "msa"},
+  {"type": "word", "front": "بِدَايَة", "back": "boshlanish", "deck": "msa"},
+  {"type": "word", "front": "بَطَل", "back": "qahramon", "deck": "msa"},
+  {"type": "word", "front": "صَوْت", "back": "ovoz, tovush", "deck": "msa"},
+  {"type": "word", "front": "حَادِثَة", "back": "hodisa, voqea", "deck": "msa"}
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "id": "a2-19",
+ "level": "A2",
+ "module": "grammar-ext",
+ "order": 19,
+ "title_uz": "«Edi / bo'ldi» — كانَ",
+ "title_ar": "كَانَ وَأَخَوَاتُهَا",
+ "can_do_uz": "كانَ va uning «opa-singillari» bilan o'tgan/o'zgargan holatni ayta olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-18"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "«Havo chiroyli» — الجَوُّ جَمِيلٌ. «Havo chiroyli EDI» — كَانَ الجَوُّ جَمِيلًا. كانَ ismli gapga kiradi va xabarni «mansub» (fatha) qiladi! أَصْبَحَ (bo'ldi), صَارَ (aylandi), ظَلَّ (qoldi) — hammasi كانَ ning «opa-singillari».",
+ "grammar": {
+  "point_ar": "كَانَ وَأَخَوَاتُهَا",
+  "explanation_uz": "كانَ va uning «opa-singillari» (أَخَوَات) ismli gapga kirib, uni o'zgartiradi: EGA (endi «ism كانَ») raf'da qoladi, XABAR (endi «xabar كانَ») NASB ga (fatha) o'tadi: الجَوُّ جَمِيلٌ → كَانَ الجَوُّ جَمِيلًا. Opa-singillar: كانَ (edi), أَصْبَحَ (bo'ldi/tong otdi), صارَ (aylandi), ظَلَّ (qoldi), لَيْسَ (emas), ما زالَ (hali ham), بَاتَ (tunadi).",
+  "table": [
+   {"ar": "كَانَ الجَوُّ جَمِيلًا", "uz": "Havo chiroyli edi", "form": "xabar nasb"},
+   {"ar": "أَصْبَحَ الطَّالِبُ مُجْتَهِدًا", "uz": "Talaba tirishqoq bo'ldi", "form": "أَصْبَحَ"},
+   {"ar": "صَارَ الجَوُّ بَارِدًا", "uz": "Havo sovuq bo'ldi", "form": "صَارَ"},
+   {"ar": "لَيْسَ البَابُ مَفْتُوحًا", "uz": "Eshik ochiq emas", "form": "لَيْسَ"}
+  ],
+  "common_mistakes_uz": [
+   "Xabarni raf' (damma) qoldirish — كانَ dan keyin xabar NASB (fatha) bo'ladi.",
+   "Egani (ism كانَ) nasb qilish — ega raf'da qoladi.",
+   "أَصْبَحَ ni faqat «ertalab» deb tarjima qilish — u «bo'ldi» ham."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ص ب ح",
+   "meaning_uz": "tong, ertalab, bo'lish",
+   "uz_cognates": ["subh", "sahar", "misboh"],
+   "derived": [
+    {"ar": "أَصْبَحَ", "uz": "bo'ldi, tong otdi (IV)", "pattern": "أَفْعَلَ"},
+    {"ar": "صَبَاح", "uz": "tong, ertalab", "pattern": "فَعَال"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "كَانَ", "translit": "kāna", "uz": "edi, bo'ldi", "root": "ك و ن", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/kana.mp3", "example_ar": "كَانَ الطَّقْسُ حَارًّا.", "example_uz": "Ob-havo issiq edi.", "srs": true},
+  {"ar": "أَصْبَحَ", "translit": "aṣbaḥa", "uz": "bo'ldi, tong otdi", "root": "ص ب ح", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/asbaha.mp3", "example_ar": "أَصْبَحَ غَنِيًّا.", "example_uz": "Boy bo'ldi.", "srs": true},
+  {"ar": "صَارَ", "translit": "ṣāra", "uz": "bo'ldi, aylandi", "root": "ص ي ر", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/sara.mp3", "example_ar": "صَارَ الجَوُّ بَارِدًا.", "example_uz": "Havo sovuq bo'ldi.", "srs": true},
+  {"ar": "ظَلَّ", "translit": "ẓalla", "uz": "qoldi, davom etdi", "root": "ظ ل ل", "pattern": "فَعَّ", "pos": "fe'l", "audio": "a2/zalla.mp3", "example_ar": "ظَلَّ صَامِتًا.", "example_uz": "Jim qoldi.", "srs": true},
+  {"ar": "لَيْسَ", "translit": "laysa", "uz": "emas (holatni inkor)", "root": "", "pattern": "", "pos": "fe'l", "audio": "a1/laysa.mp3", "example_ar": "لَيْسَ البَابُ مَفْتُوحًا.", "example_uz": "Eshik ochiq emas.", "srs": true},
+  {"ar": "مَا زَالَ", "translit": "mā zāla", "uz": "hali ham, hanuz", "root": "ز و ل", "pattern": "", "pos": "ibora", "audio": "a2/mazala.mp3", "example_ar": "مَا زَالَ نَائِمًا.", "example_uz": "Hali ham uxlayapti.", "srs": true},
+  {"ar": "طَقْس", "translit": "ṭaqs", "uz": "ob-havo", "root": "ط ق س", "pattern": "فَعْل", "pos": "ot", "audio": "a2/taqs.mp3", "example_ar": "الطَّقْسُ جَمِيلٌ.", "example_uz": "Ob-havo chiroyli.", "srs": true},
+  {"ar": "بَارِد", "translit": "bārid", "uz": "sovuq", "root": "ب ر د", "pattern": "فَاعِل", "pos": "sifat", "audio": "a2/barid.mp3", "example_ar": "المَاءُ بَارِدٌ.", "example_uz": "Suv sovuq.", "srs": true},
+  {"ar": "صَامِت", "translit": "ṣāmit", "uz": "jim, sokin", "root": "ص م ت", "pattern": "فَاعِل", "pos": "sifat", "audio": "a2/samit.mp3", "example_ar": "ظَلَّ صَامِتًا.", "example_uz": "Jim qoldi.", "srs": true},
+  {"ar": "جَوّ", "translit": "jaww", "uz": "havo, muhit", "root": "ج و و", "pattern": "فَعّ", "pos": "ot", "audio": "a2/jaww.mp3", "example_ar": "الجَوُّ لَطِيفٌ.", "example_uz": "Havo yoqimli.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "فِي الصَّبَاحِ كَانَ الجَوُّ بَارِدًا. ثُمَّ أَصْبَحَ دَافِئًا وَصَارَ جَمِيلًا. ظَلَّ الأَوْلَادُ يَلْعَبُونَ فِي الحَدِيقَةِ. لَيْسَ الطَّقْسُ سَيِّئًا اليَوْمَ.",
+   "questions": [
+    {"q_uz": "Ertalab havo qanday edi?", "a": "Sovuq (كَانَ بَارِدًا)"},
+    {"q_uz": "«جَمِيلًا» da nega fatha?", "a": "صَارَ (كانَ opa-singli) xabari — nasb"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/asbaha.mp3",
+   "transcript_ar": "أَصْبَحَ",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi?", "a": "Bo'ldi, tong otdi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "كانَ opa-singillari bilan ayting: kāna l-jawwu jamīlan, aṣbaḥa ghaniyyan.",
+   "target_ar": ["كَانَ الجَوُّ جَمِيلًا", "أَصْبَحَ غَنِيًّا", "لَيْسَ مَفْتُوحًا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Havo issiq edi» va «Talaba tirishqoq bo'ldi» gaplarini كانَ/أَصْبَحَ bilan yozing (xabar mansub).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Havo chiroyli edi» to'g'ri qaysi?", "q_ar": "", "options": ["كَانَ الجَوُّ جَمِيلًا", "كَانَ الجَوُّ جَمِيلٌ", "كَانَ الجَوَّ جَمِيلٌ", "الجَوُّ كَانَ جَمِيلٌ"], "answer": "كَانَ الجَوُّ جَمِيلًا", "explain_uz": "Ega raf' (الجَوُّ), xabar nasb (جَمِيلًا).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "كانَ dan keyin xabar qaysi holatda?", "q_ar": "", "options": ["nasb (fatha)", "raf' (damma)", "jarr (kasra)", "sukun"], "answer": "nasb (fatha)", "explain_uz": "كانَ xabarni nasb (fatha) qiladi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَصْبَحَ غَنِيًّا", "options": [], "answer": "boy bo'ldi", "explain_uz": "أَصْبَحَ = bo'ldi, غَنِيًّا = boy (xabar, nasb).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«أَصْبَحَ، صَبَاح» qaysi o'zakdan?", "q_ar": "", "options": ["ص ب ح", "ص ي ر", "ص م ت"], "answer": "ص ب ح", "explain_uz": "«ص ب ح» — tong o'zagi: asbaha, subh, sahar.", "audio": "", "root": "ص ب ح", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ob-havo", "q_ar": "", "options": [], "answer": "طَقْس", "explain_uz": "طَقْس — ob-havo.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Xabarni to'g'rilang: «كَانَ الطَّالِبُ ____» (tirishqoq edi)", "q_ar": "كَانَ الطَّالِبُ ____", "options": [], "answer": "مُجْتَهِدًا", "explain_uz": "كانَ xabari nasb: مُجْتَهِدًا.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "hali ham, hanuz", "q_ar": "", "options": [], "answer": "مَا زَالَ", "explain_uz": "مَا زَالَ — hali ham (kana opa-singli).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ص ب ح", "back": "tong o'zagi (asbaha=bo'ldi, subh, misboh)", "deck": "msa"},
+  {"type": "pattern", "front": "كَانَ + xabar nasb", "back": "kana opa-singillari xabarni mansub qiladi", "deck": "msa"},
+  {"type": "word", "front": "كَانَ", "back": "edi, bo'ldi", "deck": "msa"},
+  {"type": "word", "front": "أَصْبَحَ", "back": "bo'ldi, tong otdi", "deck": "msa"},
+  {"type": "word", "front": "صَارَ", "back": "bo'ldi, aylandi", "deck": "msa"},
+  {"type": "word", "front": "ظَلَّ", "back": "qoldi, davom etdi", "deck": "msa"},
+  {"type": "word", "front": "مَا زَالَ", "back": "hali ham, hanuz", "deck": "msa"},
+  {"type": "word", "front": "طَقْس", "back": "ob-havo", "deck": "msa"},
+  {"type": "word", "front": "بَارِد", "back": "sovuq", "deck": "msa"},
+  {"type": "word", "front": "جَوّ", "back": "havo, muhit", "deck": "msa"}
+ ]
+}

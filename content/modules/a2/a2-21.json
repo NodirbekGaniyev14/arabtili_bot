@@ -1,0 +1,98 @@
+{
+ "id": "a2-21",
+ "level": "A2",
+ "module": "grammar-ext",
+ "order": 21,
+ "title_uz": "Buyruq beraman",
+ "title_ar": "فِعْلُ الأَمْر",
+ "can_do_uz": "Buyruq fe'lini (amr) yasay olaman: «yoz!», «o'qi!», «eshit!».",
+ "duration_min": 30,
+ "prerequisites": ["a2-20"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "Qur'onning birinchi so'zi — اِقْرَأْ! (o'qi!). Buyruq fe'li (amr) hozirgi zamondan yasaladi: يَكْتُبُ (yozadi) → اُكْتُبْ! (yoz!). Prefiksni olib tashlab, kerak bo'lsa boshiga hamza qo'yasiz.",
+ "grammar": {
+  "point_ar": "صِيَاغَةُ فِعْلِ الأَمْر",
+  "explanation_uz": "Buyruq (أَمْر) hozirgi zamon fe'lidan yasaladi: (1) تَـ prefiksni olib tashlang: تَكْتُبُ → كْتُبُ. (2) Agar qolgan qism sukunli harfdan boshlansa, boshiga «vasl hamzasi» qo'shing: اُكْتُبْ (o'rta unli damma → اُ), اِجْلِسْ (o'rta unli kasra → اِ). (3) Oxiri sukunli (jazm): اُكْتُبْ. Ajvaf/naqisda oxir tushadi: قُلْ! (ayt!), اِمْشِ! (yur!).",
+  "table": [
+   {"ar": "تَكْتُبُ ← اُكْتُبْ", "uz": "yozasan → yoz!", "form": "amr"},
+   {"ar": "تَقْرَأُ ← اِقْرَأْ", "uz": "o'qiysan → o'qi!", "form": "amr"},
+   {"ar": "تَجْلِسُ ← اِجْلِسْ", "uz": "o'tirasan → o'tir!", "form": "amr"},
+   {"ar": "تَقُولُ ← قُلْ", "uz": "aytasan → ayt! (ajvaf)", "form": "maxsus"}
+  ],
+  "common_mistakes_uz": [
+   "Vasl hamzasini (اُ/اِ) noto'g'ri unli bilan qo'yish.",
+   "Amr oxirini damma qoldirish — u sukunli (jazm) bo'ladi.",
+   "Ajvaf/naqisda o'rta/oxir harfni tushirmaslik: قُلْ (قُولْ emas)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ص ب ر",
+   "meaning_uz": "sabr, chidam",
+   "uz_cognates": ["sabr", "sobir", "musobara"],
+   "derived": [
+    {"ar": "اِصْبِرْ", "uz": "sabr qil! (amr)", "pattern": "اِفْعِلْ"},
+    {"ar": "صَبْر", "uz": "sabr (masdar)", "pattern": "فَعْل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "اُكْتُبْ", "translit": "uktub", "uz": "yoz! (amr)", "root": "ك ت ب", "pattern": "اُفْعُلْ", "pos": "fe'l", "audio": "a2/uktub.mp3", "example_ar": "اُكْتُبِ الدَّرْسَ.", "example_uz": "Darsni yoz.", "srs": true},
+  {"ar": "اِقْرَأْ", "translit": "iqraʾ", "uz": "o'qi! (amr — Qur'onning birinchi so'zi)", "root": "ق ر أ", "pattern": "اِفْعَلْ", "pos": "fe'l", "audio": "a2/iqra.mp3", "example_ar": "اِقْرَأْ بِاسْمِ رَبِّكَ.", "example_uz": "Robbing nomi bilan o'qi.", "srs": true},
+  {"ar": "اِسْمَعْ", "translit": "ismaʿ", "uz": "eshit! (amr)", "root": "س م ع", "pattern": "اِفْعَلْ", "pos": "fe'l", "audio": "a2/isma.mp3", "example_ar": "اِسْمَعْ جَيِّدًا.", "example_uz": "Yaxshi eshit.", "srs": true},
+  {"ar": "اِجْلِسْ", "translit": "ijlis", "uz": "o'tir! (amr)", "root": "ج ل س", "pattern": "اِفْعِلْ", "pos": "fe'l", "audio": "a2/ijlis.mp3", "example_ar": "اِجْلِسْ هُنَا.", "example_uz": "Bu yerga o'tir.", "srs": true},
+  {"ar": "اُدْخُلْ", "translit": "udkhul", "uz": "kir! (amr)", "root": "د خ ل", "pattern": "اُفْعُلْ", "pos": "fe'l", "audio": "a2/udkhul.mp3", "example_ar": "اُدْخُلِ الغُرْفَةَ.", "example_uz": "Xonaga kir.", "srs": true},
+  {"ar": "قُلْ", "translit": "qul", "uz": "ayt! (amr, ajvaf)", "root": "ق و ل", "pattern": "فُلْ", "pos": "fe'l", "audio": "a2/qul.mp3", "example_ar": "قُلِ الحَقَّ.", "example_uz": "Haqni ayt.", "srs": true},
+  {"ar": "تَعَالَ", "translit": "taʿāla", "uz": "kel! (buyruq, o'ziga xos)", "root": "", "pattern": "", "pos": "fe'l", "audio": "a2/taala.mp3", "example_ar": "تَعَالَ هُنَا!", "example_uz": "Bu yerga kel!", "srs": true},
+  {"ar": "اِصْبِرْ", "translit": "iṣbir", "uz": "sabr qil! (amr)", "root": "ص ب ر", "pattern": "اِفْعِلْ", "pos": "fe'l", "audio": "a2/isbir.mp3", "example_ar": "اِصْبِرْ عَلَى الصُّعُوبَاتِ.", "example_uz": "Qiyinchiliklarga sabr qil.", "srs": true},
+  {"ar": "أَمْر", "translit": "amr", "uz": "buyruq, ish (o'zbekcha 'amr')", "root": "أ م ر", "pattern": "فَعْل", "pos": "ot", "audio": "a2/amr.mp3", "example_ar": "هَذَا أَمْرٌ مُهِمٌّ.", "example_uz": "Bu muhim ish.", "srs": true},
+  {"ar": "صَبْر", "translit": "ṣabr", "uz": "sabr, chidam (o'zbekcha 'sabr')", "root": "ص ب ر", "pattern": "فَعْل", "pos": "ot", "audio": "a2/sabr.mp3", "example_ar": "الصَّبْرُ مِفْتَاحُ الفَرَجِ.", "example_uz": "Sabr — yechim kaliti.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "قَالَ المُعَلِّمُ: اُدْخُلُوا وَاِجْلِسُوا. اِفْتَحُوا الكُتُبَ وَاِقْرَؤُوا الدَّرْسَ. اِسْمَعُوا جَيِّدًا وَاُكْتُبُوا المُلَاحَظَاتِ. اِصْبِرُوا فَالعِلْمُ يَحْتَاجُ صَبْرًا.",
+   "questions": [
+    {"q_uz": "O'qituvchi nima qilishni buyurdi?", "a": "Kirish, o'tirish, o'qish, yozish"},
+    {"q_uz": "«اِقْرَأْ» qanday fe'l?", "a": "Buyruq (amr) fe'li"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/iqra.mp3",
+   "transcript_ar": "اِقْرَأْ",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "O'qi! (buyruq)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Buyruqlarni ayting: uktub! iqraʾ! ismaʿ! ijlis! qul!",
+   "target_ar": ["اُكْتُبْ", "اِقْرَأْ", "اِجْلِسْ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«يَفْتَحُ» (ochadi) dan buyruq fe'lini yasang (och!).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«يَكْتُبُ» dan buyruq (yoz!) qaysi?", "q_ar": "", "options": ["اُكْتُبْ", "يَكْتُبْ", "كَتَبَ", "كَاتِب"], "answer": "اُكْتُبْ", "explain_uz": "Amr: prefiks olinib, vasl hamzasi bilan اُكْتُبْ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Buyruq fe'lining oxiri qanday bo'ladi?", "q_ar": "", "options": ["sukunli (jazm)", "damma", "fatha", "tanvin"], "answer": "sukunli (jazm)", "explain_uz": "Amr jazm holatida — oxiri sukun: اُكْتُبْ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "اِقْرَأْ بِاسْمِ رَبِّكَ", "options": [], "answer": "Robbing nomi bilan o'qi", "explain_uz": "اِقْرَأْ = o'qi (amr), Qur'onning birinchi oyati.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«اِصْبِرْ، صَبْر» qaysi o'zakdan?", "q_ar": "", "options": ["ص ب ر", "ص ب ح", "ش ب ب"], "answer": "ص ب ر", "explain_uz": "«ص ب ر» — sabr o'zagi: isbir, sabr, sobir.", "audio": "", "root": "ص ب ر", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«قُلْ» (ayt!) qaysi turdagi fe'lning amri?", "q_ar": "", "options": ["ajvaf (o'rta tushdi)", "sog'", "naqis", "mahmuz"], "answer": "ajvaf (o'rta tushdi)", "explain_uz": "قَالَ (ق و ل) ajvaf — amrda o'rta و tushadi: قُلْ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "eshit! (amr)", "q_ar": "", "options": [], "answer": "اِسْمَعْ", "explain_uz": "اِسْمَعْ — eshit! (س م ع dan amr).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "sabr, chidam", "q_ar": "", "options": [], "answer": "صَبْر", "explain_uz": "صَبْر — sabr (o'zbekcha 'sabr').", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ص ب ر", "back": "sabr o'zagi (isbir=sabr qil, sabr, sobir)", "deck": "msa"},
+  {"type": "pattern", "front": "الأَمْر: اُفْعُلْ/اِفْعِلْ", "back": "buyruq — hozirgidan prefiks olinib yasaladi", "deck": "msa"},
+  {"type": "word", "front": "اُكْتُبْ", "back": "yoz! (amr)", "deck": "msa"},
+  {"type": "word", "front": "اِقْرَأْ", "back": "o'qi! (amr)", "deck": "msa"},
+  {"type": "word", "front": "اِسْمَعْ", "back": "eshit! (amr)", "deck": "msa"},
+  {"type": "word", "front": "اِجْلِسْ", "back": "o'tir! (amr)", "deck": "msa"},
+  {"type": "word", "front": "قُلْ", "back": "ayt! (amr, ajvaf)", "deck": "msa"},
+  {"type": "word", "front": "تَعَالَ", "back": "kel! (buyruq)", "deck": "msa"},
+  {"type": "word", "front": "أَمْر", "back": "buyruq, ish", "deck": "msa"},
+  {"type": "word", "front": "صَبْر", "back": "sabr, chidam", "deck": "msa"}
+ ]
+}

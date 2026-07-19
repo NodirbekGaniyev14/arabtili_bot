@@ -1,0 +1,95 @@
+{
+ "id": "a2-42",
+ "level": "A2",
+ "module": "skills",
+ "order": 42,
+ "title_uz": "Yozish: xabar va xat",
+ "title_ar": "كِتَابَة: رِسَالَةٌ وَخِطَاب",
+ "can_do_uz": "Qisqa xabar va oddiy xat yoza olaman (murojaat, mazmun, yakun).",
+ "duration_min": 30,
+ "prerequisites": ["a2-41"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "Arabcha xat yozish oson — tuzilishi aniq: عَزِيزِي... (Azizim...), keyin mazmun, oxirida مَعَ التَّحِيَّة (hurmat bilan). Xabar (SMS/WhatsApp) esa qisqaroq. Bugun ikkalasini yozamiz.",
+ "grammar": {
+  "point_ar": "بِنْيَةُ الرِّسَالَة",
+  "explanation_uz": "Xat tuzilishi: (1) MUROJAAT — عَزِيزِي أَحْمَد (Aziz Ahmad) yoki rasmiy: السَّيِّد المُحْتَرَم. (2) SALOM — السَّلَامُ عَلَيْكُم / تَحِيَّةً طَيِّبَةً. (3) MAZMUN — asosiy fikr (qisqa gaplar). (4) YAKUN — مَعَ التَّحِيَّة (hurmat bilan), المُخْلِص (samimiy). (5) IMZO — تَوْقِيع. Qisqa xabarda faqat salom + mazmun yetarli.",
+  "table": [
+   {"ar": "عَزِيزِي أَحْمَد", "uz": "Aziz Ahmad", "form": "murojaat"},
+   {"ar": "تَحِيَّةً طَيِّبَةً", "uz": "Yaxshi salom (rasmiy)", "form": "salom"},
+   {"ar": "المَوْضُوع: ...", "uz": "Mavzu: ...", "form": "rasmiy xat"},
+   {"ar": "مَعَ التَّحِيَّة", "uz": "Hurmat bilan", "form": "yakun"}
+  ],
+  "common_mistakes_uz": [
+   "Murojaat va yakunni unutish — xat tuzilishi muhim.",
+   "Juda uzun gaplar yozish — qisqa va aniq yozing.",
+   "Rasmiy va norasmiy uslubni aralashtirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع ز ز",
+   "meaning_uz": "azizlik, qadr",
+   "uz_cognates": ["aziz", "izzat", "mu'taz"],
+   "derived": [
+    {"ar": "عَزِيز", "uz": "aziz, qadrli", "pattern": "فَعِيل"},
+    {"ar": "عِزَّة", "uz": "izzat, sha'n", "pattern": "فِعْلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "عَزِيزِي", "translit": "ʿazīzī", "uz": "azizim (murojaat) (o'zbekcha 'aziz')", "root": "ع ز ز", "pattern": "", "pos": "ibora", "audio": "a2/azizi.mp3", "example_ar": "عَزِيزِي أَحْمَد،", "example_uz": "Aziz Ahmad,", "srs": true},
+  {"ar": "تَحِيَّة", "translit": "taḥiyya", "uz": "salom, tabrik (o'zbekcha 'tahiyot')", "root": "ح ي ي", "pattern": "تَفْعِلَة", "pos": "ot", "audio": "a2/tahiyya.mp3", "example_ar": "مَعَ التَّحِيَّةِ.", "example_uz": "Hurmat bilan.", "srs": true},
+  {"ar": "مَوْضُوع", "translit": "mawḍūʿ", "uz": "mavzu (o'zbekcha 'mavzu')", "root": "و ض ع", "pattern": "مَفْعُول", "pos": "ot", "audio": "a2/mawdu.mp3", "example_ar": "المَوْضُوعُ: طَلَبُ إِجَازَةٍ.", "example_uz": "Mavzu: ta'til so'rovi.", "srs": true},
+  {"ar": "خِطَاب", "translit": "khiṭāb", "uz": "xat, murojaat (rasmiy)", "root": "خ ط ب", "pattern": "فِعَال", "pos": "ot", "audio": "a2/khitab.mp3", "example_ar": "خِطَابٌ رَسْمِيٌّ.", "example_uz": "Rasmiy xat.", "srs": true},
+  {"ar": "مُخْلِص", "translit": "mukhliṣ", "uz": "samimiy, sodiq (o'zbekcha 'muxlis')", "root": "خ ل ص", "pattern": "مُفْعِل", "pos": "sifat", "audio": "a2/mukhlis.mp3", "example_ar": "المُخْلِصُ: أَحْمَد.", "example_uz": "Samimiy: Ahmad.", "srs": true},
+  {"ar": "تَوْقِيع", "translit": "tawqīʿ", "uz": "imzo", "root": "و ق ع", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/tawqi.mp3", "example_ar": "التَّوْقِيعُ فِي الأَسْفَلِ.", "example_uz": "Imzo pastda.", "srs": true},
+  {"ar": "إِجَازَة", "translit": "ijāza", "uz": "ta'til, ruxsat (o'zbekcha 'ijozat')", "root": "ج و ز", "pattern": "إِفَالَة", "pos": "ot", "audio": "a2/ijaza.mp3", "example_ar": "طَلَبْتُ إِجَازَةً.", "example_uz": "Ta'til so'radim.", "srs": true},
+  {"ar": "رَسْمِيّ", "translit": "rasmī", "uz": "rasmiy (o'zbekcha 'rasmiy')", "root": "ر س م", "pattern": "فَعْلِيّ", "pos": "sifat", "audio": "a2/rasmi.mp3", "example_ar": "طَلَبٌ رَسْمِيٌّ.", "example_uz": "Rasmiy ariza.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "عزيزي أحمد،\nتحية طيبة وبعد،\nأكتب إليك لأخبرك أنني سأسافر إلى مكة الأسبوع القادم. أتمنى أن نلتقي هناك.\nمع التحية،\nالمخلص: محمد",
+   "questions": [
+    {"q_uz": "Xat kimga yozilgan?", "a": "Ahmadga (عزيزي أحمد)"},
+    {"q_uz": "Xat qanday tugagan?", "a": "مع التحية / المخلص (hurmat bilan)"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/tahiyya.mp3",
+   "transcript_ar": "تَحِيَّة",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Salom, tabrik"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Xat qismlarini ayting: ʿazīzī..., taḥiyyatan ṭayyiba, maʿa t-taḥiyya.",
+   "target_ar": ["عَزِيزِي", "مَعَ التَّحِيَّة", "المَوْضُوع"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Do'stingizga qisqa xat yozing: murojaat, salom, 2 gap mazmun, yakun.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "Xat boshidagi murojaat qaysi?", "q_ar": "", "options": ["عَزِيزِي", "مَعَ التَّحِيَّة", "التَّوْقِيع", "المُخْلِص"], "answer": "عَزِيزِي", "explain_uz": "عَزِيزِي — «Azizim» (xat boshi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Xat oxiridagi «hurmat bilan» qaysi?", "q_ar": "", "options": ["مَعَ التَّحِيَّة", "عَزِيزِي", "المَوْضُوع", "خِطَاب"], "answer": "مَعَ التَّحِيَّة", "explain_uz": "مَعَ التَّحِيَّة — hurmat bilan (yakun).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المَوْضُوع: طَلَبُ إِجَازَةٍ", "options": [], "answer": "mavzu ta'til so'rovi", "explain_uz": "مَوْضُوع = mavzu, إِجَازَة = ta'til.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«عَزِيزِي، عِزَّة» qaysi o'zakdan?", "q_ar": "", "options": ["ع ز ز", "ع ذ ر", "ع ز م"], "answer": "ع ز ز", "explain_uz": "«ع ز ز» — azizlik o'zagi: aziz, izzat.", "audio": "", "root": "ع ز ز", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "imzo", "q_ar": "", "options": [], "answer": "تَوْقِيع", "explain_uz": "تَوْقِيع — imzo (و ق ع o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "rasmiy", "q_ar": "", "options": [], "answer": "رَسْمِيّ", "explain_uz": "رَسْمِيّ — rasmiy.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«إِجَازَة» ma'nosi?", "q_ar": "", "options": ["ta'til, ruxsat", "imzo", "mavzu", "xat"], "answer": "ta'til, ruxsat", "explain_uz": "إِجَازَة — ta'til/ruxsat (o'zbekcha 'ijozat').", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع ز ز", "back": "azizlik o'zagi (aziz, izzat)", "deck": "msa"},
+  {"type": "word", "front": "عَزِيزِي", "back": "azizim (murojaat)", "deck": "msa"},
+  {"type": "word", "front": "تَحِيَّة", "back": "salom, tabrik", "deck": "msa"},
+  {"type": "word", "front": "مَوْضُوع", "back": "mavzu", "deck": "msa"},
+  {"type": "word", "front": "خِطَاب", "back": "xat, murojaat", "deck": "msa"},
+  {"type": "word", "front": "مُخْلِص", "back": "samimiy, sodiq", "deck": "msa"},
+  {"type": "word", "front": "تَوْقِيع", "back": "imzo", "deck": "msa"},
+  {"type": "word", "front": "إِجَازَة", "back": "ta'til, ruxsat", "deck": "msa"},
+  {"type": "word", "front": "رَسْمِيّ", "back": "rasmiy", "deck": "msa"}
+ ]
+}

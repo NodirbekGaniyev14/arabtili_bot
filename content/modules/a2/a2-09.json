@@ -1,0 +1,98 @@
+{
+ "id": "a2-09",
+ "level": "A2",
+ "module": "verb-forms",
+ "order": 9,
+ "title_uz": "X bob: talab qilish",
+ "title_ar": "البَابُ العَاشِر: اِسْتَفْعَلَ",
+ "can_do_uz": "X bob (اِسْتَفْعَلَ) fe'llarini taniyman: «... so'ramoq / ... talab qilmoq» ma'nosini bilaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-08"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "«Kechirdi» — غَفَرَ. «Kechirim so'radi» — اِسْتَغْفَرَ. O'zak boshiga اِسْتَـ qo'shsangiz — «... ni so'ramoq / talab qilmoq» ma'nosi chiqadi! اِسْتَقْبَلَ (kutib oldi), اِسْتَخْدَمَ (ishlatdi), اِسْتَرَاحَ (dam oldi).",
+ "grammar": {
+  "point_ar": "اِسْتَفْعَلَ — الطَّلَب",
+  "explanation_uz": "X bob vazni: اِسْتَفْعَلَ (o'zak boshiga اِسْتَـ). Asosiy ma'no: TALAB / so'rash — «... ni so'ramoq, ... deb hisoblamoq»: غَفَرَ (kechirdi) → اِسْتَغْفَرَ (kechirim so'radi), خَرَجَ (chiqdi) → اِسْتَخْرَجَ (chiqarib oldi). Masdari اِسْتِفْعَال: اِسْتِغْفَار, اِسْتِقْبَال (istiqbol). Hozirgi zamoni: يَسْتَفْعِلُ (يَسْتَغْفِرُ). Bu bob ilm-fan va rasmiy tilda juda ko'p.",
+  "table": [
+   {"ar": "غَفَرَ ← اِسْتَغْفَرَ", "uz": "kechirdi → kechirim so'radi", "form": "talab"},
+   {"ar": "اِسْتَخْدَمَ", "uz": "ishlatdi, foydalandi", "form": "اِسْتَفْعَلَ"},
+   {"ar": "اِسْتَطَاعَ", "uz": "qodir bo'ldi, uddaladi", "form": "اِسْتَفْعَلَ"},
+   {"ar": "مَصْدَر: اِسْتِغْفَار", "uz": "masdar: kechirim so'rash", "form": "اِسْتِفْعَال"}
+  ],
+  "common_mistakes_uz": [
+   "اِسْتَـ prefiksini to'liq yozmaslik (اِسْتَفْعَلَ).",
+   "X bob (اِسْتَفْعَلَ) va VIII bob (اِفْتَعَلَ) ni chalkashtirish.",
+   "Hozirgi zamon prefiks unlisini noto'g'ri qo'yish: يَسْتَغْفِرُ (يَـ)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "غ ف ر",
+   "meaning_uz": "kechirish, mag'firat",
+   "uz_cognates": ["mag'firat", "G'affor", "istig'for"],
+   "derived": [
+    {"ar": "اِسْتَغْفَرَ", "uz": "kechirim so'radi (X)", "pattern": "اِسْتَفْعَلَ"},
+    {"ar": "مَغْفِرَة", "uz": "mag'firat, kechirim", "pattern": "مَفْعِلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "اِسْتَغْفَرَ", "translit": "istaghfara", "uz": "kechirim/mag'firat so'radi", "root": "غ ف ر", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "a2/istaghfara.mp3", "example_ar": "اِسْتَغْفَرَ اللَّهَ.", "example_uz": "Allohdan kechirim so'radi.", "srs": true},
+  {"ar": "اِسْتَقْبَلَ", "translit": "istaqbala", "uz": "kutib oldi (o'zbekcha 'istiqbol')", "root": "ق ب ل", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "a2/istaqbala.mp3", "example_ar": "اِسْتَقْبَلَ الضُّيُوفَ.", "example_uz": "Mehmonlarni kutib oldi.", "srs": true},
+  {"ar": "اِسْتَخْدَمَ", "translit": "istakhdama", "uz": "ishlatdi, foydalandi", "root": "خ د م", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "a2/istakhdama.mp3", "example_ar": "اِسْتَخْدَمَ الحَاسُوبَ.", "example_uz": "Kompyuterdan foydalandi.", "srs": true},
+  {"ar": "اِسْتَطَاعَ", "translit": "istaṭāʿa", "uz": "qodir bo'ldi, uddaladi", "root": "ط و ع", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "a2/istataa.mp3", "example_ar": "اِسْتَطَعْتُ أَنْ أُنْهِيَ العَمَلَ.", "example_uz": "Ishni tugatishga qodir bo'ldim.", "srs": true},
+  {"ar": "اِسْتَرَاحَ", "translit": "istarāḥa", "uz": "dam oldi", "root": "ر و ح", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "a2/istaraha.mp3", "example_ar": "اِسْتَرَاحَ بَعْدَ العَمَلِ.", "example_uz": "Ishdan keyin dam oldi.", "srs": true},
+  {"ar": "اِسْتَأْجَرَ", "translit": "istaʾjara", "uz": "ijaraga oldi", "root": "أ ج ر", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "a2/istaajara.mp3", "example_ar": "اِسْتَأْجَرَ سَيَّارَةً.", "example_uz": "Mashina ijaraga oldi.", "srs": true},
+  {"ar": "اِسْتَعَدَّ", "translit": "istaʿadda", "uz": "tayyorlandi, hozirlik ko'rdi", "root": "ع د د", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "a2/istaadda.mp3", "example_ar": "اِسْتَعَدَّ لِلسَّفَرِ.", "example_uz": "Safarga tayyorlandi.", "srs": true},
+  {"ar": "اِسْتِغْفَار", "translit": "istighfār", "uz": "kechirim so'rash (masdar) (o'zbekcha 'istig'for')", "root": "غ ف ر", "pattern": "اِسْتِفْعَال", "pos": "ot", "audio": "a2/istighfar.mp3", "example_ar": "الاِسْتِغْفَارُ عِبَادَةٌ.", "example_uz": "Istig'for — ibodat.", "srs": true},
+  {"ar": "حَاسُوب", "translit": "ḥāsūb", "uz": "kompyuter", "root": "ح س ب", "pattern": "فَاعُول", "pos": "ot", "audio": "a2/hasub.mp3", "example_ar": "الحَاسُوبُ جَدِيدٌ.", "example_uz": "Kompyuter yangi.", "srs": true},
+  {"ar": "مَغْفِرَة", "translit": "maghfira", "uz": "mag'firat, kechirim (o'zbekcha 'mag'firat')", "root": "غ ف ر", "pattern": "مَفْعِلَة", "pos": "ot", "audio": "a2/maghfira.mp3", "example_ar": "نَطْلُبُ المَغْفِرَةَ.", "example_uz": "Mag'firat so'raymiz.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "اِسْتَعْدَدْتُ لِلسَّفَرِ وَاِسْتَأْجَرْتُ سَيَّارَةً. فِي الفُنْدُقِ اِسْتَقْبَلَنِي المُوَظَّفُ بِلُطْفٍ. بَعْدَ العَمَلِ اِسْتَرَحْتُ وَاِسْتَغْفَرْتُ اللَّهَ.",
+   "questions": [
+    {"q_uz": "Safarga nima qildi?", "a": "Tayyorlandi va mashina ijaraga oldi"},
+    {"q_uz": "«اِسْتَقْبَلَ» qaysi bob — ma'no?", "a": "X bob — kutib oldi"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/istakhdama.mp3",
+   "transcript_ar": "اِسْتَخْدَمَ",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi?", "a": "Ishlatdi, foydalandi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "X bob fe'llarini ayting: istaghfara, istaqbala, istakhdama, istarāḥa.",
+   "target_ar": ["اِسْتَغْفَرَ", "اِسْتَقْبَلَ", "اِسْتَخْدَمَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Kompyuterdan foydalandim» va «Safarga tayyorlandim» gaplarini X bob bilan yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "X bob vazni qaysi?", "q_ar": "", "options": ["اِسْتَفْعَلَ", "اِفْتَعَلَ", "اِنْفَعَلَ", "أَفْعَلَ"], "answer": "اِسْتَفْعَلَ", "explain_uz": "X bob — o'zak boshiga اِسْتَـ: اِسْتَفْعَلَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«غَفَرَ» (kechirdi) ning X bobi (kechirim so'radi)?", "q_ar": "", "options": ["اِسْتَغْفَرَ", "غَفَّرَ", "أَغْفَرَ", "اِنْغَفَرَ"], "answer": "اِسْتَغْفَرَ", "explain_uz": "X bob: اِسْتَغْفَرَ (kechirim so'radi = kechirimni talab qildi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "اِسْتَخْدَمَ الحَاسُوبَ", "options": [], "answer": "kompyuterdan foydalandi", "explain_uz": "اِسْتَخْدَمَ (X) = ishlatdi, الحَاسُوب = kompyuter.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«اِسْتَغْفَرَ، مَغْفِرَة» qaysi o'zakdan?", "q_ar": "", "options": ["غ ف ر", "ق ب ل", "خ د م"], "answer": "غ ف ر", "explain_uz": "«غ ف ر» — kechirish o'zagi: mag'firat, G'affor, istig'for.", "audio": "", "root": "غ ف ر", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "X bobning masdar vazni qaysi?", "q_ar": "", "options": ["اِسْتِفْعَال", "اِفْتِعَال", "إِفْعَال", "تَفْعِيل"], "answer": "اِسْتِفْعَال", "explain_uz": "X bob masdari: اِسْتِفْعَال (اِسْتِغْفَار, اِسْتِقْبَال).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "dam oldi", "q_ar": "", "options": [], "answer": "اِسْتَرَاحَ", "explain_uz": "اِسْتَرَاحَ (X) — dam oldi (روح o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "qodir bo'ldi, uddaladi", "q_ar": "", "options": [], "answer": "اِسْتَطَاعَ", "explain_uz": "اِسْتَطَاعَ (X) — qodir bo'ldi.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "غ ف ر", "back": "kechirish o'zagi (istag'fara, mag'firat, G'affor)", "deck": "msa"},
+  {"type": "pattern", "front": "اِسْتَفْعَلَ (X)", "back": "talab/so'rash (اِستَـ), masdar اِسْتِفْعَال", "deck": "msa"},
+  {"type": "word", "front": "اِسْتَغْفَرَ", "back": "kechirim so'radi (X)", "deck": "msa"},
+  {"type": "word", "front": "اِسْتَقْبَلَ", "back": "kutib oldi (X)", "deck": "msa"},
+  {"type": "word", "front": "اِسْتَخْدَمَ", "back": "ishlatdi (X)", "deck": "msa"},
+  {"type": "word", "front": "اِسْتَطَاعَ", "back": "qodir bo'ldi (X)", "deck": "msa"},
+  {"type": "word", "front": "اِسْتَرَاحَ", "back": "dam oldi (X)", "deck": "msa"},
+  {"type": "word", "front": "اِسْتَعَدَّ", "back": "tayyorlandi (X)", "deck": "msa"},
+  {"type": "word", "front": "اِسْتِغْفَار", "back": "kechirim so'rash (masdar)", "deck": "msa"},
+  {"type": "word", "front": "حَاسُوب", "back": "kompyuter", "deck": "msa"}
+ ]
+}

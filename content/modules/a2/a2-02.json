@@ -1,0 +1,98 @@
+{
+ "id": "a2-02",
+ "level": "A2",
+ "module": "verb-forms",
+ "order": 2,
+ "title_uz": "II bob: kuchaytirish",
+ "title_ar": "البَابُ الثَّانِي: فَعَّلَ",
+ "can_do_uz": "II bob (فَعَّلَ) fe'llarini taniyman: kuchaytirish va sababiyat ma'nosini bilaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-01"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "«Bildi» — عَلِمَ. «Bildirdi / o'rgatdi» — عَلَّمَ. O'rtadagi harfni SHADDALASH (ikkilantirish) yangi ma'no beradi: kuchaytirish yoki «-dirmoq» (sababiyat). فَكَّرَ (o'ylamoq), نَظَّفَ (tozalamoq) — hammasi II bob!",
+ "grammar": {
+  "point_ar": "فَعَّلَ — التَّكْثِير وَالتَّعْدِيَة",
+  "explanation_uz": "II bob vazni: فَعَّلَ (o'rtadagi o'zak harfi SHADDALANADI). Ikki asosiy ma'no: (1) KUCHAYTIRISH/ko'paytirish — كَسَرَ (sindirdi) → كَسَّرَ (parcha-parcha qildi). (2) SABABIYAT («-dirmoq») — عَلِمَ (bildi) → عَلَّمَ (bildirdi=o'rgatdi). Masdari تَفْعِيل vaznida: تَعْلِيم (ta'lim), تَنْظِيف (tozalash). Hozirgi zamoni: يُفَعِّلُ (يُعَلِّمُ).",
+  "table": [
+   {"ar": "عَلِمَ ← عَلَّمَ", "uz": "bildi → o'rgatdi (bildirdi)", "form": "sababiyat"},
+   {"ar": "كَسَرَ ← كَسَّرَ", "uz": "sindirdi → parchaladi", "form": "kuchaytirish"},
+   {"ar": "فَكَّرَ", "uz": "o'yladi, fikrladi", "form": "فَعَّلَ"},
+   {"ar": "مَصْدَر: تَعْلِيم", "uz": "masdar: ta'lim", "form": "تَفْعِيل"}
+  ],
+  "common_mistakes_uz": [
+   "O'rtadagi shaddani (ـّـ) unutish — II bobni I bobdan aynan shu farqlaydi.",
+   "Hozirgi zamonda prefiks unlisini damma qilishni unutish: يُعَلِّمُ.",
+   "II bob masdarini (تَفْعِيل) boshqa bob masdari bilan chalkashtirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ف ك ر",
+   "meaning_uz": "fikr, o'ylash",
+   "uz_cognates": ["fikr", "mutafakkir", "tafakkur"],
+   "derived": [
+    {"ar": "فَكَّرَ", "uz": "o'yladi (II)", "pattern": "فَعَّلَ"},
+    {"ar": "تَفْكِير", "uz": "fikrlash (masdar)", "pattern": "تَفْعِيل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "عَلَّمَ", "translit": "ʿallama", "uz": "o'rgatdi", "root": "ع ل م", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/allama.mp3", "example_ar": "عَلَّمَنِي أَبِي.", "example_uz": "Otam menga o'rgatdi.", "srs": true},
+  {"ar": "فَكَّرَ", "translit": "fakkara", "uz": "o'yladi, fikrladi", "root": "ف ك ر", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/fakkara.mp3", "example_ar": "فَكَّرَ فِي المَسْأَلَةِ.", "example_uz": "Masala haqida o'yladi.", "srs": true},
+  {"ar": "نَظَّفَ", "translit": "naẓẓafa", "uz": "tozaladi", "root": "ن ظ ف", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/nazzafa.mp3", "example_ar": "نَظَّفَ الغُرْفَةَ.", "example_uz": "Xonani tozaladi.", "srs": true},
+  {"ar": "غَيَّرَ", "translit": "ghayyara", "uz": "o'zgartirdi", "root": "غ ي ر", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/ghayyara.mp3", "example_ar": "غَيَّرَ رَأْيَهُ.", "example_uz": "Fikrini o'zgartirdi.", "srs": true},
+  {"ar": "حَضَّرَ", "translit": "ḥaḍḍara", "uz": "tayyorladi", "root": "ح ض ر", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/haddara.mp3", "example_ar": "حَضَّرَ الطَّعَامَ.", "example_uz": "Ovqat tayyorladi.", "srs": true},
+  {"ar": "كَبَّرَ", "translit": "kabbara", "uz": "kattalashtirdi, takbir aytdi", "root": "ك ب ر", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/kabbara.mp3", "example_ar": "كَبَّرَ الصُّورَةَ.", "example_uz": "Rasmni kattalashtirdi.", "srs": true},
+  {"ar": "دَرَّسَ", "translit": "darrasa", "uz": "dars berdi, o'qitdi", "root": "د ر س", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/darrasa.mp3", "example_ar": "دَرَّسَ العَرَبِيَّةَ.", "example_uz": "Arab tilidan dars berdi.", "srs": true},
+  {"ar": "تَعْلِيم", "translit": "taʿlīm", "uz": "ta'lim, o'qitish (masdar) (o'zbekcha 'ta'lim')", "root": "ع ل م", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/talim.mp3", "example_ar": "التَّعْلِيمُ مُهِمٌّ.", "example_uz": "Ta'lim muhim.", "srs": true},
+  {"ar": "تَنْظِيف", "translit": "tanẓīf", "uz": "tozalash (masdar)", "root": "ن ظ ف", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/tanzif.mp3", "example_ar": "تَنْظِيفُ البَيْتِ.", "example_uz": "Uyni tozalash.", "srs": true},
+  {"ar": "رَأْي", "translit": "raʾy", "uz": "fikr, qarash", "root": "ر أ ي", "pattern": "فَعْل", "pos": "ot", "audio": "a2/ray.mp3", "example_ar": "مَا رَأْيُكَ؟", "example_uz": "Fikringiz qanday?", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "المُعَلِّمُ يُعَلِّمُ وَالطَّالِبُ يَتَعَلَّمُ. أَمْسِ حَضَّرْتُ الدَّرْسَ وَنَظَّفْتُ الغُرْفَةَ. ثُمَّ فَكَّرْتُ فِي المُسْتَقْبَلِ.",
+   "questions": [
+    {"q_uz": "«يُعَلِّمُ» qaysi bob va ma'no?", "a": "II bob — o'rgatadi"},
+    {"q_uz": "Gapiruvchi darsdan oldin nima qildi?", "a": "Darsni tayyorladi, xonani tozaladi"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/fakkara.mp3",
+   "transcript_ar": "فَكَّرَ",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi?", "a": "O'yladi, fikrladi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "II bob fe'llarini ayting: ʿallama, fakkara, naẓẓafa, ḥaḍḍara.",
+   "target_ar": ["عَلَّمَ", "فَكَّرَ", "نَظَّفَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Ovqat tayyorladim» va «Xonani tozaladim» gaplarini II bob bilan yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "II bob vazni qaysi?", "q_ar": "", "options": ["فَعَّلَ", "فَعَلَ", "فَاعَلَ", "أَفْعَلَ"], "answer": "فَعَّلَ", "explain_uz": "II bob — o'rtadagi harf shaddalanadi: فَعَّلَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "نَظَّفَ الغُرْفَةَ", "options": [], "answer": "xonani tozaladi", "explain_uz": "نَظَّفَ (II) = tozaladi, الغُرْفَة = xona.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«عَلِمَ» (bildi) ni II bobga solsak?", "q_ar": "", "options": ["عَلَّمَ", "تَعَلَّمَ", "أَعْلَمَ", "اِسْتَعْلَمَ"], "answer": "عَلَّمَ", "explain_uz": "II bob: عَلَّمَ (o'rgatdi = bildirdi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ف ك ر» o'zagidan?", "q_ar": "", "options": ["فَكَّرَ", "نَظَّفَ", "غَيَّرَ"], "answer": "فَكَّرَ", "explain_uz": "«ف ك ر» — o'ylash o'zagi: فَكَّرَ (o'yladi), fikr, tafakkur.", "audio": "", "root": "ف ك ر", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "II bobning masdar vazni qaysi?", "q_ar": "", "options": ["تَفْعِيل", "إِفْعَال", "اِسْتِفْعَال", "مُفَاعَلَة"], "answer": "تَفْعِيل", "explain_uz": "II bob masdari: تَفْعِيل (تَعْلِيم, تَنْظِيف).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "o'zgartirdi", "q_ar": "", "options": [], "answer": "غَيَّرَ", "explain_uz": "غَيَّرَ — o'zgartirdi (II bob).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ta'lim, o'qitish", "q_ar": "", "options": [], "answer": "تَعْلِيم", "explain_uz": "تَعْلِيم — II bob masdari (ta'lim).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ف ك ر", "back": "fikr o'zagi (fakkara=o'yladi, tafakkur, mutafakkir)", "deck": "msa"},
+  {"type": "pattern", "front": "فَعَّلَ (II)", "back": "kuchaytirish/sababiyat, masdar تَفْعِيل", "deck": "msa"},
+  {"type": "word", "front": "عَلَّمَ", "back": "o'rgatdi (II)", "deck": "msa"},
+  {"type": "word", "front": "فَكَّرَ", "back": "o'yladi, fikrladi", "deck": "msa"},
+  {"type": "word", "front": "نَظَّفَ", "back": "tozaladi", "deck": "msa"},
+  {"type": "word", "front": "غَيَّرَ", "back": "o'zgartirdi", "deck": "msa"},
+  {"type": "word", "front": "حَضَّرَ", "back": "tayyorladi", "deck": "msa"},
+  {"type": "word", "front": "دَرَّسَ", "back": "dars berdi", "deck": "msa"},
+  {"type": "word", "front": "تَعْلِيم", "back": "ta'lim (masdar)", "deck": "msa"},
+  {"type": "word", "front": "رَأْي", "back": "fikr, qarash", "deck": "msa"}
+ ]
+}

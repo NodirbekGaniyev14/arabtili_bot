@@ -72,7 +72,7 @@
    ]
   },
   "speaking": {
-   "task_uz": "Restoranда gaplashing: abghā aṭlub, hal hādhā ḥalāl? al-fātūra law samaḥt.",
+   "task_uz": "Restoranda gaplashing: abghā aṭlub, hal hādhā ḥalāl? al-fātūra law samaḥt.",
    "target_ar": ["أَبْغَى أَطْلُب", "هَل هَذَا حَلَالٌ؟", "الفَاتُورَة لَو سَمَحْت"],
    "eval": "self_check"
   },

@@ -12,7 +12,7 @@
  "hook_uz": "Jiddadan Makkaga qanday borasiz? Taksi, avtobus yoki tez «Haramayn» poyezdida! Taksichi bilan: «بِكَمْ التَّوْصِيلَة؟» (yo'l qancha?). Bugun transport so'zlari va savdolashish iboralarini o'rganamiz.",
  "grammar": {
   "point_ar": "عِبَارَاتُ المُوَاصَلَات",
-  "explanation_uz": "Transport tanlash: تَاكْسِي (taksi), حَافِلَة (avtobus), قِطَارُ الحَرَمَيْن (Makka-Madina tez poyezdi). Taksichi bilan muhim iboralar: كَمِ الأُجْرَة؟ (haq qancha?), عَلَى العَدَّاد (hisoblagich bo'yicha), قِفْ هُنَا (shu yerda to'xta). Poyezd/avtobusda: تَذْكَرَة (chipta), رَصِيف (perron), مَقْعَد (o'rindiq). Hijoziyда «yo'l/qatnov» — تَوْصِيلَة.",
+  "explanation_uz": "Transport tanlash: تَاكْسِي (taksi), حَافِلَة (avtobus), قِطَارُ الحَرَمَيْن (Makka-Madina tez poyezdi). Taksichi bilan muhim iboralar: كَمِ الأُجْرَة؟ (haq qancha?), عَلَى العَدَّاد (hisoblagich bo'yicha), قِفْ هُنَا (shu yerda to'xta). Poyezd/avtobusda: تَذْكَرَة (chipta), رَصِيف (perron), مَقْعَد (o'rindiq). Hijoziyda «yo'l/qatnov» — تَوْصِيلَة.",
   "table": [
    {"ar": "كَمِ الأُجْرَةُ إِلَى مَكَّة؟", "uz": "Makkagacha haq qancha?", "form": "savol"},
    {"ar": "عَلَى العَدَّادِ لَو سَمَحْت", "uz": "Hisoblagich bo'yicha, iltimos", "form": "taksi"},
@@ -84,7 +84,7 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«chipta» qaysi?", "q_ar": "", "options": ["تَذْكَرَة", "أُجْرَة", "مَقْعَد", "رَصِيف"], "answer": "تَذْكَرَة", "explain_uz": "تَذْكَرَة — chipta/bilet (ذكر o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_ar_uz", "q_uz": "", "q_ar": "كَمِ الأُجْرَةُ؟", "options": [], "answer": "haq qancha", "explain_uz": "كَمْ = qancha, أُجْرَة = haq/kira.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Hijoziyда «Hisoblagichni yoq» qaysi?", "q_ar": "", "options": ["شَغِّل العَدَّاد", "قِفْ هِنا", "بِكَمْ التَّوْصِيلَة؟", "أَبْغَى أَرُوح"], "answer": "شَغِّل العَدَّاد", "explain_uz": "شَغِّل العَدَّاد — hisoblagichni yoq (taksida narx uchun).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «Hisoblagichni yoq» qaysi?", "q_ar": "", "options": ["شَغِّل العَدَّاد", "قِفْ هِنا", "بِكَمْ التَّوْصِيلَة؟", "أَبْغَى أَرُوح"], "answer": "شَغِّل العَدَّاد", "explain_uz": "شَغِّل العَدَّاد — hisoblagichni yoq (taksida narx uchun).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ذ ك ر» o'zagidan?", "q_ar": "", "options": ["تَذْكَرَة", "أُجْرَة", "رَصِيف"], "answer": "تَذْكَرَة", "explain_uz": "«ذ ك ر» — eslash o'zagi: تَذْكَرَة (chipta), zikr, tazkira.", "audio": "", "root": "ذ ك ر", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "haydovchi", "q_ar": "", "options": [], "answer": "سَائِق", "explain_uz": "سَائِق — haydovchi (س و ق = haydash o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Makka-Madina tez poyezdi qaysi?", "q_ar": "", "options": ["قِطَارُ الحَرَمَيْن", "الحَافِلَة", "التَّاكْسِي", "الطَّائِرَة"], "answer": "قِطَارُ الحَرَمَيْن", "explain_uz": "قِطَارُ الحَرَمَيْن — ikki Haram (Makka-Madina) o'rtasidagi tez poyezd.", "audio": "", "root": "", "pattern": "", "words": []},

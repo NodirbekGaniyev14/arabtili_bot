@@ -9,7 +9,7 @@
  "duration_min": 30,
  "prerequisites": ["a1-06"],
  "harakat_level": "full",
- "hook_uz": "Sayohatда savol berish shart: «Bu nima?», «Bekat qayerda?». Arabchada savol so'zi gap boshida keladi: مَا هَذَا؟ (bu nima?), أَيْنَ المَطَار؟ (aeroport qayerda?). Bugun asosiy savol so'zlarini o'rganamiz.",
+ "hook_uz": "Sayohatda savol berish shart: «Bu nima?», «Bekat qayerda?». Arabchada savol so'zi gap boshida keladi: مَا هَذَا؟ (bu nima?), أَيْنَ المَطَار؟ (aeroport qayerda?). Bugun asosiy savol so'zlarini o'rganamiz.",
  "grammar": {
   "point_ar": "أَدَوَاتُ الاِسْتِفْهَام",
   "explanation_uz": "Savol so'zlari gap boshida turadi. Asosiylar: مَا (nima — narsalar uchun), مَنْ (kim — odamlar uchun), أَيْنَ (qayerda), كَيْفَ (qanday), مَتَى (qachon), كَمْ (nechta), لِمَاذَا (nega). Ha/yo'q savoli uchun هَلْ yoki أَ gap boldiga qo'yiladi: هَلْ أَنْتَ طَالِبٌ؟ — «sen talabamisan?». Javob: نَعَمْ (ha) yoki لا (yo'q).",

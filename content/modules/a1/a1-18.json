@@ -12,7 +12,7 @@
  "hook_uz": "«U har kuni ishlaydi» — هُوَ يَعْمَلُ كُلَّ يَوْمٍ. Uchinchi shaxs uchun يـ (u-erkak) va تـ (u-ayol) prefikslari. Diqqat: fe'l o'rtasidagi unli har fe'lda har xil bo'ladi — يَكْتُبُ (damma), يَشْرَبُ (fatha), يَجْلِسُ (kasra).",
  "grammar": {
   "point_ar": "يَفْعُلُ / يَفْعَلُ / يَفْعِلُ",
-  "explanation_uz": "هُوَ (u-erkak) → يـ, هِيَ (u-ayol) → تـ. Prefiksdan keyin o'zak keladi, oxiri damma (ـُ). MUHIM: o'zakning O'RTA unlisи fe'lga qarab uch xil bo'ladi: يَكْتُبُ (damma-u), يَشْرَبُ (fatha-a), يَجْلِسُ (kasra-i). Bu unlini har fe'l bilan birga yodlash kerak (lug'atda ko'rsatiladi).",
+  "explanation_uz": "هُوَ (u-erkak) → يـ, هِيَ (u-ayol) → تـ. Prefiksdan keyin o'zak keladi, oxiri damma (ـُ). MUHIM: o'zakning O'RTA unlisi fe'lga qarab uch xil bo'ladi: يَكْتُبُ (damma-u), يَشْرَبُ (fatha-a), يَجْلِسُ (kasra-i). Bu unlini har fe'l bilan birga yodlash kerak (lug'atda ko'rsatiladi).",
   "table": [
    {"ar": "يَكْتُبُ / تَكْتُبُ", "uz": "u yozadi (erkak/ayol)", "form": "o'rta damma"},
    {"ar": "يَشْرَبُ / تَشْرَبُ", "uz": "u ichadi", "form": "o'rta fatha"},

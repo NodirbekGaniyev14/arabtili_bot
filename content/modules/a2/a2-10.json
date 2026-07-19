@@ -1,0 +1,99 @@
+{
+ "id": "a2-10",
+ "level": "A2",
+ "module": "verb-forms",
+ "order": 10,
+ "title_uz": "Masdar — har bob uchun",
+ "title_ar": "المَصْدَر لِكُلِّ بَاب",
+ "can_do_uz": "Har fe'l bobining masdar (ish nomi) vaznini taniyman va yasay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-09"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "«O'rgatdi» — عَلَّمَ. «O'rgatish/ta'lim» — تَعْلِيم. Har fe'lning «ish nomi» (masdar) bor va u BOBGA qarab aniq vaznda bo'ladi: II → تَفْعِيل, IV → إِفْعَال, X → اِسْتِفْعَال. Bobni bilsangiz, masdarni taxmin qilasiz!",
+ "grammar": {
+  "point_ar": "أَوْزَانُ المَصْدَر",
+  "explanation_uz": "Masdar — fe'lning «ish nomi» (o'zbekcha «-sh, -moq»). I bobning masdari turlicha (yodlanadi: عِلْم, كِتَابَة, ذَهَاب). Lekin II–X boblarning masdari ANIQ vaznda: II → تَفْعِيل (تَعْلِيم), III → مُفَاعَلَة (مُسَاعَدَة), IV → إِفْعَال (إِعْلَام), V → تَفَعُّل (تَعَلُّم), VI → تَفَاعُل (تَعَاوُن), VII → اِنْفِعَال (اِنْكِسَار), VIII → اِفْتِعَال (اِجْتِمَاع), X → اِسْتِفْعَال (اِسْتِغْفَار).",
+  "table": [
+   {"ar": "II: تَفْعِيل", "uz": "تَعْلِيم (ta'lim)", "form": "masdar II"},
+   {"ar": "IV: إِفْعَال", "uz": "إِعْلَام (xabar berish)", "form": "masdar IV"},
+   {"ar": "V: تَفَعُّل", "uz": "تَعَلُّم (o'rganish)", "form": "masdar V"},
+   {"ar": "X: اِسْتِفْعَال", "uz": "اِسْتِعْلَام (so'rov)", "form": "masdar X"}
+  ],
+  "common_mistakes_uz": [
+   "I bob masdarini qoida bilan yasashga urinish — u yodlanadi.",
+   "Boblar masdarini aralashtirish (II — تَفْعِيل, V — تَفَعُّل).",
+   "Masdar va fe'lni chalkashtirish — masdar ot (ish nomi)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع ل م",
+   "meaning_uz": "bilish — masdar namunalari",
+   "uz_cognates": ["ilm", "ta'lim", "e'lom"],
+   "derived": [
+    {"ar": "عِلْم", "uz": "ilm (masdar I)", "pattern": "فِعْل"},
+    {"ar": "تَعْلِيم", "uz": "ta'lim (masdar II)", "pattern": "تَفْعِيل"},
+    {"ar": "اِسْتِعْلَام", "uz": "so'rov (masdar X)", "pattern": "اِسْتِفْعَال"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "عِلْم", "translit": "ʿilm", "uz": "ilm, bilim (masdar I) (o'zbekcha 'ilm')", "root": "ع ل م", "pattern": "فِعْل", "pos": "ot", "audio": "a2/ilm.mp3", "example_ar": "طَلَبُ العِلْمِ فَرِيضَةٌ.", "example_uz": "Ilm izlash — farz.", "srs": true},
+  {"ar": "تَعْلِيم", "translit": "taʿlīm", "uz": "ta'lim, o'qitish (masdar II)", "root": "ع ل م", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/talim.mp3", "example_ar": "التَّعْلِيمُ حَقٌّ.", "example_uz": "Ta'lim — huquq.", "srs": true},
+  {"ar": "إِعْلَام", "translit": "iʿlām", "uz": "xabar berish, ommaviy axborot (masdar IV)", "root": "ع ل م", "pattern": "إِفْعَال", "pos": "ot", "audio": "a2/ilam_media.mp3", "example_ar": "وَسَائِلُ الإِعْلَامِ.", "example_uz": "Ommaviy axborot vositalari.", "srs": true},
+  {"ar": "مُسَاعَدَة", "translit": "musāʿada", "uz": "yordam (masdar III)", "root": "س ع د", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "a2/musaada.mp3", "example_ar": "طَلَبْتُ المُسَاعَدَةَ.", "example_uz": "Yordam so'radim.", "srs": true},
+  {"ar": "تَعَاوُن", "translit": "taʿāwun", "uz": "hamkorlik (masdar VI)", "root": "ع و ن", "pattern": "تَفَاعُل", "pos": "ot", "audio": "a2/taawun.mp3", "example_ar": "التَّعَاوُنُ ضَرُورِيٌّ.", "example_uz": "Hamkorlik zarur.", "srs": true},
+  {"ar": "اِجْتِمَاع", "translit": "ijtimāʿ", "uz": "yig'ilish (masdar VIII)", "root": "ج م ع", "pattern": "اِفْتِعَال", "pos": "ot", "audio": "a2/ijtimaa_n.mp3", "example_ar": "بَدَأَ الاِجْتِمَاعُ.", "example_uz": "Yig'ilish boshlandi.", "srs": true},
+  {"ar": "اِسْتِعْمَال", "translit": "istiʿmāl", "uz": "ishlatish, foydalanish (masdar X)", "root": "ع م ل", "pattern": "اِسْتِفْعَال", "pos": "ot", "audio": "a2/istimal.mp3", "example_ar": "سُوءُ الاِسْتِعْمَالِ.", "example_uz": "Noto'g'ri foydalanish.", "srs": true},
+  {"ar": "كِتَابَة", "translit": "kitāba", "uz": "yozish (masdar I)", "root": "ك ت ب", "pattern": "فِعَالَة", "pos": "ot", "audio": "a1/kitaba.mp3", "example_ar": "الكِتَابَةُ مَهَارَةٌ.", "example_uz": "Yozish — ko'nikma.", "srs": true},
+  {"ar": "وَسِيلَة", "translit": "wasīla", "uz": "vosita, usul", "root": "و س ل", "pattern": "فَعِيلَة", "pos": "ot", "audio": "a2/wasila.mp3", "example_ar": "وَسِيلَةُ النَّقْلِ.", "example_uz": "Transport vositasi.", "srs": true},
+  {"ar": "ضَرُورِيّ", "translit": "ḍarūriyy", "uz": "zarur, kerakli (o'zbekcha 'zaruriy')", "root": "ض ر ر", "pattern": "فَعُولِيّ", "pos": "sifat", "audio": "a2/daruri.mp3", "example_ar": "هَذَا ضَرُورِيٌّ.", "example_uz": "Bu zarur.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "التَّعْلِيمُ وَالتَّعَلُّمُ أَسَاسُ التَّقَدُّمِ. وَسَائِلُ الإِعْلَامِ تَنْشُرُ العِلْمَ. التَّعَاوُنُ وَالمُسَاعَدَةُ ضَرُورِيَّانِ فِي كُلِّ عَمَلٍ.",
+   "questions": [
+    {"q_uz": "«تَعْلِيم» va «تَعَلُّم» qaysi boblar masdari?", "a": "II va V bob"},
+    {"q_uz": "Taraqqiyot asosi nima?", "a": "Ta'lim va o'rganish"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/talim.mp3",
+   "transcript_ar": "تَعْلِيم",
+   "questions": [
+    {"q_uz": "So'z ma'nosi va bobi?", "a": "Ta'lim — II bob masdari"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Masdarlarni ayting: taʿlīm (II), iʿlām (IV), taʿallum (V), istiʿlām (X).",
+   "target_ar": ["تَعْلِيم", "إِعْلَام", "اِسْتِعْمَال"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«عَلَّمَ» (II) va «اِسْتَعْمَلَ» (X) fe'llarining masdarini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "II bobning masdar vazni qaysi?", "q_ar": "", "options": ["تَفْعِيل", "إِفْعَال", "تَفَعُّل", "اِسْتِفْعَال"], "answer": "تَفْعِيل", "explain_uz": "II bob masdari: تَفْعِيل (تَعْلِيم).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«عَلَّمَ» (II) ning masdari qaysi?", "q_ar": "", "options": ["تَعْلِيم", "تَعَلُّم", "إِعْلَام", "عِلْم"], "answer": "تَعْلِيم", "explain_uz": "II bob masdari: تَعْلِيم (ta'lim).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "وَسَائِلُ الإِعْلَامِ", "options": [], "answer": "ommaviy axborot vositalari", "explain_uz": "وَسَائِل = vositalar, الإِعْلَام = axborot (IV masdar).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "X bobning masdar vazni qaysi?", "q_ar": "", "options": ["اِسْتِفْعَال", "اِفْتِعَال", "إِفْعَال", "تَفْعِيل"], "answer": "اِسْتِفْعَال", "explain_uz": "X bob masdari: اِسْتِفْعَال (اِسْتِعْمَال).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«عِلْم، تَعْلِيم، إِعْلَام» qaysi o'zakdan?", "q_ar": "", "options": ["ع ل م", "ع م ل", "ع و ن"], "answer": "ع ل م", "explain_uz": "Hammasi ع ل م (bilish), turli bob masdarlari.", "audio": "", "root": "ع ل م", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ilm, bilim", "q_ar": "", "options": [], "answer": "عِلْم", "explain_uz": "عِلْم — I bob masdari (ilm).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "zarur, kerakli", "q_ar": "", "options": [], "answer": "ضَرُورِيّ", "explain_uz": "ضَرُورِيّ — zaruriy.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع ل م", "back": "bilish — masdar namunalari (ilm/ta'lim/e'lom)", "deck": "msa"},
+  {"type": "pattern", "front": "تَفْعِيل / إِفْعَال / اِسْتِفْعَال", "back": "II / IV / X bob masdarlari", "deck": "msa"},
+  {"type": "word", "front": "عِلْم", "back": "ilm (masdar I)", "deck": "msa"},
+  {"type": "word", "front": "تَعْلِيم", "back": "ta'lim (masdar II)", "deck": "msa"},
+  {"type": "word", "front": "إِعْلَام", "back": "axborot (masdar IV)", "deck": "msa"},
+  {"type": "word", "front": "اِسْتِعْمَال", "back": "foydalanish (masdar X)", "deck": "msa"},
+  {"type": "word", "front": "كِتَابَة", "back": "yozish (masdar I)", "deck": "msa"},
+  {"type": "word", "front": "وَسِيلَة", "back": "vosita, usul", "deck": "msa"},
+  {"type": "word", "front": "ضَرُورِيّ", "back": "zarur, kerakli", "deck": "msa"},
+  {"type": "word", "front": "تَعَاوُن", "back": "hamkorlik (masdar VI)", "deck": "msa"}
+ ]
+}

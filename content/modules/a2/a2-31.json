@@ -12,7 +12,7 @@
  "hook_uz": "Makka bozorida sovg'a olmoqchimisiz? Savdolashish odat: «غالي وَاجِد!» (juda qimmat!), «آخِر كَلَام؟» (oxirgi narx?). Bugun xarid va savdolashish so'zlarini o'rganamiz — arzonroq olish san'ati!",
  "grammar": {
   "point_ar": "المُسَاوَمَة (السَّوْم)",
-  "explanation_uz": "Savdolashish (المساومة) — bozorда odat. Narx so'rang: بِكَمْ هَذَا؟ (bu qancha?). Qimmat bo'lsa: غَالٍ جِدًّا! (juda qimmat!), hijoziy غالي وَاجِد!. Chegirma so'rang: أَعْطِنِي خَصْمًا (chegirma bering), hijoziy سَوِّ لِي خَصْم. Oxirgi narx: آخِر سِعْر؟, hijoziy آخِر كَلَام؟. To'lov: نَقْدًا (naqd) yoki بِالبِطَاقَة (karta bilan).",
+  "explanation_uz": "Savdolashish (المساومة) — bozorda odat. Narx so'rang: بِكَمْ هَذَا؟ (bu qancha?). Qimmat bo'lsa: غَالٍ جِدًّا! (juda qimmat!), hijoziy غالي وَاجِد!. Chegirma so'rang: أَعْطِنِي خَصْمًا (chegirma bering), hijoziy سَوِّ لِي خَصْم. Oxirgi narx: آخِر سِعْر؟, hijoziy آخِر كَلَام؟. To'lov: نَقْدًا (naqd) yoki بِالبِطَاقَة (karta bilan).",
   "table": [
    {"ar": "بِكَمْ هَذَا؟", "uz": "Bu qancha?", "form": "narx"},
    {"ar": "غالي وَاجِد!", "uz": "Juda qimmat! (hijoziy)", "form": "e'tiroz"},
@@ -84,7 +84,7 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«arzon» qaysi?", "q_ar": "", "options": ["رَخِيص", "غَالِي", "خَصْم", "نَقْد"], "answer": "رَخِيص", "explain_uz": "رَخِيص — arzon; غَالِي — qimmat.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَعْطِنِي خَصْمًا", "options": [], "answer": "menga chegirma bering", "explain_uz": "أَعْطِنِي = menga bering, خَصْم = chegirma.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Hijoziyда «Juda qimmat» qaysi?", "q_ar": "", "options": ["غالي وَاجِد", "رَخِيص", "آخِر كَلَام", "سَوِّ لِي خَصْم"], "answer": "غالي وَاجِد", "explain_uz": "غالي وَاجِد — juda qimmat (wajid = ko'p).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «Juda qimmat» qaysi?", "q_ar": "", "options": ["غالي وَاجِد", "رَخِيص", "آخِر كَلَام", "سَوِّ لِي خَصْم"], "answer": "غالي وَاجِد", "explain_uz": "غالي وَاجِد — juda qimmat (wajid = ko'p).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ب ي ع» o'zagidan?", "q_ar": "", "options": ["بَائِع", "سِعْر", "خَصْم"], "answer": "بَائِع", "explain_uz": "«ب ي ع» — sotish o'zagi: بَائِع (sotuvchi), بَيْع (savdo).", "audio": "", "root": "ب ي ع", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "narx", "q_ar": "", "options": [], "answer": "سِعْر", "explain_uz": "سِعْر — narx.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«sovg'a» qaysi?", "q_ar": "", "options": ["هَدِيَّة", "ثَوْب", "لَوْن", "مَقَاس"], "answer": "هَدِيَّة", "explain_uz": "هَدِيَّة — sovg'a (o'zbekcha 'hadya').", "audio": "", "root": "", "pattern": "", "words": []},

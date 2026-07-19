@@ -5,7 +5,7 @@
  "order": 5,
  "title_uz": "Erkak/ayol so'zni ajrataman",
  "title_ar": "المُذَكَّر وَالمُؤَنَّث",
- "can_do_uz": "So'zning erkak (muzakkar) yoki ayol (muannas) ekanini aniqlay olaman va ة belgisini tanийman.",
+ "can_do_uz": "So'zning erkak (muzakkar) yoki ayol (muannas) ekanini aniqlay olaman va ة belgisini taniyman.",
  "duration_min": 30,
  "prerequisites": ["a1-04"],
  "harakat_level": "full",

@@ -1,0 +1,98 @@
+{
+ "id": "a2-23",
+ "level": "A2",
+ "module": "grammar-ext",
+ "order": 23,
+ "title_uz": "Solishtiraman",
+ "title_ar": "اسْمُ التَّفْضِيل (أَفْعَل)",
+ "can_do_uz": "«kattaroq», «eng yaxshi» kabi solishtirma va orttirma darajani ayta olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-22"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "«Katta» — كَبِير. «Kattaroq» — أَكْبَر. «Allohu akbar» — Alloh ENG BUYUK! Sifatni أَفْعَل vazniga solsangiz — solishtirma daraja chiqadi: أَجْمَل (chiroyliroq), أَحْسَن (yaxshiroq).",
+ "grammar": {
+  "point_ar": "اسْمُ التَّفْضِيل",
+  "explanation_uz": "Solishtirish uchun sifat أَفْعَل vazniga solinadi: كَبِير → أَكْبَر, جَمِيل → أَجْمَل, حَسَن → أَحْسَن. «...dan kattaroq» = أَفْعَل + مِن: هَذَا أَكْبَرُ مِنْ ذَلِكَ. «Eng ...» (orttirma) = الأَفْعَل yoki أَفْعَل + idafa: الأَكْبَر (eng katta), أَكْبَرُ بَيْتٍ (eng katta uy). أَفْعَل erkak-ayol uchun bir xil.",
+  "table": [
+   {"ar": "كَبِير ← أَكْبَر", "uz": "katta → kattaroq", "form": "أَفْعَل"},
+   {"ar": "هَذَا أَكْبَرُ مِنْ ذَلِكَ", "uz": "Bu undan kattaroq", "form": "أَفْعَل مِن"},
+   {"ar": "الأَكْبَر / أَكْبَرُ بَيْتٍ", "uz": "eng katta / eng katta uy", "form": "orttirma"},
+   {"ar": "أَحْسَن · أَجْمَل · أَطْوَل", "uz": "yaxshiroq · chiroyliroq · balandroq", "form": "misollar"}
+  ],
+  "common_mistakes_uz": [
+   "أَفْعَل ni ayol uchun o'zgartirish — u erkak-ayol uchun bir xil.",
+   "«...dan» uchun مِن ni unutish: أَكْبَر مِن.",
+   "Ba'zi sifatlar (rang, ayb) أَفْعَل ni boshqacha yasaydi — asosiylarni yodlang."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ح س ن",
+   "meaning_uz": "go'zallik, yaxshilik",
+   "uz_cognates": ["husn", "ahsan", "tahsin", "Hasan"],
+   "derived": [
+    {"ar": "أَحْسَن", "uz": "yaxshiroq, eng yaxshi", "pattern": "أَفْعَل"},
+    {"ar": "حُسْن", "uz": "go'zallik, yaxshilik", "pattern": "فُعْل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "أَكْبَر", "translit": "akbar", "uz": "kattaroq, eng katta (o'zbekcha 'akbar')", "root": "ك ب ر", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/akbar.mp3", "example_ar": "اللَّهُ أَكْبَرُ.", "example_uz": "Alloh eng buyuk.", "srs": true},
+  {"ar": "أَصْغَر", "translit": "aṣghar", "uz": "kichikroq, eng kichik", "root": "ص غ ر", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/asghar.mp3", "example_ar": "أَخِي أَصْغَرُ مِنِّي.", "example_uz": "Ukam mendan kichik.", "srs": true},
+  {"ar": "أَحْسَن", "translit": "aḥsan", "uz": "yaxshiroq, eng yaxshi", "root": "ح س ن", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/ahsan.mp3", "example_ar": "هَذَا أَحْسَنُ.", "example_uz": "Bu yaxshiroq.", "srs": true},
+  {"ar": "أَجْمَل", "translit": "ajmal", "uz": "chiroyliroq, eng chiroyli", "root": "ج م ل", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/ajmal.mp3", "example_ar": "أَجْمَلُ يَوْمٍ.", "example_uz": "Eng chiroyli kun.", "srs": true},
+  {"ar": "أَطْوَل", "translit": "aṭwal", "uz": "balandroq, uzunroq", "root": "ط و ل", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/atwal.mp3", "example_ar": "هُوَ أَطْوَلُ مِنِّي.", "example_uz": "U mendan baland.", "srs": true},
+  {"ar": "أَفْضَل", "translit": "afḍal", "uz": "afzalroq, eng afzal (o'zbekcha 'afzal')", "root": "ف ض ل", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/afdal.mp3", "example_ar": "الصِّحَّةُ أَفْضَلُ مِنَ المَالِ.", "example_uz": "Sog'liq — puldan afzal.", "srs": true},
+  {"ar": "أَهَمّ", "translit": "ahamm", "uz": "muhimroq, eng muhim", "root": "ه م م", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/ahamm.mp3", "example_ar": "الوَقْتُ أَهَمُّ شَيْءٍ.", "example_uz": "Vaqt — eng muhim narsa.", "srs": true},
+  {"ar": "أَسْرَع", "translit": "asraʿ", "uz": "tezroq, eng tez", "root": "س ر ع", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/asra.mp3", "example_ar": "القِطَارُ أَسْرَعُ مِنَ الحَافِلَةِ.", "example_uz": "Poyezd avtobusdan tez.", "srs": true},
+  {"ar": "حُسْن", "translit": "ḥusn", "uz": "go'zallik, yaxshilik", "root": "ح س ن", "pattern": "فُعْل", "pos": "ot", "audio": "a2/husn.mp3", "example_ar": "حُسْنُ الخُلُقِ.", "example_uz": "Xulq go'zalligi.", "srs": true},
+  {"ar": "مَال", "translit": "māl", "uz": "mol, boylik, pul (o'zbekcha 'mol')", "root": "م و ل", "pattern": "فَعَل", "pos": "ot", "audio": "a2/mal.mp3", "example_ar": "المَالُ لَيْسَ كُلَّ شَيْءٍ.", "example_uz": "Pul — hamma narsa emas.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "الصِّحَّةُ أَفْضَلُ مِنَ المَالِ، وَالعِلْمُ أَهَمُّ مِنَ المَالِ أَيْضًا. أَخِي أَطْوَلُ مِنِّي لَكِنَّنِي أَكْبَرُ سِنًّا. اليَوْمُ أَجْمَلُ يَوْمٍ فِي حَيَاتِي.",
+   "questions": [
+    {"q_uz": "Nima puldan afzal?", "a": "Sog'liq (الصِّحَّة)"},
+    {"q_uz": "«أَطْوَل مِنِّي» ma'nosi?", "a": "Mendan baland"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/akbar.mp3",
+   "transcript_ar": "أَكْبَر",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Kattaroq, eng katta"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Solishtiring: akbar min, aḥsan min, afḍal min.",
+   "target_ar": ["أَكْبَرُ مِنْ", "أَحْسَنُ", "أَفْضَلُ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«جَمِيل» dan solishtirma yasang va «Bu undan chiroyliroq» gapini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«كَبِير» ning solishtirma darajasi?", "q_ar": "", "options": ["أَكْبَر", "كَبِيرَة", "كِبَار", "مَكْبُور"], "answer": "أَكْبَر", "explain_uz": "Solishtirma: أَفْعَل vazni — أَكْبَر.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الصِّحَّةُ أَفْضَلُ مِنَ المَالِ", "options": [], "answer": "sog'liq puldan afzal", "explain_uz": "أَفْضَل مِن = ...dan afzal.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«...dan kattaroq» uchun qaysi so'z kerak?", "q_ar": "", "options": ["مِن", "إِلَى", "عَلَى", "فِي"], "answer": "مِن", "explain_uz": "أَفْعَل + مِن: أَكْبَر مِن (...dan kattaroq).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«أَحْسَن، حُسْن» qaysi o'zakdan?", "q_ar": "", "options": ["ح س ن", "ح س ب", "ح ص ن"], "answer": "ح س ن", "explain_uz": "«ح س ن» — go'zallik o'zagi: ahsan, husn, tahsin, Hasan.", "audio": "", "root": "ح س ن", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«eng chiroyli kun» qaysi?", "q_ar": "", "options": ["أَجْمَلُ يَوْمٍ", "يَوْمٌ جَمِيلٌ", "أَجْمَلَ يَوْمًا", "الجَمِيلُ يَوْمٌ"], "answer": "أَجْمَلُ يَوْمٍ", "explain_uz": "Orttirma: أَفْعَل + idafa (أَجْمَلُ يَوْمٍ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "muhimroq, eng muhim", "q_ar": "", "options": [], "answer": "أَهَمّ", "explain_uz": "أَهَمّ — muhimroq (ه م م o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "tezroq", "q_ar": "", "options": [], "answer": "أَسْرَع", "explain_uz": "أَسْرَع — tezroq (س ر ع o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ح س ن", "back": "go'zallik o'zagi (ahsan, husn, tahsin, Hasan)", "deck": "msa"},
+  {"type": "pattern", "front": "أَفْعَل (tafdil)", "back": "solishtirma/orttirma (akbar, ahsan); أَفْعَل مِن", "deck": "msa"},
+  {"type": "word", "front": "أَكْبَر", "back": "kattaroq, eng katta", "deck": "msa"},
+  {"type": "word", "front": "أَصْغَر", "back": "kichikroq", "deck": "msa"},
+  {"type": "word", "front": "أَحْسَن", "back": "yaxshiroq", "deck": "msa"},
+  {"type": "word", "front": "أَجْمَل", "back": "chiroyliroq", "deck": "msa"},
+  {"type": "word", "front": "أَفْضَل", "back": "afzalroq", "deck": "msa"},
+  {"type": "word", "front": "أَهَمّ", "back": "muhimroq", "deck": "msa"},
+  {"type": "word", "front": "حُسْن", "back": "go'zallik, yaxshilik", "deck": "msa"},
+  {"type": "word", "front": "مَال", "back": "mol, boylik, pul", "deck": "msa"}
+ ]
+}

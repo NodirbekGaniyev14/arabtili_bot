@@ -9,7 +9,7 @@
  "duration_min": 30,
  "prerequisites": ["a2-37"],
  "harakat_level": "new_words_only",
- "hook_uz": "Saudiya modulini yakunlaymiz! Kundalik gapда eng ko'p eshitiladigan so'zlar: تَمَام (zo'r), يَلّا (qani), خَلَاص (bo'ldi), وَاجِد (ko'p). Bularni bilsangiz — mahalliylardek gapirasiz! Bugun eng kerakli hijoziy iboralarni jamlaymiz.",
+ "hook_uz": "Saudiya modulini yakunlaymiz! Kundalik gapda eng ko'p eshitiladigan so'zlar: تَمَام (zo'r), يَلّا (qani), خَلَاص (bo'ldi), وَاجِد (ko'p). Bularni bilsangiz — mahalliylardek gapirasiz! Bugun eng kerakli hijoziy iboralarni jamlaymiz.",
  "grammar": {
   "point_ar": "أَهَمُّ الكَلِمَات الحِجَازِيَّة",
   "explanation_uz": "Hijoziy lahja (Makka-Madina-Jidda) rasmiy arabchadan (فصحى) farq qiladi, lekin tushunish oson. Eng muhim farqlar: أُرِيدُ → أَبْغَى (xohlayman), كَثِير → وَاجِد (ko'p), أَيْنَ → وِين (qayerda), جَيِّد → زَيْن/تَمَام (yaxshi). Kundalik «to'ldiruvchi» so'zlar: يَلّا (qani/yur), خَلَاص (bo'ldi/tamom), طَيِّب (mayli), عَادِي (normal), أَكِيد (albatta), مَافِي (yo'q). Bularni ishlatsangiz, suhbat tabiiy bo'ladi.",
@@ -89,13 +89,13 @@
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "Hijoziyда «Xohlayman» qaysi?", "q_ar": "", "options": ["أَبْغَى", "وَاجِد", "وِين", "خَلَاص"], "answer": "أَبْغَى", "explain_uz": "أَبْغَى — hijoziy «xohlayman» (rasmiy: أُرِيدُ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «Xohlayman» qaysi?", "q_ar": "", "options": ["أَبْغَى", "وَاجِد", "وِين", "خَلَاص"], "answer": "أَبْغَى", "explain_uz": "أَبْغَى — hijoziy «xohlayman» (rasmiy: أُرِيدُ).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«bo'ldi, tamom» qaysi?", "q_ar": "", "options": ["خَلَاص", "يَلّا", "أَكِيد", "عَادِي"], "answer": "خَلَاص", "explain_uz": "خَلَاص — bo'ldi/tamom (o'zbekcha 'xalos').", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَافِي مُشْكِلَة", "options": [], "answer": "muammo yo'q", "explain_uz": "مَافِي = yo'q (Saudi), مُشْكِلَة = muammo.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Hijoziyда «ko'p» qaysi?", "q_ar": "", "options": ["وَاجِد", "أَبْغَى", "تَمَام", "وِين"], "answer": "وَاجِد", "explain_uz": "وَاجِد — hijoziy «ko'p» (rasmiy: كَثِير).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «ko'p» qaysi?", "q_ar": "", "options": ["وَاجِد", "أَبْغَى", "تَمَام", "وِين"], "answer": "وَاجِد", "explain_uz": "وَاجِد — hijoziy «ko'p» (rasmiy: كَثِير).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ف ه م» o'zagidan?", "q_ar": "", "options": ["فَهِمْت", "فُلُوس", "لَهْجَة"], "answer": "فَهِمْت", "explain_uz": "«ف ه م» — tushunish o'zagi: فَهِمْت (tushundim), مَفْهُوم (tushunarli).", "audio": "", "root": "ف ه م", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "qani, yur", "q_ar": "", "options": [], "answer": "يَلّا", "explain_uz": "يَلّا — «qani, yur» (harakatga undash).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Hijoziyда «pul» qaysi?", "q_ar": "", "options": ["فُلُوس", "شَنْطَة", "لَحْظَة", "لَهْجَة"], "answer": "فُلُوس", "explain_uz": "فُلُوس — kundalik «pul».", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "Hijoziyda «pul» qaysi?", "q_ar": "", "options": ["فُلُوس", "شَنْطَة", "لَحْظَة", "لَهْجَة"], "answer": "فُلُوس", "explain_uz": "فُلُوس — kundalik «pul».", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "root", "front": "ف ه م", "back": "tushunish o'zagi (fahm, mafhum, tafhim)", "deck": "msa"},

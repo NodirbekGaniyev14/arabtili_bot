@@ -53,7 +53,7 @@
   "reading": {
    "text_ar": "هَذَانِ كِتَابَانِ جَدِيدَانِ. لِلْإِنْسَانِ عَيْنَانِ وَيَدَانِ وَرِجْلَانِ. جَلَسَ وَلَدَانِ عَلَى الكُرْسِيَّيْنِ.",
    "questions": [
-    {"q_uz": "Insonда nechta ko'z bor (matnга ko'ra)?", "a": "Ikki (عَيْنَانِ)"},
+    {"q_uz": "Insonda nechta ko'z bor (matnga ko'ra)?", "a": "Ikki (عَيْنَانِ)"},
     {"q_uz": "«كِتَابَانِ» nechta kitob?", "a": "Ikki (ـَانِ qo'shimchasi)"}
    ]
   },
@@ -85,7 +85,7 @@
  ],
  "srs_cards": [
   {"type": "root", "front": "ز و ج", "back": "juft o'zagi (zavj=er, zavja=xotin, juft)", "deck": "msa"},
-  {"type": "pattern", "front": "ـَانِ / ـَيْنِ", "back": "ikkilik son (mусanna) qo'shimchasi", "deck": "msa"},
+  {"type": "pattern", "front": "ـَانِ / ـَيْنِ", "back": "ikkilik son (musanna) qo'shimchasi", "deck": "msa"},
   {"type": "word", "front": "اثْنَانِ", "back": "ikki (2)", "deck": "msa"},
   {"type": "word", "front": "كِتَابَانِ", "back": "ikki kitob", "deck": "msa"},
   {"type": "word", "front": "وَلَدَانِ", "back": "ikki bola", "deck": "msa"},

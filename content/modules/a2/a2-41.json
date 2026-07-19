@@ -1,0 +1,95 @@
+{
+ "id": "a2-41",
+ "level": "A2",
+ "module": "skills",
+ "order": 41,
+ "title_uz": "Tinglash: real suhbat",
+ "title_ar": "اِسْتِمَاع: مُحَادَثَةٌ حَقِيقِيَّة",
+ "can_do_uz": "Oddiy tezlikdagi real suhbatni tushunaman va so'zlashuv «to'ldiruvchi» so'zlarini taniyman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-40"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "Real suhbatda odamlar tez gapiradi va «to'ldiruvchi» so'zlar ishlatadi: يَعْنِي (ya'ni), طَبْعًا (albatta), عَلَى فِكْرَة (aytgancha). Bularni tanisangiz, suhbatni kuzatish osonlashadi — har so'zni tushunish shart emas!",
+ "grammar": {
+  "point_ar": "كَلِمَاتُ المُحَادَثَة",
+  "explanation_uz": "Real suhbatda tez-tez uchraydigan «to'ldiruvchi» va tasdiq so'zlari: يَعْنِي (ya'ni, demak), طَبْعًا (albatta), بِالتَّأْكِيد (shubhasiz), بِالضَّبْطِ (aniq shunday), عَلَى فِكْرَة (aytgancha), مَعْذِرَة (kechirasiz), لَحْظَة (bir lahza). TINGLASH strategiyasi: har so'zni emas, ASOSIY MA'NONI tuting; tanish so'zlarga tayaning; kontekstdan taxmin qiling.",
+  "table": [
+   {"ar": "يَعْنِي", "uz": "ya'ni, demak", "form": "izoh"},
+   {"ar": "طَبْعًا · بِالتَّأْكِيد", "uz": "albatta · shubhasiz", "form": "tasdiq"},
+   {"ar": "بِالضَّبْطِ", "uz": "aniq shunday", "form": "rozilik"},
+   {"ar": "عَلَى فِكْرَة", "uz": "aytgancha", "form": "mavzu o'zgartirish"}
+  ],
+  "common_mistakes_uz": [
+   "Har so'zni tushunishga urinib, umumiy ma'noni yo'qotish.",
+   "«To'ldiruvchi» so'zlarni ma'noli deb chalkashtirish.",
+   "Tez gapirganda panika qilish — asosiy so'zlarni tuting."
+  ]
+ },
+ "roots": [
+  {
+   "root": "أ ك د",
+   "meaning_uz": "tasdiqlash, ta'kid",
+   "uz_cognates": ["ta'kid", "muakkad", "akkad"],
+   "derived": [
+    {"ar": "بِالتَّأْكِيد", "uz": "shubhasiz, albatta", "pattern": "تَفْعِيل"},
+    {"ar": "أَكَّدَ", "uz": "tasdiqladi (II)", "pattern": "فَعَّلَ"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "يَعْنِي", "translit": "yaʿnī", "uz": "ya'ni, demak", "root": "ع ن ي", "pattern": "يَفْعِي", "pos": "ibora", "audio": "a2/yani.mp3", "example_ar": "يَعْنِي، الأَمْرُ صَعْبٌ.", "example_uz": "Ya'ni, ish qiyin.", "srs": true},
+  {"ar": "طَبْعًا", "translit": "ṭabʿan", "uz": "albatta, tabiiy", "root": "ط ب ع", "pattern": "", "pos": "ibora", "audio": "a2/taban.mp3", "example_ar": "طَبْعًا، أَنَا مُوَافِقٌ.", "example_uz": "Albatta, roziman.", "srs": true},
+  {"ar": "بِالتَّأْكِيد", "translit": "bit-taʾkīd", "uz": "shubhasiz, albatta", "root": "أ ك د", "pattern": "", "pos": "ibora", "audio": "a2/bittakid.mp3", "example_ar": "بِالتَّأْكِيدِ سَأَحْضُرُ.", "example_uz": "Albatta kelaman.", "srs": true},
+  {"ar": "بِالضَّبْطِ", "translit": "biḍ-ḍabṭ", "uz": "aniq shunday, xuddi", "root": "ض ب ط", "pattern": "", "pos": "ibora", "audio": "a2/biddabt.mp3", "example_ar": "بِالضَّبْطِ! هَذَا صَحِيحٌ.", "example_uz": "Aniq shunday! To'g'ri.", "srs": true},
+  {"ar": "عَلَى فِكْرَة", "translit": "ʿalā fikra", "uz": "aytgancha", "root": "ف ك ر", "pattern": "", "pos": "ibora", "audio": "a2/ala_fikra.mp3", "example_ar": "عَلَى فِكْرَةٍ، مَتَى تُسَافِرُ؟", "example_uz": "Aytgancha, qachon safar qilasiz?", "srs": true},
+  {"ar": "مَعْذِرَة", "translit": "maʿdhira", "uz": "kechirasiz, uzr", "root": "ع ذ ر", "pattern": "مَفْعِلَة", "pos": "ot", "audio": "a2/madhira.mp3", "example_ar": "مَعْذِرَةً، لَمْ أَفْهَمْ.", "example_uz": "Kechirasiz, tushunmadim.", "srs": true},
+  {"ar": "مُوَافِق", "translit": "muwāfiq", "uz": "rozi, muvofiq", "root": "و ف ق", "pattern": "مُفَاعِل", "pos": "sifat", "audio": "a2/muwafiq.mp3", "example_ar": "أَنَا مُوَافِقٌ.", "example_uz": "Men roziman.", "srs": true},
+  {"ar": "مُحَادَثَة", "translit": "muḥādatha", "uz": "suhbat, muloqot", "root": "ح د ث", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "a2/muhadatha.mp3", "example_ar": "مُحَادَثَةٌ قَصِيرَةٌ.", "example_uz": "Qisqa suhbat.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "— السلام عليكم! كيف حالك؟\n— وعليكم السلام، بخير الحمد لله. على فكرة، متى تسافر؟\n— بالتأكيد الأسبوع القادم، يعني بعد خمسة أيام.\n— بالضبط! رحلة موفقة.",
+   "questions": [
+    {"q_uz": "U qachon safar qiladi?", "a": "Kelasi hafta (besh kundan keyin)"},
+    {"q_uz": "«على فكرة» nima uchun ishlatildi?", "a": "Mavzuni o'zgartirish uchun (aytgancha)"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/yani.mp3",
+   "transcript_ar": "يَعْنِي",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Ya'ni, demak"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Suhbat so'zlarini ayting: yaʿnī, ṭabʿan, bit-taʾkīd, biḍ-ḍabṭ, ʿalā fikra.",
+   "target_ar": ["يَعْنِي", "طَبْعًا", "بِالضَّبْطِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Qisqa suhbat yozing (4 gap), 2 ta «to'ldiruvchi» so'z ishlating.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«يَعْنِي» ma'nosi?", "q_ar": "", "options": ["ya'ni, demak", "albatta", "kechirasiz", "aytgancha"], "answer": "ya'ni, demak", "explain_uz": "يَعْنِي — ya'ni/demak (izoh beruvchi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«aytgancha» qaysi?", "q_ar": "", "options": ["عَلَى فِكْرَة", "بِالضَّبْطِ", "طَبْعًا", "مَعْذِرَة"], "answer": "عَلَى فِكْرَة", "explain_uz": "عَلَى فِكْرَة — aytgancha (mavzu o'zgartirish).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "بِالضَّبْطِ! هَذَا صَحِيحٌ", "options": [], "answer": "aniq shunday to'g'ri", "explain_uz": "بِالضَّبْطِ = aniq shunday, صَحِيح = to'g'ri.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«بِالتَّأْكِيد» qaysi o'zakdan?", "q_ar": "", "options": ["أ ك د", "أ ك ل", "و ك د"], "answer": "أ ك د", "explain_uz": "«أ ك د» — tasdiqlash o'zagi: ta'kid, muakkad.", "audio": "", "root": "أ ك د", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "kechirasiz, uzr", "q_ar": "", "options": [], "answer": "مَعْذِرَة", "explain_uz": "مَعْذِرَة — kechirasiz (ع ذ ر o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Tinglashda eng yaxshi strategiya qaysi?", "q_ar": "", "options": ["asosiy ma'noni tutish", "har so'zni tarjima qilish", "yozib olish", "to'xtatib so'rash"], "answer": "asosiy ma'noni tutish", "explain_uz": "Har so'zni emas, umumiy ma'noni tuting.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "rozi, muvofiq", "q_ar": "", "options": [], "answer": "مُوَافِق", "explain_uz": "مُوَافِق — rozi (و ف ق o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "أ ك د", "back": "tasdiqlash o'zagi (ta'kid, muakkad)", "deck": "msa"},
+  {"type": "word", "front": "يَعْنِي", "back": "ya'ni, demak", "deck": "msa"},
+  {"type": "word", "front": "طَبْعًا", "back": "albatta, tabiiy", "deck": "msa"},
+  {"type": "word", "front": "بِالتَّأْكِيد", "back": "shubhasiz, albatta", "deck": "msa"},
+  {"type": "word", "front": "بِالضَّبْطِ", "back": "aniq shunday", "deck": "msa"},
+  {"type": "word", "front": "عَلَى فِكْرَة", "back": "aytgancha", "deck": "msa"},
+  {"type": "word", "front": "مَعْذِرَة", "back": "kechirasiz, uzr", "deck": "msa"},
+  {"type": "word", "front": "مُوَافِق", "back": "rozi, muvofiq", "deck": "msa"},
+  {"type": "word", "front": "مُحَادَثَة", "back": "suhbat, muloqot", "deck": "msa"}
+ ]
+}

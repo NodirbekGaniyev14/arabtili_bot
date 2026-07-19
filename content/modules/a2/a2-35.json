@@ -5,14 +5,14 @@
  "order": 35,
  "title_uz": "Masjid odobi",
  "title_ar": "آدَابُ المَسْجِد",
- "can_do_uz": "Masjidда namoz, jamoat, azon va iqoma bilan bog'liq so'zlarni tushunaman.",
+ "can_do_uz": "Masjidda namoz, jamoat, azon va iqoma bilan bog'liq so'zlarni tushunaman.",
  "duration_min": 30,
  "prerequisites": ["a2-34"],
  "harakat_level": "new_words_only",
- "hook_uz": "Masjidul Haramда namoz — umrichilik xotira! Azon (أَذَان) eshitilganда, jamoat (جَمَاعَة) safga (صَفّ) turadi. Qiblani (قِبْلَة) topasiz, tahorat (وُضُوء) qilasiz. Bugun masjid va namoz so'zlarini o'rganamiz.",
+ "hook_uz": "Masjidul Haramda namoz — umrichilik xotira! Azon (أَذَان) eshitilganda, jamoat (جَمَاعَة) safga (صَفّ) turadi. Qiblani (قِبْلَة) topasiz, tahorat (وُضُوء) qilasiz. Bugun masjid va namoz so'zlarini o'rganamiz.",
  "grammar": {
   "point_ar": "الصَّلَاةُ فِي المَسْجِد",
-  "explanation_uz": "Masjidда namoz tartibi: أَذَان (namozga chaqiruv) → وُضُوء (tahorat) → إِقَامَة (namoz boshlanishi) → صَفّ (saf tuzish) → jamoat namozi (الإِمَام ortida). Har namoz رَكْعَة (rakat) lardan iborat, har rakatда رُكُوع (ruku) va سَجْدَة (sajda) bor. قِبْلَة — Ka'ba tomoni. Musofir namozini qisqartirishi mumkin — قَصْر (masalan, 4 rakat → 2).",
+  "explanation_uz": "Masjidda namoz tartibi: أَذَان (namozga chaqiruv) → وُضُوء (tahorat) → إِقَامَة (namoz boshlanishi) → صَفّ (saf tuzish) → jamoat namozi (الإِمَام ortida). Har namoz رَكْعَة (rakat) lardan iborat, har rakatda رُكُوع (ruku) va سَجْدَة (sajda) bor. قِبْلَة — Ka'ba tomoni. Musofir namozini qisqartirishi mumkin — قَصْر (masalan, 4 rakat → 2).",
   "table": [
    {"ar": "أَذَان → إِقَامَة", "uz": "azon → iqoma", "form": "boshlanish"},
    {"ar": "وُضُوء → صَلَاة", "uz": "tahorat → namoz", "form": "tayyorgarlik"},
@@ -21,8 +21,8 @@
   ],
   "common_mistakes_uz": [
    "أَذَان (chaqiruv) va إِقَامَة (namoz boshlanishi) ni chalkashtirish.",
-   "Qiblani (قِبْلَة) noto'g'ri topish — masjidда mehrob (مِحْرَاب) ko'rsatadi.",
-   "Katta olomonда safni (صَفّ) buzish — tartibni saqlang."
+   "Qiblani (قِبْلَة) noto'g'ri topish — masjidda mehrob (مِحْرَاب) ko'rsatadi.",
+   "Katta olomonda safni (صَفّ) buzish — tartibni saqlang."
   ]
  },
  "roots": [
@@ -86,7 +86,7 @@
   {"type": "match_root", "q_uz": "Qaysi so'z «س ج د» o'zagidan?", "q_ar": "", "options": ["مَسْجِد", "قِبْلَة", "إِمَام"], "answer": "مَسْجِد", "explain_uz": "«س ج د» — sajda o'zagi: مَسْجِد (sajda joyi), سُجُود, sajda.", "audio": "", "root": "س ج د", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "tahorat", "q_ar": "", "options": [], "answer": "وُضُوء", "explain_uz": "وُضُوء — tahorat/obdast.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Musofir namozni qisqartirishi qaysi?", "q_ar": "", "options": ["قَصْر", "صَفّ", "سَجْدَة", "مِحْرَاب"], "answer": "قَصْر", "explain_uz": "قَصْر — safar namozini qisqartirish (4→2 rakat).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "saf, qator", "q_ar": "", "options": [], "answer": "صَفّ", "explain_uz": "صَفّ — jamoatда saf.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "translate_uz_ar", "q_uz": "saf, qator", "q_ar": "", "options": [], "answer": "صَفّ", "explain_uz": "صَفّ — jamoatda saf.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "root", "front": "س ج د", "back": "sajda o'zagi (sajda, masjid, sujud)", "deck": "msa"},

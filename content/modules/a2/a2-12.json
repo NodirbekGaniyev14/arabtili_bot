@@ -1,0 +1,101 @@
+{
+ "id": "a2-12",
+ "level": "A2",
+ "module": "verb-forms",
+ "order": 12,
+ "title_uz": "BOB USTAXONASI: ع-ل-م",
+ "title_ar": "وَرْشَةُ الجَذْر: ع ل م",
+ "can_do_uz": "Bitta o'zakdan (ع ل م) 12 xil so'z yasay olaman — fe'l boblari va otlarni birlashtiraman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-11"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "Sehr! Bitta o'zak ع-ل-م dan 12 so'z: عَلِمَ (bildi), عَلَّمَ (o'rgatdi), تَعَلَّمَ (o'rgandi), عَالِم (olim), مُعَلِّم (o'qituvchi), عِلْم (ilm), عَالَم (dunyo), عَلَامَة (belgi)... Boblar va vaznlar tizimini bir o'zakda ko'ramiz — bu arabchaning butun tizimi!",
+ "grammar": {
+  "point_ar": "جَذْرٌ وَاحِد — أَبْوَابٌ وَأَوْزَان",
+  "explanation_uz": "ع ل م o'zagini turli boblar va vaznlarga solamiz: FE'LLAR — عَلِمَ (I: bildi), عَلَّمَ (II: o'rgatdi), أَعْلَمَ (IV: xabar berdi), تَعَلَّمَ (V: o'rgandi), اِسْتَعْلَمَ (X: so'radi). OTLAR — عَالِم (olim, fo'il), مُعَلِّم (o'qituvchi, fo'il II), عِلْم (ilm, masdar), تَعْلِيم (ta'lim, masdar II), مَعْلُوم (ma'lum, maf'ul), عَالَم (dunyo), عَلَامَة (belgi). O'zak bir xil — vazn ma'noni belgilaydi!",
+  "table": [
+   {"ar": "عَلِمَ · عَلَّمَ · تَعَلَّمَ", "uz": "bildi · o'rgatdi · o'rgandi", "form": "fe'llar (I,II,V)"},
+   {"ar": "عَالِم · مُعَلِّم", "uz": "olim · o'qituvchi", "form": "ism fo'il"},
+   {"ar": "عِلْم · تَعْلِيم", "uz": "ilm · ta'lim", "form": "masdar (I, II)"},
+   {"ar": "عَالَم · عَلَامَة", "uz": "dunyo · belgi", "form": "boshqa otlar"}
+  ],
+  "common_mistakes_uz": [
+   "O'zak (ع ل م) harflarini vazn harflaridan (م، ا، ت، اِسْت) ajrata olmaslik.",
+   "Vazn ma'nosini emas, faqat so'zni yodlash.",
+   "Yaqin so'zlarni chalkashtirish: عَالِم (olim) va عَالَم (dunyo) — harakat farqi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع ل م",
+   "meaning_uz": "bilish — to'liq oila",
+   "uz_cognates": ["ilm", "olim", "muallim", "ta'lim", "ma'lum", "olam", "alomat"],
+   "derived": [
+    {"ar": "عَالِم", "uz": "olim (fo'il)", "pattern": "فَاعِل"},
+    {"ar": "مُعَلِّم", "uz": "o'qituvchi (fo'il II)", "pattern": "مُفَعِّل"},
+    {"ar": "مَعْلُوم", "uz": "ma'lum (maf'ul)", "pattern": "مَفْعُول"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "عَلِمَ", "translit": "ʿalima", "uz": "bildi (I bob)", "root": "ع ل م", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "a2/alima.mp3", "example_ar": "عَلِمَ الحَقِيقَةَ.", "example_uz": "Haqiqatni bildi.", "srs": true},
+  {"ar": "عَلَّمَ", "translit": "ʿallama", "uz": "o'rgatdi (II bob)", "root": "ع ل م", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/allama.mp3", "example_ar": "عَلَّمَ الأَطْفَالَ.", "example_uz": "Bolalarni o'rgatdi.", "srs": true},
+  {"ar": "تَعَلَّمَ", "translit": "taʿallama", "uz": "o'rgandi (V bob)", "root": "ع ل م", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/taallama.mp3", "example_ar": "تَعَلَّمَ الحِسَابَ.", "example_uz": "Hisobni o'rgandi.", "srs": true},
+  {"ar": "اِسْتَعْلَمَ", "translit": "istaʿlama", "uz": "so'rab bildi (X bob)", "root": "ع ل م", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "a2/istaalama.mp3", "example_ar": "اِسْتَعْلَمَ عَنِ الطَّرِيقِ.", "example_uz": "Yo'l haqida so'radi.", "srs": true},
+  {"ar": "عَالِم", "translit": "ʿālim", "uz": "olim, bilimdon (fo'il)", "root": "ع ل م", "pattern": "فَاعِل", "pos": "ot", "audio": "a2/aalim.mp3", "example_ar": "هُوَ عَالِمٌ كَبِيرٌ.", "example_uz": "U buyuk olim.", "srs": true},
+  {"ar": "عِلْم", "translit": "ʿilm", "uz": "ilm, fan (masdar) (o'zbekcha 'ilm')", "root": "ع ل م", "pattern": "فِعْل", "pos": "ot", "audio": "a2/ilm.mp3", "example_ar": "العِلْمُ نُورٌ.", "example_uz": "Ilm — nur.", "srs": true},
+  {"ar": "تَعْلِيم", "translit": "taʿlīm", "uz": "ta'lim (masdar II)", "root": "ع ل م", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/talim.mp3", "example_ar": "التَّعْلِيمُ مَجَّانِيٌّ.", "example_uz": "Ta'lim bepul.", "srs": true},
+  {"ar": "مَعْلُوم", "translit": "maʿlūm", "uz": "ma'lum (maf'ul) (o'zbekcha 'ma'lum')", "root": "ع ل م", "pattern": "مَفْعُول", "pos": "sifat", "audio": "a2/malum.mp3", "example_ar": "هَذَا مَعْلُومٌ.", "example_uz": "Bu ma'lum.", "srs": true},
+  {"ar": "عَالَم", "translit": "ʿālam", "uz": "dunyo, olam (o'zbekcha 'olam')", "root": "ع ل م", "pattern": "فَاعَل", "pos": "ot", "audio": "a2/aalam.mp3", "example_ar": "رَبُّ العَالَمِينَ.", "example_uz": "Olamlar Robbi.", "srs": true},
+  {"ar": "عَلَامَة", "translit": "ʿalāma", "uz": "belgi, alomat (o'zbekcha 'alomat')", "root": "ع ل م", "pattern": "فَعَالَة", "pos": "ot", "audio": "a1/alama.mp3", "example_ar": "عَلَامَةٌ حَمْرَاءُ.", "example_uz": "Qizil belgi.", "srs": true},
+  {"ar": "مُعَلِّم", "translit": "muʿallim", "uz": "o'qituvchi (fo'il II)", "root": "ع ل م", "pattern": "مُفَعِّل", "pos": "ot", "audio": "a1/muallim.mp3", "example_ar": "المُعَلِّمُ مُحْتَرَمٌ.", "example_uz": "O'qituvchi hurmatli.", "srs": true},
+  {"ar": "أَعْلَمَ", "translit": "aʿlama", "uz": "xabar berdi (IV bob)", "root": "ع ل م", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/aalama_v.mp3", "example_ar": "أَعْلَمَنِي بِالمَوْعِدِ.", "example_uz": "Uchrashuv haqida xabar berdi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "العَالِمُ يَعْلَمُ كَثِيرًا لِأَنَّهُ تَعَلَّمَ فِي صِغَرِهِ. المُعَلِّمُ يُعَلِّمُ العِلْمَ لِلطُّلَّابِ. كُلُّ هَذِهِ الكَلِمَاتِ مِنْ جَذْرٍ وَاحِدٍ: ع ل م.",
+   "questions": [
+    {"q_uz": "Matndagi so'zlar qaysi o'zakdan?", "a": "ع ل م (bilish)"},
+    {"q_uz": "«عَالِم» va «عَالَم» qanday farqlanadi?", "a": "Harakat: عَالِم (olim), عَالَم (dunyo)"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/aalim.mp3",
+   "transcript_ar": "عَالِم",
+   "questions": [
+    {"q_uz": "So'z ma'nosi va vazni?", "a": "Olim — فَاعِل (ism fo'il)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "ع ل م oilasini ayting: ʿalima, ʿallama, taʿallama, ʿālim, muʿallim, ʿilm.",
+   "target_ar": ["عَلَّمَ", "عَالِم", "عِلْم"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "ع ل م dan 4 so'z yozing: bir fe'l, bir ism fo'il, bir masdar, bir maf'ul.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "build_word", "q_uz": "«ع ل م» ni «فَاعِل» vazniga soling (olim)", "q_ar": "", "options": [], "answer": "عَالِم", "explain_uz": "ع ل م + فَاعِل = عَالِم (olim).", "audio": "", "root": "ع ل م", "pattern": "فَاعِل", "words": []},
+  {"type": "build_word", "q_uz": "«ع ل م» ni «مَفْعُول» vazniga soling (ma'lum)", "q_ar": "", "options": [], "answer": "مَعْلُوم", "explain_uz": "ع ل م + مَفْعُول = مَعْلُوم (ma'lum).", "audio": "", "root": "ع ل م", "pattern": "مَفْعُول", "words": []},
+  {"type": "mcq", "q_uz": "«o'rgandi» (V bob) qaysi?", "q_ar": "", "options": ["تَعَلَّمَ", "عَلَّمَ", "أَعْلَمَ", "اِسْتَعْلَمَ"], "answer": "تَعَلَّمَ", "explain_uz": "V bob: تَعَلَّمَ (o'rgandi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«dunyo, olam» qaysi?", "q_ar": "", "options": ["عَالَم", "عَالِم", "عِلْم", "عَلَامَة"], "answer": "عَالَم", "explain_uz": "عَالَم — dunyo (o'zbekcha 'olam'). عَالِم — olim.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "العِلْمُ نُورٌ", "options": [], "answer": "ilm — nur", "explain_uz": "العِلْم = ilm, نُور = nur.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "o'qituvchi (ism fo'il)", "q_ar": "", "options": [], "answer": "مُعَلِّم", "explain_uz": "مُعَلِّم — II bob ism fo'il (o'qituvchi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«اِسْتَعْلَمَ» qaysi bob va ma'no?", "q_ar": "", "options": ["X — so'rab bildi", "II — o'rgatdi", "IV — xabar berdi", "V — o'rgandi"], "answer": "X — so'rab bildi", "explain_uz": "X bob (اِسْتَفْعَلَ): اِسْتَعْلَمَ — ma'lumot so'radi.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع ل م", "back": "bilish — to'liq oila (ilm/olim/muallim/ta'lim/ma'lum/olam)", "deck": "msa"},
+  {"type": "word", "front": "عَلِمَ", "back": "bildi (I)", "deck": "msa"},
+  {"type": "word", "front": "عَلَّمَ", "back": "o'rgatdi (II)", "deck": "msa"},
+  {"type": "word", "front": "تَعَلَّمَ", "back": "o'rgandi (V)", "deck": "msa"},
+  {"type": "word", "front": "اِسْتَعْلَمَ", "back": "so'rab bildi (X)", "deck": "msa"},
+  {"type": "word", "front": "عَالِم", "back": "olim (fo'il)", "deck": "msa"},
+  {"type": "word", "front": "عِلْم", "back": "ilm (masdar)", "deck": "msa"},
+  {"type": "word", "front": "مَعْلُوم", "back": "ma'lum (maf'ul)", "deck": "msa"},
+  {"type": "word", "front": "عَالَم", "back": "dunyo, olam", "deck": "msa"},
+  {"type": "word", "front": "عَلَامَة", "back": "belgi, alomat", "deck": "msa"}
+ ]
+}

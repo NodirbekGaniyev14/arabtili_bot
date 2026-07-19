@@ -5,14 +5,14 @@
  "order": 37,
  "title_uz": "Ovqat buyurtma qilaman",
  "title_ar": "فِي المَطْعَم",
- "can_do_uz": "Restoranда ovqat buyurtma qila, narx va hisob so'ray olaman (rasmiy va hijoziy).",
+ "can_do_uz": "Restoranda ovqat buyurtma qila, narx va hisob so'ray olaman (rasmiy va hijoziy).",
  "duration_min": 30,
  "prerequisites": ["a1-36"],
  "harakat_level": "full",
- "hook_uz": "Saudiya restoraniда: «Iltimos, menyu» — القَائِمَة لَو سَمَحْت. Ovqat so'zlarini (لَحْم — go'sht, أَرُزّ — guruch, عَصِير — sharbat) va buyurtma iboralarini o'rganamiz. Saudiya lahjasi bilan birga!",
+ "hook_uz": "Saudiya restoranida: «Iltimos, menyu» — القَائِمَة لَو سَمَحْت. Ovqat so'zlarini (لَحْم — go'sht, أَرُزّ — guruch, عَصِير — sharbat) va buyurtma iboralarini o'rganamiz. Saudiya lahjasi bilan birga!",
  "grammar": {
   "point_ar": "الطَّلَبُ فِي المَطْعَم",
-  "explanation_uz": "Restoranда buyurtma ketma-ketligi: (1) القَائِمَة مِنْ فَضْلِكَ (menyu, iltimos). (2) أُرِيدُ... (xohlayman...) yoki hijoziyда أَبْغَى... (3) الحِسَاب مِنْ فَضْلِكَ (hisob, iltimos). Ovqat so'zlari: لَحْم (go'sht), دَجَاج (tovuq), أَرُزّ (guruch), خُضَار (sabzavot), عَصِير (sharbat). Saudiyada لَو سَمَحْت (iltimos) va زَيْن (yaxshi) ko'p eshitiladi.",
+  "explanation_uz": "Restoranda buyurtma ketma-ketligi: (1) القَائِمَة مِنْ فَضْلِكَ (menyu, iltimos). (2) أُرِيدُ... (xohlayman...) yoki hijoziyda أَبْغَى... (3) الحِسَاب مِنْ فَضْلِكَ (hisob, iltimos). Ovqat so'zlari: لَحْم (go'sht), دَجَاج (tovuq), أَرُزّ (guruch), خُضَار (sabzavot), عَصِير (sharbat). Saudiyada لَو سَمَحْت (iltimos) va زَيْن (yaxshi) ko'p eshitiladi.",
   "table": [
    {"ar": "القَائِمَة لَو سَمَحْت", "uz": "Menyu, iltimos", "form": "boshlash"},
    {"ar": "أُرِيدُ دَجَاجًا وَأَرُزًّا", "uz": "Tovuq va guruch xohlayman", "form": "buyurtma"},
@@ -22,7 +22,7 @@
   "common_mistakes_uz": [
    "«iltimos» ni tushirib qoldirish — مِنْ فَضْلِكَ / لَو سَمَحْت odob belgisi.",
    "Buyurtmada ob'ektni nasb (fatha) qilmaslik: أُرِيدُ دَجَاجًا.",
-   "Rasmiy joyда faqat hijoziy ishlatib yuborish — ikkalasini bilgan yaxshi."
+   "Rasmiy joyda faqat hijoziy ishlatib yuborish — ikkalasini bilgan yaxshi."
   ]
  },
  "roots": [
@@ -82,10 +82,10 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«go'sht» qaysi?", "q_ar": "", "options": ["لَحْم", "دَجَاج", "أَرُزّ", "خُضَار"], "answer": "لَحْم", "explain_uz": "لَحْم — go'sht.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الطَّعَامُ لَذِيذٌ", "options": [], "answer": "ovqat mazali", "explain_uz": "الطَّعَام = ovqat, لَذِيذ = mazali.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Hijoziyда «Iltimos» qaysi?", "q_ar": "", "options": ["لَو سَمَحْت", "مِنْ فَضْلِكَ", "زَيْن", "المَيّ"], "answer": "لَو سَمَحْت", "explain_uz": "Hijoziy: لَو سَمَحْت (rasmiy: مِنْ فَضْلِكَ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «Iltimos» qaysi?", "q_ar": "", "options": ["لَو سَمَحْت", "مِنْ فَضْلِكَ", "زَيْن", "المَيّ"], "answer": "لَو سَمَحْت", "explain_uz": "Hijoziy: لَو سَمَحْت (rasmiy: مِنْ فَضْلِكَ).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ح س ب» o'zagidan?", "q_ar": "", "options": ["حِسَاب", "لَحْم", "عَصِير"], "answer": "حِسَاب", "explain_uz": "«ح س ب» — hisoblash o'zagi: حِسَاب (hisob), مُحَاسِب (hisobchi).", "audio": "", "root": "ح س ب", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "sharbat, sok", "q_ar": "", "options": [], "answer": "عَصِير", "explain_uz": "عَصِير — sharbat (ع ص ر = siqish o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Hijoziyда «yaxshi/zo'r» qaysi?", "q_ar": "", "options": ["زَيْن", "لَو سَمَحْت", "المَيّ", "وِش"], "answer": "زَيْن", "explain_uz": "زَيْن — hijoziyда «yaxshi, zo'r».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «yaxshi/zo'r» qaysi?", "q_ar": "", "options": ["زَيْن", "لَو سَمَحْت", "المَيّ", "وِش"], "answer": "زَيْن", "explain_uz": "زَيْن — hijoziyda «yaxshi, zo'r».", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "och (qorni)", "q_ar": "", "options": [], "answer": "جُوعَان", "explain_uz": "جُوعَان — och (ج و ع = ochlik o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [

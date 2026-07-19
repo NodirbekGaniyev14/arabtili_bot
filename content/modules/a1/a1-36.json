@@ -9,7 +9,7 @@
  "duration_min": 30,
  "prerequisites": ["a1-35"],
  "harakat_level": "full",
- "hook_uz": "Saudiyaда vaqt namoz bilan o'lchanadi: الفَجْر (bomdod), الظُّهْر (peshin), المَغْرِب (shom)... «Soat nechada?» — كَمِ السَّاعَةُ؟. Bugun vaqt va namoz vaqtlarini o'rganamiz.",
+ "hook_uz": "Saudiyada vaqt namoz bilan o'lchanadi: الفَجْر (bomdod), الظُّهْر (peshin), المَغْرِب (shom)... «Soat nechada?» — كَمِ السَّاعَةُ؟. Bugun vaqt va namoz vaqtlarini o'rganamiz.",
  "grammar": {
   "point_ar": "الوَقْت · أَيَّامُ الأُسْبُوع · الصَّلَوَات",
   "explanation_uz": "Soat so'rash: كَمِ السَّاعَةُ؟ (soat nechada?) — javob: السَّاعَةُ الثَّالِثَةُ (soat uch) yoki oddiy son bilan. Vaqt birliklari: سَاعَة (soat), دَقِيقَة (daqiqa), نِصْف (yarim). Besh vaqt namoz kun tartibini belgilaydi: الفَجْر (tong), الظُّهْر (peshin), العَصْر (asr), المَغْرِب (shom), العِشَاء (xufton). Juma — يَوْمُ الجُمُعَةِ — muhim kun.",

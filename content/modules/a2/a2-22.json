@@ -1,0 +1,97 @@
+{
+ "id": "a2-22",
+ "level": "A2",
+ "module": "grammar-ext",
+ "order": 22,
+ "title_uz": "«Yozildi» deyman — majhul",
+ "title_ar": "المَبْنِيُّ لِلْمَجْهُول",
+ "can_do_uz": "Majhul nisbatni taniyman: «yozildi», «ochildi» (kim qilgani noma'lum).",
+ "duration_min": 30,
+ "prerequisites": ["a2-21"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "«Yozdi» — كَتَبَ. «Yozildi» (kim yozgani muhim emas) — كُتِبَ. Bajaruvchi noma'lum yoki muhim bo'lmaganda MAJHUL nisbat ishlatiladi: فُتِحَ البَابُ (eshik ochildi), خُلِقَ الإِنْسَانُ (inson yaratildi).",
+ "grammar": {
+  "point_ar": "المَبْنِيُّ لِلْمَجْهُول",
+  "explanation_uz": "Majhul (passiv) — bajaruvchi (fo'il) aytilmaydi, faqat ish tushgan narsa (نَائِب الفَاعِل) qoladi va u RAF'da bo'ladi. O'TGAN zamon majhuli: 1-harf DAMMA, o'rta KASRA: كَتَبَ → كُتِبَ (yozildi), فَتَحَ → فُتِحَ (ochildi). HOZIRGI zamon: يُـ prefiks damma, o'rta fatha: يَكْتُبُ → يُكْتَبُ (yoziladi). Ma'lum (aktiv) — كَتَبَ الوَلَدُ الرِّسَالَةَ; majhul — كُتِبَتِ الرِّسَالَةُ.",
+  "table": [
+   {"ar": "كَتَبَ ← كُتِبَ", "uz": "yozdi → yozildi", "form": "o'tgan majhul"},
+   {"ar": "فَتَحَ ← فُتِحَ", "uz": "ochdi → ochildi", "form": "o'tgan majhul"},
+   {"ar": "يَكْتُبُ ← يُكْتَبُ", "uz": "yozadi → yoziladi", "form": "hozirgi majhul"},
+   {"ar": "خُلِقَ الإِنْسَانُ", "uz": "Inson yaratildi", "form": "namuna"}
+  ],
+  "common_mistakes_uz": [
+   "Majhulda 1-harf dammani unutish: كَتِبَ (xato) → كُتِبَ.",
+   "Naib fo'ilni (ish tushgan narsa) nasb qoldirish — u raf'da bo'ladi.",
+   "Hozirgi majhulda o'rta harakatni kasra qilish — u fatha (يُكْتَبُ)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "خ ل ق",
+   "meaning_uz": "yaratish",
+   "uz_cognates": ["xalq", "maxluq", "Xoliq", "axloq"],
+   "derived": [
+    {"ar": "خُلِقَ", "uz": "yaratildi (majhul)", "pattern": "فُعِلَ"},
+    {"ar": "مَخْلُوق", "uz": "maxluq, yaratilgan", "pattern": "مَفْعُول"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "كُتِبَ", "translit": "kutiba", "uz": "yozildi (majhul)", "root": "ك ت ب", "pattern": "فُعِلَ", "pos": "fe'l", "audio": "a2/kutiba.mp3", "example_ar": "كُتِبَتِ الرِّسَالَةُ.", "example_uz": "Xat yozildi.", "srs": true},
+  {"ar": "فُتِحَ", "translit": "futiḥa", "uz": "ochildi (majhul)", "root": "ف ت ح", "pattern": "فُعِلَ", "pos": "fe'l", "audio": "a2/futiha.mp3", "example_ar": "فُتِحَ البَابُ.", "example_uz": "Eshik ochildi.", "srs": true},
+  {"ar": "قُتِلَ", "translit": "qutila", "uz": "o'ldirildi (majhul)", "root": "ق ت ل", "pattern": "فُعِلَ", "pos": "fe'l", "audio": "a2/qutila.mp3", "example_ar": "قُتِلَ فِي الحَرْبِ.", "example_uz": "Urushda o'ldirildi.", "srs": true},
+  {"ar": "خُلِقَ", "translit": "khuliqa", "uz": "yaratildi (majhul)", "root": "خ ل ق", "pattern": "فُعِلَ", "pos": "fe'l", "audio": "a2/khuliqa.mp3", "example_ar": "خُلِقَ الإِنْسَانُ ضَعِيفًا.", "example_uz": "Inson zaif yaratilgan.", "srs": true},
+  {"ar": "يُكْتَبُ", "translit": "yuktabu", "uz": "yoziladi (hozirgi majhul)", "root": "ك ت ب", "pattern": "يُفْعَلُ", "pos": "fe'l", "audio": "a2/yuktabu.mp3", "example_ar": "يُكْتَبُ الدَّرْسُ.", "example_uz": "Dars yoziladi.", "srs": true},
+  {"ar": "يُعْرَفُ", "translit": "yuʿrafu", "uz": "bilinadi, tanaladi (hozirgi majhul)", "root": "ع ر ف", "pattern": "يُفْعَلُ", "pos": "fe'l", "audio": "a2/yurafu.mp3", "example_ar": "يُعْرَفُ بِأَخْلَاقِهِ.", "example_uz": "Axloqi bilan tanaladi.", "srs": true},
+  {"ar": "مَخْلُوق", "translit": "makhlūq", "uz": "maxluq, yaratilgan (o'zbekcha 'maxluq')", "root": "خ ل ق", "pattern": "مَفْعُول", "pos": "ot", "audio": "a2/makhluq.mp3", "example_ar": "كُلُّ مَخْلُوقٍ يَمُوتُ.", "example_uz": "Har bir maxluq o'ladi.", "srs": true},
+  {"ar": "نَائِبُ الفَاعِل", "translit": "nāʾib al-fāʿil", "uz": "naib fo'il (majhulda ish tushgan narsa)", "root": "", "pattern": "", "pos": "ibora", "audio": "a2/naib_fail.mp3", "example_ar": "الرِّسَالَةُ نَائِبُ الفَاعِلِ.", "example_uz": "Xat — naib fo'il.", "srs": true},
+  {"ar": "أَخْلَاق", "translit": "akhlāq", "uz": "axloq, xulq (o'zbekcha 'axloq')", "root": "خ ل ق", "pattern": "أَفْعَال", "pos": "ot", "audio": "a2/akhlaq.mp3", "example_ar": "الأَخْلَاقُ الحَسَنَةُ.", "example_uz": "Yaxshi axloq.", "srs": true},
+  {"ar": "حَرْب", "translit": "ḥarb", "uz": "urush", "root": "ح ر ب", "pattern": "فَعْل", "pos": "ot", "audio": "a2/harb.mp3", "example_ar": "الحَرْبُ سَيِّئَةٌ.", "example_uz": "Urush yomon.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "فُتِحَ البَابُ وَدَخَلَ النَّاسُ. كُتِبَتِ الأَسْمَاءُ فِي الدَّفْتَرِ. يُعْرَفُ الإِنْسَانُ بِأَخْلَاقِهِ. كُلُّ مَخْلُوقٍ خُلِقَ لِحِكْمَةٍ.",
+   "questions": [
+    {"q_uz": "«فُتِحَ» — bajaruvchi aytilganmi?", "a": "Yo'q (majhul — kim ochgani noma'lum)"},
+    {"q_uz": "Inson nima bilan tanaladi?", "a": "Axloqi bilan (بِأَخْلَاقِهِ)"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/kutiba.mp3",
+   "transcript_ar": "كُتِبَ",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi va nisbati?", "a": "Yozildi — majhul"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Majhul fe'llarini ayting: kutiba, futiḥa, khuliqa, yuktabu.",
+   "target_ar": ["كُتِبَ", "فُتِحَ", "يُكْتَبُ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«كَتَبَ» (yozdi) ni majhulga aylantiring (yozildi) va gapda yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«كَتَبَ» (yozdi) ning majhuli (yozildi) qaysi?", "q_ar": "", "options": ["كُتِبَ", "كَتَّبَ", "اِنْكَتَبَ", "كَاتَبَ"], "answer": "كُتِبَ", "explain_uz": "Majhul: 1-harf damma, o'rta kasra: كُتِبَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "O'tgan zamon majhulida 1-harf qaysi harakat?", "q_ar": "", "options": ["damma (ـُ)", "fatha (ـَ)", "kasra (ـِ)", "sukun"], "answer": "damma (ـُ)", "explain_uz": "Majhul: 1-harf damma, o'rta kasra (كُتِبَ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "فُتِحَ البَابُ", "options": [], "answer": "eshik ochildi", "explain_uz": "فُتِحَ (majhul) = ochildi, البَاب = eshik (naib fo'il, raf').", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«خُلِقَ، مَخْلُوق، أَخْلَاق» qaysi o'zakdan?", "q_ar": "", "options": ["خ ل ق", "خ ل ص", "ح ل ق"], "answer": "خ ل ق", "explain_uz": "«خ ل ق» — yaratish o'zagi: xalq, maxluq, Xoliq, axloq.", "audio": "", "root": "خ ل ق", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hozirgi zamon majhulida o'rta harf qaysi harakat?", "q_ar": "", "options": ["fatha (يُكْتَبُ)", "kasra", "damma", "sukun"], "answer": "fatha (يُكْتَبُ)", "explain_uz": "Hozirgi majhul: يُـ damma + o'rta fatha.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "yaratildi", "q_ar": "", "options": [], "answer": "خُلِقَ", "explain_uz": "خُلِقَ (majhul) — yaratildi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "axloq, xulq", "q_ar": "", "options": [], "answer": "أَخْلَاق", "explain_uz": "أَخْلَاق — axloq (خ ل ق o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "خ ل ق", "back": "yaratish o'zagi (xalq, maxluq, Xoliq, axloq)", "deck": "msa"},
+  {"type": "pattern", "front": "فُعِلَ (majhul)", "back": "passiv: 1-harf damma, o'rta kasra (kutiba)", "deck": "msa"},
+  {"type": "word", "front": "كُتِبَ", "back": "yozildi (majhul)", "deck": "msa"},
+  {"type": "word", "front": "فُتِحَ", "back": "ochildi (majhul)", "deck": "msa"},
+  {"type": "word", "front": "خُلِقَ", "back": "yaratildi (majhul)", "deck": "msa"},
+  {"type": "word", "front": "يُكْتَبُ", "back": "yoziladi (hozirgi majhul)", "deck": "msa"},
+  {"type": "word", "front": "مَخْلُوق", "back": "maxluq, yaratilgan", "deck": "msa"},
+  {"type": "word", "front": "أَخْلَاق", "back": "axloq, xulq", "deck": "msa"},
+  {"type": "word", "front": "حَرْب", "back": "urush", "deck": "msa"}
+ ]
+}

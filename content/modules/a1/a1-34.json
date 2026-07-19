@@ -9,7 +9,7 @@
  "duration_min": 30,
  "prerequisites": ["a1-33"],
  "harakat_level": "full",
- "hook_uz": "Bozorда «Uchta non bering» demoqchimisiz? Avval 1–10 sonlarini o'rganamiz: وَاحِد (1), اثْنَانِ (2), ثَلاثَة (3)... Bu sonlar oyat va duolarда ham ko'p uchraydi.",
+ "hook_uz": "Bozorda «Uchta non bering» demoqchimisiz? Avval 1–10 sonlarini o'rganamiz: وَاحِد (1), اثْنَانِ (2), ثَلاثَة (3)... Bu sonlar oyat va duolarda ham ko'p uchraydi.",
  "grammar": {
   "point_ar": "الأَعْدَاد مِنْ ١ إِلَى ١٠",
   "explanation_uz": "1–10 sonlari: وَاحِد (1), اثْنَانِ (2), ثَلاثَة (3), أَرْبَعَة (4), خَمْسَة (5), سِتَّة (6), سَبْعَة (7), ثَمَانِيَة (8), تِسْعَة (9), عَشَرَة (10). MUHIM «qutbiylik» qoidasi: 3–10 sonlari sanaladigan ot bilan TESKARI jinsda bo'ladi va ot ko'plik-jarr shaklida keladi: ثَلاثَةُ كُتُبٍ (uch kitob). Hozircha sonlarni yodlashga e'tibor bering.",

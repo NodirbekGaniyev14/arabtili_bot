@@ -1,0 +1,98 @@
+{
+ "id": "a2-08",
+ "level": "A2",
+ "module": "verb-forms",
+ "order": 8,
+ "title_uz": "VIII bob: qaytim",
+ "title_ar": "البَابُ الثَّامِن: اِفْتَعَلَ",
+ "can_do_uz": "VIII bob (اِفْتَعَلَ) fe'llarini taniyman: o'z manfaati uchun bajarilgan harakatni bilaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-07"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "«To'pladi» — جَمَعَ. «To'plandi (o'zaro)» — اِجْتَمَعَ. O'zak boshiga اِ va 1-harfdan keyin تَـ qo'shiladi. اِسْتَمَعَ (tingladi), اِنْتَظَرَ (kutdi), اِحْتَرَمَ (hurmat qildi) — hammasi VIII bob!",
+ "grammar": {
+  "point_ar": "اِفْتَعَلَ — المُطَاوَعَة",
+  "explanation_uz": "VIII bob vazni: اِفْتَعَلَ (o'zak boshiga اِ, 1-harfdan KEYIN تَـ qo'shiladi). Asosiy ma'no: qaytim / o'z manfaatiga bajarish: جَمَعَ (to'pladi) → اِجْتَمَعَ (to'plandi), سَمِعَ (eshitdi) → اِسْتَمَعَ (diqqat bilan tingladi). Masdari اِفْتِعَال: اِجْتِمَاع (yig'ilish), اِحْتِرَام (hurmat). Hozirgi zamoni: يَفْتَعِلُ (يَجْتَمِعُ).",
+  "table": [
+   {"ar": "جَمَعَ ← اِجْتَمَعَ", "uz": "to'pladi → to'plandi", "form": "qaytim"},
+   {"ar": "سَمِعَ ← اِسْتَمَعَ", "uz": "eshitdi → tingladi", "form": "اِفْتَعَلَ"},
+   {"ar": "اِحْتَرَمَ", "uz": "hurmat qildi", "form": "اِفْتَعَلَ"},
+   {"ar": "مَصْدَر: اِجْتِمَاع", "uz": "masdar: yig'ilish", "form": "اِفْتِعَال"}
+  ],
+  "common_mistakes_uz": [
+   "1-harfdan keyingi تَـ ni unutish — bu VIII bobning belgisi.",
+   "VIII bob (اِفْتَعَلَ) va X bob (اِسْتَفْعَلَ) prefikslarini chalkashtirish.",
+   "Boshidagi hamzani (vasl) gap o'rtasida talaffuz qilish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ج م ع",
+   "meaning_uz": "yig'ish, jamlash",
+   "uz_cognates": ["ijtimoiy", "jamiyat", "jam'", "jome'"],
+   "derived": [
+    {"ar": "اِجْتَمَعَ", "uz": "to'plandi (VIII)", "pattern": "اِفْتَعَلَ"},
+    {"ar": "اِجْتِمَاع", "uz": "yig'ilish (masdar)", "pattern": "اِفْتِعَال"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "اِجْتَمَعَ", "translit": "ijtamaʿa", "uz": "to'plandi, yig'ildi", "root": "ج م ع", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "a2/ijtamaa.mp3", "example_ar": "اِجْتَمَعَ الأَصْدِقَاءُ.", "example_uz": "Do'stlar to'plandilar.", "srs": true},
+  {"ar": "اِسْتَمَعَ", "translit": "istamaʿa", "uz": "tingladi (diqqat bilan)", "root": "س م ع", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "a2/istamaa.mp3", "example_ar": "اِسْتَمَعْتُ إِلَى الدَّرْسِ.", "example_uz": "Darsni tingladim.", "srs": true},
+  {"ar": "اِنْتَظَرَ", "translit": "intaẓara", "uz": "kutdi", "root": "ن ظ ر", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "a2/intazara.mp3", "example_ar": "اِنْتَظَرْتُ الحَافِلَةَ.", "example_uz": "Avtobusni kutdim.", "srs": true},
+  {"ar": "اِحْتَرَمَ", "translit": "iḥtarama", "uz": "hurmat qildi", "root": "ح ر م", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "a2/ihtarama.mp3", "example_ar": "اِحْتَرَمَ وَالِدَيْهِ.", "example_uz": "Ota-onasini hurmat qildi.", "srs": true},
+  {"ar": "اِشْتَرَى", "translit": "ishtarā", "uz": "sotib oldi", "root": "ش ر ي", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "a2/ishtara.mp3", "example_ar": "اِشْتَرَيْتُ هَدِيَّةً.", "example_uz": "Sovg'a sotib oldim.", "srs": true},
+  {"ar": "اِخْتَارَ", "translit": "ikhtāra", "uz": "tanladi", "root": "خ ي ر", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "a2/ikhtara.mp3", "example_ar": "اِخْتَارَ اللَّوْنَ الأَزْرَقَ.", "example_uz": "Ko'k rangni tanladi.", "srs": true},
+  {"ar": "اِبْتَسَمَ", "translit": "ibtasama", "uz": "jilmaydi", "root": "ب س م", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "a2/ibtasama.mp3", "example_ar": "اِبْتَسَمَ الطِّفْلُ.", "example_uz": "Bola jilmaydi.", "srs": true},
+  {"ar": "اِجْتِمَاع", "translit": "ijtimāʿ", "uz": "yig'ilish (masdar) (o'zbekcha 'ijtimoiy')", "root": "ج م ع", "pattern": "اِفْتِعَال", "pos": "ot", "audio": "a2/ijtimaa_n.mp3", "example_ar": "حَضَرْتُ الاِجْتِمَاعَ.", "example_uz": "Yig'ilishga bordim.", "srs": true},
+  {"ar": "اِحْتِرَام", "translit": "iḥtirām", "uz": "hurmat (masdar) (o'zbekcha 'ehtirom')", "root": "ح ر م", "pattern": "اِفْتِعَال", "pos": "ot", "audio": "a2/ihtiram.mp3", "example_ar": "الاِحْتِرَامُ مُهِمٌّ.", "example_uz": "Hurmat muhim.", "srs": true},
+  {"ar": "وَالِدَيْن", "translit": "wālidayn", "uz": "ota-ona", "root": "و ل د", "pattern": "", "pos": "ot", "audio": "a2/walidayn.mp3", "example_ar": "أَطِعْ وَالِدَيْكَ.", "example_uz": "Ota-onangga bo'ysun.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "اِجْتَمَعَ الأَصْدِقَاءُ فِي البَيْتِ. اِسْتَمَعْنَا إِلَى المُوسِيقَى وَاِبْتَسَمْنَا. أَنَا أَحْتَرِمُ وَالِدَيَّ كَثِيرًا، وَالإِسْلَامُ يَأْمُرُ بِاحْتِرَامِهِمَا.",
+   "questions": [
+    {"q_uz": "Do'stlar qayerda to'plandilar?", "a": "Uyda (البَيْت)"},
+    {"q_uz": "«اِجْتَمَعَ» qaysi o'zakdan?", "a": "ج م ع (ijtimoiy, jam')"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/istamaa.mp3",
+   "transcript_ar": "اِسْتَمَعَ",
+   "questions": [
+    {"q_uz": "Fe'l ma'nosi?", "a": "Tingladi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "VIII bob fe'llarini ayting: ijtamaʿa, istamaʿa, intaẓara, iḥtarama.",
+   "target_ar": ["اِجْتَمَعَ", "اِسْتَمَعَ", "اِحْتَرَمَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Darsni tingladim» va «Sovg'a sotib oldim» gaplarini VIII bob bilan yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "VIII bob vazni qaysi?", "q_ar": "", "options": ["اِفْتَعَلَ", "اِنْفَعَلَ", "اِسْتَفْعَلَ", "تَفَاعَلَ"], "answer": "اِفْتَعَلَ", "explain_uz": "VIII bob — 1-harfdan keyin تَـ: اِفْتَعَلَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "اِنْتَظَرْتُ الحَافِلَةَ", "options": [], "answer": "avtobusni kutdim", "explain_uz": "اِنْتَظَرَ (VIII) = kutdi, الحَافِلَة = avtobus.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«hurmat qildi» qaysi?", "q_ar": "", "options": ["اِحْتَرَمَ", "حَرَّمَ", "أَحْرَمَ", "اِنْحَرَمَ"], "answer": "اِحْتَرَمَ", "explain_uz": "اِحْتَرَمَ (VIII) — hurmat qildi (ehtirom).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«اِجْتَمَعَ، اِجْتِمَاع» qaysi o'zakdan?", "q_ar": "", "options": ["ج م ع", "س م ع", "ح ر م"], "answer": "ج م ع", "explain_uz": "«ج م ع» — yig'ish o'zagi: ijtimoiy, jamiyat, jam'.", "audio": "", "root": "ج م ع", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "VIII bobning masdar vazni qaysi?", "q_ar": "", "options": ["اِفْتِعَال", "اِنْفِعَال", "اِسْتِفْعَال", "تَفَاعُل"], "answer": "اِفْتِعَال", "explain_uz": "VIII bob masdari: اِفْتِعَال (اِجْتِمَاع, اِحْتِرَام).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "sotib oldi", "q_ar": "", "options": [], "answer": "اِشْتَرَى", "explain_uz": "اِشْتَرَى (VIII) — sotib oldi (شري o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "tanladi", "q_ar": "", "options": [], "answer": "اِخْتَارَ", "explain_uz": "اِخْتَارَ (VIII) — tanladi (خير o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ج م ع", "back": "yig'ish o'zagi (ijtamaa, ijtimoiy, jamiyat, jam')", "deck": "msa"},
+  {"type": "pattern", "front": "اِفْتَعَلَ (VIII)", "back": "qaytim (1-harfdan keyin تـ), masdar اِفْتِعَال", "deck": "msa"},
+  {"type": "word", "front": "اِجْتَمَعَ", "back": "to'plandi (VIII)", "deck": "msa"},
+  {"type": "word", "front": "اِسْتَمَعَ", "back": "tingladi (VIII)", "deck": "msa"},
+  {"type": "word", "front": "اِنْتَظَرَ", "back": "kutdi (VIII)", "deck": "msa"},
+  {"type": "word", "front": "اِحْتَرَمَ", "back": "hurmat qildi (VIII)", "deck": "msa"},
+  {"type": "word", "front": "اِشْتَرَى", "back": "sotib oldi (VIII)", "deck": "msa"},
+  {"type": "word", "front": "اِخْتَارَ", "back": "tanladi (VIII)", "deck": "msa"},
+  {"type": "word", "front": "اِحْتِرَام", "back": "hurmat (masdar)", "deck": "msa"},
+  {"type": "word", "front": "اِجْتِمَاع", "back": "yig'ilish (masdar)", "deck": "msa"}
+ ]
+}
