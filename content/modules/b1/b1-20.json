@@ -1,0 +1,106 @@
+{
+ "id": "b1-20",
+ "level": "B1",
+ "module": "vocab",
+ "order": 20,
+ "title_uz": "Texnologiya",
+ "title_ar": "التِّقْنِيَة",
+ "can_do_uz": "Telefon, internet va ilovalar haqida zamonaviy arabchada gaplasha olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-19"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«Wi-Fi parolini ayting?», «Ilovani yuklab oldim», «Xabar yubor» — zamonaviy hayot tili! Arablar texnologiya so'zlarini chiroyli arablashtirgan: kompyuter — حاسوب (hisoblovchi), telefon — جوّال (yuruvchi), internet — شبكة (to'r).",
+ "grammar": {
+  "point_ar": "لُغَةُ التِّقْنِيَة",
+  "explanation_uz": "Texnologiya fe'llari ko'pincha II bob (transitiv): حَمَّلَ (yukladi), أَرْسَلَ (yubordi, IV bob), شَغَّلَ (ishga tushirdi), أَغْلَقَ (o'chirdi/yopdi). Qoliplar: أرسلْ لي رسالةً (menga xabar yubor), حمّلتُ التطبيقَ (ilovani yuklab oldim), ما كلمةُ سرِّ الواي فاي؟ (Wi-Fi paroli nima?). Ko'p atama maf'ul vaznida: مَوْقِع (sayt — joy), مِلَفّ (fayl).",
+  "table": [
+   {"ar": "حمّلتُ التطبيقَ", "uz": "ilovani yuklab oldim", "form": "II bob"},
+   {"ar": "أرسلْ لي رسالةً", "uz": "menga xabar yubor", "form": "IV bob"},
+   {"ar": "ما كلمةُ السرِّ؟", "uz": "parol nima?", "form": "so'rov"},
+   {"ar": "الشبكةُ ضعيفةٌ", "uz": "internet (tarmoq) sekin", "form": "holat"}
+  ],
+  "common_mistakes_uz": [
+   "جَوَّال (telefon) va جِوَال (qop) — harakatga e'tibor!",
+   "حاسوب o'rniga faqat كمبيوتر deyish — ikkalasi ham to'g'ri, arabchasi chiroyliroq.",
+   "رسالة ko'pligini رسالات deb yasash — to'g'risi رَسَائِل."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ر س ل",
+   "meaning_uz": "yuborish",
+   "uz_cognates": ["rasul (yuborilgan)", "risola", "mursal"],
+   "derived": [
+    {"ar": "أَرْسَلَ", "uz": "yubordi", "pattern": "أَفْعَلَ"},
+    {"ar": "رِسَالَة", "uz": "xabar, maktub", "pattern": "فِعَالَة"},
+    {"ar": "مُرَاسَلَة", "uz": "yozishma", "pattern": "مُفَاعَلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "جَوَّال", "translit": "jawwāl", "uz": "mobil telefon ('yuruvchi' — Saudiyada shu so'z!)", "root": "ج و ل", "pattern": "فَعَّال", "pos": "ot", "audio": "b1/jawwal.mp3", "example_ar": "نسيتُ جوّالي في البيتِ.", "example_uz": "Telefonimni uyda unutdim.", "srs": true},
+  {"ar": "حَاسُوب", "translit": "ḥāsūb", "uz": "kompyuter ('hisoblovchi' — hisob o'zagi)", "root": "ح س ب", "pattern": "فَاعُول", "pos": "ot", "audio": "b1/hasub.mp3", "example_ar": "أعملُ على الحاسوبِ يوميًّا.", "example_uz": "Har kuni kompyuterda ishlayman.", "srs": true},
+  {"ar": "تَطْبِيق", "translit": "taṭbīq", "uz": "ilova (o'zbekcha 'tatbiq')", "root": "ط ب ق", "pattern": "تَفْعِيل", "pos": "ot", "audio": "b1/tatbiq.mp3", "example_ar": "هذا التطبيقُ يعلّمُ العربيةَ.", "example_uz": "Bu ilova arab tilini o'rgatadi.", "srs": true},
+  {"ar": "شَبَكَة", "translit": "shabaka", "uz": "tarmoq, internet ('to'r')", "root": "ش ب ك", "pattern": "فَعَلَة", "pos": "ot", "audio": "b1/shabaka.mp3", "example_ar": "الشبكةُ ضعيفةٌ هنا.", "example_uz": "Bu yerda internet sekin.", "srs": true},
+  {"ar": "كَلِمَةُ السِّرّ", "translit": "kalimatu s-sirr", "uz": "parol ('sir so'zi')", "root": "س ر ر", "pattern": "", "pos": "ibora", "audio": "b1/kalimat_sirr.mp3", "example_ar": "غيّرْ كلمةَ السرِّ دائمًا.", "example_uz": "Parolni doim o'zgartirib turing.", "srs": true},
+  {"ar": "حَمَّلَ", "translit": "ḥammala", "uz": "yuklab oldi (II bob)", "root": "ح م ل", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/hammala.mp3", "example_ar": "حمّلتُ ملفًّا كبيرًا.", "example_uz": "Katta fayl yuklab oldim.", "srs": true},
+  {"ar": "أَرْسَلَ", "translit": "arsala", "uz": "yubordi ('rasul' o'zagi)", "root": "ر س ل", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/arsala.mp3", "example_ar": "أرسلتُ لكَ الصورَ.", "example_uz": "Senga rasmlarni yubordim.", "srs": true},
+  {"ar": "مَوْقِع", "translit": "mawqiʿ", "uz": "sayt (joy — mavqe o'zagi)", "root": "و ق ع", "pattern": "مَفْعِل", "pos": "ot", "audio": "b1/mawqi.mp3", "example_ar": "افتحِ الموقعَ الرسميَّ.", "example_uz": "Rasmiy saytni oching.", "srs": true},
+  {"ar": "مِلَفّ", "translit": "milaff", "uz": "fayl, papka", "root": "ل ف ف", "pattern": "مِفْعَل", "pos": "ot", "audio": "b1/milaff.mp3", "example_ar": "احفظِ الملفَّ قبلَ الإغلاقِ.", "example_uz": "Yopishdan oldin faylni saqlang.", "srs": true},
+  {"ar": "صُورَة", "translit": "ṣūra", "uz": "rasm, surat (o'zbekcha 'surat')", "root": "ص و ر", "pattern": "فُعْلَة", "pos": "ot", "audio": "b1/sura2.mp3", "example_ar": "التقطتُ صورًا جميلةً.", "example_uz": "Chiroyli suratlar oldim.", "srs": true},
+  {"ar": "شَحَنَ", "translit": "shaḥana", "uz": "quvvatladi (zaryadladi)", "root": "ش ح ن", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/shahana.mp3", "example_ar": "يجبُ أنْ أشحنَ جوّالي.", "example_uz": "Telefonimni quvvatlashim kerak.", "srs": true},
+  {"ar": "حِسَاب", "translit": "ḥisāb", "uz": "akkaunt; hisob (o'zbekcha 'hisob')", "root": "ح س ب", "pattern": "فِعَال", "pos": "ot", "audio": "b1/hisab.mp3", "example_ar": "أنشأتُ حسابًا جديدًا.", "example_uz": "Yangi akkaunt ochdim.", "srs": true}
+ ],
+ "hejazi": [
+  {"msa_ar": "أَرْسِلْ لِي المَوْقِعَ", "hejazi_ar": "اِبْعَتْ لِي اللُّوكِيشَن", "translit": "ibʿat lī l-lokeshan", "uz": "Menga lokatsiyani yubor (Hijoziy)", "audio": "hj/ibat_lokeshan.mp3"},
+  {"msa_ar": "لَا يُوجَدُ اتِّصَال", "hejazi_ar": "مَا فِيه نِت", "translit": "mā fīh nit", "uz": "Internet yo'q (Hijoziy)", "audio": "hj/ma_fih_nit.mp3"}
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "اشترى والدي جوّالًا جديدًا، لكنه لا يعرفُ كيف يستخدمُهُ. علّمتُهُ أنْ يفتحَ التطبيقاتِ ويرسلَ الرسائلَ والصورَ. قال ضاحكًا: «في زماننا كانتِ الرسالةُ تصلُ في أسبوعٍ، واليومَ تصلُ في ثانيةٍ!». ثم طلبَ مني أنْ أُنشئَ لهُ حسابًا.",
+   "questions": [
+    {"q_uz": "Ota nimani bilmasdi?", "a": "Yangi telefonni ishlatishni"},
+    {"q_uz": "Farzand nimalarni o'rgatdi?", "a": "Ilovalarni ochish, xabar va surat yuborishni"},
+    {"q_uz": "Ota nimadan hayratlandi?", "a": "Ilgari xabar bir haftada, endi bir soniyada yetadi"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/jawwal.mp3",
+   "transcript_ar": "جَوَّال",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z ma'nosi va asl ma'nosi?", "a": "Mobil telefon — 'yuruvchi' (javvol)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Ayting: «Wi-Fi paroli nima?», «Ilovani yuklab oldim», «Telefonimni quvvatlashim kerak».",
+   "target_ar": ["مَا كَلِمَةُ سِرِّ الوَايْ فَايْ؟", "حَمَّلْتُ التَّطْبِيقَ", "يَجِبُ أَنْ أَشْحَنَ جَوَّالِي"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Telefoningiz haqida 4 gap yozing: qaysi ilovalarni ishlatasiz, kimga xabar yuborasiz, internet qanday.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "Saudiyada mobil telefon qanday ataladi?", "q_ar": "", "options": ["جَوَّال", "حَاسُوب", "شَبَكَة", "مِلَفّ"], "answer": "جَوَّال", "explain_uz": "جوّال — 'yuruvchi' (mobil).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Parol» arabchada?", "q_ar": "", "options": ["كلمةُ السرِّ", "كلمةُ اللهِ", "كلامٌ سريعٌ", "سرّ الكلامِ"], "answer": "كلمةُ السرِّ", "explain_uz": "كلمة السر — sir so'zi = parol.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Ilovani yuklab oldim» to'g'ri qaysi?", "q_ar": "", "options": ["حمّلتُ التطبيقَ", "حملتُ التطبيقَ على ظهري", "أكلتُ التطبيقَ", "كتبتُ التطبيقَ"], "answer": "حمّلتُ التطبيقَ", "explain_uz": "حمّل (II bob) — yuklab olish.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "kompyuter (hisoblovchi)", "q_ar": "", "options": [], "answer": "حَاسُوب", "explain_uz": "حاسوب — hisob o'zagidan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "sayt", "q_ar": "", "options": [], "answer": "مَوْقِع", "explain_uz": "موقع — sayt (joy).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«أَرْسَلَ، رِسَالَة، رَسُول» qaysi o'zakdan?", "q_ar": "", "options": ["ر س ل", "ر س م", "س ل م"], "answer": "ر س ل", "explain_uz": "«ر س ل» — yuborish o'zagi: rasul, risola.", "audio": "", "root": "ر س ل", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting (Hijoziy): ma'nosi?", "q_ar": "", "options": ["Internet yo'q", "Telefon yo'q", "Vaqt yo'q", "Pul yo'q"], "answer": "Internet yo'q", "explain_uz": "ما فيه نت — internet yo'q (hijoziy).", "audio": "hj/ma_fih_nit.mp3", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ر س ل", "back": "yuborish o'zagi (rasul, risola)", "deck": "msa"},
+  {"type": "word", "front": "جَوَّال", "back": "mobil telefon", "deck": "msa"},
+  {"type": "word", "front": "حَاسُوب", "back": "kompyuter", "deck": "msa"},
+  {"type": "word", "front": "تَطْبِيق", "back": "ilova (tatbiq)", "deck": "msa"},
+  {"type": "word", "front": "شَبَكَة", "back": "tarmoq, internet", "deck": "msa"},
+  {"type": "word", "front": "كَلِمَةُ السِّرّ", "back": "parol", "deck": "msa"},
+  {"type": "word", "front": "حَمَّلَ", "back": "yuklab oldi", "deck": "msa"},
+  {"type": "word", "front": "أَرْسَلَ", "back": "yubordi", "deck": "msa"},
+  {"type": "word", "front": "مَوْقِع", "back": "sayt", "deck": "msa"},
+  {"type": "word", "front": "حِسَاب", "back": "akkaunt, hisob", "deck": "msa"},
+  {"type": "phrase", "front": "مَا فِيه نِت", "back": "Internet yo'q (Hijoziy)", "deck": "hejazi"}
+ ]
+}

@@ -1,0 +1,103 @@
+{
+ "id": "b1-15",
+ "level": "B1",
+ "module": "vocab",
+ "order": 15,
+ "title_uz": "Singan ko'pliklar — tizimli",
+ "title_ar": "جُمُوعُ التَّكْسِير",
+ "can_do_uz": "Eng ko'p uchraydigan 6 singan ko'plik vaznini taniyman va yangi so'z ko'pligini taxmin qila olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-14"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "كتاب → كُتُب, قلم → أقلام, مدينة → مُدُن... A1 da singan ko'plikni «yodlang» degandik. Endi SIRLARINI ochamiz: aslida 90% so'zlar 6 ta vaznga tushadi! Vaznni bilsangiz — yangi so'zning ko'pligini o'zingiz taxmin qilasiz.",
+ "grammar": {
+  "point_ar": "أَوْزَانُ الجُمُوع",
+  "explanation_uz": "ENG KO'P UCHRAYDIGAAN 6 VAZN: (1) فُعُول: قلب→قلوب, بيت→بيوت (uch harfli otlar); (2) أَفْعَال: قلم→أقلام, وقت→أوقات (uch harfli otlar); (3) فِعَال: جبل→جبال, رجل→رجال; (4) فُعُل: كتاب→كتب, مدينة→مدن; (5) فُعَلَاء: عالم→علماء, فقير→فقراء (kasb/sifat egalari); (6) مَفَاعِل: مسجد→مساجد, مكتب→مكاتب (م li otlar). ESLATMA: singan ko'plik JONSIZ bo'lsa, ayol birlik kabi kelishadi: كتبٌ جديدةٌ (yangi kitoblar).",
+  "table": [
+   {"ar": "قَلْب → قُلُوب", "uz": "yurak → yuraklar", "form": "فُعُول"},
+   {"ar": "قَلَم → أَقْلَام", "uz": "qalam → qalamlar", "form": "أَفْعَال"},
+   {"ar": "جَبَل → جِبَال", "uz": "tog' → tog'lar", "form": "فِعَال"},
+   {"ar": "عَالِم → عُلَمَاء", "uz": "olim → ulamolar", "form": "فُعَلَاء"},
+   {"ar": "مَسْجِد → مَسَاجِد", "uz": "masjid → masjidlar", "form": "مَفَاعِل"}
+  ],
+  "common_mistakes_uz": [
+   "Hamma so'zga ون qo'shish: كتابون emas — كُتُب.",
+   "Jonsiz ko'plikka ko'plik sifat berish: كتبٌ جديداتٌ emas — جديدةٌ (ayol birlik).",
+   "Vaznni bilmay tavakkal qilish — lug'atda tekshiring, keyin vaznini eslab qoling."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ج م ع",
+   "meaning_uz": "yig'ish, jamlash",
+   "uz_cognates": ["jam", "jamoa", "jome", "ijtimoiy"],
+   "derived": [
+    {"ar": "جَمْع", "uz": "ko'plik; yig'ish", "pattern": "فَعْل"},
+    {"ar": "جُمُوع", "uz": "ko'pliklar", "pattern": "فُعُول"},
+    {"ar": "جَامِع", "uz": "jome masjidi", "pattern": "فَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "قُلُوب", "translit": "qulūb", "uz": "yuraklar (birlik: قَلْب, 'qalb')", "root": "ق ل ب", "pattern": "فُعُول", "pos": "ot", "audio": "b1/qulub.mp3", "example_ar": "بذكرِ اللهِ تطمئنُّ القلوبُ.", "example_uz": "Allohni zikr qilish bilan qalblar orom topadi.", "srs": true},
+  {"ar": "عُقُول", "translit": "ʿuqūl", "uz": "aqllar (birlik: عَقْل, 'aql')", "root": "ع ق ل", "pattern": "فُعُول", "pos": "ot", "audio": "b1/uqul.mp3", "example_ar": "العلمُ غذاءُ العقولِ.", "example_uz": "Ilm — aqllar ozuqasi.", "srs": true},
+  {"ar": "أَوْقَات", "translit": "awqāt", "uz": "vaqtlar (birlik: وَقْت, 'vaqt')", "root": "و ق ت", "pattern": "أَفْعَال", "pos": "ot", "audio": "b1/awqat.mp3", "example_ar": "نظّمْ أوقاتَكَ جيدًا.", "example_uz": "Vaqtlaringni yaxshi tartibla.", "srs": true},
+  {"ar": "أَخْبَار", "translit": "akhbār", "uz": "xabarlar (birlik: خَبَر, 'xabar')", "root": "خ ب ر", "pattern": "أَفْعَال", "pos": "ot", "audio": "b1/akhbar.mp3", "example_ar": "أتابعُ الأخبارَ كلَّ صباحٍ.", "example_uz": "Har tong xabarlarni kuzataman.", "srs": true},
+  {"ar": "رِجَال", "translit": "rijāl", "uz": "erkaklar (birlik: رَجُل)", "root": "ر ج ل", "pattern": "فِعَال", "pos": "ot", "audio": "b1/rijal.mp3", "example_ar": "رجالُ الإطفاءِ شجعانٌ.", "example_uz": "O't o'chiruvchilar jasur.", "srs": true},
+  {"ar": "جِبَال", "translit": "jibāl", "uz": "tog'lar (birlik: جَبَل)", "root": "ج ب ل", "pattern": "فِعَال", "pos": "ot", "audio": "b1/jibal.mp3", "example_ar": "جبالُ بلادِنا عاليةٌ.", "example_uz": "Yurtimiz tog'lari baland.", "srs": true},
+  {"ar": "مُدُن", "translit": "mudun", "uz": "shaharlar (birlik: مَدِينَة)", "root": "م د ن", "pattern": "فُعُل", "pos": "ot", "audio": "b1/mudun.mp3", "example_ar": "زرتُ مدنًا قديمةً.", "example_uz": "Qadimiy shaharlarni ziyorat qildim.", "srs": true},
+  {"ar": "عُلَمَاء", "translit": "ʿulamāʾ", "uz": "olimlar, ulamolar (birlik: عَالِم)", "root": "ع ل م", "pattern": "فُعَلَاء", "pos": "ot", "audio": "b1/ulama.mp3", "example_ar": "العلماءُ ورثةُ الأنبياءِ.", "example_uz": "Olimlar — payg'ambarlar merosxo'rlari.", "srs": true},
+  {"ar": "فُقَرَاء", "translit": "fuqarāʾ", "uz": "kambag'allar, fuqarolar (birlik: فَقِير)", "root": "ف ق ر", "pattern": "فُعَلَاء", "pos": "ot", "audio": "b1/fuqara.mp3", "example_ar": "ساعدوا الفقراءَ في الشتاءِ.", "example_uz": "Qishda kambag'allarga yordam bering.", "srs": true},
+  {"ar": "مَسَاجِد", "translit": "masājid", "uz": "masjidlar (birlik: مَسْجِد)", "root": "س ج د", "pattern": "مَفَاعِل", "pos": "ot", "audio": "b1/masajid.mp3", "example_ar": "مساجدُ سمرقندَ مشهورةٌ.", "example_uz": "Samarqand masjidlari mashhur.", "srs": true},
+  {"ar": "مَكَاتِب", "translit": "makātib", "uz": "ish stollari, idoralar (birlik: مَكْتَب)", "root": "ك ت ب", "pattern": "مَفَاعِل", "pos": "ot", "audio": "b1/makatib.mp3", "example_ar": "المكاتبُ مغلقةٌ يومَ الجمعةِ.", "example_uz": "Idoralar juma kuni yopiq.", "srs": true},
+  {"ar": "أَصْدِقَاء", "translit": "aṣdiqāʾ", "uz": "do'stlar (birlik: صَدِيق, 'sodiq')", "root": "ص د ق", "pattern": "أَفْعِلَاء", "pos": "ot", "audio": "b1/asdiqa.mp3", "example_ar": "الأصدقاءُ الأوفياءُ كنزٌ.", "example_uz": "Vafodor do'stlar — xazina.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "قرأتُ في الأخبارِ أنَّ علماءَ من مدنٍ مختلفةٍ اجتمعوا في سمرقندَ. زاروا المساجدَ القديمةَ والمكاتبَ العلميةَ، وتحدثوا عن أوقاتِ العلماءِ الأوائلِ الذين ملؤوا القلوبَ والعقولَ نورًا.",
+   "questions": [
+    {"q_uz": "Olimlar qayerda yig'ilishdi?", "a": "Samarqandda"},
+    {"q_uz": "Matndan 4 ta singan ko'plikni toping.", "a": "أخبار، علماء، مدن، مساجد (مكاتب، أوقات، قلوب، عقول ham)"},
+    {"q_uz": "«المساجدَ القديمةَ» — nega sifat birlik-ayolda?", "a": "Jonsiz ko'plik ayol birlik kabi kelishadi"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/ulama.mp3",
+   "transcript_ar": "عُلَمَاء",
+   "questions": [
+    {"q_uz": "Eshitilgan ko'plikning birligi va vazni?", "a": "عَالِم — vazni فُعَلَاء"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Juftliklarni ovoz chiqarib ayting: qalb–qulub, vaqt–avqot, jabal–jibol, olim–ulamo, masjid–masojid.",
+   "target_ar": ["قَلْب → قُلُوب", "وَقْت → أَوْقَات", "عَالِم → عُلَمَاء"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "5 so'zning ko'pligini vazni bilan yozing: خَبَر، مَدِينَة، فَقِير، مَكْتَب، جَبَل.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«كِتَاب» ning ko'pligi qaysi vaznda?", "q_ar": "", "options": ["كُتُب (فُعُل)", "كِتَابَات", "أَكْتِبَاء", "كَاتِبُون"], "answer": "كُتُب (فُعُل)", "explain_uz": "كتاب → كُتُب, xuddi مدينة → مُدُن kabi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«عَالِم» ning ko'pligi?", "q_ar": "", "options": ["عُلَمَاء", "عَالِمُون", "أَعْلَام", "عُلُوم"], "answer": "عُلَمَاء", "explain_uz": "Kasb/sifat egalari فُعَلَاء oladi: علماء (ulamo).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«مَسْجِد» kabi م li otlar qaysi vaznda ko'playadi?", "q_ar": "", "options": ["مَفَاعِل (مساجد)", "فُعُول", "أَفْعَال", "فُعَلَاء"], "answer": "مَفَاعِل (مساجد)", "explain_uz": "مسجد→مساجد، مكتب→مكاتب، منزل→منازل.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Yangi kitoblar» to'g'ri qaysi?", "q_ar": "", "options": ["كتبٌ جديدةٌ", "كتبٌ جديدونَ", "كتبٌ جديداتٌ", "كتابٌ جديدةٌ"], "answer": "كتبٌ جديدةٌ", "explain_uz": "Jonsiz ko'plik — sifat ayol birlikda.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Ko'plik yozing: «وَقْت» → ?", "q_ar": "وَقْت ← ____", "options": [], "answer": "أَوْقَات", "explain_uz": "أَفْعَال vazni: وقت→أوقات.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«جَمْع، جَامِع، جُمُوع» qaysi o'zakdan?", "q_ar": "", "options": ["ج م ع", "ج و ع", "ج م ل"], "answer": "ج م ع", "explain_uz": "«ج م ع» — jamlash o'zagi: jamoa, jome.", "audio": "", "root": "ج م ع", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "olimlar (ulamolar)", "q_ar": "", "options": [], "answer": "عُلَمَاء", "explain_uz": "عُلَمَاء — o'zbekcha 'ulamo' shundan.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ج م ع", "back": "jamlash o'zagi (jamoa, jome)", "deck": "msa"},
+  {"type": "pattern", "front": "فُعُول (jam')", "back": "qalb→qulub, bayt→buyut", "deck": "msa"},
+  {"type": "pattern", "front": "أَفْعَال (jam')", "back": "qalam→aqlom, vaqt→avqot", "deck": "msa"},
+  {"type": "pattern", "front": "مَفَاعِل (jam')", "back": "masjid→masojid, maktab→makotib", "deck": "msa"},
+  {"type": "word", "front": "قُلُوب", "back": "yuraklar (qalb)", "deck": "msa"},
+  {"type": "word", "front": "أَوْقَات", "back": "vaqtlar", "deck": "msa"},
+  {"type": "word", "front": "مُدُن", "back": "shaharlar", "deck": "msa"},
+  {"type": "word", "front": "عُلَمَاء", "back": "olimlar (ulamo)", "deck": "msa"},
+  {"type": "word", "front": "مَسَاجِد", "back": "masjidlar", "deck": "msa"},
+  {"type": "word", "front": "أَصْدِقَاء", "back": "do'stlar", "deck": "msa"}
+ ]
+}

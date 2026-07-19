@@ -1,0 +1,102 @@
+{
+ "id": "b1-16",
+ "level": "B1",
+ "module": "vocab",
+ "order": 16,
+ "title_uz": "Ish va kasb",
+ "title_ar": "العَمَلُ وَالمِهَن",
+ "can_do_uz": "Kasbim, ish kunim va lavozimlar haqida gapira olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-15"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«Kasbingiz nima?» — «مَا مِهْنَتُكَ؟» Suhbatning eng birinchi savollaridan! Bugun ish dunyosi: kasblar, lavozim, maosh, ariza... Ko'p kasb nomlari sizga tanish vaznda: فَعَّال — muhandis emas-ku, lekin خَبَّاز (novvoy), طَبَّاخ (oshpaz)!",
+ "grammar": {
+  "point_ar": "وَزْنُ فَعَّال لِلْمِهَن",
+  "explanation_uz": "Kasb-hunar ko'pincha فَعَّال vaznida: خبز (non) → خَبَّاز (novvoy), طبخ → طَبَّاخ (oshpaz), نجر → نَجَّار (duradgor), حدد → حَدَّاد (temirchi). Bu vazn «doimiy shug'ullanuvchi»ni bildiradi. Boshqa kasblar ism fo'il (مُهَنْدِس، مُدَرِّس، مُحَاسِب) yoki nisba (صَحَفِيّ jurnalist) shaklida. Foydali qolip: أعملُ + kasb (nasb emas — xabar): أعملُ مهندسًا (muhandis bo'lib ishlayman — hol/tamyiz ma'nosida nasb!).",
+  "table": [
+   {"ar": "خَبَّاز · طَبَّاخ · نَجَّار", "uz": "novvoy · oshpaz · duradgor", "form": "فَعَّال"},
+   {"ar": "مُهَنْدِس · مُحَاسِب", "uz": "muhandis · hisobchi", "form": "ism fo'il"},
+   {"ar": "صَحَفِيّ · قَانُونِيّ", "uz": "jurnalist · huquqshunos", "form": "nisba"},
+   {"ar": "أعملُ مهندسًا", "uz": "muhandis bo'lib ishlayman", "form": "qolip"}
+  ],
+  "common_mistakes_uz": [
+   "أعملُ مهندسٌ deyish — kasb nasbda: مهندسًا.",
+   "مِهْنَة (kasb) va مَهَنَة deb noto'g'ri talaffuz — kasra bilan: mihna.",
+   "رَاتِب (maosh) ni رَتِيب deb adashtirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع م ل",
+   "meaning_uz": "ish, amal",
+   "uz_cognates": ["amal", "muomala", "amaliyot"],
+   "derived": [
+    {"ar": "عَمِلَ", "uz": "ishladi", "pattern": "فَعِلَ"},
+    {"ar": "عَامِل", "uz": "ishchi", "pattern": "فَاعِل"},
+    {"ar": "مُعَامَلَة", "uz": "muomala", "pattern": "مُفَاعَلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "مِهْنَة", "translit": "mihna", "uz": "kasb, hunar", "root": "م ه ن", "pattern": "فِعْلَة", "pos": "ot", "audio": "b1/mihna.mp3", "example_ar": "ما مهنتُكَ؟", "example_uz": "Kasbingiz nima?", "srs": true},
+  {"ar": "وَظِيفَة", "translit": "waẓīfa", "uz": "lavozim, ish o'rni (o'zbekcha 'vazifa')", "root": "و ظ ف", "pattern": "فَعِيلَة", "pos": "ot", "audio": "b1/wazifa.mp3", "example_ar": "حصلَ على وظيفةٍ جديدةٍ.", "example_uz": "Yangi ishga joylashdi.", "srs": true},
+  {"ar": "رَاتِب", "translit": "rātib", "uz": "maosh, oylik", "root": "ر ت ب", "pattern": "فَاعِل", "pos": "ot", "audio": "b1/ratib.mp3", "example_ar": "الراتبُ يكفي للعيشِ.", "example_uz": "Maosh yashashga yetadi.", "srs": true},
+  {"ar": "شَرِكَة", "translit": "sharika", "uz": "kompaniya, shirkat (o'zbekcha 'shirkat')", "root": "ش ر ك", "pattern": "فَعِلَة", "pos": "ot", "audio": "b1/sharika.mp3", "example_ar": "يعملُ في شركةٍ كبيرةٍ.", "example_uz": "Katta kompaniyada ishlaydi.", "srs": true},
+  {"ar": "مُدِير", "translit": "mudīr", "uz": "direktor, boshliq (o'zbekcha 'mudir')", "root": "د و ر", "pattern": "مُفْعِل", "pos": "ot", "audio": "b1/mudir.mp3", "example_ar": "المديرُ في اجتماعٍ الآن.", "example_uz": "Direktor hozir majlisda.", "srs": true},
+  {"ar": "مُوَظَّف", "translit": "muwaẓẓaf", "uz": "xodim, xizmatchi", "root": "و ظ ف", "pattern": "مُفَعَّل", "pos": "ot", "audio": "b1/muwazzaf.mp3", "example_ar": "الموظفونَ يبدؤونَ في الثامنةِ.", "example_uz": "Xodimlar sakkizda boshlashadi.", "srs": true},
+  {"ar": "مُحَاسِب", "translit": "muḥāsib", "uz": "hisobchi, buxgalter (o'zbekcha 'muhosaba')", "root": "ح س ب", "pattern": "مُفَاعِل", "pos": "ot", "audio": "b1/muhasib.mp3", "example_ar": "المحاسبُ يراجعُ الأرقامَ.", "example_uz": "Hisobchi raqamlarni tekshiradi.", "srs": true},
+  {"ar": "مُحَامٍ", "translit": "muḥāmin", "uz": "advokat (himoya qiluvchi)", "root": "ح م ي", "pattern": "مُفَاعِل", "pos": "ot", "audio": "b1/muhamin.mp3", "example_ar": "استشرْ محاميًا قبلَ التوقيعِ.", "example_uz": "Imzolashdan oldin advokat bilan maslahatlash.", "srs": true},
+  {"ar": "خَبَّاز", "translit": "khabbāz", "uz": "novvoy (فَعَّال kasb vazni)", "root": "خ ب ز", "pattern": "فَعَّال", "pos": "ot", "audio": "b1/khabbaz.mp3", "example_ar": "الخبازُ يبدأُ فجرًا.", "example_uz": "Novvoy tongda boshlaydi.", "srs": true},
+  {"ar": "طَبَّاخ", "translit": "ṭabbākh", "uz": "oshpaz (o'zbekcha 'tabx — pishirish')", "root": "ط ب خ", "pattern": "فَعَّال", "pos": "ot", "audio": "b1/tabbakh.mp3", "example_ar": "الطباخُ الماهرُ مطلوبٌ دائمًا.", "example_uz": "Mohir oshpaz doim talabgir.", "srs": true},
+  {"ar": "خِبْرَة", "translit": "khibra", "uz": "tajriba (ish tajribasi, 'xabardor' o'zagi)", "root": "خ ب ر", "pattern": "فِعْلَة", "pos": "ot", "audio": "b1/khibra.mp3", "example_ar": "عندهُ خبرةُ عشرِ سنواتٍ.", "example_uz": "Unda o'n yillik tajriba bor.", "srs": true},
+  {"ar": "طَلَبُ عَمَل", "translit": "ṭalabu ʿamal", "uz": "ish arizasi", "root": "ط ل ب", "pattern": "", "pos": "ibora", "audio": "b1/talab_amal.mp3", "example_ar": "قدّمتُ طلبَ عملٍ للشركةِ.", "example_uz": "Kompaniyaga ish arizasi topshirdim.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "تخرّجَ كريمٌ من الجامعةِ وقدّمَ طلبَ عملٍ لشركةٍ كبيرةٍ. سألهُ المديرُ في المقابلةِ: «ما خبرتُكَ؟» فأجابَ: «عملتُ محاسبًا لمدةِ سنتينِ، وأريدُ أنْ أطوّرَ نفسي». أُعجبَ المديرُ بهِ وقالَ: «مبروك، الوظيفةُ لكَ، والراتبُ جيدٌ».",
+   "questions": [
+    {"q_uz": "Karim qanday ishlagan edi?", "a": "Ikki yil hisobchi bo'lib (عمل محاسبًا)"},
+    {"q_uz": "Suhbatda direktor nimani so'radi?", "a": "Tajribasini (ما خبرتك؟)"},
+    {"q_uz": "Natija qanday bo'ldi?", "a": "Ishga qabul qilindi, maosh yaxshi"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/wazifa.mp3",
+   "transcript_ar": "وَظِيفَة",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z ma'nosi?", "a": "Lavozim, ish o'rni (vazifa)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Javob bering: مَا مِهْنَتُكَ؟ — o'z kasbingizni ayting: أعملُ ... (muallim/muhandis/talaba...).",
+   "target_ar": ["مَا مِهْنَتُكَ؟", "أَعْمَلُ مُهَنْدِسًا", "عِنْدِي خِبْرَةُ خَمْسِ سَنَوَاتٍ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Qisqa o'zingiz haqingizda yozing (4 gap): kasbingiz, qayerda ishlashingiz, tajribangiz va orzuingizdagi lavozim.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Kasbingiz nima?» qaysi?", "q_ar": "", "options": ["ما مهنتُكَ؟", "ما اسمُكَ؟", "أين تسكنُ؟", "كم عمرُكَ؟"], "answer": "ما مهنتُكَ؟", "explain_uz": "مِهْنَة — kasb; ما مهنتك — kasbingiz nima?", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "فَعَّال vazni nimani bildiradi?", "q_ar": "خَبَّاز، طَبَّاخ", "options": ["doimiy kasb egasi", "ish joyi", "asbob", "kichraytirish"], "answer": "doimiy kasb egasi", "explain_uz": "خبّاز (novvoy), طبّاخ (oshpaz) — kasb vazni.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Muhandis bo'lib ishlayman» to'g'ri qaysi?", "q_ar": "", "options": ["أعملُ مهندسًا", "أعملُ مهندسٌ", "أعملُ المهندسَ", "عملي مهندسًا"], "answer": "أعملُ مهندسًا", "explain_uz": "Kasb nasbda keladi: مهندسًا.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "maosh, oylik", "q_ar": "", "options": [], "answer": "رَاتِب", "explain_uz": "رَاتِب — maosh.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "lavozim (vazifa)", "q_ar": "", "options": [], "answer": "وَظِيفَة", "explain_uz": "وَظِيفَة — lavozim; o'zbekcha 'vazifa'.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«عَامِل، مُعَامَلَة، عَمَل» qaysi o'zakdan?", "q_ar": "", "options": ["ع م ل", "ع ل م", "أ م ل"], "answer": "ع م ل", "explain_uz": "«ع م ل» — amal o'zagi: muomala, amaliyot.", "audio": "", "root": "ع م ل", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting: bu kasb kim?", "q_ar": "", "options": ["novvoy", "oshpaz", "duradgor", "temirchi"], "answer": "novvoy", "explain_uz": "خَبَّاز — non yopuvchi, novvoy.", "audio": "b1/khabbaz.mp3", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع م ل", "back": "amal o'zagi (muomala, amaliyot)", "deck": "msa"},
+  {"type": "pattern", "front": "فَعَّال (kasb)", "back": "xabboz — novvoy, tabbox — oshpaz", "deck": "msa"},
+  {"type": "word", "front": "مِهْنَة", "back": "kasb, hunar", "deck": "msa"},
+  {"type": "word", "front": "وَظِيفَة", "back": "lavozim (vazifa)", "deck": "msa"},
+  {"type": "word", "front": "رَاتِب", "back": "maosh, oylik", "deck": "msa"},
+  {"type": "word", "front": "شَرِكَة", "back": "kompaniya (shirkat)", "deck": "msa"},
+  {"type": "word", "front": "مُدِير", "back": "direktor (mudir)", "deck": "msa"},
+  {"type": "word", "front": "مُوَظَّف", "back": "xodim", "deck": "msa"},
+  {"type": "word", "front": "مُحَاسِب", "back": "hisobchi", "deck": "msa"},
+  {"type": "word", "front": "خِبْرَة", "back": "ish tajribasi", "deck": "msa"}
+ ]
+}

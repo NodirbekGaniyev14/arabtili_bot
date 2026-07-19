@@ -1,0 +1,103 @@
+{
+ "id": "b1-26",
+ "level": "B1",
+ "module": "vocab",
+ "order": 26,
+ "title_uz": "Hissiyot",
+ "title_ar": "المَشَاعِر",
+ "can_do_uz": "His-tuyg'ularimni nozik farqlar bilan ifodalay olaman: xursandchilikdan iftixorgacha, xavotirdan umidgacha.",
+ "duration_min": 30,
+ "prerequisites": ["b1-25"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«Yaxshiman» deyish A1 edi. B1 esa: «faxrlanaman», «xavotirdaman», «sog'indim», «umidvorman»... His-tuyg'u so'zlari suhbatga JON kiritadi. Ko'pi o'zbekchada bor: g'urur, hayrat, shavq, qanoat!",
+ "grammar": {
+  "point_ar": "التَّعْبِيرُ عَنِ المَشَاعِر",
+  "explanation_uz": "Hissiyot qoliplari: (1) أشعرُ بِـ + masdar: أشعرُ بالفخرِ (faxr his qilaman). (2) Sifat bilan: أنا قلقٌ على... (…dan xavotirdaman), أنا مشتاقٌ إلى... (…ni sog'indim). (3) Fe'l bilan: أفتخرُ بِكَ (sen bilan faxrlanaman), اشتقتُ إليكَ (seni sog'indim). PREDLOGLARga e'tibor: قلق عَلَى (kim uchun xavotir), مشتاق إِلَى (kimni sog'inish), فخور بِـ (kim bilan faxr).",
+  "table": [
+   {"ar": "أفتخرُ بكَ", "uz": "sen bilan faxrlanaman", "form": "بِـ"},
+   {"ar": "اشتقتُ إليكَ", "uz": "seni sog'indim", "form": "إِلَى"},
+   {"ar": "أنا قلقٌ عليكَ", "uz": "sendan xavotirdaman", "form": "عَلَى"},
+   {"ar": "أشعرُ بالامتنانِ", "uz": "minnatdorlik his qilaman", "form": "أشعر بِـ"}
+  ],
+  "common_mistakes_uz": [
+   "Predloglarni aralashtirish: مشتاق بِك emas — مشتاق إليك.",
+   "قَلِق (xavotirda) va قَلْب (yurak) o'zaklarini adashtirish.",
+   "غَضْبَان (jahli chiqqan) ni ayolga غضبانة deyish — to'g'risi غَضْبَى."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ش و ق",
+   "meaning_uz": "sog'inch, intilish",
+   "uz_cognates": ["shavq", "mushtoq", "ishtiyoq"],
+   "derived": [
+    {"ar": "اِشْتَاقَ", "uz": "sog'indi", "pattern": "اِفْتَعَلَ"},
+    {"ar": "شَوْق", "uz": "sog'inch, shavq", "pattern": "فَعْل"},
+    {"ar": "مُشْتَاق", "uz": "sog'ingan, mushtoq", "pattern": "مُفْتَعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "فَخُور بِـ", "translit": "fakhūr bi-", "uz": "faxrlanuvchi (o'zbekcha 'faxr')", "root": "ف خ ر", "pattern": "فَعُول", "pos": "sifat", "audio": "b1/fakhur.mp3", "example_ar": "أنا فخورٌ بإنجازِكَ.", "example_uz": "Yutug'ing bilan faxrlanaman.", "srs": true},
+  {"ar": "قَلِق عَلَى", "translit": "qaliq ʿalā", "uz": "xavotirda (…dan)", "root": "ق ل ق", "pattern": "فَعِل", "pos": "sifat", "audio": "b1/qaliq.mp3", "example_ar": "الأمُّ قلقةٌ على ولدِها.", "example_uz": "Ona bolasidan xavotirda.", "srs": true},
+  {"ar": "مُشْتَاق إِلَى", "translit": "mushtāq ilā", "uz": "sog'ingan (o'zbekcha 'mushtoq')", "root": "ش و ق", "pattern": "مُفْتَعَل", "pos": "sifat", "audio": "b1/mushtaq.mp3", "example_ar": "أنا مشتاقٌ إلى عائلتي.", "example_uz": "Oilamni sog'indim.", "srs": true},
+  {"ar": "مُتَحَمِّس", "translit": "mutaḥammis", "uz": "ishtiyoqli, g'ayratga to'la (o'zbekcha 'hamiyat')", "root": "ح م س", "pattern": "مُتَفَعِّل", "pos": "sifat", "audio": "b1/mutahammis.mp3", "example_ar": "الطلابُ متحمسونَ للرحلةِ.", "example_uz": "Talabalar sayohatga ishtiyoqmand.", "srs": true},
+  {"ar": "خَجُول", "translit": "khajūl", "uz": "uyatchan (o'zbekcha 'xijolat' o'zagi)", "root": "خ ج ل", "pattern": "فَعُول", "pos": "sifat", "audio": "b1/khajul.mp3", "example_ar": "كان خجولًا في طفولتِهِ.", "example_uz": "Bolaligida uyatchan edi.", "srs": true},
+  {"ar": "غَضْبَان", "translit": "ghaḍbān", "uz": "jahli chiqqan (o'zbekcha 'g'azab')", "root": "غ ض ب", "pattern": "فَعْلَان", "pos": "sifat", "audio": "b1/ghadban.mp3", "example_ar": "لماذا أنتَ غضبانُ؟", "example_uz": "Nega jahling chiqqan?", "srs": true},
+  {"ar": "مُنْدَهِش", "translit": "mundahish", "uz": "hayratda qolgan (o'zbekcha 'dahshat' o'zagi)", "root": "د ه ش", "pattern": "مُنْفَعِل", "pos": "sifat", "audio": "b1/mundahish.mp3", "example_ar": "كنتُ مندهشًا من جمالِ المكانِ.", "example_uz": "Joyning go'zalligidan hayratda edim.", "srs": true},
+  {"ar": "اِمْتِنَان", "translit": "imtinān", "uz": "minnatdorlik (o'zbekcha 'minnat' o'zagi)", "root": "م ن ن", "pattern": "اِفْتِعَال", "pos": "ot", "audio": "b1/imtinan.mp3", "example_ar": "أشعرُ بامتنانٍ عميقٍ لكم.", "example_uz": "Sizlarga chuqur minnatdorlik his qilaman.", "srs": true},
+  {"ar": "أَمَل", "translit": "amal", "uz": "umid (o'zbekcha 'Amal' ismi shundan)", "root": "أ م ل", "pattern": "فَعَل", "pos": "ot", "audio": "b1/amal.mp3", "example_ar": "لا تفقدِ الأملَ أبدًا.", "example_uz": "Umidni hech qachon yo'qotma.", "srs": true},
+  {"ar": "قَنَاعَة", "translit": "qanāʿa", "uz": "qanoat (o'zbekcha 'qanoat' aynan shundan)", "root": "ق ن ع", "pattern": "فَعَالَة", "pos": "ot", "audio": "b1/qanaa.mp3", "example_ar": "القناعةُ كنزٌ لا يفنى.", "example_uz": "Qanoat — tugamas xazina.", "srs": true},
+  {"ar": "اِطْمَأَنَّ", "translit": "iṭmaʾanna", "uz": "xotirjam bo'ldi (o'zbekcha 'itminon')", "root": "ط م ن", "pattern": "اِفْعَلَلَّ", "pos": "fe'l", "audio": "b1/itmaanna.mp3", "example_ar": "اطمأنَّ قلبي بعدَ سماعِ صوتِكَ.", "example_uz": "Ovozingni eshitib ko'nglim tinchidi.", "srs": true},
+  {"ar": "حَنِين", "translit": "ḥanīn", "uz": "sog'inch, o'tmishga intilish", "root": "ح ن ن", "pattern": "فَعِيل", "pos": "ot", "audio": "b1/hanin.mp3", "example_ar": "عندي حنينٌ إلى أيامِ الطفولةِ.", "example_uz": "Bolalik kunlarimni qo'msayman.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "كتبَ الطالبُ المسافرُ لأمِّهِ: «أمي الحبيبة، أنا مشتاقٌ إليكم جميعًا. أعرفُ أنكِ قلقةٌ عليَّ، فاطمئنّي — أنا بخيرٍ. أشعرُ بالفخرِ لأنني أدرسُ في جامعةٍ كبيرةٍ، وبالامتنانِ لكلِّ ما فعلتِهِ لأجلي. وعندي أملٌ كبيرٌ أنْ أعودَ إليكم بالشهادةِ».",
+   "questions": [
+    {"q_uz": "Talaba onasiga qanday his-tuyg'ularini yozdi?", "a": "Sog'inch, faxr, minnatdorlik va umid"},
+    {"q_uz": "Onasini qanday tinchlantirdi?", "a": "«Xotirjam bo'ling, men yaxshiman» (اطمئنّي)"},
+    {"q_uz": "Uning katta umidi nima?", "a": "Diplom bilan qaytish"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/mushtaq.mp3",
+   "transcript_ar": "مُشْتَاق",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z ma'nosi va o'zbekchasi?", "a": "Sog'ingan — 'mushtoq'"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "His-tuyg'u bilan ayting: «Sen bilan faxrlanaman», «Oilamni sog'indim», «Ko'nglim tinchidi».",
+   "target_ar": ["أَفْتَخِرُ بِكَ", "اِشْتَقْتُ إِلَى عَائِلَتِي", "اِطْمَأَنَّ قَلْبِي"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Yaqin insoningizga qisqa xat yozing (4 gap): sog'inch, faxr, minnatdorlik va umid so'zlaridan foydalaning.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Seni sog'indim» to'g'ri qaysi?", "q_ar": "", "options": ["اشتقتُ إليكَ", "اشتقتُ بكَ", "اشتقتُ عليكَ", "اشتقتُ منكَ"], "answer": "اشتقتُ إليكَ", "explain_uz": "مشتاق/اشتاق — إِلَى predlogi bilan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«…dan xavotirdaman» qaysi predlog bilan?", "q_ar": "قَلِق ...", "options": ["عَلَى", "إِلَى", "بِـ", "مِن"], "answer": "عَلَى", "explain_uz": "قلق على — kimdir uchun xavotir.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Minnatdorlik» qaysi so'z?", "q_ar": "", "options": ["اِمْتِنَان", "اِنْتِظَار", "اِمْتِحَان", "اِنْتِقَال"], "answer": "اِمْتِنَان", "explain_uz": "امتنان — minnatdorlik (minnat o'zagi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "umid", "q_ar": "", "options": [], "answer": "أَمَل", "explain_uz": "أمل — umid.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "qanoat", "q_ar": "", "options": [], "answer": "قَنَاعَة", "explain_uz": "قناعة — qanoat (aynan o'tgan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«شَوْق، مُشْتَاق، اِشْتَاقَ» qaysi o'zakdan?", "q_ar": "", "options": ["ش و ق", "ش ق ق", "س و ق"], "answer": "ش و ق", "explain_uz": "«ش و ق» — shavq/sog'inch o'zagi: mushtoq, ishtiyoq.", "audio": "", "root": "ش و ق", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting: bu qanday his?", "q_ar": "", "options": ["hayratda qolgan", "jahli chiqqan", "uyatchan", "xursand"], "answer": "hayratda qolgan", "explain_uz": "مندهش — hayratda (dahshat o'zagi).", "audio": "b1/mundahish.mp3", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ش و ق", "back": "shavq/sog'inch o'zagi (mushtoq)", "deck": "msa"},
+  {"type": "word", "front": "فَخُور بِـ", "back": "faxrlanuvchi", "deck": "msa"},
+  {"type": "word", "front": "قَلِق عَلَى", "back": "xavotirda", "deck": "msa"},
+  {"type": "word", "front": "مُشْتَاق إِلَى", "back": "sog'ingan (mushtoq)", "deck": "msa"},
+  {"type": "word", "front": "مُتَحَمِّس", "back": "ishtiyoqli", "deck": "msa"},
+  {"type": "word", "front": "غَضْبَان", "back": "jahli chiqqan", "deck": "msa"},
+  {"type": "word", "front": "مُنْدَهِش", "back": "hayratda qolgan", "deck": "msa"},
+  {"type": "word", "front": "اِمْتِنَان", "back": "minnatdorlik", "deck": "msa"},
+  {"type": "word", "front": "أَمَل", "back": "umid", "deck": "msa"},
+  {"type": "word", "front": "قَنَاعَة", "back": "qanoat", "deck": "msa"},
+  {"type": "word", "front": "اِطْمَأَنَّ", "back": "xotirjam bo'ldi", "deck": "msa"}
+ ]
+}

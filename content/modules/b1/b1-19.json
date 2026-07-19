@@ -1,0 +1,106 @@
+{
+ "id": "b1-19",
+ "level": "B1",
+ "module": "vocab",
+ "order": 19,
+ "title_uz": "Biznes",
+ "title_ar": "التِّجَارَة وَالأَعْمَال",
+ "can_do_uz": "Savdo, shartnoma, foyda-zarar haqida oddiy biznes suhbatini olib bora olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-18"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Tijorat, savdo, foyda, mijoz, shartnoma... — biznes o'zbekchasi deyarli to'la arabcha! Payg'ambarimiz (s.a.v.) ham tijorat qilganlar. Bugun bozor va ofis tilini o'rganamiz — Saudiyada ish yuritish uchun ham asqotadi.",
+ "grammar": {
+  "point_ar": "لُغَةُ التِّجَارَة",
+  "explanation_uz": "Biznes qoliplari: (1) KELISHUV: اتفقنا على... (…ga kelishdik), وقّعنا عقدًا (shartnoma imzoladik). (2) NARX: بكم تبيعُ...؟ (qanchaga sotasiz?), السعرُ قابلٌ للتفاوضِ (narx kelishiladi). (3) FOYDA-ZARAR: ربحَ / خسرَ (foyda ko'rdi / zarar ko'rdi). (4) MULK: يملكُ شركةً (kompaniyaga ega). E'tibor: تِجَارَة (savdo sohasi) va تَاجِر (savdogar) — bir o'zak, turli vazn.",
+  "table": [
+   {"ar": "اتفقنا على السعرِ", "uz": "narxga kelishdik", "form": "kelishuv"},
+   {"ar": "وقّعنا عقدًا", "uz": "shartnoma imzoladik", "form": "hujjat"},
+   {"ar": "ربحَ التاجرُ", "uz": "savdogar foyda ko'rdi", "form": "natija"},
+   {"ar": "السوقُ نشيطةٌ اليومَ", "uz": "bozor bugun gavjum", "form": "holat"}
+  ],
+  "common_mistakes_uz": [
+   "رِبْح (foyda) va رِبَا (sudxo'rlik) ni adashtirish — butunlay boshqa!",
+   "عَقْد (shartnoma) va عَقْد (o'nlik) — kontekstga qarang.",
+   "زَبُون (mijoz) ko'pligini زبونات deb yasash — to'g'risi زَبَائِن."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ت ج ر",
+   "meaning_uz": "savdo",
+   "uz_cognates": ["tijorat", "tojir"],
+   "derived": [
+    {"ar": "تَاجِر", "uz": "savdogar, tojir", "pattern": "فَاعِل"},
+    {"ar": "تِجَارَة", "uz": "savdo, tijorat", "pattern": "فِعَالَة"},
+    {"ar": "مَتْجَر", "uz": "do'kon", "pattern": "مَفْعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "تِجَارَة", "translit": "tijāra", "uz": "savdo (o'zbekcha 'tijorat')", "root": "ت ج ر", "pattern": "فِعَالَة", "pos": "ot", "audio": "b1/tijara.mp3", "example_ar": "يعملُ في التجارةِ منذُ شبابِهِ.", "example_uz": "Yoshligidan savdo bilan shug'ullanadi.", "srs": true},
+  {"ar": "عَقْد", "translit": "ʿaqd", "uz": "shartnoma (o'zbekcha 'aqd', 'nikoh aqdi')", "root": "ع ق د", "pattern": "فَعْل", "pos": "ot", "audio": "b1/aqd.mp3", "example_ar": "وقّعنا العقدَ أمسِ.", "example_uz": "Shartnomani kecha imzoladik.", "srs": true},
+  {"ar": "رِبْح", "translit": "ribḥ", "uz": "foyda", "root": "ر ب ح", "pattern": "فِعْل", "pos": "ot", "audio": "b1/ribh.mp3", "example_ar": "الربحُ هذا الشهرَ جيدٌ.", "example_uz": "Bu oy foyda yaxshi.", "srs": true},
+  {"ar": "خَسَارَة", "translit": "khasāra", "uz": "zarar (o'zbekcha 'xasorat')", "root": "خ س ر", "pattern": "فَعَالَة", "pos": "ot", "audio": "b1/khasara.mp3", "example_ar": "تحمّلَ خسارةً كبيرةً.", "example_uz": "Katta zarar ko'rdi.", "srs": true},
+  {"ar": "زَبُون", "translit": "zabūn", "uz": "mijoz (ko'pligi: زَبَائِن)", "root": "ز ب ن", "pattern": "فَعُول", "pos": "ot", "audio": "b1/zabun.mp3", "example_ar": "الزبونُ دائمًا على حقٍّ.", "example_uz": "Mijoz doim haq.", "srs": true},
+  {"ar": "بِضَاعَة", "translit": "biḍāʿa", "uz": "mol, tovar", "root": "ب ض ع", "pattern": "فِعَالَة", "pos": "ot", "audio": "b1/bidaa.mp3", "example_ar": "وصلتِ البضاعةُ الجديدةُ.", "example_uz": "Yangi mol keldi.", "srs": true},
+  {"ar": "سِعْر", "translit": "siʿr", "uz": "narx (ko'pligi: أَسْعَار)", "root": "س ع ر", "pattern": "فِعْل", "pos": "ot", "audio": "b1/sir.mp3", "example_ar": "ارتفعتِ الأسعارُ هذا العامَ.", "example_uz": "Bu yil narxlar ko'tarildi.", "srs": true},
+  {"ar": "تَفَاوُض", "translit": "tafāwuḍ", "uz": "muzokara, kelishish", "root": "ف و ض", "pattern": "تَفَاعُل", "pos": "ot", "audio": "b1/tafawud.mp3", "example_ar": "السعرُ قابلٌ للتفاوضِ.", "example_uz": "Narx kelishilishi mumkin.", "srs": true},
+  {"ar": "اِتَّفَقَ عَلَى", "translit": "ittafaqa ʿalā", "uz": "…ga kelishdi (o'zbekcha 'ittifoq')", "root": "و ف ق", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ittafaqa.mp3", "example_ar": "اتفقنا على موعدِ التسليمِ.", "example_uz": "Topshirish muddatiga kelishdik.", "srs": true},
+  {"ar": "وَقَّعَ", "translit": "waqqaʿa", "uz": "imzoladi", "root": "و ق ع", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/waqqaa.mp3", "example_ar": "وقّعَ المديرُ على الطلبِ.", "example_uz": "Direktor arizani imzoladi.", "srs": true},
+  {"ar": "مَشْرُوع", "translit": "mashrūʿ", "uz": "loyiha (biznes-loyiha)", "root": "ش ر ع", "pattern": "مَفْعُول", "pos": "ot", "audio": "b1/mashru.mp3", "example_ar": "بدأَ مشروعًا صغيرًا.", "example_uz": "Kichik loyiha boshladi.", "srs": true},
+  {"ar": "رَأْسُ المَال", "translit": "raʾsu l-māl", "uz": "kapital, sarmoya (bosh mol)", "root": "ر أ س", "pattern": "", "pos": "ibora", "audio": "b1/ras_almal.mp3", "example_ar": "جمعَ رأسَ المالِ من شركاءَ.", "example_uz": "Sarmoyani sheriklardan yig'di.", "srs": true}
+ ],
+ "hejazi": [
+  {"msa_ar": "بِكَمْ هٰذَا؟", "hejazi_ar": "بِكَم دَا؟", "translit": "bikam dā?", "uz": "Bu qancha? (Hijoziy)", "audio": "hj/bikam_da.mp3"},
+  {"msa_ar": "غَالٍ جِدًّا", "hejazi_ar": "غَالِي مَرَّة", "translit": "ghālī marra", "uz": "Juda qimmat (Hijoziy)", "audio": "hj/ghali_marra.mp3"}
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "بدأَ عثمانُ مشروعَهُ الصغيرَ برأسِ مالٍ قليلٍ. اشترى بضاعةً جيدةً واتفقَ مع التجارِ على أسعارٍ مناسبةٍ. في السنةِ الأولى كان الربحُ قليلًا، لكنه لم ييأسْ. واليومَ عندهُ متجرانِ وزبائنُ كثيرونَ يثقونَ بهِ.",
+   "questions": [
+    {"q_uz": "Usmon loyihani qanday boshladi?", "a": "Oz sarmoya bilan (برأس مال قليل)"},
+    {"q_uz": "Birinchi yil qanday o'tdi?", "a": "Foyda kam edi, lekin umidsizlanmadi"},
+    {"q_uz": "Hozir ahvoli qanday?", "a": "Ikki do'kon va unga ishonadigan ko'p mijozlar bor"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/aqd.mp3",
+   "transcript_ar": "عَقْد",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z ma'nosi?", "a": "Shartnoma (aqd)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Muzokara qiling: narxni so'rang, qimmat deng va chegirma so'rang (A2 Saudiya modulini eslang).",
+   "target_ar": ["بِكَمْ تَبِيعُ هٰذَا؟", "السِّعْرُ غَالٍ", "هَلْ مِنْ تَخْفِيضٍ؟"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Kichik biznes g'oyangiz haqida 4 gap yozing: mahsulot, sarmoya, mijozlar va kutilayotgan foyda.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Shartnoma imzoladik» to'g'ri qaysi?", "q_ar": "", "options": ["وقّعنا عقدًا", "كتبنا كتابًا", "قرأنا عقدًا", "وقعنا في عقدٍ"], "answer": "وقّعنا عقدًا", "explain_uz": "وقّع (II bob) — imzolamoq; عقد — shartnoma.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "رِبْح ning zidi (antonimi)?", "q_ar": "", "options": ["خَسَارَة", "بِضَاعَة", "سِعْر", "زَبُون"], "answer": "خَسَارَة", "explain_uz": "Foyda ↔ zarar (xasorat).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«زَبَائِن» nimaning ko'pligi?", "q_ar": "", "options": ["زَبُون (mijoz)", "زَيْتُون (zaytun)", "زَمَان (zamon)", "بِضَاعَة (mol)"], "answer": "زَبُون (mijoz)", "explain_uz": "زبون → زبائن (mijozlar).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "savdo (tijorat)", "q_ar": "", "options": [], "answer": "تِجَارَة", "explain_uz": "تِجَارَة — tijorat.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "narx", "q_ar": "", "options": [], "answer": "سِعْر", "explain_uz": "سِعْر — narx (as'or — narxlar).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«تَاجِر، تِجَارَة، مَتْجَر» qaysi o'zakdan?", "q_ar": "", "options": ["ت ج ر", "ت ج ب", "ج ت ر"], "answer": "ت ج ر", "explain_uz": "«ت ج ر» — tijorat o'zagi.", "audio": "", "root": "ت ج ر", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting (Hijoziy): ma'nosi?", "q_ar": "", "options": ["Juda qimmat", "Juda arzon", "Juda yaxshi", "Juda katta"], "answer": "Juda qimmat", "explain_uz": "غالي مرّة — hijoziyda «juda qimmat».", "audio": "hj/ghali_marra.mp3", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ت ج ر", "back": "tijorat o'zagi (tojir, matjar)", "deck": "msa"},
+  {"type": "word", "front": "تِجَارَة", "back": "savdo, tijorat", "deck": "msa"},
+  {"type": "word", "front": "عَقْد", "back": "shartnoma (aqd)", "deck": "msa"},
+  {"type": "word", "front": "رِبْح", "back": "foyda", "deck": "msa"},
+  {"type": "word", "front": "خَسَارَة", "back": "zarar (xasorat)", "deck": "msa"},
+  {"type": "word", "front": "زَبُون", "back": "mijoz (ko'pligi zaboin)", "deck": "msa"},
+  {"type": "word", "front": "بِضَاعَة", "back": "mol, tovar", "deck": "msa"},
+  {"type": "word", "front": "سِعْر", "back": "narx", "deck": "msa"},
+  {"type": "word", "front": "مَشْرُوع", "back": "loyiha", "deck": "msa"},
+  {"type": "word", "front": "رَأْسُ المَال", "back": "sarmoya, kapital", "deck": "msa"},
+  {"type": "phrase", "front": "غَالِي مَرَّة", "back": "Juda qimmat (Hijoziy)", "deck": "hejazi"}
+ ]
+}

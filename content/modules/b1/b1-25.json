@@ -1,0 +1,102 @@
+{
+ "id": "b1-25",
+ "level": "B1",
+ "module": "vocab",
+ "order": 25,
+ "title_uz": "Sport",
+ "title_ar": "الرِّيَاضَة",
+ "can_do_uz": "Sport turlari, musobaqa va natijalar haqida gaplasha olaman.",
+ "duration_min": 25,
+ "prerequisites": ["b1-24"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Arab dunyosi futbolga jinni! Saudiya ligasida dunyo yulduzlari o'ynaydi. «Jamoa yutdi», «hisob 2-1», «musobaqa» — stadion va sport yangiliklari tili bugun sizniki!",
+ "grammar": {
+  "point_ar": "لُغَةُ الرِّيَاضَة",
+  "explanation_uz": "Sport qoliplari: (1) NATIJA: فازَ بِـ (yutdi) ↔ خسرَ أمامَ (yutqazdi), تعادلَ مع (durrang o'ynadi). (2) HISOB: بنتيجةِ هدفينِ مقابلَ هدفٍ (2:1 hisobida). (3) MASHG'ULOT: يتدرّبُ يوميًّا (har kuni mashq qiladi), يمارسُ الرياضةَ (sport bilan shug'ullanadi). E'tibor: فازَ بالمباراةِ (o'yinni yutdi — بِـ bilan!), فازَ على الفريقِ (jamoani yengdi — على bilan).",
+  "table": [
+   {"ar": "فازَ الفريقُ بالمباراةِ", "uz": "jamoa o'yinni yutdi", "form": "g'alaba"},
+   {"ar": "خسرَ أمامَ ضيفِهِ", "uz": "mehmon jamoaga yutqazdi", "form": "mag'lubiyat"},
+   {"ar": "تعادلا ١-١", "uz": "1:1 durrang o'ynashdi", "form": "durrang"},
+   {"ar": "يمارسُ الرياضةَ", "uz": "sport bilan shug'ullanadi", "form": "odat"}
+  ],
+  "common_mistakes_uz": [
+   "فازَ dan keyin to'g'ridan-to'g'ri ob'ekt: فاز المباراةَ emas — فاز بالمباراةِ.",
+   "مُبَارَاة (o'yin) va مُبَارَكَة (muborakbod) ni adashtirish.",
+   "هَدَف ham «gol», ham «maqsad» — kontekstga qarang."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ف و ز",
+   "meaning_uz": "g'alaba, yutish",
+   "uz_cognates": ["Fayzulla ismidagi 'fayz' emas — foiz ham emas; 'g'olib' ma'nosi"],
+   "derived": [
+    {"ar": "فَازَ", "uz": "yutdi, g'olib bo'ldi", "pattern": "فَعَلَ"},
+    {"ar": "فَوْز", "uz": "g'alaba", "pattern": "فَعْل"},
+    {"ar": "فَائِز", "uz": "g'olib", "pattern": "فَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "رِيَاضَة", "translit": "riyāḍa", "uz": "sport (o'zbekcha 'riyozat' — mashq)", "root": "ر و ض", "pattern": "فِعَالَة", "pos": "ot", "audio": "b1/riyada.mp3", "example_ar": "الرياضةُ مفيدةٌ للجسمِ والعقلِ.", "example_uz": "Sport tana va aqlga foydali.", "srs": true},
+  {"ar": "فَرِيق", "translit": "farīq", "uz": "jamoa (ko'pligi: فِرَق)", "root": "ف ر ق", "pattern": "فَعِيل", "pos": "ot", "audio": "b1/fariq.mp3", "example_ar": "فريقُنا الوطنيُّ قويٌّ.", "example_uz": "Milliy jamoamiz kuchli.", "srs": true},
+  {"ar": "مُبَارَاة", "translit": "mubārāt", "uz": "o'yin, uchrashuv (sport)", "root": "ب ر ي", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "b1/mubarat.mp3", "example_ar": "المباراةُ النهائيةُ غدًا.", "example_uz": "Final o'yini ertaga.", "srs": true},
+  {"ar": "فَازَ بِـ", "translit": "fāza bi-", "uz": "yutdi, g'olib bo'ldi", "root": "ف و ز", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/faza.mp3", "example_ar": "فازَ فريقُنا بالبطولةِ.", "example_uz": "Jamoamiz chempionatni yutdi.", "srs": true},
+  {"ar": "خَسِرَ", "translit": "khasira", "uz": "yutqazdi", "root": "خ س ر", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "b1/khasira.mp3", "example_ar": "خسرنا المباراةَ بهدفٍ.", "example_uz": "O'yinni bir gol bilan boy berdik.", "srs": true},
+  {"ar": "هَدَف", "translit": "hadaf", "uz": "gol; maqsad (ikkalasini eslang!)", "root": "ه د ف", "pattern": "فَعَل", "pos": "ot", "audio": "b1/hadaf.mp3", "example_ar": "سجّلَ هدفينِ رائعينِ.", "example_uz": "Ikkita ajoyib gol urdi.", "srs": true},
+  {"ar": "سَجَّلَ", "translit": "sajjala", "uz": "gol urdi; yozib oldi (II bob)", "root": "س ج ل", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/sajjala.mp3", "example_ar": "سجّلَ اللاعبُ في الدقيقةِ الأخيرةِ.", "example_uz": "O'yinchi so'nggi daqiqada gol urdi.", "srs": true},
+  {"ar": "لَاعِب", "translit": "lāʿib", "uz": "o'yinchi", "root": "ل ع ب", "pattern": "فَاعِل", "pos": "ot", "audio": "b1/laib.mp3", "example_ar": "أفضلُ لاعبٍ في العالمِ.", "example_uz": "Dunyodagi eng yaxshi o'yinchi.", "srs": true},
+  {"ar": "بُطُولَة", "translit": "buṭūla", "uz": "chempionat (qahramon — بطل o'zagi)", "root": "ب ط ل", "pattern": "فُعُولَة", "pos": "ot", "audio": "b1/butula.mp3", "example_ar": "أُقيمتِ البطولةُ في الرياضِ.", "example_uz": "Chempionat Ar-Riyodda o'tkazildi.", "srs": true},
+  {"ar": "تَدَرَّبَ", "translit": "tadarraba", "uz": "mashq qildi (V bob)", "root": "د ر ب", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "b1/tadarraba.mp3", "example_ar": "يتدرّبُ الفريقُ كلَّ صباحٍ.", "example_uz": "Jamoa har tong mashq qiladi.", "srs": true},
+  {"ar": "جُمْهُور", "translit": "jumhūr", "uz": "muxlislar, tomoshabinlar (o'zbekcha 'jumhuriyat' o'zagi)", "root": "ج م ه ر", "pattern": "فُعْلُول", "pos": "ot", "audio": "b1/jumhur.mp3", "example_ar": "شجّعَ الجمهورُ فريقَهُ بحماسٍ.", "example_uz": "Muxlislar jamoasini qizg'in qo'llab-quvvatladi.", "srs": true},
+  {"ar": "سِبَاحَة", "translit": "sibāḥa", "uz": "suzish", "root": "س ب ح", "pattern": "فِعَالَة", "pos": "ot", "audio": "b1/sibaha.mp3", "example_ar": "أمارسُ السباحةَ صيفًا.", "example_uz": "Yozda suzish bilan shug'ullanaman.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أقيمتْ أمسِ المباراةُ النهائيةُ للبطولةِ. سجّلَ فريقُنا هدفًا مبكرًا، لكنَّ الضيوفَ تعادلوا قبلَ نهايةِ الشوطِ الأولِ. وفي الدقيقةِ الأخيرةِ سجّلَ اللاعبُ الشابُّ هدفَ الفوزِ، ففرحَ الجمهورُ فرحًا عظيمًا وفازَ فريقُنا بالبطولةِ.",
+   "questions": [
+    {"q_uz": "Birinchi bo'limda hisob qanday edi?", "a": "1:1 (erta gol, keyin durrang)"},
+    {"q_uz": "G'alaba goli qachon urildi?", "a": "So'nggi daqiqada (yosh o'yinchi)"},
+    {"q_uz": "Matndagi maf'ul mutlaqni toping.", "a": "فرحًا عظيمًا (juda xursand bo'ldi)"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/mubarat.mp3",
+   "transcript_ar": "مُبَارَاة",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z ma'nosi?", "a": "O'yin, sport uchrashuvi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Sport sharhlovchisi bo'ling: «Jamoamiz chempionatni yutdi!», «Ikkita gol urdi!», «Muxlislar xursand!»",
+   "target_ar": ["فَازَ فَرِيقُنَا بِالبُطُولَةِ", "سَجَّلَ هَدَفَيْنِ", "الجُمْهُورُ سَعِيدٌ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Sevimli sportingiz haqida 4 gap yozing: qaysi tur, qachon shug'ullanasiz, sevimli jamoa/sportchi va nega yoqadi.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«O'yinni yutdi» to'g'ri qaysi?", "q_ar": "", "options": ["فازَ بالمباراةِ", "فازَ المباراةَ", "فازَ في مباراةً", "فازَ عن المباراةِ"], "answer": "فازَ بالمباراةِ", "explain_uz": "فاز بِـ — «...ni yutdi» qolipi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "هَدَف so'zining ikki ma'nosi?", "q_ar": "", "options": ["gol va maqsad", "to'p va darvoza", "o'yin va jamoa", "g'alaba va mag'lubiyat"], "answer": "gol va maqsad", "explain_uz": "سجّل هدفًا (gol) / حدّد هدفًا (maqsad).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "فَازَ ning zidi?", "q_ar": "", "options": ["خَسِرَ", "سَجَّلَ", "تَدَرَّبَ", "تَعَادَلَ"], "answer": "خَسِرَ", "explain_uz": "Yutdi ↔ yutqazdi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "jamoa", "q_ar": "", "options": [], "answer": "فَرِيق", "explain_uz": "فريق — jamoa.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "o'yinchi", "q_ar": "", "options": [], "answer": "لَاعِب", "explain_uz": "لاعب — o'yinchi (la'iba — o'ynadi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«فَوْز، فَائِز» qaysi o'zakdan?", "q_ar": "", "options": ["ف و ز", "ف ر ز", "ف ي ض"], "answer": "ف و ز", "explain_uz": "«ف و ز» — g'alaba o'zagi.", "audio": "", "root": "ف و ز", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Tartiblang: «Jamoa har tong mashq qiladi»", "q_ar": "", "options": [], "answer": "يتدرّبُ الفريقُ كلَّ صباحٍ", "explain_uz": "Fe'l + ega + vaqt zarfi.", "audio": "", "root": "", "pattern": "", "words": ["يتدرّبُ", "الفريقُ", "كلَّ", "صباحٍ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ف و ز", "back": "g'alaba o'zagi (foiz, g'olib)", "deck": "msa"},
+  {"type": "word", "front": "رِيَاضَة", "back": "sport", "deck": "msa"},
+  {"type": "word", "front": "فَرِيق", "back": "jamoa", "deck": "msa"},
+  {"type": "word", "front": "مُبَارَاة", "back": "o'yin, uchrashuv", "deck": "msa"},
+  {"type": "word", "front": "فَازَ بِـ", "back": "yutdi", "deck": "msa"},
+  {"type": "word", "front": "خَسِرَ", "back": "yutqazdi", "deck": "msa"},
+  {"type": "word", "front": "هَدَف", "back": "gol; maqsad", "deck": "msa"},
+  {"type": "word", "front": "سَجَّلَ", "back": "gol urdi; yozib oldi", "deck": "msa"},
+  {"type": "word", "front": "بُطُولَة", "back": "chempionat", "deck": "msa"},
+  {"type": "word", "front": "جُمْهُور", "back": "muxlislar", "deck": "msa"}
+ ]
+}

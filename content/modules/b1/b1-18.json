@@ -1,0 +1,106 @@
+{
+ "id": "b1-18",
+ "level": "B1",
+ "module": "vocab",
+ "order": 18,
+ "title_uz": "Salomatlik",
+ "title_ar": "الصِّحَّة",
+ "can_do_uz": "Shifokorga shikoyatimni aytib, dori-darmon va davolanish haqida gaplasha olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-17"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "A2 Saudiya modulida dorixonaga borgandik. Endi chuqurroq: shifokor qabuli, tashxis, davolanish. Tanish so'zlar ko'p: sihat-salomatlik (صحة), tabib (طبيب), dori (دواء — 'davo'!), shifo (شفاء).",
+ "grammar": {
+  "point_ar": "عِنْدَ الطَّبِيب",
+  "explanation_uz": "Shifokor qabulidagi qoliplar: (1) SHIKOYAT: أشعرُ بِـ... (his qilyapman) — أشعرُ بألمٍ في رأسي (boshimda og'riq bor); يؤلمني... (og'rityapti): يؤلمني ظهري (belim og'riyapti). (2) DAVOMIYLIK: منذُ يومينِ (ikki kundan beri). (3) SHIFOKOR: يجبُ أنْ ترتاحَ (dam olishing kerak), خذْ هذا الدواءَ (bu dorini ich). (4) TILAK: شفاكَ اللهُ (Alloh shifo bersin!).",
+  "table": [
+   {"ar": "أشعرُ بألمٍ في...", "uz": "...da og'riq sezyapman", "form": "shikoyat"},
+   {"ar": "يؤلمني رأسي", "uz": "boshim og'riyapti", "form": "shikoyat"},
+   {"ar": "منذُ يومينِ", "uz": "ikki kundan beri", "form": "davomiylik"},
+   {"ar": "شفاكَ اللهُ", "uz": "Alloh shifo bersin", "form": "tilak"}
+  ],
+  "common_mistakes_uz": [
+   "دَوَاء (dori) va دَاء (kasallik) ni adashtirish — bir harf farq, qarama-qarshi ma'no!",
+   "أشعر بألم o'rniga أشعر ألم deyish — بِـ predlogi shart.",
+   "صَيْدَلِيَّة (dorixona) urg'usini noto'g'ri qo'yish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ش ف ي",
+   "meaning_uz": "shifo topish",
+   "uz_cognates": ["shifo", "shifokor", "mustashfo"],
+   "derived": [
+    {"ar": "شَفَى", "uz": "shifo berdi", "pattern": "فَعَلَ"},
+    {"ar": "شِفَاء", "uz": "shifo", "pattern": "فِعَال"},
+    {"ar": "مُسْتَشْفَى", "uz": "shifoxona", "pattern": "مُسْتَفْعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "صِحَّة", "translit": "ṣiḥḥa", "uz": "salomatlik (o'zbekcha 'sihat')", "root": "ص ح ح", "pattern": "فِعْلَة", "pos": "ot", "audio": "b1/sihha.mp3", "example_ar": "الصحةُ تاجٌ على الرؤوسِ.", "example_uz": "Salomatlik — boshlardagi toj.", "srs": true},
+  {"ar": "أَلَم", "translit": "alam", "uz": "og'riq (o'zbekcha 'alam')", "root": "أ ل م", "pattern": "فَعَل", "pos": "ot", "audio": "b1/alam.mp3", "example_ar": "أشعرُ بألمٍ في معدتي.", "example_uz": "Oshqozonimda og'riq sezyapman.", "srs": true},
+  {"ar": "حُمَّى", "translit": "ḥummā", "uz": "isitma", "root": "ح م م", "pattern": "", "pos": "ot", "audio": "b1/humma.mp3", "example_ar": "عندهُ حمّى منذُ الليلِ.", "example_uz": "Kechadan beri isitmasi bor.", "srs": true},
+  {"ar": "سُعَال", "translit": "suʿāl", "uz": "yo'tal", "root": "س ع ل", "pattern": "فُعَال", "pos": "ot", "audio": "b1/sual.mp3", "example_ar": "السعالُ يزدادُ ليلًا.", "example_uz": "Yo'tal kechasi kuchayadi.", "srs": true},
+  {"ar": "وَصْفَة", "translit": "waṣfa", "uz": "retsept (dori yozuvi)", "root": "و ص ف", "pattern": "فَعْلَة", "pos": "ot", "audio": "b1/wasfa.mp3", "example_ar": "كتبَ الطبيبُ وصفةً.", "example_uz": "Shifokor retsept yozdi.", "srs": true},
+  {"ar": "عِلَاج", "translit": "ʿilāj", "uz": "davolash, muolaja (o'zbekcha 'iloj'!)", "root": "ع ل ج", "pattern": "فِعَال", "pos": "ot", "audio": "b1/ilaj.mp3", "example_ar": "العلاجُ يحتاجُ صبرًا.", "example_uz": "Davolanish sabr talab qiladi.", "srs": true},
+  {"ar": "تَحْلِيل دَم", "translit": "taḥlīl dam", "uz": "qon tahlili", "root": "ح ل ل", "pattern": "", "pos": "ibora", "audio": "b1/tahlil_dam.mp3", "example_ar": "اعملْ تحليلَ دمٍ أولًا.", "example_uz": "Avval qon tahlili topshiring.", "srs": true},
+  {"ar": "ضَغْط", "translit": "ḍaghṭ", "uz": "bosim (qon bosimi)", "root": "ض غ ط", "pattern": "فَعْل", "pos": "ot", "audio": "b1/daght.mp3", "example_ar": "ضغطُهُ مرتفعٌ قليلًا.", "example_uz": "Bosimi biroz baland.", "srs": true},
+  {"ar": "مَوْعِدُ الطَّبِيب", "translit": "mawʿidu ṭ-ṭabīb", "uz": "shifokor qabuli (vaqti)", "root": "و ع د", "pattern": "", "pos": "ibora", "audio": "b1/mawid_tabib.mp3", "example_ar": "حجزتُ موعدًا مع الطبيبِ.", "example_uz": "Shifokorga qabulga yozildim.", "srs": true},
+  {"ar": "اِرْتَاحَ", "translit": "irtāḥa", "uz": "dam oldi (o'zbekcha 'rohat' o'zagi)", "root": "ر و ح", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/irtaha.mp3", "example_ar": "يجبُ أنْ ترتاحَ يومينِ.", "example_uz": "Ikki kun dam olishing kerak.", "srs": true},
+  {"ar": "شَفَاكَ اللهُ", "translit": "shafāka -llāh", "uz": "Alloh shifo bersin! (bemorga tilak)", "root": "ش ف ي", "pattern": "", "pos": "ibora", "audio": "b1/shafaka.mp3", "example_ar": "شفاكَ اللهُ وعافاكَ.", "example_uz": "Alloh shifo va ofiyat bersin.", "srs": true},
+  {"ar": "دَاء", "translit": "dāʾ", "uz": "kasallik, dard (دواء emas!)", "root": "د و أ", "pattern": "", "pos": "ot", "audio": "b1/daa2.mp3", "example_ar": "لكلِّ داءٍ دواءٌ.", "example_uz": "Har dardning davosi bor.", "srs": true}
+ ],
+ "hejazi": [
+  {"msa_ar": "كَيْفَ حَالُكَ الآنَ؟", "hejazi_ar": "كِيفَك دَحِين؟", "translit": "kīfak daḥīn?", "uz": "Hozir qalaysan? (Hijoziy)", "audio": "hj/kifak_dahin.mp3"},
+  {"msa_ar": "أَشْعُرُ بِتَعَبٍ", "hejazi_ar": "حَاسِس بِتَعَب", "translit": "ḥāsis bitaʿab", "uz": "Charchoq sezyapman (Hijoziy)", "audio": "hj/hasis_taab.mp3"}
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "ذهبَ سالمٌ إلى الطبيبِ وقال: «أشعرُ بألمٍ في حلقي وعندي سعالٌ وحمّى منذُ ثلاثةِ أيامٍ». فحصَهُ الطبيبُ وقال: «التهابٌ بسيطٌ. اعملْ تحليلَ دمٍ، وخذْ هذا الدواءَ ثلاثَ مراتٍ يوميًّا، ويجبُ أنْ ترتاحَ». وكتبَ لهُ وصفةً وقال: «شفاكَ اللهُ».",
+   "questions": [
+    {"q_uz": "Salimning shikoyatlari nima edi?", "a": "Tomoq og'rig'i, yo'tal va isitma (3 kundan beri)"},
+    {"q_uz": "Shifokor nimalarni buyurdi?", "a": "Qon tahlili, kuniga 3 mahal dori va dam olish"},
+    {"q_uz": "Shifokorning tilagi?", "a": "شفاك الله — Alloh shifo bersin"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/ilaj.mp3",
+   "transcript_ar": "عِلَاج",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z ma'nosi va o'zbekcha izdoshi?", "a": "Davolash — o'zbekcha 'iloj'"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Shifokorga shikoyat ayting: boshingiz og'riyotganini, ikki kundan beri isitma borligini ayting va maslahat so'rang.",
+   "target_ar": ["أَشْعُرُ بِأَلَمٍ فِي رَأْسِي", "عِنْدِي حُمَّى مُنْذُ يَوْمَيْنِ", "مَاذَا تَنْصَحُنِي؟"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Shifokor bilan 4 gapli dialog yozing: shikoyat, davomiyligi, shifokor javobi va minnatdorchilik.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Boshim og'riyapti» qaysi?", "q_ar": "", "options": ["يؤلمني رأسي", "رأسي جميلٌ", "أحبُّ رأسي", "رأسي كبيرٌ"], "answer": "يؤلمني رأسي", "explain_uz": "يؤلمني — «meni og'ritayapti».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "دَوَاء va دَاء farqi?", "q_ar": "", "options": ["dori / kasallik", "kasallik / dori", "bir xil", "ikkalasi shifokor"], "answer": "dori / kasallik", "explain_uz": "دواء — davo(dori); داء — dard(kasallik).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Bemorga qanday tilak aytiladi?", "q_ar": "", "options": ["شفاكَ اللهُ", "مبروك", "مع السلامة", "صباح الخير"], "answer": "شفاكَ اللهُ", "explain_uz": "شفاك الله — Alloh shifo bersin.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "davolash (iloj)", "q_ar": "", "options": [], "answer": "عِلَاج", "explain_uz": "عِلَاج — davolash; o'zbekcha 'iloj'.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "og'riq (alam)", "q_ar": "", "options": [], "answer": "أَلَم", "explain_uz": "أَلَم — og'riq.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«شِفَاء، مُسْتَشْفَى» qaysi o'zakdan?", "q_ar": "", "options": ["ش ف ي", "ش ف ع", "س ق ي"], "answer": "ش ف ي", "explain_uz": "«ش ف ي» — shifo o'zagi.", "audio": "", "root": "ش ف ي", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting (Hijoziy): ma'nosi nima?", "q_ar": "", "options": ["Hozir qalaysan?", "Qayerdasan?", "Nima yeysan?", "Qachon kelasan?"], "answer": "Hozir qalaysan?", "explain_uz": "كيفك دحين — hijoziyda «hozir qalaysan».", "audio": "hj/kifak_dahin.mp3", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ش ف ي", "back": "shifo o'zagi (shifoxona)", "deck": "msa"},
+  {"type": "word", "front": "صِحَّة", "back": "salomatlik (sihat)", "deck": "msa"},
+  {"type": "word", "front": "أَلَم", "back": "og'riq (alam)", "deck": "msa"},
+  {"type": "word", "front": "حُمَّى", "back": "isitma", "deck": "msa"},
+  {"type": "word", "front": "سُعَال", "back": "yo'tal", "deck": "msa"},
+  {"type": "word", "front": "وَصْفَة", "back": "retsept", "deck": "msa"},
+  {"type": "word", "front": "عِلَاج", "back": "davolash (iloj)", "deck": "msa"},
+  {"type": "word", "front": "ضَغْط", "back": "qon bosimi", "deck": "msa"},
+  {"type": "word", "front": "شَفَاكَ اللهُ", "back": "Alloh shifo bersin!", "deck": "msa"},
+  {"type": "phrase", "front": "كِيفَك دَحِين؟", "back": "Hozir qalaysan? (Hijoziy)", "deck": "hejazi"},
+  {"type": "phrase", "front": "حَاسِس بِتَعَب", "back": "Charchoq sezyapman (Hijoziy)", "deck": "hejazi"}
+ ]
+}

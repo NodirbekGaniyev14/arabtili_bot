@@ -1,0 +1,103 @@
+{
+ "id": "b1-24",
+ "level": "B1",
+ "module": "vocab",
+ "order": 24,
+ "title_uz": "Tabiat",
+ "title_ar": "الطَّبِيعَة",
+ "can_do_uz": "Tabiat, ob-havo va atrof-muhit haqida boy lug'at bilan gapira olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-23"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Daryo, dengiz, sahro, o'rmon... Arab she'riyati ming yildan beri tabiatni kuylaydi. Qur'onda ham tabiat oyatlari ko'p: osmon, yulduzlar, dengizlar. Bugungi so'zlar sizga she'r va oyatlarni ochadi!",
+ "grammar": {
+  "point_ar": "وَصْفُ الطَّبِيعَة",
+  "explanation_uz": "Tabiat tasviri qoliplari: (1) MAVJUDLIK: تقعُ ... في (joylashgan), تحيطُ بها الجبالُ (uni tog'lar o'rab turadi). (2) SIFATLASH — kuchli sifatlar: خلّاب (maftunkor), ساحر (sehrli), شاسع (bepoyon). (3) TABIIY HODISALAR: تهبُّ الرياحُ (shamol esadi), يتساقطُ الثلجُ (qor yog'adi), تشرقُ الشمسُ (quyosh chiqadi) ↔ تغربُ (botadi). MUHIM: ko'p tabiat so'zlari ayol jinsda: شمس، أرض، سماء، ريح.",
+  "table": [
+   {"ar": "تشرقُ الشمسُ", "uz": "quyosh chiqadi", "form": "hodisa"},
+   {"ar": "تهبُّ الرياحُ", "uz": "shamol esadi", "form": "hodisa"},
+   {"ar": "منظرٌ خلّابٌ", "uz": "maftunkor manzara", "form": "sifat"},
+   {"ar": "تحيطُ بها الجبالُ", "uz": "uni tog'lar o'rab turadi", "form": "qolip"}
+  ],
+  "common_mistakes_uz": [
+   "شَمْس (quyosh) ni erkak jinsda ishlatish — u AYOL: الشمسُ مشرقةٌ.",
+   "بَحْر (dengiz) va نَهْر (daryo) ni adashtirish.",
+   "صَحْرَاء (sahro) hamzasini tushirib qoldirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ط ب ع",
+   "meaning_uz": "tabiat; muhrlash",
+   "uz_cognates": ["tabiat", "tab'", "matbaa (bosmaxona!)"],
+   "derived": [
+    {"ar": "طَبِيعَة", "uz": "tabiat", "pattern": "فَعِيلَة"},
+    {"ar": "طَبِيعِيّ", "uz": "tabiiy", "pattern": ""},
+    {"ar": "مَطْبَعَة", "uz": "bosmaxona (matbaa)", "pattern": "مَفْعَلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "طَبِيعَة", "translit": "ṭabīʿa", "uz": "tabiat (o'zbekcha 'tabiat' aynan shundan)", "root": "ط ب ع", "pattern": "فَعِيلَة", "pos": "ot", "audio": "b1/tabia.mp3", "example_ar": "طبيعةُ بلادِنا ساحرةٌ.", "example_uz": "Yurtimiz tabiati sehrli.", "srs": true},
+  {"ar": "نَهْر", "translit": "nahr", "uz": "daryo (ko'pligi: أنهار)", "root": "ن ه ر", "pattern": "فَعْل", "pos": "ot", "audio": "b1/nahr.mp3", "example_ar": "يجري النهرُ بينَ الجبالِ.", "example_uz": "Daryo tog'lar orasidan oqadi.", "srs": true},
+  {"ar": "غَابَة", "translit": "ghāba", "uz": "o'rmon", "root": "غ ي ب", "pattern": "فَعْلَة", "pos": "ot", "audio": "b1/ghaba.mp3", "example_ar": "تمشّينا في الغابةِ صباحًا.", "example_uz": "Ertalab o'rmonda sayr qildik.", "srs": true},
+  {"ar": "صَحْرَاء", "translit": "ṣaḥrāʾ", "uz": "sahro (o'zbekcha 'sahro' aynan shundan)", "root": "ص ح ر", "pattern": "فَعْلَاء", "pos": "ot", "audio": "b1/sahra.mp3", "example_ar": "ليلُ الصحراءِ مليءٌ بالنجومِ.", "example_uz": "Sahro kechasi yulduzlarga to'la.", "srs": true},
+  {"ar": "نَجْم", "translit": "najm", "uz": "yulduz (ko'pligi: نجوم)", "root": "ن ج م", "pattern": "فَعْل", "pos": "ot", "audio": "b1/najm.mp3", "example_ar": "النجومُ تلمعُ في السماءِ.", "example_uz": "Yulduzlar osmonda porlaydi.", "srs": true},
+  {"ar": "رِيح", "translit": "rīḥ", "uz": "shamol (ko'pligi: رياح; ayol jins!)", "root": "ر و ح", "pattern": "فِعْل", "pos": "ot", "audio": "b1/rih.mp3", "example_ar": "هبّتْ ريحٌ قويةٌ.", "example_uz": "Kuchli shamol esdi.", "srs": true},
+  {"ar": "ثَلْج", "translit": "thalj", "uz": "qor", "root": "ث ل ج", "pattern": "فَعْل", "pos": "ot", "audio": "b1/thalj.mp3", "example_ar": "يتساقطُ الثلجُ على القممِ.", "example_uz": "Cho'qqilarga qor yog'moqda.", "srs": true},
+  {"ar": "مَطَر", "translit": "maṭar", "uz": "yomg'ir", "root": "م ط ر", "pattern": "فَعَل", "pos": "ot", "audio": "b1/matar.mp3", "example_ar": "نزلَ المطرُ بغزارةٍ.", "example_uz": "Yomg'ir kuchli yog'di.", "srs": true},
+  {"ar": "بِيئَة", "translit": "bīʾa", "uz": "atrof-muhit", "root": "ب و أ", "pattern": "فِيعَة", "pos": "ot", "audio": "b1/bia.mp3", "example_ar": "حمايةُ البيئةِ واجبٌ علينا.", "example_uz": "Atrof-muhitni asrash — burchimiz.", "srs": true},
+  {"ar": "خَلَّاب", "translit": "khallāb", "uz": "maftunkor, olib qo'yguvchi", "root": "خ ل ب", "pattern": "فَعَّال", "pos": "sifat", "audio": "b1/khallab.mp3", "example_ar": "منظرُ الغروبِ خلّابٌ.", "example_uz": "Quyosh botishi manzarasi maftunkor.", "srs": true},
+  {"ar": "شُرُوق", "translit": "shurūq", "uz": "quyosh chiqishi (mashriq o'zagi)", "root": "ش ر ق", "pattern": "فُعُول", "pos": "ot", "audio": "b1/shuruq.mp3", "example_ar": "استيقظنا قبلَ الشروقِ.", "example_uz": "Quyosh chiqishidan oldin uyg'ondik.", "srs": true},
+  {"ar": "غُرُوب", "translit": "ghurūb", "uz": "quyosh botishi (mag'rib o'zagi)", "root": "غ ر ب", "pattern": "فُعُول", "pos": "ot", "audio": "b1/ghurub.mp3", "example_ar": "جلسنا نشاهدُ الغروبَ.", "example_uz": "Quyosh botishini tomosha qilib o'tirdik.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "سافرنا إلى قريةٍ جبليةٍ تحيطُ بها الغاباتُ من كلِّ جانبٍ. كنا نستيقظُ عندَ الشروقِ على صوتِ النهرِ، ونمشي بينَ الأشجارِ، وفي المساءِ نجلسُ نشاهدُ الغروبَ الخلّابَ. وفي الليلِ كانتِ السماءُ مليئةً بالنجومِ اللامعةِ.",
+   "questions": [
+    {"q_uz": "Qishloqni nima o'rab turadi?", "a": "Har tomondan o'rmonlar"},
+    {"q_uz": "Ertalab nima uyg'otardi?", "a": "Daryo ovozi (quyosh chiqishida)"},
+    {"q_uz": "Kechqurun nima qilishardi?", "a": "Maftunkor quyosh botishini tomosha qilishardi"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/tabia.mp3",
+   "transcript_ar": "طَبِيعَة",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z va qiziq izdoshi?", "a": "Tabiat — matbaa ham shu o'zakdan (muhrlash)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Tabiatni tasvirlang: «Quyosh chiqadi», «Kuchli shamol esdi», «Manzara maftunkor».",
+   "target_ar": ["تُشْرِقُ الشَّمْسُ", "هَبَّتْ رِيحٌ قَوِيَّةٌ", "المَنْظَرُ خَلَّابٌ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Sevimli tabiat joyingiz haqida 4 gap yozing: qayerda, nima o'rab turadi, ob-havo va his-tuyg'ularingiz.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "شَمْس so'zi qaysi jinsda?", "q_ar": "", "options": ["ayol (الشمسُ مشرقةٌ)", "erkak", "ikkalasi", "jinsi yo'q"], "answer": "ayol (الشمسُ مشرقةٌ)", "explain_uz": "شمس، أرض، سماء، ريح — ayol jinsda.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Quyosh botishi» qaysi so'z?", "q_ar": "", "options": ["غُرُوب", "شُرُوق", "ظُهُور", "نُزُول"], "answer": "غُرُوب", "explain_uz": "غروب — botish (mag'rib); شروق — chiqish (mashriq).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Maftunkor manzara» qaysi?", "q_ar": "", "options": ["منظرٌ خلّابٌ", "منظرٌ قبيحٌ", "منظرٌ صغيرٌ", "منظرٌ قديمٌ"], "answer": "منظرٌ خلّابٌ", "explain_uz": "خلّاب — aqlni olib qo'yadigan darajada go'zal.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "daryo", "q_ar": "", "options": [], "answer": "نَهْر", "explain_uz": "نهر — daryo (anhor — daryolar).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "atrof-muhit", "q_ar": "", "options": [], "answer": "بِيئَة", "explain_uz": "بيئة — atrof-muhit.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«طَبِيعَة، مَطْبَعَة» qaysi o'zakdan?", "q_ar": "", "options": ["ط ب ع", "ط ب خ", "ت ب ع"], "answer": "ط ب ع", "explain_uz": "«ط ب ع» — muhrlash o'zagi: tabiat, matbaa.", "audio": "", "root": "ط ب ع", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Tartiblang: «Sahro kechasi yulduzlarga to'la»", "q_ar": "", "options": [], "answer": "ليلُ الصحراءِ مليءٌ بالنجومِ", "explain_uz": "Idofa + xabar + predlogli to'ldiruvchi.", "audio": "", "root": "", "pattern": "", "words": ["ليلُ", "الصحراءِ", "مليءٌ", "بالنجومِ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ط ب ع", "back": "tabiat/muhr o'zagi (matbaa)", "deck": "msa"},
+  {"type": "word", "front": "طَبِيعَة", "back": "tabiat", "deck": "msa"},
+  {"type": "word", "front": "نَهْر", "back": "daryo", "deck": "msa"},
+  {"type": "word", "front": "غَابَة", "back": "o'rmon", "deck": "msa"},
+  {"type": "word", "front": "صَحْرَاء", "back": "sahro", "deck": "msa"},
+  {"type": "word", "front": "نَجْم", "back": "yulduz", "deck": "msa"},
+  {"type": "word", "front": "رِيح", "back": "shamol", "deck": "msa"},
+  {"type": "word", "front": "ثَلْج", "back": "qor", "deck": "msa"},
+  {"type": "word", "front": "مَطَر", "back": "yomg'ir", "deck": "msa"},
+  {"type": "word", "front": "بِيئَة", "back": "atrof-muhit", "deck": "msa"},
+  {"type": "word", "front": "شُرُوق / غُرُوب", "back": "quyosh chiqishi / botishi", "deck": "msa"}
+ ]
+}

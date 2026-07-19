@@ -1,0 +1,106 @@
+{
+ "id": "b1-23",
+ "level": "B1",
+ "module": "vocab",
+ "order": 23,
+ "title_uz": "Sayohat — kengaytirilgan",
+ "title_ar": "السَّفَرُ المُتَقَدِّم",
+ "can_do_uz": "Chipta band qilish, reys o'zgarishi, yo'qolgan yuk kabi murakkab safar vaziyatlarini hal qila olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-22"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "A2 da aeroportdan o'tgandik. Endi PRO daraja: reys kechiksa? Yuk yo'qolsa? Chiptani almashtirish kerak bo'lsa? Safarda hammasi silliq ketavermaydi — ana shunda til bilish o'zini ko'rsatadi!",
+ "grammar": {
+  "point_ar": "مَوَاقِفُ السَّفَرِ الصَّعْبَة",
+  "explanation_uz": "Muammoli vaziyat qoliplari: (1) SHIKOYAT: تأخّرتِ الرحلةُ (reys kechikdi), فقدتُ حقيبتي (yukimni yo'qotdim), أُلغيتِ الرحلةُ (reys bekor qilindi — majhul!). (2) SO'ROV: هل يمكنُ تغييرُ الحجزِ؟ (bronni o'zgartirsa bo'ladimi?), متى الرحلةُ القادمةُ؟ (keyingi reys qachon?). (3) TALAB: أريدُ استرجاعَ النقودِ (pulni qaytarishni xohlayman). Rasmiyroq so'zlashing — natija tezroq keladi: لو سمحت، من فضلك.",
+  "table": [
+   {"ar": "تأخّرتِ الرحلةُ", "uz": "reys kechikdi", "form": "muammo"},
+   {"ar": "فقدتُ حقيبتي", "uz": "yukimni yo'qotdim", "form": "muammo"},
+   {"ar": "هل يمكنُ تغييرُ الحجزِ؟", "uz": "bronni o'zgartirish mumkinmi?", "form": "so'rov"},
+   {"ar": "أريدُ استرجاعَ النقودِ", "uz": "pulni qaytarib olmoqchiman", "form": "talab"}
+  ],
+  "common_mistakes_uz": [
+   "رِحْلَة (reys/safar) va رِسَالَة (xat) ni adashtirish.",
+   "حَجْز (bron) va حَجَر (tosh) — bir harf farq!",
+   "Muammoda ovoz ko'tarish — arab madaniyatida xotirjam «لو سمحت» samaraliroq."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ر ح ل",
+   "meaning_uz": "ko'chish, safar",
+   "uz_cognates": ["rihlat", "marhala (bosqich)"],
+   "derived": [
+    {"ar": "رِحْلَة", "uz": "safar, reys", "pattern": "فِعْلَة"},
+    {"ar": "رَحَّالَة", "uz": "sayyoh (ko'p yuruvchi)", "pattern": "فَعَّالَة"},
+    {"ar": "مَرْحَلَة", "uz": "bosqich, marhala", "pattern": "مَفْعَلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "رِحْلَة", "translit": "riḥla", "uz": "reys; safar", "root": "ر ح ل", "pattern": "فِعْلَة", "pos": "ot", "audio": "b1/rihla.mp3", "example_ar": "رحلتي الساعةَ الثالثةَ.", "example_uz": "Reysim soat uchda.", "srs": true},
+  {"ar": "حَجْز", "translit": "ḥajz", "uz": "bron, band qilish", "root": "ح ج ز", "pattern": "فَعْل", "pos": "ot", "audio": "b1/hajz.mp3", "example_ar": "أكّدتُ الحجزَ عبرَ التطبيقِ.", "example_uz": "Bronni ilova orqali tasdiqladim.", "srs": true},
+  {"ar": "تَذْكِرَة", "translit": "tadhkira", "uz": "chipta", "root": "ذ ك ر", "pattern": "تَفْعِلَة", "pos": "ot", "audio": "b1/tadhkira.mp3", "example_ar": "اشتريتُ تذكرةَ ذهابٍ وعودةٍ.", "example_uz": "Borish-kelish chiptasini oldim.", "srs": true},
+  {"ar": "أُلْغِيَتْ", "translit": "ulghiyat", "uz": "bekor qilindi (majhul!)", "root": "ل غ و", "pattern": "أُفْعِلَ", "pos": "fe'l", "audio": "b1/ulghiyat.mp3", "example_ar": "أُلغيتِ الرحلةُ بسببِ الطقسِ.", "example_uz": "Reys ob-havo sababli bekor qilindi.", "srs": true},
+  {"ar": "فَقَدَ", "translit": "faqada", "uz": "yo'qotdi (o'zbekcha 'faqd/fuqdon')", "root": "ف ق د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/faqada.mp3", "example_ar": "فقدتُ جوازَ سفري!", "example_uz": "Pasportimni yo'qotdim!", "srs": true},
+  {"ar": "اِسْتِرْجَاع", "translit": "istirjāʿ", "uz": "qaytarib olish (pul)", "root": "ر ج ع", "pattern": "اِسْتِفْعَال", "pos": "ot", "audio": "b1/istirja.mp3", "example_ar": "طلبتُ استرجاعَ ثمنِ التذكرةِ.", "example_uz": "Chipta pulini qaytarishni so'radim.", "srs": true},
+  {"ar": "تَأْشِيرَة", "translit": "taʾshīra", "uz": "viza", "root": "أ ش ر", "pattern": "تَفْعِيلَة", "pos": "ot", "audio": "b1/tashira.mp3", "example_ar": "حصلتُ على تأشيرةِ العمرةِ.", "example_uz": "Umra vizasini oldim.", "srs": true},
+  {"ar": "صَالَةُ الاِنْتِظَار", "translit": "ṣālatu l-intiẓār", "uz": "kutish zali", "root": "ن ظ ر", "pattern": "", "pos": "ibora", "audio": "b1/salat_intizar.mp3", "example_ar": "انتظرْ في صالةِ الانتظارِ.", "example_uz": "Kutish zalida kuting.", "srs": true},
+  {"ar": "بَوَّابَة", "translit": "bawwāba", "uz": "darvoza, geyt (bob o'zagi)", "root": "ب و ب", "pattern": "فَعَّالَة", "pos": "ot", "audio": "b1/bawwaba.mp3", "example_ar": "الصعودُ من البوابةِ رقمِ سبعةَ.", "example_uz": "Chiqish 7-geytdan.", "srs": true},
+  {"ar": "مُغَادَرَة", "translit": "mughādara", "uz": "jo'nash, uchish", "root": "غ د ر", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "b1/mughadara.mp3", "example_ar": "موعدُ المغادرةِ اقتربَ.", "example_uz": "Jo'nash vaqti yaqinlashdi.", "srs": true},
+  {"ar": "وُصُول", "translit": "wuṣūl", "uz": "yetib kelish (vosil o'zagi)", "root": "و ص ل", "pattern": "فُعُول", "pos": "ot", "audio": "b1/wusul.mp3", "example_ar": "أخبرني عندَ الوصولِ.", "example_uz": "Yetib borganda menga xabar ber.", "srs": true},
+  {"ar": "جَدْوَل", "translit": "jadwal", "uz": "jadval (o'zbekcha 'jadval' aynan shundan)", "root": "ج د ل", "pattern": "فَعْلَل", "pos": "ot", "audio": "b1/jadwal.mp3", "example_ar": "تغيّرَ جدولُ الرحلاتِ.", "example_uz": "Reyslar jadvali o'zgardi.", "srs": true}
+ ],
+ "hejazi": [
+  {"msa_ar": "أَيْنَ أَسْتَلِمُ الحَقَائِبَ؟", "hejazi_ar": "وِين أَسْتَلِم الشُّنَط؟", "translit": "wīn astalim ash-shunaṭ?", "uz": "Yuklarni qayerdan olaman? (Hijoziy)", "audio": "hj/win_shunat.mp3"},
+  {"msa_ar": "الرِّحْلَةُ تَأَخَّرَتْ", "hejazi_ar": "الرِّحْلَة اتْأَخَّرَت", "translit": "ar-riḥla it'akhkharat", "uz": "Reys kechikdi (Hijoziy)", "audio": "hj/rihla_takhkharat.mp3"}
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "وصلَ عبدُاللهِ إلى المطارِ فوجدَ أنَّ رحلتَهُ تأخّرتْ ساعتينِ. ذهبَ إلى مكتبِ الخطوطِ وسألَ بأدبٍ: «هل يمكنُ تغييرُ حجزي إلى رحلةٍ أبكرَ؟» فاعتذرَ الموظفُ وأعطاهُ قسيمةَ طعامٍ مجانيةً. وعندَ الوصولِ اكتشفَ أنَّ حقيبتَهُ لم تصلْ، فملأَ نموذجَ الفقدانِ واستلمَها في اليومِ التالي.",
+   "questions": [
+    {"q_uz": "Aeroportda qanday muammo bo'ldi?", "a": "Reys ikki soat kechikdi"},
+    {"q_uz": "Xodim nima berdi?", "a": "Bepul ovqat kuponi (قسيمة طعام مجانية)"},
+    {"q_uz": "Yuk masalasi qanday hal bo'ldi?", "a": "Yo'qolish formasini to'ldirdi, ertasi kuni oldi"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/rihla.mp3",
+   "transcript_ar": "رِحْلَة",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z ma'nosi?", "a": "Reys, safar (rihla)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Muammoni ayting: «Reysim kechikdi», «Yukimni yo'qotdim», «Bronni o'zgartirish mumkinmi?» — xotirjam ohangda.",
+   "target_ar": ["تَأَخَّرَتْ رِحْلَتِي", "فَقَدْتُ حَقِيبَتِي", "هَلْ يُمْكِنُ تَغْيِيرُ الحَجْزِ؟"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Aviakompaniyaga qisqa shikoyat xati yozing (4 gap): reys raqami, muammo, talab (pul qaytarish) va aloqa.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Reys bekor qilindi» (majhul) qaysi?", "q_ar": "", "options": ["أُلغيتِ الرحلةُ", "ألغتِ الرحلةُ", "الرحلةُ تُلغي", "لغتِ الرحلةُ"], "answer": "أُلغيتِ الرحلةُ", "explain_uz": "Majhul: أُلْغِيَتْ — bekor qilindi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Bron» arabchada?", "q_ar": "", "options": ["حَجْز", "حَجَر", "حَجّ", "جَحْز"], "answer": "حَجْز", "explain_uz": "حجز — band qilish; حجر — tosh!", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Pulni qaytarib olish» qaysi?", "q_ar": "", "options": ["اِسْتِرْجَاع النُّقُود", "إِرْسَال النُّقُود", "دَفْع النُّقُود", "جَمْع النُّقُود"], "answer": "اِسْتِرْجَاع النُّقُود", "explain_uz": "X bob masdari: qaytarib olishni so'rash.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "chipta", "q_ar": "", "options": [], "answer": "تَذْكِرَة", "explain_uz": "تذكرة — chipta.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "viza", "q_ar": "", "options": [], "answer": "تَأْشِيرَة", "explain_uz": "تأشيرة — viza.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«رِحْلَة، مَرْحَلَة، رَحَّالَة» qaysi o'zakdan?", "q_ar": "", "options": ["ر ح ل", "ر ج ل", "ح ر ل"], "answer": "ر ح ل", "explain_uz": "«ر ح ل» — safar o'zagi: rihla, marhala.", "audio": "", "root": "ر ح ل", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting (Hijoziy): nima deyilyapti?", "q_ar": "", "options": ["Yuklarni qayerdan olaman?", "Reys qachon?", "Chipta qancha?", "Taksi qayerda?"], "answer": "Yuklarni qayerdan olaman?", "explain_uz": "وين أستلم الشنط — yuk olish joyini so'rash.", "audio": "hj/win_shunat.mp3", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ر ح ل", "back": "safar o'zagi (rihla, marhala)", "deck": "msa"},
+  {"type": "word", "front": "رِحْلَة", "back": "reys, safar", "deck": "msa"},
+  {"type": "word", "front": "حَجْز", "back": "bron", "deck": "msa"},
+  {"type": "word", "front": "تَذْكِرَة", "back": "chipta", "deck": "msa"},
+  {"type": "word", "front": "فَقَدَ", "back": "yo'qotdi", "deck": "msa"},
+  {"type": "word", "front": "اِسْتِرْجَاع", "back": "qaytarib olish", "deck": "msa"},
+  {"type": "word", "front": "تَأْشِيرَة", "back": "viza", "deck": "msa"},
+  {"type": "word", "front": "بَوَّابَة", "back": "geyt, darvoza", "deck": "msa"},
+  {"type": "word", "front": "مُغَادَرَة", "back": "jo'nash", "deck": "msa"},
+  {"type": "word", "front": "وُصُول", "back": "yetib kelish", "deck": "msa"},
+  {"type": "phrase", "front": "وِين أَسْتَلِم الشُّنَط؟", "back": "Yuklarni qayerdan olaman? (Hijoziy)", "deck": "hejazi"}
+ ]
+}

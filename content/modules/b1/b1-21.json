@@ -1,0 +1,102 @@
+{
+ "id": "b1-21",
+ "level": "B1",
+ "module": "vocab",
+ "order": 21,
+ "title_uz": "OAV — ommaviy axborot",
+ "title_ar": "وَسَائِلُ الإِعْلَام",
+ "can_do_uz": "Yangiliklar tilini tushunaman: sarlavha, muxbir, intervyu, e'lon.",
+ "duration_min": 30,
+ "prerequisites": ["b1-20"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Al Jazeera yoki Al Arabiya ochsangiz nimani ko'rasiz? عاجل (SHOSHILINCH!), أخبار (yangiliklar), مراسل (muxbir)... B1 dan maqsad — yangiliklarni TUSHUNISH. Bugun teleekran va gazeta tilining kalitlarini olamiz.",
+ "grammar": {
+  "point_ar": "لُغَةُ الأَخْبَار",
+  "explanation_uz": "Yangiliklar tili MAJHULNI sevadi (b1-01 esdami?): أُعلنَ أنّ... (e'lon qilindiki), ذُكرَ أنّ... (aytilishicha), يُتوقَّعُ أنْ... (kutilmoqda). Sarlavhalar qisqa, ko'pincha masdar bilan: افتتاحُ مستشفًى جديدٍ (yangi shifoxona ochilishi). MUHIM atamalar: عاجل (shoshilinch), مباشر (jonli efir), مصدر (manba), بيان (bayonot).",
+  "table": [
+   {"ar": "أُعلنَ أنَّ...", "uz": "e'lon qilindiki... (majhul)", "form": "qolip"},
+   {"ar": "يُتوقَّعُ أنْ...", "uz": "kutilmoqdaki...", "form": "qolip"},
+   {"ar": "عَاجِل", "uz": "shoshilinch xabar", "form": "atama"},
+   {"ar": "بَثٌّ مُبَاشِر", "uz": "jonli efir", "form": "atama"}
+  ],
+  "common_mistakes_uz": [
+   "إِعْلَام (OAV) va إِعْلَان (e'lon/reklama) ni adashtirish — oxirgi harf farq qiladi!",
+   "صَحِيفَة (gazeta) va صَفْحَة (sahifa) ni chalkashtirish.",
+   "خَبَر ko'pligi أخبار ekanini unutish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع ل ن",
+   "meaning_uz": "oshkor qilish",
+   "uz_cognates": ["e'lon", "alaniya (oshkora)"],
+   "derived": [
+    {"ar": "أَعْلَنَ", "uz": "e'lon qildi", "pattern": "أَفْعَلَ"},
+    {"ar": "إِعْلَان", "uz": "e'lon, reklama", "pattern": "إِفْعَال"},
+    {"ar": "إِعْلَام", "uz": "OAV (boshqa o'zak: ع ل م)", "pattern": ""}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "إِعْلَام", "translit": "iʿlām", "uz": "OAV, axborot vositalari ('ilm o'zagi — bildirish')", "root": "ع ل م", "pattern": "إِفْعَال", "pos": "ot", "audio": "b1/ilam.mp3", "example_ar": "وسائلُ الإعلامِ قويةُ التأثيرِ.", "example_uz": "OAV ta'siri kuchli.", "srs": true},
+  {"ar": "صَحِيفَة", "translit": "ṣaḥīfa", "uz": "gazeta (o'zbekcha 'sahifa' o'zagi)", "root": "ص ح ف", "pattern": "فَعِيلَة", "pos": "ot", "audio": "b1/sahifa.mp3", "example_ar": "أقرأُ الصحيفةَ صباحًا.", "example_uz": "Ertalab gazeta o'qiyman.", "srs": true},
+  {"ar": "قَنَاة", "translit": "qanāt", "uz": "kanal (TV/Telegram)", "root": "ق ن و", "pattern": "فَعَلَة", "pos": "ot", "audio": "b1/qanat.mp3", "example_ar": "أتابعُ قناةً إخباريةً.", "example_uz": "Yangiliklar kanalini kuzataman.", "srs": true},
+  {"ar": "مُرَاسِل", "translit": "murāsil", "uz": "muxbir (joydan xabar yuboruvchi)", "root": "ر س ل", "pattern": "مُفَاعِل", "pos": "ot", "audio": "b1/murasil.mp3", "example_ar": "المراسلُ في موقعِ الحدثِ.", "example_uz": "Muxbir voqea joyida.", "srs": true},
+  {"ar": "مُقَابَلَة", "translit": "muqābala", "uz": "intervyu, uchrashuv (o'zbekcha 'muqobala')", "root": "ق ب ل", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "b1/muqabala.mp3", "example_ar": "أجرى مقابلةً مع الوزيرِ.", "example_uz": "Vazir bilan intervyu o'tkazdi.", "srs": true},
+  {"ar": "عَاجِل", "translit": "ʿājil", "uz": "shoshilinch (ekrandagi qizil belgi!)", "root": "ع ج ل", "pattern": "فَاعِل", "pos": "sifat", "audio": "b1/ajil.mp3", "example_ar": "خبرٌ عاجلٌ من العاصمةِ.", "example_uz": "Poytaxtdan shoshilinch xabar.", "srs": true},
+  {"ar": "بَثٌّ مُبَاشِر", "translit": "bathth mubāshir", "uz": "jonli efir", "root": "ب ث ث", "pattern": "", "pos": "ibora", "audio": "b1/bathth.mp3", "example_ar": "ننقلُ لكم الحفلَ بثًّا مباشرًا.", "example_uz": "Marosimni jonli efirda uzatamiz.", "srs": true},
+  {"ar": "مَصْدَر", "translit": "maṣdar", "uz": "manba (o'zbekcha 'masdar')", "root": "ص د ر", "pattern": "مَفْعَل", "pos": "ot", "audio": "b1/masdar2.mp3", "example_ar": "ذكرتْ مصادرُ رسميةٌ أنَّ...", "example_uz": "Rasmiy manbalar aytishicha...", "srs": true},
+  {"ar": "بَيَان", "translit": "bayān", "uz": "bayonot (o'zbekcha 'bayon')", "root": "ب ي ن", "pattern": "فَعَال", "pos": "ot", "audio": "b1/bayan.mp3", "example_ar": "أصدرتِ الوزارةُ بيانًا.", "example_uz": "Vazirlik bayonot chiqardi.", "srs": true},
+  {"ar": "حَدَث", "translit": "ḥadath", "uz": "voqea, hodisa (o'zbekcha 'hodisa' o'zagi)", "root": "ح د ث", "pattern": "فَعَل", "pos": "ot", "audio": "b1/hadath.mp3", "example_ar": "تابعنا أحداثَ اليومِ.", "example_uz": "Kun voqealarini kuzatdik.", "srs": true},
+  {"ar": "عُنْوَان", "translit": "ʿunwān", "uz": "sarlavha; manzil (o'zbekcha 'unvon')", "root": "ع ن ن", "pattern": "", "pos": "ot", "audio": "b1/unwan.mp3", "example_ar": "اقرأِ العناوينَ الرئيسةَ.", "example_uz": "Asosiy sarlavhalarni o'qing.", "srs": true},
+  {"ar": "رَأْيٌ عَامّ", "translit": "raʾy ʿāmm", "uz": "jamoatchilik fikri", "root": "ر أ ي", "pattern": "", "pos": "ibora", "audio": "b1/ray_amm.mp3", "example_ar": "الإعلامُ يشكّلُ الرأيَ العامَّ.", "example_uz": "OAV jamoatchilik fikrini shakllantiradi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "عاجل — أعلنتْ وزارةُ التعليمِ في بيانٍ رسميٍّ افتتاحَ عشرِ مدارسَ جديدةٍ العامَ القادمَ. وذكرَ مصدرٌ في الوزارةِ أنَّ المشروعَ سيُنفَّذُ على مرحلتينِ. ونقلَ مراسلُنا أنَّ الرأيَ العامَّ استقبلَ الخبرَ بارتياحٍ كبيرٍ.",
+   "questions": [
+    {"q_uz": "Qanday e'lon qilindi?", "a": "Kelasi yili 10 ta yangi maktab ochilishi"},
+    {"q_uz": "Matndagi majhul fe'lni toping.", "a": "سيُنفَّذُ (amalga oshiriladi)"},
+    {"q_uz": "Jamoatchilik xabarni qanday qabul qildi?", "a": "Katta mamnuniyat bilan"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/ajil.mp3",
+   "transcript_ar": "عَاجِل",
+   "questions": [
+    {"q_uz": "Bu so'z ekranda chiqsa nimani bildiradi?", "a": "Shoshilinch xabar"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Diktor bo'ling: «Shoshilinch xabar», «Rasmiy manbalar aytishicha», «Jonli efirda uzatamiz» — jiddiy ohangda ayting.",
+   "target_ar": ["خَبَرٌ عَاجِلٌ", "ذَكَرَتْ مَصَادِرُ رَسْمِيَّةٌ", "بَثٌّ مُبَاشِرٌ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Qisqa yangilik yozing (3-4 gap): sarlavha (masdar bilan), voqea (majhul fe'l bilan) va manba.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "إِعْلَام va إِعْلَان farqi?", "q_ar": "", "options": ["OAV / e'lon-reklama", "e'lon / OAV", "bir xil", "gazeta / TV"], "answer": "OAV / e'lon-reklama", "explain_uz": "إعلام (م bilan) — OAV; إعلان (ن bilan) — e'lon.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Ekrandagi «عاجل» nimani bildiradi?", "q_ar": "", "options": ["shoshilinch xabar", "ob-havo", "reklama", "sport"], "answer": "shoshilinch xabar", "explain_uz": "عاجل — tezkor/shoshilinch.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«E'lon qilindiki...» (majhul) qaysi?", "q_ar": "", "options": ["أُعلنَ أنَّ", "أعلنَ أنَّ", "إعلانٌ أنَّ", "يعلنُ أنَّ"], "answer": "أُعلنَ أنَّ", "explain_uz": "Majhul: أُعْلِنَ — e'lon qilindi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "gazeta", "q_ar": "", "options": [], "answer": "صَحِيفَة", "explain_uz": "صحيفة — gazeta (sahifa o'zagi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "manba (masdar)", "q_ar": "", "options": [], "answer": "مَصْدَر", "explain_uz": "مصدر — manba.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«أَعْلَنَ، إِعْلَان» qaysi o'zakdan?", "q_ar": "", "options": ["ع ل ن", "ع ل م", "ع م ل"], "answer": "ع ل ن", "explain_uz": "«ع ل ن» — oshkoralik o'zagi: e'lon.", "audio": "", "root": "ع ل ن", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Tartiblang: «Vazir bilan intervyu o'tkazdi»", "q_ar": "", "options": [], "answer": "أجرى مقابلةً مع الوزيرِ", "explain_uz": "أجرى مقابلة — intervyu o'tkazish qolipi.", "audio": "", "root": "", "pattern": "", "words": ["أجرى", "مقابلةً", "مع", "الوزيرِ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع ل ن", "back": "oshkoralik o'zagi (e'lon)", "deck": "msa"},
+  {"type": "word", "front": "إِعْلَام", "back": "OAV", "deck": "msa"},
+  {"type": "word", "front": "صَحِيفَة", "back": "gazeta", "deck": "msa"},
+  {"type": "word", "front": "قَنَاة", "back": "kanal", "deck": "msa"},
+  {"type": "word", "front": "مُرَاسِل", "back": "muxbir", "deck": "msa"},
+  {"type": "word", "front": "مُقَابَلَة", "back": "intervyu", "deck": "msa"},
+  {"type": "word", "front": "عَاجِل", "back": "shoshilinch", "deck": "msa"},
+  {"type": "word", "front": "مَصْدَر", "back": "manba", "deck": "msa"},
+  {"type": "word", "front": "بَيَان", "back": "bayonot", "deck": "msa"},
+  {"type": "word", "front": "عُنْوَان", "back": "sarlavha; manzil", "deck": "msa"}
+ ]
+}

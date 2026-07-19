@@ -1,0 +1,102 @@
+{
+ "id": "b1-17",
+ "level": "B1",
+ "module": "vocab",
+ "order": 17,
+ "title_uz": "Ta'lim",
+ "title_ar": "التَّعْلِيم",
+ "can_do_uz": "Ta'lim tizimi, fanlar va imtihonlar haqida gapira olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-16"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Maktab, universitet, fakultet, imtihon, daraja... Ta'lim so'zlarining aksariyati o'zbekchaga arabchadan kirgan: ta'lim, tarbiya, fan, adabiyot, imtihon! Bugun ularni «asl vatanida» ko'rasiz.",
+ "grammar": {
+  "point_ar": "مُصْطَلَحَاتُ التَّعْلِيم",
+  "explanation_uz": "Ta'lim atamalari ko'pincha masdar shaklida: تَعْلِيم (o'qitish, II bob), تَعَلُّم (o'rganish, V bob), تَرْبِيَة (tarbiya), دِرَاسَة (o'qish). Farqni his qiling: التعليم — o'qitish jarayoni (ustoz tomoni), التعلّم — o'rganish (talaba tomoni). Foydali qoliplar: تخرّجَ في جامعة... (universitetni bitirdi), حصلَ على شهادة... (diplom oldi), نجحَ في امتحان... (imtihondan o'tdi).",
+  "table": [
+   {"ar": "تَعْلِيم / تَعَلُّم", "uz": "o'qitish / o'rganish", "form": "II / V masdar"},
+   {"ar": "تخرّجَ في الجامعةِ", "uz": "universitetni bitirdi", "form": "qolip"},
+   {"ar": "حصلَ على شهادةٍ", "uz": "diplom/sertifikat oldi", "form": "qolip"},
+   {"ar": "نجحَ في الامتحانِ", "uz": "imtihondan o'tdi", "form": "qolip"}
+  ],
+  "common_mistakes_uz": [
+   "تخرّج مِن deyish — arabchada ko'proq تخرّجَ في الجامعة.",
+   "كُلِّيَّة (fakultet) bilan كُلّ (hamma) ni adashtirish.",
+   "دَرَجَة (baho/daraja) va دَرْس (dars) o'zaklarini chalkashtirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "د ر س",
+   "meaning_uz": "o'qish, o'rganish",
+   "uz_cognates": ["dars", "mudarris", "madrasa"],
+   "derived": [
+    {"ar": "دِرَاسَة", "uz": "o'qish, tadqiqot", "pattern": "فِعَالَة"},
+    {"ar": "مُدَرِّس", "uz": "o'qituvchi, mudarris", "pattern": "مُفَعِّل"},
+    {"ar": "مَدْرَسَة", "uz": "maktab, madrasa", "pattern": "مَفْعَلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "جَامِعَة", "translit": "jāmiʿa", "uz": "universitet ('jamlovchi' — jome o'zagi)", "root": "ج م ع", "pattern": "فَاعِلَة", "pos": "ot", "audio": "b1/jamia.mp3", "example_ar": "أدرسُ في الجامعةِ الوطنيةِ.", "example_uz": "Milliy universitetda o'qiyman.", "srs": true},
+  {"ar": "كُلِّيَّة", "translit": "kulliyya", "uz": "fakultet", "root": "ك ل ل", "pattern": "", "pos": "ot", "audio": "b1/kulliyya.mp3", "example_ar": "كليةُ الطبِّ مشهورةٌ.", "example_uz": "Tibbiyot fakulteti mashhur.", "srs": true},
+  {"ar": "تَخَصُّص", "translit": "takhaṣṣuṣ", "uz": "mutaxassislik, yo'nalish (o'zbekcha 'taxassus')", "root": "خ ص ص", "pattern": "تَفَعُّل", "pos": "ot", "audio": "b1/takhassus.mp3", "example_ar": "ما تخصصُكَ في الجامعةِ؟", "example_uz": "Universitetda yo'nalishingiz nima?", "srs": true},
+  {"ar": "مُحَاضَرَة", "translit": "muḥāḍara", "uz": "ma'ruza (o'zbekcha 'muhozara')", "root": "ح ض ر", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "b1/muhadara.mp3", "example_ar": "المحاضرةُ تبدأُ التاسعةَ.", "example_uz": "Ma'ruza to'qqizda boshlanadi.", "srs": true},
+  {"ar": "تَخَرَّجَ", "translit": "takharraja", "uz": "bitirdi (o'quv yurtini)", "root": "خ ر ج", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "b1/takharraja.mp3", "example_ar": "تخرّجَ في كليةِ الهندسةِ.", "example_uz": "Muhandislik fakultetini bitirdi.", "srs": true},
+  {"ar": "دَرَجَة", "translit": "daraja", "uz": "baho; daraja (o'zbekcha 'daraja')", "root": "د ر ج", "pattern": "فَعَلَة", "pos": "ot", "audio": "b1/daraja2.mp3", "example_ar": "حصلَ على درجةٍ عاليةٍ.", "example_uz": "Yuqori baho oldi.", "srs": true},
+  {"ar": "مَادَّة", "translit": "mādda", "uz": "fan, predmet (o'zbekcha 'modda')", "root": "م د د", "pattern": "", "pos": "ot", "audio": "b1/madda.mp3", "example_ar": "موادُّ هذا الفصلِ سبعٌ.", "example_uz": "Bu semestr fanlari yettita.", "srs": true},
+  {"ar": "بَحْث", "translit": "baḥth", "uz": "tadqiqot, izlanish (o'zbekcha 'bahs')", "root": "ب ح ث", "pattern": "فَعْل", "pos": "ot", "audio": "b1/bahth.mp3", "example_ar": "كتبَ بحثًا عن التاريخِ.", "example_uz": "Tarix haqida tadqiqot yozdi.", "srs": true},
+  {"ar": "مِنْحَة", "translit": "minḥa", "uz": "stipendiya, grant", "root": "م ن ح", "pattern": "فِعْلَة", "pos": "ot", "audio": "b1/minha.mp3", "example_ar": "حصلَ على منحةٍ دراسيةٍ.", "example_uz": "O'quv grantini qo'lga kiritdi.", "srs": true},
+  {"ar": "فَصْل دِرَاسِيّ", "translit": "faṣl dirāsī", "uz": "semestr, chorak", "root": "ف ص ل", "pattern": "", "pos": "ibora", "audio": "b1/fasl_dirasi.mp3", "example_ar": "ينتهي الفصلُ الدراسيُّ غدًا.", "example_uz": "Semestr ertaga tugaydi.", "srs": true},
+  {"ar": "تَرْبِيَة", "translit": "tarbiya", "uz": "tarbiya (o'zbekcha 'tarbiya' aynan shundan)", "root": "ر ب و", "pattern": "تَفْعِلَة", "pos": "ot", "audio": "b1/tarbiya.mp3", "example_ar": "التربيةُ قبلَ التعليمِ.", "example_uz": "Tarbiya ta'limdan oldin.", "srs": true},
+  {"ar": "قَاعَة", "translit": "qāʿa", "uz": "zal, auditoriya", "root": "ق و ع", "pattern": "فَعْلَة", "pos": "ot", "audio": "b1/qaa.mp3", "example_ar": "القاعةُ ممتلئةٌ بالطلابِ.", "example_uz": "Zal talabalarga to'la.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "حصلتْ زينبُ على منحةٍ دراسيةٍ في كليةِ الطبِّ. تحضرُ المحاضراتِ صباحًا وتراجعُ موادَّها مساءً. كتبتْ في الفصلِ الأولِ بحثًا ممتازًا، فحصلتْ على أعلى درجةٍ. تقولُ: «أريدُ أنْ أتخرّجَ بتفوقٍ لِأخدمَ بلدي».",
+   "questions": [
+    {"q_uz": "Zaynab qanday imkoniyat qo'lga kiritdi?", "a": "Tibbiyot fakultetida o'quv granti"},
+    {"q_uz": "Birinchi semestrda nima qildi?", "a": "A'lo tadqiqot yozib, eng yuqori baho oldi"},
+    {"q_uz": "Uning maqsadi nima?", "a": "A'lo bitirib, yurtiga xizmat qilish"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/jamia.mp3",
+   "transcript_ar": "جَامِعَة",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z ma'nosi va o'zagi?", "a": "Universitet — ج م ع (jamlash)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "O'zingiz haqingizda ayting: qayerda o'qigansiz/o'qiysiz, yo'nalishingiz va qaysi fanni yaxshi ko'rasiz.",
+   "target_ar": ["أَدْرُسُ فِي الجَامِعَةِ", "تَخَصُّصِي الهَنْدَسَةُ", "أُحِبُّ مَادَّةَ التَّارِيخِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Ta'lim yo'lingiz haqida 4 gap yozing: maktab, universitet/kasb, sevimli fan va kelajak rejasi.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Universitetni bitirdi» to'g'ri qolip qaysi?", "q_ar": "", "options": ["تخرّجَ في الجامعةِ", "خرجَ من الجامعةِ", "تخرّجَ الجامعةَ", "خرّجَ في الجامعةِ"], "answer": "تخرّجَ في الجامعةِ", "explain_uz": "تخرّج في — o'quv yurtini bitirish qolipi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "التَّعْلِيم va التَّعَلُّم farqi?", "q_ar": "", "options": ["o'qitish (ustoz) / o'rganish (talaba)", "bir xil", "maktab / universitet", "eski / yangi"], "answer": "o'qitish (ustoz) / o'rganish (talaba)", "explain_uz": "II bob — o'qitish; V bob — o'zi o'rganish.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "fakultet", "q_ar": "", "options": [], "answer": "كُلِّيَّة", "explain_uz": "كُلِّيَّة — fakultet.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ma'ruza", "q_ar": "", "options": [], "answer": "مُحَاضَرَة", "explain_uz": "مُحَاضَرَة — ma'ruza (muhozara).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Stipendiya/grant» qaysi so'z?", "q_ar": "", "options": ["مِنْحَة", "مِهْنَة", "مِحْنَة", "مَدِينَة"], "answer": "مِنْحَة", "explain_uz": "مِنْحَة — grant; مِهْنَة — kasb; adashtirmang!", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«دِرَاسَة، مُدَرِّس، مَدْرَسَة» qaysi o'zakdan?", "q_ar": "", "options": ["د ر س", "د ر ج", "ر س م"], "answer": "د ر س", "explain_uz": "«د ر س» — dars o'zagi: madrasa, mudarris.", "audio": "", "root": "د ر س", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Tartiblang: «Yuqori baho oldi»", "q_ar": "", "options": [], "answer": "حصلَ على درجةٍ عاليةٍ", "explain_uz": "حصل على — «olish» qolipi.", "audio": "", "root": "", "pattern": "", "words": ["حصلَ", "على", "درجةٍ", "عاليةٍ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "د ر س", "back": "dars o'zagi (madrasa, mudarris)", "deck": "msa"},
+  {"type": "word", "front": "جَامِعَة", "back": "universitet", "deck": "msa"},
+  {"type": "word", "front": "كُلِّيَّة", "back": "fakultet", "deck": "msa"},
+  {"type": "word", "front": "تَخَصُّص", "back": "mutaxassislik", "deck": "msa"},
+  {"type": "word", "front": "مُحَاضَرَة", "back": "ma'ruza", "deck": "msa"},
+  {"type": "word", "front": "تَخَرَّجَ", "back": "bitirdi", "deck": "msa"},
+  {"type": "word", "front": "دَرَجَة", "back": "baho, daraja", "deck": "msa"},
+  {"type": "word", "front": "مَادَّة", "back": "fan, predmet", "deck": "msa"},
+  {"type": "word", "front": "بَحْث", "back": "tadqiqot", "deck": "msa"},
+  {"type": "word", "front": "مِنْحَة", "back": "stipendiya, grant", "deck": "msa"}
+ ]
+}

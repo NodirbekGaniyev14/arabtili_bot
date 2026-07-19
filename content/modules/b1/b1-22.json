@@ -1,0 +1,102 @@
+{
+ "id": "b1-22",
+ "level": "B1",
+ "module": "vocab",
+ "order": 22,
+ "title_uz": "Iqtisod",
+ "title_ar": "الاِقْتِصَاد",
+ "can_do_uz": "Iqtisodiy yangiliklar so'zlarini tushunaman: narx-navo, valyuta, o'sish, inflyatsiya.",
+ "duration_min": 30,
+ "prerequisites": ["b1-21"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«Narxlar ko'tarildi», «dollar kursi», «iqtisodiy o'sish» — har kuni eshitamiz. Arabcha yangiliklarning yarmi iqtisod! Tanish so'zlar: iqtisod (اقتصاد), qiymat (قيمة), daromad (دخل — 'daxl'). Bugun pul tili!",
+ "grammar": {
+  "point_ar": "لُغَةُ الاِقْتِصَاد",
+  "explanation_uz": "Iqtisod xabarlarining sevimli fe'llari: اِرْتَفَعَ (ko'tarildi) ↔ اِنْخَفَضَ (tushdi), زَادَ (oshdi) ↔ نَقَصَ (kamaydi). Foiz: بنسبةِ خمسةٍ بالمئةِ (besh foizga). Qoliplar: ارتفعتِ الأسعارُ بنسبةِ ١٠٪ (narxlar 10% ga oshdi), انخفضَ سعرُ صرفِ الدولارِ (dollar kursi tushdi). Bu juftliklarni bilsangiz, iqtisodiy xabarning skeleti qo'lingizda.",
+  "table": [
+   {"ar": "ارتفعَ ↔ انخفضَ", "uz": "ko'tarildi ↔ tushdi", "form": "juftlik"},
+   {"ar": "زادَ ↔ نقصَ", "uz": "oshdi ↔ kamaydi", "form": "juftlik"},
+   {"ar": "بنسبةِ ٥٪", "uz": "5 foizga", "form": "foiz"},
+   {"ar": "سعرُ الصرفِ", "uz": "valyuta kursi", "form": "atama"}
+  ],
+  "common_mistakes_uz": [
+   "دَخْل (daromad) va دَخَلَ (kirdi) ni adashtirish — sukunga e'tibor.",
+   "عُمْلَة (valyuta) va عَمَل (ish) — turli so'zlar.",
+   "ارتفع predlogsiz ishlatilishini unutish: ارتفعت الأسعارُ (to'g'ridan-to'g'ri ega)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ق ص د",
+   "meaning_uz": "maqsad; me'yor",
+   "uz_cognates": ["iqtisod", "maqsad", "qasd"],
+   "derived": [
+    {"ar": "اِقْتِصَاد", "uz": "iqtisod (me'yor bilan sarflash)", "pattern": "اِفْتِعَال"},
+    {"ar": "مَقْصِد", "uz": "maqsad, boradigan joy", "pattern": "مَفْعِل"},
+    {"ar": "اِقْتِصَادِيّ", "uz": "iqtisodiy; iqtisodchi", "pattern": ""}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "اِقْتِصَاد", "translit": "iqtiṣād", "uz": "iqtisod (o'zbekcha 'iqtisod' aynan shundan)", "root": "ق ص د", "pattern": "اِفْتِعَال", "pos": "ot", "audio": "b1/iqtisad.mp3", "example_ar": "اقتصادُ البلادِ ينمو.", "example_uz": "Mamlakat iqtisodi o'smoqda.", "srs": true},
+  {"ar": "عُمْلَة", "translit": "ʿumla", "uz": "valyuta, pul birligi", "root": "ع م ل", "pattern": "فُعْلَة", "pos": "ot", "audio": "b1/umla.mp3", "example_ar": "الريالُ عملةُ السعوديةِ.", "example_uz": "Riyol — Saudiya valyutasi.", "srs": true},
+  {"ar": "دَخْل", "translit": "dakhl", "uz": "daromad (o'zbekcha 'daxl')", "root": "د خ ل", "pattern": "فَعْل", "pos": "ot", "audio": "b1/dakhl.mp3", "example_ar": "دخلُهُ الشهريُّ جيدٌ.", "example_uz": "Oylik daromadi yaxshi.", "srs": true},
+  {"ar": "مَصْرُوف", "translit": "maṣrūf", "uz": "xarajat (o'zbekcha 'masraf/sarf')", "root": "ص ر ف", "pattern": "مَفْعُول", "pos": "ot", "audio": "b1/masruf.mp3", "example_ar": "قلّلْ مصروفاتِكَ الزائدةَ.", "example_uz": "Ortiqcha xarajatlaringni kamaytir.", "srs": true},
+  {"ar": "اِرْتَفَعَ", "translit": "irtafaʿa", "uz": "ko'tarildi (narx/kurs)", "root": "ر ف ع", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/irtafaa.mp3", "example_ar": "ارتفعَ سعرُ الذهبِ.", "example_uz": "Oltin narxi ko'tarildi.", "srs": true},
+  {"ar": "اِنْخَفَضَ", "translit": "inkhafaḍa", "uz": "pasaydi, tushdi", "root": "خ ف ض", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "b1/inkhafada.mp3", "example_ar": "انخفضتْ أسعارُ الخضارِ.", "example_uz": "Sabzavot narxlari tushdi.", "srs": true},
+  {"ar": "نِسْبَة", "translit": "nisba", "uz": "foiz, nisbat (o'zbekcha 'nisbat')", "root": "ن س ب", "pattern": "فِعْلَة", "pos": "ot", "audio": "b1/nisba.mp3", "example_ar": "زادَ الإنتاجُ بنسبةِ ٢٠٪.", "example_uz": "Ishlab chiqarish 20% ga oshdi.", "srs": true},
+  {"ar": "تَضَخُّم", "translit": "taḍakhkhum", "uz": "inflyatsiya (shishish)", "root": "ض خ م", "pattern": "تَفَعُّل", "pos": "ot", "audio": "b1/tadakhkhum.mp3", "example_ar": "التضخمُ يقلقُ الناسَ.", "example_uz": "Inflyatsiya odamlarni tashvishlantiradi.", "srs": true},
+  {"ar": "بَنْك مَرْكَزِيّ", "translit": "bank markazī", "uz": "markaziy bank", "root": "ر ك ز", "pattern": "", "pos": "ibora", "audio": "b1/bank_markazi.mp3", "example_ar": "أعلنَ البنكُ المركزيُّ سعرَ الصرفِ.", "example_uz": "Markaziy bank kursni e'lon qildi.", "srs": true},
+  {"ar": "سُوقُ العَمَل", "translit": "sūqu l-ʿamal", "uz": "mehnat bozori", "root": "س و ق", "pattern": "", "pos": "ibora", "audio": "b1/suq_amal.mp3", "example_ar": "سوقُ العملِ يحتاجُ مهاراتٍ جديدةً.", "example_uz": "Mehnat bozori yangi ko'nikmalar talab qiladi.", "srs": true},
+  {"ar": "قِيمَة", "translit": "qīma", "uz": "qiymat (o'zbekcha 'qiymat' aynan shundan)", "root": "ق و م", "pattern": "فِعْلَة", "pos": "ot", "audio": "b1/qima.mp3", "example_ar": "قيمةُ العملةِ مستقرةٌ.", "example_uz": "Valyuta qiymati barqaror.", "srs": true},
+  {"ar": "نُمُوّ", "translit": "numuww", "uz": "o'sish (iqtisodiy)", "root": "ن م و", "pattern": "فُعُول", "pos": "ot", "audio": "b1/numuww.mp3", "example_ar": "حققَ الاقتصادُ نموًّا جيدًا.", "example_uz": "Iqtisod yaxshi o'sishga erishdi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أعلنَ البنكُ المركزيُّ أنَّ الاقتصادَ حققَ نموًّا بنسبةِ خمسةٍ بالمئةِ هذا العامَ. وارتفعَ دخلُ الفردِ، بينما انخفضَ التضخمُ إلى أدنى مستوًى منذُ سنواتٍ. ويتوقعُ الخبراءُ أنْ تستقرَّ قيمةُ العملةِ الوطنيةِ.",
+   "questions": [
+    {"q_uz": "Iqtisod qancha o'sdi?", "a": "5 foizga (بنسبة ٥٪)"},
+    {"q_uz": "Nima ko'tarildi va nima tushdi?", "a": "Daromad ko'tarildi, inflyatsiya tushdi"},
+    {"q_uz": "Ekspertlar nimani kutmoqda?", "a": "Milliy valyuta qiymati barqarorlashishini"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/iqtisad.mp3",
+   "transcript_ar": "اِقْتِصَاد",
+   "questions": [
+    {"q_uz": "Eshitilgan so'zning asl ma'nosi?", "a": "Me'yor bilan sarflash — iqtisod (ق ص د o'zagi)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Iqtisodiy diktor bo'ling: «Oltin narxi ko'tarildi», «Sabzavot narxlari tushdi», «Iqtisod 5% ga o'sdi».",
+   "target_ar": ["اِرْتَفَعَ سِعْرُ الذَّهَبِ", "اِنْخَفَضَتْ أَسْعَارُ الخُضَارِ", "نَمَا الاِقْتِصَادُ بِنِسْبَةِ ٥٪"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Oilaviy byudjet haqida 4 gap yozing: daromad, xarajatlar, tejash va maqsad — ارتفع/انخفض dan foydalaning.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "اِرْتَفَعَ ning zidi?", "q_ar": "", "options": ["اِنْخَفَضَ", "اِزْدَادَ", "اِسْتَقَرَّ", "اِفْتَتَحَ"], "answer": "اِنْخَفَضَ", "explain_uz": "Ko'tarildi ↔ tushdi (irtafa'a ↔ inxafada).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«5 foizga» qanday aytiladi?", "q_ar": "", "options": ["بنسبةِ خمسةٍ بالمئةِ", "بخمسةِ أموالٍ", "خمسة أضعاف", "نصف خمسة"], "answer": "بنسبةِ خمسةٍ بالمئةِ", "explain_uz": "بنسبة ...٪ — foiz qolipi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Inflyatsiya» arabchada?", "q_ar": "", "options": ["تَضَخُّم", "تَقَدُّم", "تَخَرُّج", "تَحَدُّث"], "answer": "تَضَخُّم", "explain_uz": "تضخم — 'shishish' (narxlar shishishi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "daromad (daxl)", "q_ar": "", "options": [], "answer": "دَخْل", "explain_uz": "دَخْل — daromad.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "qiymat", "q_ar": "", "options": [], "answer": "قِيمَة", "explain_uz": "قيمة — qiymat.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«اِقْتِصَاد، مَقْصِد» qaysi o'zakdan?", "q_ar": "", "options": ["ق ص د", "ق ص ص", "ق ع د"], "answer": "ق ص د", "explain_uz": "«ق ص د» — maqsad/me'yor o'zagi: iqtisod.", "audio": "", "root": "ق ص د", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Riyol qaysi davlat valyutasi?", "q_ar": "الرِّيَالُ عُمْلَةُ...", "options": ["السعوديةِ", "مصرَ", "تركيا", "الإماراتِ فقط"], "answer": "السعوديةِ", "explain_uz": "الريال السعودي — Saudiya valyutasi.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ق ص د", "back": "maqsad o'zagi (iqtisod, qasd)", "deck": "msa"},
+  {"type": "word", "front": "اِقْتِصَاد", "back": "iqtisod", "deck": "msa"},
+  {"type": "word", "front": "عُمْلَة", "back": "valyuta", "deck": "msa"},
+  {"type": "word", "front": "دَخْل", "back": "daromad", "deck": "msa"},
+  {"type": "word", "front": "مَصْرُوف", "back": "xarajat", "deck": "msa"},
+  {"type": "word", "front": "اِرْتَفَعَ", "back": "ko'tarildi", "deck": "msa"},
+  {"type": "word", "front": "اِنْخَفَضَ", "back": "pasaydi", "deck": "msa"},
+  {"type": "word", "front": "نِسْبَة", "back": "foiz, nisbat", "deck": "msa"},
+  {"type": "word", "front": "تَضَخُّم", "back": "inflyatsiya", "deck": "msa"},
+  {"type": "word", "front": "قِيمَة", "back": "qiymat", "deck": "msa"}
+ ]
+}
