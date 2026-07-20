@@ -1,0 +1,96 @@
+{
+ "id": "b1-43",
+ "level": "B1",
+ "module": "skills",
+ "order": 43,
+ "title_uz": "Yozish: insho",
+ "title_ar": "كِتَابَة: مَقَالٌ قَصِير",
+ "can_do_uz": "Kirish-asosiy qism-xulosa tuzilishida qisqa insho yoza olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-42"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Insho — fikringizning imorati: POYDEVOR (kirish), DEVORLAR (asosiy fikrlar), TOM (xulosa). Arabcha insho bog'lovchilarga boy bo'lishi kerak — ular fikrni ipga tizadi. Bugun «Ilm ahamiyati» mavzusida namunaviy insho quramiz.",
+ "grammar": {
+  "point_ar": "بِنْيَةُ المَقَال",
+  "explanation_uz": "INSHO TUZILISHI: (1) KIRISH — mavzuni e'lon qilish: يُعَدُّ ... مِن أهمِّ... (... eng muhimlaridan sanaladi). (2) ASOSIY QISM — har fikr yangi bog'lovchi bilan: أولًا، ثانيًا، بالإضافةِ إلى ذلك (bundan tashqari), على سبيلِ المثالِ (masalan). (3) QARSHI FIKR (ixtiyoriy): ومع ذلك (shunga qaramay). (4) XULOSA: وفي الختامِ، يمكنُ القولُ إنَّ... (xulosa qilib aytish mumkinki...).",
+  "table": [
+   {"ar": "يُعَدُّ من أهمِّ...", "uz": "eng muhimlaridan sanaladi (kirish)", "form": "kirish"},
+   {"ar": "بالإضافةِ إلى ذلك", "uz": "bundan tashqari", "form": "bog'lovchi"},
+   {"ar": "على سبيلِ المثالِ", "uz": "masalan", "form": "bog'lovchi"},
+   {"ar": "يمكنُ القولُ إنَّ...", "uz": "aytish mumkinki... (xulosa)", "form": "xulosa"}
+  ],
+  "common_mistakes_uz": [
+   "Bog'lovchisiz «sakrab» yozish — har xatboshi ko'prik bilan boshlansin.",
+   "Bir gapda uch fikr — bitta gap, bitta fikr.",
+   "Xulosada YANGI fikr kiritish — xulosa faqat jamlaydi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ك ت ب",
+   "meaning_uz": "yozish",
+   "uz_cognates": ["kitob", "maktab", "kotib"],
+   "derived": [
+    {"ar": "مَقَال", "uz": "maqola, insho", "pattern": ""},
+    {"ar": "كَاتِب", "uz": "yozuvchi", "pattern": "فَاعِل"},
+    {"ar": "مُقَدِّمَة", "uz": "kirish, muqaddima", "pattern": ""}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "مُقَدِّمَة", "translit": "muqaddima", "uz": "kirish qismi (o'zbekcha 'muqaddima')", "root": "ق د م", "pattern": "مُفَعِّلَة", "pos": "ot", "audio": "b1/muqaddima.mp3", "example_ar": "ابدأْ بمقدمةٍ قصيرةٍ.", "example_uz": "Qisqa kirish bilan boshlang.", "srs": true},
+  {"ar": "خَاتِمَة", "translit": "khātima", "uz": "xulosa qismi (o'zbekcha 'xotima')", "root": "خ ت م", "pattern": "فَاعِلَة", "pos": "ot", "audio": "b1/khatima.mp3", "example_ar": "لخّصْ فكرتَكَ في الخاتمةِ.", "example_uz": "Xotimada fikringizni jamlang.", "srs": true},
+  {"ar": "يُعَدُّ", "translit": "yuʿaddu", "uz": "sanaladi, hisoblanadi (majhul!)", "root": "ع د د", "pattern": "يُفْعَلُ", "pos": "fe'l", "audio": "b1/yuaddu.mp3", "example_ar": "يُعدُّ العلمُ أساسَ التقدمِ.", "example_uz": "Ilm taraqqiyot asosi sanaladi.", "srs": true},
+  {"ar": "بِالإِضَافَةِ إِلَى", "translit": "bil-iḍāfati ilā", "uz": "bundan tashqari, ...ga qo'shimcha", "root": "ض ي ف", "pattern": "", "pos": "ibora", "audio": "b1/bil_idafa.mp3", "example_ar": "بالإضافةِ إلى ذلك، العلمُ يبني الأخلاقَ.", "example_uz": "Bundan tashqari, ilm axloqni quradi.", "srs": true},
+  {"ar": "عَلَى سَبِيلِ المِثَال", "translit": "ʿalā sabīli l-mithāl", "uz": "masalan (misol yo'lida)", "root": "م ث ل", "pattern": "", "pos": "ibora", "audio": "b1/ala_sabil.mp3", "example_ar": "على سبيلِ المثالِ، الطبُّ يحتاجُ علمًا.", "example_uz": "Masalan, tibbiyot ilm talab qiladi.", "srs": true},
+  {"ar": "وَمَعَ ذٰلِكَ", "translit": "wa-maʿa dhālika", "uz": "shunga qaramay", "root": "", "pattern": "", "pos": "ibora", "audio": "b1/maa_dhalika.mp3", "example_ar": "ومع ذلك، يهملُ بعضُ الناسِ القراءةَ.", "example_uz": "Shunga qaramay, ba'zilar o'qishga beparvo.", "srs": true},
+  {"ar": "لَخَّصَ", "translit": "lakhkhaṣa", "uz": "qisqartirib jamladi (o'zbekcha 'talxis, xulosa')", "root": "ل خ ص", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/lakhkhasa.mp3", "example_ar": "لخّصِ المقالَ في ثلاثةِ أسطرٍ.", "example_uz": "Maqolani uch qatorda jamlang.", "srs": true},
+  {"ar": "فِقْرَة", "translit": "fiqra", "uz": "xatboshi, abzats", "root": "ف ق ر", "pattern": "فِعْلَة", "pos": "ot", "audio": "b1/fiqra.mp3", "example_ar": "كلُّ فقرةٍ تحملُ فكرةً واحدةً.", "example_uz": "Har xatboshi bitta fikr ko'taradi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أهميةُ العلمِ: يُعدُّ العلمُ من أهمِّ أسبابِ تقدمِ الأممِ. أولًا، العلمُ يفتحُ أبوابَ العملِ؛ فالطبيبُ والمهندسُ تعلّما سنواتٍ طويلةً. بالإضافةِ إلى ذلك، العلمُ يبني عقلًا ناقدًا يميّزُ بينَ الحقيقةِ والإشاعةِ. ومع ذلك، يظنُّ بعضُ الناسِ أنَّ النجاحَ ممكنٌ بلا تعلمٍ، وهذا وهمٌ. وفي الختامِ، يمكنُ القولُ إنَّ العلمَ استثمارٌ لا يخسرُ صاحبُهُ أبدًا.",
+   "questions": [
+    {"q_uz": "Inshoning uch qismini ko'rsating.", "a": "Kirish (يُعدّ...), asosiy qism (أولًا، بالإضافة...), xulosa (وفي الختام)"},
+    {"q_uz": "Qanday dalillar keltirilgan?", "a": "Ish eshiklarini ochadi; tanqidiy aql quradi"},
+    {"q_uz": "Muallif qanday noto'g'ri qarashni rad etdi?", "a": "«O'qimasdan ham muvaffaqiyat mumkin» degan xomxayolni"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/muqaddima.mp3",
+   "transcript_ar": "مُقَدِّمَة",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z inshoda qaysi qism?", "a": "Kirish (muqaddima)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Insho «skeletini» og'zaki ayting: kirish jumlasi, «birinchidan...», «bundan tashqari...», «xulosa qilib...».",
+   "target_ar": ["يُعَدُّ العِلْمُ مِنْ أَهَمِّ...", "بِالإِضَافَةِ إِلَى ذٰلِكَ", "وَفِي الخِتَامِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«Til o'rganish ahamiyati» mavzusida 6-8 gapli insho yozing: kirish, 2 dalil (bog'lovchilar bilan), xulosa.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "Insho necha asosiy qismdan iborat?", "q_ar": "", "options": ["3: kirish, asosiy qism, xulosa", "2: savol, javob", "5: har biri alohida", "1: yaxlit matn"], "answer": "3: kirish, asosiy qism, xulosa", "explain_uz": "Muqaddima — asosiy fikrlar — xotima.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«بالإضافةِ إلى ذلك» qachon ishlatiladi?", "q_ar": "", "options": ["yangi qo'shimcha dalil kiritganda", "xulosada", "salomlashishda", "savol berganda"], "answer": "yangi qo'shimcha dalil kiritganda", "explain_uz": "«Bundan tashqari» — fikr ustiga fikr.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Xulosaning oltin qoidasi?", "q_ar": "", "options": ["yangi fikr kiritmaslik, jamlash", "eng uzun qism bo'lishi", "savol bilan tugashi", "raqamlar keltirish"], "answer": "yangi fikr kiritmaslik, jamlash", "explain_uz": "Xotima — tom: faqat yopadi, qurmaydi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "kirish (muqaddima)", "q_ar": "", "options": [], "answer": "مُقَدِّمَة", "explain_uz": "مقدمة — oldinga qo'yilgan qism.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "masalan", "q_ar": "", "options": [], "answer": "عَلَى سَبِيلِ المِثَال", "explain_uz": "Misol yo'li bilan — masalan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«خَاتِمَة، خِتَام» qaysi o'zakdan?", "q_ar": "", "options": ["خ ت م", "خ د م", "ح ت م"], "answer": "خ ت م", "explain_uz": "«خ ت م» — muhrlash/yakunlash o'zagi (xotima, xatm).", "audio": "", "root": "خ ت م", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«يُعَدُّ العلمُ أساسَ التقدمِ» — يُعدُّ qanday shakl?", "q_ar": "", "options": ["majhul muzori' (sanaladi)", "amr", "o'tgan zamon", "masdar"], "answer": "majhul muzori' (sanaladi)", "explain_uz": "Insho uslubining sevimli fe'li — «hisoblanadi».", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "word", "front": "مُقَدِّمَة", "back": "kirish qismi", "deck": "msa"},
+  {"type": "word", "front": "خَاتِمَة", "back": "xulosa qismi (xotima)", "deck": "msa"},
+  {"type": "word", "front": "يُعَدُّ", "back": "sanaladi", "deck": "msa"},
+  {"type": "word", "front": "بِالإِضَافَةِ إِلَى", "back": "bundan tashqari", "deck": "msa"},
+  {"type": "word", "front": "عَلَى سَبِيلِ المِثَال", "back": "masalan", "deck": "msa"},
+  {"type": "word", "front": "وَمَعَ ذٰلِكَ", "back": "shunga qaramay", "deck": "msa"},
+  {"type": "word", "front": "لَخَّصَ", "back": "jamladi, qisqartirdi", "deck": "msa"},
+  {"type": "word", "front": "فِقْرَة", "back": "xatboshi", "deck": "msa"}
+ ]
+}

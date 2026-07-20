@@ -1,0 +1,98 @@
+{
+ "id": "b1-40",
+ "level": "B1",
+ "module": "skills",
+ "order": 40,
+ "title_uz": "Tinglash: intervyu",
+ "title_ar": "اِسْتِمَاع: مُقَابَلَة",
+ "can_do_uz": "Savol-javob shaklidagi suhbatni tinglab, har tomonning pozitsiyasini aniqlay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-39"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Intervyu — ikki ovoz o'yini: muxbir SO'RAYDI, mehmon JAVOB BERADI. Savol so'zlarini (كيف، لماذا، ما) ushlang — javob qayerdaligini bilasiz. Bugun yosh tabiba bilan suhbat tinglaymiz: kasb tanlash haqida.",
+ "grammar": {
+  "point_ar": "أَسْئِلَةُ المُقَابَلَة",
+  "explanation_uz": "Intervyu savol qoliplari: حدِّثْنا عن... (bizga ... haqida so'zlab bering), كيف بدأتَ...؟ (qanday boshlagansiz?), ما نصيحتُكَ لِـ...؟ (...ga maslahatingiz?), لماذا اخترتَ...؟ (nega tanladingiz?). Javob belgilari: في الحقيقةِ (aslida), بصراحةٍ (ochig'i), الحمدُ لله (shukr). Tinglashda: SAVOLNI tushunsangiz — javobning yarmini bilasiz!",
+  "table": [
+   {"ar": "حدِّثْنا عن...", "uz": "bizga ... haqida gapirib bering", "form": "savol"},
+   {"ar": "لماذا اخترتَ...؟", "uz": "nega tanladingiz?", "form": "savol"},
+   {"ar": "في الحقيقةِ...", "uz": "aslida... (javob boshi)", "form": "javob"},
+   {"ar": "بصراحةٍ...", "uz": "ochig'ini aytsam...", "form": "javob"}
+  ],
+  "common_mistakes_uz": [
+   "Ikkala ovozni aralashtirib yuborish — savol ohangi ko'tariladi, javob tinch.",
+   "حدِّثْ (so'zlab ber) va حَدَث (voqea) ni adashtirish.",
+   "Javobning birinchi so'zidan hukm chiqarish — oxirigacha tinglang."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ح و ر",
+   "meaning_uz": "suhbat, dialog",
+   "uz_cognates": ["muhovara"],
+   "derived": [
+    {"ar": "حِوَار", "uz": "dialog", "pattern": "فِعَال"},
+    {"ar": "مُحَاوِر", "uz": "suhbat oluvchi (intervyuer)", "pattern": "مُفَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "مُحَاوِر", "translit": "muḥāwir", "uz": "intervyuer, suhbat oluvchi", "root": "ح و ر", "pattern": "مُفَاعِل", "pos": "ot", "audio": "b1/muhawir.mp3", "example_ar": "سألَ المحاورُ سؤالًا ذكيًّا.", "example_uz": "Intervyuer aqlli savol berdi.", "srs": true},
+  {"ar": "ضَيْف", "translit": "ḍayf", "uz": "mehmon (dasturda ham)", "root": "ض ي ف", "pattern": "فَعْل", "pos": "ot", "audio": "b1/dayf.mp3", "example_ar": "ضيفُنا اليومَ طبيبةٌ شابةٌ.", "example_uz": "Bugungi mehmonimiz — yosh tabiba.", "srs": true},
+  {"ar": "حَدِّثْنَا عَنْ", "translit": "ḥaddithnā ʿan", "uz": "bizga ... haqida so'zlab bering", "root": "ح د ث", "pattern": "", "pos": "ibora", "audio": "b1/haddithna.mp3", "example_ar": "حدِّثْنا عن بدايتِكِ.", "example_uz": "Boshlanishingiz haqida gapirib bering.", "srs": true},
+  {"ar": "فِي الحَقِيقَة", "translit": "fī l-ḥaqīqa", "uz": "aslida, haqiqatda", "root": "ح ق ق", "pattern": "", "pos": "ibora", "audio": "b1/fil_haqiqa.mp3", "example_ar": "في الحقيقةِ، كان الطريقُ صعبًا.", "example_uz": "Aslida, yo'l qiyin edi.", "srs": true},
+  {"ar": "بِصَرَاحَة", "translit": "biṣarāḥa", "uz": "ochig'ini aytsam (o'zbekcha 'sarohat')", "root": "ص ر ح", "pattern": "", "pos": "ravish", "audio": "b1/bisaraha.mp3", "example_ar": "بصراحةٍ، لم أتوقعِ النجاحَ السريعَ.", "example_uz": "Ochig'i, tez muvaffaqiyat kutmagandim.", "srs": true},
+  {"ar": "طُمُوح", "translit": "ṭumūḥ", "uz": "orzu-intilish, ambitsiya", "root": "ط م ح", "pattern": "فُعُول", "pos": "ot", "audio": "b1/tumuh.mp3", "example_ar": "طموحي أنْ أفتحَ عيادةً.", "example_uz": "Orzuim — klinika ochish.", "srs": true},
+  {"ar": "عِيَادَة", "translit": "ʿiyāda", "uz": "klinika, qabulxona", "root": "ع و د", "pattern": "فِعَالَة", "pos": "ot", "audio": "b1/iyada.mp3", "example_ar": "افتتحتْ عيادةً في قريتِها.", "example_uz": "O'z qishlog'ida klinika ochdi.", "srs": true},
+  {"ar": "تَحَدٍّ", "translit": "taḥaddin", "uz": "qiyinchilik, chaqiriq (challenge)", "root": "ح د ي", "pattern": "تَفَعُّل", "pos": "ot", "audio": "b1/tahaddin.mp3", "example_ar": "واجهتْ تحدياتٍ كثيرةً.", "example_uz": "Ko'p qiyinchiliklarga duch keldi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "المحاورُ: ضيفتُنا اليومَ الدكتورةُ مريمُ. حدِّثينا عن بدايتِكِ. — الدكتورةُ: في الحقيقةِ بدأتْ قصتي في قريةٍ صغيرةٍ لم يكنْ فيها مستشفًى...",
+   "questions": [
+    {"q_uz": "Kim kimdan intervyu olyapti?", "a": "Muxbir doktor Maryamdan"},
+    {"q_uz": "Javob qaysi ibora bilan boshlandi?", "a": "في الحقيقة (aslida)"},
+    {"q_uz": "Qishloqning muammosi nima edi?", "a": "Shifoxona yo'q edi"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/b1-40-muqabala.mp3",
+   "transcript_ar": "المُحَاوِرُ: لِمَاذَا اخْتَرْتِ مِهْنَةَ الطِّبِّ؟ — الدُّكْتُورَةُ: بِصَرَاحَةٍ، لِأَنَّ قَرْيَتِي لَمْ يَكُنْ فِيهَا طَبِيبٌ. — المُحَاوِرُ: وَمَا طُمُوحُكِ الآنَ؟ — الدُّكْتُورَةُ: طُمُوحِي أَنْ أَفْتَحَ عِيَادَةً هُنَاكَ، لِأَخْدُمَ أَهْلَ قَرْيَتِي.",
+   "questions": [
+    {"q_uz": "Nega tibbiyotni tanlagan?", "a": "Qishlog'ida shifokor yo'q edi"},
+    {"q_uz": "Hozirgi orzusi nima?", "a": "Qishlog'ida klinika ochib, xalqiga xizmat qilish"},
+    {"q_uz": "«لِأَخْدُمَ» dagi lam nima vazifada?", "a": "Maqsad lami + mansub fe'l (xizmat qilish uchun)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Rol almashinib o'ynang: o'zingizga uch intervyu savolini berib, javob bering: nega arab tilini tanladingiz? orzuingiz nima?",
+   "target_ar": ["لِمَاذَا اخْتَرْتَ العَرَبِيَّةَ؟", "طُمُوحِي أَنْ...", "بِصَرَاحَةٍ..."],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "O'zingiz bilan mini-intervyu yozing: 2 savol + 2 javob (حدثنا عن، لماذا اخترت qoliplari bilan).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«حدِّثْنا عن...» qanday so'rov?", "q_ar": "", "options": ["batafsil so'zlab berishni so'rash", "ha/yo'q savoli", "buyruq-taqiq", "salomlashish"], "answer": "batafsil so'zlab berishni so'rash", "explain_uz": "II bob amri: gapirib bering.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting: doktor nega tibbiyotni tanlagan?", "q_ar": "", "options": ["qishlog'ida shifokor yo'q edi", "otasi shifokor edi", "maosh yuqori", "do'sti maslahat berdi"], "answer": "qishlog'ida shifokor yo'q edi", "explain_uz": "لأنّ قريتي لم يكن فيها طبيب.", "audio": "b1/b1-40-muqabala.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«بِصَرَاحَة» ma'nosi?", "q_ar": "", "options": ["ochig'ini aytsam", "afsuski", "masalan", "nihoyat"], "answer": "ochig'ini aytsam", "explain_uz": "Samimiy javob belgisi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "mehmon", "q_ar": "", "options": [], "answer": "ضَيْف", "explain_uz": "ضيف — mehmon (ziyofat o'zagi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "orzu-intilish (ambitsiya)", "q_ar": "", "options": [], "answer": "طُمُوح", "explain_uz": "طموح — yuksak intilish.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«حِوَار، مُحَاوِر» qaysi o'zakdan?", "q_ar": "", "options": ["ح و ر", "ح ر ر", "ج و ر"], "answer": "ح و ر", "explain_uz": "«ح و ر» — dialog o'zagi.", "audio": "", "root": "ح و ر", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Savolni tushunish nega muhim?", "q_ar": "", "options": ["javobning mazmunini oldindan biladi", "savol qisqa", "savol chiroyli", "muhim emas"], "answer": "javobning mazmunini oldindan biladi", "explain_uz": "Savol — javob xaritasi.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ح و ر", "back": "dialog o'zagi", "deck": "msa"},
+  {"type": "word", "front": "مُحَاوِر", "back": "intervyuer", "deck": "msa"},
+  {"type": "word", "front": "ضَيْف", "back": "mehmon", "deck": "msa"},
+  {"type": "word", "front": "حَدِّثْنَا عَنْ", "back": "so'zlab bering", "deck": "msa"},
+  {"type": "word", "front": "فِي الحَقِيقَة", "back": "aslida", "deck": "msa"},
+  {"type": "word", "front": "بِصَرَاحَة", "back": "ochig'ini aytsam", "deck": "msa"},
+  {"type": "word", "front": "طُمُوح", "back": "orzu-intilish", "deck": "msa"},
+  {"type": "word", "front": "عِيَادَة", "back": "klinika", "deck": "msa"},
+  {"type": "word", "front": "تَحَدٍّ", "back": "qiyinchilik, chaqiriq", "deck": "msa"}
+ ]
+}

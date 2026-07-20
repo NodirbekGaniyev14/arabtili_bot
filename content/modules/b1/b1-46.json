@@ -1,0 +1,96 @@
+{
+ "id": "b1-46",
+ "level": "B1",
+ "module": "skills",
+ "order": 46,
+ "title_uz": "Gapirish: munozara",
+ "title_ar": "مُحَادَثَة: مُنَاظَرَة",
+ "can_do_uz": "Fikrimni dalil bilan himoya qilib, boshqa fikrga odob bilan e'tiroz bildira olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-45"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Fikrlar to'qnashuvi — lekin odob bilan! Arab munozara madaniyatida oltin qoida: fikrga e'tiroz — insonni hurmat qilgan holda. أحترمُ رأيَكَ، لكنّي أختلفُ معكَ (fikringizni hurmat qilaman, lekin qo'shilmayman). Bugungi mavzu: «Onlayn ta'lim yaxshimi?»",
+ "grammar": {
+  "point_ar": "عِبَارَاتُ المُنَاظَرَة",
+  "explanation_uz": "MUNOZARA FORMULALARI: (1) FIKR: في رأيي... (mening fikrimcha), أعتقدُ أنَّ... (2) QO'SHILISH: أتفقُ معكَ تمامًا (to'liq qo'shilaman), هذا صحيحٌ (to'g'ri). (3) E'TIROZ (odob bilan!): أحترمُ رأيَكَ لكنْ... (hurmat qilaman, lekin), لا أتفقُ معكَ في هذهِ النقطةِ (bu nuqtada qo'shilmayman). (4) DALIL: والدليلُ على ذلك... (buning dalili), لأنَّ... (chunki). (5) YON BERISH: ربما تكونُ محقًّا في... (balki ...da haqdirsiz).",
+  "table": [
+   {"ar": "في رأيي...", "uz": "mening fikrimcha", "form": "fikr"},
+   {"ar": "أتفقُ معكَ", "uz": "sizga qo'shilaman", "form": "qo'shilish"},
+   {"ar": "أحترمُ رأيَكَ لكنْ...", "uz": "hurmat qilaman, lekin...", "form": "e'tiroz"},
+   {"ar": "والدليلُ على ذلك...", "uz": "buning dalili...", "form": "dalil"}
+  ],
+  "common_mistakes_uz": [
+   "«أنتَ مخطئٌ!» (sen xatosun!) deyish — fikrga e'tiroz qiling, shaxsga emas.",
+   "Dalilsiz bahslashish — har fikrga لأنّ yoki الدليل qo'shing.",
+   "Faqat gapirish — munozarada TINGLASH yarim g'alaba."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ن ظ ر",
+   "meaning_uz": "qarash, nazar",
+   "uz_cognates": ["nazar", "munozara", "nazariya"],
+   "derived": [
+    {"ar": "مُنَاظَرَة", "uz": "munozara (qarashlar bahsi)", "pattern": "مُفَاعَلَة"},
+    {"ar": "وِجْهَةُ نَظَر", "uz": "nuqtai nazar", "pattern": ""},
+    {"ar": "نَظَرِيَّة", "uz": "nazariya", "pattern": ""}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "مُنَاظَرَة", "translit": "munāẓara", "uz": "munozara (o'zbekcha 'munozara' aynan shundan)", "root": "ن ظ ر", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "b1/munazara.mp3", "example_ar": "شاركتُ في مناظرةٍ طلابيةٍ.", "example_uz": "Talabalar munozarasida qatnashdim.", "srs": true},
+  {"ar": "وِجْهَةُ نَظَر", "translit": "wijhatu naẓar", "uz": "nuqtai nazar", "root": "ن ظ ر", "pattern": "", "pos": "ibora", "audio": "b1/wijhat_nazar.mp3", "example_ar": "لكلٍّ وجهةُ نظرٍ مختلفةٌ.", "example_uz": "Har kimning o'z nuqtai nazari bor.", "srs": true},
+  {"ar": "أَتَّفِقُ مَعَ", "translit": "attafiqu maʿa", "uz": "…ga qo'shilaman", "root": "و ف ق", "pattern": "أَفْتَعِلُ", "pos": "fe'l", "audio": "b1/attafiqu.mp3", "example_ar": "أتفقُ معكَ في هذهِ النقطةِ.", "example_uz": "Bu nuqtada sizga qo'shilaman.", "srs": true},
+  {"ar": "أَخْتَلِفُ مَعَ", "translit": "akhtalifu maʿa", "uz": "…dan farqli fikrdaman (ixtilof)", "root": "خ ل ف", "pattern": "أَفْتَعِلُ", "pos": "fe'l", "audio": "b1/akhtalifu.mp3", "example_ar": "أختلفُ معكَ باحترامٍ.", "example_uz": "Hurmat bilan sizga qo'shilmayman.", "srs": true},
+  {"ar": "دَلِيل", "translit": "dalīl", "uz": "dalil, isbot (o'zbekcha 'dalil' aynan shundan)", "root": "د ل ل", "pattern": "فَعِيل", "pos": "ot", "audio": "b1/dalil.mp3", "example_ar": "ما دليلُكَ على ذلك؟", "example_uz": "Bunga dalilingiz nima?", "srs": true},
+  {"ar": "مُحِقّ", "translit": "muḥiqq", "uz": "haq bo'lgan, to'g'ri aytgan", "root": "ح ق ق", "pattern": "مُفْعِل", "pos": "sifat", "audio": "b1/muhiqq.mp3", "example_ar": "ربما تكونُ محقًّا في هذا.", "example_uz": "Balki bunda haqdirsiz.", "srs": true},
+  {"ar": "مِنْ جِهَة... وَمِنْ جِهَةٍ أُخْرَى", "translit": "min jiha... wa-min jihatin ukhrā", "uz": "bir tomondan... boshqa tomondan", "root": "و ج ه", "pattern": "", "pos": "ibora", "audio": "b1/min_jiha.mp3", "example_ar": "من جهةٍ يوفّرُ الوقتَ، ومن جهةٍ أخرى يقللُ اللقاءَ.", "example_uz": "Bir tomondan vaqt tejaydi, boshqa tomondan muloqotni kamaytiradi.", "srs": true},
+  {"ar": "إِقْنَاع", "translit": "iqnāʿ", "uz": "ishontirish (qanoat o'zagi!)", "root": "ق ن ع", "pattern": "إِفْعَال", "pos": "ot", "audio": "b1/iqna.mp3", "example_ar": "فنُّ الإقناعِ يحتاجُ أدلةً.", "example_uz": "Ishontirish san'ati dalillar talab qiladi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "سالم: في رأيي، التعليمُ الإلكترونيُّ أفضلُ، لأنه يوفّرُ الوقتَ والمالَ. — كريم: أحترمُ رأيَكَ، لكني أختلفُ معكَ؛ فالتعليمُ الحضوريُّ يبني علاقاتٍ حقيقيةً، والدليلُ أنَّ أكثرَ الطلابِ يفهمونَ أفضلَ داخلَ الصفِّ. — سالم: ربما تكونُ محقًّا في نقطةِ العلاقاتِ، ومع ذلك أرى أنَّ المستقبلَ للتعليمِ المدمجِ: من جهةٍ مرونةُ الإنترنتِ، ومن جهةٍ أخرى دفءُ اللقاءِ.",
+   "questions": [
+    {"q_uz": "Ikki tomonning pozitsiyalari qanday?", "a": "Salim — onlayn tarafdori, Karim — an'anaviy ta'lim tarafdori"},
+    {"q_uz": "Karim qanday odob formulasini ishlatdi?", "a": "أحترم رأيك لكني أختلف معك"},
+    {"q_uz": "Munozara qanday yechim bilan tugadi?", "a": "Aralash ta'lim (التعليم المدمج) — ikkalasining afzalligi"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/munazara.mp3",
+   "transcript_ar": "مُنَاظَرَة",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z ma'nosi?", "a": "Munozara"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "O'zingiz bilan munozara qiling: «Onlayn ta'lim yaxshimi?» — avval BIR tomonni 3 gap bilan himoya qiling, keyin QARSHI tomonni. Har birida دليل keltiring.",
+   "target_ar": ["فِي رَأْيِي...", "أَحْتَرِمُ رَأْيَكَ لٰكِنْ...", "وَالدَّلِيلُ عَلَى ذٰلِكَ..."],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Mini-munozara dialogi yozing (4 replika): fikr → odobli e'tiroz + dalil → yon berish → umumiy xulosa.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "Odobli e'tiroz qaysi?", "q_ar": "", "options": ["أحترمُ رأيَكَ، لكني أختلفُ معكَ", "أنتَ مخطئٌ تمامًا!", "كلامُكَ فارغٌ", "اسكتْ!"], "answer": "أحترمُ رأيَكَ، لكني أختلفُ معكَ", "explain_uz": "Fikrga e'tiroz — shaxsga hurmat bilan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Har da'vodan keyin nima kelishi kerak?", "q_ar": "", "options": ["dalil (لأنّ / والدليل)", "kulgu", "yangi mavzu", "sukut"], "answer": "dalil (لأنّ / والدليل)", "explain_uz": "Dalilsiz fikr — poydevorsiz uy.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«مِن جهةٍ... ومن جهةٍ أخرى» nima uchun?", "q_ar": "", "options": ["ikki tomonni solishtirish", "vaqt aytish", "salomlashish", "buyruq berish"], "answer": "ikki tomonni solishtirish", "explain_uz": "Muvozanatli tahlil iborasi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "dalil", "q_ar": "", "options": [], "answer": "دَلِيل", "explain_uz": "دليل — isbot; yo'l ko'rsatuvchi ham.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "nuqtai nazar", "q_ar": "", "options": [], "answer": "وِجْهَةُ نَظَر", "explain_uz": "Qarash yo'nalishi — nuqtai nazar.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«مُنَاظَرَة، نَظَر، نَظَرِيَّة» qaysi o'zakdan?", "q_ar": "", "options": ["ن ظ ر", "ن ذ ر", "ن ص ر"], "answer": "ن ظ ر", "explain_uz": "«ن ظ ر» — nazar o'zagi: munozara — qarashlar bahsi.", "audio": "", "root": "ن ظ ر", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "أَتَّفِقُ va أَخْتَلِفُ qaysi bobda?", "q_ar": "", "options": ["VIII (افتعل)", "II", "IV", "X"], "answer": "VIII (افتعل)", "explain_uz": "اتّفق (kelishmoq) / اختلف (farqlanmoq) — VIII bob.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ن ظ ر", "back": "nazar o'zagi (munozara)", "deck": "msa"},
+  {"type": "word", "front": "مُنَاظَرَة", "back": "munozara", "deck": "msa"},
+  {"type": "word", "front": "وِجْهَةُ نَظَر", "back": "nuqtai nazar", "deck": "msa"},
+  {"type": "word", "front": "أَتَّفِقُ مَعَ", "back": "qo'shilaman", "deck": "msa"},
+  {"type": "word", "front": "أَخْتَلِفُ مَعَ", "back": "qo'shilmayman", "deck": "msa"},
+  {"type": "word", "front": "دَلِيل", "back": "dalil", "deck": "msa"},
+  {"type": "word", "front": "مُحِقّ", "back": "haq bo'lgan", "deck": "msa"},
+  {"type": "word", "front": "إِقْنَاع", "back": "ishontirish", "deck": "msa"}
+ ]
+}

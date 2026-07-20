@@ -1,0 +1,96 @@
+{
+ "id": "b1-45",
+ "level": "B1",
+ "module": "skills",
+ "order": 45,
+ "title_uz": "Gapirish: taqdimot",
+ "title_ar": "مُحَادَثَة: عَرْضٌ تَقْدِيمِيّ",
+ "can_do_uz": "2-3 daqiqalik qisqa taqdimotni tuzilishli qilib og'zaki taqdim eta olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-44"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Mikrofon sizda! Taqdimot — «og'zaki insho»: salom → mavzu e'loni → 2-3 fikr → xulosa → rahmat. Formulalarni yodlab oling — sahnada o'ylab o'tirmaysiz. Bugungi mashq: «Nega arab tilini o'rganyapman?» mavzusida mini-taqdimot.",
+ "grammar": {
+  "point_ar": "عِبَارَاتُ العَرْض",
+  "explanation_uz": "TAQDIMOT FORMULALARI: (1) OCHISH: السلامُ عليكم، أشكرُكم على حضورِكم (kelganingiz uchun rahmat). (2) MAVZU: سأتحدثُ اليومَ عن... (bugun ... haqida gapiraman), عرضي يتكونُ من ثلاثةِ أجزاءٍ (taqdimotim uch qismdan iborat). (3) O'TISH: ننتقلُ الآنَ إلى... (endi ...ga o'tamiz). (4) YAKUN: في نهايةِ عرضي أودُّ أنْ أقولَ... (yakunida aytmoqchimanki...), شكرًا لحسنِ استماعِكم (diqqat bilan tinglaganingiz uchun rahmat), هل من أسئلةٍ؟ (savollar bormi?).",
+  "table": [
+   {"ar": "سأتحدثُ اليومَ عن...", "uz": "bugun ... haqida gapiraman", "form": "mavzu"},
+   {"ar": "يتكونُ من ثلاثةِ أجزاءٍ", "uz": "uch qismdan iborat", "form": "reja"},
+   {"ar": "ننتقلُ الآنَ إلى...", "uz": "endi ...ga o'tamiz", "form": "o'tish"},
+   {"ar": "هل من أسئلةٍ؟", "uz": "savollar bormi?", "form": "yakun"}
+  ],
+  "common_mistakes_uz": [
+   "Rejasiz boshlash — avval «uch qism» deb e'lon qiling, tinglovchi yo'lni ko'radi.",
+   "Bir xil ohangda o'qib berish — pauza va urg'u nutqqa jon beradi.",
+   "«هل من أسئلة؟» dan qo'rqish — savol — qiziqish belgisi!"
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع ر ض",
+   "meaning_uz": "ko'rsatish, taqdim etish",
+   "uz_cognates": ["arz qilmoq", "ko'rgazma (ma'rid)"],
+   "derived": [
+    {"ar": "عَرَضَ", "uz": "ko'rsatdi, taqdim etdi", "pattern": "فَعَلَ"},
+    {"ar": "عَرْض تَقْدِيمِيّ", "uz": "taqdimot (prezentatsiya)", "pattern": ""},
+    {"ar": "شَرِيحَة", "uz": "slayd (boshqa o'zak: ش ر ح)", "pattern": ""}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "عَرْض تَقْدِيمِيّ", "translit": "ʿarḍ taqdīmī", "uz": "taqdimot, prezentatsiya", "root": "ع ر ض", "pattern": "", "pos": "ibora", "audio": "b1/ard_taqdimi.mp3", "example_ar": "أعددتُ عرضًا تقديميًّا قصيرًا.", "example_uz": "Qisqa taqdimot tayyorladim.", "srs": true},
+  {"ar": "جُمْهُورُ الحُضُور", "translit": "jumhūru l-ḥuḍūr", "uz": "tinglovchilar, auditoriya", "root": "ج م ه ر", "pattern": "", "pos": "ibora", "audio": "b1/jumhur_hudur.mp3", "example_ar": "نظرتُ إلى جمهورِ الحضورِ بثقةٍ.", "example_uz": "Auditoriyaga ishonch bilan qaradim.", "srs": true},
+  {"ar": "يَتَكَوَّنُ مِنْ", "translit": "yatakawwanu min", "uz": "…dan tashkil topadi", "root": "ك و ن", "pattern": "يَتَفَعَّلُ", "pos": "fe'l", "audio": "b1/yatakawwanu.mp3", "example_ar": "عرضي يتكونُ من ثلاثةِ أجزاءٍ.", "example_uz": "Taqdimotim uch qismdan iborat.", "srs": true},
+  {"ar": "جُزْء", "translit": "juzʾ", "uz": "qism, bo'lak (o'zbekcha 'juz')", "root": "ج ز أ", "pattern": "فُعْل", "pos": "ot", "audio": "b1/juz.mp3", "example_ar": "الجزءُ الأولُ عن الأسبابِ.", "example_uz": "Birinchi qism — sabablar haqida.", "srs": true},
+  {"ar": "نَنْتَقِلُ إِلَى", "translit": "nantaqilu ilā", "uz": "…ga o'tamiz (o'tish iborasi)", "root": "ن ق ل", "pattern": "نَفْتَعِلُ", "pos": "fe'l", "audio": "b1/nantaqilu.mp3", "example_ar": "ننتقلُ الآنَ إلى النقطةِ الثانيةِ.", "example_uz": "Endi ikkinchi nuqtaga o'tamiz.", "srs": true},
+  {"ar": "أَوَدُّ أَنْ", "translit": "awaddu an", "uz": "…ishni istardim (muloyim istak)", "root": "و د د", "pattern": "أَفْعَلُ", "pos": "fe'l", "audio": "b1/awaddu.mp3", "example_ar": "أودُّ أنْ أشكرَكم جميعًا.", "example_uz": "Barchangizga rahmat aytmoqchiman.", "srs": true},
+  {"ar": "حُسْنُ الاِسْتِمَاع", "translit": "ḥusnu l-istimāʿ", "uz": "diqqat bilan tinglash", "root": "س م ع", "pattern": "", "pos": "ibora", "audio": "b1/husn_istima.mp3", "example_ar": "شكرًا لحسنِ استماعِكم.", "example_uz": "Diqqat bilan tinglaganingiz uchun rahmat.", "srs": true},
+  {"ar": "سُؤَال", "translit": "suʾāl", "uz": "savol (o'zbekcha 'savol' aynan shundan)", "root": "س أ ل", "pattern": "فُعَال", "pos": "ot", "audio": "b1/sual2.mp3", "example_ar": "هل من أسئلةٍ؟", "example_uz": "Savollar bormi?", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "السلامُ عليكم، أشكرُكم على حضورِكم. سأتحدثُ اليومَ عن سببِ تعلمي اللغةَ العربيةَ. عرضي يتكونُ من ثلاثةِ أجزاءٍ: أولًا الدينُ، فأنا أريدُ أنْ أفهمَ القرآنَ. ثانيًا الثقافةُ، فالعربيةُ مفتاحُ حضارةٍ عظيمةٍ. ثالثًا العملُ، فالسعوديةُ سوقٌ كبيرةٌ. وفي نهايةِ عرضي أودُّ أنْ أقولَ: تعلُّمُ العربيةِ غيّرَ حياتي. شكرًا لحسنِ استماعِكم، هل من أسئلةٍ؟",
+   "questions": [
+    {"q_uz": "Taqdimot nechta qismdan iborat va qaysilar?", "a": "3: din, madaniyat, ish"},
+    {"q_uz": "Qaysi formulalar ochish va yakunda ishlatilgan?", "a": "أشكركم على حضوركم / شكرًا لحسن استماعكم، هل من أسئلة؟"},
+    {"q_uz": "Yakuniy asosiy xabar nima?", "a": "Arab tilini o'rganish hayotini o'zgartirgani"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/ard_taqdimi.mp3",
+   "transcript_ar": "عَرْض تَقْدِيمِيّ",
+   "questions": [
+    {"q_uz": "Eshitilgan ibora ma'nosi?", "a": "Taqdimot (prezentatsiya)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "ASOSIY MASHQ: yuqoridagi matnni asos qilib, O'ZINGIZNING «Nega arabcha o'rganyapman» taqdimotingizni 2 daqiqada ovoz chiqarib ayting. Ilovadagi «Jonli suhbat» rejimida ham sinang!",
+   "target_ar": ["سَأَتَحَدَّثُ اليَوْمَ عَنْ...", "عَرْضِي يَتَكَوَّنُ مِنْ ثَلَاثَةِ أَجْزَاءٍ", "شُكْرًا لِحُسْنِ اسْتِمَاعِكُمْ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Taqdimotingiz rejasini yozing: mavzu + 3 qism sarlavhasi + yakuniy gap.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "Taqdimot boshida rejani e'lon qilish nima beradi?", "q_ar": "", "options": ["tinglovchi yo'lni oldindan ko'radi", "vaqtni cho'zadi", "shart emas", "faqat chiroyli"], "answer": "tinglovchi yo'lni oldindan ko'radi", "explain_uz": "«Uch qism» dedingizmi — xarita berdingiz.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«ننتقلُ الآنَ إلى...» qachon aytiladi?", "q_ar": "", "options": ["bir qismdan ikkinchisiga o'tishda", "salomlashishda", "savolga javobda", "uzr so'rashda"], "answer": "bir qismdan ikkinchisiga o'tishda", "explain_uz": "O'tish ko'prigi — tinglovchini boshqaradi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Taqdimot qanday savol bilan yakunlanadi?", "q_ar": "", "options": ["هل من أسئلةٍ؟", "كم الساعة؟", "أين أنتم؟", "من أنا؟"], "answer": "هل من أسئلةٍ؟", "explain_uz": "Savollarga ochiqlik — professional yakun.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "qism, bo'lak", "q_ar": "", "options": [], "answer": "جُزْء", "explain_uz": "جزء — qism (juz).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "شُكْرًا لِحُسْنِ اسْتِمَاعِكُمْ", "options": [], "answer": "diqqat bilan tinglaganingiz uchun rahmat", "explain_uz": "Taqdimotning odobli yakuni.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«عَرْض، مَعْرِض، عَرَضَ» qaysi o'zakdan?", "q_ar": "", "options": ["ع ر ض", "ع ر ف", "غ ر ض"], "answer": "ع ر ض", "explain_uz": "«ع ر ض» — ko'rsatish o'zagi (arz, ko'rgazma).", "audio": "", "root": "ع ر ض", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Tartiblang: «Taqdimotim uch qismdan iborat»", "q_ar": "", "options": [], "answer": "عرضي يتكونُ من ثلاثةِ أجزاءٍ", "explain_uz": "Reja e'loni formulasi.", "audio": "", "root": "", "pattern": "", "words": ["عرضي", "يتكونُ", "من", "ثلاثةِ", "أجزاءٍ"]}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع ر ض", "back": "ko'rsatish o'zagi (arz)", "deck": "msa"},
+  {"type": "word", "front": "عَرْض تَقْدِيمِيّ", "back": "taqdimot", "deck": "msa"},
+  {"type": "word", "front": "يَتَكَوَّنُ مِنْ", "back": "…dan iborat", "deck": "msa"},
+  {"type": "word", "front": "جُزْء", "back": "qism", "deck": "msa"},
+  {"type": "word", "front": "نَنْتَقِلُ إِلَى", "back": "…ga o'tamiz", "deck": "msa"},
+  {"type": "word", "front": "أَوَدُّ أَنْ", "back": "istardim", "deck": "msa"},
+  {"type": "word", "front": "حُسْنُ الاِسْتِمَاع", "back": "diqqat bilan tinglash", "deck": "msa"},
+  {"type": "word", "front": "سُؤَال / أَسْئِلَة", "back": "savol(lar)", "deck": "msa"}
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "id": "b1-41",
+ "level": "B1",
+ "module": "skills",
+ "order": 41,
+ "title_uz": "Tinglash: yangiliklar",
+ "title_ar": "اِسْتِمَاع: نَشْرَةُ الأَخْبَار",
+ "can_do_uz": "Radio yangiliklar lo'ndasini tinglab, har xabarning mavzusi va asosiy faktini ilg'ay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-40"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Diktor tez gapiradi, lekin siruv bor: yangiliklar QOLIPLARDA yuradi! Har xabar formulasi: [KIM] + [NIMA QILDI] + [QAYERDA/QACHON]. b1-21 dagi so'zlar (أعلن، افتتح، أقيم) endi qulog'ingizga keladi. Diktorlik sur'atiga tayyor bo'ling!",
+ "grammar": {
+  "point_ar": "لُغَةُ النَّشْرَة",
+  "explanation_uz": "Radio-xabar tuzilishi: (1) BOSH E'LON: أهمُّ الأنباءِ... (asosiy yangiliklar). (2) HAR XABAR fe'l bilan boshlanadi (fe'l gap!): افتتحَ الرئيسُ... (prezident ochdi), أعلنتِ الوزارةُ... (vazirlik e'lon qildi). (3) OXIRIDA: وفي الختامِ (yakunida). Tez nutqda TAYANCH: birinchi fe'l + ega — xabarning yuragi. Raqamlarni alohida tinglang: ular sekinroq aytiladi.",
+  "table": [
+   {"ar": "أهمُّ الأنباءِ", "uz": "eng muhim yangiliklar", "form": "boshlanish"},
+   {"ar": "افتتحَ الرئيسُ...", "uz": "prezident ochdi... (fe'l gap)", "form": "xabar"},
+   {"ar": "وفي الختامِ...", "uz": "va yakunida...", "form": "tugash"},
+   {"ar": "نَبَأ / أَنْبَاء", "uz": "xabar / xabarlar", "form": "atama"}
+  ],
+  "common_mistakes_uz": [
+   "Diktor tezligidan cho'chish — qoliplarni bilsangiz, tezlik halal bermaydi.",
+   "نَبَأ (muhim xabar) va نَبِيّ (payg'ambar) o'zaklarini adashtirish.",
+   "Bir xabarni o'tkazib yuborsangiz keyingisini ham yo'qotish — har xabar mustaqil!"
+  ]
+ },
+ "roots": [
+  {
+   "root": "ن ب أ",
+   "meaning_uz": "muhim xabar",
+   "uz_cognates": ["naba' (An-Naba' surasi)", "payg'ambar (nabiy)"],
+   "derived": [
+    {"ar": "نَبَأ", "uz": "muhim xabar", "pattern": "فَعَل"},
+    {"ar": "أَنْبَاء", "uz": "xabarlar", "pattern": "أَفْعَال"},
+    {"ar": "نَشْرَة", "uz": "lo'nda, byulleten (boshqa o'zak: ن ش ر)", "pattern": ""}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "نَشْرَة", "translit": "nashra", "uz": "yangiliklar lo'ndasi (nashr o'zagi)", "root": "ن ش ر", "pattern": "فَعْلَة", "pos": "ot", "audio": "b1/nashra.mp3", "example_ar": "أستمعُ إلى النشرةِ صباحًا.", "example_uz": "Ertalab yangiliklar tinglayman.", "srs": true},
+  {"ar": "نَبَأ", "translit": "nabaʾ", "uz": "muhim xabar (ko'pligi: أنباء)", "root": "ن ب أ", "pattern": "فَعَل", "pos": "ot", "audio": "b1/naba.mp3", "example_ar": "وصلَ نبأٌ سارٌّ.", "example_uz": "Xushxabar keldi.", "srs": true},
+  {"ar": "اِفْتَتَحَ", "translit": "iftataḥa", "uz": "ochdi, ochilish marosimini o'tkazdi", "root": "ف ت ح", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/iftataha.mp3", "example_ar": "افتتحَ الوزيرُ المدرسةَ الجديدةَ.", "example_uz": "Vazir yangi maktabni ochdi.", "srs": true},
+  {"ar": "وَقَّعَ اتِّفَاقِيَّة", "translit": "waqqaʿa ittifāqiyya", "uz": "bitim imzoladi", "root": "و ق ع", "pattern": "", "pos": "ibora", "audio": "b1/waqqa_ittifaqiyya.mp3", "example_ar": "وقّعَ البلدانِ اتفاقيةَ تعاونٍ.", "example_uz": "Ikki davlat hamkorlik bitimini imzoladi.", "srs": true},
+  {"ar": "تَعَاوُن", "translit": "taʿāwun", "uz": "hamkorlik (VI bob — o'zaro!)", "root": "ع و ن", "pattern": "تَفَاعُل", "pos": "ot", "audio": "b1/taawun.mp3", "example_ar": "التعاونُ بينَ البلدينِ قويٌّ.", "example_uz": "Ikki mamlakat hamkorligi kuchli.", "srs": true},
+  {"ar": "دَرَجَةُ الحَرَارَة", "translit": "darajatu l-ḥarāra", "uz": "harorat darajasi (ob-havo!)", "root": "ح ر ر", "pattern": "", "pos": "ibora", "audio": "b1/darajat_harara.mp3", "example_ar": "درجةُ الحرارةِ ثلاثونَ مئويةً.", "example_uz": "Harorat — 30 daraja.", "srs": true},
+  {"ar": "فِي الخِتَام", "translit": "fī l-khitām", "uz": "yakunida (xotima o'zagi)", "root": "خ ت م", "pattern": "", "pos": "ibora", "audio": "b1/fil_khitam.mp3", "example_ar": "وفي الختامِ، إليكم حالةَ الطقسِ.", "example_uz": "Yakunida — ob-havo ma'lumoti.", "srs": true},
+  {"ar": "سَارّ", "translit": "sārr", "uz": "quvonchli (xabar haqida — surur o'zagi)", "root": "س ر ر", "pattern": "فَاعّ", "pos": "sifat", "audio": "b1/sarr.mp3", "example_ar": "خبرٌ سارٌّ للطلابِ.", "example_uz": "Talabalar uchun quvonchli xabar.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أهمُّ الأنباءِ في هذهِ النشرةِ: افتتاحُ مستشفًى جديدٍ في العاصمةِ، وتوقيعُ اتفاقيةِ تعاونٍ علميٍّ، وارتفاعُ درجاتِ الحرارةِ في نهايةِ الأسبوعِ.",
+   "questions": [
+    {"q_uz": "Lo'ndada nechta xabar e'lon qilindi?", "a": "3 ta: shifoxona, bitim, ob-havo"},
+    {"q_uz": "Nega xabarlar masdar bilan (افتتاحُ، توقيعُ)?", "a": "Bosh e'lonlar sarlavha uslubida — masdar qisqa"},
+    {"q_uz": "Ob-havo haqida nima deyildi?", "a": "Hafta oxirida harorat ko'tariladi"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/b1-41-nashra.mp3",
+   "transcript_ar": "أَهْلًا بِكُمْ فِي نَشْرَةِ الأَخْبَارِ. اِفْتَتَحَ وَزِيرُ الصِّحَّةِ صَبَاحَ اليَوْمِ مُسْتَشْفًى جَدِيدًا فِي العَاصِمَةِ. وَوَقَّعَتِ الجَامِعَةُ الوَطَنِيَّةُ اتِّفَاقِيَّةَ تَعَاوُنٍ مَعَ جَامِعَةٍ عَالَمِيَّةٍ. وَفِي الخِتَامِ: دَرَجَةُ الحَرَارَةِ غَدًا خَمْسٌ وَثَلَاثُونَ مِئَوِيَّةً.",
+   "questions": [
+    {"q_uz": "Shifoxonani kim va qachon ochdi?", "a": "Sog'liqni saqlash vaziri — bugun ertalab"},
+    {"q_uz": "Universitet kim bilan bitim tuzdi?", "a": "Jahon universiteti bilan (hamkorlik bitimi)"},
+    {"q_uz": "Ertaga harorat qancha?", "a": "35 daraja"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Diktor bo'ling: lo'nda matnini rasmiy ohangda, dona-dona o'qing — ayniqsa raqamni aniq ayting.",
+   "target_ar": ["أَهْلًا بِكُمْ فِي نَشْرَةِ الأَخْبَارِ", "وَفِي الخِتَامِ..."],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "3 xabarli mini-lo'nda yozing: ta'lim yangiligi, sport natijasi va ob-havo (har biri 1 gap, fe'l bilan boshlansin).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "Yangilik gapi odatda nima bilan boshlanadi?", "q_ar": "", "options": ["fe'l bilan (fe'l gap)", "olmosh bilan", "son bilan", "sifat bilan"], "answer": "fe'l bilan (fe'l gap)", "explain_uz": "افتتح الوزيرُ... — avval fe'l, keyin ega.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting: universitet kim bilan bitim imzoladi?", "q_ar": "", "options": ["jahon universiteti bilan", "vazirlik bilan", "shifoxona bilan", "maktab bilan"], "answer": "jahon universiteti bilan", "explain_uz": "اتفاقية تعاون مع جامعة عالمية.", "audio": "b1/b1-41-nashra.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«وَفِي الخِتَامِ» dan keyin nima keladi?", "q_ar": "", "options": ["oxirgi xabar (odatda ob-havo)", "bosh xabar", "reklama", "musiqa"], "answer": "oxirgi xabar (odatda ob-havo)", "explain_uz": "Xitam — yakun; lo'nda ob-havo bilan tugaydi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "hamkorlik", "q_ar": "", "options": [], "answer": "تَعَاوُن", "explain_uz": "تعاون — VI bob masdari (o'zaro yordam).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ochdi (marosim bilan)", "q_ar": "", "options": [], "answer": "اِفْتَتَحَ", "explain_uz": "افتتح — VIII bob: tantanali ochish.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«نَبَأ، أَنْبَاء» qaysi o'zakdan?", "q_ar": "", "options": ["ن ب أ", "ن ب ت", "ب ن أ"], "answer": "ن ب أ", "explain_uz": "«ن ب أ» — muhim xabar o'zagi.", "audio": "", "root": "ن ب أ", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "تَعَاوُن qaysi bob va nega aynan u?", "q_ar": "", "options": ["VI — o'zaro ma'no (ikki tomon)", "II — kuchaytirish", "X — talab", "IV — sababiyat"], "answer": "VI — o'zaro ma'no (ikki tomon)", "explain_uz": "Hamkorlik — ikki tomonlama: تفاعل vazni.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ن ب أ", "back": "muhim xabar o'zagi", "deck": "msa"},
+  {"type": "word", "front": "نَشْرَة", "back": "yangiliklar lo'ndasi", "deck": "msa"},
+  {"type": "word", "front": "نَبَأ / أَنْبَاء", "back": "muhim xabar(lar)", "deck": "msa"},
+  {"type": "word", "front": "اِفْتَتَحَ", "back": "tantanali ochdi", "deck": "msa"},
+  {"type": "word", "front": "تَعَاوُن", "back": "hamkorlik", "deck": "msa"},
+  {"type": "word", "front": "دَرَجَةُ الحَرَارَة", "back": "harorat", "deck": "msa"},
+  {"type": "word", "front": "فِي الخِتَام", "back": "yakunida", "deck": "msa"},
+  {"type": "word", "front": "سَارّ", "back": "quvonchli (xabar)", "deck": "msa"}
+ ]
+}

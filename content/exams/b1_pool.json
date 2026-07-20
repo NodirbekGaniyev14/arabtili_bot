@@ -1,0 +1,57 @@
+{
+ "level": "B1",
+ "config": {"reading": 10, "listening": 8, "writing": 2, "speaking": 3, "minutes": 45},
+ "reading": [
+  {"type": "mcq", "q_uz": "«يَكْتُبُ» ning hozirgi zamon majhuli?", "q_ar": "", "options": ["يُكْتَبُ", "يُكْتِبُ", "كُتِبَ", "يَكْتُبْ"], "answer": "يُكْتَبُ"},
+  {"type": "mcq", "q_uz": "«قَالَ» ning o'tgan zamon majhuli?", "q_ar": "", "options": ["قِيلَ", "قُوِلَ", "يُقَالُ", "قَيَّلَ"], "answer": "قِيلَ"},
+  {"type": "mcq", "q_uz": "«Men o'qigan kitob» to'g'ri qaysi?", "q_ar": "", "options": ["الكتابُ الذي قرأتُهُ", "الكتابُ الذي قرأتُ", "كتابٌ الذي قرأتُهُ", "الكتابُ التي قرأتُهُ"], "answer": "الكتابُ الذي قرأتُهُ"},
+  {"type": "mcq", "q_uz": "Jonsiz ko'plik (الكتب) uchun nisbiy olmosh?", "q_ar": "", "options": ["الَّتِي", "الَّذِينَ", "الَّذِي", "اللَّوَاتِي"], "answer": "الَّتِي"},
+  {"type": "mcq", "q_uz": "«إنْ تدرسْ ____» — javob fe'li qaysi shaklda?", "q_ar": "", "options": ["تنجحْ (majzum)", "تنجحُ (marfu')", "تنجحَ (mansub)", "نجحتَ (o'tgan)"], "answer": "تنجحْ (majzum)"},
+  {"type": "mcq", "q_uz": "«لو درستَ ____» — to'g'ri javob?", "q_ar": "", "options": ["لَنجحتَ", "نجحتَ", "تنجحْ", "فنجحتَ"], "answer": "لَنجحتَ"},
+  {"type": "mcq", "q_uz": "«جاء الولدُ ضاحكًا» — ضاحكًا nima?", "q_ar": "", "options": ["hol (nasb)", "tamyiz", "sifat", "xabar"], "answer": "hol (nasb)"},
+  {"type": "mcq", "q_uz": "«عشرون ____» (yigirma talaba) — to'g'ri shakl?", "q_ar": "", "options": ["طالبًا", "طالبٌ", "طلابًا", "الطالبَ"], "answer": "طالبًا"},
+  {"type": "mcq", "q_uz": "«ما جاء إلا أحمدُ» ma'nosi?", "q_ar": "", "options": ["faqat Ahmad keldi", "Ahmad kelmadi", "Ahmaddan boshqa keldi", "Ahmad ham keldi"], "answer": "faqat Ahmad keldi"},
+  {"type": "mcq", "q_uz": "«فهمتُ الدرسَ فهمًا عميقًا» — فهمًا nima?", "q_ar": "", "options": ["maf'ul mutlaq", "hol", "tamyiz", "maf'ul bihi"], "answer": "maf'ul mutlaq"},
+  {"type": "mcq", "q_uz": "«سافرتُ طلبًا للعلمِ» — طلبًا nima?", "q_ar": "", "options": ["maf'ul li-ajlih (maqsad)", "maf'ul mutlaq", "hol", "tamyiz"], "answer": "maf'ul li-ajlih (maqsad)"},
+  {"type": "mcq", "q_uz": "«لن ____ هذا اليومَ» (unutmayman)?", "q_ar": "", "options": ["أنسى", "أنسْ", "نسيتُ", "أنسَ"], "answer": "أنسى"},
+  {"type": "mcq", "q_uz": "«لم يذهبْ» qanday ma'no?", "q_ar": "", "options": ["bormadi (o'tgan inkor)", "bormaydi (kelasi)", "borma! (taqiq)", "boradi"], "answer": "bormadi (o'tgan inkor)"},
+  {"type": "mcq", "q_uz": "«عَالِم» ning ko'pligi?", "q_ar": "", "options": ["عُلَمَاء", "عَالِمُون", "عُلُوم", "أَعْلَام"], "answer": "عُلَمَاء"},
+  {"type": "mcq", "q_uz": "«إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ» dagi إنّما ma'nosi?", "q_ar": "", "options": ["faqat (cheklash)", "balki", "chunki", "yoki"], "answer": "faqat (cheklash)"},
+  {"type": "mcq", "q_uz": "Hadisning ikki qismi?", "q_ar": "", "options": ["sanad va matn", "oyat va sura", "kirish va xulosa", "savol va javob"], "answer": "sanad va matn"},
+  {"type": "mcq", "q_uz": "«لَمْ يَلِدْ وَلَمْ يُولَدْ» — ikkinchi fe'l qanaqa?", "q_ar": "", "options": ["majhul + majzum", "ma'lum + mansub", "amr", "masdar"], "answer": "majhul + majzum"},
+  {"type": "mcq", "q_uz": "Rasmiy xat qaysi formula bilan yakunlanadi?", "q_ar": "", "options": ["وتفضّلوا بقَبولِ فائقِ الاحترامِ", "مع السلامة يا صاحبي", "إلى اللقاءِ", "وداعًا"], "answer": "وتفضّلوا بقَبولِ فائقِ الاحترامِ"},
+  {"type": "mcq", "q_uz": "«أُقيمَ المهرجانُ» — gazeta uslubida nega majhul?", "q_ar": "", "options": ["bajaruvchi muhim emas, voqea muhim", "xato yozilgan", "she'riy uslub", "buyruq ma'nosi"], "answer": "bajaruvchi muhim emas, voqea muhim"},
+  {"type": "mcq", "q_uz": "«التعليم» va «التعلّم» farqi?", "q_ar": "", "options": ["o'qitish / o'rganish", "o'rganish / o'qitish", "maktab / dars", "bir xil"], "answer": "o'qitish / o'rganish"}
+ ],
+ "listening": [
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/qila.mp3", "options": ["deyildi (majhul)", "dedi", "aytadi", "gapir!"], "answer": "deyildi (majhul)"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/nushira.mp3", "options": ["nashr etildi", "yozildi", "o'qildi", "ochildi"], "answer": "nashr etildi"},
+  {"type": "mcq", "q_uz": "Eshitgan iborani toping", "audio": "b1/min_qibali.mp3", "options": ["tomonidan", "oldida", "uchun", "bilan"], "answer": "tomonidan"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/istighfar.mp3", "options": ["istig'for (kechirim so'rash)", "shukr", "tasbeh", "duo"], "answer": "istig'for (kechirim so'rash)"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/mumtaz.mp3", "options": ["a'lo (mumtoz)", "yomon", "o'rtacha", "qiyin"], "answer": "a'lo (mumtoz)"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/tijara.mp3", "options": ["savdo, tijorat", "sanoat", "ta'lim", "tibbiyot"], "answer": "savdo, tijorat"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/jawwal.mp3", "options": ["mobil telefon", "kompyuter", "televizor", "soat"], "answer": "mobil telefon"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/taqwa.mp3", "options": ["taqvo", "tavba", "savob", "ibodat"], "answer": "taqvo"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/rihla.mp3", "options": ["reys, safar", "xat", "shahar", "mehmonxona"], "answer": "reys, safar"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/dalil.mp3", "options": ["dalil, isbot", "savol", "javob", "fikr"], "answer": "dalil, isbot"},
+  {"type": "mcq", "q_uz": "Eshitgan ibora ma'nosi?", "audio": "b1/subhanallah.mp3", "options": ["Alloh pokdir", "Allohga hamd", "Alloh buyuk", "Alloh bilguvchi"], "answer": "Alloh pokdir"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/khulasa.mp3", "options": ["xulosa", "kirish", "sarlavha", "mavzu"], "answer": "xulosa"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/munazara.mp3", "options": ["munozara", "muzokara", "ma'ruza", "muloqot"], "answer": "munozara"},
+  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/turath.mp3", "options": ["madaniy meros", "tarix", "muzey", "kitob"], "answer": "madaniy meros"}
+ ],
+ "writing": [
+  {"task_uz": "Rasmiy ariza yozing (5-6 gap): til kursiga qabul so'rovi — murojaat, salom, maqsad (أتقدّم بطلب...), asos, yakun formulasi."},
+  {"task_uz": "«Ilm ahamiyati» mavzusida qisqa insho yozing (5-6 gap): kirish (يُعدّ...), 2 dalil (بالإضافة إلى ذلك bilan), xulosa (وفي الختام)."},
+  {"task_uz": "Uch gapni majhulga aylantiring: كتبَ الطالبُ الرسالةَ / يفتحُ العاملُ البابَ / باعَ التاجرُ البضاعةَ."},
+  {"task_uz": "Shart gaplar yozing: bittasi إذا bilan (real), bittasi لو bilan (xayoliy, javobda لَـ)."},
+  {"task_uz": "«Niyatlar hadisi»ni (إنما الأعمال بالنيات) yozing va ma'nosini o'zbekcha 2 gapda tushuntiring."}
+ ],
+ "speaking": [
+  {"q_ar": "كُتِبَ التَّقْرِيرُ مِنْ قِبَلِ المُدِيرِ، وَنُشِرَ فِي المَوْقِعِ الرَّسْمِيِّ.", "audio": "b1/nushira.mp3"},
+  {"q_ar": "إِنْ تَزْرَعْ خَيْرًا تَحْصُدْ خَيْرًا، وَلَوْ عَلِمْتُ لَجِئْتُ مُسْرِعًا.", "audio": "b1/khayr.mp3"},
+  {"q_ar": "إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَالكَلِمَةُ الطَّيِّبَةُ صَدَقَةٌ.", "audio": "b1/niyya.mp3"},
+  {"q_ar": "سَأَتَحَدَّثُ اليَوْمَ عَنْ أَهَمِّيَّةِ العِلْمِ، وَعَرْضِي يَتَكَوَّنُ مِنْ ثَلَاثَةِ أَجْزَاءٍ.", "audio": "b1/ard_taqdimi.mp3"},
+  {"q_ar": "أَحْتَرِمُ رَأْيَكَ، لٰكِنِّي أَخْتَلِفُ مَعَكَ، وَالدَّلِيلُ عَلَى ذٰلِكَ وَاضِحٌ.", "audio": "b1/dalil.mp3"},
+  {"q_ar": "اِزْدَادَتِ المَدِينَةُ سُكَّانًا، وَجَاءَ النَّاسُ إِلَيْهَا طَلَبًا لِلرِّزْقِ.", "audio": "b1/rizq.mp3"}
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "id": "b1-38",
+ "level": "B1",
+ "module": "skills",
+ "order": 38,
+ "title_uz": "O'qish: yangilik 4 (madaniyat)",
+ "title_ar": "قِرَاءَة: خَبَرٌ ثَقَافِيّ",
+ "can_do_uz": "Madaniyat-tarix mavzusidagi maqolani o'qib, fikr va faktni ajrata olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-37"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "So'nggi o'qish darsi — eng yaqin mavzu: SAMARQAND! Arab sayohatnomalarida yurtimiz asrlardan beri tilga olinadi. Bugun FAKT (dalil) va FIKR (muallif qarashi) ni ajratishni o'rganamiz — tanqidiy o'qishning kaliti.",
+ "grammar": {
+  "point_ar": "الحَقِيقَةُ وَالرَّأْي",
+  "explanation_uz": "FAKT belgilari: sanalar, raqamlar, joy nomlari, majhul fe'llar (بُنيتْ عامَ... — ...yilda qurilgan). FIKR belgilari: أعتقدُ أنَّ (menimcha), يبدو أنَّ (ko'rinishicha), من أجملِ... (eng go'zallaridan — baho!), sifatlar (رائع، ساحر). Maqolada ikkalasi aralashadi — savol bering: «Buni isbotlash mumkinmi?» Mumkin — fakt, muallifga bog'liq — fikr.",
+  "table": [
+   {"ar": "بُنيتْ عامَ ٧٥١", "uz": "751-yilda qurilgan — FAKT", "form": "fakt"},
+   {"ar": "من أجملِ مدنِ العالمِ", "uz": "dunyoning eng go'zal shaharlaridan — FIKR", "form": "fikr"},
+   {"ar": "يبدو أنَّ...", "uz": "ko'rinishicha... — FIKR", "form": "fikr"},
+   {"ar": "يقعُ في...", "uz": "...da joylashgan — FAKT", "form": "fakt"}
+  ],
+  "common_mistakes_uz": [
+   "Chiroyli yozilgan fikrni fakt deb qabul qilish — «eng go'zal» isbotlanmaydi.",
+   "تُرَاث (meros) va تَارِيخ (tarix) ni bir xil deb o'ylash.",
+   "يبدو أنّ dan keyin xabarni unutish — to'liq gap talab qiladi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "و ر ث",
+   "meaning_uz": "meros",
+   "uz_cognates": ["meros", "vorislar"],
+   "derived": [
+    {"ar": "وَرِثَ", "uz": "meros oldi", "pattern": "فَعِلَ"},
+    {"ar": "تُرَاث", "uz": "madaniy meros", "pattern": "فُعَال"},
+    {"ar": "وَارِث", "uz": "voris", "pattern": "فَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "تُرَاث", "translit": "turāth", "uz": "madaniy meros (voris o'zagi)", "root": "و ر ث", "pattern": "فُعَال", "pos": "ot", "audio": "b1/turath.mp3", "example_ar": "نحافظُ على تراثِنا الغنيِّ.", "example_uz": "Boy merosimizni asraymiz.", "srs": true},
+  {"ar": "حَضَارَة", "translit": "ḥaḍāra", "uz": "sivilizatsiya, madaniyat taraqqiyoti", "root": "ح ض ر", "pattern": "فَعَالَة", "pos": "ot", "audio": "b1/hadara2.mp3", "example_ar": "حضارةُ ما وراءَ النهرِ عريقةٌ.", "example_uz": "Movarounnahr sivilizatsiyasi qadimiy.", "srs": true},
+  {"ar": "أَثَر", "translit": "athar", "uz": "yodgorlik, iz (ko'pligi: آثار — 'asar')", "root": "أ ث ر", "pattern": "فَعَل", "pos": "ot", "audio": "b1/athar.mp3", "example_ar": "آثارُ سمرقندَ تجذبُ السياحَ.", "example_uz": "Samarqand yodgorliklari sayyohlarni jalb qiladi.", "srs": true},
+  {"ar": "عَرِيق", "translit": "ʿarīq", "uz": "qadimiy, ildizi chuqur", "root": "ع ر ق", "pattern": "فَعِيل", "pos": "sifat", "audio": "b1/ariq.mp3", "example_ar": "مدينةٌ عريقةٌ في التاريخِ.", "example_uz": "Tarixda ildizi chuqur shahar.", "srs": true},
+  {"ar": "يَقَعُ", "translit": "yaqaʿu", "uz": "joylashgan (mavqe o'zagi)", "root": "و ق ع", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "b1/yaqau.mp3", "example_ar": "تقعُ سمرقندُ على طريقِ الحريرِ.", "example_uz": "Samarqand Ipak yo'lida joylashgan.", "srs": true},
+  {"ar": "اِشْتَهَرَ بِـ", "translit": "ishtahara bi-", "uz": "… bilan mashhur bo'ldi", "root": "ش ه ر", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ishtahara.mp3", "example_ar": "اشتهرتْ بخارى بعلمائِها.", "example_uz": "Buxoro ulamolari bilan mashhur.", "srs": true},
+  {"ar": "سَائِح", "translit": "sāʾiḥ", "uz": "sayyoh (o'zbekcha 'sayyoh' — shu o'zak!)", "root": "س ي ح", "pattern": "فَاعِل", "pos": "ot", "audio": "b1/saih.mp3", "example_ar": "يزورُها ملايينُ السياحِ سنويًّا.", "example_uz": "Uni yiliga millionlab sayyohlar ziyorat qiladi.", "srs": true},
+  {"ar": "أَعْتَقِدُ أَنَّ", "translit": "aʿtaqidu anna", "uz": "menimcha, ishonamanki (fikr belgisi!)", "root": "ع ق د", "pattern": "أَفْتَعِلُ", "pos": "fe'l", "audio": "b1/ataqidu.mp3", "example_ar": "أعتقدُ أنَّ السفرَ خيرُ معلمٍ.", "example_uz": "Menimcha, safar — eng yaxshi muallim.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "تقعُ سمرقندُ في قلبِ طريقِ الحريرِ، وقد ذكرَها الرحّالةُ العربُ قبلَ أكثرَ من ألفِ عامٍ. اشتهرتِ المدينةُ بميدانِ ريجستان وقبةِ غورِ أميرَ، ويزورُها اليومَ ملايينُ السياحِ سنويًّا. وأعتقدُ أنها من أجملِ مدنِ العالمِ، فآثارُها العريقةُ تحكي قصةَ حضارةٍ عظيمةٍ لا تُنسى.",
+   "questions": [
+    {"q_uz": "Matndan 2 ta FAKT toping.", "a": "Ipak yo'lida joylashgani; arab sayyohlari 1000 yil oldin tilga olgani; millionlab sayyohlar kelishi"},
+    {"q_uz": "Matndan FIKRNI toping.", "a": "«Menimcha, u dunyoning eng go'zal shaharlaridan» (أعتقد أنها...)"},
+    {"q_uz": "«لا تُنسى» qanday shakl va ma'no?", "a": "Majhul muzori': «unutilmaydi»"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/turath.mp3",
+   "transcript_ar": "تُرَاث",
+   "questions": [
+    {"q_uz": "Eshitilgan so'z ma'nosi?", "a": "Madaniy meros"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Gid bo'ling: «Samarqand Ipak yo'lida joylashgan. Registon bilan mashhur. Menimcha, u juda go'zal» — arabcha ayting.",
+   "target_ar": ["تَقَعُ سَمَرْقَنْدُ عَلَى طَرِيقِ الحَرِيرِ", "اِشْتَهَرَتْ بِمَيْدَانِ رِيجِسْتَان", "أَعْتَقِدُ أَنَّهَا جَمِيلَةٌ جِدًّا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "O'z shahringiz haqida 4 gap yozing: 2 FAKT (joylashuvi, mashhurligi) va 2 FIKR (أعتقد أنّ bilan).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "Qaysi biri FAKT?", "q_ar": "", "options": ["تقعُ سمرقندُ على طريقِ الحريرِ", "هي أجملُ مدينةٍ", "يبدو أنها ساحرةٌ", "أعتقدُ أنها رائعةٌ"], "answer": "تقعُ سمرقندُ على طريقِ الحريرِ", "explain_uz": "Joylashuv — isbotlanadigan fakt; qolganlari baho.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«أعتقدُ أنَّ...» nimaning belgisi?", "q_ar": "", "options": ["fikr (muallif qarashi)", "fakt", "buyruq", "savol"], "answer": "fikr (muallif qarashi)", "explain_uz": "«Menimcha» — shaxsiy qarash kiritadi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«اشتهرتْ بخارى بعلمائها» ma'nosi?", "q_ar": "", "options": ["Buxoro ulamolari bilan mashhur", "Buxoro olimlarni chaqirdi", "Buxoroda maktab ko'p", "Buxoro shahar emas"], "answer": "Buxoro ulamolari bilan mashhur", "explain_uz": "اشتهر بـ — «... bilan mashhur bo'lmoq».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "madaniy meros", "q_ar": "", "options": [], "answer": "تُرَاث", "explain_uz": "تراث — avlodlarga o'tgan meros.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "sayyoh", "q_ar": "", "options": [], "answer": "سَائِح", "explain_uz": "سائح — sayyoh (siyohat o'zagi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«تُرَاث، وَارِث، مِيرَاث» qaysi o'zakdan?", "q_ar": "", "options": ["و ر ث", "ت ر ث", "و ر د"], "answer": "و ر ث", "explain_uz": "«و ر ث» — meros o'zagi.", "audio": "", "root": "و ر ث", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«آثَار» so'zining bu matndagi ma'nosi?", "q_ar": "", "options": ["tarixiy yodgorliklar", "kitob asarlari", "izlar (oyoq)", "ta'sirlar"], "answer": "tarixiy yodgorliklar", "explain_uz": "أثر ning ko'pligi — kontekstda yodgorliklar.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "و ر ث", "back": "meros o'zagi (voris)", "deck": "msa"},
+  {"type": "word", "front": "تُرَاث", "back": "madaniy meros", "deck": "msa"},
+  {"type": "word", "front": "حَضَارَة", "back": "sivilizatsiya", "deck": "msa"},
+  {"type": "word", "front": "أَثَر / آثَار", "back": "yodgorlik(lar)", "deck": "msa"},
+  {"type": "word", "front": "عَرِيق", "back": "qadimiy", "deck": "msa"},
+  {"type": "word", "front": "يَقَعُ", "back": "joylashgan", "deck": "msa"},
+  {"type": "word", "front": "اِشْتَهَرَ بِـ", "back": "… bilan mashhur", "deck": "msa"},
+  {"type": "word", "front": "سَائِح", "back": "sayyoh", "deck": "msa"},
+  {"type": "word", "front": "أَعْتَقِدُ أَنَّ", "back": "menimcha (fikr)", "deck": "msa"}
+ ]
+}

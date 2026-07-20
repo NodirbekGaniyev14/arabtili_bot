@@ -1,0 +1,91 @@
+{
+ "id": "b1-49",
+ "level": "B1",
+ "module": "review",
+ "order": 49,
+ "title_uz": "Sinov imtihoni",
+ "title_ar": "اِمْتِحَانٌ تَجْرِيبِيّ",
+ "can_do_uz": "B1 imtihoni formatini bilaman va sinov testida kuchli-zaif tomonlarimni aniqladim.",
+ "duration_min": 35,
+ "prerequisites": ["b1-48"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Katta imtihon oldidan — MASHQ JANGI! Bu dars haqiqiy imtihonning kichik nusxasi: barcha modullardan aralash savollar. Xato qilsangiz — ayni muddao: imtihonda emas, shu yerda xato qiling! Yakunda B1 imtihoniga yo'llanma olasiz.",
+ "grammar": {
+  "point_ar": "اِسْتِرَاتِيجِيَّةُ الاِمْتِحَان",
+  "explanation_uz": "IMTIHON STRATEGIYASI: (1) VAQT: har savolga o'rtacha 1 daqiqa — qotib qolmang, belgilab keyinga qoldiring. (2) O'QISH bo'limida avval savollarni o'qing, keyin matnni — nimani izlashni bilasiz. (3) TINGLASHDA birinchi eshitishda javob belgilang, ikkinchisida tekshiring. (4) YOZISHDA reja: kirish-asosiy-xulosa; oddiy, ANIQ gaplar murakkab xato gapdan yaxshi. (5) Ishonchsiz javobni ham BELGILANG — bo'sh qoldirmang.",
+  "table": [
+   {"ar": "دقيقةٌ لكلِّ سؤالٍ", "uz": "har savolga 1 daqiqa", "form": "vaqt"},
+   {"ar": "اقرأِ الأسئلةَ أولًا", "uz": "avval savollarni o'qing", "form": "o'qish"},
+   {"ar": "لا تتركْ فراغًا", "uz": "bo'sh qoldirmang", "form": "qoida"},
+   {"ar": "جملةٌ بسيطةٌ صحيحةٌ", "uz": "sodda-to'g'ri gap afzal", "form": "yozish"}
+  ],
+  "common_mistakes_uz": [
+   "Bir savolda 5 daqiqa qotish — belgilab o'ting, keyin qaytasiz.",
+   "Yozishda «chiroyli» murakkab gapga urinib xato qilish — sodda va to'g'ri yozing.",
+   "Sinovdan keyin xatolarni tahlil qilmaslik — xato eng yaxshi o'qituvchi!"
+  ]
+ },
+ "roots": [
+  {
+   "root": "ج ر ب",
+   "meaning_uz": "sinash, tajriba",
+   "uz_cognates": ["tajriba", "sinov"],
+   "derived": [
+    {"ar": "جَرَّبَ", "uz": "sinab ko'rdi", "pattern": "فَعَّلَ"},
+    {"ar": "تَجْرِيبِيّ", "uz": "sinov (tajribaviy)", "pattern": ""}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "اِمْتِحَان تَجْرِيبِيّ", "translit": "imtiḥān tajrībī", "uz": "sinov imtihoni", "root": "م ح ن", "pattern": "", "pos": "ibora", "audio": "b1/imtihan_tajribi.mp3", "example_ar": "الامتحانُ التجريبيُّ يكشفُ الضعفَ.", "example_uz": "Sinov imtihoni zaif joyni ochadi.", "srs": true},
+  {"ar": "اِسْتِرَاتِيجِيَّة", "translit": "istirātījiyya", "uz": "strategiya", "root": "", "pattern": "", "pos": "ot", "audio": "b1/istratijiyya.mp3", "example_ar": "ضعْ استراتيجيةً قبلَ البدءِ.", "example_uz": "Boshlashdan oldin strategiya tuzing.", "srs": true},
+  {"ar": "نُقْطَة ضَعْف", "translit": "nuqṭat ḍaʿf", "uz": "zaif nuqta", "root": "ض ع ف", "pattern": "", "pos": "ibora", "audio": "b1/nuqtat_daf.mp3", "example_ar": "حدّدْ نقاطَ ضعفِكَ وقوّها.", "example_uz": "Zaif nuqtalaringizni aniqlab, kuchaytiring.", "srs": true},
+  {"ar": "نُقْطَة قُوَّة", "translit": "nuqṭat quwwa", "uz": "kuchli nuqta", "root": "ق و ي", "pattern": "", "pos": "ibora", "audio": "b1/nuqtat_quwwa.mp3", "example_ar": "اعرفْ نقاطَ قوتِكَ.", "example_uz": "Kuchli tomonlaringizni biling.", "srs": true},
+  {"ar": "مُدَّة", "translit": "mudda", "uz": "muddat (o'zbekcha 'muddat')", "root": "م د د", "pattern": "فُعْلَة", "pos": "ot", "audio": "b1/mudda.mp3", "example_ar": "مدةُ الامتحانِ خمسٌ وأربعونَ دقيقةً.", "example_uz": "Imtihon muddati — 45 daqiqa.", "srs": true},
+  {"ar": "ثِقَة بِالنَّفْس", "translit": "thiqa bin-nafs", "uz": "o'ziga ishonch", "root": "و ث ق", "pattern": "", "pos": "ibora", "audio": "b1/thiqa_nafs.mp3", "example_ar": "ادخلِ الامتحانَ بثقةٍ بالنفسِ.", "example_uz": "Imtihonga o'ziga ishonch bilan kiring.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أعلنَ المعهدُ أنَّ امتحانَ المستوى المتوسطِ سيُعقدُ نهايةَ الشهرِ، ويتكونُ من أربعةِ أقسامٍ: قراءةٌ واستماعٌ وكتابةٌ ومحادثةٌ. ونصحَ المشرفونَ الطلابَ الذينَ يستعدونَ للامتحانِ بأنْ يراجعوا قليلًا كلَّ يومٍ، وألّا يسهروا ليلةَ الامتحانِ، لأنَّ العقلَ المرتاحَ يعملُ عملًا ممتازًا.",
+   "questions": [
+    {"q_uz": "Imtihon qachon va necha bo'limdan iborat?", "a": "Oy oxirida; 4 bo'lim: o'qish, tinglash, yozish, gapirish"},
+    {"q_uz": "Ustozlar qanday maslahat berdi?", "a": "Har kuni ozdan takrorlash, imtihon kechasi bedor qolmaslik"},
+    {"q_uz": "«عملًا ممتازًا» qaysi qoida?", "a": "Maf'ul mutlaq (a'lo ishlaydi — ta'kid)"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/imtihan_tajribi.mp3",
+   "transcript_ar": "اِمْتِحَان تَجْرِيبِيّ",
+   "questions": [
+    {"q_uz": "Eshitilgan ibora ma'nosi?", "a": "Sinov imtihoni"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "IMTIHON MASHQI: o'zingizni 1 daqiqada tanishtiring: ism, kasb, nega arabcha o'rganasiz, kelajak rejangiz. Bu — haqiqiy imtihon savoli!",
+   "target_ar": ["اِسْمِي...", "أَتَعَلَّمُ العَرَبِيَّةَ لِأَنَّ...", "طُمُوحِي أَنْ..."],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "IMTIHON MASHQI: «Vaqtni to'g'ri taqsimlash» mavzusida 5-6 gapli insho yozing — kirish, 2 fikr, xulosa (bu ham imtihon namunasi).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "[ARALASH] «الكتبُ ____ قرأتُها مفيدةٌ» — bo'sh joyga?", "q_ar": "", "options": ["الَّتِي", "الَّذِي", "الَّذِينَ", "مَنْ"], "answer": "الَّتِي", "explain_uz": "Jonsiz ko'plik → التي.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "[ARALASH] «لن ____ الدرسَ» (unutmayman)?", "q_ar": "", "options": ["أنسى", "أنسْ", "نسيتُ", "أنسي"], "answer": "أنسى", "explain_uz": "لن + mansub: أنسى (naqis fe'l, alif maqsura).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "[ARALASH] «وصلَ الطلابُ ____ خالدًا» (Xoliddan boshqa)?", "q_ar": "", "options": ["إلَّا", "لَكِنْ", "غَيْرُ", "بَلْ"], "answer": "إلَّا", "explain_uz": "Istisno: tasdiqda nasb bilan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "[ARALASH] «أُعلنتِ النتائجُ» dagi fe'l qanaqa?", "q_ar": "", "options": ["majhul (e'lon qilindi)", "ma'lum", "amr", "shart"], "answer": "majhul (e'lon qilindi)", "explain_uz": "Natijalar e'lon qilindi — gazeta majhuli.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "[ARALASH] muddat", "q_ar": "", "options": [], "answer": "مُدَّة", "explain_uz": "مدة — muddat.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "[ARALASH] «ادخلْ بثقةٍ ____» (o'zingga)", "q_ar": "اُدْخُلْ بِثِقَةٍ ____", "options": [], "answer": "بِالنَّفْسِ", "explain_uz": "ثقة بالنفس — o'ziga ishonch.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Sinovdan keyin eng muhim qadam?", "q_ar": "", "options": ["xatolarni tahlil qilish", "unutish", "boshqalarga aytish", "darhol qayta topshirish"], "answer": "xatolarni tahlil qilish", "explain_uz": "Xato — zaif nuqta xaritasi. Endi B1 imtihoniga tayyorsiz!", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ج ر ب", "back": "sinash o'zagi (tajriba)", "deck": "msa"},
+  {"type": "word", "front": "اِمْتِحَان تَجْرِيبِيّ", "back": "sinov imtihoni", "deck": "msa"},
+  {"type": "word", "front": "اِسْتِرَاتِيجِيَّة", "back": "strategiya", "deck": "msa"},
+  {"type": "word", "front": "نُقْطَة ضَعْف / قُوَّة", "back": "zaif / kuchli nuqta", "deck": "msa"},
+  {"type": "word", "front": "مُدَّة", "back": "muddat", "deck": "msa"},
+  {"type": "word", "front": "ثِقَة بِالنَّفْس", "back": "o'ziga ishonch", "deck": "msa"}
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "id": "b1-36",
+ "level": "B1",
+ "module": "skills",
+ "order": 36,
+ "title_uz": "O'qish: yangilik 2 (texnologiya)",
+ "title_ar": "قِرَاءَة: خَبَرٌ تِقْنِيّ",
+ "can_do_uz": "Texnologiya yangiligini o'qib, yangi atamalarni kontekstdan chiqara olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b1-35"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Texnologiya yangiliklari — eng oson janr! Nega? Chunki xalqaro so'zlar ko'p (تطبيق، ذكاء اصطناعي، روبوت) va tuzilishi bir xil: «X kompaniyasi Y ni taqdim etdi». Bugun sun'iy intellekt haqidagi xabarni o'qiymiz — mavzu ham qiziq!",
+ "grammar": {
+  "point_ar": "أَخْبَارُ التِّقْنِيَة",
+  "explanation_uz": "Texno-xabar qoliplari: (1) أَطْلَقَتْ شَرِكَةُ... (kompaniya ishga tushirdi/taqdim etdi), أَعْلَنَتْ عَنْ... (haqida e'lon qildi), كَشَفَتْ عَنْ... (ochib berdi/namoyish qildi). (2) Maqsad: يهدفُ إلى... (…ni maqsad qiladi), يساعدُ على... (…ga yordam beradi). (3) YANGI ATAMALAR ko'pincha izoh bilan keladi: الذكاءُ الاصطناعيُّ (AI) — o'qing va yodda tuting: birinchi eslatilganda izohlanadi.",
+  "table": [
+   {"ar": "أطلقتْ شركةُ...", "uz": "kompaniya taqdim etdi", "form": "qolip"},
+   {"ar": "أعلنتْ عن...", "uz": "haqida e'lon qildi", "form": "qolip"},
+   {"ar": "يهدفُ إلى...", "uz": "…ni maqsad qiladi", "form": "qolip"},
+   {"ar": "الذَّكَاءُ الاِصْطِنَاعِيّ", "uz": "sun'iy intellekt (AI)", "form": "atama"}
+  ],
+  "common_mistakes_uz": [
+   "ذَكَاء (aql-zakovat) va ذِكْر (zikr) o'zaklarini adashtirish — birinchisi ذ ك و.",
+   "اصطناعي ni «sanoat» deb tarjima qilish — u «sun'iy» (yasama).",
+   "Ingliz atamasini bilib turib arabchasidan qochish — ikkalasini bog'lang."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ذ ك و",
+   "meaning_uz": "zakovat, o'tkirlik",
+   "uz_cognates": ["zakovat", "zakiy (zehnli)"],
+   "derived": [
+    {"ar": "ذَكَاء", "uz": "aql, zakovat", "pattern": "فَعَال"},
+    {"ar": "ذَكِيّ", "uz": "aqlli, zakiy", "pattern": "فَعِيل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "ذَكَاء اِصْطِنَاعِيّ", "translit": "dhakāʾ iṣṭināʿī", "uz": "sun'iy intellekt (AI)", "root": "ذ ك و", "pattern": "", "pos": "ibora", "audio": "b1/dhaka_istinai.mp3", "example_ar": "الذكاءُ الاصطناعيُّ يغيّرُ العالمَ.", "example_uz": "Sun'iy intellekt dunyoni o'zgartirmoqda.", "srs": true},
+  {"ar": "أَطْلَقَ", "translit": "aṭlaqa", "uz": "ishga tushirdi, taqdim etdi (IV bob)", "root": "ط ل ق", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/atlaqa.mp3", "example_ar": "أطلقتِ الشركةُ تطبيقًا جديدًا.", "example_uz": "Kompaniya yangi ilova taqdim etdi.", "srs": true},
+  {"ar": "كَشَفَ عَنْ", "translit": "kashafa ʿan", "uz": "ochib berdi, namoyish qildi (o'zbekcha 'kashf')", "root": "ك ش ف", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/kashafa.mp3", "example_ar": "كشفتْ عن هاتفِها الجديدِ.", "example_uz": "Yangi telefonini namoyish qildi.", "srs": true},
+  {"ar": "مُسْتَخْدِم", "translit": "mustakhdim", "uz": "foydalanuvchi (X bob ism fo'ili)", "root": "خ د م", "pattern": "مُسْتَفْعِل", "pos": "ot", "audio": "b1/mustakhdim.mp3", "example_ar": "ملايينُ المستخدمينَ حولَ العالمِ.", "example_uz": "Dunyo bo'ylab millionlab foydalanuvchilar.", "srs": true},
+  {"ar": "مِيزَة", "translit": "mīza", "uz": "xususiyat, afzallik (imtiyoz o'zagi)", "root": "م ي ز", "pattern": "فِعْلَة", "pos": "ot", "audio": "b1/miza.mp3", "example_ar": "التحديثُ يضيفُ ميزاتٍ جديدةً.", "example_uz": "Yangilanish yangi xususiyatlar qo'shadi.", "srs": true},
+  {"ar": "تَحْدِيث", "translit": "taḥdīth", "uz": "yangilanish, update", "root": "ح د ث", "pattern": "تَفْعِيل", "pos": "ot", "audio": "b1/tahdith.mp3", "example_ar": "نزّلِ التحديثَ الأخيرَ.", "example_uz": "So'nggi yangilanishni yuklab oling.", "srs": true},
+  {"ar": "مَجَّانِيّ", "translit": "majjānī", "uz": "bepul, tekin", "root": "م ج ن", "pattern": "", "pos": "sifat", "audio": "b1/majjani.mp3", "example_ar": "التطبيقُ مجانيٌّ بالكاملِ.", "example_uz": "Ilova butunlay bepul.", "srs": true},
+  {"ar": "أَمَان البَيَانَات", "translit": "amānu l-bayānāt", "uz": "ma'lumotlar xavfsizligi", "root": "أ م ن", "pattern": "", "pos": "ibora", "audio": "b1/aman_bayanat.mp3", "example_ar": "أمانُ البياناتِ أولويةٌ.", "example_uz": "Ma'lumotlar xavfsizligi — ustuvor.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أطلقتْ شركةٌ تقنيةٌ كبرى أمسِ تطبيقًا جديدًا يعتمدُ على الذكاءِ الاصطناعيِّ لتعليمِ اللغاتِ. وكشفتِ الشركةُ عن ميزاتٍ عدةٍ، منها محادثةٌ صوتيةٌ مع معلمٍ افتراضيٍّ يصححُ النطقَ فورًا. وأكّدتْ أنَّ التطبيقَ مجانيٌّ في نسختِهِ الأولى، وأنَّ أمانَ بياناتِ المستخدمينَ أولويةٌ قصوى. ويتوقعُ الخبراءُ أنْ يصلَ عددُ المستخدمينَ إلى عشرةِ ملايينَ خلالَ عامٍ.",
+   "questions": [
+    {"q_uz": "Nima taqdim etildi?", "a": "AI asosidagi til o'rgatuvchi ilova"},
+    {"q_uz": "Asosiy xususiyati?", "a": "Talaffuzni darhol to'g'irlaydigan virtual o'qituvchi bilan ovozli suhbat"},
+    {"q_uz": "Narxi va xavfsizlik haqida nima deyilgan?", "a": "Birinchi versiyasi bepul; ma'lumotlar xavfsizligi — ustuvor"},
+    {"q_uz": "Ekspertlar prognozi?", "a": "Bir yilda 10 million foydalanuvchi"}
+   ]
+  },
+  "listening": {
+   "audio": "b1/tahdith.mp3",
+   "transcript_ar": "تَحْدِيث",
+   "questions": [
+    {"q_uz": "Eshitilgan atama ma'nosi?", "a": "Yangilanish (update)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Texno-taqdimotchi bo'ling: «Kompaniya yangi ilova taqdim etdi. Ilova bepul. U talaffuzni to'g'irlaydi» — arabcha ayting.",
+   "target_ar": ["أَطْلَقَتِ الشَّرِكَةُ تَطْبِيقًا جَدِيدًا", "التَّطْبِيقُ مَجَّانِيٌّ", "يُصَحِّحُ النُّطْقَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "O'zingiz orzu qilgan ilova haqida mini-yangilik yozing (3-4 gap): nomi, vazifasi, asosiy xususiyati.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«الذكاء الاصطناعي» ma'nosi?", "q_ar": "", "options": ["sun'iy intellekt", "sanoat aqli", "tabiiy fan", "kompyuter o'yini"], "answer": "sun'iy intellekt", "explain_uz": "ذكاء (aql) + اصطناعي (sun'iy) = AI.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Kompaniya yangi ilova taqdim etdi» qaysi?", "q_ar": "", "options": ["أطلقتِ الشركةُ تطبيقًا جديدًا", "طلقتِ الشركةُ تطبيقًا", "انطلقتِ الشركةُ تطبيقًا", "أطلقَ التطبيقُ شركةً"], "answer": "أطلقتِ الشركةُ تطبيقًا جديدًا", "explain_uz": "أطلق (IV bob) — ishga tushirmoq.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "مُسْتَخْدِم qaysi bobning ism fo'ili?", "q_ar": "", "options": ["X (استخدم — foydalanmoq)", "II", "IV", "VIII"], "answer": "X (استخدم — foydalanmoq)", "explain_uz": "استخدم → مستخدِم (foydalanuvchi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "bepul", "q_ar": "", "options": [], "answer": "مَجَّانِيّ", "explain_uz": "مجاني — bepul.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "yangilanish (update)", "q_ar": "", "options": [], "answer": "تَحْدِيث", "explain_uz": "تحديث — yangilash.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«ذَكَاء، ذَكِيّ» qaysi o'zakdan?", "q_ar": "", "options": ["ذ ك و", "ذ ك ر", "ز ك و"], "answer": "ذ ك و", "explain_uz": "«ذ ك و» — zakovat o'zagi.", "audio": "", "root": "ذ ك و", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«يُتوقَّعُ أنْ يصلَ...» qanday qurilma?", "q_ar": "", "options": ["majhul + أنْ mansub (kutilmoqda)", "amr", "shart", "istisno"], "answer": "majhul + أنْ mansub (kutilmoqda)", "explain_uz": "Gazeta prognozi: yutavaqqa'u an — kutilmoqda.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ذ ك و", "back": "zakovat o'zagi", "deck": "msa"},
+  {"type": "word", "front": "ذَكَاء اِصْطِنَاعِيّ", "back": "sun'iy intellekt", "deck": "msa"},
+  {"type": "word", "front": "أَطْلَقَ", "back": "taqdim etdi, ishga tushirdi", "deck": "msa"},
+  {"type": "word", "front": "كَشَفَ عَنْ", "back": "namoyish qildi", "deck": "msa"},
+  {"type": "word", "front": "مُسْتَخْدِم", "back": "foydalanuvchi", "deck": "msa"},
+  {"type": "word", "front": "مِيزَة", "back": "xususiyat", "deck": "msa"},
+  {"type": "word", "front": "تَحْدِيث", "back": "yangilanish", "deck": "msa"},
+  {"type": "word", "front": "مَجَّانِيّ", "back": "bepul", "deck": "msa"}
+ ]
+}
