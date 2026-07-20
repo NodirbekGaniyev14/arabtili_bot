@@ -1,0 +1,95 @@
+{
+ "id": "a2-52",
+ "level": "A2",
+ "module": "skills",
+ "order": 52,
+ "title_uz": "Gapirish: rol o'yinlari",
+ "title_ar": "مُحَادَثَة: تَمْثِيلُ الأَدْوَار",
+ "can_do_uz": "Real vaziyatlarda rol o'ynab, ishonch bilan suhbat qura olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-51"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "Endi gapirishni mashq qilamiz! Ilovadagi «Jonli suhbat» (حِوَار) rejimida taksichi, ofitsiant, mehmonxona xodimi bilan suhbatlashasiz. Xato qilishdan qo'rqmang — bu o'rganishning eng tez yo'li!",
+ "grammar": {
+  "point_ar": "مَهَارَةُ الحِوَار",
+  "explanation_uz": "Suhbat ko'nikmasi uchun 4 tamoyil: (1) BOSHLASH — salom + savol (السلام عليكم، لَو سَمَحْت...). (2) ANIQLASHTIRISH — tushunmasangiz: مَعْذِرَة، مُمْكِن تُعِيد؟ (kechirasiz, qaytarasizmi?). (3) VAQT YUTISH — يَعْنِي..., لَحْظَة... (o'ylash uchun). (4) YAKUNLASH — شُكْرًا، مَعَ السَّلَامَة. Ravonlik (طَلَاقَة) mukammallikdan muhimroq — gapirishda davom eting!",
+  "table": [
+   {"ar": "لَو سَمَحْت، مُمْكِن...؟", "uz": "Iltimos, mumkinmi...?", "form": "boshlash"},
+   {"ar": "مُمْكِن تُعِيد؟", "uz": "Qaytara olasizmi?", "form": "aniqlashtirish"},
+   {"ar": "لَحْظَة، يَعْنِي...", "uz": "Bir lahza, ya'ni...", "form": "vaqt yutish"},
+   {"ar": "شُكْرًا، مَعَ السَّلَامَة", "uz": "Rahmat, xayr", "form": "yakunlash"}
+  ],
+  "common_mistakes_uz": [
+   "Mukammal gapirishga urinib, jim qolish — ravonlik muhimroq.",
+   "Tushunmaganda so'ramaslik — «مُمْكِن تُعِيد؟» deb so'rang.",
+   "Faqat yodlangan iboralar bilan cheklanish — moslashib gapiring."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ح و ر",
+   "meaning_uz": "suhbat, dialog",
+   "uz_cognates": ["hivor", "muhovara"],
+   "derived": [
+    {"ar": "حِوَار", "uz": "suhbat, dialog", "pattern": "فِعَال"},
+    {"ar": "مُحَاوَرَة", "uz": "muloqot, bahs", "pattern": "مُفَاعَلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "حِوَار", "translit": "ḥiwār", "uz": "suhbat, dialog (o'zbekcha 'hivor')", "root": "ح و ر", "pattern": "فِعَال", "pos": "ot", "audio": "a2/hiwar.mp3", "example_ar": "حِوَارٌ قَصِيرٌ.", "example_uz": "Qisqa suhbat.", "srs": true},
+  {"ar": "دَوْر", "translit": "dawr", "uz": "rol, navbat (o'zbekcha 'davr')", "root": "د و ر", "pattern": "فَعْل", "pos": "ot", "audio": "a2/dawr.mp3", "example_ar": "دَوْرُكَ الآنَ.", "example_uz": "Endi sizning navbatingiz.", "srs": true},
+  {"ar": "مَوْقِف", "translit": "mawqif", "uz": "vaziyat, holat", "root": "و ق ف", "pattern": "مَفْعِل", "pos": "ot", "audio": "a1/mawqif.mp3", "example_ar": "مَوْقِفٌ صَعْبٌ.", "example_uz": "Qiyin vaziyat.", "srs": true},
+  {"ar": "طَلَاقَة", "translit": "ṭalāqa", "uz": "ravonlik (gapirishda)", "root": "ط ل ق", "pattern": "فَعَالَة", "pos": "ot", "audio": "a2/talaqa.mp3", "example_ar": "يَتَكَلَّمُ بِطَلَاقَةٍ.", "example_uz": "Ravon gapiradi.", "srs": true},
+  {"ar": "ثِقَة", "translit": "thiqa", "uz": "ishonch (o'zbekcha 'vasiqa' o'zagidan)", "root": "و ث ق", "pattern": "فِعَة", "pos": "ot", "audio": "a2/thiqa.mp3", "example_ar": "تَكَلَّمْ بِثِقَةٍ.", "example_uz": "Ishonch bilan gapir.", "srs": true},
+  {"ar": "تُعِيد", "translit": "tuʿīd", "uz": "qaytarasiz (takrorlaysiz)", "root": "ع و د", "pattern": "تُفِيل", "pos": "fe'l", "audio": "a2/tuid.mp3", "example_ar": "مُمْكِن تُعِيد؟", "example_uz": "Qaytara olasizmi?", "srs": true},
+  {"ar": "تَدْرِيب", "translit": "tadrīb", "uz": "mashq, trening", "root": "د ر ب", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/tadrib.mp3", "example_ar": "تَدْرِيبٌ يَوْمِيٌّ.", "example_uz": "Kunlik mashq.", "srs": true},
+  {"ar": "مَعَ السَّلَامَة", "translit": "maʿa s-salāma", "uz": "xayr, omon bo'ling", "root": "س ل م", "pattern": "", "pos": "ibora", "audio": "a2/maa_salama.mp3", "example_ar": "شُكْرًا، مَعَ السَّلَامَةِ.", "example_uz": "Rahmat, xayr.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "في التاكسي:\n— لو سمحت، أبغى أروح الحرم. بكم؟\n— بخمسين ريال.\n— غالي واجد! سو لي خصم.\n— خلاص، أربعين. يلا!\n— تمام، شكرًا. مع السلامة.",
+   "questions": [
+    {"q_uz": "Yakuniy narx qancha?", "a": "Qirq riyol (أربعين)"},
+    {"q_uz": "Suhbat qanday yakunlandi?", "a": "شكرًا، مع السلامة (rahmat, xayr)"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/hiwar.mp3",
+   "transcript_ar": "حِوَار",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Suhbat, dialog"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Ilovadagi «Jonli suhbat» rejimini oching va taksichi bilan suhbatlashing. Keyin restoran vaziyatini sinab ko'ring.",
+   "target_ar": ["لَو سَمَحْت", "مُمْكِن تُعِيد؟", "مَعَ السَّلَامَة"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Restoranda 4 gapli suhbat yozing: salom, buyurtma, savol, yakun.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«Qaytara olasizmi?» (tushunmaganda) qaysi?", "q_ar": "", "options": ["مُمْكِن تُعِيد؟", "مَعَ السَّلَامَة", "دَوْرُكَ", "بِثِقَةٍ"], "answer": "مُمْكِن تُعِيد؟", "explain_uz": "مُمْكِن تُعِيد؟ — takrorlashni so'rash.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "تَكَلَّمْ بِثِقَةٍ", "options": [], "answer": "ishonch bilan gapir", "explain_uz": "تَكَلَّمْ = gapir (amr), ثِقَة = ishonch.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Suhbatda nima muhimroq?", "q_ar": "", "options": ["ravonlik (davom etish)", "mukammal grammatika", "tez gapirish", "uzun gaplar"], "answer": "ravonlik (davom etish)", "explain_uz": "Ravonlik (طَلَاقَة) mukammallikdan muhimroq — gapirishda davom eting.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«حِوَار، مُحَاوَرَة» qaysi o'zakdan?", "q_ar": "", "options": ["ح و ر", "ح د ث", "ح ي ي"], "answer": "ح و ر", "explain_uz": "«ح و ر» — suhbat o'zagi: hivor, muhovara.", "audio": "", "root": "ح و ر", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "xayr, omon bo'ling", "q_ar": "", "options": [], "answer": "مَعَ السَّلَامَة", "explain_uz": "مَعَ السَّلَامَة — xayrlashuv iborasi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "rol, navbat", "q_ar": "", "options": [], "answer": "دَوْر", "explain_uz": "دَوْر — rol/navbat (o'zbekcha 'davr').", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "mashq, trening", "q_ar": "", "options": [], "answer": "تَدْرِيب", "explain_uz": "تَدْرِيب — mashq (د ر ب o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ح و ر", "back": "suhbat o'zagi (hivor, muhovara)", "deck": "msa"},
+  {"type": "word", "front": "حِوَار", "back": "suhbat, dialog", "deck": "msa"},
+  {"type": "word", "front": "دَوْر", "back": "rol, navbat", "deck": "msa"},
+  {"type": "word", "front": "مَوْقِف", "back": "vaziyat, holat", "deck": "msa"},
+  {"type": "word", "front": "طَلَاقَة", "back": "ravonlik", "deck": "msa"},
+  {"type": "word", "front": "ثِقَة", "back": "ishonch", "deck": "msa"},
+  {"type": "word", "front": "تُعِيد", "back": "qaytarasiz (takrorlaysiz)", "deck": "msa"},
+  {"type": "word", "front": "تَدْرِيب", "back": "mashq, trening", "deck": "msa"},
+  {"type": "word", "front": "مَعَ السَّلَامَة", "back": "xayr, omon bo'ling", "deck": "msa"}
+ ]
+}

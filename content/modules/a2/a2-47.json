@@ -1,0 +1,112 @@
+{
+ "id": "a2-47",
+ "level": "A2",
+ "module": "saudi",
+ "order": 47,
+ "title_uz": "Hijoziy ustaxonasi",
+ "title_ar": "وَرْشَةُ اللَّهْجَة الحِجَازِيَّة",
+ "can_do_uz": "Saudiyada kundalik eng kerakli hijoziy so'z va iboralarni tushunaman va ishlataman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-46"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "Saudiya modulini yakunlaymiz! Kundalik gapda eng ko'p eshitiladigan so'zlar: تَمَام (zo'r), يَلّا (qani), خَلَاص (bo'ldi), وَاجِد (ko'p). Bularni bilsangiz — mahalliylardek gapirasiz! Bugun eng kerakli hijoziy iboralarni jamlaymiz.",
+ "grammar": {
+  "point_ar": "أَهَمُّ الكَلِمَات الحِجَازِيَّة",
+  "explanation_uz": "Hijoziy lahja (Makka-Madina-Jidda) rasmiy arabchadan (فصحى) farq qiladi, lekin tushunish oson. Eng muhim farqlar: أُرِيدُ → أَبْغَى (xohlayman), كَثِير → وَاجِد (ko'p), أَيْنَ → وِين (qayerda), جَيِّد → زَيْن/تَمَام (yaxshi). Kundalik «to'ldiruvchi» so'zlar: يَلّا (qani/yur), خَلَاص (bo'ldi/tamom), طَيِّب (mayli), عَادِي (normal), أَكِيد (albatta), مَافِي (yo'q). Bularni ishlatsangiz, suhbat tabiiy bo'ladi.",
+  "table": [
+   {"ar": "أَبْغَى · وَاجِد · وِين", "uz": "xohlayman · ko'p · qayerda", "form": "asosiy"},
+   {"ar": "تَمَام · زَيْن · طَيِّب", "uz": "zo'r · yaxshi · mayli", "form": "ijobiy"},
+   {"ar": "يَلّا · خَلَاص", "uz": "qani/yur · bo'ldi/tamom", "form": "harakat"},
+   {"ar": "مَافِي · عَادِي · أَكِيد", "uz": "yo'q · normal · albatta", "form": "javob"}
+  ],
+  "common_mistakes_uz": [
+   "Rasmiy va hijoziyni butunlay ajratish — ular aralashib ishlatiladi.",
+   "يَلّا (qani) va خَلَاص (bo'ldi) o'rnini chalkashtirish.",
+   "مَافِي (yo'q) ni rasmiy لَيْسَ bilan chalkashtirish — mafi kundalik."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ف ه م",
+   "meaning_uz": "tushunish",
+   "uz_cognates": ["fahm", "mafhum", "tafhim"],
+   "derived": [
+    {"ar": "فَهِمْت", "uz": "tushundim", "pattern": "فَعِلْت"},
+    {"ar": "مَفْهُوم", "uz": "tushunarli", "pattern": "مَفْعُول"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "لَهْجَة", "translit": "lahja", "uz": "lahja, sheva", "root": "ل ه ج", "pattern": "فَعْلَة", "pos": "ot", "audio": "a2/lahja.mp3", "example_ar": "اللَّهْجَةُ الحِجَازِيَّةُ.", "example_uz": "Hijoziy lahja.", "srs": true},
+  {"ar": "فُلُوس", "translit": "fulūs", "uz": "pul (Saudi/kundalik)", "root": "ف ل س", "pattern": "فُعُول", "pos": "ot", "audio": "a2/fulus.mp3", "example_ar": "مَا مَعِي فُلُوس.", "example_uz": "Yonimda pul yo'q.", "srs": true},
+  {"ar": "شَنْطَة", "translit": "shanṭa", "uz": "sumka (Saudi)", "root": "", "pattern": "", "pos": "ot", "audio": "a2/shanta.mp3", "example_ar": "شَنْطَتِي ثَقِيلَة.", "example_uz": "Sumkam og'ir.", "srs": true},
+  {"ar": "تَمَام", "translit": "tamām", "uz": "zo'r, joyida (Saudi)", "root": "ت م م", "pattern": "فَعَال", "pos": "ibora", "audio": "hj/tamam.mp3", "example_ar": "كُلُّ شَيْءٍ تَمَام.", "example_uz": "Hammasi joyida.", "srs": true},
+  {"ar": "طَيِّب", "translit": "ṭayyib", "uz": "mayli, yaxshi (o'zbekcha 'tayyib')", "root": "ط ي ب", "pattern": "فَعِّل", "pos": "ibora", "audio": "a2/tayyib.mp3", "example_ar": "طَيِّب، مَاشِي.", "example_uz": "Mayli, bo'ldi.", "srs": true},
+  {"ar": "يَلّا", "translit": "yallā", "uz": "qani, yur (harakat)", "root": "", "pattern": "", "pos": "ibora", "audio": "hj/yalla.mp3", "example_ar": "يَلّا نَرُوح!", "example_uz": "Qani ketdik!", "srs": true},
+  {"ar": "خَلَاص", "translit": "khalāṣ", "uz": "bo'ldi, tamom (o'zbekcha 'xalos')", "root": "خ ل ص", "pattern": "فَعَال", "pos": "ibora", "audio": "hj/khalas.mp3", "example_ar": "خَلَاص، فَهِمْت.", "example_uz": "Bo'ldi, tushundim.", "srs": true},
+  {"ar": "أَكِيد", "translit": "akīd", "uz": "albatta, aniq", "root": "أ ك د", "pattern": "فَعِيل", "pos": "ibora", "audio": "a2/akid.mp3", "example_ar": "أَكِيد، مَا فِي مُشْكِلَة.", "example_uz": "Albatta, muammo yo'q.", "srs": true},
+  {"ar": "مُمْكِن", "translit": "mumkin", "uz": "mumkin (o'zbekcha 'mumkin')", "root": "م ك ن", "pattern": "مُفْعِل", "pos": "ibora", "audio": "a2/mumkin.mp3", "example_ar": "مُمْكِن أَسْأَلُك؟", "example_uz": "So'rasam mumkinmi?", "srs": true},
+  {"ar": "مَافِي", "translit": "māfī", "uz": "yo'q (Saudi «yo'q/bo'lmaydi»)", "root": "", "pattern": "", "pos": "ibora", "audio": "a2/mafi.mp3", "example_ar": "مَافِي مُشْكِلَة.", "example_uz": "Muammo yo'q.", "srs": true},
+  {"ar": "عَادِي", "translit": "ʿādī", "uz": "oddiy, normal", "root": "ع و د", "pattern": "فَاعِل", "pos": "ibora", "audio": "a2/adi.mp3", "example_ar": "عَادِي، مَا فِي شَيْء.", "example_uz": "Normal, hech gap yo'q.", "srs": true},
+  {"ar": "لَحْظَة", "translit": "laḥẓa", "uz": "bir lahza, daqiqa", "root": "ل ح ظ", "pattern": "فَعْلَة", "pos": "ot", "audio": "a2/lahza.mp3", "example_ar": "لَحْظَة لَو سَمَحْت.", "example_uz": "Bir lahza, iltimos.", "srs": true},
+  {"ar": "مُشْكِلَة", "translit": "mushkila", "uz": "muammo (o'zbekcha 'mushkul')", "root": "ش ك ل", "pattern": "مُفْعِلَة", "pos": "ot", "audio": "a2/mushkila.mp3", "example_ar": "مَا فِي مُشْكِلَة.", "example_uz": "Muammo yo'q.", "srs": true},
+  {"ar": "مَاشِي", "translit": "māshī", "uz": "bo'ladi, mayli (kelishuv)", "root": "م ش ي", "pattern": "فَاعِل", "pos": "ibora", "audio": "a2/mashi.mp3", "example_ar": "مَاشِي، خَلَاص.", "example_uz": "Bo'ladi, kelishdik.", "srs": true},
+  {"ar": "فَهِمْت", "translit": "fahimt", "uz": "tushundim", "root": "ف ه م", "pattern": "فَعِلْت", "pos": "fe'l", "audio": "a2/fahimt.mp3", "example_ar": "فَهِمْت، شُكْرًا.", "example_uz": "Tushundim, rahmat.", "srs": true}
+ ],
+ "hejazi": [
+  {"msa_ar": "كَيْفَ حَالُكَ؟", "hejazi_ar": "كَيْفَك؟", "translit": "kayfak?", "uz": "Qalaysan?", "audio": "hj/kayfak.mp3"},
+  {"msa_ar": "أُرِيدُ", "hejazi_ar": "أَبْغَى", "translit": "abghā", "uz": "Xohlayman", "audio": "hj/abgha.mp3"},
+  {"msa_ar": "كَثِير", "hejazi_ar": "وَاجِد", "translit": "wājid", "uz": "Ko'p", "audio": "hj/wajid.mp3"},
+  {"msa_ar": "أَيْنَ؟", "hejazi_ar": "وِين؟", "translit": "wēn?", "uz": "Qayerda?", "audio": "hj/wen.mp3"},
+  {"msa_ar": "جَيِّد / بِخَيْر", "hejazi_ar": "تَمَام / زَيْن", "translit": "tamām / zayn", "uz": "Zo'r / yaxshi", "audio": "hj/tamam.mp3"},
+  {"msa_ar": "نَعَمْ", "hejazi_ar": "أَيْوَه", "translit": "aywah", "uz": "Ha", "audio": "hj/aywah.mp3"},
+  {"msa_ar": "اِنْتَظِرْ", "hejazi_ar": "اِسْتَنَّى", "translit": "istannā", "uz": "Kut", "audio": "hj/istanna.mp3"},
+  {"msa_ar": "لَيْسَ هُنَاكَ مُشْكِلَة", "hejazi_ar": "مَافِي مُشْكِلَة", "translit": "māfī mushkila", "uz": "Muammo yo'q", "audio": "hj/mafi_mushkila.mp3"}
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "فِي السُّوقِ قَابَلْتُ بَائِعًا. قَالَ: كَيْفَك؟ قُلْتُ: تَمَام، الحَمْدُ لِلَّه. أَبْغَى هَذِي الشَّنْطَة، بِكَمْ؟ قَالَ: مِئَة رِيَال. قُلْتُ: غالي وَاجِد! سَوِّ لِي خَصْم. قَالَ: خَلَاص، تِسْعِين. قُلْتُ: مَاشِي، تَمَام!",
+   "questions": [
+    {"q_uz": "Sotuvchi qanday salomlashdi?", "a": "كَيْفَك؟ (qalaysan?)"},
+    {"q_uz": "Oxirgi narx qancha bo'ldi?", "a": "To'qson (تِسْعِين)"}
+   ]
+  },
+  "listening": {
+   "audio": "hj/tamam.mp3",
+   "transcript_ar": "تَمَام",
+   "questions": [
+    {"q_uz": "Iboraning ma'nosi?", "a": "Zo'r, joyida"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Hijoziy iboralarni ayting: kayfak? abghā, wājid, wēn? tamām, yallā, khalāṣ.",
+   "target_ar": ["كَيْفَك؟", "أَبْغَى", "تَمَام"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Qisqa hijoziy suhbat yozing: salomlashing, narx so'rang, savdolashing (4 gap).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "Hijoziyda «Xohlayman» qaysi?", "q_ar": "", "options": ["أَبْغَى", "وَاجِد", "وِين", "خَلَاص"], "answer": "أَبْغَى", "explain_uz": "أَبْغَى — hijoziy «xohlayman» (rasmiy: أُرِيدُ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«bo'ldi, tamom» qaysi?", "q_ar": "", "options": ["خَلَاص", "يَلّا", "أَكِيد", "عَادِي"], "answer": "خَلَاص", "explain_uz": "خَلَاص — bo'ldi/tamom (o'zbekcha 'xalos').", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَافِي مُشْكِلَة", "options": [], "answer": "muammo yo'q", "explain_uz": "مَافِي = yo'q (Saudi), مُشْكِلَة = muammo.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «ko'p» qaysi?", "q_ar": "", "options": ["وَاجِد", "أَبْغَى", "تَمَام", "وِين"], "answer": "وَاجِد", "explain_uz": "وَاجِد — hijoziy «ko'p» (rasmiy: كَثِير).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ف ه م» o'zagidan?", "q_ar": "", "options": ["فَهِمْت", "فُلُوس", "لَهْجَة"], "answer": "فَهِمْت", "explain_uz": "«ف ه م» — tushunish o'zagi: فَهِمْت (tushundim), مَفْهُوم (tushunarli).", "audio": "", "root": "ف ه م", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "qani, yur", "q_ar": "", "options": [], "answer": "يَلّا", "explain_uz": "يَلّا — «qani, yur» (harakatga undash).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «pul» qaysi?", "q_ar": "", "options": ["فُلُوس", "شَنْطَة", "لَحْظَة", "لَهْجَة"], "answer": "فُلُوس", "explain_uz": "فُلُوس — kundalik «pul».", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ف ه م", "back": "tushunish o'zagi (fahm, mafhum, tafhim)", "deck": "msa"},
+  {"type": "word", "front": "فُلُوس", "back": "pul (Saudi)", "deck": "msa"},
+  {"type": "word", "front": "شَنْطَة", "back": "sumka (Saudi)", "deck": "msa"},
+  {"type": "phrase", "front": "تَمَام", "back": "Zo'r, joyida (Saudi)", "deck": "hejazi"},
+  {"type": "phrase", "front": "يَلّا", "back": "Qani, yur (Saudi)", "deck": "hejazi"},
+  {"type": "phrase", "front": "خَلَاص", "back": "Bo'ldi, tamom (Saudi)", "deck": "hejazi"},
+  {"type": "phrase", "front": "مَافِي مُشْكِلَة", "back": "Muammo yo'q (Saudi)", "deck": "hejazi"},
+  {"type": "phrase", "front": "طَيِّب / مَاشِي", "back": "Mayli, bo'ladi (Saudi)", "deck": "hejazi"},
+  {"type": "phrase", "front": "أَبْغَى", "back": "Xohlayman (Saudi)", "deck": "hejazi"},
+  {"type": "phrase", "front": "وَاجِد", "back": "Ko'p (Saudi)", "deck": "hejazi"}
+ ]
+}

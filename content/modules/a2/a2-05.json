@@ -1,98 +1,115 @@
 {
  "id": "a2-05",
  "level": "A2",
- "module": "verb-forms",
+ "module": "sarf",
  "order": 5,
- "title_uz": "V bob: II ning qaytimi",
- "title_ar": "البَابُ الخَامِس: تَفَعَّلَ",
- "can_do_uz": "V bob (تَفَعَّلَ) fe'llarini taniyman: qaytim (o'ziga qaratilgan) ma'noni bilaman.",
+ "title_uz": "Muzori': boblar bilan",
+ "title_ar": "المُضَارِعُ مِنْ أَبْوَابٍ مُخْتَلِفَةٍ",
+ "can_do_uz": "Har qanday bobdagi fe'lning muzori' shaklini to'g'ri yasay olaman.",
  "duration_min": 30,
  "prerequisites": ["a2-04"],
  "harakat_level": "new_words_only",
- "hook_uz": "«عَلَّمَ» (o'rgatdi) → «تَعَلَّمَ» (o'rgandi). II bob boshiga تَـ qo'shsangiz — harakat O'ZIGA qaytadi! تَكَلَّمَ (gapirdi), تَذَكَّرَ (esladi), تَقَدَّمَ (oldinga siljidi) — hammasi V bob.",
+ "hook_uz": "تَعَلَّمَ ning muzori'i — يَتَعَلَّمُ. سَافَرَ niki — يُسَافِرُ. Nega biri يَـ, ikkinchisi يُـ? Bu tasodif emas — aniq qoida bor va u atigi bir qatorga sig'adi. Shu qoidani bilsangiz, lug'atga qaramay har qanday fe'lning hozirgi zamonini yasay olasiz.",
  "grammar": {
-  "point_ar": "تَفَعَّلَ — المُطَاوَعَة",
-  "explanation_uz": "V bob vazni: تَفَعَّلَ (II bob فَعَّلَ boshiga تَـ qo'shiladi). Asosiy ma'no: II bobning QAYTIMI — harakat bajaruvchining o'ziga tegishli bo'ladi: عَلَّمَ (o'rgatdi) → تَعَلَّمَ (o'rgandi=o'ziga o'rgatdi), قَدَّمَ (taqdim etdi) → تَقَدَّمَ (oldinga siljidi). Masdari تَفَعُّل: تَعَلُّم (o'rganish), تَقَدُّم (taraqqiyot). Hozirgi zamoni: يَتَفَعَّلُ (يَتَعَلَّمُ).",
+  "point_ar": "حَرَكَةُ حَرْفِ المُضَارَعَةِ",
+  "explanation_uz": "Muzori' prefiksining harakati bobga bog'liq. QOIDA: II, III va IV boblarda prefiks DAMMA bilan — يُعَلِّمُ، يُسَافِرُ، يُرْسِلُ. Qolgan hamma bobda FATHA bilan — يَكْتُبُ، يَتَعَلَّمُ، يَجْتَمِعُ، يَسْتَخْدِمُ. Yana ikki nozik nuqta: (1) V va VI boblarda prefiksdan keyin تَـ turadi: يَتَعَلَّمُ، يَتَنَاوَلُ — bu تـ ni tushirib qoldirmang. (2) X bobda moziydagi FATHA muzori'da KASRAga aylanadi: اِسْتَيْقَظَ → يَسْتَيْقِظُ، اِسْتَخْدَمَ → يَسْتَخْدِمُ. Eng muhimi: a2-04 dagi 14 qo'shimcha bu yerda ham o'zgarmaydi — يَتَعَلَّمُونَ، يَتَعَلَّمْنَ، تَتَعَلَّمِينَ.",
   "table": [
-   {"ar": "عَلَّمَ ← تَعَلَّمَ", "uz": "o'rgatdi → o'rgandi", "form": "qaytim"},
-   {"ar": "تَكَلَّمَ", "uz": "gapirdi", "form": "تَفَعَّلَ"},
-   {"ar": "تَقَدَّمَ", "uz": "oldinga siljidi, taraqqiy etdi", "form": "تَفَعَّلَ"},
-   {"ar": "مَصْدَر: تَعَلُّم", "uz": "masdar: o'rganish", "form": "تَفَعُّل"}
+   {"ar": "يَكْتُبُ", "uz": "I bob — prefiks fatha bilan", "form": "يَفْعُلُ"},
+   {"ar": "يُعَلِّمُ", "uz": "II bob — prefiks DAMMA bilan", "form": "يُفَعِّلُ"},
+   {"ar": "يُسَافِرُ", "uz": "III bob — prefiks DAMMA bilan", "form": "يُفَاعِلُ"},
+   {"ar": "يُرْسِلُ", "uz": "IV bob — prefiks DAMMA bilan", "form": "يُفْعِلُ"},
+   {"ar": "يَتَعَلَّمُ", "uz": "V bob — يَتَـ bilan", "form": "يَتَفَعَّلُ"},
+   {"ar": "يَتَنَاوَلُ", "uz": "VI bob — يَتَـ bilan", "form": "يَتَفَاعَلُ"},
+   {"ar": "يَسْتَخْدِمُ", "uz": "X bob — يَسْتَـ, o'rtasi kasra", "form": "يَسْتَفْعِلُ"},
+   {"ar": "اِسْتَيْقَظَ ← يَسْتَيْقِظُ", "uz": "moziydagi fatha muzori'da kasraga aylandi", "form": "X"},
+   {"ar": "يَتَعَلَّمُونَ / يَتَعَلَّمْنَ", "uz": "14 qo'shimcha bu yerda ham o'sha-o'sha", "form": "جَمْع"}
   ],
   "common_mistakes_uz": [
-   "Boshidagi تَـ va o'rtadagi shaddani birga qo'yishni unutish (تَفَعَّلَ).",
-   "V bob (تَفَعَّلَ, shaddali) va VI bob (تَفَاعَلَ, alifli) ni chalkashtirish.",
-   "عَلَّمَ (o'rgatdi) va تَعَلَّمَ (o'rgandi) ma'nolarini almashtirish."
+   "يُسَافِرُ ni يَسَافِرُ deb aytish — III bobda prefiks damma bilan keladi.",
+   "اِسْتَيْقَظَ dan يَسْتَيْقَظُ yasash — to'g'risi يَسْتَيْقِظُ, o'rta harf kasrali.",
+   "V bobda تـ ni tushirib qoldirish: يَعَلَّمُ emas, يَتَعَلَّمُ."
   ]
  },
  "roots": [
   {
-   "root": "ق د م",
-   "meaning_uz": "oldin, oldinga, taqdim",
-   "uz_cognates": ["muqaddima", "taqdim", "mutaqaddim", "qadim"],
+   "root": "ع ل م",
+   "meaning_uz": "bilish, ilm",
+   "uz_cognates": ["ilm", "olim", "muallim", "ta'lim"],
    "derived": [
-    {"ar": "تَقَدَّمَ", "uz": "oldinga siljidi (V)", "pattern": "تَفَعَّلَ"},
-    {"ar": "تَقَدُّم", "uz": "taraqqiyot (masdar)", "pattern": "تَفَعُّل"}
+    {"ar": "يَعْلَمُ", "uz": "biladi (I)", "pattern": "يَفْعَلُ"},
+    {"ar": "يُعَلِّمُ", "uz": "o'rgatadi (II)", "pattern": "يُفَعِّلُ"},
+    {"ar": "يَتَعَلَّمُ", "uz": "o'rganadi (V)", "pattern": "يَتَفَعَّلُ"}
+   ]
+  },
+  {
+   "root": "ر س ل",
+   "meaning_uz": "yuborish, xabar",
+   "uz_cognates": ["risola", "rasul", "irsol"],
+   "derived": [
+    {"ar": "يُرْسِلُ", "uz": "yuboradi (IV)", "pattern": "يُفْعِلُ"},
+    {"ar": "رِسَالَة", "uz": "xat, risola", "pattern": "فِعَالَة"},
+    {"ar": "مُرْسِل", "uz": "jo'natuvchi", "pattern": "مُفْعِل"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "تَعَلَّمَ", "translit": "taʿallama", "uz": "o'rgandi", "root": "ع ل م", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/taallama.mp3", "example_ar": "تَعَلَّمْتُ السِّبَاحَةَ.", "example_uz": "Suzishni o'rgandim.", "srs": true},
-  {"ar": "تَكَلَّمَ", "translit": "takallama", "uz": "gapirdi, so'zladi", "root": "ك ل م", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/takallama.mp3", "example_ar": "تَكَلَّمَ بِالعَرَبِيَّةِ.", "example_uz": "Arabcha gapirdi.", "srs": true},
-  {"ar": "تَذَكَّرَ", "translit": "tadhakkara", "uz": "esladi", "root": "ذ ك ر", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/tadhakkara.mp3", "example_ar": "تَذَكَّرْتُ اسْمَهُ.", "example_uz": "Ismini esladim.", "srs": true},
-  {"ar": "تَقَدَّمَ", "translit": "taqaddama", "uz": "oldinga siljidi, taraqqiy etdi", "root": "ق د م", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/taqaddama.mp3", "example_ar": "تَقَدَّمَ فِي العَمَلِ.", "example_uz": "Ishda oldinga siljidi.", "srs": true},
-  {"ar": "تَخَرَّجَ", "translit": "takharraja", "uz": "bitirdi, tugatdi (o'quv)", "root": "خ ر ج", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/takharraja.mp3", "example_ar": "تَخَرَّجَ مِنَ الجَامِعَةِ.", "example_uz": "Universitetni bitirdi.", "srs": true},
-  {"ar": "تَعَرَّفَ", "translit": "taʿarrafa", "uz": "tanishdi", "root": "ع ر ف", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/taarrafa.mp3", "example_ar": "تَعَرَّفْتُ عَلَى صَدِيقٍ جَدِيدٍ.", "example_uz": "Yangi do'st bilan tanishdim.", "srs": true},
-  {"ar": "تَأَخَّرَ", "translit": "taʾakhkhara", "uz": "kechikdi", "root": "أ خ ر", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/taakhkhara.mp3", "example_ar": "تَأَخَّرْتُ عَنِ الدَّرْسِ.", "example_uz": "Darsga kechikdim.", "srs": true},
-  {"ar": "تَعَلُّم", "translit": "taʿallum", "uz": "o'rganish (masdar)", "root": "ع ل م", "pattern": "تَفَعُّل", "pos": "ot", "audio": "a2/taallum.mp3", "example_ar": "تَعَلُّمُ اللُّغَاتِ مُفِيدٌ.", "example_uz": "Til o'rganish foydali.", "srs": true},
-  {"ar": "تَقَدُّم", "translit": "taqaddum", "uz": "taraqqiyot, oldinga siljish (masdar)", "root": "ق د م", "pattern": "تَفَعُّل", "pos": "ot", "audio": "a2/taqaddum.mp3", "example_ar": "التَّقَدُّمُ العِلْمِيُّ.", "example_uz": "Ilmiy taraqqiyot.", "srs": true},
-  {"ar": "سِبَاحَة", "translit": "sibāḥa", "uz": "suzish", "root": "س ب ح", "pattern": "فِعَالَة", "pos": "ot", "audio": "a2/sibaha.mp3", "example_ar": "أُحِبُّ السِّبَاحَةَ.", "example_uz": "Suzishni yaxshi ko'raman.", "srs": true}
+  {"ar": "يَتَعَلَّمُ", "translit": "yataʿallamu", "uz": "o'rganadi (V bob)", "root": "ع ل م", "pattern": "يَتَفَعَّلُ", "pos": "fe'l", "audio": "a2/yataallamu.mp3", "example_ar": "يَتَعَلَّمُ العَرَبِيَّةَ فِي المَعْهَدِ.", "example_uz": "U institutda arab tilini o'rganadi.", "srs": true},
+  {"ar": "يَتَعَلَّمُونَ", "translit": "yataʿallamūna", "uz": "ular o'rganadilar", "root": "ع ل م", "pattern": "", "pos": "fe'l", "audio": "a2/yataallamuna.mp3", "example_ar": "الطُّلَّابُ يَتَعَلَّمُونَ بِجِدٍّ.", "example_uz": "Talabalar tirishib o'rganadilar.", "srs": true},
+  {"ar": "تَتَعَلَّمِينَ", "translit": "tataʿallamīna", "uz": "sen (ayol) o'rganasan", "root": "ع ل م", "pattern": "", "pos": "fe'l", "audio": "a2/tataallamina.mp3", "example_ar": "مَاذَا تَتَعَلَّمِينَ الآنَ؟", "example_uz": "Hozir nimani o'rganyapsan?", "srs": true},
+  {"ar": "نَتَعَلَّمُ", "translit": "nataʿallamu", "uz": "biz o'rganamiz", "root": "ع ل م", "pattern": "", "pos": "fe'l", "audio": "a2/nataallamu.mp3", "example_ar": "نَحْنُ نَتَعَلَّمُ كُلَّ يَوْمٍ.", "example_uz": "Biz har kuni o'rganamiz.", "srs": true},
+  {"ar": "يُعَلِّمُ", "translit": "yuʿallimu", "uz": "o'rgatadi (II bob) (o'zbekcha 'muallim')", "root": "ع ل م", "pattern": "يُفَعِّلُ", "pos": "fe'l", "audio": "a2/yuallimu.mp3", "example_ar": "المُدَرِّسُ يُعَلِّمُ الطُّلَّابَ.", "example_uz": "O'qituvchi talabalarni o'rgatadi.", "srs": true},
+  {"ar": "يَسْتَيْقِظُ", "translit": "yastayqiẓu", "uz": "uyg'onadi (X bob)", "root": "ي ق ظ", "pattern": "يَسْتَفْعِلُ", "pos": "fe'l", "audio": "a2/yastayqizu.mp3", "example_ar": "يَسْتَيْقِظُ فِي السَّادِسَةِ.", "example_uz": "U soat oltida uyg'onadi.", "srs": true},
+  {"ar": "يَتَنَاوَلُ", "translit": "yatanāwalu", "uz": "tanovul qiladi (VI bob)", "root": "ن و ل", "pattern": "يَتَفَاعَلُ", "pos": "fe'l", "audio": "a2/yatanawalu.mp3", "example_ar": "يَتَنَاوَلُ الفَطُورَ مَعَ أُسْرَتِهِ.", "example_uz": "U oilasi bilan nonushta qiladi.", "srs": true},
+  {"ar": "يُسَافِرُ", "translit": "yusāfiru", "uz": "safar qiladi (III bob)", "root": "س ف ر", "pattern": "يُفَاعِلُ", "pos": "fe'l", "audio": "a2/yusafiru.mp3", "example_ar": "يُسَافِرُ إِلَى مِصْرَ فِي الصَّيْفِ.", "example_uz": "U yozda Misrga safar qiladi.", "srs": true},
+  {"ar": "يَسْتَخْدِمُ", "translit": "yastakhdimu", "uz": "foydalanadi (X bob)", "root": "خ د م", "pattern": "يَسْتَفْعِلُ", "pos": "fe'l", "audio": "a2/yastakhdimu.mp3", "example_ar": "يَسْتَخْدِمُ الحَاسُوبَ لِلدِّرَاسَةِ.", "example_uz": "U o'qish uchun kompyuterdan foydalanadi.", "srs": true},
+  {"ar": "يُرْسِلُ", "translit": "yursilu", "uz": "yuboradi (IV bob) (o'zbekcha 'irsol')", "root": "ر س ل", "pattern": "يُفْعِلُ", "pos": "fe'l", "audio": "a2/yursilu.mp3", "example_ar": "يُرْسِلُ رِسَالَةً إِلَى صَدِيقِهِ.", "example_uz": "U do'stiga xat yuboradi.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "تَعَلَّمْتُ العَرَبِيَّةَ فِي الجَامِعَةِ ثُمَّ تَخَرَّجْتُ. الآنَ أَتَكَلَّمُ بِطَلَاقَةٍ. أَمْسِ تَعَرَّفْتُ عَلَى مُعَلِّمٍ جَدِيدٍ وَتَقَدَّمْتُ كَثِيرًا.",
+   "text_ar": "كُلَّ صَبَاحٍ يَسْتَيْقِظُ أَحْمَدُ مُبَكِّرًا، ثُمَّ يَتَنَاوَلُ الفَطُورَ. هُوَ يَتَعَلَّمُ العَرَبِيَّةَ فِي المَعْهَدِ، وَالمُدَرِّسُ يُعَلِّمُ الطُّلَّابَ كُلَّ يَوْمٍ. الطُّلَّابُ يَتَعَلَّمُونَ بِجِدٍّ، وَنَحْنُ نَتَعَلَّمُ مَعَهُمْ. وَفِي الصَّيْفِ يُسَافِرُ أَحْمَدُ إِلَى مِصْرَ وَيَسْتَخْدِمُ العَرَبِيَّةَ هُنَاكَ.",
    "questions": [
-    {"q_uz": "Qayerda arab tilini o'rgandi?", "a": "Universitetda (الجَامِعَة)"},
-    {"q_uz": "«تَعَلَّمَ» va «عَلَّمَ» farqi?", "a": "تَعَلَّمَ — o'rgandi (V), عَلَّمَ — o'rgatdi (II)"}
+    {"q_uz": "Ahmad ertalab nima qiladi?", "a": "Erta uyg'onadi, keyin nonushta qiladi"},
+    {"q_uz": "«يُعَلِّمُ» va «يَتَعَلَّمُ» farqi nima?", "a": "O'rgatadi (II bob) va o'rganadi (V bob)"},
+    {"q_uz": "Yozda nima bo'ladi?", "a": "Ahmad Misrga safar qiladi va u yerda arabchadan foydalanadi"}
    ]
   },
   "listening": {
-   "audio": "a2/takallama.mp3",
-   "transcript_ar": "تَكَلَّمَ",
+   "audio": "a2/yastayqizu.mp3",
+   "transcript_ar": "يَسْتَيْقِظُ",
    "questions": [
-    {"q_uz": "Fe'l ma'nosi?", "a": "Gapirdi"}
+    {"q_uz": "Fe'l ma'nosi va zamoni?", "a": "Uyg'onadi — muzori' (hozirgi zamon), X bob"}
    ]
   },
   "speaking": {
-   "task_uz": "V bob fe'llarini ayting: taʿallama, takallama, tadhakkara, taqaddama.",
-   "target_ar": ["تَعَلَّمَ", "تَكَلَّمَ", "تَقَدَّمَ"],
+   "task_uz": "Prefiks harakatini farqlab ayting: yaktubu, yataʿallamu (fatha) — yuʿallimu, yusāfiru (damma).",
+   "target_ar": ["يَتَعَلَّمُ", "يُعَلِّمُ", "يُسَافِرُ", "يَسْتَخْدِمُ"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«Arabcha gapirdim» va «Universitetni bitirdim» gaplarini V bob bilan yozing.",
+   "task_uz": "Odatdagi kuningizni 3 jumlada muzori'da yozing: uyg'onaman, o'rganaman, foydalanaman.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "V bob vazni qaysi?", "q_ar": "", "options": ["تَفَعَّلَ", "فَعَّلَ", "تَفَاعَلَ", "أَفْعَلَ"], "answer": "تَفَعَّلَ", "explain_uz": "V bob — II bob boshiga تَـ: تَفَعَّلَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«عَلَّمَ» (o'rgatdi) ning V bob qaytimi?", "q_ar": "", "options": ["تَعَلَّمَ", "أَعْلَمَ", "اِسْتَعْلَمَ", "عَالَمَ"], "answer": "تَعَلَّمَ", "explain_uz": "V bob: تَعَلَّمَ (o'rgandi — harakat o'ziga qaytdi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "تَكَلَّمَ بِالعَرَبِيَّةِ", "options": [], "answer": "arabcha gapirdi", "explain_uz": "تَكَلَّمَ (V) = gapirdi, بِالعَرَبِيَّة = arabcha.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "Qaysi so'z «ق د م» o'zagidan?", "q_ar": "", "options": ["تَقَدَّمَ", "تَعَلَّمَ", "تَذَكَّرَ"], "answer": "تَقَدَّمَ", "explain_uz": "«ق د م» — oldin o'zagi: تَقَدَّمَ (siljidi), muqaddima, taqdim.", "audio": "", "root": "ق د م", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "V bobning masdar vazni qaysi?", "q_ar": "", "options": ["تَفَعُّل", "تَفْعِيل", "إِفْعَال", "مُفَاعَلَة"], "answer": "تَفَعُّل", "explain_uz": "V bob masdari: تَفَعُّل (تَعَلُّم, تَقَدُّم).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "esladi", "q_ar": "", "options": [], "answer": "تَذَكَّرَ", "explain_uz": "تَذَكَّرَ (V) — esladi (ذكر o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "kechikdi", "q_ar": "", "options": [], "answer": "تَأَخَّرَ", "explain_uz": "تَأَخَّرَ (V) — kechikdi (أخر=keyin o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "«Safar qiladi» to'g'ri shakli qaysi?", "q_ar": "", "options": ["يُسَافِرُ", "يَسَافِرُ", "يَسْتَفِرُ", "يَتَسَافَرُ"], "answer": "يُسَافِرُ", "explain_uz": "III bob (فَاعَلَ) — muzori'da prefiks damma bilan: يُسَافِرُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "اِسْتَيْقَظَ ning muzori' shakli qaysi?", "q_ar": "", "options": ["يَسْتَيْقِظُ", "يَسْتَيْقَظُ", "يُسْتَيْقِظُ", "يَتَيَقَّظُ"], "answer": "يَسْتَيْقِظُ", "explain_uz": "X bobda o'rta harf muzori'da kasra bo'ladi: يَسْتَيْقِظُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "يَتَعَلَّمُونَ", "options": [], "answer": "ular o'rganadilar", "explain_uz": "V bob + g'oyib jam' qo'shimchasi ـُونَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "biz o'rganamiz", "q_ar": "", "options": [], "answer": "نَتَعَلَّمُ", "explain_uz": "Mutakallim jam' prefiksi نـ: نَتَعَلَّمُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Qaysi boblarda muzori' prefiksi DAMMA bilan keladi?", "q_ar": "", "options": ["II, III, IV", "V, VI", "VII, VIII", "I va X"], "answer": "II, III, IV", "explain_uz": "Faqat shu uch bobda يُـ; qolganlarida يَـ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Bo'sh joyni to'ldiring: «المُدَرِّسُ ___ الطُّلَّابَ» (o'qituvchi talabalarni o'rgatadi)", "q_ar": "", "options": [], "answer": "يُعَلِّمُ", "explain_uz": "II bob muzori'i: يُعَلِّمُ (prefiks damma, o'rta harf shaddali).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "build_word", "q_uz": "ع ل م o'zagini يَتَفَعَّلُ qolipiga soling (o'rganadi):", "q_ar": "", "options": [], "answer": "يَتَعَلَّمُ", "explain_uz": "V bob muzori'i: يَتَفَعَّلُ + ع ل م = يَتَعَلَّمُ.", "audio": "", "root": "ع ل م", "pattern": "يَتَفَعَّلُ", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "ق د م", "back": "oldin o'zagi (taqaddama, muqaddima, taqdim, qadim)", "deck": "msa"},
-  {"type": "pattern", "front": "تَفَعَّلَ (V)", "back": "II ning qaytimi, masdar تَفَعُّل", "deck": "msa"},
-  {"type": "word", "front": "تَعَلَّمَ", "back": "o'rgandi (V)", "deck": "msa"},
-  {"type": "word", "front": "تَكَلَّمَ", "back": "gapirdi (V)", "deck": "msa"},
-  {"type": "word", "front": "تَذَكَّرَ", "back": "esladi (V)", "deck": "msa"},
-  {"type": "word", "front": "تَقَدَّمَ", "back": "oldinga siljidi (V)", "deck": "msa"},
-  {"type": "word", "front": "تَخَرَّجَ", "back": "bitirdi (V)", "deck": "msa"},
-  {"type": "word", "front": "تَعَرَّفَ", "back": "tanishdi (V)", "deck": "msa"},
-  {"type": "word", "front": "تَأَخَّرَ", "back": "kechikdi (V)", "deck": "msa"},
-  {"type": "word", "front": "تَعَلُّم", "back": "o'rganish (masdar)", "deck": "msa"}
+  {"type": "root", "front": "ر س ل", "back": "yuborish — risola/rasul/irsol", "deck": "msa"},
+  {"type": "pattern", "front": "يُفَاعِلُ", "back": "III bob muzori'i — prefiks damma (yusafiru)", "deck": "msa"},
+  {"type": "pattern", "front": "يَسْتَفْعِلُ", "back": "X bob muzori'i — o'rtasi kasra (yastakhdimu)", "deck": "msa"},
+  {"type": "word", "front": "يَتَعَلَّمُ", "back": "o'rganadi (V bob)", "deck": "msa"},
+  {"type": "word", "front": "يُعَلِّمُ", "back": "o'rgatadi (II bob)", "deck": "msa"},
+  {"type": "word", "front": "يَسْتَيْقِظُ", "back": "uyg'onadi (X bob)", "deck": "msa"},
+  {"type": "word", "front": "يَتَنَاوَلُ", "back": "tanovul qiladi (VI bob)", "deck": "msa"},
+  {"type": "word", "front": "يُسَافِرُ", "back": "safar qiladi (III bob)", "deck": "msa"},
+  {"type": "word", "front": "يَسْتَخْدِمُ", "back": "foydalanadi (X bob)", "deck": "msa"},
+  {"type": "word", "front": "يُرْسِلُ", "back": "yuboradi (IV bob)", "deck": "msa"}
  ]
 }

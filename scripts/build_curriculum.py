@@ -85,7 +85,16 @@ A1 = [  # 1-8 nominal, 9-16 past, 17-24 present, 25-32 nouns, 33-40 daily
     ("A1 IMTIHONI", "4 ko'nikma bo'yicha yakuniy imtihon", 0, "80% → Sertifikat A1", False),
 ]
 
-A2 = [  # 1-12 verb-forms, 13-18 weak-verbs, 19-26 grammar-ext, 27-38 saudi, 39-44 skills, 45 exam
+A2 = [  # 1-9 sarf, 10-21 verb-forms, 22-27 weak-verbs, 28-35 grammar-ext, 36-47 saudi, 48-53 skills, 54 exam
+    ("Sarf nima? 14 shakl tizimi", "غائب/مخاطب/متكلّم × muzakkar/muannas × mufrad/musanna/jam'", 10, "Butun arab tilining kaliti", False),
+    ("Moziy fe'li: 14 shakl to'liq", "الماضي — كَتَبَ dan كَتَبْنَا gacha", 10, "Tasniya (ikkilik) shakllari yangi", False),
+    ("Moziy: turli fe'llar bilan mashq", "ذَهَبَ · شَرِبَ · سَمِعَ · تَعَلَّمَ", 10, "", False),
+    ("Muzori' fe'li: 14 shakl to'liq", "المضارع — يَكْتُبُ dan نَكْتُبُ gacha", 10, "ATIN prefikslari + oxirgi qo'shimchalar", False),
+    ("Muzori': boblar bilan", "يَتَعَلَّمُ · يَسْتَيْقِظُ · يُسَافِرُ · يَسْتَخْدِمُ", 10, "", False),
+    ("Sarf ustaxonasi: moziy ⇄ muzori'", "Ikki zamon o'rtasida almashtirish drilli", 10, "Interaktiv wow-dars", False),
+    ("Alohida olmoshlar (14 ta)", "الضمائر المنفصلة — هُوَ … نَحْنُ", 10, "A1 dagi 8 tasi + tasniya to'ldiriladi", False),
+    ("Birikuvchi olmoshlar (14 ta)", "الضمائر المتصلة — كِتَابُهُ · كِتَابِي", 10, "Ot + fe'l + predlog bilan", False),
+    ("Ko'rsatish olmoshlari to'liq", "أسماء الإشارة — yaqin/uzoq, tasniya bilan", 10, "هَذَانِ · هَاتَانِ · أُولَئِكَ", False),
     ("Fe'l boblari: umumiy ko'rinish", "I-X tizimi — bitta o'zakdan 10 xil ma'no", 8, "", False),
     ("II bob: kuchaytirish", "فَعَّلَ — عَلَّمَ (o'rgatdi)", 10, "muallim · ta'lim · mudarris ko'prigi", False),
     ("III bob: o'zaro harakat", "فاعَلَ — شاهَدَ", 10, "mushohada", False),
@@ -204,11 +213,12 @@ def module_for(level: str, order: int) -> str:
         if order <= 39: return "daily-life"
         return "exam"
     if level == "A2":
-        if order <= 12: return "verb-forms"
-        if order <= 18: return "weak-verbs"
-        if order <= 26: return "grammar-ext"
-        if order <= 38: return "saudi"
-        if order <= 44: return "skills"
+        if order <= 9: return "sarf"
+        if order <= 21: return "verb-forms"
+        if order <= 27: return "weak-verbs"
+        if order <= 35: return "grammar-ext"
+        if order <= 47: return "saudi"
+        if order <= 53: return "skills"
         return "exam"
     # B1
     if order <= 14: return "adv-grammar"
@@ -272,4 +282,4 @@ if __name__ == "__main__":
     )
     total = sum(data["counts"].values())
     print(f"curriculum.json yozildi: {total} dars {data['counts']}")
-    assert total == 160, f"160 emas: {total}"
+    assert total == 169, f"169 emas: {total}"

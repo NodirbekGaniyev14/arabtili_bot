@@ -1,98 +1,98 @@
 {
  "id": "a2-15",
  "level": "A2",
- "module": "weak-verbs",
+ "module": "verb-forms",
  "order": 15,
- "title_uz": "Ajvaf fe'llar",
- "title_ar": "الفِعْلُ الأَجْوَف",
- "can_do_uz": "O'rtasi و/ي bo'lgan (ajvaf) fe'llarni tuslay olaman va o'zgarishini bilaman.",
+ "title_uz": "VI bob: o'zaro",
+ "title_ar": "البَابُ السَّادِس: تَفَاعَلَ",
+ "can_do_uz": "VI bob (تَفَاعَلَ) fe'llarini taniyman: bir necha kishi o'rtasidagi o'zaro harakatni bilaman.",
  "duration_min": 30,
  "prerequisites": ["a2-14"],
  "harakat_level": "new_words_only",
- "hook_uz": "«Dedi» — قَالَ (aslida ق-و-ل!). O'rtadagi و o'tgan zamonda ALIF ga aylanadi. Hozirgi zamonda u qaytadi: يَقُولُ (و ko'rinadi), يَبِيعُ (ي ko'rinadi). كَانَ, زَارَ, نَامَ — hammasi ajvaf.",
+ "hook_uz": "«Yordamlashdi» — تَعَاوَنَ. «Almashdilar» — تَبَادَلَ. III bob (فَاعَلَ) boshiga تَـ qo'shsangiz — harakat IKKI TOMONLAMA, o'zaro bo'ladi. تَوَاصَلَ (aloqa qildi), تَفَاهَمَ (bir-birini tushundi).",
  "grammar": {
-  "point_ar": "الأَجْوَف — تَحَوُّلُ الوَسَط",
-  "explanation_uz": "Ajvaf fe'l — o'rta o'zak harfi و yoki ي. O'TGAN zamonda o'rta illat ALIF ga aylanadi: ق و ل → قَالَ, ب ي ع → بَاعَ. HOZIRGI zamonda asl harf qaytadi: يَقُولُ (و), يَبِيعُ (ي), يَنَامُ (ا). Qisqargan shakllarda (masalan لَمْ bilan) o'rta harf tushib qoladi: لَمْ يَقُلْ (aytmadi).",
+  "point_ar": "تَفَاعَلَ — المُشَارَكَة المُتَبَادَلَة",
+  "explanation_uz": "VI bob vazni: تَفَاعَلَ (III bob فَاعَلَ boshiga تَـ). Asosiy ma'no: bir necha shaxs o'rtasida O'ZARO harakat: تَعَاوَنَ (yordamlashdi — birga), تَبَادَلَ (almashdilar), تَقَابَلَ (uchrashdilar). Odatda EGA ko'plikda bo'ladi. Masdari تَفَاعُل: تَعَاوُن (hamkorlik). Hozirgi zamoni: يَتَفَاعَلُ (يَتَعَاوَنُ).",
   "table": [
-   {"ar": "قَالَ ← يَقُولُ", "uz": "dedi → aytadi (ق و ل)", "form": "و ajvaf"},
-   {"ar": "بَاعَ ← يَبِيعُ", "uz": "sotdi → sotadi (ب ي ع)", "form": "ي ajvaf"},
-   {"ar": "كَانَ ← يَكُونُ", "uz": "edi → bo'ladi (ك و ن)", "form": "و ajvaf"},
-   {"ar": "نَامَ ← يَنَامُ", "uz": "uxladi → uxlaydi (ن و م)", "form": "ajvaf"}
+   {"ar": "تَعَاوَنَ", "uz": "yordamlashdi (o'zaro)", "form": "تَفَاعَلَ"},
+   {"ar": "تَبَادَلَ", "uz": "almashdilar", "form": "o'zaro"},
+   {"ar": "تَوَاصَلَ", "uz": "aloqa qildi", "form": "تَفَاعَلَ"},
+   {"ar": "مَصْدَر: تَعَاوُن", "uz": "masdar: hamkorlik", "form": "تَفَاعُل"}
   ],
   "common_mistakes_uz": [
-   "O'tgan zamonda o'rta harfni و/ي qoldirish: قَوَلَ (xato) → قَالَ.",
-   "Hozirgi zamonda asl harfni (و/ي) noto'g'ri tanlash.",
-   "Ajvaf va sog' fe'lni chalkashtirish — o'zakni tekshiring."
+   "V bob (تَفَعَّلَ, shadda) va VI bob (تَفَاعَلَ, alif) shakllarini chalkashtirish.",
+   "VI bobni bitta shaxsga ishlatish — u odatda O'ZARO (ko'p shaxs).",
+   "Masdarni (تَفَاعُل) noto'g'ri yozish."
   ]
  },
  "roots": [
   {
-   "root": "ك و ن",
-   "meaning_uz": "bo'lish, mavjudlik",
-   "uz_cognates": ["makon", "kavn", "takvin"],
+   "root": "ع و ن",
+   "meaning_uz": "yordam, ko'maklashish",
+   "uz_cognates": ["muovin", "taovun", "muin"],
    "derived": [
-    {"ar": "كَانَ", "uz": "edi, bo'ldi (ajvaf)", "pattern": "فَعَلَ"},
-    {"ar": "مَكَان", "uz": "joy, makon", "pattern": "مَفْعَل"}
+    {"ar": "تَعَاوَنَ", "uz": "yordamlashdi (VI)", "pattern": "تَفَاعَلَ"},
+    {"ar": "تَعَاوُن", "uz": "hamkorlik (masdar)", "pattern": "تَفَاعُل"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "كَانَ", "translit": "kāna", "uz": "edi, bo'ldi (ajvaf: ك و ن)", "root": "ك و ن", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/kana.mp3", "example_ar": "كَانَ الجَوُّ جَمِيلًا.", "example_uz": "Havo chiroyli edi.", "srs": true},
-  {"ar": "يَكُونُ", "translit": "yakūnu", "uz": "bo'ladi (و qaytdi)", "root": "ك و ن", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a2/yakunu.mp3", "example_ar": "سَيَكُونُ الجَوُّ حَارًّا.", "example_uz": "Havo issiq bo'ladi.", "srs": true},
-  {"ar": "قَالَ", "translit": "qāla", "uz": "dedi (ajvaf: ق و ل)", "root": "ق و ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/qala.mp3", "example_ar": "قَالَ نَعَمْ.", "example_uz": "Ha dedi.", "srs": true},
-  {"ar": "يَقُولُ", "translit": "yaqūlu", "uz": "aytadi (و qaytdi)", "root": "ق و ل", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a2/yaqulu.mp3", "example_ar": "مَاذَا يَقُولُ؟", "example_uz": "U nima deydi?", "srs": true},
-  {"ar": "زَارَ", "translit": "zāra", "uz": "ziyorat qildi (ajvaf: ز و ر)", "root": "ز و ر", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/zara.mp3", "example_ar": "زَارَ المَدِينَةَ.", "example_uz": "Shaharni ziyorat qildi.", "srs": true},
-  {"ar": "نَامَ", "translit": "nāma", "uz": "uxladi (ajvaf: ن و م)", "root": "ن و م", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/nama.mp3", "example_ar": "نَامَ مُبَكِّرًا.", "example_uz": "Erta uxladi.", "srs": true},
-  {"ar": "بَاعَ", "translit": "bāʿa", "uz": "sotdi (ajvaf: ب ي ع)", "root": "ب ي ع", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/baa.mp3", "example_ar": "بَاعَ السَّيَّارَةَ.", "example_uz": "Mashinani sotdi.", "srs": true},
-  {"ar": "يَبِيعُ", "translit": "yabīʿu", "uz": "sotadi (ي qaytdi)", "root": "ب ي ع", "pattern": "يَفْعِلُ", "pos": "fe'l", "audio": "a2/yabiu.mp3", "example_ar": "يَبِيعُ الخُضَارَ.", "example_uz": "Sabzavot sotadi.", "srs": true},
-  {"ar": "عَادَ", "translit": "ʿāda", "uz": "qaytdi (ajvaf: ع و د)", "root": "ع و د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/aada.mp3", "example_ar": "عَادَ إِلَى بَلَدِهِ.", "example_uz": "Yurtiga qaytdi.", "srs": true},
-  {"ar": "مَكَان", "translit": "makān", "uz": "joy, makon (o'zbekcha 'makon')", "root": "ك و ن", "pattern": "مَفْعَل", "pos": "ot", "audio": "a2/makan.mp3", "example_ar": "مَكَانٌ جَمِيلٌ.", "example_uz": "Chiroyli joy.", "srs": true}
+  {"ar": "تَعَاوَنَ", "translit": "taʿāwana", "uz": "yordamlashdi, hamkorlik qildi", "root": "ع و ن", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/taawana.mp3", "example_ar": "تَعَاوَنَ الطُّلَّابُ.", "example_uz": "Talabalar yordamlashdilar.", "srs": true},
+  {"ar": "تَبَادَلَ", "translit": "tabādala", "uz": "almashdilar", "root": "ب د ل", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/tabadala.mp3", "example_ar": "تَبَادَلَا الهَدَايَا.", "example_uz": "Ular sovg'a almashdilar.", "srs": true},
+  {"ar": "تَنَاوَلَ", "translit": "tanāwala", "uz": "yedi, oldi (ovqat)", "root": "ن و ل", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/tanawala.mp3", "example_ar": "تَنَاوَلَ الفَطُورَ.", "example_uz": "Nonushta qildi.", "srs": true},
+  {"ar": "تَوَاصَلَ", "translit": "tawāṣala", "uz": "aloqa qildi, bog'landi", "root": "و ص ل", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/tawasala.mp3", "example_ar": "تَوَاصَلْتُ مَعَ عَائِلَتِي.", "example_uz": "Oilam bilan aloqa qildim.", "srs": true},
+  {"ar": "تَفَاهَمَ", "translit": "tafāhama", "uz": "bir-birini tushundi", "root": "ف ه م", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/tafahama.mp3", "example_ar": "تَفَاهَمْنَا بِسُهُولَةٍ.", "example_uz": "Osongina tushunishdik.", "srs": true},
+  {"ar": "تَقَابَلَ", "translit": "taqābala", "uz": "uchrashdilar", "root": "ق ب ل", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/taqabala.mp3", "example_ar": "تَقَابَلْنَا فِي السُّوقِ.", "example_uz": "Bozorda uchrashdik.", "srs": true},
+  {"ar": "تَشَاوَرَ", "translit": "tashāwara", "uz": "maslahatlashdilar", "root": "ش و ر", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/tashawara.mp3", "example_ar": "تَشَاوَرَ الأَعْضَاءُ.", "example_uz": "A'zolar maslahatlashdilar.", "srs": true},
+  {"ar": "تَعَاوُن", "translit": "taʿāwun", "uz": "hamkorlik (masdar)", "root": "ع و ن", "pattern": "تَفَاعُل", "pos": "ot", "audio": "a2/taawun.mp3", "example_ar": "التَّعَاوُنُ قُوَّةٌ.", "example_uz": "Hamkorlik — kuch.", "srs": true},
+  {"ar": "فَطُور", "translit": "faṭūr", "uz": "nonushta", "root": "ف ط ر", "pattern": "فَعُول", "pos": "ot", "audio": "a2/fatur.mp3", "example_ar": "تَنَاوَلْتُ الفَطُورَ.", "example_uz": "Nonushta qildim.", "srs": true},
+  {"ar": "بِسُهُولَة", "translit": "bisuhūla", "uz": "osonlik bilan", "root": "س ه ل", "pattern": "", "pos": "ibora", "audio": "a2/bisuhula.mp3", "example_ar": "فَهِمْتُ بِسُهُولَةٍ.", "example_uz": "Osonlik bilan tushundim.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "أَمْسِ كَانَ الجَوُّ حَارًّا. زُرْتُ صَدِيقِي وَقَالَ لِي: أَهْلًا! نِمْنَا مُبَكِّرًا وَعُدْنَا فِي الصَّبَاحِ. غَدًا يَكُونُ اليَوْمُ أَجْمَلَ.",
+   "text_ar": "فِي المَدْرَسَةِ تَعَاوَنَ الطُّلَّابُ وَتَبَادَلُوا الكُتُبَ. تَنَاوَلْنَا الفَطُورَ مَعًا ثُمَّ تَشَاوَرْنَا فِي المَشْرُوعِ. التَّعَاوُنُ يُسَهِّلُ العَمَلَ.",
    "questions": [
-    {"q_uz": "Kecha havo qanday edi?", "a": "Issiq (كَانَ حَارًّا)"},
-    {"q_uz": "«قَالَ» ning asl o'zagi?", "a": "ق و ل (o'rtasi و — ajvaf)"}
+    {"q_uz": "Talabalar nima qildilar?", "a": "Yordamlashib kitob almashdilar"},
+    {"q_uz": "«تَعَاوَنَ» qaysi bob — ma'no?", "a": "VI bob — o'zaro yordamlashish"}
    ]
   },
   "listening": {
-   "audio": "a2/qala.mp3",
-   "transcript_ar": "قَالَ",
+   "audio": "a2/taawana.mp3",
+   "transcript_ar": "تَعَاوَنَ",
    "questions": [
-    {"q_uz": "Fe'l ma'nosi?", "a": "Dedi"}
+    {"q_uz": "Fe'l ma'nosi?", "a": "Yordamlashdi (o'zaro)"}
    ]
   },
   "speaking": {
-   "task_uz": "Past→present ayting: qāla→yaqūlu, bāʿa→yabīʿu, kāna→yakūnu.",
-   "target_ar": ["قَالَ", "يَقُولُ", "بَاعَ"],
+   "task_uz": "VI bob fe'llarini ayting: taʿāwana, tabādala, tawāṣala, taqābala.",
+   "target_ar": ["تَعَاوَنَ", "تَبَادَلَ", "تَوَاصَلَ"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«زَارَ» ning hozirgi zamon shaklini yozing (o'rta و ni ko'rsating).",
+   "task_uz": "«Do'stlarim bilan yordamlashdik» va «Oilam bilan aloqa qildim» gaplarini VI bob bilan yozing.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "«قَالَ» ning hozirgi zamoni qaysi?", "q_ar": "", "options": ["يَقُولُ", "يَقَالُ", "يَقْوُلُ", "قَوَلَ"], "answer": "يَقُولُ", "explain_uz": "Ajvaf — hozirgida asl و qaytadi: يَقُولُ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Ajvaf fe'lda o'tgan zamonda o'rta harf nimaga aylanadi?", "q_ar": "", "options": ["alif (ا)", "و", "ي", "hamza"], "answer": "alif (ا)", "explain_uz": "O'tganda o'rta و/ي → ا: قَالَ, بَاعَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "زَارَ المَدِينَةَ", "options": [], "answer": "shaharni ziyorat qildi", "explain_uz": "زَارَ (ajvaf) = ziyorat qildi, المَدِينَة = shahar.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«كَانَ، مَكَان» qaysi o'zakdan?", "q_ar": "", "options": ["ك و ن", "ك ت ب", "ك ب ر"], "answer": "ك و ن", "explain_uz": "«ك و ن» — bo'lish o'zagi: kana, makon, kavn.", "audio": "", "root": "ك و ن", "pattern": "", "words": []},
-  {"type": "fill_blank", "q_uz": "Hozirgi zamon: «بَاعَ» → «يَـ___» (sotadi)", "q_ar": "يَـ___", "options": [], "answer": "بِيعُ", "explain_uz": "ي qaytadi: يَبِيعُ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "uxladi", "q_ar": "", "options": [], "answer": "نَامَ", "explain_uz": "نَامَ (ajvaf, ن و م) — uxladi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "qaytdi", "q_ar": "", "options": [], "answer": "عَادَ", "explain_uz": "عَادَ (ajvaf, ع و د) — qaytdi.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "VI bob vazni qaysi?", "q_ar": "", "options": ["تَفَاعَلَ", "تَفَعَّلَ", "فَاعَلَ", "اِنْفَعَلَ"], "answer": "تَفَاعَلَ", "explain_uz": "VI bob — III bob boshiga تَـ: تَفَاعَلَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "تَعَاوَنَ الطُّلَّابُ", "options": [], "answer": "talabalar yordamlashdilar", "explain_uz": "تَعَاوَنَ (VI) = o'zaro yordamlashdi, الطُّلَّاب = talabalar.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "VI bob odatda qanday egani talab qiladi?", "q_ar": "", "options": ["ko'plik (o'zaro)", "birlik", "faqat erkak", "faqat ayol"], "answer": "ko'plik (o'zaro)", "explain_uz": "VI bob o'zaro harakat — bir necha shaxs (ko'plik).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ع و ن» o'zagidan?", "q_ar": "", "options": ["تَعَاوَنَ", "تَبَادَلَ", "تَفَاهَمَ"], "answer": "تَعَاوَنَ", "explain_uz": "«ع و ن» — yordam o'zagi: تَعَاوَنَ (VI), muovin, taovun.", "audio": "", "root": "ع و ن", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "aloqa qildi, bog'landi", "q_ar": "", "options": [], "answer": "تَوَاصَلَ", "explain_uz": "تَوَاصَلَ (VI) — aloqa qildi (وصل=ulanish o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "nonushta", "q_ar": "", "options": [], "answer": "فَطُور", "explain_uz": "فَطُور — nonushta (ف ط ر o'zagidan, iftor bilan bog'liq).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«bir-birini tushundi» qaysi?", "q_ar": "", "options": ["تَفَاهَمَ", "فَهِمَ", "أَفْهَمَ", "تَعَلَّمَ"], "answer": "تَفَاهَمَ", "explain_uz": "تَفَاهَمَ (VI) — o'zaro tushunishdi.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "ك و ن", "back": "bo'lish o'zagi (kana=edi, makon, kavn) — ajvaf", "deck": "msa"},
-  {"type": "pattern", "front": "أَجْوَف: قَالَ→يَقُولُ", "back": "o'rtasi و/ي, o'tganda ا, hozirda qaytadi", "deck": "msa"},
-  {"type": "word", "front": "كَانَ", "back": "edi, bo'ldi (ajvaf)", "deck": "msa"},
-  {"type": "word", "front": "قَالَ", "back": "dedi (ajvaf)", "deck": "msa"},
-  {"type": "word", "front": "زَارَ", "back": "ziyorat qildi (ajvaf)", "deck": "msa"},
-  {"type": "word", "front": "نَامَ", "back": "uxladi (ajvaf)", "deck": "msa"},
-  {"type": "word", "front": "بَاعَ", "back": "sotdi (ajvaf)", "deck": "msa"},
-  {"type": "word", "front": "عَادَ", "back": "qaytdi (ajvaf)", "deck": "msa"},
-  {"type": "word", "front": "يَقُولُ", "back": "aytadi (و qaytdi)", "deck": "msa"},
-  {"type": "word", "front": "مَكَان", "back": "joy, makon", "deck": "msa"}
+  {"type": "root", "front": "ع و ن", "back": "yordam o'zagi (taawana, muovin, taovun)", "deck": "msa"},
+  {"type": "pattern", "front": "تَفَاعَلَ (VI)", "back": "o'zaro harakat (ko'plik), masdar تَفَاعُل", "deck": "msa"},
+  {"type": "word", "front": "تَعَاوَنَ", "back": "yordamlashdi (VI)", "deck": "msa"},
+  {"type": "word", "front": "تَبَادَلَ", "back": "almashdilar (VI)", "deck": "msa"},
+  {"type": "word", "front": "تَنَاوَلَ", "back": "yedi, oldi (VI)", "deck": "msa"},
+  {"type": "word", "front": "تَوَاصَلَ", "back": "aloqa qildi (VI)", "deck": "msa"},
+  {"type": "word", "front": "تَفَاهَمَ", "back": "bir-birini tushundi (VI)", "deck": "msa"},
+  {"type": "word", "front": "تَقَابَلَ", "back": "uchrashdilar (VI)", "deck": "msa"},
+  {"type": "word", "front": "تَعَاوُن", "back": "hamkorlik (masdar)", "deck": "msa"},
+  {"type": "word", "front": "فَطُور", "back": "nonushta", "deck": "msa"}
  ]
 }

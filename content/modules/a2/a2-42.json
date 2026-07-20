@@ -1,95 +1,104 @@
 {
  "id": "a2-42",
  "level": "A2",
- "module": "skills",
+ "module": "saudi",
  "order": 42,
- "title_uz": "Yozish: xabar va xat",
- "title_ar": "كِتَابَة: رِسَالَةٌ وَخِطَاب",
- "can_do_uz": "Qisqa xabar va oddiy xat yoza olaman (murojaat, mazmun, yakun).",
+ "title_uz": "Bank / to'lov",
+ "title_ar": "البَنْك وَالدَّفْع",
+ "can_do_uz": "Valyuta ayirboshlash, karta va «mada» tizimi orqali to'lov haqida gapira olaman.",
  "duration_min": 30,
  "prerequisites": ["a2-41"],
  "harakat_level": "new_words_only",
- "hook_uz": "Arabcha xat yozish oson — tuzilishi aniq: عَزِيزِي... (Azizim...), keyin mazmun, oxirida مَعَ التَّحِيَّة (hurmat bilan). Xabar (SMS/WhatsApp) esa qisqaroq. Bugun ikkalasini yozamiz.",
+ "hook_uz": "Saudiyada pul kerak — dollarni riyolga almashtirasiz. «أَبْغَى أَصْرِف فُلُوس» (pul almashtirmoqchiman). Ko'p joyda «مَدَى» kartasi bilan to'laysiz. Bugun bank va to'lov so'zlarini o'rganamiz.",
  "grammar": {
-  "point_ar": "بِنْيَةُ الرِّسَالَة",
-  "explanation_uz": "Xat tuzilishi: (1) MUROJAAT — عَزِيزِي أَحْمَد (Aziz Ahmad) yoki rasmiy: السَّيِّد المُحْتَرَم. (2) SALOM — السَّلَامُ عَلَيْكُم / تَحِيَّةً طَيِّبَةً. (3) MAZMUN — asosiy fikr (qisqa gaplar). (4) YAKUN — مَعَ التَّحِيَّة (hurmat bilan), المُخْلِص (samimiy). (5) IMZO — تَوْقِيع. Qisqa xabarda faqat salom + mazmun yetarli.",
+  "point_ar": "عِبَارَاتُ البَنْك",
+  "explanation_uz": "Valyuta almashtirish: أُرِيدُ صَرْفَ... (... almashtirmoqchiman), أَيْنَ الصَّرَّافُ؟ (bankomat qayerda?). To'lov usullari: نَقْدًا (naqd), بِالبِطَاقَةِ (karta bilan), yoki Saudiya «مَدَى» tizimi (mahalliy karta). Balans — رَصِيد, o'tkazma — تَحْوِيل. Hijoziyda «pul» — فُلُوس. Bankomatda رَقَم سِرِّيّ (PIN) kiritasiz.",
   "table": [
-   {"ar": "عَزِيزِي أَحْمَد", "uz": "Aziz Ahmad", "form": "murojaat"},
-   {"ar": "تَحِيَّةً طَيِّبَةً", "uz": "Yaxshi salom (rasmiy)", "form": "salom"},
-   {"ar": "المَوْضُوع: ...", "uz": "Mavzu: ...", "form": "rasmiy xat"},
-   {"ar": "مَعَ التَّحِيَّة", "uz": "Hurmat bilan", "form": "yakun"}
+   {"ar": "أَبْغَى أَصْرِف فُلُوس", "uz": "Pul almashtirmoqchiman (hijoziy)", "form": "boshlash"},
+   {"ar": "أَيْنَ الصَّرَّافُ؟", "uz": "Bankomat qayerda?", "form": "savol"},
+   {"ar": "بِالبِطَاقَة أَو نَقْدًا؟", "uz": "Karta bilanmi yoki naqdmi?", "form": "to'lov"},
+   {"ar": "أَدْفَعُ بِمَدَى", "uz": "Mada bilan to'layman", "form": "Saudiya"}
   ],
   "common_mistakes_uz": [
-   "Murojaat va yakunni unutish — xat tuzilishi muhim.",
-   "Juda uzun gaplar yozish — qisqa va aniq yozing.",
-   "Rasmiy va norasmiy uslubni aralashtirish."
+   "صَرْف (ayirboshlash) va صَرَّاف (bankomat/kassir) ni chalkashtirish.",
+   "Kartani ishlatishdan oldin رَقَم سِرِّيّ (PIN) ni tayyorlamaslik.",
+   "Valyuta kursini (سِعْر الصَّرْف) so'ramaslik."
   ]
  },
  "roots": [
   {
-   "root": "ع ز ز",
-   "meaning_uz": "azizlik, qadr",
-   "uz_cognates": ["aziz", "izzat", "mu'taz"],
+   "root": "ص ر ف",
+   "meaning_uz": "sarflash, almashtirish",
+   "uz_cognates": ["sarf", "masraf", "sarrof"],
    "derived": [
-    {"ar": "عَزِيز", "uz": "aziz, qadrli", "pattern": "فَعِيل"},
-    {"ar": "عِزَّة", "uz": "izzat, sha'n", "pattern": "فِعْلَة"}
+    {"ar": "صَرَّاف", "uz": "kassir, bankomat", "pattern": "فَعَّال"},
+    {"ar": "مَصْرِف", "uz": "bank", "pattern": "مَفْعِل"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "عَزِيزِي", "translit": "ʿazīzī", "uz": "azizim (murojaat) (o'zbekcha 'aziz')", "root": "ع ز ز", "pattern": "", "pos": "ibora", "audio": "a2/azizi.mp3", "example_ar": "عَزِيزِي أَحْمَد،", "example_uz": "Aziz Ahmad,", "srs": true},
-  {"ar": "تَحِيَّة", "translit": "taḥiyya", "uz": "salom, tabrik (o'zbekcha 'tahiyot')", "root": "ح ي ي", "pattern": "تَفْعِلَة", "pos": "ot", "audio": "a2/tahiyya.mp3", "example_ar": "مَعَ التَّحِيَّةِ.", "example_uz": "Hurmat bilan.", "srs": true},
-  {"ar": "مَوْضُوع", "translit": "mawḍūʿ", "uz": "mavzu (o'zbekcha 'mavzu')", "root": "و ض ع", "pattern": "مَفْعُول", "pos": "ot", "audio": "a2/mawdu.mp3", "example_ar": "المَوْضُوعُ: طَلَبُ إِجَازَةٍ.", "example_uz": "Mavzu: ta'til so'rovi.", "srs": true},
-  {"ar": "خِطَاب", "translit": "khiṭāb", "uz": "xat, murojaat (rasmiy)", "root": "خ ط ب", "pattern": "فِعَال", "pos": "ot", "audio": "a2/khitab.mp3", "example_ar": "خِطَابٌ رَسْمِيٌّ.", "example_uz": "Rasmiy xat.", "srs": true},
-  {"ar": "مُخْلِص", "translit": "mukhliṣ", "uz": "samimiy, sodiq (o'zbekcha 'muxlis')", "root": "خ ل ص", "pattern": "مُفْعِل", "pos": "sifat", "audio": "a2/mukhlis.mp3", "example_ar": "المُخْلِصُ: أَحْمَد.", "example_uz": "Samimiy: Ahmad.", "srs": true},
-  {"ar": "تَوْقِيع", "translit": "tawqīʿ", "uz": "imzo", "root": "و ق ع", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/tawqi.mp3", "example_ar": "التَّوْقِيعُ فِي الأَسْفَلِ.", "example_uz": "Imzo pastda.", "srs": true},
-  {"ar": "إِجَازَة", "translit": "ijāza", "uz": "ta'til, ruxsat (o'zbekcha 'ijozat')", "root": "ج و ز", "pattern": "إِفَالَة", "pos": "ot", "audio": "a2/ijaza.mp3", "example_ar": "طَلَبْتُ إِجَازَةً.", "example_uz": "Ta'til so'radim.", "srs": true},
-  {"ar": "رَسْمِيّ", "translit": "rasmī", "uz": "rasmiy (o'zbekcha 'rasmiy')", "root": "ر س م", "pattern": "فَعْلِيّ", "pos": "sifat", "audio": "a2/rasmi.mp3", "example_ar": "طَلَبٌ رَسْمِيٌّ.", "example_uz": "Rasmiy ariza.", "srs": true}
+  {"ar": "بَنْك", "translit": "bank", "uz": "bank", "root": "", "pattern": "", "pos": "ot", "audio": "a2/bank.mp3", "example_ar": "أَيْنَ البَنْكُ؟", "example_uz": "Bank qayerda?", "srs": true},
+  {"ar": "صَرَّاف", "translit": "ṣarrāf", "uz": "bankomat, kassir", "root": "ص ر ف", "pattern": "فَعَّال", "pos": "ot", "audio": "a2/sarraf.mp3", "example_ar": "الصَّرَّافُ الآلِيُّ هُنَاكَ.", "example_uz": "Bankomat u yerda.", "srs": true},
+  {"ar": "عُمْلَة", "translit": "ʿumla", "uz": "valyuta, pul birligi", "root": "ع م ل", "pattern": "فُعْلَة", "pos": "ot", "audio": "a2/umla.mp3", "example_ar": "أَيُّ عُمْلَةٍ؟", "example_uz": "Qaysi valyuta?", "srs": true},
+  {"ar": "صَرْف", "translit": "ṣarf", "uz": "ayirboshlash", "root": "ص ر ف", "pattern": "فَعْل", "pos": "ot", "audio": "a2/sarf.mp3", "example_ar": "سِعْرُ الصَّرْفِ.", "example_uz": "Valyuta kursi.", "srs": true},
+  {"ar": "بِطَاقَة", "translit": "biṭāqa", "uz": "karta", "root": "", "pattern": "", "pos": "ot", "audio": "a2/bitaqa.mp3", "example_ar": "أَدْفَعُ بِالبِطَاقَةِ.", "example_uz": "Karta bilan to'layman.", "srs": true},
+  {"ar": "رَصِيد", "translit": "raṣīd", "uz": "balans, hisobdagi pul", "root": "ر ص د", "pattern": "فَعِيل", "pos": "ot", "audio": "a2/rasid.mp3", "example_ar": "مَا رَصِيدِي؟", "example_uz": "Balansim qancha?", "srs": true},
+  {"ar": "تَحْوِيل", "translit": "taḥwīl", "uz": "pul o'tkazma", "root": "ح و ل", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/tahwil.mp3", "example_ar": "تَحْوِيلٌ بَنْكِيٌّ.", "example_uz": "Bank o'tkazmasi.", "srs": true},
+  {"ar": "مَدَى", "translit": "madā", "uz": "«mada» — Saudiya to'lov tizimi", "root": "", "pattern": "", "pos": "ot", "audio": "a2/mada.mp3", "example_ar": "أَدْفَعُ بِمَدَى.", "example_uz": "Mada bilan to'layman.", "srs": true},
+  {"ar": "رَقَم سِرِّيّ", "translit": "raqam sirrī", "uz": "PIN kod", "root": "", "pattern": "", "pos": "ibora", "audio": "a2/raqam_sirri.mp3", "example_ar": "أَدْخِلِ الرَّقَمَ السِّرِّيَّ.", "example_uz": "PIN kodni kiriting.", "srs": true},
+  {"ar": "يَدْفَعُ", "translit": "yadfaʿu", "uz": "to'laydi", "root": "د ف ع", "pattern": "يَفْعَل", "pos": "fe'l", "audio": "a2/yadfau.mp3", "example_ar": "يَدْفَعُ الحِسَابَ.", "example_uz": "Hisobni to'laydi.", "srs": true},
+  {"ar": "دُولَار", "translit": "dūlār", "uz": "dollar", "root": "", "pattern": "", "pos": "ot", "audio": "a2/dular.mp3", "example_ar": "صَرَفْتُ الدُّولَارَ.", "example_uz": "Dollarni almashtirdim.", "srs": true},
+  {"ar": "حِسَاب", "translit": "ḥisāb", "uz": "hisob (bank hisobi)", "root": "ح س ب", "pattern": "فِعَال", "pos": "ot", "audio": "a1/hisab.mp3", "example_ar": "حِسَابٌ بَنْكِيٌّ.", "example_uz": "Bank hisobi.", "srs": true}
  ],
- "hejazi": [],
+ "hejazi": [
+  {"msa_ar": "أُرِيدُ صَرْفَ نُقُودٍ", "hejazi_ar": "أَبْغَى أَصْرِف فُلُوس", "translit": "abghā aṣrif fulūs", "uz": "Pul almashtirmoqchiman (hijoziy — fulus)", "audio": "hj/abgha_asrif.mp3"},
+  {"msa_ar": "أَيْنَ الصَّرَّافُ الآلِيُّ؟", "hejazi_ar": "وِين الصَّرَّاف؟", "translit": "wēn aṣ-ṣarrāf?", "uz": "Bankomat qayerda? (hijoziy)", "audio": "hj/wen_sarraf.mp3"},
+  {"msa_ar": "بِالبِطَاقَةِ", "hejazi_ar": "بِالشَّبَكَة / مَدَى", "translit": "bish-shabaka / madā", "uz": "Karta/mada bilan (hijoziy)", "audio": "hj/bishabaka.mp3"}
+ ],
  "skills": {
   "reading": {
-   "text_ar": "عزيزي أحمد،\nتحية طيبة وبعد،\nأكتب إليك لأخبرك أنني سأسافر إلى مكة الأسبوع القادم. أتمنى أن نلتقي هناك.\nمع التحية،\nالمخلص: محمد",
+   "text_ar": "ذَهَبْتُ إِلَى البَنْكِ وَقُلْتُ: أَبْغَى أَصْرِف فُلُوس، عِنْدِي دُولَار. سَأَلْتُ عَنْ سِعْرِ الصَّرْفِ. ثُمَّ فِي المَحَلِّ دَفَعْتُ بِمَدَى لِأَنَّ مَعِي بِطَاقَةٌ سَعُودِيَّةٌ.",
    "questions": [
-    {"q_uz": "Xat kimga yozilgan?", "a": "Ahmadga (عزيزي أحمد)"},
-    {"q_uz": "Xat qanday tugagan?", "a": "مع التحية / المخلص (hurmat bilan)"}
+    {"q_uz": "Bankda nima qildi?", "a": "Dollarni riyolga almashtirdi (صَرْف)"},
+    {"q_uz": "Do'konda qanday to'ladi?", "a": "Mada (karta) bilan"}
    ]
   },
   "listening": {
-   "audio": "a2/tahiyya.mp3",
-   "transcript_ar": "تَحِيَّة",
+   "audio": "a2/sarraf.mp3",
+   "transcript_ar": "صَرَّاف",
    "questions": [
-    {"q_uz": "So'z ma'nosi?", "a": "Salom, tabrik"}
+    {"q_uz": "So'z ma'nosi?", "a": "Bankomat, kassir"}
    ]
   },
   "speaking": {
-   "task_uz": "Xat qismlarini ayting: ʿazīzī..., taḥiyyatan ṭayyiba, maʿa t-taḥiyya.",
-   "target_ar": ["عَزِيزِي", "مَعَ التَّحِيَّة", "المَوْضُوع"],
+   "task_uz": "Bankda gaplashing: abghā aṣrif fulūs, wēn aṣ-ṣarrāf? adfaʿu bimadā.",
+   "target_ar": ["أَبْغَى أَصْرِف فُلُوس", "وِين الصَّرَّاف؟", "أَدْفَعُ بِمَدَى"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Do'stingizga qisqa xat yozing: murojaat, salom, 2 gap mazmun, yakun.",
+   "task_uz": "«Bankomat qayerda?» va «Karta bilan to'layman» gaplarini yozing.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "Xat boshidagi murojaat qaysi?", "q_ar": "", "options": ["عَزِيزِي", "مَعَ التَّحِيَّة", "التَّوْقِيع", "المُخْلِص"], "answer": "عَزِيزِي", "explain_uz": "عَزِيزِي — «Azizim» (xat boshi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Xat oxiridagi «hurmat bilan» qaysi?", "q_ar": "", "options": ["مَعَ التَّحِيَّة", "عَزِيزِي", "المَوْضُوع", "خِطَاب"], "answer": "مَعَ التَّحِيَّة", "explain_uz": "مَعَ التَّحِيَّة — hurmat bilan (yakun).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المَوْضُوع: طَلَبُ إِجَازَةٍ", "options": [], "answer": "mavzu ta'til so'rovi", "explain_uz": "مَوْضُوع = mavzu, إِجَازَة = ta'til.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«عَزِيزِي، عِزَّة» qaysi o'zakdan?", "q_ar": "", "options": ["ع ز ز", "ع ذ ر", "ع ز م"], "answer": "ع ز ز", "explain_uz": "«ع ز ز» — azizlik o'zagi: aziz, izzat.", "audio": "", "root": "ع ز ز", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "imzo", "q_ar": "", "options": [], "answer": "تَوْقِيع", "explain_uz": "تَوْقِيع — imzo (و ق ع o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "rasmiy", "q_ar": "", "options": [], "answer": "رَسْمِيّ", "explain_uz": "رَسْمِيّ — rasmiy.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«إِجَازَة» ma'nosi?", "q_ar": "", "options": ["ta'til, ruxsat", "imzo", "mavzu", "xat"], "answer": "ta'til, ruxsat", "explain_uz": "إِجَازَة — ta'til/ruxsat (o'zbekcha 'ijozat').", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "«bankomat» qaysi?", "q_ar": "", "options": ["صَرَّاف", "صَرْف", "عُمْلَة", "رَصِيد"], "answer": "صَرَّاف", "explain_uz": "صَرَّاف (الآلي) — bankomat/kassir.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَدْفَعُ بِالبِطَاقَةِ", "options": [], "answer": "karta bilan to'layman", "explain_uz": "أَدْفَعُ = to'layman, بِالبِطَاقَة = karta bilan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Saudiya mahalliy to'lov tizimi qaysi?", "q_ar": "", "options": ["مَدَى", "دُولَار", "تَحْوِيل", "رَصِيد"], "answer": "مَدَى", "explain_uz": "مَدَى — Saudiya milliy karta/to'lov tizimi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ص ر ف» o'zagidan?", "q_ar": "", "options": ["صَرَّاف", "بِطَاقَة", "رَصِيد"], "answer": "صَرَّاف", "explain_uz": "«ص ر ف» — sarflash/almashtirish o'zagi: صَرَّاف, صَرْف, masraf.", "audio": "", "root": "ص ر ف", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "valyuta", "q_ar": "", "options": [], "answer": "عُمْلَة", "explain_uz": "عُمْلَة — valyuta/pul birligi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hijoziyda «pul» qaysi?", "q_ar": "", "options": ["فُلُوس", "عُمْلَة", "مَدَى", "رَصِيد"], "answer": "فُلُوس", "explain_uz": "فُلُوس — hijoziy/kundalik «pul».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "balans", "q_ar": "", "options": [], "answer": "رَصِيد", "explain_uz": "رَصِيد — hisobdagi balans.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "ع ز ز", "back": "azizlik o'zagi (aziz, izzat)", "deck": "msa"},
-  {"type": "word", "front": "عَزِيزِي", "back": "azizim (murojaat)", "deck": "msa"},
-  {"type": "word", "front": "تَحِيَّة", "back": "salom, tabrik", "deck": "msa"},
-  {"type": "word", "front": "مَوْضُوع", "back": "mavzu", "deck": "msa"},
-  {"type": "word", "front": "خِطَاب", "back": "xat, murojaat", "deck": "msa"},
-  {"type": "word", "front": "مُخْلِص", "back": "samimiy, sodiq", "deck": "msa"},
-  {"type": "word", "front": "تَوْقِيع", "back": "imzo", "deck": "msa"},
-  {"type": "word", "front": "إِجَازَة", "back": "ta'til, ruxsat", "deck": "msa"},
-  {"type": "word", "front": "رَسْمِيّ", "back": "rasmiy", "deck": "msa"}
+  {"type": "root", "front": "ص ر ف", "back": "sarflash o'zagi (sarf, sarrof=bankomat, masraf)", "deck": "msa"},
+  {"type": "word", "front": "بَنْك", "back": "bank", "deck": "msa"},
+  {"type": "word", "front": "صَرَّاف", "back": "bankomat, kassir", "deck": "msa"},
+  {"type": "word", "front": "عُمْلَة", "back": "valyuta", "deck": "msa"},
+  {"type": "word", "front": "صَرْف", "back": "ayirboshlash", "deck": "msa"},
+  {"type": "word", "front": "رَصِيد", "back": "balans", "deck": "msa"},
+  {"type": "word", "front": "تَحْوِيل", "back": "pul o'tkazma", "deck": "msa"},
+  {"type": "word", "front": "مَدَى", "back": "mada (Saudiya to'lov tizimi)", "deck": "msa"},
+  {"type": "phrase", "front": "أَبْغَى أَصْرِف فُلُوس", "back": "Pul almashtirmoqchiman (hijoziy)", "deck": "hejazi"},
+  {"type": "phrase", "front": "وِين الصَّرَّاف؟", "back": "Bankomat qayerda? (hijoziy)", "deck": "hejazi"}
  ]
 }

@@ -1,0 +1,95 @@
+{
+ "id": "a2-53",
+ "level": "A2",
+ "module": "skills",
+ "order": 53,
+ "title_uz": "Umumiy takrorlash",
+ "title_ar": "المُرَاجَعَةُ الشَّامِلَة",
+ "can_do_uz": "A2 darajasining asosiy mavzularini takrorlab, imtihonga tayyorman.",
+ "duration_min": 30,
+ "prerequisites": ["a2-52"],
+ "harakat_level": "new_words_only",
+ "hook_uz": "A2 ni yakunlaymiz! Fe'l boblari (I–X), illatli fe'llar, كانَ va إنَّ, buyruq, majhul, solishtirish, Saudiya moduli — hammasini o'rgandingiz. Endi imtihon va SERTIFIKAT (شَهَادَة) sizni kutmoqda!",
+ "grammar": {
+  "point_ar": "خُلَاصَةُ المُسْتَوَى A2",
+  "explanation_uz": "A2 xulosasi: (1) FE'L BOBLARI — II فَعَّلَ (kuchaytirish), III فَاعَلَ (o'zaro), IV أَفْعَلَ (sababiyat), V تَفَعَّلَ, VI تَفَاعَلَ, VII اِنْفَعَلَ (natija), VIII اِفْتَعَلَ, X اِسْتَفْعَلَ (talab) + masdar va ism fo'il/maf'ul. (2) ILLATLI FE'LLAR — mithal, ajvaf, naqis, muzoaf, mahmuz. (3) GRAMMATIKA — كانَ (xabar nasb), إنَّ (ism nasb), amr, majhul, أَفْعَل solishtirish, sonlar, zarf. (4) SAUDIYA — 12 vaziyat + hijoziy lahja.",
+  "table": [
+   {"ar": "عَلَّمَ · تَعَلَّمَ · اِسْتَعْلَمَ", "uz": "boblar tizimi (II, V, X)", "form": "verb-forms"},
+   {"ar": "قَالَ · وَصَلَ · مَشَى", "uz": "ajvaf · mithal · naqis", "form": "illatli"},
+   {"ar": "كَانَ ... جَمِيلًا / إِنَّ ... مُجْتَهِدٌ", "uz": "xabar nasb / ism nasb", "form": "grammatika"},
+   {"ar": "شَهَادَةُ A2", "uz": "A2 sertifikati — maqsad!", "form": "imtihon"}
+  ],
+  "common_mistakes_uz": [
+   "Boblarni shakliga qarab emas, faqat yodlab ajratish — vaznni tanish muhim.",
+   "كانَ (xabar nasb) va إنَّ (ism nasb) ni chalkashtirish.",
+   "Imtihonga tayyorlanmasdan kirish — avval takrorlang."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ش ه د",
+   "meaning_uz": "guvohlik, shahodat",
+   "uz_cognates": ["shohid", "shahodat", "mashhad"],
+   "derived": [
+    {"ar": "شَهَادَة", "uz": "sertifikat, guvohnoma", "pattern": "فَعَالَة"},
+    {"ar": "شَاهِد", "uz": "guvoh", "pattern": "فَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "مُرَاجَعَة", "translit": "murājaʿa", "uz": "takrorlash, ko'rib chiqish", "root": "ر ج ع", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "a1/murajaa.mp3", "example_ar": "المُرَاجَعَةُ مُهِمَّةٌ.", "example_uz": "Takrorlash muhim.", "srs": true},
+  {"ar": "مُسْتَوَى", "translit": "mustawā", "uz": "daraja, saviya (o'zbekcha 'mustaviy')", "root": "س و ي", "pattern": "مُسْتَفْعَل", "pos": "ot", "audio": "a2/mustawa.mp3", "example_ar": "مُسْتَوَى A2.", "example_uz": "A2 darajasi.", "srs": true},
+  {"ar": "شَهَادَة", "translit": "shahāda", "uz": "sertifikat, guvohnoma (o'zbekcha 'shahodat')", "root": "ش ه د", "pattern": "فَعَالَة", "pos": "ot", "audio": "a2/shahada_cert.mp3", "example_ar": "حَصَلْتُ عَلَى شَهَادَةٍ.", "example_uz": "Sertifikat oldim.", "srs": true},
+  {"ar": "اِمْتِحَان", "translit": "imtiḥān", "uz": "imtihon (o'zbekcha 'imtihon')", "root": "م ح ن", "pattern": "اِفْتِعَال", "pos": "ot", "audio": "a2/imtihan.mp3", "example_ar": "الاِمْتِحَانُ غَدًا.", "example_uz": "Imtihon ertaga.", "srs": true},
+  {"ar": "إِنْجَاز", "translit": "injāz", "uz": "yutuq, natija", "root": "ن ج ز", "pattern": "إِفْعَال", "pos": "ot", "audio": "a2/injaz.mp3", "example_ar": "إِنْجَازٌ كَبِيرٌ.", "example_uz": "Katta yutuq.", "srs": true},
+  {"ar": "إِتْقَان", "translit": "itqān", "uz": "mukammal egallash, puxtalik", "root": "ت ق ن", "pattern": "إِفْعَال", "pos": "ot", "audio": "a2/itqan.mp3", "example_ar": "إِتْقَانُ اللُّغَةِ.", "example_uz": "Tilni puxta egallash.", "srs": true},
+  {"ar": "مُوَاصَلَة", "translit": "muwāṣala", "uz": "davom ettirish", "root": "و ص ل", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "a2/muwasala.mp3", "example_ar": "مُوَاصَلَةُ التَّعَلُّمِ.", "example_uz": "O'rganishni davom ettirish.", "srs": true},
+  {"ar": "حَصَلَ", "translit": "ḥaṣala", "uz": "erishdi, oldi", "root": "ح ص ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/hasala.mp3", "example_ar": "حَصَلَ عَلَى الشَّهَادَةِ.", "example_uz": "Sertifikatga erishdi.", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أكملت مستوى A2! تعلمت أبواب الفعل والأفعال المعتلة وكان وإنّ والأمر والمجهول. تدربت أيضًا على اللهجة الحجازية للسفر إلى السعودية. الآن أستعد للامتحان وأحصل على الشهادة إن شاء الله.",
+   "questions": [
+    {"q_uz": "A2 da nimalar o'rganildi?", "a": "Fe'l boblari, illatli fe'llar, kana/inna, amr, majhul, hijoziy"},
+    {"q_uz": "Keyingi qadam nima?", "a": "Imtihon va sertifikat"}
+   ]
+  },
+  "listening": {
+   "audio": "a2/shahada_cert.mp3",
+   "transcript_ar": "شَهَادَة",
+   "questions": [
+    {"q_uz": "So'z ma'nosi?", "a": "Sertifikat, guvohnoma"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "A2 da o'rgangan 3 mavzuni arabcha ayting: abwāb al-fiʿl, al-afʿāl al-muʿtalla, kāna wa inna.",
+   "target_ar": ["أَبْوَابُ الفِعْل", "الأَفْعَالُ المُعْتَلَّة", "شَهَادَة"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "A2 da nimalarni o'rganganingizni 4 gapda yozing (boblar, illatli, grammatika, Saudiya).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "II bob (فَعَّلَ) ning asosiy ma'nosi?", "q_ar": "", "options": ["kuchaytirish/sababiyat", "o'zaro", "natija", "talab"], "answer": "kuchaytirish/sababiyat", "explain_uz": "II bob — kuchaytirish yoki «-dirmoq» (عَلَّمَ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«قَالَ» qaysi illatli tur?", "q_ar": "", "options": ["أَجْوَف", "مِثَال", "نَاقِص", "مُضَاعَف"], "answer": "أَجْوَف", "explain_uz": "قَالَ (ق و ل) — o'rtasi illat, ajvaf.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "كانَ dan keyin XABAR qaysi holatda?", "q_ar": "", "options": ["nasb (fatha)", "raf' (damma)", "jarr", "sukun"], "answer": "nasb (fatha)", "explain_uz": "كانَ xabarni nasb qiladi; إنَّ esa egani nasb qiladi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«شَهَادَة، شَاهِد» qaysi o'zakdan?", "q_ar": "", "options": ["ش ه د", "ش ه ر", "ش د د"], "answer": "ش ه د", "explain_uz": "«ش ه د» — guvohlik o'zagi: shohid, shahodat, mashhad.", "audio": "", "root": "ش ه د", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«كُتِبَ» qaysi nisbat?", "q_ar": "", "options": ["majhul (passiv)", "ma'lum (aktiv)", "amr", "masdar"], "answer": "majhul (passiv)", "explain_uz": "كُتِبَ — majhul (1-harf damma, o'rta kasra).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "sertifikat, guvohnoma", "q_ar": "", "options": [], "answer": "شَهَادَة", "explain_uz": "شَهَادَة — sertifikat (imtihondan keyin olinadi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "daraja, saviya", "q_ar": "", "options": [], "answer": "مُسْتَوَى", "explain_uz": "مُسْتَوَى — daraja (A2 mustawā).", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ش ه د", "back": "guvohlik o'zagi (shohid, shahodat, mashhad)", "deck": "msa"},
+  {"type": "word", "front": "مُرَاجَعَة", "back": "takrorlash", "deck": "msa"},
+  {"type": "word", "front": "مُسْتَوَى", "back": "daraja, saviya", "deck": "msa"},
+  {"type": "word", "front": "شَهَادَة", "back": "sertifikat, guvohnoma", "deck": "msa"},
+  {"type": "word", "front": "اِمْتِحَان", "back": "imtihon", "deck": "msa"},
+  {"type": "word", "front": "إِنْجَاز", "back": "yutuq, natija", "deck": "msa"},
+  {"type": "word", "front": "إِتْقَان", "back": "puxta egallash", "deck": "msa"},
+  {"type": "word", "front": "حَصَلَ", "back": "erishdi, oldi", "deck": "msa"},
+  {"type": "word", "front": "مُوَاصَلَة", "back": "davom ettirish", "deck": "msa"}
+ ]
+}

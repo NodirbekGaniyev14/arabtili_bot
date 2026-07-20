@@ -1,98 +1,122 @@
 {
  "id": "a2-08",
  "level": "A2",
- "module": "verb-forms",
+ "module": "sarf",
  "order": 8,
- "title_uz": "VIII bob: qaytim",
- "title_ar": "البَابُ الثَّامِن: اِفْتَعَلَ",
- "can_do_uz": "VIII bob (اِفْتَعَلَ) fe'llarini taniyman: o'z manfaati uchun bajarilgan harakatni bilaman.",
+ "title_uz": "Birikuvchi olmoshlar (14 ta)",
+ "title_ar": "الضَّمَائِرُ المُتَّصِلَةُ",
+ "can_do_uz": "Birikuvchi olmoshni otga, fe'lga va predlogga to'g'ri ulab gapira olaman.",
  "duration_min": 30,
  "prerequisites": ["a2-07"],
  "harakat_level": "new_words_only",
- "hook_uz": "«To'pladi» — جَمَعَ. «To'plandi (o'zaro)» — اِجْتَمَعَ. O'zak boshiga اِ va 1-harfdan keyin تَـ qo'shiladi. اِسْتَمَعَ (tingladi), اِنْتَظَرَ (kutdi), اِحْتَرَمَ (hurmat qildi) — hammasi VIII bob!",
+ "hook_uz": "O'zbekchada «kitobim, kitobing, kitobi» — qo'shimcha so'z oxiriga qo'shiladi. Arabchada ham AYNAN shunday: كِتَابِي، كِتَابُكَ، كِتَابُهُ. Bu — ona tilingiz bilan arab tilining eng yaqinlashadigan nuqtasi! Bugun 14 tasini to'liq olamiz va bir sirni ochamiz: xuddi shu qo'shimchalar fe'l va predlogga ham ulanadi.",
  "grammar": {
-  "point_ar": "اِفْتَعَلَ — المُطَاوَعَة",
-  "explanation_uz": "VIII bob vazni: اِفْتَعَلَ (o'zak boshiga اِ, 1-harfdan KEYIN تَـ qo'shiladi). Asosiy ma'no: qaytim / o'z manfaatiga bajarish: جَمَعَ (to'pladi) → اِجْتَمَعَ (to'plandi), سَمِعَ (eshitdi) → اِسْتَمَعَ (diqqat bilan tingladi). Masdari اِفْتِعَال: اِجْتِمَاع (yig'ilish), اِحْتِرَام (hurmat). Hozirgi zamoni: يَفْتَعِلُ (يَجْتَمِعُ).",
+  "point_ar": "الضَّمَائِرُ المُتَّصِلَةُ وَوَظَائِفُهَا",
+  "explanation_uz": "Muttasil («birikuvchi») olmosh so'zga YOPISHIB keladi, alohida yozilmaydi. Uning UCH vazifasi bor. (1) OT bilan — EGALIK bildiradi: كِتَابُهُ (uning kitobi), كِتَابُهُنَّ (ularning — ayollarning — kitobi). (2) FE'L bilan — TO'LDIRUVCHI bo'ladi (kimni/nimani): عَلَّمَهُمْ (ularni o'rgatdi), سَأَلَهَا (undan so'radi). (3) PREDLOG bilan: لَهُ (uning uchun), مَعَنَا (biz bilan), عِنْدَهُمْ (ularda). Ikki nozik qoida. BIRINCHI: «meni» ma'nosida fe'lga ـنِي qo'shiladi, ـِي emas — سَأَلَنِي (سَأَلِي xato). O'rtadagi نـ «himoya nuni» (نُون الوِقَايَة) deyiladi. IKKINCHI: ـهُ va ـهُمْ kasradan keyin ـهِ, ـهِمْ bo'ladi: فِي كِتَابِهِ، إِلَيْهِمْ.",
   "table": [
-   {"ar": "جَمَعَ ← اِجْتَمَعَ", "uz": "to'pladi → to'plandi", "form": "qaytim"},
-   {"ar": "سَمِعَ ← اِسْتَمَعَ", "uz": "eshitdi → tingladi", "form": "اِفْتَعَلَ"},
-   {"ar": "اِحْتَرَمَ", "uz": "hurmat qildi", "form": "اِفْتَعَلَ"},
-   {"ar": "مَصْدَر: اِجْتِمَاع", "uz": "masdar: yig'ilish", "form": "اِفْتِعَال"}
+   {"ar": "كِتَابُهُ", "uz": "uning (bir erkak) kitobi", "form": "ـهُ"},
+   {"ar": "كِتَابُهُمَا", "uz": "ular ikkovining kitobi", "form": "ـهُمَا"},
+   {"ar": "كِتَابُهُمْ", "uz": "ularning (erkaklar) kitobi", "form": "ـهُمْ"},
+   {"ar": "كِتَابُهَا", "uz": "uning (bir ayol) kitobi", "form": "ـهَا"},
+   {"ar": "كِتَابُهُنَّ", "uz": "ularning (ayollar) kitobi", "form": "ـهُنَّ"},
+   {"ar": "كِتَابُكَ", "uz": "sening (erkak) kitobing", "form": "ـكَ"},
+   {"ar": "كِتَابُكِ", "uz": "sening (ayol) kitobing", "form": "ـكِ"},
+   {"ar": "كِتَابُكُمَا", "uz": "sizlar ikkovingizning kitobingiz", "form": "ـكُمَا"},
+   {"ar": "كِتَابُكُمْ", "uz": "sizlarning (erkaklar) kitobingiz", "form": "ـكُمْ"},
+   {"ar": "كِتَابُكُنَّ", "uz": "sizlarning (ayollar) kitobingiz", "form": "ـكُنَّ"},
+   {"ar": "كِتَابِي", "uz": "mening kitobim", "form": "ـِي"},
+   {"ar": "كِتَابُنَا", "uz": "bizning kitobimiz", "form": "ـنَا"},
+   {"ar": "عَلَّمَهُمْ / سَأَلَنِي", "uz": "fe'l bilan — to'ldiruvchi: ularni o'rgatdi / mendan so'radi", "form": "مَفْعُول"},
+   {"ar": "لَهُ / مَعَنَا / عِنْدَهُمْ", "uz": "predlog bilan — uning uchun / biz bilan / ularda", "form": "جَارّ وَمَجْرُور"}
   ],
   "common_mistakes_uz": [
-   "1-harfdan keyingi تَـ ni unutish — bu VIII bobning belgisi.",
-   "VIII bob (اِفْتَعَلَ) va X bob (اِسْتَفْعَلَ) prefikslarini chalkashtirish.",
-   "Boshidagi hamzani (vasl) gap o'rtasida talaffuz qilish."
+   "Fe'lga «meni» qo'shganda ـِي ishlatish: «سَأَلِي» xato — to'g'risi سَأَلَنِي (himoya nuni bilan).",
+   "كِتَابُهُمْ va كِتَابُهُمَا ni chalkashtirish — ـهُمَا faqat ROSA ikki kishi uchun.",
+   "Kasradan keyin ـهُ ni o'zgartirmaslik: «فِي كِتَابُهُ» xato, to'g'risi فِي كِتَابِهِ."
   ]
  },
  "roots": [
   {
-   "root": "ج م ع",
-   "meaning_uz": "yig'ish, jamlash",
-   "uz_cognates": ["ijtimoiy", "jamiyat", "jam'", "jome'"],
+   "root": "س أ ل",
+   "meaning_uz": "so'rash, savol berish",
+   "uz_cognates": ["savol", "mas'ul", "so'rov"],
    "derived": [
-    {"ar": "اِجْتَمَعَ", "uz": "to'plandi (VIII)", "pattern": "اِفْتَعَلَ"},
-    {"ar": "اِجْتِمَاع", "uz": "yig'ilish (masdar)", "pattern": "اِفْتِعَال"}
+    {"ar": "سَأَلَ", "uz": "so'radi", "pattern": "فَعَلَ"},
+    {"ar": "سُؤَال", "uz": "savol", "pattern": "فُعَال"},
+    {"ar": "مَسْؤُول", "uz": "mas'ul, javobgar", "pattern": "مَفْعُول"}
+   ]
+  },
+  {
+   "root": "و ق ي",
+   "meaning_uz": "saqlash, himoya qilish — «himoya nuni» nomi shundan",
+   "uz_cognates": ["taqvo", "viqoya"],
+   "derived": [
+    {"ar": "وَقَى", "uz": "asradi, himoya qildi", "pattern": "فَعَى"},
+    {"ar": "وِقَايَة", "uz": "himoya, saqlanish", "pattern": "فِعَالَة"},
+    {"ar": "تَقْوَى", "uz": "taqvo, ehtiyotkorlik", "pattern": "فَعْوَى"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "اِجْتَمَعَ", "translit": "ijtamaʿa", "uz": "to'plandi, yig'ildi", "root": "ج م ع", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "a2/ijtamaa.mp3", "example_ar": "اِجْتَمَعَ الأَصْدِقَاءُ.", "example_uz": "Do'stlar to'plandilar.", "srs": true},
-  {"ar": "اِسْتَمَعَ", "translit": "istamaʿa", "uz": "tingladi (diqqat bilan)", "root": "س م ع", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "a2/istamaa.mp3", "example_ar": "اِسْتَمَعْتُ إِلَى الدَّرْسِ.", "example_uz": "Darsni tingladim.", "srs": true},
-  {"ar": "اِنْتَظَرَ", "translit": "intaẓara", "uz": "kutdi", "root": "ن ظ ر", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "a2/intazara.mp3", "example_ar": "اِنْتَظَرْتُ الحَافِلَةَ.", "example_uz": "Avtobusni kutdim.", "srs": true},
-  {"ar": "اِحْتَرَمَ", "translit": "iḥtarama", "uz": "hurmat qildi", "root": "ح ر م", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "a2/ihtarama.mp3", "example_ar": "اِحْتَرَمَ وَالِدَيْهِ.", "example_uz": "Ota-onasini hurmat qildi.", "srs": true},
-  {"ar": "اِشْتَرَى", "translit": "ishtarā", "uz": "sotib oldi", "root": "ش ر ي", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "a2/ishtara.mp3", "example_ar": "اِشْتَرَيْتُ هَدِيَّةً.", "example_uz": "Sovg'a sotib oldim.", "srs": true},
-  {"ar": "اِخْتَارَ", "translit": "ikhtāra", "uz": "tanladi", "root": "خ ي ر", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "a2/ikhtara.mp3", "example_ar": "اِخْتَارَ اللَّوْنَ الأَزْرَقَ.", "example_uz": "Ko'k rangni tanladi.", "srs": true},
-  {"ar": "اِبْتَسَمَ", "translit": "ibtasama", "uz": "jilmaydi", "root": "ب س م", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "a2/ibtasama.mp3", "example_ar": "اِبْتَسَمَ الطِّفْلُ.", "example_uz": "Bola jilmaydi.", "srs": true},
-  {"ar": "اِجْتِمَاع", "translit": "ijtimāʿ", "uz": "yig'ilish (masdar) (o'zbekcha 'ijtimoiy')", "root": "ج م ع", "pattern": "اِفْتِعَال", "pos": "ot", "audio": "a2/ijtimaa_n.mp3", "example_ar": "حَضَرْتُ الاِجْتِمَاعَ.", "example_uz": "Yig'ilishga bordim.", "srs": true},
-  {"ar": "اِحْتِرَام", "translit": "iḥtirām", "uz": "hurmat (masdar) (o'zbekcha 'ehtirom')", "root": "ح ر م", "pattern": "اِفْتِعَال", "pos": "ot", "audio": "a2/ihtiram.mp3", "example_ar": "الاِحْتِرَامُ مُهِمٌّ.", "example_uz": "Hurmat muhim.", "srs": true},
-  {"ar": "وَالِدَيْن", "translit": "wālidayn", "uz": "ota-ona", "root": "و ل د", "pattern": "", "pos": "ot", "audio": "a2/walidayn.mp3", "example_ar": "أَطِعْ وَالِدَيْكَ.", "example_uz": "Ota-onangga bo'ysun.", "srs": true}
+  {"ar": "كِتَابُهُمَا", "translit": "kitābuhumā", "uz": "ular ikkovining kitobi", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a2/kitabuhuma.mp3", "example_ar": "الطَّالِبَانِ أَخَذَا كِتَابَهُمَا.", "example_uz": "Ikki talaba kitobini oldi.", "srs": true},
+  {"ar": "كِتَابُهُمْ", "translit": "kitābuhum", "uz": "ularning (erkaklar) kitobi", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a2/kitabuhum.mp3", "example_ar": "كِتَابُهُمْ عَلَى الطَّاوِلَةِ.", "example_uz": "Ularning kitobi stol ustida.", "srs": true},
+  {"ar": "كِتَابُهُنَّ", "translit": "kitābuhunna", "uz": "ularning (ayollar) kitobi", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a2/kitabuhunna.mp3", "example_ar": "كِتَابُهُنَّ جَدِيدٌ.", "example_uz": "Ularning (ayollarning) kitobi yangi.", "srs": true},
+  {"ar": "كِتَابُكُمَا", "translit": "kitābukumā", "uz": "sizlar ikkovingizning kitobingiz", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a2/kitabukuma.mp3", "example_ar": "أَيْنَ كِتَابُكُمَا؟", "example_uz": "Ikkovingizning kitobingiz qani?", "srs": true},
+  {"ar": "كِتَابُكُمْ", "translit": "kitābukum", "uz": "sizlarning (erkaklar) kitobingiz", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a2/kitabukum.mp3", "example_ar": "هَلْ كِتَابُكُمْ مَعَكُمْ؟", "example_uz": "Kitobingiz o'zingiz bilanmi?", "srs": true},
+  {"ar": "كِتَابُكُنَّ", "translit": "kitābukunna", "uz": "sizlarning (ayollar) kitobingiz", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a2/kitabukunna.mp3", "example_ar": "كِتَابُكُنَّ فِي الحَقِيبَةِ.", "example_uz": "Sizlarning kitobingiz sumkada.", "srs": true},
+  {"ar": "سَأَلَنِي", "translit": "saʾalanī", "uz": "mendan so'radi", "root": "س أ ل", "pattern": "", "pos": "fe'l", "audio": "a2/saalani.mp3", "example_ar": "سَأَلَنِي المُدَرِّسُ عَنِ الدَّرْسِ.", "example_uz": "O'qituvchi mendan dars haqida so'radi.", "srs": true},
+  {"ar": "عَلَّمَهُمْ", "translit": "ʿallamahum", "uz": "ularni o'rgatdi", "root": "ع ل م", "pattern": "", "pos": "fe'l", "audio": "a2/allamahum.mp3", "example_ar": "عَلَّمَهُمُ العَرَبِيَّةَ.", "example_uz": "Ularga arab tilini o'rgatdi.", "srs": true},
+  {"ar": "مَعَنَا", "translit": "maʿanā", "uz": "biz bilan", "root": "", "pattern": "", "pos": "predlog", "audio": "a2/maana.mp3", "example_ar": "كِتَابُنَا مَعَنَا.", "example_uz": "Kitobimiz o'zimiz bilan.", "srs": true},
+  {"ar": "عِنْدَهُمْ", "translit": "ʿindahum", "uz": "ularda (bor)", "root": "", "pattern": "", "pos": "predlog", "audio": "a2/indahum.mp3", "example_ar": "عِنْدَهُمْ كُتُبٌ كَثِيرَةٌ.", "example_uz": "Ularda ko'p kitob bor.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "اِجْتَمَعَ الأَصْدِقَاءُ فِي البَيْتِ. اِسْتَمَعْنَا إِلَى المُوسِيقَى وَاِبْتَسَمْنَا. أَنَا أَحْتَرِمُ وَالِدَيَّ كَثِيرًا، وَالإِسْلَامُ يَأْمُرُ بِاحْتِرَامِهِمَا.",
+   "text_ar": "هَذَا كِتَابُهُ وَذَلِكَ كِتَابُهَا. الطَّالِبَانِ أَخَذَا كِتَابَهُمَا، وَالطُّلَّابُ أَخَذُوا كُتُبَهُمْ، وَالطَّالِبَاتُ أَخَذْنَ كُتُبَهُنَّ. المُدَرِّسُ عَلَّمَهُمْ وَسَأَلَنِي عَنِ الدَّرْسِ. هَلْ كِتَابُكُمْ مَعَكُمْ؟ نَعَمْ، كِتَابُنَا مَعَنَا.",
    "questions": [
-    {"q_uz": "Do'stlar qayerda to'plandilar?", "a": "Uyda (البَيْت)"},
-    {"q_uz": "«اِجْتَمَعَ» qaysi o'zakdan?", "a": "ج م ع (ijtimoiy, jam')"}
+    {"q_uz": "«Ularning (ayollarning) kitoblari» matnda qaysi so'z?", "a": "كُتُبَهُنَّ"},
+    {"q_uz": "O'qituvchi nima qildi?", "a": "Ularni o'rgatdi va mendan dars haqida so'radi"},
+    {"q_uz": "«سَأَلَنِي» dagi ـنِي nimani bildiradi?", "a": "«Mendan» — fe'lga qo'shiladigan «men» shakli"}
    ]
   },
   "listening": {
-   "audio": "a2/istamaa.mp3",
-   "transcript_ar": "اِسْتَمَعَ",
+   "audio": "a2/kitabuhunna.mp3",
+   "transcript_ar": "كِتَابُهُنَّ",
    "questions": [
-    {"q_uz": "Fe'l ma'nosi?", "a": "Tingladi"}
+    {"q_uz": "Kitob kimga tegishli?", "a": "Ularga — ayollarga"}
    ]
   },
   "speaking": {
-   "task_uz": "VIII bob fe'llarini ayting: ijtamaʿa, istamaʿa, intaẓara, iḥtarama.",
-   "target_ar": ["اِجْتَمَعَ", "اِسْتَمَعَ", "اِحْتَرَمَ"],
+   "task_uz": "كِتَاب so'ziga 14 olmoshni ulab ayting: kitābuhu, kitābuhumā, kitābuhum, kitābuhā… kitābī, kitābunā.",
+   "target_ar": ["كِتَابُهُمْ", "كِتَابُهُنَّ", "كِتَابُكُمْ", "كِتَابُنَا"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«Darsni tingladim» va «Sovg'a sotib oldim» gaplarini VIII bob bilan yozing.",
+   "task_uz": "Uch vazifaga uchta jumla yozing: (1) egalik — kitobim, (2) fe'l bilan — meni o'rgatdi, (3) predlog bilan — biz bilan.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "VIII bob vazni qaysi?", "q_ar": "", "options": ["اِفْتَعَلَ", "اِنْفَعَلَ", "اِسْتَفْعَلَ", "تَفَاعَلَ"], "answer": "اِفْتَعَلَ", "explain_uz": "VIII bob — 1-harfdan keyin تَـ: اِفْتَعَلَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "اِنْتَظَرْتُ الحَافِلَةَ", "options": [], "answer": "avtobusni kutdim", "explain_uz": "اِنْتَظَرَ (VIII) = kutdi, الحَافِلَة = avtobus.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«hurmat qildi» qaysi?", "q_ar": "", "options": ["اِحْتَرَمَ", "حَرَّمَ", "أَحْرَمَ", "اِنْحَرَمَ"], "answer": "اِحْتَرَمَ", "explain_uz": "اِحْتَرَمَ (VIII) — hurmat qildi (ehtirom).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«اِجْتَمَعَ، اِجْتِمَاع» qaysi o'zakdan?", "q_ar": "", "options": ["ج م ع", "س م ع", "ح ر م"], "answer": "ج م ع", "explain_uz": "«ج م ع» — yig'ish o'zagi: ijtimoiy, jamiyat, jam'.", "audio": "", "root": "ج م ع", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "VIII bobning masdar vazni qaysi?", "q_ar": "", "options": ["اِفْتِعَال", "اِنْفِعَال", "اِسْتِفْعَال", "تَفَاعُل"], "answer": "اِفْتِعَال", "explain_uz": "VIII bob masdari: اِفْتِعَال (اِجْتِمَاع, اِحْتِرَام).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "sotib oldi", "q_ar": "", "options": [], "answer": "اِشْتَرَى", "explain_uz": "اِشْتَرَى (VIII) — sotib oldi (شري o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "tanladi", "q_ar": "", "options": [], "answer": "اِخْتَارَ", "explain_uz": "اِخْتَارَ (VIII) — tanladi (خير o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "«Ularning (ayollar) kitobi» qaysi?", "q_ar": "", "options": ["كِتَابُهُنَّ", "كِتَابُهُمْ", "كِتَابُهُمَا", "كِتَابُكُنَّ"], "answer": "كِتَابُهُنَّ", "explain_uz": "ـهُنَّ — g'oyiba jam' (ular, ayollar) qo'shimchasi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Mendan so'radi» to'g'ri shakli qaysi?", "q_ar": "", "options": ["سَأَلَنِي", "سَأَلِي", "سَأَلَنَا", "سَأَلَهُ"], "answer": "سَأَلَنِي", "explain_uz": "Fe'lga «meni» qo'shilganda himoya nuni kiradi: ـنِي.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "كِتَابُكُمَا", "options": [], "answer": "sizlar ikkovingizning kitobingiz", "explain_uz": "ـكُمَا — muxotab musanna qo'shimchasi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ularning (erkaklar) kitobi", "q_ar": "", "options": [], "answer": "كِتَابُهُمْ", "explain_uz": "ـهُمْ — g'oyib jam' muzakkar qo'shimchasi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Bo'sh joyni to'ldiring: «المُدَرِّسُ عَلَّمَ___» (o'qituvchi ularni — erkaklarni — o'rgatdi)", "q_ar": "", "options": [], "answer": "هُمْ", "explain_uz": "Fe'lga to'ldiruvchi olmosh ulanadi: عَلَّمَهُمْ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "harakat", "q_uz": "«uning kitobida» to'g'ri yozilishini tanlang:", "q_ar": "في كتابه", "options": ["فِي كِتَابِهِ", "فِي كِتَابُهُ", "فِي كِتَابَهُ", "فِي كِتَابُهِ"], "answer": "فِي كِتَابِهِ", "explain_uz": "فِي predlogidan keyin ot kasrali; kasradan keyin ـهُ ham ـهِ bo'ladi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Birikuvchi olmoshning uchta vazifasi qaysi?", "q_ar": "", "options": ["Egalik / fe'l to'ldiruvchisi / predlog bilan", "Faqat egalik", "Faqat fe'l bilan", "Faqat predlog bilan"], "answer": "Egalik / fe'l to'ldiruvchisi / predlog bilan", "explain_uz": "كِتَابُهُ (egalik), عَلَّمَهُ (to'ldiruvchi), لَهُ (predlog bilan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«سَأَلَ، سُؤَال، مَسْؤُول» qaysi o'zakdan?", "q_ar": "", "options": ["س أ ل", "و ق ي", "ك ت ب"], "answer": "س أ ل", "explain_uz": "Hammasi س أ ل (so'rash) o'zagidan — o'zbekcha 'savol, mas'ul'.", "audio": "", "root": "س أ ل", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "ج م ع", "back": "yig'ish o'zagi (ijtamaa, ijtimoiy, jamiyat, jam')", "deck": "msa"},
-  {"type": "pattern", "front": "اِفْتَعَلَ (VIII)", "back": "qaytim (1-harfdan keyin تـ), masdar اِفْتِعَال", "deck": "msa"},
-  {"type": "word", "front": "اِجْتَمَعَ", "back": "to'plandi (VIII)", "deck": "msa"},
-  {"type": "word", "front": "اِسْتَمَعَ", "back": "tingladi (VIII)", "deck": "msa"},
-  {"type": "word", "front": "اِنْتَظَرَ", "back": "kutdi (VIII)", "deck": "msa"},
-  {"type": "word", "front": "اِحْتَرَمَ", "back": "hurmat qildi (VIII)", "deck": "msa"},
-  {"type": "word", "front": "اِشْتَرَى", "back": "sotib oldi (VIII)", "deck": "msa"},
-  {"type": "word", "front": "اِخْتَارَ", "back": "tanladi (VIII)", "deck": "msa"},
-  {"type": "word", "front": "اِحْتِرَام", "back": "hurmat (masdar)", "deck": "msa"},
-  {"type": "word", "front": "اِجْتِمَاع", "back": "yig'ilish (masdar)", "deck": "msa"}
+  {"type": "root", "front": "س أ ل", "back": "so'rash — savol/mas'ul/so'rov", "deck": "msa"},
+  {"type": "root", "front": "و ق ي", "back": "himoya — taqvo/viqoya; himoya nuni (ـنِي)", "deck": "msa"},
+  {"type": "word", "front": "كِتَابُهُمَا", "back": "ular ikkovining kitobi", "deck": "msa"},
+  {"type": "word", "front": "كِتَابُهُمْ", "back": "ularning (erkaklar) kitobi", "deck": "msa"},
+  {"type": "word", "front": "كِتَابُهُنَّ", "back": "ularning (ayollar) kitobi", "deck": "msa"},
+  {"type": "word", "front": "كِتَابُكُمْ", "back": "sizlarning kitobingiz", "deck": "msa"},
+  {"type": "word", "front": "كِتَابُكُنَّ", "back": "sizlarning (ayollar) kitobingiz", "deck": "msa"},
+  {"type": "word", "front": "سَأَلَنِي", "back": "mendan so'radi (himoya nuni)", "deck": "msa"},
+  {"type": "word", "front": "عَلَّمَهُمْ", "back": "ularni o'rgatdi", "deck": "msa"},
+  {"type": "word", "front": "مَعَنَا", "back": "biz bilan", "deck": "msa"},
+  {"type": "word", "front": "عِنْدَهُمْ", "back": "ularda (bor)", "deck": "msa"}
  ]
 }

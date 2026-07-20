@@ -50,9 +50,37 @@ async def _ensure_columns(conn) -> None:
                 )
 
 
+async def _shift_a2_lessons(conn) -> None:
+    """Bir martalik migratsiya: sarf moduli (9 dars) A2 boshiga qo'shilgani
+    uchun eski a2-01..a2-45 identifikatorlari a2-10..a2-54 ga suriladi.
+    Meta jadvalidagi kalit orqali qayta ishlamaydi."""
+    key = "a2_sarf_shift_v1"
+    row = (
+        await conn.exec_driver_sql(
+            "SELECT value FROM meta WHERE key = ?", (key,)
+        )
+    ).first()
+    if row:
+        return
+    shift = (
+        "UPDATE {t} SET {c} = printf('a2-%02d', "
+        "CAST(substr({c}, 4) AS INTEGER) + 9) WHERE {c} LIKE 'a2-%'"
+    )
+    for table, col in (
+        ("progress", "lesson_id"),
+        ("lesson_ratings", "lesson_id"),
+        ("plans", "start_lesson"),
+    ):
+        await conn.exec_driver_sql(shift.format(t=table, c=col))
+    await conn.exec_driver_sql(
+        "INSERT INTO meta (key, value) VALUES (?, 'done')", (key,)
+    )
+
+
 async def init_db():
     from db.models import Base
 
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
         await _ensure_columns(conn)
+        await _shift_a2_lessons(conn)

@@ -1,104 +1,98 @@
 {
  "id": "a2-32",
  "level": "A2",
- "module": "saudi",
+ "module": "grammar-ext",
  "order": 32,
- "title_uz": "Dorixona / shifokor",
- "title_ar": "الصَّيْدَلِيَّة وَالطَّبِيب",
- "can_do_uz": "Og'riq va kasallik haqida gapira, dorixonada dori so'ray olaman.",
+ "title_uz": "Solishtiraman",
+ "title_ar": "اسْمُ التَّفْضِيل (أَفْعَل)",
+ "can_do_uz": "«kattaroq», «eng yaxshi» kabi solishtirma va orttirma darajani ayta olaman.",
  "duration_min": 30,
  "prerequisites": ["a2-31"],
  "harakat_level": "new_words_only",
- "hook_uz": "Umra safarida kasal bo'lib qolsangiz? Dorixonaga borib: «عِنْدِي صُدَاع» (boshim og'riyapti) yoki «عِنْدِي حُمَّى» (isitmam bor) deysiz. Bugun salomatlik va dori so'zlarini o'rganamiz — kerak bo'lmasin, lekin bilib qo'ygan yaxshi!",
+ "hook_uz": "«Katta» — كَبِير. «Kattaroq» — أَكْبَر. «Allohu akbar» — Alloh ENG BUYUK! Sifatni أَفْعَل vazniga solsangiz — solishtirma daraja chiqadi: أَجْمَل (chiroyliroq), أَحْسَن (yaxshiroq).",
  "grammar": {
-  "point_ar": "عِبَارَاتُ الصِّحَّة",
-  "explanation_uz": "Kasallikni tushuntirish: عِنْدِي... (menda ... bor) yoki أَشْعُرُ بِـ... (... his qilyapman): عِنْدِي صُدَاع (boshim og'riyapti), عِنْدِي حُمَّى (isitma), يُؤْلِمُنِي بَطْنِي (qornim og'riyapti). Dorixonada: أُرِيدُ دَوَاءً لِـ... (... uchun dori kerak). Retsept — وَصْفَة. Jiddiy holatda: أَيْنَ أَقْرَبُ مُسْتَشْفَى؟ (eng yaqin kasalxona qayerda?), tez yordam — إِسْعَاف. Hijoziyda «kasal/holsiz» — تَعْبَان.",
+  "point_ar": "اسْمُ التَّفْضِيل",
+  "explanation_uz": "Solishtirish uchun sifat أَفْعَل vazniga solinadi: كَبِير → أَكْبَر, جَمِيل → أَجْمَل, حَسَن → أَحْسَن. «...dan kattaroq» = أَفْعَل + مِن: هَذَا أَكْبَرُ مِنْ ذَلِكَ. «Eng ...» (orttirma) = الأَفْعَل yoki أَفْعَل + idafa: الأَكْبَر (eng katta), أَكْبَرُ بَيْتٍ (eng katta uy). أَفْعَل erkak-ayol uchun bir xil.",
   "table": [
-   {"ar": "عِنْدِي صُدَاع", "uz": "Boshim og'riyapti", "form": "shikoyat"},
-   {"ar": "أُرِيدُ دَوَاءً", "uz": "Dori kerak", "form": "so'rov"},
-   {"ar": "أَيْنَ أَقْرَبُ صَيْدَلِيَّة؟", "uz": "Eng yaqin dorixona qayerda?", "form": "savol"},
-   {"ar": "أَنَا تَعْبَان", "uz": "O'zimni yomon his qilyapman (hijoziy)", "form": "hijoziy"}
+   {"ar": "كَبِير ← أَكْبَر", "uz": "katta → kattaroq", "form": "أَفْعَل"},
+   {"ar": "هَذَا أَكْبَرُ مِنْ ذَلِكَ", "uz": "Bu undan kattaroq", "form": "أَفْعَل مِن"},
+   {"ar": "الأَكْبَر / أَكْبَرُ بَيْتٍ", "uz": "eng katta / eng katta uy", "form": "orttirma"},
+   {"ar": "أَحْسَن · أَجْمَل · أَطْوَل", "uz": "yaxshiroq · chiroyliroq · balandroq", "form": "misollar"}
   ],
   "common_mistakes_uz": [
-   "أَلَم (og'riq) va مَرَض (kasallik) so'zlarini chalkashtirish.",
-   "Dorini retseptsiz (وَصْفَة) so'rash — ba'zi dorilar retsept talab qiladi.",
-   "Jiddiy holatda إِسْعَاف (997 — Saudiyada) ni chaqirishni bilmaslik."
+   "أَفْعَل ni ayol uchun o'zgartirish — u erkak-ayol uchun bir xil.",
+   "«...dan» uchun مِن ni unutish: أَكْبَر مِن.",
+   "Ba'zi sifatlar (rang, ayb) أَفْعَل ni boshqacha yasaydi — asosiylarni yodlang."
   ]
  },
  "roots": [
   {
-   "root": "ش ف ي",
-   "meaning_uz": "shifo, sog'ayish",
-   "uz_cognates": ["shifo", "mustashfo", "shofiy"],
+   "root": "ح س ن",
+   "meaning_uz": "go'zallik, yaxshilik",
+   "uz_cognates": ["husn", "ahsan", "tahsin", "Hasan"],
    "derived": [
-    {"ar": "مُسْتَشْفَى", "uz": "kasalxona (shifo topiladigan joy)", "pattern": "مُسْتَفْعَل"},
-    {"ar": "شِفَاء", "uz": "shifo, sog'ayish", "pattern": "فِعَال"}
+    {"ar": "أَحْسَن", "uz": "yaxshiroq, eng yaxshi", "pattern": "أَفْعَل"},
+    {"ar": "حُسْن", "uz": "go'zallik, yaxshilik", "pattern": "فُعْل"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "صَيْدَلِيَّة", "translit": "ṣaydaliyya", "uz": "dorixona", "root": "", "pattern": "", "pos": "ot", "audio": "a2/saydaliyya.mp3", "example_ar": "أَيْنَ الصَّيْدَلِيَّةُ؟", "example_uz": "Dorixona qayerda?", "srs": true},
-  {"ar": "دَوَاء", "translit": "dawāʾ", "uz": "dori", "root": "د و ي", "pattern": "فَعَال", "pos": "ot", "audio": "a2/dawa.mp3", "example_ar": "أُرِيدُ دَوَاءً.", "example_uz": "Dori kerak.", "srs": true},
-  {"ar": "أَلَم", "translit": "alam", "uz": "og'riq", "root": "أ ل م", "pattern": "فَعَل", "pos": "ot", "audio": "a2/alam.mp3", "example_ar": "عِنْدِي أَلَمٌ.", "example_uz": "Og'riqim bor.", "srs": true},
-  {"ar": "حُمَّى", "translit": "ḥummā", "uz": "isitma", "root": "ح م م", "pattern": "فُعْلَى", "pos": "ot", "audio": "a2/humma.mp3", "example_ar": "عِنْدِي حُمَّى.", "example_uz": "Isitmam bor.", "srs": true},
-  {"ar": "صُدَاع", "translit": "ṣudāʿ", "uz": "bosh og'rig'i", "root": "ص د ع", "pattern": "فُعَال", "pos": "ot", "audio": "a2/sudaa.mp3", "example_ar": "عِنْدِي صُدَاعٌ.", "example_uz": "Boshim og'riyapti.", "srs": true},
-  {"ar": "وَصْفَة", "translit": "waṣfa", "uz": "retsept", "root": "و ص ف", "pattern": "فَعْلَة", "pos": "ot", "audio": "a2/wasfa.mp3", "example_ar": "هَذِهِ وَصْفَةٌ طِبِّيَّةٌ.", "example_uz": "Bu tibbiy retsept.", "srs": true},
-  {"ar": "مُسْتَشْفَى", "translit": "mustashfā", "uz": "kasalxona", "root": "ش ف ي", "pattern": "مُسْتَفْعَل", "pos": "ot", "audio": "a2/mustashfa.mp3", "example_ar": "أَيْنَ المُسْتَشْفَى؟", "example_uz": "Kasalxona qayerda?", "srs": true},
-  {"ar": "حُبُوب", "translit": "ḥubūb", "uz": "tabletka, dorilar", "root": "ح ب ب", "pattern": "فُعُول", "pos": "ot", "audio": "a2/hubub.mp3", "example_ar": "حُبُوبٌ لِلصُّدَاعِ.", "example_uz": "Bosh og'rig'i uchun tabletka.", "srs": true},
-  {"ar": "إِسْعَاف", "translit": "isʿāf", "uz": "tez yordam", "root": "س ع ف", "pattern": "إِفْعَال", "pos": "ot", "audio": "a2/isaf.mp3", "example_ar": "اِتَّصِلْ بِالإِسْعَافِ!", "example_uz": "Tez yordam chaqir!", "srs": true},
-  {"ar": "مَعِدَة", "translit": "maʿida", "uz": "oshqozon, qorin", "root": "م ع د", "pattern": "فَعِلَة", "pos": "ot", "audio": "a2/maida.mp3", "example_ar": "تُؤْلِمُنِي مَعِدَتِي.", "example_uz": "Oshqozonim og'riyapti.", "srs": true},
-  {"ar": "أَشْعُر", "translit": "ashʿuru", "uz": "his qilaman, sezaman", "root": "ش ع ر", "pattern": "أَفْعُل", "pos": "fe'l", "audio": "a2/ashur.mp3", "example_ar": "أَشْعُرُ بِأَلَمٍ.", "example_uz": "Og'riq his qilyapman.", "srs": true},
-  {"ar": "طَبِيب", "translit": "ṭabīb", "uz": "shifokor (o'zbekcha 'tabib')", "root": "ط ب ب", "pattern": "فَعِيل", "pos": "ot", "audio": "a1/tabib.mp3", "example_ar": "أَحْتَاجُ طَبِيبًا.", "example_uz": "Shifokor kerak.", "srs": true}
+  {"ar": "أَكْبَر", "translit": "akbar", "uz": "kattaroq, eng katta (o'zbekcha 'akbar')", "root": "ك ب ر", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/akbar.mp3", "example_ar": "اللَّهُ أَكْبَرُ.", "example_uz": "Alloh eng buyuk.", "srs": true},
+  {"ar": "أَصْغَر", "translit": "aṣghar", "uz": "kichikroq, eng kichik", "root": "ص غ ر", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/asghar.mp3", "example_ar": "أَخِي أَصْغَرُ مِنِّي.", "example_uz": "Ukam mendan kichik.", "srs": true},
+  {"ar": "أَحْسَن", "translit": "aḥsan", "uz": "yaxshiroq, eng yaxshi", "root": "ح س ن", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/ahsan.mp3", "example_ar": "هَذَا أَحْسَنُ.", "example_uz": "Bu yaxshiroq.", "srs": true},
+  {"ar": "أَجْمَل", "translit": "ajmal", "uz": "chiroyliroq, eng chiroyli", "root": "ج م ل", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/ajmal.mp3", "example_ar": "أَجْمَلُ يَوْمٍ.", "example_uz": "Eng chiroyli kun.", "srs": true},
+  {"ar": "أَطْوَل", "translit": "aṭwal", "uz": "balandroq, uzunroq", "root": "ط و ل", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/atwal.mp3", "example_ar": "هُوَ أَطْوَلُ مِنِّي.", "example_uz": "U mendan baland.", "srs": true},
+  {"ar": "أَفْضَل", "translit": "afḍal", "uz": "afzalroq, eng afzal (o'zbekcha 'afzal')", "root": "ف ض ل", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/afdal.mp3", "example_ar": "الصِّحَّةُ أَفْضَلُ مِنَ المَالِ.", "example_uz": "Sog'liq — puldan afzal.", "srs": true},
+  {"ar": "أَهَمّ", "translit": "ahamm", "uz": "muhimroq, eng muhim", "root": "ه م م", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/ahamm.mp3", "example_ar": "الوَقْتُ أَهَمُّ شَيْءٍ.", "example_uz": "Vaqt — eng muhim narsa.", "srs": true},
+  {"ar": "أَسْرَع", "translit": "asraʿ", "uz": "tezroq, eng tez", "root": "س ر ع", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/asra.mp3", "example_ar": "القِطَارُ أَسْرَعُ مِنَ الحَافِلَةِ.", "example_uz": "Poyezd avtobusdan tez.", "srs": true},
+  {"ar": "حُسْن", "translit": "ḥusn", "uz": "go'zallik, yaxshilik", "root": "ح س ن", "pattern": "فُعْل", "pos": "ot", "audio": "a2/husn.mp3", "example_ar": "حُسْنُ الخُلُقِ.", "example_uz": "Xulq go'zalligi.", "srs": true},
+  {"ar": "مَال", "translit": "māl", "uz": "mol, boylik, pul (o'zbekcha 'mol')", "root": "م و ل", "pattern": "فَعَل", "pos": "ot", "audio": "a2/mal.mp3", "example_ar": "المَالُ لَيْسَ كُلَّ شَيْءٍ.", "example_uz": "Pul — hamma narsa emas.", "srs": true}
  ],
- "hejazi": [
-  {"msa_ar": "أَنَا مَرِيض", "hejazi_ar": "أَنَا تَعْبَان", "translit": "anā taʿbān", "uz": "O'zimni yomon his qilyapman (hijoziy)", "audio": "hj/ana_taban.mp3"},
-  {"msa_ar": "أَيْنَ أَقْرَبُ صَيْدَلِيَّة؟", "hejazi_ar": "وِين أَقْرَب صَيْدَلِيَّة؟", "translit": "wēn aqrab ṣaydaliyya?", "uz": "Eng yaqin dorixona qayerda? (hijoziy)", "audio": "hj/wen_saydaliyya.mp3"},
-  {"msa_ar": "عِنْدِي أَلَمٌ هُنَا", "hejazi_ar": "يُوجِعْنِي هِنا", "translit": "yūjiʿnī hina", "uz": "Bu yerim og'riyapti (hijoziy)", "audio": "hj/yujini_hina.mp3"}
- ],
+ "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "شَعَرْتُ بِصُدَاعٍ وَحُمَّى فِي مَكَّةَ. ذَهَبْتُ إِلَى أَقْرَبِ صَيْدَلِيَّةٍ وَقُلْتُ: أَنَا تَعْبَان، عِنْدِي صُدَاع. أَعْطَانِي الصَّيْدَلِيُّ حُبُوبًا وَقَالَ: اِشْرَبْ مَاءً كَثِيرًا.",
+   "text_ar": "الصِّحَّةُ أَفْضَلُ مِنَ المَالِ، وَالعِلْمُ أَهَمُّ مِنَ المَالِ أَيْضًا. أَخِي أَطْوَلُ مِنِّي لَكِنَّنِي أَكْبَرُ سِنًّا. اليَوْمُ أَجْمَلُ يَوْمٍ فِي حَيَاتِي.",
    "questions": [
-    {"q_uz": "Qanday kasallik bo'ldi?", "a": "Bosh og'rig'i va isitma (صُدَاع، حُمَّى)"},
-    {"q_uz": "Dorixona nima berdi?", "a": "Tabletka (حُبُوب)"}
+    {"q_uz": "Nima puldan afzal?", "a": "Sog'liq (الصِّحَّة)"},
+    {"q_uz": "«أَطْوَل مِنِّي» ma'nosi?", "a": "Mendan baland"}
    ]
   },
   "listening": {
-   "audio": "a2/dawa.mp3",
-   "transcript_ar": "دَوَاء",
+   "audio": "a2/akbar.mp3",
+   "transcript_ar": "أَكْبَر",
    "questions": [
-    {"q_uz": "So'z ma'nosi?", "a": "Dori"}
+    {"q_uz": "So'z ma'nosi?", "a": "Kattaroq, eng katta"}
    ]
   },
   "speaking": {
-   "task_uz": "Kasallikni tushuntiring: ʿindī ṣudāʿ, anā taʿbān, wēn aqrab ṣaydaliyya?",
-   "target_ar": ["عِنْدِي صُدَاع", "أَنَا تَعْبَان", "أُرِيدُ دَوَاءً"],
+   "task_uz": "Solishtiring: akbar min, aḥsan min, afḍal min.",
+   "target_ar": ["أَكْبَرُ مِنْ", "أَحْسَنُ", "أَفْضَلُ"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«Isitmam bor» va «Eng yaqin dorixona qayerda?» gaplarini yozing.",
+   "task_uz": "«جَمِيل» dan solishtirma yasang va «Bu undan chiroyliroq» gapini yozing.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "«dorixona» qaysi?", "q_ar": "", "options": ["صَيْدَلِيَّة", "مُسْتَشْفَى", "وَصْفَة", "دَوَاء"], "answer": "صَيْدَلِيَّة", "explain_uz": "صَيْدَلِيَّة — dorixona; مُسْتَشْفَى — kasalxona.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "عِنْدِي صُدَاع", "options": [], "answer": "boshim og'riyapti", "explain_uz": "عِنْدِي = menda bor, صُدَاع = bosh og'rig'i.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Hijoziyda «O'zimni yomon his qilyapman» qaysi?", "q_ar": "", "options": ["أَنَا تَعْبَان", "أَنَا بِخَيْر", "أَنَا جُوعَان", "أَنَا هُنَا"], "answer": "أَنَا تَعْبَان", "explain_uz": "تَعْبَان — hijoziyda «charchagan/kasal».", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "Qaysi so'z «ش ف ي» o'zagidan?", "q_ar": "", "options": ["مُسْتَشْفَى", "دَوَاء", "أَلَم"], "answer": "مُسْتَشْفَى", "explain_uz": "«ش ف ي» — shifo o'zagi: مُسْتَشْفَى (kasalxona), شِفَاء (shifo).", "audio": "", "root": "ش ف ي", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "isitma", "q_ar": "", "options": [], "answer": "حُمَّى", "explain_uz": "حُمَّى — isitma.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«tez yordam» qaysi?", "q_ar": "", "options": ["إِسْعَاف", "وَصْفَة", "حُبُوب", "مَعِدَة"], "answer": "إِسْعَاف", "explain_uz": "إِسْعَاف — tez yordam (Saudiyada 997).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "retsept", "q_ar": "", "options": [], "answer": "وَصْفَة", "explain_uz": "وَصْفَة — tibbiy retsept.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "«كَبِير» ning solishtirma darajasi?", "q_ar": "", "options": ["أَكْبَر", "كَبِيرَة", "كِبَار", "مَكْبُور"], "answer": "أَكْبَر", "explain_uz": "Solishtirma: أَفْعَل vazni — أَكْبَر.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الصِّحَّةُ أَفْضَلُ مِنَ المَالِ", "options": [], "answer": "sog'liq puldan afzal", "explain_uz": "أَفْضَل مِن = ...dan afzal.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«...dan kattaroq» uchun qaysi so'z kerak?", "q_ar": "", "options": ["مِن", "إِلَى", "عَلَى", "فِي"], "answer": "مِن", "explain_uz": "أَفْعَل + مِن: أَكْبَر مِن (...dan kattaroq).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«أَحْسَن، حُسْن» qaysi o'zakdan?", "q_ar": "", "options": ["ح س ن", "ح س ب", "ح ص ن"], "answer": "ح س ن", "explain_uz": "«ح س ن» — go'zallik o'zagi: ahsan, husn, tahsin, Hasan.", "audio": "", "root": "ح س ن", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«eng chiroyli kun» qaysi?", "q_ar": "", "options": ["أَجْمَلُ يَوْمٍ", "يَوْمٌ جَمِيلٌ", "أَجْمَلَ يَوْمًا", "الجَمِيلُ يَوْمٌ"], "answer": "أَجْمَلُ يَوْمٍ", "explain_uz": "Orttirma: أَفْعَل + idafa (أَجْمَلُ يَوْمٍ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "muhimroq, eng muhim", "q_ar": "", "options": [], "answer": "أَهَمّ", "explain_uz": "أَهَمّ — muhimroq (ه م م o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "tezroq", "q_ar": "", "options": [], "answer": "أَسْرَع", "explain_uz": "أَسْرَع — tezroq (س ر ع o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "ش ف ي", "back": "shifo o'zagi (shifo, mustashfo=kasalxona, shofiy)", "deck": "msa"},
-  {"type": "word", "front": "صَيْدَلِيَّة", "back": "dorixona", "deck": "msa"},
-  {"type": "word", "front": "دَوَاء", "back": "dori", "deck": "msa"},
-  {"type": "word", "front": "أَلَم", "back": "og'riq", "deck": "msa"},
-  {"type": "word", "front": "حُمَّى", "back": "isitma", "deck": "msa"},
-  {"type": "word", "front": "صُدَاع", "back": "bosh og'rig'i", "deck": "msa"},
-  {"type": "word", "front": "مُسْتَشْفَى", "back": "kasalxona", "deck": "msa"},
-  {"type": "word", "front": "إِسْعَاف", "back": "tez yordam", "deck": "msa"},
-  {"type": "phrase", "front": "أَنَا تَعْبَان", "back": "Yomon his qilyapman (hijoziy)", "deck": "hejazi"},
-  {"type": "phrase", "front": "وِين أَقْرَب صَيْدَلِيَّة؟", "back": "Eng yaqin dorixona qayerda? (hijoziy)", "deck": "hejazi"}
+  {"type": "root", "front": "ح س ن", "back": "go'zallik o'zagi (ahsan, husn, tahsin, Hasan)", "deck": "msa"},
+  {"type": "pattern", "front": "أَفْعَل (tafdil)", "back": "solishtirma/orttirma (akbar, ahsan); أَفْعَل مِن", "deck": "msa"},
+  {"type": "word", "front": "أَكْبَر", "back": "kattaroq, eng katta", "deck": "msa"},
+  {"type": "word", "front": "أَصْغَر", "back": "kichikroq", "deck": "msa"},
+  {"type": "word", "front": "أَحْسَن", "back": "yaxshiroq", "deck": "msa"},
+  {"type": "word", "front": "أَجْمَل", "back": "chiroyliroq", "deck": "msa"},
+  {"type": "word", "front": "أَفْضَل", "back": "afzalroq", "deck": "msa"},
+  {"type": "word", "front": "أَهَمّ", "back": "muhimroq", "deck": "msa"},
+  {"type": "word", "front": "حُسْن", "back": "go'zallik, yaxshilik", "deck": "msa"},
+  {"type": "word", "front": "مَال", "back": "mol, boylik, pul", "deck": "msa"}
  ]
 }

@@ -1,98 +1,98 @@
 {
  "id": "a2-14",
  "level": "A2",
- "module": "weak-verbs",
+ "module": "verb-forms",
  "order": 14,
- "title_uz": "Misol fe'llar",
- "title_ar": "الفِعْلُ المِثَال",
- "can_do_uz": "Boshida و bo'lgan (mithal) fe'llarni tuslay olaman — hozirgi zamonda و tushishini bilaman.",
+ "title_uz": "V bob: II ning qaytimi",
+ "title_ar": "البَابُ الخَامِس: تَفَعَّلَ",
+ "can_do_uz": "V bob (تَفَعَّلَ) fe'llarini taniyman: qaytim (o'ziga qaratilgan) ma'noni bilaman.",
  "duration_min": 30,
  "prerequisites": ["a2-13"],
  "harakat_level": "new_words_only",
- "hook_uz": "«Yetib keldi» — وَصَلَ. «Yetib keladi» — يَصِلُ. E'tibor bering: hozirgi zamonda و YO'QOLADI! Boshida و bo'lgan fe'llar (mithal) shu qoidaga bo'ysunadi: وَجَدَ → يَجِدُ, وَعَدَ → يَعِدُ.",
+ "hook_uz": "«عَلَّمَ» (o'rgatdi) → «تَعَلَّمَ» (o'rgandi). II bob boshiga تَـ qo'shsangiz — harakat O'ZIGA qaytadi! تَكَلَّمَ (gapirdi), تَذَكَّرَ (esladi), تَقَدَّمَ (oldinga siljidi) — hammasi V bob.",
  "grammar": {
-  "point_ar": "المِثَال — سُقُوطُ الوَاو",
-  "explanation_uz": "Mithal fe'l — boshi و (ba'zan ي). ASOSIY qoida: o'tgan zamonda و SAQLANADI (وَصَلَ), lekin hozirgi zamonda و TUSHADI: وَصَلَ → يَصِلُ (yasilu, و yo'q!), وَجَدَ → يَجِدُ, وَقَفَ → يَقِفُ. Buyruqda ham و tushadi: صِلْ! (yet!). Bu faqat mithal fe'llarga xos.",
+  "point_ar": "تَفَعَّلَ — المُطَاوَعَة",
+  "explanation_uz": "V bob vazni: تَفَعَّلَ (II bob فَعَّلَ boshiga تَـ qo'shiladi). Asosiy ma'no: II bobning QAYTIMI — harakat bajaruvchining o'ziga tegishli bo'ladi: عَلَّمَ (o'rgatdi) → تَعَلَّمَ (o'rgandi=o'ziga o'rgatdi), قَدَّمَ (taqdim etdi) → تَقَدَّمَ (oldinga siljidi). Masdari تَفَعُّل: تَعَلُّم (o'rganish), تَقَدُّم (taraqqiyot). Hozirgi zamoni: يَتَفَعَّلُ (يَتَعَلَّمُ).",
   "table": [
-   {"ar": "وَصَلَ ← يَصِلُ", "uz": "yetib keldi → keladi (و tushdi)", "form": "past → present"},
-   {"ar": "وَجَدَ ← يَجِدُ", "uz": "topdi → topadi", "form": "و tushadi"},
-   {"ar": "وَعَدَ ← يَعِدُ", "uz": "va'da berdi → beradi", "form": "و tushadi"},
-   {"ar": "وَقَفَ ← يَقِفُ", "uz": "to'xtadi → to'xtaydi", "form": "و tushadi"}
+   {"ar": "عَلَّمَ ← تَعَلَّمَ", "uz": "o'rgatdi → o'rgandi", "form": "qaytim"},
+   {"ar": "تَكَلَّمَ", "uz": "gapirdi", "form": "تَفَعَّلَ"},
+   {"ar": "تَقَدَّمَ", "uz": "oldinga siljidi, taraqqiy etdi", "form": "تَفَعَّلَ"},
+   {"ar": "مَصْدَر: تَعَلُّم", "uz": "masdar: o'rganish", "form": "تَفَعُّل"}
   ],
   "common_mistakes_uz": [
-   "Hozirgi zamonda و ni saqlab qolish: يَوْصِلُ (xato) → يَصِلُ (to'g'ri).",
-   "O'tgan zamonda و ni tushirish — o'tganda و SAQLANADI (وَصَلَ).",
-   "Boshqa illatli turlar bilan chalkashtirish."
+   "Boshidagi تَـ va o'rtadagi shaddani birga qo'yishni unutish (تَفَعَّلَ).",
+   "V bob (تَفَعَّلَ, shaddali) va VI bob (تَفَاعَلَ, alifli) ni chalkashtirish.",
+   "عَلَّمَ (o'rgatdi) va تَعَلَّمَ (o'rgandi) ma'nolarini almashtirish."
   ]
  },
  "roots": [
   {
-   "root": "و ع د",
-   "meaning_uz": "va'da, so'z berish",
-   "uz_cognates": ["va'da", "mav'ud", "miod"],
+   "root": "ق د م",
+   "meaning_uz": "oldin, oldinga, taqdim",
+   "uz_cognates": ["muqaddima", "taqdim", "mutaqaddim", "qadim"],
    "derived": [
-    {"ar": "وَعَدَ", "uz": "va'da berdi (mithal)", "pattern": "فَعَلَ"},
-    {"ar": "مَوْعِد", "uz": "uchrashuv vaqti, miod", "pattern": "مَفْعِل"}
+    {"ar": "تَقَدَّمَ", "uz": "oldinga siljidi (V)", "pattern": "تَفَعَّلَ"},
+    {"ar": "تَقَدُّم", "uz": "taraqqiyot (masdar)", "pattern": "تَفَعُّل"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "وَصَلَ", "translit": "waṣala", "uz": "yetib keldi (mithal)", "root": "و ص ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/wasala.mp3", "example_ar": "وَصَلَ القِطَارُ.", "example_uz": "Poyezd keldi.", "srs": true},
-  {"ar": "يَصِلُ", "translit": "yaṣilu", "uz": "yetib keladi (و tushdi)", "root": "و ص ل", "pattern": "يَعِلُ", "pos": "fe'l", "audio": "a2/yasilu.mp3", "example_ar": "يَصِلُ فِي المَسَاءِ.", "example_uz": "Kechqurun keladi.", "srs": true},
-  {"ar": "وَجَدَ", "translit": "wajada", "uz": "topdi (mithal)", "root": "و ج د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/wajada.mp3", "example_ar": "وَجَدَ المِفْتَاحَ.", "example_uz": "Kalitni topdi.", "srs": true},
-  {"ar": "يَجِدُ", "translit": "yajidu", "uz": "topadi (و tushdi)", "root": "و ج د", "pattern": "يَعِلُ", "pos": "fe'l", "audio": "a2/yajidu.mp3", "example_ar": "لَا يَجِدُ الوَقْتَ.", "example_uz": "Vaqt topolmaydi.", "srs": true},
-  {"ar": "وَعَدَ", "translit": "waʿada", "uz": "va'da berdi (mithal)", "root": "و ع د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/waada.mp3", "example_ar": "وَعَدَ بِالحُضُورِ.", "example_uz": "Kelishga va'da berdi.", "srs": true},
-  {"ar": "وَقَفَ", "translit": "waqafa", "uz": "to'xtadi, turdi (mithal)", "root": "و ق ف", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/waqafa.mp3", "example_ar": "وَقَفَ أَمَامَ البَابِ.", "example_uz": "Eshik oldida to'xtadi.", "srs": true},
-  {"ar": "وَضَعَ", "translit": "waḍaʿa", "uz": "qo'ydi (mithal)", "root": "و ض ع", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/wadaa.mp3", "example_ar": "وَضَعَ الكِتَابَ عَلَى الطَّاوِلَةِ.", "example_uz": "Kitobni stolga qo'ydi.", "srs": true},
-  {"ar": "مَوْعِد", "translit": "mawʿid", "uz": "uchrashuv, miod (o'zbekcha 'miod')", "root": "و ع د", "pattern": "مَفْعِل", "pos": "ot", "audio": "a2/mawid.mp3", "example_ar": "عِنْدِي مَوْعِدٌ.", "example_uz": "Uchrashuvim bor.", "srs": true},
-  {"ar": "وَعْد", "translit": "waʿd", "uz": "va'da (masdar)", "root": "و ع د", "pattern": "فَعْل", "pos": "ot", "audio": "a2/wad.mp3", "example_ar": "الوَعْدُ دَيْنٌ.", "example_uz": "Va'da — qarz.", "srs": true},
-  {"ar": "حُضُور", "translit": "ḥuḍūr", "uz": "kelish, hozir bo'lish", "root": "ح ض ر", "pattern": "فُعُول", "pos": "ot", "audio": "a2/hudur.mp3", "example_ar": "الحُضُورُ إِجْبَارِيٌّ.", "example_uz": "Hozir bo'lish majburiy.", "srs": true}
+  {"ar": "تَعَلَّمَ", "translit": "taʿallama", "uz": "o'rgandi", "root": "ع ل م", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/taallama.mp3", "example_ar": "تَعَلَّمْتُ السِّبَاحَةَ.", "example_uz": "Suzishni o'rgandim.", "srs": true},
+  {"ar": "تَكَلَّمَ", "translit": "takallama", "uz": "gapirdi, so'zladi", "root": "ك ل م", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/takallama.mp3", "example_ar": "تَكَلَّمَ بِالعَرَبِيَّةِ.", "example_uz": "Arabcha gapirdi.", "srs": true},
+  {"ar": "تَذَكَّرَ", "translit": "tadhakkara", "uz": "esladi", "root": "ذ ك ر", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/tadhakkara.mp3", "example_ar": "تَذَكَّرْتُ اسْمَهُ.", "example_uz": "Ismini esladim.", "srs": true},
+  {"ar": "تَقَدَّمَ", "translit": "taqaddama", "uz": "oldinga siljidi, taraqqiy etdi", "root": "ق د م", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/taqaddama.mp3", "example_ar": "تَقَدَّمَ فِي العَمَلِ.", "example_uz": "Ishda oldinga siljidi.", "srs": true},
+  {"ar": "تَخَرَّجَ", "translit": "takharraja", "uz": "bitirdi, tugatdi (o'quv)", "root": "خ ر ج", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/takharraja.mp3", "example_ar": "تَخَرَّجَ مِنَ الجَامِعَةِ.", "example_uz": "Universitetni bitirdi.", "srs": true},
+  {"ar": "تَعَرَّفَ", "translit": "taʿarrafa", "uz": "tanishdi", "root": "ع ر ف", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/taarrafa.mp3", "example_ar": "تَعَرَّفْتُ عَلَى صَدِيقٍ جَدِيدٍ.", "example_uz": "Yangi do'st bilan tanishdim.", "srs": true},
+  {"ar": "تَأَخَّرَ", "translit": "taʾakhkhara", "uz": "kechikdi", "root": "أ خ ر", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/taakhkhara.mp3", "example_ar": "تَأَخَّرْتُ عَنِ الدَّرْسِ.", "example_uz": "Darsga kechikdim.", "srs": true},
+  {"ar": "تَعَلُّم", "translit": "taʿallum", "uz": "o'rganish (masdar)", "root": "ع ل م", "pattern": "تَفَعُّل", "pos": "ot", "audio": "a2/taallum.mp3", "example_ar": "تَعَلُّمُ اللُّغَاتِ مُفِيدٌ.", "example_uz": "Til o'rganish foydali.", "srs": true},
+  {"ar": "تَقَدُّم", "translit": "taqaddum", "uz": "taraqqiyot, oldinga siljish (masdar)", "root": "ق د م", "pattern": "تَفَعُّل", "pos": "ot", "audio": "a2/taqaddum.mp3", "example_ar": "التَّقَدُّمُ العِلْمِيُّ.", "example_uz": "Ilmiy taraqqiyot.", "srs": true},
+  {"ar": "سِبَاحَة", "translit": "sibāḥa", "uz": "suzish", "root": "س ب ح", "pattern": "فِعَالَة", "pos": "ot", "audio": "a2/sibaha.mp3", "example_ar": "أُحِبُّ السِّبَاحَةَ.", "example_uz": "Suzishni yaxshi ko'raman.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "وَعَدَنِي صَدِيقِي بِالحُضُورِ. اِنْتَظَرْتُهُ لَكِنَّهُ لَمْ يَصِلْ. أَخِيرًا وَصَلَ مُتَأَخِّرًا وَوَضَعَ حَقِيبَتَهُ ثُمَّ وَقَفَ يَعْتَذِرُ.",
+   "text_ar": "تَعَلَّمْتُ العَرَبِيَّةَ فِي الجَامِعَةِ ثُمَّ تَخَرَّجْتُ. الآنَ أَتَكَلَّمُ بِطَلَاقَةٍ. أَمْسِ تَعَرَّفْتُ عَلَى مُعَلِّمٍ جَدِيدٍ وَتَقَدَّمْتُ كَثِيرًا.",
    "questions": [
-    {"q_uz": "Do'sti nima va'da qildi?", "a": "Kelishga (بِالحُضُور)"},
-    {"q_uz": "«يَصِلُ» da nega و yo'q?", "a": "Mithal fe'l — hozirgi zamonda و tushadi"}
+    {"q_uz": "Qayerda arab tilini o'rgandi?", "a": "Universitetda (الجَامِعَة)"},
+    {"q_uz": "«تَعَلَّمَ» va «عَلَّمَ» farqi?", "a": "تَعَلَّمَ — o'rgandi (V), عَلَّمَ — o'rgatdi (II)"}
    ]
   },
   "listening": {
-   "audio": "a2/yasilu.mp3",
-   "transcript_ar": "يَصِلُ",
+   "audio": "a2/takallama.mp3",
+   "transcript_ar": "تَكَلَّمَ",
    "questions": [
-    {"q_uz": "Fe'l ma'nosi?", "a": "Yetib keladi (hozirgi)"}
+    {"q_uz": "Fe'l ma'nosi?", "a": "Gapirdi"}
    ]
   },
   "speaking": {
-   "task_uz": "Past→present ayting: waṣala→yaṣilu, wajada→yajidu, waʿada→yaʿidu.",
-   "target_ar": ["وَصَلَ", "يَصِلُ", "وَجَدَ"],
+   "task_uz": "V bob fe'llarini ayting: taʿallama, takallama, tadhakkara, taqaddama.",
+   "target_ar": ["تَعَلَّمَ", "تَكَلَّمَ", "تَقَدَّمَ"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«وَقَفَ» ning hozirgi zamon shaklini yozing (و tushishini ko'rsating).",
+   "task_uz": "«Arabcha gapirdim» va «Universitetni bitirdim» gaplarini V bob bilan yozing.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "«وَصَلَ» ning hozirgi zamoni qaysi?", "q_ar": "", "options": ["يَصِلُ", "يَوْصِلُ", "يَصُولُ", "وَاصَلَ"], "answer": "يَصِلُ", "explain_uz": "Mithal — hozirgi zamonda و tushadi: يَصِلُ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Mithal fe'lda و qachon tushadi?", "q_ar": "", "options": ["hozirgi zamonda", "o'tgan zamonda", "hech qachon", "har doim"], "answer": "hozirgi zamonda", "explain_uz": "O'tganda saqlanadi (وَصَلَ), hozirda tushadi (يَصِلُ).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "وَعَدَ بِالحُضُورِ", "options": [], "answer": "kelishga va'da berdi", "explain_uz": "وَعَدَ = va'da berdi, الحُضُور = kelish.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«وَعَدَ، مَوْعِد» qaysi o'zakdan?", "q_ar": "", "options": ["و ع د", "و ص ل", "و ج د"], "answer": "و ع د", "explain_uz": "«و ع د» — va'da o'zagi: vada, mavud, miod.", "audio": "", "root": "و ع د", "pattern": "", "words": []},
-  {"type": "fill_blank", "q_uz": "Hozirgi zamon qiling: «وَجَدَ» → «يَـ___» (topadi)", "q_ar": "يَـ___", "options": [], "answer": "جِدُ", "explain_uz": "و tushadi: يَجِدُ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "uchrashuv, miod", "q_ar": "", "options": [], "answer": "مَوْعِد", "explain_uz": "مَوْعِد — uchrashuv vaqti (miod).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "qo'ydi", "q_ar": "", "options": [], "answer": "وَضَعَ", "explain_uz": "وَضَعَ (mithal) — qo'ydi.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "V bob vazni qaysi?", "q_ar": "", "options": ["تَفَعَّلَ", "فَعَّلَ", "تَفَاعَلَ", "أَفْعَلَ"], "answer": "تَفَعَّلَ", "explain_uz": "V bob — II bob boshiga تَـ: تَفَعَّلَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«عَلَّمَ» (o'rgatdi) ning V bob qaytimi?", "q_ar": "", "options": ["تَعَلَّمَ", "أَعْلَمَ", "اِسْتَعْلَمَ", "عَالَمَ"], "answer": "تَعَلَّمَ", "explain_uz": "V bob: تَعَلَّمَ (o'rgandi — harakat o'ziga qaytdi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "تَكَلَّمَ بِالعَرَبِيَّةِ", "options": [], "answer": "arabcha gapirdi", "explain_uz": "تَكَلَّمَ (V) = gapirdi, بِالعَرَبِيَّة = arabcha.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "Qaysi so'z «ق د م» o'zagidan?", "q_ar": "", "options": ["تَقَدَّمَ", "تَعَلَّمَ", "تَذَكَّرَ"], "answer": "تَقَدَّمَ", "explain_uz": "«ق د م» — oldin o'zagi: تَقَدَّمَ (siljidi), muqaddima, taqdim.", "audio": "", "root": "ق د م", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "V bobning masdar vazni qaysi?", "q_ar": "", "options": ["تَفَعُّل", "تَفْعِيل", "إِفْعَال", "مُفَاعَلَة"], "answer": "تَفَعُّل", "explain_uz": "V bob masdari: تَفَعُّل (تَعَلُّم, تَقَدُّم).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "esladi", "q_ar": "", "options": [], "answer": "تَذَكَّرَ", "explain_uz": "تَذَكَّرَ (V) — esladi (ذكر o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "kechikdi", "q_ar": "", "options": [], "answer": "تَأَخَّرَ", "explain_uz": "تَأَخَّرَ (V) — kechikdi (أخر=keyin o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "و ع د", "back": "va'da o'zagi (vada, mavud, miod)", "deck": "msa"},
-  {"type": "pattern", "front": "مِثَال: وَصَلَ→يَصِلُ", "back": "boshi و, hozirgi zamonda و tushadi", "deck": "msa"},
-  {"type": "word", "front": "وَصَلَ", "back": "yetib keldi (mithal)", "deck": "msa"},
-  {"type": "word", "front": "يَصِلُ", "back": "yetib keladi (و tushdi)", "deck": "msa"},
-  {"type": "word", "front": "وَجَدَ", "back": "topdi (mithal)", "deck": "msa"},
-  {"type": "word", "front": "وَعَدَ", "back": "va'da berdi (mithal)", "deck": "msa"},
-  {"type": "word", "front": "وَقَفَ", "back": "to'xtadi, turdi (mithal)", "deck": "msa"},
-  {"type": "word", "front": "وَضَعَ", "back": "qo'ydi (mithal)", "deck": "msa"},
-  {"type": "word", "front": "مَوْعِد", "back": "uchrashuv, miod", "deck": "msa"},
-  {"type": "word", "front": "وَعْد", "back": "va'da (masdar)", "deck": "msa"}
+  {"type": "root", "front": "ق د م", "back": "oldin o'zagi (taqaddama, muqaddima, taqdim, qadim)", "deck": "msa"},
+  {"type": "pattern", "front": "تَفَعَّلَ (V)", "back": "II ning qaytimi, masdar تَفَعُّل", "deck": "msa"},
+  {"type": "word", "front": "تَعَلَّمَ", "back": "o'rgandi (V)", "deck": "msa"},
+  {"type": "word", "front": "تَكَلَّمَ", "back": "gapirdi (V)", "deck": "msa"},
+  {"type": "word", "front": "تَذَكَّرَ", "back": "esladi (V)", "deck": "msa"},
+  {"type": "word", "front": "تَقَدَّمَ", "back": "oldinga siljidi (V)", "deck": "msa"},
+  {"type": "word", "front": "تَخَرَّجَ", "back": "bitirdi (V)", "deck": "msa"},
+  {"type": "word", "front": "تَعَرَّفَ", "back": "tanishdi (V)", "deck": "msa"},
+  {"type": "word", "front": "تَأَخَّرَ", "back": "kechikdi (V)", "deck": "msa"},
+  {"type": "word", "front": "تَعَلُّم", "back": "o'rganish (masdar)", "deck": "msa"}
  ]
 }

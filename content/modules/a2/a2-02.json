@@ -1,98 +1,111 @@
 {
  "id": "a2-02",
  "level": "A2",
- "module": "verb-forms",
+ "module": "sarf",
  "order": 2,
- "title_uz": "II bob: kuchaytirish",
- "title_ar": "البَابُ الثَّانِي: فَعَّلَ",
- "can_do_uz": "II bob (فَعَّلَ) fe'llarini taniyman: kuchaytirish va sababiyat ma'nosini bilaman.",
+ "title_uz": "Moziy fe'li: 14 shakl to'liq",
+ "title_ar": "تَصْرِيفُ فِعْلِ المَاضِي",
+ "can_do_uz": "كَتَبَ fe'lini 14 shaklda to'liq tuslab, ikkilik shakllarini ham ishlata olaman.",
  "duration_min": 30,
  "prerequisites": ["a2-01"],
  "harakat_level": "new_words_only",
- "hook_uz": "«Bildi» — عَلِمَ. «Bildirdi / o'rgatdi» — عَلَّمَ. O'rtadagi harfni SHADDALASH (ikkilantirish) yangi ma'no beradi: kuchaytirish yoki «-dirmoq» (sababiyat). فَكَّرَ (o'ylamoq), نَظَّفَ (tozalamoq) — hammasi II bob!",
+ "hook_uz": "A1 darajada 8 shaklni bilib oldingiz: كَتَبَ، كَتَبَتْ، كَتَبْتَ، كَتَبْتُ… Endi yetishmayotgan 6 shaklni qo'yamiz — TASNIYA (ikkilik). «Ikki kishi yozdi» degani uchun arabchada maxsus shakl bor: كَتَبَا. O'zbekchada bunday narsa yo'q, shuning uchun eng ko'p xato shu yerda. Bugun jadval to'liq yopiladi.",
  "grammar": {
-  "point_ar": "فَعَّلَ — التَّكْثِير وَالتَّعْدِيَة",
-  "explanation_uz": "II bob vazni: فَعَّلَ (o'rtadagi o'zak harfi SHADDALANADI). Ikki asosiy ma'no: (1) KUCHAYTIRISH/ko'paytirish — كَسَرَ (sindirdi) → كَسَّرَ (parcha-parcha qildi). (2) SABABIYAT («-dirmoq») — عَلِمَ (bildi) → عَلَّمَ (bildirdi=o'rgatdi). Masdari تَفْعِيل vaznida: تَعْلِيم (ta'lim), تَنْظِيف (tozalash). Hozirgi zamoni: يُفَعِّلُ (يُعَلِّمُ).",
+  "point_ar": "المَاضِي: أَرْبَعَ عَشْرَةَ صِيغَةً",
+  "explanation_uz": "Moziy (o'tgan zamon) fe'lida O'ZAK O'ZGARMAYDI — faqat OXIRIGA qo'shimcha ulanadi. Uch guruhga bo'lib yodlang. (1) G'OYIB — qo'shimcha qisqa: كَتَبَ / كَتَبَا / كَتَبُوا (erkaklar), كَتَبَتْ / كَتَبَتَا / كَتَبْنَ (ayollar). Ayol belgisi — ت. (2) MUXOTAB — hamma qo'shimcha تـ bilan boshlanadi va o'zakning oxirgi harfi SUKUNLI bo'ladi: كَتَبْتَ / كَتَبْتُمَا / كَتَبْتُمْ (erkaklar), كَتَبْتِ / كَتَبْتُمَا / كَتَبْتُنَّ (ayollar). Diqqat: ikkilikda erkak va ayol shakli BIR XIL — كَتَبْتُمَا. (3) MUTAKALLIM — كَتَبْتُ (men), كَتَبْنَا (biz), jins farqi yo'q. كَتَبُوا so'zi oxiridagi ا yoziladi-yu, O'QILMAYDI (alif foriqa) — «katabū» deb aytiladi.",
   "table": [
-   {"ar": "عَلِمَ ← عَلَّمَ", "uz": "bildi → o'rgatdi (bildirdi)", "form": "sababiyat"},
-   {"ar": "كَسَرَ ← كَسَّرَ", "uz": "sindirdi → parchaladi", "form": "kuchaytirish"},
-   {"ar": "فَكَّرَ", "uz": "o'yladi, fikrladi", "form": "فَعَّلَ"},
-   {"ar": "مَصْدَر: تَعْلِيم", "uz": "masdar: ta'lim", "form": "تَفْعِيل"}
+   {"ar": "كَتَبَ", "uz": "u (bir erkak) yozdi", "form": "غَائِب مُفْرَد"},
+   {"ar": "كَتَبَا", "uz": "u ikki erkak yozdi", "form": "غَائِب مُثَنَّى"},
+   {"ar": "كَتَبُوا", "uz": "ular (erkaklar) yozdilar", "form": "غَائِب جَمْع"},
+   {"ar": "كَتَبَتْ", "uz": "u (bir ayol) yozdi", "form": "غَائِبَة مُفْرَد"},
+   {"ar": "كَتَبَتَا", "uz": "u ikki ayol yozdi", "form": "غَائِبَة مُثَنَّى"},
+   {"ar": "كَتَبْنَ", "uz": "ular (ayollar) yozdilar", "form": "غَائِبَة جَمْع"},
+   {"ar": "كَتَبْتَ", "uz": "sen (erkak) yozding", "form": "مُخَاطَب مُفْرَد"},
+   {"ar": "كَتَبْتُمَا", "uz": "sizlar (ikki erkak) yozdingiz", "form": "مُخَاطَب مُثَنَّى"},
+   {"ar": "كَتَبْتُمْ", "uz": "sizlar (erkaklar) yozdingiz", "form": "مُخَاطَب جَمْع"},
+   {"ar": "كَتَبْتِ", "uz": "sen (ayol) yozding", "form": "مُخَاطَبَة مُفْرَد"},
+   {"ar": "كَتَبْتُمَا", "uz": "sizlar (ikki ayol) yozdingiz — erkak bilan bir xil", "form": "مُخَاطَبَة مُثَنَّى"},
+   {"ar": "كَتَبْتُنَّ", "uz": "sizlar (ayollar) yozdingiz", "form": "مُخَاطَبَة جَمْع"},
+   {"ar": "كَتَبْتُ", "uz": "men yozdim", "form": "مُتَكَلِّم مُفْرَد"},
+   {"ar": "كَتَبْنَا", "uz": "biz yozdik", "form": "مُتَكَلِّم جَمْع"}
   ],
   "common_mistakes_uz": [
-   "O'rtadagi shaddani (ـّـ) unutish — II bobni I bobdan aynan shu farqlaydi.",
-   "Hozirgi zamonda prefiks unlisini damma qilishni unutish: يُعَلِّمُ.",
-   "II bob masdarini (تَفْعِيل) boshqa bob masdari bilan chalkashtirish."
+   "كَتَبْنَ (ular ayollar yozdilar) va كَتَبْنَا (biz yozdik) ni chalkashtirish — farq oxiridagi bitta ا da.",
+   "كَتَبَتْ (u ayol yozdi) va كَتَبْتَ (sen erkak yozding) — ت ning o'rni va harakati boshqa: birinchisida ت oxirida sukunli, ikkinchisida ب sukunli.",
+   "كَتَبُوا oxiridagi alifni o'qish — u yozuvda bor, talaffuzda yo'q: «katabū»."
   ]
  },
  "roots": [
   {
-   "root": "ف ك ر",
-   "meaning_uz": "fikr, o'ylash",
-   "uz_cognates": ["fikr", "mutafakkir", "tafakkur"],
+   "root": "ك ت ب",
+   "meaning_uz": "yozish — barcha tuslash mashqlarining tayanchi",
+   "uz_cognates": ["kitob", "maktab", "kotib", "maktub"],
    "derived": [
-    {"ar": "فَكَّرَ", "uz": "o'yladi (II)", "pattern": "فَعَّلَ"},
-    {"ar": "تَفْكِير", "uz": "fikrlash (masdar)", "pattern": "تَفْعِيل"}
+    {"ar": "كَتَبَ", "uz": "yozdi", "pattern": "فَعَلَ"},
+    {"ar": "كِتَاب", "uz": "kitob", "pattern": "فِعَال"},
+    {"ar": "كَاتِب", "uz": "yozuvchi, kotib", "pattern": "فَاعِل"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "عَلَّمَ", "translit": "ʿallama", "uz": "o'rgatdi", "root": "ع ل م", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/allama.mp3", "example_ar": "عَلَّمَنِي أَبِي.", "example_uz": "Otam menga o'rgatdi.", "srs": true},
-  {"ar": "فَكَّرَ", "translit": "fakkara", "uz": "o'yladi, fikrladi", "root": "ف ك ر", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/fakkara.mp3", "example_ar": "فَكَّرَ فِي المَسْأَلَةِ.", "example_uz": "Masala haqida o'yladi.", "srs": true},
-  {"ar": "نَظَّفَ", "translit": "naẓẓafa", "uz": "tozaladi", "root": "ن ظ ف", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/nazzafa.mp3", "example_ar": "نَظَّفَ الغُرْفَةَ.", "example_uz": "Xonani tozaladi.", "srs": true},
-  {"ar": "غَيَّرَ", "translit": "ghayyara", "uz": "o'zgartirdi", "root": "غ ي ر", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/ghayyara.mp3", "example_ar": "غَيَّرَ رَأْيَهُ.", "example_uz": "Fikrini o'zgartirdi.", "srs": true},
-  {"ar": "حَضَّرَ", "translit": "ḥaḍḍara", "uz": "tayyorladi", "root": "ح ض ر", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/haddara.mp3", "example_ar": "حَضَّرَ الطَّعَامَ.", "example_uz": "Ovqat tayyorladi.", "srs": true},
-  {"ar": "كَبَّرَ", "translit": "kabbara", "uz": "kattalashtirdi, takbir aytdi", "root": "ك ب ر", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/kabbara.mp3", "example_ar": "كَبَّرَ الصُّورَةَ.", "example_uz": "Rasmni kattalashtirdi.", "srs": true},
-  {"ar": "دَرَّسَ", "translit": "darrasa", "uz": "dars berdi, o'qitdi", "root": "د ر س", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/darrasa.mp3", "example_ar": "دَرَّسَ العَرَبِيَّةَ.", "example_uz": "Arab tilidan dars berdi.", "srs": true},
-  {"ar": "تَعْلِيم", "translit": "taʿlīm", "uz": "ta'lim, o'qitish (masdar) (o'zbekcha 'ta'lim')", "root": "ع ل م", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/talim.mp3", "example_ar": "التَّعْلِيمُ مُهِمٌّ.", "example_uz": "Ta'lim muhim.", "srs": true},
-  {"ar": "تَنْظِيف", "translit": "tanẓīf", "uz": "tozalash (masdar)", "root": "ن ظ ف", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/tanzif.mp3", "example_ar": "تَنْظِيفُ البَيْتِ.", "example_uz": "Uyni tozalash.", "srs": true},
-  {"ar": "رَأْي", "translit": "raʾy", "uz": "fikr, qarash", "root": "ر أ ي", "pattern": "فَعْل", "pos": "ot", "audio": "a2/ray.mp3", "example_ar": "مَا رَأْيُكَ؟", "example_uz": "Fikringiz qanday?", "srs": true}
+  {"ar": "كَتَبَا", "translit": "katabā", "uz": "u ikki erkak yozdi (ikkilik)", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/kataba_du.mp3", "example_ar": "الطَّالِبَانِ كَتَبَا الدَّرْسَ.", "example_uz": "Ikki talaba darsni yozdi.", "srs": true},
+  {"ar": "كَتَبُوا", "translit": "katabū", "uz": "ular (erkaklar) yozdilar", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/katabu.mp3", "example_ar": "الطُّلَّابُ كَتَبُوا أَسْمَاءَهُمْ.", "example_uz": "Talabalar ismlarini yozdilar.", "srs": true},
+  {"ar": "كَتَبَتْ", "translit": "katabat", "uz": "u (bir ayol) yozdi", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/katabat.mp3", "example_ar": "كَتَبَتِ الطَّالِبَةُ رِسَالَةً.", "example_uz": "Talaba qiz xat yozdi.", "srs": true},
+  {"ar": "كَتَبَتَا", "translit": "katabatā", "uz": "u ikki ayol yozdi (ikkilik)", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/katabata.mp3", "example_ar": "الطَّالِبَتَانِ كَتَبَتَا الوَاجِبَ.", "example_uz": "Ikki talaba qiz vazifani yozdi.", "srs": true},
+  {"ar": "كَتَبْنَ", "translit": "katabna", "uz": "ular (ayollar) yozdilar", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/katabna_f.mp3", "example_ar": "الطَّالِبَاتُ كَتَبْنَ الدَّرْسَ.", "example_uz": "Talaba qizlar darsni yozdilar.", "srs": true},
+  {"ar": "كَتَبْتَ", "translit": "katabta", "uz": "sen (erkak) yozding", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/katabta.mp3", "example_ar": "هَلْ كَتَبْتَ الوَاجِبَ؟", "example_uz": "Vazifani yozdingmi?", "srs": true},
+  {"ar": "كَتَبْتِ", "translit": "katabti", "uz": "sen (ayol) yozding", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/katabti.mp3", "example_ar": "يَا مَرْيَمُ، كَتَبْتِ الرِّسَالَةَ.", "example_uz": "Ey Maryam, xatni yozding.", "srs": true},
+  {"ar": "كَتَبْتُمَا", "translit": "katabtumā", "uz": "sizlar (ikki kishi) yozdingiz", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/katabtuma.mp3", "example_ar": "أَنْتُمَا كَتَبْتُمَا الدَّرْسَ.", "example_uz": "Sizlar ikkovingiz darsni yozdingiz.", "srs": true},
+  {"ar": "كَتَبْتُمْ", "translit": "katabtum", "uz": "sizlar (erkaklar) yozdingiz", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/katabtum.mp3", "example_ar": "أَنْتُمْ كَتَبْتُمْ كَثِيرًا.", "example_uz": "Sizlar ko'p yozdingiz.", "srs": true},
+  {"ar": "كَتَبْتُنَّ", "translit": "katabtunna", "uz": "sizlar (ayollar) yozdingiz", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/katabtunna.mp3", "example_ar": "أَنْتُنَّ كَتَبْتُنَّ الأَسْمَاءَ.", "example_uz": "Sizlar (ayollar) ismlarni yozdingiz.", "srs": true},
+  {"ar": "كَتَبْنَا", "translit": "katabnā", "uz": "biz yozdik", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/katabna.mp3", "example_ar": "نَحْنُ كَتَبْنَا كُلَّ شَيْءٍ.", "example_uz": "Biz hamma narsani yozdik.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "المُعَلِّمُ يُعَلِّمُ وَالطَّالِبُ يَتَعَلَّمُ. أَمْسِ حَضَّرْتُ الدَّرْسَ وَنَظَّفْتُ الغُرْفَةَ. ثُمَّ فَكَّرْتُ فِي المُسْتَقْبَلِ.",
+   "text_ar": "كَتَبَ الطَّالِبُ الدَّرْسَ، وَكَتَبَتِ الطَّالِبَةُ الرِّسَالَةَ. الطَّالِبَانِ كَتَبَا الوَاجِبَ، وَالطُّلَّابُ كَتَبُوا الأَسْمَاءَ، وَالطَّالِبَاتُ كَتَبْنَ الدَّرْسَ أَيْضًا. وَأَنَا كَتَبْتُ اسْمِي، وَنَحْنُ كَتَبْنَا كُلَّ شَيْءٍ.",
    "questions": [
-    {"q_uz": "«يُعَلِّمُ» qaysi bob va ma'no?", "a": "II bob — o'rgatadi"},
-    {"q_uz": "Gapiruvchi darsdan oldin nima qildi?", "a": "Darsni tayyorladi, xonani tozaladi"}
+    {"q_uz": "«الطَّالِبَانِ» uchun qaysi shakl ishlatilgan va nega?", "a": "كَتَبَا — chunki ikki kishi (musanna)"},
+    {"q_uz": "«Ular (ayollar) yozdilar» matnda qaysi so'z?", "a": "كَتَبْنَ"},
+    {"q_uz": "«Biz yozdik» qaysi so'z?", "a": "كَتَبْنَا"}
    ]
   },
   "listening": {
-   "audio": "a2/fakkara.mp3",
-   "transcript_ar": "فَكَّرَ",
+   "audio": "a2/katabna_f.mp3",
+   "transcript_ar": "كَتَبْنَ",
    "questions": [
-    {"q_uz": "Fe'l ma'nosi?", "a": "O'yladi, fikrladi"}
+    {"q_uz": "Kim yozdi?", "a": "Ular — ayollar (g'oyiba jam')"}
    ]
   },
   "speaking": {
-   "task_uz": "II bob fe'llarini ayting: ʿallama, fakkara, naẓẓafa, ḥaḍḍara.",
-   "target_ar": ["عَلَّمَ", "فَكَّرَ", "نَظَّفَ"],
+   "task_uz": "G'oyib qatorini ovoz chiqarib ayting: kataba, katabā, katabū, katabat, katabatā, katabna.",
+   "target_ar": ["كَتَبَ", "كَتَبَا", "كَتَبُوا", "كَتَبْنَ"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«Ovqat tayyorladim» va «Xonani tozaladim» gaplarini II bob bilan yozing.",
+   "task_uz": "Kecha qilgan ishingizni uch shaxsda yozing: «men yozdim», «biz yozdik», «ular yozdilar».",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "II bob vazni qaysi?", "q_ar": "", "options": ["فَعَّلَ", "فَعَلَ", "فَاعَلَ", "أَفْعَلَ"], "answer": "فَعَّلَ", "explain_uz": "II bob — o'rtadagi harf shaddalanadi: فَعَّلَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "نَظَّفَ الغُرْفَةَ", "options": [], "answer": "xonani tozaladi", "explain_uz": "نَظَّفَ (II) = tozaladi, الغُرْفَة = xona.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«عَلِمَ» (bildi) ni II bobga solsak?", "q_ar": "", "options": ["عَلَّمَ", "تَعَلَّمَ", "أَعْلَمَ", "اِسْتَعْلَمَ"], "answer": "عَلَّمَ", "explain_uz": "II bob: عَلَّمَ (o'rgatdi = bildirdi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "Qaysi so'z «ف ك ر» o'zagidan?", "q_ar": "", "options": ["فَكَّرَ", "نَظَّفَ", "غَيَّرَ"], "answer": "فَكَّرَ", "explain_uz": "«ف ك ر» — o'ylash o'zagi: فَكَّرَ (o'yladi), fikr, tafakkur.", "audio": "", "root": "ف ك ر", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "II bobning masdar vazni qaysi?", "q_ar": "", "options": ["تَفْعِيل", "إِفْعَال", "اِسْتِفْعَال", "مُفَاعَلَة"], "answer": "تَفْعِيل", "explain_uz": "II bob masdari: تَفْعِيل (تَعْلِيم, تَنْظِيف).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "o'zgartirdi", "q_ar": "", "options": [], "answer": "غَيَّرَ", "explain_uz": "غَيَّرَ — o'zgartirdi (II bob).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "ta'lim, o'qitish", "q_ar": "", "options": [], "answer": "تَعْلِيم", "explain_uz": "تَعْلِيم — II bob masdari (ta'lim).", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "«Ular (ayollar) yozdilar» qaysi?", "q_ar": "", "options": ["كَتَبْنَ", "كَتَبْنَا", "كَتَبُوا", "كَتَبَتَا"], "answer": "كَتَبْنَ", "explain_uz": "كَتَبْنَ — g'oyiba jam' (ular ayollar). كَتَبْنَا esa «biz yozdik».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Biz yozdik» qaysi?", "q_ar": "", "options": ["كَتَبْنَا", "كَتَبْنَ", "كَتَبْتُمْ", "كَتَبَا"], "answer": "كَتَبْنَا", "explain_uz": "Mutakallim jam': كَتَبْنَا — oxirida ا bor.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "كَتَبَا", "options": [], "answer": "u ikki erkak yozdi", "explain_uz": "Ikkilik (musanna) shakli: oxiriga ا qo'shiladi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "sizlar (erkaklar) yozdingiz", "q_ar": "", "options": [], "answer": "كَتَبْتُمْ", "explain_uz": "Muxotab jam' muzakkar: كَتَبْتُمْ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Bo'sh joyni to'ldiring: «الطَّالِبَتَانِ ___ الدَّرْسَ» (ikki qiz darsni yozdi)", "q_ar": "", "options": [], "answer": "كَتَبَتَا", "explain_uz": "Ayol + ikkilik = كَتَبَتَا (ت ayol belgisi, ا ikkilik belgisi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "harakat", "q_uz": "«sizlar (erkaklar) yozdingiz» bo'lishi uchun to'g'ri shaklni tanlang:", "q_ar": "كتبتم", "options": ["كَتَبْتُمْ", "كَتَبْتُمَا", "كَتَبْتُنَّ", "كَتَبَتْ"], "answer": "كَتَبْتُمْ", "explain_uz": "ـتُمْ — muxotab jam' muzakkar qo'shimchasi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "build_word", "q_uz": "ك ت ب o'zagini فَعَلَ qolipiga soling (moziy, u yozdi):", "q_ar": "", "options": [], "answer": "كَتَبَ", "explain_uz": "فَعَلَ qolipi + ك ت ب = كَتَبَ.", "audio": "", "root": "ك ت ب", "pattern": "فَعَلَ", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "ف ك ر", "back": "fikr o'zagi (fakkara=o'yladi, tafakkur, mutafakkir)", "deck": "msa"},
-  {"type": "pattern", "front": "فَعَّلَ (II)", "back": "kuchaytirish/sababiyat, masdar تَفْعِيل", "deck": "msa"},
-  {"type": "word", "front": "عَلَّمَ", "back": "o'rgatdi (II)", "deck": "msa"},
-  {"type": "word", "front": "فَكَّرَ", "back": "o'yladi, fikrladi", "deck": "msa"},
-  {"type": "word", "front": "نَظَّفَ", "back": "tozaladi", "deck": "msa"},
-  {"type": "word", "front": "غَيَّرَ", "back": "o'zgartirdi", "deck": "msa"},
-  {"type": "word", "front": "حَضَّرَ", "back": "tayyorladi", "deck": "msa"},
-  {"type": "word", "front": "دَرَّسَ", "back": "dars berdi", "deck": "msa"},
-  {"type": "word", "front": "تَعْلِيم", "back": "ta'lim (masdar)", "deck": "msa"},
-  {"type": "word", "front": "رَأْي", "back": "fikr, qarash", "deck": "msa"}
+  {"type": "root", "front": "ك ت ب", "back": "yozish — kitob/maktab/kotib", "deck": "msa"},
+  {"type": "word", "front": "كَتَبَا", "back": "u ikki erkak yozdi (ikkilik)", "deck": "msa"},
+  {"type": "word", "front": "كَتَبُوا", "back": "ular (erkaklar) yozdilar", "deck": "msa"},
+  {"type": "word", "front": "كَتَبَتْ", "back": "u (bir ayol) yozdi", "deck": "msa"},
+  {"type": "word", "front": "كَتَبَتَا", "back": "u ikki ayol yozdi", "deck": "msa"},
+  {"type": "word", "front": "كَتَبْنَ", "back": "ular (ayollar) yozdilar", "deck": "msa"},
+  {"type": "word", "front": "كَتَبْتُمَا", "back": "sizlar (ikki kishi) yozdingiz", "deck": "msa"},
+  {"type": "word", "front": "كَتَبْتُمْ", "back": "sizlar (erkaklar) yozdingiz", "deck": "msa"},
+  {"type": "word", "front": "كَتَبْتُنَّ", "back": "sizlar (ayollar) yozdingiz", "deck": "msa"},
+  {"type": "word", "front": "كَتَبْنَا", "back": "biz yozdik", "deck": "msa"}
  ]
 }

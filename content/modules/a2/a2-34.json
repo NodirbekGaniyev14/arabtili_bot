@@ -1,104 +1,98 @@
 {
  "id": "a2-34",
  "level": "A2",
- "module": "saudi",
+ "module": "grammar-ext",
  "order": 34,
- "title_uz": "Umra lug'ati",
- "title_ar": "مُصْطَلَحَاتُ العُمْرَة",
- "can_do_uz": "Umra amallarining asosiy atamalarini (ihrom, tavof, sa'y, talbiya) tushunaman va aytaman.",
+ "title_uz": "Tartibni aytaman",
+ "title_ar": "الأَعْدَادُ التَّرْتِيبِيَّة",
+ "can_do_uz": "«birinchi», «ikkinchi», «uchinchi» kabi tartib sonlarni ishlata olaman.",
  "duration_min": 30,
  "prerequisites": ["a2-33"],
  "harakat_level": "new_words_only",
- "hook_uz": "Umra — ko'pchilikning maqsadi! Amallar ketma-ketligi bor: مِيقَات da ihrom kiyasiz, تَلْبِيَة aytasiz, Ka'bani طَوَاف qilasiz, Safo-Marva orasida سَعْي qilasiz. Bugun umra atamalarini o'rganamiz — safaringiz ma'noli bo'lsin.",
+ "hook_uz": "«Birinchi dars» — الدَّرْسُ الأَوَّلُ. «Uchinchi qavat» — الطَّابِقُ الثَّالِثُ. Tartib sonlar narsalarning ketma-ketligini ko'rsatadi: أَوَّل, ثَانِي, ثَالِث... Ular otga jins va aniqlikda moslashadi.",
  "grammar": {
-  "point_ar": "مَنَاسِكُ العُمْرَة",
-  "explanation_uz": "Umra amallari (مناسك) tartibi: (1) المِيقَات — ihrom bog'lash joyi. (2) الإِحْرَام — maxsus holat va oq kiyim. (3) التَّلْبِيَة — «لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ» aytish. (4) الطَّوَاف — Ka'ba atrofida 7 marta aylanish. (5) السَّعْي — الصَّفَا va المَرْوَة orasida 7 marta yurish. (6) الحَلْق أَو التَّقْصِير — sochni olish/kaltalash. Umra qiluvchi — مُعْتَمِر. Bu atamalar butun dunyoda bir xil (klassik arabcha).",
+  "point_ar": "الأَعْدَادُ التَّرْتِيبِيَّة",
+  "explanation_uz": "Tartib sonlar (1–10): الأَوَّل (1-), الثَّانِي (2-), الثَّالِث (3-), الرَّابِع (4-), الخَامِس (5-), السَّادِس (6-), السَّابِع (7-), الثَّامِن (8-), التَّاسِع (9-), العَاشِر (10-). أوّل dan boshqasi فَاعِل vaznida. Ular otdan KEYIN keladi va sifat kabi MOSLASHADI: الدَّرْسُ الثَّالِثُ (erkak), الصَّفْحَةُ الثَّالِثَةُ (ayol, ة bilan).",
   "table": [
-   {"ar": "المِيقَات → الإِحْرَام", "uz": "miqot → ihrom", "form": "1-2 amal"},
-   {"ar": "التَّلْبِيَة → الطَّوَاف", "uz": "talbiya → tavof", "form": "3-4 amal"},
-   {"ar": "السَّعْي (الصَّفَا وَالمَرْوَة)", "uz": "sa'y (Safo va Marva)", "form": "5-amal"},
-   {"ar": "الحَلْق أَوِ التَّقْصِير", "uz": "soch olish yoki kaltalash", "form": "6-amal"}
+   {"ar": "الأَوَّل · الثَّانِي · الثَّالِث", "uz": "1- · 2- · 3-", "form": "1-3"},
+   {"ar": "الرَّابِع · الخَامِس", "uz": "4- · 5-", "form": "4-5"},
+   {"ar": "الطَّابِقُ الثَّالِثُ", "uz": "uchinchi qavat", "form": "erkak"},
+   {"ar": "الصَّفْحَةُ الثَّانِيَةُ", "uz": "ikkinchi sahifa", "form": "ayol (ة)"}
   ],
   "common_mistakes_uz": [
-   "طَوَاف (Ka'ba atrofida) va سَعْي (Safo-Marva orasida) ni chalkashtirish.",
-   "الحَلْق (to'liq olish) va التَّقْصِير (kaltalash) farqini bilmaslik.",
-   "Atamalarni noto'g'ri talaffuz qilish — bu muqaddas so'zlar, diqqat bilan ayting."
+   "Tartib sonni otdan oldin qo'yish — u otdan KEYIN keladi (sifat kabi).",
+   "Ayol otga tartib sonni moslamaslik: الصَّفْحَةُ الثَّانِي (xato) → الثَّانِيَة.",
+   "Sanoq son (ثَلَاثَة) va tartib son (ثَالِث) ni chalkashtirish."
   ]
  },
  "roots": [
   {
-   "root": "ح ر م",
-   "meaning_uz": "harom, muqaddaslik, taqiq",
-   "uz_cognates": ["harom", "Haram", "ihrom", "mahram", "muharram"],
+   "root": "أ و ل",
+   "meaning_uz": "birinchi, boshlanish",
+   "uz_cognates": ["avval", "avvalgi", "ibtido"],
    "derived": [
-    {"ar": "إِحْرَام", "uz": "ihrom (umra holati)", "pattern": "إِفْعَال"},
-    {"ar": "الحَرَم", "uz": "Haram (muqaddas hudud)", "pattern": "فَعَل"}
+    {"ar": "أَوَّل", "uz": "birinchi", "pattern": "أَفْعَل"},
+    {"ar": "أَوَّلًا", "uz": "avvalo, birinchidan", "pattern": ""}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "عُمْرَة", "translit": "ʿumra", "uz": "umra (o'zbekcha 'umra')", "root": "ع م ر", "pattern": "فُعْلَة", "pos": "ot", "audio": "a2/umra_word.mp3", "example_ar": "أَدَّيْتُ العُمْرَةَ.", "example_uz": "Umra qildim.", "srs": true},
-  {"ar": "إِحْرَام", "translit": "iḥrām", "uz": "ihrom (holat va oq kiyim)", "root": "ح ر م", "pattern": "إِفْعَال", "pos": "ot", "audio": "a2/ihram.mp3", "example_ar": "لَبِسْتُ الإِحْرَامَ.", "example_uz": "Ihrom kiydim.", "srs": true},
-  {"ar": "طَوَاف", "translit": "ṭawāf", "uz": "tavof (Ka'ba atrofida aylanish)", "root": "ط و ف", "pattern": "فَعَال", "pos": "ot", "audio": "a2/tawaf.mp3", "example_ar": "الطَّوَافُ سَبْعَةُ أَشْوَاطٍ.", "example_uz": "Tavof — yetti aylanish.", "srs": true},
-  {"ar": "سَعْي", "translit": "saʿy", "uz": "sa'y (Safo-Marva orasida yurish)", "root": "س ع ي", "pattern": "فَعْل", "pos": "ot", "audio": "a2/say.mp3", "example_ar": "السَّعْيُ بَيْنَ الصَّفَا وَالمَرْوَةِ.", "example_uz": "Sa'y — Safo va Marva orasida.", "srs": true},
-  {"ar": "تَلْبِيَة", "translit": "talbiya", "uz": "talbiya («labbayk...» aytish)", "root": "ل ب ي", "pattern": "تَفْعِلَة", "pos": "ot", "audio": "a2/talbiya.mp3", "example_ar": "التَّلْبِيَةُ: لَبَّيْكَ اللَّهُمَّ.", "example_uz": "Talbiya: labbayk Allohumma.", "srs": true},
-  {"ar": "مِيقَات", "translit": "mīqāt", "uz": "miqot (ihrom bog'lash joyi)", "root": "و ق ت", "pattern": "مِفْعَال", "pos": "ot", "audio": "a2/miqat.mp3", "example_ar": "أَحْرَمْتُ مِنَ المِيقَاتِ.", "example_uz": "Miqotdan ihrom bog'ladim.", "srs": true},
-  {"ar": "كَعْبَة", "translit": "kaʿba", "uz": "Ka'ba (o'zbekcha 'Ka'ba')", "root": "ك ع ب", "pattern": "فَعْلَة", "pos": "ot", "audio": "a2/kaba.mp3", "example_ar": "طُفْتُ حَوْلَ الكَعْبَةِ.", "example_uz": "Ka'ba atrofida tavof qildim.", "srs": true},
-  {"ar": "الصَّفَا وَالمَرْوَة", "translit": "aṣ-ṣafā wal-marwa", "uz": "Safo va Marva (ikki tepalik)", "root": "", "pattern": "", "pos": "ibora", "audio": "a2/safa_marwa.mp3", "example_ar": "السَّعْيُ بَيْنَ الصَّفَا وَالمَرْوَةِ.", "example_uz": "Safo va Marva orasida sa'y.", "srs": true},
-  {"ar": "حَلْق", "translit": "ḥalq", "uz": "soch olish (umra oxirida)", "root": "ح ل ق", "pattern": "فَعْل", "pos": "ot", "audio": "a2/halq.mp3", "example_ar": "الحَلْقُ أَوِ التَّقْصِيرُ.", "example_uz": "Soch olish yoki kaltalash.", "srs": true},
-  {"ar": "مُعْتَمِر", "translit": "muʿtamir", "uz": "umra qiluvchi", "root": "ع م ر", "pattern": "مُفْتَعِل", "pos": "ot", "audio": "a2/mutamir.mp3", "example_ar": "المُعْتَمِرُونَ كَثِيرُونَ.", "example_uz": "Umra qiluvchilar ko'p.", "srs": true},
-  {"ar": "الحَرَم", "translit": "al-ḥaram", "uz": "Haram (Masjidul Haram)", "root": "ح ر م", "pattern": "فَعَل", "pos": "ot", "audio": "a2/haram.mp3", "example_ar": "المَسْجِدُ الحَرَامُ فِي مَكَّةَ.", "example_uz": "Masjidul Haram Makkada.", "srs": true},
-  {"ar": "دُعَاء", "translit": "duʿāʾ", "uz": "duo (o'zbekcha 'duo')", "root": "د ع و", "pattern": "فُعَال", "pos": "ot", "audio": "a2/dua.mp3", "example_ar": "دَعَوْتُ اللَّهَ.", "example_uz": "Allohga duo qildim.", "srs": true}
+  {"ar": "أَوَّل", "translit": "awwal", "uz": "birinchi (1-) (o'zbekcha 'avval')", "root": "أ و ل", "pattern": "أَفْعَل", "pos": "son", "audio": "a2/awwal.mp3", "example_ar": "الدَّرْسُ الأَوَّلُ.", "example_uz": "Birinchi dars.", "srs": true},
+  {"ar": "ثَانِي", "translit": "thānī", "uz": "ikkinchi (2-)", "root": "ث ن ي", "pattern": "فَاعِل", "pos": "son", "audio": "a2/thani.mp3", "example_ar": "الطَّابِقُ الثَّانِي.", "example_uz": "Ikkinchi qavat.", "srs": true},
+  {"ar": "ثَالِث", "translit": "thālith", "uz": "uchinchi (3-)", "root": "ث ل ث", "pattern": "فَاعِل", "pos": "son", "audio": "a2/thalith.mp3", "example_ar": "اليَوْمُ الثَّالِثُ.", "example_uz": "Uchinchi kun.", "srs": true},
+  {"ar": "رَابِع", "translit": "rābiʿ", "uz": "to'rtinchi (4-)", "root": "ر ب ع", "pattern": "فَاعِل", "pos": "son", "audio": "a2/rabi.mp3", "example_ar": "الصَّفُّ الرَّابِعُ.", "example_uz": "To'rtinchi sinf.", "srs": true},
+  {"ar": "خَامِس", "translit": "khāmis", "uz": "beshinchi (5-)", "root": "خ م س", "pattern": "فَاعِل", "pos": "son", "audio": "a2/khamis.mp3", "example_ar": "الأُسْبُوعُ الخَامِسُ.", "example_uz": "Beshinchi hafta.", "srs": true},
+  {"ar": "سَادِس", "translit": "sādis", "uz": "oltinchi (6-)", "root": "س د س", "pattern": "فَاعِل", "pos": "son", "audio": "a2/sadis.mp3", "example_ar": "الشَّهْرُ السَّادِسُ.", "example_uz": "Oltinchi oy.", "srs": true},
+  {"ar": "سَابِع", "translit": "sābiʿ", "uz": "yettinchi (7-)", "root": "س ب ع", "pattern": "فَاعِل", "pos": "son", "audio": "a2/sabi.mp3", "example_ar": "اليَوْمُ السَّابِعُ.", "example_uz": "Yettinchi kun.", "srs": true},
+  {"ar": "عَاشِر", "translit": "ʿāshir", "uz": "o'ninchi (10-)", "root": "ع ش ر", "pattern": "فَاعِل", "pos": "son", "audio": "a2/ashir.mp3", "example_ar": "البَابُ العَاشِرُ.", "example_uz": "O'ninchi bob.", "srs": true},
+  {"ar": "تَرْتِيب", "translit": "tartīb", "uz": "tartib, ketma-ketlik (o'zbekcha 'tartib')", "root": "ر ت ب", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/tartib.mp3", "example_ar": "بِالتَّرْتِيبِ.", "example_uz": "Tartib bilan.", "srs": true},
+  {"ar": "أَوَّلًا", "translit": "awwalan", "uz": "avvalo, birinchidan", "root": "أ و ل", "pattern": "", "pos": "ravish", "audio": "a2/awwalan.mp3", "example_ar": "أَوَّلًا، اِقْرَأِ السُّؤَالَ.", "example_uz": "Avvalo, savolni o'qi.", "srs": true}
  ],
- "hejazi": [
-  {"msa_ar": "أَيْنَ الحَرَمُ؟", "hejazi_ar": "وِين الحَرَم؟", "translit": "wēn al-ḥaram?", "uz": "Haram qayerda? (hijoziy)", "audio": "hj/wen_haram.mp3"},
-  {"msa_ar": "مَتَى الأَذَانُ؟", "hejazi_ar": "مَتَى الأَذَان؟", "translit": "matā al-adhān?", "uz": "Azon qachon? (hijoziy)", "audio": "hj/mata_adhan.mp3"},
-  {"msa_ar": "أَيْنَ بَابُ المَلِكِ فَهْد؟", "hejazi_ar": "وِين بَاب المَلِك فَهْد؟", "translit": "wēn bāb al-malik fahd?", "uz": "Malik Fahd darvozasi qayerda? (hijoziy)", "audio": "hj/wen_bab_fahd.mp3"}
- ],
+ "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "وَصَلْتُ إِلَى المِيقَاتِ وَلَبِسْتُ الإِحْرَامَ وَبَدَأْتُ التَّلْبِيَةَ. فِي مَكَّةَ طُفْتُ حَوْلَ الكَعْبَةِ سَبْعَةَ أَشْوَاطٍ، ثُمَّ سَعَيْتُ بَيْنَ الصَّفَا وَالمَرْوَةِ. وَفِي النِّهَايَةِ حَلَقْتُ رَأْسِي. الحَمْدُ لِلَّهِ، تَمَّتِ العُمْرَةُ.",
+   "text_ar": "أَسْكُنُ فِي الطَّابِقِ الثَّالِثِ. غُرْفَتِي هِيَ الأُولَى عَلَى اليَمِينِ. اليَوْمُ هُوَ اليَوْمُ الخَامِسُ مِنَ الشَّهْرِ. أَوَّلًا نَدْرُسُ ثُمَّ نَسْتَرِيحُ.",
    "questions": [
-    {"q_uz": "Ka'ba atrofida necha marta aylandi?", "a": "Yetti (سَبْعَة أَشْوَاط)"},
-    {"q_uz": "Sa'y qayerda qilinadi?", "a": "Safo va Marva orasida"}
+    {"q_uz": "Qaysi qavatda yashaydi?", "a": "Uchinchi (الطَّابِق الثَّالِث)"},
+    {"q_uz": "«الأُولَى» — qaysi tartib son (ayol)?", "a": "Birinchi (أَوَّل ning ayol shakli)"}
    ]
   },
   "listening": {
-   "audio": "a2/tawaf.mp3",
-   "transcript_ar": "طَوَاف",
+   "audio": "a2/thalith.mp3",
+   "transcript_ar": "ثَالِث",
    "questions": [
-    {"q_uz": "So'z ma'nosi?", "a": "Tavof (Ka'ba atrofida aylanish)"}
+    {"q_uz": "Qaysi tartib son?", "a": "Uchinchi (3-)"}
    ]
   },
   "speaking": {
-   "task_uz": "Umra amallarini ayting: iḥrām, talbiya, ṭawāf, saʿy, ḥalq.",
-   "target_ar": ["الإِحْرَام", "الطَّوَاف", "السَّعْي"],
+   "task_uz": "Tartib sonlarni ayting: al-awwal, ath-thānī, ath-thālith, ar-rābiʿ, al-khāmis.",
+   "target_ar": ["الأَوَّل", "الثَّانِي", "الثَّالِث"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Umra amallarini tartibda yozing: miqot, ihrom, tavof, sa'y, soch olish.",
+   "task_uz": "«uchinchi qavat» (erkak) va «ikkinchi sahifa» (ayol) iboralarini yozing.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "Ka'ba atrofida aylanish qaysi?", "q_ar": "", "options": ["طَوَاف", "سَعْي", "حَلْق", "مِيقَات"], "answer": "طَوَاف", "explain_uz": "طَوَاف — Ka'ba atrofida 7 marta aylanish. سَعْي — Safo-Marva orasida.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "لَبِسْتُ الإِحْرَامَ", "options": [], "answer": "ihrom kiydim", "explain_uz": "لَبِسْتُ = kiydim, الإِحْرَام = ihrom.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Safo va Marva orasida yurish qaysi?", "q_ar": "", "options": ["سَعْي", "طَوَاف", "تَلْبِيَة", "حَلْق"], "answer": "سَعْي", "explain_uz": "سَعْي — Safo va Marva orasida 7 marta yurish.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "Qaysi so'z «ح ر م» o'zagidan?", "q_ar": "", "options": ["إِحْرَام", "طَوَاف", "سَعْي"], "answer": "إِحْرَام", "explain_uz": "«ح ر م» — muqaddaslik o'zagi: إِحْرَام (ihrom), الحَرَم, harom, mahram.", "audio": "", "root": "ح ر م", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "ihrom bog'lash joyi (miqot)", "q_ar": "", "options": [], "answer": "مِيقَات", "explain_uz": "مِيقَات — ihrom bog'lanadigan belgilangan joy (و ق ت o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«umra qiluvchi» qaysi?", "q_ar": "", "options": ["مُعْتَمِر", "مُسَافِر", "نَزِيل", "مُوَظَّف"], "answer": "مُعْتَمِر", "explain_uz": "مُعْتَمِر — umra qiluvchi (ع م ر o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "duo", "q_ar": "", "options": [], "answer": "دُعَاء", "explain_uz": "دُعَاء — duo (o'zbekcha 'duo').", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "«uchinchi» qaysi?", "q_ar": "", "options": ["ثَالِث", "ثَلَاثَة", "ثُلُث", "ثَانِي"], "answer": "ثَالِث", "explain_uz": "Tartib son: ثَالِث (uchinchi). ثَلَاثَة — sanoq (3).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الطَّابِقُ الثَّالِثُ", "options": [], "answer": "uchinchi qavat", "explain_uz": "الطَّابِق = qavat, الثَّالِث = uchinchi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Tartib son otga qanday joylashadi?", "q_ar": "", "options": ["otdan keyin (sifat kabi)", "otdan oldin", "gap oxirida", "gap boshida"], "answer": "otdan keyin (sifat kabi)", "explain_uz": "Tartib son sifat kabi otdan keyin, moslashadi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«أَوَّل، أَوَّلًا» qaysi o'zakdan?", "q_ar": "", "options": ["أ و ل", "و أ ل", "أ ل ف"], "answer": "أ و ل", "explain_uz": "«أ و ل» — birinchi/boshlanish o'zagi: avval, ibtido.", "audio": "", "root": "أ و ل", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«ikkinchi sahifa» (ayol) qaysi?", "q_ar": "", "options": ["الصَّفْحَةُ الثَّانِيَةُ", "الصَّفْحَةُ الثَّانِي", "الثَّانِي الصَّفْحَةُ", "صَفْحَةٌ ثَانِيَةٌ"], "answer": "الصَّفْحَةُ الثَّانِيَةُ", "explain_uz": "Ayol otga tartib son ة bilan moslashadi: الثَّانِيَة.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "beshinchi", "q_ar": "", "options": [], "answer": "خَامِس", "explain_uz": "خَامِس — beshinchi (خ م س o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "avvalo, birinchidan", "q_ar": "", "options": [], "answer": "أَوَّلًا", "explain_uz": "أَوَّلًا — avvalo (ravish).", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "ح ر م", "back": "muqaddaslik o'zagi (harom, Haram, ihrom, mahram)", "deck": "msa"},
-  {"type": "word", "front": "عُمْرَة", "back": "umra", "deck": "msa"},
-  {"type": "word", "front": "إِحْرَام", "back": "ihrom (holat va oq kiyim)", "deck": "msa"},
-  {"type": "word", "front": "طَوَاف", "back": "tavof (Ka'ba atrofida aylanish)", "deck": "msa"},
-  {"type": "word", "front": "سَعْي", "back": "sa'y (Safo-Marva orasida)", "deck": "msa"},
-  {"type": "word", "front": "تَلْبِيَة", "back": "talbiya (labbayk aytish)", "deck": "msa"},
-  {"type": "word", "front": "مِيقَات", "back": "miqot (ihrom joyi)", "deck": "msa"},
-  {"type": "word", "front": "كَعْبَة", "back": "Ka'ba", "deck": "msa"},
-  {"type": "word", "front": "مُعْتَمِر", "back": "umra qiluvchi", "deck": "msa"},
-  {"type": "word", "front": "حَلْق", "back": "soch olish (umra oxirida)", "deck": "msa"}
+  {"type": "root", "front": "أ و ل", "back": "birinchi o'zagi (avval, ibtido)", "deck": "msa"},
+  {"type": "pattern", "front": "فَاعِل (tartib son)", "back": "ثَالِث, رَابِع... otdan keyin, moslashadi", "deck": "msa"},
+  {"type": "word", "front": "أَوَّل", "back": "birinchi (1-)", "deck": "msa"},
+  {"type": "word", "front": "ثَانِي", "back": "ikkinchi (2-)", "deck": "msa"},
+  {"type": "word", "front": "ثَالِث", "back": "uchinchi (3-)", "deck": "msa"},
+  {"type": "word", "front": "رَابِع", "back": "to'rtinchi (4-)", "deck": "msa"},
+  {"type": "word", "front": "خَامِس", "back": "beshinchi (5-)", "deck": "msa"},
+  {"type": "word", "front": "عَاشِر", "back": "o'ninchi (10-)", "deck": "msa"},
+  {"type": "word", "front": "تَرْتِيب", "back": "tartib, ketma-ketlik", "deck": "msa"},
+  {"type": "word", "front": "أَوَّلًا", "back": "avvalo, birinchidan", "deck": "msa"}
  ]
 }

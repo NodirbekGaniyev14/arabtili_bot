@@ -1,98 +1,98 @@
 {
  "id": "a2-20",
  "level": "A2",
- "module": "grammar-ext",
+ "module": "verb-forms",
  "order": 20,
- "title_uz": "Ta'kid bilan gapiraman — إنَّ",
- "title_ar": "إِنَّ وَأَخَوَاتُهَا",
- "can_do_uz": "إنَّ va uning «opa-singillari» bilan ta'kidlab, «go'yo», «ehtimol» kabi ma'nolarni ayta olaman.",
+ "title_uz": "Ism fo'il / maf'ul",
+ "title_ar": "اسْمُ الفَاعِل وَاسْمُ المَفْعُول",
+ "can_do_uz": "Bajaruvchi (ism fo'il) va bajarilgan (ism maf'ul) so'zlarini yasay va farqlay olaman.",
  "duration_min": 30,
  "prerequisites": ["a2-19"],
  "harakat_level": "new_words_only",
- "hook_uz": "«Talaba tirishqoq» — الطَّالِبُ مُجْتَهِدٌ. «HAQIQATAN talaba tirishqoq» — إِنَّ الطَّالِبَ مُجْتَهِدٌ. إنَّ ismli gapga kirib, EGANI mansub qiladi (كانَ ning teskarisi!). لَكِنَّ (lekin), كَأَنَّ (go'yo), لَعَلَّ (ehtimol) — uning opa-singillari.",
+ "hook_uz": "«O'rgatuvchi» — مُعَلِّم. «O'rgatilgan» — مُعَلَّم. Faqat oxirgi harakat farqi (kasra/fatha)! Bajaruvchi (kim qiladi) va bajarilgan (nimaga qilinadi) — ikki muhim ot turi. كَاتِب (yozuvchi) / مَكْتُوب (yozilgan).",
  "grammar": {
-  "point_ar": "إِنَّ وَأَخَوَاتُهَا",
-  "explanation_uz": "إنَّ va opa-singillari ismli gapga kiradi va EGANI («ism إنَّ») NASB ga (fatha) qo'yadi, XABAR esa raf'da qoladi (كانَ ning aksi!): الطَّالِبُ مُجْتَهِدٌ → إِنَّ الطَّالِبَ مُجْتَهِدٌ. Opa-singillar: إِنَّ / أَنَّ (haqiqatan, ...ligini), لَكِنَّ (lekin), كَأَنَّ (go'yo), لَعَلَّ (ehtimol), لَيْتَ (koshki).",
+  "point_ar": "اسْمُ الفَاعِل وَالمَفْعُول",
+  "explanation_uz": "ISM FO'IL — harakatni bajaruvchi. I bob: فَاعِل (كَاتِب — yozuvchi). II–X boblarda: مُـ prefiks + oxirdan avvalgi harf KASRA (مُعَلِّم, مُسَاعِد, مُسْتَخْدِم). ISM MAF'UL — harakat tushgan narsa. I bob: مَفْعُول (مَكْتُوب — yozilgan). II–X: مُـ prefiks + oxirdan avvalgi harf FATHA (مُعَلَّم, مُسْتَخْدَم). Farqi — oxirgi harakat: fo'il kasra (ـِ), maf'ul fatha (ـَ).",
   "table": [
-   {"ar": "إِنَّ الطَّالِبَ مُجْتَهِدٌ", "uz": "Haqiqatan talaba tirishqoq", "form": "ism nasb"},
-   {"ar": "لَكِنَّ العَمَلَ صَعْبٌ", "uz": "Lekin ish qiyin", "form": "لَكِنَّ"},
-   {"ar": "كَأَنَّ الوَلَدَ أَسَدٌ", "uz": "Go'yo bola sherdek", "form": "كَأَنَّ"},
-   {"ar": "لَعَلَّ الجَوَّ يَتَحَسَّنُ", "uz": "Ehtimol havo yaxshilanadi", "form": "لَعَلَّ"}
+   {"ar": "كَاتِب / مَكْتُوب", "uz": "yozuvchi / yozilgan (I)", "form": "فَاعِل / مَفْعُول"},
+   {"ar": "مُعَلِّم / مُعَلَّم", "uz": "o'rgatuvchi / o'rgatilgan (II)", "form": "kasra / fatha"},
+   {"ar": "مُسْتَخْدِم / مُسْتَخْدَم", "uz": "foydalanuvchi / ishlatilgan (X)", "form": "مُـ + kasra/fatha"},
+   {"ar": "عَالِم / مَعْلُوم", "uz": "olim / ma'lum (I)", "form": "فَاعِل / مَفْعُول"}
   ],
   "common_mistakes_uz": [
-   "إنَّ dan keyin egani raf' qoldirish — u NASB (fatha) bo'ladi.",
-   "إنَّ (egani nasb) va كانَ (xabarni nasb) ni chalkashtirish — ular teskari.",
-   "Xabarni nasb qilish — إنَّ dan keyin xabar raf'da qoladi."
+   "Fo'il (kasra) va maf'ul (fatha) oxirgi harakatini almashtirish — مُعَلِّم / مُعَلَّم.",
+   "Derived boblarda مُـ prefiksini unutish.",
+   "Ma'noni chalkashtirish: fo'il — kim qiladi, maf'ul — nimaga qilinadi."
   ]
  },
  "roots": [
   {
-   "root": "ح ق ق",
-   "meaning_uz": "haqiqat, haqlik",
-   "uz_cognates": ["haqiqat", "haq", "tahqiq", "huquq"],
+   "root": "ك ت ب",
+   "meaning_uz": "yozish — fo'il/maf'ul namunasi",
+   "uz_cognates": ["kotib", "maktub", "kitob"],
    "derived": [
-    {"ar": "حَقِيقَة", "uz": "haqiqat", "pattern": "فَعِيلَة"},
-    {"ar": "حَقّ", "uz": "haq, huquq", "pattern": "فَعّ"}
+    {"ar": "كَاتِب", "uz": "yozuvchi (fo'il)", "pattern": "فَاعِل"},
+    {"ar": "مَكْتُوب", "uz": "yozilgan (maf'ul)", "pattern": "مَفْعُول"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "إِنَّ", "translit": "inna", "uz": "albatta, haqiqatan (ta'kid)", "root": "", "pattern": "", "pos": "yuklama", "audio": "a2/inna.mp3", "example_ar": "إِنَّ العِلْمَ نُورٌ.", "example_uz": "Haqiqatan, ilm — nur.", "srs": true},
-  {"ar": "أَنَّ", "translit": "anna", "uz": "...ligini (that)", "root": "", "pattern": "", "pos": "yuklama", "audio": "a2/anna.mp3", "example_ar": "أَعْلَمُ أَنَّ الجَوَّ حَارٌّ.", "example_uz": "Havo issiqligini bilaman.", "srs": true},
-  {"ar": "لَكِنَّ", "translit": "lākinna", "uz": "lekin (ta'kid bilan)", "root": "", "pattern": "", "pos": "yuklama", "audio": "a2/lakinna.mp3", "example_ar": "لَكِنَّ العَمَلَ صَعْبٌ.", "example_uz": "Lekin ish qiyin.", "srs": true},
-  {"ar": "كَأَنَّ", "translit": "kaʾanna", "uz": "go'yo, xuddi", "root": "", "pattern": "", "pos": "yuklama", "audio": "a2/kaanna.mp3", "example_ar": "كَأَنَّ الوَلَدَ أَسَدٌ.", "example_uz": "Go'yo bola sherdek.", "srs": true},
-  {"ar": "لَعَلَّ", "translit": "laʿalla", "uz": "ehtimol, shoyad", "root": "", "pattern": "", "pos": "yuklama", "audio": "a2/laalla.mp3", "example_ar": "لَعَلَّهُ يَنْجَحُ.", "example_uz": "Shoyad u muvaffaq bo'lsa.", "srs": true},
-  {"ar": "لَيْتَ", "translit": "layta", "uz": "koshki, qani edi", "root": "", "pattern": "", "pos": "yuklama", "audio": "a2/layta.mp3", "example_ar": "لَيْتَ الشَّبَابَ يَعُودُ.", "example_uz": "Koshki yoshlik qaytsa.", "srs": true},
-  {"ar": "حَقِيقَة", "translit": "ḥaqīqa", "uz": "haqiqat (o'zbekcha 'haqiqat')", "root": "ح ق ق", "pattern": "فَعِيلَة", "pos": "ot", "audio": "a2/haqiqa.mp3", "example_ar": "قُلِ الحَقِيقَةَ.", "example_uz": "Haqiqatni ayt.", "srs": true},
-  {"ar": "أَسَد", "translit": "asad", "uz": "sher, arslon", "root": "أ س د", "pattern": "فَعَل", "pos": "ot", "audio": "a2/asad.mp3", "example_ar": "الأَسَدُ قَوِيٌّ.", "example_uz": "Sher kuchli.", "srs": true},
-  {"ar": "يَنْجَحُ", "translit": "yanjaḥu", "uz": "muvaffaq bo'ladi, o'tadi", "root": "ن ج ح", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a2/yanjahu.mp3", "example_ar": "الطَّالِبُ يَنْجَحُ.", "example_uz": "Talaba muvaffaq bo'ladi.", "srs": true},
-  {"ar": "شَبَاب", "translit": "shabāb", "uz": "yoshlik, yoshlar", "root": "ش ب ب", "pattern": "فَعَال", "pos": "ot", "audio": "a2/shabab.mp3", "example_ar": "الشَّبَابُ قُوَّةٌ.", "example_uz": "Yoshlik — kuch.", "srs": true}
+  {"ar": "كَاتِب", "translit": "kātib", "uz": "yozuvchi, kotib (fo'il I)", "root": "ك ت ب", "pattern": "فَاعِل", "pos": "ot", "audio": "a1/katib.mp3", "example_ar": "هُوَ كَاتِبٌ.", "example_uz": "U yozuvchi.", "srs": true},
+  {"ar": "مَكْتُوب", "translit": "maktūb", "uz": "yozilgan (maf'ul I)", "root": "ك ت ب", "pattern": "مَفْعُول", "pos": "ot", "audio": "a1/maktub.mp3", "example_ar": "هَذَا مَكْتُوبٌ.", "example_uz": "Bu yozilgan.", "srs": true},
+  {"ar": "مُعَلِّم", "translit": "muʿallim", "uz": "o'qituvchi (fo'il II)", "root": "ع ل م", "pattern": "مُفَعِّل", "pos": "ot", "audio": "a1/muallim.mp3", "example_ar": "المُعَلِّمُ فِي الصَّفِّ.", "example_uz": "O'qituvchi sinfda.", "srs": true},
+  {"ar": "مُعَلَّم", "translit": "muʿallam", "uz": "o'rgatilgan (maf'ul II)", "root": "ع ل م", "pattern": "مُفَعَّل", "pos": "sifat", "audio": "a2/muallam.mp3", "example_ar": "دَرْسٌ مُعَلَّمٌ جَيِّدًا.", "example_uz": "Yaxshi o'rgatilgan dars.", "srs": true},
+  {"ar": "مُسَاعِد", "translit": "musāʿid", "uz": "yordamchi (fo'il III)", "root": "س ع د", "pattern": "مُفَاعِل", "pos": "ot", "audio": "a2/musaid.mp3", "example_ar": "هُوَ مُسَاعِدُ المُدِيرِ.", "example_uz": "U direktor yordamchisi.", "srs": true},
+  {"ar": "مُسْتَخْدِم", "translit": "mustakhdim", "uz": "foydalanuvchi (fo'il X)", "root": "خ د م", "pattern": "مُسْتَفْعِل", "pos": "ot", "audio": "a2/mustakhdim.mp3", "example_ar": "مُسْتَخْدِمُ الحَاسُوبِ.", "example_uz": "Kompyuter foydalanuvchisi.", "srs": true},
+  {"ar": "مَعْلُوم", "translit": "maʿlūm", "uz": "ma'lum, bilingan (maf'ul I) (o'zbekcha 'ma'lum')", "root": "ع ل م", "pattern": "مَفْعُول", "pos": "sifat", "audio": "a2/malum.mp3", "example_ar": "هَذَا مَعْلُومٌ لِلْجَمِيعِ.", "example_uz": "Bu hammaga ma'lum.", "srs": true},
+  {"ar": "مَسْؤُول", "translit": "masʾūl", "uz": "mas'ul, javobgar (maf'ul I) (o'zbekcha 'mas'ul')", "root": "س أ ل", "pattern": "مَفْعُول", "pos": "ot", "audio": "a2/masul.mp3", "example_ar": "مَنِ المَسْؤُولُ؟", "example_uz": "Mas'ul kim?", "srs": true},
+  {"ar": "عَامِل", "translit": "ʿāmil", "uz": "ishchi (fo'il I)", "root": "ع م ل", "pattern": "فَاعِل", "pos": "ot", "audio": "a1/amil.mp3", "example_ar": "العَامِلُ نَشِيطٌ.", "example_uz": "Ishchi tirishqoq.", "srs": true},
+  {"ar": "مَشْغُول", "translit": "mashghūl", "uz": "band, mashg'ul (maf'ul I) (o'zbekcha 'mashg'ul')", "root": "ش غ ل", "pattern": "مَفْعُول", "pos": "sifat", "audio": "a2/mashghul.mp3", "example_ar": "أَنَا مَشْغُولٌ الآنَ.", "example_uz": "Men hozir bandman.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "إِنَّ العِلْمَ نُورٌ وَإِنَّ الجَهْلَ ظَلَامٌ. الطَّالِبُ مُجْتَهِدٌ لَكِنَّ الاِمْتِحَانَ صَعْبٌ. لَعَلَّهُ يَنْجَحُ إِنْ شَاءَ اللَّهُ.",
+   "text_ar": "المُعَلِّمُ يُعَلِّمُ وَالطَّالِبُ المُعَلَّمُ يَفْهَمُ. الكَاتِبُ كَتَبَ مَكْتُوبًا. أَنَا مَشْغُولٌ لِأَنَّنِي مَسْؤُولٌ عَنِ المَشْرُوعِ.",
    "questions": [
-    {"q_uz": "«إِنَّ العِلْمَ» da «العِلْمَ» nega fatha?", "a": "إنَّ egani nasb qiladi"},
-    {"q_uz": "Imtihon qanday?", "a": "Qiyin (لَكِنَّ الاِمْتِحَانَ صَعْبٌ)"}
+    {"q_uz": "«مُعَلِّم» va «مُعَلَّم» farqi?", "a": "مُعَلِّم — o'rgatuvchi (fo'il), مُعَلَّم — o'rgatilgan (maf'ul)"},
+    {"q_uz": "Nega u band?", "a": "Loyihaga mas'ul (مَسْؤُول) bo'lgani uchun"}
    ]
   },
   "listening": {
-   "audio": "a2/inna.mp3",
-   "transcript_ar": "إِنَّ",
+   "audio": "a2/malum.mp3",
+   "transcript_ar": "مَعْلُوم",
    "questions": [
-    {"q_uz": "So'z ma'nosi?", "a": "Albatta, haqiqatan (ta'kid)"}
+    {"q_uz": "So'z ma'nosi va turi?", "a": "Ma'lum — ism maf'ul"}
    ]
   },
   "speaking": {
-   "task_uz": "إنَّ opa-singillari bilan ayting: inna l-ʿilma nūr, lākinna l-ʿamala ṣaʿb, laʿallahu yanjaḥu.",
-   "target_ar": ["إِنَّ العِلْمَ نُورٌ", "لَكِنَّ العَمَلَ صَعْبٌ", "لَعَلَّهُ يَنْجَحُ"],
+   "task_uz": "Fo'il/maf'ul juftlarini ayting: kātib/maktūb, muʿallim/muʿallam.",
+   "target_ar": ["كَاتِب", "مَكْتُوب", "مُعَلِّم"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«Haqiqatan talaba tirishqoq» va «Lekin ish qiyin» gaplarini إنَّ/لكنَّ bilan yozing (ega mansub).",
+   "task_uz": "«عَمِلَ» dan ishchi (fo'il) va «فَعَلَ» dan bajarilgan (maf'ul) so'zini yozing.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "«Haqiqatan talaba tirishqoq» to'g'ri qaysi?", "q_ar": "", "options": ["إِنَّ الطَّالِبَ مُجْتَهِدٌ", "إِنَّ الطَّالِبُ مُجْتَهِدٌ", "إِنَّ الطَّالِبَ مُجْتَهِدًا", "الطَّالِبَ إِنَّ مُجْتَهِدٌ"], "answer": "إِنَّ الطَّالِبَ مُجْتَهِدٌ", "explain_uz": "إنَّ egani nasb (الطَّالِبَ), xabar raf' (مُجْتَهِدٌ).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "إنَّ dan keyin EGA qaysi holatda?", "q_ar": "", "options": ["nasb (fatha)", "raf' (damma)", "jarr (kasra)", "sukun"], "answer": "nasb (fatha)", "explain_uz": "إنَّ egani nasb qiladi (كانَ ning aksi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "كَأَنَّ الوَلَدَ أَسَدٌ", "options": [], "answer": "go'yo bola sherdek", "explain_uz": "كَأَنَّ = go'yo, الوَلَد = bola, أَسَد = sher.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«حَقِيقَة، حَقّ» qaysi o'zakdan?", "q_ar": "", "options": ["ح ق ق", "ح ك م", "ح ق ب"], "answer": "ح ق ق", "explain_uz": "«ح ق ق» — haqiqat o'zagi: haqiqat, haq, huquq.", "audio": "", "root": "ح ق ق", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«ehtimol, shoyad» qaysi?", "q_ar": "", "options": ["لَعَلَّ", "لَيْتَ", "كَأَنَّ", "لَكِنَّ"], "answer": "لَعَلَّ", "explain_uz": "لَعَلَّ — ehtimol/shoyad.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "koshki, qani edi", "q_ar": "", "options": [], "answer": "لَيْتَ", "explain_uz": "لَيْتَ — koshki (orzu-istak).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "haqiqat", "q_ar": "", "options": [], "answer": "حَقِيقَة", "explain_uz": "حَقِيقَة — haqiqat.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "«o'rgatuvchi» (ism fo'il) qaysi?", "q_ar": "", "options": ["مُعَلِّم", "مُعَلَّم", "تَعْلِيم", "عِلْم"], "answer": "مُعَلِّم", "explain_uz": "Ism fo'il — kasra bilan: مُعَلِّم (o'rgatuvchi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«o'rgatilgan» (ism maf'ul) qaysi?", "q_ar": "", "options": ["مُعَلَّم", "مُعَلِّم", "عَالِم", "تَعَلُّم"], "answer": "مُعَلَّم", "explain_uz": "Ism maf'ul — fatha bilan: مُعَلَّم (o'rgatilgan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَنَا مَشْغُولٌ", "options": [], "answer": "men bandman", "explain_uz": "مَشْغُول (maf'ul) = band/mashg'ul.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Ism fo'il va maf'ulni nima farqlaydi (derived boblarda)?", "q_ar": "", "options": ["oxirgi harakat (kasra/fatha)", "birinchi harf", "uzunlik", "o'zak"], "answer": "oxirgi harakat (kasra/fatha)", "explain_uz": "Fo'il — kasra (مُعَلِّم), maf'ul — fatha (مُعَلَّم).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "build_word", "q_uz": "«ك ت ب» ni «مَفْعُول» vazniga soling (yozilgan)", "q_ar": "", "options": [], "answer": "مَكْتُوب", "explain_uz": "ك ت ب + مَفْعُول = مَكْتُوب (yozilgan).", "audio": "", "root": "ك ت ب", "pattern": "مَفْعُول", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "yordamchi", "q_ar": "", "options": [], "answer": "مُسَاعِد", "explain_uz": "مُسَاعِد — yordamchi (III bob ism fo'il).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ma'lum", "q_ar": "", "options": [], "answer": "مَعْلُوم", "explain_uz": "مَعْلُوم — ism maf'ul (ma'lum).", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "ح ق ق", "back": "haqiqat o'zagi (haqiqat, haq, huquq, tahqiq)", "deck": "msa"},
-  {"type": "pattern", "front": "إِنَّ + ism nasb", "back": "inna opa-singillari egani mansub qiladi", "deck": "msa"},
-  {"type": "word", "front": "إِنَّ", "back": "albatta, haqiqatan", "deck": "msa"},
-  {"type": "word", "front": "أَنَّ", "back": "...ligini (that)", "deck": "msa"},
-  {"type": "word", "front": "لَكِنَّ", "back": "lekin", "deck": "msa"},
-  {"type": "word", "front": "كَأَنَّ", "back": "go'yo, xuddi", "deck": "msa"},
-  {"type": "word", "front": "لَعَلَّ", "back": "ehtimol, shoyad", "deck": "msa"},
-  {"type": "word", "front": "لَيْتَ", "back": "koshki", "deck": "msa"},
-  {"type": "word", "front": "حَقِيقَة", "back": "haqiqat", "deck": "msa"},
-  {"type": "word", "front": "أَسَد", "back": "sher, arslon", "deck": "msa"}
+  {"type": "root", "front": "ك ت ب", "back": "yozish — fo'il/maf'ul (katib=yozuvchi, maktub=yozilgan)", "deck": "msa"},
+  {"type": "pattern", "front": "فَاعِل / مَفْعُول", "back": "ism fo'il (bajaruvchi) / ism maf'ul (bajarilgan)", "deck": "msa"},
+  {"type": "word", "front": "كَاتِب", "back": "yozuvchi (fo'il I)", "deck": "msa"},
+  {"type": "word", "front": "مَكْتُوب", "back": "yozilgan (maf'ul I)", "deck": "msa"},
+  {"type": "word", "front": "مُعَلِّم", "back": "o'qituvchi (fo'il II)", "deck": "msa"},
+  {"type": "word", "front": "مُعَلَّم", "back": "o'rgatilgan (maf'ul II)", "deck": "msa"},
+  {"type": "word", "front": "مُسْتَخْدِم", "back": "foydalanuvchi (fo'il X)", "deck": "msa"},
+  {"type": "word", "front": "مَعْلُوم", "back": "ma'lum (maf'ul I)", "deck": "msa"},
+  {"type": "word", "front": "مَسْؤُول", "back": "mas'ul, javobgar", "deck": "msa"},
+  {"type": "word", "front": "مَشْغُول", "back": "band, mashg'ul", "deck": "msa"}
  ]
 }

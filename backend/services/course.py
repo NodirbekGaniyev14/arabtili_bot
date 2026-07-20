@@ -28,6 +28,7 @@ MODULE_META: dict[str, tuple[str, str]] = {
     "noun-system": ("Ot tizimi", "نِظام الاسم"),
     "daily-life": ("Kundalik hayot", "الحَياة اليوميّة"),
     # A2
+    "sarf": ("Sarf — so'z tuzilishi", "الصَّرْف"),
     "verb-forms": ("Fe'l boblari", "أوزان الفِعل"),
     "weak-verbs": ("Illatli fe'llar", "الأفعال المُعتلّة"),
     "grammar-ext": ("Grammatika (kengaytma)", "النَّحو"),

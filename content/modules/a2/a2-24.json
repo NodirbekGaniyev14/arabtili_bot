@@ -1,98 +1,98 @@
 {
  "id": "a2-24",
  "level": "A2",
- "module": "grammar-ext",
+ "module": "weak-verbs",
  "order": 24,
- "title_uz": "Katta sonlarni aytaman",
- "title_ar": "الأَعْدَادُ الكَبِيرَة",
- "can_do_uz": "100 dan 1000 gacha va undan katta sonlarni ayta va sanaladigan ot bilan bog'lay olaman.",
+ "title_uz": "Ajvaf fe'llar",
+ "title_ar": "الفِعْلُ الأَجْوَف",
+ "can_do_uz": "O'rtasi و/ي bo'lgan (ajvaf) fe'llarni tuslay olaman va o'zgarishini bilaman.",
  "duration_min": 30,
  "prerequisites": ["a2-23"],
  "harakat_level": "new_words_only",
- "hook_uz": "«Yuz kishi» — مِئَةُ شَخْصٍ. «Ming riyol» — أَلْفُ رِيَالٍ. Katta sonlar (100, 1000, million) o'ziga xos qoidaga ega: sanaladigan ot BIRLIK-jarrda keladi. Yarim (نِصْف), chorak (رُبْع) kabi ulushlarni ham o'rganamiz.",
+ "hook_uz": "«Dedi» — قَالَ (aslida ق-و-ل!). O'rtadagi و o'tgan zamonda ALIF ga aylanadi. Hozirgi zamonda u qaytadi: يَقُولُ (و ko'rinadi), يَبِيعُ (ي ko'rinadi). كَانَ, زَارَ, نَامَ — hammasi ajvaf.",
  "grammar": {
-  "point_ar": "الأَعْدَادُ مِنْ مِئَة",
-  "explanation_uz": "100 va undan katta sonlar (مِئَة, أَلْف, مِلْيُون) dan keyin sanaladigan ot BIRLIK va JARRda bo'ladi: مِئَةُ رَجُلٍ (100 kishi), أَلْفُ رِيَالٍ (1000 riyol). Diqqat: 3–10 dan keyin ot ko'plik-jarr edi (a1-34), lekin 100+ dan keyin BIRLIK-jarr. Ulushlar (kasrlar): نِصْف (1/2), ثُلُث (1/3), رُبْع (1/4).",
+  "point_ar": "الأَجْوَف — تَحَوُّلُ الوَسَط",
+  "explanation_uz": "Ajvaf fe'l — o'rta o'zak harfi و yoki ي. O'TGAN zamonda o'rta illat ALIF ga aylanadi: ق و ل → قَالَ, ب ي ع → بَاعَ. HOZIRGI zamonda asl harf qaytadi: يَقُولُ (و), يَبِيعُ (ي), يَنَامُ (ا). Qisqargan shakllarda (masalan لَمْ bilan) o'rta harf tushib qoladi: لَمْ يَقُلْ (aytmadi).",
   "table": [
-   {"ar": "مِئَةُ رَجُلٍ", "uz": "100 kishi (birlik-jarr)", "form": "100+"},
-   {"ar": "أَلْفُ رِيَالٍ", "uz": "1000 riyol", "form": "1000"},
-   {"ar": "مِئَتَانِ · أَلْفَانِ", "uz": "200 · 2000", "form": "ikkilik"},
-   {"ar": "نِصْف · ثُلُث · رُبْع", "uz": "yarim · uchdan bir · chorak", "form": "ulushlar"}
+   {"ar": "قَالَ ← يَقُولُ", "uz": "dedi → aytadi (ق و ل)", "form": "و ajvaf"},
+   {"ar": "بَاعَ ← يَبِيعُ", "uz": "sotdi → sotadi (ب ي ع)", "form": "ي ajvaf"},
+   {"ar": "كَانَ ← يَكُونُ", "uz": "edi → bo'ladi (ك و ن)", "form": "و ajvaf"},
+   {"ar": "نَامَ ← يَنَامُ", "uz": "uxladi → uxlaydi (ن و م)", "form": "ajvaf"}
   ],
   "common_mistakes_uz": [
-   "100+ dan keyin otni ko'plik qilish: مِئَةُ رِجَالٍ (xato) → مِئَةُ رَجُلٍ (birlik).",
-   "مِئَة (100) va مِئَتَان (200) shakllarini chalkashtirish.",
-   "أَلْف (1000) va أَلِف (harf) ni chalkashtirish."
+   "O'tgan zamonda o'rta harfni و/ي qoldirish: قَوَلَ (xato) → قَالَ.",
+   "Hozirgi zamonda asl harfni (و/ي) noto'g'ri tanlash.",
+   "Ajvaf va sog' fe'lni chalkashtirish — o'zakni tekshiring."
   ]
  },
  "roots": [
   {
-   "root": "ر ب ع",
-   "meaning_uz": "to'rt, chorak",
-   "uz_cognates": ["rub'", "chorak", "murabba", "arba'a"],
+   "root": "ك و ن",
+   "meaning_uz": "bo'lish, mavjudlik",
+   "uz_cognates": ["makon", "kavn", "takvin"],
    "derived": [
-    {"ar": "رُبْع", "uz": "chorak (1/4)", "pattern": "فُعْل"},
-    {"ar": "أَرْبَعَة", "uz": "to'rt (4)", "pattern": "أَفْعَلَة"}
+    {"ar": "كَانَ", "uz": "edi, bo'ldi (ajvaf)", "pattern": "فَعَلَ"},
+    {"ar": "مَكَان", "uz": "joy, makon", "pattern": "مَفْعَل"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "مِئَة", "translit": "miʾa", "uz": "yuz (100)", "root": "م أ ي", "pattern": "فِعَة", "pos": "son", "audio": "a1/mia.mp3", "example_ar": "مِئَةُ رِيَالٍ.", "example_uz": "Yuz riyol.", "srs": true},
-  {"ar": "مِئَتَان", "translit": "miʾatān", "uz": "ikki yuz (200)", "root": "م أ ي", "pattern": "", "pos": "son", "audio": "a2/miatan.mp3", "example_ar": "مِئَتَا صَفْحَةٍ.", "example_uz": "Ikki yuz sahifa.", "srs": true},
-  {"ar": "أَلْف", "translit": "alf", "uz": "ming (1000)", "root": "أ ل ف", "pattern": "فَعْل", "pos": "son", "audio": "a2/alf.mp3", "example_ar": "أَلْفُ رِيَالٍ.", "example_uz": "Ming riyol.", "srs": true},
-  {"ar": "أَلْفَان", "translit": "alfān", "uz": "ikki ming (2000)", "root": "أ ل ف", "pattern": "", "pos": "son", "audio": "a2/alfan.mp3", "example_ar": "أَلْفَا رِيَالٍ.", "example_uz": "Ikki ming riyol.", "srs": true},
-  {"ar": "مِلْيُون", "translit": "milyūn", "uz": "million (o'zbekcha 'million')", "root": "", "pattern": "", "pos": "son", "audio": "a2/milyun.mp3", "example_ar": "مِلْيُونُ نَسَمَةٍ.", "example_uz": "Bir million aholi.", "srs": true},
-  {"ar": "نِصْف", "translit": "niṣf", "uz": "yarim (1/2) (o'zbekcha 'nisf')", "root": "ن ص ف", "pattern": "فِعْل", "pos": "ot", "audio": "a1/nisf.mp3", "example_ar": "نِصْفُ سَاعَةٍ.", "example_uz": "Yarim soat.", "srs": true},
-  {"ar": "ثُلُث", "translit": "thuluth", "uz": "uchdan bir (1/3)", "root": "ث ل ث", "pattern": "فُعُل", "pos": "ot", "audio": "a2/thuluth.mp3", "example_ar": "ثُلُثُ الطَّرِيقِ.", "example_uz": "Yo'lning uchdan biri.", "srs": true},
-  {"ar": "رُبْع", "translit": "rubʿ", "uz": "chorak (1/4) (o'zbekcha 'rub'')", "root": "ر ب ع", "pattern": "فُعْل", "pos": "ot", "audio": "a2/rub.mp3", "example_ar": "رُبْعُ سَاعَةٍ.", "example_uz": "Chorak soat.", "srs": true},
-  {"ar": "صَفْحَة", "translit": "ṣafḥa", "uz": "sahifa, bet", "root": "ص ف ح", "pattern": "فَعْلَة", "pos": "ot", "audio": "a2/safha.mp3", "example_ar": "الصَّفْحَةُ الأُولَى.", "example_uz": "Birinchi sahifa.", "srs": true},
-  {"ar": "نَسَمَة", "translit": "nasama", "uz": "jon, aholi (birligi)", "root": "ن س م", "pattern": "فَعَلَة", "pos": "ot", "audio": "a2/nasama.mp3", "example_ar": "عَشَرَةُ مَلَايِينِ نَسَمَةٍ.", "example_uz": "O'n million aholi.", "srs": true}
+  {"ar": "كَانَ", "translit": "kāna", "uz": "edi, bo'ldi (ajvaf: ك و ن)", "root": "ك و ن", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/kana.mp3", "example_ar": "كَانَ الجَوُّ جَمِيلًا.", "example_uz": "Havo chiroyli edi.", "srs": true},
+  {"ar": "يَكُونُ", "translit": "yakūnu", "uz": "bo'ladi (و qaytdi)", "root": "ك و ن", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a2/yakunu.mp3", "example_ar": "سَيَكُونُ الجَوُّ حَارًّا.", "example_uz": "Havo issiq bo'ladi.", "srs": true},
+  {"ar": "قَالَ", "translit": "qāla", "uz": "dedi (ajvaf: ق و ل)", "root": "ق و ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/qala.mp3", "example_ar": "قَالَ نَعَمْ.", "example_uz": "Ha dedi.", "srs": true},
+  {"ar": "يَقُولُ", "translit": "yaqūlu", "uz": "aytadi (و qaytdi)", "root": "ق و ل", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a2/yaqulu.mp3", "example_ar": "مَاذَا يَقُولُ؟", "example_uz": "U nima deydi?", "srs": true},
+  {"ar": "زَارَ", "translit": "zāra", "uz": "ziyorat qildi (ajvaf: ز و ر)", "root": "ز و ر", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/zara.mp3", "example_ar": "زَارَ المَدِينَةَ.", "example_uz": "Shaharni ziyorat qildi.", "srs": true},
+  {"ar": "نَامَ", "translit": "nāma", "uz": "uxladi (ajvaf: ن و م)", "root": "ن و م", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/nama.mp3", "example_ar": "نَامَ مُبَكِّرًا.", "example_uz": "Erta uxladi.", "srs": true},
+  {"ar": "بَاعَ", "translit": "bāʿa", "uz": "sotdi (ajvaf: ب ي ع)", "root": "ب ي ع", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/baa.mp3", "example_ar": "بَاعَ السَّيَّارَةَ.", "example_uz": "Mashinani sotdi.", "srs": true},
+  {"ar": "يَبِيعُ", "translit": "yabīʿu", "uz": "sotadi (ي qaytdi)", "root": "ب ي ع", "pattern": "يَفْعِلُ", "pos": "fe'l", "audio": "a2/yabiu.mp3", "example_ar": "يَبِيعُ الخُضَارَ.", "example_uz": "Sabzavot sotadi.", "srs": true},
+  {"ar": "عَادَ", "translit": "ʿāda", "uz": "qaytdi (ajvaf: ع و د)", "root": "ع و د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/aada.mp3", "example_ar": "عَادَ إِلَى بَلَدِهِ.", "example_uz": "Yurtiga qaytdi.", "srs": true},
+  {"ar": "مَكَان", "translit": "makān", "uz": "joy, makon (o'zbekcha 'makon')", "root": "ك و ن", "pattern": "مَفْعَل", "pos": "ot", "audio": "a2/makan.mp3", "example_ar": "مَكَانٌ جَمِيلٌ.", "example_uz": "Chiroyli joy.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "فِي الكِتَابِ مِئَتَا صَفْحَةٍ. دَفَعْتُ أَلْفَ رِيَالٍ لِلرِّحْلَةِ. المَدِينَةُ فِيهَا مِلْيُونُ نَسَمَةٍ. اِنْتَظَرْتُ نِصْفَ سَاعَةٍ ثُمَّ رُبْعَ سَاعَةٍ.",
+   "text_ar": "أَمْسِ كَانَ الجَوُّ حَارًّا. زُرْتُ صَدِيقِي وَقَالَ لِي: أَهْلًا! نِمْنَا مُبَكِّرًا وَعُدْنَا فِي الصَّبَاحِ. غَدًا يَكُونُ اليَوْمُ أَجْمَلَ.",
    "questions": [
-    {"q_uz": "Kitobda necha sahifa?", "a": "Ikki yuz (مِئَتَا صَفْحَة)"},
-    {"q_uz": "«مِئَة» dan keyin ot qanday shaklda?", "a": "Birlik-jarr (صَفْحَة)"}
+    {"q_uz": "Kecha havo qanday edi?", "a": "Issiq (كَانَ حَارًّا)"},
+    {"q_uz": "«قَالَ» ning asl o'zagi?", "a": "ق و ل (o'rtasi و — ajvaf)"}
    ]
   },
   "listening": {
-   "audio": "a2/alf.mp3",
-   "transcript_ar": "أَلْف",
+   "audio": "a2/qala.mp3",
+   "transcript_ar": "قَالَ",
    "questions": [
-    {"q_uz": "Qaysi son?", "a": "Ming (1000)"}
+    {"q_uz": "Fe'l ma'nosi?", "a": "Dedi"}
    ]
   },
   "speaking": {
-   "task_uz": "Sonlarni ayting: miʾatu riyāl, alfu riyāl, niṣf sāʿa, rubʿ sāʿa.",
-   "target_ar": ["مِئَةُ رِيَالٍ", "أَلْفُ رِيَالٍ", "نِصْفُ سَاعَةٍ"],
+   "task_uz": "Past→present ayting: qāla→yaqūlu, bāʿa→yabīʿu, kāna→yakūnu.",
+   "target_ar": ["قَالَ", "يَقُولُ", "بَاعَ"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«Ming riyol» va «Chorak soat» iboralarini yozing.",
+   "task_uz": "«زَارَ» ning hozirgi zamon shaklini yozing (o'rta و ni ko'rsating).",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "«ming (1000)» qaysi?", "q_ar": "", "options": ["أَلْف", "مِئَة", "مِلْيُون", "مِئَتَان"], "answer": "أَلْف", "explain_uz": "أَلْف — ming (1000).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "100 dan keyin sanaladigan ot qaysi shaklda?", "q_ar": "", "options": ["birlik-jarr", "ko'plik-jarr", "ikkilik", "raf'"], "answer": "birlik-jarr", "explain_uz": "100+ dan keyin ot BIRLIK-jarr: مِئَةُ رَجُلٍ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "نِصْفُ سَاعَةٍ", "options": [], "answer": "yarim soat", "explain_uz": "نِصْف = yarim, سَاعَة = soat.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«رُبْع، أَرْبَعَة» qaysi o'zakdan?", "q_ar": "", "options": ["ر ب ع", "ر ب و", "ر ف ع"], "answer": "ر ب ع", "explain_uz": "«ر ب ع» — to'rt o'zagi: rub' (chorak), arba'a, murabba.", "audio": "", "root": "ر ب ع", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "chorak (1/4)", "q_ar": "", "options": [], "answer": "رُبْع", "explain_uz": "رُبْع — chorak (o'zbekcha 'rub'').", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«ikki yuz» qaysi?", "q_ar": "", "options": ["مِئَتَان", "مِئَة", "أَلْفَان", "ثُلُث"], "answer": "مِئَتَان", "explain_uz": "مِئَتَان — 200 (مِئَة ning ikkiligi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "sahifa, bet", "q_ar": "", "options": [], "answer": "صَفْحَة", "explain_uz": "صَفْحَة — sahifa.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "«قَالَ» ning hozirgi zamoni qaysi?", "q_ar": "", "options": ["يَقُولُ", "يَقَالُ", "يَقْوُلُ", "قَوَلَ"], "answer": "يَقُولُ", "explain_uz": "Ajvaf — hozirgida asl و qaytadi: يَقُولُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Ajvaf fe'lda o'tgan zamonda o'rta harf nimaga aylanadi?", "q_ar": "", "options": ["alif (ا)", "و", "ي", "hamza"], "answer": "alif (ا)", "explain_uz": "O'tganda o'rta و/ي → ا: قَالَ, بَاعَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "زَارَ المَدِينَةَ", "options": [], "answer": "shaharni ziyorat qildi", "explain_uz": "زَارَ (ajvaf) = ziyorat qildi, المَدِينَة = shahar.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«كَانَ، مَكَان» qaysi o'zakdan?", "q_ar": "", "options": ["ك و ن", "ك ت ب", "ك ب ر"], "answer": "ك و ن", "explain_uz": "«ك و ن» — bo'lish o'zagi: kana, makon, kavn.", "audio": "", "root": "ك و ن", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Hozirgi zamon: «بَاعَ» → «يَـ___» (sotadi)", "q_ar": "يَـ___", "options": [], "answer": "بِيعُ", "explain_uz": "ي qaytadi: يَبِيعُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "uxladi", "q_ar": "", "options": [], "answer": "نَامَ", "explain_uz": "نَامَ (ajvaf, ن و م) — uxladi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "qaytdi", "q_ar": "", "options": [], "answer": "عَادَ", "explain_uz": "عَادَ (ajvaf, ع و د) — qaytdi.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "ر ب ع", "back": "to'rt o'zagi (rub'=chorak, arba'a, murabba)", "deck": "msa"},
-  {"type": "word", "front": "مِئَة", "back": "yuz (100)", "deck": "msa"},
-  {"type": "word", "front": "مِئَتَان", "back": "ikki yuz (200)", "deck": "msa"},
-  {"type": "word", "front": "أَلْف", "back": "ming (1000)", "deck": "msa"},
-  {"type": "word", "front": "أَلْفَان", "back": "ikki ming (2000)", "deck": "msa"},
-  {"type": "word", "front": "مِلْيُون", "back": "million", "deck": "msa"},
-  {"type": "word", "front": "نِصْف", "back": "yarim (1/2)", "deck": "msa"},
-  {"type": "word", "front": "ثُلُث", "back": "uchdan bir (1/3)", "deck": "msa"},
-  {"type": "word", "front": "رُبْع", "back": "chorak (1/4)", "deck": "msa"},
-  {"type": "word", "front": "صَفْحَة", "back": "sahifa, bet", "deck": "msa"}
+  {"type": "root", "front": "ك و ن", "back": "bo'lish o'zagi (kana=edi, makon, kavn) — ajvaf", "deck": "msa"},
+  {"type": "pattern", "front": "أَجْوَف: قَالَ→يَقُولُ", "back": "o'rtasi و/ي, o'tganda ا, hozirda qaytadi", "deck": "msa"},
+  {"type": "word", "front": "كَانَ", "back": "edi, bo'ldi (ajvaf)", "deck": "msa"},
+  {"type": "word", "front": "قَالَ", "back": "dedi (ajvaf)", "deck": "msa"},
+  {"type": "word", "front": "زَارَ", "back": "ziyorat qildi (ajvaf)", "deck": "msa"},
+  {"type": "word", "front": "نَامَ", "back": "uxladi (ajvaf)", "deck": "msa"},
+  {"type": "word", "front": "بَاعَ", "back": "sotdi (ajvaf)", "deck": "msa"},
+  {"type": "word", "front": "عَادَ", "back": "qaytdi (ajvaf)", "deck": "msa"},
+  {"type": "word", "front": "يَقُولُ", "back": "aytadi (و qaytdi)", "deck": "msa"},
+  {"type": "word", "front": "مَكَان", "back": "joy, makon", "deck": "msa"}
  ]
 }

@@ -1,98 +1,130 @@
 {
  "id": "a2-07",
  "level": "A2",
- "module": "verb-forms",
+ "module": "sarf",
  "order": 7,
- "title_uz": "VII bob: natija/qaytim",
- "title_ar": "البَابُ السَّابِع: اِنْفَعَلَ",
- "can_do_uz": "VII bob (اِنْفَعَلَ) fe'llarini taniyman: «o'zi bo'ldi» (natija) ma'nosini bilaman.",
+ "title_uz": "Alohida olmoshlar (14 ta)",
+ "title_ar": "الضَّمَائِرُ المُنْفَصِلَةُ",
+ "can_do_uz": "14 ta alohida olmoshni to'g'ri tanlab, ularni fe'l shakliga moslay olaman.",
  "duration_min": 30,
  "prerequisites": ["a2-06"],
  "harakat_level": "new_words_only",
- "hook_uz": "«Sindirdi» — كَسَرَ. «Sindi (o'zi)» — اِنْكَسَرَ. O'zak boshiga اِنْـ qo'shsangiz — harakat O'Z-O'ZIDAN sodir bo'lgandek, natija ma'nosi chiqadi: اِنْفَتَحَ (ochildi), اِنْتَهَى (tugadi).",
+ "hook_uz": "A1 da 8 ta olmoshni bilib olgansiz: أَنَا، أَنْتَ، هُوَ، هِيَ… Lekin jadval to'liq emas edi. «Ular ikkovi» va «sizlar — ayollar» uchun alohida olmoshlar bor: هُمَا، هُنَّ، أَنْتُمَا، أَنْتُنَّ. Va e'tibor bering — olmoshlar ham xuddi fe'l kabi 14 ta. Chunki ular BIR TIZIMNING ikki yuzi.",
  "grammar": {
-  "point_ar": "اِنْفَعَلَ — المُطَاوَعَة",
-  "explanation_uz": "VII bob vazni: اِنْفَعَلَ (o'zak boshiga اِنْـ). Asosiy ma'no: NATIJA / passiv-qaytim — «o'zi ... bo'ldi»: كَسَرَ (sindirdi) → اِنْكَسَرَ (sindi), فَتَحَ (ochdi) → اِنْفَتَحَ (ochildi). Bu fe'llar o'timsiz (ob'ekt olmaydi). Masdari اِنْفِعَال: اِنْكِسَار. Hozirgi zamoni: يَنْفَعِلُ (يَنْكَسِرُ). Boshidagi hamza — «vasl» (ulanishda tushadi).",
+  "point_ar": "الضَّمَائِرُ المُنْفَصِلَةُ الأَرْبَعَ عَشْرَةَ",
+  "explanation_uz": "Munfasil («alohida») olmosh — mustaqil so'z: u hech narsaga ulanmaydi, alohida yoziladi va gapda ko'pincha EGA (مُبْتَدَأ) bo'ladi. Ularning soni ham 14 ta va tartibi fe'l tuslanishi bilan ayni bir xil: g'oyib 6, muxotab 6, mutakallim 2. Ikki muhim nuqta. (1) IKKILIKDA jins farqi yo'q: هُمَا ikki erkakka ham, ikki ayolga ham; أَنْتُمَا ham shunday. (2) Olmosh fe'lga MOS kelishi shart: هُنَّ كَتَبْنَ (to'g'ri), هُنَّ كَتَبُوا (xato). Ismli gapda olmosh aniq, xabar noaniq bo'ladi: أَنْتُمَا زَمِيلَانِ — sizlar ikkovingiz hamkasbsiz.",
   "table": [
-   {"ar": "كَسَرَ ← اِنْكَسَرَ", "uz": "sindirdi → sindi", "form": "natija"},
-   {"ar": "فَتَحَ ← اِنْفَتَحَ", "uz": "ochdi → ochildi", "form": "natija"},
-   {"ar": "اِنْتَهَى", "uz": "tugadi, tugallandi", "form": "اِنْفَعَلَ"},
-   {"ar": "مَصْدَر: اِنْكِسَار", "uz": "masdar: sinish", "form": "اِنْفِعَال"}
+   {"ar": "هُوَ", "uz": "u (bir erkak)", "form": "غَائِب مُفْرَد"},
+   {"ar": "هُمَا", "uz": "ular ikki erkak", "form": "غَائِب مُثَنَّى"},
+   {"ar": "هُمْ", "uz": "ular (erkaklar)", "form": "غَائِب جَمْع"},
+   {"ar": "هِيَ", "uz": "u (bir ayol)", "form": "غَائِبَة مُفْرَد"},
+   {"ar": "هُمَا", "uz": "ular ikki ayol — erkak bilan bir xil", "form": "غَائِبَة مُثَنَّى"},
+   {"ar": "هُنَّ", "uz": "ular (ayollar)", "form": "غَائِبَة جَمْع"},
+   {"ar": "أَنْتَ", "uz": "sen (erkak)", "form": "مُخَاطَب مُفْرَد"},
+   {"ar": "أَنْتُمَا", "uz": "sizlar ikkovingiz", "form": "مُخَاطَب مُثَنَّى"},
+   {"ar": "أَنْتُمْ", "uz": "sizlar (erkaklar)", "form": "مُخَاطَب جَمْع"},
+   {"ar": "أَنْتِ", "uz": "sen (ayol)", "form": "مُخَاطَبَة مُفْرَد"},
+   {"ar": "أَنْتُمَا", "uz": "sizlar ikki ayol — erkak bilan bir xil", "form": "مُخَاطَبَة مُثَنَّى"},
+   {"ar": "أَنْتُنَّ", "uz": "sizlar (ayollar)", "form": "مُخَاطَبَة جَمْع"},
+   {"ar": "أَنَا", "uz": "men", "form": "مُتَكَلِّم مُفْرَد"},
+   {"ar": "نَحْنُ", "uz": "biz", "form": "مُتَكَلِّم جَمْع"}
   ],
   "common_mistakes_uz": [
-   "VII bob fe'liga ob'ekt (mafʿul) qo'shish — u o'timsiz (natija).",
-   "اِنْـ prefiksini I bob amri (اُكْتُبْ) bilan chalkashtirish.",
-   "Boshidagi hamzani gap o'rtasida ham talaffuz qilish — u «vasl», tushadi."
+   "هُمْ (erkaklar) ni ayollar guruhiga ishlatish — ayollar uchun هُنَّ.",
+   "هُمَا va أَنْتُمَا da erkak-ayol shaklini izlash — ikkilikda jins farqi umuman yo'q.",
+   "Olmoshni fe'lga moslamaslik: «هُنَّ كَتَبُوا» xato, to'g'risi «هُنَّ كَتَبْنَ»."
   ]
  },
  "roots": [
   {
-   "root": "ك س ر",
-   "meaning_uz": "sindirish, sinish",
-   "uz_cognates": ["kasr (matematik)", "inkisor"],
+   "root": "ف ص ل",
+   "meaning_uz": "ajratish, bo'lish",
+   "uz_cognates": ["fasl", "tafsilot", "fosila"],
    "derived": [
-    {"ar": "اِنْكَسَرَ", "uz": "sindi (VII)", "pattern": "اِنْفَعَلَ"},
-    {"ar": "كَسَرَ", "uz": "sindirdi (I)", "pattern": "فَعَلَ"}
+    {"ar": "فَصَلَ", "uz": "ajratdi", "pattern": "فَعَلَ"},
+    {"ar": "مُنْفَصِل", "uz": "ajralgan, alohida", "pattern": "مُنْفَعِل"},
+    {"ar": "تَفْصِيل", "uz": "tafsilot", "pattern": "تَفْعِيل"}
+   ]
+  },
+  {
+   "root": "و ص ل",
+   "meaning_uz": "ulanish, yetib borish",
+   "uz_cognates": ["vasl", "ittisol", "aloqa (ittisol)"],
+   "derived": [
+    {"ar": "وَصَلَ", "uz": "yetib keldi", "pattern": "فَعَلَ"},
+    {"ar": "مُتَّصِل", "uz": "ulangan, birikkan", "pattern": "مُفْتَعِل"},
+    {"ar": "اِتِّصَال", "uz": "aloqa", "pattern": "اِفْتِعَال"}
+   ]
+  },
+  {
+   "root": "ج ه د",
+   "meaning_uz": "harakat qilish, tirishish",
+   "uz_cognates": ["jahd", "ijtihod", "mujtahid"],
+   "derived": [
+    {"ar": "اِجْتَهَدَ", "uz": "tirishdi", "pattern": "اِفْتَعَلَ"},
+    {"ar": "مُجْتَهِد", "uz": "tirishqoq", "pattern": "مُفْتَعِل"},
+    {"ar": "جُهْد", "uz": "kuch, harakat", "pattern": "فُعْل"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "اِنْكَسَرَ", "translit": "inkasara", "uz": "sindi (o'zi)", "root": "ك س ر", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/inkasara.mp3", "example_ar": "اِنْكَسَرَ الزُّجَاجُ.", "example_uz": "Shisha sindi.", "srs": true},
-  {"ar": "اِنْفَتَحَ", "translit": "infataḥa", "uz": "ochildi (o'zi)", "root": "ف ت ح", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/infataha.mp3", "example_ar": "اِنْفَتَحَ البَابُ.", "example_uz": "Eshik ochildi.", "srs": true},
-  {"ar": "اِنْقَطَعَ", "translit": "inqaṭaʿa", "uz": "uzildi (o'zi)", "root": "ق ط ع", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/inqataa.mp3", "example_ar": "اِنْقَطَعَ الحَبْلُ.", "example_uz": "Arqon uzildi.", "srs": true},
-  {"ar": "اِنْتَهَى", "translit": "intahā", "uz": "tugadi, tugallandi", "root": "ن ه ي", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/intaha.mp3", "example_ar": "اِنْتَهَى الدَّرْسُ.", "example_uz": "Dars tugadi.", "srs": true},
-  {"ar": "اِنْصَرَفَ", "translit": "inṣarafa", "uz": "jo'nab ketdi, tarqaldi", "root": "ص ر ف", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/insarafa.mp3", "example_ar": "اِنْصَرَفَ النَّاسُ.", "example_uz": "Odamlar tarqaldilar.", "srs": true},
-  {"ar": "اِنْشَغَلَ", "translit": "inshaghala", "uz": "band bo'ldi, mashg'ul bo'ldi", "root": "ش غ ل", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/inshaghala.mp3", "example_ar": "اِنْشَغَلْتُ بِالعَمَلِ.", "example_uz": "Ish bilan band bo'ldim.", "srs": true},
-  {"ar": "اِنْقَسَمَ", "translit": "inqasama", "uz": "bo'lindi (o'zi)", "root": "ق س م", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/inqasama.mp3", "example_ar": "اِنْقَسَمَ الفَرِيقُ.", "example_uz": "Jamoa bo'lindi.", "srs": true},
-  {"ar": "اِنْكِسَار", "translit": "inkisār", "uz": "sinish (masdar) (o'zbekcha 'inkisor')", "root": "ك س ر", "pattern": "اِنْفِعَال", "pos": "ot", "audio": "a2/inkisar.mp3", "example_ar": "اِنْكِسَارُ الزُّجَاجِ.", "example_uz": "Shishaning sinishi.", "srs": true},
-  {"ar": "زُجَاج", "translit": "zujāj", "uz": "shisha", "root": "ز ج ج", "pattern": "فُعَال", "pos": "ot", "audio": "a2/zujaj.mp3", "example_ar": "الزُّجَاجُ مَكْسُورٌ.", "example_uz": "Shisha singan.", "srs": true},
-  {"ar": "نِهَايَة", "translit": "nihāya", "uz": "oxir, yakun", "root": "ن ه ي", "pattern": "فِعَالَة", "pos": "ot", "audio": "a2/nihaya.mp3", "example_ar": "فِي نِهَايَةِ اليَوْمِ.", "example_uz": "Kun oxirida.", "srs": true}
+  {"ar": "هُمَا", "translit": "humā", "uz": "ular ikkovi (erkak ham, ayol ham)", "root": "", "pattern": "", "pos": "olmosh", "audio": "a2/huma_pr.mp3", "example_ar": "هُمَا زَمِيلَانِ مُجْتَهِدَانِ.", "example_uz": "Ular ikkovi tirishqoq hamkasb.", "srs": true},
+  {"ar": "هُنَّ", "translit": "hunna", "uz": "ular (ayollar)", "root": "", "pattern": "", "pos": "olmosh", "audio": "a2/hunna.mp3", "example_ar": "هُنَّ جَارَاتُنَا.", "example_uz": "Ular bizning qo'shnilarimiz (ayollar).", "srs": true},
+  {"ar": "أَنْتُمَا", "translit": "antumā", "uz": "sizlar ikkovingiz", "root": "", "pattern": "", "pos": "olmosh", "audio": "a2/antuma.mp3", "example_ar": "أَنْتُمَا طَالِبَانِ.", "example_uz": "Sizlar ikkovingiz talabasiz.", "srs": true},
+  {"ar": "أَنْتُنَّ", "translit": "antunna", "uz": "sizlar (ayollar)", "root": "", "pattern": "", "pos": "olmosh", "audio": "a2/antunna.mp3", "example_ar": "أَنْتُنَّ طَالِبَاتٌ مُجْتَهِدَاتٌ.", "example_uz": "Sizlar tirishqoq talaba qizlarsiz.", "srs": true},
+  {"ar": "مُنْفَصِل", "translit": "munfaṣil", "uz": "ajralgan, alohida (o'zbekcha 'fasl, tafsilot')", "root": "ف ص ل", "pattern": "مُنْفَعِل", "pos": "sifat", "audio": "a2/munfasil.mp3", "example_ar": "الضَّمِيرُ المُنْفَصِلُ كَلِمَةٌ مُسْتَقِلَّةٌ.", "example_uz": "Alohida olmosh — mustaqil so'z.", "srs": true},
+  {"ar": "مُتَّصِل", "translit": "muttaṣil", "uz": "ulangan, birikkan (o'zbekcha 'ittisol, aloqa')", "root": "و ص ل", "pattern": "مُفْتَعِل", "pos": "sifat", "audio": "a2/muttasil.mp3", "example_ar": "الضَّمِيرُ المُتَّصِلُ يَلْتَصِقُ بِالكَلِمَةِ.", "example_uz": "Birikuvchi olmosh so'zga yopishadi.", "srs": true},
+  {"ar": "مُجْتَهِد", "translit": "mujtahid", "uz": "tirishqoq (o'zbekcha 'ijtihod, mujtahid')", "root": "ج ه د", "pattern": "مُفْتَعِل", "pos": "sifat", "audio": "a2/mujtahid.mp3", "example_ar": "هُوَ طَالِبٌ مُجْتَهِدٌ.", "example_uz": "U tirishqoq talaba.", "srs": true},
+  {"ar": "زَمِيل", "translit": "zamīl", "uz": "hamkasb, sinfdosh", "root": "ز م ل", "pattern": "فَعِيل", "pos": "ot", "audio": "a2/zamil.mp3", "example_ar": "زَمِيلِي فِي الصَّفِّ.", "example_uz": "Sinfdoshim.", "srs": true},
+  {"ar": "جَارَة", "translit": "jāra", "uz": "qo'shni ayol", "root": "ج و ر", "pattern": "فَاعِلَة", "pos": "ot", "audio": "a2/jara.mp3", "example_ar": "جَارَتُنَا طَبِيبَةٌ.", "example_uz": "Qo'shnimiz — shifokor ayol.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "فِي نِهَايَةِ الدَّرْسِ اِنْصَرَفَ الطُّلَّابُ. لَكِنْ وَقَعَ كِتَابٌ وَاِنْكَسَرَ الزُّجَاجُ عَلَى الطَّاوِلَةِ. اِنْشَغَلَ المُعَلِّمُ بِالتَّنْظِيفِ حَتَّى اِنْتَهَى.",
+   "text_ar": "أَنَا طَالِبٌ وَأَنْتَ مُدَرِّسٌ. هُوَ مُهَنْدِسٌ وَهِيَ طَبِيبَةٌ. هُمَا زَمِيلَانِ مُجْتَهِدَانِ، وَهُمْ طُلَّابٌ فِي المَعْهَدِ. وَهُنَّ جَارَاتُنَا. أَنْتُمَا زَمِيلَانِ، وَأَنْتُنَّ طَالِبَاتٌ. وَنَحْنُ نَتَعَلَّمُ العَرَبِيَّةَ مَعًا.",
    "questions": [
-    {"q_uz": "Dars oxirida nima bo'ldi?", "a": "Talabalar tarqaldi, shisha sindi"},
-    {"q_uz": "«اِنْكَسَرَ» qaysi bob — ma'no?", "a": "VII bob — sindi (o'zi)"}
+    {"q_uz": "«هُمَا» kimlar haqida aytilgan?", "a": "Ikki tirishqoq hamkasb haqida"},
+    {"q_uz": "Ayollar ko'pligi uchun qaysi olmoshlar ishlatilgan?", "a": "هُنَّ va أَنْتُنَّ"},
+    {"q_uz": "«نَحْنُ» nima qiladi?", "a": "Birgalikda arab tilini o'rganadi"}
    ]
   },
   "listening": {
-   "audio": "a2/inkasara.mp3",
-   "transcript_ar": "اِنْكَسَرَ",
+   "audio": "a2/hunna.mp3",
+   "transcript_ar": "هُنَّ",
    "questions": [
-    {"q_uz": "Fe'l ma'nosi?", "a": "Sindi (o'zi)"}
+    {"q_uz": "Bu olmosh kimni bildiradi?", "a": "Ular — ayollar (g'oyiba jam')"}
    ]
   },
   "speaking": {
-   "task_uz": "VII bob fe'llarini ayting: inkasara, infataḥa, intahā, inṣarafa.",
-   "target_ar": ["اِنْكَسَرَ", "اِنْفَتَحَ", "اِنْتَهَى"],
+   "task_uz": "14 olmoshni tartib bilan ayting: huwa, humā, hum, hiya, humā, hunna, anta, antumā, antum, anti, antumā, antunna, anā, naḥnu.",
+   "target_ar": ["هُمَا", "هُنَّ", "أَنْتُمَا", "أَنْتُنَّ"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«Eshik ochildi» va «Dars tugadi» gaplarini VII bob bilan yozing.",
+   "task_uz": "To'rtta yangi olmosh bilan to'rtta ismli gap yozing (هُمَا، هُنَّ، أَنْتُمَا، أَنْتُنَّ).",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "VII bob vazni qaysi?", "q_ar": "", "options": ["اِنْفَعَلَ", "أَفْعَلَ", "تَفَاعَلَ", "اِفْتَعَلَ"], "answer": "اِنْفَعَلَ", "explain_uz": "VII bob — o'zak boshiga اِنْـ: اِنْفَعَلَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«كَسَرَ» (sindirdi) ning VII bob natijasi (sindi)?", "q_ar": "", "options": ["اِنْكَسَرَ", "كَسَّرَ", "تَكَسَّرَ", "أَكْسَرَ"], "answer": "اِنْكَسَرَ", "explain_uz": "VII bob: اِنْكَسَرَ (o'zi sindi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "اِنْتَهَى الدَّرْسُ", "options": [], "answer": "dars tugadi", "explain_uz": "اِنْتَهَى (VII) = tugadi, الدَّرْس = dars.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "VII bob fe'llari ob'ekt (mafʿul) oladimi?", "q_ar": "", "options": ["yo'q (o'timsiz)", "ha, doim", "ba'zan", "faqat ko'plikda"], "answer": "yo'q (o'timsiz)", "explain_uz": "VII bob — natija/qaytim, o'timsiz (ob'ekt yo'q).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "ochildi (o'zi)", "q_ar": "", "options": [], "answer": "اِنْفَتَحَ", "explain_uz": "اِنْفَتَحَ (VII) — ochildi (فتح o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "Qaysi so'z «ك س ر» o'zagidan?", "q_ar": "", "options": ["اِنْكَسَرَ", "اِنْفَتَحَ", "اِنْتَهَى"], "answer": "اِنْكَسَرَ", "explain_uz": "«ك س ر» — sinish o'zagi: اِنْكَسَرَ (VII), كَسَرَ (I), kasr.", "audio": "", "root": "ك س ر", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "shisha", "q_ar": "", "options": [], "answer": "زُجَاج", "explain_uz": "زُجَاج — shisha.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "«Ular (ayollar)» qaysi olmosh?", "q_ar": "", "options": ["هُنَّ", "هُمْ", "هُمَا", "أَنْتُنَّ"], "answer": "هُنَّ", "explain_uz": "هُنَّ — g'oyiba jam' (ular, ayollar).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Sizlar ikkovingiz» qaysi?", "q_ar": "", "options": ["أَنْتُمَا", "أَنْتُمْ", "أَنْتُنَّ", "هُمَا"], "answer": "أَنْتُمَا", "explain_uz": "Muxotab musanna — erkak va ayol uchun bir xil.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "هُمَا", "options": [], "answer": "ular ikkovi", "explain_uz": "Ikkilik olmoshi — jins farqi yo'q.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "sizlar (ayollar)", "q_ar": "", "options": [], "answer": "أَنْتُنَّ", "explain_uz": "Muxotaba jam': أَنْتُنَّ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Qaysi gap TO'G'RI?", "q_ar": "", "options": ["هُنَّ كَتَبْنَ", "هُنَّ كَتَبُوا", "هُنَّ كَتَبْتُنَّ", "هُنَّ كَتَبَ"], "answer": "هُنَّ كَتَبْنَ", "explain_uz": "Olmosh fe'lga mos bo'lishi shart: هُنَّ → كَتَبْنَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Bo'sh joyni to'ldiring: «___ طَالِبَانِ مُجْتَهِدَانِ» (ular ikkovi tirishqoq talaba)", "q_ar": "", "options": [], "answer": "هُمَا", "explain_uz": "Ikkilik ega uchun هُمَا olmoshi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«مُنْفَصِل، فَصْل، تَفْصِيل» qaysi o'zakdan?", "q_ar": "", "options": ["ف ص ل", "و ص ل", "ج ه د"], "answer": "ف ص ل", "explain_uz": "Hammasi ف ص ل (ajratish) o'zagidan — o'zbekcha 'fasl, tafsilot'.", "audio": "", "root": "ف ص ل", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "ك س ر", "back": "sinish o'zagi (kasara=sindirdi, inkasara=sindi, kasr)", "deck": "msa"},
-  {"type": "pattern", "front": "اِنْفَعَلَ (VII)", "back": "natija/qaytim (o'zi bo'ldi), masdar اِنْفِعَال", "deck": "msa"},
-  {"type": "word", "front": "اِنْكَسَرَ", "back": "sindi (VII)", "deck": "msa"},
-  {"type": "word", "front": "اِنْفَتَحَ", "back": "ochildi (VII)", "deck": "msa"},
-  {"type": "word", "front": "اِنْقَطَعَ", "back": "uzildi (VII)", "deck": "msa"},
-  {"type": "word", "front": "اِنْتَهَى", "back": "tugadi (VII)", "deck": "msa"},
-  {"type": "word", "front": "اِنْصَرَفَ", "back": "jo'nab ketdi (VII)", "deck": "msa"},
-  {"type": "word", "front": "اِنْشَغَلَ", "back": "band bo'ldi (VII)", "deck": "msa"},
-  {"type": "word", "front": "نِهَايَة", "back": "oxir, yakun", "deck": "msa"},
-  {"type": "word", "front": "زُجَاج", "back": "shisha", "deck": "msa"}
+  {"type": "root", "front": "ف ص ل", "back": "ajratish — fasl/tafsilot/munfasil", "deck": "msa"},
+  {"type": "root", "front": "و ص ل", "back": "ulanish — vasl/ittisol/muttasil", "deck": "msa"},
+  {"type": "root", "front": "ج ه د", "back": "tirishish — jahd/ijtihod/mujtahid", "deck": "msa"},
+  {"type": "word", "front": "هُمَا", "back": "ular ikkovi (jins farqi yo'q)", "deck": "msa"},
+  {"type": "word", "front": "هُنَّ", "back": "ular (ayollar)", "deck": "msa"},
+  {"type": "word", "front": "أَنْتُمَا", "back": "sizlar ikkovingiz", "deck": "msa"},
+  {"type": "word", "front": "أَنْتُنَّ", "back": "sizlar (ayollar)", "deck": "msa"},
+  {"type": "word", "front": "مُنْفَصِل", "back": "ajralgan, alohida", "deck": "msa"},
+  {"type": "word", "front": "مُتَّصِل", "back": "ulangan, birikkan", "deck": "msa"},
+  {"type": "word", "front": "مُجْتَهِد", "back": "tirishqoq", "deck": "msa"},
+  {"type": "word", "front": "زَمِيل", "back": "hamkasb, sinfdosh", "deck": "msa"}
  ]
 }

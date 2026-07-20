@@ -1,97 +1,115 @@
 {
  "id": "a2-01",
  "level": "A2",
- "module": "verb-forms",
+ "module": "sarf",
  "order": 1,
- "title_uz": "Fe'l boblari: umumiy ko'rinish",
- "title_ar": "أَوْزَانُ الفِعْل",
- "can_do_uz": "Bir o'zakni turli «boblar» (vaznlar)ga solib ma'no o'zgarishini tushunaman.",
+ "title_uz": "Sarf nima? 14 shakl tizimi",
+ "title_ar": "الصَّرْفُ وَالصِّيَغُ الأَرْبَعَ عَشْرَةَ",
+ "can_do_uz": "Fe'l va olmoshning 14 shaklini nomlab, gap kim haqida ketayotganini aniqlayman.",
  "duration_min": 30,
  "prerequisites": [],
  "harakat_level": "new_words_only",
- "hook_uz": "Arab tilining SIRI ochiladi! Bitta o'zak ع-ل-م: عَلِمَ (bildi) → عَلَّمَ (o'rgatdi) → تَعَلَّمَ (o'rgandi) → أَعْلَمَ (xabar berdi) → اِسْتَعْلَمَ (so'radi). Faqat harflar qo'shib ma'noni o'zgartirasiz! Bu — «fe'l boblari» tizimi (I–X). Bilib olsangiz, minglab so'zni taxmin qilasiz.",
+ "hook_uz": "O'zbekchada «yozdi» — bitta so'z. Arabchada esa 14 xil shakl: كَتَبَ، كَتَبَا، كَتَبُوا، كَتَبَتْ… Ko'p ko'rinadimi? Aslida bu — TIZIM: 3 shaxs × 2 jins × 3 son. Shu tizimni bir marta tushunsangiz, har qanday fe'lni, har qanday olmoshni o'zingiz yasaysiz. Bu — arab tilining skeleti. Keyingi 9 dars shu skeletni quradi.",
  "grammar": {
-  "point_ar": "الأَوْزَانُ العَشَرَة",
-  "explanation_uz": "Arabchada fe'l o'zagi (3 harf) turli QOLIP (bob/vazn) larga solinadi. Har qolip o'ziga xos ma'no qatlamini qo'shadi. I bob — asos (فَعَلَ). II–X boblar o'zakka harf QO'SHADI (ziyada): shaddalash (II — kuchaytirish), alif (III — o'zaro), hamza (IV — sababiyat), تَـ (V, VI — qaytim/o'zaro), اِنْـ (VII), اِفْتَـ (VIII), اِسْتَـ (X — talab). Har bobning ma'nosini bilsangiz, yangi fe'lni ko'rib ma'nosini taxmin qilasiz.",
+  "point_ar": "الصِّيَغُ الأَرْبَعَ عَشْرَةَ",
+  "explanation_uz": "Sarf (الصَّرْف) — so'zning ICHKI tuzilishi haqidagi ilm: bir o'zak qanday shakllarga kiradi. Arab tilida fe'l ham, olmosh ham 14 shaklda keladi. Bu 14 raqami tasodifiy emas — u uchta o'lchovdan chiqadi: (1) SHAXS: غَائِب (g'oyib — u/ular, gapda yo'q kishi), مُخَاطَب (muxotab — sen/sizlar, yuzma-yuz turgani), مُتَكَلِّم (mutakallim — men/biz, gapiruvchining o'zi). (2) JINS: مُذَكَّر (erkak) va مُؤَنَّث (ayol). (3) SON: مُفْرَد (birlik — 1 kishi), مُثَنَّى (ikkilik — ROSA 2 kishi, o'zbekchada yo'q!), جَمْع (ko'plik — 3 va undan ko'p). G'oyibda 2 jins × 3 son = 6 shakl. Muxotabda ham 6 shakl. Mutakallimda jins farqi YO'Q, faqat men/biz = 2 shakl. 6 + 6 + 2 = 14.",
   "table": [
-   {"ar": "عَلِمَ", "uz": "bildi (I — asos)", "form": "فَعَلَ"},
-   {"ar": "عَلَّمَ", "uz": "o'rgatdi (II — kuchaytirish)", "form": "فَعَّلَ"},
-   {"ar": "تَعَلَّمَ", "uz": "o'rgandi (V — qaytim)", "form": "تَفَعَّلَ"},
-   {"ar": "اِسْتَعْلَمَ", "uz": "so'rab bildi (X — talab)", "form": "اِسْتَفْعَلَ"}
+   {"ar": "غَائِب", "uz": "g'oyib — u / ular (gapda yo'q kishi)", "form": "6 shakl"},
+   {"ar": "مُخَاطَب", "uz": "muxotab — sen / sizlar (murojaat qilinayotgan)", "form": "6 shakl"},
+   {"ar": "مُتَكَلِّم", "uz": "mutakallim — men / biz (gapiruvchi)", "form": "2 shakl"},
+   {"ar": "مُفْرَد", "uz": "birlik — 1 kishi", "form": "عَدَد"},
+   {"ar": "مُثَنَّى", "uz": "ikkilik — rosa 2 kishi", "form": "عَدَد"},
+   {"ar": "جَمْع", "uz": "ko'plik — 3 va undan ko'p", "form": "عَدَد"},
+   {"ar": "مُذَكَّر / مُؤَنَّث", "uz": "erkak / ayol jinsi", "form": "جِنْس"},
+   {"ar": "٦ + ٦ + ٢ = ١٤", "uz": "g'oyib 6 + muxotab 6 + mutakallim 2 = 14 shakl", "form": "الْمَجْمُوع"}
   ],
   "common_mistakes_uz": [
-   "Qo'shilgan harflarni (ziyada) o'zak harfi deb o'ylash — o'zak faqat asosiy 3 undosh.",
-   "Har bobning ma'nosini yodlamay, faqat so'zni yodlash — bob ma'no beradi.",
-   "II bob (shaddali) va boshqa boblarni chalkashtirish — shaklga diqqat qiling."
+   "Mutakallimda (men/biz) ham erkak-ayol shakli bor deb o'ylash — yo'q, 1-shaxsda jins farqi umuman yo'q.",
+   "Musanna (ikkilik) ni ko'plikka qo'shib yuborish — arabchada ROSA 2 ta uchun alohida shakl bor, buni o'zbekcha tarjima ko'rsatmaydi.",
+   "G'oyib va muxotabni chalkashtirish: غَائِب = u (yonimizda yo'q), مُخَاطَب = sen (yuzma-yuz turibdi)."
   ]
  },
  "roots": [
   {
-   "root": "ع ل م",
-   "meaning_uz": "bilish, ilm — boblar namunasi",
-   "uz_cognates": ["ilm", "olim", "muallim", "ta'lim"],
+   "root": "ص ر ف",
+   "meaning_uz": "o'zgartirish, shaklga solish — sarf ilmining nomi shundan",
+   "uz_cognates": ["sarf", "sarflamoq", "tasrif"],
    "derived": [
-    {"ar": "عَلَّمَ", "uz": "o'rgatdi (II)", "pattern": "فَعَّلَ"},
-    {"ar": "تَعَلَّمَ", "uz": "o'rgandi (V)", "pattern": "تَفَعَّلَ"},
-    {"ar": "أَعْلَمَ", "uz": "xabar berdi (IV)", "pattern": "أَفْعَلَ"}
+    {"ar": "صَرَفَ", "uz": "sarfladi, o'zgartirdi", "pattern": "فَعَلَ"},
+    {"ar": "تَصْرِيف", "uz": "tuslash, shakldan shaklga solish", "pattern": "تَفْعِيل"},
+    {"ar": "مَصْرِف", "uz": "bank (pul almashtiriladigan joy)", "pattern": "مَفْعِل"}
+   ]
+  },
+  {
+   "root": "ك ل م",
+   "meaning_uz": "gapirish, so'z",
+   "uz_cognates": ["kalom", "kalima", "mutakallim"],
+   "derived": [
+    {"ar": "كَلِمَة", "uz": "so'z", "pattern": "فَعِلَة"},
+    {"ar": "كَلَام", "uz": "gap, nutq", "pattern": "فَعَال"},
+    {"ar": "مُتَكَلِّم", "uz": "gapiruvchi (1-shaxs)", "pattern": "مُتَفَعِّل"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "عَلَّمَ", "translit": "ʿallama", "uz": "o'rgatdi (II bob)", "root": "ع ل م", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/allama.mp3", "example_ar": "عَلَّمَ المُدَرِّسُ الطُّلَّابَ.", "example_uz": "O'qituvchi talabalarni o'rgatdi.", "srs": true},
-  {"ar": "تَعَلَّمَ", "translit": "taʿallama", "uz": "o'rgandi (V bob)", "root": "ع ل م", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/taallama.mp3", "example_ar": "تَعَلَّمْتُ العَرَبِيَّةَ.", "example_uz": "Arab tilini o'rgandim.", "srs": true},
-  {"ar": "أَرْسَلَ", "translit": "arsala", "uz": "yubordi (IV bob) (o'zbekcha 'irsol')", "root": "ر س ل", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/arsala.mp3", "example_ar": "أَرْسَلَ رِسَالَةً.", "example_uz": "Xat yubordi.", "srs": true},
-  {"ar": "اِسْتَقْبَلَ", "translit": "istaqbala", "uz": "kutib oldi (X bob) (o'zbekcha 'istiqbol')", "root": "ق ب ل", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "a2/istaqbala.mp3", "example_ar": "اِسْتَقْبَلَ الضُّيُوفَ.", "example_uz": "Mehmonlarni kutib oldi.", "srs": true},
-  {"ar": "بَاب", "translit": "bāb", "uz": "bob (fe'l qolipi)", "root": "ب و ب", "pattern": "فَعَل", "pos": "ot", "audio": "a0/bab.mp3", "example_ar": "البَابُ الثَّانِي.", "example_uz": "Ikkinchi bob.", "srs": true},
-  {"ar": "وَزْن", "translit": "wazn", "uz": "vazn, qolip (o'zbekcha 'vazn')", "root": "و ز ن", "pattern": "فَعْل", "pos": "ot", "audio": "a2/wazn.mp3", "example_ar": "وَزْنُ الفِعْلِ.", "example_uz": "Fe'l vazni.", "srs": true},
-  {"ar": "زِيَادَة", "translit": "ziyāda", "uz": "qo'shimcha (o'zakka qo'shilgan harf) (o'zbekcha 'ziyoda')", "root": "ز ي د", "pattern": "فِعَالَة", "pos": "ot", "audio": "a2/ziyada.mp3", "example_ar": "حُرُوفُ الزِّيَادَةِ.", "example_uz": "Qo'shimcha harflar.", "srs": true},
-  {"ar": "مَعْنَى", "translit": "maʿnā", "uz": "ma'no (o'zbekcha 'ma'no')", "root": "ع ن ي", "pattern": "مَفْعَل", "pos": "ot", "audio": "a2/mana.mp3", "example_ar": "مَا مَعْنَى هَذَا؟", "example_uz": "Bu nima ma'no?", "srs": true}
+  {"ar": "صَرْف", "translit": "ṣarf", "uz": "sarf — so'z tuzilishi ilmi (o'zbekcha 'sarf')", "root": "ص ر ف", "pattern": "فَعْل", "pos": "ot", "audio": "a2/sarf.mp3", "example_ar": "دَرَسْتُ الصَّرْفَ وَالنَّحْوَ.", "example_uz": "Sarf va nahvni o'rgandim.", "srs": true},
+  {"ar": "تَصْرِيف", "translit": "taṣrīf", "uz": "tuslash — fe'lni 14 shaklga solish (o'zbekcha 'tasrif')", "root": "ص ر ف", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/tasrif.mp3", "example_ar": "تَصْرِيفُ الفِعْلِ سَهْلٌ.", "example_uz": "Fe'lni tuslash oson.", "srs": true},
+  {"ar": "صِيغَة", "translit": "ṣīgha", "uz": "shakl, sig'a (fe'lning bir ko'rinishi)", "root": "ص و غ", "pattern": "فِعْلَة", "pos": "ot", "audio": "a2/sigha.mp3", "example_ar": "لِلْفِعْلِ أَرْبَعَ عَشْرَةَ صِيغَةً.", "example_uz": "Fe'lning 14 ta shakli bor.", "srs": true},
+  {"ar": "غَائِب", "translit": "ghāʾib", "uz": "g'oyib — 3-shaxs, u/ular (o'zbekcha 'g'oyib')", "root": "غ ي ب", "pattern": "فَاعِل", "pos": "ot", "audio": "a2/ghaib.mp3", "example_ar": "هُوَ وَهِيَ ضَمِيرَا الغَائِبِ.", "example_uz": "هو va هي — g'oyib olmoshlari.", "srs": true},
+  {"ar": "مُخَاطَب", "translit": "mukhāṭab", "uz": "muxotab — 2-shaxs, sen/sizlar (o'zbekcha 'xitob')", "root": "خ ط ب", "pattern": "مُفَاعَل", "pos": "ot", "audio": "a2/mukhatab.mp3", "example_ar": "أَنْتَ ضَمِيرُ المُخَاطَبِ.", "example_uz": "أنت — muxotab olmoshi.", "srs": true},
+  {"ar": "مُتَكَلِّم", "translit": "mutakallim", "uz": "mutakallim — 1-shaxs, men/biz (o'zbekcha 'kalom')", "root": "ك ل م", "pattern": "مُتَفَعِّل", "pos": "ot", "audio": "a2/mutakallim.mp3", "example_ar": "أَنَا وَنَحْنُ لِلْمُتَكَلِّمِ.", "example_uz": "أنا va نحن — mutakallim uchun.", "srs": true},
+  {"ar": "مُفْرَد", "translit": "mufrad", "uz": "birlik — bir kishi (o'zbekcha 'fard' — yakka)", "root": "ف ر د", "pattern": "مُفْعَل", "pos": "ot", "audio": "a2/mufrad.mp3", "example_ar": "كِتَابٌ مُفْرَدٌ وَكُتُبٌ جَمْعٌ.", "example_uz": "كتاب — birlik, كتب — ko'plik.", "srs": true},
+  {"ar": "مُثَنَّى", "translit": "muthannā", "uz": "ikkilik — rosa 2 ta (o'zbekcha 'soniy' — ikkinchi)", "root": "ث ن ي", "pattern": "مُفَعَّل", "pos": "ot", "audio": "a2/muthanna.mp3", "example_ar": "كِتَابَانِ مُثَنًّى.", "example_uz": "كتابان — ikkilik shakli.", "srs": true},
+  {"ar": "جَمْع", "translit": "jamʿ", "uz": "ko'plik — 3 va undan ortiq (o'zbekcha 'jamoa, jami')", "root": "ج م ع", "pattern": "فَعْل", "pos": "ot", "audio": "a2/jam_pl.mp3", "example_ar": "الطُّلَّابُ جَمْعٌ.", "example_uz": "الطلاب — ko'plik.", "srs": true},
+  {"ar": "ضَمِير", "translit": "ḍamīr", "uz": "olmosh (o'zbekcha 'zamir')", "root": "ض م ر", "pattern": "فَعِيل", "pos": "ot", "audio": "a2/damir.mp3", "example_ar": "هُوَ ضَمِيرٌ مُنْفَصِلٌ.", "example_uz": "هو — alohida olmosh.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "مِنْ جَذْرٍ وَاحِدٍ (ع ل م) نُكَوِّنُ أَفْعَالًا كَثِيرَةً: عَلِمَ، عَلَّمَ، تَعَلَّمَ، أَعْلَمَ، اِسْتَعْلَمَ. كُلُّ بَابٍ يُضِيفُ مَعْنًى جَدِيدًا. هَذَا سِرُّ العَرَبِيَّةِ.",
+   "text_ar": "الصَّرْفُ عِلْمٌ يَدْرُسُ بِنَاءَ الكَلِمَةِ. لِلْفِعْلِ أَرْبَعَ عَشْرَةَ صِيغَةً: سِتٌّ لِلْغَائِبِ، وَسِتٌّ لِلْمُخَاطَبِ، وَاثْنَتَانِ لِلْمُتَكَلِّمِ. وَفِي كُلِّ قِسْمٍ مُفْرَدٌ وَمُثَنًّى وَجَمْعٌ. مَنْ عَرَفَ هَذَا النِّظَامَ سَهُلَتْ عَلَيْهِ العَرَبِيَّةُ.",
    "questions": [
-    {"q_uz": "Matndagi fe'llar qaysi o'zakdan?", "a": "ع ل م (bilish)"},
-    {"q_uz": "Har «bob» nima qiladi?", "a": "Yangi ma'no qo'shadi"}
+    {"q_uz": "Fe'lning nechta shakli bor?", "a": "14 ta"},
+    {"q_uz": "Mutakallim uchun nechta shakl ajratilgan?", "a": "2 ta (men va biz)"},
+    {"q_uz": "Har bo'limda qanday sonlar bor?", "a": "Birlik, ikkilik va ko'plik"}
    ]
   },
   "listening": {
-   "audio": "a2/allama.mp3",
-   "transcript_ar": "عَلَّمَ",
+   "audio": "a2/muthanna.mp3",
+   "transcript_ar": "مُثَنَّى",
    "questions": [
-    {"q_uz": "Fe'l ma'nosi va bobi?", "a": "O'rgatdi — II bob"}
+    {"q_uz": "Bu atama nimani bildiradi?", "a": "Ikkilik — rosa 2 ta"}
    ]
   },
   "speaking": {
-   "task_uz": "ع ل م oilasini ayting: ʿalima, ʿallama, taʿallama, aʿlama, istaʿlama.",
-   "target_ar": ["عَلَّمَ", "تَعَلَّمَ", "اِسْتَعْلَمَ"],
+   "task_uz": "Uch shaxsni ovoz chiqarib ayting va har birining shakl sonini qo'shing: ghoib — olti, muxotab — olti, mutakallim — ikki.",
+   "target_ar": ["غَائِب", "مُخَاطَب", "مُتَكَلِّم"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«O'rgatdi» (II) va «o'rgandi» (V) fe'llarining farqini bir jumlada yozing.",
+   "task_uz": "14 shakl qayerdan chiqishini bir jumlada yozing (6 + 6 + 2 formulasi bilan).",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "«o'rgatdi» (II bob) qaysi?", "q_ar": "", "options": ["عَلَّمَ", "عَلِمَ", "تَعَلَّمَ", "أَعْلَمَ"], "answer": "عَلَّمَ", "explain_uz": "II bob (فَعَّلَ, shaddali): عَلَّمَ — o'rgatdi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«o'rgandi» (V bob) qaysi?", "q_ar": "", "options": ["تَعَلَّمَ", "عَلَّمَ", "أَعْلَمَ", "عَلِمَ"], "answer": "تَعَلَّمَ", "explain_uz": "V bob (تَفَعَّلَ): تَعَلَّمَ — o'rgandi (II ning qaytimi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَرْسَلَ رِسَالَةً", "options": [], "answer": "xat yubordi", "explain_uz": "أَرْسَلَ (IV bob) = yubordi, رِسَالَة = xat.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«عَلَّمَ، تَعَلَّمَ، أَعْلَمَ» qaysi o'zakdan?", "q_ar": "", "options": ["ع ل م", "ر س ل", "ق ب ل"], "answer": "ع ل م", "explain_uz": "Hammasi ع ل م (bilish) o'zagidan, turli boblarda.", "audio": "", "root": "ع ل م", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "ma'no", "q_ar": "", "options": [], "answer": "مَعْنَى", "explain_uz": "مَعْنَى — ma'no.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Fe'l boblari tizimida nechta asosiy bob bor?", "q_ar": "", "options": ["10 (I–X)", "3", "5", "7"], "answer": "10 (I–X)", "explain_uz": "Asosiy 10 bob (I–X), lekin IX kam ishlatiladi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "vazn, qolip", "q_ar": "", "options": [], "answer": "وَزْن", "explain_uz": "وَزْن — fe'l qolipi/vazni.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "«Men / biz» — qaysi shaxs?", "q_ar": "", "options": ["مُتَكَلِّم", "غَائِب", "مُخَاطَب", "مُفْرَد"], "answer": "مُتَكَلِّم", "explain_uz": "مُتَكَلِّم — gapiruvchining o'zi: men, biz.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Rosa 2 ta uchun ishlatiladigan son qaysi?", "q_ar": "", "options": ["مُثَنَّى", "مُفْرَد", "جَمْع", "صِيغَة"], "answer": "مُثَنَّى", "explain_uz": "مُثَنَّى — ikkilik. O'zbekchada bunday shakl yo'q, shuning uchun diqqat.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "غَائِب", "options": [], "answer": "g'oyib", "explain_uz": "غَائِب — 3-shaxs: u, ular (gapda yo'q kishi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "olmosh", "q_ar": "", "options": [], "answer": "ضَمِير", "explain_uz": "ضَمِير — olmosh (o'zbekcha 'zamir').", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Fe'l jami nechta shaklda tuslanadi?", "q_ar": "", "options": ["14", "10", "12", "8"], "answer": "14", "explain_uz": "6 (g'oyib) + 6 (muxotab) + 2 (mutakallim) = 14.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«صَرْف، تَصْرِيف، مَصْرِف» qaysi o'zakdan?", "q_ar": "", "options": ["ص ر ف", "ك ل م", "ج م ع"], "answer": "ص ر ف", "explain_uz": "Hammasi ص ر ف (o'zgartirish) o'zagidan.", "audio": "", "root": "ص ر ف", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Mutakallimda (men/biz) erkak-ayol farqi bormi?", "q_ar": "", "options": ["Yo'q — bitta shakl", "Ha, 2 xil", "Faqat ko'plikda", "Faqat birlikda"], "answer": "Yo'q — bitta shakl", "explain_uz": "1-shaxsda jins ko'rsatilmaydi: أَنَا erkak ham, ayol ham.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "ع ل م", "back": "bilish o'zagi — boblar namunasi (bildi/o'rgatdi/o'rgandi)", "deck": "msa"},
-  {"type": "pattern", "front": "فَعَّلَ (II)", "back": "kuchaytirish/sababiyat bobi (allama=o'rgatdi)", "deck": "msa"},
-  {"type": "pattern", "front": "تَفَعَّلَ (V)", "back": "II ning qaytim bobi (taallama=o'rgandi)", "deck": "msa"},
-  {"type": "word", "front": "عَلَّمَ", "back": "o'rgatdi (II)", "deck": "msa"},
-  {"type": "word", "front": "تَعَلَّمَ", "back": "o'rgandi (V)", "deck": "msa"},
-  {"type": "word", "front": "أَرْسَلَ", "back": "yubordi (IV)", "deck": "msa"},
-  {"type": "word", "front": "اِسْتَقْبَلَ", "back": "kutib oldi (X)", "deck": "msa"},
-  {"type": "word", "front": "وَزْن", "back": "vazn, qolip", "deck": "msa"},
-  {"type": "word", "front": "زِيَادَة", "back": "qo'shimcha harf", "deck": "msa"},
-  {"type": "word", "front": "مَعْنَى", "back": "ma'no", "deck": "msa"}
+  {"type": "root", "front": "ص ر ف", "back": "o'zgartirish, shaklga solish — sarf/tasrif/masrif", "deck": "msa"},
+  {"type": "root", "front": "ك ل م", "back": "gapirish — kalom/kalima/mutakallim", "deck": "msa"},
+  {"type": "word", "front": "صَرْف", "back": "sarf — so'z tuzilishi ilmi", "deck": "msa"},
+  {"type": "word", "front": "صِيغَة", "back": "shakl, sig'a", "deck": "msa"},
+  {"type": "word", "front": "غَائِب", "back": "g'oyib — 3-shaxs (u/ular)", "deck": "msa"},
+  {"type": "word", "front": "مُخَاطَب", "back": "muxotab — 2-shaxs (sen/sizlar)", "deck": "msa"},
+  {"type": "word", "front": "مُتَكَلِّم", "back": "mutakallim — 1-shaxs (men/biz)", "deck": "msa"},
+  {"type": "word", "front": "مُفْرَد", "back": "birlik — 1 kishi", "deck": "msa"},
+  {"type": "word", "front": "مُثَنَّى", "back": "ikkilik — rosa 2 kishi", "deck": "msa"},
+  {"type": "word", "front": "جَمْع", "back": "ko'plik — 3 va undan ortiq", "deck": "msa"},
+  {"type": "word", "front": "ضَمِير", "back": "olmosh", "deck": "msa"}
  ]
 }

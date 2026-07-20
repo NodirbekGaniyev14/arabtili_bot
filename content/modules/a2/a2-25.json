@@ -1,98 +1,98 @@
 {
  "id": "a2-25",
  "level": "A2",
- "module": "grammar-ext",
+ "module": "weak-verbs",
  "order": 25,
- "title_uz": "Tartibni aytaman",
- "title_ar": "الأَعْدَادُ التَّرْتِيبِيَّة",
- "can_do_uz": "«birinchi», «ikkinchi», «uchinchi» kabi tartib sonlarni ishlata olaman.",
+ "title_uz": "Naqis fe'llar",
+ "title_ar": "الفِعْلُ النَّاقِص",
+ "can_do_uz": "Oxiri و/ي bo'lgan (naqis) fe'llarni tuslay olaman.",
  "duration_min": 30,
  "prerequisites": ["a2-24"],
  "harakat_level": "new_words_only",
- "hook_uz": "«Birinchi dars» — الدَّرْسُ الأَوَّلُ. «Uchinchi qavat» — الطَّابِقُ الثَّالِثُ. Tartib sonlar narsalarning ketma-ketligini ko'rsatadi: أَوَّل, ثَانِي, ثَالِث... Ular otga jins va aniqlikda moslashadi.",
+ "hook_uz": "«Yurdi» — مَشَى. «Chaqirdi/duo qildi» — دَعَا. Bu fe'llar OXIRIDA و yoki ي bor (م-ش-ي, د-ع-و). Hozirgi zamonda bu harf ko'rinadi: يَمْشِي (ي), يَدْعُو (و).",
  "grammar": {
-  "point_ar": "الأَعْدَادُ التَّرْتِيبِيَّة",
-  "explanation_uz": "Tartib sonlar (1–10): الأَوَّل (1-), الثَّانِي (2-), الثَّالِث (3-), الرَّابِع (4-), الخَامِس (5-), السَّادِس (6-), السَّابِع (7-), الثَّامِن (8-), التَّاسِع (9-), العَاشِر (10-). أوّل dan boshqasi فَاعِل vaznida. Ular otdan KEYIN keladi va sifat kabi MOSLASHADI: الدَّرْسُ الثَّالِثُ (erkak), الصَّفْحَةُ الثَّالِثَةُ (ayol, ة bilan).",
+  "point_ar": "النَّاقِص — العِلَّةُ فِي الآخِر",
+  "explanation_uz": "Naqis fe'l — o'zagining OXIRGI harfi و yoki ي. O'tgan zamonda oxir ى yoki ا bo'lib yoziladi: مَشَى (م ش ي), دَعَا (د ع و). Hozirgi zamonda asl harf ko'rinadi: يَمْشِي (ي), يَدْعُو (و), يَنْسَى (ى — cho'ziq a). Qisqargan shakllarda oxirgi harf tushadi: لَمْ يَمْشِ (yurmadi).",
   "table": [
-   {"ar": "الأَوَّل · الثَّانِي · الثَّالِث", "uz": "1- · 2- · 3-", "form": "1-3"},
-   {"ar": "الرَّابِع · الخَامِس", "uz": "4- · 5-", "form": "4-5"},
-   {"ar": "الطَّابِقُ الثَّالِثُ", "uz": "uchinchi qavat", "form": "erkak"},
-   {"ar": "الصَّفْحَةُ الثَّانِيَةُ", "uz": "ikkinchi sahifa", "form": "ayol (ة)"}
+   {"ar": "مَشَى ← يَمْشِي", "uz": "yurdi → yuradi (م ش ي)", "form": "ي naqis"},
+   {"ar": "دَعَا ← يَدْعُو", "uz": "chaqirdi → chaqiradi (د ع و)", "form": "و naqis"},
+   {"ar": "بَنَى ← يَبْنِي", "uz": "qurdi → quradi (ب ن ي)", "form": "ي naqis"},
+   {"ar": "نَسِيَ ← يَنْسَى", "uz": "unutdi → unutadi (ن س ي)", "form": "naqis"}
   ],
   "common_mistakes_uz": [
-   "Tartib sonni otdan oldin qo'yish — u otdan KEYIN keladi (sifat kabi).",
-   "Ayol otga tartib sonni moslamaslik: الصَّفْحَةُ الثَّانِي (xato) → الثَّانِيَة.",
-   "Sanoq son (ثَلَاثَة) va tartib son (ثَالِث) ni chalkashtirish."
+   "O'tgan zamon oxiridagi ى va ا ni chalkashtirish (مَشَى / دَعَا).",
+   "Hozirgi zamonda asl harfni (و/ي) noto'g'ri qo'yish.",
+   "Naqis fe'lni ajvaf bilan chalkashtirish — illat o'RNIga qarang."
   ]
  },
  "roots": [
   {
-   "root": "أ و ل",
-   "meaning_uz": "birinchi, boshlanish",
-   "uz_cognates": ["avval", "avvalgi", "ibtido"],
+   "root": "د ع و",
+   "meaning_uz": "chaqirish, duo",
+   "uz_cognates": ["duo", "davat", "doiy"],
    "derived": [
-    {"ar": "أَوَّل", "uz": "birinchi", "pattern": "أَفْعَل"},
-    {"ar": "أَوَّلًا", "uz": "avvalo, birinchidan", "pattern": ""}
+    {"ar": "دَعَا", "uz": "chaqirdi, duo qildi (naqis)", "pattern": "فَعَا"},
+    {"ar": "دَعْوَة", "uz": "taklif, davat", "pattern": "فَعْلَة"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "أَوَّل", "translit": "awwal", "uz": "birinchi (1-) (o'zbekcha 'avval')", "root": "أ و ل", "pattern": "أَفْعَل", "pos": "son", "audio": "a2/awwal.mp3", "example_ar": "الدَّرْسُ الأَوَّلُ.", "example_uz": "Birinchi dars.", "srs": true},
-  {"ar": "ثَانِي", "translit": "thānī", "uz": "ikkinchi (2-)", "root": "ث ن ي", "pattern": "فَاعِل", "pos": "son", "audio": "a2/thani.mp3", "example_ar": "الطَّابِقُ الثَّانِي.", "example_uz": "Ikkinchi qavat.", "srs": true},
-  {"ar": "ثَالِث", "translit": "thālith", "uz": "uchinchi (3-)", "root": "ث ل ث", "pattern": "فَاعِل", "pos": "son", "audio": "a2/thalith.mp3", "example_ar": "اليَوْمُ الثَّالِثُ.", "example_uz": "Uchinchi kun.", "srs": true},
-  {"ar": "رَابِع", "translit": "rābiʿ", "uz": "to'rtinchi (4-)", "root": "ر ب ع", "pattern": "فَاعِل", "pos": "son", "audio": "a2/rabi.mp3", "example_ar": "الصَّفُّ الرَّابِعُ.", "example_uz": "To'rtinchi sinf.", "srs": true},
-  {"ar": "خَامِس", "translit": "khāmis", "uz": "beshinchi (5-)", "root": "خ م س", "pattern": "فَاعِل", "pos": "son", "audio": "a2/khamis.mp3", "example_ar": "الأُسْبُوعُ الخَامِسُ.", "example_uz": "Beshinchi hafta.", "srs": true},
-  {"ar": "سَادِس", "translit": "sādis", "uz": "oltinchi (6-)", "root": "س د س", "pattern": "فَاعِل", "pos": "son", "audio": "a2/sadis.mp3", "example_ar": "الشَّهْرُ السَّادِسُ.", "example_uz": "Oltinchi oy.", "srs": true},
-  {"ar": "سَابِع", "translit": "sābiʿ", "uz": "yettinchi (7-)", "root": "س ب ع", "pattern": "فَاعِل", "pos": "son", "audio": "a2/sabi.mp3", "example_ar": "اليَوْمُ السَّابِعُ.", "example_uz": "Yettinchi kun.", "srs": true},
-  {"ar": "عَاشِر", "translit": "ʿāshir", "uz": "o'ninchi (10-)", "root": "ع ش ر", "pattern": "فَاعِل", "pos": "son", "audio": "a2/ashir.mp3", "example_ar": "البَابُ العَاشِرُ.", "example_uz": "O'ninchi bob.", "srs": true},
-  {"ar": "تَرْتِيب", "translit": "tartīb", "uz": "tartib, ketma-ketlik (o'zbekcha 'tartib')", "root": "ر ت ب", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/tartib.mp3", "example_ar": "بِالتَّرْتِيبِ.", "example_uz": "Tartib bilan.", "srs": true},
-  {"ar": "أَوَّلًا", "translit": "awwalan", "uz": "avvalo, birinchidan", "root": "أ و ل", "pattern": "", "pos": "ravish", "audio": "a2/awwalan.mp3", "example_ar": "أَوَّلًا، اِقْرَأِ السُّؤَالَ.", "example_uz": "Avvalo, savolni o'qi.", "srs": true}
+  {"ar": "مَشَى", "translit": "mashā", "uz": "yurdi (naqis: م ش ي)", "root": "م ش ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/masha.mp3", "example_ar": "مَشَى فِي الحَدِيقَةِ.", "example_uz": "Bog'da yurdi.", "srs": true},
+  {"ar": "يَمْشِي", "translit": "yamshī", "uz": "yuradi (ي ko'rindi)", "root": "م ش ي", "pattern": "يَفْعِي", "pos": "fe'l", "audio": "a2/yamshi.mp3", "example_ar": "يَمْشِي كُلَّ صَبَاحٍ.", "example_uz": "Har ertalab yuradi.", "srs": true},
+  {"ar": "دَعَا", "translit": "daʿā", "uz": "chaqirdi, duo qildi (naqis)", "root": "د ع و", "pattern": "فَعَا", "pos": "fe'l", "audio": "a2/daaa.mp3", "example_ar": "دَعَا اللَّهَ.", "example_uz": "Allohga duo qildi.", "srs": true},
+  {"ar": "يَدْعُو", "translit": "yadʿū", "uz": "chaqiradi (و ko'rindi)", "root": "د ع و", "pattern": "يَفْعُو", "pos": "fe'l", "audio": "a2/yadu.mp3", "example_ar": "يَدْعُو أَصْدِقَاءَهُ.", "example_uz": "Do'stlarini taklif qiladi.", "srs": true},
+  {"ar": "بَنَى", "translit": "banā", "uz": "qurdi (naqis: ب ن ي)", "root": "ب ن ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/bana.mp3", "example_ar": "بَنَى بَيْتًا.", "example_uz": "Uy qurdi.", "srs": true},
+  {"ar": "رَمَى", "translit": "ramā", "uz": "otdi, uloqtirdi (naqis)", "root": "ر م ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/rama.mp3", "example_ar": "رَمَى الكُرَةَ.", "example_uz": "To'pni otdi.", "srs": true},
+  {"ar": "نَسِيَ", "translit": "nasiya", "uz": "unutdi (naqis: ن س ي)", "root": "ن س ي", "pattern": "فَعِيَ", "pos": "fe'l", "audio": "a2/nasiya.mp3", "example_ar": "نَسِيَ المِفْتَاحَ.", "example_uz": "Kalitni unutdi.", "srs": true},
+  {"ar": "بَكَى", "translit": "bakā", "uz": "yig'ladi (naqis)", "root": "ب ك ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/baka.mp3", "example_ar": "بَكَى الطِّفْلُ.", "example_uz": "Bola yig'ladi.", "srs": true},
+  {"ar": "دَعْوَة", "translit": "daʿwa", "uz": "taklif, davat (o'zbekcha 'davat')", "root": "د ع و", "pattern": "فَعْلَة", "pos": "ot", "audio": "a2/dawa_invite.mp3", "example_ar": "شُكْرًا عَلَى الدَّعْوَةِ.", "example_uz": "Taklif uchun rahmat.", "srs": true},
+  {"ar": "مَبْنَى", "translit": "mabnā", "uz": "bino", "root": "ب ن ي", "pattern": "مَفْعَى", "pos": "ot", "audio": "a2/mabna.mp3", "example_ar": "مَبْنًى كَبِيرٌ.", "example_uz": "Katta bino.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "أَسْكُنُ فِي الطَّابِقِ الثَّالِثِ. غُرْفَتِي هِيَ الأُولَى عَلَى اليَمِينِ. اليَوْمُ هُوَ اليَوْمُ الخَامِسُ مِنَ الشَّهْرِ. أَوَّلًا نَدْرُسُ ثُمَّ نَسْتَرِيحُ.",
+   "text_ar": "كُلَّ صَبَاحٍ يَمْشِي جَدِّي فِي الحَدِيقَةِ وَيَدْعُو اللَّهَ. أَمْسِ بَنَى الأَوْلَادُ بَيْتًا مِنَ الرَّمْلِ. نَسِيتُ حَقِيبَتِي فَعُدْتُ إِلَيْهَا.",
    "questions": [
-    {"q_uz": "Qaysi qavatda yashaydi?", "a": "Uchinchi (الطَّابِق الثَّالِث)"},
-    {"q_uz": "«الأُولَى» — qaysi tartib son (ayol)?", "a": "Birinchi (أَوَّل ning ayol shakli)"}
+    {"q_uz": "Bobo har ertalab nima qiladi?", "a": "Yuradi va duo qiladi"},
+    {"q_uz": "«مَشَى» ning asl o'zagi?", "a": "م ش ي (oxiri ي — naqis)"}
    ]
   },
   "listening": {
-   "audio": "a2/thalith.mp3",
-   "transcript_ar": "ثَالِث",
+   "audio": "a2/masha.mp3",
+   "transcript_ar": "مَشَى",
    "questions": [
-    {"q_uz": "Qaysi tartib son?", "a": "Uchinchi (3-)"}
+    {"q_uz": "Fe'l ma'nosi?", "a": "Yurdi"}
    ]
   },
   "speaking": {
-   "task_uz": "Tartib sonlarni ayting: al-awwal, ath-thānī, ath-thālith, ar-rābiʿ, al-khāmis.",
-   "target_ar": ["الأَوَّل", "الثَّانِي", "الثَّالِث"],
+   "task_uz": "Past→present ayting: mashā→yamshī, daʿā→yadʿū, banā→yabnī.",
+   "target_ar": ["مَشَى", "يَمْشِي", "دَعَا"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«uchinchi qavat» (erkak) va «ikkinchi sahifa» (ayol) iboralarini yozing.",
+   "task_uz": "«بَنَى» ning hozirgi zamon shaklini yozing.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "«uchinchi» qaysi?", "q_ar": "", "options": ["ثَالِث", "ثَلَاثَة", "ثُلُث", "ثَانِي"], "answer": "ثَالِث", "explain_uz": "Tartib son: ثَالِث (uchinchi). ثَلَاثَة — sanoq (3).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الطَّابِقُ الثَّالِثُ", "options": [], "answer": "uchinchi qavat", "explain_uz": "الطَّابِق = qavat, الثَّالِث = uchinchi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Tartib son otga qanday joylashadi?", "q_ar": "", "options": ["otdan keyin (sifat kabi)", "otdan oldin", "gap oxirida", "gap boshida"], "answer": "otdan keyin (sifat kabi)", "explain_uz": "Tartib son sifat kabi otdan keyin, moslashadi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«أَوَّل، أَوَّلًا» qaysi o'zakdan?", "q_ar": "", "options": ["أ و ل", "و أ ل", "أ ل ف"], "answer": "أ و ل", "explain_uz": "«أ و ل» — birinchi/boshlanish o'zagi: avval, ibtido.", "audio": "", "root": "أ و ل", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«ikkinchi sahifa» (ayol) qaysi?", "q_ar": "", "options": ["الصَّفْحَةُ الثَّانِيَةُ", "الصَّفْحَةُ الثَّانِي", "الثَّانِي الصَّفْحَةُ", "صَفْحَةٌ ثَانِيَةٌ"], "answer": "الصَّفْحَةُ الثَّانِيَةُ", "explain_uz": "Ayol otga tartib son ة bilan moslashadi: الثَّانِيَة.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "beshinchi", "q_ar": "", "options": [], "answer": "خَامِس", "explain_uz": "خَامِس — beshinchi (خ م س o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "avvalo, birinchidan", "q_ar": "", "options": [], "answer": "أَوَّلًا", "explain_uz": "أَوَّلًا — avvalo (ravish).", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "«مَشَى» ning hozirgi zamoni qaysi?", "q_ar": "", "options": ["يَمْشِي", "يَمْشَى", "يَمْشُو", "مَشَّى"], "answer": "يَمْشِي", "explain_uz": "Naqis — hozirgida asl ي ko'rinadi: يَمْشِي.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Naqis fe'lda illat harfi qayerda?", "q_ar": "", "options": ["oxirida", "boshida", "o'rtasida", "yo'q"], "answer": "oxirida", "explain_uz": "Naqis — o'zakning oxirgi harfi و/ي.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "دَعَا اللَّهَ", "options": [], "answer": "Allohga duo qildi", "explain_uz": "دَعَا (naqis) = duo qildi/chaqirdi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«دَعَا، دَعْوَة» qaysi o'zakdan?", "q_ar": "", "options": ["د ع و", "د ع ي", "د خ ل"], "answer": "د ع و", "explain_uz": "«د ع و» — chaqirish o'zagi: duo, davat, doiy.", "audio": "", "root": "د ع و", "pattern": "", "words": []},
+  {"type": "fill_blank", "q_uz": "Hozirgi zamon: «بَنَى» → «يَـ___» (quradi)", "q_ar": "يَـ___", "options": [], "answer": "بْنِي", "explain_uz": "ي ko'rinadi: يَبْنِي.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "unutdi", "q_ar": "", "options": [], "answer": "نَسِيَ", "explain_uz": "نَسِيَ (naqis, ن س ي) — unutdi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "taklif, davat", "q_ar": "", "options": [], "answer": "دَعْوَة", "explain_uz": "دَعْوَة — taklif (o'zbekcha 'davat').", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "أ و ل", "back": "birinchi o'zagi (avval, ibtido)", "deck": "msa"},
-  {"type": "pattern", "front": "فَاعِل (tartib son)", "back": "ثَالِث, رَابِع... otdan keyin, moslashadi", "deck": "msa"},
-  {"type": "word", "front": "أَوَّل", "back": "birinchi (1-)", "deck": "msa"},
-  {"type": "word", "front": "ثَانِي", "back": "ikkinchi (2-)", "deck": "msa"},
-  {"type": "word", "front": "ثَالِث", "back": "uchinchi (3-)", "deck": "msa"},
-  {"type": "word", "front": "رَابِع", "back": "to'rtinchi (4-)", "deck": "msa"},
-  {"type": "word", "front": "خَامِس", "back": "beshinchi (5-)", "deck": "msa"},
-  {"type": "word", "front": "عَاشِر", "back": "o'ninchi (10-)", "deck": "msa"},
-  {"type": "word", "front": "تَرْتِيب", "back": "tartib, ketma-ketlik", "deck": "msa"},
-  {"type": "word", "front": "أَوَّلًا", "back": "avvalo, birinchidan", "deck": "msa"}
+  {"type": "root", "front": "د ع و", "back": "chaqirish o'zagi (daa=duo qildi, duo, davat) — naqis", "deck": "msa"},
+  {"type": "pattern", "front": "نَاقِص: مَشَى→يَمْشِي", "back": "oxiri و/ي, hozirgida ko'rinadi", "deck": "msa"},
+  {"type": "word", "front": "مَشَى", "back": "yurdi (naqis)", "deck": "msa"},
+  {"type": "word", "front": "دَعَا", "back": "chaqirdi, duo qildi (naqis)", "deck": "msa"},
+  {"type": "word", "front": "بَنَى", "back": "qurdi (naqis)", "deck": "msa"},
+  {"type": "word", "front": "رَمَى", "back": "otdi (naqis)", "deck": "msa"},
+  {"type": "word", "front": "نَسِيَ", "back": "unutdi (naqis)", "deck": "msa"},
+  {"type": "word", "front": "بَكَى", "back": "yig'ladi (naqis)", "deck": "msa"},
+  {"type": "word", "front": "دَعْوَة", "back": "taklif, davat", "deck": "msa"},
+  {"type": "word", "front": "مَبْنَى", "back": "bino", "deck": "msa"}
  ]
 }
