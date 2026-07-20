@@ -38,6 +38,12 @@ async def exam_info(
     cooldown = await exam_svc.cooldown_until(session, user.id, level)
     passed = await exam_svc.already_passed(session, user.id, level)
     pool = exam_svc.load_pool(level) if available else None
+
+    done, total = await exam_svc.level_progress(session, user.id, level)
+    needed = exam_svc.unlock_threshold(total)
+    # Bir marta o'tgan bo'lsa — qayta topshirish har doim ochiq
+    unlocked = done >= needed or passed
+
     return {
         "level": level,
         "available": available,
@@ -45,6 +51,12 @@ async def exam_info(
         "cooldown_until": cooldown.isoformat() if cooldown else None,
         "minutes": pool["config"]["minutes"] if pool else 0,
         "counts": pool["config"] if pool else {},
+        # Darslar qulfi (80%)
+        "unlocked": unlocked,
+        "lessons_done": done,
+        "lessons_total": total,
+        "lessons_needed": needed,
+        "next_level": exam_svc.next_level(level),
     }
 
 
@@ -56,6 +68,16 @@ async def exam_start(
     level = await _user_level(session, user.id)
     if not exam_svc.exam_available(level):
         raise HTTPException(status_code=404, detail="Bu daraja uchun imtihon hali yo'q")
+
+    done, total = await exam_svc.level_progress(session, user.id, level)
+    needed = exam_svc.unlock_threshold(total)
+    already = await exam_svc.already_passed(session, user.id, level)
+    if done < needed and not already:
+        raise HTTPException(
+            status_code=403,
+            detail=f"Imtihon uchun {needed} ta dars kerak — hozir {done} ta tugatilgan",
+        )
+
     cooldown = await exam_svc.cooldown_until(session, user.id, level)
     if cooldown:
         raise HTTPException(
@@ -114,10 +136,24 @@ async def exam_submit(
     session.add(attempt)
 
     cert_data = None
+    promoted_to = None
     if result["passed"]:
         session.add(
             XpLog(user_id=user.id, amount=PASS_XP, source=f"exam:{attempt.level}")
         )
+
+        # Daraja ko'tarilishi — faqat joriy darajadan yuqoriga
+        plan = (
+            await session.execute(
+                select(Plan).where(Plan.user_id == user.id).order_by(Plan.id.desc()).limit(1)
+            )
+        ).scalar_one_or_none()
+        nxt = exam_svc.next_level(attempt.level)
+        if plan and nxt and plan.level == attempt.level:
+            plan.level = nxt
+            session.add(plan)
+            promoted_to = nxt
+
         await session.commit()
 
         holder = body.holder_name.strip() or user.name
@@ -164,12 +200,25 @@ async def exam_submit(
                 )
                 if cert.pdf_path:
                     await bot.send_document(user.tg_id, FSInputFile(cert.pdf_path))
+                if promoted_to:
+                    await bot.send_message(
+                        user.tg_id,
+                        f"🎉 <b>{promoted_to} darajasi ochildi!</b>\n\n"
+                        f"{attempt.level} imtihonidan o'tdingiz — endi darslar "
+                        f"{promoted_to} darajasidan davom etadi. Omad!",
+                        parse_mode="HTML",
+                    )
             except Exception:
                 pass
     else:
         await session.commit()
 
-    return {**result, "xp_earned": PASS_XP if result["passed"] else 0, "certificate": cert_data}
+    return {
+        **result,
+        "xp_earned": PASS_XP if result["passed"] else 0,
+        "certificate": cert_data,
+        "promoted_to": promoted_to,
+    }
 
 
 @router.get("/api/certificates/{cert_file}")
@@ -199,6 +248,7 @@ async def my_certs(
         "certificates": [
             {
                 "cert_id": c.cert_id,
+                "kind": c.kind or "level",
                 "level": c.level,
                 "score": c.score,
                 "issued_at": c.issued_at.strftime("%d.%m.%Y"),
@@ -229,15 +279,29 @@ async def verify(code: str, session: AsyncSession = Depends(get_session)):
         )
 
     scores = json.loads(cert.scores_json or "{}")
+    if (cert.kind or "level") == "weekly":
+        rank = scores.get("rank", cert.level.lstrip("W") or "—")
+        body = (
+            f'<p style="margin:4px">Haftalik reyting: <b>{rank}-o\'rin</b></p>'
+            f'<p style="margin:4px">Haftalik XP: <b>{cert.score}</b></p>'
+            f'<p style="margin:4px;font-size:13px;color:#8A8071">Hafta: {scores.get("week","—")}</p>'
+        )
+    else:
+        body = (
+            f'<p style="margin:4px">Daraja: <b>{cert.level}</b></p>'
+            f'<p style="margin:4px">Ball: <b>{cert.score}/100</b></p>'
+            f'<p style="margin:4px;font-size:13px;color:#8A8071">'
+            f'O\'qish {scores.get("reading","—")} · Tinglash {scores.get("listening","—")} · '
+            f'Yozish {scores.get("writing","—")} · Gapirish {scores.get("speaking","—")}</p>'
+        )
+
     return HTMLResponse(f"""<html><head><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Arabiy — sertifikat tekshiruvi</title></head>
 <body style="font-family:sans-serif;background:#FAF6EE;color:#26211A;text-align:center;padding:40px 16px">
 <h1 style="color:#0E6B4E">✅ Haqiqiy sertifikat</h1>
 <div style="max-width:420px;margin:0 auto;background:#FFFDF7;border:2px solid #C9A227;border-radius:16px;padding:24px">
 <p style="font-size:22px;font-weight:bold;margin:4px">{cert.holder_name}</p>
-<p style="margin:4px">Daraja: <b>{cert.level}</b></p>
-<p style="margin:4px">Ball: <b>{cert.score}/100</b></p>
-<p style="margin:4px;font-size:13px;color:#8A8071">O'qish {scores.get('reading','—')} · Tinglash {scores.get('listening','—')} · Yozish {scores.get('writing','—')} · Gapirish {scores.get('speaking','—')}</p>
+{body}
 <p style="margin:4px">Sana: {cert.issued_at.strftime('%d.%m.%Y')}</p>
 <p style="margin:4px;font-size:12px;color:#8A8071">ID: {cert.cert_id}</p>
 </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { api, type ProfileData } from "../lib/api";
+import { api, type MyCertificate, type ProfileData } from "../lib/api";
 import { isSoundOn, setSoundOn } from "../lib/audio";
 import { formatTargetDate, GOALS, DURATIONS } from "./onboarding/data";
 
@@ -110,8 +110,14 @@ export default function Profile() {
     else if (window.confirm(msg)) doReset();
   };
 
+  const [certs, setCerts] = useState<MyCertificate[]>([]);
+
   useEffect(() => {
     api.getProfile().then(setData).catch(() => setError(true));
+    api
+      .getMyCertificates()
+      .then((r) => setCerts(r.certificates))
+      .catch(() => {});
   }, []);
 
   const photo = tg()?.initDataUnsafe.user?.photo_url;
@@ -219,6 +225,40 @@ export default function Profile() {
           ))}
         </div>
       </section>
+
+      {/* Sertifikatlar */}
+      {certs.length > 0 && (
+        <section>
+          <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft mb-2.5">
+            SERTIFIKATLARIM
+          </div>
+          <div className="flex gap-3 overflow-x-auto pb-1 -mx-4 px-4">
+            {certs.map((c) => {
+              const weekly = c.kind === "weekly";
+              const rank = weekly ? c.level.replace("W", "") : "";
+              return (
+                <a
+                  key={c.cert_id}
+                  href={c.png_url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="shrink-0 w-40 rounded-2xl bg-card border border-gold/40 p-3 text-center active:scale-[0.98] transition-transform"
+                >
+                  <div className="text-3xl">
+                    {weekly ? (rank === "1" ? "🥇" : rank === "2" ? "🥈" : "🥉") : "🎓"}
+                  </div>
+                  <div className="mt-1 text-sm font-extrabold leading-tight">
+                    {weekly ? `Haftalik ${rank}-o'rin` : `${c.level} darajasi`}
+                  </div>
+                  <div className="text-[11px] text-ink-soft font-semibold">
+                    {weekly ? `${c.score} XP` : `${c.score}/100`} · {c.issued_at}
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      )}
 
       {/* STATISTIKA (Hanyu uslubi) */}
       <section>

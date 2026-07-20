@@ -19,10 +19,16 @@ from db.models import (
 from services.stats import TASHKENT_OFFSET, _local_date, _today
 
 
-def _day_start_utc(d) -> str:
-    """Toshkent sanasi 00:00 → naive UTC ISO (xp_log/created_at bilan solishtirish uchun)."""
+def _day_start_utc(d) -> datetime:
+    """Toshkent sanasi 00:00 → naive UTC datetime.
+
+    DIQQAT: isoformat() MATNI qaytarilmaydi — SQLite datetime'ni
+    "2026-07-19 21:00:00" ko'rinishida saqlaydi va u "2026-07-19T19:00:00"
+    matnidan KICHIK sanaladi (probel < "T"). Natijada kunning dastlabki
+    5 soatidagi XP hisobga olinmay qolardi.
+    """
     local_midnight = datetime(d.year, d.month, d.day)
-    return (local_midnight - TASHKENT_OFFSET).isoformat()
+    return local_midnight - TASHKENT_OFFSET
 
 
 async def overview(session: AsyncSession) -> str:

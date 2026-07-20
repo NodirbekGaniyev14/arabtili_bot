@@ -156,6 +156,29 @@ export default function Exam({ onClose }: { onClose: () => void }) {
               <p className="mt-4 text-ink-soft font-semibold">
                 Bu daraja uchun imtihon tez orada qo'shiladi.
               </p>
+            ) : !info.unlocked ? (
+              <div className="mt-5 rounded-2xl bg-card border border-cardline p-5">
+                <div className="text-4xl">🔒</div>
+                <p className="mt-2 font-extrabold">Imtihon hali ochilmagan</p>
+                <p className="mt-1 text-sm text-ink-soft font-semibold">
+                  {info.level} darajasining kamida{" "}
+                  <b>{info.lessons_needed} ta darsini</b> tugatish kerak.
+                </p>
+                <div className="mt-4 h-3 rounded-full bg-cardline overflow-hidden">
+                  <div
+                    className="h-full rounded-full bg-emerald-deep transition-all duration-500"
+                    style={{
+                      width: `${Math.min(100, Math.round((info.lessons_done / Math.max(1, info.lessons_needed)) * 100))}%`,
+                    }}
+                  />
+                </div>
+                <p className="mt-2 text-sm font-bold">
+                  {info.lessons_done} / {info.lessons_total} dars tugatildi
+                </p>
+                <p className="mt-1 text-xs text-ink-soft font-semibold">
+                  Imtihonga {Math.max(0, info.lessons_needed - info.lessons_done)} ta dars qoldi
+                </p>
+              </div>
             ) : (
               <>
                 <div className="mt-5 rounded-2xl bg-card border border-cardline p-4 text-left text-sm font-semibold space-y-1.5">
@@ -321,6 +344,17 @@ export default function Exam({ onClose }: { onClose: () => void }) {
             <div className="mt-2 text-4xl font-extrabold text-emerald-deep">
               {result.total}/100
             </div>
+            {result.promoted_to && (
+              <div className="mt-4 rounded-2xl bg-gold-soft border border-gold/40 px-5 py-4">
+                <div className="text-3xl">🎉</div>
+                <p className="mt-1 font-extrabold text-emerald-dark">
+                  {result.promoted_to} darajasi ochildi!
+                </p>
+                <p className="mt-1 text-xs font-semibold text-ink-soft">
+                  Endi darslar va imtihon {result.promoted_to} darajasidan davom etadi
+                </p>
+              </div>
+            )}
             <div className="mt-4 space-y-2 text-left">
               {(
                 [

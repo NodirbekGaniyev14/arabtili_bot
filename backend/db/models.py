@@ -34,6 +34,10 @@ class User(Base):
     notified_date: Mapped[str] = mapped_column(String(10), default="")
     # Demo raqib (liga jonli ko'rinishi uchun) — haqiqiy foydalanuvchi emas
     is_demo: Mapped[int] = mapped_column(Integer, default=0)
+    # Oxirgi "o'rin boy berildi" xabari — kuniga ko'p yubormaslik uchun
+    rank_notice_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    # Oxirgi tekshiruvdagi haftalik reyting o'rni (0 = hali hisoblanmagan)
+    last_rank: Mapped[int] = mapped_column(Integer, default=0)
 
 
 class Placement(Base):
@@ -141,6 +145,8 @@ class Certificate(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     cert_id: Mapped[str] = mapped_column(String(24), unique=True, index=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    # "level" — daraja imtihoni sertifikati; "weekly" — haftalik reyting sovrini
+    kind: Mapped[str] = mapped_column(String(8), default="level")
     level: Mapped[str] = mapped_column(String(4))
     score: Mapped[int] = mapped_column(Integer)
     scores_json: Mapped[str] = mapped_column(Text, default="{}")
@@ -214,6 +220,21 @@ class ClientError(Base):
     message: Mapped[str] = mapped_column(Text)
     context: Mapped[str] = mapped_column(String(128), default="")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
+class WeeklyAward(Base):
+    """Haftalik reyting sovrini (top-3) — hafta boshiga bir marta beriladi."""
+
+    __tablename__ = "weekly_awards"
+    __table_args__ = (UniqueConstraint("user_id", "week_start", name="uq_award_week"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    week_start: Mapped[str] = mapped_column(String(10), index=True)  # YYYY-MM-DD
+    rank: Mapped[int] = mapped_column(Integer)  # 1 | 2 | 3
+    weekly_xp: Mapped[int] = mapped_column(Integer, default=0)
+    cert_id: Mapped[str] = mapped_column(String(24), default="")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
 
 
 class Plan(Base):

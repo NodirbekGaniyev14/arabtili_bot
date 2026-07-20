@@ -58,11 +58,26 @@ async def lifespan(app: FastAPI):
 
     await init_db()
 
+    # Daraja o'sishi K10'da qo'shildi — undan oldin imtihondan o'tganlarni
+    # bir marta to'g'ri darajaga ko'taramiz.
+    try:
+        from db.session import SessionLocal
+        from services.exam import backfill_levels
+
+        async with SessionLocal() as _s:
+            n = await backfill_levels(_s)
+            if n:
+                print(f"📈 {n} ta foydalanuvchining darajasi to'g'rilandi")
+    except Exception as e:
+        print(f"Daraja to'g'rilash xatosi: {e!r}")
+
     polling_task = None
     reminder_task = None
+    weekly_task = None
     bot = None
     if settings.bot_token:
         from services.reminders import reminder_loop
+        from services.weekly import weekly_loop
 
         bot = Bot(token=settings.bot_token)
         app.state.bot = bot  # sertifikat yuborish uchun
@@ -79,6 +94,8 @@ async def lifespan(app: FastAPI):
         )
         # Kunlik eslatma fon vazifasi
         reminder_task = asyncio.create_task(reminder_loop(bot))
+        # Haftalik reyting: dushanba yakuni + o'rin kuzatuvi
+        weekly_task = asyncio.create_task(weekly_loop(bot))
         # Deploy xabari — versiya o'zgargan bo'lsa foydalanuvchilarga bildiradi
         from services.deploy_notify import notify_if_updated
 
@@ -87,7 +104,7 @@ async def lifespan(app: FastAPI):
     else:
         print("⚠️  BOT_TOKEN yo'q — bot ishga tushmadi (.env faylini to'ldiring)")
     yield
-    for task in (polling_task, reminder_task):
+    for task in (polling_task, reminder_task, weekly_task):
         if task:
             task.cancel()
     if bot:

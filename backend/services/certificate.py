@@ -115,6 +115,98 @@ def render_png(
     img.save(out_path, "PNG")
 
 
+RANK_META = {
+    1: ("🥇", "BIRINCHI O'RIN", "المَرْكَزُ الأَوَّل", (201, 162, 39)),
+    2: ("🥈", "IKKINCHI O'RIN", "المَرْكَزُ الثَّانِي", (150, 150, 156)),
+    3: ("🥉", "UCHINCHI O'RIN", "المَرْكَزُ الثَّالِث", (170, 118, 60)),
+}
+
+
+def render_rank_png(
+    cert_id: str,
+    name: str,
+    rank: int,
+    weekly_xp: int,
+    week_label: str,
+    verify_url: str,
+    out_path: Path,
+) -> None:
+    """Haftalik reyting sovrini — daraja sertifikatidan farqli dizayn."""
+    _, title_uz, title_ar, accent = RANK_META.get(rank, RANK_META[3])
+    W, H = 1200, 850
+    img = Image.new("RGB", (W, H), SAND)
+    d = ImageDraw.Draw(img)
+
+    d.rectangle([20, 20, W - 20, H - 20], outline=accent, width=6)
+    d.rectangle([36, 36, W - 36, H - 36], outline=EMERALD, width=2)
+
+    _center(d, 60, "ARABIY", _font(64), EMERALD_DARK, W)
+    _center(d, 140, _ar("جَائِزَةُ الأُسْبُوع"), _font(44), accent, W)
+    _center(d, 205, "HAFTALIK REYTING SOVRINI", _font(22), INK, W)
+
+    # O'rin doirasi
+    cx, cy, r = W // 2, 335, 78
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=accent, outline=EMERALD_DARK, width=3)
+    rf = _font(76)
+    rt = str(rank)
+    rw = d.textlength(rt, font=rf)
+    d.text((cx - rw / 2, cy - 50), rt, font=rf, fill=SAND)
+    _center(d, cy + r + 12, _ar(title_ar), _font(30), EMERALD, W)
+
+    _center(d, 500, name or "O'rganuvchi", _font(48), INK, W)
+    _center(d, 570, title_uz, _font(30), EMERALD_DARK, W)
+    _center(d, 618, f"Haftalik XP: {weekly_xp}  ·  {week_label}", _font(22), INK, W)
+
+    d.text((70, H - 145), f"Hafta: {week_label}", font=_font(24), fill=INK)
+    d.text((70, H - 105), f"ID: {cert_id}", font=_font(24), fill=INK)
+    d.text((70, H - 68), verify_url, font=_font(18), fill=EMERALD_DARK)
+
+    qr = qrcode.QRCode(box_size=4, border=2)
+    qr.add_data(verify_url)
+    qr.make(fit=True)
+    qimg = qr.make_image(fill_color="black", back_color="white").convert("RGB")
+    qimg = qimg.resize((150, 150))
+    img.paste(qimg, (W - 220, H - 220))
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    img.save(out_path, "PNG")
+
+
+async def issue_weekly_certificate(
+    session: AsyncSession,
+    user_id: int,
+    name: str,
+    rank: int,
+    weekly_xp: int,
+    week_label: str,
+) -> Certificate:
+    """Haftalik top-3 sovrini uchun sertifikat yaratadi."""
+    cert_id = new_cert_id(f"W{rank}")
+    issued = datetime.now(timezone.utc).replace(tzinfo=None)
+    base_url = settings.webapp_url or "https://arabiy.digitalcfo.uz"
+    verify_url = f"{base_url}/api/verify/{cert_id.split('-')[-1]}"
+
+    png_path = CERT_DIR / f"{cert_id}.png"
+    render_rank_png(cert_id, name, rank, weekly_xp, week_label, verify_url, png_path)
+
+    cert = Certificate(
+        cert_id=cert_id,
+        user_id=user_id,
+        kind="weekly",
+        level=f"W{rank}",
+        score=weekly_xp,
+        scores_json=json.dumps({"rank": rank, "week": week_label}),
+        holder_name=name,
+        issued_at=issued,
+        png_path=str(png_path),
+        pdf_path="",
+    )
+    session.add(cert)
+    await session.commit()
+    await session.refresh(cert)
+    return cert
+
+
 def render_pdf(png_path: Path, pdf_path: Path) -> None:
     from reportlab.lib.pagesizes import landscape, A4
     from reportlab.pdfgen import canvas

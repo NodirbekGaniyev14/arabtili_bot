@@ -338,6 +338,22 @@ export interface ExamInfo {
   cooldown_until: string | null;
   minutes: number;
   counts: Record<string, number>;
+  /** Darslar qulfi — daraja darslarining 80% tugagach ochiladi */
+  unlocked: boolean;
+  lessons_done: number;
+  lessons_total: number;
+  lessons_needed: number;
+  next_level: string | null;
+}
+
+export interface MyCertificate {
+  cert_id: string;
+  /** "level" — daraja imtihoni; "weekly" — haftalik reyting sovrini */
+  kind: string;
+  level: string;
+  score: number;
+  issued_at: string;
+  png_url: string;
 }
 
 export interface ExamWriting {
@@ -373,6 +389,8 @@ export interface ExamResult {
     png_url: string;
     verify_code: string;
   } | null;
+  /** Imtihondan o'tilgach ochilgan yangi daraja (yoki null) */
+  promoted_to: string | null;
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
@@ -466,6 +484,8 @@ export const api = {
       body: JSON.stringify({ lesson_id: lessonId, text }),
     }),
   getExamInfo: () => request<ExamInfo>("/api/exam/info"),
+  getMyCertificates: () =>
+    request<{ certificates: MyCertificate[] }>("/api/my-certificates"),
   startExam: () => request<ExamData>("/api/exam/start", { method: "POST", body: "{}" }),
   submitExam: (payload: {
     attempt_id: number;

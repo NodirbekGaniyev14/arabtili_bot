@@ -21,6 +21,8 @@ _MIGRATIONS = {
     "users": {
         "notified_date": "VARCHAR(10) DEFAULT ''",
         "is_demo": "INTEGER DEFAULT 0",
+        "rank_notice_at": "DATETIME",
+        "last_rank": "INTEGER DEFAULT 0",
     },
     "user_words": {
         "card_type": "VARCHAR(16) DEFAULT 'word'",
@@ -28,6 +30,9 @@ _MIGRATIONS = {
     },
     "plans": {
         "start_lesson": "VARCHAR(12) DEFAULT 'a0-01'",
+    },
+    "certificates": {
+        "kind": "VARCHAR(8) DEFAULT 'level'",
     },
 }
 

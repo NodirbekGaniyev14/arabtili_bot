@@ -1,6 +1,7 @@
+import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import XPRing from "../components/XPRing";
-import type { Stats } from "../lib/api";
+import { api, type ExamInfo, type Stats } from "../lib/api";
 
 interface HomeProps {
   name: string;
@@ -37,6 +38,20 @@ export default function Home({
 }: HomeProps) {
   const next = stats.next_lesson;
   const remaining = Math.max(xpGoal - stats.xp_today, 0);
+
+  // Imtihon kartasi darajani va qulf holatini ko'rsatadi
+  const [exam, setExam] = useState<ExamInfo | null>(null);
+  useEffect(() => {
+    api.getExamInfo().then(setExam).catch(() => {});
+  }, [stats.lessons]);
+
+  const examDesc = !exam
+    ? "4 bo'lim · vaqtli"
+    : !exam.available
+      ? "tez orada"
+      : exam.unlocked
+        ? `${exam.level} · 4 bo'lim`
+        : `🔒 ${exam.lessons_done}/${exam.lessons_needed} dars`;
 
   return (
     <div className="px-4 pt-4 space-y-4">
@@ -155,7 +170,7 @@ export default function Home({
           <ModeCard
             ar="امتحان"
             label="Imtihon"
-            desc="4 bo'lim · vaqtli"
+            desc={examDesc}
             onClick={onOpenExam}
           />
           <ModeCard

@@ -69,6 +69,15 @@ export default function Rating() {
         </div>
       </section>
 
+      {/* Haftalik sovrin */}
+      <div className="rounded-2xl bg-gold-soft/60 border border-gold/30 px-4 py-3 text-center">
+        <p className="text-sm font-extrabold">🏆 Haftalik sovrin</p>
+        <p className="mt-0.5 text-xs font-semibold text-ink-soft leading-relaxed">
+          Dushanba tongida hafta yakunlanadi — <b>1, 2 va 3-o'rin</b> egalariga
+          sertifikat botga yuboriladi va profilda saqlanadi.
+        </p>
+      </div>
+
       {/* Haftalik izoh */}
       <div className="text-center text-xs text-ink-soft font-semibold">
         Har hafta XP bo'yicha bellashuv · dushanbada yangilanadi

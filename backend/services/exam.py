@@ -9,12 +9,97 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import BASE_DIR
-from db.models import ExamAttempt
+from db.models import ExamAttempt, Progress
+from services.curriculum import load_curriculum, written_lesson_ids
 
 EXAMS_DIR = BASE_DIR / "content" / "exams"
 COOLDOWN_HOURS = 24
 PASS_TOTAL = 80  # yakuniy 80%+ yetarli (bo'lim bo'yicha minimal talab yo'q)
 GRACE_MINUTES = 3
+
+LEVEL_ORDER = ["A0", "A1", "A2", "B1"]
+UNLOCK_RATIO = 0.8  # daraja darslarining 80% tugagach imtihon ochiladi
+
+
+def next_level(level: str) -> str | None:
+    """Keyingi daraja (oxirgisidan keyin — None)."""
+    if level not in LEVEL_ORDER:
+        return None
+    i = LEVEL_ORDER.index(level)
+    return LEVEL_ORDER[i + 1] if i + 1 < len(LEVEL_ORDER) else None
+
+
+def level_lesson_ids(level: str) -> set[str]:
+    """Shu darajadagi YOZILGAN darslar (imtihon tugunlari hisobga olinmaydi)."""
+    written = written_lesson_ids()
+    return {
+        lid
+        for lid, meta in load_curriculum().items()
+        if meta["level"] == level and meta["type"] == "lesson" and lid in written
+    }
+
+
+async def level_progress(
+    session: AsyncSession, user_id: int, level: str
+) -> tuple[int, int]:
+    """(tugatilgan, jami) — shu darajadagi darslar bo'yicha."""
+    ids = level_lesson_ids(level)
+    if not ids:
+        return 0, 0
+    done_rows = (
+        await session.execute(
+            select(Progress.lesson_id).where(Progress.user_id == user_id).distinct()
+        )
+    ).scalars().all()
+    return len(ids & set(done_rows)), len(ids)
+
+
+def unlock_threshold(total: int) -> int:
+    """Imtihon ochilishi uchun kerakli dars soni (80%, kamida 1 ta)."""
+    return max(1, -(-total * 8 // 10)) if total else 0  # yuqoriga yaxlitlash
+
+
+async def backfill_levels(session: AsyncSession) -> int:
+    """Ilgari imtihondan o'tgan, ammo darajasi ko'tarilmagan foydalanuvchilar.
+
+    Daraja o'sishi K10'da qo'shildi — undan oldin imtihondan o'tganlar eski
+    darajada qolib ketgan edi. Ishga tushishda bir marta to'g'rilaymiz.
+    """
+    from db.models import Plan  # aylanma importdan qochish
+
+    plans = (await session.execute(select(Plan))).scalars().all()
+    if not plans:
+        return 0
+
+    passed_rows = (
+        await session.execute(
+            select(ExamAttempt.user_id, ExamAttempt.level).where(ExamAttempt.passed == 1)
+        )
+    ).all()
+    passed: dict[int, set[str]] = {}
+    for uid, lvl in passed_rows:
+        passed.setdefault(uid, set()).add(lvl)
+
+    fixed = 0
+    for plan in plans:
+        mine = passed.get(plan.user_id)
+        if not mine:
+            continue
+        # Joriy darajadan boshlab, o'tilgan imtihonlar zanjiri bo'yicha ko'taramiz
+        level = plan.level
+        while level in mine:
+            nxt = next_level(level)
+            if not nxt:
+                break
+            level = nxt
+        if level != plan.level:
+            plan.level = level
+            session.add(plan)
+            fixed += 1
+
+    if fixed:
+        await session.commit()
+    return fixed
 
 
 def _now() -> datetime:
