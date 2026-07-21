@@ -5,84 +5,79 @@
  "order": 1,
  "title_uz": "Arab alifbosi",
  "title_ar": "الحُرُوفُ العَرَبِيَّة",
- "can_do_uz": "Arab yozuvi o'ngdan chapga yozilishini bilaman, 28 harf borligini tushunaman va birinchi harfim — alif (ا) ni taniyman.",
+ "can_do_uz": "Arab yozuvi o'ngdan chapga yozilishini bilaman va birinchi 5 harfni — ا ب م ل و — shakli hamda nomi bo'yicha bir-biridan ajrataman.",
  "duration_min": 20,
  "prerequisites": [],
  "harakat_level": "full",
- "hook_uz": "Siz arab tilini bilmasangiz ham, allaqachon yuzlab arabcha so'zlarni bilasiz: kitob, maktab, salom, ilm, qalam — hammasi arabchadan! Bu kursda avval harflarni SEKIN, birma-bir taniymiz, keyin ularni qo'shib o'qishni o'rganamiz. Shoshilmang — harf tanish o'qishning poydevori.",
+ "hook_uz": "Siz arab tilini bilmasangiz ham, allaqachon yuzlab arabcha so'zlarni bilasiz: kitob, maktab, salom, ilm, qalam — hammasi arabchadan! Lekin ularni O'QISH uchun avval harfni tanish kerak. Shuning uchun bu darsda birorta ham so'z yodlamaymiz. Faqat 5 ta harf: ularning shakli va nomi. So'zlar keyin keladi — poydevor mustahkam bo'lsin.",
  "grammar": {
   "point_ar": "الكِتَابَةُ مِنَ اليَمِينِ إِلَى اليَسَار",
-  "explanation_uz": "Arab tilida yozuv O'NGDAN CHAPGA yoziladi (o'zbekchaning aksi). Alifboda 28 ta harf bor. Harflar asosan undosh tovushlar; unlilar keyinroq o'rganadigan kichik belgilar (harakatlar) bilan ko'rsatiladi. MUHIM: bu darslarda avval FAQAT harflarni taniymiz va talaffuz qilamiz. So'zlarni mustaqil o'qish — harakatlarni o'rgangandan keyin boshlanadi, hozir so'zlarni faqat QULOQ bilan tanish yetarli.",
+  "explanation_uz": "Arab tilida yozuv O'NGDAN CHAPGA yoziladi (o'zbekchaning aksi). Alifboda 28 ta harf bor. Har harfning ikki narsasi bor: SHAKLI (ko'zga ko'rinishi) va NOMI (masalan ا — «alif», ب — «bo»). Avval shu ikkitasini yodlaymiz. Harflar asosan undosh tovushlarni bildiradi; unlilar keyinroq o'rganadigan kichik belgilar (harakatlar) bilan qo'yiladi. MUHIM: bu darsda so'z o'qimaymiz va so'z yodlamaymiz. Harflarni bir-biriga qo'shib o'qish — 8-darsdan, so'zlar esa harakatlarni o'rgangandan keyin boshlanadi.",
   "table": [
    {"ar": "← ←", "uz": "Yozuv yo'nalishi: o'ngdan chapga", "form": "yo'nalish"},
    {"ar": "٢٨", "uz": "Alifboda 28 ta harf", "form": "son"},
-   {"ar": "ا", "uz": "Birinchi harf — alif: cho'ziq 'aa' tovushi", "form": "harf"},
-   {"ar": "كِتَاب", "uz": "'kitob' — bunday so'zlarni hozircha faqat eshitib taniymiz", "form": "misol"}
+   {"ar": "ا", "uz": "alif — tik tayoqcha, nuqtasiz", "form": "harf"},
+   {"ar": "ب", "uz": "bo — kosacha, pastda 1 nuqta", "form": "harf"},
+   {"ar": "م", "uz": "mim — yumaloq bosh va pastga dum", "form": "harf"},
+   {"ar": "ل", "uz": "lom — uzun ilmoq", "form": "harf"},
+   {"ar": "و", "uz": "vov — halqa va quyruq", "form": "harf"}
   ],
   "common_mistakes_uz": [
    "So'zni chapdan o'ngga o'qishga urinish — arabchada o'ngdan boshlanadi.",
-   "Birinchi kundanoq so'z o'qishga urinish — avval harflarni puxta taniang, o'qish o'z vaqtida keladi.",
-   "28 harfni bir darsda yodlashga urinish — biz ularni 6 ta kichik oilaga bo'lib, sekin o'rganamiz."
+   "Birinchi kundanoq so'z o'qishga urinish — avval harf shaklini puxta taning, o'qish o'z vaqtida keladi.",
+   "28 harfni bir darsda yodlashga urinish — biz ularni kichik oilalarga bo'lib, sekin o'rganamiz."
   ]
  },
- "roots": [
-  {
-   "root": "ك ت ب",
-   "meaning_uz": "yozish bilan bog'liq (keyinroq batafsil o'rganamiz)",
-   "uz_cognates": ["kitob", "maktab", "kotib", "maktub"],
-   "derived": [
-    {"ar": "كِتَاب", "uz": "kitob", "pattern": ""},
-    {"ar": "مَكْتَب", "uz": "maktab / ish stoli", "pattern": ""}
-   ]
-  }
- ],
+ "roots": [],
  "vocabulary": [
-  {"ar": "ا", "translit": "alif (aa)", "uz": "«aa» — cho'ziq unli. Tik tayoqcha, nuqtasiz. Alifboning 1-harfi", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_alif.mp3", "audio_text": "أَلِف", "example_ar": "ا ـا", "example_uz": "yolg'iz · so'z ichida (o'zidan keyingi harfga ulanmaydi)", "srs": true},
-  {"ar": "كِتَاب", "translit": "kitāb", "uz": "kitob — o'zbekcha 'kitob' aynan shundan! (hozircha faqat eshitib taning)", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a0/kitab.mp3", "example_ar": "", "example_uz": "", "srs": true},
-  {"ar": "سَلَام", "translit": "salām", "uz": "salom, tinchlik — o'zbekcha 'salom' shundan", "root": "س ل م", "pattern": "", "pos": "ot", "audio": "a0/salam.mp3", "example_ar": "", "example_uz": "", "srs": true},
-  {"ar": "بَيْت", "translit": "bayt", "uz": "uy — she'rdagi 'bayt' ham shundan", "root": "ب ي ت", "pattern": "", "pos": "ot", "audio": "a0/bayt.mp3", "example_ar": "", "example_uz": "", "srs": true},
-  {"ar": "قَمَر", "translit": "qamar", "uz": "oy (osmondagi) — 'Qamar' ismi shundan", "root": "ق م ر", "pattern": "", "pos": "ot", "audio": "a0/qamar.mp3", "example_ar": "", "example_uz": "", "srs": true}
+  {"ar": "ا", "translit": "alif", "uz": "alif — tik tayoqcha, nuqtasiz. Alifboning 1-harfi", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_alif.mp3", "audio_text": "أَلِف", "example_ar": "ا ـا", "example_uz": "yolg'iz · so'z ichida (o'zidan keyingi harfga ulanmaydi)", "srs": true},
+  {"ar": "ب", "translit": "bo", "uz": "bo — kosacha shakli, PASTDA 1 nuqta", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_ba.mp3", "audio_text": "بَاء", "example_ar": "بـ ـبـ ـب", "example_uz": "boshida · o'rtada · oxirida", "srs": true},
+  {"ar": "م", "translit": "mim", "uz": "mim — yumaloq bosh, pastga tushgan dum. Nuqtasiz", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_mim.mp3", "audio_text": "مِيم", "example_ar": "مـ ـمـ ـم", "example_uz": "boshida · o'rtada · oxirida", "srs": true},
+  {"ar": "ل", "translit": "lom", "uz": "lom — uzun ilmoq. Nuqtasiz", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_lam.mp3", "audio_text": "لَام", "example_ar": "لـ ـلـ ـل", "example_uz": "boshida · o'rtada · oxirida", "srs": true},
+  {"ar": "و", "translit": "vov", "uz": "vov — halqa va quyruq. Nuqtasiz, keyingi harfga ulanmaydi", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_waw.mp3", "audio_text": "وَاو", "example_ar": "و ـو", "example_uz": "yolg'iz · so'z ichida (o'zidan keyingi harfga ulanmaydi)", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "ا ا ا",
+   "text_ar": "ا ب م ل و",
    "questions": [
-    {"q_uz": "Bu qaysi harf?", "a": "Alif (cho'ziq 'aa')"},
-    {"q_uz": "Arab matni qaysi tomondan o'qiladi?", "a": "O'ngdan chapga"}
+    {"q_uz": "Bu qatorda nechta harf bor va qaysi tomondan o'qiymiz?", "a": "5 ta harf, o'ngdan chapga"},
+    {"q_uz": "Qaysi harfda nuqta bor?", "a": "Faqat ب (pastda 1 nuqta)"},
+    {"q_uz": "Birinchi (eng o'ngdagi) harf qaysi?", "a": "Alif — ا"}
    ]
   },
   "listening": {
-   "audio": "a0/a0-01-harflar.mp3",
-   "transcript_ar": "أَلِف. أَلِف. أَلِف",
+   "audio": "a0/harf_mim.mp3",
+   "transcript_ar": "مِيم",
    "questions": [
-    {"q_uz": "Qaysi harf nomi eshitildi?", "a": "Alif (ا)"}
+    {"q_uz": "Qaysi harf nomi eshitildi?", "a": "Mim (م)"}
    ]
   },
   "speaking": {
-   "task_uz": "Alif harfini nomi bilan uch marta ayting: «alif — aa». Keyin tanish so'zlarni audio ortidan takrorlang: kitāb, salām.",
-   "target_ar": ["ا", "كِتَاب", "سَلَام"],
+   "task_uz": "Beshta harf nomini audio ortidan baland ovozda takrorlang: alif, bo, mim, lom, vov. Har birini uch martadan ayting.",
+   "target_ar": ["ا", "ب", "م", "ل", "و"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Daftaringizga o'ngdan chapga qarab bir qator alif (ا) yozing — tepadan pastga tik tayoqcha. Qo'lingiz yozuv yo'nalishiga o'rgansin.",
+   "task_uz": "Daftaringizga o'ngdan chapga qarab bir qator alif (ا) yozing — tepadan pastga tik tayoqcha. Keyin bir qator bo (ب) — kosacha va pastiga bitta nuqta. Qo'lingiz yozuv yo'nalishiga o'rgansin.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "Arab tilida yozuv qaysi yo'nalishda yoziladi?", "q_ar": "", "options": ["O'ngdan chapga", "Chapdan o'ngga", "Yuqoridan pastga"], "answer": "O'ngdan chapga", "explain_uz": "Arabcha o'zbekchaning aksi — o'ngdan chapga yoziladi va o'qiladi.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Arab alifbosida nechta harf bor?", "q_ar": "", "options": ["24", "26", "28", "33"], "answer": "28", "explain_uz": "Arab alifbosida 28 ta harf mavjud.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Eshiting: bu qaysi harfning nomi?", "q_ar": "", "options": ["ا", "ب", "م", "ك"], "answer": "ا", "explain_uz": "«Alif» — tik tayoqcha ا, cho'ziq 'aa' tovushi.", "audio": "a0/harf_alif.mp3", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Alif (ا) qanday tovush beradi?", "q_ar": "ا", "options": ["cho'ziq 'aa'", "'b'", "'k'", "'m'"], "answer": "cho'ziq 'aa'", "explain_uz": "Alif — cho'ziq 'aa' unlisi. Masalan kitAAb so'zidagi 'aa'.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Eshiting: bu so'zning ma'nosi nima?", "q_ar": "", "options": ["kitob", "salom", "uy", "oy"], "answer": "kitob", "explain_uz": "«Kitāb» — kitob. O'zbekcha 'kitob' shu so'zdan olingan.", "audio": "a0/kitab.mp3", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Eshiting: bu so'zning ma'nosi nima?", "q_ar": "", "options": ["salom", "kitob", "maktab", "qalam"], "answer": "salom", "explain_uz": "«Salām» — salom, tinchlik.", "audio": "a0/salam.mp3", "root": "", "pattern": "", "words": []},
-  {"type": "shadowing", "q_uz": "Eshiting va baland ovozda takrorlang", "q_ar": "سَلَام", "options": [], "answer": "", "explain_uz": "", "audio": "a0/salam.mp3", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "Eshiting: bu qaysi harfning nomi?", "q_ar": "", "options": ["ا", "ب", "م", "ل"], "answer": "ا", "explain_uz": "«Alif» — tik tayoqcha ا, nuqtasiz.", "audio": "a0/harf_alif.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Qaysi harf nuqtasiz TIK TAYOQCHA shaklida?", "q_ar": "", "options": ["ا", "ب", "م", "و"], "answer": "ا", "explain_uz": "Alif — eng sodda shakl: tepadan pastga bitta tik chiziq.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Bu beshtadan qaysi birida NUQTA bor?", "q_ar": "ا ب م ل و", "options": ["ب", "ا", "م", "ل"], "answer": "ب", "explain_uz": "Faqat ب da nuqta bor — pastda 1 ta. Qolgan to'rttasi nuqtasiz.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "dictation", "q_uz": "Eshiting va shu harfni klaviaturadan bosing.", "q_ar": "", "options": [], "answer": "م", "explain_uz": "«Mim» — yumaloq boshli, pastga dumli م harfi.", "audio": "a0/harf_mim.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting: bu qaysi harfning nomi?", "q_ar": "", "options": ["و", "ل", "ب", "ا"], "answer": "و", "explain_uz": "«Vov» — halqa va quyruqli و harfi.", "audio": "a0/harf_waw.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "shadowing", "q_uz": "Harf nomlarini eshiting va baland ovozda takrorlang", "q_ar": "ا ب م ل و", "options": [], "answer": "", "explain_uz": "", "audio": "a0/a0-01-harflar.mp3", "audio_text": "أَلِف، بَاء، مِيم، لَام، وَاو", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "word", "front": "ا", "back": "alif — cho'ziq 'aa' (nuqtasiz tik tayoqcha)", "deck": "msa"},
-  {"type": "word", "front": "كِتَاب", "back": "kitob (kitāb)", "deck": "msa"},
-  {"type": "word", "front": "سَلَام", "back": "salom, tinchlik (salām)", "deck": "msa"},
-  {"type": "word", "front": "بَيْت", "back": "uy (bayt)", "deck": "msa"},
-  {"type": "word", "front": "قَمَر", "back": "oy — osmondagi (qamar)", "deck": "msa"}
+  {"type": "word", "front": "ا", "back": "alif — tik tayoqcha, nuqtasiz", "deck": "msa"},
+  {"type": "word", "front": "ب", "back": "bo — kosacha, pastda 1 nuqta", "deck": "msa"},
+  {"type": "word", "front": "م", "back": "mim — yumaloq bosh, pastga dum", "deck": "msa"},
+  {"type": "word", "front": "ل", "back": "lom — uzun ilmoq", "deck": "msa"},
+  {"type": "word", "front": "و", "back": "vov — halqa va quyruq", "deck": "msa"}
  ]
 }
