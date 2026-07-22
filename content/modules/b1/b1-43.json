@@ -40,11 +40,11 @@
  "vocabulary": [
   {"ar": "مُقَدِّمَة", "translit": "muqaddima", "uz": "kirish qismi (o'zbekcha 'muqaddima')", "root": "ق د م", "pattern": "مُفَعِّلَة", "pos": "ot", "audio": "b1/muqaddima.mp3", "example_ar": "ابدأْ بمقدمةٍ قصيرةٍ.", "example_uz": "Qisqa kirish bilan boshlang.", "srs": true},
   {"ar": "خَاتِمَة", "translit": "khātima", "uz": "xulosa qismi (o'zbekcha 'xotima')", "root": "خ ت م", "pattern": "فَاعِلَة", "pos": "ot", "audio": "b1/khatima.mp3", "example_ar": "لخّصْ فكرتَكَ في الخاتمةِ.", "example_uz": "Xotimada fikringizni jamlang.", "srs": true},
-  {"ar": "يُعَدُّ", "translit": "yuʿaddu", "uz": "sanaladi, hisoblanadi (majhul!)", "root": "ع د د", "pattern": "يُفْعَلُ", "pos": "fe'l", "audio": "b1/yuaddu.mp3", "example_ar": "يُعدُّ العلمُ أساسَ التقدمِ.", "example_uz": "Ilm taraqqiyot asosi sanaladi.", "srs": true},
+  {"ar": "يُعَدُّ", "translit": "yuʿaddu", "uz": "sanaladi, hisoblanadi (majhul!) · majhul", "root": "ع د د", "pattern": "يُفْعَلُ", "pos": "fe'l", "audio": "b1/yuaddu.mp3", "example_ar": "يُعدُّ العلمُ أساسَ التقدمِ.", "example_uz": "Ilm taraqqiyot asosi sanaladi.", "srs": true},
   {"ar": "بِالإِضَافَةِ إِلَى", "translit": "bil-iḍāfati ilā", "uz": "bundan tashqari, ...ga qo'shimcha", "root": "ض ي ف", "pattern": "", "pos": "ibora", "audio": "b1/bil_idafa.mp3", "example_ar": "بالإضافةِ إلى ذلك، العلمُ يبني الأخلاقَ.", "example_uz": "Bundan tashqari, ilm axloqni quradi.", "srs": true},
   {"ar": "عَلَى سَبِيلِ المِثَال", "translit": "ʿalā sabīli l-mithāl", "uz": "masalan (misol yo'lida)", "root": "م ث ل", "pattern": "", "pos": "ibora", "audio": "b1/ala_sabil.mp3", "example_ar": "على سبيلِ المثالِ، الطبُّ يحتاجُ علمًا.", "example_uz": "Masalan, tibbiyot ilm talab qiladi.", "srs": true},
   {"ar": "وَمَعَ ذٰلِكَ", "translit": "wa-maʿa dhālika", "uz": "shunga qaramay", "root": "", "pattern": "", "pos": "ibora", "audio": "b1/maa_dhalika.mp3", "example_ar": "ومع ذلك، يهملُ بعضُ الناسِ القراءةَ.", "example_uz": "Shunga qaramay, ba'zilar o'qishga beparvo.", "srs": true},
-  {"ar": "لَخَّصَ", "translit": "lakhkhaṣa", "uz": "qisqartirib jamladi (o'zbekcha 'talxis, xulosa')", "root": "ل خ ص", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/lakhkhasa.mp3", "example_ar": "لخّصِ المقالَ في ثلاثةِ أسطرٍ.", "example_uz": "Maqolani uch qatorda jamlang.", "srs": true},
+  {"ar": "لَخَّصَ", "translit": "lakhkhaṣa", "uz": "qisqartirib jamladi (o'zbekcha 'talxis, xulosa') · u/erkak", "root": "ل خ ص", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/lakhkhasa.mp3", "example_ar": "لخّصِ المقالَ في ثلاثةِ أسطرٍ.", "example_uz": "Maqolani uch qatorda jamlang.", "srs": true},
   {"ar": "فِقْرَة", "translit": "fiqra", "uz": "xatboshi, abzats", "root": "ف ق ر", "pattern": "فِعْلَة", "pos": "ot", "audio": "b1/fiqra.mp3", "example_ar": "كلُّ فقرةٍ تحملُ فكرةً واحدةً.", "example_uz": "Har xatboshi bitta fikr ko'taradi.", "srs": true}
  ],
  "hejazi": [],
@@ -86,11 +86,11 @@
  "srs_cards": [
   {"type": "word", "front": "مُقَدِّمَة", "back": "kirish qismi", "deck": "msa"},
   {"type": "word", "front": "خَاتِمَة", "back": "xulosa qismi (xotima)", "deck": "msa"},
-  {"type": "word", "front": "يُعَدُّ", "back": "sanaladi", "deck": "msa"},
+  {"type": "word", "front": "يُعَدُّ", "back": "sanaladi · majhul", "deck": "msa"},
   {"type": "word", "front": "بِالإِضَافَةِ إِلَى", "back": "bundan tashqari", "deck": "msa"},
   {"type": "word", "front": "عَلَى سَبِيلِ المِثَال", "back": "masalan", "deck": "msa"},
   {"type": "word", "front": "وَمَعَ ذٰلِكَ", "back": "shunga qaramay", "deck": "msa"},
-  {"type": "word", "front": "لَخَّصَ", "back": "jamladi, qisqartirdi", "deck": "msa"},
+  {"type": "word", "front": "لَخَّصَ", "back": "jamladi, qisqartirdi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "فِقْرَة", "back": "xatboshi", "deck": "msa"}
  ]
 }

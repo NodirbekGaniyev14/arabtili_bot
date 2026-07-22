@@ -38,10 +38,10 @@
   }
  ],
  "vocabulary": [
-  {"ar": "عَلِمَ", "translit": "ʿalima", "uz": "bildi (I bob)", "root": "ع ل م", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "a2/alima.mp3", "example_ar": "عَلِمَ الحَقِيقَةَ.", "example_uz": "Haqiqatni bildi.", "srs": true},
-  {"ar": "عَلَّمَ", "translit": "ʿallama", "uz": "o'rgatdi (II bob)", "root": "ع ل م", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/allama.mp3", "example_ar": "عَلَّمَ الأَطْفَالَ.", "example_uz": "Bolalarni o'rgatdi.", "srs": true},
-  {"ar": "تَعَلَّمَ", "translit": "taʿallama", "uz": "o'rgandi (V bob)", "root": "ع ل م", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/taallama.mp3", "example_ar": "تَعَلَّمَ الحِسَابَ.", "example_uz": "Hisobni o'rgandi.", "srs": true},
-  {"ar": "اِسْتَعْلَمَ", "translit": "istaʿlama", "uz": "so'rab bildi (X bob)", "root": "ع ل م", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "a2/istaalama.mp3", "example_ar": "اِسْتَعْلَمَ عَنِ الطَّرِيقِ.", "example_uz": "Yo'l haqida so'radi.", "srs": true},
+  {"ar": "عَلِمَ", "translit": "ʿalima", "uz": "bildi (I bob) · u/erkak", "root": "ع ل م", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "a2/alima.mp3", "example_ar": "عَلِمَ الحَقِيقَةَ.", "example_uz": "Haqiqatni bildi.", "srs": true},
+  {"ar": "عَلَّمَ", "translit": "ʿallama", "uz": "o'rgatdi (II bob) · u/erkak", "root": "ع ل م", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/allama.mp3", "example_ar": "عَلَّمَ الأَطْفَالَ.", "example_uz": "Bolalarni o'rgatdi.", "srs": true},
+  {"ar": "تَعَلَّمَ", "translit": "taʿallama", "uz": "o'rgandi (V bob) · u/erkak", "root": "ع ل م", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/taallama.mp3", "example_ar": "تَعَلَّمَ الحِسَابَ.", "example_uz": "Hisobni o'rgandi.", "srs": true},
+  {"ar": "اِسْتَعْلَمَ", "translit": "istaʿlama", "uz": "so'rab bildi (X bob) · u/erkak", "root": "ع ل م", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "a2/istaalama.mp3", "example_ar": "اِسْتَعْلَمَ عَنِ الطَّرِيقِ.", "example_uz": "Yo'l haqida so'radi.", "srs": true},
   {"ar": "عَالِم", "translit": "ʿālim", "uz": "olim, bilimdon (fo'il)", "root": "ع ل م", "pattern": "فَاعِل", "pos": "ot", "audio": "a2/aalim.mp3", "example_ar": "هُوَ عَالِمٌ كَبِيرٌ.", "example_uz": "U buyuk olim.", "srs": true},
   {"ar": "عِلْم", "translit": "ʿilm", "uz": "ilm, fan (masdar) (o'zbekcha 'ilm')", "root": "ع ل م", "pattern": "فِعْل", "pos": "ot", "audio": "a2/ilm.mp3", "example_ar": "العِلْمُ نُورٌ.", "example_uz": "Ilm — nur.", "srs": true},
   {"ar": "تَعْلِيم", "translit": "taʿlīm", "uz": "ta'lim (masdar II)", "root": "ع ل م", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/talim.mp3", "example_ar": "التَّعْلِيمُ مَجَّانِيٌّ.", "example_uz": "Ta'lim bepul.", "srs": true},
@@ -49,7 +49,7 @@
   {"ar": "عَالَم", "translit": "ʿālam", "uz": "dunyo, olam (o'zbekcha 'olam')", "root": "ع ل م", "pattern": "فَاعَل", "pos": "ot", "audio": "a2/aalam.mp3", "example_ar": "رَبُّ العَالَمِينَ.", "example_uz": "Olamlar Robbi.", "srs": true},
   {"ar": "عَلَامَة", "translit": "ʿalāma", "uz": "belgi, alomat (o'zbekcha 'alomat')", "root": "ع ل م", "pattern": "فَعَالَة", "pos": "ot", "audio": "a1/alama.mp3", "example_ar": "عَلَامَةٌ حَمْرَاءُ.", "example_uz": "Qizil belgi.", "srs": true},
   {"ar": "مُعَلِّم", "translit": "muʿallim", "uz": "o'qituvchi (fo'il II)", "root": "ع ل م", "pattern": "مُفَعِّل", "pos": "ot", "audio": "a1/muallim.mp3", "example_ar": "المُعَلِّمُ مُحْتَرَمٌ.", "example_uz": "O'qituvchi hurmatli.", "srs": true},
-  {"ar": "أَعْلَمَ", "translit": "aʿlama", "uz": "xabar berdi (IV bob)", "root": "ع ل م", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/aalama_v.mp3", "example_ar": "أَعْلَمَنِي بِالمَوْعِدِ.", "example_uz": "Uchrashuv haqida xabar berdi.", "srs": true}
+  {"ar": "أَعْلَمَ", "translit": "aʿlama", "uz": "xabar berdi (IV bob) · u/erkak", "root": "ع ل م", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/aalama_v.mp3", "example_ar": "أَعْلَمَنِي بِالمَوْعِدِ.", "example_uz": "Uchrashuv haqida xabar berdi.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
@@ -88,10 +88,10 @@
  ],
  "srs_cards": [
   {"type": "root", "front": "ع ل م", "back": "bilish — to'liq oila (ilm/olim/muallim/ta'lim/ma'lum/olam)", "deck": "msa"},
-  {"type": "word", "front": "عَلِمَ", "back": "bildi (I)", "deck": "msa"},
-  {"type": "word", "front": "عَلَّمَ", "back": "o'rgatdi (II)", "deck": "msa"},
-  {"type": "word", "front": "تَعَلَّمَ", "back": "o'rgandi (V)", "deck": "msa"},
-  {"type": "word", "front": "اِسْتَعْلَمَ", "back": "so'rab bildi (X)", "deck": "msa"},
+  {"type": "word", "front": "عَلِمَ", "back": "bildi (I) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "عَلَّمَ", "back": "o'rgatdi (II) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "تَعَلَّمَ", "back": "o'rgandi (V) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "اِسْتَعْلَمَ", "back": "so'rab bildi (X) · u/erkak", "deck": "msa"},
   {"type": "word", "front": "عَالِم", "back": "olim (fo'il)", "deck": "msa"},
   {"type": "word", "front": "عِلْم", "back": "ilm (masdar)", "deck": "msa"},
   {"type": "word", "front": "مَعْلُوم", "back": "ma'lum (maf'ul)", "deck": "msa"},

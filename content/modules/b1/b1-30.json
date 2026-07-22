@@ -41,13 +41,13 @@
   {"ar": "عَصْر", "translit": "ʿaṣr", "uz": "asr, zamon; asr payti (o'zbekcha 'asr')", "root": "ع ص ر", "pattern": "فَعْل", "pos": "ot", "audio": "b1/asr.mp3", "example_ar": "نعيشُ في عصرِ السرعةِ.", "example_uz": "Tezlik asrida yashayapmiz.", "srs": true},
   {"ar": "إِنْسَان", "translit": "insān", "uz": "inson (o'zbekcha 'inson' aynan shundan)", "root": "أ ن س", "pattern": "فِعْلَان", "pos": "ot", "audio": "b1/insan.mp3", "example_ar": "الإنسانُ مخلوقٌ مكرَّمٌ.", "example_uz": "Inson — mukarram maxluq.", "srs": true},
   {"ar": "خُسْر", "translit": "khusr", "uz": "ziyon, yutqazish (o'zbekcha 'xasorat' o'zagi)", "root": "خ س ر", "pattern": "فُعْل", "pos": "ot", "audio": "b1/khusr.mp3", "example_ar": "الغفلةُ خسرٌ للعمرِ.", "example_uz": "G'aflat — umr uchun ziyon.", "srs": true},
-  {"ar": "تَوَاصَوْا", "translit": "tawāṣaw", "uz": "bir-birlariga vasiyat qildilar (VI bob)", "root": "و ص ي", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "b1/tawasaw.mp3", "example_ar": "تواصوْا بالحقِّ والصبرِ.", "example_uz": "Bir-birlariga haq va sabrni vasiyat qildilar.", "srs": true},
+  {"ar": "تَوَاصَوْا", "translit": "tawāṣaw", "uz": "bir-birlariga vasiyat qildilar (VI bob) · u/erkak", "root": "و ص ي", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "b1/tawasaw.mp3", "example_ar": "تواصوْا بالحقِّ والصبرِ.", "example_uz": "Bir-birlariga haq va sabrni vasiyat qildilar.", "srs": true},
   {"ar": "حَقّ", "translit": "ḥaqq", "uz": "haq, haqiqat (o'zbekcha 'haq')", "root": "ح ق ق", "pattern": "فَعْل", "pos": "ot", "audio": "b1/haqq.mp3", "example_ar": "قلِ الحقَّ ولو كانَ مرًّا.", "example_uz": "Achchiq bo'lsa ham haqni ayt.", "srs": true},
   {"ar": "صَبْر", "translit": "ṣabr", "uz": "sabr (o'zbekcha 'sabr' aynan shundan)", "root": "ص ب ر", "pattern": "فَعْل", "pos": "ot", "audio": "b1/sabr.mp3", "example_ar": "الصبرُ مفتاحُ الفرجِ.", "example_uz": "Sabr — najot kaliti.", "srs": true},
   {"ar": "قَسَم", "translit": "qasam", "uz": "qasam (o'zbekcha 'qasam' aynan shundan)", "root": "ق س م", "pattern": "فَعَل", "pos": "ot", "audio": "b1/qasam.mp3", "example_ar": "بدأتِ السورةُ بقسمٍ.", "example_uz": "Sura qasam bilan boshlandi.", "srs": true},
   {"ar": "زَمَن", "translit": "zaman", "uz": "zamon, vaqt (o'zbekcha 'zamon')", "root": "ز م ن", "pattern": "فَعَل", "pos": "ot", "audio": "b1/zaman.mp3", "example_ar": "الزمنُ أغلى من الذهبِ.", "example_uz": "Vaqt oltindan qimmat.", "srs": true},
   {"ar": "غَفْلَة", "translit": "ghafla", "uz": "g'aflat, beparvolik (o'zbekcha 'g'aflat')", "root": "غ ف ل", "pattern": "فَعْلَة", "pos": "ot", "audio": "b1/ghafla.mp3", "example_ar": "احذرِ الغفلةَ عن الوقتِ.", "example_uz": "Vaqtdan g'ofil bo'lishdan saqlan.", "srs": true},
-  {"ar": "اِسْتَثْمَرَ", "translit": "istathmara", "uz": "samarali ishlatdi, sarmoya qildi (vaqtni ham!)", "root": "ث م ر", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "b1/istathmara.mp3", "example_ar": "استثمرْ وقتَكَ في الخيرِ.", "example_uz": "Vaqtingni yaxshilikka sarfla.", "srs": true}
+  {"ar": "اِسْتَثْمَرَ", "translit": "istathmara", "uz": "samarali ishlatdi, sarmoya qildi (vaqtni ham!) · u/erkak", "root": "ث م ر", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "b1/istathmara.mp3", "example_ar": "استثمرْ وقتَكَ في الخيرِ.", "example_uz": "Vaqtingni yaxshilikka sarfla.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
@@ -90,7 +90,7 @@
   {"type": "word", "front": "عَصْر", "back": "asr, zamon", "deck": "msa"},
   {"type": "word", "front": "إِنْسَان", "back": "inson", "deck": "msa"},
   {"type": "word", "front": "خُسْر", "back": "ziyon", "deck": "msa"},
-  {"type": "word", "front": "تَوَاصَوْا", "back": "bir-biriga vasiyat qildilar", "deck": "msa"},
+  {"type": "word", "front": "تَوَاصَوْا", "back": "bir-biriga vasiyat qildilar · u/erkak", "deck": "msa"},
   {"type": "word", "front": "حَقّ", "back": "haq", "deck": "msa"},
   {"type": "word", "front": "صَبْر", "back": "sabr", "deck": "msa"},
   {"type": "word", "front": "قَسَم", "back": "qasam", "deck": "msa"},

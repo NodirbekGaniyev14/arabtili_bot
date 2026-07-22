@@ -43,12 +43,12 @@
   {"ar": "تَطْبِيق", "translit": "taṭbīq", "uz": "ilova (o'zbekcha 'tatbiq')", "root": "ط ب ق", "pattern": "تَفْعِيل", "pos": "ot", "audio": "b1/tatbiq.mp3", "example_ar": "هذا التطبيقُ يعلّمُ العربيةَ.", "example_uz": "Bu ilova arab tilini o'rgatadi.", "srs": true},
   {"ar": "شَبَكَة", "translit": "shabaka", "uz": "tarmoq, internet ('to'r')", "root": "ش ب ك", "pattern": "فَعَلَة", "pos": "ot", "audio": "b1/shabaka.mp3", "example_ar": "الشبكةُ ضعيفةٌ هنا.", "example_uz": "Bu yerda internet sekin.", "srs": true},
   {"ar": "كَلِمَةُ السِّرّ", "translit": "kalimatu s-sirr", "uz": "parol ('sir so'zi')", "root": "س ر ر", "pattern": "", "pos": "ibora", "audio": "b1/kalimat_sirr.mp3", "example_ar": "غيّرْ كلمةَ السرِّ دائمًا.", "example_uz": "Parolni doim o'zgartirib turing.", "srs": true},
-  {"ar": "حَمَّلَ", "translit": "ḥammala", "uz": "yuklab oldi (II bob)", "root": "ح م ل", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/hammala.mp3", "example_ar": "حمّلتُ ملفًّا كبيرًا.", "example_uz": "Katta fayl yuklab oldim.", "srs": true},
-  {"ar": "أَرْسَلَ", "translit": "arsala", "uz": "yubordi ('rasul' o'zagi)", "root": "ر س ل", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/arsala.mp3", "example_ar": "أرسلتُ لكَ الصورَ.", "example_uz": "Senga rasmlarni yubordim.", "srs": true},
+  {"ar": "حَمَّلَ", "translit": "ḥammala", "uz": "yuklab oldi (II bob) · u/erkak", "root": "ح م ل", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/hammala.mp3", "example_ar": "حمّلتُ ملفًّا كبيرًا.", "example_uz": "Katta fayl yuklab oldim.", "srs": true},
+  {"ar": "أَرْسَلَ", "translit": "arsala", "uz": "yubordi ('rasul' o'zagi) · u/erkak", "root": "ر س ل", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/arsala.mp3", "example_ar": "أرسلتُ لكَ الصورَ.", "example_uz": "Senga rasmlarni yubordim.", "srs": true},
   {"ar": "مَوْقِع", "translit": "mawqiʿ", "uz": "sayt (joy — mavqe o'zagi)", "root": "و ق ع", "pattern": "مَفْعِل", "pos": "ot", "audio": "b1/mawqi.mp3", "example_ar": "افتحِ الموقعَ الرسميَّ.", "example_uz": "Rasmiy saytni oching.", "srs": true},
   {"ar": "مِلَفّ", "translit": "milaff", "uz": "fayl, papka", "root": "ل ف ف", "pattern": "مِفْعَل", "pos": "ot", "audio": "b1/milaff.mp3", "example_ar": "احفظِ الملفَّ قبلَ الإغلاقِ.", "example_uz": "Yopishdan oldin faylni saqlang.", "srs": true},
   {"ar": "صُورَة", "translit": "ṣūra", "uz": "rasm, surat (o'zbekcha 'surat')", "root": "ص و ر", "pattern": "فُعْلَة", "pos": "ot", "audio": "b1/sura2.mp3", "example_ar": "التقطتُ صورًا جميلةً.", "example_uz": "Chiroyli suratlar oldim.", "srs": true},
-  {"ar": "شَحَنَ", "translit": "shaḥana", "uz": "quvvatladi (zaryadladi)", "root": "ش ح ن", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/shahana.mp3", "example_ar": "يجبُ أنْ أشحنَ جوّالي.", "example_uz": "Telefonimni quvvatlashim kerak.", "srs": true},
+  {"ar": "شَحَنَ", "translit": "shaḥana", "uz": "quvvatladi (zaryadladi) · u/erkak", "root": "ش ح ن", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/shahana.mp3", "example_ar": "يجبُ أنْ أشحنَ جوّالي.", "example_uz": "Telefonimni quvvatlashim kerak.", "srs": true},
   {"ar": "حِسَاب", "translit": "ḥisāb", "uz": "akkaunt; hisob (o'zbekcha 'hisob')", "root": "ح س ب", "pattern": "فِعَال", "pos": "ot", "audio": "b1/hisab.mp3", "example_ar": "أنشأتُ حسابًا جديدًا.", "example_uz": "Yangi akkaunt ochdim.", "srs": true}
  ],
  "hejazi": [
@@ -97,8 +97,8 @@
   {"type": "word", "front": "تَطْبِيق", "back": "ilova (tatbiq)", "deck": "msa"},
   {"type": "word", "front": "شَبَكَة", "back": "tarmoq, internet", "deck": "msa"},
   {"type": "word", "front": "كَلِمَةُ السِّرّ", "back": "parol", "deck": "msa"},
-  {"type": "word", "front": "حَمَّلَ", "back": "yuklab oldi", "deck": "msa"},
-  {"type": "word", "front": "أَرْسَلَ", "back": "yubordi", "deck": "msa"},
+  {"type": "word", "front": "حَمَّلَ", "back": "yuklab oldi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "أَرْسَلَ", "back": "yubordi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "مَوْقِع", "back": "sayt", "deck": "msa"},
   {"type": "word", "front": "حِسَاب", "back": "akkaunt, hisob", "deck": "msa"},
   {"type": "phrase", "front": "مَا فِيه نِت", "back": "Internet yo'q (Hijoziy)", "deck": "hejazi"}

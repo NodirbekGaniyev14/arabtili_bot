@@ -37,14 +37,14 @@
   }
  ],
  "vocabulary": [
-  {"ar": "اُكْتُبْ", "translit": "uktub", "uz": "yoz! (amr)", "root": "ك ت ب", "pattern": "اُفْعُلْ", "pos": "fe'l", "audio": "a2/uktub.mp3", "example_ar": "اُكْتُبِ الدَّرْسَ.", "example_uz": "Darsni yoz.", "srs": true},
-  {"ar": "اِقْرَأْ", "translit": "iqraʾ", "uz": "o'qi! (amr — Qur'onning birinchi so'zi)", "root": "ق ر أ", "pattern": "اِفْعَلْ", "pos": "fe'l", "audio": "a2/iqra.mp3", "example_ar": "اِقْرَأْ بِاسْمِ رَبِّكَ.", "example_uz": "Robbing nomi bilan o'qi.", "srs": true},
-  {"ar": "اِسْمَعْ", "translit": "ismaʿ", "uz": "eshit! (amr)", "root": "س م ع", "pattern": "اِفْعَلْ", "pos": "fe'l", "audio": "a2/isma.mp3", "example_ar": "اِسْمَعْ جَيِّدًا.", "example_uz": "Yaxshi eshit.", "srs": true},
-  {"ar": "اِجْلِسْ", "translit": "ijlis", "uz": "o'tir! (amr)", "root": "ج ل س", "pattern": "اِفْعِلْ", "pos": "fe'l", "audio": "a2/ijlis.mp3", "example_ar": "اِجْلِسْ هُنَا.", "example_uz": "Bu yerga o'tir.", "srs": true},
-  {"ar": "اُدْخُلْ", "translit": "udkhul", "uz": "kir! (amr)", "root": "د خ ل", "pattern": "اُفْعُلْ", "pos": "fe'l", "audio": "a2/udkhul.mp3", "example_ar": "اُدْخُلِ الغُرْفَةَ.", "example_uz": "Xonaga kir.", "srs": true},
-  {"ar": "قُلْ", "translit": "qul", "uz": "ayt! (amr, ajvaf)", "root": "ق و ل", "pattern": "فُلْ", "pos": "fe'l", "audio": "a2/qul.mp3", "example_ar": "قُلِ الحَقَّ.", "example_uz": "Haqni ayt.", "srs": true},
-  {"ar": "تَعَالَ", "translit": "taʿāla", "uz": "kel! (buyruq, o'ziga xos)", "root": "", "pattern": "", "pos": "fe'l", "audio": "a2/taala.mp3", "example_ar": "تَعَالَ هُنَا!", "example_uz": "Bu yerga kel!", "srs": true},
-  {"ar": "اِصْبِرْ", "translit": "iṣbir", "uz": "sabr qil! (amr)", "root": "ص ب ر", "pattern": "اِفْعِلْ", "pos": "fe'l", "audio": "a2/isbir.mp3", "example_ar": "اِصْبِرْ عَلَى الصُّعُوبَاتِ.", "example_uz": "Qiyinchiliklarga sabr qil.", "srs": true},
+  {"ar": "اُكْتُبْ", "translit": "uktub", "uz": "yoz! (amr) · buyruq (sen)", "root": "ك ت ب", "pattern": "اُفْعُلْ", "pos": "fe'l", "audio": "a2/uktub.mp3", "example_ar": "اُكْتُبِ الدَّرْسَ.", "example_uz": "Darsni yoz.", "srs": true},
+  {"ar": "اِقْرَأْ", "translit": "iqraʾ", "uz": "o'qi! (amr — Qur'onning birinchi so'zi) · buyruq (sen)", "root": "ق ر أ", "pattern": "اِفْعَلْ", "pos": "fe'l", "audio": "a2/iqra.mp3", "example_ar": "اِقْرَأْ بِاسْمِ رَبِّكَ.", "example_uz": "Robbing nomi bilan o'qi.", "srs": true},
+  {"ar": "اِسْمَعْ", "translit": "ismaʿ", "uz": "eshit! (amr) · buyruq (sen)", "root": "س م ع", "pattern": "اِفْعَلْ", "pos": "fe'l", "audio": "a2/isma.mp3", "example_ar": "اِسْمَعْ جَيِّدًا.", "example_uz": "Yaxshi eshit.", "srs": true},
+  {"ar": "اِجْلِسْ", "translit": "ijlis", "uz": "o'tir! (amr) · buyruq (sen)", "root": "ج ل س", "pattern": "اِفْعِلْ", "pos": "fe'l", "audio": "a2/ijlis.mp3", "example_ar": "اِجْلِسْ هُنَا.", "example_uz": "Bu yerga o'tir.", "srs": true},
+  {"ar": "اُدْخُلْ", "translit": "udkhul", "uz": "kir! (amr) · buyruq (sen)", "root": "د خ ل", "pattern": "اُفْعُلْ", "pos": "fe'l", "audio": "a2/udkhul.mp3", "example_ar": "اُدْخُلِ الغُرْفَةَ.", "example_uz": "Xonaga kir.", "srs": true},
+  {"ar": "قُلْ", "translit": "qul", "uz": "ayt! (amr, ajvaf) · buyruq (sen)", "root": "ق و ل", "pattern": "فُلْ", "pos": "fe'l", "audio": "a2/qul.mp3", "example_ar": "قُلِ الحَقَّ.", "example_uz": "Haqni ayt.", "srs": true},
+  {"ar": "تَعَالَ", "translit": "taʿāla", "uz": "kel! (buyruq, o'ziga xos) · buyruq (sen)", "root": "", "pattern": "", "pos": "fe'l", "audio": "a2/taala.mp3", "example_ar": "تَعَالَ هُنَا!", "example_uz": "Bu yerga kel!", "srs": true},
+  {"ar": "اِصْبِرْ", "translit": "iṣbir", "uz": "sabr qil! (amr) · buyruq (sen)", "root": "ص ب ر", "pattern": "اِفْعِلْ", "pos": "fe'l", "audio": "a2/isbir.mp3", "example_ar": "اِصْبِرْ عَلَى الصُّعُوبَاتِ.", "example_uz": "Qiyinchiliklarga sabr qil.", "srs": true},
   {"ar": "أَمْر", "translit": "amr", "uz": "buyruq, ish (o'zbekcha 'amr')", "root": "أ م ر", "pattern": "فَعْل", "pos": "ot", "audio": "a2/amr.mp3", "example_ar": "هَذَا أَمْرٌ مُهِمٌّ.", "example_uz": "Bu muhim ish.", "srs": true},
   {"ar": "صَبْر", "translit": "ṣabr", "uz": "sabr, chidam (o'zbekcha 'sabr')", "root": "ص ب ر", "pattern": "فَعْل", "pos": "ot", "audio": "a2/sabr.mp3", "example_ar": "الصَّبْرُ مِفْتَاحُ الفَرَجِ.", "example_uz": "Sabr — yechim kaliti.", "srs": true}
  ],
@@ -86,12 +86,12 @@
  "srs_cards": [
   {"type": "root", "front": "ص ب ر", "back": "sabr o'zagi (isbir=sabr qil, sabr, sobir)", "deck": "msa"},
   {"type": "pattern", "front": "الأَمْر: اُفْعُلْ/اِفْعِلْ", "back": "buyruq — hozirgidan prefiks olinib yasaladi", "deck": "msa"},
-  {"type": "word", "front": "اُكْتُبْ", "back": "yoz! (amr)", "deck": "msa"},
-  {"type": "word", "front": "اِقْرَأْ", "back": "o'qi! (amr)", "deck": "msa"},
-  {"type": "word", "front": "اِسْمَعْ", "back": "eshit! (amr)", "deck": "msa"},
-  {"type": "word", "front": "اِجْلِسْ", "back": "o'tir! (amr)", "deck": "msa"},
-  {"type": "word", "front": "قُلْ", "back": "ayt! (amr, ajvaf)", "deck": "msa"},
-  {"type": "word", "front": "تَعَالَ", "back": "kel! (buyruq)", "deck": "msa"},
+  {"type": "word", "front": "اُكْتُبْ", "back": "yoz! (amr) · buyruq (sen)", "deck": "msa"},
+  {"type": "word", "front": "اِقْرَأْ", "back": "o'qi! (amr) · buyruq (sen)", "deck": "msa"},
+  {"type": "word", "front": "اِسْمَعْ", "back": "eshit! (amr) · buyruq (sen)", "deck": "msa"},
+  {"type": "word", "front": "اِجْلِسْ", "back": "o'tir! (amr) · buyruq (sen)", "deck": "msa"},
+  {"type": "word", "front": "قُلْ", "back": "ayt! (amr, ajvaf) · buyruq (sen)", "deck": "msa"},
+  {"type": "word", "front": "تَعَالَ", "back": "kel! (buyruq) · buyruq (sen)", "deck": "msa"},
   {"type": "word", "front": "أَمْر", "back": "buyruq, ish", "deck": "msa"},
   {"type": "word", "front": "صَبْر", "back": "sabr, chidam", "deck": "msa"}
  ]

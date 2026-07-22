@@ -76,7 +76,7 @@
   {
    "ar": "يَكْتُبُ",
    "translit": "yaktubu",
-   "uz": "u (erkak) yozadi",
+   "uz": "(erkak) yozadi · u/erkak",
    "root": "ك ت ب",
    "pattern": "يَفْعُلُ",
    "pos": "fe'l",
@@ -124,7 +124,7 @@
   {
    "ar": "يَعْلَمُ",
    "translit": "yaʿlamu",
-   "uz": "u biladi",
+   "uz": "biladi · u/erkak",
    "root": "ع ل م",
    "pattern": "يَفْعَلُ",
    "pos": "fe'l",
@@ -136,7 +136,7 @@
   {
    "ar": "يَذْهَبُ",
    "translit": "yadhhabu",
-   "uz": "u boradi",
+   "uz": "boradi · u/erkak",
    "root": "ذ ه ب",
    "pattern": "يَفْعَلُ",
    "pos": "fe'l",
@@ -330,7 +330,7 @@
   {
    "type": "word",
    "front": "يَكْتُبُ",
-   "back": "u yozadi",
+   "back": "yozadi · u/erkak",
    "deck": "msa"
   },
   {
@@ -354,13 +354,13 @@
   {
    "type": "word",
    "front": "يَعْلَمُ",
-   "back": "u biladi",
+   "back": "biladi · u/erkak",
    "deck": "msa"
   },
   {
    "type": "word",
    "front": "يَذْهَبُ",
-   "back": "u boradi",
+   "back": "boradi · u/erkak",
    "deck": "msa"
   },
   {

@@ -46,7 +46,7 @@
   {"ar": "سِوَى", "translit": "siwā", "uz": "…dan boshqa (إلا ning sinonimi, idofa bilan)", "root": "س و ي", "pattern": "", "pos": "ot", "audio": "b1/siwa.mp3", "example_ar": "ما عندي سوى كتابٍ واحدٍ.", "example_uz": "Bitta kitobdan boshqa hech narsam yo'q.", "srs": true},
   {"ar": "أَحَد", "translit": "aḥad", "uz": "biror kishi, hech kim (inkorda)", "root": "أ ح د", "pattern": "فَعَل", "pos": "ot", "audio": "b1/ahad.mp3", "example_ar": "ما في البيتِ أحدٌ إلا الجدّةُ.", "example_uz": "Uyda buvidan boshqa hech kim yo'q.", "srs": true},
   {"ar": "وَاجِب", "translit": "wājib", "uz": "vazifa, majburiyat (o'zbekcha 'vojib')", "root": "و ج ب", "pattern": "فَاعِل", "pos": "ot", "audio": "b1/wajib2.mp3", "example_ar": "أنهيتُ الواجباتِ إلا واحدًا.", "example_uz": "Bittasidan boshqa vazifalarni tugatdim.", "srs": true},
-  {"ar": "أَنْهَى", "translit": "anhā", "uz": "tugatdi, yakunladi (IV bob)", "root": "ن ه ي", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/anha.mp3", "example_ar": "أنهى عملَهُ قبلَ المساءِ.", "example_uz": "Ishini kechgacha tugatdi.", "srs": true}
+  {"ar": "أَنْهَى", "translit": "anhā", "uz": "tugatdi, yakunladi (IV bob) · u/erkak", "root": "ن ه ي", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/anha.mp3", "example_ar": "أنهى عملَهُ قبلَ المساءِ.", "example_uz": "Ishini kechgacha tugatdi.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
@@ -94,6 +94,6 @@
   {"type": "word", "front": "قَاعِدَة", "back": "qoida", "deck": "msa"},
   {"type": "word", "front": "سِوَى", "back": "…dan boshqa", "deck": "msa"},
   {"type": "word", "front": "وَاجِب", "back": "vazifa (vojib)", "deck": "msa"},
-  {"type": "word", "front": "أَنْهَى", "back": "tugatdi", "deck": "msa"}
+  {"type": "word", "front": "أَنْهَى", "back": "tugatdi · u/erkak", "deck": "msa"}
  ]
 }

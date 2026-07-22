@@ -37,14 +37,14 @@
   }
  ],
  "vocabulary": [
-  {"ar": "سَأَلَ", "translit": "saʾala", "uz": "so'radi", "root": "س أ ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/saala.mp3", "example_ar": "سَأَلَ المُدَرِّسَ.", "example_uz": "U o'qituvchidan so'radi.", "srs": true},
-  {"ar": "دَخَلَ", "translit": "dakhala", "uz": "kirdi", "root": "د خ ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/dakhala.mp3", "example_ar": "دَخَلَ الغُرْفَةَ.", "example_uz": "U xonaga kirdi.", "srs": true},
-  {"ar": "خَرَجَ", "translit": "kharaja", "uz": "chiqdi", "root": "خ ر ج", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/kharaja.mp3", "example_ar": "خَرَجَ مِنَ البَيْتِ.", "example_uz": "U uydan chiqdi.", "srs": true},
-  {"ar": "رَجَعَ", "translit": "rajaʿa", "uz": "qaytdi", "root": "ر ج ع", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/rajaa.mp3", "example_ar": "رَجَعَ إِلَى البَيْتِ.", "example_uz": "U uyga qaytdi.", "srs": true},
-  {"ar": "وَجَدَ", "translit": "wajada", "uz": "topdi", "root": "و ج د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/wajada.mp3", "example_ar": "وَجَدَ المِفْتَاحَ.", "example_uz": "U kalitni topdi.", "srs": true},
-  {"ar": "عَرَفَ", "translit": "ʿarafa", "uz": "bildi, tanidi", "root": "ع ر ف", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/arafa.mp3", "example_ar": "عَرَفَ الطَّرِيقَ.", "example_uz": "U yo'lni bildi.", "srs": true},
-  {"ar": "نَظَرَ", "translit": "naẓara", "uz": "qaradi", "root": "ن ظ ر", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/nazara.mp3", "example_ar": "نَظَرَ إِلَى الشَّمْسِ.", "example_uz": "U quyoshga qaradi.", "srs": true},
-  {"ar": "حَمَلَ", "translit": "ḥamala", "uz": "ko'tardi, olib bordi", "root": "ح م ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/hamala.mp3", "example_ar": "حَمَلَ الكِتَابَ.", "example_uz": "U kitobni ko'tardi.", "srs": true}
+  {"ar": "سَأَلَ", "translit": "saʾala", "uz": "so'radi · u/erkak", "root": "س أ ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/saala.mp3", "example_ar": "سَأَلَ المُدَرِّسَ.", "example_uz": "U o'qituvchidan so'radi.", "srs": true},
+  {"ar": "دَخَلَ", "translit": "dakhala", "uz": "kirdi · u/erkak", "root": "د خ ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/dakhala.mp3", "example_ar": "دَخَلَ الغُرْفَةَ.", "example_uz": "U xonaga kirdi.", "srs": true},
+  {"ar": "خَرَجَ", "translit": "kharaja", "uz": "chiqdi · u/erkak", "root": "خ ر ج", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/kharaja.mp3", "example_ar": "خَرَجَ مِنَ البَيْتِ.", "example_uz": "U uydan chiqdi.", "srs": true},
+  {"ar": "رَجَعَ", "translit": "rajaʿa", "uz": "qaytdi · u/erkak", "root": "ر ج ع", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/rajaa.mp3", "example_ar": "رَجَعَ إِلَى البَيْتِ.", "example_uz": "U uyga qaytdi.", "srs": true},
+  {"ar": "وَجَدَ", "translit": "wajada", "uz": "topdi · u/erkak", "root": "و ج د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/wajada.mp3", "example_ar": "وَجَدَ المِفْتَاحَ.", "example_uz": "U kalitni topdi.", "srs": true},
+  {"ar": "عَرَفَ", "translit": "ʿarafa", "uz": "bildi, tanidi · u/erkak", "root": "ع ر ف", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/arafa.mp3", "example_ar": "عَرَفَ الطَّرِيقَ.", "example_uz": "U yo'lni bildi.", "srs": true},
+  {"ar": "نَظَرَ", "translit": "naẓara", "uz": "qaradi · u/erkak", "root": "ن ظ ر", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/nazara.mp3", "example_ar": "نَظَرَ إِلَى الشَّمْسِ.", "example_uz": "U quyoshga qaradi.", "srs": true},
+  {"ar": "حَمَلَ", "translit": "ḥamala", "uz": "ko'tardi, olib bordi · u/erkak", "root": "ح م ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/hamala.mp3", "example_ar": "حَمَلَ الكِتَابَ.", "example_uz": "U kitobni ko'tardi.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
@@ -83,13 +83,13 @@
  ],
  "srs_cards": [
   {"type": "root", "front": "د خ ل", "back": "kirish o'zagi (daxala=kirdi, madxal)", "deck": "msa"},
-  {"type": "word", "front": "سَأَلَ", "back": "u so'radi", "deck": "msa"},
-  {"type": "word", "front": "دَخَلَ", "back": "u kirdi", "deck": "msa"},
-  {"type": "word", "front": "خَرَجَ", "back": "u chiqdi", "deck": "msa"},
-  {"type": "word", "front": "رَجَعَ", "back": "u qaytdi", "deck": "msa"},
-  {"type": "word", "front": "وَجَدَ", "back": "u topdi", "deck": "msa"},
-  {"type": "word", "front": "عَرَفَ", "back": "u bildi, tanidi", "deck": "msa"},
-  {"type": "word", "front": "نَظَرَ", "back": "u qaradi", "deck": "msa"},
-  {"type": "word", "front": "حَمَلَ", "back": "u ko'tardi", "deck": "msa"}
+  {"type": "word", "front": "سَأَلَ", "back": "so'radi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "دَخَلَ", "back": "kirdi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "خَرَجَ", "back": "chiqdi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "رَجَعَ", "back": "qaytdi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "وَجَدَ", "back": "topdi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "عَرَفَ", "back": "bildi, tanidi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "نَظَرَ", "back": "qaradi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "حَمَلَ", "back": "ko'tardi · u/erkak", "deck": "msa"}
  ]
 }

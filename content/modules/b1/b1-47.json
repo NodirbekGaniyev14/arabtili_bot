@@ -39,10 +39,10 @@
  "vocabulary": [
   {"ar": "خَرِيطَة", "translit": "kharīṭa", "uz": "xarita (o'zbekcha 'xarita' aynan shundan)", "root": "خ ر ط", "pattern": "فَعِيلَة", "pos": "ot", "audio": "b1/kharita.mp3", "example_ar": "ارسمْ خريطةً للقواعدِ.", "example_uz": "Qoidalar xaritasini chizing.", "srs": true},
   {"ar": "قَاعِدَة نَحْوِيَّة", "translit": "qāʿida naḥwiyya", "uz": "grammatik qoida", "root": "ق ع د", "pattern": "", "pos": "ibora", "audio": "b1/qaida_nahwiyya.mp3", "example_ar": "طبّقِ القاعدةَ النحويةَ في جملةٍ.", "example_uz": "Qoidani gapda qo'llang.", "srs": true},
-  {"ar": "طَبَّقَ", "translit": "ṭabbaqa", "uz": "qo'lladi, tatbiq etdi", "root": "ط ب ق", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/tabbaqa.mp3", "example_ar": "العلمُ بلا تطبيقٍ ينسى.", "example_uz": "Qo'llanmagan ilm unutiladi.", "srs": true},
+  {"ar": "طَبَّقَ", "translit": "ṭabbaqa", "uz": "qo'lladi, tatbiq etdi · u/erkak", "root": "ط ب ق", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/tabbaqa.mp3", "example_ar": "العلمُ بلا تطبيقٍ ينسى.", "example_uz": "Qo'llanmagan ilm unutiladi.", "srs": true},
   {"ar": "مِثَال", "translit": "mithāl", "uz": "misol (o'zbekcha 'misol' aynan shundan)", "root": "م ث ل", "pattern": "فِعَال", "pos": "ot", "audio": "b1/mithal.mp3", "example_ar": "أعطني مثالًا على الحالِ.", "example_uz": "Holga misol bering.", "srs": true},
   {"ar": "فَرْق", "translit": "farq", "uz": "farq (o'zbekcha 'farq' aynan shundan)", "root": "ف ر ق", "pattern": "فَعْل", "pos": "ot", "audio": "b1/farq.mp3", "example_ar": "ما الفرقُ بينَ الحالِ والتمييزِ؟", "example_uz": "Hol va tamyiz farqi nima?", "srs": true},
-  {"ar": "أَتْقَنَ", "translit": "atqana", "uz": "puxta egalladi (itqon)", "root": "ت ق ن", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/atqana.mp3", "example_ar": "أتقنتُ قواعدَ المستوى.", "example_uz": "Daraja qoidalarini puxta egalladim.", "srs": true}
+  {"ar": "أَتْقَنَ", "translit": "atqana", "uz": "puxta egalladi (itqon) · u/erkak", "root": "ت ق ن", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/atqana.mp3", "example_ar": "أتقنتُ قواعدَ المستوى.", "example_uz": "Daraja qoidalarini puxta egalladim.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
@@ -84,9 +84,9 @@
   {"type": "root", "front": "ر ج ع", "back": "qaytish o'zagi (muroja'at)", "deck": "msa"},
   {"type": "word", "front": "خَرِيطَة", "back": "xarita", "deck": "msa"},
   {"type": "word", "front": "قَاعِدَة نَحْوِيَّة", "back": "grammatik qoida", "deck": "msa"},
-  {"type": "word", "front": "طَبَّقَ", "back": "qo'lladi", "deck": "msa"},
+  {"type": "word", "front": "طَبَّقَ", "back": "qo'lladi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "مِثَال", "back": "misol", "deck": "msa"},
   {"type": "word", "front": "فَرْق", "back": "farq", "deck": "msa"},
-  {"type": "word", "front": "أَتْقَنَ", "back": "puxta egalladi", "deck": "msa"}
+  {"type": "word", "front": "أَتْقَنَ", "back": "puxta egalladi · u/erkak", "deck": "msa"}
  ]
 }

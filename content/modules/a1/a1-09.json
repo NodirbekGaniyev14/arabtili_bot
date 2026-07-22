@@ -12,7 +12,7 @@
  "hook_uz": "Nima bo'lganini aytmoqchimisiz? «U yozdi» — كَتَبَ. Arab tilida fe'lning ASOSIY shakli aynan shu: «u qildi». Ayol uchun oxiriga ـَتْ qo'shiladi: كَتَبَتْ. Bugun o'tgan zamonni boshlaymiz.",
  "grammar": {
   "point_ar": "الماضي: فَعَلَ / فَعَلَتْ",
-  "explanation_uz": "O'tgan zamon fe'li (الماضي) ning ASOS shakli — «u (erkak) qildi»: كَتَبَ (yozdi), وazni فَعَلَ (uch harakat: fatha-fatha-fatha). Ayol («u qildi») uchun oxiriga ـَتْ qo'shiladi: كَتَبَتْ. Diqqat: bu fe'lning lug'atdagi asosiy shakli — o'zbekchada «yozmoq» desak, arabchada «u yozdi» (كَتَبَ) deb yod olinadi.",
+  "explanation_uz": "O'tgan zamon fe'li (الماضي) ning ASOS shakli — «u (erkak) qildi»: كَتَبَ (yozdi), vazni فَعَلَ (uch harakat: fatha-fatha-fatha). Ayol («u qildi») uchun oxiriga ـَتْ qo'shiladi: كَتَبَتْ. Diqqat: bu fe'lning lug'atdagi asosiy shakli — o'zbekchada «yozmoq» desak, arabchada «u yozdi» (كَتَبَ) deb yod olinadi.",
   "table": [
    {"ar": "كَتَبَ", "uz": "u (erkak) yozdi", "form": "هُوَ — فَعَلَ"},
    {"ar": "كَتَبَتْ", "uz": "u (ayol) yozdi", "form": "هِيَ — فَعَلَتْ"},
@@ -37,14 +37,14 @@
   }
  ],
  "vocabulary": [
-  {"ar": "كَتَبَ", "translit": "kataba", "uz": "yozdi", "root": "ك ت ب", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/kataba.mp3", "example_ar": "كَتَبَ الوَلَدُ.", "example_uz": "Bola yozdi.", "srs": true},
-  {"ar": "ذَهَبَ", "translit": "dhahaba", "uz": "bordi, ketdi", "root": "ذ ه ب", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/dhahaba.mp3", "example_ar": "ذَهَبَ إِلَى السُّوقِ.", "example_uz": "U bozorga bordi.", "srs": true},
-  {"ar": "دَرَسَ", "translit": "darasa", "uz": "o'qidi, o'rgandi", "root": "د ر س", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/darasa.mp3", "example_ar": "دَرَسَ الطَّالِبُ.", "example_uz": "Talaba o'qidi.", "srs": true},
-  {"ar": "أَكَلَ", "translit": "akala", "uz": "yedi", "root": "أ ك ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/akala.mp3", "example_ar": "أَكَلَ الخُبْزَ.", "example_uz": "U non yedi.", "srs": true},
-  {"ar": "شَرِبَ", "translit": "shariba", "uz": "ichdi", "root": "ش ر ب", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "a1/shariba.mp3", "example_ar": "شَرِبَ المَاءَ.", "example_uz": "U suv ichdi.", "srs": true},
-  {"ar": "فَتَحَ", "translit": "fataḥa", "uz": "ochdi", "root": "ف ت ح", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/fataha.mp3", "example_ar": "فَتَحَ البَابَ.", "example_uz": "U eshikni ochdi.", "srs": true},
-  {"ar": "جَلَسَ", "translit": "jalasa", "uz": "o'tirdi", "root": "ج ل س", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/jalasa.mp3", "example_ar": "جَلَسَ عَلَى الكُرْسِيِّ.", "example_uz": "U stulga o'tirdi.", "srs": true},
-  {"ar": "سَمِعَ", "translit": "samiʿa", "uz": "eshitdi", "root": "س م ع", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "a1/samia.mp3", "example_ar": "سَمِعَ الأَذَانَ.", "example_uz": "U azonni eshitdi.", "srs": true},
+  {"ar": "كَتَبَ", "translit": "kataba", "uz": "yozdi · u/erkak", "root": "ك ت ب", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/kataba.mp3", "example_ar": "كَتَبَ الوَلَدُ.", "example_uz": "Bola yozdi.", "srs": true},
+  {"ar": "ذَهَبَ", "translit": "dhahaba", "uz": "bordi, ketdi · u/erkak", "root": "ذ ه ب", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/dhahaba.mp3", "example_ar": "ذَهَبَ إِلَى السُّوقِ.", "example_uz": "U bozorga bordi.", "srs": true},
+  {"ar": "دَرَسَ", "translit": "darasa", "uz": "o'qidi, o'rgandi · u/erkak", "root": "د ر س", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/darasa.mp3", "example_ar": "دَرَسَ الطَّالِبُ.", "example_uz": "Talaba o'qidi.", "srs": true},
+  {"ar": "أَكَلَ", "translit": "akala", "uz": "yedi · u/erkak", "root": "أ ك ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/akala.mp3", "example_ar": "أَكَلَ الخُبْزَ.", "example_uz": "U non yedi.", "srs": true},
+  {"ar": "شَرِبَ", "translit": "shariba", "uz": "ichdi · u/erkak", "root": "ش ر ب", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "a1/shariba.mp3", "example_ar": "شَرِبَ المَاءَ.", "example_uz": "U suv ichdi.", "srs": true},
+  {"ar": "فَتَحَ", "translit": "fataḥa", "uz": "ochdi · u/erkak", "root": "ف ت ح", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/fataha.mp3", "example_ar": "فَتَحَ البَابَ.", "example_uz": "U eshikni ochdi.", "srs": true},
+  {"ar": "جَلَسَ", "translit": "jalasa", "uz": "o'tirdi · u/erkak", "root": "ج ل س", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/jalasa.mp3", "example_ar": "جَلَسَ عَلَى الكُرْسِيِّ.", "example_uz": "U stulga o'tirdi.", "srs": true},
+  {"ar": "سَمِعَ", "translit": "samiʿa", "uz": "eshitdi · u/erkak", "root": "س م ع", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "a1/samia.mp3", "example_ar": "سَمِعَ الأَذَانَ.", "example_uz": "U azonni eshitdi.", "srs": true},
   {"ar": "خُبْز", "translit": "khubz", "uz": "non", "root": "خ ب ز", "pattern": "فُعْل", "pos": "ot", "audio": "a1/khubz.mp3", "example_ar": "أَكَلَ الخُبْزَ.", "example_uz": "U non yedi.", "srs": true},
   {"ar": "مَاء", "translit": "māʾ", "uz": "suv", "root": "م و ه", "pattern": "", "pos": "ot", "audio": "a1/maa.mp3", "example_ar": "شَرِبَ المَاءَ.", "example_uz": "U suv ichdi.", "srs": true}
  ],
@@ -85,14 +85,14 @@
  ],
  "srs_cards": [
   {"type": "root", "front": "ذ ه ب", "back": "borish o'zagi (dhahaba=bordi, mazhab)", "deck": "msa"},
-  {"type": "word", "front": "كَتَبَ", "back": "u yozdi", "deck": "msa"},
-  {"type": "word", "front": "ذَهَبَ", "back": "u bordi, ketdi", "deck": "msa"},
-  {"type": "word", "front": "دَرَسَ", "back": "u o'qidi", "deck": "msa"},
-  {"type": "word", "front": "أَكَلَ", "back": "u yedi", "deck": "msa"},
-  {"type": "word", "front": "شَرِبَ", "back": "u ichdi", "deck": "msa"},
-  {"type": "word", "front": "فَتَحَ", "back": "u ochdi", "deck": "msa"},
-  {"type": "word", "front": "جَلَسَ", "back": "u o'tirdi", "deck": "msa"},
-  {"type": "word", "front": "سَمِعَ", "back": "u eshitdi", "deck": "msa"},
+  {"type": "word", "front": "كَتَبَ", "back": "yozdi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "ذَهَبَ", "back": "bordi, ketdi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "دَرَسَ", "back": "o'qidi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "أَكَلَ", "back": "yedi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "شَرِبَ", "back": "ichdi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "فَتَحَ", "back": "ochdi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "جَلَسَ", "back": "o'tirdi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "سَمِعَ", "back": "eshitdi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "خُبْز", "back": "non", "deck": "msa"}
  ]
 }

@@ -3,96 +3,106 @@
  "level": "A2",
  "module": "verb-forms",
  "order": 13,
- "title_uz": "IV bob: sababiyat",
+ "title_uz": "IV bob: sababiyat (أَرْسَلَ)",
  "title_ar": "البَابُ الرَّابِع: أَفْعَلَ",
- "can_do_uz": "IV bob (أَفْعَلَ) fe'llarini taniyman: «-dirmoq», sababiyat va o'timli ma'noni bilaman.",
+ "can_do_uz": "IV bob (أَفْعَلَ) ma'nosini bilaman va أَرْسَلَ fe'lini 14 shaklda to'liq tuslay olaman.",
  "duration_min": 30,
  "prerequisites": ["a2-12"],
  "harakat_level": "new_words_only",
- "hook_uz": "«سَلِمَ» — omon bo'ldi. «أَسْلَمَ» — taslim bo'ldi (= Islom!). O'zak boshiga HAMZA (أَـ) qo'shsangiz — «-dirmoq» ma'nosi chiqadi: خَرَجَ (chiqdi) → أَخْرَجَ (chiqardi). Masdari — إِفْعَال (إِسْلَام, إِرْسَال). Bu bob juda ko'p ishlatiladi!",
+ "hook_uz": "IV bobda o'zak oldiga HAMZA (أَـ) qo'shiladi: أَرْسَلَ (yubordi), أَخْرَجَ (chiqardi). Ma'nosi ko'pincha «-dirmoq» (sababiyat). Bugun bitta أَرْسَلَ ni 14 shaklda tuslaymiz. Diqqat: muzori'da boshidagi hamza YO'QOLADI — يُرْسِلُ.",
  "grammar": {
-  "point_ar": "أَفْعَلَ — التَّعْدِيَة",
-  "explanation_uz": "IV bob vazni: أَفْعَلَ (o'zak boshiga hamza أَـ, 1-harf sukunli). Asosiy ma'no: SABABIYAT / o'timlilik («-dirmoq, qildirmoq»): دَخَلَ (kirdi) → أَدْخَلَ (kiritdi), خَرَجَ (chiqdi) → أَخْرَجَ (chiqardi). Mashhur misol: سَلِمَ (salomat bo'ldi) → أَسْلَمَ (Allohga taslim bo'ldi = musulmon bo'ldi). Masdari إِفْعَال: إِسْلَام (Islom), إِرْسَال (yuborish). Hozirgi zamoni: يُفْعِلُ (يُرْسِلُ).",
+  "point_ar": "أَفْعَلَ — تَصْرِيفُ أَرْسَلَ",
+  "explanation_uz": "IV bob vazni — أَفْعَلَ: o'zak oldiga HAMZA (أَـ) qo'shiladi. Ma'nosi: SABABIYAT / «-dirmoq» (تَعْدِيَة) — o'timsiz fe'lni o'timli qiladi: خَرَجَ (chiqdi) → أَخْرَجَ (chiqardi), دَخَلَ (kirdi) → أَدْخَلَ (kiritdi). Muzori'i يُفْعِلُ (يُرْسِلُ) — prefiks DAMMA, boshidagi hamza TUSHIB QOLADI. Masdari إِفْعَال (إِرْسَال, إِخْرَاج). Tuslash qo'shimchalari moziydagidek o'zgarmaydi.",
   "table": [
-   {"ar": "سَلِمَ ← أَسْلَمَ", "uz": "omon bo'ldi → taslim bo'ldi (Islom)", "form": "أَفْعَلَ"},
-   {"ar": "خَرَجَ ← أَخْرَجَ", "uz": "chiqdi → chiqardi", "form": "sababiyat"},
-   {"ar": "أَرْسَلَ", "uz": "yubordi", "form": "أَفْعَلَ"},
-   {"ar": "مَصْدَر: إِسْلَام · إِرْسَال", "uz": "masdar: Islom, yuborish", "form": "إِفْعَال"}
+   {"ar": "أَرْسَلَ", "uz": "u (bir erkak) yubordi", "form": "غَائِب مُفْرَد"},
+   {"ar": "أَرْسَلَا", "uz": "u ikki erkak yubordi", "form": "غَائِب مُثَنَّى"},
+   {"ar": "أَرْسَلُوا", "uz": "ular (erkaklar) yuborishdi", "form": "غَائِب جَمْع"},
+   {"ar": "أَرْسَلَتْ", "uz": "u (bir ayol) yubordi", "form": "غَائِبَة مُفْرَد"},
+   {"ar": "أَرْسَلَتَا", "uz": "u ikki ayol yubordi", "form": "غَائِبَة مُثَنَّى"},
+   {"ar": "أَرْسَلْنَ", "uz": "ular (ayollar) yuborishdi", "form": "غَائِبَة جَمْع"},
+   {"ar": "أَرْسَلْتَ", "uz": "sen (erkak) yubording", "form": "مُخَاطَب مُفْرَد"},
+   {"ar": "أَرْسَلْتُمَا", "uz": "sizlar ikkovingiz yubordingiz", "form": "مُخَاطَب مُثَنَّى"},
+   {"ar": "أَرْسَلْتُمْ", "uz": "sizlar (erkaklar) yubordingiz", "form": "مُخَاطَب جَمْع"},
+   {"ar": "أَرْسَلْتِ", "uz": "sen (ayol) yubording", "form": "مُخَاطَبَة مُفْرَد"},
+   {"ar": "أَرْسَلْتُنَّ", "uz": "sizlar (ayollar) yubordingiz", "form": "مُخَاطَبَة جَمْع"},
+   {"ar": "أَرْسَلْتُ", "uz": "men yubordim", "form": "مُتَكَلِّم مُفْرَد"},
+   {"ar": "أَرْسَلْنَا", "uz": "biz yubordik", "form": "مُتَكَلِّم جَمْع"},
+   {"ar": "يُرْسِلُ", "uz": "u yuboradi (muzori' — hamza tushdi, prefiks damma)", "form": "المُضَارِع"}
   ],
   "common_mistakes_uz": [
-   "O'zak boshidagi hamzani (أَـ) unutish — bu IV bobning belgisi.",
-   "IV bob (أَفْعَلَ) va I bob amrini (اُفْعُلْ) chalkashtirish.",
-   "Hozirgi zamon prefiksini damma qilishni unutish: يُرْسِلُ (يُـ)."
+   "Muzori'da hamzani saqlab qolish: يُؤَرْسِلُ xato — to'g'risi يُرْسِلُ (hamza tushadi).",
+   "Boshidagi hamzani (أَـ) tushirib qoldirish — IV bobni ajratadigan belgi shu.",
+   "أَرْسَلْنَ (ular ayollar) va أَرْسَلْنَا (biz) ni chalkashtirish — farq oxirgi ا da."
   ]
  },
  "roots": [
   {
-   "root": "س ل م",
-   "meaning_uz": "salomatlik, taslim, tinchlik",
-   "uz_cognates": ["Islom", "musulmon", "salom", "taslim"],
+   "root": "ر س ل",
+   "meaning_uz": "yuborish, xabar — IV bob namunasi",
+   "uz_cognates": ["risola", "rasul", "irsol"],
    "derived": [
-    {"ar": "أَسْلَمَ", "uz": "taslim bo'ldi, musulmon bo'ldi (IV)", "pattern": "أَفْعَلَ"},
-    {"ar": "إِسْلَام", "uz": "Islom (masdar)", "pattern": "إِفْعَال"}
+    {"ar": "أَرْسَلَ", "uz": "yubordi (IV)", "pattern": "أَفْعَلَ"},
+    {"ar": "مُرْسِل", "uz": "jo'natuvchi (ism fo'il)", "pattern": "مُفْعِل"},
+    {"ar": "إِرْسَال", "uz": "jo'natish (masdar)", "pattern": "إِفْعَال"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "أَرْسَلَ", "translit": "arsala", "uz": "yubordi (o'zbekcha 'irsol')", "root": "ر س ل", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/arsala.mp3", "example_ar": "أَرْسَلَ رِسَالَةً.", "example_uz": "Xat yubordi.", "srs": true},
-  {"ar": "أَخْرَجَ", "translit": "akhraja", "uz": "chiqardi", "root": "خ ر ج", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/akhraja.mp3", "example_ar": "أَخْرَجَ الكِتَابَ.", "example_uz": "Kitobni chiqardi.", "srs": true},
-  {"ar": "أَدْخَلَ", "translit": "adkhala", "uz": "kiritdi", "root": "د خ ل", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/adkhala.mp3", "example_ar": "أَدْخَلَ الرَّقَمَ السِّرِّيَّ.", "example_uz": "PIN kodni kiritdi.", "srs": true},
-  {"ar": "أَكْمَلَ", "translit": "akmala", "uz": "tugalladi, yakunladi", "root": "ك م ل", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/akmala.mp3", "example_ar": "أَكْمَلَ الدِّرَاسَةَ.", "example_uz": "O'qishni tugalladi.", "srs": true},
-  {"ar": "أَخْبَرَ", "translit": "akhbara", "uz": "xabar berdi", "root": "خ ب ر", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/akhbara.mp3", "example_ar": "أَخْبَرَنِي بِالخَبَرِ.", "example_uz": "Menga xabarni aytdi.", "srs": true},
-  {"ar": "أَكْرَمَ", "translit": "akrama", "uz": "izzat qildi, hurmatladi (o'zbekcha 'ikrom')", "root": "ك ر م", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/akrama.mp3", "example_ar": "أَكْرَمَ الضَّيْفَ.", "example_uz": "Mehmonni izzat qildi.", "srs": true},
-  {"ar": "أَحْسَنَ", "translit": "aḥsana", "uz": "yaxshi qildi, ehson qildi", "root": "ح س ن", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/ahsana.mp3", "example_ar": "أَحْسَنَ إِلَى الفُقَرَاءِ.", "example_uz": "Kambag'allarga ezgulik qildi.", "srs": true},
-  {"ar": "أَسْلَمَ", "translit": "aslama", "uz": "taslim bo'ldi, musulmon bo'ldi", "root": "س ل م", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/aslama.mp3", "example_ar": "أَسْلَمَ الرَّجُلُ.", "example_uz": "Erkak musulmon bo'ldi.", "srs": true},
-  {"ar": "إِسْلَام", "translit": "islām", "uz": "Islom (masdar) (o'zbekcha 'Islom')", "root": "س ل م", "pattern": "إِفْعَال", "pos": "ot", "audio": "a2/islam.mp3", "example_ar": "الإِسْلَامُ دِينُ السَّلَامِ.", "example_uz": "Islom — tinchlik dini.", "srs": true},
-  {"ar": "ضَيْف", "translit": "ḍayf", "uz": "mehmon", "root": "ض ي ف", "pattern": "فَعْل", "pos": "ot", "audio": "a2/dayf.mp3", "example_ar": "أَكْرَمَ الضَّيْفَ.", "example_uz": "Mehmonni izzatladi.", "srs": true}
+  {"ar": "أَرْسَلَ", "translit": "arsala", "uz": "yubordi (IV bob · u/erkak — lug'at shakli) (o'zbekcha 'irsol')", "root": "ر س ل", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/arsala.mp3", "example_ar": "أَرْسَلَ رِسَالَةً.", "example_uz": "Xat yubordi.", "srs": true},
+  {"ar": "أَخْرَجَ", "translit": "akhraja", "uz": "chiqardi (IV bob · u/erkak)", "root": "خ ر ج", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/akhraja.mp3", "example_ar": "أَخْرَجَ الكِتَابَ.", "example_uz": "Kitobni chiqardi.", "srs": true},
+  {"ar": "أَدْخَلَ", "translit": "adkhala", "uz": "kiritdi (IV bob · u/erkak)", "root": "د خ ل", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/adkhala.mp3", "example_ar": "أَدْخَلَ الضَّيْفَ.", "example_uz": "Mehmonni kiritdi.", "srs": true},
+  {"ar": "أَخْبَرَ", "translit": "akhbara", "uz": "xabar berdi (IV bob · u/erkak) (o'zbekcha 'xabar')", "root": "خ ب ر", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/akhbara.mp3", "example_ar": "أَخْبَرَنِي بِالخَبَرِ.", "example_uz": "Menga xabarni aytdi.", "srs": true},
+  {"ar": "أَكْمَلَ", "translit": "akmala", "uz": "tugalladi, yakunladi (IV bob · u/erkak)", "root": "ك م ل", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/akmala.mp3", "example_ar": "أَكْمَلَ العَمَلَ.", "example_uz": "Ishni tugalladi.", "srs": true},
+  {"ar": "يُرْسِلُ", "translit": "yursilu", "uz": "yuboradi (IV bob muzori' · u/erkak)", "root": "ر س ل", "pattern": "يُفْعِلُ", "pos": "fe'l", "audio": "a2/yursilu.mp3", "example_ar": "يُرْسِلُ رِسَالَةً كُلَّ يَوْمٍ.", "example_uz": "Har kuni xat yuboradi.", "srs": true},
+  {"ar": "إِرْسَال", "translit": "irsāl", "uz": "jo'natish, yuborish (IV bob masdari) (o'zbekcha 'irsol')", "root": "ر س ل", "pattern": "إِفْعَال", "pos": "ot", "audio": "a2/irsal.mp3", "example_ar": "إِرْسَالُ الرَّسَائِلِ.", "example_uz": "Xatlarni jo'natish.", "srs": true},
+  {"ar": "رِسَالَة", "translit": "risāla", "uz": "xat, risola (o'zbekcha 'risola')", "root": "ر س ل", "pattern": "فِعَالَة", "pos": "ot", "audio": "a2/risala.mp3", "example_ar": "كَتَبْتُ رِسَالَةً.", "example_uz": "Xat yozdim.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "أَرْسَلْتُ رِسَالَةً إِلَى صَدِيقِي وَأَخْبَرْتُهُ بِالخَبَرِ. أَكْمَلْتُ عَمَلِي ثُمَّ أَكْرَمْتُ ضَيْفِي. الإِسْلَامُ يَأْمُرُ بِإِكْرَامِ الضَّيْفِ.",
+   "text_ar": "أَرْسَلَ أَحْمَدُ رِسَالَةً، وَأَرْسَلَتْ مَرْيَمُ رِسَالَةً أُخْرَى. نَحْنُ أَرْسَلْنَا الهَدَايَا، وَهُمْ أَرْسَلُوا الكُتُبَ. غَدًا يُرْسِلُ المُدِيرُ الخِطَابَ.",
    "questions": [
-    {"q_uz": "Do'stiga nima yubordi?", "a": "Xat (رِسَالَة)"},
-    {"q_uz": "«أَكْرَمَ» qaysi bob va ma'no?", "a": "IV bob — izzat qildi"}
+    {"q_uz": "«أَرْسَلَتْ» qaysi shakl?", "a": "U (bir ayol) yubordi"},
+    {"q_uz": "«Biz yubordik» matnda qaysi?", "a": "أَرْسَلْنَا"},
+    {"q_uz": "«يُرْسِلُ» da hamzaga nima bo'ldi?", "a": "Muzori'da hamza tushib qoldi"}
    ]
   },
   "listening": {
    "audio": "a2/arsala.mp3",
    "transcript_ar": "أَرْسَلَ",
    "questions": [
-    {"q_uz": "Fe'l ma'nosi va bobi?", "a": "Yubordi — IV bob"}
+    {"q_uz": "Fe'l ma'nosi, bobi va shakli?", "a": "Yubordi — IV bob, u (bir erkak)"}
    ]
   },
   "speaking": {
-   "task_uz": "IV bob fe'llarini ayting: arsala, akhraja, akmala, aslama.",
-   "target_ar": ["أَرْسَلَ", "أَخْرَجَ", "أَسْلَمَ"],
+   "task_uz": "أَرْسَلَ ning g'oyib qatorini ayting: arsala, arsalā, arsalū, arsalat, arsalatā, arsalna. Keyin: men — arsaltu, biz — arsalnā.",
+   "target_ar": ["أَرْسَلَ", "أَرْسَلُوا", "أَرْسَلْنَا"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«Xat yubordim» va «Ishimni tugalladim» gaplarini IV bob bilan yozing.",
+   "task_uz": "أَرْسَلَ fe'lini uch shaxsda yozing: «men yubordim», «u (ayol) yubordi», «ular yuborishdi».",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "IV bob vazni qaysi?", "q_ar": "", "options": ["أَفْعَلَ", "فَعَّلَ", "فَاعَلَ", "تَفَعَّلَ"], "answer": "أَفْعَلَ", "explain_uz": "IV bob — o'zak boshiga hamza: أَفْعَلَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَرْسَلَ رِسَالَةً", "options": [], "answer": "xat yubordi", "explain_uz": "أَرْسَلَ (IV) = yubordi, رِسَالَة = xat.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«خَرَجَ» (chiqdi) ni IV bobga solsak «chiqardi»?", "q_ar": "", "options": ["أَخْرَجَ", "خَرَّجَ", "تَخَرَّجَ", "اِسْتَخْرَجَ"], "answer": "أَخْرَجَ", "explain_uz": "IV bob: أَخْرَجَ (chiqardi = chiqishga sabab bo'ldi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«أَسْلَمَ، إِسْلَام» qaysi o'zakdan?", "q_ar": "", "options": ["س ل م", "ر س ل", "ك ر م"], "answer": "س ل م", "explain_uz": "«س ل م» — salomatlik/taslim o'zagi: Islom, musulmon, salom, taslim.", "audio": "", "root": "س ل م", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "IV bobning masdar vazni qaysi?", "q_ar": "", "options": ["إِفْعَال", "تَفْعِيل", "مُفَاعَلَة", "اِسْتِفْعَال"], "answer": "إِفْعَال", "explain_uz": "IV bob masdari: إِفْعَال (إِسْلَام, إِرْسَال).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "xabar berdi", "q_ar": "", "options": [], "answer": "أَخْبَرَ", "explain_uz": "أَخْبَرَ (IV) — xabar berdi (خبر o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "izzat qildi, hurmatladi", "q_ar": "", "options": [], "answer": "أَكْرَمَ", "explain_uz": "أَكْرَمَ (IV) — izzat qildi (o'zbekcha 'ikrom').", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "IV bob vazni qaysi?", "q_ar": "", "options": ["أَفْعَلَ", "فَعَّلَ", "فَاعَلَ", "اِسْتَفْعَلَ"], "answer": "أَفْعَلَ", "explain_uz": "IV bob — o'zak oldiga hamza: أَفْعَلَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "أَرْسَلَ ning muzori' shakli qaysi?", "q_ar": "", "options": ["يُرْسِلُ", "يُؤَرْسِلُ", "يَرْسَلُ", "يَأْرَسِلُ"], "answer": "يُرْسِلُ", "explain_uz": "IV bob muzori'ida hamza tushadi: يُرْسِلُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَرْسَلْنَا الهَدَايَا", "options": [], "answer": "biz sovg'alarni yubordik", "explain_uz": "أَرْسَلْنَا — mutakallim jam' (biz).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "harakat", "q_uz": "«ular (ayollar) yuborishdi» to'g'ri shaklini tanlang:", "q_ar": "أرسلن", "options": ["أَرْسَلْنَ", "أَرْسَلْنَا", "أَرْسَلُوا", "أَرْسَلَتَا"], "answer": "أَرْسَلْنَ", "explain_uz": "G'oyiba jam': أَرْسَلْنَ (biz esa أَرْسَلْنَا).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«خَرَجَ» (chiqdi) ni IV bobga solsak?", "q_ar": "", "options": ["أَخْرَجَ", "خَرَّجَ", "تَخَرَّجَ", "اِسْتَخْرَجَ"], "answer": "أَخْرَجَ", "explain_uz": "IV bob: أَخْرَجَ (chiqardi — «chiqdi»ni o'timli qiladi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "jo'natish (masdar)", "q_ar": "", "options": [], "answer": "إِرْسَال", "explain_uz": "إِرْسَال — IV bob masdari (vazn: إِفْعَال).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "build_word", "q_uz": "ر س ل o'zagini أَفْعَلَ qolipiga soling (yubordi):", "q_ar": "", "options": [], "answer": "أَرْسَلَ", "explain_uz": "أَفْعَلَ + ر س ل = أَرْسَلَ (oldiga hamza).", "audio": "", "root": "ر س ل", "pattern": "أَفْعَلَ", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "س ل م", "back": "taslim/salom o'zagi (Islom, musulmon, salom, taslim)", "deck": "msa"},
-  {"type": "pattern", "front": "أَفْعَلَ (IV)", "back": "sababiyat/o'timli, masdar إِفْعَال", "deck": "msa"},
-  {"type": "word", "front": "أَرْسَلَ", "back": "yubordi (IV)", "deck": "msa"},
-  {"type": "word", "front": "أَخْرَجَ", "back": "chiqardi (IV)", "deck": "msa"},
-  {"type": "word", "front": "أَدْخَلَ", "back": "kiritdi (IV)", "deck": "msa"},
-  {"type": "word", "front": "أَكْمَلَ", "back": "tugalladi (IV)", "deck": "msa"},
-  {"type": "word", "front": "أَخْبَرَ", "back": "xabar berdi (IV)", "deck": "msa"},
-  {"type": "word", "front": "أَكْرَمَ", "back": "izzat qildi (IV)", "deck": "msa"},
-  {"type": "word", "front": "أَسْلَمَ", "back": "musulmon bo'ldi (IV)", "deck": "msa"},
-  {"type": "word", "front": "إِسْلَام", "back": "Islom (masdar)", "deck": "msa"}
+  {"type": "root", "front": "ر س ل", "back": "yuborish — IV bob namunasi (arsala=yubordi)", "deck": "msa"},
+  {"type": "pattern", "front": "أَفْعَلَ (IV)", "back": "sababiyat, muzori' يُفْعِلُ (hamza tushadi), masdar إِفْعَال", "deck": "msa"},
+  {"type": "word", "front": "أَرْسَلَ", "back": "yubordi (IV · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "أَرْسَلْنَا", "back": "biz yubordik (IV)", "deck": "msa"},
+  {"type": "word", "front": "أَرْسَلُوا", "back": "ular (erkaklar) yuborishdi (IV)", "deck": "msa"},
+  {"type": "word", "front": "أَخْرَجَ", "back": "chiqardi (IV · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "أَدْخَلَ", "back": "kiritdi (IV · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "أَخْبَرَ", "back": "xabar berdi (IV · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "يُرْسِلُ", "back": "yuboradi (IV muzori' · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "إِرْسَال", "back": "jo'natish (IV masdari)", "deck": "msa"}
  ]
 }

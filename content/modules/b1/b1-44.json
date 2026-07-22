@@ -43,9 +43,9 @@
   {"ar": "مُؤَلِّف", "translit": "muʾallif", "uz": "muallif (o'zbekcha 'muallif' aynan shundan)", "root": "أ ل ف", "pattern": "مُفَعِّل", "pos": "ot", "audio": "b1/muallif.mp3", "example_ar": "يرى المؤلفُ أنَّ القراءةَ ضرورةٌ.", "example_uz": "Muallif o'qishni zarurat deb biladi.", "srs": true},
   {"ar": "فِكْرَة رَئِيسَة", "translit": "fikra raʾīsa", "uz": "asosiy fikr", "root": "ف ك ر", "pattern": "", "pos": "ibora", "audio": "b1/fikra_raisa.mp3", "example_ar": "لكلِّ فقرةٍ فكرةٌ رئيسةٌ.", "example_uz": "Har xatboshining asosiy fikri bor.", "srs": true},
   {"ar": "تَفَاصِيل", "translit": "tafāṣīl", "uz": "tafsilotlar (o'zbekcha 'tafsilot')", "root": "ف ص ل", "pattern": "تَفَاعِيل", "pos": "ot", "audio": "b1/tafasil.mp3", "example_ar": "احذفِ التفاصيلَ الثانويةَ.", "example_uz": "Ikkinchi darajali tafsilotlarni olib tashlang.", "srs": true},
-  {"ar": "حَذَفَ", "translit": "ḥadhafa", "uz": "olib tashladi, o'chirdi (o'zbekcha 'hazf')", "root": "ح ذ ف", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/hadhafa.mp3", "example_ar": "احذفِ الأمثلةَ من الملخصِ.", "example_uz": "Konspektdan misollarni o'chiring.", "srs": true},
+  {"ar": "حَذَفَ", "translit": "ḥadhafa", "uz": "olib tashladi, o'chirdi (o'zbekcha 'hazf') · u/erkak", "root": "ح ذ ف", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/hadhafa.mp3", "example_ar": "احذفِ الأمثلةَ من الملخصِ.", "example_uz": "Konspektdan misollarni o'chiring.", "srs": true},
   {"ar": "أَعَادَ صِيَاغَة", "translit": "aʿāda ṣiyāgha", "uz": "qayta ifodaladi (o'z so'zi bilan)", "root": "ص و غ", "pattern": "", "pos": "ibora", "audio": "b1/aada_siyagha.mp3", "example_ar": "أعدْ صياغةَ الجملةِ بأسلوبِكَ.", "example_uz": "Gapni o'z uslubingizda qayta yozing.", "srs": true},
-  {"ar": "يَخْلُصُ إِلَى", "translit": "yakhluṣu ilā", "uz": "…degan xulosaga keladi", "root": "خ ل ص", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "b1/yakhlusu.mp3", "example_ar": "يخلُصُ النصُّ إلى أهميةِ الصبرِ.", "example_uz": "Matn sabr muhimligi xulosasiga keladi.", "srs": true}
+  {"ar": "يَخْلُصُ إِلَى", "translit": "yakhluṣu ilā", "uz": "…degan xulosaga keladi · u/erkak", "root": "خ ل ص", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "b1/yakhlusu.mp3", "example_ar": "يخلُصُ النصُّ إلى أهميةِ الصبرِ.", "example_uz": "Matn sabr muhimligi xulosasiga keladi.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
@@ -90,7 +90,7 @@
   {"type": "word", "front": "مُؤَلِّف", "back": "muallif", "deck": "msa"},
   {"type": "word", "front": "فِكْرَة رَئِيسَة", "back": "asosiy fikr", "deck": "msa"},
   {"type": "word", "front": "تَفَاصِيل", "back": "tafsilotlar", "deck": "msa"},
-  {"type": "word", "front": "حَذَفَ", "back": "olib tashladi", "deck": "msa"},
-  {"type": "word", "front": "يَخْلُصُ إِلَى", "back": "xulosaga keladi", "deck": "msa"}
+  {"type": "word", "front": "حَذَفَ", "back": "olib tashladi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "يَخْلُصُ إِلَى", "back": "xulosaga keladi · u/erkak", "deck": "msa"}
  ]
 }

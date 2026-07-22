@@ -37,11 +37,11 @@
   }
  ],
  "vocabulary": [
-  {"ar": "يَعْرِفُ", "translit": "yaʿrifu", "uz": "u biladi, taniydi", "root": "ع ر ف", "pattern": "يَفْعِلُ", "pos": "fe'l", "audio": "a1/yarifu.mp3", "example_ar": "يَعْرِفُ الطَّرِيقَ.", "example_uz": "U yo'lni biladi.", "srs": true},
-  {"ar": "يَسْمَعُ", "translit": "yasmaʿu", "uz": "u eshitadi", "root": "س م ع", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a1/yasmau.mp3", "example_ar": "يَسْمَعُ الأَذَانَ.", "example_uz": "U azonni eshitadi.", "srs": true},
-  {"ar": "يَنْظُرُ", "translit": "yanẓuru", "uz": "u qaraydi", "root": "ن ظ ر", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a1/yanzuru.mp3", "example_ar": "يَنْظُرُ إِلَى الكِتَابِ.", "example_uz": "U kitobga qaraydi.", "srs": true},
-  {"ar": "يَرْجِعُ", "translit": "yarjiʿu", "uz": "u qaytadi", "root": "ر ج ع", "pattern": "يَفْعِلُ", "pos": "fe'l", "audio": "a1/yarjiu.mp3", "example_ar": "يَرْجِعُ إِلَى البَيْتِ.", "example_uz": "U uyga qaytadi.", "srs": true},
-  {"ar": "يَدْخُلُ", "translit": "yadkhulu", "uz": "u kiradi", "root": "د خ ل", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a1/yadkhulu.mp3", "example_ar": "يَدْخُلُ الغُرْفَةَ.", "example_uz": "U xonaga kiradi.", "srs": true},
+  {"ar": "يَعْرِفُ", "translit": "yaʿrifu", "uz": "biladi, taniydi · u/erkak", "root": "ع ر ف", "pattern": "يَفْعِلُ", "pos": "fe'l", "audio": "a1/yarifu.mp3", "example_ar": "يَعْرِفُ الطَّرِيقَ.", "example_uz": "U yo'lni biladi.", "srs": true},
+  {"ar": "يَسْمَعُ", "translit": "yasmaʿu", "uz": "eshitadi · u/erkak", "root": "س م ع", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a1/yasmau.mp3", "example_ar": "يَسْمَعُ الأَذَانَ.", "example_uz": "U azonni eshitadi.", "srs": true},
+  {"ar": "يَنْظُرُ", "translit": "yanẓuru", "uz": "qaraydi · u/erkak", "root": "ن ظ ر", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a1/yanzuru.mp3", "example_ar": "يَنْظُرُ إِلَى الكِتَابِ.", "example_uz": "U kitobga qaraydi.", "srs": true},
+  {"ar": "يَرْجِعُ", "translit": "yarjiʿu", "uz": "qaytadi · u/erkak", "root": "ر ج ع", "pattern": "يَفْعِلُ", "pos": "fe'l", "audio": "a1/yarjiu.mp3", "example_ar": "يَرْجِعُ إِلَى البَيْتِ.", "example_uz": "U uyga qaytadi.", "srs": true},
+  {"ar": "يَدْخُلُ", "translit": "yadkhulu", "uz": "kiradi · u/erkak", "root": "د خ ل", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a1/yadkhulu.mp3", "example_ar": "يَدْخُلُ الغُرْفَةَ.", "example_uz": "U xonaga kiradi.", "srs": true},
   {"ar": "يَعْرِفُونَ", "translit": "yaʿrifūna", "uz": "ular biladilar", "root": "ع ر ف", "pattern": "يَفْعِلُونَ", "pos": "fe'l", "audio": "a1/yarifuna.mp3", "example_ar": "هُمْ يَعْرِفُونَ العَرَبِيَّةَ.", "example_uz": "Ular arabchani biladilar.", "srs": true},
   {"ar": "يَدْرُسُونَ", "translit": "yadrusūna", "uz": "ular o'qiydilar", "root": "د ر س", "pattern": "يَفْعُلُونَ", "pos": "fe'l", "audio": "a1/yadrusuna.mp3", "example_ar": "الطُّلَّابُ يَدْرُسُونَ.", "example_uz": "Talabalar o'qiydilar.", "srs": true},
   {"ar": "طَرِيق", "translit": "ṭarīq", "uz": "yo'l (o'zbekcha 'tariqat' shundan)", "root": "ط ر ق", "pattern": "فَعِيل", "pos": "ot", "audio": "a1/tariq.mp3", "example_ar": "يَعْرِفُ الطَّرِيقَ.", "example_uz": "U yo'lni biladi.", "srs": true}
@@ -83,11 +83,11 @@
  ],
  "srs_cards": [
   {"type": "root", "front": "ع ر ف", "back": "bilish o'zagi (ma'rifat, ta'rif, orif)", "deck": "msa"},
-  {"type": "word", "front": "يَعْرِفُ", "back": "u biladi, taniydi", "deck": "msa"},
-  {"type": "word", "front": "يَسْمَعُ", "back": "u eshitadi", "deck": "msa"},
-  {"type": "word", "front": "يَنْظُرُ", "back": "u qaraydi", "deck": "msa"},
-  {"type": "word", "front": "يَرْجِعُ", "back": "u qaytadi", "deck": "msa"},
-  {"type": "word", "front": "يَدْخُلُ", "back": "u kiradi", "deck": "msa"},
+  {"type": "word", "front": "يَعْرِفُ", "back": "biladi, taniydi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "يَسْمَعُ", "back": "eshitadi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "يَنْظُرُ", "back": "qaraydi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "يَرْجِعُ", "back": "qaytadi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "يَدْخُلُ", "back": "kiradi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "يَعْرِفُونَ", "back": "ular biladilar", "deck": "msa"},
   {"type": "word", "front": "يَدْرُسُونَ", "back": "ular o'qiydilar", "deck": "msa"},
   {"type": "word", "front": "طَرِيق", "back": "yo'l", "deck": "msa"}

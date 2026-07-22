@@ -38,16 +38,16 @@
   }
  ],
  "vocabulary": [
-  {"ar": "بُنِيَ", "translit": "buniya", "uz": "qurildi (o'zbekcha 'bino' o'zagi)", "root": "ب ن ي", "pattern": "فُعِلَ", "pos": "fe'l", "audio": "b1/buniya.mp3", "example_ar": "بُنِيَ المسجدُ قبلَ مئةِ سنةٍ.", "example_uz": "Masjid yuz yil oldin qurilgan.", "srs": true},
-  {"ar": "يُبْنَى", "translit": "yubnā", "uz": "quriladi", "root": "ب ن ي", "pattern": "يُفْعَل", "pos": "fe'l", "audio": "b1/yubna.mp3", "example_ar": "يُبْنَى مستشفًى جديدٌ هنا.", "example_uz": "Bu yerda yangi shifoxona qurilyapti.", "srs": true},
+  {"ar": "بُنِيَ", "translit": "buniya", "uz": "qurildi (o'zbekcha 'bino' o'zagi) · majhul", "root": "ب ن ي", "pattern": "فُعِلَ", "pos": "fe'l", "audio": "b1/buniya.mp3", "example_ar": "بُنِيَ المسجدُ قبلَ مئةِ سنةٍ.", "example_uz": "Masjid yuz yil oldin qurilgan.", "srs": true},
+  {"ar": "يُبْنَى", "translit": "yubnā", "uz": "quriladi · u/erkak", "root": "ب ن ي", "pattern": "يُفْعَل", "pos": "fe'l", "audio": "b1/yubna.mp3", "example_ar": "يُبْنَى مستشفًى جديدٌ هنا.", "example_uz": "Bu yerda yangi shifoxona qurilyapti.", "srs": true},
   {"ar": "مِنْ قِبَلِ", "translit": "min qibali", "uz": "tomonidan (bajaruvchini kiritadi)", "root": "ق ب ل", "pattern": "", "pos": "ibora", "audio": "b1/min_qibali.mp3", "example_ar": "كُتِبَ التقريرُ مِنْ قِبَلِ المديرِ.", "example_uz": "Hisobot direktor tomonidan yozildi.", "srs": true},
-  {"ar": "قِيلَ", "translit": "qīla", "uz": "deyildi, aytildi", "root": "ق و ل", "pattern": "فِيلَ", "pos": "fe'l", "audio": "b1/qila.mp3", "example_ar": "قِيلَ إنَّ الاجتماعَ غدًا.", "example_uz": "Majlis ertaga deyildi.", "srs": true},
-  {"ar": "بِيعَ", "translit": "bīʿa", "uz": "sotildi", "root": "ب ي ع", "pattern": "فِيلَ", "pos": "fe'l", "audio": "b1/bia.mp3", "example_ar": "بِيعَ البيتُ أمسِ.", "example_uz": "Uy kecha sotildi.", "srs": true},
+  {"ar": "قِيلَ", "translit": "qīla", "uz": "deyildi, aytildi · majhul", "root": "ق و ل", "pattern": "فِيلَ", "pos": "fe'l", "audio": "b1/qila.mp3", "example_ar": "قِيلَ إنَّ الاجتماعَ غدًا.", "example_uz": "Majlis ertaga deyildi.", "srs": true},
+  {"ar": "بِيعَ", "translit": "bīʿa", "uz": "sotildi · majhul", "root": "ب ي ع", "pattern": "فِيلَ", "pos": "fe'l", "audio": "b1/bia.mp3", "example_ar": "بِيعَ البيتُ أمسِ.", "example_uz": "Uy kecha sotildi.", "srs": true},
   {"ar": "تَقْرِير", "translit": "taqrīr", "uz": "hisobot (o'zbekcha 'taqriz'ga yaqin o'zak)", "root": "ق ر ر", "pattern": "تَفْعِيل", "pos": "ot", "audio": "b1/taqrir.mp3", "example_ar": "قُرِئَ التقريرُ في الاجتماعِ.", "example_uz": "Hisobot majlisda o'qildi.", "srs": true},
   {"ar": "مُسْتَشْفَى", "translit": "mustashfā", "uz": "shifoxona (o'zbekcha 'shifo' o'zagi ش ف ي)", "root": "ش ف ي", "pattern": "مُسْتَفْعَل", "pos": "ot", "audio": "b1/mustashfa.mp3", "example_ar": "أُسِّسَ المستشفى عامَ ألفينِ.", "example_uz": "Shifoxona 2000-yilda tashkil etilgan.", "srs": true},
-  {"ar": "أُسِّسَ", "translit": "ussisa", "uz": "tashkil etildi, asos solindi (o'zbekcha 'asos')", "root": "أ س س", "pattern": "فُعِّلَ", "pos": "fe'l", "audio": "b1/ussisa.mp3", "example_ar": "أُسِّسَتِ الشركةُ حديثًا.", "example_uz": "Kompaniya yaqinda tashkil etildi.", "srs": true},
-  {"ar": "يُقَالُ", "translit": "yuqālu", "uz": "deyiladi", "root": "ق و ل", "pattern": "يُفَالُ", "pos": "fe'l", "audio": "b1/yuqalu.mp3", "example_ar": "يُقَالُ إنَّ الصبرَ مفتاحُ الفرجِ.", "example_uz": "Sabr — najot kaliti, deyiladi.", "srs": true},
-  {"ar": "نُشِرَ", "translit": "nushira", "uz": "nashr etildi (o'zbekcha 'nashr')", "root": "ن ش ر", "pattern": "فُعِلَ", "pos": "fe'l", "audio": "b1/nushira.mp3", "example_ar": "نُشِرَ الخبرُ في الصحيفةِ.", "example_uz": "Xabar gazetada nashr etildi.", "srs": true}
+  {"ar": "أُسِّسَ", "translit": "ussisa", "uz": "tashkil etildi, asos solindi (o'zbekcha 'asos') · majhul", "root": "أ س س", "pattern": "فُعِّلَ", "pos": "fe'l", "audio": "b1/ussisa.mp3", "example_ar": "أُسِّسَتِ الشركةُ حديثًا.", "example_uz": "Kompaniya yaqinda tashkil etildi.", "srs": true},
+  {"ar": "يُقَالُ", "translit": "yuqālu", "uz": "deyiladi · u/erkak", "root": "ق و ل", "pattern": "يُفَالُ", "pos": "fe'l", "audio": "b1/yuqalu.mp3", "example_ar": "يُقَالُ إنَّ الصبرَ مفتاحُ الفرجِ.", "example_uz": "Sabr — najot kaliti, deyiladi.", "srs": true},
+  {"ar": "نُشِرَ", "translit": "nushira", "uz": "nashr etildi (o'zbekcha 'nashr') · majhul", "root": "ن ش ر", "pattern": "فُعِلَ", "pos": "fe'l", "audio": "b1/nushira.mp3", "example_ar": "نُشِرَ الخبرُ في الصحيفةِ.", "example_uz": "Xabar gazetada nashr etildi.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
@@ -87,14 +87,14 @@
  ],
  "srs_cards": [
   {"type": "root", "front": "ب ن ي", "back": "qurish o'zagi (bino, mabno)", "deck": "msa"},
-  {"type": "word", "front": "بُنِيَ", "back": "qurildi (majhul)", "deck": "msa"},
-  {"type": "word", "front": "يُبْنَى", "back": "quriladi", "deck": "msa"},
+  {"type": "word", "front": "بُنِيَ", "back": "qurildi (majhul) · majhul", "deck": "msa"},
+  {"type": "word", "front": "يُبْنَى", "back": "quriladi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "مِنْ قِبَلِ", "back": "tomonidan", "deck": "msa"},
-  {"type": "word", "front": "قِيلَ", "back": "deyildi", "deck": "msa"},
-  {"type": "word", "front": "بِيعَ", "back": "sotildi", "deck": "msa"},
+  {"type": "word", "front": "قِيلَ", "back": "deyildi · majhul", "deck": "msa"},
+  {"type": "word", "front": "بِيعَ", "back": "sotildi · majhul", "deck": "msa"},
   {"type": "word", "front": "تَقْرِير", "back": "hisobot", "deck": "msa"},
   {"type": "word", "front": "مُسْتَشْفَى", "back": "shifoxona", "deck": "msa"},
-  {"type": "word", "front": "أُسِّسَ", "back": "tashkil etildi", "deck": "msa"},
-  {"type": "word", "front": "نُشِرَ", "back": "nashr etildi", "deck": "msa"}
+  {"type": "word", "front": "أُسِّسَ", "back": "tashkil etildi · majhul", "deck": "msa"},
+  {"type": "word", "front": "نُشِرَ", "back": "nashr etildi · majhul", "deck": "msa"}
  ]
 }

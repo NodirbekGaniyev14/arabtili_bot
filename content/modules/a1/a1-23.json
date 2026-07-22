@@ -37,7 +37,7 @@
   }
  ],
  "vocabulary": [
-  {"ar": "سَيَذْهَبُ", "translit": "sayadhhabu", "uz": "u boradi (kelasi)", "root": "ذ ه ب", "pattern": "سَيَفْعَلُ", "pos": "fe'l", "audio": "a1/sayadhhabu.mp3", "example_ar": "سَيَذْهَبُ غَدًا.", "example_uz": "U ertaga boradi.", "srs": true},
+  {"ar": "سَيَذْهَبُ", "translit": "sayadhhabu", "uz": "boradi (kelasi) · u/erkak", "root": "ذ ه ب", "pattern": "سَيَفْعَلُ", "pos": "fe'l", "audio": "a1/sayadhhabu.mp3", "example_ar": "سَيَذْهَبُ غَدًا.", "example_uz": "U ertaga boradi.", "srs": true},
   {"ar": "سَأَكْتُبُ", "translit": "saʾaktubu", "uz": "men yozaman (kelasi)", "root": "ك ت ب", "pattern": "سَأَفْعُلُ", "pos": "fe'l", "audio": "a1/saaktubu.mp3", "example_ar": "سَأَكْتُبُ رِسَالَةً.", "example_uz": "Xat yozaman.", "srs": true},
   {"ar": "سَنَذْهَبُ", "translit": "sanadhhabu", "uz": "biz boramiz (kelasi)", "root": "ذ ه ب", "pattern": "سَنَفْعَلُ", "pos": "fe'l", "audio": "a1/sanadhhabu.mp3", "example_ar": "سَنَذْهَبُ إِلَى مَكَّةَ.", "example_uz": "Makkaga boramiz.", "srs": true},
   {"ar": "سَوْفَ", "translit": "sawfa", "uz": "kelasi zamon so'zi (-ajak)", "root": "", "pattern": "", "pos": "yuklama", "audio": "a1/sawfa.mp3", "example_ar": "سَوْفَ أَدْرُسُ.", "example_uz": "O'qiyman (kelajak).", "srs": true},
@@ -85,7 +85,7 @@
  ],
  "srs_cards": [
   {"type": "root", "front": "س ف ر", "back": "safar o'zagi (safar, musofir, safir)", "deck": "msa"},
-  {"type": "word", "front": "سَيَذْهَبُ", "back": "u boradi (kelasi)", "deck": "msa"},
+  {"type": "word", "front": "سَيَذْهَبُ", "back": "boradi (kelasi) · u/erkak", "deck": "msa"},
   {"type": "word", "front": "سَأَكْتُبُ", "back": "men yozaman (kelasi)", "deck": "msa"},
   {"type": "word", "front": "سَوْفَ", "back": "kelasi zamon so'zi (-ajak)", "deck": "msa"},
   {"type": "word", "front": "غَدًا", "back": "ertaga", "deck": "msa"},

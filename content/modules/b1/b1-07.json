@@ -46,7 +46,7 @@
   {"ar": "خَائِفًا", "translit": "khāʾifan", "uz": "qo'rqib, qo'rqqan holda (o'zbekcha 'xavf')", "root": "خ و ف", "pattern": "فَاعِل", "pos": "hol", "audio": "b1/khaifan.mp3", "example_ar": "تكلّمَ خائفًا.", "example_uz": "Qo'rqib gapirdi.", "srs": true},
   {"ar": "فَرِحًا", "translit": "fariḥan", "uz": "xursand holda (o'zbekcha 'farah — shodlik')", "root": "ف ر ح", "pattern": "فَعِل", "pos": "hol", "audio": "b1/farihan.mp3", "example_ar": "استلمَ الجائزةَ فرِحًا.", "example_uz": "Mukofotni xursand holda oldi.", "srs": true},
   {"ar": "جَائِع", "translit": "jāʾiʿ", "uz": "och (qorni och)", "root": "ج و ع", "pattern": "فَاعِل", "pos": "sifat", "audio": "b1/jai.mp3", "example_ar": "لا تنمْ جائعًا.", "example_uz": "Och holda uxlama.", "srs": true},
-  {"ar": "اِسْتَقْبَلَ", "translit": "istaqbala", "uz": "kutib oldi (X bob, o'zbekcha 'istiqbol')", "root": "ق ب ل", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "b1/istaqbala2.mp3", "example_ar": "استقبلَ الضيوفَ واقفًا.", "example_uz": "Mehmonlarni tik turib kutib oldi.", "srs": true},
+  {"ar": "اِسْتَقْبَلَ", "translit": "istaqbala", "uz": "kutib oldi (X bob, o'zbekcha 'istiqbol') · u/erkak", "root": "ق ب ل", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "b1/istaqbala2.mp3", "example_ar": "استقبلَ الضيوفَ واقفًا.", "example_uz": "Mehmonlarni tik turib kutib oldi.", "srs": true},
   {"ar": "جَائِزَة", "translit": "jāʾiza", "uz": "mukofot, sovrin", "root": "ج و ز", "pattern": "فَاعِلَة", "pos": "ot", "audio": "b1/jaiza.mp3", "example_ar": "فازَ بالجائزةِ الأولى.", "example_uz": "Birinchi mukofotni qo'lga kiritdi.", "srs": true}
  ],
  "hejazi": [],
@@ -94,7 +94,7 @@
   {"type": "word", "front": "مُبْتَسِمًا", "back": "jilmayib (tabassum)", "deck": "msa"},
   {"type": "word", "front": "خَائِفًا", "back": "qo'rqib (xavf)", "deck": "msa"},
   {"type": "word", "front": "فَرِحًا", "back": "xursand holda", "deck": "msa"},
-  {"type": "word", "front": "اِسْتَقْبَلَ", "back": "kutib oldi (istiqbol)", "deck": "msa"},
+  {"type": "word", "front": "اِسْتَقْبَلَ", "back": "kutib oldi (istiqbol) · u/erkak", "deck": "msa"},
   {"type": "word", "front": "جَائِزَة", "back": "mukofot, sovrin", "deck": "msa"}
  ]
 }

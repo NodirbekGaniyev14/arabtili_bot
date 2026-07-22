@@ -47,7 +47,7 @@
   {"ar": "مَقَاس", "translit": "maqās", "uz": "o'lcham, razmer", "root": "ق ي س", "pattern": "مَفْعَل", "pos": "ot", "audio": "a2/maqas.mp3", "example_ar": "مَا مَقَاسُكَ؟", "example_uz": "O'lchamingiz qancha?", "srs": true},
   {"ar": "لَوْن", "translit": "lawn", "uz": "rang", "root": "ل و ن", "pattern": "فَعْل", "pos": "ot", "audio": "a2/lawn.mp3", "example_ar": "أَيُّ لَوْنٍ؟", "example_uz": "Qaysi rang?", "srs": true},
   {"ar": "نَقْد", "translit": "naqd", "uz": "naqd pul", "root": "ن ق د", "pattern": "فَعْل", "pos": "ot", "audio": "a2/naqd.mp3", "example_ar": "أَدْفَعُ نَقْدًا.", "example_uz": "Naqd to'layman.", "srs": true},
-  {"ar": "يَشْتَرِي", "translit": "yashtarī", "uz": "sotib oladi", "root": "ش ر ي", "pattern": "يَفْتَعِل", "pos": "fe'l", "audio": "a2/yashtari.mp3", "example_ar": "يَشْتَرِي هَدِيَّةً.", "example_uz": "Sovg'a sotib oladi.", "srs": true},
+  {"ar": "يَشْتَرِي", "translit": "yashtarī", "uz": "sotib oladi · u/erkak", "root": "ش ر ي", "pattern": "يَفْتَعِل", "pos": "fe'l", "audio": "a2/yashtari.mp3", "example_ar": "يَشْتَرِي هَدِيَّةً.", "example_uz": "Sovg'a sotib oladi.", "srs": true},
   {"ar": "هَدِيَّة", "translit": "hadiyya", "uz": "sovg'a (o'zbekcha 'hadya')", "root": "ه د ي", "pattern": "فَعِيلَة", "pos": "ot", "audio": "a2/hadiyya.mp3", "example_ar": "اِشْتَرَيْتُ هَدِيَّةً.", "example_uz": "Sovg'a sotib oldim.", "srs": true}
  ],
  "hejazi": [

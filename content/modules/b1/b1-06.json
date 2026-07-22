@@ -40,11 +40,11 @@
  "vocabulary": [
   {"ar": "لَوْ", "translit": "law", "uz": "agar (xayoliy, amalga oshmagan shart)", "root": "", "pattern": "", "pos": "yuklama", "audio": "b1/law.mp3", "example_ar": "لو علمتُ لَجئتُ.", "example_uz": "Bilganimda edi, kelardim.", "srs": true},
   {"ar": "لَوْلَا", "translit": "lawlā", "uz": "bo'lmaganida edi", "root": "", "pattern": "", "pos": "yuklama", "audio": "b1/lawla.mp3", "example_ar": "لولا العلمُ لَضاعَ الإنسانُ.", "example_uz": "Ilm bo'lmaganida, inson adashardi.", "srs": true},
-  {"ar": "سَاعَدَ", "translit": "sāʿada", "uz": "yordam berdi (o'zbekcha 'musoada')", "root": "س ع د", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "b1/saada.mp3", "example_ar": "لو كنتُ هناك لَساعدتُكَ.", "example_uz": "U yerda bo'lganimda, senga yordam berardim.", "srs": true},
+  {"ar": "سَاعَدَ", "translit": "sāʿada", "uz": "yordam berdi (o'zbekcha 'musoada') · u/erkak", "root": "س ع د", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "b1/saada.mp3", "example_ar": "لو كنتُ هناك لَساعدتُكَ.", "example_uz": "U yerda bo'lganimda, senga yordam berardim.", "srs": true},
   {"ar": "غَنِيّ", "translit": "ghaniyy", "uz": "boy (o'zbekcha 'g'ani', 'boy-g'ani')", "root": "غ ن ي", "pattern": "فَعِيل", "pos": "sifat", "audio": "b1/ghaniy.mp3", "example_ar": "لو كانَ غنيًّا لَبنى مدرسةً.", "example_uz": "Boy bo'lganida, maktab qurardi.", "srs": true},
   {"ar": "فَقِير", "translit": "faqīr", "uz": "kambag'al (o'zbekcha 'faqir')", "root": "ف ق ر", "pattern": "فَعِيل", "pos": "sifat", "audio": "b1/faqir.mp3", "example_ar": "ساعدَ الفقراءَ سرًّا.", "example_uz": "Kambag'allarga yashirincha yordam berdi.", "srs": true},
-  {"ar": "ضَاعَ", "translit": "ḍāʿa", "uz": "yo'qoldi, zoye bo'ldi (o'zbekcha 'zoye')", "root": "ض ي ع", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/daa.mp3", "example_ar": "لولا الخريطةُ لَضاعَ المسافرُ.", "example_uz": "Xarita bo'lmaganida, yo'lovchi adashardi.", "srs": true},
-  {"ar": "نَدِمَ", "translit": "nadima", "uz": "afsuslandi, pushaymon bo'ldi (o'zbekcha 'nadomat')", "root": "ن د م", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "b1/nadima.mp3", "example_ar": "لو سمعَ النصيحةَ لَما ندِمَ.", "example_uz": "Nasihatni eshitganida, afsuslanmasdi.", "srs": true},
+  {"ar": "ضَاعَ", "translit": "ḍāʿa", "uz": "yo'qoldi, zoye bo'ldi (o'zbekcha 'zoye') · u/erkak", "root": "ض ي ع", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/daa.mp3", "example_ar": "لولا الخريطةُ لَضاعَ المسافرُ.", "example_uz": "Xarita bo'lmaganida, yo'lovchi adashardi.", "srs": true},
+  {"ar": "نَدِمَ", "translit": "nadima", "uz": "afsuslandi, pushaymon bo'ldi (o'zbekcha 'nadomat') · u/erkak", "root": "ن د م", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "b1/nadima.mp3", "example_ar": "لو سمعَ النصيحةَ لَما ندِمَ.", "example_uz": "Nasihatni eshitganida, afsuslanmasdi.", "srs": true},
   {"ar": "نَصِيحَة", "translit": "naṣīḥa", "uz": "nasihat (o'zbekcha 'nasihat' aynan shundan)", "root": "ن ص ح", "pattern": "فَعِيلَة", "pos": "ot", "audio": "b1/nasiha.mp3", "example_ar": "قدّمَ لي نصيحةً ثمينةً.", "example_uz": "Menga qimmatli nasihat berdi.", "srs": true},
   {"ar": "ثَمِين", "translit": "thamīn", "uz": "qimmatbaho (o'zbekcha 'samin emas — qimmat')", "root": "ث م ن", "pattern": "فَعِيل", "pos": "sifat", "audio": "b1/thamin.mp3", "example_ar": "الوقتُ أثمنُ ما نملكُ.", "example_uz": "Vaqt — egalik qilganimizning eng qimmati.", "srs": true},
   {"ar": "طَائِر", "translit": "ṭāʾir", "uz": "qush (uchuvchi)", "root": "ط ي ر", "pattern": "فَاعِل", "pos": "ot", "audio": "b1/tair.mp3", "example_ar": "لو كنتُ طائرًا لَطرتُ إليكَ.", "example_uz": "Qush bo'lganimda, senga uchib borardim.", "srs": true}
@@ -89,10 +89,10 @@
   {"type": "root", "front": "س ع د", "back": "saodat o'zagi (said, musoada)", "deck": "msa"},
   {"type": "word", "front": "لَوْ", "back": "agar (xayoliy shart)", "deck": "msa"},
   {"type": "word", "front": "لَوْلَا", "back": "bo'lmaganida edi", "deck": "msa"},
-  {"type": "word", "front": "سَاعَدَ", "back": "yordam berdi", "deck": "msa"},
+  {"type": "word", "front": "سَاعَدَ", "back": "yordam berdi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "غَنِيّ", "back": "boy", "deck": "msa"},
   {"type": "word", "front": "فَقِير", "back": "kambag'al", "deck": "msa"},
-  {"type": "word", "front": "نَدِمَ", "back": "afsuslandi (nadomat)", "deck": "msa"},
+  {"type": "word", "front": "نَدِمَ", "back": "afsuslandi (nadomat) · u/erkak", "deck": "msa"},
   {"type": "word", "front": "نَصِيحَة", "back": "nasihat", "deck": "msa"},
   {"type": "word", "front": "ثَمِين", "back": "qimmatbaho", "deck": "msa"},
   {"type": "word", "front": "طَائِر", "back": "qush", "deck": "msa"}

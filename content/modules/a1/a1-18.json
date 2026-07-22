@@ -37,11 +37,11 @@
   }
  ],
  "vocabulary": [
-  {"ar": "يَشْرَبُ", "translit": "yashrabu", "uz": "u ichadi", "root": "ش ر ب", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a1/yashrabu.mp3", "example_ar": "يَشْرَبُ القَهْوَةَ.", "example_uz": "U qahva ichadi.", "srs": true},
-  {"ar": "يَجْلِسُ", "translit": "yajlisu", "uz": "u o'tiradi", "root": "ج ل س", "pattern": "يَفْعِلُ", "pos": "fe'l", "audio": "a1/yajlisu.mp3", "example_ar": "يَجْلِسُ عَلَى الكُرْسِيِّ.", "example_uz": "U stulga o'tiradi.", "srs": true},
-  {"ar": "يَفْتَحُ", "translit": "yaftaḥu", "uz": "u ochadi", "root": "ف ت ح", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a1/yaftahu.mp3", "example_ar": "يَفْتَحُ البَابَ.", "example_uz": "U eshikni ochadi.", "srs": true},
-  {"ar": "يَعْمَلُ", "translit": "yaʿmalu", "uz": "u ishlaydi", "root": "ع م ل", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a1/yamalu.mp3", "example_ar": "يَعْمَلُ فِي المَعْمَلِ.", "example_uz": "U zavodda ishlaydi.", "srs": true},
-  {"ar": "يَدْرُسُ", "translit": "yadrusu", "uz": "u o'qiydi", "root": "د ر س", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a1/yadrusu.mp3", "example_ar": "يَدْرُسُ فِي الجَامِعَةِ.", "example_uz": "U universitetda o'qiydi.", "srs": true},
+  {"ar": "يَشْرَبُ", "translit": "yashrabu", "uz": "ichadi · u/erkak", "root": "ش ر ب", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a1/yashrabu.mp3", "example_ar": "يَشْرَبُ القَهْوَةَ.", "example_uz": "U qahva ichadi.", "srs": true},
+  {"ar": "يَجْلِسُ", "translit": "yajlisu", "uz": "o'tiradi · u/erkak", "root": "ج ل س", "pattern": "يَفْعِلُ", "pos": "fe'l", "audio": "a1/yajlisu.mp3", "example_ar": "يَجْلِسُ عَلَى الكُرْسِيِّ.", "example_uz": "U stulga o'tiradi.", "srs": true},
+  {"ar": "يَفْتَحُ", "translit": "yaftaḥu", "uz": "ochadi · u/erkak", "root": "ف ت ح", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a1/yaftahu.mp3", "example_ar": "يَفْتَحُ البَابَ.", "example_uz": "U eshikni ochadi.", "srs": true},
+  {"ar": "يَعْمَلُ", "translit": "yaʿmalu", "uz": "ishlaydi · u/erkak", "root": "ع م ل", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a1/yamalu.mp3", "example_ar": "يَعْمَلُ فِي المَعْمَلِ.", "example_uz": "U zavodda ishlaydi.", "srs": true},
+  {"ar": "يَدْرُسُ", "translit": "yadrusu", "uz": "o'qiydi · u/erkak", "root": "د ر س", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a1/yadrusu.mp3", "example_ar": "يَدْرُسُ فِي الجَامِعَةِ.", "example_uz": "U universitetda o'qiydi.", "srs": true},
   {"ar": "تَشْرَبُ", "translit": "tashrabu", "uz": "u (ayol) ichadi / sen ichasan", "root": "ش ر ب", "pattern": "تَفْعَلُ", "pos": "fe'l", "audio": "a1/tashrabu.mp3", "example_ar": "هِيَ تَشْرَبُ الشَّايَ.", "example_uz": "U (ayol) choy ichadi.", "srs": true},
   {"ar": "قَهْوَة", "translit": "qahwa", "uz": "qahva (o'zbekcha 'qahva' shundan)", "root": "ق ه و", "pattern": "فَعْلَة", "pos": "ot", "audio": "a1/qahwa.mp3", "example_ar": "أَشْرَبُ القَهْوَةَ.", "example_uz": "Qahva ichaman.", "srs": true},
   {"ar": "شَاي", "translit": "shāy", "uz": "choy (o'zbekcha 'choy' shundan)", "root": "", "pattern": "", "pos": "ot", "audio": "a1/shay_tea.mp3", "example_ar": "تَشْرَبُ الشَّايَ.", "example_uz": "U choy ichadi.", "srs": true},
@@ -84,11 +84,11 @@
  ],
  "srs_cards": [
   {"type": "root", "front": "ش ر ب", "back": "ichish o'zagi (sharob, mashrubot, mashrub=ichimlik)", "deck": "msa"},
-  {"type": "word", "front": "يَشْرَبُ", "back": "u ichadi", "deck": "msa"},
-  {"type": "word", "front": "يَجْلِسُ", "back": "u o'tiradi", "deck": "msa"},
-  {"type": "word", "front": "يَفْتَحُ", "back": "u ochadi", "deck": "msa"},
-  {"type": "word", "front": "يَعْمَلُ", "back": "u ishlaydi", "deck": "msa"},
-  {"type": "word", "front": "يَدْرُسُ", "back": "u o'qiydi", "deck": "msa"},
+  {"type": "word", "front": "يَشْرَبُ", "back": "ichadi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "يَجْلِسُ", "back": "o'tiradi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "يَفْتَحُ", "back": "ochadi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "يَعْمَلُ", "back": "ishlaydi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "يَدْرُسُ", "back": "o'qiydi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "قَهْوَة", "back": "qahva", "deck": "msa"},
   {"type": "word", "front": "شَاي", "back": "choy", "deck": "msa"},
   {"type": "word", "front": "كُلَّ يَوْمٍ", "back": "har kuni", "deck": "msa"}

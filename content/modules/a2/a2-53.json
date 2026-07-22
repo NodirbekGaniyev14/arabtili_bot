@@ -44,7 +44,7 @@
   {"ar": "إِنْجَاز", "translit": "injāz", "uz": "yutuq, natija", "root": "ن ج ز", "pattern": "إِفْعَال", "pos": "ot", "audio": "a2/injaz.mp3", "example_ar": "إِنْجَازٌ كَبِيرٌ.", "example_uz": "Katta yutuq.", "srs": true},
   {"ar": "إِتْقَان", "translit": "itqān", "uz": "mukammal egallash, puxtalik", "root": "ت ق ن", "pattern": "إِفْعَال", "pos": "ot", "audio": "a2/itqan.mp3", "example_ar": "إِتْقَانُ اللُّغَةِ.", "example_uz": "Tilni puxta egallash.", "srs": true},
   {"ar": "مُوَاصَلَة", "translit": "muwāṣala", "uz": "davom ettirish", "root": "و ص ل", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "a2/muwasala.mp3", "example_ar": "مُوَاصَلَةُ التَّعَلُّمِ.", "example_uz": "O'rganishni davom ettirish.", "srs": true},
-  {"ar": "حَصَلَ", "translit": "ḥaṣala", "uz": "erishdi, oldi", "root": "ح ص ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/hasala.mp3", "example_ar": "حَصَلَ عَلَى الشَّهَادَةِ.", "example_uz": "Sertifikatga erishdi.", "srs": true}
+  {"ar": "حَصَلَ", "translit": "ḥaṣala", "uz": "erishdi, oldi · u/erkak", "root": "ح ص ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/hasala.mp3", "example_ar": "حَصَلَ عَلَى الشَّهَادَةِ.", "example_uz": "Sertifikatga erishdi.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
@@ -89,7 +89,7 @@
   {"type": "word", "front": "اِمْتِحَان", "back": "imtihon", "deck": "msa"},
   {"type": "word", "front": "إِنْجَاز", "back": "yutuq, natija", "deck": "msa"},
   {"type": "word", "front": "إِتْقَان", "back": "puxta egallash", "deck": "msa"},
-  {"type": "word", "front": "حَصَلَ", "back": "erishdi, oldi", "deck": "msa"},
+  {"type": "word", "front": "حَصَلَ", "back": "erishdi, oldi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "مُوَاصَلَة", "back": "davom ettirish", "deck": "msa"}
  ]
 }

@@ -37,9 +37,9 @@
   }
  ],
  "vocabulary": [
-  {"ar": "أَحْرَزَ", "translit": "aḥraza", "uz": "qo'lga kiritdi (gol urdi, medal oldi)", "root": "ح ر ز", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/ahraza.mp3", "example_ar": "أحرزَ المنتخبُ الميداليةَ الذهبيةَ.", "example_uz": "Terma jamoa oltin medalni qo'lga kiritdi.", "srs": true},
+  {"ar": "أَحْرَزَ", "translit": "aḥraza", "uz": "qo'lga kiritdi (gol urdi, medal oldi) · u/erkak", "root": "ح ر ز", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/ahraza.mp3", "example_ar": "أحرزَ المنتخبُ الميداليةَ الذهبيةَ.", "example_uz": "Terma jamoa oltin medalni qo'lga kiritdi.", "srs": true},
   {"ar": "مُنْتَخَب", "translit": "muntakhab", "uz": "terma jamoa (saylangan — intixob o'zagi)", "root": "ن خ ب", "pattern": "مُفْتَعَل", "pos": "ot", "audio": "b1/muntakhab.mp3", "example_ar": "منتخبُنا الوطنيُّ تأهّلَ.", "example_uz": "Milliy termamiz yo'llanma oldi.", "srs": true},
-  {"ar": "تَأَهَّلَ", "translit": "taʾahhala", "uz": "keyingi bosqichga chiqdi, yo'llanma oldi", "root": "أ ه ل", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "b1/taahhala.mp3", "example_ar": "تأهّلَ الفريقُ إلى النهائيِّ.", "example_uz": "Jamoa finalga yo'l oldi.", "srs": true},
+  {"ar": "تَأَهَّلَ", "translit": "taʾahhala", "uz": "keyingi bosqichga chiqdi, yo'llanma oldi · u/erkak", "root": "أ ه ل", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "b1/taahhala.mp3", "example_ar": "تأهّلَ الفريقُ إلى النهائيِّ.", "example_uz": "Jamoa finalga yo'l oldi.", "srs": true},
   {"ar": "دَقِيقَة", "translit": "daqīqa", "uz": "daqiqa (o'zbekcha 'daqiqa' aynan shundan)", "root": "د ق ق", "pattern": "فَعِيلَة", "pos": "ot", "audio": "b1/daqiqa.mp3", "example_ar": "سجّلَ في الدقيقةِ الأخيرةِ.", "example_uz": "So'nggi daqiqada gol urdi.", "srs": true},
   {"ar": "شَوْط", "translit": "shawṭ", "uz": "bo'lim, taym (o'yin yarmi)", "root": "ش و ط", "pattern": "فَعْل", "pos": "ot", "audio": "b1/shawt.mp3", "example_ar": "انتهى الشوطُ الأولُ بالتعادلِ.", "example_uz": "Birinchi taym durrang tugadi.", "srs": true},
   {"ar": "حَكَم", "translit": "ḥakam", "uz": "hakam (o'zbekcha 'hakam' aynan shundan)", "root": "ح ك م", "pattern": "فَعَل", "pos": "ot", "audio": "b1/hakam.mp3", "example_ar": "احتسبَ الحكمُ ركلةَ جزاءٍ.", "example_uz": "Hakam penalti belgiladi.", "srs": true},
@@ -85,9 +85,9 @@
  ],
  "srs_cards": [
   {"type": "root", "front": "ح ر ز", "back": "qo'lga kiritish o'zagi", "deck": "msa"},
-  {"type": "word", "front": "أَحْرَزَ", "back": "qo'lga kiritdi", "deck": "msa"},
+  {"type": "word", "front": "أَحْرَزَ", "back": "qo'lga kiritdi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "مُنْتَخَب", "back": "terma jamoa", "deck": "msa"},
-  {"type": "word", "front": "تَأَهَّلَ", "back": "keyingi bosqichga chiqdi", "deck": "msa"},
+  {"type": "word", "front": "تَأَهَّلَ", "back": "keyingi bosqichga chiqdi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "دَقِيقَة", "back": "daqiqa", "deck": "msa"},
   {"type": "word", "front": "شَوْط", "back": "taym, bo'lim", "deck": "msa"},
   {"type": "word", "front": "حَكَم", "back": "hakam", "deck": "msa"},

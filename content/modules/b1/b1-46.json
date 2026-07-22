@@ -40,8 +40,8 @@
  "vocabulary": [
   {"ar": "مُنَاظَرَة", "translit": "munāẓara", "uz": "munozara (o'zbekcha 'munozara' aynan shundan)", "root": "ن ظ ر", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "b1/munazara.mp3", "example_ar": "شاركتُ في مناظرةٍ طلابيةٍ.", "example_uz": "Talabalar munozarasida qatnashdim.", "srs": true},
   {"ar": "وِجْهَةُ نَظَر", "translit": "wijhatu naẓar", "uz": "nuqtai nazar", "root": "ن ظ ر", "pattern": "", "pos": "ibora", "audio": "b1/wijhat_nazar.mp3", "example_ar": "لكلٍّ وجهةُ نظرٍ مختلفةٌ.", "example_uz": "Har kimning o'z nuqtai nazari bor.", "srs": true},
-  {"ar": "أَتَّفِقُ مَعَ", "translit": "attafiqu maʿa", "uz": "…ga qo'shilaman", "root": "و ف ق", "pattern": "أَفْتَعِلُ", "pos": "fe'l", "audio": "b1/attafiqu.mp3", "example_ar": "أتفقُ معكَ في هذهِ النقطةِ.", "example_uz": "Bu nuqtada sizga qo'shilaman.", "srs": true},
-  {"ar": "أَخْتَلِفُ مَعَ", "translit": "akhtalifu maʿa", "uz": "…dan farqli fikrdaman (ixtilof)", "root": "خ ل ف", "pattern": "أَفْتَعِلُ", "pos": "fe'l", "audio": "b1/akhtalifu.mp3", "example_ar": "أختلفُ معكَ باحترامٍ.", "example_uz": "Hurmat bilan sizga qo'shilmayman.", "srs": true},
+  {"ar": "أَتَّفِقُ مَعَ", "translit": "attafiqu maʿa", "uz": "…ga qo'shilaman · men", "root": "و ف ق", "pattern": "أَفْتَعِلُ", "pos": "fe'l", "audio": "b1/attafiqu.mp3", "example_ar": "أتفقُ معكَ في هذهِ النقطةِ.", "example_uz": "Bu nuqtada sizga qo'shilaman.", "srs": true},
+  {"ar": "أَخْتَلِفُ مَعَ", "translit": "akhtalifu maʿa", "uz": "…dan farqli fikrdaman (ixtilof) · men", "root": "خ ل ف", "pattern": "أَفْتَعِلُ", "pos": "fe'l", "audio": "b1/akhtalifu.mp3", "example_ar": "أختلفُ معكَ باحترامٍ.", "example_uz": "Hurmat bilan sizga qo'shilmayman.", "srs": true},
   {"ar": "دَلِيل", "translit": "dalīl", "uz": "dalil, isbot (o'zbekcha 'dalil' aynan shundan)", "root": "د ل ل", "pattern": "فَعِيل", "pos": "ot", "audio": "b1/dalil.mp3", "example_ar": "ما دليلُكَ على ذلك؟", "example_uz": "Bunga dalilingiz nima?", "srs": true},
   {"ar": "مُحِقّ", "translit": "muḥiqq", "uz": "haq bo'lgan, to'g'ri aytgan", "root": "ح ق ق", "pattern": "مُفْعِل", "pos": "sifat", "audio": "b1/muhiqq.mp3", "example_ar": "ربما تكونُ محقًّا في هذا.", "example_uz": "Balki bunda haqdirsiz.", "srs": true},
   {"ar": "مِنْ جِهَة... وَمِنْ جِهَةٍ أُخْرَى", "translit": "min jiha... wa-min jihatin ukhrā", "uz": "bir tomondan... boshqa tomondan", "root": "و ج ه", "pattern": "", "pos": "ibora", "audio": "b1/min_jiha.mp3", "example_ar": "من جهةٍ يوفّرُ الوقتَ، ومن جهةٍ أخرى يقللُ اللقاءَ.", "example_uz": "Bir tomondan vaqt tejaydi, boshqa tomondan muloqotni kamaytiradi.", "srs": true},
@@ -87,8 +87,8 @@
   {"type": "root", "front": "ن ظ ر", "back": "nazar o'zagi (munozara)", "deck": "msa"},
   {"type": "word", "front": "مُنَاظَرَة", "back": "munozara", "deck": "msa"},
   {"type": "word", "front": "وِجْهَةُ نَظَر", "back": "nuqtai nazar", "deck": "msa"},
-  {"type": "word", "front": "أَتَّفِقُ مَعَ", "back": "qo'shilaman", "deck": "msa"},
-  {"type": "word", "front": "أَخْتَلِفُ مَعَ", "back": "qo'shilmayman", "deck": "msa"},
+  {"type": "word", "front": "أَتَّفِقُ مَعَ", "back": "qo'shilaman · men", "deck": "msa"},
+  {"type": "word", "front": "أَخْتَلِفُ مَعَ", "back": "qo'shilmayman · men", "deck": "msa"},
   {"type": "word", "front": "دَلِيل", "back": "dalil", "deck": "msa"},
   {"type": "word", "front": "مُحِقّ", "back": "haq bo'lgan", "deck": "msa"},
   {"type": "word", "front": "إِقْنَاع", "back": "ishontirish", "deck": "msa"}

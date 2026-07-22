@@ -53,7 +53,7 @@
   {"ar": "تَنَاوَلْتُ", "translit": "tanāwaltu", "uz": "men tanovul qildim", "root": "ن و ل", "pattern": "", "pos": "fe'l", "audio": "a2/tanawaltu.mp3", "example_ar": "تَنَاوَلْتُ الغَدَاءَ فِي البَيْتِ.", "example_uz": "Tushlikni uyda yedim.", "srs": true},
   {"ar": "أَتَنَاوَلُ", "translit": "atanāwalu", "uz": "men tanovul qilaman", "root": "ن و ل", "pattern": "", "pos": "fe'l", "audio": "a2/atanawalu.mp3", "example_ar": "أَتَنَاوَلُ الفَطُورَ فِي السَّابِعَةِ.", "example_uz": "Nonushtani soat yettida qilaman.", "srs": true},
   {"ar": "اِسْتَخْدَمُوا", "translit": "istakhdamū", "uz": "ular foydalandilar", "root": "خ د م", "pattern": "", "pos": "fe'l", "audio": "a2/istakhdamu.mp3", "example_ar": "اِسْتَخْدَمُوا الحَاسُوبَ فِي الدَّرْسِ.", "example_uz": "Ular darsda kompyuterdan foydalandilar.", "srs": true},
-  {"ar": "سَيَكْتُبُ", "translit": "sayaktubu", "uz": "u yozadi (kelasi zamon)", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/sayaktubu.mp3", "example_ar": "غَدًا سَيَكْتُبُ الرِّسَالَةَ.", "example_uz": "Ertaga xatni yozadi.", "srs": true},
+  {"ar": "سَيَكْتُبُ", "translit": "sayaktubu", "uz": "yozadi (kelasi zamon) · u/erkak", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/sayaktubu.mp3", "example_ar": "غَدًا سَيَكْتُبُ الرِّسَالَةَ.", "example_uz": "Ertaga xatni yozadi.", "srs": true},
   {"ar": "غَدًا", "translit": "ghadan", "uz": "ertaga", "root": "غ د و", "pattern": "", "pos": "ravish", "audio": "a2/ghadan.mp3", "example_ar": "غَدًا نُسَافِرُ.", "example_uz": "Ertaga safar qilamiz.", "srs": true},
   {"ar": "أَمْسِ", "translit": "amsi", "uz": "kecha", "root": "أ م س", "pattern": "", "pos": "ravish", "audio": "a2/amsi.mp3", "example_ar": "أَمْسِ تَعَلَّمْنَا دَرْسًا جَدِيدًا.", "example_uz": "Kecha yangi dars o'rgandik.", "srs": true}
  ],
@@ -102,7 +102,7 @@
   {"type": "word", "front": "نُسَافِرُ", "back": "biz safar qilamiz", "deck": "msa"},
   {"type": "word", "front": "تَنَاوَلْتُ", "back": "men tanovul qildim", "deck": "msa"},
   {"type": "word", "front": "أَتَنَاوَلُ", "back": "men tanovul qilaman", "deck": "msa"},
-  {"type": "word", "front": "سَيَكْتُبُ", "back": "u yozadi (kelasi zamon)", "deck": "msa"},
+  {"type": "word", "front": "سَيَكْتُبُ", "back": "yozadi (kelasi zamon) · u/erkak", "deck": "msa"},
   {"type": "word", "front": "غَدًا", "back": "ertaga", "deck": "msa"},
   {"type": "word", "front": "أَمْسِ", "back": "kecha", "deck": "msa"}
  ]

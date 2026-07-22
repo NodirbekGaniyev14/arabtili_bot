@@ -83,7 +83,7 @@
   {
    "ar": "يَقْدِرُ",
    "translit": "yaqdiru",
-   "uz": "qila oladi, qodir",
+   "uz": "qila oladi, qodir · u/erkak",
    "root": "ق د ر",
    "pattern": "يَفْعِلُ",
    "pos": "fe'l",
@@ -95,7 +95,7 @@
   {
    "ar": "يَطْلُبُ",
    "translit": "yaṭlubu",
-   "uz": "so'raydi, talab qiladi",
+   "uz": "so'raydi, talab qiladi · u/erkak",
    "root": "ط ل ب",
    "pattern": "يَفْعُلُ",
    "pos": "fe'l",
@@ -107,7 +107,7 @@
   {
    "ar": "يَقْبَلُ",
    "translit": "yaqbalu",
-   "uz": "qabul qiladi",
+   "uz": "qabul qiladi · u/erkak",
    "root": "ق ب ل",
    "pattern": "يَفْعَلُ",
    "pos": "fe'l",
@@ -323,19 +323,19 @@
   {
    "type": "word",
    "front": "يَقْدِرُ",
-   "back": "qila oladi, qodir",
+   "back": "qila oladi, qodir · u/erkak",
    "deck": "msa"
   },
   {
    "type": "word",
    "front": "يَطْلُبُ",
-   "back": "so'raydi, talab qiladi",
+   "back": "so'raydi, talab qiladi · u/erkak",
    "deck": "msa"
   },
   {
    "type": "word",
    "front": "يَقْبَلُ",
-   "back": "qabul qiladi",
+   "back": "qabul qiladi · u/erkak",
    "deck": "msa"
   },
   {

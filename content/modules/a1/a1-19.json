@@ -38,7 +38,7 @@
  ],
  "vocabulary": [
   {"ar": "تَكْتُبِينَ", "translit": "taktubīna", "uz": "sen (ayol) yozasan", "root": "ك ت ب", "pattern": "تَفْعُلِينَ", "pos": "fe'l", "audio": "a1/taktubina.mp3", "example_ar": "أَنْتِ تَكْتُبِينَ رِسَالَةً.", "example_uz": "Sen (ayol) xat yozasan.", "srs": true},
-  {"ar": "يَسْكُنُ", "translit": "yaskunu", "uz": "u yashaydi", "root": "س ك ن", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a1/yaskunu.mp3", "example_ar": "يَسْكُنُ فِي المَدِينَةِ.", "example_uz": "U shaharda yashaydi.", "srs": true},
+  {"ar": "يَسْكُنُ", "translit": "yaskunu", "uz": "yashaydi · u/erkak", "root": "س ك ن", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a1/yaskunu.mp3", "example_ar": "يَسْكُنُ فِي المَدِينَةِ.", "example_uz": "U shaharda yashaydi.", "srs": true},
   {"ar": "تَسْكُنُ", "translit": "taskunu", "uz": "sen yashaysan / u (ayol) yashaydi", "root": "س ك ن", "pattern": "تَفْعُلُ", "pos": "fe'l", "audio": "a1/taskunu.mp3", "example_ar": "أَيْنَ تَسْكُنُ؟", "example_uz": "Qayerda yashaysan?", "srs": true},
   {"ar": "تَذْهَبُ", "translit": "tadhhabu", "uz": "sen borasan / u (ayol) boradi", "root": "ذ ه ب", "pattern": "تَفْعَلُ", "pos": "fe'l", "audio": "a1/tadhhabu.mp3", "example_ar": "هَلْ تَذْهَبُ إِلَى السُّوقِ؟", "example_uz": "Bozorga borasanmi?", "srs": true},
   {"ar": "تَذْهَبِينَ", "translit": "tadhhabīna", "uz": "sen (ayol) borasan", "root": "ذ ه ب", "pattern": "تَفْعَلِينَ", "pos": "fe'l", "audio": "a1/tadhhabina.mp3", "example_ar": "أَنْتِ تَذْهَبِينَ إِلَى المَدْرَسَةِ.", "example_uz": "Sen (ayol) maktabga borasan.", "srs": true},
@@ -85,7 +85,7 @@
  "srs_cards": [
   {"type": "root", "front": "س ك ن", "back": "yashash o'zagi (maskan, sukunat, sokin)", "deck": "msa"},
   {"type": "word", "front": "تَكْتُبِينَ", "back": "sen (ayol) yozasan", "deck": "msa"},
-  {"type": "word", "front": "يَسْكُنُ", "back": "u yashaydi", "deck": "msa"},
+  {"type": "word", "front": "يَسْكُنُ", "back": "yashaydi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "تَسْكُنُ", "back": "sen yashaysan", "deck": "msa"},
   {"type": "word", "front": "تَذْهَبُ", "back": "sen borasan", "deck": "msa"},
   {"type": "word", "front": "تَذْهَبِينَ", "back": "sen (ayol) borasan", "deck": "msa"},

@@ -47,7 +47,7 @@
   {"ar": "رَحِيم", "translit": "raḥīm", "uz": "rahmli (o'zbekcha 'rahm')", "root": "ر ح م", "pattern": "فَعِيل", "pos": "sifat", "audio": "b1/rahim.mp3", "example_ar": "الرحمٰنُ الرحيمُ.", "example_uz": "Rahmon va Rahim.", "srs": true},
   {"ar": "عَالَمِين", "translit": "ʿālamīn", "uz": "olamlar (barcha olam — 'olam')", "root": "ع ل م", "pattern": "", "pos": "ot", "audio": "b1/alamin.mp3", "example_ar": "رَبِّ العالمينَ.", "example_uz": "Olamlar Robbi.", "srs": true},
   {"ar": "هُدًى", "translit": "hudan", "uz": "hidoyat (o'zbekcha 'hidoyat' o'zagi)", "root": "ه د ي", "pattern": "فُعَل", "pos": "ot", "audio": "b1/hudan.mp3", "example_ar": "القرآنُ هدًى للناسِ.", "example_uz": "Qur'on — odamlar uchun hidoyat.", "srs": true},
-  {"ar": "زِدْنِي", "translit": "zidnī", "uz": "meni ziyoda qil (ziyoda o'zagi — duo fe'li)", "root": "ز ي د", "pattern": "", "pos": "fe'l", "audio": "b1/zidni.mp3", "example_ar": "رَبِّ زِدْنِي عِلْمًا.", "example_uz": "Robbim, ilmimni ziyoda qil (Toha, 114).", "srs": true}
+  {"ar": "زِدْنِي", "translit": "zidnī", "uz": "meni ziyoda qil (ziyoda o'zagi — duo fe'li) · buyruq (sen)", "root": "ز ي د", "pattern": "", "pos": "fe'l", "audio": "b1/zidni.mp3", "example_ar": "رَبِّ زِدْنِي عِلْمًا.", "example_uz": "Robbim, ilmimni ziyoda qil (Toha, 114).", "srs": true}
  ],
  "hejazi": [],
  "skills": {

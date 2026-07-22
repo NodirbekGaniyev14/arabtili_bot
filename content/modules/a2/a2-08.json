@@ -64,8 +64,8 @@
   {"ar": "كِتَابُكُمَا", "translit": "kitābukumā", "uz": "sizlar ikkovingizning kitobingiz", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a2/kitabukuma.mp3", "example_ar": "أَيْنَ كِتَابُكُمَا؟", "example_uz": "Ikkovingizning kitobingiz qani?", "srs": true},
   {"ar": "كِتَابُكُمْ", "translit": "kitābukum", "uz": "sizlarning (erkaklar) kitobingiz", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a2/kitabukum.mp3", "example_ar": "هَلْ كِتَابُكُمْ مَعَكُمْ؟", "example_uz": "Kitobingiz o'zingiz bilanmi?", "srs": true},
   {"ar": "كِتَابُكُنَّ", "translit": "kitābukunna", "uz": "sizlarning (ayollar) kitobingiz", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a2/kitabukunna.mp3", "example_ar": "كِتَابُكُنَّ فِي الحَقِيبَةِ.", "example_uz": "Sizlarning kitobingiz sumkada.", "srs": true},
-  {"ar": "سَأَلَنِي", "translit": "saʾalanī", "uz": "mendan so'radi", "root": "س أ ل", "pattern": "", "pos": "fe'l", "audio": "a2/saalani.mp3", "example_ar": "سَأَلَنِي المُدَرِّسُ عَنِ الدَّرْسِ.", "example_uz": "O'qituvchi mendan dars haqida so'radi.", "srs": true},
-  {"ar": "عَلَّمَهُمْ", "translit": "ʿallamahum", "uz": "ularni o'rgatdi", "root": "ع ل م", "pattern": "", "pos": "fe'l", "audio": "a2/allamahum.mp3", "example_ar": "عَلَّمَهُمُ العَرَبِيَّةَ.", "example_uz": "Ularga arab tilini o'rgatdi.", "srs": true},
+  {"ar": "سَأَلَنِي", "translit": "saʾalanī", "uz": "mendan so'radi · u/erkak", "root": "س أ ل", "pattern": "", "pos": "fe'l", "audio": "a2/saalani.mp3", "example_ar": "سَأَلَنِي المُدَرِّسُ عَنِ الدَّرْسِ.", "example_uz": "O'qituvchi mendan dars haqida so'radi.", "srs": true},
+  {"ar": "عَلَّمَهُمْ", "translit": "ʿallamahum", "uz": "ularni o'rgatdi · u/erkak", "root": "ع ل م", "pattern": "", "pos": "fe'l", "audio": "a2/allamahum.mp3", "example_ar": "عَلَّمَهُمُ العَرَبِيَّةَ.", "example_uz": "Ularga arab tilini o'rgatdi.", "srs": true},
   {"ar": "مَعَنَا", "translit": "maʿanā", "uz": "biz bilan", "root": "", "pattern": "", "pos": "predlog", "audio": "a2/maana.mp3", "example_ar": "كِتَابُنَا مَعَنَا.", "example_uz": "Kitobimiz o'zimiz bilan.", "srs": true},
   {"ar": "عِنْدَهُمْ", "translit": "ʿindahum", "uz": "ularda (bor)", "root": "", "pattern": "", "pos": "predlog", "audio": "a2/indahum.mp3", "example_ar": "عِنْدَهُمْ كُتُبٌ كَثِيرَةٌ.", "example_uz": "Ularda ko'p kitob bor.", "srs": true}
  ],
@@ -114,8 +114,8 @@
   {"type": "word", "front": "كِتَابُهُنَّ", "back": "ularning (ayollar) kitobi", "deck": "msa"},
   {"type": "word", "front": "كِتَابُكُمْ", "back": "sizlarning kitobingiz", "deck": "msa"},
   {"type": "word", "front": "كِتَابُكُنَّ", "back": "sizlarning (ayollar) kitobingiz", "deck": "msa"},
-  {"type": "word", "front": "سَأَلَنِي", "back": "mendan so'radi (himoya nuni)", "deck": "msa"},
-  {"type": "word", "front": "عَلَّمَهُمْ", "back": "ularni o'rgatdi", "deck": "msa"},
+  {"type": "word", "front": "سَأَلَنِي", "back": "mendan so'radi (himoya nuni) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "عَلَّمَهُمْ", "back": "ularni o'rgatdi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "مَعَنَا", "back": "biz bilan", "deck": "msa"},
   {"type": "word", "front": "عِنْدَهُمْ", "back": "ularda (bor)", "deck": "msa"}
  ]

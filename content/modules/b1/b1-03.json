@@ -38,14 +38,14 @@
   }
  ],
  "vocabulary": [
-  {"ar": "وَصَفَ", "translit": "waṣafa", "uz": "tavsifladi (o'zbekcha 'vasf', 'tavsif')", "root": "و ص ف", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/wasafa.mp3", "example_ar": "وصفَ الكاتبُ مدينةً لم أزرْها.", "example_uz": "Yozuvchi men bormagan shaharni tavsifladi.", "srs": true},
+  {"ar": "وَصَفَ", "translit": "waṣafa", "uz": "tavsifladi (o'zbekcha 'vasf', 'tavsif') · u/erkak", "root": "و ص ف", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/wasafa.mp3", "example_ar": "وصفَ الكاتبُ مدينةً لم أزرْها.", "example_uz": "Yozuvchi men bormagan shaharni tavsifladi.", "srs": true},
   {"ar": "بِجِدٍّ", "translit": "bijiddin", "uz": "tirishib, jiddiy ravishda (o'zbekcha 'jiddiy')", "root": "ج د د", "pattern": "", "pos": "ravish", "audio": "b1/bijidd.mp3", "example_ar": "أعرفُ طالبًا يدرسُ بجدٍّ.", "example_uz": "Tirishib o'qiydigan talabani bilaman.", "srs": true},
-  {"ar": "يَتَحَدَّثُ", "translit": "yataḥaddathu", "uz": "so'zlaydi, gapiradi (V bob, 'hadis' o'zagi)", "root": "ح د ث", "pattern": "يَتَفَعَّلُ", "pos": "fe'l", "audio": "b1/yatahaddathu.mp3", "example_ar": "قرأتُ مقالًا يتحدثُ عن الصحةِ.", "example_uz": "Salomatlik haqidagi maqola o'qidim.", "srs": true},
+  {"ar": "يَتَحَدَّثُ", "translit": "yataḥaddathu", "uz": "so'zlaydi, gapiradi (V bob, 'hadis' o'zagi) · u/erkak", "root": "ح د ث", "pattern": "يَتَفَعَّلُ", "pos": "fe'l", "audio": "b1/yatahaddathu.mp3", "example_ar": "قرأتُ مقالًا يتحدثُ عن الصحةِ.", "example_uz": "Salomatlik haqidagi maqola o'qidim.", "srs": true},
   {"ar": "مَقَال", "translit": "maqāl", "uz": "maqola (o'zbekcha 'maqola' aynan shundan)", "root": "ق و ل", "pattern": "مَفَال", "pos": "ot", "audio": "b1/maqal.mp3", "example_ar": "هذا مقالٌ يستحقُّ القراءةَ.", "example_uz": "Bu o'qishga arziydigan maqola.", "srs": true},
-  {"ar": "يَسْتَحِقُّ", "translit": "yastaḥiqqu", "uz": "arziydi, loyiq (X bob, 'haq' o'zagi)", "root": "ح ق ق", "pattern": "يَسْتَفْعِلُ", "pos": "fe'l", "audio": "b1/yastahiqqu.mp3", "example_ar": "فيلمٌ يستحقُّ المشاهدةَ.", "example_uz": "Ko'rishga arziydigan film.", "srs": true},
+  {"ar": "يَسْتَحِقُّ", "translit": "yastaḥiqqu", "uz": "arziydi, loyiq (X bob, 'haq' o'zagi) · u/erkak", "root": "ح ق ق", "pattern": "يَسْتَفْعِلُ", "pos": "fe'l", "audio": "b1/yastahiqqu.mp3", "example_ar": "فيلمٌ يستحقُّ المشاهدةَ.", "example_uz": "Ko'rishga arziydigan film.", "srs": true},
   {"ar": "مَنْظَر", "translit": "manẓar", "uz": "manzara (o'zbekcha 'manzara' shundan)", "root": "ن ظ ر", "pattern": "مَفْعَل", "pos": "ot", "audio": "b1/manzar.mp3", "example_ar": "رأينا منظرًا يأخذُ الأنفاسَ.", "example_uz": "Nafasni oladigan manzara ko'rdik.", "srs": true},
   {"ar": "تَجْرِبَة", "translit": "tajriba", "uz": "tajriba (o'zbekcha 'tajriba' aynan shundan)", "root": "ج ر ب", "pattern": "تَفْعِلَة", "pos": "ot", "audio": "b1/tajriba.mp3", "example_ar": "مررتُ بتجربةٍ غيّرتْ حياتي.", "example_uz": "Hayotimni o'zgartirgan tajribani boshdan kechirdim.", "srs": true},
-  {"ar": "غَيَّرَ", "translit": "ghayyara", "uz": "o'zgartirdi (II bob)", "root": "غ ي ر", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/ghayyara.mp3", "example_ar": "قرارٌ غيّرَ مستقبلَهُ.", "example_uz": "Kelajagini o'zgartirgan qaror.", "srs": true},
+  {"ar": "غَيَّرَ", "translit": "ghayyara", "uz": "o'zgartirdi (II bob) · u/erkak", "root": "غ ي ر", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/ghayyara.mp3", "example_ar": "قرارٌ غيّرَ مستقبلَهُ.", "example_uz": "Kelajagini o'zgartirgan qaror.", "srs": true},
   {"ar": "قَرَار", "translit": "qarār", "uz": "qaror (o'zbekcha 'qaror' aynan shundan)", "root": "ق ر ر", "pattern": "فَعَال", "pos": "ot", "audio": "b1/qarar.mp3", "example_ar": "اتخذَ قرارًا يحتاجُ شجاعةً.", "example_uz": "Jasorat talab qiladigan qaror qabul qildi.", "srs": true},
   {"ar": "شَجَاعَة", "translit": "shajāʿa", "uz": "jasorat (o'zbekcha 'shijoat' shundan)", "root": "ش ج ع", "pattern": "فَعَالَة", "pos": "ot", "audio": "b1/shajaa.mp3", "example_ar": "أظهرَ شجاعةً نادرةً.", "example_uz": "Kamyob jasorat ko'rsatdi.", "srs": true}
  ],
@@ -87,14 +87,14 @@
  ],
  "srs_cards": [
   {"type": "root", "front": "و ص ف", "back": "tavsif o'zagi (vasf, sifat, mavsuf)", "deck": "msa"},
-  {"type": "word", "front": "وَصَفَ", "back": "tavsifladi", "deck": "msa"},
+  {"type": "word", "front": "وَصَفَ", "back": "tavsifladi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "بِجِدٍّ", "back": "tirishib, jiddiy", "deck": "msa"},
-  {"type": "word", "front": "يَتَحَدَّثُ", "back": "so'zlaydi", "deck": "msa"},
+  {"type": "word", "front": "يَتَحَدَّثُ", "back": "so'zlaydi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "مَقَال", "back": "maqola", "deck": "msa"},
-  {"type": "word", "front": "يَسْتَحِقُّ", "back": "arziydi, loyiq", "deck": "msa"},
+  {"type": "word", "front": "يَسْتَحِقُّ", "back": "arziydi, loyiq · u/erkak", "deck": "msa"},
   {"type": "word", "front": "مَنْظَر", "back": "manzara", "deck": "msa"},
   {"type": "word", "front": "تَجْرِبَة", "back": "tajriba", "deck": "msa"},
-  {"type": "word", "front": "غَيَّرَ", "back": "o'zgartirdi", "deck": "msa"},
+  {"type": "word", "front": "غَيَّرَ", "back": "o'zgartirdi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "قَرَار", "back": "qaror", "deck": "msa"}
  ]
 }

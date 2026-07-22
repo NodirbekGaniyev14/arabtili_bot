@@ -48,7 +48,7 @@
   {"ar": "اِمْتِنَان", "translit": "imtinān", "uz": "minnatdorlik (o'zbekcha 'minnat' o'zagi)", "root": "م ن ن", "pattern": "اِفْتِعَال", "pos": "ot", "audio": "b1/imtinan.mp3", "example_ar": "أشعرُ بامتنانٍ عميقٍ لكم.", "example_uz": "Sizlarga chuqur minnatdorlik his qilaman.", "srs": true},
   {"ar": "أَمَل", "translit": "amal", "uz": "umid (o'zbekcha 'Amal' ismi shundan)", "root": "أ م ل", "pattern": "فَعَل", "pos": "ot", "audio": "b1/amal.mp3", "example_ar": "لا تفقدِ الأملَ أبدًا.", "example_uz": "Umidni hech qachon yo'qotma.", "srs": true},
   {"ar": "قَنَاعَة", "translit": "qanāʿa", "uz": "qanoat (o'zbekcha 'qanoat' aynan shundan)", "root": "ق ن ع", "pattern": "فَعَالَة", "pos": "ot", "audio": "b1/qanaa.mp3", "example_ar": "القناعةُ كنزٌ لا يفنى.", "example_uz": "Qanoat — tugamas xazina.", "srs": true},
-  {"ar": "اِطْمَأَنَّ", "translit": "iṭmaʾanna", "uz": "xotirjam bo'ldi (o'zbekcha 'itminon')", "root": "ط م ن", "pattern": "اِفْعَلَلَّ", "pos": "fe'l", "audio": "b1/itmaanna.mp3", "example_ar": "اطمأنَّ قلبي بعدَ سماعِ صوتِكَ.", "example_uz": "Ovozingni eshitib ko'nglim tinchidi.", "srs": true},
+  {"ar": "اِطْمَأَنَّ", "translit": "iṭmaʾanna", "uz": "xotirjam bo'ldi (o'zbekcha 'itminon') · u/erkak", "root": "ط م ن", "pattern": "اِفْعَلَلَّ", "pos": "fe'l", "audio": "b1/itmaanna.mp3", "example_ar": "اطمأنَّ قلبي بعدَ سماعِ صوتِكَ.", "example_uz": "Ovozingni eshitib ko'nglim tinchidi.", "srs": true},
   {"ar": "حَنِين", "translit": "ḥanīn", "uz": "sog'inch, o'tmishga intilish", "root": "ح ن ن", "pattern": "فَعِيل", "pos": "ot", "audio": "b1/hanin.mp3", "example_ar": "عندي حنينٌ إلى أيامِ الطفولةِ.", "example_uz": "Bolalik kunlarimni qo'msayman.", "srs": true}
  ],
  "hejazi": [],
@@ -98,6 +98,6 @@
   {"type": "word", "front": "اِمْتِنَان", "back": "minnatdorlik", "deck": "msa"},
   {"type": "word", "front": "أَمَل", "back": "umid", "deck": "msa"},
   {"type": "word", "front": "قَنَاعَة", "back": "qanoat", "deck": "msa"},
-  {"type": "word", "front": "اِطْمَأَنَّ", "back": "xotirjam bo'ldi", "deck": "msa"}
+  {"type": "word", "front": "اِطْمَأَنَّ", "back": "xotirjam bo'ldi · u/erkak", "deck": "msa"}
  ]
 }

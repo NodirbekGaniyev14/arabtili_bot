@@ -37,15 +37,15 @@
   }
  ],
  "vocabulary": [
-  {"ar": "كَانَ", "translit": "kāna", "uz": "edi, bo'ldi (ajvaf: ك و ن)", "root": "ك و ن", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/kana.mp3", "example_ar": "كَانَ الجَوُّ جَمِيلًا.", "example_uz": "Havo chiroyli edi.", "srs": true},
-  {"ar": "يَكُونُ", "translit": "yakūnu", "uz": "bo'ladi (و qaytdi)", "root": "ك و ن", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a2/yakunu.mp3", "example_ar": "سَيَكُونُ الجَوُّ حَارًّا.", "example_uz": "Havo issiq bo'ladi.", "srs": true},
-  {"ar": "قَالَ", "translit": "qāla", "uz": "dedi (ajvaf: ق و ل)", "root": "ق و ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/qala.mp3", "example_ar": "قَالَ نَعَمْ.", "example_uz": "Ha dedi.", "srs": true},
-  {"ar": "يَقُولُ", "translit": "yaqūlu", "uz": "aytadi (و qaytdi)", "root": "ق و ل", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a2/yaqulu.mp3", "example_ar": "مَاذَا يَقُولُ؟", "example_uz": "U nima deydi?", "srs": true},
-  {"ar": "زَارَ", "translit": "zāra", "uz": "ziyorat qildi (ajvaf: ز و ر)", "root": "ز و ر", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/zara.mp3", "example_ar": "زَارَ المَدِينَةَ.", "example_uz": "Shaharni ziyorat qildi.", "srs": true},
-  {"ar": "نَامَ", "translit": "nāma", "uz": "uxladi (ajvaf: ن و م)", "root": "ن و م", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/nama.mp3", "example_ar": "نَامَ مُبَكِّرًا.", "example_uz": "Erta uxladi.", "srs": true},
-  {"ar": "بَاعَ", "translit": "bāʿa", "uz": "sotdi (ajvaf: ب ي ع)", "root": "ب ي ع", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/baa.mp3", "example_ar": "بَاعَ السَّيَّارَةَ.", "example_uz": "Mashinani sotdi.", "srs": true},
-  {"ar": "يَبِيعُ", "translit": "yabīʿu", "uz": "sotadi (ي qaytdi)", "root": "ب ي ع", "pattern": "يَفْعِلُ", "pos": "fe'l", "audio": "a2/yabiu.mp3", "example_ar": "يَبِيعُ الخُضَارَ.", "example_uz": "Sabzavot sotadi.", "srs": true},
-  {"ar": "عَادَ", "translit": "ʿāda", "uz": "qaytdi (ajvaf: ع و د)", "root": "ع و د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/aada.mp3", "example_ar": "عَادَ إِلَى بَلَدِهِ.", "example_uz": "Yurtiga qaytdi.", "srs": true},
+  {"ar": "كَانَ", "translit": "kāna", "uz": "edi, bo'ldi (ajvaf: ك و ن) · u/erkak", "root": "ك و ن", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/kana.mp3", "example_ar": "كَانَ الجَوُّ جَمِيلًا.", "example_uz": "Havo chiroyli edi.", "srs": true},
+  {"ar": "يَكُونُ", "translit": "yakūnu", "uz": "bo'ladi (و qaytdi) · u/erkak", "root": "ك و ن", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a2/yakunu.mp3", "example_ar": "سَيَكُونُ الجَوُّ حَارًّا.", "example_uz": "Havo issiq bo'ladi.", "srs": true},
+  {"ar": "قَالَ", "translit": "qāla", "uz": "dedi (ajvaf: ق و ل) · u/erkak", "root": "ق و ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/qala.mp3", "example_ar": "قَالَ نَعَمْ.", "example_uz": "Ha dedi.", "srs": true},
+  {"ar": "يَقُولُ", "translit": "yaqūlu", "uz": "aytadi (و qaytdi) · u/erkak", "root": "ق و ل", "pattern": "يَفْعُلُ", "pos": "fe'l", "audio": "a2/yaqulu.mp3", "example_ar": "مَاذَا يَقُولُ؟", "example_uz": "U nima deydi?", "srs": true},
+  {"ar": "زَارَ", "translit": "zāra", "uz": "ziyorat qildi (ajvaf: ز و ر) · u/erkak", "root": "ز و ر", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/zara.mp3", "example_ar": "زَارَ المَدِينَةَ.", "example_uz": "Shaharni ziyorat qildi.", "srs": true},
+  {"ar": "نَامَ", "translit": "nāma", "uz": "uxladi (ajvaf: ن و م) · u/erkak", "root": "ن و م", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/nama.mp3", "example_ar": "نَامَ مُبَكِّرًا.", "example_uz": "Erta uxladi.", "srs": true},
+  {"ar": "بَاعَ", "translit": "bāʿa", "uz": "sotdi (ajvaf: ب ي ع) · u/erkak", "root": "ب ي ع", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/baa.mp3", "example_ar": "بَاعَ السَّيَّارَةَ.", "example_uz": "Mashinani sotdi.", "srs": true},
+  {"ar": "يَبِيعُ", "translit": "yabīʿu", "uz": "sotadi (ي qaytdi) · u/erkak", "root": "ب ي ع", "pattern": "يَفْعِلُ", "pos": "fe'l", "audio": "a2/yabiu.mp3", "example_ar": "يَبِيعُ الخُضَارَ.", "example_uz": "Sabzavot sotadi.", "srs": true},
+  {"ar": "عَادَ", "translit": "ʿāda", "uz": "qaytdi (ajvaf: ع و د) · u/erkak", "root": "ع و د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/aada.mp3", "example_ar": "عَادَ إِلَى بَلَدِهِ.", "example_uz": "Yurtiga qaytdi.", "srs": true},
   {"ar": "مَكَان", "translit": "makān", "uz": "joy, makon (o'zbekcha 'makon')", "root": "ك و ن", "pattern": "مَفْعَل", "pos": "ot", "audio": "a2/makan.mp3", "example_ar": "مَكَانٌ جَمِيلٌ.", "example_uz": "Chiroyli joy.", "srs": true}
  ],
  "hejazi": [],
@@ -86,13 +86,13 @@
  "srs_cards": [
   {"type": "root", "front": "ك و ن", "back": "bo'lish o'zagi (kana=edi, makon, kavn) — ajvaf", "deck": "msa"},
   {"type": "pattern", "front": "أَجْوَف: قَالَ→يَقُولُ", "back": "o'rtasi و/ي, o'tganda ا, hozirda qaytadi", "deck": "msa"},
-  {"type": "word", "front": "كَانَ", "back": "edi, bo'ldi (ajvaf)", "deck": "msa"},
-  {"type": "word", "front": "قَالَ", "back": "dedi (ajvaf)", "deck": "msa"},
-  {"type": "word", "front": "زَارَ", "back": "ziyorat qildi (ajvaf)", "deck": "msa"},
-  {"type": "word", "front": "نَامَ", "back": "uxladi (ajvaf)", "deck": "msa"},
-  {"type": "word", "front": "بَاعَ", "back": "sotdi (ajvaf)", "deck": "msa"},
-  {"type": "word", "front": "عَادَ", "back": "qaytdi (ajvaf)", "deck": "msa"},
-  {"type": "word", "front": "يَقُولُ", "back": "aytadi (و qaytdi)", "deck": "msa"},
+  {"type": "word", "front": "كَانَ", "back": "edi, bo'ldi (ajvaf) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "قَالَ", "back": "dedi (ajvaf) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "زَارَ", "back": "ziyorat qildi (ajvaf) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "نَامَ", "back": "uxladi (ajvaf) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "بَاعَ", "back": "sotdi (ajvaf) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "عَادَ", "back": "qaytdi (ajvaf) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "يَقُولُ", "back": "aytadi (و qaytdi) · u/erkak", "deck": "msa"},
   {"type": "word", "front": "مَكَان", "back": "joy, makon", "deck": "msa"}
  ]
 }

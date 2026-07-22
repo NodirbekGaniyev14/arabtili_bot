@@ -75,7 +75,7 @@
   {
    "ar": "كَتَبَ",
    "translit": "kataba",
-   "uz": "yozdi",
+   "uz": "yozdi · u/erkak",
    "root": "ك ت ب",
    "pattern": "",
    "pos": "fe'l",
@@ -99,7 +99,7 @@
   {
    "ar": "ذَهَبَ",
    "translit": "zahaba",
-   "uz": "ketdi, bordi",
+   "uz": "ketdi, bordi · u/erkak",
    "root": "ذ ه ب",
    "pattern": "",
    "pos": "fe'l",
@@ -111,7 +111,7 @@
   {
    "ar": "شَرِبَ",
    "translit": "shariba",
-   "uz": "ichdi",
+   "uz": "ichdi · u/erkak",
    "root": "ش ر ب",
    "pattern": "",
    "pos": "fe'l",
@@ -123,7 +123,7 @@
   {
    "ar": "فَتَحَ",
    "translit": "fataha",
-   "uz": "ochdi",
+   "uz": "ochdi · u/erkak",
    "root": "ف ت ح",
    "pattern": "",
    "pos": "fe'l",
@@ -135,7 +135,7 @@
   {
    "ar": "جَلَسَ",
    "translit": "jalasa",
-   "uz": "o'tirdi",
+   "uz": "o'tirdi · u/erkak",
    "root": "ج ل س",
    "pattern": "",
    "pos": "fe'l",
@@ -147,7 +147,7 @@
   {
    "ar": "سَمِعَ",
    "translit": "sami'a",
-   "uz": "eshitdi",
+   "uz": "eshitdi · u/erkak",
    "root": "س م ع",
    "pattern": "",
    "pos": "fe'l",
@@ -159,7 +159,7 @@
   {
    "ar": "دَرَسَ",
    "translit": "darasa",
-   "uz": "o'qidi, o'rgandi (o'zbekcha «dars», «madrasa» shundan)",
+   "uz": "o'qidi, o'rgandi (o'zbekcha «dars», «madrasa» shundan) · u/erkak",
    "root": "د ر س",
    "pattern": "",
    "pos": "fe'l",
@@ -330,7 +330,7 @@
   {
    "type": "word",
    "front": "كَتَبَ",
-   "back": "kataba — yozdi",
+   "back": "kataba — yozdi · u/erkak",
    "deck": "msa"
   },
   {
@@ -342,37 +342,37 @@
   {
    "type": "word",
    "front": "ذَهَبَ",
-   "back": "zahaba — ketdi, bordi",
+   "back": "zahaba — ketdi, bordi · u/erkak",
    "deck": "msa"
   },
   {
    "type": "word",
    "front": "شَرِبَ",
-   "back": "shariba — ichdi",
+   "back": "shariba — ichdi · u/erkak",
    "deck": "msa"
   },
   {
    "type": "word",
    "front": "فَتَحَ",
-   "back": "fataha — ochdi",
+   "back": "fataha — ochdi · u/erkak",
    "deck": "msa"
   },
   {
    "type": "word",
    "front": "جَلَسَ",
-   "back": "jalasa — o'tirdi",
+   "back": "jalasa — o'tirdi · u/erkak",
    "deck": "msa"
   },
   {
    "type": "word",
    "front": "سَمِعَ",
-   "back": "sami'a — eshitdi",
+   "back": "sami'a — eshitdi · u/erkak",
    "deck": "msa"
   },
   {
    "type": "word",
    "front": "دَرَسَ",
-   "back": "darasa — o'qidi, o'rgandi (dars, madrasa)",
+   "back": "darasa — o'qidi, o'rgandi (dars, madrasa) · u/erkak",
    "deck": "msa"
   }
  ]

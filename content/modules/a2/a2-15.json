@@ -3,96 +3,106 @@
  "level": "A2",
  "module": "verb-forms",
  "order": 15,
- "title_uz": "VI bob: o'zaro",
+ "title_uz": "VI bob: o'zaro (تَعَاوَنَ)",
  "title_ar": "البَابُ السَّادِس: تَفَاعَلَ",
- "can_do_uz": "VI bob (تَفَاعَلَ) fe'llarini taniyman: bir necha kishi o'rtasidagi o'zaro harakatni bilaman.",
+ "can_do_uz": "VI bob (تَفَاعَلَ) ma'nosini bilaman va تَعَاوَنَ fe'lini 14 shaklda to'liq tuslay olaman.",
  "duration_min": 30,
  "prerequisites": ["a2-14"],
  "harakat_level": "new_words_only",
- "hook_uz": "«Yordamlashdi» — تَعَاوَنَ. «Almashdilar» — تَبَادَلَ. III bob (فَاعَلَ) boshiga تَـ qo'shsangiz — harakat IKKI TOMONLAMA, o'zaro bo'ladi. تَوَاصَلَ (aloqa qildi), تَفَاهَمَ (bir-birini tushundi).",
+ "hook_uz": "III bob فَاعَلَ (سَاعَدَ) oldiga تَـ qo'shing — تَعَاوَنَ (hamkorlik qildilar). VI bob ko'pincha IKKI TARAF birga qiladigan ishni bildiradi: yordamlashdilar, xat yozishdilar. Bugun bitta تَعَاوَنَ ni 14 shaklda tuslaymiz.",
  "grammar": {
-  "point_ar": "تَفَاعَلَ — المُشَارَكَة المُتَبَادَلَة",
-  "explanation_uz": "VI bob vazni: تَفَاعَلَ (III bob فَاعَلَ boshiga تَـ). Asosiy ma'no: bir necha shaxs o'rtasida O'ZARO harakat: تَعَاوَنَ (yordamlashdi — birga), تَبَادَلَ (almashdilar), تَقَابَلَ (uchrashdilar). Odatda EGA ko'plikda bo'ladi. Masdari تَفَاعُل: تَعَاوُن (hamkorlik). Hozirgi zamoni: يَتَفَاعَلُ (يَتَعَاوَنُ).",
+  "point_ar": "تَفَاعَلَ — تَصْرِيفُ تَعَاوَنَ",
+  "explanation_uz": "VI bob vazni — تَفَاعَلَ: III bob (فَاعَلَ) oldiga تَـ qo'shiladi. Ma'nosi: O'ZARO, ikki tomon birga (المُشَارَكَة المُتَبَادَلَة) — عَاوَنَ (yordamlashdi) → تَعَاوَنَ (o'zaro hamkorlik qildilar), كَاتَبَ → تَكَاتَبَ (xat yozishdilar). Muzori'i يَتَفَاعَلُ (يَتَعَاوَنُ) — prefiks FATHA (V bobdagidek). Masdari تَفَاعُل (تَعَاوُن). Tuslash qo'shimchalari moziydagidek o'zgarmaydi.",
   "table": [
-   {"ar": "تَعَاوَنَ", "uz": "yordamlashdi (o'zaro)", "form": "تَفَاعَلَ"},
-   {"ar": "تَبَادَلَ", "uz": "almashdilar", "form": "o'zaro"},
-   {"ar": "تَوَاصَلَ", "uz": "aloqa qildi", "form": "تَفَاعَلَ"},
-   {"ar": "مَصْدَر: تَعَاوُن", "uz": "masdar: hamkorlik", "form": "تَفَاعُل"}
+   {"ar": "تَعَاوَنَ", "uz": "u (bir erkak) hamkorlik qildi", "form": "غَائِب مُفْرَد"},
+   {"ar": "تَعَاوَنَا", "uz": "u ikki erkak hamkorlik qildi", "form": "غَائِب مُثَنَّى"},
+   {"ar": "تَعَاوَنُوا", "uz": "ular (erkaklar) hamkorlik qildilar", "form": "غَائِب جَمْع"},
+   {"ar": "تَعَاوَنَتْ", "uz": "u (bir ayol) hamkorlik qildi", "form": "غَائِبَة مُفْرَد"},
+   {"ar": "تَعَاوَنَتَا", "uz": "u ikki ayol hamkorlik qildi", "form": "غَائِبَة مُثَنَّى"},
+   {"ar": "تَعَاوَنَّ", "uz": "ular (ayollar) hamkorlik qildilar", "form": "غَائِبَة جَمْع"},
+   {"ar": "تَعَاوَنْتَ", "uz": "sen (erkak) hamkorlik qilding", "form": "مُخَاطَب مُفْرَد"},
+   {"ar": "تَعَاوَنْتُمَا", "uz": "sizlar ikkovingiz hamkorlik qildingiz", "form": "مُخَاطَب مُثَنَّى"},
+   {"ar": "تَعَاوَنْتُمْ", "uz": "sizlar (erkaklar) hamkorlik qildingiz", "form": "مُخَاطَب جَمْع"},
+   {"ar": "تَعَاوَنْتِ", "uz": "sen (ayol) hamkorlik qilding", "form": "مُخَاطَبَة مُفْرَد"},
+   {"ar": "تَعَاوَنْتُنَّ", "uz": "sizlar (ayollar) hamkorlik qildingiz", "form": "مُخَاطَبَة جَمْع"},
+   {"ar": "تَعَاوَنْتُ", "uz": "men hamkorlik qildim", "form": "مُتَكَلِّم مُفْرَد"},
+   {"ar": "تَعَاوَنَّا", "uz": "biz hamkorlik qildik", "form": "مُتَكَلِّم جَمْع"},
+   {"ar": "يَتَعَاوَنُ", "uz": "u hamkorlik qiladi (muzori' — prefiks fatha)", "form": "المُضَارِع"}
   ],
   "common_mistakes_uz": [
-   "V bob (تَفَعَّلَ, shadda) va VI bob (تَفَاعَلَ, alif) shakllarini chalkashtirish.",
-   "VI bobni bitta shaxsga ishlatish — u odatda O'ZARO (ko'p shaxs).",
-   "Masdarni (تَفَاعُل) noto'g'ri yozish."
+   "Muzori'da prefiksni damma qilish: يُتَعَاوَنُ xato — V/VI bobda prefiks FATHA: يَتَعَاوَنُ.",
+   "تَعَاوَنَّ (ular ayollar, نّ shaddali) va تَعَاوَنَّا (biz) ni chalkashtirish — farq oxirgi ا da.",
+   "VI bob ko'pincha ko'plik/juftlik bilan keladi — chunki ma'nosi «o'zaro»."
   ]
  },
  "roots": [
   {
    "root": "ع و ن",
-   "meaning_uz": "yordam, ko'maklashish",
-   "uz_cognates": ["muovin", "taovun", "muin"],
+   "meaning_uz": "yordam — VI bob namunasi",
+   "uz_cognates": ["muovin", "taovun", "yordam"],
    "derived": [
-    {"ar": "تَعَاوَنَ", "uz": "yordamlashdi (VI)", "pattern": "تَفَاعَلَ"},
+    {"ar": "تَعَاوَنَ", "uz": "hamkorlik qildi (VI)", "pattern": "تَفَاعَلَ"},
+    {"ar": "مُتَعَاوِن", "uz": "hamkor (ism fo'il)", "pattern": "مُتَفَاعِل"},
     {"ar": "تَعَاوُن", "uz": "hamkorlik (masdar)", "pattern": "تَفَاعُل"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "تَعَاوَنَ", "translit": "taʿāwana", "uz": "yordamlashdi, hamkorlik qildi", "root": "ع و ن", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/taawana.mp3", "example_ar": "تَعَاوَنَ الطُّلَّابُ.", "example_uz": "Talabalar yordamlashdilar.", "srs": true},
-  {"ar": "تَبَادَلَ", "translit": "tabādala", "uz": "almashdilar", "root": "ب د ل", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/tabadala.mp3", "example_ar": "تَبَادَلَا الهَدَايَا.", "example_uz": "Ular sovg'a almashdilar.", "srs": true},
-  {"ar": "تَنَاوَلَ", "translit": "tanāwala", "uz": "yedi, oldi (ovqat)", "root": "ن و ل", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/tanawala.mp3", "example_ar": "تَنَاوَلَ الفَطُورَ.", "example_uz": "Nonushta qildi.", "srs": true},
-  {"ar": "تَوَاصَلَ", "translit": "tawāṣala", "uz": "aloqa qildi, bog'landi", "root": "و ص ل", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/tawasala.mp3", "example_ar": "تَوَاصَلْتُ مَعَ عَائِلَتِي.", "example_uz": "Oilam bilan aloqa qildim.", "srs": true},
-  {"ar": "تَفَاهَمَ", "translit": "tafāhama", "uz": "bir-birini tushundi", "root": "ف ه م", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/tafahama.mp3", "example_ar": "تَفَاهَمْنَا بِسُهُولَةٍ.", "example_uz": "Osongina tushunishdik.", "srs": true},
-  {"ar": "تَقَابَلَ", "translit": "taqābala", "uz": "uchrashdilar", "root": "ق ب ل", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/taqabala.mp3", "example_ar": "تَقَابَلْنَا فِي السُّوقِ.", "example_uz": "Bozorda uchrashdik.", "srs": true},
-  {"ar": "تَشَاوَرَ", "translit": "tashāwara", "uz": "maslahatlashdilar", "root": "ش و ر", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/tashawara.mp3", "example_ar": "تَشَاوَرَ الأَعْضَاءُ.", "example_uz": "A'zolar maslahatlashdilar.", "srs": true},
-  {"ar": "تَعَاوُن", "translit": "taʿāwun", "uz": "hamkorlik (masdar)", "root": "ع و ن", "pattern": "تَفَاعُل", "pos": "ot", "audio": "a2/taawun.mp3", "example_ar": "التَّعَاوُنُ قُوَّةٌ.", "example_uz": "Hamkorlik — kuch.", "srs": true},
-  {"ar": "فَطُور", "translit": "faṭūr", "uz": "nonushta", "root": "ف ط ر", "pattern": "فَعُول", "pos": "ot", "audio": "a2/fatur.mp3", "example_ar": "تَنَاوَلْتُ الفَطُورَ.", "example_uz": "Nonushta qildim.", "srs": true},
-  {"ar": "بِسُهُولَة", "translit": "bisuhūla", "uz": "osonlik bilan", "root": "س ه ل", "pattern": "", "pos": "ibora", "audio": "a2/bisuhula.mp3", "example_ar": "فَهِمْتُ بِسُهُولَةٍ.", "example_uz": "Osonlik bilan tushundim.", "srs": true}
+  {"ar": "تَعَاوَنَ", "translit": "taʿāwana", "uz": "hamkorlik qildi, yordamlashdi (VI bob · u/erkak — lug'at shakli) (o'zbekcha 'taovun')", "root": "ع و ن", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/taawana.mp3", "example_ar": "تَعَاوَنَ الطُّلَّابُ.", "example_uz": "Talabalar hamkorlik qildilar.", "srs": true},
+  {"ar": "تَبَادَلَ", "translit": "tabādala", "uz": "almashdilar (VI bob · u/erkak)", "root": "ب د ل", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/tabadala.mp3", "example_ar": "تَبَادَلَا الهَدَايَا.", "example_uz": "Ikkovi sovg'a almashdi.", "srs": true},
+  {"ar": "تَوَاصَلَ", "translit": "tawāṣala", "uz": "aloqa qildi, bog'landi (VI bob · u/erkak) (o'zbekcha 'ittisol')", "root": "و ص ل", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/tawasala.mp3", "example_ar": "تَوَاصَلَ مَعَ أَصْدِقَائِهِ.", "example_uz": "Do'stlari bilan aloqa qildi.", "srs": true},
+  {"ar": "تَقَابَلَ", "translit": "taqābala", "uz": "uchrashdilar (VI bob · u/erkak)", "root": "ق ب ل", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/taqabala.mp3", "example_ar": "تَقَابَلَا فِي السُّوقِ.", "example_uz": "Ikkovi bozorda uchrashdi.", "srs": true},
+  {"ar": "تَفَاهَمَ", "translit": "tafāhama", "uz": "bir-birini tushundi (VI bob · u/erkak)", "root": "ف ه م", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "a2/tafahama.mp3", "example_ar": "تَفَاهَمَ الفَرِيقُ.", "example_uz": "Jamoa bir-birini tushundi.", "srs": true},
+  {"ar": "يَتَعَاوَنُ", "translit": "yataʿāwanu", "uz": "hamkorlik qiladi (VI bob muzori' · u/erkak)", "root": "ع و ن", "pattern": "يَتَفَاعَلُ", "pos": "fe'l", "audio": "a2/yataawanu.mp3", "example_ar": "يَتَعَاوَنُونَ فِي العَمَلِ.", "example_uz": "Ishda hamkorlik qiladilar.", "srs": true},
+  {"ar": "تَعَاوُن", "translit": "taʿāwun", "uz": "hamkorlik (VI bob masdari) (o'zbekcha 'taovun')", "root": "ع و ن", "pattern": "تَفَاعُل", "pos": "ot", "audio": "a2/taawun.mp3", "example_ar": "التَّعَاوُنُ قُوَّةٌ.", "example_uz": "Hamkorlik — kuch.", "srs": true},
+  {"ar": "فَرِيق", "translit": "farīq", "uz": "jamoa, guruh (sport/ish)", "root": "ف ر ق", "pattern": "فَعِيل", "pos": "ot", "audio": "a2/fariq.mp3", "example_ar": "فَرِيقُنَا فَازَ.", "example_uz": "Jamoamiz yutdi.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "فِي المَدْرَسَةِ تَعَاوَنَ الطُّلَّابُ وَتَبَادَلُوا الكُتُبَ. تَنَاوَلْنَا الفَطُورَ مَعًا ثُمَّ تَشَاوَرْنَا فِي المَشْرُوعِ. التَّعَاوُنُ يُسَهِّلُ العَمَلَ.",
+   "text_ar": "تَعَاوَنَ الطُّلَّابُ فِي المَشْرُوعِ، وَتَعَاوَنَتِ المُعَلِّمَاتُ أَيْضًا. نَحْنُ تَعَاوَنَّا مَعَ الجِيرَانِ، وَهُمْ تَعَاوَنُوا مَعَنَا. الفَرِيقُ النَّاجِحُ يَتَعَاوَنُ دَائِمًا.",
    "questions": [
-    {"q_uz": "Talabalar nima qildilar?", "a": "Yordamlashib kitob almashdilar"},
-    {"q_uz": "«تَعَاوَنَ» qaysi bob — ma'no?", "a": "VI bob — o'zaro yordamlashish"}
+    {"q_uz": "«تَعَاوَنَتْ» qaysi shakl?", "a": "U (bir ayol) hamkorlik qildi"},
+    {"q_uz": "«Biz hamkorlik qildik» matnda qaysi?", "a": "تَعَاوَنَّا"},
+    {"q_uz": "VI bob ma'nosi nima?", "a": "O'zaro — ikki tomon birga qiladi"}
    ]
   },
   "listening": {
    "audio": "a2/taawana.mp3",
    "transcript_ar": "تَعَاوَنَ",
    "questions": [
-    {"q_uz": "Fe'l ma'nosi?", "a": "Yordamlashdi (o'zaro)"}
+    {"q_uz": "Fe'l ma'nosi, bobi va shakli?", "a": "Hamkorlik qildi — VI bob, u (bir erkak)"}
    ]
   },
   "speaking": {
-   "task_uz": "VI bob fe'llarini ayting: taʿāwana, tabādala, tawāṣala, taqābala.",
-   "target_ar": ["تَعَاوَنَ", "تَبَادَلَ", "تَوَاصَلَ"],
+   "task_uz": "تَعَاوَنَ ning g'oyib qatorini ayting: taʿāwana, taʿāwanā, taʿāwanū, taʿāwanat, taʿāwanatā, taʿāwanna. Keyin: men — taʿāwantu, biz — taʿāwannā.",
+   "target_ar": ["تَعَاوَنَ", "تَعَاوَنُوا", "تَعَاوَنَّا"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«Do'stlarim bilan yordamlashdik» va «Oilam bilan aloqa qildim» gaplarini VI bob bilan yozing.",
+   "task_uz": "تَعَاوَنَ fe'lini uch shaxsda yozing: «biz hamkorlik qildik», «ular hamkorlik qildilar», «u (ayol) hamkorlik qildi».",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "VI bob vazni qaysi?", "q_ar": "", "options": ["تَفَاعَلَ", "تَفَعَّلَ", "فَاعَلَ", "اِنْفَعَلَ"], "answer": "تَفَاعَلَ", "explain_uz": "VI bob — III bob boshiga تَـ: تَفَاعَلَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "تَعَاوَنَ الطُّلَّابُ", "options": [], "answer": "talabalar yordamlashdilar", "explain_uz": "تَعَاوَنَ (VI) = o'zaro yordamlashdi, الطُّلَّاب = talabalar.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "VI bob odatda qanday egani talab qiladi?", "q_ar": "", "options": ["ko'plik (o'zaro)", "birlik", "faqat erkak", "faqat ayol"], "answer": "ko'plik (o'zaro)", "explain_uz": "VI bob o'zaro harakat — bir necha shaxs (ko'plik).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "Qaysi so'z «ع و ن» o'zagidan?", "q_ar": "", "options": ["تَعَاوَنَ", "تَبَادَلَ", "تَفَاهَمَ"], "answer": "تَعَاوَنَ", "explain_uz": "«ع و ن» — yordam o'zagi: تَعَاوَنَ (VI), muovin, taovun.", "audio": "", "root": "ع و ن", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "aloqa qildi, bog'landi", "q_ar": "", "options": [], "answer": "تَوَاصَلَ", "explain_uz": "تَوَاصَلَ (VI) — aloqa qildi (وصل=ulanish o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "nonushta", "q_ar": "", "options": [], "answer": "فَطُور", "explain_uz": "فَطُور — nonushta (ف ط ر o'zagidan, iftor bilan bog'liq).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«bir-birini tushundi» qaysi?", "q_ar": "", "options": ["تَفَاهَمَ", "فَهِمَ", "أَفْهَمَ", "تَعَلَّمَ"], "answer": "تَفَاهَمَ", "explain_uz": "تَفَاهَمَ (VI) — o'zaro tushunishdi.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "VI bob vazni qaysi?", "q_ar": "", "options": ["تَفَاعَلَ", "تَفَعَّلَ", "فَاعَلَ", "اِنْفَعَلَ"], "answer": "تَفَاعَلَ", "explain_uz": "VI bob — III (فَاعَلَ) oldiga تَـ: تَفَاعَلَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Biz hamkorlik qildik» qaysi?", "q_ar": "", "options": ["تَعَاوَنَّا", "تَعَاوَنَّ", "تَعَاوَنُوا", "تَعَاوَنْتُمْ"], "answer": "تَعَاوَنَّا", "explain_uz": "Mutakallim jam': تَعَاوَنَّا (oxirida ا). تَعَاوَنَّ esa «ular ayollar».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "تَعَاوَنُوا فِي العَمَلِ", "options": [], "answer": "ular ishda hamkorlik qildilar", "explain_uz": "تَعَاوَنُوا — g'oyib jam' (ular).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "تَعَاوَنَ ning muzori' shakli qaysi?", "q_ar": "", "options": ["يَتَعَاوَنُ", "يُتَعَاوَنُ", "يَتَعَاوُنُ", "يَعَاوَنُ"], "answer": "يَتَعَاوَنُ", "explain_uz": "VI bobda muzori' prefiksi fatha, تَـ saqlanadi: يَتَعَاوَنُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "aloqa qildi, bog'landi", "q_ar": "", "options": [], "answer": "تَوَاصَلَ", "explain_uz": "تَوَاصَلَ — VI bob (o'zaro aloqa).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "hamkorlik (masdar)", "q_ar": "", "options": [], "answer": "تَعَاوُن", "explain_uz": "تَعَاوُن — VI bob masdari (vazn: تَفَاعُل).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "build_word", "q_uz": "ع و ن o'zagini تَفَاعَلَ qolipiga soling (hamkorlik qildi):", "q_ar": "", "options": [], "answer": "تَعَاوَنَ", "explain_uz": "تَفَاعَلَ + ع و ن = تَعَاوَنَ.", "audio": "", "root": "ع و ن", "pattern": "تَفَاعَلَ", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "ع و ن", "back": "yordam o'zagi (taawana, muovin, taovun)", "deck": "msa"},
-  {"type": "pattern", "front": "تَفَاعَلَ (VI)", "back": "o'zaro harakat (ko'plik), masdar تَفَاعُل", "deck": "msa"},
-  {"type": "word", "front": "تَعَاوَنَ", "back": "yordamlashdi (VI)", "deck": "msa"},
-  {"type": "word", "front": "تَبَادَلَ", "back": "almashdilar (VI)", "deck": "msa"},
-  {"type": "word", "front": "تَنَاوَلَ", "back": "yedi, oldi (VI)", "deck": "msa"},
-  {"type": "word", "front": "تَوَاصَلَ", "back": "aloqa qildi (VI)", "deck": "msa"},
-  {"type": "word", "front": "تَفَاهَمَ", "back": "bir-birini tushundi (VI)", "deck": "msa"},
-  {"type": "word", "front": "تَقَابَلَ", "back": "uchrashdilar (VI)", "deck": "msa"},
-  {"type": "word", "front": "تَعَاوُن", "back": "hamkorlik (masdar)", "deck": "msa"},
-  {"type": "word", "front": "فَطُور", "back": "nonushta", "deck": "msa"}
+  {"type": "root", "front": "ع و ن", "back": "yordam — VI bob namunasi (taawana=hamkorlik qildi)", "deck": "msa"},
+  {"type": "pattern", "front": "تَفَاعَلَ (VI)", "back": "o'zaro (ikki tomon), muzori' يَتَفَاعَلُ (fatha), masdar تَفَاعُل", "deck": "msa"},
+  {"type": "word", "front": "تَعَاوَنَ", "back": "hamkorlik qildi (VI · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "تَعَاوَنَّا", "back": "biz hamkorlik qildik (VI)", "deck": "msa"},
+  {"type": "word", "front": "تَعَاوَنُوا", "back": "ular (erkaklar) hamkorlik qildilar (VI)", "deck": "msa"},
+  {"type": "word", "front": "تَبَادَلَ", "back": "almashdilar (VI · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "تَوَاصَلَ", "back": "aloqa qildi (VI · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "تَفَاهَمَ", "back": "bir-birini tushundi (VI · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "يَتَعَاوَنُ", "back": "hamkorlik qiladi (VI muzori' · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "تَعَاوُن", "back": "hamkorlik (VI masdari)", "deck": "msa"}
  ]
 }

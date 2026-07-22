@@ -46,7 +46,7 @@
   {"ar": "قِطَارُ الحَرَمَيْن", "translit": "qiṭār al-ḥaramayn", "uz": "Haramayn (Makka-Madina) tez poyezdi", "root": "", "pattern": "", "pos": "ibora", "audio": "a2/qitar_haramayn.mp3", "example_ar": "رَكِبْتُ قِطَارَ الحَرَمَيْنِ.", "example_uz": "Haramayn poyezdiga chiqdim.", "srs": true},
   {"ar": "نَقْل", "translit": "naql", "uz": "transport, tashish", "root": "ن ق ل", "pattern": "فَعْل", "pos": "ot", "audio": "a2/naql.mp3", "example_ar": "وَسِيلَةُ النَّقْلِ.", "example_uz": "Transport vositasi.", "srs": true},
   {"ar": "مُبَاشِر", "translit": "mubāshir", "uz": "to'g'ridan-to'g'ri, bevosita", "root": "ب ش ر", "pattern": "مُفَاعِل", "pos": "sifat", "audio": "a2/mubashir.mp3", "example_ar": "قِطَارٌ مُبَاشِرٌ.", "example_uz": "To'g'ri (to'xtovsiz) poyezd.", "srs": true},
-  {"ar": "رَكِبَ", "translit": "rakiba", "uz": "mindi, chiqdi (transportga)", "root": "ر ك ب", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "a2/rakiba.mp3", "example_ar": "رَكِبْتُ التَّاكْسِي.", "example_uz": "Taksiga mindim.", "srs": true},
+  {"ar": "رَكِبَ", "translit": "rakiba", "uz": "mindi, chiqdi (transportga) · u/erkak", "root": "ر ك ب", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "a2/rakiba.mp3", "example_ar": "رَكِبْتُ التَّاكْسِي.", "example_uz": "Taksiga mindim.", "srs": true},
   {"ar": "مَحَطَّة", "translit": "maḥaṭṭa", "uz": "bekat, stansiya", "root": "ح ط ط", "pattern": "مَفْعَلَة", "pos": "ot", "audio": "a1/mahatta.mp3", "example_ar": "مَحَطَّةُ القِطَارِ.", "example_uz": "Poyezd bekati.", "srs": true},
   {"ar": "تَاكْسِي", "translit": "tāksī", "uz": "taksi", "root": "", "pattern": "", "pos": "ot", "audio": "a1/taksi.mp3", "example_ar": "أَبْغَى تَاكْسِي.", "example_uz": "Taksi kerak.", "srs": true}
  ],
@@ -98,7 +98,7 @@
   {"type": "word", "front": "مَقْعَد", "back": "o'rindiq, joy", "deck": "msa"},
   {"type": "word", "front": "رَصِيف", "back": "perron, platforma", "deck": "msa"},
   {"type": "word", "front": "عَدَّاد", "back": "hisoblagich (taksi)", "deck": "msa"},
-  {"type": "word", "front": "رَكِبَ", "back": "mindi (transportga)", "deck": "msa"},
+  {"type": "word", "front": "رَكِبَ", "back": "mindi (transportga) · u/erkak", "deck": "msa"},
   {"type": "phrase", "front": "بِكَمْ التَّوْصِيلَة؟", "back": "Yo'l qancha? (hijoziy)", "deck": "hejazi"},
   {"type": "phrase", "front": "قِفْ هِنا", "back": "Shu yerda to'xta (hijoziy)", "deck": "hejazi"}
  ]

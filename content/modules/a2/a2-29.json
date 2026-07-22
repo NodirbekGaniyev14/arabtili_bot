@@ -45,7 +45,7 @@
   {"ar": "لَيْتَ", "translit": "layta", "uz": "koshki, qani edi", "root": "", "pattern": "", "pos": "yuklama", "audio": "a2/layta.mp3", "example_ar": "لَيْتَ الشَّبَابَ يَعُودُ.", "example_uz": "Koshki yoshlik qaytsa.", "srs": true},
   {"ar": "حَقِيقَة", "translit": "ḥaqīqa", "uz": "haqiqat (o'zbekcha 'haqiqat')", "root": "ح ق ق", "pattern": "فَعِيلَة", "pos": "ot", "audio": "a2/haqiqa.mp3", "example_ar": "قُلِ الحَقِيقَةَ.", "example_uz": "Haqiqatni ayt.", "srs": true},
   {"ar": "أَسَد", "translit": "asad", "uz": "sher, arslon", "root": "أ س د", "pattern": "فَعَل", "pos": "ot", "audio": "a2/asad.mp3", "example_ar": "الأَسَدُ قَوِيٌّ.", "example_uz": "Sher kuchli.", "srs": true},
-  {"ar": "يَنْجَحُ", "translit": "yanjaḥu", "uz": "muvaffaq bo'ladi, o'tadi", "root": "ن ج ح", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a2/yanjahu.mp3", "example_ar": "الطَّالِبُ يَنْجَحُ.", "example_uz": "Talaba muvaffaq bo'ladi.", "srs": true},
+  {"ar": "يَنْجَحُ", "translit": "yanjaḥu", "uz": "muvaffaq bo'ladi, o'tadi · u/erkak", "root": "ن ج ح", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "a2/yanjahu.mp3", "example_ar": "الطَّالِبُ يَنْجَحُ.", "example_uz": "Talaba muvaffaq bo'ladi.", "srs": true},
   {"ar": "شَبَاب", "translit": "shabāb", "uz": "yoshlik, yoshlar", "root": "ش ب ب", "pattern": "فَعَال", "pos": "ot", "audio": "a2/shabab.mp3", "example_ar": "الشَّبَابُ قُوَّةٌ.", "example_uz": "Yoshlik — kuch.", "srs": true}
  ],
  "hejazi": [],

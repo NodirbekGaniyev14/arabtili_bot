@@ -42,7 +42,7 @@
   {"ar": "مَرْء", "translit": "marʾ", "uz": "kishi, inson", "root": "م ر أ", "pattern": "فَعْل", "pos": "ot", "audio": "b1/mar.mp3", "example_ar": "المرءُ معَ مَن أحبَّ.", "example_uz": "Kishi — sevgani bilan birga.", "srs": true},
   {"ar": "حُسْن", "translit": "ḥusn", "uz": "go'zallik, chiroylilik (o'zbekcha 'husn')", "root": "ح س ن", "pattern": "فُعْل", "pos": "ot", "audio": "b1/husn.mp3", "example_ar": "حسنُ الخلقِ نصفُ الدينِ.", "example_uz": "Go'zal xulq — dinning yarmi (ma'noda).", "srs": true},
   {"ar": "تَرْك", "translit": "tark", "uz": "tark etish, qo'yish (o'zbekcha 'tark')", "root": "ت ر ك", "pattern": "فَعْل", "pos": "masdar", "audio": "b1/tark.mp3", "example_ar": "تركُ الغيبةِ عبادةٌ.", "example_uz": "G'iybatni tark etish — ibodat.", "srs": true},
-  {"ar": "يَعْنِي", "translit": "yaʿnī", "uz": "tegishli bo'ladi; anglatadi ('ya'ni' shundan!)", "root": "ع ن ي", "pattern": "يَفْعِل", "pos": "fe'l", "audio": "b1/yani.mp3", "example_ar": "اتركْ ما لا يعنيكَ.", "example_uz": "O'zingga tegishli bo'lmaganini tark et.", "srs": true},
+  {"ar": "يَعْنِي", "translit": "yaʿnī", "uz": "tegishli bo'ladi; anglatadi ('ya'ni' shundan!) · u/erkak", "root": "ع ن ي", "pattern": "يَفْعِل", "pos": "fe'l", "audio": "b1/yani.mp3", "example_ar": "اتركْ ما لا يعنيكَ.", "example_uz": "O'zingga tegishli bo'lmaganini tark et.", "srs": true},
   {"ar": "أَرْبَعُون", "translit": "arbaʿūn", "uz": "qirq (Arba'in — 40 hadis to'plami)", "root": "ر ب ع", "pattern": "", "pos": "son", "audio": "b1/arbaun.mp3", "example_ar": "حفظَ الأربعينَ النوويةَ.", "example_uz": "Navaviy Arba'inini yod oldi.", "srs": true},
   {"ar": "كَلِمَة طَيِّبَة", "translit": "kalima ṭayyiba", "uz": "yaxshi so'z (sadaqa hisoblanadi)", "root": "ط ي ب", "pattern": "", "pos": "ibora", "audio": "b1/kalima_tayyiba.mp3", "example_ar": "الكلمةُ الطيبةُ صدقةٌ.", "example_uz": "Yaxshi so'z — sadaqadir (hadis).", "srs": true},
   {"ar": "صَدَقَة", "translit": "ṣadaqa", "uz": "sadaqa (o'zbekcha 'sadaqa' aynan shundan)", "root": "ص د ق", "pattern": "فَعَلَة", "pos": "ot", "audio": "b1/sadaqa2.mp3", "example_ar": "الصدقةُ تطفئُ الخطيئةَ.", "example_uz": "Sadaqa xatoni o'chiradi (ma'noda).", "srs": true},
@@ -91,7 +91,7 @@
   {"type": "word", "front": "مَرْء", "back": "kishi", "deck": "msa"},
   {"type": "word", "front": "حُسْن", "back": "go'zallik (husn)", "deck": "msa"},
   {"type": "word", "front": "تَرْك", "back": "tark etish", "deck": "msa"},
-  {"type": "word", "front": "يَعْنِي", "back": "tegishli bo'ladi; anglatadi", "deck": "msa"},
+  {"type": "word", "front": "يَعْنِي", "back": "tegishli bo'ladi; anglatadi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "صَدَقَة", "back": "sadaqa", "deck": "msa"},
   {"type": "word", "front": "عِبَادَة", "back": "ibodat", "deck": "msa"},
   {"type": "word", "front": "يُسْر", "back": "yengillik", "deck": "msa"}

@@ -47,7 +47,7 @@
   {"ar": "حُبُوب", "translit": "ḥubūb", "uz": "tabletka, dorilar", "root": "ح ب ب", "pattern": "فُعُول", "pos": "ot", "audio": "a2/hubub.mp3", "example_ar": "حُبُوبٌ لِلصُّدَاعِ.", "example_uz": "Bosh og'rig'i uchun tabletka.", "srs": true},
   {"ar": "إِسْعَاف", "translit": "isʿāf", "uz": "tez yordam", "root": "س ع ف", "pattern": "إِفْعَال", "pos": "ot", "audio": "a2/isaf.mp3", "example_ar": "اِتَّصِلْ بِالإِسْعَافِ!", "example_uz": "Tez yordam chaqir!", "srs": true},
   {"ar": "مَعِدَة", "translit": "maʿida", "uz": "oshqozon, qorin", "root": "م ع د", "pattern": "فَعِلَة", "pos": "ot", "audio": "a2/maida.mp3", "example_ar": "تُؤْلِمُنِي مَعِدَتِي.", "example_uz": "Oshqozonim og'riyapti.", "srs": true},
-  {"ar": "أَشْعُر", "translit": "ashʿuru", "uz": "his qilaman, sezaman", "root": "ش ع ر", "pattern": "أَفْعُل", "pos": "fe'l", "audio": "a2/ashur.mp3", "example_ar": "أَشْعُرُ بِأَلَمٍ.", "example_uz": "Og'riq his qilyapman.", "srs": true},
+  {"ar": "أَشْعُر", "translit": "ashʿuru", "uz": "his qilaman, sezaman · men", "root": "ش ع ر", "pattern": "أَفْعُل", "pos": "fe'l", "audio": "a2/ashur.mp3", "example_ar": "أَشْعُرُ بِأَلَمٍ.", "example_uz": "Og'riq his qilyapman.", "srs": true},
   {"ar": "طَبِيب", "translit": "ṭabīb", "uz": "shifokor (o'zbekcha 'tabib')", "root": "ط ب ب", "pattern": "فَعِيل", "pos": "ot", "audio": "a1/tabib.mp3", "example_ar": "أَحْتَاجُ طَبِيبًا.", "example_uz": "Shifokor kerak.", "srs": true}
  ],
  "hejazi": [

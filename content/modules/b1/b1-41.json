@@ -40,7 +40,7 @@
  "vocabulary": [
   {"ar": "نَشْرَة", "translit": "nashra", "uz": "yangiliklar lo'ndasi (nashr o'zagi)", "root": "ن ش ر", "pattern": "فَعْلَة", "pos": "ot", "audio": "b1/nashra.mp3", "example_ar": "أستمعُ إلى النشرةِ صباحًا.", "example_uz": "Ertalab yangiliklar tinglayman.", "srs": true},
   {"ar": "نَبَأ", "translit": "nabaʾ", "uz": "muhim xabar (ko'pligi: أنباء)", "root": "ن ب أ", "pattern": "فَعَل", "pos": "ot", "audio": "b1/naba.mp3", "example_ar": "وصلَ نبأٌ سارٌّ.", "example_uz": "Xushxabar keldi.", "srs": true},
-  {"ar": "اِفْتَتَحَ", "translit": "iftataḥa", "uz": "ochdi, ochilish marosimini o'tkazdi", "root": "ف ت ح", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/iftataha.mp3", "example_ar": "افتتحَ الوزيرُ المدرسةَ الجديدةَ.", "example_uz": "Vazir yangi maktabni ochdi.", "srs": true},
+  {"ar": "اِفْتَتَحَ", "translit": "iftataḥa", "uz": "ochdi, ochilish marosimini o'tkazdi · u/erkak", "root": "ف ت ح", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/iftataha.mp3", "example_ar": "افتتحَ الوزيرُ المدرسةَ الجديدةَ.", "example_uz": "Vazir yangi maktabni ochdi.", "srs": true},
   {"ar": "وَقَّعَ اتِّفَاقِيَّة", "translit": "waqqaʿa ittifāqiyya", "uz": "bitim imzoladi", "root": "و ق ع", "pattern": "", "pos": "ibora", "audio": "b1/waqqa_ittifaqiyya.mp3", "example_ar": "وقّعَ البلدانِ اتفاقيةَ تعاونٍ.", "example_uz": "Ikki davlat hamkorlik bitimini imzoladi.", "srs": true},
   {"ar": "تَعَاوُن", "translit": "taʿāwun", "uz": "hamkorlik (VI bob — o'zaro!)", "root": "ع و ن", "pattern": "تَفَاعُل", "pos": "ot", "audio": "b1/taawun.mp3", "example_ar": "التعاونُ بينَ البلدينِ قويٌّ.", "example_uz": "Ikki mamlakat hamkorligi kuchli.", "srs": true},
   {"ar": "دَرَجَةُ الحَرَارَة", "translit": "darajatu l-ḥarāra", "uz": "harorat darajasi (ob-havo!)", "root": "ح ر ر", "pattern": "", "pos": "ibora", "audio": "b1/darajat_harara.mp3", "example_ar": "درجةُ الحرارةِ ثلاثونَ مئويةً.", "example_uz": "Harorat — 30 daraja.", "srs": true},
@@ -89,7 +89,7 @@
   {"type": "root", "front": "ن ب أ", "back": "muhim xabar o'zagi", "deck": "msa"},
   {"type": "word", "front": "نَشْرَة", "back": "yangiliklar lo'ndasi", "deck": "msa"},
   {"type": "word", "front": "نَبَأ / أَنْبَاء", "back": "muhim xabar(lar)", "deck": "msa"},
-  {"type": "word", "front": "اِفْتَتَحَ", "back": "tantanali ochdi", "deck": "msa"},
+  {"type": "word", "front": "اِفْتَتَحَ", "back": "tantanali ochdi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "تَعَاوُن", "back": "hamkorlik", "deck": "msa"},
   {"type": "word", "front": "دَرَجَةُ الحَرَارَة", "back": "harorat", "deck": "msa"},
   {"type": "word", "front": "فِي الخِتَام", "back": "yakunida", "deck": "msa"},

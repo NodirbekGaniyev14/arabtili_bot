@@ -40,12 +40,12 @@
   {"ar": "إِذَا", "translit": "idhā", "uz": "agar, qachonki (real shart)", "root": "", "pattern": "", "pos": "yuklama", "audio": "b1/idha.mp3", "example_ar": "إذا اجتهدتَ وصلتَ إلى هدفِكَ.", "example_uz": "Tirishsang — maqsadingga yetasan.", "srs": true},
   {"ar": "شَرْط", "translit": "sharṭ", "uz": "shart (o'zbekcha 'shart' aynan shundan)", "root": "ش ر ط", "pattern": "فَعْل", "pos": "ot", "audio": "b1/shart.mp3", "example_ar": "النجاحُ لهُ شروطٌ.", "example_uz": "Muvaffaqiyatning shartlari bor.", "srs": true},
   {"ar": "هَدَف", "translit": "hadaf", "uz": "maqsad, nishon", "root": "ه د ف", "pattern": "فَعَل", "pos": "ot", "audio": "b1/hadaf.mp3", "example_ar": "حدِّدْ هدفَكَ أوّلًا.", "example_uz": "Avval maqsadingni belgila.", "srs": true},
-  {"ar": "اِتَّصَلَ", "translit": "ittaṣala", "uz": "qo'ng'iroq qildi, bog'landi (VIII bob)", "root": "و ص ل", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ittasala.mp3", "example_ar": "إذا احتجتَ شيئًا فاتصلْ بي.", "example_uz": "Biror narsa kerak bo'lsa, menga qo'ng'iroq qil.", "srs": true},
-  {"ar": "اِحْتَاجَ", "translit": "iḥtāja", "uz": "muhtoj bo'ldi, kerak bo'ldi (o'zbekcha 'ehtiyoj')", "root": "ح و ج", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ihtaja.mp3", "example_ar": "إذا احتجتَ مساعدةً فأخبرْني.", "example_uz": "Yordam kerak bo'lsa, menga ayt.", "srs": true},
+  {"ar": "اِتَّصَلَ", "translit": "ittaṣala", "uz": "qo'ng'iroq qildi, bog'landi (VIII bob) · u/erkak", "root": "و ص ل", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ittasala.mp3", "example_ar": "إذا احتجتَ شيئًا فاتصلْ بي.", "example_uz": "Biror narsa kerak bo'lsa, menga qo'ng'iroq qil.", "srs": true},
+  {"ar": "اِحْتَاجَ", "translit": "iḥtāja", "uz": "muhtoj bo'ldi, kerak bo'ldi (o'zbekcha 'ehtiyoj') · u/erkak", "root": "ح و ج", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ihtaja.mp3", "example_ar": "إذا احتجتَ مساعدةً فأخبرْني.", "example_uz": "Yordam kerak bo'lsa, menga ayt.", "srs": true},
   {"ar": "بَطَل", "translit": "baṭal", "uz": "qahramon", "root": "ب ط ل", "pattern": "فَعَل", "pos": "ot", "audio": "b1/batal.mp3", "example_ar": "إذا صبرتَ فأنتَ بطلٌ.", "example_uz": "Sabr qilsang — sen qahramonsan.", "srs": true},
   {"ar": "صَيْف", "translit": "ṣayf", "uz": "yoz (fasl)", "root": "ص ي ف", "pattern": "فَعْل", "pos": "ot", "audio": "b1/sayf.mp3", "example_ar": "إذا جاء الصيفُ ذهبنا إلى الجبالِ.", "example_uz": "Yoz kelsa, tog'larga boramiz.", "srs": true},
   {"ar": "فُرْصَة", "translit": "furṣa", "uz": "imkoniyat, fursat (o'zbekcha 'fursat')", "root": "ف ر ص", "pattern": "فُعْلَة", "pos": "ot", "audio": "b1/fursa.mp3", "example_ar": "إذا جاءتِ الفرصةُ فاغتنمْها.", "example_uz": "Fursat kelsa, undan foydalan.", "srs": true},
-  {"ar": "اِغْتَنَمَ", "translit": "ightanama", "uz": "g'animat bildi, foydalanib qoldi (o'zbekcha 'g'animat')", "root": "غ ن م", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ightanama.mp3", "example_ar": "اغتنمِ الوقتَ قبلَ فواتِهِ.", "example_uz": "Vaqtni o'tib ketmasidan g'animat bil.", "srs": true},
+  {"ar": "اِغْتَنَمَ", "translit": "ightanama", "uz": "g'animat bildi, foydalanib qoldi (o'zbekcha 'g'animat') · u/erkak", "root": "غ ن م", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ightanama.mp3", "example_ar": "اغتنمِ الوقتَ قبلَ فواتِهِ.", "example_uz": "Vaqtni o'tib ketmasidan g'animat bil.", "srs": true},
   {"ar": "نَتِيجَة", "translit": "natīja", "uz": "natija (o'zbekcha 'natija' aynan shundan)", "root": "ن ت ج", "pattern": "فَعِيلَة", "pos": "ot", "audio": "b1/natija.mp3", "example_ar": "إذا عملتَ ظهرتِ النتيجةُ.", "example_uz": "Ishlasang — natija ko'rinadi.", "srs": true}
  ],
  "hejazi": [],
@@ -89,11 +89,11 @@
   {"type": "word", "front": "إِذَا", "back": "agar, qachonki (real shart)", "deck": "msa"},
   {"type": "word", "front": "شَرْط", "back": "shart", "deck": "msa"},
   {"type": "word", "front": "هَدَف", "back": "maqsad, nishon", "deck": "msa"},
-  {"type": "word", "front": "اِتَّصَلَ", "back": "qo'ng'iroq qildi, bog'landi", "deck": "msa"},
-  {"type": "word", "front": "اِحْتَاجَ", "back": "muhtoj bo'ldi", "deck": "msa"},
+  {"type": "word", "front": "اِتَّصَلَ", "back": "qo'ng'iroq qildi, bog'landi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "اِحْتَاجَ", "back": "muhtoj bo'ldi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "بَطَل", "back": "qahramon", "deck": "msa"},
   {"type": "word", "front": "فُرْصَة", "back": "imkoniyat, fursat", "deck": "msa"},
-  {"type": "word", "front": "اِغْتَنَمَ", "back": "g'animat bildi, foydalandi", "deck": "msa"},
+  {"type": "word", "front": "اِغْتَنَمَ", "back": "g'animat bildi, foydalandi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "نَتِيجَة", "back": "natija", "deck": "msa"}
  ]
 }

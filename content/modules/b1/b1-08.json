@@ -39,7 +39,7 @@
  ],
  "vocabulary": [
   {"ar": "تَمْيِيز", "translit": "tamyīz", "uz": "aniqlashtirish (o'zbekcha 'imtiyoz' o'zagi)", "root": "م ي ز", "pattern": "تَفْعِيل", "pos": "ot", "audio": "b1/tamyiz.mp3", "example_ar": "التمييزُ يوضّحُ المقصودَ.", "example_uz": "Tamyiz maqsadni oydinlashtiradi.", "srs": true},
-  {"ar": "اِزْدَادَ", "translit": "izdāda", "uz": "ortdi, ko'paydi (VIII bob, 'ziyoda')", "root": "ز ي د", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/izdada.mp3", "example_ar": "ازدادَ المدينةُ سكانًا.", "example_uz": "Shahar aholisi ko'paydi.", "srs": true},
+  {"ar": "اِزْدَادَ", "translit": "izdāda", "uz": "ortdi, ko'paydi (VIII bob, 'ziyoda') · u/erkak", "root": "ز ي د", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/izdada.mp3", "example_ar": "ازدادَ المدينةُ سكانًا.", "example_uz": "Shahar aholisi ko'paydi.", "srs": true},
   {"ar": "سُكَّان", "translit": "sukkān", "uz": "aholi (yashovchilar, 'maskan' o'zagi)", "root": "س ك ن", "pattern": "فُعَّال", "pos": "ot", "audio": "b1/sukkan.mp3", "example_ar": "كم عددُ سكانِ مدينتِكَ؟", "example_uz": "Shahringiz aholisi qancha?", "srs": true},
   {"ar": "مُمْتَاز", "translit": "mumtāz", "uz": "a'lo (o'zbekcha 'mumtoz' aynan shundan!)", "root": "م ي ز", "pattern": "مُفْتَعَل", "pos": "sifat", "audio": "b1/mumtaz.mp3", "example_ar": "حصلَ على تقديرٍ ممتازٍ.", "example_uz": "A'lo baho oldi.", "srs": true},
   {"ar": "صَبْرًا", "translit": "ṣabran", "uz": "sabr jihatidan (tamyiz shakli)", "root": "ص ب ر", "pattern": "", "pos": "tamyiz", "audio": "b1/sabran.mp3", "example_ar": "هو أكثرُ منّي صبرًا.", "example_uz": "U mendan sabrliroq.", "srs": true},
@@ -88,7 +88,7 @@
  "srs_cards": [
   {"type": "root", "front": "م ي ز", "back": "ajratish o'zagi (imtiyoz, mumtoz)", "deck": "msa"},
   {"type": "word", "front": "تَمْيِيز", "back": "aniqlashtirish, tamyiz", "deck": "msa"},
-  {"type": "word", "front": "اِزْدَادَ", "back": "ortdi, ko'paydi", "deck": "msa"},
+  {"type": "word", "front": "اِزْدَادَ", "back": "ortdi, ko'paydi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "سُكَّان", "back": "aholi", "deck": "msa"},
   {"type": "word", "front": "مُمْتَاز", "back": "a'lo (mumtoz)", "deck": "msa"},
   {"type": "word", "front": "تُفَّاح", "back": "olma", "deck": "msa"},

@@ -3,96 +3,106 @@
  "level": "A2",
  "module": "verb-forms",
  "order": 16,
- "title_uz": "VII bob: natija/qaytim",
+ "title_uz": "VII bob: natija/qaytim (اِنْكَسَرَ)",
  "title_ar": "البَابُ السَّابِع: اِنْفَعَلَ",
- "can_do_uz": "VII bob (اِنْفَعَلَ) fe'llarini taniyman: «o'zi bo'ldi» (natija) ma'nosini bilaman.",
+ "can_do_uz": "VII bob (اِنْفَعَلَ) ma'nosini bilaman va اِنْكَسَرَ fe'lini 14 shaklda to'liq tuslay olaman.",
  "duration_min": 30,
  "prerequisites": ["a2-15"],
  "harakat_level": "new_words_only",
- "hook_uz": "«Sindirdi» — كَسَرَ. «Sindi (o'zi)» — اِنْكَسَرَ. O'zak boshiga اِنْـ qo'shsangiz — harakat O'Z-O'ZIDAN sodir bo'lgandek, natija ma'nosi chiqadi: اِنْفَتَحَ (ochildi), اِنْتَهَى (tugadi).",
+ "hook_uz": "كَسَرَ — «(kimdir) sindirdi». اِنْكَسَرَ — «(narsa o'zi) sindi». VII bobda o'zak oldiga اِنْـ qo'shiladi va fe'l «o'z-o'zidan bo'ldi» ma'nosini oladi (majhulga yaqin). Bugun bitta اِنْكَسَرَ ni 14 shaklda tuslaymiz.",
  "grammar": {
-  "point_ar": "اِنْفَعَلَ — المُطَاوَعَة",
-  "explanation_uz": "VII bob vazni: اِنْفَعَلَ (o'zak boshiga اِنْـ). Asosiy ma'no: NATIJA / passiv-qaytim — «o'zi ... bo'ldi»: كَسَرَ (sindirdi) → اِنْكَسَرَ (sindi), فَتَحَ (ochdi) → اِنْفَتَحَ (ochildi). Bu fe'llar o'timsiz (ob'ekt olmaydi). Masdari اِنْفِعَال: اِنْكِسَار. Hozirgi zamoni: يَنْفَعِلُ (يَنْكَسِرُ). Boshidagi hamza — «vasl» (ulanishda tushadi).",
+  "point_ar": "اِنْفَعَلَ — تَصْرِيفُ اِنْكَسَرَ",
+  "explanation_uz": "VII bob vazni — اِنْفَعَلَ: o'zak oldiga اِنْـ (hamzatul vasl + nun) qo'shiladi. Ma'nosi: NATIJA / o'z-o'zidan bo'lish (المُطَاوَعَة), majhulga yaqin — كَسَرَ (sindirdi) → اِنْكَسَرَ (sindi), فَتَحَ (ochdi) → اِنْفَتَحَ (ochildi). Ko'pincha JONSIZ narsaga aytiladi, shuning uchun 3-shaxs ko'p ishlatiladi. Muzori'i يَنْفَعِلُ (يَنْكَسِرُ) — prefiks FATHA, boshdagi hamzatul vasl tushadi, o'rta harf kasra. Masdari اِنْفِعَال (اِنْكِسَار).",
   "table": [
-   {"ar": "كَسَرَ ← اِنْكَسَرَ", "uz": "sindirdi → sindi", "form": "natija"},
-   {"ar": "فَتَحَ ← اِنْفَتَحَ", "uz": "ochdi → ochildi", "form": "natija"},
-   {"ar": "اِنْتَهَى", "uz": "tugadi, tugallandi", "form": "اِنْفَعَلَ"},
-   {"ar": "مَصْدَر: اِنْكِسَار", "uz": "masdar: sinish", "form": "اِنْفِعَال"}
+   {"ar": "اِنْكَسَرَ", "uz": "u (bir narsa/erkak) sindi", "form": "غَائِب مُفْرَد"},
+   {"ar": "اِنْكَسَرَا", "uz": "ikkovi sindi", "form": "غَائِب مُثَنَّى"},
+   {"ar": "اِنْكَسَرُوا", "uz": "ular (erkaklar) sindilar", "form": "غَائِب جَمْع"},
+   {"ar": "اِنْكَسَرَتْ", "uz": "u (bir ayol/narsa) sindi", "form": "غَائِبَة مُفْرَد"},
+   {"ar": "اِنْكَسَرَتَا", "uz": "u ikki ayol/narsa sindi", "form": "غَائِبَة مُثَنَّى"},
+   {"ar": "اِنْكَسَرْنَ", "uz": "ular (ayollar) sindilar", "form": "غَائِبَة جَمْع"},
+   {"ar": "اِنْكَسَرْتَ", "uz": "sen (erkak) singding", "form": "مُخَاطَب مُفْرَد"},
+   {"ar": "اِنْكَسَرْتُمَا", "uz": "sizlar ikkovingiz singdingiz", "form": "مُخَاطَب مُثَنَّى"},
+   {"ar": "اِنْكَسَرْتُمْ", "uz": "sizlar (erkaklar) singdingiz", "form": "مُخَاطَب جَمْع"},
+   {"ar": "اِنْكَسَرْتِ", "uz": "sen (ayol) singding", "form": "مُخَاطَبَة مُفْرَد"},
+   {"ar": "اِنْكَسَرْتُنَّ", "uz": "sizlar (ayollar) singdingiz", "form": "مُخَاطَبَة جَمْع"},
+   {"ar": "اِنْكَسَرْتُ", "uz": "men singdim", "form": "مُتَكَلِّم مُفْرَد"},
+   {"ar": "اِنْكَسَرْنَا", "uz": "biz singdik", "form": "مُتَكَلِّم جَمْع"},
+   {"ar": "يَنْكَسِرُ", "uz": "u sinadi (muzori' — hamza tushdi, o'rta kasra)", "form": "المُضَارِع"}
   ],
   "common_mistakes_uz": [
-   "VII bob fe'liga ob'ekt (mafʿul) qo'shish — u o'timsiz (natija).",
-   "اِنْـ prefiksini I bob amri (اُكْتُبْ) bilan chalkashtirish.",
-   "Boshidagi hamzani gap o'rtasida ham talaffuz qilish — u «vasl», tushadi."
+   "VII bobni o'timli deb o'ylash — u «o'zi bo'ldi» degani: اِنْكَسَرَ الزُّجَاجُ (shisha sindi), kimnidir sindirmaydi.",
+   "Muzori'da hamzatul vaslni saqlash: يَاِنْكَسِرُ xato — to'g'risi يَنْكَسِرُ.",
+   "اِنْكَسَرْنَ (ular ayollar) va اِنْكَسَرْنَا (biz) ni chalkashtirish — farq oxirgi ا da."
   ]
  },
  "roots": [
   {
    "root": "ك س ر",
-   "meaning_uz": "sindirish, sinish",
+   "meaning_uz": "sinish — VII bob namunasi",
    "uz_cognates": ["kasr (matematik)", "inkisor"],
    "derived": [
     {"ar": "اِنْكَسَرَ", "uz": "sindi (VII)", "pattern": "اِنْفَعَلَ"},
-    {"ar": "كَسَرَ", "uz": "sindirdi (I)", "pattern": "فَعَلَ"}
+    {"ar": "مُنْكَسِر", "uz": "singan (ism fo'il)", "pattern": "مُنْفَعِل"},
+    {"ar": "اِنْكِسَار", "uz": "sinish (masdar)", "pattern": "اِنْفِعَال"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "اِنْكَسَرَ", "translit": "inkasara", "uz": "sindi (o'zi)", "root": "ك س ر", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/inkasara.mp3", "example_ar": "اِنْكَسَرَ الزُّجَاجُ.", "example_uz": "Shisha sindi.", "srs": true},
-  {"ar": "اِنْفَتَحَ", "translit": "infataḥa", "uz": "ochildi (o'zi)", "root": "ف ت ح", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/infataha.mp3", "example_ar": "اِنْفَتَحَ البَابُ.", "example_uz": "Eshik ochildi.", "srs": true},
-  {"ar": "اِنْقَطَعَ", "translit": "inqaṭaʿa", "uz": "uzildi (o'zi)", "root": "ق ط ع", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/inqataa.mp3", "example_ar": "اِنْقَطَعَ الحَبْلُ.", "example_uz": "Arqon uzildi.", "srs": true},
-  {"ar": "اِنْتَهَى", "translit": "intahā", "uz": "tugadi, tugallandi", "root": "ن ه ي", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/intaha.mp3", "example_ar": "اِنْتَهَى الدَّرْسُ.", "example_uz": "Dars tugadi.", "srs": true},
-  {"ar": "اِنْصَرَفَ", "translit": "inṣarafa", "uz": "jo'nab ketdi, tarqaldi", "root": "ص ر ف", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/insarafa.mp3", "example_ar": "اِنْصَرَفَ النَّاسُ.", "example_uz": "Odamlar tarqaldilar.", "srs": true},
-  {"ar": "اِنْشَغَلَ", "translit": "inshaghala", "uz": "band bo'ldi, mashg'ul bo'ldi", "root": "ش غ ل", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/inshaghala.mp3", "example_ar": "اِنْشَغَلْتُ بِالعَمَلِ.", "example_uz": "Ish bilan band bo'ldim.", "srs": true},
-  {"ar": "اِنْقَسَمَ", "translit": "inqasama", "uz": "bo'lindi (o'zi)", "root": "ق س م", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/inqasama.mp3", "example_ar": "اِنْقَسَمَ الفَرِيقُ.", "example_uz": "Jamoa bo'lindi.", "srs": true},
-  {"ar": "اِنْكِسَار", "translit": "inkisār", "uz": "sinish (masdar) (o'zbekcha 'inkisor')", "root": "ك س ر", "pattern": "اِنْفِعَال", "pos": "ot", "audio": "a2/inkisar.mp3", "example_ar": "اِنْكِسَارُ الزُّجَاجِ.", "example_uz": "Shishaning sinishi.", "srs": true},
-  {"ar": "زُجَاج", "translit": "zujāj", "uz": "shisha", "root": "ز ج ج", "pattern": "فُعَال", "pos": "ot", "audio": "a2/zujaj.mp3", "example_ar": "الزُّجَاجُ مَكْسُورٌ.", "example_uz": "Shisha singan.", "srs": true},
-  {"ar": "نِهَايَة", "translit": "nihāya", "uz": "oxir, yakun", "root": "ن ه ي", "pattern": "فِعَالَة", "pos": "ot", "audio": "a2/nihaya.mp3", "example_ar": "فِي نِهَايَةِ اليَوْمِ.", "example_uz": "Kun oxirida.", "srs": true}
+  {"ar": "اِنْكَسَرَ", "translit": "inkasara", "uz": "sindi (o'zi) (VII bob · u — lug'at shakli)", "root": "ك س ر", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/inkasara.mp3", "example_ar": "اِنْكَسَرَ الزُّجَاجُ.", "example_uz": "Shisha sindi.", "srs": true},
+  {"ar": "اِنْفَتَحَ", "translit": "infataḥa", "uz": "ochildi (o'zi) (VII bob · u)", "root": "ف ت ح", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/infataha.mp3", "example_ar": "اِنْفَتَحَ البَابُ.", "example_uz": "Eshik ochildi.", "srs": true},
+  {"ar": "اِنْقَطَعَ", "translit": "inqaṭaʿa", "uz": "uzildi (o'zi) (VII bob · u)", "root": "ق ط ع", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/inqataa.mp3", "example_ar": "اِنْقَطَعَ الحَبْلُ.", "example_uz": "Arqon uzildi.", "srs": true},
+  {"ar": "اِنْصَرَفَ", "translit": "inṣarafa", "uz": "jo'nab ketdi, tarqaldi (VII bob · u/erkak)", "root": "ص ر ف", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/insarafa.mp3", "example_ar": "اِنْصَرَفَ النَّاسُ.", "example_uz": "Odamlar tarqaldi.", "srs": true},
+  {"ar": "اِنْشَغَلَ", "translit": "inshaghala", "uz": "band bo'ldi, mashg'ul bo'ldi (VII bob · u/erkak)", "root": "ش غ ل", "pattern": "اِنْفَعَلَ", "pos": "fe'l", "audio": "a2/inshaghala.mp3", "example_ar": "اِنْشَغَلَ بِالعَمَلِ.", "example_uz": "Ish bilan band bo'ldi.", "srs": true},
+  {"ar": "يَنْكَسِرُ", "translit": "yankasiru", "uz": "sinadi (VII bob muzori' · u)", "root": "ك س ر", "pattern": "يَنْفَعِلُ", "pos": "fe'l", "audio": "a2/yankasiru.mp3", "example_ar": "الزُّجَاجُ يَنْكَسِرُ بِسُهُولَةٍ.", "example_uz": "Shisha oson sinadi.", "srs": true},
+  {"ar": "اِنْكِسَار", "translit": "inkisār", "uz": "sinish (VII bob masdari) (o'zbekcha 'inkisor')", "root": "ك س ر", "pattern": "اِنْفِعَال", "pos": "ot", "audio": "a2/inkisar.mp3", "example_ar": "اِنْكِسَارُ الزُّجَاجِ.", "example_uz": "Shishaning sinishi.", "srs": true},
+  {"ar": "زُجَاج", "translit": "zujāj", "uz": "shisha (material)", "root": "ز ج ج", "pattern": "فُعَال", "pos": "ot", "audio": "a2/zujaj.mp3", "example_ar": "النَّافِذَةُ مِنْ زُجَاجٍ.", "example_uz": "Deraza shishadan.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "فِي نِهَايَةِ الدَّرْسِ اِنْصَرَفَ الطُّلَّابُ. لَكِنْ وَقَعَ كِتَابٌ وَاِنْكَسَرَ الزُّجَاجُ عَلَى الطَّاوِلَةِ. اِنْشَغَلَ المُعَلِّمُ بِالتَّنْظِيفِ حَتَّى اِنْتَهَى.",
+   "text_ar": "اِنْكَسَرَ الزُّجَاجُ وَاِنْفَتَحَ البَابُ بِسَبَبِ الرِّيحِ. اِنْقَطَعَتِ الكَهْرَبَاءُ فَاِنْصَرَفَ العُمَّالُ. الأَشْيَاءُ الضَّعِيفَةُ تَنْكَسِرُ بِسُهُولَةٍ.",
    "questions": [
-    {"q_uz": "Dars oxirida nima bo'ldi?", "a": "Talabalar tarqaldi, shisha sindi"},
-    {"q_uz": "«اِنْكَسَرَ» qaysi bob — ma'no?", "a": "VII bob — sindi (o'zi)"}
+    {"q_uz": "«اِنْكَسَرَ» kim/nima haqida?", "a": "Shisha — u o'zi sindi (jonsiz)"},
+    {"q_uz": "VII bobning asosiy ma'nosi nima?", "a": "«O'z-o'zidan bo'ldi» — natija/qaytim"},
+    {"q_uz": "«تَنْكَسِرُ» qaysi zamon?", "a": "Muzori' — sinadi"}
    ]
   },
   "listening": {
    "audio": "a2/inkasara.mp3",
    "transcript_ar": "اِنْكَسَرَ",
    "questions": [
-    {"q_uz": "Fe'l ma'nosi?", "a": "Sindi (o'zi)"}
+    {"q_uz": "Fe'l ma'nosi va bobi?", "a": "Sindi (o'zi) — VII bob"}
    ]
   },
   "speaking": {
-   "task_uz": "VII bob fe'llarini ayting: inkasara, infataḥa, intahā, inṣarafa.",
-   "target_ar": ["اِنْكَسَرَ", "اِنْفَتَحَ", "اِنْتَهَى"],
+   "task_uz": "اِنْكَسَرَ ning g'oyib qatorini ayting: inkasara, inkasarā, inkasarū, inkasarat, inkasaratā, inkasarna. Keyin muzori': yankasiru.",
+   "target_ar": ["اِنْكَسَرَ", "اِنْكَسَرَتْ", "يَنْكَسِرُ"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«Eshik ochildi» va «Dars tugadi» gaplarini VII bob bilan yozing.",
+   "task_uz": "اِنْكَسَرَ va اِنْفَتَحَ bilan ikki jumla yozing: «shisha sindi», «eshik ochildi».",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "VII bob vazni qaysi?", "q_ar": "", "options": ["اِنْفَعَلَ", "أَفْعَلَ", "تَفَاعَلَ", "اِفْتَعَلَ"], "answer": "اِنْفَعَلَ", "explain_uz": "VII bob — o'zak boshiga اِنْـ: اِنْفَعَلَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«كَسَرَ» (sindirdi) ning VII bob natijasi (sindi)?", "q_ar": "", "options": ["اِنْكَسَرَ", "كَسَّرَ", "تَكَسَّرَ", "أَكْسَرَ"], "answer": "اِنْكَسَرَ", "explain_uz": "VII bob: اِنْكَسَرَ (o'zi sindi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "اِنْتَهَى الدَّرْسُ", "options": [], "answer": "dars tugadi", "explain_uz": "اِنْتَهَى (VII) = tugadi, الدَّرْس = dars.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "VII bob fe'llari ob'ekt (mafʿul) oladimi?", "q_ar": "", "options": ["yo'q (o'timsiz)", "ha, doim", "ba'zan", "faqat ko'plikda"], "answer": "yo'q (o'timsiz)", "explain_uz": "VII bob — natija/qaytim, o'timsiz (ob'ekt yo'q).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "ochildi (o'zi)", "q_ar": "", "options": [], "answer": "اِنْفَتَحَ", "explain_uz": "اِنْفَتَحَ (VII) — ochildi (فتح o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "Qaysi so'z «ك س ر» o'zagidan?", "q_ar": "", "options": ["اِنْكَسَرَ", "اِنْفَتَحَ", "اِنْتَهَى"], "answer": "اِنْكَسَرَ", "explain_uz": "«ك س ر» — sinish o'zagi: اِنْكَسَرَ (VII), كَسَرَ (I), kasr.", "audio": "", "root": "ك س ر", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "shisha", "q_ar": "", "options": [], "answer": "زُجَاج", "explain_uz": "زُجَاج — shisha.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "VII bob vazni qaysi?", "q_ar": "", "options": ["اِنْفَعَلَ", "اِفْتَعَلَ", "اِسْتَفْعَلَ", "تَفَاعَلَ"], "answer": "اِنْفَعَلَ", "explain_uz": "VII bob — o'zak oldiga اِنْـ: اِنْفَعَلَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«كَسَرَ» (sindirdi) ni VII bobga solsak?", "q_ar": "", "options": ["اِنْكَسَرَ", "كَسَّرَ", "اِسْتَكْسَرَ", "أَكْسَرَ"], "answer": "اِنْكَسَرَ", "explain_uz": "VII bob: اِنْكَسَرَ (sindi — o'zi bo'ldi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "اِنْفَتَحَ البَابُ", "options": [], "answer": "eshik ochildi", "explain_uz": "اِنْفَتَحَ — o'zi ochildi (VII bob).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "اِنْكَسَرَ ning muzori' shakli qaysi?", "q_ar": "", "options": ["يَنْكَسِرُ", "يَاِنْكَسِرُ", "يُنْكَسِرُ", "يَنْكَسَرُ"], "answer": "يَنْكَسِرُ", "explain_uz": "Hamzatul vasl tushadi, o'rta harf kasra: يَنْكَسِرُ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "VII bobning ma'no xususiyati qanday?", "q_ar": "", "options": ["O'z-o'zidan bo'lish (majhulga yaqin)", "Birovni majburlash", "Talab qilish", "O'zaro harakat"], "answer": "O'z-o'zidan bo'lish (majhulga yaqin)", "explain_uz": "اِنْكَسَرَ — o'zi sindi, hech kim sindirmadi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "sinish (masdar)", "q_ar": "", "options": [], "answer": "اِنْكِسَار", "explain_uz": "اِنْكِسَار — VII bob masdari (vazn: اِنْفِعَال).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "build_word", "q_uz": "ك س ر o'zagini اِنْفَعَلَ qolipiga soling (sindi):", "q_ar": "", "options": [], "answer": "اِنْكَسَرَ", "explain_uz": "اِنْفَعَلَ + ك س ر = اِنْكَسَرَ.", "audio": "", "root": "ك س ر", "pattern": "اِنْفَعَلَ", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "ك س ر", "back": "sinish o'zagi (kasara=sindirdi, inkasara=sindi, kasr)", "deck": "msa"},
-  {"type": "pattern", "front": "اِنْفَعَلَ (VII)", "back": "natija/qaytim (o'zi bo'ldi), masdar اِنْفِعَال", "deck": "msa"},
-  {"type": "word", "front": "اِنْكَسَرَ", "back": "sindi (VII)", "deck": "msa"},
-  {"type": "word", "front": "اِنْفَتَحَ", "back": "ochildi (VII)", "deck": "msa"},
-  {"type": "word", "front": "اِنْقَطَعَ", "back": "uzildi (VII)", "deck": "msa"},
-  {"type": "word", "front": "اِنْتَهَى", "back": "tugadi (VII)", "deck": "msa"},
-  {"type": "word", "front": "اِنْصَرَفَ", "back": "jo'nab ketdi (VII)", "deck": "msa"},
-  {"type": "word", "front": "اِنْشَغَلَ", "back": "band bo'ldi (VII)", "deck": "msa"},
-  {"type": "word", "front": "نِهَايَة", "back": "oxir, yakun", "deck": "msa"},
-  {"type": "word", "front": "زُجَاج", "back": "shisha", "deck": "msa"}
+  {"type": "root", "front": "ك س ر", "back": "sinish — VII bob namunasi (inkasara=sindi)", "deck": "msa"},
+  {"type": "pattern", "front": "اِنْفَعَلَ (VII)", "back": "o'z-o'zidan bo'lish, muzori' يَنْفَعِلُ, masdar اِنْفِعَال", "deck": "msa"},
+  {"type": "word", "front": "اِنْكَسَرَ", "back": "sindi o'zi (VII · u)", "deck": "msa"},
+  {"type": "word", "front": "اِنْكَسَرَتْ", "back": "u (ayol/narsa) sindi (VII)", "deck": "msa"},
+  {"type": "word", "front": "اِنْفَتَحَ", "back": "ochildi o'zi (VII · u)", "deck": "msa"},
+  {"type": "word", "front": "اِنْقَطَعَ", "back": "uzildi o'zi (VII · u)", "deck": "msa"},
+  {"type": "word", "front": "اِنْصَرَفَ", "back": "jo'nab ketdi (VII · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "اِنْشَغَلَ", "back": "band bo'ldi (VII · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "يَنْكَسِرُ", "back": "sinadi (VII muzori' · u)", "deck": "msa"},
+  {"type": "word", "front": "اِنْكِسَار", "back": "sinish (VII masdari)", "deck": "msa"}
  ]
 }

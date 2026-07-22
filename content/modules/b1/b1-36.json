@@ -38,8 +38,8 @@
  ],
  "vocabulary": [
   {"ar": "ذَكَاء اِصْطِنَاعِيّ", "translit": "dhakāʾ iṣṭināʿī", "uz": "sun'iy intellekt (AI)", "root": "ذ ك و", "pattern": "", "pos": "ibora", "audio": "b1/dhaka_istinai.mp3", "example_ar": "الذكاءُ الاصطناعيُّ يغيّرُ العالمَ.", "example_uz": "Sun'iy intellekt dunyoni o'zgartirmoqda.", "srs": true},
-  {"ar": "أَطْلَقَ", "translit": "aṭlaqa", "uz": "ishga tushirdi, taqdim etdi (IV bob)", "root": "ط ل ق", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/atlaqa.mp3", "example_ar": "أطلقتِ الشركةُ تطبيقًا جديدًا.", "example_uz": "Kompaniya yangi ilova taqdim etdi.", "srs": true},
-  {"ar": "كَشَفَ عَنْ", "translit": "kashafa ʿan", "uz": "ochib berdi, namoyish qildi (o'zbekcha 'kashf')", "root": "ك ش ف", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/kashafa.mp3", "example_ar": "كشفتْ عن هاتفِها الجديدِ.", "example_uz": "Yangi telefonini namoyish qildi.", "srs": true},
+  {"ar": "أَطْلَقَ", "translit": "aṭlaqa", "uz": "ishga tushirdi, taqdim etdi (IV bob) · u/erkak", "root": "ط ل ق", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/atlaqa.mp3", "example_ar": "أطلقتِ الشركةُ تطبيقًا جديدًا.", "example_uz": "Kompaniya yangi ilova taqdim etdi.", "srs": true},
+  {"ar": "كَشَفَ عَنْ", "translit": "kashafa ʿan", "uz": "ochib berdi, namoyish qildi (o'zbekcha 'kashf') · u/erkak", "root": "ك ش ف", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/kashafa.mp3", "example_ar": "كشفتْ عن هاتفِها الجديدِ.", "example_uz": "Yangi telefonini namoyish qildi.", "srs": true},
   {"ar": "مُسْتَخْدِم", "translit": "mustakhdim", "uz": "foydalanuvchi (X bob ism fo'ili)", "root": "خ د م", "pattern": "مُسْتَفْعِل", "pos": "ot", "audio": "b1/mustakhdim.mp3", "example_ar": "ملايينُ المستخدمينَ حولَ العالمِ.", "example_uz": "Dunyo bo'ylab millionlab foydalanuvchilar.", "srs": true},
   {"ar": "مِيزَة", "translit": "mīza", "uz": "xususiyat, afzallik (imtiyoz o'zagi)", "root": "م ي ز", "pattern": "فِعْلَة", "pos": "ot", "audio": "b1/miza.mp3", "example_ar": "التحديثُ يضيفُ ميزاتٍ جديدةً.", "example_uz": "Yangilanish yangi xususiyatlar qo'shadi.", "srs": true},
   {"ar": "تَحْدِيث", "translit": "taḥdīth", "uz": "yangilanish, update", "root": "ح د ث", "pattern": "تَفْعِيل", "pos": "ot", "audio": "b1/tahdith.mp3", "example_ar": "نزّلِ التحديثَ الأخيرَ.", "example_uz": "So'nggi yangilanishni yuklab oling.", "srs": true},
@@ -86,8 +86,8 @@
  "srs_cards": [
   {"type": "root", "front": "ذ ك و", "back": "zakovat o'zagi", "deck": "msa"},
   {"type": "word", "front": "ذَكَاء اِصْطِنَاعِيّ", "back": "sun'iy intellekt", "deck": "msa"},
-  {"type": "word", "front": "أَطْلَقَ", "back": "taqdim etdi, ishga tushirdi", "deck": "msa"},
-  {"type": "word", "front": "كَشَفَ عَنْ", "back": "namoyish qildi", "deck": "msa"},
+  {"type": "word", "front": "أَطْلَقَ", "back": "taqdim etdi, ishga tushirdi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "كَشَفَ عَنْ", "back": "namoyish qildi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "مُسْتَخْدِم", "back": "foydalanuvchi", "deck": "msa"},
   {"type": "word", "front": "مِيزَة", "back": "xususiyat", "deck": "msa"},
   {"type": "word", "front": "تَحْدِيث", "back": "yangilanish", "deck": "msa"},

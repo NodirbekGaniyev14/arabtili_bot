@@ -38,15 +38,15 @@
   }
  ],
  "vocabulary": [
-  {"ar": "قُلْ", "translit": "qul", "uz": "ayt! (قال fe'lining buyrug'i)", "root": "ق و ل", "pattern": "", "pos": "fe'l", "audio": "b1/qul.mp3", "example_ar": "قُلْ هوَ اللهُ أحدٌ.", "example_uz": "Ayt: U Alloh yagonadir.", "srs": true},
+  {"ar": "قُلْ", "translit": "qul", "uz": "ayt! (قال fe'lining buyrug'i) · buyruq (sen)", "root": "ق و ل", "pattern": "", "pos": "fe'l", "audio": "b1/qul.mp3", "example_ar": "قُلْ هوَ اللهُ أحدٌ.", "example_uz": "Ayt: U Alloh yagonadir.", "srs": true},
   {"ar": "أَحَد", "translit": "aḥad", "uz": "yagona, birgina (mutlaq yakkalik)", "root": "أ ح د", "pattern": "فَعَل", "pos": "ot", "audio": "b1/ahad2.mp3", "example_ar": "اللهُ أحدٌ لا شريكَ لهُ.", "example_uz": "Alloh yagona, sherigi yo'q.", "srs": true},
   {"ar": "الصَّمَد", "translit": "aṣ-ṣamad", "uz": "Samad — hamma Unga muhtoj, U hech kimga muhtoj emas", "root": "ص م د", "pattern": "فَعَل", "pos": "ot", "audio": "b1/samad.mp3", "example_ar": "اللهُ الصمدُ.", "example_uz": "Alloh — Samad.", "srs": true},
-  {"ar": "وَلَدَ", "translit": "walada", "uz": "tug'di (valad — bola shu o'zakdan)", "root": "و ل د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/walada.mp3", "example_ar": "لم يلدْ ولم يولدْ.", "example_uz": "Tug'magan va tug'ilmagan.", "srs": true},
+  {"ar": "وَلَدَ", "translit": "walada", "uz": "tug'di (valad — bola shu o'zakdan) · u/erkak", "root": "و ل د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/walada.mp3", "example_ar": "لم يلدْ ولم يولدْ.", "example_uz": "Tug'magan va tug'ilmagan.", "srs": true},
   {"ar": "كُفُو", "translit": "kufuw", "uz": "teng, o'xshash", "root": "ك ف أ", "pattern": "فُعُل", "pos": "ot", "audio": "b1/kufuw.mp3", "example_ar": "لم يكنْ لهُ كفوًا أحدٌ.", "example_uz": "Unga hech kim teng bo'lmagan.", "srs": true},
   {"ar": "شَرِيك", "translit": "sharīk", "uz": "sherik (o'zbekcha 'sherik' aynan shundan)", "root": "ش ر ك", "pattern": "فَعِيل", "pos": "ot", "audio": "b1/sharik.mp3", "example_ar": "لا شريكَ لهُ في الملكِ.", "example_uz": "Mulkda Uning sherigi yo'q.", "srs": true},
   {"ar": "ثُلُث", "translit": "thuluth", "uz": "uchdan bir (kasr)", "root": "ث ل ث", "pattern": "فُعُل", "pos": "ot", "audio": "b1/thuluth.mp3", "example_ar": "تعدلُ ثلثَ القرآنِ.", "example_uz": "Qur'onning uchdan biriga teng (savobda).", "srs": true},
   {"ar": "فَضْلُ السُّورَة", "translit": "faḍlu s-sūra", "uz": "suraning fazilati", "root": "ف ض ل", "pattern": "", "pos": "ibora", "audio": "b1/fadl_sura.mp3", "example_ar": "لهذهِ السورةِ فضلٌ عظيمٌ.", "example_uz": "Bu suraning fazilati ulug'.", "srs": true},
-  {"ar": "حَفِظَ", "translit": "ḥafiẓa", "uz": "yod oldi; saqladi (o'zbekcha 'hifz', 'hofiz')", "root": "ح ف ظ", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "b1/hafiza.mp3", "example_ar": "حفظتُ السورةَ وفهمتُها.", "example_uz": "Surani yod oldim va tushundim.", "srs": true},
+  {"ar": "حَفِظَ", "translit": "ḥafiẓa", "uz": "yod oldi; saqladi (o'zbekcha 'hifz', 'hofiz') · u/erkak", "root": "ح ف ظ", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "b1/hafiza.mp3", "example_ar": "حفظتُ السورةَ وفهمتُها.", "example_uz": "Surani yod oldim va tushundim.", "srs": true},
   {"ar": "مَعْنًى", "translit": "maʿnan", "uz": "ma'no (o'zbekcha 'ma'no' aynan shundan)", "root": "ع ن ي", "pattern": "مَفْعَل", "pos": "ot", "audio": "b1/mana.mp3", "example_ar": "افهمْ معنى ما تقرأُ.", "example_uz": "O'qiyotganingning ma'nosini tushun.", "srs": true}
  ],
  "hejazi": [],
@@ -87,11 +87,11 @@
  ],
  "srs_cards": [
   {"type": "root", "front": "خ ل ص", "back": "ixlos o'zagi (xolis, muxlis)", "deck": "msa"},
-  {"type": "word", "front": "قُلْ", "back": "ayt! (amr)", "deck": "msa"},
+  {"type": "word", "front": "قُلْ", "back": "ayt! (amr) · buyruq (sen)", "deck": "msa"},
   {"type": "word", "front": "أَحَد", "back": "mutlaq yagona", "deck": "msa"},
   {"type": "word", "front": "الصَّمَد", "back": "Samad — behojat Zot", "deck": "msa"},
   {"type": "word", "front": "شَرِيك", "back": "sherik", "deck": "msa"},
-  {"type": "word", "front": "حَفِظَ", "back": "yod oldi (hifz)", "deck": "msa"},
+  {"type": "word", "front": "حَفِظَ", "back": "yod oldi (hifz) · u/erkak", "deck": "msa"},
   {"type": "word", "front": "مَعْنًى", "back": "ma'no", "deck": "msa"},
   {"type": "word", "front": "ثُلُث", "back": "uchdan bir", "deck": "msa"}
  ]

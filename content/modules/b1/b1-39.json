@@ -38,7 +38,7 @@
   }
  ],
  "vocabulary": [
-  {"ar": "اِسْتَمَعَ إِلَى", "translit": "istamaʿa ilā", "uz": "diqqat bilan tingladi (VIII bob)", "root": "س م ع", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/istamaa.mp3", "example_ar": "أستمعُ إلى بودكاست عربيٍّ يوميًّا.", "example_uz": "Har kuni arabcha podkast tinglayman.", "srs": true},
+  {"ar": "اِسْتَمَعَ إِلَى", "translit": "istamaʿa ilā", "uz": "diqqat bilan tingladi (VIII bob) · u/erkak", "root": "س م ع", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/istamaa.mp3", "example_ar": "أستمعُ إلى بودكاست عربيٍّ يوميًّا.", "example_uz": "Har kuni arabcha podkast tinglayman.", "srs": true},
   {"ar": "مُسْتَمِع", "translit": "mustamiʿ", "uz": "tinglovchi", "root": "س م ع", "pattern": "مُفْتَعِل", "pos": "ot", "audio": "b1/mustami.mp3", "example_ar": "أهلًا بكم مستمعينا الكرامَ!", "example_uz": "Aziz tinglovchilarimiz, xush kelibsiz!", "srs": true},
   {"ar": "حَلْقَة", "translit": "ḥalqa", "uz": "epizod, son (podkast qismi — 'halqa')", "root": "ح ل ق", "pattern": "فَعْلَة", "pos": "ot", "audio": "b1/halqa.mp3", "example_ar": "حلقةُ اليومِ عن تنظيمِ الوقتِ.", "example_uz": "Bugungi son vaqtni tartiblash haqida.", "srs": true},
   {"ar": "تَنْظِيمُ الوَقْت", "translit": "tanẓīmu l-waqt", "uz": "vaqtni tartiblash (taym-menejment)", "root": "ن ظ م", "pattern": "", "pos": "ibora", "audio": "b1/tanzim_waqt.mp3", "example_ar": "تنظيمُ الوقتِ سرُّ النجاحِ.", "example_uz": "Vaqtni tartiblash — muvaffaqiyat siri.", "srs": true},
@@ -87,7 +87,7 @@
  ],
  "srs_cards": [
   {"type": "root", "front": "س م ع", "back": "eshitish o'zagi (istima')", "deck": "msa"},
-  {"type": "word", "front": "اِسْتَمَعَ إِلَى", "back": "diqqat bilan tingladi", "deck": "msa"},
+  {"type": "word", "front": "اِسْتَمَعَ إِلَى", "back": "diqqat bilan tingladi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "مُسْتَمِع", "back": "tinglovchi", "deck": "msa"},
   {"type": "word", "front": "حَلْقَة", "back": "epizod, son", "deck": "msa"},
   {"type": "word", "front": "تَنْظِيمُ الوَقْت", "back": "vaqtni tartiblash", "deck": "msa"},

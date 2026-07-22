@@ -42,10 +42,10 @@
   {"ar": "حَضَارَة", "translit": "ḥaḍāra", "uz": "sivilizatsiya, madaniyat taraqqiyoti", "root": "ح ض ر", "pattern": "فَعَالَة", "pos": "ot", "audio": "b1/hadara2.mp3", "example_ar": "حضارةُ ما وراءَ النهرِ عريقةٌ.", "example_uz": "Movarounnahr sivilizatsiyasi qadimiy.", "srs": true},
   {"ar": "أَثَر", "translit": "athar", "uz": "yodgorlik, iz (ko'pligi: آثار — 'asar')", "root": "أ ث ر", "pattern": "فَعَل", "pos": "ot", "audio": "b1/athar.mp3", "example_ar": "آثارُ سمرقندَ تجذبُ السياحَ.", "example_uz": "Samarqand yodgorliklari sayyohlarni jalb qiladi.", "srs": true},
   {"ar": "عَرِيق", "translit": "ʿarīq", "uz": "qadimiy, ildizi chuqur", "root": "ع ر ق", "pattern": "فَعِيل", "pos": "sifat", "audio": "b1/ariq.mp3", "example_ar": "مدينةٌ عريقةٌ في التاريخِ.", "example_uz": "Tarixda ildizi chuqur shahar.", "srs": true},
-  {"ar": "يَقَعُ", "translit": "yaqaʿu", "uz": "joylashgan (mavqe o'zagi)", "root": "و ق ع", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "b1/yaqau.mp3", "example_ar": "تقعُ سمرقندُ على طريقِ الحريرِ.", "example_uz": "Samarqand Ipak yo'lida joylashgan.", "srs": true},
-  {"ar": "اِشْتَهَرَ بِـ", "translit": "ishtahara bi-", "uz": "… bilan mashhur bo'ldi", "root": "ش ه ر", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ishtahara.mp3", "example_ar": "اشتهرتْ بخارى بعلمائِها.", "example_uz": "Buxoro ulamolari bilan mashhur.", "srs": true},
+  {"ar": "يَقَعُ", "translit": "yaqaʿu", "uz": "joylashgan (mavqe o'zagi) · u/erkak", "root": "و ق ع", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "b1/yaqau.mp3", "example_ar": "تقعُ سمرقندُ على طريقِ الحريرِ.", "example_uz": "Samarqand Ipak yo'lida joylashgan.", "srs": true},
+  {"ar": "اِشْتَهَرَ بِـ", "translit": "ishtahara bi-", "uz": "… bilan mashhur bo'ldi · u/erkak", "root": "ش ه ر", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ishtahara.mp3", "example_ar": "اشتهرتْ بخارى بعلمائِها.", "example_uz": "Buxoro ulamolari bilan mashhur.", "srs": true},
   {"ar": "سَائِح", "translit": "sāʾiḥ", "uz": "sayyoh (o'zbekcha 'sayyoh' — shu o'zak!)", "root": "س ي ح", "pattern": "فَاعِل", "pos": "ot", "audio": "b1/saih.mp3", "example_ar": "يزورُها ملايينُ السياحِ سنويًّا.", "example_uz": "Uni yiliga millionlab sayyohlar ziyorat qiladi.", "srs": true},
-  {"ar": "أَعْتَقِدُ أَنَّ", "translit": "aʿtaqidu anna", "uz": "menimcha, ishonamanki (fikr belgisi!)", "root": "ع ق د", "pattern": "أَفْتَعِلُ", "pos": "fe'l", "audio": "b1/ataqidu.mp3", "example_ar": "أعتقدُ أنَّ السفرَ خيرُ معلمٍ.", "example_uz": "Menimcha, safar — eng yaxshi muallim.", "srs": true}
+  {"ar": "أَعْتَقِدُ أَنَّ", "translit": "aʿtaqidu anna", "uz": "menimcha, ishonamanki (fikr belgisi!) · men", "root": "ع ق د", "pattern": "أَفْتَعِلُ", "pos": "fe'l", "audio": "b1/ataqidu.mp3", "example_ar": "أعتقدُ أنَّ السفرَ خيرُ معلمٍ.", "example_uz": "Menimcha, safar — eng yaxshi muallim.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
@@ -89,9 +89,9 @@
   {"type": "word", "front": "حَضَارَة", "back": "sivilizatsiya", "deck": "msa"},
   {"type": "word", "front": "أَثَر / آثَار", "back": "yodgorlik(lar)", "deck": "msa"},
   {"type": "word", "front": "عَرِيق", "back": "qadimiy", "deck": "msa"},
-  {"type": "word", "front": "يَقَعُ", "back": "joylashgan", "deck": "msa"},
-  {"type": "word", "front": "اِشْتَهَرَ بِـ", "back": "… bilan mashhur", "deck": "msa"},
+  {"type": "word", "front": "يَقَعُ", "back": "joylashgan · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "اِشْتَهَرَ بِـ", "back": "… bilan mashhur · u/erkak", "deck": "msa"},
   {"type": "word", "front": "سَائِح", "back": "sayyoh", "deck": "msa"},
-  {"type": "word", "front": "أَعْتَقِدُ أَنَّ", "back": "menimcha (fikr)", "deck": "msa"}
+  {"type": "word", "front": "أَعْتَقِدُ أَنَّ", "back": "menimcha (fikr) · men", "deck": "msa"}
  ]
 }

@@ -42,8 +42,8 @@
   {"ar": "مِثَال", "translit": "mithāl", "uz": "misol (turi: و/ي boshida)", "root": "م ث ل", "pattern": "فِعَال", "pos": "ot", "audio": "a2/mithal.mp3", "example_ar": "الفِعْلُ المِثَالُ.", "example_uz": "Mithal fe'li.", "srs": true},
   {"ar": "أَجْوَف", "translit": "ajwaf", "uz": "ajvaf (o'rtasi و/ي)", "root": "ج و ف", "pattern": "أَفْعَل", "pos": "sifat", "audio": "a2/ajwaf.mp3", "example_ar": "الفِعْلُ الأَجْوَفُ.", "example_uz": "Ajvaf fe'li.", "srs": true},
   {"ar": "نَاقِص", "translit": "nāqiṣ", "uz": "naqis (oxiri و/ي)", "root": "ن ق ص", "pattern": "فَاعِل", "pos": "sifat", "audio": "a2/naqis.mp3", "example_ar": "الفِعْلُ النَّاقِصُ.", "example_uz": "Naqis fe'li.", "srs": true},
-  {"ar": "قَالَ", "translit": "qāla", "uz": "dedi (ajvaf: ق و ل)", "root": "ق و ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/qala.mp3", "example_ar": "قَالَ الحَقَّ.", "example_uz": "Haqni aytdi.", "srs": true},
-  {"ar": "مَشَى", "translit": "mashā", "uz": "yurdi (naqis: م ش ي)", "root": "م ش ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/masha.mp3", "example_ar": "مَشَى إِلَى البَيْتِ.", "example_uz": "Uyga yurdi.", "srs": true},
+  {"ar": "قَالَ", "translit": "qāla", "uz": "dedi (ajvaf: ق و ل) · u/erkak", "root": "ق و ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/qala.mp3", "example_ar": "قَالَ الحَقَّ.", "example_uz": "Haqni aytdi.", "srs": true},
+  {"ar": "مَشَى", "translit": "mashā", "uz": "yurdi (naqis: م ش ي) · u/erkak", "root": "م ش ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/masha.mp3", "example_ar": "مَشَى إِلَى البَيْتِ.", "example_uz": "Uyga yurdi.", "srs": true},
   {"ar": "حَرْفُ العِلَّة", "translit": "ḥarf al-ʿilla", "uz": "illat harfi (و ي ا)", "root": "ع ل ل", "pattern": "", "pos": "ibora", "audio": "a2/harf_illa.mp3", "example_ar": "حُرُوفُ العِلَّةِ ثَلَاثَةٌ.", "example_uz": "Illat harflari uchta.", "srs": true}
  ],
  "hejazi": [],
@@ -88,8 +88,8 @@
   {"type": "word", "front": "مِثَال", "back": "mithal (و/ي boshida)", "deck": "msa"},
   {"type": "word", "front": "أَجْوَف", "back": "ajvaf (o'rtasi و/ي)", "deck": "msa"},
   {"type": "word", "front": "نَاقِص", "back": "naqis (oxiri و/ي)", "deck": "msa"},
-  {"type": "word", "front": "قَالَ", "back": "dedi (ajvaf)", "deck": "msa"},
-  {"type": "word", "front": "مَشَى", "back": "yurdi (naqis)", "deck": "msa"},
+  {"type": "word", "front": "قَالَ", "back": "dedi (ajvaf) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "مَشَى", "back": "yurdi (naqis) · u/erkak", "deck": "msa"},
   {"type": "word", "front": "حَرْفُ العِلَّة", "back": "illat harfi (و ي ا)", "deck": "msa"}
  ]
 }

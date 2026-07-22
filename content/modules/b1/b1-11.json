@@ -43,11 +43,11 @@
   {"ar": "حُبًّا لِـ", "translit": "ḥubban li-", "uz": "…ni sevib (muhabbat bilan)", "root": "ح ب ب", "pattern": "", "pos": "masdar", "audio": "b1/hubban.mp3", "example_ar": "يخدمُ وطنَهُ حبًّا لهُ.", "example_uz": "Vatanini sevib unga xizmat qiladi.", "srs": true},
   {"ar": "رَغْبَةً فِي", "translit": "raghbatan fī", "uz": "…ni istab (o'zbekcha 'rag'bat')", "root": "ر غ ب", "pattern": "", "pos": "masdar", "audio": "b1/raghbatan.mp3", "example_ar": "يعملُ رغبةً في التقدمِ.", "example_uz": "Taraqqiyotni istab ishlaydi.", "srs": true},
   {"ar": "شُكْرًا لِـ", "translit": "shukran li-", "uz": "…ga minnatdor bo'lib (shukr)", "root": "ش ك ر", "pattern": "", "pos": "masdar", "audio": "b1/shukran_li.mp3", "example_ar": "سجدَ شكرًا للهِ.", "example_uz": "Allohga shukr qilib sajda qildi.", "srs": true},
-  {"ar": "هَاجَرَ", "translit": "hājara", "uz": "hijrat qildi, ko'chdi (o'zbekcha 'hijrat')", "root": "ه ج ر", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "b1/hajara.mp3", "example_ar": "هاجرتِ العائلةُ إلى المدينةِ.", "example_uz": "Oila shaharga ko'chib ketdi.", "srs": true},
+  {"ar": "هَاجَرَ", "translit": "hājara", "uz": "hijrat qildi, ko'chdi (o'zbekcha 'hijrat') · u/erkak", "root": "ه ج ر", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "b1/hajara.mp3", "example_ar": "هاجرتِ العائلةُ إلى المدينةِ.", "example_uz": "Oila shaharga ko'chib ketdi.", "srs": true},
   {"ar": "رِزْق", "translit": "rizq", "uz": "rizq, nasiba (o'zbekcha 'rizq' aynan shundan)", "root": "ر ز ق", "pattern": "فِعْل", "pos": "ot", "audio": "b1/rizq.mp3", "example_ar": "الرزقُ بيدِ اللهِ.", "example_uz": "Rizq Allohning qo'lida.", "srs": true},
   {"ar": "تَقَدُّم", "translit": "taqaddum", "uz": "taraqqiyot, oldinga siljish (o'zbekcha 'taqaddum')", "root": "ق د م", "pattern": "تَفَعُّل", "pos": "ot", "audio": "b1/taqaddum.mp3", "example_ar": "التقدمُ يحتاجُ صبرًا.", "example_uz": "Taraqqiyot sabr talab qiladi.", "srs": true},
   {"ar": "وَطَن", "translit": "waṭan", "uz": "vatan (o'zbekcha 'vatan' aynan shundan)", "root": "و ط ن", "pattern": "فَعَل", "pos": "ot", "audio": "b1/watan.mp3", "example_ar": "حبُّ الوطنِ من الإيمانِ.", "example_uz": "Vatanni sevish iymondandir.", "srs": true},
-  {"ar": "سَجَدَ", "translit": "sajada", "uz": "sajda qildi (o'zbekcha 'sajda')", "root": "س ج د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/sajada.mp3", "example_ar": "سجدَ المصلّونَ خشوعًا.", "example_uz": "Namozxonlar xushu' bilan sajda qildilar.", "srs": true}
+  {"ar": "سَجَدَ", "translit": "sajada", "uz": "sajda qildi (o'zbekcha 'sajda') · u/erkak", "root": "س ج د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/sajada.mp3", "example_ar": "سجدَ المصلّونَ خشوعًا.", "example_uz": "Namozxonlar xushu' bilan sajda qildilar.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
@@ -91,10 +91,10 @@
   {"type": "word", "front": "خَوْفًا مِن", "back": "…dan qo'rqib", "deck": "msa"},
   {"type": "word", "front": "رَغْبَةً فِي", "back": "…ni istab (rag'bat)", "deck": "msa"},
   {"type": "word", "front": "شُكْرًا لِـ", "back": "…ga shukr qilib", "deck": "msa"},
-  {"type": "word", "front": "هَاجَرَ", "back": "hijrat qildi", "deck": "msa"},
+  {"type": "word", "front": "هَاجَرَ", "back": "hijrat qildi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "رِزْق", "back": "rizq, nasiba", "deck": "msa"},
   {"type": "word", "front": "تَقَدُّم", "back": "taraqqiyot", "deck": "msa"},
   {"type": "word", "front": "وَطَن", "back": "vatan", "deck": "msa"},
-  {"type": "word", "front": "سَجَدَ", "back": "sajda qildi", "deck": "msa"}
+  {"type": "word", "front": "سَجَدَ", "back": "sajda qildi · u/erkak", "deck": "msa"}
  ]
 }

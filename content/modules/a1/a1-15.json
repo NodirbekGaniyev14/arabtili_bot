@@ -38,8 +38,8 @@
  ],
  "vocabulary": [
   {"ar": "مَا", "translit": "mā", "uz": "inkor: -madi (fe'l oldida)", "root": "", "pattern": "", "pos": "inkor", "audio": "a1/ma_neg.mp3", "example_ar": "مَا ذَهَبْتُ.", "example_uz": "Bormadim.", "srs": true},
-  {"ar": "فَهِمَ", "translit": "fahima", "uz": "tushundi", "root": "ف ه م", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "a1/fahima.mp3", "example_ar": "مَا فَهِمْتُ الدَّرْسَ.", "example_uz": "Darsni tushunmadim.", "srs": true},
-  {"ar": "رَأَى", "translit": "raʾā", "uz": "ko'rdi", "root": "ر أ ي", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/raa.mp3", "example_ar": "مَا رَأَيْتُ أَحَدًا.", "example_uz": "Hech kimni ko'rmadim.", "srs": true},
+  {"ar": "فَهِمَ", "translit": "fahima", "uz": "tushundi · u/erkak", "root": "ف ه م", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "a1/fahima.mp3", "example_ar": "مَا فَهِمْتُ الدَّرْسَ.", "example_uz": "Darsni tushunmadim.", "srs": true},
+  {"ar": "رَأَى", "translit": "raʾā", "uz": "ko'rdi · u/erkak", "root": "ر أ ي", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/raa.mp3", "example_ar": "مَا رَأَيْتُ أَحَدًا.", "example_uz": "Hech kimni ko'rmadim.", "srs": true},
   {"ar": "قَبْلَ", "translit": "qabla", "uz": "oldin (o'zbekcha 'qabl' shundan)", "root": "ق ب ل", "pattern": "فَعْل", "pos": "predlog", "audio": "a1/qabla.mp3", "example_ar": "ذَهَبْتُ قَبْلَ الدَّرْسِ.", "example_uz": "Darsdan oldin bordim.", "srs": true},
   {"ar": "بَعْدَ", "translit": "baʿda", "uz": "keyin, so'ng", "root": "ب ع د", "pattern": "فَعْل", "pos": "predlog", "audio": "a1/bada.mp3", "example_ar": "رَجَعْتُ بَعْدَ الدَّرْسِ.", "example_uz": "Darsdan keyin qaytdim.", "srs": true},
   {"ar": "لَكِنْ", "translit": "lākin", "uz": "lekin, ammo", "root": "", "pattern": "", "pos": "bog'lovchi", "audio": "a1/lakin.mp3", "example_ar": "دَرَسْتُ لَكِنْ مَا فَهِمْتُ.", "example_uz": "O'qidim, lekin tushunmadim.", "srs": true},
@@ -84,8 +84,8 @@
  "srs_cards": [
   {"type": "root", "front": "ق ب ل", "back": "oldin/qabul o'zagi (qabul, istiqbol, mustaqbal, qibla)", "deck": "msa"},
   {"type": "word", "front": "مَا", "back": "inkor: -madi (fe'l oldida)", "deck": "msa"},
-  {"type": "word", "front": "فَهِمَ", "back": "u tushundi", "deck": "msa"},
-  {"type": "word", "front": "رَأَى", "back": "u ko'rdi", "deck": "msa"},
+  {"type": "word", "front": "فَهِمَ", "back": "tushundi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "رَأَى", "back": "ko'rdi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "قَبْلَ", "back": "oldin", "deck": "msa"},
   {"type": "word", "front": "بَعْدَ", "back": "keyin, so'ng", "deck": "msa"},
   {"type": "word", "front": "لَكِنْ", "back": "lekin, ammo", "deck": "msa"},

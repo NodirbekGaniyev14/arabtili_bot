@@ -37,7 +37,7 @@
   }
  ],
  "vocabulary": [
-  {"ar": "حَدَثَ", "translit": "ḥadatha", "uz": "yuz berdi, sodir bo'ldi", "root": "ح د ث", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/hadatha.mp3", "example_ar": "مَاذَا حَدَثَ؟", "example_uz": "Nima bo'ldi?", "srs": true},
+  {"ar": "حَدَثَ", "translit": "ḥadatha", "uz": "yuz berdi, sodir bo'ldi · u/erkak", "root": "ح د ث", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/hadatha.mp3", "example_ar": "مَاذَا حَدَثَ؟", "example_uz": "Nima bo'ldi?", "srs": true},
   {"ar": "فَجْأَةً", "translit": "fajʾatan", "uz": "to'satdan, birdan", "root": "ف ج أ", "pattern": "", "pos": "ravish", "audio": "a2/fajatan.mp3", "example_ar": "فَجْأَةً سَمِعْنَا صَوْتًا.", "example_uz": "To'satdan ovoz eshitdik.", "srs": true},
   {"ar": "بَيْنَمَا", "translit": "baynamā", "uz": "...ayotganda, shu paytda", "root": "ب ي ن", "pattern": "", "pos": "bog'lovchi", "audio": "a2/baynama.mp3", "example_ar": "بَيْنَمَا كُنْتُ أَقْرَأُ.", "example_uz": "Men o'qiyotganimda.", "srs": true},
   {"ar": "أَخِيرًا", "translit": "akhīran", "uz": "nihoyat, oxir-oqibat", "root": "أ خ ر", "pattern": "", "pos": "ravish", "audio": "a2/akhiran.mp3", "example_ar": "أَخِيرًا وَصَلْنَا.", "example_uz": "Nihoyat yetib keldik.", "srs": true},
@@ -83,7 +83,7 @@
  ],
  "srs_cards": [
   {"type": "root", "front": "ح د ث", "back": "yuz berish o'zagi (hadis, hodisa, muhaddis)", "deck": "msa"},
-  {"type": "word", "front": "حَدَثَ", "back": "yuz berdi", "deck": "msa"},
+  {"type": "word", "front": "حَدَثَ", "back": "yuz berdi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "فَجْأَةً", "back": "to'satdan", "deck": "msa"},
   {"type": "word", "front": "بَيْنَمَا", "back": "...ayotganda", "deck": "msa"},
   {"type": "word", "front": "أَخِيرًا", "back": "nihoyat", "deck": "msa"},

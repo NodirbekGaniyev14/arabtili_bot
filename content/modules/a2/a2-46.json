@@ -45,9 +45,9 @@
   {"ar": "خَطَر", "translit": "khaṭar", "uz": "xavf", "root": "خ ط ر", "pattern": "فَعَل", "pos": "ot", "audio": "a2/khatar.mp3", "example_ar": "اِنْتَبِهْ! خَطَرٌ!", "example_uz": "Ehtiyot bo'l! Xavf!", "srs": true},
   {"ar": "حَادِث", "translit": "ḥādith", "uz": "hodisa, avariya", "root": "ح د ث", "pattern": "فَاعِل", "pos": "ot", "audio": "a2/hadith.mp3", "example_ar": "وَقَعَ حَادِثٌ.", "example_uz": "Avariya bo'ldi.", "srs": true},
   {"ar": "سِفَارَة", "translit": "sifāra", "uz": "elchixona", "root": "س ف ر", "pattern": "فِعَالَة", "pos": "ot", "audio": "a2/sifara.mp3", "example_ar": "أَيْنَ سِفَارَةُ أُوزْبَكِسْتَان؟", "example_uz": "O'zbekiston elchixonasi qayerda?", "srs": true},
-  {"ar": "ضَاعَ", "translit": "ḍāʿa", "uz": "yo'qoldi", "root": "ض ي ع", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/daa.mp3", "example_ar": "ضَاعَ ابْنِي!", "example_uz": "O'g'lim yo'qoldi!", "srs": true},
-  {"ar": "سَاعِدْنِي", "translit": "sāʿidnī", "uz": "menga yordam bering", "root": "س ع د", "pattern": "فَاعِلْنِي", "pos": "fe'l", "audio": "a2/saidni.mp3", "example_ar": "سَاعِدْنِي لَو سَمَحْت!", "example_uz": "Iltimos, yordam bering!", "srs": true},
-  {"ar": "اِتَّصِلْ", "translit": "ittaṣil", "uz": "qo'ng'iroq qil", "root": "و ص ل", "pattern": "اِفْتَعِلْ", "pos": "fe'l", "audio": "a2/ittasil.mp3", "example_ar": "اِتَّصِلْ بِالإِسْعَافِ!", "example_uz": "Tez yordam chaqir!", "srs": true}
+  {"ar": "ضَاعَ", "translit": "ḍāʿa", "uz": "yo'qoldi · u/erkak", "root": "ض ي ع", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/daa.mp3", "example_ar": "ضَاعَ ابْنِي!", "example_uz": "O'g'lim yo'qoldi!", "srs": true},
+  {"ar": "سَاعِدْنِي", "translit": "sāʿidnī", "uz": "menga yordam bering · buyruq (sen)", "root": "س ع د", "pattern": "فَاعِلْنِي", "pos": "fe'l", "audio": "a2/saidni.mp3", "example_ar": "سَاعِدْنِي لَو سَمَحْت!", "example_uz": "Iltimos, yordam bering!", "srs": true},
+  {"ar": "اِتَّصِلْ", "translit": "ittaṣil", "uz": "qo'ng'iroq qil · buyruq (sen)", "root": "و ص ل", "pattern": "اِفْتَعِلْ", "pos": "fe'l", "audio": "a2/ittasil.mp3", "example_ar": "اِتَّصِلْ بِالإِسْعَافِ!", "example_uz": "Tez yordam chaqir!", "srs": true}
  ],
  "hejazi": [
   {"msa_ar": "سَاعِدْنِي!", "hejazi_ar": "سَاعِدْنِي!", "translit": "sāʿidnī!", "uz": "Yordam bering! (bir xil)", "audio": "hj/saidni.mp3"},
@@ -96,7 +96,7 @@
   {"type": "word", "front": "سَرِقَة", "back": "o'g'irlik", "deck": "msa"},
   {"type": "word", "front": "مَفْقُود", "back": "yo'qolgan (narsa)", "deck": "msa"},
   {"type": "word", "front": "سِفَارَة", "back": "elchixona", "deck": "msa"},
-  {"type": "word", "front": "اِتَّصِلْ", "back": "qo'ng'iroq qil", "deck": "msa"},
+  {"type": "word", "front": "اِتَّصِلْ", "back": "qo'ng'iroq qil · buyruq (sen)", "deck": "msa"},
   {"type": "phrase", "front": "سَاعِدْنِي!", "back": "Yordam bering! (hijoziy=MSA)", "deck": "hejazi"},
   {"type": "phrase", "front": "ضَيَّعْت...", "back": "... yo'qotib qo'ydim (hijoziy)", "deck": "hejazi"}
  ]

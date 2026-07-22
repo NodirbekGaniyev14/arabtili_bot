@@ -51,7 +51,7 @@
   {"ar": "لَحْظَة", "translit": "laḥẓa", "uz": "bir lahza, daqiqa", "root": "ل ح ظ", "pattern": "فَعْلَة", "pos": "ot", "audio": "a2/lahza.mp3", "example_ar": "لَحْظَة لَو سَمَحْت.", "example_uz": "Bir lahza, iltimos.", "srs": true},
   {"ar": "مُشْكِلَة", "translit": "mushkila", "uz": "muammo (o'zbekcha 'mushkul')", "root": "ش ك ل", "pattern": "مُفْعِلَة", "pos": "ot", "audio": "a2/mushkila.mp3", "example_ar": "مَا فِي مُشْكِلَة.", "example_uz": "Muammo yo'q.", "srs": true},
   {"ar": "مَاشِي", "translit": "māshī", "uz": "bo'ladi, mayli (kelishuv)", "root": "م ش ي", "pattern": "فَاعِل", "pos": "ibora", "audio": "a2/mashi.mp3", "example_ar": "مَاشِي، خَلَاص.", "example_uz": "Bo'ladi, kelishdik.", "srs": true},
-  {"ar": "فَهِمْت", "translit": "fahimt", "uz": "tushundim", "root": "ف ه م", "pattern": "فَعِلْت", "pos": "fe'l", "audio": "a2/fahimt.mp3", "example_ar": "فَهِمْت، شُكْرًا.", "example_uz": "Tushundim, rahmat.", "srs": true}
+  {"ar": "فَهِمْت", "translit": "fahimt", "uz": "tushundim · u/erkak", "root": "ف ه م", "pattern": "فَعِلْت", "pos": "fe'l", "audio": "a2/fahimt.mp3", "example_ar": "فَهِمْت، شُكْرًا.", "example_uz": "Tushundim, rahmat.", "srs": true}
  ],
  "hejazi": [
   {"msa_ar": "كَيْفَ حَالُكَ؟", "hejazi_ar": "كَيْفَك؟", "translit": "kayfak?", "uz": "Qalaysan?", "audio": "hj/kayfak.mp3"},

@@ -40,10 +40,10 @@
  "vocabulary": [
   {"ar": "عَرْض تَقْدِيمِيّ", "translit": "ʿarḍ taqdīmī", "uz": "taqdimot, prezentatsiya", "root": "ع ر ض", "pattern": "", "pos": "ibora", "audio": "b1/ard_taqdimi.mp3", "example_ar": "أعددتُ عرضًا تقديميًّا قصيرًا.", "example_uz": "Qisqa taqdimot tayyorladim.", "srs": true},
   {"ar": "جُمْهُورُ الحُضُور", "translit": "jumhūru l-ḥuḍūr", "uz": "tinglovchilar, auditoriya", "root": "ج م ه ر", "pattern": "", "pos": "ibora", "audio": "b1/jumhur_hudur.mp3", "example_ar": "نظرتُ إلى جمهورِ الحضورِ بثقةٍ.", "example_uz": "Auditoriyaga ishonch bilan qaradim.", "srs": true},
-  {"ar": "يَتَكَوَّنُ مِنْ", "translit": "yatakawwanu min", "uz": "…dan tashkil topadi", "root": "ك و ن", "pattern": "يَتَفَعَّلُ", "pos": "fe'l", "audio": "b1/yatakawwanu.mp3", "example_ar": "عرضي يتكونُ من ثلاثةِ أجزاءٍ.", "example_uz": "Taqdimotim uch qismdan iborat.", "srs": true},
+  {"ar": "يَتَكَوَّنُ مِنْ", "translit": "yatakawwanu min", "uz": "…dan tashkil topadi · u/erkak", "root": "ك و ن", "pattern": "يَتَفَعَّلُ", "pos": "fe'l", "audio": "b1/yatakawwanu.mp3", "example_ar": "عرضي يتكونُ من ثلاثةِ أجزاءٍ.", "example_uz": "Taqdimotim uch qismdan iborat.", "srs": true},
   {"ar": "جُزْء", "translit": "juzʾ", "uz": "qism, bo'lak (o'zbekcha 'juz')", "root": "ج ز أ", "pattern": "فُعْل", "pos": "ot", "audio": "b1/juz.mp3", "example_ar": "الجزءُ الأولُ عن الأسبابِ.", "example_uz": "Birinchi qism — sabablar haqida.", "srs": true},
-  {"ar": "نَنْتَقِلُ إِلَى", "translit": "nantaqilu ilā", "uz": "…ga o'tamiz (o'tish iborasi)", "root": "ن ق ل", "pattern": "نَفْتَعِلُ", "pos": "fe'l", "audio": "b1/nantaqilu.mp3", "example_ar": "ننتقلُ الآنَ إلى النقطةِ الثانيةِ.", "example_uz": "Endi ikkinchi nuqtaga o'tamiz.", "srs": true},
-  {"ar": "أَوَدُّ أَنْ", "translit": "awaddu an", "uz": "…ishni istardim (muloyim istak)", "root": "و د د", "pattern": "أَفْعَلُ", "pos": "fe'l", "audio": "b1/awaddu.mp3", "example_ar": "أودُّ أنْ أشكرَكم جميعًا.", "example_uz": "Barchangizga rahmat aytmoqchiman.", "srs": true},
+  {"ar": "نَنْتَقِلُ إِلَى", "translit": "nantaqilu ilā", "uz": "…ga o'tamiz (o'tish iborasi) · biz", "root": "ن ق ل", "pattern": "نَفْتَعِلُ", "pos": "fe'l", "audio": "b1/nantaqilu.mp3", "example_ar": "ننتقلُ الآنَ إلى النقطةِ الثانيةِ.", "example_uz": "Endi ikkinchi nuqtaga o'tamiz.", "srs": true},
+  {"ar": "أَوَدُّ أَنْ", "translit": "awaddu an", "uz": "…ishni istardim (muloyim istak) · men", "root": "و د د", "pattern": "أَفْعَلُ", "pos": "fe'l", "audio": "b1/awaddu.mp3", "example_ar": "أودُّ أنْ أشكرَكم جميعًا.", "example_uz": "Barchangizga rahmat aytmoqchiman.", "srs": true},
   {"ar": "حُسْنُ الاِسْتِمَاع", "translit": "ḥusnu l-istimāʿ", "uz": "diqqat bilan tinglash", "root": "س م ع", "pattern": "", "pos": "ibora", "audio": "b1/husn_istima.mp3", "example_ar": "شكرًا لحسنِ استماعِكم.", "example_uz": "Diqqat bilan tinglaganingiz uchun rahmat.", "srs": true},
   {"ar": "سُؤَال", "translit": "suʾāl", "uz": "savol (o'zbekcha 'savol' aynan shundan)", "root": "س أ ل", "pattern": "فُعَال", "pos": "ot", "audio": "b1/sual2.mp3", "example_ar": "هل من أسئلةٍ؟", "example_uz": "Savollar bormi?", "srs": true}
  ],
@@ -86,10 +86,10 @@
  "srs_cards": [
   {"type": "root", "front": "ع ر ض", "back": "ko'rsatish o'zagi (arz)", "deck": "msa"},
   {"type": "word", "front": "عَرْض تَقْدِيمِيّ", "back": "taqdimot", "deck": "msa"},
-  {"type": "word", "front": "يَتَكَوَّنُ مِنْ", "back": "…dan iborat", "deck": "msa"},
+  {"type": "word", "front": "يَتَكَوَّنُ مِنْ", "back": "…dan iborat · u/erkak", "deck": "msa"},
   {"type": "word", "front": "جُزْء", "back": "qism", "deck": "msa"},
-  {"type": "word", "front": "نَنْتَقِلُ إِلَى", "back": "…ga o'tamiz", "deck": "msa"},
-  {"type": "word", "front": "أَوَدُّ أَنْ", "back": "istardim", "deck": "msa"},
+  {"type": "word", "front": "نَنْتَقِلُ إِلَى", "back": "…ga o'tamiz · biz", "deck": "msa"},
+  {"type": "word", "front": "أَوَدُّ أَنْ", "back": "istardim · men", "deck": "msa"},
   {"type": "word", "front": "حُسْنُ الاِسْتِمَاع", "back": "diqqat bilan tinglash", "deck": "msa"},
   {"type": "word", "front": "سُؤَال / أَسْئِلَة", "back": "savol(lar)", "deck": "msa"}
  ]

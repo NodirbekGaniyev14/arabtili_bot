@@ -41,12 +41,12 @@
   {"ar": "الَّتِي", "translit": "allatī", "uz": "…gan (ayol birlik; jonsiz ko'plik)", "root": "", "pattern": "", "pos": "olmosh", "audio": "b1/allati.mp3", "example_ar": "المدينةُ التي زرتُها جميلةٌ.", "example_uz": "Men borgan shahar chiroyli.", "srs": true},
   {"ar": "الَّذِينَ", "translit": "alladhīna", "uz": "…gan (erkaklar ko'pligi)", "root": "", "pattern": "", "pos": "olmosh", "audio": "b1/alladhina.mp3", "example_ar": "الطلابُ الذين درسوا نجحوا.", "example_uz": "O'qigan talabalar muvaffaq bo'ldi.", "srs": true},
   {"ar": "جَارٌ", "translit": "jār", "uz": "qo'shni", "root": "ج و ر", "pattern": "", "pos": "ot", "audio": "b1/jar.mp3", "example_ar": "الجارُ الذي يسكنُ بجانبنا طبيبٌ.", "example_uz": "Yonimizda yashaydigan qo'shni — shifokor.", "srs": true},
-  {"ar": "زَارَ", "translit": "zāra", "uz": "ziyorat qildi (o'zbekcha 'ziyorat')", "root": "ز و ر", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/zara.mp3", "example_ar": "البلدُ الذي زرناهُ بعيدٌ.", "example_uz": "Biz borgan mamlakat uzoq.", "srs": true},
-  {"ar": "نَجَحَ", "translit": "najaḥa", "uz": "muvaffaq bo'ldi (o'zbekcha 'najot'ga yaqin his)", "root": "ن ج ح", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/najaha.mp3", "example_ar": "نجحَ الذين اجتهدوا.", "example_uz": "Tirishganlar muvaffaq bo'ldi.", "srs": true},
-  {"ar": "اِخْتَارَ", "translit": "ikhtāra", "uz": "tanladi (VIII bob, o'zbekcha 'ixtiyor')", "root": "خ ي ر", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ikhtara.mp3", "example_ar": "الهديةُ التي اخترتُها بسيطةٌ.", "example_uz": "Men tanlagan sovg'a oddiy.", "srs": true},
+  {"ar": "زَارَ", "translit": "zāra", "uz": "ziyorat qildi (o'zbekcha 'ziyorat') · u/erkak", "root": "ز و ر", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/zara.mp3", "example_ar": "البلدُ الذي زرناهُ بعيدٌ.", "example_uz": "Biz borgan mamlakat uzoq.", "srs": true},
+  {"ar": "نَجَحَ", "translit": "najaḥa", "uz": "muvaffaq bo'ldi (o'zbekcha 'najot'ga yaqin his) · u/erkak", "root": "ن ج ح", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/najaha.mp3", "example_ar": "نجحَ الذين اجتهدوا.", "example_uz": "Tirishganlar muvaffaq bo'ldi.", "srs": true},
+  {"ar": "اِخْتَارَ", "translit": "ikhtāra", "uz": "tanladi (VIII bob, o'zbekcha 'ixtiyor') · u/erkak", "root": "خ ي ر", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ikhtara.mp3", "example_ar": "الهديةُ التي اخترتُها بسيطةٌ.", "example_uz": "Men tanlagan sovg'a oddiy.", "srs": true},
   {"ar": "قِصَّة", "translit": "qiṣṣa", "uz": "hikoya (o'zbekcha 'qissa')", "root": "ق ص ص", "pattern": "فِعْلَة", "pos": "ot", "audio": "b1/qissa.mp3", "example_ar": "القصةُ التي سمعناها مؤثرةٌ.", "example_uz": "Biz eshitgan qissa ta'sirli.", "srs": true},
   {"ar": "مُؤَثِّر", "translit": "muʾaththir", "uz": "ta'sirli (o'zbekcha 'ta'sir' o'zagi أ ث ر)", "root": "أ ث ر", "pattern": "مُفَعِّل", "pos": "sifat", "audio": "b1/muaththir.mp3", "example_ar": "فيلمٌ مؤثرٌ جدًّا.", "example_uz": "Juda ta'sirli film.", "srs": true},
-  {"ar": "اِجْتَهَدَ", "translit": "ijtahada", "uz": "tirishdi (o'zbekcha 'ijtihod')", "root": "ج ه د", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ijtahada2.mp3", "example_ar": "الطالبُ الذي يجتهدُ ينجحُ.", "example_uz": "Tirishgan talaba muvaffaq bo'ladi.", "srs": true}
+  {"ar": "اِجْتَهَدَ", "translit": "ijtahada", "uz": "tirishdi (o'zbekcha 'ijtihod') · u/erkak", "root": "ج ه د", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ijtahada2.mp3", "example_ar": "الطالبُ الذي يجتهدُ ينجحُ.", "example_uz": "Tirishgan talaba muvaffaq bo'ladi.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
@@ -90,10 +90,10 @@
   {"type": "word", "front": "الَّتِي", "back": "…gan (ayol birlik / jonsiz ko'plik)", "deck": "msa"},
   {"type": "word", "front": "الَّذِينَ", "back": "…gan (erkaklar ko'pligi)", "deck": "msa"},
   {"type": "word", "front": "جَارٌ", "back": "qo'shni", "deck": "msa"},
-  {"type": "word", "front": "زَارَ", "back": "ziyorat qildi", "deck": "msa"},
-  {"type": "word", "front": "نَجَحَ", "back": "muvaffaq bo'ldi", "deck": "msa"},
-  {"type": "word", "front": "اِخْتَارَ", "back": "tanladi", "deck": "msa"},
+  {"type": "word", "front": "زَارَ", "back": "ziyorat qildi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "نَجَحَ", "back": "muvaffaq bo'ldi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "اِخْتَارَ", "back": "tanladi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "قِصَّة", "back": "hikoya, qissa", "deck": "msa"},
-  {"type": "word", "front": "اِجْتَهَدَ", "back": "tirishdi", "deck": "msa"}
+  {"type": "word", "front": "اِجْتَهَدَ", "back": "tirishdi · u/erkak", "deck": "msa"}
  ]
 }

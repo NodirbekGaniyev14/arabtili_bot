@@ -3,96 +3,106 @@
  "level": "A2",
  "module": "verb-forms",
  "order": 12,
- "title_uz": "III bob: o'zaro harakat",
+ "title_uz": "III bob: o'zaro harakat (سَاعَدَ)",
  "title_ar": "البَابُ الثَّالِث: فَاعَلَ",
- "can_do_uz": "III bob (فَاعَلَ) fe'llarini taniyman: o'zaro va birovga qaratilgan harakat ma'nosini bilaman.",
+ "can_do_uz": "III bob (فَاعَلَ) ma'nosini bilaman va سَاعَدَ fe'lini 14 shaklda to'liq tuslay olaman.",
  "duration_min": 30,
  "prerequisites": ["a2-11"],
  "harakat_level": "new_words_only",
- "hook_uz": "«Yordam berdi» — سَاعَدَ. «Suhbatlashdi» — كَاتَبَ. Birinchi o'zak harfidan keyin ALIF qo'shsangiz — harakat BIROVGA qaratiladi yoki O'ZARO bo'ladi. سَافَرَ (safar qildi), شَاهَدَ (tomosha qildi) — hammasi III bob!",
+ "hook_uz": "III bobda birinchi o'zak harfidan keyin ALIF qo'shiladi: سَاعَدَ (yordam berdi), قَابَلَ (uchrashdi). Ma'nosi ko'pincha ikki tomon o'rtasida bo'ladi — «birga qilish». Bugun bitta سَاعَدَ ni 14 shaklda tuslaymiz; qolgan III bob fe'llari xuddi shunday.",
  "grammar": {
-  "point_ar": "فَاعَلَ — المُشَارَكَة",
-  "explanation_uz": "III bob vazni: فَاعَلَ (1-o'zak harfidan keyin ALIF). Asosiy ma'no: harakatni BIROVGA qaratish yoki O'ZARO bajarish. سَاعَدَ (yordam berdi — kimgadir), كَاتَبَ (yozishdi — o'zaro), قَابَلَ (uchrashdi). Masdari ikki xil: مُفَاعَلَة (مُسَاعَدَة) yoki فِعَال (جِهَاد). Hozirgi zamoni: يُفَاعِلُ (يُسَاعِدُ).",
+  "point_ar": "فَاعَلَ — تَصْرِيفُ سَاعَدَ",
+  "explanation_uz": "III bob vazni — فَاعَلَ: birinchi o'zak harfidan keyin ALIF (ـَا) qo'shiladi. Ma'nosi: O'ZARO / birga harakat (مُشَارَكَة) — قَاتَلَ (jang qildi), كَاتَبَ (yozishdi), سَاعَدَ (yordam berdi). Muzori'i يُفَاعِلُ (يُسَاعِدُ) — prefiks DAMMA bilan. Masdari مُفَاعَلَة (مُسَاعَدَة) yoki فِعَال. Tuslash qo'shimchalari moziydagidek o'zgarmaydi; alif barcha shaklda saqlanadi.",
   "table": [
-   {"ar": "سَاعَدَ", "uz": "yordam berdi (birovga)", "form": "فَاعَلَ"},
-   {"ar": "كَاتَبَ", "uz": "yozishdi (o'zaro)", "form": "o'zaro"},
-   {"ar": "سَافَرَ", "uz": "safar qildi", "form": "فَاعَلَ"},
-   {"ar": "مَصْدَر: مُسَاعَدَة", "uz": "masdar: yordam", "form": "مُفَاعَلَة"}
+   {"ar": "سَاعَدَ", "uz": "u (bir erkak) yordam berdi", "form": "غَائِب مُفْرَد"},
+   {"ar": "سَاعَدَا", "uz": "u ikki erkak yordam berdi", "form": "غَائِب مُثَنَّى"},
+   {"ar": "سَاعَدُوا", "uz": "ular (erkaklar) yordam berdilar", "form": "غَائِب جَمْع"},
+   {"ar": "سَاعَدَتْ", "uz": "u (bir ayol) yordam berdi", "form": "غَائِبَة مُفْرَد"},
+   {"ar": "سَاعَدَتَا", "uz": "u ikki ayol yordam berdi", "form": "غَائِبَة مُثَنَّى"},
+   {"ar": "سَاعَدْنَ", "uz": "ular (ayollar) yordam berdilar", "form": "غَائِبَة جَمْع"},
+   {"ar": "سَاعَدْتَ", "uz": "sen (erkak) yordam berding", "form": "مُخَاطَب مُفْرَد"},
+   {"ar": "سَاعَدْتُمَا", "uz": "sizlar ikkovingiz yordam berdingiz", "form": "مُخَاطَب مُثَنَّى"},
+   {"ar": "سَاعَدْتُمْ", "uz": "sizlar (erkaklar) yordam berdingiz", "form": "مُخَاطَب جَمْع"},
+   {"ar": "سَاعَدْتِ", "uz": "sen (ayol) yordam berding", "form": "مُخَاطَبَة مُفْرَد"},
+   {"ar": "سَاعَدْتُنَّ", "uz": "sizlar (ayollar) yordam berdingiz", "form": "مُخَاطَبَة جَمْع"},
+   {"ar": "سَاعَدْتُ", "uz": "men yordam berdim", "form": "مُتَكَلِّم مُفْرَد"},
+   {"ar": "سَاعَدْنَا", "uz": "biz yordam berdik", "form": "مُتَكَلِّم جَمْع"},
+   {"ar": "يُسَاعِدُ", "uz": "u yordam beradi (muzori' — prefiks damma)", "form": "المُضَارِع"}
   ],
   "common_mistakes_uz": [
-   "1-o'zak harfidan keyingi alifni (فَاعَلَ) unutish — bu III bobning belgisi.",
-   "III bob (فَاعَلَ, alif) va II bob (فَعَّلَ, shadda) ni chalkashtirish.",
-   "Masdarni noto'g'ri tanlash — مُفَاعَلَة yoki فِعَال."
+   "Alifni (ـَا) tushirib qoldirish — III bobni ajratadigan belgi shu: سَعَدَ emas, سَاعَدَ.",
+   "Muzori'da prefiksni fatha qilish: يَسَاعِدُ xato — to'g'risi يُسَاعِدُ (damma).",
+   "سَاعَدْنَ (ular ayollar) va سَاعَدْنَا (biz) ni chalkashtirish — farq oxirgi ا da."
   ]
  },
  "roots": [
   {
-   "root": "ج ه د",
-   "meaning_uz": "harakat, jahd, jihod",
-   "uz_cognates": ["jihod", "mujohid", "ijtihod", "jahd"],
+   "root": "س ع د",
+   "meaning_uz": "yordam, baxt — III bob namunasi",
+   "uz_cognates": ["saodat", "musoada", "Sa'd (ism)"],
    "derived": [
-    {"ar": "جَاهَدَ", "uz": "kurashdi, jihod qildi (III)", "pattern": "فَاعَلَ"},
-    {"ar": "جِهَاد", "uz": "jihod, kurash (masdar)", "pattern": "فِعَال"}
+    {"ar": "سَاعَدَ", "uz": "yordam berdi (III)", "pattern": "فَاعَلَ"},
+    {"ar": "مُسَاعِد", "uz": "yordamchi (ism fo'il)", "pattern": "مُفَاعِل"},
+    {"ar": "مُسَاعَدَة", "uz": "yordam (masdar)", "pattern": "مُفَاعَلَة"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "سَاعَدَ", "translit": "sāʿada", "uz": "yordam berdi", "root": "س ع د", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "a2/saada_v.mp3", "example_ar": "سَاعَدَ صَدِيقَهُ.", "example_uz": "Do'stiga yordam berdi.", "srs": true},
-  {"ar": "شَاهَدَ", "translit": "shāhada", "uz": "tomosha qildi, ko'rdi", "root": "ش ه د", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "a2/shahada.mp3", "example_ar": "شَاهَدَ المُبَارَاةَ.", "example_uz": "O'yinni tomosha qildi.", "srs": true},
-  {"ar": "سَافَرَ", "translit": "sāfara", "uz": "safar qildi", "root": "س ف ر", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "a2/safara.mp3", "example_ar": "سَافَرَ إِلَى مَكَّةَ.", "example_uz": "Makkaga safar qildi.", "srs": true},
-  {"ar": "قَابَلَ", "translit": "qābala", "uz": "uchrashdi, duch keldi", "root": "ق ب ل", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "a2/qabala.mp3", "example_ar": "قَابَلْتُ صَدِيقِي.", "example_uz": "Do'stimni uchratdim.", "srs": true},
-  {"ar": "حَاوَلَ", "translit": "ḥāwala", "uz": "harakat qildi, urindi", "root": "ح و ل", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "a2/hawala.mp3", "example_ar": "حَاوَلَ مَرَّةً أُخْرَى.", "example_uz": "Yana bir marta urindi.", "srs": true},
-  {"ar": "شَارَكَ", "translit": "shāraka", "uz": "qatnashdi, ishtirok etdi", "root": "ش ر ك", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "a2/sharaka.mp3", "example_ar": "شَارَكَ فِي المُسَابَقَةِ.", "example_uz": "Musobaqada qatnashdi.", "srs": true},
-  {"ar": "نَاقَشَ", "translit": "nāqasha", "uz": "muhokama qildi, bahslashdi", "root": "ن ق ش", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "a2/naqasha.mp3", "example_ar": "نَاقَشَ الفِكْرَةَ.", "example_uz": "G'oyani muhokama qildi.", "srs": true},
-  {"ar": "مُسَاعَدَة", "translit": "musāʿada", "uz": "yordam (masdar)", "root": "س ع د", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "a2/musaada.mp3", "example_ar": "شُكْرًا عَلَى المُسَاعَدَةِ.", "example_uz": "Yordam uchun rahmat.", "srs": true},
-  {"ar": "مُبَارَاة", "translit": "mubārāt", "uz": "musobaqa, o'yin (sport)", "root": "ب ر ي", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "a2/mubarat.mp3", "example_ar": "مُبَارَاةُ كُرَةِ القَدَمِ.", "example_uz": "Futbol o'yini.", "srs": true},
-  {"ar": "مَرَّة أُخْرَى", "translit": "marra ukhrā", "uz": "yana bir marta", "root": "", "pattern": "", "pos": "ibora", "audio": "a2/marra_ukhra.mp3", "example_ar": "حَاوِلْ مَرَّةً أُخْرَى.", "example_uz": "Yana bir marta urin.", "srs": true}
+  {"ar": "سَاعَدَ", "translit": "sāʿada", "uz": "yordam berdi (III bob · u/erkak — lug'at shakli)", "root": "س ع د", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "a2/saada.mp3", "example_ar": "سَاعَدَ صَدِيقَهُ.", "example_uz": "Do'stiga yordam berdi.", "srs": true},
+  {"ar": "قَابَلَ", "translit": "qābala", "uz": "uchrashdi, duch keldi (III bob · u/erkak)", "root": "ق ب ل", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "a2/qabala.mp3", "example_ar": "قَابَلَ المُدِيرَ.", "example_uz": "Direktor bilan uchrashdi.", "srs": true},
+  {"ar": "شَارَكَ", "translit": "shāraka", "uz": "qatnashdi, ishtirok etdi (III bob · u/erkak) (o'zbekcha 'ishtirok')", "root": "ش ر ك", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "a2/sharaka.mp3", "example_ar": "شَارَكَ فِي المُسَابَقَةِ.", "example_uz": "Musobaqada qatnashdi.", "srs": true},
+  {"ar": "نَاقَشَ", "translit": "nāqasha", "uz": "muhokama qildi, bahslashdi (III bob · u/erkak)", "root": "ن ق ش", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "a2/naqasha.mp3", "example_ar": "نَاقَشَ المَوْضُوعَ.", "example_uz": "Mavzuni muhokama qildi.", "srs": true},
+  {"ar": "شَاهَدَ", "translit": "shāhada", "uz": "tomosha qildi, ko'rdi (III bob · u/erkak) (o'zbekcha 'mushohada')", "root": "ش ه د", "pattern": "فَاعَلَ", "pos": "fe'l", "audio": "a2/shahada.mp3", "example_ar": "شَاهَدَ المُبَارَاةَ.", "example_uz": "O'yinni tomosha qildi.", "srs": true},
+  {"ar": "يُسَاعِدُ", "translit": "yusāʿidu", "uz": "yordam beradi (III bob muzori' · u/erkak)", "root": "س ع د", "pattern": "يُفَاعِلُ", "pos": "fe'l", "audio": "a2/yusaidu.mp3", "example_ar": "يُسَاعِدُ وَالِدَيْهِ.", "example_uz": "Ota-onasiga yordam beradi.", "srs": true},
+  {"ar": "مُسَاعَدَة", "translit": "musāʿada", "uz": "yordam (III bob masdari)", "root": "س ع د", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "a2/musaada.mp3", "example_ar": "أَحْتَاجُ مُسَاعَدَةً.", "example_uz": "Yordamga muhtojman.", "srs": true},
+  {"ar": "مُبَارَاة", "translit": "mubārāh", "uz": "musobaqa, o'yin (sport)", "root": "ب ر ي", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "a2/mubaraah.mp3", "example_ar": "المُبَارَاةُ غَدًا.", "example_uz": "Musobaqa ertaga.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "أَمْسِ سَاعَدْتُ صَدِيقِي فِي الوَاجِبِ. ثُمَّ شَاهَدْنَا مُبَارَاةً مَعًا. غَدًا سَأُسَافِرُ إِلَى المَدِينَةِ وَأُقَابِلُ عَائِلَتِي.",
+   "text_ar": "سَاعَدَ أَحْمَدُ صَدِيقَهُ، وَسَاعَدَتْ فَاطِمَةُ أُمَّهَا. نَحْنُ سَاعَدْنَا الجِيرَانَ، وَهُمْ سَاعَدُونَا أَيْضًا. الطُّلَّابُ يُسَاعِدُونَ بَعْضَهُمْ فِي الدَّرْسِ.",
    "questions": [
-    {"q_uz": "Do'stiga nimada yordam berdi?", "a": "Vazifada (الوَاجِب)"},
-    {"q_uz": "«سَافَرَ» qaysi bob?", "a": "III bob (فَاعَلَ)"}
+    {"q_uz": "«سَاعَدَتْ» qaysi shakl?", "a": "U (bir ayol) yordam berdi"},
+    {"q_uz": "«Biz yordam berdik» matnda qaysi?", "a": "سَاعَدْنَا"},
+    {"q_uz": "«يُسَاعِدُونَ» qaysi zamon va shakl?", "a": "Muzori', ular yordam beradilar"}
    ]
   },
   "listening": {
-   "audio": "a2/saada_v.mp3",
+   "audio": "a2/saada.mp3",
    "transcript_ar": "سَاعَدَ",
    "questions": [
-    {"q_uz": "Fe'l ma'nosi?", "a": "Yordam berdi"}
+    {"q_uz": "Fe'l ma'nosi, bobi va shakli?", "a": "Yordam berdi — III bob, u (bir erkak)"}
    ]
   },
   "speaking": {
-   "task_uz": "III bob fe'llarini ayting: sāʿada, shāhada, sāfara, qābala.",
-   "target_ar": ["سَاعَدَ", "شَاهَدَ", "سَافَرَ"],
+   "task_uz": "سَاعَدَ ning g'oyib qatorini ayting: sāʿada, sāʿadā, sāʿadū, sāʿadat, sāʿadatā, sāʿadna. Keyin: men — sāʿadtu, biz — sāʿadnā.",
+   "target_ar": ["سَاعَدَ", "سَاعَدُوا", "سَاعَدْنَا"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«Do'stimga yordam berdim» va «Oilamni uchratdim» gaplarini III bob bilan yozing.",
+   "task_uz": "سَاعَدَ fe'lini uch shaxsda yozing: «men yordam berdim», «u (ayol) yordam berdi», «ular yordam berdilar».",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "III bob vazni qaysi?", "q_ar": "", "options": ["فَاعَلَ", "فَعَّلَ", "أَفْعَلَ", "تَفَعَّلَ"], "answer": "فَاعَلَ", "explain_uz": "III bob — 1-harfdan keyin alif: فَاعَلَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "سَاعَدَ صَدِيقَهُ", "options": [], "answer": "do'stiga yordam berdi", "explain_uz": "سَاعَدَ (III) = yordam berdi, صَدِيقَهُ = do'stiga.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«tomosha qildi» qaysi?", "q_ar": "", "options": ["شَاهَدَ", "سَاعَدَ", "نَاقَشَ", "شَارَكَ"], "answer": "شَاهَدَ", "explain_uz": "شَاهَدَ (III) — tomosha qildi/guvoh bo'ldi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "Qaysi so'z «ج ه د» o'zagidan?", "q_ar": "", "options": ["جَاهَدَ", "قَابَلَ", "حَاوَلَ"], "answer": "جَاهَدَ", "explain_uz": "«ج ه د» — harakat/jahd o'zagi: جَاهَدَ (III), jihod, mujohid.", "audio": "", "root": "ج ه د", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "III bobning masdari (bir varianti) qaysi?", "q_ar": "", "options": ["مُفَاعَلَة", "تَفْعِيل", "إِفْعَال", "تَفَعُّل"], "answer": "مُفَاعَلَة", "explain_uz": "III bob masdari: مُفَاعَلَة (مُسَاعَدَة) yoki فِعَال (جِهَاد).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "qatnashdi, ishtirok etdi", "q_ar": "", "options": [], "answer": "شَارَكَ", "explain_uz": "شَارَكَ (III) — qatnashdi (ش ر ك = sherik o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "yordam (masdar)", "q_ar": "", "options": [], "answer": "مُسَاعَدَة", "explain_uz": "مُسَاعَدَة — III bob masdari (yordam).", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "III bob vazni qaysi?", "q_ar": "", "options": ["فَاعَلَ", "فَعَّلَ", "أَفْعَلَ", "تَفَعَّلَ"], "answer": "فَاعَلَ", "explain_uz": "III bob — birinchi harfdan keyin alif: فَاعَلَ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Ular (ayollar) yordam berdilar» qaysi?", "q_ar": "", "options": ["سَاعَدْنَ", "سَاعَدْنَا", "سَاعَدُوا", "سَاعَدَتَا"], "answer": "سَاعَدْنَ", "explain_uz": "G'oyiba jam': سَاعَدْنَ. سَاعَدْنَا esa «biz».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "سَاعَدْنَا الجِيرَانَ", "options": [], "answer": "biz qo'shnilarga yordam berdik", "explain_uz": "سَاعَدْنَا — mutakallim jam' (biz).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "harakat", "q_uz": "«sen (ayol) yordam berding» to'g'ri shaklini tanlang:", "q_ar": "ساعدت", "options": ["سَاعَدْتِ", "سَاعَدْتَ", "سَاعَدْتُ", "سَاعَدْنَ"], "answer": "سَاعَدْتِ", "explain_uz": "Muxotaba mufrad — oxiri kasra: سَاعَدْتِ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«يُسَاعِدُ» prefiksining unlisi qaysi?", "q_ar": "", "options": ["damma (يُـ)", "fatha (يَـ)", "kasra (يِـ)", "sukun"], "answer": "damma (يُـ)", "explain_uz": "II, III, IV boblarda muzori' prefiksi damma bilan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "yordam (masdar)", "q_ar": "", "options": [], "answer": "مُسَاعَدَة", "explain_uz": "مُسَاعَدَة — III bob masdari (vazn: مُفَاعَلَة).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "build_word", "q_uz": "س ع د o'zagini فَاعَلَ qolipiga soling (yordam berdi):", "q_ar": "", "options": [], "answer": "سَاعَدَ", "explain_uz": "فَاعَلَ + س ع د = سَاعَدَ (birinchi harfdan keyin alif).", "audio": "", "root": "س ع د", "pattern": "فَاعَلَ", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "ج ه د", "back": "jahd/jihod o'zagi (jahada, jihod, mujohid, ijtihod)", "deck": "msa"},
-  {"type": "pattern", "front": "فَاعَلَ (III)", "back": "o'zaro/qaratilgan harakat, masdar مُفَاعَلَة", "deck": "msa"},
-  {"type": "word", "front": "سَاعَدَ", "back": "yordam berdi (III)", "deck": "msa"},
-  {"type": "word", "front": "شَاهَدَ", "back": "tomosha qildi (III)", "deck": "msa"},
-  {"type": "word", "front": "سَافَرَ", "back": "safar qildi (III)", "deck": "msa"},
-  {"type": "word", "front": "قَابَلَ", "back": "uchrashdi (III)", "deck": "msa"},
-  {"type": "word", "front": "حَاوَلَ", "back": "urindi (III)", "deck": "msa"},
-  {"type": "word", "front": "شَارَكَ", "back": "qatnashdi (III)", "deck": "msa"},
-  {"type": "word", "front": "مُسَاعَدَة", "back": "yordam (masdar)", "deck": "msa"},
-  {"type": "word", "front": "مُبَارَاة", "back": "musobaqa, o'yin", "deck": "msa"}
+  {"type": "root", "front": "س ع د", "back": "yordam/baxt — III bob namunasi (saada=yordam berdi)", "deck": "msa"},
+  {"type": "pattern", "front": "فَاعَلَ (III)", "back": "o'zaro harakat, muzori' يُفَاعِلُ, masdar مُفَاعَلَة", "deck": "msa"},
+  {"type": "word", "front": "سَاعَدَ", "back": "yordam berdi (III · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "سَاعَدْنَا", "back": "biz yordam berdik (III)", "deck": "msa"},
+  {"type": "word", "front": "سَاعَدُوا", "back": "ular (erkaklar) yordam berdilar (III)", "deck": "msa"},
+  {"type": "word", "front": "قَابَلَ", "back": "uchrashdi (III · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "شَارَكَ", "back": "qatnashdi (III · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "نَاقَشَ", "back": "muhokama qildi (III · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "يُسَاعِدُ", "back": "yordam beradi (III muzori' · u/erkak)", "deck": "msa"},
+  {"type": "word", "front": "مُسَاعَدَة", "back": "yordam (III masdari)", "deck": "msa"}
  ]
 }

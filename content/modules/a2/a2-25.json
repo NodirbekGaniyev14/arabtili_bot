@@ -37,14 +37,14 @@
   }
  ],
  "vocabulary": [
-  {"ar": "مَشَى", "translit": "mashā", "uz": "yurdi (naqis: م ش ي)", "root": "م ش ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/masha.mp3", "example_ar": "مَشَى فِي الحَدِيقَةِ.", "example_uz": "Bog'da yurdi.", "srs": true},
-  {"ar": "يَمْشِي", "translit": "yamshī", "uz": "yuradi (ي ko'rindi)", "root": "م ش ي", "pattern": "يَفْعِي", "pos": "fe'l", "audio": "a2/yamshi.mp3", "example_ar": "يَمْشِي كُلَّ صَبَاحٍ.", "example_uz": "Har ertalab yuradi.", "srs": true},
-  {"ar": "دَعَا", "translit": "daʿā", "uz": "chaqirdi, duo qildi (naqis)", "root": "د ع و", "pattern": "فَعَا", "pos": "fe'l", "audio": "a2/daaa.mp3", "example_ar": "دَعَا اللَّهَ.", "example_uz": "Allohga duo qildi.", "srs": true},
-  {"ar": "يَدْعُو", "translit": "yadʿū", "uz": "chaqiradi (و ko'rindi)", "root": "د ع و", "pattern": "يَفْعُو", "pos": "fe'l", "audio": "a2/yadu.mp3", "example_ar": "يَدْعُو أَصْدِقَاءَهُ.", "example_uz": "Do'stlarini taklif qiladi.", "srs": true},
-  {"ar": "بَنَى", "translit": "banā", "uz": "qurdi (naqis: ب ن ي)", "root": "ب ن ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/bana.mp3", "example_ar": "بَنَى بَيْتًا.", "example_uz": "Uy qurdi.", "srs": true},
-  {"ar": "رَمَى", "translit": "ramā", "uz": "otdi, uloqtirdi (naqis)", "root": "ر م ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/rama.mp3", "example_ar": "رَمَى الكُرَةَ.", "example_uz": "To'pni otdi.", "srs": true},
-  {"ar": "نَسِيَ", "translit": "nasiya", "uz": "unutdi (naqis: ن س ي)", "root": "ن س ي", "pattern": "فَعِيَ", "pos": "fe'l", "audio": "a2/nasiya.mp3", "example_ar": "نَسِيَ المِفْتَاحَ.", "example_uz": "Kalitni unutdi.", "srs": true},
-  {"ar": "بَكَى", "translit": "bakā", "uz": "yig'ladi (naqis)", "root": "ب ك ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/baka.mp3", "example_ar": "بَكَى الطِّفْلُ.", "example_uz": "Bola yig'ladi.", "srs": true},
+  {"ar": "مَشَى", "translit": "mashā", "uz": "yurdi (naqis: م ش ي) · u/erkak", "root": "م ش ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/masha.mp3", "example_ar": "مَشَى فِي الحَدِيقَةِ.", "example_uz": "Bog'da yurdi.", "srs": true},
+  {"ar": "يَمْشِي", "translit": "yamshī", "uz": "yuradi (ي ko'rindi) · u/erkak", "root": "م ش ي", "pattern": "يَفْعِي", "pos": "fe'l", "audio": "a2/yamshi.mp3", "example_ar": "يَمْشِي كُلَّ صَبَاحٍ.", "example_uz": "Har ertalab yuradi.", "srs": true},
+  {"ar": "دَعَا", "translit": "daʿā", "uz": "chaqirdi, duo qildi (naqis) · u/erkak", "root": "د ع و", "pattern": "فَعَا", "pos": "fe'l", "audio": "a2/daaa.mp3", "example_ar": "دَعَا اللَّهَ.", "example_uz": "Allohga duo qildi.", "srs": true},
+  {"ar": "يَدْعُو", "translit": "yadʿū", "uz": "chaqiradi (و ko'rindi) · u/erkak", "root": "د ع و", "pattern": "يَفْعُو", "pos": "fe'l", "audio": "a2/yadu.mp3", "example_ar": "يَدْعُو أَصْدِقَاءَهُ.", "example_uz": "Do'stlarini taklif qiladi.", "srs": true},
+  {"ar": "بَنَى", "translit": "banā", "uz": "qurdi (naqis: ب ن ي) · u/erkak", "root": "ب ن ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/bana.mp3", "example_ar": "بَنَى بَيْتًا.", "example_uz": "Uy qurdi.", "srs": true},
+  {"ar": "رَمَى", "translit": "ramā", "uz": "otdi, uloqtirdi (naqis) · u/erkak", "root": "ر م ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/rama.mp3", "example_ar": "رَمَى الكُرَةَ.", "example_uz": "To'pni otdi.", "srs": true},
+  {"ar": "نَسِيَ", "translit": "nasiya", "uz": "unutdi (naqis: ن س ي) · u/erkak", "root": "ن س ي", "pattern": "فَعِيَ", "pos": "fe'l", "audio": "a2/nasiya.mp3", "example_ar": "نَسِيَ المِفْتَاحَ.", "example_uz": "Kalitni unutdi.", "srs": true},
+  {"ar": "بَكَى", "translit": "bakā", "uz": "yig'ladi (naqis) · u/erkak", "root": "ب ك ي", "pattern": "فَعَى", "pos": "fe'l", "audio": "a2/baka.mp3", "example_ar": "بَكَى الطِّفْلُ.", "example_uz": "Bola yig'ladi.", "srs": true},
   {"ar": "دَعْوَة", "translit": "daʿwa", "uz": "taklif, davat (o'zbekcha 'davat')", "root": "د ع و", "pattern": "فَعْلَة", "pos": "ot", "audio": "a2/dawa_invite.mp3", "example_ar": "شُكْرًا عَلَى الدَّعْوَةِ.", "example_uz": "Taklif uchun rahmat.", "srs": true},
   {"ar": "مَبْنَى", "translit": "mabnā", "uz": "bino", "root": "ب ن ي", "pattern": "مَفْعَى", "pos": "ot", "audio": "a2/mabna.mp3", "example_ar": "مَبْنًى كَبِيرٌ.", "example_uz": "Katta bino.", "srs": true}
  ],
@@ -86,12 +86,12 @@
  "srs_cards": [
   {"type": "root", "front": "د ع و", "back": "chaqirish o'zagi (daa=duo qildi, duo, davat) — naqis", "deck": "msa"},
   {"type": "pattern", "front": "نَاقِص: مَشَى→يَمْشِي", "back": "oxiri و/ي, hozirgida ko'rinadi", "deck": "msa"},
-  {"type": "word", "front": "مَشَى", "back": "yurdi (naqis)", "deck": "msa"},
-  {"type": "word", "front": "دَعَا", "back": "chaqirdi, duo qildi (naqis)", "deck": "msa"},
-  {"type": "word", "front": "بَنَى", "back": "qurdi (naqis)", "deck": "msa"},
-  {"type": "word", "front": "رَمَى", "back": "otdi (naqis)", "deck": "msa"},
-  {"type": "word", "front": "نَسِيَ", "back": "unutdi (naqis)", "deck": "msa"},
-  {"type": "word", "front": "بَكَى", "back": "yig'ladi (naqis)", "deck": "msa"},
+  {"type": "word", "front": "مَشَى", "back": "yurdi (naqis) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "دَعَا", "back": "chaqirdi, duo qildi (naqis) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "بَنَى", "back": "qurdi (naqis) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "رَمَى", "back": "otdi (naqis) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "نَسِيَ", "back": "unutdi (naqis) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "بَكَى", "back": "yig'ladi (naqis) · u/erkak", "deck": "msa"},
   {"type": "word", "front": "دَعْوَة", "back": "taklif, davat", "deck": "msa"},
   {"type": "word", "front": "مَبْنَى", "back": "bino", "deck": "msa"}
  ]

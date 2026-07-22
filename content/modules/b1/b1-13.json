@@ -41,12 +41,12 @@
   {"ar": "لَمْ", "translit": "lam", "uz": "…madi (o'tgan inkor, jazm qiladi)", "root": "", "pattern": "", "pos": "yuklama", "audio": "b1/lam.mp3", "example_ar": "لم أفهمْ سؤالَكَ.", "example_uz": "Savolingni tushunmadim.", "srs": true},
   {"ar": "لَمَّا", "translit": "lammā", "uz": "hali …gani yo'q", "root": "", "pattern": "", "pos": "yuklama", "audio": "b1/lamma.mp3", "example_ar": "لمّا يأتِ الربيعُ.", "example_uz": "Bahor hali kelgani yo'q.", "srs": true},
   {"ar": "لَا تَخَفْ", "translit": "lā takhaf", "uz": "qo'rqma! (taqiq namunasi)", "root": "خ و ف", "pattern": "", "pos": "ibora", "audio": "b1/la_takhaf.mp3", "example_ar": "لا تخفْ، أنا معكَ.", "example_uz": "Qo'rqma, men sen bilanman.", "srs": true},
-  {"ar": "حَزِنَ", "translit": "ḥazina", "uz": "xafa bo'ldi (o'zbekcha 'hazin')", "root": "ح ز ن", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "b1/hazina.mp3", "example_ar": "لا تحزنْ على ما فاتَ.", "example_uz": "O'tib ketgan narsaga xafa bo'lma.", "srs": true},
-  {"ar": "تَأَخَّرَ", "translit": "taʾakhkhara", "uz": "kechikdi (o'zbekcha 'taxir', 'axir')", "root": "أ خ ر", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "b1/taakhkhara2.mp3", "example_ar": "لا تتأخرْ عن الموعدِ.", "example_uz": "Uchrashuvga kechikma.", "srs": true},
-  {"ar": "يَئِسَ", "translit": "yaʾisa", "uz": "umidsizlandi", "root": "ي أ س", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "b1/yaisa.mp3", "example_ar": "لا تيأسْ من رحمةِ اللهِ.", "example_uz": "Allohning rahmatidan umidsizlanma.", "srs": true},
+  {"ar": "حَزِنَ", "translit": "ḥazina", "uz": "xafa bo'ldi (o'zbekcha 'hazin') · u/erkak", "root": "ح ز ن", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "b1/hazina.mp3", "example_ar": "لا تحزنْ على ما فاتَ.", "example_uz": "O'tib ketgan narsaga xafa bo'lma.", "srs": true},
+  {"ar": "تَأَخَّرَ", "translit": "taʾakhkhara", "uz": "kechikdi (o'zbekcha 'taxir', 'axir') · u/erkak", "root": "أ خ ر", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "b1/taakhkhara2.mp3", "example_ar": "لا تتأخرْ عن الموعدِ.", "example_uz": "Uchrashuvga kechikma.", "srs": true},
+  {"ar": "يَئِسَ", "translit": "yaʾisa", "uz": "umidsizlandi · u/erkak", "root": "ي أ س", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "b1/yaisa.mp3", "example_ar": "لا تيأسْ من رحمةِ اللهِ.", "example_uz": "Allohning rahmatidan umidsizlanma.", "srs": true},
   {"ar": "رَحْمَة", "translit": "raḥma", "uz": "rahmat, mehr (o'zbekcha 'rahmat', 'marhamat')", "root": "ر ح م", "pattern": "فَعْلَة", "pos": "ot", "audio": "b1/rahma.mp3", "example_ar": "رحمةُ اللهِ واسعةٌ.", "example_uz": "Allohning rahmati keng.", "srs": true},
   {"ar": "مَوْعِد", "translit": "mawʿid", "uz": "uchrashuv vaqti (o'zbekcha 'va'da' o'zagi)", "root": "و ع د", "pattern": "مَفْعِل", "pos": "ot", "audio": "b1/mawid.mp3", "example_ar": "حدّدنا موعدًا غدًا.", "example_uz": "Ertaga uchrashuv belgiladik.", "srs": true},
-  {"ar": "أَجَّلَ", "translit": "ajjala", "uz": "kechiktirdi, keyinga surdi", "root": "أ ج ل", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/ajjala.mp3", "example_ar": "لا تؤجلْ عملَ اليومِ إلى الغدِ.", "example_uz": "Bugungi ishni ertaga qoldirma.", "srs": true},
+  {"ar": "أَجَّلَ", "translit": "ajjala", "uz": "kechiktirdi, keyinga surdi · u/erkak", "root": "أ ج ل", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/ajjala.mp3", "example_ar": "لا تؤجلْ عملَ اليومِ إلى الغدِ.", "example_uz": "Bugungi ishni ertaga qoldirma.", "srs": true},
   {"ar": "قِطَار", "translit": "qiṭār", "uz": "poyezd", "root": "ق ط ر", "pattern": "فِعَال", "pos": "ot", "audio": "b1/qitar.mp3", "example_ar": "لم يصلِ القطارُ بعدُ.", "example_uz": "Poyezd hali kelmadi.", "srs": true}
  ],
  "hejazi": [],
@@ -90,11 +90,11 @@
   {"type": "word", "front": "لَمْ", "back": "…madi (o'tgan inkor)", "deck": "msa"},
   {"type": "word", "front": "لَمَّا", "back": "hali …gani yo'q", "deck": "msa"},
   {"type": "word", "front": "لَا تَخَفْ", "back": "qo'rqma!", "deck": "msa"},
-  {"type": "word", "front": "حَزِنَ", "back": "xafa bo'ldi", "deck": "msa"},
-  {"type": "word", "front": "تَأَخَّرَ", "back": "kechikdi", "deck": "msa"},
-  {"type": "word", "front": "يَئِسَ", "back": "umidsizlandi", "deck": "msa"},
+  {"type": "word", "front": "حَزِنَ", "back": "xafa bo'ldi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "تَأَخَّرَ", "back": "kechikdi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "يَئِسَ", "back": "umidsizlandi · u/erkak", "deck": "msa"},
   {"type": "word", "front": "رَحْمَة", "back": "rahmat, mehr", "deck": "msa"},
   {"type": "word", "front": "مَوْعِد", "back": "uchrashuv vaqti", "deck": "msa"},
-  {"type": "word", "front": "أَجَّلَ", "back": "kechiktirdi", "deck": "msa"}
+  {"type": "word", "front": "أَجَّلَ", "back": "kechiktirdi · u/erkak", "deck": "msa"}
  ]
 }

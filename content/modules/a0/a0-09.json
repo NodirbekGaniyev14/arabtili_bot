@@ -12,7 +12,7 @@
  "hook_uz": "Sirni ochamiz: nega ba'zi so'zlar ichida «yoriq» bor? Chunki OLTITA harf — ا د ذ ر ز و — o'zidan keyingi harfga qo'l bermaydi! Masalan دَرْس (dars) so'zida د dan keyin uzilish bor. Bu yoriqlarni ko'ra olsangiz, so'zlar «rasm»dan tanish shakllarga aylanadi.",
  "grammar": {
   "point_ar": "ا د ذ ر ز و",
-  "explanation_uz": "Bu 6 harf o'zidan KEYINGI harfga ulanmaydi (oldingisidan qabul qiladi, lekin keyingisiga qo'l uzatmaydi). Shuning uchun so'z ichida ulardan keyin doim kichik UZILISH bo'ladi: دَرْس (д dan keyin), وَرَق (و va ر dan keyin). Uzilish so'z tugadi degani EMAS — bu shunchaki shu 6 harfning xususiyati. Eslab qolish: «Alif, Dol, Zol, Ro, Zo, Vov — olti do'st yolg'iz yuradi».",
+  "explanation_uz": "Bu 6 harf o'zidan KEYINGI harfga ulanmaydi (oldingisidan qabul qiladi, lekin keyingisiga qo'l uzatmaydi). Shuning uchun so'z ichida ulardan keyin doim kichik UZILISH bo'ladi: دَرْس (د dan keyin), وَرَق (و va ر dan keyin). Uzilish so'z tugadi degani EMAS — bu shunchaki shu 6 harfning xususiyati. Eslab qolish: «Alif, Dol, Zol, Ro, Zo, Vov — olti do'st yolg'iz yuradi».",
   "table": [
    {"ar": "ا د ذ ر ز و", "uz": "keyingi harfga ulanmaydigan 6 harf", "form": "qoida"},
    {"ar": "دَرْس", "uz": "د dan keyin uzilish — «d | ars»", "form": "misol"},

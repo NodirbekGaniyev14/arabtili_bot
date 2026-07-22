@@ -37,13 +37,13 @@
   }
  ],
  "vocabulary": [
-  {"ar": "وَصَلَ", "translit": "waṣala", "uz": "yetib keldi (mithal)", "root": "و ص ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/wasala.mp3", "example_ar": "وَصَلَ القِطَارُ.", "example_uz": "Poyezd keldi.", "srs": true},
-  {"ar": "يَصِلُ", "translit": "yaṣilu", "uz": "yetib keladi (و tushdi)", "root": "و ص ل", "pattern": "يَعِلُ", "pos": "fe'l", "audio": "a2/yasilu.mp3", "example_ar": "يَصِلُ فِي المَسَاءِ.", "example_uz": "Kechqurun keladi.", "srs": true},
-  {"ar": "وَجَدَ", "translit": "wajada", "uz": "topdi (mithal)", "root": "و ج د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/wajada.mp3", "example_ar": "وَجَدَ المِفْتَاحَ.", "example_uz": "Kalitni topdi.", "srs": true},
-  {"ar": "يَجِدُ", "translit": "yajidu", "uz": "topadi (و tushdi)", "root": "و ج د", "pattern": "يَعِلُ", "pos": "fe'l", "audio": "a2/yajidu.mp3", "example_ar": "لَا يَجِدُ الوَقْتَ.", "example_uz": "Vaqt topolmaydi.", "srs": true},
-  {"ar": "وَعَدَ", "translit": "waʿada", "uz": "va'da berdi (mithal)", "root": "و ع د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/waada.mp3", "example_ar": "وَعَدَ بِالحُضُورِ.", "example_uz": "Kelishga va'da berdi.", "srs": true},
-  {"ar": "وَقَفَ", "translit": "waqafa", "uz": "to'xtadi, turdi (mithal)", "root": "و ق ف", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/waqafa.mp3", "example_ar": "وَقَفَ أَمَامَ البَابِ.", "example_uz": "Eshik oldida to'xtadi.", "srs": true},
-  {"ar": "وَضَعَ", "translit": "waḍaʿa", "uz": "qo'ydi (mithal)", "root": "و ض ع", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/wadaa.mp3", "example_ar": "وَضَعَ الكِتَابَ عَلَى الطَّاوِلَةِ.", "example_uz": "Kitobni stolga qo'ydi.", "srs": true},
+  {"ar": "وَصَلَ", "translit": "waṣala", "uz": "yetib keldi (mithal) · u/erkak", "root": "و ص ل", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/wasala.mp3", "example_ar": "وَصَلَ القِطَارُ.", "example_uz": "Poyezd keldi.", "srs": true},
+  {"ar": "يَصِلُ", "translit": "yaṣilu", "uz": "yetib keladi (و tushdi) · u/erkak", "root": "و ص ل", "pattern": "يَعِلُ", "pos": "fe'l", "audio": "a2/yasilu.mp3", "example_ar": "يَصِلُ فِي المَسَاءِ.", "example_uz": "Kechqurun keladi.", "srs": true},
+  {"ar": "وَجَدَ", "translit": "wajada", "uz": "topdi (mithal) · u/erkak", "root": "و ج د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a1/wajada.mp3", "example_ar": "وَجَدَ المِفْتَاحَ.", "example_uz": "Kalitni topdi.", "srs": true},
+  {"ar": "يَجِدُ", "translit": "yajidu", "uz": "topadi (و tushdi) · u/erkak", "root": "و ج د", "pattern": "يَعِلُ", "pos": "fe'l", "audio": "a2/yajidu.mp3", "example_ar": "لَا يَجِدُ الوَقْتَ.", "example_uz": "Vaqt topolmaydi.", "srs": true},
+  {"ar": "وَعَدَ", "translit": "waʿada", "uz": "va'da berdi (mithal) · u/erkak", "root": "و ع د", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/waada.mp3", "example_ar": "وَعَدَ بِالحُضُورِ.", "example_uz": "Kelishga va'da berdi.", "srs": true},
+  {"ar": "وَقَفَ", "translit": "waqafa", "uz": "to'xtadi, turdi (mithal) · u/erkak", "root": "و ق ف", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/waqafa.mp3", "example_ar": "وَقَفَ أَمَامَ البَابِ.", "example_uz": "Eshik oldida to'xtadi.", "srs": true},
+  {"ar": "وَضَعَ", "translit": "waḍaʿa", "uz": "qo'ydi (mithal) · u/erkak", "root": "و ض ع", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "a2/wadaa.mp3", "example_ar": "وَضَعَ الكِتَابَ عَلَى الطَّاوِلَةِ.", "example_uz": "Kitobni stolga qo'ydi.", "srs": true},
   {"ar": "مَوْعِد", "translit": "mawʿid", "uz": "uchrashuv, miod (o'zbekcha 'miod')", "root": "و ع د", "pattern": "مَفْعِل", "pos": "ot", "audio": "a2/mawid.mp3", "example_ar": "عِنْدِي مَوْعِدٌ.", "example_uz": "Uchrashuvim bor.", "srs": true},
   {"ar": "وَعْد", "translit": "waʿd", "uz": "va'da (masdar)", "root": "و ع د", "pattern": "فَعْل", "pos": "ot", "audio": "a2/wad.mp3", "example_ar": "الوَعْدُ دَيْنٌ.", "example_uz": "Va'da — qarz.", "srs": true},
   {"ar": "حُضُور", "translit": "ḥuḍūr", "uz": "kelish, hozir bo'lish", "root": "ح ض ر", "pattern": "فُعُول", "pos": "ot", "audio": "a2/hudur.mp3", "example_ar": "الحُضُورُ إِجْبَارِيٌّ.", "example_uz": "Hozir bo'lish majburiy.", "srs": true}
@@ -86,12 +86,12 @@
  "srs_cards": [
   {"type": "root", "front": "و ع د", "back": "va'da o'zagi (vada, mavud, miod)", "deck": "msa"},
   {"type": "pattern", "front": "مِثَال: وَصَلَ→يَصِلُ", "back": "boshi و, hozirgi zamonda و tushadi", "deck": "msa"},
-  {"type": "word", "front": "وَصَلَ", "back": "yetib keldi (mithal)", "deck": "msa"},
-  {"type": "word", "front": "يَصِلُ", "back": "yetib keladi (و tushdi)", "deck": "msa"},
-  {"type": "word", "front": "وَجَدَ", "back": "topdi (mithal)", "deck": "msa"},
-  {"type": "word", "front": "وَعَدَ", "back": "va'da berdi (mithal)", "deck": "msa"},
-  {"type": "word", "front": "وَقَفَ", "back": "to'xtadi, turdi (mithal)", "deck": "msa"},
-  {"type": "word", "front": "وَضَعَ", "back": "qo'ydi (mithal)", "deck": "msa"},
+  {"type": "word", "front": "وَصَلَ", "back": "yetib keldi (mithal) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "يَصِلُ", "back": "yetib keladi (و tushdi) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "وَجَدَ", "back": "topdi (mithal) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "وَعَدَ", "back": "va'da berdi (mithal) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "وَقَفَ", "back": "to'xtadi, turdi (mithal) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "وَضَعَ", "back": "qo'ydi (mithal) · u/erkak", "deck": "msa"},
   {"type": "word", "front": "مَوْعِد", "back": "uchrashuv, miod", "deck": "msa"},
   {"type": "word", "front": "وَعْد", "back": "va'da (masdar)", "deck": "msa"}
  ]

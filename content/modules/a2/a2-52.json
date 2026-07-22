@@ -42,7 +42,7 @@
   {"ar": "مَوْقِف", "translit": "mawqif", "uz": "vaziyat, holat", "root": "و ق ف", "pattern": "مَفْعِل", "pos": "ot", "audio": "a1/mawqif.mp3", "example_ar": "مَوْقِفٌ صَعْبٌ.", "example_uz": "Qiyin vaziyat.", "srs": true},
   {"ar": "طَلَاقَة", "translit": "ṭalāqa", "uz": "ravonlik (gapirishda)", "root": "ط ل ق", "pattern": "فَعَالَة", "pos": "ot", "audio": "a2/talaqa.mp3", "example_ar": "يَتَكَلَّمُ بِطَلَاقَةٍ.", "example_uz": "Ravon gapiradi.", "srs": true},
   {"ar": "ثِقَة", "translit": "thiqa", "uz": "ishonch (o'zbekcha 'vasiqa' o'zagidan)", "root": "و ث ق", "pattern": "فِعَة", "pos": "ot", "audio": "a2/thiqa.mp3", "example_ar": "تَكَلَّمْ بِثِقَةٍ.", "example_uz": "Ishonch bilan gapir.", "srs": true},
-  {"ar": "تُعِيد", "translit": "tuʿīd", "uz": "qaytarasiz (takrorlaysiz)", "root": "ع و د", "pattern": "تُفِيل", "pos": "fe'l", "audio": "a2/tuid.mp3", "example_ar": "مُمْكِن تُعِيد؟", "example_uz": "Qaytara olasizmi?", "srs": true},
+  {"ar": "تُعِيد", "translit": "tuʿīd", "uz": "qaytarasiz (takrorlaysiz) · u/erkak", "root": "ع و د", "pattern": "تُفِيل", "pos": "fe'l", "audio": "a2/tuid.mp3", "example_ar": "مُمْكِن تُعِيد؟", "example_uz": "Qaytara olasizmi?", "srs": true},
   {"ar": "تَدْرِيب", "translit": "tadrīb", "uz": "mashq, trening", "root": "د ر ب", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/tadrib.mp3", "example_ar": "تَدْرِيبٌ يَوْمِيٌّ.", "example_uz": "Kunlik mashq.", "srs": true},
   {"ar": "مَعَ السَّلَامَة", "translit": "maʿa s-salāma", "uz": "xayr, omon bo'ling", "root": "س ل م", "pattern": "", "pos": "ibora", "audio": "a2/maa_salama.mp3", "example_ar": "شُكْرًا، مَعَ السَّلَامَةِ.", "example_uz": "Rahmat, xayr.", "srs": true}
  ],
@@ -88,7 +88,7 @@
   {"type": "word", "front": "مَوْقِف", "back": "vaziyat, holat", "deck": "msa"},
   {"type": "word", "front": "طَلَاقَة", "back": "ravonlik", "deck": "msa"},
   {"type": "word", "front": "ثِقَة", "back": "ishonch", "deck": "msa"},
-  {"type": "word", "front": "تُعِيد", "back": "qaytarasiz (takrorlaysiz)", "deck": "msa"},
+  {"type": "word", "front": "تُعِيد", "back": "qaytarasiz (takrorlaysiz) · u/erkak", "deck": "msa"},
   {"type": "word", "front": "تَدْرِيب", "back": "mashq, trening", "deck": "msa"},
   {"type": "word", "front": "مَعَ السَّلَامَة", "back": "xayr, omon bo'ling", "deck": "msa"}
  ]

@@ -12,7 +12,7 @@
  "hook_uz": "Arab tilining SIRI ochiladi! Bitta o'zak ع-ل-م: عَلِمَ (bildi) → عَلَّمَ (o'rgatdi) → تَعَلَّمَ (o'rgandi) → أَعْلَمَ (xabar berdi) → اِسْتَعْلَمَ (so'radi). Faqat harflar qo'shib ma'noni o'zgartirasiz! Bu — «fe'l boblari» tizimi (I–X). Bilib olsangiz, minglab so'zni taxmin qilasiz.",
  "grammar": {
   "point_ar": "الأَوْزَانُ العَشَرَة",
-  "explanation_uz": "Arabchada fe'l o'zagi (3 harf) turli QOLIP (bob/vazn) larga solinadi. Har qolip o'ziga xos ma'no qatlamini qo'shadi. I bob — asos (فَعَلَ). II–X boblar o'zakka harf QO'SHADI (ziyada): shaddalash (II — kuchaytirish), alif (III — o'zaro), hamza (IV — sababiyat), تَـ (V, VI — qaytim/o'zaro), اِنْـ (VII), اِفْتَـ (VIII), اِسْتَـ (X — talab). Har bobning ma'nosini bilsangiz, yangi fe'lni ko'rib ma'nosini taxmin qilasiz.",
+  "explanation_uz": "Arabchada fe'l o'zagi (3 harf) turli QOLIP (bob/vazn) larga solinadi. Har qolip o'ziga xos ma'no qatlamini qo'shadi. I bob — asos (فَعَلَ). II–X boblar o'zakka harf QO'SHADI (ziyada): shaddalash (II — kuchaytirish), alif (III — o'zaro), hamza (IV — sababiyat), تَـ (V, VI — qaytim/o'zaro), اِنْـ (VII), اِفْتَـ (VIII), اِسْتَـ (X — talab). Har bobning ma'nosini bilsangiz, yangi fe'lni ko'rib ma'nosini taxmin qilasiz. Keyingi 8 darsda har bobni ALOHIDA olamiz: bitta vakil fe'lni sarf darslaridagidek 14 shaklda tuslaymiz (masalan II bob — عَلَّمَ). Shunda bob ham, tuslash ham bir vaqtda mustahkamlanadi.",
   "table": [
    {"ar": "عَلِمَ", "uz": "bildi (I — asos)", "form": "فَعَلَ"},
    {"ar": "عَلَّمَ", "uz": "o'rgatdi (II — kuchaytirish)", "form": "فَعَّلَ"},
@@ -38,10 +38,10 @@
   }
  ],
  "vocabulary": [
-  {"ar": "عَلَّمَ", "translit": "ʿallama", "uz": "o'rgatdi (II bob)", "root": "ع ل م", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/allama.mp3", "example_ar": "عَلَّمَ المُدَرِّسُ الطُّلَّابَ.", "example_uz": "O'qituvchi talabalarni o'rgatdi.", "srs": true},
-  {"ar": "تَعَلَّمَ", "translit": "taʿallama", "uz": "o'rgandi (V bob)", "root": "ع ل م", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/taallama.mp3", "example_ar": "تَعَلَّمْتُ العَرَبِيَّةَ.", "example_uz": "Arab tilini o'rgandim.", "srs": true},
-  {"ar": "أَرْسَلَ", "translit": "arsala", "uz": "yubordi (IV bob) (o'zbekcha 'irsol')", "root": "ر س ل", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/arsala.mp3", "example_ar": "أَرْسَلَ رِسَالَةً.", "example_uz": "Xat yubordi.", "srs": true},
-  {"ar": "اِسْتَقْبَلَ", "translit": "istaqbala", "uz": "kutib oldi (X bob) (o'zbekcha 'istiqbol')", "root": "ق ب ل", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "a2/istaqbala.mp3", "example_ar": "اِسْتَقْبَلَ الضُّيُوفَ.", "example_uz": "Mehmonlarni kutib oldi.", "srs": true},
+  {"ar": "عَلَّمَ", "translit": "ʿallama", "uz": "o'rgatdi (II bob) · u/erkak", "root": "ع ل م", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "a2/allama.mp3", "example_ar": "عَلَّمَ المُدَرِّسُ الطُّلَّابَ.", "example_uz": "O'qituvchi talabalarni o'rgatdi.", "srs": true},
+  {"ar": "تَعَلَّمَ", "translit": "taʿallama", "uz": "o'rgandi (V bob) · u/erkak", "root": "ع ل م", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "a2/taallama.mp3", "example_ar": "تَعَلَّمْتُ العَرَبِيَّةَ.", "example_uz": "Arab tilini o'rgandim.", "srs": true},
+  {"ar": "أَرْسَلَ", "translit": "arsala", "uz": "yubordi (IV bob) (o'zbekcha 'irsol') · u/erkak", "root": "ر س ل", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "a2/arsala.mp3", "example_ar": "أَرْسَلَ رِسَالَةً.", "example_uz": "Xat yubordi.", "srs": true},
+  {"ar": "اِسْتَقْبَلَ", "translit": "istaqbala", "uz": "kutib oldi (X bob) (o'zbekcha 'istiqbol') · u/erkak", "root": "ق ب ل", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "a2/istaqbala.mp3", "example_ar": "اِسْتَقْبَلَ الضُّيُوفَ.", "example_uz": "Mehmonlarni kutib oldi.", "srs": true},
   {"ar": "بَاب", "translit": "bāb", "uz": "bob (fe'l qolipi)", "root": "ب و ب", "pattern": "فَعَل", "pos": "ot", "audio": "a0/bab.mp3", "example_ar": "البَابُ الثَّانِي.", "example_uz": "Ikkinchi bob.", "srs": true},
   {"ar": "وَزْن", "translit": "wazn", "uz": "vazn, qolip (o'zbekcha 'vazn')", "root": "و ز ن", "pattern": "فَعْل", "pos": "ot", "audio": "a2/wazn.mp3", "example_ar": "وَزْنُ الفِعْلِ.", "example_uz": "Fe'l vazni.", "srs": true},
   {"ar": "زِيَادَة", "translit": "ziyāda", "uz": "qo'shimcha (o'zakka qo'shilgan harf) (o'zbekcha 'ziyoda')", "root": "ز ي د", "pattern": "فِعَالَة", "pos": "ot", "audio": "a2/ziyada.mp3", "example_ar": "حُرُوفُ الزِّيَادَةِ.", "example_uz": "Qo'shimcha harflar.", "srs": true},
@@ -86,10 +86,10 @@
   {"type": "root", "front": "ع ل م", "back": "bilish o'zagi — boblar namunasi (bildi/o'rgatdi/o'rgandi)", "deck": "msa"},
   {"type": "pattern", "front": "فَعَّلَ (II)", "back": "kuchaytirish/sababiyat bobi (allama=o'rgatdi)", "deck": "msa"},
   {"type": "pattern", "front": "تَفَعَّلَ (V)", "back": "II ning qaytim bobi (taallama=o'rgandi)", "deck": "msa"},
-  {"type": "word", "front": "عَلَّمَ", "back": "o'rgatdi (II)", "deck": "msa"},
-  {"type": "word", "front": "تَعَلَّمَ", "back": "o'rgandi (V)", "deck": "msa"},
-  {"type": "word", "front": "أَرْسَلَ", "back": "yubordi (IV)", "deck": "msa"},
-  {"type": "word", "front": "اِسْتَقْبَلَ", "back": "kutib oldi (X)", "deck": "msa"},
+  {"type": "word", "front": "عَلَّمَ", "back": "o'rgatdi (II) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "تَعَلَّمَ", "back": "o'rgandi (V) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "أَرْسَلَ", "back": "yubordi (IV) · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "اِسْتَقْبَلَ", "back": "kutib oldi (X) · u/erkak", "deck": "msa"},
   {"type": "word", "front": "وَزْن", "back": "vazn, qolip", "deck": "msa"},
   {"type": "word", "front": "زِيَادَة", "back": "qo'shimcha harf", "deck": "msa"},
   {"type": "word", "front": "مَعْنَى", "back": "ma'no", "deck": "msa"}
