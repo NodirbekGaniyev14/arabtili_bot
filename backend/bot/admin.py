@@ -39,6 +39,15 @@ async def cmd_funnel(message: Message):
     await message.answer(text, parse_mode="HTML")
 
 
+@router.message(Command("retention"))
+async def cmd_retention(message: Message):
+    if not _is_admin(message):
+        return
+    async with SessionLocal() as session:
+        text = await admin.retention(session)
+    await message.answer(text, parse_mode="HTML")
+
+
 @router.message(Command("ratings"))
 async def cmd_ratings(message: Message):
     if not _is_admin(message):

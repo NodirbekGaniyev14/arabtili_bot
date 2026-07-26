@@ -389,6 +389,96 @@ async def ratings_report(session: AsyncSession) -> str:
     return "\n".join(lines)
 
 
+async def retention(session: AsyncSession, weeks: int = 6) -> str:
+    """Kogorta retentsiyasi — D1/D7/D30 va haftalik kogortalar.
+
+    Tashqi analitika xizmati kerak emas: ro'yxatdan o'tgan sana (users) va
+    faollik kunlari (xp_log) allaqachon bazada. Faol kun = o'sha kuni XP
+    olingan kun (dars, takror, imtihon — hammasi XP yozadi).
+    """
+    users = (
+        await session.execute(
+            select(User.id, User.created_at).where(User.is_demo == 0)
+        )
+    ).all()
+    if not users:
+        return "Hali foydalanuvchi yo'q."
+
+    real_ids = {uid for uid, _ in users}
+    xp_rows = (
+        await session.execute(select(XpLog.user_id, XpLog.created_at))
+    ).all()
+    active: dict[int, set] = {}
+    for uid, dt in xp_rows:
+        if uid in real_ids:  # demo raqiblar hisobga olinmaydi
+            active.setdefault(uid, set()).add(_local_date(dt))
+
+    today = _today()
+
+    def retained(uid: int, joined, day_from: int, day_to: int) -> bool:
+        """[day_from, day_to] oynasida kamida bir kun faolmi."""
+        j = _local_date(joined)
+        days = active.get(uid, set())
+        return any(
+            (j + timedelta(days=n)) in days for n in range(day_from, day_to + 1)
+        )
+
+    lines = ["📈 <b>Retentsiya</b>\n"]
+
+    # D1 / D7 / D30 — faqat yetarlicha ulg'aygan kogortalar
+    for label, lo, hi, min_age in (
+        ("D1", 1, 1, 1),
+        ("D7", 7, 7, 7),
+        ("D30", 30, 30, 30),
+    ):
+        pool = [
+            (uid, cr) for uid, cr in users
+            if (today - _local_date(cr)).days >= min_age
+        ]
+        if not pool:
+            lines.append(f"{label}: — (kogorta hali yosh)")
+            continue
+        kept = sum(1 for uid, cr in pool if retained(uid, cr, lo, hi))
+        frac = kept / len(pool)
+        lines.append(
+            f"{label}: {_bar(frac)} {round(frac * 100)}% ({kept}/{len(pool)})"
+        )
+
+    # Haftalik kogortalar — kim qachon qo'shildi va 7 kunda qaytdimi
+    lines.append("\n🗓 <b>Haftalik kogortalar</b> (qo'shilgan → 7 kunda qaytgan)")
+    buckets: dict[str, list] = {}
+    for uid, cr in users:
+        j = _local_date(cr)
+        monday = j - timedelta(days=j.weekday())
+        buckets.setdefault(monday.isoformat(), []).append((uid, cr))
+
+    for wk in sorted(buckets)[-weeks:]:
+        group = buckets[wk]
+        mature = [
+            (uid, cr) for uid, cr in group
+            if (today - _local_date(cr)).days >= 7
+        ]
+        if not mature:
+            lines.append(f"{wk}: {len(group)} ta yangi · (hali 7 kun to'lmagan)")
+            continue
+        kept = sum(1 for uid, cr in mature if retained(uid, cr, 1, 7))
+        frac = kept / len(mature)
+        lines.append(
+            f"{wk}: {len(group):3d} ta · D1-7 {_bar(frac, 8)} {round(frac * 100)}%"
+        )
+
+    # Yopishqoqlik: DAU/MAU
+    dau = sum(1 for uid in active if today in active[uid])
+    mau = sum(
+        1 for uid, days in active.items()
+        if any((today - d).days <= 30 for d in days)
+    )
+    sticky = round(dau / mau * 100) if mau else 0
+    lines.append(f"\n🔁 <b>Yopishqoqlik</b>: DAU {dau} / MAU {mau} = {sticky}%")
+
+    return "\n".join(lines)
+
+
 async def all_real_tg_ids(session: AsyncSession) -> list[int]:
     return list(
         (

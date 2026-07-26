@@ -248,7 +248,7 @@ export default function Profile() {
                     {weekly ? (rank === "1" ? "🥇" : rank === "2" ? "🥈" : "🥉") : "🎓"}
                   </div>
                   <div className="mt-1 text-sm font-extrabold leading-tight">
-                    {weekly ? `Haftalik ${rank}-o'rin` : `${c.level} darajasi`}
+                    {weekly ? `Haftalik ${rank}-o'rin` : `${c.level} kursi`}
                   </div>
                   <div className="text-[11px] text-ink-soft font-semibold">
                     {weekly ? `${c.score} XP` : `${c.score}/100`} · {c.issued_at}

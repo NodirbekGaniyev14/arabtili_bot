@@ -21,6 +21,7 @@ type Phase = "boot" | "onboarding" | "app";
 
 const EMPTY_STATS: Stats = {
   streak: 0,
+  streak_freezes: 0,
   xp_today: 0,
   words: 0,
   lessons: 0,

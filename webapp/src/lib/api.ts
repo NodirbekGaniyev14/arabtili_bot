@@ -26,6 +26,8 @@ export interface NextLesson {
 
 export interface Stats {
   streak: number;
+  /** Qolgan streak muzlatkichlari (haftada +1, ko'pi bilan 2) */
+  streak_freezes: number;
   xp_today: number;
   words: number;
   lessons: number;

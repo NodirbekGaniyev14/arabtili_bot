@@ -19,6 +19,95 @@ def _today() -> date:
     return _local_date(datetime.now(timezone.utc).replace(tzinfo=None))
 
 
+MAX_FREEZES = 2
+
+
+def _week_monday(d: date) -> date:
+    return d - timedelta(days=d.weekday())
+
+
+async def resolve_streak(
+    session: AsyncSession, user_id: int, active_days: set[date], today: date
+) -> tuple[int, int]:
+    """Streakni muzlatkichlarni hisobga olib hisoblaydi.
+
+    Muzlatkich (streak freeze) bitta o'tkazib yuborilgan kunni yopadi:
+    zanjir uzilmaydi, lekin streak soniga qo'shilmaydi. Haftada +1 beriladi
+    (ko'pi bilan 2 ta saqlanadi) va foydalanuvchi qaytib kelganda
+    avtomatik ishlatiladi.
+
+    Qaytaradi: (streak, qolgan_muzlatkich).
+    """
+    from db.models import User
+
+    user = (
+        await session.execute(select(User).where(User.id == user_id))
+    ).scalar_one_or_none()
+    if user is None:
+        return 0, 0
+
+    # Haftalik to'ldirish
+    this_week = _week_monday(today).isoformat()
+    dirty = False
+    if user.freeze_granted_week != this_week:
+        user.freeze_granted_week = this_week
+        if (user.streak_freezes or 0) < MAX_FREEZES:
+            user.streak_freezes = (user.streak_freezes or 0) + 1
+        dirty = True
+
+    if not active_days:
+        if dirty:
+            session.add(user)
+            await session.commit()
+        return 0, user.streak_freezes or 0
+
+    frozen = {
+        date.fromisoformat(s)
+        for s in (user.frozen_days or "").split(",")
+        if s.strip()
+    }
+    earliest = min(active_days)
+    # Muzlatkich faqat foydalanuvchi BUGUN qaytib kelganda sarflanadi —
+    # aks holda hali kuni tugamagan odamning zaxirasi behuda yoqiladi.
+    can_spend = today in active_days
+
+    streak = 0
+    day = today if today in active_days else today - timedelta(days=1)
+    while day >= earliest:
+        if day in active_days:
+            streak += 1
+            day -= timedelta(days=1)
+            continue
+        if day in frozen:
+            day -= timedelta(days=1)
+            continue
+
+        # Bo'shliq: keyingi faol kungacha nechta kun yopish kerakligini
+        # OLDINDAN sanaymiz. Yetmasa — hech narsa sarflamaymiz (isrof yo'q).
+        gap_end = day
+        while gap_end >= earliest and gap_end not in active_days:
+            gap_end -= timedelta(days=1)
+        gap = [
+            gap_end + timedelta(days=n + 1)
+            for n in range((day - gap_end).days)
+        ]
+        need = [d for d in gap if d not in frozen]
+        if not can_spend or len(need) > (user.streak_freezes or 0):
+            break
+
+        user.streak_freezes -= len(need)
+        frozen.update(need)
+        dirty = True
+        day = gap_end
+
+    if dirty:
+        user.frozen_days = ",".join(sorted(d.isoformat() for d in frozen))
+        session.add(user)
+        await session.commit()
+
+    return streak, user.streak_freezes or 0
+
+
 async def completed_lesson_ids(session: AsyncSession, user_id: int) -> set[str]:
     rows = await session.execute(
         select(Progress.lesson_id).where(Progress.user_id == user_id).distinct()
@@ -37,23 +126,30 @@ async def profile_extras(session: AsyncSession, user_id: int) -> dict:
     ).all()
     total_xp = sum(a for _, a in xp_rows)
 
-    # Eng uzun streak — faol kunlarning eng uzun ketma-ketligi
+    user = (
+        await session.execute(select(User).where(User.id == user_id))
+    ).scalar_one_or_none()
+    member_since = user.created_at.date().isoformat() if user else ""
+
+    # Eng uzun streak — muzlatilgan kunlar zanjirni uzmaydi
+    frozen = {
+        date.fromisoformat(s)
+        for s in ((user.frozen_days if user else "") or "").split(",")
+        if s.strip()
+    }
     active_days = sorted({_local_date(dt) for dt, _ in xp_rows})
     longest = 0
     run = 0
     prev = None
     for d in active_days:
-        if prev is not None and (d - prev).days == 1:
-            run += 1
+        if prev is not None:
+            gap = {prev + timedelta(days=i) for i in range(1, (d - prev).days)}
+            joined = (d - prev).days == 1 or (gap and gap <= frozen)
+            run = run + 1 if joined else 1
         else:
             run = 1
         longest = max(longest, run)
         prev = d
-
-    user = (
-        await session.execute(select(User).where(User.id == user_id))
-    ).scalar_one_or_none()
-    member_since = user.created_at.date().isoformat() if user else ""
 
     return {
         "total_xp": total_xp,
@@ -102,11 +198,7 @@ async def user_stats(
     xp_today = sum(a for dt, a in xp_rows if _local_date(dt) == today)
 
     active_days = {_local_date(dt) for dt, _ in xp_rows}
-    streak = 0
-    day = today if today in active_days else today - timedelta(days=1)
-    while day in active_days:
-        streak += 1
-        day -= timedelta(days=1)
+    streak, freezes_left = await resolve_streak(session, user_id, active_days, today)
 
     # Bugun takrorlanishi kerak bo'lgan kartalar
     due_rows = await session.execute(
@@ -121,6 +213,7 @@ async def user_stats(
 
     return {
         "streak": streak,
+        "streak_freezes": freezes_left,
         "xp_today": xp_today,
         "words": words,
         "lessons": len(v2_done),

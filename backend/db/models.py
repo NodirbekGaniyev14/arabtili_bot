@@ -38,6 +38,12 @@ class User(Base):
     rank_notice_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     # Oxirgi tekshiruvdagi haftalik reyting o'rni (0 = hali hisoblanmagan)
     last_rank: Mapped[int] = mapped_column(Integer, default=0)
+    # Streak himoyasi: qolgan muzlatkichlar soni (haftada +1, ko'pi bilan 2)
+    streak_freezes: Mapped[int] = mapped_column(Integer, default=2)
+    # Muzlatkich ishlatilgan kunlar, vergul bilan: "2026-07-18,2026-07-25"
+    frozen_days: Mapped[str] = mapped_column(Text, default="")
+    # Oxirgi muzlatkich berilgan hafta (YYYY-MM-DD, dushanba) — haftada 1 marta
+    freeze_granted_week: Mapped[str] = mapped_column(String(10), default="")
 
 
 class Placement(Base):

@@ -1,8 +1,9 @@
 interface HeaderProps {
   streak: number;
+  freezes?: number;
 }
 
-export default function Header({ streak }: HeaderProps) {
+export default function Header({ streak, freezes = 0 }: HeaderProps) {
   return (
     <header className="flex items-center justify-between">
       <div className="flex items-center gap-2.5">
@@ -14,9 +15,20 @@ export default function Header({ streak }: HeaderProps) {
         <span className="text-xl font-extrabold tracking-tight">Arabiy</span>
       </div>
 
-      <div className="flex items-center gap-1.5 rounded-full bg-gold-soft border border-gold/30 px-3.5 py-1.5">
-        <span className="text-base leading-none">🔥</span>
-        <span className="text-sm font-bold text-ink">{streak} kun</span>
+      <div className="flex items-center gap-2">
+        {freezes > 0 && (
+          <div
+            className="flex items-center gap-1 rounded-full bg-card border border-cardline px-2.5 py-1.5"
+            title="Streak muzlatkichi — bir kun o'tkazib yuborsangiz streak saqlanadi"
+          >
+            <span className="text-base leading-none">🧊</span>
+            <span className="text-sm font-bold text-ink-soft">{freezes}</span>
+          </div>
+        )}
+        <div className="flex items-center gap-1.5 rounded-full bg-gold-soft border border-gold/30 px-3.5 py-1.5">
+          <span className="text-base leading-none">🔥</span>
+          <span className="text-sm font-bold text-ink">{streak} kun</span>
+        </div>
       </div>
     </header>
   );

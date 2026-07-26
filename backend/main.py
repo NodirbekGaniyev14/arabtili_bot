@@ -39,6 +39,7 @@ async def _setup_commands(bot: Bot):
             [
                 BotCommand(command="admin", description="📊 Statistika paneli"),
                 BotCommand(command="funnel", description="📉 Voronka (drop-off)"),
+                BotCommand(command="retention", description="📈 Retentsiya (D1/D7/D30)"),
                 BotCommand(command="ratings", description="⭐ Dars baholari va fikrlar"),
                 BotCommand(command="users", description="👥 Oxirgi foydalanuvchilar"),
                 BotCommand(command="user", description="👤 Foydalanuvchi ma'lumoti"),
@@ -57,6 +58,19 @@ async def lifespan(app: FastAPI):
     from db.session import init_db
 
     await init_db()
+
+    from config import dev_auth_active
+
+    if dev_auth_active():
+        print(
+            "🔓 DEV_AUTH YOQILGAN — imzo tekshiruvi o'chiq! "
+            "Bu faqat lokal ishlab chiqish uchun."
+        )
+    elif settings.dev_auth:
+        print(
+            "ℹ️  DEV_AUTH=1, lekin BOT_TOKEN mavjud — imzo tekshiruvi "
+            "kuchda qoldi (xavfsiz)."
+        )
 
     # Daraja o'sishi K10'da qo'shildi — undan oldin imtihondan o'tganlarni
     # bir marta to'g'ri darajaga ko'taramiz.

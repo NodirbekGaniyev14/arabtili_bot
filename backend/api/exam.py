@@ -181,7 +181,7 @@ async def exam_submit(
                 from urllib.parse import quote
 
                 share_text = quote(
-                    f"Men Arabiy'da {attempt.level} darajasini tugatdim! 🎓"
+                    f"Men Arabiy'da {attempt.level} kursini tugatdim! 🎓"
                 )
                 share_url = quote("https://t.me/JamalArabiy_bot")
                 kb = InlineKeyboardMarkup(
@@ -196,8 +196,8 @@ async def exam_submit(
                     user.tg_id,
                     FSInputFile(cert.png_path),
                     caption=(
-                        f"🏅 Tabriklaymiz! {attempt.level} darajasi "
-                        f"sertifikati — {result['total']}/100"
+                        f"🏅 Tabriklaymiz! {attempt.level} kursini tugatganlik "
+                        f"sertifikati — yakuniy imtihon {result['total']}/100"
                     ),
                     reply_markup=kb,
                 )
@@ -597,8 +597,8 @@ async def verify(code: str, session: AsyncSession = Depends(get_session)):
         )
     else:
         body = (
-            f'<p style="margin:4px">Daraja: <b>{cert.level}</b></p>'
-            f'<p style="margin:4px">Ball: <b>{cert.score}/100</b></p>'
+            f'<p style="margin:4px">Tugatilgan kurs: <b>{cert.level}</b></p>'
+            f'<p style="margin:4px">Yakuniy imtihon: <b>{cert.score}/100</b></p>'
             f'<p style="margin:4px;font-size:13px;color:#8A8071">'
             f'O\'qish {scores.get("reading","—")} · Tinglash {scores.get("listening","—")} · '
             f'Yozish {scores.get("writing","—")} · Gapirish {scores.get("speaking","—")}</p>'

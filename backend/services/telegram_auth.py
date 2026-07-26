@@ -7,23 +7,36 @@ yuboradi — bu foydalanuvchini soxtalashtirib bo'lmasligini kafolatlaydi.
 import hashlib
 import hmac
 import json
+import time
 from urllib.parse import parse_qsl
 
 from fastapi import Depends, Header, HTTPException
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from config import settings
+from config import dev_auth_active, settings
 from db.models import User
 from db.session import get_session
 
+# initData qancha vaqt amal qiladi (Telegram tavsiyasi: 1 kundan oshmasin)
+MAX_AUTH_AGE_SECONDS = 24 * 60 * 60
+
 
 def validate_init_data(init_data: str, bot_token: str) -> dict | None:
-    """To'g'ri imzolangan bo'lsa Telegram user dict'ini qaytaradi, aks holda None."""
+    """To'g'ri imzolangan va muddati o'tmagan bo'lsa Telegram user dict'ini
+    qaytaradi, aks holda None."""
     try:
         parsed = dict(parse_qsl(init_data, keep_blank_values=True))
         received_hash = parsed.pop("hash", None)
         if not received_hash:
+            return None
+
+        # Muddat: eski initData qayta ishlatilmasin (replay hujumiga qarshi)
+        try:
+            auth_age = time.time() - int(parsed.get("auth_date", "0"))
+        except ValueError:
+            return None
+        if auth_age > MAX_AUTH_AGE_SECONDS or auth_age < -300:
             return None
 
         data_check_string = "\n".join(
@@ -51,7 +64,7 @@ async def get_current_user(
     tg_user = validate_init_data(x_init_data, settings.bot_token) if x_init_data else None
 
     if tg_user is None:
-        if settings.dev_auth:
+        if dev_auth_active():
             # Dev rejim: Telegram tashqarisidan test qilish uchun
             tg_user = {"id": 1, "first_name": "Dev", "username": "dev"}
         else:

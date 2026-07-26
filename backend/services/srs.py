@@ -132,6 +132,12 @@ async def reset_words(
 
 def apply_grade(word: UserWord, grade: str) -> None:
     """Kartani bahoga qarab keyingi sanaga suradi (SM-2 soddalashtirilgan)."""
+    # Hali flush qilinmagan kartada ustun standartlari qo'llanmagan bo'ladi
+    word.reps = word.reps or 0
+    word.lapses = word.lapses or 0
+    word.interval_days = word.interval_days or 0
+    word.ease = word.ease or 2.5
+
     if grade == "again":
         word.reps = 0
         word.lapses += 1

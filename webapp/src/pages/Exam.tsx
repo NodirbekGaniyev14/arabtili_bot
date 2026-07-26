@@ -145,7 +145,7 @@ export default function Exam({ onClose }: { onClose: () => void }) {
           <div className="pt-6 text-center">
             <div className="text-6xl">📋</div>
             <h1 className="mt-2 text-2xl font-extrabold">
-              {info.level} daraja imtihoni
+              {info.level} kursi yakuniy imtihoni
             </h1>
             {info.already_passed && (
               <p className="mt-2 text-sm font-bold text-emerald-deep">

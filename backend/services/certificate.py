@@ -75,8 +75,8 @@ def render_png(
 
     # Sarlavha
     _center(d, 60, "ARABIY", _font(64), EMERALD_DARK, W)
-    _center(d, 140, _ar("شَهادة إتمام المستوى"), _font(44), GOLD, W)
-    _center(d, 205, "DARAJA TUGATILGANLIK SERTIFIKATI", _font(22), INK, W)
+    _center(d, 140, _ar("شَهادة إتمام دَورة المستوى"), _font(44), GOLD, W)
+    _center(d, 205, "KURSNI TUGATGANLIK SERTIFIKATI", _font(22), INK, W)
 
     # Daraja muhri (aylantirilgan kvadrat effekti — romb)
     cx, cy, r = W // 2, 330, 70
@@ -90,18 +90,26 @@ def render_png(
     _center(d, cy + r + 10, _ar(LEVEL_NAMES.get(level, "")), _font(30), EMERALD, W)
 
     # Ism va ball
-    _center(d, 490, name or "O'rganuvchi", _font(48), INK, W)
-    _center(d, 560, f"Ball: {total} / 100", _font(30), EMERALD_DARK, W)
+    _center(d, 480, name or "O'rganuvchi", _font(48), INK, W)
+    _center(d, 548, f"Arabiy {level} kursini tugatdi", _font(26), EMERALD_DARK, W)
+    _center(d, 590, f"Yakuniy imtihon: {total} / 100", _font(26), EMERALD_DARK, W)
     parts = (
         f"O'qish {scores.get('reading', 0)}  ·  Tinglash {scores.get('listening', 0)}"
         f"  ·  Yozish {scores.get('writing', 0)}  ·  Gapirish {scores.get('speaking', 0)}"
     )
-    _center(d, 610, parts, _font(22), INK, W)
+    _center(d, 634, parts, _font(22), INK, W)
+
+    # Halollik izohi — bu rasmiy CEFR guvohnomasi EMAS
+    _center(
+        d, 672,
+        "Ichki kurs sertifikati · rasmiy CEFR guvohnomasi emas",
+        _font(17), (138, 128, 113), W,
+    )
 
     # Pastki qator: sana, ID
-    d.text((70, H - 120), f"Sana: {issued}", font=_font(24), fill=INK)
-    d.text((70, H - 80), f"ID: {cert_id}", font=_font(24), fill=INK)
-    d.text((70, H - 45), verify_url, font=_font(18), fill=EMERALD_DARK)
+    d.text((70, H - 142), f"Sana: {issued}", font=_font(24), fill=INK)
+    d.text((70, H - 104), f"ID: {cert_id}", font=_font(24), fill=INK)
+    d.text((70, H - 70), verify_url, font=_font(18), fill=EMERALD_DARK)
 
     # QR
     qr = qrcode.QRCode(box_size=4, border=2)

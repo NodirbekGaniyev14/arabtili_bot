@@ -69,7 +69,7 @@ export default function Home({
 
   return (
     <div className="px-4 pt-4 space-y-4">
-      <Header streak={stats.streak} />
+      <Header streak={stats.streak} freezes={stats.streak_freezes} />
 
       <h1 className="text-[26px] font-extrabold leading-tight pt-1">
         {greeting()}
