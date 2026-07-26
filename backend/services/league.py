@@ -132,6 +132,51 @@ async def weekly_top3(
     ]
 
 
+async def _streaks_by_user(
+    session: AsyncSession, user_ids: list[int]
+) -> dict[int, int]:
+    """user_id -> streak (ketma-ket faol kunlar).
+
+    Bitta so'rov bilan hisoblanadi: oxirgi 90 kunlik XP kunlari olinadi va
+    har foydalanuvchi uchun bugundan (yoki kechadan) orqaga sanaladi.
+    Muzlatkich (streak freeze) bu yerda hisobga olinmaydi — reyting uchun
+    sof ketma-ketlik ko'rsatiladi.
+    """
+    if not user_ids:
+        return {}
+    from services.stats import _local_date, _today
+
+    since = datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(days=90)
+    rows = (
+        await session.execute(
+            select(XpLog.user_id, XpLog.created_at).where(
+                XpLog.user_id.in_(user_ids), XpLog.created_at >= since
+            )
+        )
+    ).all()
+
+    days_by_user: dict[int, set] = {}
+    for uid, created in rows:
+        days_by_user.setdefault(uid, set()).add(_local_date(created))
+
+    today = _today()
+    out: dict[int, int] = {}
+    for uid, days in days_by_user.items():
+        if today in days:
+            day = today
+        elif (today - timedelta(days=1)) in days:
+            day = today - timedelta(days=1)
+        else:
+            out[uid] = 0
+            continue
+        streak = 0
+        while day in days:
+            streak += 1
+            day -= timedelta(days=1)
+        out[uid] = streak
+    return out
+
+
 async def _levels_by_user(session: AsyncSession, user_ids: list[int]) -> dict[int, str]:
     """user_id -> daraja (oxirgi Plan bo'yicha). Rejasi yo'qlarga A0."""
     if not user_ids:
@@ -155,7 +200,9 @@ async def leaderboard(
     ranked = await _ranked_rows(session, period_start(period))
 
     my_xp = next((r.xp for r in ranked if r.id == me_id), 0)
-    levels = await _levels_by_user(session, [r.id for r in ranked] + [me_id])
+    ids = [r.id for r in ranked] + [me_id]
+    levels = await _levels_by_user(session, ids)
+    streaks = await _streaks_by_user(session, ids)
 
     entries = []
     my_rank = None
@@ -169,6 +216,7 @@ async def leaderboard(
                 "name": r.name or "Foydalanuvchi",
                 "xp": int(r.xp),
                 "level": levels.get(r.id, "A0"),
+                "streak": streaks.get(r.id, 0),
                 "is_me": is_me,
                 "is_demo": False,
             }
@@ -183,6 +231,7 @@ async def leaderboard(
                 "name": "Siz",
                 "xp": 0,
                 "level": levels.get(me_id, "A0"),
+                "streak": streaks.get(me_id, 0),
                 "is_me": True,
                 "is_demo": False,
             }

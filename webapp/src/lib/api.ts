@@ -156,6 +156,8 @@ export interface LeaderboardEntry {
   xp: number;
   /** Foydalanuvchining joriy darajasi (A0/A1/A2/B1) */
   level: string;
+  /** Ketma-ket faol kunlar */
+  streak: number;
   is_me: boolean;
   is_demo: boolean;
 }

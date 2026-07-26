@@ -29,10 +29,13 @@ function inviteFriend() {
   }
 }
 
-/** Ism ostidagi kichik daraja belgisi — ismga nisbatan ochroq */
-function LevelTag({ level }: { level: string }) {
+/** Ism ostidagi kichik belgi: daraja + streak — ismga nisbatan ochroq */
+function LevelTag({ level, streak }: { level: string; streak: number }) {
   return (
-    <span className="text-[11px] font-bold text-ink-soft/70">{level} daraja</span>
+    <span className="text-[11px] font-bold text-ink-soft/70">
+      {level} daraja
+      {streak > 0 && <> · 🔥 {streak} kun</>}
+    </span>
   );
 }
 
@@ -66,6 +69,7 @@ function Podium({ top }: { top: LeaderboardEntry[] }) {
               </div>
               <div className="text-[10px] font-bold text-ink-soft/70">
                 {s.entry.level}
+                {s.entry.streak > 0 && ` · 🔥${s.entry.streak}`}
               </div>
               <div className="text-xs font-extrabold text-emerald-dark">
                 {s.entry.xp} XP
@@ -195,7 +199,7 @@ export default function Rating() {
                         </span>
                       )}
                     </div>
-                    <LevelTag level={e.level} />
+                    <LevelTag level={e.level} streak={e.streak} />
                   </div>
                   <div className="font-extrabold text-emerald-dark">{e.xp} XP</div>
                 </div>

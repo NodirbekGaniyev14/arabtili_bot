@@ -480,6 +480,27 @@ function renderExercise(
   onDone: (ok: boolean) => void,
   rootPool: string[]
 ) {
+  // Klaviatura talab qiladigan turlar (fill_blank / harakat / dictation /
+  // translate_uz_ar) ba'zan TAYYOR VARIANTLAR bilan yoziladi ("...ni tanlang").
+  // Bunday savolni yozdirish o'rniga variantli test qilib ko'rsatamiz —
+  // aks holda o'quvchi klaviaturadan aynan mos matnni topa olmaydi.
+  const KEYBOARD_TYPES = ["fill_blank", "harakat", "dictation", "translate_uz_ar"];
+  if (KEYBOARD_TYPES.includes(item.type) && item.options && item.options.length >= 2) {
+    return (
+      <OptionsEx
+        key={key}
+        prompt={item.q_uz || item.q_ar}
+        arabicBig={item.q_uz && isArabic(item.q_ar) ? item.q_ar : undefined}
+        audio={item.audio || undefined}
+        options={item.options}
+        answer={item.answer}
+        explain={item.explain_uz}
+        arabicOptions={item.options.some(isArabic)}
+        onDone={onDone}
+      />
+    );
+  }
+
   switch (item.type) {
     case "mcq":
       return (
@@ -528,20 +549,26 @@ function renderExercise(
         />
       );
     }
-    case "fill_blank":
+    case "fill_blank": {
+      // Javob arabcha bo'lmasa (masalan «bir qalam (noaniq)») — arab
+      // klaviaturasi bilan uni yozib bo'lmaydi, lotin kiritish beriladi.
+      const arabicAnswer = isArabic(item.answer);
       return (
         <InputEx
           key={key}
           prompt={item.q_uz || "Bo'sh joyni to'ldiring"}
           arabicBig={item.q_ar}
-          arabicInput
+          arabicInput={arabicAnswer}
           showHarakatKeys={false}
-          check={(v) => normAr(v) === normAr(item.answer)}
+          check={(v) =>
+            arabicAnswer ? normAr(v) === normAr(item.answer) : latOk(item.answer, v)
+          }
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}
         />
       );
+    }
     case "translate_uz_ar":
       return (
         <InputEx

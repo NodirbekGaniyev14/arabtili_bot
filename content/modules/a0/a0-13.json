@@ -253,29 +253,34 @@
    "words": []
   },
   {
-   "type": "harakat",
-   "q_uz": "بَيْت so'zini 'baytun' bo'lib o'qilishi uchun oxiriga qaysi belgini qo'yasiz?",
+   "type": "mcq",
+   "q_uz": "«baytun» deb o'qilishi uchun so'z qanday yozilishi kerak?",
    "q_ar": "",
    "options": [
-    "ٌ",
-    "ٍ",
-    "ً",
-    "ْ"
+    "بَيْتٌ",
+    "بَيْتٍ",
+    "بَيْتًا",
+    "بَيْتْ"
    ],
-   "answer": "ٌ",
-   "explain_uz": "-un tovushi uchun dammatan ٌ qo'yiladi: بَيْتٌ.",
+   "answer": "بَيْتٌ",
+   "explain_uz": "«-un» tovushi uchun so'z oxiriga dammatan (ٌ) qo'yiladi: بَيْتٌ.",
    "audio": "",
    "root": "",
    "pattern": "",
    "words": []
   },
   {
-   "type": "fill_blank",
-   "q_uz": "قَلَم so'zi 'qalamun' bo'lib o'qilsa, u ___ ma'nosini beradi.",
+   "type": "mcq",
+   "q_uz": "قَلَمٌ («qalamun») nimani bildiradi?",
    "q_ar": "",
-   "options": [],
+   "options": [
+    "bir qalam (noaniq)",
+    "o'sha qalam (aniq)",
+    "qalamlar (ko'plik)",
+    "qalamsiz"
+   ],
    "answer": "bir qalam (noaniq)",
-   "explain_uz": "Tanvin so'zni noaniq qiladi — 'bir qalam'.",
+   "explain_uz": "Tanvin so'zni NOANIQ qiladi — «bir qalam». Aniq bo'lsa الْقَلَمُ bo'lardi.",
    "audio": "",
    "root": "",
    "pattern": "",

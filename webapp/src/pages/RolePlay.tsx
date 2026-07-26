@@ -191,7 +191,9 @@ export default function RolePlay({ onClose }: RolePlayProps) {
                 onKeyDown={(e) => e.key === "Enter" && send()}
                 dir="rtl"
                 placeholder="جوابك هنا..."
-                className="flex-1 rounded-xl bg-sand border border-cardline px-3 py-2.5 font-arabic text-lg outline-none focus:border-emerald-deep/40"
+                // min-w-0: flex ichida input'ning tug'ma eni (size≈20) qatorni
+                // ekrandan kengaytirib, matn boshini kesib qo'yardi
+                className="flex-1 min-w-0 rounded-xl bg-sand border border-cardline px-3 py-2.5 font-arabic text-lg outline-none focus:border-emerald-deep/40"
               />
               <button
                 onClick={send}
