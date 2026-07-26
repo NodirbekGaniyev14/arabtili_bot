@@ -3,95 +3,94 @@
  "level": "B1",
  "module": "skills",
  "order": 38,
- "title_uz": "O'qish: yangilik 4 (madaniyat)",
- "title_ar": "قِرَاءَة: خَبَرٌ ثَقَافِيّ",
- "can_do_uz": "Madaniyat-tarix mavzusidagi maqolani o'qib, fikr va faktni ajrata olaman.",
+ "title_uz": "Gapirish: munozara",
+ "title_ar": "مُحَادَثَة: مُنَاظَرَة",
+ "can_do_uz": "Fikrimni dalil bilan himoya qilib, boshqa fikrga odob bilan e'tiroz bildira olaman.",
  "duration_min": 30,
  "prerequisites": ["b1-37"],
  "harakat_level": "ambiguous_only",
- "hook_uz": "So'nggi o'qish darsi — eng yaqin mavzu: SAMARQAND! Arab sayohatnomalarida yurtimiz asrlardan beri tilga olinadi. Bugun FAKT (dalil) va FIKR (muallif qarashi) ni ajratishni o'rganamiz — tanqidiy o'qishning kaliti.",
+ "hook_uz": "Fikrlar to'qnashuvi — lekin odob bilan! Arab munozara madaniyatida oltin qoida: fikrga e'tiroz — insonni hurmat qilgan holda. أحترمُ رأيَكَ، لكنّي أختلفُ معكَ (fikringizni hurmat qilaman, lekin qo'shilmayman). Bugungi mavzu: «Onlayn ta'lim yaxshimi?»",
  "grammar": {
-  "point_ar": "الحَقِيقَةُ وَالرَّأْي",
-  "explanation_uz": "FAKT belgilari: sanalar, raqamlar, joy nomlari, majhul fe'llar (بُنيتْ عامَ... — ...yilda qurilgan). FIKR belgilari: أعتقدُ أنَّ (menimcha), يبدو أنَّ (ko'rinishicha), من أجملِ... (eng go'zallaridan — baho!), sifatlar (رائع، ساحر). Maqolada ikkalasi aralashadi — savol bering: «Buni isbotlash mumkinmi?» Mumkin — fakt, muallifga bog'liq — fikr.",
+  "point_ar": "عِبَارَاتُ المُنَاظَرَة",
+  "explanation_uz": "MUNOZARA FORMULALARI: (1) FIKR: في رأيي... (mening fikrimcha), أعتقدُ أنَّ... (2) QO'SHILISH: أتفقُ معكَ تمامًا (to'liq qo'shilaman), هذا صحيحٌ (to'g'ri). (3) E'TIROZ (odob bilan!): أحترمُ رأيَكَ لكنْ... (hurmat qilaman, lekin), لا أتفقُ معكَ في هذهِ النقطةِ (bu nuqtada qo'shilmayman). (4) DALIL: والدليلُ على ذلك... (buning dalili), لأنَّ... (chunki). (5) YON BERISH: ربما تكونُ محقًّا في... (balki ...da haqdirsiz).",
   "table": [
-   {"ar": "بُنيتْ عامَ ٧٥١", "uz": "751-yilda qurilgan — FAKT", "form": "fakt"},
-   {"ar": "من أجملِ مدنِ العالمِ", "uz": "dunyoning eng go'zal shaharlaridan — FIKR", "form": "fikr"},
-   {"ar": "يبدو أنَّ...", "uz": "ko'rinishicha... — FIKR", "form": "fikr"},
-   {"ar": "يقعُ في...", "uz": "...da joylashgan — FAKT", "form": "fakt"}
+   {"ar": "في رأيي...", "uz": "mening fikrimcha", "form": "fikr"},
+   {"ar": "أتفقُ معكَ", "uz": "sizga qo'shilaman", "form": "qo'shilish"},
+   {"ar": "أحترمُ رأيَكَ لكنْ...", "uz": "hurmat qilaman, lekin...", "form": "e'tiroz"},
+   {"ar": "والدليلُ على ذلك...", "uz": "buning dalili...", "form": "dalil"}
   ],
   "common_mistakes_uz": [
-   "Chiroyli yozilgan fikrni fakt deb qabul qilish — «eng go'zal» isbotlanmaydi.",
-   "تُرَاث (meros) va تَارِيخ (tarix) ni bir xil deb o'ylash.",
-   "يبدو أنّ dan keyin xabarni unutish — to'liq gap talab qiladi."
+   "«أنتَ مخطئٌ!» (sen xatosun!) deyish — fikrga e'tiroz qiling, shaxsga emas.",
+   "Dalilsiz bahslashish — har fikrga لأنّ yoki الدليل qo'shing.",
+   "Faqat gapirish — munozarada TINGLASH yarim g'alaba."
   ]
  },
  "roots": [
   {
-   "root": "و ر ث",
-   "meaning_uz": "meros",
-   "uz_cognates": ["meros", "vorislar"],
+   "root": "ن ظ ر",
+   "meaning_uz": "qarash, nazar",
+   "uz_cognates": ["nazar", "munozara", "nazariya"],
    "derived": [
-    {"ar": "وَرِثَ", "uz": "meros oldi", "pattern": "فَعِلَ"},
-    {"ar": "تُرَاث", "uz": "madaniy meros", "pattern": "فُعَال"},
-    {"ar": "وَارِث", "uz": "voris", "pattern": "فَاعِل"}
+    {"ar": "مُنَاظَرَة", "uz": "munozara (qarashlar bahsi)", "pattern": "مُفَاعَلَة"},
+    {"ar": "وِجْهَةُ نَظَر", "uz": "nuqtai nazar", "pattern": ""},
+    {"ar": "نَظَرِيَّة", "uz": "nazariya", "pattern": ""}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "تُرَاث", "translit": "turāth", "uz": "madaniy meros (voris o'zagi)", "root": "و ر ث", "pattern": "فُعَال", "pos": "ot", "audio": "b1/turath.mp3", "example_ar": "نحافظُ على تراثِنا الغنيِّ.", "example_uz": "Boy merosimizni asraymiz.", "srs": true},
-  {"ar": "حَضَارَة", "translit": "ḥaḍāra", "uz": "sivilizatsiya, madaniyat taraqqiyoti", "root": "ح ض ر", "pattern": "فَعَالَة", "pos": "ot", "audio": "b1/hadara2.mp3", "example_ar": "حضارةُ ما وراءَ النهرِ عريقةٌ.", "example_uz": "Movarounnahr sivilizatsiyasi qadimiy.", "srs": true},
-  {"ar": "أَثَر", "translit": "athar", "uz": "yodgorlik, iz (ko'pligi: آثار — 'asar')", "root": "أ ث ر", "pattern": "فَعَل", "pos": "ot", "audio": "b1/athar.mp3", "example_ar": "آثارُ سمرقندَ تجذبُ السياحَ.", "example_uz": "Samarqand yodgorliklari sayyohlarni jalb qiladi.", "srs": true},
-  {"ar": "عَرِيق", "translit": "ʿarīq", "uz": "qadimiy, ildizi chuqur", "root": "ع ر ق", "pattern": "فَعِيل", "pos": "sifat", "audio": "b1/ariq.mp3", "example_ar": "مدينةٌ عريقةٌ في التاريخِ.", "example_uz": "Tarixda ildizi chuqur shahar.", "srs": true},
-  {"ar": "يَقَعُ", "translit": "yaqaʿu", "uz": "joylashgan (mavqe o'zagi) · u/erkak", "root": "و ق ع", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "b1/yaqau.mp3", "example_ar": "تقعُ سمرقندُ على طريقِ الحريرِ.", "example_uz": "Samarqand Ipak yo'lida joylashgan.", "srs": true},
-  {"ar": "اِشْتَهَرَ بِـ", "translit": "ishtahara bi-", "uz": "… bilan mashhur bo'ldi · u/erkak", "root": "ش ه ر", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ishtahara.mp3", "example_ar": "اشتهرتْ بخارى بعلمائِها.", "example_uz": "Buxoro ulamolari bilan mashhur.", "srs": true},
-  {"ar": "سَائِح", "translit": "sāʾiḥ", "uz": "sayyoh (o'zbekcha 'sayyoh' — shu o'zak!)", "root": "س ي ح", "pattern": "فَاعِل", "pos": "ot", "audio": "b1/saih.mp3", "example_ar": "يزورُها ملايينُ السياحِ سنويًّا.", "example_uz": "Uni yiliga millionlab sayyohlar ziyorat qiladi.", "srs": true},
-  {"ar": "أَعْتَقِدُ أَنَّ", "translit": "aʿtaqidu anna", "uz": "menimcha, ishonamanki (fikr belgisi!) · men", "root": "ع ق د", "pattern": "أَفْتَعِلُ", "pos": "fe'l", "audio": "b1/ataqidu.mp3", "example_ar": "أعتقدُ أنَّ السفرَ خيرُ معلمٍ.", "example_uz": "Menimcha, safar — eng yaxshi muallim.", "srs": true}
+  {"ar": "مُنَاظَرَة", "translit": "munāẓara", "uz": "munozara (o'zbekcha 'munozara' aynan shundan)", "root": "ن ظ ر", "pattern": "مُفَاعَلَة", "pos": "ot", "audio": "b1/munazara.mp3", "example_ar": "شاركتُ في مناظرةٍ طلابيةٍ.", "example_uz": "Talabalar munozarasida qatnashdim.", "srs": true},
+  {"ar": "وِجْهَةُ نَظَر", "translit": "wijhatu naẓar", "uz": "nuqtai nazar", "root": "ن ظ ر", "pattern": "", "pos": "ibora", "audio": "b1/wijhat_nazar.mp3", "example_ar": "لكلٍّ وجهةُ نظرٍ مختلفةٌ.", "example_uz": "Har kimning o'z nuqtai nazari bor.", "srs": true},
+  {"ar": "أَتَّفِقُ مَعَ", "translit": "attafiqu maʿa", "uz": "…ga qo'shilaman · men", "root": "و ف ق", "pattern": "أَفْتَعِلُ", "pos": "fe'l", "audio": "b1/attafiqu.mp3", "example_ar": "أتفقُ معكَ في هذهِ النقطةِ.", "example_uz": "Bu nuqtada sizga qo'shilaman.", "srs": true},
+  {"ar": "أَخْتَلِفُ مَعَ", "translit": "akhtalifu maʿa", "uz": "…dan farqli fikrdaman (ixtilof) · men", "root": "خ ل ف", "pattern": "أَفْتَعِلُ", "pos": "fe'l", "audio": "b1/akhtalifu.mp3", "example_ar": "أختلفُ معكَ باحترامٍ.", "example_uz": "Hurmat bilan sizga qo'shilmayman.", "srs": true},
+  {"ar": "دَلِيل", "translit": "dalīl", "uz": "dalil, isbot (o'zbekcha 'dalil' aynan shundan)", "root": "د ل ل", "pattern": "فَعِيل", "pos": "ot", "audio": "b1/dalil.mp3", "example_ar": "ما دليلُكَ على ذلك؟", "example_uz": "Bunga dalilingiz nima?", "srs": true},
+  {"ar": "مُحِقّ", "translit": "muḥiqq", "uz": "haq bo'lgan, to'g'ri aytgan", "root": "ح ق ق", "pattern": "مُفْعِل", "pos": "sifat", "audio": "b1/muhiqq.mp3", "example_ar": "ربما تكونُ محقًّا في هذا.", "example_uz": "Balki bunda haqdirsiz.", "srs": true},
+  {"ar": "مِنْ جِهَة... وَمِنْ جِهَةٍ أُخْرَى", "translit": "min jiha... wa-min jihatin ukhrā", "uz": "bir tomondan... boshqa tomondan", "root": "و ج ه", "pattern": "", "pos": "ibora", "audio": "b1/min_jiha.mp3", "example_ar": "من جهةٍ يوفّرُ الوقتَ، ومن جهةٍ أخرى يقللُ اللقاءَ.", "example_uz": "Bir tomondan vaqt tejaydi, boshqa tomondan muloqotni kamaytiradi.", "srs": true},
+  {"ar": "إِقْنَاع", "translit": "iqnāʿ", "uz": "ishontirish (qanoat o'zagi!)", "root": "ق ن ع", "pattern": "إِفْعَال", "pos": "ot", "audio": "b1/iqna.mp3", "example_ar": "فنُّ الإقناعِ يحتاجُ أدلةً.", "example_uz": "Ishontirish san'ati dalillar talab qiladi.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "تقعُ سمرقندُ في قلبِ طريقِ الحريرِ، وقد ذكرَها الرحّالةُ العربُ قبلَ أكثرَ من ألفِ عامٍ. اشتهرتِ المدينةُ بميدانِ ريجستان وقبةِ غورِ أميرَ، ويزورُها اليومَ ملايينُ السياحِ سنويًّا. وأعتقدُ أنها من أجملِ مدنِ العالمِ، فآثارُها العريقةُ تحكي قصةَ حضارةٍ عظيمةٍ لا تُنسى.",
+   "text_ar": "سالم: في رأيي، التعليمُ الإلكترونيُّ أفضلُ، لأنه يوفّرُ الوقتَ والمالَ. — كريم: أحترمُ رأيَكَ، لكني أختلفُ معكَ؛ فالتعليمُ الحضوريُّ يبني علاقاتٍ حقيقيةً، والدليلُ أنَّ أكثرَ الطلابِ يفهمونَ أفضلَ داخلَ الصفِّ. — سالم: ربما تكونُ محقًّا في نقطةِ العلاقاتِ، ومع ذلك أرى أنَّ المستقبلَ للتعليمِ المدمجِ: من جهةٍ مرونةُ الإنترنتِ، ومن جهةٍ أخرى دفءُ اللقاءِ.",
    "questions": [
-    {"q_uz": "Matndan 2 ta FAKT toping.", "a": "Ipak yo'lida joylashgani; arab sayyohlari 1000 yil oldin tilga olgani; millionlab sayyohlar kelishi"},
-    {"q_uz": "Matndan FIKRNI toping.", "a": "«Menimcha, u dunyoning eng go'zal shaharlaridan» (أعتقد أنها...)"},
-    {"q_uz": "«لا تُنسى» qanday shakl va ma'no?", "a": "Majhul muzori': «unutilmaydi»"}
+    {"q_uz": "Ikki tomonning pozitsiyalari qanday?", "a": "Salim — onlayn tarafdori, Karim — an'anaviy ta'lim tarafdori"},
+    {"q_uz": "Karim qanday odob formulasini ishlatdi?", "a": "أحترم رأيك لكني أختلف معك"},
+    {"q_uz": "Munozara qanday yechim bilan tugadi?", "a": "Aralash ta'lim (التعليم المدمج) — ikkalasining afzalligi"}
    ]
   },
   "listening": {
-   "audio": "b1/turath.mp3",
-   "transcript_ar": "تُرَاث",
+   "audio": "b1/munazara.mp3",
+   "transcript_ar": "مُنَاظَرَة",
    "questions": [
-    {"q_uz": "Eshitilgan so'z ma'nosi?", "a": "Madaniy meros"}
+    {"q_uz": "Eshitilgan so'z ma'nosi?", "a": "Munozara"}
    ]
   },
   "speaking": {
-   "task_uz": "Gid bo'ling: «Samarqand Ipak yo'lida joylashgan. Registon bilan mashhur. Menimcha, u juda go'zal» — arabcha ayting.",
-   "target_ar": ["تَقَعُ سَمَرْقَنْدُ عَلَى طَرِيقِ الحَرِيرِ", "اِشْتَهَرَتْ بِمَيْدَانِ رِيجِسْتَان", "أَعْتَقِدُ أَنَّهَا جَمِيلَةٌ جِدًّا"],
+   "task_uz": "O'zingiz bilan munozara qiling: «Onlayn ta'lim yaxshimi?» — avval BIR tomonni 3 gap bilan himoya qiling, keyin QARSHI tomonni. Har birida دليل keltiring.",
+   "target_ar": ["فِي رَأْيِي...", "أَحْتَرِمُ رَأْيَكَ لٰكِنْ...", "وَالدَّلِيلُ عَلَى ذٰلِكَ..."],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "O'z shahringiz haqida 4 gap yozing: 2 FAKT (joylashuvi, mashhurligi) va 2 FIKR (أعتقد أنّ bilan).",
+   "task_uz": "Mini-munozara dialogi yozing (4 replika): fikr → odobli e'tiroz + dalil → yon berish → umumiy xulosa.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "Qaysi biri FAKT?", "q_ar": "", "options": ["تقعُ سمرقندُ على طريقِ الحريرِ", "هي أجملُ مدينةٍ", "يبدو أنها ساحرةٌ", "أعتقدُ أنها رائعةٌ"], "answer": "تقعُ سمرقندُ على طريقِ الحريرِ", "explain_uz": "Joylashuv — isbotlanadigan fakt; qolganlari baho.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«أعتقدُ أنَّ...» nimaning belgisi?", "q_ar": "", "options": ["fikr (muallif qarashi)", "fakt", "buyruq", "savol"], "answer": "fikr (muallif qarashi)", "explain_uz": "«Menimcha» — shaxsiy qarash kiritadi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«اشتهرتْ بخارى بعلمائها» ma'nosi?", "q_ar": "", "options": ["Buxoro ulamolari bilan mashhur", "Buxoro olimlarni chaqirdi", "Buxoroda maktab ko'p", "Buxoro shahar emas"], "answer": "Buxoro ulamolari bilan mashhur", "explain_uz": "اشتهر بـ — «... bilan mashhur bo'lmoq».", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "madaniy meros", "q_ar": "", "options": [], "answer": "تُرَاث", "explain_uz": "تراث — avlodlarga o'tgan meros.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "sayyoh", "q_ar": "", "options": [], "answer": "سَائِح", "explain_uz": "سائح — sayyoh (siyohat o'zagi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«تُرَاث، وَارِث، مِيرَاث» qaysi o'zakdan?", "q_ar": "", "options": ["و ر ث", "ت ر ث", "و ر د"], "answer": "و ر ث", "explain_uz": "«و ر ث» — meros o'zagi.", "audio": "", "root": "و ر ث", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«آثَار» so'zining bu matndagi ma'nosi?", "q_ar": "", "options": ["tarixiy yodgorliklar", "kitob asarlari", "izlar (oyoq)", "ta'sirlar"], "answer": "tarixiy yodgorliklar", "explain_uz": "أثر ning ko'pligi — kontekstda yodgorliklar.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "Odobli e'tiroz qaysi?", "q_ar": "", "options": ["أحترمُ رأيَكَ، لكني أختلفُ معكَ", "أنتَ مخطئٌ تمامًا!", "كلامُكَ فارغٌ", "اسكتْ!"], "answer": "أحترمُ رأيَكَ، لكني أختلفُ معكَ", "explain_uz": "Fikrga e'tiroz — shaxsga hurmat bilan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Har da'vodan keyin nima kelishi kerak?", "q_ar": "", "options": ["dalil (لأنّ / والدليل)", "kulgu", "yangi mavzu", "sukut"], "answer": "dalil (لأنّ / والدليل)", "explain_uz": "Dalilsiz fikr — poydevorsiz uy.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«مِن جهةٍ... ومن جهةٍ أخرى» nima uchun?", "q_ar": "", "options": ["ikki tomonni solishtirish", "vaqt aytish", "salomlashish", "buyruq berish"], "answer": "ikki tomonni solishtirish", "explain_uz": "Muvozanatli tahlil iborasi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "dalil", "q_ar": "", "options": [], "answer": "دَلِيل", "explain_uz": "دليل — isbot; yo'l ko'rsatuvchi ham.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "nuqtai nazar", "q_ar": "", "options": [], "answer": "وِجْهَةُ نَظَر", "explain_uz": "Qarash yo'nalishi — nuqtai nazar.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«مُنَاظَرَة، نَظَر، نَظَرِيَّة» qaysi o'zakdan?", "q_ar": "", "options": ["ن ظ ر", "ن ذ ر", "ن ص ر"], "answer": "ن ظ ر", "explain_uz": "«ن ظ ر» — nazar o'zagi: munozara — qarashlar bahsi.", "audio": "", "root": "ن ظ ر", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "أَتَّفِقُ va أَخْتَلِفُ qaysi bobda?", "q_ar": "", "options": ["VIII (افتعل)", "II", "IV", "X"], "answer": "VIII (افتعل)", "explain_uz": "اتّفق (kelishmoq) / اختلف (farqlanmoq) — VIII bob.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "و ر ث", "back": "meros o'zagi (voris)", "deck": "msa"},
-  {"type": "word", "front": "تُرَاث", "back": "madaniy meros", "deck": "msa"},
-  {"type": "word", "front": "حَضَارَة", "back": "sivilizatsiya", "deck": "msa"},
-  {"type": "word", "front": "أَثَر / آثَار", "back": "yodgorlik(lar)", "deck": "msa"},
-  {"type": "word", "front": "عَرِيق", "back": "qadimiy", "deck": "msa"},
-  {"type": "word", "front": "يَقَعُ", "back": "joylashgan · u/erkak", "deck": "msa"},
-  {"type": "word", "front": "اِشْتَهَرَ بِـ", "back": "… bilan mashhur · u/erkak", "deck": "msa"},
-  {"type": "word", "front": "سَائِح", "back": "sayyoh", "deck": "msa"},
-  {"type": "word", "front": "أَعْتَقِدُ أَنَّ", "back": "menimcha (fikr) · men", "deck": "msa"}
+  {"type": "root", "front": "ن ظ ر", "back": "nazar o'zagi (munozara)", "deck": "msa"},
+  {"type": "word", "front": "مُنَاظَرَة", "back": "munozara", "deck": "msa"},
+  {"type": "word", "front": "وِجْهَةُ نَظَر", "back": "nuqtai nazar", "deck": "msa"},
+  {"type": "word", "front": "أَتَّفِقُ مَعَ", "back": "qo'shilaman · men", "deck": "msa"},
+  {"type": "word", "front": "أَخْتَلِفُ مَعَ", "back": "qo'shilmayman · men", "deck": "msa"},
+  {"type": "word", "front": "دَلِيل", "back": "dalil", "deck": "msa"},
+  {"type": "word", "front": "مُحِقّ", "back": "haq bo'lgan", "deck": "msa"},
+  {"type": "word", "front": "إِقْنَاع", "back": "ishontirish", "deck": "msa"}
  ]
 }

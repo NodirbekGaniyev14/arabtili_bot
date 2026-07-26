@@ -10,6 +10,7 @@ import Rating from "./pages/Rating";
 import Review from "./pages/Review";
 import RootLab from "./pages/RootLab";
 import Exam from "./pages/Exam";
+import Checkpoint from "./pages/Checkpoint";
 import WeakPractice from "./pages/WeakPractice";
 import RolePlay from "./pages/RolePlay";
 import LessonPlayerV2 from "./pages/v2/LessonPlayerV2";
@@ -38,6 +39,7 @@ export default function App() {
   });
   const [showRootLab, setShowRootLab] = useState(false);
   const [showExam, setShowExam] = useState(false);
+  const [checkpointPct, setCheckpointPct] = useState<number | null>(null);
   const [showWeak, setShowWeak] = useState(false);
   const [showRolePlay, setShowRolePlay] = useState(false);
 
@@ -123,7 +125,11 @@ export default function App() {
           />
         )}
         {tab === "lessons" && (
-          <Lessons key={stats.lessons} onOpen={setActiveLessonV2} />
+          <Lessons
+            key={stats.lessons}
+            onOpen={setActiveLessonV2}
+            onOpenCheckpoint={setCheckpointPct}
+          />
         )}
         {tab === "review" && <Review onDone={refreshMe} />}
         {tab === "rating" && <Rating />}
@@ -140,6 +146,16 @@ export default function App() {
         <Exam
           onClose={() => {
             setShowExam(false);
+            api.getMe().then(setMe).catch(() => {});
+          }}
+        />
+      )}
+
+      {checkpointPct !== null && (
+        <Checkpoint
+          percent={checkpointPct}
+          onClose={() => {
+            setCheckpointPct(null);
             api.getMe().then(setMe).catch(() => {});
           }}
         />

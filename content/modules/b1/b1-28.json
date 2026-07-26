@@ -1,108 +1,96 @@
 {
  "id": "b1-28",
  "level": "B1",
- "module": "quran-hadith",
+ "module": "skills",
  "order": 28,
- "title_uz": "Eng ko'p uchraydigan Qur'oniy so'zlar",
- "title_ar": "أَكْثَرُ كَلِمَاتِ القُرْآنِ تَكْرَارًا",
- "can_do_uz": "Qur'onda eng ko'p takrorlanadigan so'zlarni bilaman — bu matnning katta qismini ochadi.",
+ "title_uz": "O'qish: yangilik 2 (texnologiya)",
+ "title_ar": "قِرَاءَة: خَبَرٌ تِقْنِيّ",
+ "can_do_uz": "Texnologiya yangiligini o'qib, yangi atamalarni kontekstdan chiqara olaman.",
  "duration_min": 30,
  "prerequisites": ["b1-27"],
- "harakat_level": "full",
- "hook_uz": "Ajoyib fakt: Qur'onda eng ko'p takrorlanadigan 100 ta so'z matnning yarmidan ko'pini tashkil qiladi! اللّٰه، رَبّ، يَوْم، أَرْض، سَمَاء... Bugun ana shu «oltin ro'yxat»ning eng muhimlarini o'rganamiz — har biri ochqich!",
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Texnologiya yangiliklari — eng oson janr! Nega? Chunki xalqaro so'zlar ko'p (تطبيق، ذكاء اصطناعي، روبوت) va tuzilishi bir xil: «X kompaniyasi Y ni taqdim etdi». Bugun sun'iy intellekt haqidagi xabarni o'qiymiz — mavzu ham qiziq!",
  "grammar": {
-  "point_ar": "كَلِمَاتٌ مُتَكَرِّرَة",
-  "explanation_uz": "Ko'p uchraydigan so'zlarning grammatik sirlari: (1) الَّذِينَ (…ganlar) — Qur'onda minglab marta: الَّذِينَ آمَنُوا (iymon keltirganlar) — siz buni b1-02 da o'rgangansiz! (2) Juftliklar: السَّمَاوَات وَالأَرْض (osmonlar va yer), الدُّنْيَا وَالآخِرَة (dunyo va oxirat). (3) Ismlar ko'pincha idofada: يَوْمُ الدِّينِ (din kuni), رَبُّ العَالَمِينَ. Bu so'zlarni bilish — Qur'on sahifasini ochganda tanish yuzlarni ko'rishdek!",
+  "point_ar": "أَخْبَارُ التِّقْنِيَة",
+  "explanation_uz": "Texno-xabar qoliplari: (1) أَطْلَقَتْ شَرِكَةُ... (kompaniya ishga tushirdi/taqdim etdi), أَعْلَنَتْ عَنْ... (haqida e'lon qildi), كَشَفَتْ عَنْ... (ochib berdi/namoyish qildi). (2) Maqsad: يهدفُ إلى... (…ni maqsad qiladi), يساعدُ على... (…ga yordam beradi). (3) YANGI ATAMALAR ko'pincha izoh bilan keladi: الذكاءُ الاصطناعيُّ (AI) — o'qing va yodda tuting: birinchi eslatilganda izohlanadi.",
   "table": [
-   {"ar": "الَّذِينَ آمَنُوا", "uz": "iymon keltirganlar", "form": "eng ko'p qolip"},
-   {"ar": "السَّمَاوَاتُ وَالأَرْضُ", "uz": "osmonlar va yer", "form": "juftlik"},
-   {"ar": "الدُّنْيَا وَالآخِرَةُ", "uz": "dunyo va oxirat", "form": "juftlik"},
-   {"ar": "يَوْمُ القِيَامَةِ", "uz": "qiyomat kuni", "form": "idofa"}
+   {"ar": "أطلقتْ شركةُ...", "uz": "kompaniya taqdim etdi", "form": "qolip"},
+   {"ar": "أعلنتْ عن...", "uz": "haqida e'lon qildi", "form": "qolip"},
+   {"ar": "يهدفُ إلى...", "uz": "…ni maqsad qiladi", "form": "qolip"},
+   {"ar": "الذَّكَاءُ الاِصْطِنَاعِيّ", "uz": "sun'iy intellekt (AI)", "form": "atama"}
   ],
   "common_mistakes_uz": [
-   "دُنْيَا ni faqat «pul-mol» deb tushunish — u «yaqin hayot» degani.",
-   "آمَنَ (iymon keltirdi) va أَمِنَ (omon bo'ldi) — bog'liq, lekin farqli.",
-   "نَاس (odamlar) ni birlik deb o'ylash — u jamlovchi ko'plik."
+   "ذَكَاء (aql-zakovat) va ذِكْر (zikr) o'zaklarini adashtirish — birinchisi ذ ك و.",
+   "اصطناعي ni «sanoat» deb tarjima qilish — u «sun'iy» (yasama).",
+   "Ingliz atamasini bilib turib arabchasidan qochish — ikkalasini bog'lang."
   ]
  },
  "roots": [
   {
-   "root": "أ م ن",
-   "meaning_uz": "iymon, xavfsizlik",
-   "uz_cognates": ["iymon", "omonat", "omon", "mo'min"],
+   "root": "ذ ك و",
+   "meaning_uz": "zakovat, o'tkirlik",
+   "uz_cognates": ["zakovat", "zakiy (zehnli)"],
    "derived": [
-    {"ar": "آمَنَ", "uz": "iymon keltirdi", "pattern": "أَفْعَلَ"},
-    {"ar": "إِيمَان", "uz": "iymon", "pattern": "إِفْعَال"},
-    {"ar": "مُؤْمِن", "uz": "mo'min", "pattern": "مُفْعِل"},
-    {"ar": "أَمَانَة", "uz": "omonat", "pattern": "فَعَالَة"}
+    {"ar": "ذَكَاء", "uz": "aql, zakovat", "pattern": "فَعَال"},
+    {"ar": "ذَكِيّ", "uz": "aqlli, zakiy", "pattern": "فَعِيل"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "رَبّ", "translit": "rabb", "uz": "Rob, Parvardigor (tarbiyalovchi Ega)", "root": "ر ب ب", "pattern": "", "pos": "ot", "audio": "b1/rabb.mp3", "example_ar": "رَبُّنَا اللهُ.", "example_uz": "Robbimiz — Alloh.", "srs": true},
-  {"ar": "يَوْم", "translit": "yawm", "uz": "kun (Qur'onda 365 marta!)", "root": "ي و م", "pattern": "فَعْل", "pos": "ot", "audio": "b1/yawm.mp3", "example_ar": "يَوْمُ القيامةِ حقٌّ.", "example_uz": "Qiyomat kuni haqdir.", "srs": true},
-  {"ar": "أَرْض", "translit": "arḍ", "uz": "yer (o'zbekcha 'arz' — 'yer yuzi')", "root": "أ ر ض", "pattern": "فَعْل", "pos": "ot", "audio": "b1/ard.mp3", "example_ar": "خلقَ اللهُ السماواتِ والأرضَ.", "example_uz": "Alloh osmonlar va yerni yaratdi.", "srs": true},
-  {"ar": "سَمَاء", "translit": "samāʾ", "uz": "osmon (ko'pligi: سماوات — 'samo')", "root": "س م و", "pattern": "فَعَال", "pos": "ot", "audio": "b1/samaa.mp3", "example_ar": "في السماءِ آياتٌ للمؤمنينَ.", "example_uz": "Osmonda mo'minlar uchun belgilar bor.", "srs": true},
-  {"ar": "نَاس", "translit": "nās", "uz": "odamlar (o'zbekcha 'nos' emas — 'xaloyiq')", "root": "أ ن س", "pattern": "", "pos": "ot", "audio": "b1/nas.mp3", "example_ar": "قُلْ أعوذُ بربِّ الناسِ.", "example_uz": "Ayt: odamlar Robbiga sig'inaman.", "srs": true},
-  {"ar": "آمَنَ", "translit": "āmana", "uz": "iymon keltirdi · u/erkak", "root": "أ م ن", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/amana.mp3", "example_ar": "الذينَ آمنوا وعملوا الصالحاتِ.", "example_uz": "Iymon keltirib, solih amallar qilganlar.", "srs": true},
-  {"ar": "عَمِلَ الصَّالِحَات", "translit": "ʿamila ṣ-ṣāliḥāt", "uz": "solih (yaxshi) amallar qildi", "root": "ص ل ح", "pattern": "", "pos": "ibora", "audio": "b1/salihat.mp3", "example_ar": "منْ آمنَ وعملَ صالحًا فلهُ أجرٌ.", "example_uz": "Kim iymon keltirib yaxshi ish qilsa — ajri bor.", "srs": true},
-  {"ar": "دُنْيَا", "translit": "dunyā", "uz": "dunyo — yaqin hayot (o'zbekcha 'dunyo')", "root": "د ن و", "pattern": "فُعْلَى", "pos": "ot", "audio": "b1/dunya.mp3", "example_ar": "الدنيا دارُ عملٍ.", "example_uz": "Dunyo — amal qilish joyi.", "srs": true},
-  {"ar": "آخِرَة", "translit": "ākhira", "uz": "oxirat (o'zbekcha 'oxirat' aynan shundan)", "root": "أ خ ر", "pattern": "فَاعِلَة", "pos": "ot", "audio": "b1/akhira.mp3", "example_ar": "الآخرةُ خيرٌ وأبقى.", "example_uz": "Oxirat yaxshiroq va boqiyroq.", "srs": true},
-  {"ar": "جَنَّة", "translit": "janna", "uz": "jannat; bog' (o'zbekcha 'jannat')", "root": "ج ن ن", "pattern": "فَعْلَة", "pos": "ot", "audio": "b1/janna.mp3", "example_ar": "الجنةُ تحتَ أقدامِ الأمهاتِ.", "example_uz": "Jannat onalar oyog'i ostidadir.", "srs": true},
-  {"ar": "قَلْب", "translit": "qalb", "uz": "qalb, yurak (o'zbekcha 'qalb')", "root": "ق ل ب", "pattern": "فَعْل", "pos": "ot", "audio": "b1/qalb.mp3", "example_ar": "في القلوبِ إيمانٌ ونورٌ.", "example_uz": "Qalblarda iymon va nur bor.", "srs": true},
-  {"ar": "نُور", "translit": "nūr", "uz": "nur, yorug'lik (o'zbekcha 'nur')", "root": "ن و ر", "pattern": "فُعْل", "pos": "ot", "audio": "b1/nur.mp3", "example_ar": "العلمُ نورٌ.", "example_uz": "Ilm — nur.", "srs": true},
-  {"ar": "صِرَاط مُسْتَقِيم", "translit": "ṣirāṭ mustaqīm", "uz": "to'g'ri yo'l (mustaqim — 'tik turgan')", "root": "ق و م", "pattern": "", "pos": "ibora", "audio": "b1/sirat.mp3", "example_ar": "اهدنا الصراطَ المستقيمَ.", "example_uz": "Bizni to'g'ri yo'lga hidoyat qil.", "srs": true},
-  {"ar": "أَجْر", "translit": "ajr", "uz": "ajr, mukofot (o'zbekcha 'ajr')", "root": "أ ج ر", "pattern": "فَعْل", "pos": "ot", "audio": "b1/ajr.mp3", "example_ar": "لهم أجرُهم عندَ ربِّهم.", "example_uz": "Ular uchun Robbilari huzurida ajrlari bor.", "srs": true}
+  {"ar": "ذَكَاء اِصْطِنَاعِيّ", "translit": "dhakāʾ iṣṭināʿī", "uz": "sun'iy intellekt (AI)", "root": "ذ ك و", "pattern": "", "pos": "ibora", "audio": "b1/dhaka_istinai.mp3", "example_ar": "الذكاءُ الاصطناعيُّ يغيّرُ العالمَ.", "example_uz": "Sun'iy intellekt dunyoni o'zgartirmoqda.", "srs": true},
+  {"ar": "أَطْلَقَ", "translit": "aṭlaqa", "uz": "ishga tushirdi, taqdim etdi (IV bob) · u/erkak", "root": "ط ل ق", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/atlaqa.mp3", "example_ar": "أطلقتِ الشركةُ تطبيقًا جديدًا.", "example_uz": "Kompaniya yangi ilova taqdim etdi.", "srs": true},
+  {"ar": "كَشَفَ عَنْ", "translit": "kashafa ʿan", "uz": "ochib berdi, namoyish qildi (o'zbekcha 'kashf') · u/erkak", "root": "ك ش ف", "pattern": "فَعَلَ", "pos": "fe'l", "audio": "b1/kashafa.mp3", "example_ar": "كشفتْ عن هاتفِها الجديدِ.", "example_uz": "Yangi telefonini namoyish qildi.", "srs": true},
+  {"ar": "مُسْتَخْدِم", "translit": "mustakhdim", "uz": "foydalanuvchi (X bob ism fo'ili)", "root": "خ د م", "pattern": "مُسْتَفْعِل", "pos": "ot", "audio": "b1/mustakhdim.mp3", "example_ar": "ملايينُ المستخدمينَ حولَ العالمِ.", "example_uz": "Dunyo bo'ylab millionlab foydalanuvchilar.", "srs": true},
+  {"ar": "مِيزَة", "translit": "mīza", "uz": "xususiyat, afzallik (imtiyoz o'zagi)", "root": "م ي ز", "pattern": "فِعْلَة", "pos": "ot", "audio": "b1/miza.mp3", "example_ar": "التحديثُ يضيفُ ميزاتٍ جديدةً.", "example_uz": "Yangilanish yangi xususiyatlar qo'shadi.", "srs": true},
+  {"ar": "تَحْدِيث", "translit": "taḥdīth", "uz": "yangilanish, update", "root": "ح د ث", "pattern": "تَفْعِيل", "pos": "ot", "audio": "b1/tahdith.mp3", "example_ar": "نزّلِ التحديثَ الأخيرَ.", "example_uz": "So'nggi yangilanishni yuklab oling.", "srs": true},
+  {"ar": "مَجَّانِيّ", "translit": "majjānī", "uz": "bepul, tekin", "root": "م ج ن", "pattern": "", "pos": "sifat", "audio": "b1/majjani.mp3", "example_ar": "التطبيقُ مجانيٌّ بالكاملِ.", "example_uz": "Ilova butunlay bepul.", "srs": true},
+  {"ar": "أَمَان البَيَانَات", "translit": "amānu l-bayānāt", "uz": "ma'lumotlar xavfsizligi", "root": "أ م ن", "pattern": "", "pos": "ibora", "audio": "b1/aman_bayanat.mp3", "example_ar": "أمانُ البياناتِ أولويةٌ.", "example_uz": "Ma'lumotlar xavfsizligi — ustuvor.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "إِنَّ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ لَهُمْ أَجْرُهُمْ عِنْدَ رَبِّهِمْ. — bu qolip Qur'onda ko'p keladi. Endi tahlil: إنّ (ta'kid) + الذين (…ganlar) + آمنوا (iymon keltirdilar) + عملوا الصالحات (solih amallar qildilar) + لهم أجرهم (ular uchun ajrlari bor) + عند ربهم (Robbilari huzurida).",
+   "text_ar": "أطلقتْ شركةٌ تقنيةٌ كبرى أمسِ تطبيقًا جديدًا يعتمدُ على الذكاءِ الاصطناعيِّ لتعليمِ اللغاتِ. وكشفتِ الشركةُ عن ميزاتٍ عدةٍ، منها محادثةٌ صوتيةٌ مع معلمٍ افتراضيٍّ يصححُ النطقَ فورًا. وأكّدتْ أنَّ التطبيقَ مجانيٌّ في نسختِهِ الأولى، وأنَّ أمانَ بياناتِ المستخدمينَ أولويةٌ قصوى. ويتوقعُ الخبراءُ أنْ يصلَ عددُ المستخدمينَ إلى عشرةِ ملايينَ خلالَ عامٍ.",
    "questions": [
-    {"q_uz": "الَّذِينَ bu yerda kimlarni bildiradi?", "a": "Iymon keltirgan va solih amal qilganlarni"},
-    {"q_uz": "«عِنْدَ رَبِّهِمْ» qanday tuzilma?", "a": "Joy zarfi + idofa (Robbilari huzurida)"},
-    {"q_uz": "Ushbu qolipdagi va'da nima?", "a": "Ularga ajr (mukofot) borligi"}
+    {"q_uz": "Nima taqdim etildi?", "a": "AI asosidagi til o'rgatuvchi ilova"},
+    {"q_uz": "Asosiy xususiyati?", "a": "Talaffuzni darhol to'g'irlaydigan virtual o'qituvchi bilan ovozli suhbat"},
+    {"q_uz": "Narxi va xavfsizlik haqida nima deyilgan?", "a": "Birinchi versiyasi bepul; ma'lumotlar xavfsizligi — ustuvor"},
+    {"q_uz": "Ekspertlar prognozi?", "a": "Bir yilda 10 million foydalanuvchi"}
    ]
   },
   "listening": {
-   "audio": "b1/nur.mp3",
-   "transcript_ar": "نُور",
+   "audio": "b1/tahdith.mp3",
+   "transcript_ar": "تَحْدِيث",
    "questions": [
-    {"q_uz": "Eshitilgan so'z ma'nosi?", "a": "Nur, yorug'lik"}
+    {"q_uz": "Eshitilgan atama ma'nosi?", "a": "Yangilanish (update)"}
    ]
   },
   "speaking": {
-   "task_uz": "Juftliklarni ayting: dunyo–oxirat, osmon–yer, jannat, qalb–nur. Har birining o'zbekcha ma'nosini qo'shib ayting.",
-   "target_ar": ["الدُّنْيَا وَالآخِرَة", "السَّمَاء وَالأَرْض", "قَلْبٌ فِيهِ نُورٌ"],
+   "task_uz": "Texno-taqdimotchi bo'ling: «Kompaniya yangi ilova taqdim etdi. Ilova bepul. U talaffuzni to'g'irlaydi» — arabcha ayting.",
+   "target_ar": ["أَطْلَقَتِ الشَّرِكَةُ تَطْبِيقًا جَدِيدًا", "التَّطْبِيقُ مَجَّانِيٌّ", "يُصَحِّحُ النُّطْقَ"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Bugungi so'zlardan 5 tasini tanlab, har biri bilan bittadan sodda gap yozing.",
+   "task_uz": "O'zingiz orzu qilgan ilova haqida mini-yangilik yozing (3-4 gap): nomi, vazifasi, asosiy xususiyati.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "«الَّذِينَ آمَنُوا» ma'nosi?", "q_ar": "", "options": ["iymon keltirganlar", "iymon keltiringlar!", "iymon keltiradi", "iymonlilar emas"], "answer": "iymon keltirganlar", "explain_uz": "الذين + o'tgan fe'l — «…ganlar» (b1-02 qoidasi!).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "دُنْيَا so'zining asl ma'nosi?", "q_ar": "", "options": ["yaqin (hayot)", "pul-mol", "past", "keng"], "answer": "yaqin (hayot)", "explain_uz": "دنيا — «eng yaqin» (د ن و o'zagi): yaqin hayot.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«يَوْمُ القِيَامَةِ» qanday tuzilma?", "q_ar": "", "options": ["idofa (qiyomat kuni)", "sifat", "fe'l gap", "hol"], "answer": "idofa (qiyomat kuni)", "explain_uz": "yawm + al-qiyama — egalik birikmasi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "العِلْمُ نُورٌ", "options": [], "answer": "ilm nur", "explain_uz": "Mashhur hikmat: Ilm — nur.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«إِيمَان، مُؤْمِن، أَمَانَة» qaysi o'zakdan?", "q_ar": "", "options": ["أ م ن", "أ م ر", "م ن ن"], "answer": "أ م ن", "explain_uz": "«أ م ن» — iymon/omonlik o'zagi: mo'min, omonat.", "audio": "", "root": "أ م ن", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "oxirat", "q_ar": "", "options": [], "answer": "آخِرَة", "explain_uz": "آخرة — oxirat (keyingi hayot).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "qalb, yurak", "q_ar": "", "options": [], "answer": "قَلْب", "explain_uz": "قلب — qalb.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«صِرَاط مُسْتَقِيم» ma'nosi?", "q_ar": "", "options": ["to'g'ri yo'l", "keng ko'cha", "uzun safar", "qiyin yo'l"], "answer": "to'g'ri yo'l", "explain_uz": "Fotihada so'raladigan — to'g'ri yo'l.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "«الذكاء الاصطناعي» ma'nosi?", "q_ar": "", "options": ["sun'iy intellekt", "sanoat aqli", "tabiiy fan", "kompyuter o'yini"], "answer": "sun'iy intellekt", "explain_uz": "ذكاء (aql) + اصطناعي (sun'iy) = AI.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«Kompaniya yangi ilova taqdim etdi» qaysi?", "q_ar": "", "options": ["أطلقتِ الشركةُ تطبيقًا جديدًا", "طلقتِ الشركةُ تطبيقًا", "انطلقتِ الشركةُ تطبيقًا", "أطلقَ التطبيقُ شركةً"], "answer": "أطلقتِ الشركةُ تطبيقًا جديدًا", "explain_uz": "أطلق (IV bob) — ishga tushirmoq.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "مُسْتَخْدِم qaysi bobning ism fo'ili?", "q_ar": "", "options": ["X (استخدم — foydalanmoq)", "II", "IV", "VIII"], "answer": "X (استخدم — foydalanmoq)", "explain_uz": "استخدم → مستخدِم (foydalanuvchi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "bepul", "q_ar": "", "options": [], "answer": "مَجَّانِيّ", "explain_uz": "مجاني — bepul.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "yangilanish (update)", "q_ar": "", "options": [], "answer": "تَحْدِيث", "explain_uz": "تحديث — yangilash.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«ذَكَاء، ذَكِيّ» qaysi o'zakdan?", "q_ar": "", "options": ["ذ ك و", "ذ ك ر", "ز ك و"], "answer": "ذ ك و", "explain_uz": "«ذ ك و» — zakovat o'zagi.", "audio": "", "root": "ذ ك و", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«يُتوقَّعُ أنْ يصلَ...» qanday qurilma?", "q_ar": "", "options": ["majhul + أنْ mansub (kutilmoqda)", "amr", "shart", "istisno"], "answer": "majhul + أنْ mansub (kutilmoqda)", "explain_uz": "Gazeta prognozi: yutavaqqa'u an — kutilmoqda.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "أ م ن", "back": "iymon o'zagi (mo'min, omonat)", "deck": "msa"},
-  {"type": "word", "front": "رَبّ", "back": "Rob, Parvardigor", "deck": "msa"},
-  {"type": "word", "front": "أَرْض", "back": "yer", "deck": "msa"},
-  {"type": "word", "front": "سَمَاء", "back": "osmon (samo)", "deck": "msa"},
-  {"type": "word", "front": "نَاس", "back": "odamlar", "deck": "msa"},
-  {"type": "word", "front": "آمَنَ", "back": "iymon keltirdi · u/erkak", "deck": "msa"},
-  {"type": "word", "front": "دُنْيَا", "back": "dunyo (yaqin hayot)", "deck": "msa"},
-  {"type": "word", "front": "آخِرَة", "back": "oxirat", "deck": "msa"},
-  {"type": "word", "front": "جَنَّة", "back": "jannat", "deck": "msa"},
-  {"type": "word", "front": "قَلْب", "back": "qalb", "deck": "msa"},
-  {"type": "word", "front": "نُور", "back": "nur", "deck": "msa"},
-  {"type": "word", "front": "أَجْر", "back": "ajr, mukofot", "deck": "msa"}
+  {"type": "root", "front": "ذ ك و", "back": "zakovat o'zagi", "deck": "msa"},
+  {"type": "word", "front": "ذَكَاء اِصْطِنَاعِيّ", "back": "sun'iy intellekt", "deck": "msa"},
+  {"type": "word", "front": "أَطْلَقَ", "back": "taqdim etdi, ishga tushirdi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "كَشَفَ عَنْ", "back": "namoyish qildi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "مُسْتَخْدِم", "back": "foydalanuvchi", "deck": "msa"},
+  {"type": "word", "front": "مِيزَة", "back": "xususiyat", "deck": "msa"},
+  {"type": "word", "front": "تَحْدِيث", "back": "yangilanish", "deck": "msa"},
+  {"type": "word", "front": "مَجَّانِيّ", "back": "bepul", "deck": "msa"}
  ]
 }

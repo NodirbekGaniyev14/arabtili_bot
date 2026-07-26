@@ -10,6 +10,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from db.models import Certificate, ExamAttempt, Plan, User, XpLog
 from db.session import get_session
+from services import checkpoint as checkpoint_svc
 from services import exam as exam_svc
 from services.certificate import issue_certificate
 from services.telegram_auth import get_current_user
@@ -17,6 +18,7 @@ from services.telegram_auth import get_current_user
 router = APIRouter()
 
 PASS_XP = 50
+MINI_PASS_XP = 15  # mini-imtihondan o'tgani uchun
 
 
 async def _user_level(session: AsyncSession, user_id: int) -> str:
@@ -218,6 +220,162 @@ async def exam_submit(
         "xp_earned": PASS_XP if result["passed"] else 0,
         "certificate": cert_data,
         "promoted_to": promoted_to,
+    }
+
+
+# ─────────────────── Mini-imtihonlar (25% / 50% / 75%) ───────────────────
+
+
+@router.get("/api/checkpoint/info")
+async def checkpoint_info(
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Daraja bo'yicha mini-imtihonlar holati."""
+    level = await _user_level(session, user.id)
+    done, total = await exam_svc.level_progress(session, user.id, level)
+
+    passed_rows = (
+        await session.execute(
+            select(ExamAttempt.checkpoint, ExamAttempt.total_score, ExamAttempt.passed)
+            .where(
+                ExamAttempt.user_id == user.id,
+                ExamAttempt.level == level,
+                ExamAttempt.kind == "mini",
+                ExamAttempt.finished_at.isnot(None),
+            )
+            .order_by(ExamAttempt.id)
+        )
+    ).all()
+    best: dict[int, dict] = {}
+    for cp, score, ok in passed_rows:
+        cur = best.get(cp)
+        if cur is None or score > cur["score"]:
+            best[cp] = {"score": score, "passed": bool(ok)}
+
+    items = []
+    for cp in checkpoint_svc.checkpoints_for(level):
+        rec = best.get(cp["percent"])
+        items.append(
+            {
+                "percent": cp["percent"],
+                "need": cp["need"],
+                "unlocked": done >= cp["need"],
+                "attempted": rec is not None,
+                "passed": bool(rec and rec["passed"]),
+                "best_score": rec["score"] if rec else None,
+            }
+        )
+
+    # Hozir topshirish mumkin bo'lgan birinchi mini-imtihon (o'tilmagani)
+    due = next(
+        (i["percent"] for i in items if i["unlocked"] and not i["passed"]), None
+    )
+    return {
+        "level": level,
+        "lessons_done": done,
+        "lessons_total": total,
+        "pass_score": checkpoint_svc.PASS,
+        "checkpoints": items,
+        "due": due,
+    }
+
+
+@router.post("/api/checkpoint/start")
+async def checkpoint_start(
+    percent: int,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    level = await _user_level(session, user.id)
+    cp = next(
+        (c for c in checkpoint_svc.checkpoints_for(level) if c["percent"] == percent),
+        None,
+    )
+    if cp is None:
+        raise HTTPException(status_code=404, detail="Bunday mini-imtihon yo'q")
+
+    done, _ = await exam_svc.level_progress(session, user.id, level)
+    if done < cp["need"]:
+        raise HTTPException(
+            status_code=403,
+            detail=f"Mini-imtihon uchun {cp['need']} ta dars kerak — hozir {done} ta",
+        )
+
+    mini = checkpoint_svc.build_mini(level, percent)
+    if not mini:
+        raise HTTPException(status_code=404, detail="Savol banki bo'sh")
+
+    attempt = ExamAttempt(
+        user_id=user.id,
+        level=level,
+        kind="mini",
+        checkpoint=percent,
+        questions_json=json.dumps(mini, ensure_ascii=False),
+    )
+    session.add(attempt)
+    await session.commit()
+    await session.refresh(attempt)
+    return {"attempt_id": attempt.id, **mini}
+
+
+class CheckpointSubmit(BaseModel):
+    attempt_id: int
+    correct: int = Field(ge=0)
+    total: int = Field(ge=1)
+    wrong_words: list[str] = Field(default_factory=list)
+
+
+@router.post("/api/checkpoint/submit")
+async def checkpoint_submit(
+    body: CheckpointSubmit,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    attempt = (
+        await session.execute(
+            select(ExamAttempt).where(
+                ExamAttempt.id == body.attempt_id,
+                ExamAttempt.user_id == user.id,
+                ExamAttempt.kind == "mini",
+            )
+        )
+    ).scalar_one_or_none()
+    if attempt is None:
+        raise HTTPException(status_code=404, detail="Urinish topilmadi")
+    if attempt.finished_at is not None:
+        raise HTTPException(status_code=409, detail="Bu urinish yakunlangan")
+
+    result = checkpoint_svc.grade(body.correct, body.total)
+
+    attempt.finished_at = exam_svc._now()
+    attempt.total_score = result["score"]
+    attempt.passed = 1 if result["passed"] else 0
+    session.add(attempt)
+
+    xp = MINI_PASS_XP if result["passed"] else 0
+    if xp:
+        session.add(
+            XpLog(
+                user_id=user.id,
+                amount=xp,
+                source=f"checkpoint:{attempt.level}:{attempt.checkpoint}",
+            )
+        )
+    await session.commit()
+
+    # Xato so'zlar takrorga qaytadi (qulf yo'q — faqat mustahkamlash)
+    from services.srs import reset_words
+
+    reset_n = await reset_words(session, user.id, body.wrong_words)
+
+    return {
+        **result,
+        "level": attempt.level,
+        "percent": attempt.checkpoint,
+        "xp_earned": xp,
+        "srs_reset": reset_n,
+        "locked": False,
     }
 
 

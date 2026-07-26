@@ -1,103 +1,97 @@
 {
  "id": "b1-34",
  "level": "B1",
- "module": "quran-hadith",
+ "module": "skills",
  "order": 34,
- "title_uz": "Diniy atamalar lug'ati",
- "title_ar": "المُصْطَلَحَاتُ الدِّينِيَّة",
- "can_do_uz": "Asosiy diniy atamalarni arabcha asli bilan bilaman va diniy matnlarda taniyman.",
+ "title_uz": "Yozish: rasmiy xat",
+ "title_ar": "كِتَابَة: خِطَابٌ رَسْمِيّ",
+ "can_do_uz": "Rasmiy ariza yoki murojaat xatini to'g'ri tuzilishda yoza olaman.",
  "duration_min": 30,
  "prerequisites": ["b1-33"],
- "harakat_level": "full",
- "hook_uz": "Iymon, ihson, taqvo, farz, sunnat, halol, harom... Bu so'zlarni har kuni ishlatasiz — endi ularning arab tilidagi ASL shaklini, o'zagini va aniq ma'nosini bilib oling. Modul yakuni — atamalar xazinasi!",
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "A2 da do'stga xat yozgandik. B1 esa JIDDIY daraja: ishga ariza, universitetga murojaat, rasmiy so'rov. Rasmiy xatning temir qolipi bor — uni bilsangiz, istalgan idoraga yozasiz. Saudiyada ish yuritishda ham aynan shu!",
  "grammar": {
-  "point_ar": "مُصْطَلَحَات",
-  "explanation_uz": "Atamalarning o'zak sirlari: تَقْوَى (taqvo) — وقى «saqlanish» o'zagidan: Allohdan qo'rqib saqlanish. إِحْسَان (ihson) — حسن «go'zallik»dan: ibodatni go'zal qilish. حَلَال (halol) — «yechilgan, ruxsat etilgan», حَرَام (harom) — «taqiqlangan, daxlsiz» (Haram masjidi ham shu o'zak — hurmati tufayli!). فَرْض — «belgilab qo'yilgan», سُنَّة — «yo'l, odat». Har atama — bir o'zak hikoyasi.",
+  "point_ar": "قَالَبُ الخِطَابِ الرَّسْمِيّ",
+  "explanation_uz": "RASMIY XAT QOLIPI: (1) MUROJAAT: السيدُ المحترمُ / سعادةُ المديرِ (hurmatli janob/direktor). (2) SALOM: السلامُ عليكم ورحمةُ اللهِ، تحيةً طيبةً وبعدُ (yaxshi salom, so'ng...). (3) MAQSAD: أتقدّمُ إليكم بطلبِ... (sizga ... so'rovi bilan murojaat qilaman), أرجو من سيادتِكم (janoblaridan iltimos qilaman). (4) YAKUN: وتفضّلوا بقَبولِ فائقِ الاحترامِ (yuksak ehtiromni qabul qiling). (5) IMZO: مقدِّمُ الطلبِ (ariza beruvchi).",
   "table": [
-   {"ar": "تَقْوَى ← و ق ي", "uz": "taqvo — saqlanish o'zagidan", "form": "o'zak"},
-   {"ar": "إِحْسَان ← ح س ن", "uz": "ihson — go'zallik o'zagidan", "form": "o'zak"},
-   {"ar": "حَرَام / حَرَم", "uz": "harom va Haram — bir o'zak!", "form": "o'zak"},
-   {"ar": "فَرْض / سُنَّة", "uz": "farz (majburiy) / sunnat (yo'l)", "form": "juftlik"}
+   {"ar": "السيدُ المحترمُ...", "uz": "hurmatli janob...", "form": "murojaat"},
+   {"ar": "تحيةً طيبةً وبعدُ", "uz": "yaxshi salom, so'ng...", "form": "kirish"},
+   {"ar": "أتقدّمُ بطلبِ...", "uz": "... so'rovi bilan murojaat qilaman", "form": "maqsad"},
+   {"ar": "فائقُ الاحترامِ", "uz": "yuksak ehtirom (yakun)", "form": "yakun"}
   ],
   "common_mistakes_uz": [
-   "حَرَام (taqiqlangan) va حَرَم (muqaddas hudud) ni adashtirish — bir o'zak, farqli vazn.",
-   "سُنَّة ni faqat «nafl amal» deyish — asl ma'nosi «yo'l, tutum».",
-   "ثَوَاب (savob) va صَوَاب (to'g'ri) ni chalkashtirish — ikki xil harf!"
+   "Rasmiy xatda og'zaki iboralar (يا صاحبي) ishlatish — uslub buziladi.",
+   "أَرْجُو (iltimos qilaman) va أُرْجِئُ (kechiktiraman) ni adashtirish.",
+   "Yakun formulasini tashlab ketish — rasmiy xat «osilib» qoladi."
   ]
  },
  "roots": [
   {
-   "root": "و ق ي",
-   "meaning_uz": "saqlanish, himoya",
-   "uz_cognates": ["taqvo", "muttaqiy"],
+   "root": "ق د م",
+   "meaning_uz": "oldinga kelish, taqdim",
+   "uz_cognates": ["taqdim", "muqaddam", "qadam"],
    "derived": [
-    {"ar": "وَقَى", "uz": "saqladi", "pattern": "فَعَلَ"},
-    {"ar": "تَقْوَى", "uz": "taqvo (saqlanish)", "pattern": "فَعْلَى"},
-    {"ar": "مُتَّقِي", "uz": "taqvodor", "pattern": "مُفْتَعِل"}
+    {"ar": "تَقَدَّمَ بِـ", "uz": "murojaat qildi (ariza bilan)", "pattern": "تَفَعَّلَ"},
+    {"ar": "مُقَدِّمُ الطَّلَب", "uz": "ariza beruvchi", "pattern": ""},
+    {"ar": "تَقْدِيم", "uz": "taqdim etish", "pattern": "تَفْعِيل"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "إِيمَان", "translit": "īmān", "uz": "iymon — qalb bilan ishonish", "root": "أ م ن", "pattern": "إِفْعَال", "pos": "ot", "audio": "b1/iman.mp3", "example_ar": "الإيمانُ يزيدُ وينقصُ.", "example_uz": "Iymon ziyoda bo'ladi va kamayadi.", "srs": true},
-  {"ar": "إِحْسَان", "translit": "iḥsān", "uz": "ihson — ibodatni go'zal qilish", "root": "ح س ن", "pattern": "إِفْعَال", "pos": "ot", "audio": "b1/ihsan.mp3", "example_ar": "الإحسانُ أعلى درجاتِ الدينِ.", "example_uz": "Ihson — dinning eng yuqori darajasi.", "srs": true},
-  {"ar": "تَقْوَى", "translit": "taqwā", "uz": "taqvo — Allohdan qo'rqib saqlanish", "root": "و ق ي", "pattern": "فَعْلَى", "pos": "ot", "audio": "b1/taqwa.mp3", "example_ar": "خيرُ الزادِ التقوى.", "example_uz": "Eng yaxshi ozuqa — taqvo.", "srs": true},
-  {"ar": "حَلَال", "translit": "ḥalāl", "uz": "halol — ruxsat etilgan", "root": "ح ل ل", "pattern": "فَعَال", "pos": "sifat", "audio": "b1/halal2.mp3", "example_ar": "اطلبِ الرزقَ الحلالَ.", "example_uz": "Halol rizq izla.", "srs": true},
-  {"ar": "حَرَام", "translit": "ḥarām", "uz": "harom — taqiqlangan", "root": "ح ر م", "pattern": "فَعَال", "pos": "sifat", "audio": "b1/haram2.mp3", "example_ar": "اجتنبِ الحرامَ تكنْ أعبدَ الناسِ.", "example_uz": "Haromdan saqlan — eng obid bo'lasan (ma'noda).", "srs": true},
-  {"ar": "فَرْض", "translit": "farḍ", "uz": "farz — majburiy amal", "root": "ف ر ض", "pattern": "فَعْل", "pos": "ot", "audio": "b1/fard.mp3", "example_ar": "الصلواتُ الخمسُ فرضٌ.", "example_uz": "Besh namoz — farz.", "srs": true},
-  {"ar": "سُنَّة", "translit": "sunna", "uz": "sunnat — Payg'ambar ﷺ yo'li", "root": "س ن ن", "pattern": "فُعْلَة", "pos": "ot", "audio": "b1/sunna.mp3", "example_ar": "اتّبعْ سنةَ النبيِّ ﷺ.", "example_uz": "Payg'ambar ﷺ sunnatiga ergash.", "srs": true},
-  {"ar": "ثَوَاب", "translit": "thawāb", "uz": "savob (o'zbekcha 'savob' aynan shundan)", "root": "ث و ب", "pattern": "فَعَال", "pos": "ot", "audio": "b1/thawab.mp3", "example_ar": "لكلِّ خطوةٍ إلى المسجدِ ثوابٌ.", "example_uz": "Masjidga har qadamda savob bor.", "srs": true},
-  {"ar": "ذَنْب", "translit": "dhanb", "uz": "gunoh (ko'pligi: ذنوب)", "root": "ذ ن ب", "pattern": "فَعْل", "pos": "ot", "audio": "b1/dhanb.mp3", "example_ar": "الاستغفارُ يمحو الذنوبَ.", "example_uz": "Istig'for gunohlarni o'chiradi.", "srs": true},
-  {"ar": "تَوْبَة", "translit": "tawba", "uz": "tavba (o'zbekcha 'tavba' aynan shundan)", "root": "ت و ب", "pattern": "فَعْلَة", "pos": "ot", "audio": "b1/tawba.mp3", "example_ar": "بابُ التوبةِ مفتوحٌ.", "example_uz": "Tavba eshigi ochiq.", "srs": true},
-  {"ar": "أَخْلَاق", "translit": "akhlāq", "uz": "axloq (o'zbekcha 'axloq' aynan shundan)", "root": "خ ل ق", "pattern": "أَفْعَال", "pos": "ot", "audio": "b1/akhlaq.mp3", "example_ar": "بُعثتُ لأتمّمَ مكارمَ الأخلاقِ.", "example_uz": "Go'zal axloqni kamolga yetkazish uchun yuborildim (hadis ma'nosi).", "srs": true},
-  {"ar": "عَقِيدَة", "translit": "ʿaqīda", "uz": "aqiyda — e'tiqod asoslari (o'zbekcha 'aqida')", "root": "ع ق د", "pattern": "فَعِيلَة", "pos": "ot", "audio": "b1/aqida.mp3", "example_ar": "العقيدةُ أساسُ الدينِ.", "example_uz": "Aqiyda — din asosi.", "srs": true}
+  {"ar": "خِطَاب رَسْمِيّ", "translit": "khiṭāb rasmī", "uz": "rasmiy xat", "root": "خ ط ب", "pattern": "", "pos": "ibora", "audio": "b1/khitab_rasmi.mp3", "example_ar": "كتبتُ خطابًا رسميًّا للإدارةِ.", "example_uz": "Ma'muriyatga rasmiy xat yozdim.", "srs": true},
+  {"ar": "المُحْتَرَم", "translit": "al-muḥtaram", "uz": "hurmatli (murojaatda — 'muhtaram'!)", "root": "ح ر م", "pattern": "مُفْتَعَل", "pos": "sifat", "audio": "b1/muhtaram.mp3", "example_ar": "السيدُ المديرُ المحترمُ.", "example_uz": "Muhtaram janob direktor.", "srs": true},
+  {"ar": "أَتَقَدَّمُ بِطَلَبِ", "translit": "ataqaddamu bi-ṭalabi", "uz": "... so'rovi bilan murojaat qilaman", "root": "ق د م", "pattern": "", "pos": "ibora", "audio": "b1/ataqaddamu.mp3", "example_ar": "أتقدّمُ بطلبِ الالتحاقِ بالجامعةِ.", "example_uz": "Universitetga qabul so'rovi bilan murojaat qilaman.", "srs": true},
+  {"ar": "أَرْجُو", "translit": "arjū", "uz": "iltimos qilaman, umid qilaman · men", "root": "ر ج و", "pattern": "أَفْعُو", "pos": "fe'l", "audio": "b1/arju.mp3", "example_ar": "أرجو النظرَ في طلبي.", "example_uz": "Arizamni ko'rib chiqishingizni so'rayman.", "srs": true},
+  {"ar": "مُرْفَق", "translit": "murfaq", "uz": "ilova (xatga qo'shilgan hujjat)", "root": "ر ف ق", "pattern": "مُفْعَل", "pos": "ot", "audio": "b1/murfaq.mp3", "example_ar": "المرفقاتُ: السيرةُ الذاتيةُ والشهاداتُ.", "example_uz": "Ilovalar: rezyume va diplomlar.", "srs": true},
+  {"ar": "سِيرَة ذَاتِيَّة", "translit": "sīra dhātiyya", "uz": "rezyume, tarjimai hol", "root": "س ي ر", "pattern": "", "pos": "ibora", "audio": "b1/sira_dhatiyya.mp3", "example_ar": "أرفقتُ سيرتي الذاتيةَ.", "example_uz": "Rezyumemni ilova qildim.", "srs": true},
+  {"ar": "اِلْتِحَاق", "translit": "iltiḥāq", "uz": "qabul bo'lish, qo'shilish (o'qishga/ishga)", "root": "ل ح ق", "pattern": "اِفْتِعَال", "pos": "ot", "audio": "b1/iltihaq.mp3", "example_ar": "شروطُ الالتحاقِ بالبرنامجِ.", "example_uz": "Dasturga qabul shartlari.", "srs": true},
+  {"ar": "فَائِقُ الاِحْتِرَام", "translit": "fāʾiqu l-iḥtirām", "uz": "yuksak ehtirom (xat yakuni)", "root": "ف و ق", "pattern": "", "pos": "ibora", "audio": "b1/faiq_ihtiram.mp3", "example_ar": "وتفضّلوا بقَبولِ فائقِ الاحترامِ.", "example_uz": "Yuksak ehtiromimni qabul qilgaysiz.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "سألَ رجلٌ عالِمًا: «ما الفرقُ بينَ الإيمانِ والإحسانِ؟» قال: «الإيمانُ أنْ تؤمنَ بقلبِكَ، والإحسانُ أنْ تعبدَ اللهَ كأنكَ تراهُ. ومفتاحُهما التقوى: أنْ تجعلَ بينَكَ وبينَ الحرامِ حاجزًا، وتطلبَ الحلالَ، وتتبعَ الفرضَ والسنةَ».",
+   "text_ar": "سعادةَ مديرِ معهدِ اللغةِ العربيةِ المحترم، السلامُ عليكم ورحمةُ اللهِ وبركاتُهُ، تحيةً طيبةً وبعدُ: أتقدّمُ إلى سيادتِكم بطلبِ الالتحاقِ بدورةِ المستوى المتوسطِ، علمًا بأنني أنهيتُ المستوى الأساسيَّ بتقديرِ ممتازٍ. أرجو التكرمَ بالنظرِ في طلبي، والمرفقاتُ: شهادةُ المستوى والسيرةُ الذاتيةُ. وتفضّلوا بقَبولِ فائقِ الاحترامِ. مقدِّمُ الطلبِ: أكرم.",
    "questions": [
-    {"q_uz": "Ihson qanday ta'riflandi?", "a": "Allohga go'yo Uni ko'rib turgandek ibodat qilish"},
-    {"q_uz": "Taqvo qanday tushuntirildi?", "a": "O'zi bilan harom orasiga to'siq qo'yish"},
-    {"q_uz": "Matnda qaysi juftlik atamalar bor?", "a": "Halol-harom, farz-sunnat, iymon-ihson"}
+    {"q_uz": "Xat kimga va qanday maqsadda yozilgan?", "a": "Arab tili instituti direktoriga — o'rta bosqich kursiga qabul so'rovi"},
+    {"q_uz": "Ariza beruvchi qanday ma'lumot keltirgan?", "a": "Boshlang'ich bosqichni a'lo tugatgani"},
+    {"q_uz": "Qanday hujjatlar ilova qilingan?", "a": "Daraja sertifikati va rezyume"}
    ]
   },
   "listening": {
-   "audio": "b1/taqwa.mp3",
-   "transcript_ar": "تَقْوَى",
+   "audio": "b1/muhtaram.mp3",
+   "transcript_ar": "المُحْتَرَم",
    "questions": [
-    {"q_uz": "Eshitilgan atama va o'zagi?", "a": "Taqvo — و ق ي (saqlanish)"}
+    {"q_uz": "Eshitilgan so'z va o'zbekcha shakli?", "a": "Hurmatli — 'muhtaram'"}
    ]
   },
   "speaking": {
-   "task_uz": "Uch atamani ta'rifi bilan ayting: iymon (qalb ishonchi), ihson (go'zal ibodat), taqvo (saqlanish).",
-   "target_ar": ["الإِيمَانُ تَصْدِيقٌ بِالقَلْبِ", "الإِحْسَانُ إِتْقَانُ العِبَادَةِ", "التَّقْوَى وِقَايَةٌ"],
+   "task_uz": "Xat qismlarini ovoz chiqarib ayting: murojaat, maqsad jumlasi va yakun formulasi — rasmiy ohangda.",
+   "target_ar": ["السَّيِّدُ المُدِيرُ المُحْتَرَمُ", "أَتَقَدَّمُ بِطَلَبِ...", "فَائِقُ الاِحْتِرَامِ"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "5 atamani tanlab, har birining arabchasi, o'zagi va o'zbekcha ma'nosini jadval qilib yozing.",
+   "task_uz": "To'liq rasmiy ariza yozing (5-6 gap): kurs/ishga qabul so'rovi — murojaat, salom, maqsad, asos, ilova, yakun.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "تَقْوَى qaysi o'zakdan va asl ma'nosi?", "q_ar": "", "options": ["و ق ي — saqlanish", "ت ق و — kuch", "ق و ي — quvvat", "و ق ت — vaqt"], "answer": "و ق ي — saqlanish", "explain_uz": "Taqvo — gunohdan saqlanish (himoya).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "حَرَام va حَرَم bog'liqligi?", "q_ar": "", "options": ["bir o'zak: taqiq/hurmat-daxlsizlik", "aloqasi yo'q", "biri fe'l, biri harf", "ikkalasi joy nomi"], "answer": "bir o'zak: taqiq/hurmat-daxlsizlik", "explain_uz": "ح ر م — daxlsizlik: harom (taqiq), Haram (muqaddas).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "فَرْض ma'nosi?", "q_ar": "", "options": ["majburiy amal", "ixtiyoriy amal", "taqiqlangan", "makruh"], "answer": "majburiy amal", "explain_uz": "Farz — belgilab qo'yilgan majburiyat.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "ثَوَاب va صَوَاب farqi?", "q_ar": "", "options": ["savob (mukofot) / to'g'ri", "bir xil", "gunoh / savob", "savol / javob"], "answer": "savob (mukofot) / to'g'ri", "explain_uz": "ث bilan — savob; ص bilan — to'g'rilik.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«تَقْوَى، مُتَّقِي، وِقَايَة» qaysi o'zakdan?", "q_ar": "", "options": ["و ق ي", "ت ق ي", "ق و ي"], "answer": "و ق ي", "explain_uz": "«و ق ي» — saqlash o'zagi.", "audio": "", "root": "و ق ي", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "tavba", "q_ar": "", "options": [], "answer": "تَوْبَة", "explain_uz": "توبة — tavba (qaytish).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "axloq", "q_ar": "", "options": [], "answer": "أَخْلَاق", "explain_uz": "أخلاق — xulqlar (axloq).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "بَابُ التَّوْبَةِ مَفْتُوحٌ", "options": [], "answer": "tavba eshigi ochiq", "explain_uz": "Umid beruvchi ibora — mubtada+xabar.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "Rasmiy xat murojaati qaysi?", "q_ar": "", "options": ["السيدُ المديرُ المحترمُ", "يا صاحبي العزيز", "أهلًا يا أخي", "مرحبًا"], "answer": "السيدُ المديرُ المحترمُ", "explain_uz": "Rasmiy uslub: as-sayyid + lavozim + al-muhtaram.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«... so'rovi bilan murojaat qilaman» qaysi?", "q_ar": "", "options": ["أتقدّمُ بطلبِ...", "أريدُ...", "أعطني...", "هاتِ..."], "answer": "أتقدّمُ بطلبِ...", "explain_uz": "Rasmiy formula; أريد og'zaki uslub.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«المُرْفَقَات» nima?", "q_ar": "", "options": ["xatga ilova hujjatlar", "xat sarlavhasi", "imzo", "manzil"], "answer": "xatga ilova hujjatlar", "explain_uz": "مرفق — birga yuborilgan hujjat.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "rezyume (tarjimai hol)", "q_ar": "", "options": [], "answer": "سِيرَة ذَاتِيَّة", "explain_uz": "Shaxsiy yo'l tavsifi — rezyume.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "iltimos qilaman (umid bilan)", "q_ar": "", "options": [], "answer": "أَرْجُو", "explain_uz": "أرجو — rasmiy iltimos fe'li.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«تَقَدَّمَ، تَقْدِيم، مُقَدِّم» qaysi o'zakdan?", "q_ar": "", "options": ["ق د م", "ق د ر", "ق س م"], "answer": "ق د م", "explain_uz": "«ق د م» — taqdim/qadam o'zagi.", "audio": "", "root": "ق د م", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Tartiblang (yakun formulasi): «Yuksak ehtiromni qabul qilgaysiz»", "q_ar": "", "options": [], "answer": "وتفضّلوا بقَبولِ فائقِ الاحترامِ", "explain_uz": "Rasmiy xatning standart yakuni.", "audio": "", "root": "", "pattern": "", "words": ["وتفضّلوا", "بقَبولِ", "فائقِ", "الاحترامِ"]}
  ],
  "srs_cards": [
-  {"type": "root", "front": "و ق ي", "back": "saqlanish o'zagi (taqvo)", "deck": "msa"},
-  {"type": "word", "front": "إِيمَان", "back": "iymon", "deck": "msa"},
-  {"type": "word", "front": "إِحْسَان", "back": "ihson", "deck": "msa"},
-  {"type": "word", "front": "تَقْوَى", "back": "taqvo", "deck": "msa"},
-  {"type": "word", "front": "حَلَال / حَرَام", "back": "halol / harom", "deck": "msa"},
-  {"type": "word", "front": "فَرْض / سُنَّة", "back": "farz / sunnat", "deck": "msa"},
-  {"type": "word", "front": "ثَوَاب", "back": "savob", "deck": "msa"},
-  {"type": "word", "front": "ذَنْب", "back": "gunoh", "deck": "msa"},
-  {"type": "word", "front": "تَوْبَة", "back": "tavba", "deck": "msa"},
-  {"type": "word", "front": "عَقِيدَة", "back": "aqiyda", "deck": "msa"}
+  {"type": "root", "front": "ق د م", "back": "taqdim o'zagi", "deck": "msa"},
+  {"type": "word", "front": "خِطَاب رَسْمِيّ", "back": "rasmiy xat", "deck": "msa"},
+  {"type": "word", "front": "المُحْتَرَم", "back": "hurmatli (muhtaram)", "deck": "msa"},
+  {"type": "word", "front": "أَتَقَدَّمُ بِطَلَبِ", "back": "so'rov bilan murojaat qilaman", "deck": "msa"},
+  {"type": "word", "front": "أَرْجُو", "back": "iltimos qilaman · men", "deck": "msa"},
+  {"type": "word", "front": "مُرْفَق", "back": "ilova hujjat", "deck": "msa"},
+  {"type": "word", "front": "سِيرَة ذَاتِيَّة", "back": "rezyume", "deck": "msa"},
+  {"type": "word", "front": "اِلْتِحَاق", "back": "qabul bo'lish", "deck": "msa"},
+  {"type": "word", "front": "فَائِقُ الاِحْتِرَام", "back": "yuksak ehtirom", "deck": "msa"}
  ]
 }

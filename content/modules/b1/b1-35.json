@@ -3,94 +3,94 @@
  "level": "B1",
  "module": "skills",
  "order": 35,
- "title_uz": "O'qish: yangilik 1 (jamiyat)",
- "title_ar": "قِرَاءَة: خَبَرٌ اجْتِمَاعِيّ",
- "can_do_uz": "Haqiqiy uslubdagi yangilik matnini o'qib, asosiy faktlarni (kim, nima, qachon, qayerda) ajrata olaman.",
+ "title_uz": "Yozish: insho",
+ "title_ar": "كِتَابَة: مَقَالٌ قَصِير",
+ "can_do_uz": "Kirish-asosiy qism-xulosa tuzilishida qisqa insho yoza olaman.",
  "duration_min": 30,
  "prerequisites": ["b1-34"],
  "harakat_level": "ambiguous_only",
- "hook_uz": "B1 ning katta imtihoni — HAQIQIY matnlar! Bugundan yangiliklar o'qishni boshlaymiz. Sir: yangilikni so'zma-so'z emas, SAVOLLAR bilan o'qing — kim? nima? qachon? qayerda? nega? Shu 5 savolga javob topsangiz — matnni tushundingiz.",
+ "hook_uz": "Insho — fikringizning imorati: POYDEVOR (kirish), DEVORLAR (asosiy fikrlar), TOM (xulosa). Arabcha insho bog'lovchilarga boy bo'lishi kerak — ular fikrni ipga tizadi. Bugun «Ilm ahamiyati» mavzusida namunaviy insho quramiz.",
  "grammar": {
-  "point_ar": "مَهَارَةُ القِرَاءَةِ السَّرِيعَة",
-  "explanation_uz": "Yangilik o'qish strategiyasi: (1) SARLAVHA — asosiy g'oya shu yerda (ko'pincha masdar bilan: افتتاحُ، إطلاقُ). (2) BIRINCHI XATBOSHI — 5 savol javobi (من؟ ماذا؟ متى؟ أين؟ لماذا؟). (3) MAJHUL FE'LLAR — rasmiy uslub belgisi: أُقيمَ (o'tkazildi), نُظِّمَ (tashkil etildi). (4) Notanish so'zda TO'XTAMANG — kontekst ma'noni beradi; muhim so'z takrorlanadi. (5) Raqamlar va ismlar — faktlarning skeleti.",
+  "point_ar": "بِنْيَةُ المَقَال",
+  "explanation_uz": "INSHO TUZILISHI: (1) KIRISH — mavzuni e'lon qilish: يُعَدُّ ... مِن أهمِّ... (... eng muhimlaridan sanaladi). (2) ASOSIY QISM — har fikr yangi bog'lovchi bilan: أولًا، ثانيًا، بالإضافةِ إلى ذلك (bundan tashqari), على سبيلِ المثالِ (masalan). (3) QARSHI FIKR (ixtiyoriy): ومع ذلك (shunga qaramay). (4) XULOSA: وفي الختامِ، يمكنُ القولُ إنَّ... (xulosa qilib aytish mumkinki...).",
   "table": [
-   {"ar": "مَن؟ مَاذَا؟ مَتَى؟", "uz": "kim? nima? qachon?", "form": "5 savol"},
-   {"ar": "أَيْنَ؟ لِمَاذَا؟", "uz": "qayerda? nega?", "form": "5 savol"},
-   {"ar": "أُقِيمَ / نُظِّمَ", "uz": "o'tkazildi / tashkil etildi", "form": "majhul"},
-   {"ar": "شَهِدَ ... حُضُورًا كَبِيرًا", "uz": "katta ishtirokka guvoh bo'ldi", "form": "gazeta iborasi"}
+   {"ar": "يُعَدُّ من أهمِّ...", "uz": "eng muhimlaridan sanaladi (kirish)", "form": "kirish"},
+   {"ar": "بالإضافةِ إلى ذلك", "uz": "bundan tashqari", "form": "bog'lovchi"},
+   {"ar": "على سبيلِ المثالِ", "uz": "masalan", "form": "bog'lovchi"},
+   {"ar": "يمكنُ القولُ إنَّ...", "uz": "aytish mumkinki... (xulosa)", "form": "xulosa"}
   ],
   "common_mistakes_uz": [
-   "Har notanish so'zda lug'atga yugurish — avval xatboshini oxirigacha o'qing.",
-   "Sarlavhani tashlab ketish — u matnning xaritasi.",
-   "Majhul fe'lni ega izlab adashish — bajaruvchi ataylab aytilmagan."
+   "Bog'lovchisiz «sakrab» yozish — har xatboshi ko'prik bilan boshlansin.",
+   "Bir gapda uch fikr — bitta gap, bitta fikr.",
+   "Xulosada YANGI fikr kiritish — xulosa faqat jamlaydi."
   ]
  },
  "roots": [
   {
-   "root": "ق ر أ",
-   "meaning_uz": "o'qish",
-   "uz_cognates": ["qiroat", "Qur'on"],
+   "root": "ك ت ب",
+   "meaning_uz": "yozish",
+   "uz_cognates": ["kitob", "maktab", "kotib"],
    "derived": [
-    {"ar": "قِرَاءَة سَرِيعَة", "uz": "tez o'qish (skanerlash)", "pattern": ""},
-    {"ar": "قِرَاءَة مُتَأَنِّيَة", "uz": "sinchkov o'qish", "pattern": ""}
+    {"ar": "مَقَال", "uz": "maqola, insho", "pattern": ""},
+    {"ar": "كَاتِب", "uz": "yozuvchi", "pattern": "فَاعِل"},
+    {"ar": "مُقَدِّمَة", "uz": "kirish, muqaddima", "pattern": ""}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "مَهْرَجَان", "translit": "mahrajān", "uz": "festival, bayram tadbiri", "root": "", "pattern": "", "pos": "ot", "audio": "b1/mahrajan.mp3", "example_ar": "أقيمَ مهرجانُ الكتابِ.", "example_uz": "Kitob festivali o'tkazildi.", "srs": true},
-  {"ar": "أُقِيمَ", "translit": "uqīma", "uz": "o'tkazildi (majhul — gazeta fe'li!) · majhul", "root": "ق و م", "pattern": "أُفْعِلَ", "pos": "fe'l", "audio": "b1/uqima.mp3", "example_ar": "أقيمَ الحفلُ في القاعةِ الكبرى.", "example_uz": "Marosim katta zalda o'tkazildi.", "srs": true},
-  {"ar": "نَظَّمَ", "translit": "naẓẓama", "uz": "tashkil etdi (o'zbekcha 'nizom' o'zagi) · u/erkak", "root": "ن ظ م", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/nazzama.mp3", "example_ar": "نظّمتِ الجامعةُ ندوةً علميةً.", "example_uz": "Universitet ilmiy anjuman tashkil etdi.", "srs": true},
-  {"ar": "شَهِدَ", "translit": "shahida", "uz": "guvoh bo'ldi (gazetada: «...ga guvoh bo'ldi») · u/erkak", "root": "ش ه د", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "b1/shahida.mp3", "example_ar": "شهدتِ المدينةُ تطورًا كبيرًا.", "example_uz": "Shahar katta rivojlanishga guvoh bo'ldi.", "srs": true},
-  {"ar": "حُضُور", "translit": "ḥuḍūr", "uz": "ishtirok, kelganlar (o'zbekcha 'huzur')", "root": "ح ض ر", "pattern": "فُعُول", "pos": "ot", "audio": "b1/hudur.mp3", "example_ar": "شهدَ المعرضُ حضورًا واسعًا.", "example_uz": "Ko'rgazma keng ishtirokka guvoh bo'ldi.", "srs": true},
-  {"ar": "مَعْرِض", "translit": "maʿriḍ", "uz": "ko'rgazma", "root": "ع ر ض", "pattern": "مَفْعِل", "pos": "ot", "audio": "b1/marid.mp3", "example_ar": "افتُتحَ معرضُ الصناعاتِ اليدويةِ.", "example_uz": "Hunarmandchilik ko'rgazmasi ochildi.", "srs": true},
-  {"ar": "فَعَالِيَّة", "translit": "faʿāliyya", "uz": "tadbir (ko'pligi: فعاليات)", "root": "ف ع ل", "pattern": "", "pos": "ot", "audio": "b1/faaliyya.mp3", "example_ar": "تضمّنَ المهرجانُ فعالياتٍ متنوعةً.", "example_uz": "Festival turli tadbirlarni o'z ichiga oldi.", "srs": true},
-  {"ar": "زَائِر", "translit": "zāʾir", "uz": "tashrif buyuruvchi (ziyorat o'zagi)", "root": "ز و ر", "pattern": "فَاعِل", "pos": "ot", "audio": "b1/zair.mp3", "example_ar": "استقبلَ المعرضُ آلافَ الزوارِ.", "example_uz": "Ko'rgazma minglab tashrifchilarni qabul qildi.", "srs": true}
+  {"ar": "مُقَدِّمَة", "translit": "muqaddima", "uz": "kirish qismi (o'zbekcha 'muqaddima')", "root": "ق د م", "pattern": "مُفَعِّلَة", "pos": "ot", "audio": "b1/muqaddima.mp3", "example_ar": "ابدأْ بمقدمةٍ قصيرةٍ.", "example_uz": "Qisqa kirish bilan boshlang.", "srs": true},
+  {"ar": "خَاتِمَة", "translit": "khātima", "uz": "xulosa qismi (o'zbekcha 'xotima')", "root": "خ ت م", "pattern": "فَاعِلَة", "pos": "ot", "audio": "b1/khatima.mp3", "example_ar": "لخّصْ فكرتَكَ في الخاتمةِ.", "example_uz": "Xotimada fikringizni jamlang.", "srs": true},
+  {"ar": "يُعَدُّ", "translit": "yuʿaddu", "uz": "sanaladi, hisoblanadi (majhul!) · majhul", "root": "ع د د", "pattern": "يُفْعَلُ", "pos": "fe'l", "audio": "b1/yuaddu.mp3", "example_ar": "يُعدُّ العلمُ أساسَ التقدمِ.", "example_uz": "Ilm taraqqiyot asosi sanaladi.", "srs": true},
+  {"ar": "بِالإِضَافَةِ إِلَى", "translit": "bil-iḍāfati ilā", "uz": "bundan tashqari, ...ga qo'shimcha", "root": "ض ي ف", "pattern": "", "pos": "ibora", "audio": "b1/bil_idafa.mp3", "example_ar": "بالإضافةِ إلى ذلك، العلمُ يبني الأخلاقَ.", "example_uz": "Bundan tashqari, ilm axloqni quradi.", "srs": true},
+  {"ar": "عَلَى سَبِيلِ المِثَال", "translit": "ʿalā sabīli l-mithāl", "uz": "masalan (misol yo'lida)", "root": "م ث ل", "pattern": "", "pos": "ibora", "audio": "b1/ala_sabil.mp3", "example_ar": "على سبيلِ المثالِ، الطبُّ يحتاجُ علمًا.", "example_uz": "Masalan, tibbiyot ilm talab qiladi.", "srs": true},
+  {"ar": "وَمَعَ ذٰلِكَ", "translit": "wa-maʿa dhālika", "uz": "shunga qaramay", "root": "", "pattern": "", "pos": "ibora", "audio": "b1/maa_dhalika.mp3", "example_ar": "ومع ذلك، يهملُ بعضُ الناسِ القراءةَ.", "example_uz": "Shunga qaramay, ba'zilar o'qishga beparvo.", "srs": true},
+  {"ar": "لَخَّصَ", "translit": "lakhkhaṣa", "uz": "qisqartirib jamladi (o'zbekcha 'talxis, xulosa') · u/erkak", "root": "ل خ ص", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/lakhkhasa.mp3", "example_ar": "لخّصِ المقالَ في ثلاثةِ أسطرٍ.", "example_uz": "Maqolani uch qatorda jamlang.", "srs": true},
+  {"ar": "فِقْرَة", "translit": "fiqra", "uz": "xatboshi, abzats", "root": "ف ق ر", "pattern": "فِعْلَة", "pos": "ot", "audio": "b1/fiqra.mp3", "example_ar": "كلُّ فقرةٍ تحملُ فكرةً واحدةً.", "example_uz": "Har xatboshi bitta fikr ko'taradi.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "أُقيمَ في العاصمةِ أمسِ مهرجانُ «القراءةُ للجميعِ» الذي نظّمتْهُ وزارةُ الثقافةِ بمناسبةِ اليومِ العالميِّ للكتابِ. وشهدَ المهرجانُ حضورًا كبيرًا تجاوزَ عشرةَ آلافِ زائرٍ في يومِهِ الأولِ. وتضمّنتِ الفعالياتُ معرضًا للكتبِ، ولقاءاتٍ مع كتّابٍ مشهورينَ، ومسابقاتٍ للأطفالِ. وقالَ مديرُ المهرجانِ: «هدفُنا أنْ نجعلَ القراءةَ عادةً يوميةً لكلِّ أسرةٍ».",
+   "text_ar": "أهميةُ العلمِ: يُعدُّ العلمُ من أهمِّ أسبابِ تقدمِ الأممِ. أولًا، العلمُ يفتحُ أبوابَ العملِ؛ فالطبيبُ والمهندسُ تعلّما سنواتٍ طويلةً. بالإضافةِ إلى ذلك، العلمُ يبني عقلًا ناقدًا يميّزُ بينَ الحقيقةِ والإشاعةِ. ومع ذلك، يظنُّ بعضُ الناسِ أنَّ النجاحَ ممكنٌ بلا تعلمٍ، وهذا وهمٌ. وفي الختامِ، يمكنُ القولُ إنَّ العلمَ استثمارٌ لا يخسرُ صاحبُهُ أبدًا.",
    "questions": [
-    {"q_uz": "NIMA bo'ldi va QAYERDA?", "a": "«Qiroat hamma uchun» festivali — poytaxtda"},
-    {"q_uz": "KIM tashkil etdi va QACHON?", "a": "Madaniyat vazirligi — kecha (Butunjahon kitob kuni munosabati bilan)"},
-    {"q_uz": "Birinchi kunda nechta tashrifchi?", "a": "10 000 dan ortiq"},
-    {"q_uz": "Direktorning maqsadi?", "a": "Qiroatni har oila uchun kundalik odatga aylantirish"}
+    {"q_uz": "Inshoning uch qismini ko'rsating.", "a": "Kirish (يُعدّ...), asosiy qism (أولًا، بالإضافة...), xulosa (وفي الختام)"},
+    {"q_uz": "Qanday dalillar keltirilgan?", "a": "Ish eshiklarini ochadi; tanqidiy aql quradi"},
+    {"q_uz": "Muallif qanday noto'g'ri qarashni rad etdi?", "a": "«O'qimasdan ham muvaffaqiyat mumkin» degan xomxayolni"}
    ]
   },
   "listening": {
-   "audio": "b1/mahrajan.mp3",
-   "transcript_ar": "مَهْرَجَان",
+   "audio": "b1/muqaddima.mp3",
+   "transcript_ar": "مُقَدِّمَة",
    "questions": [
-    {"q_uz": "Eshitilgan so'z ma'nosi?", "a": "Festival"}
+    {"q_uz": "Eshitilgan so'z inshoda qaysi qism?", "a": "Kirish (muqaddima)"}
    ]
   },
   "speaking": {
-   "task_uz": "Matnni diktor kabi ovoz chiqarib o'qing — birinchi gapni to'liq, ravon talaffuz bilan.",
-   "target_ar": ["أُقِيمَ فِي العَاصِمَةِ مَهْرَجَانُ القِرَاءَةِ"],
+   "task_uz": "Insho «skeletini» og'zaki ayting: kirish jumlasi, «birinchidan...», «bundan tashqari...», «xulosa qilib...».",
+   "target_ar": ["يُعَدُّ العِلْمُ مِنْ أَهَمِّ...", "بِالإِضَافَةِ إِلَى ذٰلِكَ", "وَفِي الخِتَامِ"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Matn asosida 5 savolga bir gapdan javob yozing: من؟ ماذا؟ متى؟ أين؟ لماذا؟",
+   "task_uz": "«Til o'rganish ahamiyati» mavzusida 6-8 gapli insho yozing: kirish, 2 dalil (bog'lovchilar bilan), xulosa.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "Yangilik o'qishda birinchi qadam?", "q_ar": "", "options": ["sarlavha va 5 savol", "har so'zni lug'atdan qarash", "oxiridan boshlash", "faqat rasmlarga qarash"], "answer": "sarlavha va 5 savol", "explain_uz": "Kim-nima-qachon-qayerda-nega — matn skeleti.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«أُقِيمَ المهرجانُ» — nega مهرجان raf'da?", "q_ar": "", "options": ["majhul egasi (noibul-foil)", "mubtada", "xabar", "tamyiz"], "answer": "majhul egasi (noibul-foil)", "explain_uz": "Majhulda asl ob'ekt ega o'rniga o'tadi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«شَهِدَ المعرضُ حضورًا كبيرًا» ma'nosi?", "q_ar": "", "options": ["ko'rgazmaga ko'p odam keldi", "ko'rgazma guvohnoma berdi", "ko'rgazma yopildi", "ko'rgazma qimmat edi"], "answer": "ko'rgazmaga ko'p odam keldi", "explain_uz": "Gazeta iborasi: «katta ishtirokka guvoh bo'ldi».", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "ko'rgazma", "q_ar": "", "options": [], "answer": "مَعْرِض", "explain_uz": "معرض — ko'rgazma (arz qilish joyi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "tashkil etdi", "q_ar": "", "options": [], "answer": "نَظَّمَ", "explain_uz": "نظّم — nizomga soldi, tashkil etdi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«زَائِر، زِيَارَة» qaysi o'zakdan?", "q_ar": "", "options": ["ز و ر", "ز ر ع", "و ز ر"], "answer": "ز و ر", "explain_uz": "«ز و ر» — ziyorat o'zagi.", "audio": "", "root": "ز و ر", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Notanish so'z uchrasa nima qilasiz?", "q_ar": "", "options": ["kontekstdan taxmin qilib davom etaman", "darhol to'xtayman", "o'qishni tashlayman", "hammasini tarjima qilaman"], "answer": "kontekstdan taxmin qilib davom etaman", "explain_uz": "Muhim so'z baribir takrorlanadi — oqim muhimroq.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "Insho necha asosiy qismdan iborat?", "q_ar": "", "options": ["3: kirish, asosiy qism, xulosa", "2: savol, javob", "5: har biri alohida", "1: yaxlit matn"], "answer": "3: kirish, asosiy qism, xulosa", "explain_uz": "Muqaddima — asosiy fikrlar — xotima.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«بالإضافةِ إلى ذلك» qachon ishlatiladi?", "q_ar": "", "options": ["yangi qo'shimcha dalil kiritganda", "xulosada", "salomlashishda", "savol berganda"], "answer": "yangi qo'shimcha dalil kiritganda", "explain_uz": "«Bundan tashqari» — fikr ustiga fikr.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Xulosaning oltin qoidasi?", "q_ar": "", "options": ["yangi fikr kiritmaslik, jamlash", "eng uzun qism bo'lishi", "savol bilan tugashi", "raqamlar keltirish"], "answer": "yangi fikr kiritmaslik, jamlash", "explain_uz": "Xotima — tom: faqat yopadi, qurmaydi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "kirish (muqaddima)", "q_ar": "", "options": [], "answer": "مُقَدِّمَة", "explain_uz": "مقدمة — oldinga qo'yilgan qism.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "masalan", "q_ar": "", "options": [], "answer": "عَلَى سَبِيلِ المِثَال", "explain_uz": "Misol yo'li bilan — masalan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«خَاتِمَة، خِتَام» qaysi o'zakdan?", "q_ar": "", "options": ["خ ت م", "خ د م", "ح ت م"], "answer": "خ ت م", "explain_uz": "«خ ت م» — muhrlash/yakunlash o'zagi (xotima, xatm).", "audio": "", "root": "خ ت م", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«يُعَدُّ العلمُ أساسَ التقدمِ» — يُعدُّ qanday shakl?", "q_ar": "", "options": ["majhul muzori' (sanaladi)", "amr", "o'tgan zamon", "masdar"], "answer": "majhul muzori' (sanaladi)", "explain_uz": "Insho uslubining sevimli fe'li — «hisoblanadi».", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "word", "front": "مَهْرَجَان", "back": "festival", "deck": "msa"},
-  {"type": "word", "front": "أُقِيمَ", "back": "o'tkazildi (majhul) · majhul", "deck": "msa"},
-  {"type": "word", "front": "نَظَّمَ", "back": "tashkil etdi · u/erkak", "deck": "msa"},
-  {"type": "word", "front": "شَهِدَ", "back": "guvoh bo'ldi · u/erkak", "deck": "msa"},
-  {"type": "word", "front": "حُضُور", "back": "ishtirok", "deck": "msa"},
-  {"type": "word", "front": "مَعْرِض", "back": "ko'rgazma", "deck": "msa"},
-  {"type": "word", "front": "فَعَالِيَّة", "back": "tadbir", "deck": "msa"},
-  {"type": "word", "front": "زَائِر", "back": "tashrifchi", "deck": "msa"}
+  {"type": "word", "front": "مُقَدِّمَة", "back": "kirish qismi", "deck": "msa"},
+  {"type": "word", "front": "خَاتِمَة", "back": "xulosa qismi (xotima)", "deck": "msa"},
+  {"type": "word", "front": "يُعَدُّ", "back": "sanaladi · majhul", "deck": "msa"},
+  {"type": "word", "front": "بِالإِضَافَةِ إِلَى", "back": "bundan tashqari", "deck": "msa"},
+  {"type": "word", "front": "عَلَى سَبِيلِ المِثَال", "back": "masalan", "deck": "msa"},
+  {"type": "word", "front": "وَمَعَ ذٰلِكَ", "back": "shunga qaramay", "deck": "msa"},
+  {"type": "word", "front": "لَخَّصَ", "back": "jamladi, qisqartirdi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "فِقْرَة", "back": "xatboshi", "deck": "msa"}
  ]
 }

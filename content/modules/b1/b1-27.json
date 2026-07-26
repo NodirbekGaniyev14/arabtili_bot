@@ -1,99 +1,96 @@
 {
  "id": "b1-27",
  "level": "B1",
- "module": "quran-hadith",
+ "module": "skills",
  "order": 27,
- "title_uz": "Qur'on tili",
- "title_ar": "لُغَةُ القُرْآن",
- "can_do_uz": "Qur'on arabchasining xususiyatlarini bilaman va oddiy oyatlarning tuzilishini tushuna boshlayman.",
+ "title_uz": "O'qish: yangilik 1 (jamiyat)",
+ "title_ar": "قِرَاءَة: خَبَرٌ اجْتِمَاعِيّ",
+ "can_do_uz": "Haqiqiy uslubdagi yangilik matnini o'qib, asosiy faktlarni (kim, nima, qachon, qayerda) ajrata olaman.",
  "duration_min": 30,
  "prerequisites": ["b1-26"],
- "harakat_level": "full",
- "hook_uz": "Siz arab tilini nima uchun o'rganyapsiz? Ko'pchilik uchun javob — QUR'ONNI tushunish. Xushxabar: siz o'rgangan grammatika (fe'l boblari, majhul, inna, nisbiy olmoshlar...) aynan Qur'on tilining kalitlari! Bu modulda ma'no tarjimasi bilan ishlaymiz — chuqur tafsir uchun ustozga murojaat qiling.",
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "B1 ning katta imtihoni — HAQIQIY matnlar! Bugundan yangiliklar o'qishni boshlaymiz. Sir: yangilikni so'zma-so'z emas, SAVOLLAR bilan o'qing — kim? nima? qachon? qayerda? nega? Shu 5 savolga javob topsangiz — matnni tushundingiz.",
  "grammar": {
-  "point_ar": "خَصَائِصُ لُغَةِ القُرْآن",
-  "explanation_uz": "Qur'on arabchasi (fus'ha klassikasi) xususiyatlari: (1) TO'LIQ HARAKAT — mushafda hamma belgi qo'yilgan, siz o'qiy olasiz! (2) TA'KID vositalari ko'p: إنَّ، لَـ، قد — إِنَّ اللهَ غَفُورٌ (albatta Alloh mag'firatli). (3) TAKROR — muhim ma'nolar takrorlanadi. (4) QISQA-LO'NDA gaplar — har so'z o'z o'rnida. (5) Siz bilgan qoidalar ishlaydi: الحَمْدُ لِلَّهِ (mubtada+xabar), رَبِّ العَالَمِينَ (idofa), الرَّحْمٰنِ الرَّحِيمِ (sifatlar). ESLATMA: bu darslar ma'no tarjimasi; tafsir alohida ilm.",
+  "point_ar": "مَهَارَةُ القِرَاءَةِ السَّرِيعَة",
+  "explanation_uz": "Yangilik o'qish strategiyasi: (1) SARLAVHA — asosiy g'oya shu yerda (ko'pincha masdar bilan: افتتاحُ، إطلاقُ). (2) BIRINCHI XATBOSHI — 5 savol javobi (من؟ ماذا؟ متى؟ أين؟ لماذا؟). (3) MAJHUL FE'LLAR — rasmiy uslub belgisi: أُقيمَ (o'tkazildi), نُظِّمَ (tashkil etildi). (4) Notanish so'zda TO'XTAMANG — kontekst ma'noni beradi; muhim so'z takrorlanadi. (5) Raqamlar va ismlar — faktlarning skeleti.",
   "table": [
-   {"ar": "بِسْمِ اللهِ", "uz": "Alloh nomi bilan — idofa (siz bilasiz!)", "form": "idofa"},
-   {"ar": "الحَمْدُ لِلَّهِ", "uz": "hamd Allohga xos — mubtada+xabar", "form": "ot gap"},
-   {"ar": "إِنَّ اللهَ غَفُورٌ", "uz": "albatta Alloh mag'firatli — inna qoidasi", "form": "ta'kid"},
-   {"ar": "رَبِّ زِدْنِي عِلْمًا", "uz": "Robbim, ilmimni ziyoda qil — amr+tamyiz", "form": "duo"}
+   {"ar": "مَن؟ مَاذَا؟ مَتَى؟", "uz": "kim? nima? qachon?", "form": "5 savol"},
+   {"ar": "أَيْنَ؟ لِمَاذَا؟", "uz": "qayerda? nega?", "form": "5 savol"},
+   {"ar": "أُقِيمَ / نُظِّمَ", "uz": "o'tkazildi / tashkil etildi", "form": "majhul"},
+   {"ar": "شَهِدَ ... حُضُورًا كَبِيرًا", "uz": "katta ishtirokka guvoh bo'ldi", "form": "gazeta iborasi"}
   ],
   "common_mistakes_uz": [
-   "Qur'onni oddiy matn kabi tez o'qish — tilovat odob va tajvid bilan bo'ladi; bu darslar faqat MA'NO uchun.",
-   "Bir oyatdan shaxsiy hukm chiqarish — hukm uchun tafsir va ulamolar kerak.",
-   "Qadimiy so'zlarni zamonaviy ma'noda tushunish — kontekst muhim."
+   "Har notanish so'zda lug'atga yugurish — avval xatboshini oxirigacha o'qing.",
+   "Sarlavhani tashlab ketish — u matnning xaritasi.",
+   "Majhul fe'lni ega izlab adashish — bajaruvchi ataylab aytilmagan."
   ]
  },
  "roots": [
   {
    "root": "ق ر أ",
    "meaning_uz": "o'qish",
-   "uz_cognates": ["Qur'on", "qiroat", "qori"],
+   "uz_cognates": ["qiroat", "Qur'on"],
    "derived": [
-    {"ar": "قُرْآن", "uz": "Qur'on (o'qiladigan)", "pattern": "فُعْلَان"},
-    {"ar": "قِرَاءَة", "uz": "qiroat, o'qish", "pattern": "فِعَالَة"},
-    {"ar": "قَارِئ", "uz": "qori, o'quvchi", "pattern": "فَاعِل"}
+    {"ar": "قِرَاءَة سَرِيعَة", "uz": "tez o'qish (skanerlash)", "pattern": ""},
+    {"ar": "قِرَاءَة مُتَأَنِّيَة", "uz": "sinchkov o'qish", "pattern": ""}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "آيَة", "translit": "āya", "uz": "oyat; belgi-mo'jiza (o'zbekcha 'oyat')", "root": "أ ي ي", "pattern": "", "pos": "ot", "audio": "b1/aya.mp3", "example_ar": "في هذه السورةِ أربعُ آياتٍ.", "example_uz": "Bu surada to'rt oyat bor.", "srs": true},
-  {"ar": "سُورَة", "translit": "sūra", "uz": "sura (o'zbekcha 'sura')", "root": "س و ر", "pattern": "فُعْلَة", "pos": "ot", "audio": "b1/sura3.mp3", "example_ar": "حفظتُ سورةً قصيرةً.", "example_uz": "Qisqa surani yod oldim.", "srs": true},
-  {"ar": "تِلَاوَة", "translit": "tilāwa", "uz": "tilovat (o'zbekcha 'tilovat' aynan shundan)", "root": "ت ل و", "pattern": "فِعَالَة", "pos": "ot", "audio": "b1/tilawa.mp3", "example_ar": "أستمعُ إلى التلاوةِ كلَّ صباحٍ.", "example_uz": "Har tong tilovat tinglayman.", "srs": true},
-  {"ar": "تَفْسِير", "translit": "tafsīr", "uz": "tafsir — oyat sharhi (o'zbekcha 'tafsir')", "root": "ف س ر", "pattern": "تَفْعِيل", "pos": "ot", "audio": "b1/tafsir.mp3", "example_ar": "قرأتُ تفسيرَ هذه الآيةِ.", "example_uz": "Bu oyat tafsirini o'qidim.", "srs": true},
-  {"ar": "تَرْجَمَةُ المَعَانِي", "translit": "tarjamatu l-maʿānī", "uz": "ma'nolar tarjimasi", "root": "ت ر ج م", "pattern": "", "pos": "ibora", "audio": "b1/tarjamat_maani.mp3", "example_ar": "هذه ترجمةُ معاني القرآنِ.", "example_uz": "Bu — Qur'on ma'nolarining tarjimasi.", "srs": true},
-  {"ar": "غَفُور", "translit": "ghafūr", "uz": "mag'firatli (ko'p kechiruvchi — 'mag'firat')", "root": "غ ف ر", "pattern": "فَعُول", "pos": "sifat", "audio": "b1/ghafur.mp3", "example_ar": "إنَّ اللهَ غفورٌ رحيمٌ.", "example_uz": "Albatta Alloh mag'firatli, rahmli.", "srs": true},
-  {"ar": "رَحِيم", "translit": "raḥīm", "uz": "rahmli (o'zbekcha 'rahm')", "root": "ر ح م", "pattern": "فَعِيل", "pos": "sifat", "audio": "b1/rahim.mp3", "example_ar": "الرحمٰنُ الرحيمُ.", "example_uz": "Rahmon va Rahim.", "srs": true},
-  {"ar": "عَالَمِين", "translit": "ʿālamīn", "uz": "olamlar (barcha olam — 'olam')", "root": "ع ل م", "pattern": "", "pos": "ot", "audio": "b1/alamin.mp3", "example_ar": "رَبِّ العالمينَ.", "example_uz": "Olamlar Robbi.", "srs": true},
-  {"ar": "هُدًى", "translit": "hudan", "uz": "hidoyat (o'zbekcha 'hidoyat' o'zagi)", "root": "ه د ي", "pattern": "فُعَل", "pos": "ot", "audio": "b1/hudan.mp3", "example_ar": "القرآنُ هدًى للناسِ.", "example_uz": "Qur'on — odamlar uchun hidoyat.", "srs": true},
-  {"ar": "زِدْنِي", "translit": "zidnī", "uz": "meni ziyoda qil (ziyoda o'zagi — duo fe'li) · buyruq (sen)", "root": "ز ي د", "pattern": "", "pos": "fe'l", "audio": "b1/zidni.mp3", "example_ar": "رَبِّ زِدْنِي عِلْمًا.", "example_uz": "Robbim, ilmimni ziyoda qil (Toha, 114).", "srs": true}
+  {"ar": "مَهْرَجَان", "translit": "mahrajān", "uz": "festival, bayram tadbiri", "root": "", "pattern": "", "pos": "ot", "audio": "b1/mahrajan.mp3", "example_ar": "أقيمَ مهرجانُ الكتابِ.", "example_uz": "Kitob festivali o'tkazildi.", "srs": true},
+  {"ar": "أُقِيمَ", "translit": "uqīma", "uz": "o'tkazildi (majhul — gazeta fe'li!) · majhul", "root": "ق و م", "pattern": "أُفْعِلَ", "pos": "fe'l", "audio": "b1/uqima.mp3", "example_ar": "أقيمَ الحفلُ في القاعةِ الكبرى.", "example_uz": "Marosim katta zalda o'tkazildi.", "srs": true},
+  {"ar": "نَظَّمَ", "translit": "naẓẓama", "uz": "tashkil etdi (o'zbekcha 'nizom' o'zagi) · u/erkak", "root": "ن ظ م", "pattern": "فَعَّلَ", "pos": "fe'l", "audio": "b1/nazzama.mp3", "example_ar": "نظّمتِ الجامعةُ ندوةً علميةً.", "example_uz": "Universitet ilmiy anjuman tashkil etdi.", "srs": true},
+  {"ar": "شَهِدَ", "translit": "shahida", "uz": "guvoh bo'ldi (gazetada: «...ga guvoh bo'ldi») · u/erkak", "root": "ش ه د", "pattern": "فَعِلَ", "pos": "fe'l", "audio": "b1/shahida.mp3", "example_ar": "شهدتِ المدينةُ تطورًا كبيرًا.", "example_uz": "Shahar katta rivojlanishga guvoh bo'ldi.", "srs": true},
+  {"ar": "حُضُور", "translit": "ḥuḍūr", "uz": "ishtirok, kelganlar (o'zbekcha 'huzur')", "root": "ح ض ر", "pattern": "فُعُول", "pos": "ot", "audio": "b1/hudur.mp3", "example_ar": "شهدَ المعرضُ حضورًا واسعًا.", "example_uz": "Ko'rgazma keng ishtirokka guvoh bo'ldi.", "srs": true},
+  {"ar": "مَعْرِض", "translit": "maʿriḍ", "uz": "ko'rgazma", "root": "ع ر ض", "pattern": "مَفْعِل", "pos": "ot", "audio": "b1/marid.mp3", "example_ar": "افتُتحَ معرضُ الصناعاتِ اليدويةِ.", "example_uz": "Hunarmandchilik ko'rgazmasi ochildi.", "srs": true},
+  {"ar": "فَعَالِيَّة", "translit": "faʿāliyya", "uz": "tadbir (ko'pligi: فعاليات)", "root": "ف ع ل", "pattern": "", "pos": "ot", "audio": "b1/faaliyya.mp3", "example_ar": "تضمّنَ المهرجانُ فعالياتٍ متنوعةً.", "example_uz": "Festival turli tadbirlarni o'z ichiga oldi.", "srs": true},
+  {"ar": "زَائِر", "translit": "zāʾir", "uz": "tashrif buyuruvchi (ziyorat o'zagi)", "root": "ز و ر", "pattern": "فَاعِل", "pos": "ot", "audio": "b1/zair.mp3", "example_ar": "استقبلَ المعرضُ آلافَ الزوارِ.", "example_uz": "Ko'rgazma minglab tashrifchilarni qabul qildi.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ. الحَمْدُ لِلَّهِ رَبِّ العَالَمِينَ. الرَّحْمٰنِ الرَّحِيمِ. مَالِكِ يَوْمِ الدِّينِ.",
+   "text_ar": "أُقيمَ في العاصمةِ أمسِ مهرجانُ «القراءةُ للجميعِ» الذي نظّمتْهُ وزارةُ الثقافةِ بمناسبةِ اليومِ العالميِّ للكتابِ. وشهدَ المهرجانُ حضورًا كبيرًا تجاوزَ عشرةَ آلافِ زائرٍ في يومِهِ الأولِ. وتضمّنتِ الفعالياتُ معرضًا للكتبِ، ولقاءاتٍ مع كتّابٍ مشهورينَ، ومسابقاتٍ للأطفالِ. وقالَ مديرُ المهرجانِ: «هدفُنا أنْ نجعلَ القراءةَ عادةً يوميةً لكلِّ أسرةٍ».",
    "questions": [
-    {"q_uz": "«رَبِّ العَالَمِينَ» qanday tuzilma?", "a": "Idofa: olamlar(ning) Robbi"},
-    {"q_uz": "«الحَمْدُ لِلَّهِ» dagi gap turi?", "a": "Ot gap: mubtada (hamd) + xabar (Allohga xos)"},
-    {"q_uz": "Bu qaysi suraning boshi?", "a": "Fotiha surasi (ma'no tarjimasi bilan tanishdik)"}
+    {"q_uz": "NIMA bo'ldi va QAYERDA?", "a": "«Qiroat hamma uchun» festivali — poytaxtda"},
+    {"q_uz": "KIM tashkil etdi va QACHON?", "a": "Madaniyat vazirligi — kecha (Butunjahon kitob kuni munosabati bilan)"},
+    {"q_uz": "Birinchi kunda nechta tashrifchi?", "a": "10 000 dan ortiq"},
+    {"q_uz": "Direktorning maqsadi?", "a": "Qiroatni har oila uchun kundalik odatga aylantirish"}
    ]
   },
   "listening": {
-   "audio": "b1/tilawa.mp3",
-   "transcript_ar": "تِلَاوَة",
+   "audio": "b1/mahrajan.mp3",
+   "transcript_ar": "مَهْرَجَان",
    "questions": [
-    {"q_uz": "Eshitilgan so'z ma'nosi?", "a": "Tilovat — Qur'onni odob bilan o'qish"}
+    {"q_uz": "Eshitilgan so'z ma'nosi?", "a": "Festival"}
    ]
   },
   "speaking": {
-   "task_uz": "Duoni yod ayting: رَبِّ زِدْنِي عِلْمًا (Robbim, ilmimni ziyoda qil). Keyin ma'nosini o'zbekcha ayting. Tilovatni qori audiosidan tinglashni odat qiling.",
-   "target_ar": ["رَبِّ زِدْنِي عِلْمًا"],
+   "task_uz": "Matnni diktor kabi ovoz chiqarib o'qing — birinchi gapni to'liq, ravon talaffuz bilan.",
+   "target_ar": ["أُقِيمَ فِي العَاصِمَةِ مَهْرَجَانُ القِرَاءَةِ"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Fotihaning birinchi ikki oyatini xattotlikka rioya qilib ko'chiring va har so'z ostiga o'zbekcha ma'nosini yozing.",
+   "task_uz": "Matn asosida 5 savolga bir gapdan javob yozing: من؟ ماذا؟ متى؟ أين؟ لماذا؟",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "«رَبِّ العَالَمِينَ» qanday tuzilma?", "q_ar": "", "options": ["idofa (olamlar Robbi)", "fe'l gap", "sifat", "hol"], "answer": "idofa (olamlar Robbi)", "explain_uz": "رب + العالمين — egalik birikmasi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«إِنَّ اللهَ غَفُورٌ» — nega اللهَ nasbda?", "q_ar": "", "options": ["إنّ egasini nasb qiladi", "u ob'ekt", "xato", "duo shakli"], "answer": "إنّ egasini nasb qiladi", "explain_uz": "Siz o'rgangan inna qoidasi Qur'onda ham!", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Bu darslar nimani beradi?", "q_ar": "", "options": ["ma'no tarjimasi bilan tanishtiradi", "tajvid o'rgatadi", "tafsir hukmlarini beradi", "qorilik sanadini beradi"], "answer": "ma'no tarjimasi bilan tanishtiradi", "explain_uz": "Tafsir va tajvid — ustoz bilan o'rganiladigan alohida ilmlar.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "رَبِّ زِدْنِي عِلْمًا", "options": [], "answer": "Robbim ilmimni ziyoda qil", "explain_uz": "Toha surasi 114-oyatdagi duo.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«قُرْآن، قِرَاءَة، قَارِئ» qaysi o'zakdan?", "q_ar": "", "options": ["ق ر أ", "ق ر ب", "ق ر ر"], "answer": "ق ر أ", "explain_uz": "«ق ر أ» — o'qish o'zagi: Qur'on, qori, qiroat.", "audio": "", "root": "ق ر أ", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "sura", "q_ar": "", "options": [], "answer": "سُورَة", "explain_uz": "سورة — sura.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«هُدًى لِلنَّاسِ» ma'nosi?", "q_ar": "", "options": ["odamlar uchun hidoyat", "odamlarning kitobi", "odamlar o'qiydi", "odamlarga sovg'a"], "answer": "odamlar uchun hidoyat", "explain_uz": "هدى — hidoyat, to'g'ri yo'l ko'rsatish.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "Yangilik o'qishda birinchi qadam?", "q_ar": "", "options": ["sarlavha va 5 savol", "har so'zni lug'atdan qarash", "oxiridan boshlash", "faqat rasmlarga qarash"], "answer": "sarlavha va 5 savol", "explain_uz": "Kim-nima-qachon-qayerda-nega — matn skeleti.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«أُقِيمَ المهرجانُ» — nega مهرجان raf'da?", "q_ar": "", "options": ["majhul egasi (noibul-foil)", "mubtada", "xabar", "tamyiz"], "answer": "majhul egasi (noibul-foil)", "explain_uz": "Majhulda asl ob'ekt ega o'rniga o'tadi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«شَهِدَ المعرضُ حضورًا كبيرًا» ma'nosi?", "q_ar": "", "options": ["ko'rgazmaga ko'p odam keldi", "ko'rgazma guvohnoma berdi", "ko'rgazma yopildi", "ko'rgazma qimmat edi"], "answer": "ko'rgazmaga ko'p odam keldi", "explain_uz": "Gazeta iborasi: «katta ishtirokka guvoh bo'ldi».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ko'rgazma", "q_ar": "", "options": [], "answer": "مَعْرِض", "explain_uz": "معرض — ko'rgazma (arz qilish joyi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "tashkil etdi", "q_ar": "", "options": [], "answer": "نَظَّمَ", "explain_uz": "نظّم — nizomga soldi, tashkil etdi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«زَائِر، زِيَارَة» qaysi o'zakdan?", "q_ar": "", "options": ["ز و ر", "ز ر ع", "و ز ر"], "answer": "ز و ر", "explain_uz": "«ز و ر» — ziyorat o'zagi.", "audio": "", "root": "ز و ر", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Notanish so'z uchrasa nima qilasiz?", "q_ar": "", "options": ["kontekstdan taxmin qilib davom etaman", "darhol to'xtayman", "o'qishni tashlayman", "hammasini tarjima qilaman"], "answer": "kontekstdan taxmin qilib davom etaman", "explain_uz": "Muhim so'z baribir takrorlanadi — oqim muhimroq.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "ق ر أ", "back": "o'qish o'zagi (Qur'on, qori, qiroat)", "deck": "msa"},
-  {"type": "word", "front": "آيَة", "back": "oyat", "deck": "msa"},
-  {"type": "word", "front": "سُورَة", "back": "sura", "deck": "msa"},
-  {"type": "word", "front": "تِلَاوَة", "back": "tilovat", "deck": "msa"},
-  {"type": "word", "front": "تَفْسِير", "back": "tafsir", "deck": "msa"},
-  {"type": "word", "front": "غَفُور", "back": "mag'firatli", "deck": "msa"},
-  {"type": "word", "front": "رَحِيم", "back": "rahmli", "deck": "msa"},
-  {"type": "word", "front": "هُدًى", "back": "hidoyat", "deck": "msa"},
-  {"type": "word", "front": "رَبِّ زِدْنِي عِلْمًا", "back": "Robbim, ilmimni ziyoda qil", "deck": "msa"}
+  {"type": "word", "front": "مَهْرَجَان", "back": "festival", "deck": "msa"},
+  {"type": "word", "front": "أُقِيمَ", "back": "o'tkazildi (majhul) · majhul", "deck": "msa"},
+  {"type": "word", "front": "نَظَّمَ", "back": "tashkil etdi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "شَهِدَ", "back": "guvoh bo'ldi · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "حُضُور", "back": "ishtirok", "deck": "msa"},
+  {"type": "word", "front": "مَعْرِض", "back": "ko'rgazma", "deck": "msa"},
+  {"type": "word", "front": "فَعَالِيَّة", "back": "tadbir", "deck": "msa"},
+  {"type": "word", "front": "زَائِر", "back": "tashrifchi", "deck": "msa"}
  ]
 }

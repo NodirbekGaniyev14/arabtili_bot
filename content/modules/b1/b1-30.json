@@ -1,99 +1,97 @@
 {
  "id": "b1-30",
  "level": "B1",
- "module": "quran-hadith",
+ "module": "skills",
  "order": 30,
- "title_uz": "Qisqa suralar tahlili 2: Asr",
- "title_ar": "سُورَةُ العَصْر",
- "can_do_uz": "Asr surasini so'zma-so'z tushunaman — undagi istisno va ko'plik shakllarini tahlil qila olaman.",
+ "title_uz": "O'qish: yangilik 4 (madaniyat)",
+ "title_ar": "قِرَاءَة: خَبَرٌ ثَقَافِيّ",
+ "can_do_uz": "Madaniyat-tarix mavzusidagi maqolani o'qib, fikr va faktni ajrata olaman.",
  "duration_min": 30,
  "prerequisites": ["b1-29"],
- "harakat_level": "full",
- "hook_uz": "Imom Shofe'iy: «Odamlar faqat shu sura haqida fikr yuritganlarida ham, u ularga yetarli bo'lardi». 3 oyat — butun hayot dasturi! Va qarang: unda siz o'rgangan ISTISNO (إلا) qoidasi bor. Grammatika bilimi endi ma'no ochadi.",
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "So'nggi o'qish darsi — eng yaqin mavzu: SAMARQAND! Arab sayohatnomalarida yurtimiz asrlardan beri tilga olinadi. Bugun FAKT (dalil) va FIKR (muallif qarashi) ni ajratishni o'rganamiz — tanqidiy o'qishning kaliti.",
  "grammar": {
-  "point_ar": "وَالْعَصْرِ. إِنَّ الْإِنْسَانَ لَفِي خُسْرٍ...",
-  "explanation_uz": "TAHLIL: (1) وَالْعَصْرِ — Asr (zamon) bilan qasam — vov qasami, ism jarrda! (2) إِنَّ الْإِنسَانَ لَفِي خُسْرٍ — albatta inson ziyondadir: إنّ + nasb egasi (siz bilasiz!) + لَـ ta'kidi. (3) إِلَّا الَّذِينَ آمَنُوا — istisno (b1-09!): faqat iymon keltirganlar... (4) وَتَوَاصَوْا بِالْحَقِّ — va bir-birlariga haqni vasiyat qilganlar: VI bob (تَفَاعَلَ) — o'zaro ma'no! Bir surada: qasam, inna, istisno, VI bob — hammasini o'qigansiz!",
+  "point_ar": "الحَقِيقَةُ وَالرَّأْي",
+  "explanation_uz": "FAKT belgilari: sanalar, raqamlar, joy nomlari, majhul fe'llar (بُنيتْ عامَ... — ...yilda qurilgan). FIKR belgilari: أعتقدُ أنَّ (menimcha), يبدو أنَّ (ko'rinishicha), من أجملِ... (eng go'zallaridan — baho!), sifatlar (رائع، ساحر). Maqolada ikkalasi aralashadi — savol bering: «Buni isbotlash mumkinmi?» Mumkin — fakt, muallifga bog'liq — fikr.",
   "table": [
-   {"ar": "وَالْعَصْرِ", "uz": "Asrga qasam — vov qasami (jarr)", "form": "qasam"},
-   {"ar": "إِنَّ الإِنْسَانَ", "uz": "albatta inson — inna+nasb", "form": "إنّ"},
-   {"ar": "إِلَّا الَّذِينَ آمَنُوا", "uz": "faqat iymon keltirganlar", "form": "istisno"},
-   {"ar": "تَوَاصَوْا", "uz": "bir-biriga vasiyat qildilar — VI bob", "form": "تفاعل"}
+   {"ar": "بُنيتْ عامَ ٧٥١", "uz": "751-yilda qurilgan — FAKT", "form": "fakt"},
+   {"ar": "من أجملِ مدنِ العالمِ", "uz": "dunyoning eng go'zal shaharlaridan — FIKR", "form": "fikr"},
+   {"ar": "يبدو أنَّ...", "uz": "ko'rinishicha... — FIKR", "form": "fikr"},
+   {"ar": "يقعُ في...", "uz": "...da joylashgan — FAKT", "form": "fakt"}
   ],
   "common_mistakes_uz": [
-   "عَصْر ni faqat «asr namozi» deb tushunish — bu yerda «zamon/davr» ma'nosi ham bor.",
-   "خُسْر ni «xarajat» deyish — u «ziyon, yutqazish» (xasorat).",
-   "تواصوا ning VI bob ekanini ko'rmaslik — o'zaro vasiyat: bir-birini haqqa chaqirish."
+   "Chiroyli yozilgan fikrni fakt deb qabul qilish — «eng go'zal» isbotlanmaydi.",
+   "تُرَاث (meros) va تَارِيخ (tarix) ni bir xil deb o'ylash.",
+   "يبدو أنّ dan keyin xabarni unutish — to'liq gap talab qiladi."
   ]
  },
  "roots": [
   {
-   "root": "و ص ي",
-   "meaning_uz": "vasiyat, tavsiya",
-   "uz_cognates": ["vasiyat", "tavsiya"],
+   "root": "و ر ث",
+   "meaning_uz": "meros",
+   "uz_cognates": ["meros", "vorislar"],
    "derived": [
-    {"ar": "وَصِيَّة", "uz": "vasiyat", "pattern": "فَعِيلَة"},
-    {"ar": "تَوَاصَى", "uz": "bir-biriga vasiyat qildi", "pattern": "تَفَاعَلَ"},
-    {"ar": "تَوْصِيَة", "uz": "tavsiya", "pattern": "تَفْعِلَة"}
+    {"ar": "وَرِثَ", "uz": "meros oldi", "pattern": "فَعِلَ"},
+    {"ar": "تُرَاث", "uz": "madaniy meros", "pattern": "فُعَال"},
+    {"ar": "وَارِث", "uz": "voris", "pattern": "فَاعِل"}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "عَصْر", "translit": "ʿaṣr", "uz": "asr, zamon; asr payti (o'zbekcha 'asr')", "root": "ع ص ر", "pattern": "فَعْل", "pos": "ot", "audio": "b1/asr.mp3", "example_ar": "نعيشُ في عصرِ السرعةِ.", "example_uz": "Tezlik asrida yashayapmiz.", "srs": true},
-  {"ar": "إِنْسَان", "translit": "insān", "uz": "inson (o'zbekcha 'inson' aynan shundan)", "root": "أ ن س", "pattern": "فِعْلَان", "pos": "ot", "audio": "b1/insan.mp3", "example_ar": "الإنسانُ مخلوقٌ مكرَّمٌ.", "example_uz": "Inson — mukarram maxluq.", "srs": true},
-  {"ar": "خُسْر", "translit": "khusr", "uz": "ziyon, yutqazish (o'zbekcha 'xasorat' o'zagi)", "root": "خ س ر", "pattern": "فُعْل", "pos": "ot", "audio": "b1/khusr.mp3", "example_ar": "الغفلةُ خسرٌ للعمرِ.", "example_uz": "G'aflat — umr uchun ziyon.", "srs": true},
-  {"ar": "تَوَاصَوْا", "translit": "tawāṣaw", "uz": "bir-birlariga vasiyat qildilar (VI bob) · u/erkak", "root": "و ص ي", "pattern": "تَفَاعَلَ", "pos": "fe'l", "audio": "b1/tawasaw.mp3", "example_ar": "تواصوْا بالحقِّ والصبرِ.", "example_uz": "Bir-birlariga haq va sabrni vasiyat qildilar.", "srs": true},
-  {"ar": "حَقّ", "translit": "ḥaqq", "uz": "haq, haqiqat (o'zbekcha 'haq')", "root": "ح ق ق", "pattern": "فَعْل", "pos": "ot", "audio": "b1/haqq.mp3", "example_ar": "قلِ الحقَّ ولو كانَ مرًّا.", "example_uz": "Achchiq bo'lsa ham haqni ayt.", "srs": true},
-  {"ar": "صَبْر", "translit": "ṣabr", "uz": "sabr (o'zbekcha 'sabr' aynan shundan)", "root": "ص ب ر", "pattern": "فَعْل", "pos": "ot", "audio": "b1/sabr.mp3", "example_ar": "الصبرُ مفتاحُ الفرجِ.", "example_uz": "Sabr — najot kaliti.", "srs": true},
-  {"ar": "قَسَم", "translit": "qasam", "uz": "qasam (o'zbekcha 'qasam' aynan shundan)", "root": "ق س م", "pattern": "فَعَل", "pos": "ot", "audio": "b1/qasam.mp3", "example_ar": "بدأتِ السورةُ بقسمٍ.", "example_uz": "Sura qasam bilan boshlandi.", "srs": true},
-  {"ar": "زَمَن", "translit": "zaman", "uz": "zamon, vaqt (o'zbekcha 'zamon')", "root": "ز م ن", "pattern": "فَعَل", "pos": "ot", "audio": "b1/zaman.mp3", "example_ar": "الزمنُ أغلى من الذهبِ.", "example_uz": "Vaqt oltindan qimmat.", "srs": true},
-  {"ar": "غَفْلَة", "translit": "ghafla", "uz": "g'aflat, beparvolik (o'zbekcha 'g'aflat')", "root": "غ ف ل", "pattern": "فَعْلَة", "pos": "ot", "audio": "b1/ghafla.mp3", "example_ar": "احذرِ الغفلةَ عن الوقتِ.", "example_uz": "Vaqtdan g'ofil bo'lishdan saqlan.", "srs": true},
-  {"ar": "اِسْتَثْمَرَ", "translit": "istathmara", "uz": "samarali ishlatdi, sarmoya qildi (vaqtni ham!) · u/erkak", "root": "ث م ر", "pattern": "اِسْتَفْعَلَ", "pos": "fe'l", "audio": "b1/istathmara.mp3", "example_ar": "استثمرْ وقتَكَ في الخيرِ.", "example_uz": "Vaqtingni yaxshilikka sarfla.", "srs": true}
+  {"ar": "تُرَاث", "translit": "turāth", "uz": "madaniy meros (voris o'zagi)", "root": "و ر ث", "pattern": "فُعَال", "pos": "ot", "audio": "b1/turath.mp3", "example_ar": "نحافظُ على تراثِنا الغنيِّ.", "example_uz": "Boy merosimizni asraymiz.", "srs": true},
+  {"ar": "حَضَارَة", "translit": "ḥaḍāra", "uz": "sivilizatsiya, madaniyat taraqqiyoti", "root": "ح ض ر", "pattern": "فَعَالَة", "pos": "ot", "audio": "b1/hadara2.mp3", "example_ar": "حضارةُ ما وراءَ النهرِ عريقةٌ.", "example_uz": "Movarounnahr sivilizatsiyasi qadimiy.", "srs": true},
+  {"ar": "أَثَر", "translit": "athar", "uz": "yodgorlik, iz (ko'pligi: آثار — 'asar')", "root": "أ ث ر", "pattern": "فَعَل", "pos": "ot", "audio": "b1/athar.mp3", "example_ar": "آثارُ سمرقندَ تجذبُ السياحَ.", "example_uz": "Samarqand yodgorliklari sayyohlarni jalb qiladi.", "srs": true},
+  {"ar": "عَرِيق", "translit": "ʿarīq", "uz": "qadimiy, ildizi chuqur", "root": "ع ر ق", "pattern": "فَعِيل", "pos": "sifat", "audio": "b1/ariq.mp3", "example_ar": "مدينةٌ عريقةٌ في التاريخِ.", "example_uz": "Tarixda ildizi chuqur shahar.", "srs": true},
+  {"ar": "يَقَعُ", "translit": "yaqaʿu", "uz": "joylashgan (mavqe o'zagi) · u/erkak", "root": "و ق ع", "pattern": "يَفْعَلُ", "pos": "fe'l", "audio": "b1/yaqau.mp3", "example_ar": "تقعُ سمرقندُ على طريقِ الحريرِ.", "example_uz": "Samarqand Ipak yo'lida joylashgan.", "srs": true},
+  {"ar": "اِشْتَهَرَ بِـ", "translit": "ishtahara bi-", "uz": "… bilan mashhur bo'ldi · u/erkak", "root": "ش ه ر", "pattern": "اِفْتَعَلَ", "pos": "fe'l", "audio": "b1/ishtahara.mp3", "example_ar": "اشتهرتْ بخارى بعلمائِها.", "example_uz": "Buxoro ulamolari bilan mashhur.", "srs": true},
+  {"ar": "سَائِح", "translit": "sāʾiḥ", "uz": "sayyoh (o'zbekcha 'sayyoh' — shu o'zak!)", "root": "س ي ح", "pattern": "فَاعِل", "pos": "ot", "audio": "b1/saih.mp3", "example_ar": "يزورُها ملايينُ السياحِ سنويًّا.", "example_uz": "Uni yiliga millionlab sayyohlar ziyorat qiladi.", "srs": true},
+  {"ar": "أَعْتَقِدُ أَنَّ", "translit": "aʿtaqidu anna", "uz": "menimcha, ishonamanki (fikr belgisi!) · men", "root": "ع ق د", "pattern": "أَفْتَعِلُ", "pos": "fe'l", "audio": "b1/ataqidu.mp3", "example_ar": "أعتقدُ أنَّ السفرَ خيرُ معلمٍ.", "example_uz": "Menimcha, safar — eng yaxshi muallim.", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ. وَالْعَصْرِ. إِنَّ الْإِنْسَانَ لَفِي خُسْرٍ. إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ.",
+   "text_ar": "تقعُ سمرقندُ في قلبِ طريقِ الحريرِ، وقد ذكرَها الرحّالةُ العربُ قبلَ أكثرَ من ألفِ عامٍ. اشتهرتِ المدينةُ بميدانِ ريجستان وقبةِ غورِ أميرَ، ويزورُها اليومَ ملايينُ السياحِ سنويًّا. وأعتقدُ أنها من أجملِ مدنِ العالمِ، فآثارُها العريقةُ تحكي قصةَ حضارةٍ عظيمةٍ لا تُنسى.",
    "questions": [
-    {"q_uz": "Ziyondan istisno qilinganlarning 4 sifati?", "a": "Iymon, solih amal, haqni vasiyat qilish, sabrni vasiyat qilish"},
-    {"q_uz": "«إِلَّا الَّذِينَ» qaysi qoida?", "a": "Istisno (b1-09) + nisbiy olmosh (b1-02)"},
-    {"q_uz": "تَوَاصَوْا qaysi bob va ma'nosi?", "a": "VI bob (تفاعل) — o'zaro vasiyatlashish"}
+    {"q_uz": "Matndan 2 ta FAKT toping.", "a": "Ipak yo'lida joylashgani; arab sayyohlari 1000 yil oldin tilga olgani; millionlab sayyohlar kelishi"},
+    {"q_uz": "Matndan FIKRNI toping.", "a": "«Menimcha, u dunyoning eng go'zal shaharlaridan» (أعتقد أنها...)"},
+    {"q_uz": "«لا تُنسى» qanday shakl va ma'no?", "a": "Majhul muzori': «unutilmaydi»"}
    ]
   },
   "listening": {
-   "audio": "b1/sabr.mp3",
-   "transcript_ar": "صَبْر",
+   "audio": "b1/turath.mp3",
+   "transcript_ar": "تُرَاث",
    "questions": [
-    {"q_uz": "Eshitilgan so'z va suradagi o'rni?", "a": "Sabr — oxirgi vasiyat mavzusi"}
+    {"q_uz": "Eshitilgan so'z ma'nosi?", "a": "Madaniy meros"}
    ]
   },
   "speaking": {
-   "task_uz": "Surani yoddan, ma'nosini his qilib ayting. So'ng 4 najot sifatini o'zbekcha sanang.",
-   "target_ar": ["وَالْعَصْرِ", "إِنَّ الإِنْسَانَ لَفِي خُسْرٍ"],
+   "task_uz": "Gid bo'ling: «Samarqand Ipak yo'lida joylashgan. Registon bilan mashhur. Menimcha, u juda go'zal» — arabcha ayting.",
+   "target_ar": ["تَقَعُ سَمَرْقَنْدُ عَلَى طَرِيقِ الحَرِيرِ", "اِشْتَهَرَتْ بِمَيْدَانِ رِيجِسْتَان", "أَعْتَقِدُ أَنَّهَا جَمِيلَةٌ جِدًّا"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Surani ko'chiring va 4 najot shartini (iymon, amal, haq, sabr) alohida ro'yxat qilib o'zbekcha izohlang.",
+   "task_uz": "O'z shahringiz haqida 4 gap yozing: 2 FAKT (joylashuvi, mashhurligi) va 2 FIKR (أعتقد أنّ bilan).",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "«وَالْعَصْرِ» dagi و nima?", "q_ar": "", "options": ["qasam vovi (ism jarrda)", "bog'lovchi va", "hol vovi", "ko'plik belgisi"], "answer": "qasam vovi (ism jarrda)", "explain_uz": "Vov qasami ismni jarr qiladi: وَالعصرِ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«إِلَّا الَّذِينَ آمَنُوا» qaysi uslub?", "q_ar": "", "options": ["istisno", "shart", "hol", "tamyiz"], "answer": "istisno", "explain_uz": "Umumdan (inson ziyonda) istisno qilinyapti.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "تَوَاصَوْا qaysi bobda?", "q_ar": "", "options": ["VI (تَفَاعَلَ) — o'zaro", "II — kuchaytirish", "X — talab", "IV — sababiyat"], "answer": "VI (تَفَاعَلَ) — o'zaro", "explain_uz": "O'zaro vasiyatlashish — bir-birini chaqirish.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الصَّبْرُ مِفْتَاحُ الفَرَجِ", "options": [], "answer": "sabr najot kaliti", "explain_uz": "Mashhur hikmat — sabr haqida.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«وَصِيَّة، تَوَاصَوْا، تَوْصِيَة» qaysi o'zakdan?", "q_ar": "", "options": ["و ص ي", "و ص ل", "و س ي"], "answer": "و ص ي", "explain_uz": "«و ص ي» — vasiyat o'zagi.", "audio": "", "root": "و ص ي", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "haq, haqiqat", "q_ar": "", "options": [], "answer": "حَقّ", "explain_uz": "حق — haq.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Suradagi najot sifatlari nechta?", "q_ar": "", "options": ["4 ta", "2 ta", "3 ta", "5 ta"], "answer": "4 ta", "explain_uz": "Iymon, solih amal, haq vasiyati, sabr vasiyati.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "Qaysi biri FAKT?", "q_ar": "", "options": ["تقعُ سمرقندُ على طريقِ الحريرِ", "هي أجملُ مدينةٍ", "يبدو أنها ساحرةٌ", "أعتقدُ أنها رائعةٌ"], "answer": "تقعُ سمرقندُ على طريقِ الحريرِ", "explain_uz": "Joylashuv — isbotlanadigan fakt; qolganlari baho.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«أعتقدُ أنَّ...» nimaning belgisi?", "q_ar": "", "options": ["fikr (muallif qarashi)", "fakt", "buyruq", "savol"], "answer": "fikr (muallif qarashi)", "explain_uz": "«Menimcha» — shaxsiy qarash kiritadi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«اشتهرتْ بخارى بعلمائها» ma'nosi?", "q_ar": "", "options": ["Buxoro ulamolari bilan mashhur", "Buxoro olimlarni chaqirdi", "Buxoroda maktab ko'p", "Buxoro shahar emas"], "answer": "Buxoro ulamolari bilan mashhur", "explain_uz": "اشتهر بـ — «... bilan mashhur bo'lmoq».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "madaniy meros", "q_ar": "", "options": [], "answer": "تُرَاث", "explain_uz": "تراث — avlodlarga o'tgan meros.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "sayyoh", "q_ar": "", "options": [], "answer": "سَائِح", "explain_uz": "سائح — sayyoh (siyohat o'zagi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«تُرَاث، وَارِث، مِيرَاث» qaysi o'zakdan?", "q_ar": "", "options": ["و ر ث", "ت ر ث", "و ر د"], "answer": "و ر ث", "explain_uz": "«و ر ث» — meros o'zagi.", "audio": "", "root": "و ر ث", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«آثَار» so'zining bu matndagi ma'nosi?", "q_ar": "", "options": ["tarixiy yodgorliklar", "kitob asarlari", "izlar (oyoq)", "ta'sirlar"], "answer": "tarixiy yodgorliklar", "explain_uz": "أثر ning ko'pligi — kontekstda yodgorliklar.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "root", "front": "و ص ي", "back": "vasiyat o'zagi (tavsiya)", "deck": "msa"},
-  {"type": "word", "front": "عَصْر", "back": "asr, zamon", "deck": "msa"},
-  {"type": "word", "front": "إِنْسَان", "back": "inson", "deck": "msa"},
-  {"type": "word", "front": "خُسْر", "back": "ziyon", "deck": "msa"},
-  {"type": "word", "front": "تَوَاصَوْا", "back": "bir-biriga vasiyat qildilar · u/erkak", "deck": "msa"},
-  {"type": "word", "front": "حَقّ", "back": "haq", "deck": "msa"},
-  {"type": "word", "front": "صَبْر", "back": "sabr", "deck": "msa"},
-  {"type": "word", "front": "قَسَم", "back": "qasam", "deck": "msa"},
-  {"type": "word", "front": "غَفْلَة", "back": "g'aflat", "deck": "msa"}
+  {"type": "root", "front": "و ر ث", "back": "meros o'zagi (voris)", "deck": "msa"},
+  {"type": "word", "front": "تُرَاث", "back": "madaniy meros", "deck": "msa"},
+  {"type": "word", "front": "حَضَارَة", "back": "sivilizatsiya", "deck": "msa"},
+  {"type": "word", "front": "أَثَر / آثَار", "back": "yodgorlik(lar)", "deck": "msa"},
+  {"type": "word", "front": "عَرِيق", "back": "qadimiy", "deck": "msa"},
+  {"type": "word", "front": "يَقَعُ", "back": "joylashgan · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "اِشْتَهَرَ بِـ", "back": "… bilan mashhur · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "سَائِح", "back": "sayyoh", "deck": "msa"},
+  {"type": "word", "front": "أَعْتَقِدُ أَنَّ", "back": "menimcha (fikr) · men", "deck": "msa"}
  ]
 }

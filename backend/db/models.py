@@ -119,13 +119,16 @@ class XpLog(Base):
 
 
 class ExamAttempt(Base):
-    """Daraja imtihoni urinishlari (spec §12)."""
+    """Imtihon urinishlari: yakuniy daraja imtihoni (kind='level', spec §12)
+    va oraliq mini-imtihonlar (kind='mini', checkpoint=25/50/75)."""
 
     __tablename__ = "exam_attempts"
 
     id: Mapped[int] = mapped_column(primary_key=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
     level: Mapped[str] = mapped_column(String(4))
+    kind: Mapped[str] = mapped_column(String(8), default="level")
+    checkpoint: Mapped[int] = mapped_column(Integer, default=0)
     started_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
     finished_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     score_reading: Mapped[int] = mapped_column(Integer, default=0)

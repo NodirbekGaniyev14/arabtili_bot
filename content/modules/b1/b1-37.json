@@ -3,94 +3,94 @@
  "level": "B1",
  "module": "skills",
  "order": 37,
- "title_uz": "O'qish: yangilik 3 (sport)",
- "title_ar": "قِرَاءَة: خَبَرٌ رِيَاضِيّ",
- "can_do_uz": "Sport reportajini o'qib, voqealar ketma-ketligi va natijani aniqlay olaman.",
- "duration_min": 25,
+ "title_uz": "Gapirish: taqdimot",
+ "title_ar": "مُحَادَثَة: عَرْضٌ تَقْدِيمِيّ",
+ "can_do_uz": "2-3 daqiqalik qisqa taqdimotni tuzilishli qilib og'zaki taqdim eta olaman.",
+ "duration_min": 30,
  "prerequisites": ["b1-36"],
  "harakat_level": "ambiguous_only",
- "hook_uz": "Sport xabari — harakatga to'la matn: gol, jarima, muxlislar... b1-25 dagi so'zlar endi jangovar holatda! Sport jurnalistlari o'tgan zamonda yozadi va vaqt bog'lovchilarini sevadi: أولًا، ثم، بعدَ ذلك، أخيرًا. Ketma-ketlikni tuting — reportaj qo'lingizda.",
+ "hook_uz": "Mikrofon sizda! Taqdimot — «og'zaki insho»: salom → mavzu e'loni → 2-3 fikr → xulosa → rahmat. Formulalarni yodlab oling — sahnada o'ylab o'tirmaysiz. Bugungi mashq: «Nega arab tilini o'rganyapman?» mavzusida mini-taqdimot.",
  "grammar": {
-  "point_ar": "تَسَلْسُلُ الأَحْدَاث",
-  "explanation_uz": "Voqealar KETMA-KETLIGI bog'lovchilari: أَوَّلًا (avvalo), ثُمَّ (keyin), بَعْدَ ذٰلِكَ (shundan so'ng), فِي النِّهَايَةِ / أَخِيرًا (nihoyat). Sport uslubi: فتحَ التسجيلَ (hisobni ochdi), عادلَ النتيجةَ (hisobni tenglashtirdi), أحرزَ هدفَ الفوزِ (g'alaba golini urdi). Vaqt aniqlagichlari: في الدقيقةِ العاشرةِ (10-daqiqada), قبلَ النهايةِ بدقيقتينِ (tugashiga 2 daqiqa qolganda).",
+  "point_ar": "عِبَارَاتُ العَرْض",
+  "explanation_uz": "TAQDIMOT FORMULALARI: (1) OCHISH: السلامُ عليكم، أشكرُكم على حضورِكم (kelganingiz uchun rahmat). (2) MAVZU: سأتحدثُ اليومَ عن... (bugun ... haqida gapiraman), عرضي يتكونُ من ثلاثةِ أجزاءٍ (taqdimotim uch qismdan iborat). (3) O'TISH: ننتقلُ الآنَ إلى... (endi ...ga o'tamiz). (4) YAKUN: في نهايةِ عرضي أودُّ أنْ أقولَ... (yakunida aytmoqchimanki...), شكرًا لحسنِ استماعِكم (diqqat bilan tinglaganingiz uchun rahmat), هل من أسئلةٍ؟ (savollar bormi?).",
   "table": [
-   {"ar": "أولًا... ثم... أخيرًا", "uz": "avval... keyin... nihoyat", "form": "ketma-ketlik"},
-   {"ar": "فتحَ التسجيلَ", "uz": "hisobni ochdi", "form": "sport iborasi"},
-   {"ar": "عادلَ النتيجةَ", "uz": "hisobni tenglashtirdi", "form": "sport iborasi"},
-   {"ar": "في الدقيقةِ العاشرةِ", "uz": "o'ninchi daqiqada", "form": "vaqt"}
+   {"ar": "سأتحدثُ اليومَ عن...", "uz": "bugun ... haqida gapiraman", "form": "mavzu"},
+   {"ar": "يتكونُ من ثلاثةِ أجزاءٍ", "uz": "uch qismdan iborat", "form": "reja"},
+   {"ar": "ننتقلُ الآنَ إلى...", "uz": "endi ...ga o'tamiz", "form": "o'tish"},
+   {"ar": "هل من أسئلةٍ؟", "uz": "savollar bormi?", "form": "yakun"}
   ],
   "common_mistakes_uz": [
-   "ثُمَّ (keyin, oraliq bilan) va فَـ (darhol keyin) farqini bilmaslik.",
-   "أَحْرَزَ (qo'lga kiritdi) ni faqat «gol» ma'nosida deb o'ylash — u yutuqlarga ham.",
-   "Tartib sonlarda adashish: العاشرة (o'ninchi) — ayol shaklda, chunki دقيقة ayol."
+   "Rejasiz boshlash — avval «uch qism» deb e'lon qiling, tinglovchi yo'lni ko'radi.",
+   "Bir xil ohangda o'qib berish — pauza va urg'u nutqqa jon beradi.",
+   "«هل من أسئلة؟» dan qo'rqish — savol — qiziqish belgisi!"
   ]
  },
  "roots": [
   {
-   "root": "ح ر ز",
-   "meaning_uz": "qo'lga kiritish, erishish",
-   "uz_cognates": ["ehroz (erishish)"],
+   "root": "ع ر ض",
+   "meaning_uz": "ko'rsatish, taqdim etish",
+   "uz_cognates": ["arz qilmoq", "ko'rgazma (ma'rid)"],
    "derived": [
-    {"ar": "أَحْرَزَ", "uz": "qo'lga kiritdi (gol, medal)", "pattern": "أَفْعَلَ"},
-    {"ar": "إِحْرَاز", "uz": "erishish", "pattern": "إِفْعَال"}
+    {"ar": "عَرَضَ", "uz": "ko'rsatdi, taqdim etdi", "pattern": "فَعَلَ"},
+    {"ar": "عَرْض تَقْدِيمِيّ", "uz": "taqdimot (prezentatsiya)", "pattern": ""},
+    {"ar": "شَرِيحَة", "uz": "slayd (boshqa o'zak: ش ر ح)", "pattern": ""}
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "أَحْرَزَ", "translit": "aḥraza", "uz": "qo'lga kiritdi (gol urdi, medal oldi) · u/erkak", "root": "ح ر ز", "pattern": "أَفْعَلَ", "pos": "fe'l", "audio": "b1/ahraza.mp3", "example_ar": "أحرزَ المنتخبُ الميداليةَ الذهبيةَ.", "example_uz": "Terma jamoa oltin medalni qo'lga kiritdi.", "srs": true},
-  {"ar": "مُنْتَخَب", "translit": "muntakhab", "uz": "terma jamoa (saylangan — intixob o'zagi)", "root": "ن خ ب", "pattern": "مُفْتَعَل", "pos": "ot", "audio": "b1/muntakhab.mp3", "example_ar": "منتخبُنا الوطنيُّ تأهّلَ.", "example_uz": "Milliy termamiz yo'llanma oldi.", "srs": true},
-  {"ar": "تَأَهَّلَ", "translit": "taʾahhala", "uz": "keyingi bosqichga chiqdi, yo'llanma oldi · u/erkak", "root": "أ ه ل", "pattern": "تَفَعَّلَ", "pos": "fe'l", "audio": "b1/taahhala.mp3", "example_ar": "تأهّلَ الفريقُ إلى النهائيِّ.", "example_uz": "Jamoa finalga yo'l oldi.", "srs": true},
-  {"ar": "دَقِيقَة", "translit": "daqīqa", "uz": "daqiqa (o'zbekcha 'daqiqa' aynan shundan)", "root": "د ق ق", "pattern": "فَعِيلَة", "pos": "ot", "audio": "b1/daqiqa.mp3", "example_ar": "سجّلَ في الدقيقةِ الأخيرةِ.", "example_uz": "So'nggi daqiqada gol urdi.", "srs": true},
-  {"ar": "شَوْط", "translit": "shawṭ", "uz": "bo'lim, taym (o'yin yarmi)", "root": "ش و ط", "pattern": "فَعْل", "pos": "ot", "audio": "b1/shawt.mp3", "example_ar": "انتهى الشوطُ الأولُ بالتعادلِ.", "example_uz": "Birinchi taym durrang tugadi.", "srs": true},
-  {"ar": "حَكَم", "translit": "ḥakam", "uz": "hakam (o'zbekcha 'hakam' aynan shundan)", "root": "ح ك م", "pattern": "فَعَل", "pos": "ot", "audio": "b1/hakam.mp3", "example_ar": "احتسبَ الحكمُ ركلةَ جزاءٍ.", "example_uz": "Hakam penalti belgiladi.", "srs": true},
-  {"ar": "رَكْلَةُ جَزَاء", "translit": "raklatu jazāʾ", "uz": "penalti (jazo zarbasi)", "root": "ر ك ل", "pattern": "", "pos": "ibora", "audio": "b1/raklat_jaza.mp3", "example_ar": "أضاعَ اللاعبُ ركلةَ الجزاءِ.", "example_uz": "O'yinchi penaltini yo'qotdi.", "srs": true},
-  {"ar": "مُشَجِّع", "translit": "mushajjiʿ", "uz": "muxlis (ruhlantiruvchi — shijoat o'zagi)", "root": "ش ج ع", "pattern": "مُفَعِّل", "pos": "ot", "audio": "b1/mushajji.mp3", "example_ar": "ملأ المشجعونَ الملعبَ.", "example_uz": "Muxlislar stadionni to'ldirdi.", "srs": true}
+  {"ar": "عَرْض تَقْدِيمِيّ", "translit": "ʿarḍ taqdīmī", "uz": "taqdimot, prezentatsiya", "root": "ع ر ض", "pattern": "", "pos": "ibora", "audio": "b1/ard_taqdimi.mp3", "example_ar": "أعددتُ عرضًا تقديميًّا قصيرًا.", "example_uz": "Qisqa taqdimot tayyorladim.", "srs": true},
+  {"ar": "جُمْهُورُ الحُضُور", "translit": "jumhūru l-ḥuḍūr", "uz": "tinglovchilar, auditoriya", "root": "ج م ه ر", "pattern": "", "pos": "ibora", "audio": "b1/jumhur_hudur.mp3", "example_ar": "نظرتُ إلى جمهورِ الحضورِ بثقةٍ.", "example_uz": "Auditoriyaga ishonch bilan qaradim.", "srs": true},
+  {"ar": "يَتَكَوَّنُ مِنْ", "translit": "yatakawwanu min", "uz": "…dan tashkil topadi · u/erkak", "root": "ك و ن", "pattern": "يَتَفَعَّلُ", "pos": "fe'l", "audio": "b1/yatakawwanu.mp3", "example_ar": "عرضي يتكونُ من ثلاثةِ أجزاءٍ.", "example_uz": "Taqdimotim uch qismdan iborat.", "srs": true},
+  {"ar": "جُزْء", "translit": "juzʾ", "uz": "qism, bo'lak (o'zbekcha 'juz')", "root": "ج ز أ", "pattern": "فُعْل", "pos": "ot", "audio": "b1/juz.mp3", "example_ar": "الجزءُ الأولُ عن الأسبابِ.", "example_uz": "Birinchi qism — sabablar haqida.", "srs": true},
+  {"ar": "نَنْتَقِلُ إِلَى", "translit": "nantaqilu ilā", "uz": "…ga o'tamiz (o'tish iborasi) · biz", "root": "ن ق ل", "pattern": "نَفْتَعِلُ", "pos": "fe'l", "audio": "b1/nantaqilu.mp3", "example_ar": "ننتقلُ الآنَ إلى النقطةِ الثانيةِ.", "example_uz": "Endi ikkinchi nuqtaga o'tamiz.", "srs": true},
+  {"ar": "أَوَدُّ أَنْ", "translit": "awaddu an", "uz": "…ishni istardim (muloyim istak) · men", "root": "و د د", "pattern": "أَفْعَلُ", "pos": "fe'l", "audio": "b1/awaddu.mp3", "example_ar": "أودُّ أنْ أشكرَكم جميعًا.", "example_uz": "Barchangizga rahmat aytmoqchiman.", "srs": true},
+  {"ar": "حُسْنُ الاِسْتِمَاع", "translit": "ḥusnu l-istimāʿ", "uz": "diqqat bilan tinglash", "root": "س م ع", "pattern": "", "pos": "ibora", "audio": "b1/husn_istima.mp3", "example_ar": "شكرًا لحسنِ استماعِكم.", "example_uz": "Diqqat bilan tinglaganingiz uchun rahmat.", "srs": true},
+  {"ar": "سُؤَال", "translit": "suʾāl", "uz": "savol (o'zbekcha 'savol' aynan shundan)", "root": "س أ ل", "pattern": "فُعَال", "pos": "ot", "audio": "b1/sual2.mp3", "example_ar": "هل من أسئلةٍ؟", "example_uz": "Savollar bormi?", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "تأهّلَ منتخبُنا الوطنيُّ إلى نهائيِّ كأسِ آسيا بعدَ فوزٍ مثيرٍ. أولًا فتحَ الضيوفُ التسجيلَ في الدقيقةِ العاشرةِ، ثم عادلَ لاعبُنا الشابُّ النتيجةَ قبلَ نهايةِ الشوطِ الأولِ. وبعدَ ذلكَ احتسبَ الحكمُ ركلةَ جزاءٍ لمصلحتِنا، فأحرزَ القائدُ هدفَ الفوزِ. وفي النهايةِ احتفلَ آلافُ المشجعينَ في الشوارعِ.",
+   "text_ar": "السلامُ عليكم، أشكرُكم على حضورِكم. سأتحدثُ اليومَ عن سببِ تعلمي اللغةَ العربيةَ. عرضي يتكونُ من ثلاثةِ أجزاءٍ: أولًا الدينُ، فأنا أريدُ أنْ أفهمَ القرآنَ. ثانيًا الثقافةُ، فالعربيةُ مفتاحُ حضارةٍ عظيمةٍ. ثالثًا العملُ، فالسعوديةُ سوقٌ كبيرةٌ. وفي نهايةِ عرضي أودُّ أنْ أقولَ: تعلُّمُ العربيةِ غيّرَ حياتي. شكرًا لحسنِ استماعِكم، هل من أسئلةٍ؟",
    "questions": [
-    {"q_uz": "Birinchi golni kim urdi va qachon?", "a": "Mehmonlar — 10-daqiqada"},
-    {"q_uz": "G'alaba goli qanday keldi?", "a": "Hakam penalti berdi, sardor uni gol qildi"},
-    {"q_uz": "Ketma-ketlik bog'lovchilarini tartib bilan toping.", "a": "أولًا، ثم، بعد ذلك، في النهاية"},
-    {"q_uz": "Natija nima bo'ldi?", "a": "Terma jamoa Osiyo kubogi finaliga chiqdi"}
+    {"q_uz": "Taqdimot nechta qismdan iborat va qaysilar?", "a": "3: din, madaniyat, ish"},
+    {"q_uz": "Qaysi formulalar ochish va yakunda ishlatilgan?", "a": "أشكركم على حضوركم / شكرًا لحسن استماعكم، هل من أسئلة؟"},
+    {"q_uz": "Yakuniy asosiy xabar nima?", "a": "Arab tilini o'rganish hayotini o'zgartirgani"}
    ]
   },
   "listening": {
-   "audio": "b1/hakam.mp3",
-   "transcript_ar": "حَكَم",
+   "audio": "b1/ard_taqdimi.mp3",
+   "transcript_ar": "عَرْض تَقْدِيمِيّ",
    "questions": [
-    {"q_uz": "Eshitilgan so'z ma'nosi?", "a": "Hakam (sudya)"}
+    {"q_uz": "Eshitilgan ibora ma'nosi?", "a": "Taqdimot (prezentatsiya)"}
    ]
   },
   "speaking": {
-   "task_uz": "Reportaj o'qing: matnning birinchi ikki gapini sport sharhlovchisi shiddati bilan ovoz chiqarib ayting.",
-   "target_ar": ["تَأَهَّلَ مُنْتَخَبُنَا إِلَى النِّهَائِيِّ", "أَحْرَزَ القَائِدُ هَدَفَ الفَوْزِ"],
+   "task_uz": "ASOSIY MASHQ: yuqoridagi matnni asos qilib, O'ZINGIZNING «Nega arabcha o'rganyapman» taqdimotingizni 2 daqiqada ovoz chiqarib ayting. Ilovadagi «Jonli suhbat» rejimida ham sinang!",
+   "target_ar": ["سَأَتَحَدَّثُ اليَوْمَ عَنْ...", "عَرْضِي يَتَكَوَّنُ مِنْ ثَلَاثَةِ أَجْزَاءٍ", "شُكْرًا لِحُسْنِ اسْتِمَاعِكُمْ"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "O'zingiz ko'rgan (yoki xayoliy) o'yin haqida 4 gapli mini-reportaj yozing — أولًا، ثم، أخيرًا bog'lovchilari bilan.",
+   "task_uz": "Taqdimotingiz rejasini yozing: mavzu + 3 qism sarlavhasi + yakuniy gap.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "«فتحَ التسجيلَ» sport tilida nimani bildiradi?", "q_ar": "", "options": ["hisobni ochdi (birinchi gol)", "ro'yxatdan o'tdi", "darvozani ochdi", "o'yinni boshladi"], "answer": "hisobni ochdi (birinchi gol)", "explain_uz": "Sport iborasi: birinchi golni urish.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Voqealar ketma-ketligini qaysi qator to'g'ri beradi?", "q_ar": "", "options": ["أولًا ← ثم ← بعد ذلك ← أخيرًا", "أخيرًا ← ثم ← أولًا", "ثم ← أولًا ← أخيرًا", "بعد ذلك ← أولًا ← ثم"], "answer": "أولًا ← ثم ← بعد ذلك ← أخيرًا", "explain_uz": "Avval-keyin-so'ng-nihoyat.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«رَكْلَةُ جَزَاء» nima?", "q_ar": "", "options": ["penalti", "burchak zarbasi", "jarima kartochkasi", "o'yin tanaffusi"], "answer": "penalti", "explain_uz": "Jazo zarbasi = penalti.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "hakam", "q_ar": "", "options": [], "answer": "حَكَم", "explain_uz": "حكم — hakam (hukm o'zagi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "daqiqa", "q_ar": "", "options": [], "answer": "دَقِيقَة", "explain_uz": "دقيقة — daqiqa.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«مُشَجِّع، شَجَاعَة» qaysi o'zakdan?", "q_ar": "", "options": ["ش ج ع", "ش ج ر", "س ج ع"], "answer": "ش ج ع", "explain_uz": "«ش ج ع» — shijoat o'zagi: muxlis ruh beradi.", "audio": "", "root": "ش ج ع", "pattern": "", "words": []},
-  {"type": "order_words", "q_uz": "Tartiblang: «Jamoa finalga yo'l oldi»", "q_ar": "", "options": [], "answer": "تأهّلَ الفريقُ إلى النهائيِّ", "explain_uz": "تأهّل إلى — bosqichga chiqmoq.", "audio": "", "root": "", "pattern": "", "words": ["تأهّلَ", "الفريقُ", "إلى", "النهائيِّ"]}
+  {"type": "mcq", "q_uz": "Taqdimot boshida rejani e'lon qilish nima beradi?", "q_ar": "", "options": ["tinglovchi yo'lni oldindan ko'radi", "vaqtni cho'zadi", "shart emas", "faqat chiroyli"], "answer": "tinglovchi yo'lni oldindan ko'radi", "explain_uz": "«Uch qism» dedingizmi — xarita berdingiz.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«ننتقلُ الآنَ إلى...» qachon aytiladi?", "q_ar": "", "options": ["bir qismdan ikkinchisiga o'tishda", "salomlashishda", "savolga javobda", "uzr so'rashda"], "answer": "bir qismdan ikkinchisiga o'tishda", "explain_uz": "O'tish ko'prigi — tinglovchini boshqaradi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Taqdimot qanday savol bilan yakunlanadi?", "q_ar": "", "options": ["هل من أسئلةٍ؟", "كم الساعة؟", "أين أنتم؟", "من أنا؟"], "answer": "هل من أسئلةٍ؟", "explain_uz": "Savollarga ochiqlik — professional yakun.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "qism, bo'lak", "q_ar": "", "options": [], "answer": "جُزْء", "explain_uz": "جزء — qism (juz).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "شُكْرًا لِحُسْنِ اسْتِمَاعِكُمْ", "options": [], "answer": "diqqat bilan tinglaganingiz uchun rahmat", "explain_uz": "Taqdimotning odobli yakuni.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "match_root", "q_uz": "«عَرْض، مَعْرِض، عَرَضَ» qaysi o'zakdan?", "q_ar": "", "options": ["ع ر ض", "ع ر ف", "غ ر ض"], "answer": "ع ر ض", "explain_uz": "«ع ر ض» — ko'rsatish o'zagi (arz, ko'rgazma).", "audio": "", "root": "ع ر ض", "pattern": "", "words": []},
+  {"type": "order_words", "q_uz": "Tartiblang: «Taqdimotim uch qismdan iborat»", "q_ar": "", "options": [], "answer": "عرضي يتكونُ من ثلاثةِ أجزاءٍ", "explain_uz": "Reja e'loni formulasi.", "audio": "", "root": "", "pattern": "", "words": ["عرضي", "يتكونُ", "من", "ثلاثةِ", "أجزاءٍ"]}
  ],
  "srs_cards": [
-  {"type": "root", "front": "ح ر ز", "back": "qo'lga kiritish o'zagi", "deck": "msa"},
-  {"type": "word", "front": "أَحْرَزَ", "back": "qo'lga kiritdi · u/erkak", "deck": "msa"},
-  {"type": "word", "front": "مُنْتَخَب", "back": "terma jamoa", "deck": "msa"},
-  {"type": "word", "front": "تَأَهَّلَ", "back": "keyingi bosqichga chiqdi · u/erkak", "deck": "msa"},
-  {"type": "word", "front": "دَقِيقَة", "back": "daqiqa", "deck": "msa"},
-  {"type": "word", "front": "شَوْط", "back": "taym, bo'lim", "deck": "msa"},
-  {"type": "word", "front": "حَكَم", "back": "hakam", "deck": "msa"},
-  {"type": "word", "front": "مُشَجِّع", "back": "muxlis", "deck": "msa"}
+  {"type": "root", "front": "ع ر ض", "back": "ko'rsatish o'zagi (arz)", "deck": "msa"},
+  {"type": "word", "front": "عَرْض تَقْدِيمِيّ", "back": "taqdimot", "deck": "msa"},
+  {"type": "word", "front": "يَتَكَوَّنُ مِنْ", "back": "…dan iborat · u/erkak", "deck": "msa"},
+  {"type": "word", "front": "جُزْء", "back": "qism", "deck": "msa"},
+  {"type": "word", "front": "نَنْتَقِلُ إِلَى", "back": "…ga o'tamiz · biz", "deck": "msa"},
+  {"type": "word", "front": "أَوَدُّ أَنْ", "back": "istardim · men", "deck": "msa"},
+  {"type": "word", "front": "حُسْنُ الاِسْتِمَاع", "back": "diqqat bilan tinglash", "deck": "msa"},
+  {"type": "word", "front": "سُؤَال / أَسْئِلَة", "back": "savol(lar)", "deck": "msa"}
  ]
 }

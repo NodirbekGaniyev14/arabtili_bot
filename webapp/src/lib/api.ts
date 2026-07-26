@@ -346,6 +346,47 @@ export interface ExamInfo {
   next_level: string | null;
 }
 
+/** Mini-imtihon (25% / 50% / 75%) */
+export interface CheckpointItem {
+  percent: number;
+  need: number;
+  unlocked: boolean;
+  attempted: boolean;
+  passed: boolean;
+  best_score: number | null;
+}
+
+export interface CheckpointInfo {
+  level: string;
+  lessons_done: number;
+  lessons_total: number;
+  pass_score: number;
+  checkpoints: CheckpointItem[];
+  /** Hozir topshirish mumkin bo'lgan birinchi mini-imtihon foizi */
+  due: number | null;
+}
+
+export interface CheckpointData {
+  attempt_id: number;
+  level: string;
+  percent: number;
+  lessons_covered: number;
+  items: MicroTestItem[];
+  pass_score: number;
+}
+
+export interface CheckpointResult {
+  score: number;
+  passed: boolean;
+  correct: number;
+  total: number;
+  level: string;
+  percent: number;
+  xp_earned: number;
+  srs_reset: number;
+  locked: boolean;
+}
+
 export interface MyCertificate {
   cert_id: string;
   /** "level" — daraja imtihoni; "weekly" — haftalik reyting sovrini */
@@ -496,6 +537,22 @@ export const api = {
     holder_name: string;
   }) =>
     request<ExamResult>("/api/exam/submit", {
+      method: "POST",
+      body: JSON.stringify(payload),
+    }),
+  getCheckpointInfo: () => request<CheckpointInfo>("/api/checkpoint/info"),
+  startCheckpoint: (percent: number) =>
+    request<CheckpointData>(`/api/checkpoint/start?percent=${percent}`, {
+      method: "POST",
+      body: "{}",
+    }),
+  submitCheckpoint: (payload: {
+    attempt_id: number;
+    correct: number;
+    total: number;
+    wrong_words: string[];
+  }) =>
+    request<CheckpointResult>("/api/checkpoint/submit", {
       method: "POST",
       body: JSON.stringify(payload),
     }),

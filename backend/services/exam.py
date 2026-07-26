@@ -73,7 +73,9 @@ async def backfill_levels(session: AsyncSession) -> int:
 
     passed_rows = (
         await session.execute(
-            select(ExamAttempt.user_id, ExamAttempt.level).where(ExamAttempt.passed == 1)
+            select(ExamAttempt.user_id, ExamAttempt.level).where(
+                ExamAttempt.passed == 1, ExamAttempt.kind == "level"
+            )
         )
     ).all()
     passed: dict[int, set[str]] = {}
@@ -127,6 +129,7 @@ async def cooldown_until(
             .where(
                 ExamAttempt.user_id == user_id,
                 ExamAttempt.level == level,
+                ExamAttempt.kind == "level",
                 ExamAttempt.finished_at.isnot(None),
             )
             .order_by(ExamAttempt.id.desc())
@@ -148,6 +151,7 @@ async def already_passed(
             select(ExamAttempt.id).where(
                 ExamAttempt.user_id == user_id,
                 ExamAttempt.level == level,
+                ExamAttempt.kind == "level",
                 ExamAttempt.passed == 1,
             ).limit(1)
         )

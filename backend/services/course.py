@@ -37,7 +37,6 @@ MODULE_META: dict[str, tuple[str, str]] = {
     # B1
     "adv-grammar": ("Yuqori grammatika", "النَّحو المُتقدّم"),
     "vocab": ("Lug'at boyligi", "المُفردات"),
-    "quran-hadith": ("Qur'on va hadis", "القُرآن والحَديث"),
     "review": ("Umumiy takror", "المُراجعة"),
     # umumiy
     "exam": ("Daraja imtihoni", "الامتِحان"),

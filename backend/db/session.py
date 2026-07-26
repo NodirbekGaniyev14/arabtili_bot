@@ -34,6 +34,10 @@ _MIGRATIONS = {
     "certificates": {
         "kind": "VARCHAR(8) DEFAULT 'level'",
     },
+    "exam_attempts": {
+        "kind": "VARCHAR(8) DEFAULT 'level'",
+        "checkpoint": "INTEGER DEFAULT 0",
+    },
 }
 
 
@@ -77,6 +81,51 @@ async def _shift_a2_lessons(conn) -> None:
     )
 
 
+async def _remove_b1_quran_module(conn) -> None:
+    """Bir martalik migratsiya: B1 dagi «Qur'on va hadis» moduli (b1-27..b1-34)
+    olib tashlandi. Shu darslarning progressi o'chiriladi, keyingi darslar
+    (b1-35..b1-50) 8 taga pastga suriladi: b1-27..b1-42."""
+    key = "b1_quran_removal_v1"
+    row = (
+        await conn.exec_driver_sql(
+            "SELECT value FROM meta WHERE key = ?", (key,)
+        )
+    ).first()
+    if row:
+        return
+
+    removed = "{c} IN ('b1-27','b1-28','b1-29','b1-30','b1-31','b1-32','b1-33','b1-34')"
+    kept = "CAST(substr({c}, 4) AS INTEGER) BETWEEN 35 AND 50"
+    shift = (
+        "UPDATE {t} SET {c} = printf('b1-%02d', "
+        "CAST(substr({c}, 4) AS INTEGER) - 8) "
+        "WHERE {c} LIKE 'b1-%' AND " + kept
+    )
+
+    # 1) O'chirilgan darslar yozuvlari
+    for table, col in (("progress", "lesson_id"), ("lesson_ratings", "lesson_id")):
+        await conn.exec_driver_sql(
+            f"DELETE FROM {table} WHERE " + removed.format(c=col)
+        )
+    # start_lesson o'chirilgan darsga ishora qilsa — modul boshiga qaytaramiz
+    await conn.exec_driver_sql(
+        "UPDATE plans SET start_lesson = 'b1-27' WHERE "
+        + removed.format(c="start_lesson")
+    )
+
+    # 2) Qolganini surish
+    for table, col in (
+        ("progress", "lesson_id"),
+        ("lesson_ratings", "lesson_id"),
+        ("plans", "start_lesson"),
+    ):
+        await conn.exec_driver_sql(shift.format(t=table, c=col))
+
+    await conn.exec_driver_sql(
+        "INSERT INTO meta (key, value) VALUES (?, 'done')", (key,)
+    )
+
+
 async def init_db():
     from db.models import Base
 
@@ -84,3 +133,4 @@ async def init_db():
         await conn.run_sync(Base.metadata.create_all)
         await _ensure_columns(conn)
         await _shift_a2_lessons(conn)
+        await _remove_b1_quran_module(conn)

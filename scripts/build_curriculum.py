@@ -142,7 +142,7 @@ A2 = [  # 1-9 sarf, 10-21 verb-forms, 22-27 weak-verbs, 28-35 grammar-ext, 36-47
     ("A2 IMTIHONI", "4 ko'nikma bo'yicha yakuniy imtihon", 0, "80% → Sertifikat A2", False),
 ]
 
-B1 = [  # 1-14 adv-grammar, 15-26 vocab, 27-34 quran-hadith, 35-46 skills, 47-50 exam
+B1 = [  # 1-14 adv-grammar, 15-26 vocab, 27-38 skills, 39-41 review, 42 exam
     ("Majhul nisbat — to'liq", "Har bob uchun majhul shakllar", 10, "", False),
     ("Nisbiy olmoshlar", "الذي · التي · الذين · اللاتي", 10, "", False),
     ("Sifatlovchi gap", "Noaniq ot bilan sifat gap", 10, "", False),
@@ -169,14 +169,6 @@ B1 = [  # 1-14 adv-grammar, 15-26 vocab, 27-34 quran-hadith, 35-46 skills, 47-50
     ("Tabiat", "Mavzuviy lug'at", 12, "", False),
     ("Sport", "Mavzuviy lug'at", 12, "", False),
     ("Hissiyot", "Mavzuviy lug'at", 12, "", False),
-    ("Qur'on tili", "MSA'dan farqlari", 10, "Diniy kontent — aniq va hurmatli", False),
-    ("100 Qur'oniy so'z", "Eng ko'p uchraydigan so'zlar (matnning ~40%)", 15, "", False),
-    ("Qisqa suralar tahlili 1", "So'zma-so'z, o'zak bilan", 10, "Sura/oyat raqamlari aniq", False),
-    ("Qisqa suralar tahlili 2", "So'zma-so'z, o'zak bilan", 10, "Sura/oyat raqamlari aniq", False),
-    ("Hadis matni tuzilishi", "Isnod + matn", 10, "", False),
-    ("Arba'in namunalari", "an-Nawawiy to'plamidan", 10, "", False),
-    ("Duo va zikr matnlari", "Grammatik tahlil", 10, "", False),
-    ("Diniy atamalar lug'ati", "Asosiy terminlar", 12, "", False),
     ("O'qish: yangilik 1", "Soddalashtirilgan maqola", 8, "", False),
     ("O'qish: yangilik 2", "Soddalashtirilgan → original", 8, "", False),
     ("O'qish: yangilik 3", "Original maqola", 8, "", False),
@@ -223,9 +215,8 @@ def module_for(level: str, order: int) -> str:
     # B1
     if order <= 14: return "adv-grammar"
     if order <= 26: return "vocab"
-    if order <= 34: return "quran-hadith"
-    if order <= 46: return "skills"
-    if order <= 49: return "review"
+    if order <= 38: return "skills"
+    if order <= 41: return "review"
     return "exam"
 
 
@@ -282,4 +273,4 @@ if __name__ == "__main__":
     )
     total = sum(data["counts"].values())
     print(f"curriculum.json yozildi: {total} dars {data['counts']}")
-    assert total == 169, f"169 emas: {total}"
+    assert total == 161, f"161 emas: {total}"
