@@ -61,7 +61,11 @@ function StatCard({
   );
 }
 
-export default function Profile() {
+export default function Profile({
+  onOpenPlacement,
+}: {
+  onOpenPlacement?: () => void;
+} = {}) {
   const [data, setData] = useState<ProfileData | null>(null);
   const [error, setError] = useState(false);
   const [savingGoal, setSavingGoal] = useState(false);
@@ -393,6 +397,21 @@ export default function Profile() {
           </>
         )}
       </section>
+
+      {/* Darajani qayta aniqlash — IXTIYORIY */}
+      {onOpenPlacement && (
+        <>
+          <button
+            onClick={onOpenPlacement}
+            className="w-full rounded-2xl border-2 border-emerald-deep/40 bg-emerald-deep/8 py-3.5 font-extrabold text-emerald-deep active:scale-[0.98] transition-transform"
+          >
+            🎯 Darajani qayta aniqlash
+          </button>
+          <p className="text-center text-[11px] text-ink-soft font-semibold -mt-2">
+            Qisqa test · darslaringiz va XP saqlanadi
+          </p>
+        </>
+      )}
 
       {/* Rejani tozalash */}
       <button

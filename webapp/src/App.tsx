@@ -17,7 +17,7 @@ import WeakPractice from "./pages/WeakPractice";
 import RolePlay from "./pages/RolePlay";
 import LessonPlayerV2 from "./pages/v2/LessonPlayerV2";
 
-type Phase = "boot" | "onboarding" | "app";
+type Phase = "boot" | "onboarding" | "app" | "offline";
 
 const EMPTY_STATS: Stats = {
   streak: 0,
@@ -44,7 +44,7 @@ export default function App() {
   const [showExam, setShowExam] = useState(false);
   const [checkpointPct, setCheckpointPct] = useState<number | null>(null);
   const [showChallenge, setShowChallenge] = useState(false);
-  const [retestDone, setRetestDone] = useState(false);
+  const [showPlacement, setShowPlacement] = useState(false);
   const [showWeak, setShowWeak] = useState(false);
   const [showRolePlay, setShowRolePlay] = useState(false);
 
@@ -58,14 +58,26 @@ export default function App() {
       setTgName(tg.initDataUnsafe.user.first_name);
     }
 
+    loadMe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  /** Server javob bermasa ONBOARDINGGA TASHLAMAYMIZ.
+   *
+   * Ilgari `.catch(() => setPhase("onboarding"))` edi: server bir soniya
+   * yiqilsa ham foydalanuvchi «Salom! Men Jamalman» ekranini ko'rib,
+   * hamma natijam o'chibdi deb o'ylardi va qaytadan test topshirardi.
+   * Endi xato bo'lsa — qayta urinish ekrani, ma'lumot joyida qoladi. */
+  const loadMe = () => {
+    setPhase("boot");
     api
       .getMe()
       .then((m) => {
         setMe(m);
         setPhase(m.has_plan ? "app" : "onboarding");
       })
-      .catch(() => setPhase("onboarding"));
-  }, []);
+      .catch(() => setPhase("offline"));
+  };
 
   const handleOnboardingDone = (plan: PlanData, newName: string) => {
     setMe((m) => ({
@@ -98,6 +110,25 @@ export default function App() {
     );
   }
 
+  if (phase === "offline") {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-8 text-center">
+        <div className="text-5xl">📡</div>
+        <h1 className="text-xl font-extrabold">Serverga ulanib bo'lmadi</h1>
+        <p className="text-sm text-ink-soft font-semibold">
+          Ma'lumotlaringiz joyida — hech narsa yo'qolmadi. Internetni tekshirib,
+          qayta urinib ko'ring.
+        </p>
+        <button
+          onClick={loadMe}
+          className="w-full max-w-xs rounded-2xl bg-emerald-deep py-4 text-white font-extrabold text-lg"
+        >
+          Qayta urinish
+        </button>
+      </div>
+    );
+  }
+
   if (phase === "onboarding") {
     return (
       <div className="min-h-screen">
@@ -110,22 +141,20 @@ export default function App() {
   const displayName = me?.name || tgName;
   const stats = me?.stats ?? EMPTY_STATS;
 
-  // Eski foydalanuvchilar: daraja eski (noto'g'ri) usulda aniqlangan bo'lsa —
-  // bir martalik qayta daraja testi. O'tkazib yuborib bo'lmaydi.
-  const needsRetest =
-    !retestDone &&
-    !!me?.plan &&
-    (me.plan.placement_version ?? 0) < (me.plan.placement_current ?? 0);
-
-  if (needsRetest) {
+  // Daraja testi MAJBURIY EMAS. Ilgari eski foydalanuvchilarga ilova
+  // ochilganda majburiy qayta test chiqardi — bu «progressim o'chibdi»
+  // taassurotini berardi. Endi u faqat Profil sahifasidan ixtiyoriy
+  // (showPlacement) ochiladi.
+  if (showPlacement) {
     return (
       <div className="min-h-screen">
         <ArabicBg />
         <Placement
           onDone={() => {
-            setRetestDone(true);
+            setShowPlacement(false);
             api.getMe().then(setMe).catch(() => {});
           }}
+          onClose={() => setShowPlacement(false)}
         />
       </div>
     );
@@ -160,7 +189,9 @@ export default function App() {
         )}
         {tab === "review" && <Review onDone={refreshMe} />}
         {tab === "rating" && <Rating />}
-        {tab === "profile" && <Profile />}
+        {tab === "profile" && (
+          <Profile onOpenPlacement={() => setShowPlacement(true)} />
+        )}
       </main>
 
       <NavBar tab={tab} onChange={setTab} reviewBadge={stats.due_count} />

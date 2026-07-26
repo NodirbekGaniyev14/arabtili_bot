@@ -641,6 +641,15 @@ async def onboarding(
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
+    # HIMOYA: rejasi bor foydalanuvchi onboardingga qaytmasligi kerak.
+    # (Ilgari server bir lahza javob bermasa ilova onboardingni ko'rsatardi —
+    # shunda yangi reja yozilib, daraja va boshlash nuqtasi nolga tushardi.)
+    # Haqiqiy qayta-onboarding /settings/reset-plan orqali bo'ladi — u avval
+    # rejani o'chiradi, shuning uchun bu yerga kelganda reja bo'lmaydi.
+    existing = await latest_plan(session, user.id)
+    if existing is not None:
+        return {"ai_used": False, "plan": plan_to_dict(existing), "kept": True}
+
     answers = body.model_dump(exclude={"test"})
 
     # Foydalanuvchi kiritgan ismni saqlaymiz
