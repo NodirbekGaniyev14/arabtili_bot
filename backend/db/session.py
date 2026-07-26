@@ -23,6 +23,7 @@ _MIGRATIONS = {
         "is_demo": "INTEGER DEFAULT 0",
         "rank_notice_at": "DATETIME",
         "last_rank": "INTEGER DEFAULT 0",
+        "league_id": "VARCHAR(12) DEFAULT 'bronze'",
         "streak_freezes": "INTEGER DEFAULT 2",
         "frozen_days": "TEXT DEFAULT ''",
         "freeze_granted_week": "VARCHAR(10) DEFAULT ''",

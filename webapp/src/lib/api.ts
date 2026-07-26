@@ -172,6 +172,46 @@ export interface LeaderboardData {
   my_weekly_xp: number;
   my_period_xp: number;
   entries: LeaderboardEntry[];
+  /** Liga mexanikasi — ko'tarilish/tushish zonalari */
+  league_rank: number;
+  league_size: number;
+  promote_zone: boolean;
+  relegate_zone: boolean;
+  promote_top: number;
+  relegate_bottom: number;
+  min_xp_to_promote: number;
+  next_league: League | null;
+}
+
+/** Ma'lumotnoma — grammatika va lug'at */
+export interface ReferenceStats {
+  grammar_points: number;
+  vocab_words: number;
+}
+
+export interface GrammarEntry {
+  lesson_id: string;
+  level: string;
+  module: string;
+  lesson_title: string;
+  point_ar: string;
+  explanation_uz: string;
+  table: { ar: string; uz: string; form?: string }[];
+  common_mistakes_uz: string[];
+}
+
+export interface VocabEntry {
+  ar: string;
+  translit: string;
+  uz: string;
+  root: string;
+  pattern: string;
+  pos: string;
+  audio: string;
+  example_ar: string;
+  example_uz: string;
+  level: string;
+  lessons: string[];
 }
 
 /** Daraja aniqlash testi (placement) */
@@ -547,6 +587,15 @@ export const api = {
       method: "POST",
       body: JSON.stringify({ word_id: wordId, grade }),
     }),
+  getReferenceStats: () => request<ReferenceStats>("/api/reference/stats"),
+  searchGrammar: (q: string, level = "") =>
+    request<{ total: number; items: GrammarEntry[] }>(
+      `/api/reference/grammar?q=${encodeURIComponent(q)}&level=${level}`
+    ),
+  searchVocab: (q: string, level = "", offset = 0) =>
+    request<{ total: number; items: VocabEntry[] }>(
+      `/api/reference/vocab?q=${encodeURIComponent(q)}&level=${level}&offset=${offset}`
+    ),
   getLeaderboard: (period: LeaderPeriod = "week") =>
     request<LeaderboardData>(`/api/leaderboard?period=${period}`),
   getPlacementStep: (passed: string) =>

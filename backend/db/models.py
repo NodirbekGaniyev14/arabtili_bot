@@ -38,6 +38,8 @@ class User(Base):
     rank_notice_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     # Oxirgi tekshiruvdagi haftalik reyting o'rni (0 = hali hisoblanmagan)
     last_rank: Mapped[int] = mapped_column(Integer, default=0)
+    # Joriy liga (bronze|silver|gold|emerald) — haftalik ko'tarilish/tushish
+    league_id: Mapped[str] = mapped_column(String(12), default="bronze")
     # Streak himoyasi: qolgan muzlatkichlar soni (haftada +1, ko'pi bilan 2)
     streak_freezes: Mapped[int] = mapped_column(Integer, default=2)
     # Muzlatkich ishlatilgan kunlar, vergul bilan: "2026-07-18,2026-07-25"

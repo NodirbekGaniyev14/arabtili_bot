@@ -16,7 +16,14 @@ from sqlalchemy import select
 from db.models import Meta, User, WeeklyAward
 from db.session import SessionLocal
 from services.certificate import issue_weekly_certificate
-from services.league import _week_start_utc, refresh_ranks, weekly_top3
+from services.league import (
+    LEAGUE_ORDER,
+    _week_start_utc,
+    apply_league_movement,
+    league_by_id,
+    refresh_ranks,
+    weekly_top3,
+)
 from services.stats import TASHKENT_OFFSET
 
 ROLLOVER_HOUR = 9  # dushanba, Toshkent vaqti
@@ -106,6 +113,37 @@ async def _rollover(bot: Bot) -> None:
                         f"{rank}-o'rin!</b>\n\n"
                         f"{label} haftasida {xp} XP to'pladingiz. "
                         f"Sovrin sertifikatingiz tayyor — tabriklaymiz!"
+                    ),
+                    parse_mode="HTML",
+                )
+            except Exception:
+                pass
+
+        # Liga harakati — ko'tarilish va tushish
+        try:
+            moved = await apply_league_movement(session, prev_week_start)
+        except Exception as e:
+            print(f"Liga harakati xatosi: {e!r}")
+            moved = []
+
+        for user, old_league, new_league in moved:
+            up = LEAGUE_ORDER.index(new_league) > LEAGUE_ORDER.index(old_league)
+            old_lg, new_lg = league_by_id(old_league), league_by_id(new_league)
+            try:
+                await bot.send_message(
+                    user.tg_id,
+                    (
+                        f"{new_lg['icon']} <b>{new_lg['name']} ligasiga "
+                        f"ko'tarildingiz!</b>\n\n"
+                        f"{old_lg['name']} ligasida yuqori o'rinni egalladingiz. "
+                        f"Yangi ligada raqiblar kuchliroq — omad!"
+                    )
+                    if up
+                    else (
+                        f"{new_lg['icon']} <b>{new_lg['name']} ligasiga "
+                        f"tushdingiz</b>\n\n"
+                        f"{old_lg['name']} ligasida oxirgi o'rinlarda qoldingiz. "
+                        f"Bu hafta ko'proq mashq qiling — qaytib chiqasiz 💪"
                     ),
                     parse_mode="HTML",
                 )

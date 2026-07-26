@@ -14,6 +14,7 @@ interface HomeProps {
   onOpenChallenge: () => void;
   onOpenWeak: () => void;
   onOpenRolePlay: () => void;
+  onOpenReference: () => void;
   onGoLessons: () => void;
 }
 
@@ -36,6 +37,7 @@ export default function Home({
   onOpenWeak,
   onOpenChallenge,
   onOpenRolePlay,
+  onOpenReference,
   onGoLessons,
 }: HomeProps) {
   const next = stats.next_lesson;
@@ -221,7 +223,12 @@ export default function Home({
             desc="🇸🇦 rol o'yini"
             onClick={onOpenRolePlay}
           />
-          <ModeCard ar="قواعد" label="Grammatika" desc="Tez orada" disabled />
+          <ModeCard
+            ar="قواعد"
+            label="Ma'lumotnoma"
+            desc="grammatika + lug'at"
+            onClick={onOpenReference}
+          />
         </div>
       </section>
     </div>

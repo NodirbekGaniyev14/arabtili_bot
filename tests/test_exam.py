@@ -115,8 +115,9 @@ async def test_level_progress_counts_only_that_level(session, make_user):
     done_a0, total_a0 = await ex.level_progress(session, user.id, "A0")
     done_a1, _ = await ex.level_progress(session, user.id, "A1")
     assert done_a0 == 2
-    assert total_a0 == 24
     assert done_a1 == 1
+    # Jami — kontentdan olinadi (qattiq raqam yozilmaydi: kurs o'sib boradi)
+    assert total_a0 == len(ex.level_lesson_ids("A0")) > 0
 
 
 async def test_duplicate_progress_rows_counted_once(session, make_user):

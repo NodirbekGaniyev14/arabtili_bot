@@ -160,6 +160,29 @@ export default function Rating() {
                   </div>
                 ))}
               </div>
+
+              {/* Ligadagi o'rin va zona */}
+              <div className="mt-3 rounded-2xl bg-white/10 px-3 py-2 text-[13px] font-semibold">
+                Ligada: <b>{data.league_rank}</b> / {data.league_size}
+                {data.promote_zone && data.next_league && (
+                  <div className="mt-1 text-gold-soft font-extrabold">
+                    ⬆ Ko'tarilish zonasi — {data.next_league.name} ligasiga
+                    chiqyapsiz!
+                  </div>
+                )}
+                {data.relegate_zone && (
+                  <div className="mt-1 text-white/90 font-extrabold">
+                    ⬇ Tushish zonasi — bu hafta XP to'plang!
+                  </div>
+                )}
+                {!data.promote_zone && !data.relegate_zone && (
+                  <div className="mt-1 text-white/70">
+                    {data.next_league
+                      ? `Top-${data.promote_top} ga kirsangiz ${data.next_league.name} ligasiga ko'tarilasiz`
+                      : "Eng yuqori ligadasiz — ushlab turing!"}
+                  </div>
+                )}
+              </div>
             </section>
           )}
 

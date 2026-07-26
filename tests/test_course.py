@@ -26,11 +26,11 @@ def test_percent_zero_when_nothing_done():
 
 def test_percent_reflects_completion():
     a0 = sorted(lid for lid in WRITTEN if lid.startswith("a0-"))
-    done = set(a0[:12])  # 24 tadan 12 tasi
-    data = course_all_levels(done, current_level="A0")
+    half = len(a0) // 2
+    data = course_all_levels(set(a0[:half]), current_level="A0")
     level_a0 = next(lv for lv in data["levels"] if lv["level"] == "A0")
-    assert level_a0["done"] == 12
-    assert level_a0["percent"] == 50
+    assert level_a0["done"] == half
+    assert level_a0["percent"] == round(half / len(a0) * 100)
 
 
 def test_full_completion_gives_100_percent():

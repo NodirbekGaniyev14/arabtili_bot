@@ -687,3 +687,38 @@ async def onboarding(
     await session.commit()
 
     return {"ai_used": ai_used, "plan": plan_to_dict(plan)}
+
+
+# ─────────────────── Ma'lumotnoma: grammatika va lug'at ───────────────────
+
+
+@router.get("/reference/stats")
+async def reference_stats_route(user: User = Depends(get_current_user)):
+    from services.reference import reference_stats
+
+    return reference_stats()
+
+
+@router.get("/reference/grammar")
+async def reference_grammar(
+    q: str = "",
+    level: str = "",
+    user: User = Depends(get_current_user),
+):
+    """Butun kurs bo'ylab grammatika qoidalari (qidiruv + daraja filtri)."""
+    from services.reference import search_grammar
+
+    return search_grammar(q[:100], level[:4].upper())
+
+
+@router.get("/reference/vocab")
+async def reference_vocab(
+    q: str = "",
+    level: str = "",
+    offset: int = 0,
+    user: User = Depends(get_current_user),
+):
+    """Butun kurs lug'ati — arabcha, transliteratsiya, o'zbekcha yoki o'zak bo'yicha."""
+    from services.reference import search_vocab
+
+    return search_vocab(q[:100], level[:4].upper(), limit=60, offset=max(0, offset))
