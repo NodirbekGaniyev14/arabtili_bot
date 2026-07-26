@@ -1,0 +1,355 @@
+{
+ "id": "a0-30",
+ "level": "A0",
+ "module": "harakat",
+ "order": 30,
+ "title_uz": "Cho'ziq unlilar (madd)",
+ "title_ar": "حُرُوف المَدّ",
+ "can_do_uz": "Men ا و ي harflarini cho'zish (madd) vazifasida taniy olaman va so'zlarni to'g'ri cho'zib o'qiy olaman.",
+ "duration_min": 30,
+ "prerequisites": [
+  "a0-29"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "«Kitob» so'zini bilasizmi? Arabchada u كِتَاب — o'rtadagi «taa» tovushi cho'ziladi: ki-taaab. Bugun uch sehrli harf — ا و ي qanday qilib unlini cho'zishini o'rganamiz.",
+ "grammar": {
+  "point_ar": "حُرُوف المَدّ: ا · و · ي",
+  "explanation_uz": "Uch harf — ا, و, ي — ba'zan undosh emas, balki oldingi qisqa unlini cho'zish uchun keladi. Bunda ular ustiga hech qanday harakat qo'yilmaydi. Qoida oddiy: qaysi qisqa harakat kelsa, o'sha cho'ziladi. Fatha (a) + ا = ā (aa). Damma (u) + و = ū (uu). Kasra (i) + ي = ī (ii).",
+  "table": [
+   {
+    "ar": "بَ + ا = بَا",
+    "uz": "«ba» → «baa» (uzun a)",
+    "form": "ا cho'zadi"
+   },
+   {
+    "ar": "نُ + و = نُو",
+    "uz": "«nu» → «nuu» (uzun u)",
+    "form": "و cho'zadi"
+   },
+   {
+    "ar": "دِ + ي = دِي",
+    "uz": "«di» → «dii» (uzun i)",
+    "form": "ي cho'zadi"
+   },
+   {
+    "ar": "بَاب",
+    "uz": "baab (eshik) — ا ni cho'z",
+    "form": "misol"
+   },
+   {
+    "ar": "نُور",
+    "uz": "nuur (nur) — و ni cho'z",
+    "form": "misol"
+   },
+   {
+    "ar": "دِين",
+    "uz": "diin (din) — ي ni cho'z",
+    "form": "misol"
+   }
+  ],
+  "common_mistakes_uz": [
+   "Cho'ziq unlini qisqa o'qish: كِتَاب ni «kitab» emas, «kitaab» deb cho'zish kerak.",
+   "Madd harfiga harakat qo'yish: cho'zuvchi ا و ي ustiga hech qachon fatha/kasra/damma qo'yilmaydi.",
+   "و va ي ni har doim «v» va «y» deb o'qish. Cho'zishda ular «uu» va «ii» bo'lib ketadi.",
+   "Cho'ziqlikni oldingi harakat belgilaydi — damma + و = uu, kasra + ي = ii. Bularni chalkashtirmang."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ك ت ب",
+   "meaning_uz": "yozmoq bilan bog'liq",
+   "uz_cognates": [
+    "kitob",
+    "kotib",
+    "maktab"
+   ],
+   "derived": [
+    {
+     "ar": "كِتَاب",
+     "uz": "kitob",
+     "pattern": "فِعَال"
+    },
+    {
+     "ar": "كَاتِب",
+     "uz": "yozuvchi, kotib",
+     "pattern": "فَاعِل"
+    },
+    {
+     "ar": "مَكْتَب",
+     "uz": "idora, maktab",
+     "pattern": "مَفْعَل"
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "نُور",
+   "translit": "nūr",
+   "uz": "nur, yorug'lik (o'zbekcha «nur»)",
+   "root": "ن و ر",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/nur.mp3",
+   "example_ar": "نُور",
+   "example_uz": "yorug'lik",
+   "srs": true
+  },
+  {
+   "ar": "بَيْت",
+   "translit": "bayt",
+   "uz": "uy",
+   "root": "ب ي ت",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/bayt.mp3",
+   "example_ar": "بَيْت كَبِير",
+   "example_uz": "katta uy",
+   "srs": true
+  },
+  {
+   "ar": "بَاب",
+   "translit": "bāb",
+   "uz": "eshik",
+   "root": "ب و ب",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/bab.mp3",
+   "example_ar": "بَاب كَبِير",
+   "example_uz": "katta eshik",
+   "srs": true
+  },
+  {
+   "ar": "سُوق",
+   "translit": "sūq",
+   "uz": "bozor",
+   "root": "س و ق",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/suq.mp3",
+   "example_ar": "سُوق كَبِير",
+   "example_uz": "katta bozor",
+   "srs": true
+  },
+  {
+   "ar": "دِين",
+   "translit": "dīn",
+   "uz": "din, e'tiqod",
+   "root": "د ي ن",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/din.mp3",
+   "example_ar": "دِين",
+   "example_uz": "din",
+   "srs": true
+  },
+  {
+   "ar": "نَار",
+   "translit": "nār",
+   "uz": "olov, o't",
+   "root": "ن و ر",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/nar.mp3",
+   "example_ar": "نَار",
+   "example_uz": "olov",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "بَيْت كَبِير. بَاب كَبِير. كِتَاب كَبِير.",
+   "questions": [
+    {
+     "q_uz": "«بَيْت» so'zi qanday tarjima qilinadi?",
+     "a": "uy"
+    },
+    {
+     "q_uz": "«كَبِير» so'zi nimani bildiradi?",
+     "a": "katta"
+    },
+    {
+     "q_uz": "Matnda qaysi so'zda ا cho'ziladi?",
+     "a": "بَاب (baab) va كِتَاب (kitaab)"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/madd_listen.mp3",
+   "transcript_ar": "كِتَاب. نُور. سُوق. دِين.",
+   "questions": [
+    {
+     "q_uz": "Birinchi eshitilgan so'z qaysi?",
+     "a": "كِتَاب"
+    },
+    {
+     "q_uz": "«sūq» so'zi nimani anglatadi?",
+     "a": "bozor"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Quyidagi so'zlarni cho'ziq unlilarni aniq cho'zib, ovoz chiqarib o'qing: كِتَاب, نُور, بَاب, دِين.",
+   "target_ar": [
+    "كِتَاب",
+    "نُور",
+    "بَاب",
+    "دِين"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«bāb», «nūr» va «kitāb» so'zlarini harakatlari bilan yozing va har birida qaysi harf cho'zilayotganini belgilang.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi so'zda و unlini cho'zish uchun kelgan?",
+   "q_ar": "",
+   "options": [
+    "نُور",
+    "بَيْت",
+    "كِتَاب"
+   ],
+   "answer": "نُور",
+   "explain_uz": "نُور = nuur, damma + و uzun «uu» beradi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«kitob» so'zining arabchasi qaysi?",
+   "q_ar": "",
+   "options": [
+    "كِتَاب",
+    "كَبِير",
+    "بَاب"
+   ],
+   "answer": "كِتَاب",
+   "explain_uz": "كِتَاب (kitaab) — o'zbekcha «kitob» shu so'zdan olingan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "",
+   "q_ar": "بَاب",
+   "options": [],
+   "answer": "eshik",
+   "explain_uz": "بَاب = baab, ا cho'ziladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "bozor",
+   "q_ar": "",
+   "options": [],
+   "answer": "سُوق",
+   "explain_uz": "سُوق = suuq, و cho'ziladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "harakat",
+   "q_uz": "«diin» (din) so'ziga to'g'ri harakat qo'ying.",
+   "q_ar": "دين",
+   "options": [],
+   "answer": "دِين",
+   "explain_uz": "Kasra + ي = uzun «ii».",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«كِتَاب» so'zining o'zagini toping.",
+   "q_ar": "",
+   "options": [
+    "ك ت ب",
+    "ن و ر",
+    "ب ي ت"
+   ],
+   "answer": "ك ت ب",
+   "explain_uz": "كِتَاب, كَاتِب, مَكْتَب — hammasi ك ت ب o'zagidan.",
+   "audio": "",
+   "root": "ك ت ب",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshitgan so'zingizni yozing.",
+   "q_ar": "",
+   "options": [],
+   "answer": "كَبِير",
+   "explain_uz": "كَبِير = kabiir, ي cho'ziladi (katta).",
+   "audio": "a0/kabir.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "word",
+   "front": "نُور",
+   "back": "nur, yorug'lik",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "بَيْت",
+   "back": "uy",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "بَاب",
+   "back": "eshik",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "سُوق",
+   "back": "bozor",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "دِين",
+   "back": "din, e'tiqod",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "نَار",
+   "back": "olov, o't",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "ك ت ب",
+   "back": "yozmoq: كِتَاب (kitob), كَاتِب (kotib), مَكْتَب (maktab)",
+   "deck": "msa"
+  },
+  {
+   "type": "pattern",
+   "front": "فِعَال (masalan كِتَاب)",
+   "back": "ا bilan cho'ziluvchi ot vazni: ki-taab",
+   "deck": "msa"
+  }
+ ]
+}

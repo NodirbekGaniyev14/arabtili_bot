@@ -1,0 +1,77 @@
+{
+ "id": "a0-38",
+ "level": "A0",
+ "module": "workshop",
+ "order": 38,
+ "title_uz": "O'qish ustaxonasi 1: 2-3 harfli so'zlar",
+ "title_ar": "وَرْشَةُ القِرَاءَة ١",
+ "can_do_uz": "O'rgangan barcha belgilar bilan qisqa (2-3 harfli) so'zlarni ravon o'qiyman.",
+ "duration_min": 15,
+ "prerequisites": ["a0-37"],
+ "harakat_level": "full",
+ "hook_uz": "Barcha harflar, harakatlar, sukun, tanvin, cho'ziq unlilarni bildingiz. Endi hammasini birlashtirib RAVON o'qiymiz! Bugungi ustaxonada faqat qisqa 2-3 harfli so'zlar — poydevoringiz mustahkam ekaniga ishonch hosil qiladi.",
+ "grammar": {
+  "point_ar": "قِرَاءَةُ الكَلِمَاتِ القَصِيرَة",
+  "explanation_uz": "Ravon o'qish uchun: (1) har harfni harakati bilan ayting, (2) sukunli harfda to'xtang (unli yo'q), (3) cho'ziq unlini (ا و ي) cho'zib ayting, (4) tanvinni («-un/-in/-an») so'z oxirida qo'shing. Sekin boshlang, keyin tezlashtiring. Bugun barcha so'z 2-3 harfli — tanish belgilar.",
+  "table": [
+   {"ar": "بَابْ", "uz": "«bāb» — eshik (alif cho'zadi)", "form": "3 harf"},
+   {"ar": "نُور", "uz": "«nūr» — nur (vov cho'zadi)", "form": "3 harf"},
+   {"ar": "يَدْ", "uz": "«yad» — qo'l", "form": "2 harf"},
+   {"ar": "دَمْ", "uz": "«dam» — qon", "form": "2 harf"}
+  ],
+  "common_mistakes_uz": [
+   "Cho'ziq unlini qisqa o'qish — بَاب da «aa» cho'ziladi.",
+   "Sukunli harfda to'xtamaslik.",
+   "So'zni yodlab qo'yish — har safar harf-harf o'qing."
+  ]
+ },
+ "roots": [],
+ "vocabulary": [
+  {"ar": "بَابْ", "translit": "bāb", "uz": "eshik", "root": "", "pattern": "", "pos": "ot", "audio": "a0/bab.mp3", "example_ar": "بَابْ", "example_uz": "eshik", "srs": true},
+  {"ar": "نُور", "translit": "nūr", "uz": "nur, yorug'lik", "root": "", "pattern": "", "pos": "ot", "audio": "a0/nur.mp3", "example_ar": "نُور", "example_uz": "nur", "srs": true},
+  {"ar": "دِين", "translit": "dīn", "uz": "din, e'tiqod", "root": "", "pattern": "", "pos": "ot", "audio": "a0/din.mp3", "example_ar": "دِين", "example_uz": "din", "srs": true},
+  {"ar": "يَدْ", "translit": "yad", "uz": "qo'l", "root": "", "pattern": "", "pos": "ot", "audio": "a0/yad.mp3", "example_ar": "يَدْ", "example_uz": "qo'l", "srs": true},
+  {"ar": "أُمّ", "translit": "umm", "uz": "ona", "root": "", "pattern": "", "pos": "ot", "audio": "a0/umm.mp3", "example_ar": "أُمّ", "example_uz": "ona", "srs": true},
+  {"ar": "أَخْ", "translit": "akh", "uz": "aka/uka", "root": "", "pattern": "", "pos": "ot", "audio": "a0/akh.mp3", "example_ar": "أَخْ", "example_uz": "aka", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "بَابْ · نُور · دِين · يَدْ · أُمّ",
+   "questions": [
+    {"q_uz": "بَابْ da qaysi harf cho'ziladi?", "a": "Alif (ا) — «baab»"},
+    {"q_uz": "أُمّ so'zida nima bor?", "a": "Shadda — «umm» (m ikkilanadi)"}
+   ]
+  },
+  "listening": {
+   "audio": "a0/bab.mp3",
+   "transcript_ar": "بَابْ",
+   "questions": [{"q_uz": "Qaysi so'z eshitildi?", "a": "«bāb» (eshik)"}]
+  },
+  "speaking": {
+   "task_uz": "Qisqa so'zlarni ravon o'qing: bāb, nūr, dīn, yad, umm. Cho'ziq unlini cho'zib ayting.",
+   "target_ar": ["بَابْ", "نُور", "دِين"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Uchta qisqa so'z yozing: بَابْ، نُور، يَدْ. Cho'ziq unli va harakatlarni to'g'ri qo'ying.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "بَابْ", "options": [], "answer": "eshik", "explain_uz": "بَابْ — eshik.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "نُور", "options": [], "answer": "nur", "explain_uz": "نُور — nur, yorug'lik.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "بَابْ da cho'ziq unli qaysi?", "q_ar": "", "options": ["alif (ا)", "vov (و)", "yo (ي)", "yo'q"], "answer": "alif (ا)", "explain_uz": "Alif «a» ni cho'zadi: «baab».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أُمّ", "options": [], "answer": "ona", "explain_uz": "أُمّ — ona (shadda bilan «umm»).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«qo'l» ma'nosidagi so'z qaysi?", "q_ar": "", "options": ["يَدْ", "أَخْ", "دِين", "نُور"], "answer": "يَدْ", "explain_uz": "يَدْ («yad») — qo'l.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "dictation", "q_uz": "Eshiting va yozing.", "q_ar": "", "options": [], "answer": "بَابْ", "explain_uz": "«bāb» — eshik: بَابْ.", "audio": "a0/bab.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "دِين", "options": [], "answer": "din", "explain_uz": "دِين — din, e'tiqod.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "word", "front": "بَابْ", "back": "eshik (bāb)", "deck": "msa"},
+  {"type": "word", "front": "نُور", "back": "nur (nūr)", "deck": "msa"},
+  {"type": "word", "front": "دِين", "back": "din (dīn)", "deck": "msa"},
+  {"type": "word", "front": "أُمّ", "back": "ona (umm)", "deck": "msa"},
+  {"type": "word", "front": "أَخْ", "back": "aka/uka (akh)", "deck": "msa"}
+ ]
+}

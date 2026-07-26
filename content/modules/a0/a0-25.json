@@ -1,0 +1,73 @@
+{
+ "id": "a0-25",
+ "level": "A0",
+ "module": "harakat",
+ "order": 25,
+ "title_uz": "Ikki harfli bo'g'in o'qish",
+ "title_ar": "قِرَاءَةُ المَقْطَع",
+ "can_do_uz": "Ikkita harakatli harfni qo'shib bitta bo'g'in yoki qisqa so'z o'qiyman.",
+ "duration_min": 15,
+ "prerequisites": ["a0-24"],
+ "harakat_level": "full",
+ "hook_uz": "Katta lahza keldi — birinchi marta O'QIYMIZ! Uch harakatni (a, i, u) bildingiz. Endi ikki harfni birlashtiramiz: مَ + نْ = مَنْ («man» — kim). Harf + harf = bo'g'in. Bu — arab tilida o'qishning boshlanishi!",
+ "grammar": {
+  "point_ar": "الحَرْفُ + الحَرَكَة = مَقْطَع",
+  "explanation_uz": "Har harfga harakat qo'yib o'qiladi, keyin ular birlashadi. مَ («ma») + نْ («n» — sukunli) = مَنْ («man»). Ikki harfli qisqa so'zlar shunday tuziladi: لَكَ («laka» — senga), مَا («maa» — nima), كَمْ («kam» — nechta). O'qishda: birinchi harfni harakati bilan ayting, keyin ikkinchisini — bir tekis ulang. O'ngdan chapga o'qing: birinchi harf o'ngda.",
+  "table": [
+   {"ar": "مَنْ", "uz": "«man» — kim", "form": "ma + n"},
+   {"ar": "لَكَ", "uz": "«laka» — senga", "form": "la + ka"},
+   {"ar": "كَمْ", "uz": "«kam» — nechta", "form": "ka + m"},
+   {"ar": "مَا", "uz": "«maa» — nima (alif cho'zadi)", "form": "ma + aa"}
+  ],
+  "common_mistakes_uz": [
+   "Harfni harakatsiz o'qishga urinish — har harfda harakat bo'lishi kerak.",
+   "Chapdan o'ngga o'qish — arabcha o'ngdan boshlanadi.",
+   "Sukunli harfni ham unli bilan o'qish — sukun «unli yo'q» degani."
+  ]
+ },
+ "roots": [],
+ "vocabulary": [
+  {"ar": "مَنْ", "translit": "man", "uz": "kim (so'roq so'zi)", "root": "", "pattern": "", "pos": "ot", "audio": "a0/man.mp3", "example_ar": "مَنْ؟", "example_uz": "Kim?", "srs": true},
+  {"ar": "مَا", "translit": "mā", "uz": "nima (so'roq so'zi)", "root": "", "pattern": "", "pos": "ot", "audio": "a0/maa.mp3", "example_ar": "مَا؟", "example_uz": "Nima?", "srs": true},
+  {"ar": "كَمْ", "translit": "kam", "uz": "nechta (so'roq so'zi)", "root": "", "pattern": "", "pos": "ot", "audio": "a0/kam.mp3", "example_ar": "كَمْ؟", "example_uz": "Nechta?", "srs": true},
+  {"ar": "لَكَ", "translit": "laka", "uz": "senga (erkak)", "root": "", "pattern": "", "pos": "predlog", "audio": "a0/laka.mp3", "example_ar": "لَكَ", "example_uz": "senga", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "مَنْ · مَا · كَمْ · لَكَ",
+   "questions": [
+    {"q_uz": "مَنْ qanday o'qiladi va nima ma'no?", "a": "«man» — kim"},
+    {"q_uz": "مَا da alif nima qiladi?", "a": "«a» tovushini cho'zadi — «maa»"}
+   ]
+  },
+  "listening": {
+   "audio": "a0/man.mp3",
+   "transcript_ar": "مَنْ",
+   "questions": [{"q_uz": "Qaysi so'z eshitildi?", "a": "«man» (kim)"}]
+  },
+  "speaking": {
+   "task_uz": "Bo'g'inlarni ulab o'qing: man, maa, kam, laka. Har harfni harakati bilan ayting.",
+   "target_ar": ["مَنْ", "مَا", "كَمْ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Ikki harfni harakat bilan yozing: مَ + نْ = مَنْ. O'ngdan boshlang.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "مَنْ qanday o'qiladi?", "q_ar": "مَنْ", "options": ["man", "min", "mun", "nam"], "answer": "man", "explain_uz": "مَ («ma») + نْ («n») = «man».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَنْ", "options": [], "answer": "kim", "explain_uz": "مَنْ — «kim» so'roq so'zi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«nechta» ma'nosidagi so'z qaysi?", "q_ar": "", "options": ["كَمْ", "مَنْ", "مَا", "لَكَ"], "answer": "كَمْ", "explain_uz": "كَمْ («kam») — nechta.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "مَا so'zida alif nima vazifa bajaradi?", "q_ar": "", "options": ["«a» ni cho'zadi", "«i» qo'shadi", "sukun qo'yadi", "hech narsa"], "answer": "«a» ni cho'zadi", "explain_uz": "Alif oldingi fathani cho'zadi: «maa».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Arab so'zi qaysi tomondan o'qiladi?", "q_ar": "", "options": ["o'ngdan chapga", "chapdan o'ngga", "yuqoridan", "farqi yo'q"], "answer": "o'ngdan chapga", "explain_uz": "Birinchi harf eng o'ngda.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَا", "options": [], "answer": "nima", "explain_uz": "مَا — «nima» so'roq so'zi.", "audio": "", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "word", "front": "مَنْ", "back": "kim (man)", "deck": "msa"},
+  {"type": "word", "front": "مَا", "back": "nima (mā)", "deck": "msa"},
+  {"type": "word", "front": "كَمْ", "back": "nechta (kam)", "deck": "msa"},
+  {"type": "word", "front": "لَكَ", "back": "senga (laka)", "deck": "msa"}
+ ]
+}

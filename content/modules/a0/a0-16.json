@@ -1,344 +1,79 @@
 {
  "id": "a0-16",
  "level": "A0",
- "module": "harakat",
+ "module": "letters",
  "order": 16,
- "title_uz": "Hamza",
- "title_ar": "الهَمْزَة",
- "can_do_uz": "Hamzaning turli shakllarini (ء أ إ ؤ ئ) tanib, ularni to'g'ri o'qiy olaman.",
- "duration_min": 30,
- "prerequisites": [
-  "a0-15"
- ],
+ "title_uz": "Nuqtasiz harflar drilli",
+ "title_ar": "تَدْرِيبُ الحُرُوفِ غَيْرِ المَنْقُوطَة",
+ "can_do_uz": "Nuqtasiz harflarni faqat shakli bo'yicha bir-biridan ajrataman.",
+ "duration_min": 15,
+ "prerequisites": ["a0-15"],
  "harakat_level": "full",
- "hook_uz": "«Islom» so'zi arabchada إِسْلام deb yoziladi — boshidagi kichkina belgi «hamza». Bu tovush o'zbekchada ham bor: «sa'at», «ma'no» so'zlaridagi uzilishga o'xshaydi. Hamza — bir qisqa, keskin to'xtash tovushi.",
+ "hook_uz": "Kecha nuqtali harflarni mashq qildik. Bugun — NUQTASIZ harflar. Ularda nuqta yo'q, shuning uchun faqat SHAKLGA qarab tanish kerak: ا tik, د do'ppi, ر o'roq, س taroq, ل ilmoq, م yumaloq. Yangi harf yo'q — faqat ko'z mashqi.",
  "grammar": {
-  "point_ar": "الهَمْزَة",
-  "explanation_uz": "Hamza (ء) — bir undosh tovush bo'lib, tomoqda havoni bir lahzaga to'xtatib qo'yadigan «uzilish» tovushidir. U yolg'iz (ء) ham, yoki bir «kursi» (tayanch harf) ustida ham yoziladi: أ va إ (alif ustida/ostida), ؤ (vov ustida), ئ (yo ustida — nuqtasiz). Qaysi shaklda yozilishi hamzaning so'zdagi o'rniga va yonidagi harakatlarga bog'liq. Hozircha eng muhimi — bu shakllarning HAMMASI bitta tovush ekanini bilish.",
+  "point_ar": "الحُرُوفُ غَيْرُ المَنْقُوطَة",
+  "explanation_uz": "Nuqtasiz harflar shakli bilan ajraladi. Asosiylari: ا (tik tayoqcha), د (do'ppi), ر (pastga o'roq), س (uch tishli taroq), ص (tuxumsimon qorin), ط (qorin + tayoq), ك (ichida belgi), ل (uzun ilmoq), م (yumaloq bosh + dum), ه (yumaloq), و (halqa + quyruq), ح (bo'g'iz, qayiqcha), ع (bo'g'iz). Diqqat: shakli o'xshash juftliklar — د/ر (do'ppi va o'roq), ص/ط (qorin, ط da tayoq bor).",
   "table": [
-   {
-    "ar": "ء",
-    "uz": "yolg'iz hamza (kursisiz)",
-    "form": "مَاء"
-   },
-   {
-    "ar": "أ",
-    "uz": "alif ustida hamza (fatha yoki damma bilan)",
-    "form": "أَب"
-   },
-   {
-    "ar": "إ",
-    "uz": "alif ostida hamza (kasra bilan)",
-    "form": "إِسْلام"
-   },
-   {
-    "ar": "ؤ",
-    "uz": "vov ustida hamza",
-    "form": "سُؤَال"
-   },
-   {
-    "ar": "ئ",
-    "uz": "yo (nuqtasiz) ustida hamza",
-    "form": "بِئْر"
-   }
+   {"ar": "ا", "uz": "tik tayoqcha", "form": "aa"},
+   {"ar": "د", "uz": "do'ppi shakli", "form": "d"},
+   {"ar": "ر", "uz": "pastga o'roq", "form": "r"},
+   {"ar": "س", "uz": "uch tishli taroq", "form": "s"},
+   {"ar": "ل", "uz": "uzun ilmoq", "form": "l"},
+   {"ar": "م", "uz": "yumaloq bosh + dum", "form": "m"},
+   {"ar": "و", "uz": "halqa + quyruq", "form": "v/u"}
   ],
   "common_mistakes_uz": [
-   "أ va إ ni oddiy alif (cho'ziq unli) deb o'qish — yo'q, bular hamza (undosh tovush).",
-   "ؤ ni «v» tovushi deb o'qish — bu yerda vov faqat kursi, o'qilishi hamza.",
-   "ئ ostidagi tayanch nuqtasiz — uni «y» deb o'qimang, bu ham hamza.",
-   "Hamzani butunlay tashlab ketish — u albatta talaffuz qilinadi (qisqa to'xtash)."
+   "د va ر ni chalkashtirish — د chiziq ustida burchakli, ر chiziq ostiga o'roqsimon tushadi.",
+   "ا va ل ni chalkashtirish — ا tik va yolg'iz, ل pastida egilgan ilmoq bor.",
+   "و va ر ni chalkashtirish — و da tepada halqa bor, ر da yo'q."
   ]
  },
- "roots": [
-  {
-   "root": "ء ب و",
-   "meaning_uz": "ota (ab) bilan bog'liq o'zak",
-   "uz_cognates": [],
-   "derived": [
-    {
-     "ar": "أَب",
-     "uz": "ota",
-     "pattern": ""
-    },
-    {
-     "ar": "أَبَوَان",
-     "uz": "ota-ona",
-     "pattern": ""
-    }
-   ]
-  }
- ],
+ "roots": [],
  "vocabulary": [
-  {
-   "ar": "أَب",
-   "translit": "ab",
-   "uz": "ota",
-   "root": "ء ب و",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/ab.mp3",
-   "example_ar": "هٰذَا أَب.",
-   "example_uz": "Bu — ota.",
-   "srs": true
-  },
-  {
-   "ar": "إِسْلام",
-   "translit": "islaam",
-   "uz": "Islom",
-   "root": "س ل م",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/islam.mp3",
-   "example_ar": "الإِسْلام دِين.",
-   "example_uz": "Islom — din.",
-   "srs": true
-  },
-  {
-   "ar": "مَاء",
-   "translit": "maa'",
-   "uz": "suv",
-   "root": "م و ه",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/maa.mp3",
-   "example_ar": "هٰذَا مَاء.",
-   "example_uz": "Bu — suv.",
-   "srs": true
-  },
-  {
-   "ar": "سُؤَال",
-   "translit": "su'aal",
-   "uz": "savol",
-   "root": "س ء ل",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/sual.mp3",
-   "example_ar": "هٰذَا سُؤَال.",
-   "example_uz": "Bu — savol.",
-   "srs": true
-  },
-  {
-   "ar": "بِئْر",
-   "translit": "bi'r",
-   "uz": "quduq",
-   "root": "ب ء ر",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/bir.mp3",
-   "example_ar": "هٰذَا بِئْر.",
-   "example_uz": "Bu — quduq.",
-   "srs": true
-  },
-  {
-   "ar": "أُم",
-   "translit": "umm",
-   "uz": "ona",
-   "root": "ء م م",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/umm.mp3",
-   "example_ar": "هٰذِهِ أُم.",
-   "example_uz": "Bu — ona.",
-   "srs": true
-  }
+  {"ar": "ا", "translit": "alif", "uz": "alif — tik tayoqcha, nuqtasiz", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_alif.mp3", "audio_text": "أَلِف", "example_ar": "ا ـا", "example_uz": "yolg'iz · so'z ichida (ULANMAYDI)", "srs": true},
+  {"ar": "د", "translit": "dāl (d)", "uz": "dol — do'ppi shakli, nuqtasiz", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_dal.mp3", "audio_text": "دَال", "example_ar": "د ـد", "example_uz": "yolg'iz · so'z ichida (ULANMAYDI)", "srs": true},
+  {"ar": "ر", "translit": "rā (r)", "uz": "ro — pastga o'roq, nuqtasiz", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_ra.mp3", "audio_text": "رَاء", "example_ar": "ر ـر", "example_uz": "yolg'iz · so'z ichida (ULANMAYDI)", "srs": true},
+  {"ar": "ل", "translit": "lām (l)", "uz": "lom — uzun ilmoq, nuqtasiz", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_lam.mp3", "audio_text": "لَام", "example_ar": "لـ ـلـ ـل", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
+  {"ar": "م", "translit": "mīm (m)", "uz": "mim — yumaloq bosh + dum, nuqtasiz", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_mim.mp3", "audio_text": "مِيم", "example_ar": "مـ ـمـ ـم", "example_uz": "boshida · o'rtasida · oxirida", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "هٰذَا أَب وَهٰذِهِ أُم. هٰذَا مَاء. هٰذَا سُؤَال. الإِسْلام دِين.",
+   "text_ar": "ا د ر س ل م و",
    "questions": [
-    {
-     "q_uz": "«أَب» so'zi nimani bildiradi?",
-     "a": "Ota"
-    },
-    {
-     "q_uz": "«مَاء» so'zi nimani bildiradi?",
-     "a": "Suv"
-    },
-    {
-     "q_uz": "Matnda qaysi din tilga olingan?",
-     "a": "Islom (الإِسْلام)"
-    }
+    {"q_uz": "Qaysi harflar ulanmaydi?", "a": "ا د ر و (keyingi harfga qo'l uzatmaydi)"},
+    {"q_uz": "Taroq shaklidagi harf qaysi?", "a": "س (sin)"}
    ]
   },
   "listening": {
-   "audio": "a0/hamza_listen.mp3",
-   "transcript_ar": "أَب. إِسْلام. مَاء. سُؤَال. بِئْر. أُم.",
-   "questions": [
-    {
-     "q_uz": "Nechta so'z eshitdingiz?",
-     "a": "Olti"
-    },
-    {
-     "q_uz": "«suv» so'zini eshitib topding — arabchasi qanday?",
-     "a": "مَاء"
-    }
-   ]
+   "audio": "a0/harf_dal.mp3",
+   "transcript_ar": "دَال",
+   "questions": [{"q_uz": "Qaysi harf?", "a": "Dol — do'ppi shakli"}]
   },
   "speaking": {
-   "task_uz": "Har bir hamza shaklini ovoz chiqarib o'qing: أَب, إِسْلام, مَاء, سُؤَال, بِئْر. Hamzani qisqa to'xtash bilan aytishga harakat qiling.",
-   "target_ar": [
-    "أَب",
-    "إِسْلام",
-    "مَاء",
-    "سُؤَال",
-    "بِئْر"
-   ],
+   "task_uz": "Shaklni ayting: «alif — tik», «dol — do'ppi», «ro — o'roq», «lom — ilmoq», «mim — yumaloq».",
+   "target_ar": ["ا", "د", "ر", "ل", "م"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Quyidagi so'zlardan hamza shakli boshqacha bo'lganlarini ajrating va daftaringizga ko'chiring: أَب, مَاء, إِسْلام. Har birida hamza qaysi kursida ekanini yozing.",
+   "task_uz": "Nuqtasiz harflarni yozib mashq qiling: ا د ر س ل م و. د ni burchakli, ر ni chiziq ostiga tushiring.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {
-   "type": "mcq",
-   "q_uz": "«أَب» so'zi nimani bildiradi?",
-   "q_ar": "",
-   "options": [
-    "Ota",
-    "Ona",
-    "Suv",
-    "Savol"
-   ],
-   "answer": "Ota",
-   "explain_uz": "أَب — «ota» degani.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "Qaysi shakl «alif ostida hamza» (kasra bilan)?",
-   "q_ar": "",
-   "options": [
-    "أ",
-    "إ",
-    "ؤ",
-    "ئ"
-   ],
-   "answer": "إ",
-   "explain_uz": "إ — hamza alif ostida yoziladi, masalan إِسْلام.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_ar_uz",
-   "q_uz": "",
-   "q_ar": "مَاء",
-   "options": [],
-   "answer": "suv",
-   "explain_uz": "مَاء — «suv», oxirida yolg'iz hamza (ء) turadi.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_uz_ar",
-   "q_uz": "savol",
-   "q_ar": "",
-   "options": [],
-   "answer": "سُؤَال",
-   "explain_uz": "سُؤَال — vov ustida hamza (ؤ) bor.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "harakat",
-   "q_uz": "«ata» (ota) so'ziga to'g'ri harakat qo'ying:",
-   "q_ar": "اب",
-   "options": [],
-   "answer": "أَب",
-   "explain_uz": "Boshida alif ustida hamza + fatha: أَب.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "match_root",
-   "q_uz": "«أَب» so'zining o'zagini toping:",
-   "q_ar": "",
-   "options": [
-    "ء ب و",
-    "ب و ب",
-    "أ ب ت",
-    "ء م م"
-   ],
-   "answer": "ء ب و",
-   "explain_uz": "«ota» ma'nosidagi o'zak — ء ب و.",
-   "audio": "",
-   "root": "ء ب و",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "«ئ» shakli qanday kursi ustida yoziladi?",
-   "q_ar": "",
-   "options": [
-    "nuqtasiz yo (ي)",
-    "vov (و)",
-    "alif (ا)",
-    "kursisiz"
-   ],
-   "answer": "nuqtasiz yo (ي)",
-   "explain_uz": "ئ — nuqtasiz yo ustidagi hamza, masalan بِئْر.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  }
+  {"type": "mcq", "q_uz": "Qaysi harf DO'PPI shaklida (nuqtasiz)?", "q_ar": "", "options": ["د", "ر", "و", "ا"], "answer": "د", "explain_uz": "د (dol) — do'ppisimon, chiziq ustida.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "د va ر ning farqi nimada?", "q_ar": "", "options": ["د burchakli va yuqorida, ر o'roqsimon va pastga tushadi", "د da nuqta bor", "ر ulanadi", "farq yo'q"], "answer": "د burchakli va yuqorida, ر o'roqsimon va pastga tushadi", "explain_uz": "Shakli boshqa: د yuqorida, ر pastga tushadi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting: bu qaysi harfning nomi?", "q_ar": "", "options": ["ل", "م", "ا", "د"], "answer": "ل", "explain_uz": "«Lom» — uzun ilmoq.", "audio": "a0/harf_lam.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "ا va ل ni qanday ajratamiz?", "q_ar": "", "options": ["ا tik va yolg'iz, ل da pastda egilgan ilmoq", "ا da nuqta bor", "ل ulanmaydi", "farq yo'q"], "answer": "ا tik va yolg'iz, ل da pastda egilgan ilmoq", "explain_uz": "ل ning pastki qismi egilgan, ا tik turadi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Taroq shaklidagi nuqtasiz harf qaysi?", "q_ar": "", "options": ["س", "ص", "م", "و"], "answer": "س", "explain_uz": "س (sin) — uch tishli taroq, nuqtasiz.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "dictation", "q_uz": "Eshiting va shu harfni klaviaturadan bosing.", "q_ar": "", "options": [], "answer": "م", "explain_uz": "«Mim» — yumaloq bosh, pastga dum.", "audio": "a0/harf_mim.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "و ni ر dan qanday ajratamiz?", "q_ar": "", "options": ["و da tepada halqa bor", "ر da nuqta bor", "و ulanadi", "farq yo'q"], "answer": "و da tepada halqa bor", "explain_uz": "و — halqa + quyruq; ر — faqat o'roq.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {
-   "type": "word",
-   "front": "أَب",
-   "back": "ota",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "إِسْلام",
-   "back": "Islom",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "مَاء",
-   "back": "suv",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "سُؤَال",
-   "back": "savol",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "بِئْر",
-   "back": "quduq",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "أُم",
-   "back": "ona",
-   "deck": "msa"
-  },
-  {
-   "type": "root",
-   "front": "ء ب و",
-   "back": "ota bilan bog'liq o'zak (أَب — ota)",
-   "deck": "msa"
-  }
+  {"type": "word", "front": "ا", "back": "alif — tik tayoqcha", "deck": "msa"},
+  {"type": "word", "front": "د", "back": "dol — do'ppi shakli", "deck": "msa"},
+  {"type": "word", "front": "ر", "back": "ro — pastga o'roq", "deck": "msa"},
+  {"type": "word", "front": "ل", "back": "lom — uzun ilmoq", "deck": "msa"},
+  {"type": "word", "front": "م", "back": "mim — yumaloq bosh + dum", "deck": "msa"}
  ]
 }

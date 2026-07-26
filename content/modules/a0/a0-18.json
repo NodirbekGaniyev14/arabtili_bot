@@ -3,403 +3,71 @@
  "level": "A0",
  "module": "reading",
  "order": 18,
- "title_uz": "Quyosh va oy harflari",
- "title_ar": "الْحُرُوفُ الشَّمْسِيَّةُ وَالْقَمَرِيَّةُ",
- "can_do_uz": "ال artikli qachon 'al' o'qilishini (oy harflari) va qachon keyingi harfga qo'shilib ketishini (quyosh harflari) ajrata olaman va to'g'ri o'qiyman.",
- "duration_min": 30,
- "prerequisites": [
-  "a0-17"
- ],
- "harakat_level": "full",
- "hook_uz": "O'zbekchada 'kitob' deymiz — arabchada esa 'al-kitab' (aniq kitob) bo'ladi. Lekin 'quyosh' so'zi 'al-shams' emas, 'ash-shams' o'qiladi! Nega ل tovushi yo'qolib qoladi? Keling, quyosh va oy harflari sirini ochamiz.",
+ "title_uz": "Ulanmaydigan 6 harf",
+ "title_ar": "الحُرُوفُ غَيْرُ المُتَّصِلَة",
+ "can_do_uz": "So'z ichidagi «uzilish»larni ko'rib, ular ا د ذ ر ز و harflaridan keyin bo'lishini tushunaman.",
+ "duration_min": 15,
+ "prerequisites": ["a0-17"],
+ "harakat_level": "none",
+ "hook_uz": "Sirni ochamiz: nega ba'zi so'zlar ichida «yoriq» bor? Chunki OLTITA harf — ا د ذ ر ز و — o'zidan keyingi harfga qo'l bermaydi! Masalan درس (dars) skeletida د dan keyin uzilish bor. Bu yoriqlarni ko'ra olsangiz, so'z shakllari tanish bo'ladi. Hali o'qimaymiz — faqat SHAKLNI kuzatamiz.",
  "grammar": {
-  "point_ar": "الْ + الشَّمْسِيَّةُ / الْقَمَرِيَّةُ",
-  "explanation_uz": "Arabchada aniqlik artikli — ال (al). U so'z boshiga qo'shilib, 'aniq, ma'lum' narsani bildiradi (o'zbekchadagi 'o'sha, aynan shu' ma'nosiga yaqin). Ammo ال dan keyin kelgan harf ikki xil bo'ladi: 1) QUYOSH harflari — bunda ل o'qilmaydi, keyingi harf shadda bilan ikkilanadi: الشَّمْس = 'ash-shams'. 2) OY harflari — bunda ل toza o'qiladi: الْقَمَر = 'al-qamar'. Yodlash oson yo'li: quyosh harfi ustida ل da sukun bo'lmaydi (keyingi harfda shadda bor), oy harfida esa لْ ustida sukun turadi.",
+  "point_ar": "ا د ذ ر ز و — لَا تَتَّصِلُ بِمَا بَعْدَهَا",
+  "explanation_uz": "Oltita harf o'zidan KEYINGI harfga ulanmaydi: ا د ذ ر ز و. Ular oldingi harfga qo'shiladi (agar u ulanadigan bo'lsa), lekin keyingisiga qo'l uzatmaydi — shu yerda «uzilish» bo'ladi. Masalan درس skeletida: د keyingi harfga ulanmaydi, shuning uchun د va ر orasida yoriq bor. Bu harflarni yodda tuting — ular so'z shaklini «bo'lib» ko'rsatadi. Hali harakat yo'q, faqat qayerda uzilishni o'rganamiz.",
   "table": [
-   {
-    "ar": "الشَّمْس",
-    "uz": "ash-shams (quyosh) — ل yo'qoladi, ش shadda",
-    "form": "Quyosh harfi (ش)"
-   },
-   {
-    "ar": "النُّور",
-    "uz": "an-nur (nur) — ل yo'qoladi, ن shadda",
-    "form": "Quyosh harfi (ن)"
-   },
-   {
-    "ar": "السَّلَام",
-    "uz": "as-salam (tinchlik) — ل yo'qoladi, س shadda",
-    "form": "Quyosh harfi (س)"
-   },
-   {
-    "ar": "الرَّجُل",
-    "uz": "ar-rajul (erkak) — ل yo'qoladi, ر shadda",
-    "form": "Quyosh harfi (ر)"
-   },
-   {
-    "ar": "الْقَمَر",
-    "uz": "al-qamar (oy) — ل toza o'qiladi",
-    "form": "Oy harfi (ق)"
-   },
-   {
-    "ar": "الْبَيْت",
-    "uz": "al-bayt (uy) — ل toza o'qiladi",
-    "form": "Oy harfi (ب)"
-   },
-   {
-    "ar": "الْكِتَاب",
-    "uz": "al-kitab (kitob) — ل toza o'qiladi",
-    "form": "Oy harfi (ك)"
-   }
+   {"ar": "درس", "uz": "d-r-s: د va ر dan keyin uzilish", "form": "2 uzilish"},
+   {"ar": "ورد", "uz": "w-r-d: و va ر dan keyin uzilish", "form": "2 uzilish"},
+   {"ar": "كتب", "uz": "k-t-b: uzilish yo'q (hammasi ulanadi)", "form": "0 uzilish"},
+   {"ar": "ا د ذ ر ز و", "uz": "ulanmaydigan 6 harf", "form": "eslab qoling"}
   ],
   "common_mistakes_uz": [
-   "الشَّمْس ni 'al-shams' deb o'qish — noto'g'ri. To'g'risi 'ash-shams' (ل tushib qoladi).",
-   "Quyosh harfidagi shaddani unutish: النُّور = 'an-nur', 'an-nur' emas — ن ikkilanib talaffuz qilinadi.",
-   "Yozuvda ال doim yoziladi (ا va ل harflari qoladi), faqat TALAFFUZDA ل o'zgaradi.",
-   "Oy harfida ل ustidagi sukun (لْ) — bu 'al' tozaligi belgisi; uni shadda bilan aralashtirmang."
+   "Uzilishni «yangi so'z boshlandi» deb o'ylash — u shunchaki ulanmaydigan harf belgisi.",
+   "ا د ذ ر ز و dan keyin tutashtirishga urinish.",
+   "Uzilish oldingi ulanishga xalal beradi deb o'ylash — oldingisiga ulanaveradi."
   ]
  },
- "roots": [
-  {
-   "root": "ن و ر",
-   "meaning_uz": "yorug'lik, nur",
-   "uz_cognates": [
-    "nur",
-    "nuroniy",
-    "munavvar"
-   ],
-   "derived": [
-    {
-     "ar": "النُّور",
-     "uz": "nur, yorug'lik",
-     "pattern": ""
-    },
-    {
-     "ar": "مُنِير",
-     "uz": "nur sochuvchi, yorug'",
-     "pattern": ""
-    }
-   ]
-  }
- ],
+ "roots": [],
  "vocabulary": [
-  {
-   "ar": "الشَّمْس",
-   "translit": "ash-shams",
-   "uz": "quyosh",
-   "root": "ش م س",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/ash-shams.mp3",
-   "example_ar": "الشَّمْسُ نُورٌ.",
-   "example_uz": "Quyosh — nurdir.",
-   "srs": true
-  },
-  {
-   "ar": "الْقَمَر",
-   "translit": "al-qamar",
-   "uz": "oy",
-   "root": "ق م ر",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/al-qamar.mp3",
-   "example_ar": "الْقَمَرُ نُورٌ.",
-   "example_uz": "Oy — nurdir.",
-   "srs": true
-  },
-  {
-   "ar": "النُّور",
-   "translit": "an-nur",
-   "uz": "nur, yorug'lik (o'zbekcha 'nur')",
-   "root": "ن و ر",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/an-nur.mp3",
-   "example_ar": "النُّورُ فِي الْبَيْتِ.",
-   "example_uz": "Nur uy ichida.",
-   "srs": true
-  },
-  {
-   "ar": "السَّلَام",
-   "translit": "as-salam",
-   "uz": "tinchlik, salom (o'zbekcha 'salom')",
-   "root": "س ل م",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/as-salam.mp3",
-   "example_ar": "السَّلَامُ فِي الْبَيْتِ.",
-   "example_uz": "Uyda tinchlik bor.",
-   "srs": true
-  },
-  {
-   "ar": "الرَّجُل",
-   "translit": "ar-rajul",
-   "uz": "erkak, kishi",
-   "root": "ر ج ل",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/ar-rajul.mp3",
-   "example_ar": "الرَّجُلُ فِي الْبَيْتِ.",
-   "example_uz": "Erkak uyda.",
-   "srs": true
-  },
-  {
-   "ar": "الْبَيْت",
-   "translit": "al-bayt",
-   "uz": "uy",
-   "root": "ب ي ت",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/al-bayt.mp3",
-   "example_ar": "الْبَيْتُ كَبِيرٌ.",
-   "example_uz": "Uy katta.",
-   "srs": true
-  },
-  {
-   "ar": "الْكِتَاب",
-   "translit": "al-kitab",
-   "uz": "kitob (o'zbekcha 'kitob')",
-   "root": "ك ت ب",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/al-kitab.mp3",
-   "example_ar": "الْكِتَابُ فِي الْبَيْتِ.",
-   "example_uz": "Kitob uyda.",
-   "srs": true
-  },
-  {
-   "ar": "الْبَاب",
-   "translit": "al-bab",
-   "uz": "eshik",
-   "root": "ب و ب",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/al-bab.mp3",
-   "example_ar": "الْبَابُ كَبِيرٌ.",
-   "example_uz": "Eshik katta.",
-   "srs": true
-  }
+  {"ar": "درس", "translit": "d-r-s", "uz": "skelet: د va ر dan keyin uzilish bor (harakatsiz)", "root": "", "pattern": "", "pos": "harf", "audio": "", "example_ar": "د ر س", "example_uz": "ikki uzilish", "srs": false},
+  {"ar": "ورد", "translit": "w-r-d", "uz": "skelet: و va ر dan keyin uzilish", "root": "", "pattern": "", "pos": "harf", "audio": "", "example_ar": "و ر د", "example_uz": "ikki uzilish", "srs": false},
+  {"ar": "كتب", "translit": "k-t-b", "uz": "skelet: uzilish yo'q, hammasi tutashadi", "root": "", "pattern": "", "pos": "harf", "audio": "", "example_ar": "كـ ـتـ ـب", "example_uz": "uzilishsiz", "srs": false},
+  {"ar": "زر", "translit": "z-r", "uz": "skelet: har ikki harf ham ulanmaydi", "root": "", "pattern": "", "pos": "harf", "audio": "", "example_ar": "ز ر", "example_uz": "uzilish", "srs": false}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "الشَّمْسُ نُورٌ، وَالْقَمَرُ نُورٌ. السَّلَامُ فِي الْبَيْتِ. الْكِتَابُ فِي الْبَيْتِ، وَالرَّجُلُ فِي الْبَيْتِ.",
+   "text_ar": "درس · ورد · كتب",
    "questions": [
-    {
-     "q_uz": "'الشَّمْس' so'zi qanday o'qiladi?",
-     "a": "ash-shams (ل yo'qoladi)"
-    },
-    {
-     "q_uz": "'الْقَمَر' so'zida ل o'qiladimi?",
-     "a": "Ha, toza o'qiladi: al-qamar"
-    },
-    {
-     "q_uz": "Kitob qayerda?",
-     "a": "Uyda (fi-l-bayt)"
-    }
+    {"q_uz": "درس da nechta uzilish bor?", "a": "2 ta (د va ر dan keyin)"},
+    {"q_uz": "كتب da uzilish bormi?", "a": "Yo'q — hamma harf ulanadi"}
    ]
   },
   "listening": {
-   "audio": "a0/a0-18-listen.mp3",
-   "transcript_ar": "الشَّمْسُ نُورٌ. الْقَمَرُ نُورٌ. السَّلَامُ فِي الْبَيْتِ.",
-   "questions": [
-    {
-     "q_uz": "Birinchi so'z quyosh harfi bilan boshlanadimi yoki oy harfi bilan?",
-     "a": "Quyosh harfi (ش) — ash-shams"
-    },
-    {
-     "q_uz": "Ikkinchi jumlada ل toza eshitildimi?",
-     "a": "Ha — al-qamar (oy harfi)"
-    }
-   ]
+   "audio": "a0/harf_dal.mp3",
+   "transcript_ar": "دَال",
+   "questions": [{"q_uz": "Bu harf ulanadimi?", "a": "Yo'q — د ulanmaydi"}]
   },
   "speaking": {
-   "task_uz": "Quyidagi so'zlarni ovoz chiqarib to'g'ri o'qing. Quyosh harflarida ل ni tushiring, oy harflarida esa toza ayting.",
-   "target_ar": [
-    "الشَّمْس",
-    "الْقَمَر",
-    "النُّور",
-    "الْبَيْت"
-   ],
+   "task_uz": "Ulanmaydigan 6 harfni ayting: alif, dol, zol, ro, zoy, vov. Ular keyingi harfga qo'l bermaydi.",
+   "target_ar": ["ا", "د", "ذ", "ر", "ز", "و"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Quyidagi so'zlarni ال artikli bilan yozing va yoniga talaffuzini lotin harflarda belgilang: quyosh, oy, uy, kitob.",
+   "task_uz": "درس skeletini yozing: د va ر dan keyin qalamni uzib, keyingi harfni ajratib yozing.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {
-   "type": "mcq",
-   "q_uz": "'الشَّمْس' qanday to'g'ri o'qiladi?",
-   "q_ar": "",
-   "options": [
-    "al-shams",
-    "ash-shams",
-    "as-shams",
-    "ash-sham"
-   ],
-   "answer": "ash-shams",
-   "explain_uz": "ش — quyosh harfi, shuning uchun ل yo'qoladi va ش shadda bilan ikkilanadi.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "Qaysi so'zda ل toza o'qiladi (oy harfi)?",
-   "q_ar": "",
-   "options": [
-    "النُّور",
-    "الرَّجُل",
-    "الْقَمَر",
-    "السَّلَام"
-   ],
-   "answer": "الْقَمَر",
-   "explain_uz": "ق — oy harfi, shuning uchun 'al-qamar' deb toza o'qiladi.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "'النُّور' so'zida nima yuz beradi?",
-   "q_ar": "",
-   "options": [
-    "ل toza o'qiladi",
-    "ن shadda bilan ikkilanadi, ل yo'qoladi",
-    "hech narsa o'zgarmaydi",
-    "ن tushib qoladi"
-   ],
-   "answer": "ن shadda bilan ikkilanadi, ل yo'qoladi",
-   "explain_uz": "ن — quyosh harfi: 'an-nur'. O'zbekcha 'nur' so'zini eslang.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_uz_ar",
-   "q_uz": "'oy' so'zini aniqlik artikli bilan yozing.",
-   "q_ar": "",
-   "options": [],
-   "answer": "الْقَمَر",
-   "explain_uz": "al-qamar — ق oy harfi.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_ar_uz",
-   "q_uz": "'الْكِتَاب' so'zini o'zbekchaga o'giring.",
-   "q_ar": "",
-   "options": [],
-   "answer": "kitob (aniq kitob)",
-   "explain_uz": "ك — oy harfi: 'al-kitab'. O'zbekcha 'kitob' shu so'zdan.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "match_root",
-   "q_uz": "'النُّور' so'zining o'zagini toping.",
-   "q_ar": "",
-   "options": [
-    "ن و ر",
-    "ن ر و",
-    "و ر ن",
-    "ن و ن"
-   ],
-   "answer": "ن و ر",
-   "explain_uz": "Nur, yorug'lik ma'nosidagi o'zak — ن و ر.",
-   "audio": "",
-   "root": "ن و ر",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "harakat",
-   "q_uz": "'الشمس' so'ziga to'g'ri harakat qo'ying (quyosh harfi ekanini hisobga oling).",
-   "q_ar": "",
-   "options": [],
-   "answer": "الشَّمْس",
-   "explain_uz": "ش quyosh harfi bo'lgani uchun shadda oladi, ل sukunsiz.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  }
+  {"type": "mcq", "q_uz": "Qaysi harf keyingisiga ULANMAYDI?", "q_ar": "", "options": ["د", "ب", "ن", "س"], "answer": "د", "explain_uz": "د — ulanmaydigan 6 harfdan biri.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "درس skeletida nechta uzilish bor?", "q_ar": "", "options": ["2", "0", "1", "3"], "answer": "2", "explain_uz": "د va ر — ikkalasi ham ulanmaydi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "كتب da uzilish bormi?", "q_ar": "", "options": ["Yo'q, hammasi ulanadi", "Ha, 1 ta", "Ha, 2 ta", "Ha, 3 ta"], "answer": "Yo'q, hammasi ulanadi", "explain_uz": "ك ت ب — uchalasi ulanadigan harf.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Ulanmaydigan 6 harf qaysilar?", "q_ar": "", "options": ["ا د ذ ر ز و", "ب ت ث ن ي س", "ك ل م ن ه و", "ج ح خ ع غ ف"], "answer": "ا د ذ ر ز و", "explain_uz": "Aynan shu oltitasi keyingi harfga ulanmaydi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Uzilish nimani bildiradi?", "q_ar": "", "options": ["Ulanmaydigan harf shu yerda", "Yangi so'z", "Xato", "Bo'shliq"], "answer": "Ulanmaydigan harf shu yerda", "explain_uz": "Uzilish = oldingi harf ulanmaydigan turdan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "ورد skeletida و dan keyin nima bo'ladi?", "q_ar": "", "options": ["uzilish (و ulanmaydi)", "tutashuv", "yangi so'z", "nuqta"], "answer": "uzilish (و ulanmaydi)", "explain_uz": "و — ulanmaydigan harf.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {
-   "type": "word",
-   "front": "الشَّمْس",
-   "back": "ash-shams — quyosh (quyosh harfi, ل yo'qoladi)",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "الْقَمَر",
-   "back": "al-qamar — oy (oy harfi, ل toza)",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "النُّور",
-   "back": "an-nur — nur, yorug'lik",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "السَّلَام",
-   "back": "as-salam — tinchlik, salom",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "الرَّجُل",
-   "back": "ar-rajul — erkak, kishi",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "الْبَيْت",
-   "back": "al-bayt — uy",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "الْكِتَاب",
-   "back": "al-kitab — kitob",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "الْبَاب",
-   "back": "al-bab — eshik",
-   "deck": "msa"
-  },
-  {
-   "type": "root",
-   "front": "ن و ر",
-   "back": "nur, yorug'lik → النُّور (nur), مُنِير (nur sochuvchi)",
-   "deck": "msa"
-  },
-  {
-   "type": "phrase",
-   "front": "Quyosh harflari qoidasi",
-   "back": "ال dan keyin ت ث د ذ ر ز س ش ص ض ط ظ ل ن kelsa — ل yo'qoladi, keyingi harf shadda oladi (ash-shams).",
-   "deck": "msa"
-  },
-  {
-   "type": "phrase",
-   "front": "Oy harflari qoidasi",
-   "back": "ال dan keyin ا ب ج ح خ ع غ ف ق ك م ه و ي kelsa — ل toza o'qiladi (al-qamar).",
-   "deck": "msa"
-  }
+  {"type": "word", "front": "ا", "back": "alif — ULANMAYDI", "deck": "msa"},
+  {"type": "word", "front": "د", "back": "dol — ULANMAYDI", "deck": "msa"},
+  {"type": "word", "front": "ر", "back": "ro — ULANMAYDI", "deck": "msa"},
+  {"type": "word", "front": "و", "back": "vov — ULANMAYDI", "deck": "msa"}
  ]
 }

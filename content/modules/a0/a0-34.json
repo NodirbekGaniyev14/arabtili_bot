@@ -1,0 +1,290 @@
+{
+ "id": "a0-34",
+ "level": "A0",
+ "module": "pronunciation",
+ "order": 34,
+ "title_uz": "Talaffuz 1: ع ح",
+ "title_ar": "النُّطْق: ع ح",
+ "can_do_uz": "ع va ح tovushlarini bo'g'izdan to'g'ri chiqarib, o'zbekcha ' (hamza) va h tovushlaridan farqlay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a0-33"],
+ "harakat_level": "full",
+ "hook_uz": "\"Arab\" so'zi خ bilan emas, ع bilan boshlanadi: عَرَب. Bu tovush o'zbekda YO'Q — u tomog'ing chuqurida tug'iladi. \"Ilm\", \"Ali\", \"asr\" so'zlaridagi jimgina 'e' aslida ع edi! Bugun uni va uning qo'shnisi ح ni ushlaymiz.",
+ "grammar": {
+  "point_ar": "ع · ح",
+  "explanation_uz": "ع va ح — ikkalasi ham tomoq (bo'g'iz) o'rtasidan chiqadi va o'zbek tilida aniq muqobili yo'q. ع — ovozli (jarangli), tomoqni bir oz siqib 'a' chiqargandek. ح — ovozsiz, xuddi issiq oynaga 'haaa' deb nafas urgandek, lekin kuchliroq va tomoqdan. Diqqat: ح ≠ o'zbekcha 'h', ح ≠ خ (x). ع ni ko'pincha ' (hamza / to'xtash) bilan adashtirishadi — lekin ع jarangli va cho'ziladi.",
+  "table": [
+   {
+    "ar": "ع",
+    "uz": "jarangli bo'g'iz tovushi (o'zbekda YO'Q)",
+    "form": "tomoq siqiladi, ovoz bilan"
+   },
+   {
+    "ar": "ح",
+    "uz": "ovozsiz bo'g'iz 'h' (kuchli nafas)",
+    "form": "issiq nafas, ovozsiz"
+   },
+   {
+    "ar": "خ",
+    "uz": "x (o'zbekda BOR — 'xato')",
+    "form": "solishtirish uchun"
+   },
+   {
+    "ar": "ه",
+    "uz": "yumshoq h (o'zbekcha 'havo')",
+    "form": "solishtirish uchun"
+   }
+  ],
+  "common_mistakes_uz": [
+   "ع ni oddiy 'a' deb o'qish — yo'q, tomoqni siqish kerak: عَرَب ('arab).",
+   "ح ni o'zbekcha yumshoq 'h' deb aytish — ح kuchliroq va tomoqdan chiqadi: حَجّ (hajj).",
+   "ح ni خ (x) bilan aralashtirish — ح da 'xirillash' yo'q.",
+   "ع ni hamza (to'xtash ') bilan chalkashtirish — ع jarangli va cho'ziluvchan."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع ل م",
+   "meaning_uz": "bilish, ilm",
+   "uz_cognates": [
+    "ilm",
+    "olim",
+    "ma'lumot"
+   ],
+   "derived": [
+    {
+     "ar": "عِلْم",
+     "uz": "ilm, bilim",
+     "pattern": ""
+    },
+    {
+     "ar": "عَالِم",
+     "uz": "olim, biluvchi",
+     "pattern": ""
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "عَرَب",
+   "translit": "'arab",
+   "uz": "arab(lar)",
+   "root": "ع ر ب",
+   "pattern": "",
+   "pos": "ism",
+   "audio": "a0/arab.mp3",
+   "example_ar": "أَنَا عَرَبِيّ",
+   "example_uz": "Men arabman",
+   "srs": true
+  },
+  {
+   "ar": "حَجّ",
+   "translit": "hajj",
+   "uz": "haj",
+   "root": "ح ج ج",
+   "pattern": "",
+   "pos": "ism",
+   "audio": "a0/hajj.mp3",
+   "example_ar": "الْحَجّ فِي مَكَّة",
+   "example_uz": "Haj Makkada",
+   "srs": true
+  },
+  {
+   "ar": "عِلْم",
+   "translit": "'ilm",
+   "uz": "ilm, bilim (o'zbekcha 'ilm')",
+   "root": "ع ل م",
+   "pattern": "",
+   "pos": "ism",
+   "audio": "a0/ilm.mp3",
+   "example_ar": "الْعِلْم نُور",
+   "example_uz": "Ilm — nur",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "عَرَب. حَجّ. عِلْم. أَنَا عَرَبِيّ وَأُحِبّ الْعِلْم. الْحَجّ فِي مَكَّة.",
+   "questions": [
+    {
+     "q_uz": "Qaysi so'z ع bilan boshlanadi?",
+     "a": "عَرَب (va عِلْم)"
+    },
+    {
+     "q_uz": "Qaysi so'z ح bilan boshlanadi?",
+     "a": "حَجّ"
+    },
+    {
+     "q_uz": "«عِلْم» so'zi o'zbekchada qanday eshitiladi?",
+     "a": "ilm"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/ayn_ha_drill.mp3",
+   "transcript_ar": "عَ ـ حَ ـ عَرَب ـ حَجّ ـ عِلْم",
+   "questions": [
+    {
+     "q_uz": "Birinchi tovush ع mi yoki ح mi?",
+     "a": "ع (jarangli)"
+    },
+    {
+     "q_uz": "«حَجّ» dagi birinchi tovush ovozlimi yoki ovozsizmi?",
+     "a": "Ovozsiz (ح)"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Audioni tinglab, ovoz chiqarib takrorla (shadowing): عَ / حَ, keyin عَرَب / حَجّ / عِلْم. ع da tomoqni sqib, ح da issiq nafasni his qil.",
+   "target_ar": [
+    "عَرَب",
+    "حَجّ",
+    "عِلْم"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "عَرَب, حَجّ, عِلْم so'zlarini ko'chirib yoz va har birining tagiga o'zbekcha talaffuzini yoz.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi tovush o'zbek tilida umuman yo'q va tomoqni siqib chiqariladi?",
+   "q_ar": "",
+   "options": [
+    "ع",
+    "خ",
+    "ق",
+    "ه"
+   ],
+   "answer": "ع",
+   "explain_uz": "ع jarangli bo'g'iz tovushi — o'zbekda muqobili yo'q.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«ح» tovushi qanday?",
+   "q_ar": "",
+   "options": [
+    "Ovozsiz kuchli bo'g'iz 'h'",
+    "Ovozli 'a'",
+    "Xirillovchi 'x'",
+    "Yumshoq 'g''"
+   ],
+   "answer": "Ovozsiz kuchli bo'g'iz 'h'",
+   "explain_uz": "ح — ovozsiz, tomoqdan chiqadigan kuchli nafas.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "shadowing",
+   "q_uz": "Audioni tinglab takrorla.",
+   "q_ar": "عَرَب",
+   "options": [],
+   "answer": "عَرَب",
+   "explain_uz": "ع ni jarangli aytishga e'tibor ber.",
+   "audio": "a0/arab.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshitilgan so'zni yoz.",
+   "q_ar": "",
+   "options": [],
+   "answer": "حَجّ",
+   "explain_uz": "ح + shadda + ج: حَجّ.",
+   "audio": "a0/hajj.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«عِلْم» so'zining o'zbekcha muqobili qaysi?",
+   "q_ar": "",
+   "options": [
+    "ilm",
+    "olov",
+    "avlod",
+    "havo"
+   ],
+   "answer": "ilm",
+   "explain_uz": "عِلْم — o'zbekchaga 'ilm' bo'lib o'zlashgan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«عِلْم» va «عَالِم» so'zlarining o'zagini tanla.",
+   "q_ar": "",
+   "options": [
+    "ع ل م",
+    "ح ج ج",
+    "ع ر ب",
+    "خ ب ر"
+   ],
+   "answer": "ع ل م",
+   "explain_uz": "Ikkalasi ham ع ل م o'zagidan — bilish/ilm.",
+   "audio": "",
+   "root": "ع ل م",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi juftlik NOTO'G'RI aralashtirilishi mumkin?",
+   "q_ar": "",
+   "options": [
+    "ح va خ",
+    "ب va م",
+    "ل va ن",
+    "س va ط"
+   ],
+   "answer": "ح va خ",
+   "explain_uz": "ح (ovozsiz nafas) va خ (xirillovchi x) ko'pincha adashtiriladi, lekin farqli.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "word",
+   "front": "عَرَب",
+   "back": "arab(lar) — ع jarangli bo'g'iz tovushi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "حَجّ",
+   "back": "haj — ح ovozsiz kuchli bo'g'iz 'h'",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "عِلْم",
+   "back": "ilm, bilim (o'zbekcha 'ilm')",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "ع ل م",
+   "back": "bilish, ilm → عِلْم (ilm), عَالِم (olim)",
+   "deck": "msa"
+  }
+ ]
+}

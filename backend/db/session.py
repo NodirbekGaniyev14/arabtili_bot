@@ -130,6 +130,45 @@ async def _remove_b1_quran_module(conn) -> None:
     )
 
 
+# Eski A0 (25 dars) -> yangi A0 (42 dars) xaritasi.
+# A0 poydevori maydalandi: harflar kichik guruhlarga bo'lindi, ulanish/harakat
+# mashqlari qo'shildi. Eski darslar mazmuni yangi o'ringa ko'chdi.
+_A0_REMAP = {
+    1: 1, 2: 4, 3: 5, 4: 7, 5: 9, 6: 11, 7: 14, 8: 17, 9: 18,
+    10: 24, 11: 26, 12: 28, 13: 29, 14: 30, 15: 31, 16: 32, 17: 33,
+    18: 37, 19: 34, 20: 35, 21: 36, 22: 40, 23: 39, 24: 41, 25: 42,  # 25 = imtihon
+}
+
+
+async def _remap_a0_lessons(conn) -> None:
+    """Bir martalik migratsiya: eski A0 dars ID'lari yangi (kengaytirilgan)
+    tartibga ko'chiriladi. Meta kaliti orqali qayta ishlamaydi.
+
+    Xarita kesishgani uchun CASE ishlatiladi (bir o'tishda, to'qnashuvsiz)."""
+    key = "a0_expand_v1"
+    row = (
+        await conn.exec_driver_sql("SELECT value FROM meta WHERE key = ?", (key,))
+    ).first()
+    if row:
+        return
+
+    cases = " ".join(
+        f"WHEN 'a0-{old:02d}' THEN 'a0-{new:02d}'" for old, new in _A0_REMAP.items()
+    )
+    for table, col in (
+        ("progress", "lesson_id"),
+        ("lesson_ratings", "lesson_id"),
+        ("plans", "start_lesson"),
+    ):
+        await conn.exec_driver_sql(
+            f"UPDATE {table} SET {col} = CASE {col} {cases} ELSE {col} END "
+            f"WHERE {col} LIKE 'a0-%'"
+        )
+    await conn.exec_driver_sql(
+        "INSERT INTO meta (key, value) VALUES (?, 'done')", (key,)
+    )
+
+
 async def init_db():
     from db.models import Base
 
@@ -138,3 +177,4 @@ async def init_db():
         await _ensure_columns(conn)
         await _shift_a2_lessons(conn)
         await _remove_b1_quran_module(conn)
+        await _remap_a0_lessons(conn)

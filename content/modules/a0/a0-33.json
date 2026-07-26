@@ -1,0 +1,310 @@
+{
+ "id": "a0-33",
+ "level": "A0",
+ "module": "harakat",
+ "order": 33,
+ "title_uz": "Alif maqsura (ى)",
+ "title_ar": "الألِف المَقْصورة",
+ "can_do_uz": "So'z oxiridagi ى (alif maqsura) ni tanib, uni cho'ziq 'a' tovushi sifatida to'g'ri o'qiy olaman va uni nuqtali ي dan farqlay olaman.",
+ "duration_min": 30,
+ "prerequisites": [
+  "a0-32"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "Payg'ambar «Muso» ismini arabchada مُوسى deb yozamiz — oxiridagi harf ي ga o'xshaydi, lekin nuqtasi yo'q va 'i' emas, 'a' deb o'qiladi! Bu maxsus harf — alif maqsura.",
+ "grammar": {
+  "point_ar": "ى / ي",
+  "explanation_uz": "So'z oxirida ba'zan nuqtasiz ى keladi. Uni 'alif maqsura' deyiladi va u cho'ziq 'aa' tovushini beradi (xuddi ا kabi). Nuqtali ي esa 'y' yoki cho'ziq 'ii' bo'ladi. Ikkalasi bir-biriga o'xshaydi, farqi — NUQTA: ى nuqtasiz, ي pastida ikki nuqta bor. Alif maqsura faqat so'z OXIRIDA keladi va ustiga harakat qo'yilmaydi.",
+  "table": [
+   {
+    "ar": "ى",
+    "uz": "nuqtasiz, oxirida — cho'ziq 'aa' o'qiladi",
+    "form": "alif maqsura"
+   },
+   {
+    "ar": "ي",
+    "uz": "ikki nuqtali — 'y' yoki cho'ziq 'ii'",
+    "form": "yo"
+   },
+   {
+    "ar": "مُوسى",
+    "uz": "Muso (o'qilishi: Muusaa)",
+    "form": "misol: ى"
+   },
+   {
+    "ar": "عَلى",
+    "uz": "ustida (o'qilishi: 'alaa)",
+    "form": "misol: ى"
+   },
+   {
+    "ar": "فِي",
+    "uz": "ichida (o'qilishi: fii)",
+    "form": "misol: ي"
+   }
+  ],
+  "common_mistakes_uz": [
+   "ى ni 'i' deb o'qish — xato. U cho'ziq 'aa' beradi: عَلى = 'alaa, 'ali emas.",
+   "ى ustiga nuqta qo'yib yuborish — u NUQTASIZ yoziladi.",
+   "Alif maqsurani so'z o'rtasida qidirish — u faqat so'z OXIRIDA keladi.",
+   "ى ustiga harakat (fatha/kasra) qo'yish — unga harakat qo'yilmaydi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ه د ي",
+   "meaning_uz": "to'g'ri yo'lga boshlash, hidoyat qilish",
+   "uz_cognates": [
+    "hidoyat",
+    "hadya (sovg'a)"
+   ],
+   "derived": [
+    {
+     "ar": "هُدى",
+     "uz": "hidoyat, to'g'ri yo'l",
+     "pattern": ""
+    },
+    {
+     "ar": "هادي",
+     "uz": "yo'l ko'rsatuvchi",
+     "pattern": ""
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "عَلى",
+   "translit": "'alaa",
+   "uz": "ustida, -da (yuzasida)",
+   "root": "",
+   "pattern": "",
+   "pos": "yuklama",
+   "audio": "a0/ala.mp3",
+   "example_ar": "الكِتابُ عَلى المَكْتَب",
+   "example_uz": "Kitob stol ustida",
+   "srs": true
+  },
+  {
+   "ar": "إِلى",
+   "translit": "ilaa",
+   "uz": "-ga, tomon",
+   "root": "",
+   "pattern": "",
+   "pos": "yuklama",
+   "audio": "a0/ila.mp3",
+   "example_ar": "أَذْهَبُ إِلى مَكّة",
+   "example_uz": "Makkaga boraman",
+   "srs": true
+  },
+  {
+   "ar": "هُدى",
+   "translit": "hudaa",
+   "uz": "hidoyat, to'g'ri yo'l",
+   "root": "ه د ي",
+   "pattern": "",
+   "pos": "ism",
+   "audio": "a0/huda.mp3",
+   "example_ar": "هُدى مِنَ اللّٰه",
+   "example_uz": "Hidoyat Allohdan",
+   "srs": true
+  },
+  {
+   "ar": "مَتى",
+   "translit": "mataa",
+   "uz": "qachon",
+   "root": "",
+   "pattern": "",
+   "pos": "so'roq",
+   "audio": "a0/mata.mp3",
+   "example_ar": "مَتى تَذْهَب؟",
+   "example_uz": "Qachon borasan?",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "مُوسى نَبِيّ. الكِتابُ عَلى المَكْتَب. هٰذا هُدى مِنَ اللّٰه. مَتى نَذْهَبُ إِلى مَكّة؟",
+   "questions": [
+    {
+     "q_uz": "«مُوسى» so'zining oxirgi harfi qanday o'qiladi — 'i' yoki cho'ziq 'aa'?",
+     "a": "cho'ziq 'aa' (muusaa)"
+    },
+    {
+     "q_uz": "«عَلى» so'zi nimani bildiradi?",
+     "a": "ustida, -da"
+    },
+    {
+     "q_uz": "Matnda qaysi joyga borish haqida so'ralyapti?",
+     "a": "Makkaga (إِلى مَكّة)"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/dars17_listening.mp3",
+   "transcript_ar": "مُوسى ، عَلى ، إِلى ، هُدى ، مَتى",
+   "questions": [
+    {
+     "q_uz": "Eshitgan so'zlaringizning oxirida qaysi tovush takrorlanadi?",
+     "a": "cho'ziq 'aa' (alif maqsura ى)"
+    },
+    {
+     "q_uz": "«hudaa» so'zini eshitdingizmi? U nimani bildiradi?",
+     "a": "ha, hidoyat"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Quyidagi so'zlarni ovoz chiqarib o'qing va oxirini cho'ziq 'aa' bilan tugating: مُوسى، عَلى، إِلى، هُدى، مَتى. ى ni 'i' emas, 'aa' deb ayting.",
+   "target_ar": [
+    "مُوسى",
+    "عَلى",
+    "إِلى",
+    "هُدى",
+    "مَتى"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "«مُوسى» va «عَلى» so'zlarini ko'chirib yozing. Diqqat qiling: oxirgi harf ى NUQTASIZ va harakatsiz bo'lsin.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«مُوسى» so'zining oxiridagi ى harfi qanday o'qiladi?",
+   "q_ar": "",
+   "options": [
+    "cho'ziq 'aa'",
+    "cho'ziq 'ii'",
+    "'y' tovushi",
+    "'i' tovushi"
+   ],
+   "answer": "cho'ziq 'aa'",
+   "explain_uz": "Alif maqsura (ى) so'z oxirida cho'ziq 'aa' tovushini beradi: muusaa.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi harfda ikki nuqta bor?",
+   "q_ar": "",
+   "options": [
+    "ي",
+    "ى",
+    "ا",
+    "و"
+   ],
+   "answer": "ي",
+   "explain_uz": "ي (yo) pastida ikki nuqtali; ى (alif maqsura) nuqtasiz.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "",
+   "q_ar": "عَلى",
+   "options": [],
+   "answer": "ustida",
+   "explain_uz": "عَلى — 'ustida, -da' ma'nosini beradi, o'qilishi 'alaa.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "qachon",
+   "q_ar": "",
+   "options": [],
+   "answer": "مَتى",
+   "explain_uz": "«qachon» = مَتى (mataa), oxirida alif maqsura.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshiting va yozing (hidoyat):",
+   "q_ar": "",
+   "options": [],
+   "answer": "هُدى",
+   "explain_uz": "هُدى — 'hidoyat', o'zbekcha 'hidoyat' so'zi shundan.",
+   "audio": "a0/huda.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«هُدى» so'zining o'zagini toping:",
+   "q_ar": "",
+   "options": [
+    "ه د ي",
+    "ه د و",
+    "ح د ث",
+    "ه ن د"
+   ],
+   "answer": "ه د ي",
+   "explain_uz": "هُدى — ه د ي o'zagidan (hidoyat, to'g'ri yo'l).",
+   "audio": "",
+   "root": "ه د ي",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "So'zlarni tartibga soling: «Kitob stol ustida»",
+   "q_ar": "",
+   "options": [],
+   "answer": "الكِتابُ عَلى المَكْتَب",
+   "explain_uz": "الكِتابُ عَلى المَكْتَب — Kitob stol ustida. «kitob» va «maktab» o'zbekchada ham bor.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": [
+    "الكِتابُ",
+    "عَلى",
+    "المَكْتَب"
+   ]
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "word",
+   "front": "عَلى",
+   "back": "ustida, -da ('alaa)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "إِلى",
+   "back": "-ga, tomon (ilaa)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "هُدى",
+   "back": "hidoyat, to'g'ri yo'l (hudaa) — o'zbekcha 'hidoyat'",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "مَتى",
+   "back": "qachon (mataa)",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "ه د ي",
+   "back": "hidoyat, to'g'ri yo'lga boshlash → هُدى, هادي",
+   "deck": "msa"
+  }
+ ]
+}

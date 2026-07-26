@@ -3,76 +3,73 @@
  "level": "A0",
  "module": "letters",
  "order": 5,
- "title_uz": "Harf oilasi 4: س ش ص ض",
- "title_ar": "عائلة الحروف: س ش ص ض",
- "can_do_uz": "س ش ص ض harflarini taniyman va yengil (س) bilan qalin (ص) tovush farqini his qilaman.",
+ "title_uz": "Harf oilasi 2: ج ح خ",
+ "title_ar": "عائلة الحروف: ج ح خ",
+ "can_do_uz": "ج ح خ harflarini ajrata olaman, ayniqsa chuqur ح bilan o'zbekcha 'x'ga teng خ farqini talaffuzda his qilaman.",
  "duration_min": 20,
  "prerequisites": ["a0-04"],
  "harakat_level": "full",
- "hook_uz": "«Tishli» harflar keldi! س va ش — uch tishli taroqcha. ص va ض — tuxumsimon qorinli harflar. Bugun birinchi marta YENGIL va QALIN tovush farqini eshitasiz: س (oddiy s) va ص (qalin, to'q s). Bu farq arab tilining o'ziga xos jozibasi!",
+ "hook_uz": "Ikkinchi oila — «ilgakli» harflar: ج ح خ. Tanasi bir xil ilgak, farqi yana nuqtada! Xushxabar: خ tovushi o'zbekcha 'x' bilan BIR XIL — 'xon', 'xat'dagi x. Siz bu tovushni allaqachon bilasiz!",
  "grammar": {
-  "point_ar": "س ش ص ض",
-  "explanation_uz": "س (sin, 's') va ش (shin, 'sh' — tepasida 3 nuqta) — taroqchali juftlik. ص (sod, QALIN 's') va ض (dod, QALIN 'd' — tepasida 1 nuqta) — qorinli juftlik. QALIN tovushda til orqa qismi yuqoriga ko'tariladi, tovush «to'q», «og'ir» chiqadi — solishtiring: «sana» (yengil) va «SO'M» dagi to'q s kabi. Qalin harflar yonidagi unlilarni ham to'qlashtiradi.",
+  "point_ar": "ج ح خ",
+  "explanation_uz": "Uchala harfning tanasi ilgakka o'xshaydi. ج — ichida 1 nuqta, 'j' tovushi. ح — nuqtasiz, BO'G'IZDAN chuqur 'h' (Muhammad, Rahim so'zlaridagi h — kuchli nafas bilan). خ — tepada 1 nuqta, o'zbekcha 'x'. ح ni to'g'ri chiqarish uchun: xuddi qo'lingizni sovuqda isitayotgandek «hhh» deb kuchli nafas chiqaring.",
   "table": [
-   {"ar": "س", "uz": "sin — 's' · nuqtasiz taroq", "form": "سـ ـسـ ـس"},
-   {"ar": "ش", "uz": "shin — 'sh' · tepada 3 nuqta", "form": "شـ ـشـ ـش"},
-   {"ar": "ص", "uz": "sod — QALIN 's' · nuqtasiz", "form": "صـ ـصـ ـص"},
-   {"ar": "ض", "uz": "dod — QALIN 'd' · tepada 1 nuqta", "form": "ضـ ـضـ ـض"}
+   {"ar": "ج", "uz": "jim — 'j' · ichida 1 nuqta", "form": "جـ ـجـ ـج"},
+   {"ar": "ح", "uz": "ho — chuqur 'h' · nuqtasiz", "form": "حـ ـحـ ـح"},
+   {"ar": "خ", "uz": "xo — o'zbekcha 'x' · tepada 1 nuqta", "form": "خـ ـخـ ـخ"}
   ],
   "common_mistakes_uz": [
-   "ص ni oddiy س deb talaffuz qilish — ص da til orqasi ko'tarilib, to'q 's' chiqadi.",
-   "ض ni oddiy 'd' (د) deb aytish — ض qalin, og'ir d.",
-   "ش ning 3 nuqtasini ث bilan adashtirish — ش taroqli tanaga ega, ث qayiqchaga."
+   "ح ni oddiy yengil 'h' deb aytish — u bo'g'izdan, kuchli nafas bilan chiqadi.",
+   "ح va خ ni chalkashtirish: ح toza nafas, خ esa xirillagan o'zbekcha 'x'.",
+   "Nuqta joyini adashtirish: ج da nuqta ICHIDA, خ da TEPADA."
   ]
  },
  "roots": [],
  "vocabulary": [
-  {"ar": "س", "translit": "sin (s)", "uz": "«s» tovushi — 'suv'dagi s. Nuqtasiz taroqcha", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_sin.mp3", "audio_text": "سِين", "example_ar": "سـ ـسـ ـس", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
-  {"ar": "ش", "translit": "shin (sh)", "uz": "«sh» tovushi — 'shahar'dagi sh. Nuqta: 3 ta, TEPADA", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_shin.mp3", "audio_text": "شِين", "example_ar": "شـ ـشـ ـش", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
-  {"ar": "ص", "translit": "sod (ṣ)", "uz": "QALIN «s» — til orqasi ko'tariladi, to'q tovush. Nuqtasiz", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_sad.mp3", "audio_text": "صَاد", "example_ar": "صـ ـصـ ـص", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
-  {"ar": "ض", "translit": "dod (ḍ)", "uz": "QALIN «d» — og'ir, to'q d. Arablar tilini «ض tili» deyishadi. Nuqta: 1 ta, TEPADA", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_dad.mp3", "audio_text": "ضَاد", "example_ar": "ضـ ـضـ ـض", "example_uz": "boshida · o'rtasida · oxirida", "srs": true}
+  {"ar": "ج", "translit": "jim (j)", "uz": "«j» tovushi — 'jon'dagi j. Nuqta: 1 ta, ICHIDA", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_jim.mp3", "audio_text": "جِيم", "example_ar": "جـ ـجـ ـج", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
+  {"ar": "ح", "translit": "ho (ḥ)", "uz": "chuqur bo'g'iz «h» — 'Muhammad', 'Rahim'dagi h. Kuchli nafas bilan. Nuqtasiz", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_ha.mp3", "audio_text": "حَاء", "example_ar": "حـ ـحـ ـح", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
+  {"ar": "خ", "translit": "xo (x)", "uz": "o'zbekcha «x» — 'xon', 'xat'dagi x. Siz buni bilasiz! Nuqta: 1 ta, TEPADA", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_kha.mp3", "audio_text": "خَاء", "example_ar": "خـ ـخـ ـخ", "example_uz": "boshida · o'rtasida · oxirida", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "س ش ص ض",
+   "text_ar": "ج ح خ",
    "questions": [
-    {"q_uz": "'sh' tovushini beruvchi harf qaysi?", "a": "ش (shin)"},
-    {"q_uz": "Qalin 's' qaysi harf?", "a": "ص (sod)"},
-    {"q_uz": "ص va ض ning farqi nimada?", "a": "ض da tepada 1 nuqta bor"}
+    {"q_uz": "Nuqtasiz harf qaysi?", "a": "ح (ho)"},
+    {"q_uz": "O'zbekcha 'x' tovushini beruvchi harf?", "a": "خ (xo)"},
+    {"q_uz": "ج ning nuqtasi qayerda?", "a": "Ichida"}
    ]
   },
   "listening": {
-   "audio": "a0/a0-05-harflar.mp3",
-   "transcript_ar": "سِين. شِين. صَاد. ضَاد",
+   "audio": "a0/a0-03-harflar.mp3",
+   "transcript_ar": "جِيم. حَاء. خَاء",
    "questions": [
-    {"q_uz": "Nechta harf nomi eshitildi?", "a": "4 ta"},
-    {"q_uz": "Qalin tovushli harflar qaysilar edi?", "a": "ص va ض (sod, dod)"}
+    {"q_uz": "Nechta harf nomi eshitildi?", "a": "3 ta"},
+    {"q_uz": "Oxirgi eshitilgan harf qaysi?", "a": "خ (xo)"}
    ]
   },
   "speaking": {
-   "task_uz": "Juftlab ayting va farqni his qiling: «sin — sod» (s va TO'Q s), «shin», «dod». Qalin tovushda og'iz kengroq, til orqasi yuqorida.",
-   "target_ar": ["س", "ش", "ص", "ض"],
+   "task_uz": "Uchala harfni ovoz chiqarib ayting: «jim — j», «ho — h (chuqur)», «xo — x». ح da qo'lingizni og'zingiz oldiga tutib, iliq nafasni his qiling.",
+   "target_ar": ["ج", "ح", "خ"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Daftaringizga س، ش، ص، ض harflaridan bir qatordan yozing. Taroq tishlarini uchta qilib, ص ning qornini tuxumsimon chizing.",
+   "task_uz": "Daftaringizga ج، ح، خ harflaridan bir qatordan yozing. Ilgak shaklini bir xil chizib, faqat nuqta o'rnini o'zgartiring.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "Qaysi harfda tepada 3 ta nuqta bor?", "q_ar": "", "options": ["ش", "س", "ض", "ص"], "answer": "ش", "explain_uz": "ش (shin) — taroq ustida 3 nuqta, 'sh' tovushi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Eshiting: bu qaysi harfning nomi?", "q_ar": "", "options": ["ص", "س", "ش", "ض"], "answer": "ص", "explain_uz": "«Sod» — qalin s. Til orqasi ko'tarilib aytiladi.", "audio": "a0/harf_sad.mp3", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "QALIN 'd' tovushini qaysi harf beradi?", "q_ar": "", "options": ["ض", "د", "ص", "ذ"], "answer": "ض", "explain_uz": "ض (dod) — qalin d. Oddiy d esa د.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "dictation", "q_uz": "Eshiting va shu harfni klaviaturadan bosing.", "q_ar": "", "options": [], "answer": "ش", "explain_uz": "«Shin» — 3 nuqtali taroq, 'sh'.", "audio": "a0/harf_shin.mp3", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "س va ص ning farqi nimada?", "q_ar": "", "options": ["ص qalin (to'q) talaffuz qilinadi", "س qalin talaffuz qilinadi", "ص da 3 nuqta bor", "farq yo'q"], "answer": "ص qalin (to'q) talaffuz qilinadi", "explain_uz": "Ikkalasi 's', lekin ص — til orqasi ko'tarilgan QALIN s.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "ش harfi so'z BOSHIDA qanday ko'rinadi?", "q_ar": "", "options": ["شـ", "ـشـ", "ـش"], "answer": "شـ", "explain_uz": "So'z boshida: شـ (keyingi harfga ulanadi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "shadowing", "q_uz": "Harf nomlarini eshiting va takrorlang", "q_ar": "س ش ص ض", "options": [], "answer": "", "explain_uz": "", "audio": "a0/a0-05-harflar.mp3", "root": "", "pattern": "", "words": []}
+  {"type": "mcq", "q_uz": "Qaysi harf NUQTASIZ?", "q_ar": "", "options": ["ح", "ج", "خ", "ب"], "answer": "ح", "explain_uz": "ح (ho) — bu oilada yagona nuqtasiz harf.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting: bu qaysi harfning nomi?", "q_ar": "", "options": ["خ", "ح", "ج", "ت"], "answer": "خ", "explain_uz": "«Xo» — tepasida nuqtali, o'zbekcha 'x' tovushi.", "audio": "a0/harf_kha.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "O'zbekcha 'xon' so'zidagi 'x' tovushiga mos harf qaysi?", "q_ar": "", "options": ["خ", "ح", "ج", "ه"], "answer": "خ", "explain_uz": "خ = o'zbekcha x. ح esa chuqur toza 'h'.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "dictation", "q_uz": "Eshiting va shu harfni klaviaturadan bosing.", "q_ar": "", "options": [], "answer": "ج", "explain_uz": "«Jim» — ichida nuqtali ج harfi.", "audio": "a0/harf_jim.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "ح harfi so'z BOSHIDA qanday ko'rinadi?", "q_ar": "", "options": ["حـ", "ـحـ", "ـح"], "answer": "حـ", "explain_uz": "So'z boshida: حـ (keyingi harfga ulanadi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "'Muhammad' ismidagi chuqur 'h' qaysi harf?", "q_ar": "", "options": ["ح", "خ", "ج", "ن"], "answer": "ح", "explain_uz": "ح — bo'g'izdan kuchli nafas bilan chiqadigan h.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "shadowing", "q_uz": "Harf nomlarini eshiting va takrorlang", "q_ar": "ج ح خ", "options": [], "answer": "", "explain_uz": "", "audio": "a0/a0-03-harflar.mp3", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {"type": "word", "front": "س", "back": "sin — 's' (nuqtasiz taroq)", "deck": "msa"},
-  {"type": "word", "front": "ش", "back": "shin — 'sh' (3 nuqta tepada)", "deck": "msa"},
-  {"type": "word", "front": "ص", "back": "sod — QALIN 's' (nuqtasiz)", "deck": "msa"},
-  {"type": "word", "front": "ض", "back": "dod — QALIN 'd' (1 nuqta tepada)", "deck": "msa"}
+  {"type": "word", "front": "ج", "back": "jim — 'j' (nuqta ichida)", "deck": "msa"},
+  {"type": "word", "front": "ح", "back": "ho — chuqur bo'g'iz 'h' (nuqtasiz)", "deck": "msa"},
+  {"type": "word", "front": "خ", "back": "xo — o'zbekcha 'x' (nuqta tepada)", "deck": "msa"}
  ]
 }

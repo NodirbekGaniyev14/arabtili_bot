@@ -1,0 +1,73 @@
+{
+ "id": "a0-27",
+ "level": "A0",
+ "module": "harakat",
+ "order": 27,
+ "title_uz": "Uch harfli birinchi so'zlar",
+ "title_ar": "أَوَّلُ الكَلِمَاتِ الثُّلَاثِيَّة",
+ "can_do_uz": "Harakat va sukun bilan to'liq uch harfli so'zni o'qiyman.",
+ "duration_min": 15,
+ "prerequisites": ["a0-26"],
+ "harakat_level": "full",
+ "hook_uz": "Bo'g'in va sukunni bildingiz. Endi to'liq UCH harfli so'z o'qiymiz: يَدْ («yad» — qo'l), دَمْ («dam» — qon), اِبْن («ibn» — o'g'il). Har biri qisqa, lekin haqiqiy so'z! Sekin o'qing: harf + harakat, keyingi harf + harakat.",
+ "grammar": {
+  "point_ar": "الكَلِمَةُ الثُّلَاثِيَّة",
+  "explanation_uz": "Uch harfli so'z — arab tilining eng keng tarqalgan shakli. Har harfda harakat yoki sukun bo'ladi: يَدْ = يَ («ya») + دْ («d» sukunli) = «yad». Sekin o'qing va so'zni bo'lib: بَيْت? — yo'q, bu 4 harf, hozir faqat 3 harf. Misollar: دَمْ (qon), يَدْ (qo'l), أَبْ (ota), أُمّ? — shadda, keyingi darsda. Hozir sodda 3 harfli so'zlar bilan mashq qilamiz.",
+  "table": [
+   {"ar": "يَدْ", "uz": "«yad» — qo'l", "form": "ya-d"},
+   {"ar": "دَمْ", "uz": "«dam» — qon", "form": "da-m"},
+   {"ar": "أَبْ", "uz": "«ab» — ota", "form": "a-b"},
+   {"ar": "بَحْر", "uz": "«bahr» — dengiz", "form": "ba-h-r"}
+  ],
+  "common_mistakes_uz": [
+   "So'zni yaxlit «rasm» sifatida yodlash — harf-harf o'qing.",
+   "Sukunli harfni unli bilan o'qish.",
+   "So'zni chapdan o'qishga urinish."
+  ]
+ },
+ "roots": [],
+ "vocabulary": [
+  {"ar": "يَدْ", "translit": "yad", "uz": "qo'l (tana a'zosi)", "root": "", "pattern": "", "pos": "ot", "audio": "a0/yad.mp3", "example_ar": "يَدْ", "example_uz": "qo'l", "srs": true},
+  {"ar": "دَمْ", "translit": "dam", "uz": "qon", "root": "", "pattern": "", "pos": "ot", "audio": "a0/dam.mp3", "example_ar": "دَمْ", "example_uz": "qon", "srs": true},
+  {"ar": "أَبْ", "translit": "ab", "uz": "ota", "root": "", "pattern": "", "pos": "ot", "audio": "a0/ab.mp3", "example_ar": "أَبْ", "example_uz": "ota", "srs": true},
+  {"ar": "بَحْر", "translit": "baḥr", "uz": "dengiz", "root": "", "pattern": "", "pos": "ot", "audio": "a0/bahr.mp3", "example_ar": "بَحْر", "example_uz": "dengiz", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "يَدْ · دَمْ · أَبْ",
+   "questions": [
+    {"q_uz": "يَدْ qanday o'qiladi va nima ma'no?", "a": "«yad» — qo'l"},
+    {"q_uz": "دَمْ da oxirgi harf sukunlimi?", "a": "Ha — مْ, «d-a-m»"}
+   ]
+  },
+  "listening": {
+   "audio": "a0/yad.mp3",
+   "transcript_ar": "يَدْ",
+   "questions": [{"q_uz": "Qaysi so'z eshitildi?", "a": "«yad» (qo'l)"}]
+  },
+  "speaking": {
+   "task_uz": "Uch harfli so'zlarni sekin o'qing: yad, dam, ab. Har harfni harakati bilan ayting.",
+   "target_ar": ["يَدْ", "دَمْ", "أَبْ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "يَدْ so'zini yozing: يَ + دْ. Harakat va sukunni qo'ying.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "يَدْ qanday o'qiladi?", "q_ar": "يَدْ", "options": ["yad", "yud", "day", "yid"], "answer": "yad", "explain_uz": "يَ («ya») + دْ («d») = «yad».", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "يَدْ", "options": [], "answer": "qo'l", "explain_uz": "يَدْ — qo'l.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "دَمْ", "options": [], "answer": "qon", "explain_uz": "دَمْ — qon.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "«ota» ma'nosidagi so'z qaysi?", "q_ar": "", "options": ["أَبْ", "يَدْ", "دَمْ", "بَحْر"], "answer": "أَبْ", "explain_uz": "أَبْ («ab») — ota.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "دَمْ so'zining oxirgi harfida nima bor?", "q_ar": "", "options": ["sukun (unli yo'q)", "fatha", "kasra", "damma"], "answer": "sukun (unli yo'q)", "explain_uz": "مْ — sukunli, «dam» deb o'qiladi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "dictation", "q_uz": "Eshiting va yozing (uch harfli so'z).", "q_ar": "", "options": [], "answer": "يَدْ", "explain_uz": "«yad» — qo'l: يَدْ.", "audio": "a0/yad.mp3", "root": "", "pattern": "", "words": []}
+ ],
+ "srs_cards": [
+  {"type": "word", "front": "يَدْ", "back": "qo'l (yad)", "deck": "msa"},
+  {"type": "word", "front": "دَمْ", "back": "qon (dam)", "deck": "msa"},
+  {"type": "word", "front": "أَبْ", "back": "ota (ab)", "deck": "msa"},
+  {"type": "word", "front": "بَحْر", "back": "dengiz (bahr)", "deck": "msa"}
+ ]
+}

@@ -3,76 +3,190 @@
  "level": "A0",
  "module": "letters",
  "order": 4,
- "title_uz": "Harf oilasi 3: د ذ ر ز",
- "title_ar": "عائلة الحروف: د ذ ر ز",
- "can_do_uz": "د ذ ر ز harflarini taniyman va bular o'zidan keyingi harfga ULANMASLIGINI bilaman.",
- "duration_min": 20,
- "prerequisites": ["a0-03"],
+ "title_uz": "ن va ي — «bo» oilasi to'liq",
+ "title_ar": "نُون وَيَاء",
+ "can_do_uz": "nun va yo harflarini shakli, nuqtasi va tovushi bo'yicha ajrataman.",
+ "duration_min": 15,
+ "prerequisites": [
+  "a0-03"
+ ],
  "harakat_level": "full",
- "hook_uz": "Bu to'rt harf — «yolg'izlikni yaxshi ko'radiganlar»: ular o'zidan KEYINGI harfga hech qachon ulanmaydi! د ذ (do'ppi shakli) va ر ز (o'roq shakli). To'rttasidan uchtasi sizga tanish tovushlar: d, r, z.",
+ "hook_uz": "Oila to'ldi! ب ت ث ن ي — beshovi ham bir xil tanadan chiqadi, farq faqat NUQTADA. ن — tepada 1 nuqta, ي — pastda 2 nuqta. Bugun beshovini birga solishtirib, ko'zingizni o'rgatamiz.",
  "grammar": {
-  "point_ar": "د ذ ر ز",
-  "explanation_uz": "Ikki juftlik: د (dol, 'd') va ذ (zol, tishlararo 'z' — inglizcha 'this') — do'ppiga o'xshash; ر (ro, titroq 'r') va ز (zo, 'z') — o'roqqa o'xshash. Har juftlikda nuqtasiz va nuqtali bor. MUHIM XUSUSIYAT: bu harflar o'zidan keyingi harfga ULANMAYDI — so'z ichida ulardan keyin doim kichik uzilish bo'ladi. Buni keyinroq (a0-09 darsda) batafsil ko'ramiz.",
+  "point_ar": "ن ي",
+  "explanation_uz": "ن (nun) — kosacha chuqurroq, TEPADA 1 nuqta, «n» tovushi. ي (yo) — kosacha pastga cho'zilgan, PASTDA 2 nuqta, «y» tovushi. Endi butun oilani yodda tuting: ب (pastda 1) · ت (tepada 2) · ث (tepada 3) · ن (tepada 1) · ي (pastda 2). Nuqta SONI va JOYI — ikkalasiga ham qarang.",
   "table": [
-   {"ar": "د", "uz": "dol — 'd' · nuqtasiz", "form": "د ـد"},
-   {"ar": "ذ", "uz": "zol — tishlararo 'z' · tepada 1 nuqta", "form": "ذ ـذ"},
-   {"ar": "ر", "uz": "ro — titroq 'r' · nuqtasiz", "form": "ر ـر"},
-   {"ar": "ز", "uz": "zo — 'z' · tepada 1 nuqta", "form": "ز ـز"}
+   {
+    "ar": "ن",
+    "uz": "nun — chuqurroq kosacha, TEPADA 1 nuqta — «n»",
+    "form": "نـ ـنـ ـن"
+   },
+   {
+    "ar": "ي",
+    "uz": "yo — pastga cho'zilgan kosacha, PASTDA 2 nuqta — «y»",
+    "form": "يـ ـيـ ـي"
+   }
   ],
   "common_mistakes_uz": [
-   "ذ ni oddiy 'z' deb aytish — u tishlararo: til uchi tishlar orasiga tegadi.",
-   "د va ر ni chalkashtirish: د burchakli do'ppi, ر yumaloq o'roq (pastga cho'ziladi).",
-   "Bu harflardan keyin ulanish kutish — ular keyingi harfga ULANMAYDI."
+   "ب va ن ni chalkashtirish — ikkalasida 1 nuqta, lekin ب da PASTDA, ن da TEPADA.",
+   "ي va ب ni chalkashtirish — ikkalasida nuqta pastda, lekin ي da 2 ta, ب da 1 ta.",
+   "Yakka turgan ن va ي ning tanasi chuqurroq bo'lishini e'tibordan chiqarish."
   ]
  },
  "roots": [],
  "vocabulary": [
-  {"ar": "د", "translit": "dol (d)", "uz": "«d» tovushi — 'daraxt'dagi d. Nuqtasiz, do'ppi shakli", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_dal.mp3", "audio_text": "دَال", "example_ar": "د ـد", "example_uz": "yolg'iz · oxirida (keyingi harfga ulanmaydi)", "srs": true},
-  {"ar": "ذ", "translit": "zol (dh)", "uz": "tishlararo «z» — til uchi tishlar orasida (inglizcha 'this'). Nuqta: 1 ta tepada", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_dhal.mp3", "audio_text": "ذَال", "example_ar": "ذ ـذ", "example_uz": "yolg'iz · oxirida (keyingi harfga ulanmaydi)", "srs": true},
-  {"ar": "ر", "translit": "ro (r)", "uz": "titroq «r» — 'rang'dagi r. Nuqtasiz, o'roq shakli", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_ra.mp3", "audio_text": "رَاء", "example_ar": "ر ـر", "example_uz": "yolg'iz · oxirida (keyingi harfga ulanmaydi)", "srs": true},
-  {"ar": "ز", "translit": "zo (z)", "uz": "«z» tovushi — 'zar'dagi z. Nuqta: 1 ta tepada", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_zay.mp3", "audio_text": "زَاي", "example_ar": "ز ـز", "example_uz": "yolg'iz · oxirida (keyingi harfga ulanmaydi)", "srs": true}
+  {
+   "ar": "ن",
+   "translit": "nūn (n)",
+   "uz": "nun — chuqurroq kosacha, TEPADA 1 nuqta — «n»",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "a0/harf_nun.mp3",
+   "audio_text": "نُون",
+   "example_ar": "نـ ـنـ ـن",
+   "example_uz": "boshida · o'rtasida · oxirida",
+   "srs": true
+  },
+  {
+   "ar": "ي",
+   "translit": "yā (y)",
+   "uz": "yo — pastga cho'zilgan kosacha, PASTDA 2 nuqta — «y»",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "a0/harf_ya.mp3",
+   "audio_text": "يَاء",
+   "example_ar": "يـ ـيـ ـي",
+   "example_uz": "boshida · o'rtasida · oxirida",
+   "srs": true
+  }
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "د ذ ر ز",
+   "text_ar": "ن ي",
    "questions": [
-    {"q_uz": "Do'ppi shaklidagi juftlik qaysi?", "a": "د va ذ"},
-    {"q_uz": "O'roq shaklidagi juftlik qaysi?", "a": "ر va ز"},
-    {"q_uz": "Bu harflarning umumiy xususiyati nima?", "a": "Keyingi harfga ulanmaydi"}
+    {
+     "q_uz": "Bu qatorda nechta harf bor?",
+     "a": "2 ta"
+    },
+    {
+     "q_uz": "Qaysi tomondan o'qiymiz?",
+     "a": "O'ngdan chapga"
+    }
    ]
   },
   "listening": {
-   "audio": "a0/a0-04-harflar.mp3",
-   "transcript_ar": "دَال. ذَال. رَاء. زَاي",
+   "audio": "a0/harf_nun.mp3",
+   "transcript_ar": "نُون",
    "questions": [
-    {"q_uz": "Nechta harf nomi eshitildi?", "a": "4 ta"},
-    {"q_uz": "Uchinchi eshitilgan harf qaysi?", "a": "ر (ro)"}
+    {
+     "q_uz": "Qaysi harf nomi eshitildi?",
+     "a": "Nun (ن)"
+    }
    ]
   },
   "speaking": {
-   "task_uz": "Harflarni nomi bilan ayting: «dol — d», «zol — tishlararo z», «ro — r», «zo — z». ذ da til uchini tishlar orasiga qo'ying.",
-   "target_ar": ["د", "ذ", "ر", "ز"],
+   "task_uz": "Harf nomlarini audio ortidan uch martadan takrorlang: nun, yo.",
+   "target_ar": [
+    "ن",
+    "ي"
+   ],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Daftaringizga د، ذ، ر، ز harflaridan bir qatordan yozing. د ni burchakli, ر ni yumaloq pastga cho'zilgan qilib chizing.",
+   "task_uz": "Daftaringizga har harfdan bir qatordan yozing (o'ngdan chapga). Nuqtalarni aniq joyiga qo'ying.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "Bu to'rt harfning umumiy xususiyati nima?", "q_ar": "د ذ ر ز", "options": ["keyingi harfga ulanmaydi", "nuqtasi yo'q", "unli tovushlar", "faqat so'z boshida keladi"], "answer": "keyingi harfga ulanmaydi", "explain_uz": "د ذ ر ز — o'zidan keyingi harfga ulanmaydigan harflar.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Eshiting: bu qaysi harfning nomi?", "q_ar": "", "options": ["ر", "ز", "د", "ذ"], "answer": "ر", "explain_uz": "«Ro» — nuqtasiz o'roq shaklidagi titroq r.", "audio": "a0/harf_ra.mp3", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Bu harf qanday tovush beradi?", "q_ar": "ذ", "options": ["tishlararo 'z' (this)", "oddiy 'z'", "'d'", "'r'"], "answer": "tishlararo 'z' (this)", "explain_uz": "ذ (zol) — til uchi tishlar orasida, yumshoq z.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "dictation", "q_uz": "Eshiting va shu harfni klaviaturadan bosing.", "q_ar": "", "options": [], "answer": "ز", "explain_uz": "«Zo» (zay) — tepasida nuqtali o'roq, oddiy z.", "audio": "a0/harf_zay.mp3", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "د va ر qanday farqlanadi?", "q_ar": "", "options": ["د burchakli, ر yumaloq pastga cho'zilgan", "د da nuqta bor", "ر keyingi harfga ulanadi", "farq yo'q"], "answer": "د burchakli, ر yumaloq pastga cho'zilgan", "explain_uz": "د — do'ppi (burchakli), ر — o'roq (chiziq ostiga cho'ziladi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Qaysi harfda tepada 1 nuqta bor va u tishlararo talaffuz qilinadi?", "q_ar": "", "options": ["ذ", "ز", "د", "ر"], "answer": "ذ", "explain_uz": "ذ (zol) — nuqtali do'ppi, tishlararo z.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "shadowing", "q_uz": "Harf nomlarini eshiting va takrorlang", "q_ar": "د ذ ر ز", "options": [], "answer": "", "explain_uz": "", "audio": "a0/a0-04-harflar.mp3", "root": "", "pattern": "", "words": []}
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_ar": "",
+   "options": [
+    "ن",
+    "ي",
+    "ا"
+   ],
+   "answer": "ن",
+   "explain_uz": "«Nun» — chuqurroq kosacha, TEPADA 1 nuqta — «n».",
+   "audio": "a0/harf_nun.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_ar": "",
+   "options": [
+    "ي",
+    "ن",
+    "ا"
+   ],
+   "answer": "ي",
+   "explain_uz": "«Yo» — pastga cho'zilgan kosacha, PASTDA 2 nuqta — «y».",
+   "audio": "a0/harf_ya.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "ن harfi so'z BOSHIDA qanday ko'rinadi?",
+   "q_ar": "",
+   "options": [
+    "نـ",
+    "ـنـ",
+    "ـن"
+   ],
+   "answer": "نـ",
+   "explain_uz": "So'z boshidagi shakl: نـ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
+   "q_ar": "",
+   "options": [],
+   "answer": "ي",
+   "explain_uz": "«Yo» — pastga cho'zilgan kosacha, PASTDA 2 nuqta — «y».",
+   "audio": "a0/harf_ya.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "shadowing",
+   "q_uz": "Harf nomlarini eshiting va baland ovozda takrorlang",
+   "q_ar": "ن ي",
+   "options": [],
+   "answer": "",
+   "explain_uz": "",
+   "audio": "a0/a0-04-harflar.mp3",
+   "audio_text": "نُون، يَاء",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
  ],
  "srs_cards": [
-  {"type": "word", "front": "د", "back": "dol — 'd' (nuqtasiz, ulanmaydigan)", "deck": "msa"},
-  {"type": "word", "front": "ذ", "back": "zol — tishlararo 'z' (nuqta tepada)", "deck": "msa"},
-  {"type": "word", "front": "ر", "back": "ro — titroq 'r' (nuqtasiz, ulanmaydigan)", "deck": "msa"},
-  {"type": "word", "front": "ز", "back": "zo — 'z' (nuqta tepada)", "deck": "msa"}
+  {
+   "type": "word",
+   "front": "ن",
+   "back": "nun — chuqurroq kosacha, TEPADA 1 nuqta — «n»",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "ي",
+   "back": "yo — pastga cho'zilgan kosacha, PASTDA 2 nuqta — «y»",
+   "deck": "msa"
+  }
  ]
 }

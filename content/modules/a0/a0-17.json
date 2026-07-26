@@ -1,328 +1,73 @@
 {
  "id": "a0-17",
  "level": "A0",
- "module": "harakat",
+ "module": "reading",
  "order": 17,
- "title_uz": "Alif maqsura (ى)",
- "title_ar": "الألِف المَقْصورة",
- "can_do_uz": "So'z oxiridagi ى (alif maqsura) ni tanib, uni cho'ziq 'a' tovushi sifatida to'g'ri o'qiy olaman va uni nuqtali ي dan farqlay olaman.",
- "duration_min": 30,
- "prerequisites": [
-  "a0-16"
- ],
- "harakat_level": "full",
- "hook_uz": "Payg'ambar «Muso» ismini arabchada مُوسى deb yozamiz — oxiridagi harf ي ga o'xshaydi, lekin nuqtasi yo'q va 'i' emas, 'a' deb o'qiladi! Bu maxsus harf — alif maqsura.",
+ "title_uz": "Harf shakllari: boshi · o'rtasi · oxiri",
+ "title_ar": "أَشْكَالُ الحَرْف",
+ "can_do_uz": "Bir harfning so'zdagi o'rniga qarab uch xil ko'rinishini taniyman.",
+ "duration_min": 15,
+ "prerequisites": ["a0-16"],
+ "harakat_level": "none",
+ "hook_uz": "28 harfni bildingiz. Endi bir siri bor: arab harfi so'zda QAYERDA turishiga qarab shaklini o'zgartiradi! Masalan ه harfi: boshida هـ, o'rtada ـهـ, oxirida ـه. Uchtasi ham bitta harf. Bugun shu o'zgarishni ko'ramiz — hali o'qimaymiz, faqat SHAKLNI kuzatamiz.",
  "grammar": {
-  "point_ar": "ى / ي",
-  "explanation_uz": "So'z oxirida ba'zan nuqtasiz ى keladi. Uni 'alif maqsura' deyiladi va u cho'ziq 'aa' tovushini beradi (xuddi ا kabi). Nuqtali ي esa 'y' yoki cho'ziq 'ii' bo'ladi. Ikkalasi bir-biriga o'xshaydi, farqi — NUQTA: ى nuqtasiz, ي pastida ikki nuqta bor. Alif maqsura faqat so'z OXIRIDA keladi va ustiga harakat qo'yilmaydi.",
+  "point_ar": "الحَرْفُ فِي أَوَّلِ وَوَسَطِ وَآخِرِ الكَلِمَة",
+  "explanation_uz": "Ulanadigan harfning UCH shakli bor: (1) BOSHIDA — keyingi harfga qo'l uzatadi: بـ. (2) O'RTADA — ikki tomondan tutashadi: ـبـ. (3) OXIRIDA — oldingiga ulanadi, dumini yozadi: ـب. Yakka turganda esa to'liq shakli: ب. Ba'zi harflar juda o'zgaradi (masalan ع: عـ ـعـ ـع), ba'zilari kam (masalan ب). 6 ta harf (ا د ذ ر ز و) faqat 2 shaklga ega, chunki ular ulanmaydi.",
   "table": [
-   {
-    "ar": "ى",
-    "uz": "nuqtasiz, oxirida — cho'ziq 'aa' o'qiladi",
-    "form": "alif maqsura"
-   },
-   {
-    "ar": "ي",
-    "uz": "ikki nuqtali — 'y' yoki cho'ziq 'ii'",
-    "form": "yo"
-   },
-   {
-    "ar": "مُوسى",
-    "uz": "Muso (o'qilishi: Muusaa)",
-    "form": "misol: ى"
-   },
-   {
-    "ar": "عَلى",
-    "uz": "ustida (o'qilishi: 'alaa)",
-    "form": "misol: ى"
-   },
-   {
-    "ar": "فِي",
-    "uz": "ichida (o'qilishi: fii)",
-    "form": "misol: ي"
-   }
+   {"ar": "بـ ـبـ ـب", "uz": "bo: boshi · o'rtasi · oxiri", "form": "ulanadi"},
+   {"ar": "عـ ـعـ ـع", "uz": "ayn: juda o'zgaradi", "form": "ulanadi"},
+   {"ar": "هـ ـهـ ـه", "uz": "he: uch ko'rinish", "form": "ulanadi"},
+   {"ar": "د ـد", "uz": "dol: faqat 2 shakl (ulanmaydi)", "form": "ulanmaydi"}
   ],
   "common_mistakes_uz": [
-   "ى ni 'i' deb o'qish — xato. U cho'ziq 'aa' beradi: عَلى = 'alaa, 'ali emas.",
-   "ى ustiga nuqta qo'yib yuborish — u NUQTASIZ yoziladi.",
-   "Alif maqsurani so'z o'rtasida qidirish — u faqat so'z OXIRIDA keladi.",
-   "ى ustiga harakat (fatha/kasra) qo'yish — unga harakat qo'yilmaydi."
+   "Bir harfning turli shaklini boshqa-boshqa harf deb o'ylash.",
+   "O'rta shaklni (ـبـ) tanimay qolish — u ikki tomondan tutashadi.",
+   "Ulanmaydigan harflarga o'rta shakl izlash — ularda faqat 2 shakl bor."
   ]
  },
- "roots": [
-  {
-   "root": "ه د ي",
-   "meaning_uz": "to'g'ri yo'lga boshlash, hidoyat qilish",
-   "uz_cognates": [
-    "hidoyat",
-    "hadya (sovg'a)"
-   ],
-   "derived": [
-    {
-     "ar": "هُدى",
-     "uz": "hidoyat, to'g'ri yo'l",
-     "pattern": ""
-    },
-    {
-     "ar": "هادي",
-     "uz": "yo'l ko'rsatuvchi",
-     "pattern": ""
-    }
-   ]
-  }
- ],
+ "roots": [],
  "vocabulary": [
-  {
-   "ar": "مُوسى",
-   "translit": "muusaa",
-   "uz": "Muso (payg'ambar ismi)",
-   "root": "",
-   "pattern": "",
-   "pos": "ism",
-   "audio": "a0/musa.mp3",
-   "example_ar": "مُوسى نَبِيّ",
-   "example_uz": "Muso — payg'ambar",
-   "srs": true
-  },
-  {
-   "ar": "عَلى",
-   "translit": "'alaa",
-   "uz": "ustida, -da (yuzasida)",
-   "root": "",
-   "pattern": "",
-   "pos": "yuklama",
-   "audio": "a0/ala.mp3",
-   "example_ar": "الكِتابُ عَلى المَكْتَب",
-   "example_uz": "Kitob stol ustida",
-   "srs": true
-  },
-  {
-   "ar": "إِلى",
-   "translit": "ilaa",
-   "uz": "-ga, tomon",
-   "root": "",
-   "pattern": "",
-   "pos": "yuklama",
-   "audio": "a0/ila.mp3",
-   "example_ar": "أَذْهَبُ إِلى مَكّة",
-   "example_uz": "Makkaga boraman",
-   "srs": true
-  },
-  {
-   "ar": "هُدى",
-   "translit": "hudaa",
-   "uz": "hidoyat, to'g'ri yo'l",
-   "root": "ه د ي",
-   "pattern": "",
-   "pos": "ism",
-   "audio": "a0/huda.mp3",
-   "example_ar": "هُدى مِنَ اللّٰه",
-   "example_uz": "Hidoyat Allohdan",
-   "srs": true
-  },
-  {
-   "ar": "مَتى",
-   "translit": "mataa",
-   "uz": "qachon",
-   "root": "",
-   "pattern": "",
-   "pos": "so'roq",
-   "audio": "a0/mata.mp3",
-   "example_ar": "مَتى تَذْهَب؟",
-   "example_uz": "Qachon borasan?",
-   "srs": true
-  }
+  {"ar": "ب", "translit": "bā (b)", "uz": "bo — shakllari: بـ ـبـ ـب", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_ba.mp3", "audio_text": "بَاء", "example_ar": "بـ ـبـ ـب", "example_uz": "boshi · o'rtasi · oxiri", "srs": true},
+  {"ar": "ع", "translit": "ʿayn", "uz": "ayn — shakli juda o'zgaradi: عـ ـعـ ـع", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_ayn.mp3", "audio_text": "عَيْن", "example_ar": "عـ ـعـ ـع", "example_uz": "boshi · o'rtasi · oxiri", "srs": true},
+  {"ar": "ه", "translit": "hā (h)", "uz": "he — uch ko'rinish: هـ ـهـ ـه", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_haa.mp3", "audio_text": "هَاء", "example_ar": "هـ ـهـ ـه", "example_uz": "boshi · o'rtasi · oxiri", "srs": true},
+  {"ar": "د", "translit": "dāl (d)", "uz": "dol — faqat 2 shakl (ulanmaydi): د ـد", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_dal.mp3", "audio_text": "دَال", "example_ar": "د ـد", "example_uz": "yakka · oxiri", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "مُوسى نَبِيّ. الكِتابُ عَلى المَكْتَب. هٰذا هُدى مِنَ اللّٰه. مَتى نَذْهَبُ إِلى مَكّة؟",
+   "text_ar": "بـ ـبـ ـب · عـ ـعـ ـع",
    "questions": [
-    {
-     "q_uz": "«مُوسى» so'zining oxirgi harfi qanday o'qiladi — 'i' yoki cho'ziq 'aa'?",
-     "a": "cho'ziq 'aa' (muusaa)"
-    },
-    {
-     "q_uz": "«عَلى» so'zi nimani bildiradi?",
-     "a": "ustida, -da"
-    },
-    {
-     "q_uz": "Matnda qaysi joyga borish haqida so'ralyapti?",
-     "a": "Makkaga (إِلى مَكّة)"
-    }
+    {"q_uz": "ـبـ shakli qayerda keladi?", "a": "So'z o'rtasida (ikki tomondan tutashadi)"},
+    {"q_uz": "Nega د da faqat 2 shakl bor?", "a": "U ulanmaydi, o'rta shakli yo'q"}
    ]
   },
   "listening": {
-   "audio": "a0/dars17_listening.mp3",
-   "transcript_ar": "مُوسى ، عَلى ، إِلى ، هُدى ، مَتى",
-   "questions": [
-    {
-     "q_uz": "Eshitgan so'zlaringizning oxirida qaysi tovush takrorlanadi?",
-     "a": "cho'ziq 'aa' (alif maqsura ى)"
-    },
-    {
-     "q_uz": "«hudaa» so'zini eshitdingizmi? U nimani bildiradi?",
-     "a": "ha, hidoyat"
-    }
-   ]
+   "audio": "a0/harf_ayn.mp3",
+   "transcript_ar": "عَيْن",
+   "questions": [{"q_uz": "Qaysi harf?", "a": "Ayn (ع)"}]
   },
   "speaking": {
-   "task_uz": "Quyidagi so'zlarni ovoz chiqarib o'qing va oxirini cho'ziq 'aa' bilan tugating: مُوسى، عَلى، إِلى، هُدى، مَتى. ى ni 'i' emas, 'aa' deb ayting.",
-   "target_ar": [
-    "مُوسى",
-    "عَلى",
-    "إِلى",
-    "هُدى",
-    "مَتى"
-   ],
+   "task_uz": "Bir harfning shakllarini nomlang: «bo — boshi, o'rtasi, oxiri». Har harf so'zda o'zgaradi.",
+   "target_ar": ["ب", "ع", "ه"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«مُوسى» va «عَلى» so'zlarini ko'chirib yozing. Diqqat qiling: oxirgi harf ى NUQTASIZ va harakatsiz bo'lsin.",
+   "task_uz": "ب harfini uch o'rinda yozing: بـ (boshida), ـبـ (o'rtada), ـب (oxirida).",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {
-   "type": "mcq",
-   "q_uz": "«مُوسى» so'zining oxiridagi ى harfi qanday o'qiladi?",
-   "q_ar": "",
-   "options": [
-    "cho'ziq 'aa'",
-    "cho'ziq 'ii'",
-    "'y' tovushi",
-    "'i' tovushi"
-   ],
-   "answer": "cho'ziq 'aa'",
-   "explain_uz": "Alif maqsura (ى) so'z oxirida cho'ziq 'aa' tovushini beradi: muusaa.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "Qaysi harfda ikki nuqta bor?",
-   "q_ar": "",
-   "options": [
-    "ي",
-    "ى",
-    "ا",
-    "و"
-   ],
-   "answer": "ي",
-   "explain_uz": "ي (yo) pastida ikki nuqtali; ى (alif maqsura) nuqtasiz.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_ar_uz",
-   "q_uz": "",
-   "q_ar": "عَلى",
-   "options": [],
-   "answer": "ustida",
-   "explain_uz": "عَلى — 'ustida, -da' ma'nosini beradi, o'qilishi 'alaa.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_uz_ar",
-   "q_uz": "qachon",
-   "q_ar": "",
-   "options": [],
-   "answer": "مَتى",
-   "explain_uz": "«qachon» = مَتى (mataa), oxirida alif maqsura.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "dictation",
-   "q_uz": "Eshiting va yozing (hidoyat):",
-   "q_ar": "",
-   "options": [],
-   "answer": "هُدى",
-   "explain_uz": "هُدى — 'hidoyat', o'zbekcha 'hidoyat' so'zi shundan.",
-   "audio": "a0/huda.mp3",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "match_root",
-   "q_uz": "«هُدى» so'zining o'zagini toping:",
-   "q_ar": "",
-   "options": [
-    "ه د ي",
-    "ه د و",
-    "ح د ث",
-    "ه ن د"
-   ],
-   "answer": "ه د ي",
-   "explain_uz": "هُدى — ه د ي o'zagidan (hidoyat, to'g'ri yo'l).",
-   "audio": "",
-   "root": "ه د ي",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "order_words",
-   "q_uz": "So'zlarni tartibga soling: «Kitob stol ustida»",
-   "q_ar": "",
-   "options": [],
-   "answer": "الكِتابُ عَلى المَكْتَب",
-   "explain_uz": "الكِتابُ عَلى المَكْتَب — Kitob stol ustida. «kitob» va «maktab» o'zbekchada ham bor.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": [
-    "الكِتابُ",
-    "عَلى",
-    "المَكْتَب"
-   ]
-  }
+  {"type": "mcq", "q_uz": "ـبـ shakli so'zning qayerida keladi?", "q_ar": "", "options": ["o'rtasida", "boshida", "oxirida", "yakka"], "answer": "o'rtasida", "explain_uz": "Ikki tomondan tutashgan shakl — o'rtada.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "بـ ـبـ ـب — bular nechta HARF?", "q_ar": "", "options": ["1 (bitta harfning shakllari)", "3", "2", "4"], "answer": "1 (bitta harfning shakllari)", "explain_uz": "Bitta ب harfining uch xil ko'rinishi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Qaysi harfda faqat 2 shakl bor?", "q_ar": "", "options": ["د (ulanmaydi)", "ب", "ع", "ه"], "answer": "د (ulanmaydi)", "explain_uz": "Ulanmaydigan harflarda o'rta shakl yo'q.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting: bu qaysi harf?", "q_ar": "", "options": ["ه", "ح", "ع", "خ"], "answer": "ه", "explain_uz": "«He» — yengil h.", "audio": "a0/harf_haa.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "ـع shakli qayerda keladi?", "q_ar": "", "options": ["oxirida", "boshida", "o'rtasida", "yakka"], "answer": "oxirida", "explain_uz": "Boshiga ulangan, dumi ochiq — oxirgi shakl.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Nima uchun harf shakli o'zgaradi?", "q_ar": "", "options": ["So'zdagi o'rniga qarab tutashadi", "Tovushi o'zgaradi", "Ma'nosi o'zgaradi", "Sababsiz"], "answer": "So'zdagi o'rniga qarab tutashadi", "explain_uz": "Boshida/o'rtada/oxirida turli tutashuv.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {
-   "type": "word",
-   "front": "مُوسى",
-   "back": "Muso (payg'ambar ismi) — muusaa, oxirida ى = 'aa'",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "عَلى",
-   "back": "ustida, -da ('alaa)",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "إِلى",
-   "back": "-ga, tomon (ilaa)",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "هُدى",
-   "back": "hidoyat, to'g'ri yo'l (hudaa) — o'zbekcha 'hidoyat'",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "مَتى",
-   "back": "qachon (mataa)",
-   "deck": "msa"
-  },
-  {
-   "type": "root",
-   "front": "ه د ي",
-   "back": "hidoyat, to'g'ri yo'lga boshlash → هُدى, هادي",
-   "deck": "msa"
-  }
+  {"type": "word", "front": "ب", "back": "bo — بـ ـبـ ـب (uch shakl)", "deck": "msa"},
+  {"type": "word", "front": "ع", "back": "ayn — عـ ـعـ ـع", "deck": "msa"},
+  {"type": "word", "front": "ه", "back": "he — هـ ـهـ ـه", "deck": "msa"},
+  {"type": "word", "front": "د", "back": "dol — د ـد (ulanmaydi, 2 shakl)", "deck": "msa"}
  ]
 }

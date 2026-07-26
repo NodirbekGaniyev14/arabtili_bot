@@ -1,272 +1,73 @@
 {
  "id": "a0-20",
  "level": "A0",
- "module": "pronunciation",
+ "module": "reading",
  "order": 20,
- "title_uz": "Talaffuz 2: ص ض ط ظ",
- "title_ar": "الحُروف المُفَخَّمة",
- "can_do_uz": "Qalin (emfatik) harflar ص ض ط ظ ni yupqa juftlaridan (س ت ذ) ajrata olaman va minimal juftlarni to'g'ri talaffuz qila olaman.",
- "duration_min": 30,
- "prerequisites": [
-  "a0-19"
- ],
- "harakat_level": "full",
- "hook_uz": "O'zbekcha \"soat\" so'zini eslang — undagi \"s\" yumshoq. Endi og'zingizni to'ldirib, \"qalin\" s aytib ko'ring: bu arabcha ص. Xuddi shu ص \"soat\" (السَّاعة emas, balki يُصَلّي — namoz o'qish) so'zlarida ishlatiladi. Bugun 4 ta \"qalin\" tovushni yupqa juftidan ajratamiz.",
+ "title_uz": "Ulanish mashqi: uch harf",
+ "title_ar": "وَصْلُ ثَلَاثَةِ حُرُوف",
+ "can_do_uz": "Uchta harfni to'g'ri tutashtirib bitta so'z shakliga keltiraman (hali harakatsiz).",
+ "duration_min": 15,
+ "prerequisites": ["a0-19"],
+ "harakat_level": "none",
+ "hook_uz": "Ikki harfni ulashni ko'rdingiz. Endi UCH harf: كـ + ـتـ + ـب = كتب. O'rtadagi harf «o'rta» shaklini oladi — ikki tomondan tutashadi. Bu so'zning SKELETIni ko'rasiz. Harakat qo'ysak — «kataba» bo'ladi, lekin bu keyingi bo'limda.",
  "grammar": {
-  "point_ar": "ص ض ط ظ",
-  "explanation_uz": "Arab tilida bir xil ko'rinadigan, lekin biri \"yupqa\" (yumshoq), ikkinchisi \"qalin\" (emfatik) bo'lgan tovushlar bor. Qalin tovushni aytganda tilingizning orqa qismi tanglaykka ko'tariladi va ovoz \"to'la\" chiqadi. So'zning ma'nosi shu farq bilan o'zgaradi! Juftliklar: س (yumshoq s) ↔ ص (qalin s); ت (yumshoq t) ↔ ط (qalin t); د (yumshoq d) ↔ ض (qalin d); ذ/ز (yumshoq z) ↔ ظ (qalin z).",
+  "point_ar": "وَصْلُ ثَلَاثَةِ حُرُوف",
+  "explanation_uz": "Uch harf tutashganda: birinchisi BOSHIDA (كـ), o'rtadagisi O'RTADA (ـتـ), oxirgisi OXIRIDA (ـب). Masalan كـ + ـتـ + ـب = كتب (k-t-b skeleti). Agar o'rtada ulanmaydigan harf bo'lsa, u yerda uzilish bo'ladi: مـ + ـد + ر = مدر emas, بعده uzilib — مدر kabi. Hali harakat yo'q, faqat harflar tutashuvini kuzatamiz. Bu — arab so'zining «suyagi».",
   "table": [
-   {
-    "ar": "س",
-    "uz": "yumshoq \"s\" (o'zbekcha \"soz\" dagi s)",
-    "form": "yupqa"
-   },
-   {
-    "ar": "ص",
-    "uz": "qalin \"s\" — og'iz to'la, ovoz orqadan",
-    "form": "qalin"
-   },
-   {
-    "ar": "ت",
-    "uz": "yumshoq \"t\" (o'zbekcha \"tosh\" dagi t)",
-    "form": "yupqa"
-   },
-   {
-    "ar": "ط",
-    "uz": "qalin \"t\" — kuchli, orqadan",
-    "form": "qalin"
-   },
-   {
-    "ar": "ض",
-    "uz": "qalin \"d\" — o'zbekda yo'q, kuchli d",
-    "form": "qalin"
-   },
-   {
-    "ar": "ظ",
-    "uz": "qalin \"z\" — til tishlar orasida, orqadan",
-    "form": "qalin"
-   }
+   {"ar": "كـ ـتـ ـب = كتب", "uz": "k-t-b uch harf tutashdi", "form": "hammasi ulanadi"},
+   {"ar": "لـ ـعـ ـب = لعب", "uz": "l-'-b tutashdi", "form": "hammasi ulanadi"},
+   {"ar": "مـ ـن = من", "uz": "m-n (ikki harf)", "form": "ulanadi"},
+   {"ar": "بـ ـيـ ـت = بيت", "uz": "b-y-t skeleti", "form": "hammasi ulanadi"}
   ],
   "common_mistakes_uz": [
-   "ص ni oddiy س deb o'qish — bu so'z ma'nosini buzadi (masalan صَيْف = yoz, سَيْف = qilich).",
-   "ط ni oddiy ت deb aytish — qalinlik yo'qolib qoladi.",
-   "ض va ظ ni chalkashtirish — ض qalin \"d\", ظ qalin \"z\".",
-   "Qalin harfdan keyingi unlini ham \"qalin\" (orqadan) aytishni unutish."
+   "O'rtadagi harfning «o'rta» shaklini bilmaslik — u ikki tomondan tutashadi (ـتـ).",
+   "Ulanmaydigan harf o'rtada kelsa uzilishni e'tibordan chiqarish.",
+   "Harflarni teskari tartibda ulash — o'ngdan chapga: birinchi harf o'ngda."
   ]
  },
- "roots": [
-  {
-   "root": "ص ي ف",
-   "meaning_uz": "yoz (fasl)",
-   "uz_cognates": [],
-   "derived": [
-    {
-     "ar": "صَيْف",
-     "uz": "yoz",
-     "pattern": ""
-    }
-   ]
-  }
- ],
+ "roots": [],
  "vocabulary": [
-  {
-   "ar": "صَيْف",
-   "translit": "sayf",
-   "uz": "yoz (fasl)",
-   "root": "ص ي ف",
-   "pattern": "",
-   "pos": "ism",
-   "audio": "a0/sayf.mp3",
-   "example_ar": "الصَّيْف حارّ",
-   "example_uz": "Yoz issiq",
-   "srs": true
-  },
-  {
-   "ar": "طَيِّب",
-   "translit": "tayyib",
-   "uz": "yaxshi, mazali",
-   "root": "ط ي ب",
-   "pattern": "",
-   "pos": "sifat",
-   "audio": "a0/tayyib.mp3",
-   "example_ar": "هذا طَيِّب",
-   "example_uz": "Bu yaxshi",
-   "srs": true
-  }
+  {"ar": "كتب", "translit": "k-t-b", "uz": "uch harf skeleti (harakatsiz — hali o'qilmaydi)", "root": "", "pattern": "", "pos": "harf", "audio": "", "example_ar": "كـ + ـتـ + ـب", "example_uz": "uch harf tutashdi", "srs": false},
+  {"ar": "بيت", "translit": "b-y-t", "uz": "uch harf skeleti", "root": "", "pattern": "", "pos": "harf", "audio": "", "example_ar": "بـ + ـيـ + ـت", "example_uz": "uch harf tutashdi", "srs": false},
+  {"ar": "لعب", "translit": "l-ʿ-b", "uz": "uch harf skeleti", "root": "", "pattern": "", "pos": "harf", "audio": "", "example_ar": "لـ + ـعـ + ـب", "example_uz": "uch harf tutashdi", "srs": false},
+  {"ar": "من", "translit": "m-n", "uz": "ikki harf tutashgan", "root": "", "pattern": "", "pos": "harf", "audio": "", "example_ar": "مـ + ـن", "example_uz": "ikki harf tutashdi", "srs": false}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "الصَّيْف حارّ. هذا طَعام طَيِّب. أنا في السَّاعة الطَّويلة.",
+   "text_ar": "كتب · بيت · لعب · من",
    "questions": [
-    {
-     "q_uz": "\"Yoz issiq\" jumlasini toping va ص harfini o'qing.",
-     "a": "الصَّيْف حارّ"
-    },
-    {
-     "q_uz": "\"Bu mazali taom\" jumlasidagi qalin ط harfli so'zni ayting.",
-     "a": "طَعام / طَيِّب"
-    }
+    {"q_uz": "كتب da nechta harf tutashgan?", "a": "3 ta (k-t-b)"},
+    {"q_uz": "O'rtadagi harf qanday shaklda keladi?", "a": "«O'rta» shakli — ikki tomondan tutashadi"}
    ]
   },
   "listening": {
-   "audio": "a0/pron_sad_ta.mp3",
-   "transcript_ar": "سَيْف — صَيْف — تين — طين",
-   "questions": [
-    {
-     "q_uz": "Birinchi juftda qaysi so'zda qalin ص bor?",
-     "a": "صَيْف (yoz)"
-    },
-    {
-     "q_uz": "Ikkinchi juftda qalin ط qaysi so'zda?",
-     "a": "طين (loy)"
-    }
-   ]
+   "audio": "a0/harf_kaf.mp3",
+   "transcript_ar": "كَاف",
+   "questions": [{"q_uz": "كتب dagi birinchi harf?", "a": "Kof (ك)"}]
   },
   "speaking": {
-   "task_uz": "Quyidagi minimal juftliklarni ovoz chiqarib, yupqa va qalinni ajratib ayting: سَيْف / صَيْف, تين / طين, دَلّ / ضَلّ.",
-   "target_ar": [
-    "سَيْف",
-    "صَيْف",
-    "تين",
-    "طين"
-   ],
+   "task_uz": "Harflarni ketma-ket nomlang: «kof-to-bo» (كتب), «bo-yo-to» (بيت). Hali qo'shib o'qimaymiz.",
+   "target_ar": ["كتب", "بيت"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "صَيْف va طَيِّب so'zlarini bir marta ko'chirib yozing va har biridagi qalin harfning ostiga chiziq torting.",
+   "task_uz": "Uch harfni tutashtirib yozing: كـ + ـتـ + ـب = كتب. O'ngdan boshlang, o'rtadagi harfni ikki tomondan ulang.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {
-   "type": "mcq",
-   "q_uz": "Qaysi so'z \"yoz\" ma'nosini beradi (qalin ص bilan)?",
-   "q_ar": "",
-   "options": [
-    "سَيْف",
-    "صَيْف",
-    "سيف",
-    "تين"
-   ],
-   "answer": "صَيْف",
-   "explain_uz": "صَيْف = yoz (qalin ص). سَيْف = qilich (yumshoq س).",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "ط qanday tovush?",
-   "q_ar": "",
-   "options": [
-    "Yumshoq t",
-    "Qalin (emfatik) t",
-    "Yumshoq s",
-    "Qalin z"
-   ],
-   "answer": "Qalin (emfatik) t",
-   "explain_uz": "ط — bu ت ning qalin (emfatik) juftidir.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "dictation",
-   "q_uz": "Eshitilgan so'zni yozing (qalin harfga e'tibor bering).",
-   "q_ar": "",
-   "options": [],
-   "answer": "طَيِّب",
-   "explain_uz": "طَيِّب — qalin ط bilan boshlanadi.",
-   "audio": "a0/tayyib.mp3",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "ض va ظ farqi nimada?",
-   "q_ar": "",
-   "options": [
-    "ض qalin \"d\", ظ qalin \"z\"",
-    "ض qalin \"z\", ظ qalin \"d\"",
-    "Ikkalasi ham \"s\"",
-    "Farqi yo'q"
-   ],
-   "answer": "ض qalin \"d\", ظ qalin \"z\"",
-   "explain_uz": "ض — qalin d tovushi, ظ — qalin z tovushi.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "Qaysi juftlik to'g'ri: yumshoq ↔ qalin?",
-   "q_ar": "",
-   "options": [
-    "س ↔ ص",
-    "ب ↔ ص",
-    "ج ↔ ط",
-    "ك ↔ ظ"
-   ],
-   "answer": "س ↔ ص",
-   "explain_uz": "س (yumshoq s) va ص (qalin s) o'zaro juft.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "match_root",
-   "q_uz": "صَيْف so'zining o'zagini tanlang.",
-   "q_ar": "",
-   "options": [
-    "ص ي ف",
-    "س ي ف",
-    "ص و ف",
-    "ط ي ب"
-   ],
-   "answer": "ص ي ف",
-   "explain_uz": "صَيْف so'zi ص ي ف o'zagidan.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "harakat",
-   "q_uz": "\"tayyib\" so'zini to'g'ri harakatlang.",
-   "q_ar": "طيب",
-   "options": [],
-   "answer": "طَيِّب",
-   "explain_uz": "ط + fatha, ي shadda + kasra, ب. Talaffuzi: tayyib.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  }
+  {"type": "mcq", "q_uz": "كتب da nechta harf bor?", "q_ar": "", "options": ["3", "2", "4", "1"], "answer": "3", "explain_uz": "كـ + ـتـ + ـب = كتب, uchta harf.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Uch harfdan o'rtadagisi qaysi shaklda keladi?", "q_ar": "", "options": ["o'rta (ikki tomondan tutashadi)", "boshi", "oxiri", "yakka"], "answer": "o'rta (ikki tomondan tutashadi)", "explain_uz": "O'rtadagi harf ـتـ kabi ikki tomondan ulanadi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "بـ + ـيـ + ـت nima beradi?", "q_ar": "", "options": ["بيت", "تيب", "بتي", "يبت"], "answer": "بيت", "explain_uz": "Bo boshida, yo o'rtada, to oxirida = بيت.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Arab so'zi qaysi tomondan yoziladi?", "q_ar": "", "options": ["o'ngdan chapga", "chapdan o'ngga", "yuqoridan pastga", "farqi yo'q"], "answer": "o'ngdan chapga", "explain_uz": "Birinchi harf eng o'ngda turadi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hozir كتب ni o'qiy olamizmi?", "q_ar": "", "options": ["Yo'q — harakat (unli) yo'q", "Ha, to'liq", "Faqat oxirini", "Faqat boshini"], "answer": "Yo'q — harakat (unli) yo'q", "explain_uz": "Harakat qo'yilgach o'qiymiz — keyingi bo'limda.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "لـ + ـعـ + ـب birikmasi qaysi?", "q_ar": "", "options": ["لعب", "بعل", "علب", "لبع"], "answer": "لعب", "explain_uz": "Lom + ayn + bo tutashib لعب.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {
-   "type": "word",
-   "front": "صَيْف",
-   "back": "yoz (fasl) — qalin ص",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "طَيِّب",
-   "back": "yaxshi, mazali — qalin ط",
-   "deck": "msa"
-  },
-  {
-   "type": "root",
-   "front": "ص ي ف",
-   "back": "yoz ma'nosi (صَيْف)",
-   "deck": "msa"
-  }
+  {"type": "word", "front": "ـتـ", "back": "to — o'rta shakl (ikki tomondan tutashadi)", "deck": "msa"},
+  {"type": "word", "front": "ـعـ", "back": "ayn — o'rta shakl", "deck": "msa"},
+  {"type": "word", "front": "كـ", "back": "kof — boshlang'ich shakl", "deck": "msa"},
+  {"type": "word", "front": "ـب", "back": "bo — oxirgi shakl", "deck": "msa"}
  ]
 }

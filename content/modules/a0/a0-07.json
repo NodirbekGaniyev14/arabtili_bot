@@ -3,87 +3,204 @@
  "level": "A0",
  "module": "letters",
  "order": 7,
- "title_uz": "Harf oilasi 6: ف ق ك ل م ه و",
- "title_ar": "عائلة الحروف: ف ق ك ل م ه و",
- "can_do_uz": "Oxirgi yetti harfni (ف ق ك ل م ه و) taniyman — endi 28 harfning hammasi bilan tanishman!",
- "duration_min": 25,
- "prerequisites": ["a0-06"],
+ "title_uz": "ر va ز",
+ "title_ar": "رَاء وَزَاي",
+ "can_do_uz": "ro va zoy harflarini shakli, nuqtasi va tovushi bo'yicha ajrataman.",
+ "duration_min": 15,
+ "prerequisites": [
+  "a0-06"
+ ],
  "harakat_level": "full",
- "hook_uz": "Marra chizig'i ko'rindi — oxirgi 7 harf! Ularning deyarli hammasi o'zbek tilida bor tovushlar: f, q (ha, aynan o'zbekcha 'qish'dagi q!), k, l, m, h, v. Bu darsdan keyin siz BUTUN arab alifbosini taniysiz. Keyingi bosqich — harflarni bir-biriga ulash!",
+ "hook_uz": "O'roqqa o'xshagan harf: pastga egilib tushadi. Nuqtasiz — ر, tepasida 1 nuqta — ز. Bular ham ulanmaydi. د bilan solishtiring: د yuqorida qoladi, ر esa qatordan pastga tushadi.",
  "grammar": {
-  "point_ar": "ف ق ك ل م ه و",
-  "explanation_uz": "ف (fo, 'f' — 1 nuqta) va ق (qof, o'zbekcha 'q' — 2 nuqta) — boshli juftlik. ك (kof, 'k'), ل (lom, 'l'), م (mim, 'm'), ه (ho, YENGIL 'h' — 'havo'dagi h; ح dan farqli, zo'riqishsiz), و (vov, 'v/u' — keyingi harfga ulanmaydi!). Endi 28 harf to'liq: 3-darsdagi ح (chuqur h) va bu darsdagi ه (yengil h) farqiga alohida e'tibor bering.",
+  "point_ar": "ر ز",
+  "explanation_uz": "ر (ro) — pastga tushgan o'roq, nuqtasiz, titroq «r» (o'zbekcha «rang» dagi r). ز (zoy) — ayni o'roq, TEPADA 1 nuqta, oddiy «z». Ikkalasi ULANMAYDI: ر · ـر · ز · ـز. Yozganda dumini chiziq ostiga tushiring — د dan farqi shunda.",
   "table": [
-   {"ar": "ف", "uz": "fo — 'f' · tepada 1 nuqta", "form": "فـ ـفـ ـف"},
-   {"ar": "ق", "uz": "qof — o'zbekcha 'q' · tepada 2 nuqta", "form": "قـ ـقـ ـق"},
-   {"ar": "ك", "uz": "kof — 'k'", "form": "كـ ـكـ ـك"},
-   {"ar": "ل", "uz": "lom — 'l'", "form": "لـ ـلـ ـل"},
-   {"ar": "م", "uz": "mim — 'm'", "form": "مـ ـمـ ـم"},
-   {"ar": "ه", "uz": "ho — yengil 'h'", "form": "هـ ـهـ ـه"},
-   {"ar": "و", "uz": "vov — 'v/u' · keyingiga ulanmaydi", "form": "و ـو"}
+   {
+    "ar": "ر",
+    "uz": "ro — pastga tushgan o'roq, nuqtasiz — titroq «r»",
+    "form": "ر ـر"
+   },
+   {
+    "ar": "ز",
+    "uz": "zoy — o'roq, TEPADA 1 nuqta — «z»",
+    "form": "ز ـز"
+   }
   ],
   "common_mistakes_uz": [
-   "ق ni 'k' deb aytish — u o'zbekcha chuqur 'q' (qish, qora).",
-   "ه (yengil h) va ح (chuqur h) ni chalkashtirish.",
-   "ف va ق ni adashtirish: ف da 1 nuqta, ق da 2 nuqta va dumi chuqurroq.",
-   "و dan keyin ulanish kutish — u ham د ر kabi keyingi harfga ulanmaydi."
+   "ر va د ni chalkashtirish — ر pastga tushadi, د chiziq ustida qoladi.",
+   "ز va ذ ni chalkashtirish — ikkalasida 1 nuqta, lekin tanasi boshqa (o'roq va do'ppi).",
+   "ر ni keyingi harfga ulash — u ulanmaydi."
   ]
  },
  "roots": [],
  "vocabulary": [
-  {"ar": "ف", "translit": "fo (f)", "uz": "«f» tovushi — 'fil'dagi f. Nuqta: 1 ta tepada", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_fa.mp3", "audio_text": "فَاء", "example_ar": "فـ ـفـ ـف", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
-  {"ar": "ق", "translit": "qof (q)", "uz": "o'zbekcha «q» — 'qish', 'qora'dagi q. Siz buni bilasiz! Nuqta: 2 ta tepada", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_qaf.mp3", "audio_text": "قَاف", "example_ar": "قـ ـقـ ـق", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
-  {"ar": "ك", "translit": "kof (k)", "uz": "«k» tovushi — 'kitob'dagi k", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_kaf.mp3", "audio_text": "كَاف", "example_ar": "كـ ـكـ ـك", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
-  {"ar": "ل", "translit": "lom (l)", "uz": "«l» tovushi — 'lola'dagi l", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_lam.mp3", "audio_text": "لَام", "example_ar": "لـ ـلـ ـل", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
-  {"ar": "م", "translit": "mim (m)", "uz": "«m» tovushi — 'mehr'dagi m", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_mim.mp3", "audio_text": "مِيم", "example_ar": "مـ ـمـ ـم", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
-  {"ar": "ه", "translit": "ho (h)", "uz": "YENGIL «h» — 'havo'dagi h, zo'riqishsiz. (Chuqur ح bilan adashtirmang!)", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_haa.mp3", "audio_text": "هَاء", "example_ar": "هـ ـهـ ـه", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
-  {"ar": "و", "translit": "vov (v/u)", "uz": "«v» yoki cho'ziq «u» — 'vatan'dagi v. Keyingi harfga ULANMAYDI", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_waw.mp3", "audio_text": "وَاو", "example_ar": "و ـو", "example_uz": "yolg'iz · oxirida (keyingiga ulanmaydi)", "srs": true}
+  {
+   "ar": "ر",
+   "translit": "rā (r)",
+   "uz": "ro — pastga tushgan o'roq, nuqtasiz — titroq «r»",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "a0/harf_ra.mp3",
+   "audio_text": "رَاء",
+   "example_ar": "ر ـر",
+   "example_uz": "yolg'iz · so'z ichida (keyingi harfga ULANMAYDI)",
+   "srs": true
+  },
+  {
+   "ar": "ز",
+   "translit": "zāy (z)",
+   "uz": "zoy — o'roq, TEPADA 1 nuqta — «z»",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "a0/harf_zay.mp3",
+   "audio_text": "زَاي",
+   "example_ar": "ز ـز",
+   "example_uz": "yolg'iz · so'z ichida (keyingi harfga ULANMAYDI)",
+   "srs": true
+  }
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "ف ق ك ل م ه و",
+   "text_ar": "ر ز",
    "questions": [
-    {"q_uz": "O'zbekcha 'q' tovushiga mos harf qaysi?", "a": "ق (qof)"},
-    {"q_uz": "ف va ق qanday farqlanadi?", "a": "ف da 1, ق da 2 nuqta"},
-    {"q_uz": "Bu guruhda keyingiga ulanmaydigan harf?", "a": "و (vov)"}
+    {
+     "q_uz": "Bu qatorda nechta harf bor?",
+     "a": "2 ta"
+    },
+    {
+     "q_uz": "Qaysi tomondan o'qiymiz?",
+     "a": "O'ngdan chapga"
+    }
    ]
   },
   "listening": {
-   "audio": "a0/a0-07-harflar.mp3",
-   "transcript_ar": "فَاء. قَاف. كَاف. لَام. مِيم. هَاء. وَاو",
+   "audio": "a0/harf_ra.mp3",
+   "transcript_ar": "رَاء",
    "questions": [
-    {"q_uz": "Nechta harf nomi eshitildi?", "a": "7 ta"},
-    {"q_uz": "To'rtinchi eshitilgan harf qaysi?", "a": "ل (lom)"}
+    {
+     "q_uz": "Qaysi harf nomi eshitildi?",
+     "a": "Ro (ر)"
+    }
    ]
   },
   "speaking": {
-   "task_uz": "Yetti harfni nomi bilan ayting: fo, qof, kof, lom, mim, ho, vov. ق da o'zbekcha 'qora' so'zidagi q ni ishlating. Yakunda ح (chuqur) va ه (yengil) ni ketma-ket aytib solishtiring.",
-   "target_ar": ["ف", "ق", "ك", "ل", "م", "ه", "و"],
+   "task_uz": "Harf nomlarini audio ortidan uch martadan takrorlang: ro, zoy.",
+   "target_ar": [
+    "ر",
+    "ز"
+   ],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Daftaringizga ف، ق، ك، ل، م، ه، و harflaridan bir qatordan yozing. Tabriklaymiz — endi siz 28 harfning hammasini yozgansiz!",
+   "task_uz": "Daftaringizga har harfdan bir qatordan yozing (o'ngdan chapga). Nuqtalarni aniq joyiga qo'ying.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "O'zbekcha 'qish' so'zidagi q tovushiga mos harf qaysi?", "q_ar": "", "options": ["ق", "ك", "غ", "خ"], "answer": "ق", "explain_uz": "ق (qof) = o'zbekcha q. Chuqur, bo'g'izga yaqin tovush.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Eshiting: bu qaysi harfning nomi?", "q_ar": "", "options": ["م", "ن", "ل", "ه"], "answer": "م", "explain_uz": "«Mim» — dumaloq boshli, 'm' tovushi.", "audio": "a0/harf_mim.mp3", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "'havo'dagi YENGIL h qaysi harf?", "q_ar": "", "options": ["ه", "ح", "خ", "ع"], "answer": "ه", "explain_uz": "ه — yengil h. ح esa bo'g'izdan chuqur h.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "dictation", "q_uz": "Eshiting va shu harfni klaviaturadan bosing.", "q_ar": "", "options": [], "answer": "ق", "explain_uz": "«Qof» — 2 nuqtali, o'zbekcha q.", "audio": "a0/harf_qaf.mp3", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "ف va ق qanday farqlanadi?", "q_ar": "", "options": ["ف da 1 nuqta, ق da 2 nuqta", "ف da 2 nuqta, ق da 1 nuqta", "ikkalasi bir xil", "ف keyingiga ulanmaydi"], "answer": "ف da 1 nuqta, ق da 2 nuqta", "explain_uz": "ف — 1 nuqta 'f'; ق — 2 nuqta, chuqurroq dumli 'q'.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Bu guruhda qaysi harf KEYINGI harfga ulanmaydi?", "q_ar": "", "options": ["و", "ل", "م", "ك"], "answer": "و", "explain_uz": "و (vov) — د ذ ر ز kabi keyingi harfga ulanmaydi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "ل harfi so'z BOSHIDA qanday ko'rinadi?", "q_ar": "", "options": ["لـ", "ـلـ", "ـل"], "answer": "لـ", "explain_uz": "So'z boshida: لـ (keyingi harfga ulanadi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "shadowing", "q_uz": "Harf nomlarini eshiting va takrorlang", "q_ar": "ف ق ك ل م ه و", "options": [], "answer": "", "explain_uz": "", "audio": "a0/a0-07-harflar.mp3", "root": "", "pattern": "", "words": []}
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_ar": "",
+   "options": [
+    "ر",
+    "ز",
+    "ا"
+   ],
+   "answer": "ر",
+   "explain_uz": "«Ro» — pastga tushgan o'roq, nuqtasiz — titroq «r».",
+   "audio": "a0/harf_ra.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_ar": "",
+   "options": [
+    "ز",
+    "ر",
+    "ا"
+   ],
+   "answer": "ز",
+   "explain_uz": "«Zoy» — o'roq, TEPADA 1 nuqta — «z».",
+   "audio": "a0/harf_zay.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi harf NUQTASIZ?",
+   "q_ar": "",
+   "options": [
+    "ر",
+    "ز"
+   ],
+   "answer": "ر",
+   "explain_uz": "ر (ro) — nuqtasiz.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "ر harfi so'z BOSHIDA qanday ko'rinadi?",
+   "q_ar": "",
+   "options": [
+    "ر",
+    "ـر"
+   ],
+   "answer": "ر",
+   "explain_uz": "So'z boshidagi shakl: ر.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
+   "q_ar": "",
+   "options": [],
+   "answer": "ز",
+   "explain_uz": "«Zoy» — o'roq, TEPADA 1 nuqta — «z».",
+   "audio": "a0/harf_zay.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "shadowing",
+   "q_uz": "Harf nomlarini eshiting va baland ovozda takrorlang",
+   "q_ar": "ر ز",
+   "options": [],
+   "answer": "",
+   "explain_uz": "",
+   "audio": "a0/a0-07-harflar.mp3",
+   "audio_text": "رَاء، زَاي",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
  ],
  "srs_cards": [
-  {"type": "word", "front": "ف", "back": "fo — 'f' (1 nuqta tepada)", "deck": "msa"},
-  {"type": "word", "front": "ق", "back": "qof — o'zbekcha 'q' (2 nuqta tepada)", "deck": "msa"},
-  {"type": "word", "front": "ك", "back": "kof — 'k'", "deck": "msa"},
-  {"type": "word", "front": "ل", "back": "lom — 'l'", "deck": "msa"},
-  {"type": "word", "front": "م", "back": "mim — 'm'", "deck": "msa"},
-  {"type": "word", "front": "ه", "back": "ho — yengil 'h' (havo)", "deck": "msa"},
-  {"type": "word", "front": "و", "back": "vov — 'v/u' (keyingiga ulanmaydi)", "deck": "msa"}
+  {
+   "type": "word",
+   "front": "ر",
+   "back": "ro — pastga tushgan o'roq, nuqtasiz — titroq «r»",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "ز",
+   "back": "zoy — o'roq, TEPADA 1 nuqta — «z»",
+   "deck": "msa"
+  }
  ]
 }

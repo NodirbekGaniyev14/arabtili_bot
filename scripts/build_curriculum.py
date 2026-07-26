@@ -14,30 +14,52 @@ OUT = ROOT / "content" / "curriculum.json"
 # Har qator: (title_uz, topic/grammatika, so'z_mo'ljali, eslatma, hejazi)
 # type: exam qatorlari alohida belgilanadi.
 
-A0 = [  # module ranglari: 1-9 letters, 10-17 harakat, 18 reading, 19-21 pronunciation, 22 roots-intro, 23-24 workshop, 25 exam
-    ("Arab alifbosi", "O'ngdan chapga yozuv, 28 harf bilan umumiy tanishuv", 5, "Motivatsiya: o'zbekchadagi arabcha so'zlar", False),
-    ("Harf oilasi 1: ب ت ث ن ي", "Nuqta farqi bilan ajratish", 6, "Birinchi o'qiladigan so'z: بَيْت", False),
-    ("Harf oilasi 2: ج ح خ", "خ tovushi o'zbekda bor (x)", 6, "باب · بِنْت", False),
-    ("Harf oilasi 3: د ذ ر ز", "Ulanmaydigan harflar bilan tanishuv", 6, "دَرْس · وَرْد", False),
-    ("Harf oilasi 4: س ش ص ض", "Qalin (emfatik) harflar kirish", 6, "شَمْس", False),
-    ("Harf oilasi 5: ط ظ ع غ", "ع — eng qiyin tovush; غ o'zbekda bor (g')", 6, "", False),
-    ("Harf oilasi 6: ف ق ك ل م ه و", "ق tovushi o'zbekda bor (q)", 8, "قَلَم · كِتاب", False),
-    ("Ulanish shakllari", "Harfning boshi / o'rtasi / oxiri shakllari", 6, "Interaktiv mashqlar", False),
-    ("Ulanmaydigan 6 harf", "ا د ذ ر ز و dan keyin uzilish", 6, "So'z ichida bo'linish", False),
-    ("Qisqa unlilar", "Fatha · kasra · damma", 8, "كَتَبَ / كُتُب farqi", False),
-    ("Sukun", "Harakatsiz harf", 6, "مَكْتَب", False),
-    ("Shadda", "Ikkilangan harf", 6, "مُدَرِّس", False),
-    ("Tanvin", "ً ٍ ٌ — noaniqlik belgisi", 6, "كِتابٌ", False),
-    ("Cho'ziq unlilar (madd)", "ا و ي cho'zish vazifasida", 8, "كِتاب · نور · بيت", False),
-    ("Ta marbuta (ة)", "Muannaslik belgisi", 6, "مَدْرَسة", False),
-    ("Hamza", "ء أ إ ؤ ئ shakllari", 6, "أَب · إِسْلام", False),
-    ("Alif maqsura (ى)", "ى va ي farqi", 5, "مُوسى", False),
-    ("Quyosh va oy harflari", "ال artikli assimilyatsiyasi: الشَّمْس vs القَمَر", 8, "Aniqlik artikli", False),
-    ("Talaffuz 1: ع ح", "O'zbekda YO'Q tovushlar ustaxonasi", 0, "Audio + ovozli takrorlash (shadowing)", False),
+A0 = [  # 1-16 letters, 17-20 reading(ulanish), 21-33 harakat, 34-36 pronunciation,
+        # 37 reading(al), 38-39 workshop, 40 roots-intro, 41 workshop, 42 exam
+        #
+        # DIQQAT: A0 — poydevor. Harflar KICHIK guruhlarda (2-3 tadan) beriladi,
+        # so'z faqat harakatlar o'rganilgandan keyin va MAKSIMUM 3 HARFLI bo'ladi.
+        # 4+ harfli so'zlar faqat oxirgi o'qish darslarida (39, 40).
+    ("Arab alifbosi bilan tanishuv", "O'ngdan chapga yozuv, 28 harf, harf shakli tushunchasi", 5, "So'z yo'q — faqat tanishuv", False),
+    ("ا va ب", "Birinchi ikki harf: tik tayoqcha va kosacha", 2, "Nuqta tushunchasi", False),
+    ("ت va ث", "Bir tanaga 2 va 3 nuqta", 2, "ب bilan solishtirish", False),
+    ("ن va ي — «bo» oilasi to'liq", "Beshta o'xshash harfni nuqtasiga qarab ajratish", 2, "ب ت ث ن ي drilli", False),
+    ("ج ح خ", "Bir tana, nuqta joyi farqli", 3, "خ = o'zbekcha x", False),
+    ("د va ذ", "Do'ppi shakli, nuqtasiz va nuqtali", 2, "Ulanmaydigan harflar", False),
+    ("ر va ز", "O'roq shakli, nuqtasiz va nuqtali", 2, "د bilan solishtirish", False),
+    ("س va ش", "Tishchalar: nuqtasiz va 3 nuqtali", 2, "", False),
+    ("ص va ض", "Qalin (emfatik) juftlik", 2, "س/ص farqi", False),
+    ("ط va ظ", "Qalin juftlik davomi", 2, "ت/ط farqi", False),
+    ("ع va غ", "Eng qiyin tovush va uning nuqtali jufti", 2, "غ = o'zbekcha g'", False),
+    ("ف va ق", "Bir nuqta va ikki nuqta", 2, "ق = o'zbekcha q", False),
+    ("ك ل م", "Uchta keng tarqalgan harf", 3, "", False),
+    ("ه و ء", "Oxirgi guruh: he, vov, hamza", 3, "28 harf tugadi", False),
+    ("Nuqtali harflar drilli", "15 nuqtali harfni nuqta soni/joyi bo'yicha ajratish", 0, "Faqat takror", False),
+    ("Nuqtasiz harflar drilli", "13 nuqtasiz harfni shakli bo'yicha ajratish", 0, "Faqat takror", False),
+    ("Harf shakllari: boshi · o'rtasi · oxiri", "Bir harf uch xil ko'rinishda", 0, "So'z yo'q — faqat shakl", False),
+    ("Ulanmaydigan 6 harf", "ا د ذ ر ز و dan keyin uzilish", 0, "Bo'linish qoidasi", False),
+    ("Ulanish mashqi: ikki harf", "Ikki harfni qo'shib yozish: بـت = بت", 0, "Harakatsiz birikma", False),
+    ("Ulanish mashqi: uch harf", "Uch harfni qo'shib yozish: كـتـب = كتب", 0, "Hali o'qilmaydi — faqat shakl", False),
+    ("Fatha (َ) — «a» tovushi", "Harf ustidagi chiziqcha: بَ تَ نَ", 4, "Birinchi unli", False),
+    ("Kasra (ِ) — «i» tovushi", "Harf ostidagi chiziqcha: بِ تِ نِ", 4, "", False),
+    ("Damma (ُ) — «u» tovushi", "Harf ustidagi kichik vov: بُ تُ نُ", 4, "", False),
+    ("Uch harakat aralash drill", "Bir harfni uch harakatda o'qish", 4, "بَ بِ بُ", False),
+    ("Ikki harfli bo'g'in o'qish", "Ikki harakatli harfni qo'shib o'qish: مَنْ · لَكَ", 5, "Birinchi o'qish!", False),
+    ("Sukun (ْ) — unlisiz harf", "Harakatsiz harf bo'g'inni yopadi", 5, "3 harfli so'z: مِنْ", False),
+    ("Uch harfli birinchi so'zlar", "Harakat + sukun bilan to'liq so'z o'qish", 6, "Maksimum 3 harf", False),
+    ("Shadda (ّ) — ikkilangan harf", "Harfni ikki marta o'qish", 5, "3 harfli misollar", False),
+    ("Tanvin (ً ٍ ٌ)", "Noaniqlik belgisi — so'z oxirida", 6, "", False),
+    ("Cho'ziq unlilar (madd)", "ا و ي cho'zish vazifasida", 6, "", False),
+    ("Ta marbuta (ة)", "Muannaslik belgisi", 5, "", False),
+    ("Hamza", "ء أ إ ؤ ئ shakllari", 5, "", False),
+    ("Alif maqsura (ى)", "ى va ي farqi", 5, "", False),
+    ("Talaffuz 1: ع ح", "O'zbekda YO'Q tovushlar ustaxonasi", 0, "Audio + shadowing", False),
     ("Talaffuz 2: ص ض ط ظ", "Qalin harflar: س/ص · ت/ط solishtiruv", 0, "Minimal juftliklar", False),
-    ("Talaffuz 3: ق خ غ", "O'zbekda BOR tovushlar — motivatsion dars", 0, "qalam=قلم, xabar=خبر, g'oya kabi ko'priklar", False),
-    ("O'zak (جذر) tushunchasi", "3 harfli o'zak tizimi kirish", 10, "O'zbekcha ko'prik jadvali: kitob-maktab-kotib", False),
-    ("O'qish ustaxonasi", "50 so'zni ravon o'qish", 15, "Vaqtli o'qish mashqi", False),
+    ("Talaffuz 3: ق خ غ", "O'zbekda BOR tovushlar — motivatsion dars", 0, "qalam=قلم, xabar=خبر", False),
+    ("Quyosh va oy harflari", "ال artikli assimilyatsiyasi: الشَّمْس vs القَمَر", 6, "Aniqlik artikli", False),
+    ("O'qish ustaxonasi 1: 2-3 harfli so'zlar", "Qisqa so'zlarni ravon o'qish", 10, "Vaqtli mashq", False),
+    ("O'qish ustaxonasi 2: uzunroq so'zlar", "4-5 harfli so'zlarga birinchi qadam", 12, "Endi ruxsat", False),
+    ("O'zak (جذر) tushunchasi", "3 harfli o'zak tizimi kirish", 10, "kitob-maktab-kotib ko'prigi", False),
     ("Qo'lda yozish", "Harf yozish tartibi (yo'nalishlar)", 0, "Ko'rsatma + mashq varaqlari", False),
     ("A0 IMTIHONI", "4 ko'nikma bo'yicha yakuniy imtihon", 0, "80% → Sertifikat A0", False),
 ]
@@ -190,12 +212,14 @@ B1 = [  # 1-14 adv-grammar, 15-26 vocab, 27-38 skills, 39-41 review, 42 exam
 
 def module_for(level: str, order: int) -> str:
     if level == "A0":
-        if order <= 9: return "letters"
-        if order <= 17: return "harakat"
-        if order == 18: return "reading"
-        if order <= 21: return "pronunciation"
-        if order == 22: return "roots-intro"
-        if order <= 24: return "workshop"
+        if order <= 16: return "letters"        # 28 harf, kichik guruhlarda + drill
+        if order <= 20: return "reading"        # ulanish shakllari va mashqlari
+        if order <= 33: return "harakat"        # fatha..alif maqsura
+        if order <= 36: return "pronunciation"  # qiyin tovushlar
+        if order == 37: return "reading"        # quyosh/oy harflari (ال)
+        if order <= 39: return "workshop"       # o'qish ustaxonalari
+        if order == 40: return "roots-intro"
+        if order == 41: return "workshop"       # qo'lda yozish
         return "exam"
     if level == "A1":
         if order <= 8: return "nominal-sentence"
@@ -227,6 +251,10 @@ HARAKAT_BY_LEVEL = {
     "B1": "ambiguous_only",
 }
 
+# Ulanish/shakl darslari harakatsiz birikma ko'rsatadi (بت, كتب — hali o'qilmaydi),
+# shuning uchun harakat tekshiruvidan ozod.
+HARAKAT_NONE = {"a0-17", "a0-18", "a0-19", "a0-20"}
+
 
 def build() -> dict:
     lessons = []
@@ -245,7 +273,7 @@ def build() -> dict:
                 "words_target": words,
                 "note": note,
                 "hejazi": hejazi,
-                "harakat_level": HARAKAT_BY_LEVEL[level],
+                "harakat_level": "none" if lid in HARAKAT_NONE else HARAKAT_BY_LEVEL[level],
                 "type": "exam" if module == "exam" else "lesson",
                 "prerequisites": [f"{prefix}-{i-1:02d}"] if i > 1 else [],
             }
@@ -273,4 +301,4 @@ if __name__ == "__main__":
     )
     total = sum(data["counts"].values())
     print(f"curriculum.json yozildi: {total} dars {data['counts']}")
-    assert total == 161, f"161 emas: {total}"
+    assert total == 178, f"178 emas: {total}"

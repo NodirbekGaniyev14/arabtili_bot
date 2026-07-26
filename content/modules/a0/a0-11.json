@@ -1,211 +1,148 @@
 {
  "id": "a0-11",
  "level": "A0",
- "module": "harakat",
+ "module": "letters",
  "order": 11,
- "title_uz": "Sukun",
- "title_ar": "السُّكُون",
- "can_do_uz": "Harfda unli yo'qligini bildiruvchi sukun belgisini tanib, so'zni to'g'ri bo'g'inlab o'qiy olaman.",
- "duration_min": 30,
+ "title_uz": "ع va غ",
+ "title_ar": "عَيْن وَغَيْن",
+ "can_do_uz": "ayn va g'ayn harflarini shakli, nuqtasi va tovushi bo'yicha ajrataman.",
+ "duration_min": 15,
  "prerequisites": [
   "a0-10"
  ],
  "harakat_level": "full",
- "hook_uz": "O'zbekchadagi 'maktab' so'zini bilasiz-a? Arabchada u مَكْتَب bo'lib yoziladi. E'tibor bering: ك harfida hech qanday unli yo'q — u 'k' bo'lib to'xtaydi. Ana shu 'to'xtash'ni bildiruvchi kichkina belgi — sukun.",
+ "hook_uz": "Eng qiyin harf keldi: ع. Bu tovush o'zbekchada YO'Q — bo'g'izning chuqur joyidan chiqadi, xuddi og'irlik ko'targanda chiqadigan tovushga o'xshaydi. Xafa bo'lmang: uni birdan uddalash shart emas, sekin mashq qilinadi. غ esa oson — o'zbekcha «g'» (g'oya, bog').",
  "grammar": {
-  "point_ar": "السُّكُون ( ْ )",
-  "explanation_uz": "Sukun — harf ustiga qo'yiladigan kichik doiracha ( ْ ). U harfda hech qanday unli (fatha, kasra, damma) yo'qligini bildiradi. Ya'ni harf 'a', 'i', 'u' bilan emas, balki yolg'iz undosh sifatida o'qiladi. Masalan مَكْتَب so'zida: مَ = 'ma', كْ = 'k' (unlisiz, sukun bilan), تَ = 'ta', ب = 'b'. Natija: mak-tab. Sukun ikki undoshni birlashtirib, yopiq bo'g'in hosil qiladi.",
+  "point_ar": "ع غ",
+  "explanation_uz": "ع (ayn) — nuqtasiz, bo'g'izdan chiqadigan tovush. Uni chiqarish uchun bo'g'izni biroz siqib, «a» aytishga urining. غ (g'ayn) — ayni shakl, TEPADA 1 nuqta, o'zbekcha «g'» tovushi (g'isht, bog'). Ikkalasi ulanadi va shakli juda o'zgaradi: عـ ـعـ ـع · غـ ـغـ ـغ — so'z boshida va oxirida boshqacha ko'rinadi.",
   "table": [
    {
-    "ar": "مَ",
-    "uz": "ma (fatha bilan)",
-    "form": "unli bor"
+    "ar": "ع",
+    "uz": "ayn — bo'g'izdan chiqadigan tovush — o'zbekda YO'Q, nuqtasiz",
+    "form": "عـ ـعـ ـع"
    },
    {
-    "ar": "كْ",
-    "uz": "k (sukun bilan, unli yo'q)",
-    "form": "sukun"
-   },
-   {
-    "ar": "دَرْس",
-    "uz": "dars — رْ = 'r' unlisiz",
-    "form": "sukun"
-   },
-   {
-    "ar": "عِلْم",
-    "uz": "ilm — لْ = 'l' unlisiz",
-    "form": "sukun"
-   },
-   {
-    "ar": "بِنْت",
-    "uz": "bint (qiz) — نْ = 'n' unlisiz",
-    "form": "sukun"
+    "ar": "غ",
+    "uz": "g'ayn — ayn + TEPADA 1 nuqta — o'zbekcha «g'»",
+    "form": "غـ ـغـ ـغ"
    }
   ],
   "common_mistakes_uz": [
-   "Sukunli harfga unli qo'shib o'qish: مَكْتَب ni 'makatab' emas, 'maktab' deb o'qing.",
-   "Sukun ( ْ ) belgisini damma ( ُ ) bilan chalkashtirish — sukun to'liq doiracha, damma esa kichik 'و' shaklida.",
-   "So'zning eng oxirgi harfida ko'pincha unli tushiriladi (vaqf) — u ham unlisiz, sukunga o'xshab o'qiladi."
+   "ع ni «a» unlisi deb o'ylash — bu undosh, bo'g'iz tovushi.",
+   "ع va غ ni chalkashtirish — farq faqat nuqtada.",
+   "ع ni umuman tashlab ketish — u so'zning bir qismi, aytilmasa ma'no buziladi."
   ]
  },
- "roots": [
-  {
-   "root": "ك ت ب",
-   "meaning_uz": "yozmoq",
-   "uz_cognates": [
-    "kitob",
-    "maktab",
-    "kotib"
-   ],
-   "derived": [
-    {
-     "ar": "مَكْتَب",
-     "uz": "idora, stol",
-     "pattern": "مَفْعَل"
-    },
-    {
-     "ar": "كَتَبَ",
-     "uz": "u yozdi",
-     "pattern": "فَعَلَ"
-    }
-   ]
-  }
- ],
+ "roots": [],
  "vocabulary": [
   {
-   "ar": "مَكْتَب",
-   "translit": "maktab",
-   "uz": "idora, ish stoli (o'zbekcha 'maktab' shu o'zakdan)",
-   "root": "ك ت ب",
-   "pattern": "مَفْعَل",
-   "pos": "ot",
-   "audio": "a0/maktab.mp3",
-   "example_ar": "مَكْتَب",
-   "example_uz": "idora",
+   "ar": "ع",
+   "translit": "ʿayn",
+   "uz": "ayn — bo'g'izdan chiqadigan tovush — o'zbekda YO'Q, nuqtasiz",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "a0/harf_ayn.mp3",
+   "audio_text": "عَيْن",
+   "example_ar": "عـ ـعـ ـع",
+   "example_uz": "boshida · o'rtasida · oxirida",
    "srs": true
   },
   {
-   "ar": "دَرْس",
-   "translit": "dars",
-   "uz": "dars (o'zbekchaga aynan o'tgan)",
-   "root": "د ر س",
+   "ar": "غ",
+   "translit": "ghayn (gh)",
+   "uz": "g'ayn — ayn + TEPADA 1 nuqta — o'zbekcha «g'»",
+   "root": "",
    "pattern": "",
-   "pos": "ot",
-   "audio": "a0/dars.mp3",
-   "example_ar": "دَرْس",
-   "example_uz": "dars",
-   "srs": true
-  },
-  {
-   "ar": "عِلْم",
-   "translit": "ilm",
-   "uz": "ilm, bilim (o'zbekcha 'ilm')",
-   "root": "ع ل م",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/ilm.mp3",
-   "example_ar": "عِلْم",
-   "example_uz": "ilm",
-   "srs": true
-  },
-  {
-   "ar": "قَلْب",
-   "translit": "qalb",
-   "uz": "yurak, qalb (o'zbekcha 'qalb')",
-   "root": "ق ل ب",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/qalb.mp3",
-   "example_ar": "قَلْب",
-   "example_uz": "yurak",
-   "srs": true
-  },
-  {
-   "ar": "بِنْت",
-   "translit": "bint",
-   "uz": "qiz (bola)",
-   "root": "ب ن ت",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/bint.mp3",
-   "example_ar": "بِنْت",
-   "example_uz": "qiz",
-   "srs": true
-  },
-  {
-   "ar": "شَمْس",
-   "translit": "shams",
-   "uz": "quyosh",
-   "root": "ش م س",
-   "pattern": "",
-   "pos": "ot",
-   "audio": "a0/shams.mp3",
-   "example_ar": "شَمْس",
-   "example_uz": "quyosh",
+   "pos": "harf",
+   "audio": "a0/harf_ghayn.mp3",
+   "audio_text": "غَيْن",
+   "example_ar": "غـ ـغـ ـغ",
+   "example_uz": "boshida · o'rtasida · oxirida",
    "srs": true
   }
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "مَكْتَب. دَرْس. عِلْم. قَلْب. بِنْت. شَمْس.",
+   "text_ar": "ع غ",
    "questions": [
     {
-     "q_uz": "Qaysi so'z 'idora, stol' ma'nosini beradi?",
-     "a": "مَكْتَب"
+     "q_uz": "Bu qatorda nechta harf bor?",
+     "a": "2 ta"
     },
     {
-     "q_uz": "'Yurak' so'zi qaysi?",
-     "a": "قَلْب"
-    },
-    {
-     "q_uz": "دَرْس so'zida qaysi harfda sukun bor?",
-     "a": "ر harfida (رْ)"
+     "q_uz": "Qaysi tomondan o'qiymiz?",
+     "a": "O'ngdan chapga"
     }
    ]
   },
   "listening": {
-   "audio": "a0/maktab.mp3",
-   "transcript_ar": "مَكْتَب",
+   "audio": "a0/harf_ayn.mp3",
+   "transcript_ar": "عَيْن",
    "questions": [
     {
-     "q_uz": "Eshitgan so'zingizni yozing.",
-     "a": "مَكْتَب"
-    },
-    {
-     "q_uz": "Bu so'z necha bo'g'inli?",
-     "a": "ikki bo'g'in: mak-tab"
+     "q_uz": "Qaysi harf nomi eshitildi?",
+     "a": "Ayn (ع)"
     }
    ]
   },
   "speaking": {
-   "task_uz": "Quyidagi so'zlarni sukunga e'tibor berib, unlisiz harfni cho'zmasdan o'qing: maktab, dars, ilm, qalb.",
+   "task_uz": "Harf nomlarini audio ortidan uch martadan takrorlang: ayn, g'ayn.",
    "target_ar": [
-    "مَكْتَب",
-    "دَرْس",
-    "عِلْم",
-    "قَلْب"
+    "ع",
+    "غ"
    ],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "دَرْس va عِلْم so'zlarini daftaringizga ko'chiring va sukun belgisini ( ْ ) to'g'ri harf ustiga qo'ying.",
+   "task_uz": "Daftaringizga har harfdan bir qatordan yozing (o'ngdan chapga). Nuqtalarni aniq joyiga qo'ying.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
   {
    "type": "mcq",
-   "q_uz": "Sukun belgisi ( ْ ) nimani bildiradi?",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
    "q_ar": "",
    "options": [
-    "Harfda unli yo'qligini",
-    "Harf 'a' bilan o'qilishini",
-    "Harf 'u' bilan o'qilishini",
-    "Harf ikki marta o'qilishini"
+    "ع",
+    "غ",
+    "ا"
    ],
-   "answer": "Harfda unli yo'qligini",
-   "explain_uz": "Sukun harfda fatha, kasra yoki damma yo'qligini — ya'ni yolg'iz undosh ekanini bildiradi.",
+   "answer": "ع",
+   "explain_uz": "«Ayn» — bo'g'izdan chiqadigan tovush — o'zbekda YO'Q, nuqtasiz.",
+   "audio": "a0/harf_ayn.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_ar": "",
+   "options": [
+    "غ",
+    "ع",
+    "ا"
+   ],
+   "answer": "غ",
+   "explain_uz": "«G'ayn» — ayn + TEPADA 1 nuqta — o'zbekcha «g'».",
+   "audio": "a0/harf_ghayn.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi harf NUQTASIZ?",
+   "q_ar": "",
+   "options": [
+    "ع",
+    "غ"
+   ],
+   "answer": "ع",
+   "explain_uz": "ع (ayn) — nuqtasiz.",
    "audio": "",
    "root": "",
    "pattern": "",
@@ -213,87 +150,41 @@
   },
   {
    "type": "mcq",
-   "q_uz": "مَكْتَب so'zi qanday o'qiladi?",
+   "q_uz": "ع harfi so'z BOSHIDA qanday ko'rinadi?",
    "q_ar": "",
    "options": [
-    "maktab",
-    "makatab",
-    "makutab",
-    "makitab"
+    "عـ",
+    "ـعـ",
+    "ـع"
    ],
-   "answer": "maktab",
-   "explain_uz": "كْ sukunli, shuning uchun 'k' unlisiz o'qiladi: mak-tab.",
+   "answer": "عـ",
+   "explain_uz": "So'z boshidagi shakl: عـ.",
    "audio": "",
    "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_ar_uz",
-   "q_uz": "Tarjima qiling: عِلْم",
-   "q_ar": "",
-   "options": [],
-   "answer": "ilm, bilim",
-   "explain_uz": "عِلْم — 'ilm', o'zbekchaga aynan o'tgan so'z. لْ sukunli.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_uz_ar",
-   "q_uz": "Arabchaga o'giring: yurak",
-   "q_ar": "",
-   "options": [],
-   "answer": "قَلْب",
-   "explain_uz": "قَلْب — 'qalb', لْ sukun bilan.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "harakat",
-   "q_uz": "درس so'zining o'rtadagi ر harfiga to'g'ri belgini qo'ying (dars deb o'qilishi uchun).",
-   "q_ar": "",
-   "options": [
-    "دَرَس",
-    "دَرْس",
-    "دَرُس",
-    "دَرِس"
-   ],
-   "answer": "دَرْس",
-   "explain_uz": "ر sukunli bo'lib, 'dars' bo'g'inini yopadi: دَرْس.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "match_root",
-   "q_uz": "مَكْتَب so'zining o'zagini toping.",
-   "q_ar": "",
-   "options": [
-    "ك ت ب",
-    "د ر س",
-    "ع ل م",
-    "ق ل ب"
-   ],
-   "answer": "ك ت ب",
-   "explain_uz": "مَكْتَب 'yozmoq' o'zagi ك ت ب dan yasalgan (kitob, kotib bilan bir o'zak).",
-   "audio": "",
-   "root": "ك ت ب",
    "pattern": "",
    "words": []
   },
   {
    "type": "dictation",
-   "q_uz": "Eshiting va yozing.",
+   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
    "q_ar": "",
    "options": [],
-   "answer": "بِنْت",
-   "explain_uz": "بِنْت — 'bint' (qiz), نْ sukunli.",
-   "audio": "a0/bint.mp3",
+   "answer": "غ",
+   "explain_uz": "«G'ayn» — ayn + TEPADA 1 nuqta — o'zbekcha «g'».",
+   "audio": "a0/harf_ghayn.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "shadowing",
+   "q_uz": "Harf nomlarini eshiting va baland ovozda takrorlang",
+   "q_ar": "ع غ",
+   "options": [],
+   "answer": "",
+   "explain_uz": "",
+   "audio": "a0/a0-11-harflar.mp3",
+   "audio_text": "عَيْن، غَيْن",
    "root": "",
    "pattern": "",
    "words": []
@@ -302,50 +193,14 @@
  "srs_cards": [
   {
    "type": "word",
-   "front": "مَكْتَب",
-   "back": "idora, ish stoli (o'zak: ك ت ب)",
+   "front": "ع",
+   "back": "ayn — bo'g'izdan chiqadigan tovush — o'zbekda YO'Q, nuqtasiz",
    "deck": "msa"
   },
   {
    "type": "word",
-   "front": "دَرْس",
-   "back": "dars",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "عِلْم",
-   "back": "ilm, bilim",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "قَلْب",
-   "back": "yurak, qalb",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "بِنْت",
-   "back": "qiz (bola)",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "شَمْس",
-   "back": "quyosh",
-   "deck": "msa"
-  },
-  {
-   "type": "root",
-   "front": "ك ت ب",
-   "back": "yozmoq (kitob, maktab, kotib)",
-   "deck": "msa"
-  },
-  {
-   "type": "pattern",
-   "front": "مَفْعَل",
-   "back": "joy vazni: مَكْتَب (idora)",
+   "front": "غ",
+   "back": "g'ayn — ayn + TEPADA 1 nuqta — o'zbekcha «g'»",
    "deck": "msa"
   }
  ]

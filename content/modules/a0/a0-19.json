@@ -1,292 +1,73 @@
 {
  "id": "a0-19",
  "level": "A0",
- "module": "pronunciation",
+ "module": "reading",
  "order": 19,
- "title_uz": "Talaffuz 1: ع ح",
- "title_ar": "النُّطْق: ع ح",
- "can_do_uz": "ع va ح tovushlarini bo'g'izdan to'g'ri chiqarib, o'zbekcha ' (hamza) va h tovushlaridan farqlay olaman.",
- "duration_min": 30,
- "prerequisites": [
-  "a0-18"
- ],
- "harakat_level": "full",
- "hook_uz": "\"Arab\" so'zi خ bilan emas, ع bilan boshlanadi: عَرَب. Bu tovush o'zbekda YO'Q — u tomog'ing chuqurida tug'iladi. \"Ilm\", \"Ali\", \"asr\" so'zlaridagi jimgina 'e' aslida ع edi! Bugun uni va uning qo'shnisi ح ni ushlaymiz.",
+ "title_uz": "Ulanish mashqi: ikki harf",
+ "title_ar": "وَصْلُ حَرْفَيْن",
+ "can_do_uz": "Ikkita harfni to'g'ri qo'shib bitta birikma qilib yozaman va ularni ajrata olaman.",
+ "duration_min": 15,
+ "prerequisites": ["a0-18"],
+ "harakat_level": "none",
+ "hook_uz": "Harflarni yakka ko'rdingiz. Endi ularni QO'SHISH boshlanadi — arab yozuvida harflar bir-biriga tutashib yoziladi. Masalan بـ + ـت = بت. Bugun hali o'qimaymiz (harakat yo'q), faqat ikki harf qanday tutashishini ko'ramiz. Bu — so'z o'qishning birinchi qadami.",
  "grammar": {
-  "point_ar": "ع · ح",
-  "explanation_uz": "ع va ح — ikkalasi ham tomoq (bo'g'iz) o'rtasidan chiqadi va o'zbek tilida aniq muqobili yo'q. ع — ovozli (jarangli), tomoqni bir oz siqib 'a' chiqargandek. ح — ovozsiz, xuddi issiq oynaga 'haaa' deb nafas urgandek, lekin kuchliroq va tomoqdan. Diqqat: ح ≠ o'zbekcha 'h', ح ≠ خ (x). ع ni ko'pincha ' (hamza / to'xtash) bilan adashtirishadi — lekin ع jarangli va cho'ziladi.",
+  "point_ar": "وَصْلُ الحُرُوف",
+  "explanation_uz": "Arab yozuvida harflar tutashadi. Har harfning uch shakli bor: BOSHIDA (بـ), O'RTADA (ـبـ), OXIRIDA (ـب). Ikki harf qo'shilganda birinchisi «boshi» shaklida, ikkinchisi «oxiri» shaklida keladi: بـ + ـت = بت. LEKIN 6 ta harf (ا د ذ ر ز و) keyingi harfga ULANMAYDI — ulardan keyin uzilish bo'ladi: بـ + ا = با, lekin ا + ب = اب (a dan keyin uzilish). Hali harakat qo'ymaymiz — bu faqat SHAKL mashqi, o'qish keyingi darslarda.",
   "table": [
-   {
-    "ar": "ع",
-    "uz": "jarangli bo'g'iz tovushi (o'zbekda YO'Q)",
-    "form": "tomoq siqiladi, ovoz bilan"
-   },
-   {
-    "ar": "ح",
-    "uz": "ovozsiz bo'g'iz 'h' (kuchli nafas)",
-    "form": "issiq nafas, ovozsiz"
-   },
-   {
-    "ar": "خ",
-    "uz": "x (o'zbekda BOR — 'xato')",
-    "form": "solishtirish uchun"
-   },
-   {
-    "ar": "ه",
-    "uz": "yumshoq h (o'zbekcha 'havo')",
-    "form": "solishtirish uchun"
-   }
+   {"ar": "بـ + ـت = بت", "uz": "bo + to tutashdi", "form": "ulanadi"},
+   {"ar": "نـ + ـم = نم", "uz": "nun + mim tutashdi", "form": "ulanadi"},
+   {"ar": "ا + ب = اب", "uz": "alifdan keyin uzilish", "form": "ulanmaydi"},
+   {"ar": "د + ت = دت", "uz": "doldan keyin uzilish", "form": "ulanmaydi"}
   ],
   "common_mistakes_uz": [
-   "ع ni oddiy 'a' deb o'qish — yo'q, tomoqni siqish kerak: عَرَب ('arab).",
-   "ح ni o'zbekcha yumshoq 'h' deb aytish — ح kuchliroq va tomoqdan chiqadi: حَجّ (hajj).",
-   "ح ni خ (x) bilan aralashtirish — ح da 'xirillash' yo'q.",
-   "ع ni hamza (to'xtash ') bilan chalkashtirish — ع jarangli va cho'ziluvchan."
+   "Ulanmaydigan harfdan (ا د ذ ر ز و) keyin ham tutashtirishga urinish.",
+   "Harflarni yakka shaklda yonma-yon qo'yib «ulandi» deb o'ylash — ular TUTASHADI.",
+   "Ulanma harakatini (unlisini) o'ylash — hozir faqat SHAKL, tovush keyin."
   ]
  },
- "roots": [
-  {
-   "root": "ع ل م",
-   "meaning_uz": "bilish, ilm",
-   "uz_cognates": [
-    "ilm",
-    "olim",
-    "ma'lumot"
-   ],
-   "derived": [
-    {
-     "ar": "عِلْم",
-     "uz": "ilm, bilim",
-     "pattern": ""
-    },
-    {
-     "ar": "عَالِم",
-     "uz": "olim, biluvchi",
-     "pattern": ""
-    }
-   ]
-  }
- ],
+ "roots": [],
  "vocabulary": [
-  {
-   "ar": "عَرَب",
-   "translit": "'arab",
-   "uz": "arab(lar)",
-   "root": "ع ر ب",
-   "pattern": "",
-   "pos": "ism",
-   "audio": "a0/arab.mp3",
-   "example_ar": "أَنَا عَرَبِيّ",
-   "example_uz": "Men arabman",
-   "srs": true
-  },
-  {
-   "ar": "حَجّ",
-   "translit": "hajj",
-   "uz": "haj",
-   "root": "ح ج ج",
-   "pattern": "",
-   "pos": "ism",
-   "audio": "a0/hajj.mp3",
-   "example_ar": "الْحَجّ فِي مَكَّة",
-   "example_uz": "Haj Makkada",
-   "srs": true
-  },
-  {
-   "ar": "عِلْم",
-   "translit": "'ilm",
-   "uz": "ilm, bilim (o'zbekcha 'ilm')",
-   "root": "ع ل م",
-   "pattern": "",
-   "pos": "ism",
-   "audio": "a0/ilm.mp3",
-   "example_ar": "الْعِلْم نُور",
-   "example_uz": "Ilm — nur",
-   "srs": true
-  }
+  {"ar": "بت", "translit": "b-t", "uz": "bo va to tutashgan birikma (hali so'z emas)", "root": "", "pattern": "", "pos": "harf", "audio": "", "example_ar": "بـ + ـت", "example_uz": "ikki harf ulandi", "srs": false},
+  {"ar": "نم", "translit": "n-m", "uz": "nun va mim tutashgan birikma", "root": "", "pattern": "", "pos": "harf", "audio": "", "example_ar": "نـ + ـم", "example_uz": "ikki harf ulandi", "srs": false},
+  {"ar": "لك", "translit": "l-k", "uz": "lom va kof tutashgan birikma", "root": "", "pattern": "", "pos": "harf", "audio": "", "example_ar": "لـ + ـك", "example_uz": "ikki harf ulandi", "srs": false},
+  {"ar": "اب", "translit": "a-b", "uz": "alif va bo — alifdan keyin uzilgan", "root": "", "pattern": "", "pos": "harf", "audio": "", "example_ar": "ا + ب", "example_uz": "ulanmadi (alif)", "srs": false}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "عَرَب. حَجّ. عِلْم. أَنَا عَرَبِيّ وَأُحِبّ الْعِلْم. الْحَجّ فِي مَكَّة.",
+   "text_ar": "بت · نم · لك · اب",
    "questions": [
-    {
-     "q_uz": "Qaysi so'z ع bilan boshlanadi?",
-     "a": "عَرَب (va عِلْم)"
-    },
-    {
-     "q_uz": "Qaysi so'z ح bilan boshlanadi?",
-     "a": "حَجّ"
-    },
-    {
-     "q_uz": "«عِلْم» so'zi o'zbekchada qanday eshitiladi?",
-     "a": "ilm"
-    }
+    {"q_uz": "بت da nechta harf bor?", "a": "2 ta (bo va to)"},
+    {"q_uz": "Nega اب da harflar tutashmagan?", "a": "Alif (ا) keyingi harfga ulanmaydi"}
    ]
   },
   "listening": {
-   "audio": "a0/ayn_ha_drill.mp3",
-   "transcript_ar": "عَ ـ حَ ـ عَرَب ـ حَجّ ـ عِلْم",
-   "questions": [
-    {
-     "q_uz": "Birinchi tovush ع mi yoki ح mi?",
-     "a": "ع (jarangli)"
-    },
-    {
-     "q_uz": "«حَجّ» dagi birinchi tovush ovozlimi yoki ovozsizmi?",
-     "a": "Ovozsiz (ح)"
-    }
-   ]
+   "audio": "a0/harf_ba.mp3",
+   "transcript_ar": "بَاء",
+   "questions": [{"q_uz": "Birikmadagi birinchi harf?", "a": "Bo (ب)"}]
   },
   "speaking": {
-   "task_uz": "Audioni tinglab, ovoz chiqarib takrorla (shadowing): عَ / حَ, keyin عَرَب / حَجّ / عِلْم. ع da tomoqni sqib, ح da issiq nafasni his qil.",
-   "target_ar": [
-    "عَرَب",
-    "حَجّ",
-    "عِلْم"
-   ],
+   "task_uz": "Harflarni ajratib ayting: «bo-to», «nun-mim». Hali qo'shib o'qimaymiz — faqat nomlaymiz.",
+   "target_ar": ["بت", "نم"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "عَرَب, حَجّ, عِلْم so'zlarini ko'chirib yoz va har birining tagiga o'zbekcha talaffuzini yoz.",
+   "task_uz": "Ikki harfni tutashtirib yozing: بـ + ـت = بت. Keyin ulanmaydiganini: ا + ب = اب (orada bo'shliq).",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {
-   "type": "mcq",
-   "q_uz": "Qaysi tovush o'zbek tilida umuman yo'q va tomoqni siqib chiqariladi?",
-   "q_ar": "",
-   "options": [
-    "ع",
-    "خ",
-    "ق",
-    "ه"
-   ],
-   "answer": "ع",
-   "explain_uz": "ع jarangli bo'g'iz tovushi — o'zbekda muqobili yo'q.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "«ح» tovushi qanday?",
-   "q_ar": "",
-   "options": [
-    "Ovozsiz kuchli bo'g'iz 'h'",
-    "Ovozli 'a'",
-    "Xirillovchi 'x'",
-    "Yumshoq 'g''"
-   ],
-   "answer": "Ovozsiz kuchli bo'g'iz 'h'",
-   "explain_uz": "ح — ovozsiz, tomoqdan chiqadigan kuchli nafas.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "shadowing",
-   "q_uz": "Audioni tinglab takrorla.",
-   "q_ar": "عَرَب",
-   "options": [],
-   "answer": "عَرَب",
-   "explain_uz": "ع ni jarangli aytishga e'tibor ber.",
-   "audio": "a0/arab.mp3",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "dictation",
-   "q_uz": "Eshitilgan so'zni yoz.",
-   "q_ar": "",
-   "options": [],
-   "answer": "حَجّ",
-   "explain_uz": "ح + shadda + ج: حَجّ.",
-   "audio": "a0/hajj.mp3",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "«عِلْم» so'zining o'zbekcha muqobili qaysi?",
-   "q_ar": "",
-   "options": [
-    "ilm",
-    "olov",
-    "avlod",
-    "havo"
-   ],
-   "answer": "ilm",
-   "explain_uz": "عِلْم — o'zbekchaga 'ilm' bo'lib o'zlashgan.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "match_root",
-   "q_uz": "«عِلْم» va «عَالِم» so'zlarining o'zagini tanla.",
-   "q_ar": "",
-   "options": [
-    "ع ل م",
-    "ح ج ج",
-    "ع ر ب",
-    "خ ب ر"
-   ],
-   "answer": "ع ل م",
-   "explain_uz": "Ikkalasi ham ع ل م o'zagidan — bilish/ilm.",
-   "audio": "",
-   "root": "ع ل م",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "Qaysi juftlik NOTO'G'RI aralashtirilishi mumkin?",
-   "q_ar": "",
-   "options": [
-    "ح va خ",
-    "ب va م",
-    "ل va ن",
-    "س va ط"
-   ],
-   "answer": "ح va خ",
-   "explain_uz": "ح (ovozsiz nafas) va خ (xirillovchi x) ko'pincha adashtiriladi, lekin farqli.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  }
+  {"type": "mcq", "q_uz": "بت birikmasida nechta harf bor?", "q_ar": "", "options": ["2", "1", "3", "4"], "answer": "2", "explain_uz": "بـ (bo) + ـت (to) = بت — ikki harf.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Qaysi harfdan keyin ulanish UZILADI?", "q_ar": "", "options": ["ا (alif)", "ب (bo)", "ن (nun)", "م (mim)"], "answer": "ا (alif)", "explain_uz": "ا ulanmaydigan 6 harfdan biri.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "بـ shakli so'zning qayerida keladi?", "q_ar": "", "options": ["boshida", "o'rtasida", "oxirida", "yakka"], "answer": "boshida", "explain_uz": "بـ — boshlang'ich shakl, keyingi harfga tutashadi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "نـ + ـم nima beradi?", "q_ar": "", "options": ["نم", "من", "نن", "مم"], "answer": "نم", "explain_uz": "Nun boshida + mim oxirida = نم.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Hozirgi darsda nega harakat (unli) yo'q?", "q_ar": "", "options": ["Faqat ulanish shaklini o'rganamiz", "Harakat yo'q qilingan", "So'z tugagan", "Kerak emas"], "answer": "Faqat ulanish shaklini o'rganamiz", "explain_uz": "Avval shakl, keyin harakat va o'qish.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "لـ + ـك birikmasi qaysi?", "q_ar": "", "options": ["لك", "كل", "لل", "كك"], "answer": "لك", "explain_uz": "Lom boshida + kof oxirida = لك.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {
-   "type": "word",
-   "front": "عَرَب",
-   "back": "arab(lar) — ع jarangli bo'g'iz tovushi",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "حَجّ",
-   "back": "haj — ح ovozsiz kuchli bo'g'iz 'h'",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "عِلْم",
-   "back": "ilm, bilim (o'zbekcha 'ilm')",
-   "deck": "msa"
-  },
-  {
-   "type": "root",
-   "front": "ع ل م",
-   "back": "bilish, ilm → عِلْم (ilm), عَالِم (olim)",
-   "deck": "msa"
-  }
+  {"type": "word", "front": "ب", "back": "bo — ulanadi (بـ ـبـ ـب)", "deck": "msa"},
+  {"type": "word", "front": "ا", "back": "alif — ULANMAYDI", "deck": "msa"},
+  {"type": "word", "front": "ن", "back": "nun — ulanadi", "deck": "msa"},
+  {"type": "word", "front": "د", "back": "dol — ULANMAYDI", "deck": "msa"}
  ]
 }

@@ -3,76 +3,204 @@
  "level": "A0",
  "module": "letters",
  "order": 6,
- "title_uz": "Harf oilasi 5: ط ظ ع غ",
- "title_ar": "عائلة الحروف: ط ظ ع غ",
- "can_do_uz": "ط ظ ع غ harflarini taniyman; غ ni o'zbekcha g' kabi aytaman va ع ning bo'g'iz tovushini his qilaman.",
- "duration_min": 20,
- "prerequisites": ["a0-05"],
+ "title_uz": "د va ذ",
+ "title_ar": "دَال وَذَال",
+ "can_do_uz": "dol va zol (tishlararo) harflarini shakli, nuqtasi va tovushi bo'yicha ajrataman.",
+ "duration_min": 15,
+ "prerequisites": [
+  "a0-05"
+ ],
  "harakat_level": "full",
- "hook_uz": "Eng «arabcha» harflar darsi! Yana bir xushxabar: غ tovushi o'zbekcha 'g'' bilan deyarli BIR XIL — 'g'oz', 'bog''dagi g'. ع esa mashhur 'ayn' — o'zbekcha 'ma'no', 'san'at'dagi tutuq (') belgisi joyida keladigan tovushga yaqin. Siz o'ylagandan ko'ra tayyorroqsiz!",
+ "hook_uz": "Yangi shakl: do'ppiga o'xshagan harf. Nuqtasiz bo'lsa د, tepasiga 1 nuqta qo'ysangiz ذ. MUHIM: bu ikkalasi o'zidan keyingi harfga ULANMAYDI — so'z ichida ular «to'xtab» qoladi.",
  "grammar": {
-  "point_ar": "ط ظ ع غ",
-  "explanation_uz": "Ikki juftlik: ط (to', QALIN 't') va ظ (zo', QALIN tishlararo 'z') — tik tayoqli juftlik, farqi nuqtada. ع (ayn — bo'g'izning siqilishidan chiqadigan tovush; o'zbekcha 'ma'no'dagi tutuq joyi) va غ (g'ayn — o'zbekcha g'!) — «uchlik» boshli juftlik, farqi yana nuqtada. ع ni mashq qilish: «a-a» deb bo'g'izni biroz siqib ayting.",
+  "point_ar": "د ذ",
+  "explanation_uz": "د (dol) — do'ppi shakli, nuqtasiz, oddiy «d». ذ (zol) — ayni shakl, TEPADA 1 nuqta, TISHLARARO «z»: til uchi tishlar orasida (inglizcha «this»). Ikkalasi ULANMAYDIGAN harflardan: o'zidan oldingisiga qo'shiladi, lekin keyingisiga qo'l uzatmaydi. Shuning uchun ularning faqat 2 shakli bor: د va ـد.",
   "table": [
-   {"ar": "ط", "uz": "to' — QALIN 't' · nuqtasiz", "form": "طـ ـطـ ـط"},
-   {"ar": "ظ", "uz": "zo' — QALIN tishlararo 'z' · tepada 1 nuqta", "form": "ظـ ـظـ ـظ"},
-   {"ar": "ع", "uz": "ayn — bo'g'iz tovushi · nuqtasiz", "form": "عـ ـعـ ـع"},
-   {"ar": "غ", "uz": "g'ayn — o'zbekcha g' · tepada 1 nuqta", "form": "غـ ـغـ ـغ"}
+   {
+    "ar": "د",
+    "uz": "dol — do'ppi shakli, nuqtasiz — «d»",
+    "form": "د ـد"
+   },
+   {
+    "ar": "ذ",
+    "uz": "zol (tishlararo) — do'ppi, TEPADA 1 nuqta — tishlararo «z» (inglizcha this)",
+    "form": "ذ ـذ"
+   }
   ],
   "common_mistakes_uz": [
-   "ط ni oddiy ت deb aytish — ط qalin, to'q t.",
-   "ع ni umuman tashlab ketish yoki oddiy 'a' deyish — u bo'g'izda his qilinadigan alohida undosh.",
-   "غ ni 'g' deb aytish — u o'zbekcha 'g'' (g'oz), oddiy g emas."
+   "ذ ni oddiy «z» (ز) deb aytish — ذ da til tish orasiga chiqadi.",
+   "د ni keyingi harfga ulashga urinish — u ulanmaydi, so'z shu yerda bo'linadi.",
+   "د va ر ni chalkashtirish — د burchakli va yuqorida turadi, ر esa yumaloq va pastga tushadi."
   ]
  },
  "roots": [],
  "vocabulary": [
-  {"ar": "ط", "translit": "to' (ṭ)", "uz": "QALIN «t» — to'q, og'ir t. Tik tayoqli tana, nuqtasiz", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_tah.mp3", "audio_text": "طَاء", "example_ar": "طـ ـطـ ـط", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
-  {"ar": "ظ", "translit": "zo' (ẓ)", "uz": "QALIN tishlararo «z» — til tishlar orasida + to'q talaffuz. Nuqta: 1 ta tepada", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_zah.mp3", "audio_text": "ظَاء", "example_ar": "ظـ ـظـ ـظ", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
-  {"ar": "ع", "translit": "ayn (ʿ)", "uz": "bo'g'iz tovushi — 'ma'no', 'san'at'dagi tutuq (') o'rnidagi tovushga yaqin. Nuqtasiz", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_ayn.mp3", "audio_text": "عَيْن", "example_ar": "عـ ـعـ ـع", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
-  {"ar": "غ", "translit": "g'ayn (g')", "uz": "o'zbekcha «g'» — 'g'oz', 'bog''dagi g'. Siz buni bilasiz! Nuqta: 1 ta tepada", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_ghayn.mp3", "audio_text": "غَيْن", "example_ar": "غـ ـغـ ـغ", "example_uz": "boshida · o'rtasida · oxirida", "srs": true}
+  {
+   "ar": "د",
+   "translit": "dāl (d)",
+   "uz": "dol — do'ppi shakli, nuqtasiz — «d»",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "a0/harf_dal.mp3",
+   "audio_text": "دَال",
+   "example_ar": "د ـد",
+   "example_uz": "yolg'iz · so'z ichida (keyingi harfga ULANMAYDI)",
+   "srs": true
+  },
+  {
+   "ar": "ذ",
+   "translit": "dhāl (dh)",
+   "uz": "zol (tishlararo) — do'ppi, TEPADA 1 nuqta — tishlararo «z» (inglizcha this)",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "a0/harf_dhal.mp3",
+   "audio_text": "ذَال",
+   "example_ar": "ذ ـذ",
+   "example_uz": "yolg'iz · so'z ichida (keyingi harfga ULANMAYDI)",
+   "srs": true
+  }
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "ط ظ ع غ",
+   "text_ar": "د ذ",
    "questions": [
-    {"q_uz": "O'zbekcha g' tovushiga mos harf qaysi?", "a": "غ (g'ayn)"},
-    {"q_uz": "ط va ظ ning farqi nimada?", "a": "ظ da tepada 1 nuqta bor"},
-    {"q_uz": "Bo'g'iz tovushi qaysi harf?", "a": "ع (ayn)"}
+    {
+     "q_uz": "Bu qatorda nechta harf bor?",
+     "a": "2 ta"
+    },
+    {
+     "q_uz": "Qaysi tomondan o'qiymiz?",
+     "a": "O'ngdan chapga"
+    }
    ]
   },
   "listening": {
-   "audio": "a0/a0-06-harflar.mp3",
-   "transcript_ar": "طَاء. ظَاء. عَيْن. غَيْن",
+   "audio": "a0/harf_dal.mp3",
+   "transcript_ar": "دَال",
    "questions": [
-    {"q_uz": "Nechta harf nomi eshitildi?", "a": "4 ta"},
-    {"q_uz": "Oxirgi harf qaysi edi?", "a": "غ (g'ayn)"}
+    {
+     "q_uz": "Qaysi harf nomi eshitildi?",
+     "a": "Dol (د)"
+    }
    ]
   },
   "speaking": {
-   "task_uz": "Ayting: «to'», «zo'», «ayn», «g'ayn». ع uchun: 'ma'no' so'zini ayting va o'rtadagi tutilishga e'tibor bering — ana shu joyda ع tovushi yashaydi.",
-   "target_ar": ["ط", "ظ", "ع", "غ"],
+   "task_uz": "Harf nomlarini audio ortidan uch martadan takrorlang: dol, zol (tishlararo).",
+   "target_ar": [
+    "د",
+    "ذ"
+   ],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Daftaringizga ط، ظ، ع، غ harflaridan bir qatordan yozing. ع ning boshini ochiq uchlik shaklida chizing.",
+   "task_uz": "Daftaringizga har harfdan bir qatordan yozing (o'ngdan chapga). Nuqtalarni aniq joyiga qo'ying.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "O'zbekcha 'g'oz' so'zidagi g' tovushiga mos harf qaysi?", "q_ar": "", "options": ["غ", "ع", "ط", "خ"], "answer": "غ", "explain_uz": "غ (g'ayn) = o'zbekcha g'. Deyarli bir xil tovush!", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Eshiting: bu qaysi harfning nomi?", "q_ar": "", "options": ["ع", "غ", "ط", "ح"], "answer": "ع", "explain_uz": "«Ayn» — bo'g'izdan chiqadigan nuqtasiz harf.", "audio": "a0/harf_ayn.mp3", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "QALIN 't' tovushini qaysi harf beradi?", "q_ar": "", "options": ["ط", "ت", "ث", "د"], "answer": "ط", "explain_uz": "ط (to') — qalin t. Oddiy t esa ت.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "dictation", "q_uz": "Eshiting va shu harfni klaviaturadan bosing.", "q_ar": "", "options": [], "answer": "غ", "explain_uz": "«G'ayn» — tepasida nuqtali, o'zbekcha g'.", "audio": "a0/harf_ghayn.mp3", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "'ma'no' so'zidagi tutuq (') o'rnida qaysi arab harfi turadi?", "q_ar": "", "options": ["ع", "غ", "ه", "ء yozilmaydi"], "answer": "ع", "explain_uz": "Arabcha مَعْنَى da aynan ع bor — o'zbekcha tutuq shu tovush izi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "ع va غ qanday farqlanadi?", "q_ar": "", "options": ["غ da tepada nuqta bor", "ع da tepada nuqta bor", "shakli boshqa", "farq yo'q"], "answer": "غ da tepada nuqta bor", "explain_uz": "Tanasi bir xil «uchlik»; nuqtali — غ (g'ayn).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "shadowing", "q_uz": "Harf nomlarini eshiting va takrorlang", "q_ar": "ط ظ ع غ", "options": [], "answer": "", "explain_uz": "", "audio": "a0/a0-06-harflar.mp3", "root": "", "pattern": "", "words": []}
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_ar": "",
+   "options": [
+    "د",
+    "ذ",
+    "ا"
+   ],
+   "answer": "د",
+   "explain_uz": "«Dol» — do'ppi shakli, nuqtasiz — «d».",
+   "audio": "a0/harf_dal.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_ar": "",
+   "options": [
+    "ذ",
+    "د",
+    "ا"
+   ],
+   "answer": "ذ",
+   "explain_uz": "«Zol (tishlararo)» — do'ppi, TEPADA 1 nuqta — tishlararo «z» (inglizcha this).",
+   "audio": "a0/harf_dhal.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi harf NUQTASIZ?",
+   "q_ar": "",
+   "options": [
+    "د",
+    "ذ"
+   ],
+   "answer": "د",
+   "explain_uz": "د (dol) — nuqtasiz.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "د harfi so'z BOSHIDA qanday ko'rinadi?",
+   "q_ar": "",
+   "options": [
+    "د",
+    "ـد"
+   ],
+   "answer": "د",
+   "explain_uz": "So'z boshidagi shakl: د.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
+   "q_ar": "",
+   "options": [],
+   "answer": "ذ",
+   "explain_uz": "«Zol (tishlararo)» — do'ppi, TEPADA 1 nuqta — tishlararo «z» (inglizcha this).",
+   "audio": "a0/harf_dhal.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "shadowing",
+   "q_uz": "Harf nomlarini eshiting va baland ovozda takrorlang",
+   "q_ar": "د ذ",
+   "options": [],
+   "answer": "",
+   "explain_uz": "",
+   "audio": "a0/a0-06-harflar.mp3",
+   "audio_text": "دَال، ذَال",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
  ],
  "srs_cards": [
-  {"type": "word", "front": "ط", "back": "to' — QALIN 't' (nuqtasiz)", "deck": "msa"},
-  {"type": "word", "front": "ظ", "back": "zo' — QALIN tishlararo 'z' (nuqta tepada)", "deck": "msa"},
-  {"type": "word", "front": "ع", "back": "ayn — bo'g'iz tovushi ('ma'no'dagi tutuq)", "deck": "msa"},
-  {"type": "word", "front": "غ", "back": "g'ayn — o'zbekcha g' (nuqta tepada)", "deck": "msa"}
+  {
+   "type": "word",
+   "front": "د",
+   "back": "dol — do'ppi shakli, nuqtasiz — «d»",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "ذ",
+   "back": "zol (tishlararo) — do'ppi, TEPADA 1 nuqta — tishlararo «z» (inglizcha this)",
+   "deck": "msa"
+  }
  ]
 }

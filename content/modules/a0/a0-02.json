@@ -3,80 +3,204 @@
  "level": "A0",
  "module": "letters",
  "order": 2,
- "title_uz": "Harf oilasi 1: ب ت ث ن ي",
- "title_ar": "عائلة الحروف: ب ت ث ن ي",
- "can_do_uz": "ب ت ث ن ي harflarini nuqtalari soni va joyiga qarab ajrata olaman hamda har birining nomi va tovushini to'g'ri aytaman.",
- "duration_min": 20,
- "prerequisites": ["a0-01"],
+ "title_uz": "ا va ب",
+ "title_ar": "أَلِف وَبَاء",
+ "can_do_uz": "alif va bo harflarini shakli, nuqtasi va tovushi bo'yicha ajrataman.",
+ "duration_min": 15,
+ "prerequisites": [
+  "a0-01"
+ ],
  "harakat_level": "full",
- "hook_uz": "Birinchi harf oilasi! Bu beshta harfning tanasi bir xil qayiqchaga o'xshaydi — farqi FAQAT nuqtalarda. Bugun so'z o'qimaymiz: faqat harflarni taniymiz, nomini o'rganamiz va talaffuz qilamiz. Harflarni puxta bilsangiz, keyin o'qish o'z-o'zidan oson bo'ladi!",
+ "hook_uz": "Birinchi ikkita harf. ا — eng sodda: tik tayoqcha. ب — kosacha va uning PASTIDA bitta nuqta. Arab yozuvida nuqta juda muhim: bir xil tanaga turli nuqta qo'yilsa — boshqa harf chiqadi. Shuning uchun boshidanoq nuqtaga diqqat qiling.",
  "grammar": {
-  "point_ar": "ب ت ث ن ي",
-  "explanation_uz": "Bu beshta harfning tanasi (asosi) bir xil — pastga qayrilgan kichkina qayiqcha. Ularni bir-biridan faqat NUQTALAR ajratadi: soni (1, 2, 3 ta) va joyi (tepada yoki pastda). Har bir harfning NOMI (masalan «bo») va TOVUSHI (b) bor — hozir shu ikkisini o'rganamiz. Har harfning kartasida uning so'z boshida/o'rtasida/oxirida qanday ko'rinishi ham berilgan — hozircha shunchaki ko'z tanishtiring, o'qish keyin!",
+  "point_ar": "ا ب",
+  "explanation_uz": "ا (alif) — nuqtasiz tik chiziq, alifboning birinchi harfi. ب (bo) — pastga qaragan kosacha, uning PASTIDA 1 ta nuqta bor, «b» tovushini beradi. Ikkalasining farqi: ا ulanmaydi (o'zidan keyingi harfga qo'l uzatmaydi), ب esa ulanadi va so'zdagi o'rniga qarab shakli o'zgaradi: بـ (boshida) · ـبـ (o'rtada) · ـب (oxirida).",
   "table": [
-   {"ar": "ب", "uz": "bo — 'b' · pastda 1 nuqta", "form": "بـ ـبـ ـب"},
-   {"ar": "ت", "uz": "to — 't' · tepada 2 nuqta", "form": "تـ ـتـ ـت"},
-   {"ar": "ث", "uz": "so — tishlararo 's' · tepada 3 nuqta", "form": "ثـ ـثـ ـث"},
-   {"ar": "ن", "uz": "nun — 'n' · tepada 1 nuqta", "form": "نـ ـنـ ـن"},
-   {"ar": "ي", "uz": "yo — 'y' · pastda 2 nuqta", "form": "يـ ـيـ ـي"}
+   {
+    "ar": "ا",
+    "uz": "alif — tik tayoqcha, nuqtasiz. Cho'ziq «aa» ham bo'ladi",
+    "form": "ا ـا"
+   },
+   {
+    "ar": "ب",
+    "uz": "bo — kosacha, PASTDA 1 nuqta — «b»",
+    "form": "بـ ـبـ ـب"
+   }
   ],
   "common_mistakes_uz": [
-   "ب va ن ni chalkashtirish: ب da nuqta PASTDA, ن da TEPADA.",
-   "ت va ث ni chalkashtirish: ت da 2 ta, ث da 3 ta nuqta.",
-   "ث ni oddiy 's' deb o'qish — u tishlararo: til uchi tishlar orasiga tegadi (inglizcha 'think').",
-   "Birinchi darsdanoq so'z o'qishga shoshilish — hozir vazifa faqat harf tanish."
+   "ا ni lotincha «l» yoki raqam «1» deb o'ylash — bu arab harfi, tovushi cho'ziq «aa».",
+   "ب ning nuqtasini tepaga qo'yish — u PASTDA bo'ladi, tepada bo'lsa boshqa harf (ن).",
+   "Harfni chapdan o'ngga yozish — arabcha o'ngdan chapga yoziladi."
   ]
  },
  "roots": [],
  "vocabulary": [
-  {"ar": "ب", "translit": "bo (b)", "uz": "«b» tovushi — 'bola'dagi b. Nuqta: 1 ta, PASTDA", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_ba.mp3", "audio_text": "بَاء", "example_ar": "بـ ـبـ ـب", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
-  {"ar": "ت", "translit": "to (t)", "uz": "«t» tovushi — 'tosh'dagi t. Nuqta: 2 ta, TEPADA", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_ta.mp3", "audio_text": "تَاء", "example_ar": "تـ ـتـ ـت", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
-  {"ar": "ث", "translit": "so (th)", "uz": "tishlararo «s» — til uchi tishlar orasida (inglizcha 'think'). Nuqta: 3 ta, TEPADA", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_tha.mp3", "audio_text": "ثَاء", "example_ar": "ثـ ـثـ ـث", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
-  {"ar": "ن", "translit": "nun (n)", "uz": "«n» tovushi — 'non'dagi n. Nuqta: 1 ta, TEPADA", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_nun.mp3", "audio_text": "نُون", "example_ar": "نـ ـنـ ـن", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
-  {"ar": "ي", "translit": "yo (y)", "uz": "«y» tovushi — 'yo'l'dagi y. Nuqta: 2 ta, PASTDA", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_ya.mp3", "audio_text": "يَاء", "example_ar": "يـ ـيـ ـي", "example_uz": "boshida · o'rtasida · oxirida", "srs": true}
+  {
+   "ar": "ا",
+   "translit": "alif",
+   "uz": "alif — tik tayoqcha, nuqtasiz. Cho'ziq «aa» ham bo'ladi",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "a0/harf_alif.mp3",
+   "audio_text": "أَلِف",
+   "example_ar": "ا ـا",
+   "example_uz": "yolg'iz · so'z ichida (keyingi harfga ULANMAYDI)",
+   "srs": true
+  },
+  {
+   "ar": "ب",
+   "translit": "bā (b)",
+   "uz": "bo — kosacha, PASTDA 1 nuqta — «b»",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "a0/harf_ba.mp3",
+   "audio_text": "بَاء",
+   "example_ar": "بـ ـبـ ـب",
+   "example_uz": "boshida · o'rtasida · oxirida",
+   "srs": true
+  }
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "ب ت ث ن ي",
+   "text_ar": "ا ب",
    "questions": [
-    {"q_uz": "Tepasida 3 nuqtali harf qaysi?", "a": "ث (so)"},
-    {"q_uz": "Pastida 2 nuqtali harf qaysi?", "a": "ي (yo)"},
-    {"q_uz": "ب bilan ن ning farqi nimada?", "a": "Nuqta joyida: ب — pastda, ن — tepada"}
+    {
+     "q_uz": "Bu qatorda nechta harf bor?",
+     "a": "2 ta"
+    },
+    {
+     "q_uz": "Qaysi tomondan o'qiymiz?",
+     "a": "O'ngdan chapga"
+    }
    ]
   },
   "listening": {
-   "audio": "a0/a0-02-harflar.mp3",
-   "transcript_ar": "بَاء. تَاء. ثَاء. نُون. يَاء",
+   "audio": "a0/harf_alif.mp3",
+   "transcript_ar": "أَلِف",
    "questions": [
-    {"q_uz": "Nechta harf nomi eshitildi?", "a": "5 ta"},
-    {"q_uz": "Birinchi eshitilgan harf qaysi?", "a": "ب (bo)"}
+    {
+     "q_uz": "Qaysi harf nomi eshitildi?",
+     "a": "Alif (ا)"
+    }
    ]
   },
   "speaking": {
-   "task_uz": "Har harfni nomi va tovushi bilan ovoz chiqarib ayting: «bo — b», «to — t», «so — th», «nun — n», «yo — y». ث da til uchini tishlar orasiga qo'ying.",
-   "target_ar": ["ب", "ت", "ث", "ن", "ي"],
+   "task_uz": "Harf nomlarini audio ortidan uch martadan takrorlang: alif, bo.",
+   "target_ar": [
+    "ا",
+    "ب"
+   ],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Daftaringizga har harfdan bir qator yozing: ب، ت، ث، ن، ي. Har birining tagiga nuqta soni va joyini (tepa/past) belgilab qo'ying.",
+   "task_uz": "Daftaringizga har harfdan bir qatordan yozing (o'ngdan chapga). Nuqtalarni aniq joyiga qo'ying.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "Qaysi harfda nuqta PASTDA va 1 ta?", "q_ar": "", "options": ["ب", "ت", "ن", "ث"], "answer": "ب", "explain_uz": "ب (bo) — pastda bitta nuqta. ن da nuqta tepada.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Eshiting: bu qaysi harfning nomi?", "q_ar": "", "options": ["ت", "ث", "ب", "ن"], "answer": "ت", "explain_uz": "«To» — tepasida 2 nuqtali ت harfi.", "audio": "a0/harf_ta.mp3", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Bu harf qanday tovush beradi?", "q_ar": "ث", "options": ["tishlararo 's' (think)", "oddiy 't'", "'n'", "'y'"], "answer": "tishlararo 's' (think)", "explain_uz": "ث (so) — til uchi tishlar orasiga tegadi, yumshoq 's'.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "dictation", "q_uz": "Eshiting va shu harfni klaviaturadan bosing.", "q_ar": "", "options": [], "answer": "ن", "explain_uz": "«Nun» — tepasida 1 nuqtali ن harfi.", "audio": "a0/harf_nun.mp3", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "ب harfi so'z BOSHIDA qanday ko'rinadi?", "q_ar": "", "options": ["بـ", "ـبـ", "ـب"], "answer": "بـ", "explain_uz": "So'z boshida dumi qisqaradi va keyingi harfga ulanadi: بـ", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "ن va ب orasidagi asosiy farq nima?", "q_ar": "", "options": ["nuqta joyi (ن-tepada, ب-pastda)", "nuqta soni", "tanasi shakli", "farq yo'q"], "answer": "nuqta joyi (ن-tepada, ب-pastda)", "explain_uz": "Ikkalasida 1 ta nuqta, farq joyida: ن tepada, ب pastda.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "shadowing", "q_uz": "Harf nomlarini eshiting va takrorlang", "q_ar": "ب ت ث ن ي", "options": [], "answer": "", "explain_uz": "", "audio": "a0/a0-02-harflar.mp3", "root": "", "pattern": "", "words": []}
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_ar": "",
+   "options": [
+    "ا",
+    "ب",
+    "ب"
+   ],
+   "answer": "ا",
+   "explain_uz": "«Alif» — tik tayoqcha, nuqtasiz. Cho'ziq «aa» ham bo'ladi.",
+   "audio": "a0/harf_alif.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_ar": "",
+   "options": [
+    "ب",
+    "ا",
+    "ا"
+   ],
+   "answer": "ب",
+   "explain_uz": "«Bo» — kosacha, PASTDA 1 nuqta — «b».",
+   "audio": "a0/harf_ba.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi harf NUQTASIZ?",
+   "q_ar": "",
+   "options": [
+    "ا",
+    "ب"
+   ],
+   "answer": "ا",
+   "explain_uz": "ا (alif) — nuqtasiz.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "ا harfi so'z BOSHIDA qanday ko'rinadi?",
+   "q_ar": "",
+   "options": [
+    "ا",
+    "ـا"
+   ],
+   "answer": "ا",
+   "explain_uz": "So'z boshidagi shakl: ا.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
+   "q_ar": "",
+   "options": [],
+   "answer": "ب",
+   "explain_uz": "«Bo» — kosacha, PASTDA 1 nuqta — «b».",
+   "audio": "a0/harf_ba.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "shadowing",
+   "q_uz": "Harf nomlarini eshiting va baland ovozda takrorlang",
+   "q_ar": "ا ب",
+   "options": [],
+   "answer": "",
+   "explain_uz": "",
+   "audio": "a0/a0-02-harflar.mp3",
+   "audio_text": "أَلِف، بَاء",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
  ],
  "srs_cards": [
-  {"type": "word", "front": "ب", "back": "bo — 'b' (nuqta: 1 ta pastda)", "deck": "msa"},
-  {"type": "word", "front": "ت", "back": "to — 't' (nuqta: 2 ta tepada)", "deck": "msa"},
-  {"type": "word", "front": "ث", "back": "so — tishlararo 's' (nuqta: 3 ta tepada)", "deck": "msa"},
-  {"type": "word", "front": "ن", "back": "nun — 'n' (nuqta: 1 ta tepada)", "deck": "msa"},
-  {"type": "word", "front": "ي", "back": "yo — 'y' (nuqta: 2 ta pastda)", "deck": "msa"}
+  {
+   "type": "word",
+   "front": "ا",
+   "back": "alif — tik tayoqcha, nuqtasiz. Cho'ziq «aa» ham bo'ladi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "ب",
+   "back": "bo — kosacha, PASTDA 1 nuqta — «b»",
+   "deck": "msa"
+  }
  ]
 }

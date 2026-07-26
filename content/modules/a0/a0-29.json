@@ -1,0 +1,321 @@
+{
+ "id": "a0-29",
+ "level": "A0",
+ "module": "harakat",
+ "order": 29,
+ "title_uz": "Tanvin",
+ "title_ar": "التَّنْوين",
+ "can_do_uz": "So'z oxiridagi ً ٍ ٌ belgilarini tanib, ularni -an, -in, -un tovushlari bilan to'g'ri o'qiy olaman.",
+ "duration_min": 30,
+ "prerequisites": [
+  "a0-28"
+ ],
+ "harakat_level": "full",
+ "hook_uz": "\"Kitob\" so'zi o'zbekchaga arabchadan kirgan — arabcha كِتاب. Agar u \"biror kitob\" (aniq emas) ma'nosini bersa, oxiriga kichkina belgi qo'yiladi va كِتابٌ (kitobun) deb o'qiladi. Mana shu belgi — tanvin.",
+ "grammar": {
+  "point_ar": "التَّنْوين: ً ٍ ٌ",
+  "explanation_uz": "Tanvin — so'z oxiriga qo'yiladigan belgi bo'lib, unli tovushdan keyin qo'shimcha 'n' tovushini bildiradi. U so'zning NOANIQ (bir, biror) ekanini ko'rsatadi, xuddi o'zbekcha 'bir kitob' kabi. Tanvin faqat so'zning OXIRGI harfida turadi. Uch xil bo'ladi: ٌ (dammatan = -un), ٍ (kasratan = -in), ً (fathatan = -an). Diqqat: ً belgisi ko'pincha ا (alif) bilan yoziladi (masalan كِتابًا), lekin alifning bu vazifasini keyingi darsda o'rganamiz — hozir asosan ٌ va ٍ ga e'tibor beramiz.",
+  "table": [
+   {
+    "ar": "كِتابٌ",
+    "uz": "kitobun (bir kitob)",
+    "form": "ٌ dammatan = -un"
+   },
+   {
+    "ar": "كِتابٍ",
+    "uz": "kitobin (bir kitobning)",
+    "form": "ٍ kasratan = -in"
+   },
+   {
+    "ar": "كِتابًا",
+    "uz": "kitoban (bir kitobni)",
+    "form": "ً fathatan = -an"
+   },
+   {
+    "ar": "بَيْتٌ",
+    "uz": "baytun (bir uy)",
+    "form": "ٌ dammatan = -un"
+   },
+   {
+    "ar": "قَلَمٍ",
+    "uz": "qalamin (bir ruchkaning)",
+    "form": "ٍ kasratan = -in"
+   }
+  ],
+  "common_mistakes_uz": [
+   "Tanvin 'n' tovushini beradi, lekin ن harfi YOZILMAYDI — belgining o'zi buni bildiradi.",
+   "ٌ (dammatan) ni oddiy damma ــُ bilan aralashtirmang: ٌ ikkita belgidan iborat va 'n' qo'shadi.",
+   "Tanvin faqat so'zning eng oxirida bo'ladi, o'rtasida emas.",
+   "ٍ (kasratan) so'zning tagiga, ٌ va ً ustiga qo'yiladi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ك ت ب",
+   "meaning_uz": "yozish bilan bog'liq",
+   "uz_cognates": [
+    "kitob",
+    "maktab",
+    "kotib"
+   ],
+   "derived": [
+    {
+     "ar": "كِتابٌ",
+     "uz": "bir kitob",
+     "pattern": ""
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "بَيْتٌ",
+   "translit": "baytun",
+   "uz": "bir uy",
+   "root": "ب ي ت",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/bayt.mp3",
+   "example_ar": "بَيْتٌ",
+   "example_uz": "bir uy",
+   "srs": true
+  },
+  {
+   "ar": "بابٌ",
+   "translit": "babun",
+   "uz": "bir eshik",
+   "root": "ب و ب",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/bab.mp3",
+   "example_ar": "بابٌ",
+   "example_uz": "bir eshik",
+   "srs": true
+  },
+  {
+   "ar": "وَلَدٌ",
+   "translit": "waladun",
+   "uz": "bir bola (o'g'il)",
+   "root": "و ل د",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/walad.mp3",
+   "example_ar": "وَلَدٌ",
+   "example_uz": "bir bola",
+   "srs": true
+  },
+  {
+   "ar": "قَلَمٌ",
+   "translit": "qalamun",
+   "uz": "bir qalam (ruchka)",
+   "root": "ق ل م",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/qalam.mp3",
+   "example_ar": "قَلَمٌ",
+   "example_uz": "bir qalam",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "كِتابٌ. قَلَمٌ. بابٌ. بَيْتٌ. وَلَدٌ.",
+   "questions": [
+    {
+     "q_uz": "كِتابٌ so'zi qanday o'qiladi?",
+     "a": "kitobun"
+    },
+    {
+     "q_uz": "بَيْتٌ so'zining oxiridagi belgi qaysi tovushni qo'shadi?",
+     "a": "-un (n tovushi)"
+    },
+    {
+     "q_uz": "Bu so'zlar aniq (ma'lum) so'zlarmi yoki noaniq (bir, biror)?",
+     "a": "noaniq — 'bir kitob', 'bir eshik' kabi"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/kitab.mp3",
+   "transcript_ar": "كِتابٌ",
+   "questions": [
+    {
+     "q_uz": "Eshitgan so'zingiz oxirida qanday tovush bor?",
+     "a": "-un"
+    },
+    {
+     "q_uz": "Bu qaysi so'z?",
+     "a": "كِتابٌ (bir kitob)"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Quyidagi so'zlarni tanvin bilan ovoz chiqarib o'qing: كِتابٌ، قَلَمٌ، بابٌ. Har birida oxirgi 'n' tovushini aniq talaffuz qiling.",
+   "target_ar": [
+    "كِتابٌ",
+    "قَلَمٌ",
+    "بابٌ"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "بَيْت so'zining oxiriga dammatan (ٌ) qo'yib yozing va uni qanday o'qilishini lotin harflarida yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "ٌ (dammatan) belgisi qaysi tovushni qo'shadi?",
+   "q_ar": "",
+   "options": [
+    "-un",
+    "-in",
+    "-an",
+    "hech nima"
+   ],
+   "answer": "-un",
+   "explain_uz": "ٌ = damma + tanvin, ya'ni -un tovushi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "ٍ (kasratan) belgisi qanday o'qiladi?",
+   "q_ar": "",
+   "options": [
+    "-in",
+    "-un",
+    "-an",
+    "-o"
+   ],
+   "answer": "-in",
+   "explain_uz": "ٍ = kasra + tanvin, ya'ni -in tovushi. So'zning tagiga qo'yiladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Tanvin so'zning qayerida bo'ladi?",
+   "q_ar": "",
+   "options": [
+    "Faqat oxirgi harfda",
+    "Birinchi harfda",
+    "O'rtada",
+    "Istalgan joyda"
+   ],
+   "answer": "Faqat oxirgi harfda",
+   "explain_uz": "Tanvin doimo so'zning eng oxirida bo'ladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "",
+   "q_ar": "كِتابٌ",
+   "options": [],
+   "answer": "bir kitob",
+   "explain_uz": "كِتاب = kitob, ٌ = noaniqlik (bir). O'zbekchaga 'kitob' shu so'zdan kirgan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«baytun» deb o'qilishi uchun so'z qanday yozilishi kerak?",
+   "q_ar": "",
+   "options": [
+    "بَيْتٌ",
+    "بَيْتٍ",
+    "بَيْتًا",
+    "بَيْتْ"
+   ],
+   "answer": "بَيْتٌ",
+   "explain_uz": "«-un» tovushi uchun so'z oxiriga dammatan (ٌ) qo'yiladi: بَيْتٌ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "قَلَمٌ («qalamun») nimani bildiradi?",
+   "q_ar": "",
+   "options": [
+    "bir qalam (noaniq)",
+    "o'sha qalam (aniq)",
+    "qalamlar (ko'plik)",
+    "qalamsiz"
+   ],
+   "answer": "bir qalam (noaniq)",
+   "explain_uz": "Tanvin so'zni NOANIQ qiladi — «bir qalam». Aniq bo'lsa الْقَلَمُ bo'lardi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Tanvindagi 'n' tovushi uchun ن harfi yoziladimi?",
+   "q_ar": "",
+   "options": [
+    "Yo'q, faqat belgi qo'yiladi",
+    "Ha, doim yoziladi",
+    "Ba'zan yoziladi",
+    "Faqat oxirda yoziladi"
+   ],
+   "answer": "Yo'q, faqat belgi qo'yiladi",
+   "explain_uz": "Tanvin belgisining o'zi 'n' tovushini bildiradi, ن harfi yozilmaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "word",
+   "front": "بَيْتٌ",
+   "back": "baytun — bir uy",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "بابٌ",
+   "back": "babun — bir eshik",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "وَلَدٌ",
+   "back": "waladun — bir bola (o'g'il)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "قَلَمٌ",
+   "back": "qalamun — bir qalam (ruchka)",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "ك ت ب",
+   "back": "yozish o'zagi — kitob, maktab, kotib",
+   "deck": "msa"
+  },
+  {
+   "type": "pattern",
+   "front": "ٌ / ٍ / ً",
+   "back": "Tanvin: -un / -in / -an. Noaniqlik belgisi, so'z oxirida.",
+   "deck": "msa"
+  }
+ ]
+}

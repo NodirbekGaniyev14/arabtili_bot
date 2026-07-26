@@ -1,0 +1,555 @@
+{
+ "id": "a0-39",
+ "level": "A0",
+ "module": "workshop",
+ "order": 39,
+ "title_uz": "O'qish ustaxonasi",
+ "title_ar": "وَرْشَةُ القِرَاءَة",
+ "can_do_uz": "Tanish 50 ta so'zni harakatlari bilan ravon va vaqtli o'qiy olaman.",
+ "duration_min": 30,
+ "prerequisites": ["a0-38"],
+ "harakat_level": "full",
+ "hook_uz": "Endi harflarni bilasiz, harakatlarni bilasiz — vaqt keldi ravon o'qishga! Xuddi 'kitob' (كِتَاب) so'zi arabchadan o'zbekchaga o'tgani kabi, ko'p so'zlar sizga allaqachon tanish. Bugun 50 ta so'zni sekundomer bilan o'qiymiz.",
+ "grammar": {
+  "point_ar": "القِرَاءَة",
+  "explanation_uz": "Ravon o'qish uchun uchta narsani birlashtirasiz: (1) harfning boshi/o'rtasi/oxiri shakli, (2) qisqa unlilar (fatha/kasra/damma), (3) cho'ziq unlilar (madd). O'qishda ko'zingizni O'NGDAN CHAPGA harakatlantiring va bo'g'inlab (bo'lib) o'qing: كِ + تَا + بٌ.",
+  "table": [
+   {
+    "ar": "بَيْت",
+    "uz": "uy — bay-t",
+    "form": "1 bo'g'in + sukun"
+   },
+   {
+    "ar": "كِتَاب",
+    "uz": "kitob — ki-taab",
+    "form": "cho'ziq alif (aa)"
+   },
+   {
+    "ar": "مَدْرَسَة",
+    "uz": "maktab — mad-ra-sa",
+    "form": "ta marbuta (a) oxirida"
+   },
+   {
+    "ar": "قَلَم",
+    "uz": "qalam — qa-lam",
+    "form": "3 harf, oddiy"
+   },
+   {
+    "ar": "الشَّمْس",
+    "uz": "quyosh — ash-shams",
+    "form": "quyosh harfi, lam yozilmaydi"
+   }
+  ],
+  "common_mistakes_uz": [
+   "Chapdan o'ngga o'qish — arabchada har doim O'NGDAN CHAPGA!",
+   "Cho'ziq unlini (اا) qisqa o'qib yuborish: كِتَاب 'kitaab' bo'ladi, 'kitab' emas.",
+   "Ta marbuta (ة) ni 'h' emas, to'xtaganda '-a' deb o'qish: مَدْرَسَة → 'madrasa'.",
+   "Quyosh harflarida ال ning 'l' tovushini o'qib yuborish: الشَّمْس → 'ashshams', 'alshams' emas."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ك ت ب",
+   "meaning_uz": "yozish bilan bog'liq",
+   "uz_cognates": [
+    "kitob",
+    "maktab",
+    "kotib"
+   ],
+   "derived": [
+    {
+     "ar": "كِتَاب",
+     "uz": "kitob",
+     "pattern": "فِعَال"
+    },
+    {
+     "ar": "مَكْتَب",
+     "uz": "ish stoli / idora",
+     "pattern": "مَفْعَل"
+    },
+    {
+     "ar": "كَاتِب",
+     "uz": "yozuvchi / kotib",
+     "pattern": "فَاعِل"
+    }
+   ]
+  },
+  {
+   "root": "د ر س",
+   "meaning_uz": "o'qish / dars bilan bog'liq",
+   "uz_cognates": [
+    "dars",
+    "mudarris",
+    "madrasa"
+   ],
+   "derived": [
+    {
+     "ar": "دَرْس",
+     "uz": "dars",
+     "pattern": "فَعْل"
+    },
+    {
+     "ar": "مَدْرَسَة",
+     "uz": "maktab / madrasa",
+     "pattern": "مَفْعَلَة"
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "بَيْت",
+   "translit": "bayt",
+   "uz": "uy",
+   "root": "ب ي ت",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/bayt.mp3",
+   "example_ar": "هٰذَا بَيْتٌ.",
+   "example_uz": "Bu uy.",
+   "srs": true
+  },
+  {
+   "ar": "كِتَاب",
+   "translit": "kitaab",
+   "uz": "kitob (o'zbekcha 'kitob' shundan)",
+   "root": "ك ت ب",
+   "pattern": "فِعَال",
+   "pos": "ot",
+   "audio": "a0/kitaab.mp3",
+   "example_ar": "الكِتَابُ جَدِيدٌ.",
+   "example_uz": "Kitob yangi.",
+   "srs": true
+  },
+  {
+   "ar": "قَلَم",
+   "translit": "qalam",
+   "uz": "qalam (o'zbekcha 'qalam' shundan)",
+   "root": "ق ل م",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/qalam.mp3",
+   "example_ar": "هٰذَا قَلَمٌ.",
+   "example_uz": "Bu qalam.",
+   "srs": true
+  },
+  {
+   "ar": "مَدْرَسَة",
+   "translit": "madrasa",
+   "uz": "maktab / madrasa",
+   "root": "د ر س",
+   "pattern": "مَفْعَلَة",
+   "pos": "ot",
+   "audio": "a0/madrasa.mp3",
+   "example_ar": "المَدْرَسَةُ كَبِيرَةٌ.",
+   "example_uz": "Maktab katta.",
+   "srs": true
+  },
+  {
+   "ar": "بَاب",
+   "translit": "baab",
+   "uz": "eshik",
+   "root": "ب و ب",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/baab.mp3",
+   "example_ar": "البَابُ مَفْتُوحٌ.",
+   "example_uz": "Eshik ochiq.",
+   "srs": true
+  },
+  {
+   "ar": "وَلَد",
+   "translit": "walad",
+   "uz": "bola (o'g'il)",
+   "root": "و ل د",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/walad.mp3",
+   "example_ar": "الوَلَدُ صَغِيرٌ.",
+   "example_uz": "Bola kichkina.",
+   "srs": true
+  },
+  {
+   "ar": "بِنْت",
+   "translit": "bint",
+   "uz": "qiz",
+   "root": "ب ن ت",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/bint.mp3",
+   "example_ar": "البِنْتُ جَمِيلَةٌ.",
+   "example_uz": "Qiz chiroyli.",
+   "srs": true
+  },
+  {
+   "ar": "مَاء",
+   "translit": "maa'",
+   "uz": "suv",
+   "root": "م و ه",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/maa.mp3",
+   "example_ar": "المَاءُ بَارِدٌ.",
+   "example_uz": "Suv sovuq.",
+   "srs": true
+  },
+  {
+   "ar": "شَمْس",
+   "translit": "shams",
+   "uz": "quyosh",
+   "root": "ش م س",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/shams.mp3",
+   "example_ar": "الشَّمْسُ كَبِيرَةٌ.",
+   "example_uz": "Quyosh katta.",
+   "srs": true
+  },
+  {
+   "ar": "قَمَر",
+   "translit": "qamar",
+   "uz": "oy",
+   "root": "ق م ر",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/qamar.mp3",
+   "example_ar": "القَمَرُ جَمِيلٌ.",
+   "example_uz": "Oy chiroyli.",
+   "srs": true
+  },
+  {
+   "ar": "يَد",
+   "translit": "yad",
+   "uz": "qo'l",
+   "root": "ي د ي",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/yad.mp3",
+   "example_ar": "هٰذِهِ يَدٌ.",
+   "example_uz": "Bu qo'l.",
+   "srs": true
+  },
+  {
+   "ar": "دَرْس",
+   "translit": "dars",
+   "uz": "dars (o'zbekcha 'dars' shundan)",
+   "root": "د ر س",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "a0/dars.mp3",
+   "example_ar": "الدَّرْسُ سَهْلٌ.",
+   "example_uz": "Dars oson.",
+   "srs": true
+  },
+  {
+   "ar": "عِلْم",
+   "translit": "'ilm",
+   "uz": "ilm (o'zbekcha 'ilm' shundan)",
+   "root": "ع ل م",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/ilm.mp3",
+   "example_ar": "العِلْمُ نُورٌ.",
+   "example_uz": "Ilm — nur.",
+   "srs": true
+  },
+  {
+   "ar": "نُور",
+   "translit": "nuur",
+   "uz": "nur (o'zbekcha 'nur' shundan)",
+   "root": "ن و ر",
+   "pattern": "",
+   "pos": "ot",
+   "audio": "a0/nuur.mp3",
+   "example_ar": "النُّورُ جَمِيلٌ.",
+   "example_uz": "Nur chiroyli.",
+   "srs": true
+  },
+  {
+   "ar": "كَبِير",
+   "translit": "kabiir",
+   "uz": "katta",
+   "root": "ك ب ر",
+   "pattern": "فَعِيل",
+   "pos": "sifat",
+   "audio": "a0/kabiir.mp3",
+   "example_ar": "البَيْتُ كَبِيرٌ.",
+   "example_uz": "Uy katta.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "هٰذَا بَيْتٌ. البَيْتُ كَبِيرٌ. فِي البَيْتِ وَلَدٌ وَبِنْتٌ. الوَلَدُ يَقْرَأُ كِتَابًا. الشَّمْسُ نُورٌ وَالعِلْمُ نُورٌ.",
+   "questions": [
+    {
+     "q_uz": "Uy qanday? (katta / kichik)",
+     "a": "Katta (كَبِيرٌ)."
+    },
+    {
+     "q_uz": "Uyda kimlar bor?",
+     "a": "Bola (وَلَد) va qiz (بِنْت)."
+    },
+    {
+     "q_uz": "Matnda nima 'nur' deb aytilgan?",
+     "a": "Quyosh (الشَّمْس) va ilm (العِلْم)."
+    }
+   ]
+  },
+  "listening": {
+   "audio": "a0/a0-23-listen.mp3",
+   "transcript_ar": "بَيْت، كِتَاب، قَلَم، مَدْرَسَة، شَمْس، قَمَر، مَاء، عِلْم.",
+   "questions": [
+    {
+     "q_uz": "Eshitgan so'zlaringizdan qaysi biri 'kitob'ni bildiradi?",
+     "a": "كِتَاب (kitaab)."
+    },
+    {
+     "q_uz": "'Quyosh' so'zini eshitdingizmi? Arabchasi qanday?",
+     "a": "Ha, الشَّمْس / شَمْس (shams)."
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Sekundomerni yoqing. Lug'atdagi 15 so'zni ovoz chiqarib, bo'g'inlab o'qing: 'ki-taab, qa-lam, mad-ra-sa...'. Maqsad: 60 sekundda xatosiz o'qish.",
+   "target_ar": [
+    "بَيْت",
+    "كِتَاب",
+    "قَلَم",
+    "مَدْرَسَة",
+    "شَمْس",
+    "قَمَر"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Quyidagi 3 so'zni harakatlari bilan ko'chirib yozing va yoniga o'zbekcha tarjimasini yozing: كِتَاب ، بَيْت ، قَلَم.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "كِتَاب so'zi qanday o'qiladi?",
+   "q_ar": "",
+   "options": [
+    "kitab (qisqa)",
+    "kitaab (cho'ziq aa)",
+    "kataab",
+    "kutub"
+   ],
+   "answer": "kitaab (cho'ziq aa)",
+   "explain_uz": "Cho'ziq alif (ا) tovushni uzaytiradi: ki-taab.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "الشَّمْس so'zi qanday o'qiladi? (quyosh harfi)",
+   "q_ar": "",
+   "options": [
+    "al-shams",
+    "ash-shams",
+    "al-sams",
+    "as-sams"
+   ],
+   "answer": "ash-shams",
+   "explain_uz": "ش quyosh harfi, shuning uchun ال ning 'l' tovushi o'qilmaydi, shadda bilan 'sh' ikkilanadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "",
+   "q_ar": "بَيْت",
+   "options": [],
+   "answer": "uy",
+   "explain_uz": "بَيْت — bay-t, 'uy' degani.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "qalam",
+   "q_ar": "",
+   "options": [],
+   "answer": "قَلَم",
+   "explain_uz": "قَلَم — o'zbekcha 'qalam' shu so'zdan olingan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "كِتَاب so'zining o'zagi qaysi?",
+   "q_ar": "",
+   "options": [
+    "ك ت ب",
+    "د ر س",
+    "ق ل م"
+   ],
+   "answer": "ك ت ب",
+   "explain_uz": "كِتَاب, مَكْتَب, كَاتِب — hammasi ك ت ب o'zagidan.",
+   "audio": "",
+   "root": "ك ت ب",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "harakat",
+   "q_uz": "'madrasa' so'zini to'g'ri harakatlangan shaklini tanlang.",
+   "q_ar": "",
+   "options": [
+    "مَدْرَسَة",
+    "مُدْرِسَة",
+    "مِدْرَسَة"
+   ],
+   "answer": "مَدْرَسَة",
+   "explain_uz": "mad-ra-sa: fatha bilan boshlanadi, oxirida ta marbuta.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "So'zlarni to'g'ri o'qish tartibida (o'ngdan chapga) joylashtiring: bo'g'inlar.",
+   "q_ar": "",
+   "options": [],
+   "answer": "كِ تَا بٌ",
+   "explain_uz": "ki + taa + bun = kitaabun. O'ngdan chapga o'qiladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": [
+    "كِ",
+    "تَا",
+    "بٌ"
+   ]
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "word",
+   "front": "بَيْت",
+   "back": "uy (bayt)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "كِتَاب",
+   "back": "kitob (kitaab)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "قَلَم",
+   "back": "qalam",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "مَدْرَسَة",
+   "back": "maktab / madrasa",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "بَاب",
+   "back": "eshik (baab)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "وَلَد",
+   "back": "bola / o'g'il (walad)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "بِنْت",
+   "back": "qiz (bint)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "مَاء",
+   "back": "suv (maa')",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "شَمْس",
+   "back": "quyosh (shams)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "قَمَر",
+   "back": "oy (qamar)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "يَد",
+   "back": "qo'l (yad)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "دَرْس",
+   "back": "dars",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "عِلْم",
+   "back": "ilm ('ilm)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "نُور",
+   "back": "nur (nuur)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "كَبِير",
+   "back": "katta (kabiir)",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "ك ت ب",
+   "back": "yozish o'zagi: كِتَاب (kitob), مَكْتَب (idora), كَاتِب (kotib)",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "د ر س",
+   "back": "dars o'zagi: دَرْس (dars), مَدْرَسَة (maktab)",
+   "deck": "msa"
+  },
+  {
+   "type": "pattern",
+   "front": "فِعَال",
+   "back": "vazn: كِتَاب (kitaab) kabi",
+   "deck": "msa"
+  },
+  {
+   "type": "pattern",
+   "front": "مَفْعَلَة",
+   "back": "joy vazni: مَدْرَسَة (madrasa) kabi",
+   "deck": "msa"
+  }
+ ]
+}

@@ -1,234 +1,148 @@
 {
  "id": "a0-10",
  "level": "A0",
- "module": "harakat",
+ "module": "letters",
  "order": 10,
- "title_uz": "Qisqa unlilar",
- "title_ar": "الحَرَكات القَصيرة",
- "can_do_uz": "Fatha, kasra va damma belgilarini taniyman va harflarni to'g'ri o'qiy olaman: a, i, u tovushlari.",
- "duration_min": 30,
+ "title_uz": "ط va ظ",
+ "title_ar": "طَاء وَظَاء",
+ "can_do_uz": "to (qalin) va zo (qalin) harflarini shakli, nuqtasi va tovushi bo'yicha ajrataman.",
+ "duration_min": 15,
  "prerequisites": [
   "a0-09"
  ],
  "harakat_level": "full",
- "hook_uz": "Arab yozuvida unlilar harflar emas — ular kichik belgilar. Bitta so'z «كتب» dan belgilar bilan «kataba» (yozdi) ham, «kutub» (kitoblar) ham chiqadi. O'zbekchadagi «kitob» so'zi ham aynan shu o'zakdan!",
+ "hook_uz": "Qalin juftlik davom etadi: ط — qalin «t», ظ — qalin «z». Shakli ص ga o'xshaydi, lekin ustida tik tayoq bor. Oddiy ت bilan solishtiring: ت yengil, ط esa to'q va og'ir.",
  "grammar": {
-  "point_ar": "الفَتْحة · الكَسْرة · الضَّمّة",
-  "explanation_uz": "Arab tilida qisqa unlilar (a, i, u) alohida harf emas, balki harf ustiga yoki ostiga qo'yiladigan mayda belgilardir. Uchtasi bor: fatha (kichik chiziq, harf USTIDA) = a; kasra (kichik chiziq, harf OSTIDA) = i; damma (kichik و shakli, harf USTIDA) = u. Bu belgilar so'z ma'nosini butunlay o'zgartiradi: كَتَبَ = «yozdi», كُتُبُ = «kitoblar».",
+  "point_ar": "ط ظ",
+  "explanation_uz": "ط (to) — qorin + TIK TAYOQ, nuqtasiz, QALIN «t». ظ (zo) — ayni shakl, TEPADA 1 nuqta, QALIN «z» (yoki qalin tishlararo z). Bu ikkalasi boshqa harflardan farqli: shakli so'z ichida deyarli o'zgarmaydi. Yengil-qalin juftlarni yodda tuting: ت↔ط · د↔ض · س↔ص · ذ↔ظ.",
   "table": [
    {
-    "ar": "بَ",
-    "uz": "ba (a tovushi)",
-    "form": "fatha — harf ustida chiziq"
+    "ar": "ط",
+    "uz": "to (qalin) — qorin + tik tayoq, nuqtasiz — QALIN «t»",
+    "form": "طـ ـطـ ـط"
    },
    {
-    "ar": "بِ",
-    "uz": "bi (i tovushi)",
-    "form": "kasra — harf ostida chiziq"
-   },
-   {
-    "ar": "بُ",
-    "uz": "bu (u tovushi)",
-    "form": "damma — harf ustida و shakli"
-   },
-   {
-    "ar": "كَتَبَ",
-    "uz": "kataba — yozdi",
-    "form": "uchta fatha"
-   },
-   {
-    "ar": "كُتُبُ",
-    "uz": "kutub — kitoblar",
-    "form": "uchta damma"
+    "ar": "ظ",
+    "uz": "zo (qalin) — qorin + tayoq, TEPADA 1 nuqta — QALIN «z»",
+    "form": "ظـ ـظـ ـظ"
    }
   ],
   "common_mistakes_uz": [
-   "Kasrani harf ustiga qo'yish — kasra HAR DOIM harf OSTIDA.",
-   "Fatha (a) va damma (u) ni chalkashtirish — damma kichik «و» shakliga o'xshaydi.",
-   "Harakatlarni o'qimay tashlab ketish — har bir belgi tovush beradi, o'qish shart."
+   "ط ni oddiy ت deb aytish — qalinlik yo'qoladi.",
+   "ط va ص ni chalkashtirish — ط da tik tayoq bor, ص da yo'q.",
+   "ظ ning nuqtasini unutish — nuqtasiz bo'lsa u ط bo'lib qoladi."
   ]
  },
- "roots": [
-  {
-   "root": "ك ت ب",
-   "meaning_uz": "yozish",
-   "uz_cognates": [
-    "kitob",
-    "maktab",
-    "kotib"
-   ],
-   "derived": [
-    {
-     "ar": "كَتَبَ",
-     "uz": "yozdi",
-     "pattern": ""
-    },
-    {
-     "ar": "كُتُبُ",
-     "uz": "kitoblar",
-     "pattern": ""
-    }
-   ]
-  }
- ],
+ "roots": [],
  "vocabulary": [
   {
-   "ar": "كَتَبَ",
-   "translit": "kataba",
-   "uz": "yozdi · u/erkak",
-   "root": "ك ت ب",
+   "ar": "ط",
+   "translit": "ṭā (ṭ)",
+   "uz": "to (qalin) — qorin + tik tayoq, nuqtasiz — QALIN «t»",
+   "root": "",
    "pattern": "",
-   "pos": "fe'l",
-   "audio": "a0/kataba.mp3",
-   "example_ar": "كَتَبَ.",
-   "example_uz": "U yozdi.",
+   "pos": "harf",
+   "audio": "a0/harf_tah.mp3",
+   "audio_text": "طَاء",
+   "example_ar": "طـ ـطـ ـط",
+   "example_uz": "boshida · o'rtasida · oxirida",
    "srs": true
   },
   {
-   "ar": "كُتُبُ",
-   "translit": "kutub",
-   "uz": "kitoblar (o'zbekcha «kitob» shundan)",
-   "root": "ك ت ب",
+   "ar": "ظ",
+   "translit": "ẓā (ẓ)",
+   "uz": "zo (qalin) — qorin + tayoq, TEPADA 1 nuqta — QALIN «z»",
+   "root": "",
    "pattern": "",
-   "pos": "ot",
-   "audio": "a0/kutub.mp3",
-   "example_ar": "كُتُبُ.",
-   "example_uz": "Kitoblar.",
-   "srs": true
-  },
-  {
-   "ar": "ذَهَبَ",
-   "translit": "zahaba",
-   "uz": "ketdi, bordi · u/erkak",
-   "root": "ذ ه ب",
-   "pattern": "",
-   "pos": "fe'l",
-   "audio": "a0/zahaba.mp3",
-   "example_ar": "ذَهَبَ.",
-   "example_uz": "U ketdi.",
-   "srs": true
-  },
-  {
-   "ar": "شَرِبَ",
-   "translit": "shariba",
-   "uz": "ichdi · u/erkak",
-   "root": "ش ر ب",
-   "pattern": "",
-   "pos": "fe'l",
-   "audio": "a0/shariba.mp3",
-   "example_ar": "شَرِبَ.",
-   "example_uz": "U ichdi.",
-   "srs": true
-  },
-  {
-   "ar": "فَتَحَ",
-   "translit": "fataha",
-   "uz": "ochdi · u/erkak",
-   "root": "ف ت ح",
-   "pattern": "",
-   "pos": "fe'l",
-   "audio": "a0/fataha.mp3",
-   "example_ar": "فَتَحَ.",
-   "example_uz": "U ochdi.",
-   "srs": true
-  },
-  {
-   "ar": "جَلَسَ",
-   "translit": "jalasa",
-   "uz": "o'tirdi · u/erkak",
-   "root": "ج ل س",
-   "pattern": "",
-   "pos": "fe'l",
-   "audio": "a0/jalasa.mp3",
-   "example_ar": "جَلَسَ.",
-   "example_uz": "U o'tirdi.",
-   "srs": true
-  },
-  {
-   "ar": "سَمِعَ",
-   "translit": "sami'a",
-   "uz": "eshitdi · u/erkak",
-   "root": "س م ع",
-   "pattern": "",
-   "pos": "fe'l",
-   "audio": "a0/samia.mp3",
-   "example_ar": "سَمِعَ.",
-   "example_uz": "U eshitdi.",
-   "srs": true
-  },
-  {
-   "ar": "دَرَسَ",
-   "translit": "darasa",
-   "uz": "o'qidi, o'rgandi (o'zbekcha «dars», «madrasa» shundan) · u/erkak",
-   "root": "د ر س",
-   "pattern": "",
-   "pos": "fe'l",
-   "audio": "a0/darasa.mp3",
-   "example_ar": "دَرَسَ.",
-   "example_uz": "U o'qidi.",
+   "pos": "harf",
+   "audio": "a0/harf_zah.mp3",
+   "audio_text": "ظَاء",
+   "example_ar": "ظـ ـظـ ـظ",
+   "example_uz": "boshida · o'rtasida · oxirida",
    "srs": true
   }
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "دَرَسَ. كَتَبَ. شَرِبَ. ذَهَبَ.",
+   "text_ar": "ط ظ",
    "questions": [
     {
-     "q_uz": "«كَتَبَ» so'zi qanday o'qiladi va nimani anglatadi?",
-     "a": "kataba — yozdi"
+     "q_uz": "Bu qatorda nechta harf bor?",
+     "a": "2 ta"
     },
     {
-     "q_uz": "«شَرِبَ» so'zida qaysi harakatlar bor?",
-     "a": "fatha, kasra, fatha (sha-ri-ba)"
-    },
-    {
-     "q_uz": "«دَرَسَ» so'zi o'zbekchadagi qaysi so'zga bog'liq?",
-     "a": "dars / madrasa"
+     "q_uz": "Qaysi tomondan o'qiymiz?",
+     "a": "O'ngdan chapga"
     }
    ]
   },
   "listening": {
-   "audio": "a0/a0-10_listen.mp3",
-   "transcript_ar": "كُتُبُ. جَلَسَ. سَمِعَ.",
+   "audio": "a0/harf_tah.mp3",
+   "transcript_ar": "طَاء",
    "questions": [
     {
-     "q_uz": "Birinchi so'z qaysi harakat bilan boshlanadi (a, i, u)?",
-     "a": "u (damma) — kutub"
-    },
-    {
-     "q_uz": "«جَلَسَ» nimani anglatadi?",
-     "a": "o'tirdi"
+     "q_uz": "Qaysi harf nomi eshitildi?",
+     "a": "To (qalin) (ط)"
     }
    ]
   },
   "speaking": {
-   "task_uz": "Quyidagi so'zlarni ovoz chiqarib, har bir harfning unlisini aniq talaffuz qiling: kataba, kutub, shariba.",
+   "task_uz": "Harf nomlarini audio ortidan uch martadan takrorlang: to (qalin), zo (qalin).",
    "target_ar": [
-    "كَتَبَ",
-    "كُتُبُ",
-    "شَرِبَ"
+    "ط",
+    "ظ"
    ],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "«ذهب» so'ziga to'g'ri harakatlarni qo'yib, «zahaba» (ketdi) bo'ladigan qilib yozing.",
+   "task_uz": "Daftaringizga har harfdan bir qatordan yozing (o'ngdan chapga). Nuqtalarni aniq joyiga qo'ying.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
   {
    "type": "mcq",
-   "q_uz": "«كَتَبَ» so'zi nimani anglatadi?",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
    "q_ar": "",
    "options": [
-    "yozdi",
-    "ichdi",
-    "ketdi",
-    "o'tirdi"
+    "ط",
+    "ظ",
+    "ا"
    ],
-   "answer": "yozdi",
-   "explain_uz": "كَتَبَ (kataba) — uchta fatha bilan «yozdi» degani.",
+   "answer": "ط",
+   "explain_uz": "«To (qalin)» — qorin + tik tayoq, nuqtasiz — QALIN «t».",
+   "audio": "a0/harf_tah.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_ar": "",
+   "options": [
+    "ظ",
+    "ط",
+    "ا"
+   ],
+   "answer": "ظ",
+   "explain_uz": "«Zo (qalin)» — qorin + tayoq, TEPADA 1 nuqta — QALIN «z».",
+   "audio": "a0/harf_zah.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi harf NUQTASIZ?",
+   "q_ar": "",
+   "options": [
+    "ط",
+    "ظ"
+   ],
+   "answer": "ط",
+   "explain_uz": "ط (to (qalin)) — nuqtasiz.",
    "audio": "",
    "root": "",
    "pattern": "",
@@ -236,56 +150,15 @@
   },
   {
    "type": "mcq",
-   "q_uz": "Qaysi belgi «u» tovushini beradi?",
+   "q_uz": "ط harfi so'z BOSHIDA qanday ko'rinadi?",
    "q_ar": "",
    "options": [
-    "fatha",
-    "kasra",
-    "damma"
+    "طـ",
+    "ـطـ",
+    "ـط"
    ],
-   "answer": "damma",
-   "explain_uz": "Damma — harf ustidagi kichik «و» shakli, «u» tovushini beradi.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "Kasra belgisi harfning qayeriga qo'yiladi?",
-   "q_ar": "",
-   "options": [
-    "ustiga",
-    "ostiga",
-    "yoniga",
-    "ichiga"
-   ],
-   "answer": "ostiga",
-   "explain_uz": "Kasra har doim harf OSTIGA qo'yiladi va «i» tovushini beradi.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_ar_uz",
-   "q_uz": "",
-   "q_ar": "شَرِبَ",
-   "options": [],
-   "answer": "ichdi",
-   "explain_uz": "شَرِبَ (shariba) — fatha, kasra, fatha bilan «ichdi».",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "harakat",
-   "q_uz": "«zahaba» (ketdi) bo'lishi uchun harakatlarni qo'ying:",
-   "q_ar": "ذهب",
-   "options": [],
-   "answer": "ذَهَبَ",
-   "explain_uz": "Uchta fatha: za-ha-ba.",
+   "answer": "طـ",
+   "explain_uz": "So'z boshidagi shakl: طـ.",
    "audio": "",
    "root": "",
    "pattern": "",
@@ -293,28 +166,25 @@
   },
   {
    "type": "dictation",
-   "q_uz": "Eshitilgan so'zni yozing:",
+   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
    "q_ar": "",
    "options": [],
-   "answer": "دَرَسَ",
-   "explain_uz": "دَرَسَ (darasa) — o'qidi/o'rgandi; «dars» so'zi shundan.",
-   "audio": "a0/darasa.mp3",
+   "answer": "ظ",
+   "explain_uz": "«Zo (qalin)» — qorin + tayoq, TEPADA 1 nuqta — QALIN «z».",
+   "audio": "a0/harf_zah.mp3",
    "root": "",
    "pattern": "",
    "words": []
   },
   {
-   "type": "mcq",
-   "q_uz": "«كُتُبُ» nimani anglatadi? (o'zbekcha «kitob» so'zi shundan)",
-   "q_ar": "",
-   "options": [
-    "kitoblar",
-    "kaliti",
-    "eshik"
-   ],
-   "answer": "kitoblar",
-   "explain_uz": "كُتُبُ (kutub) — uchta damma bilan «kitoblar».",
-   "audio": "",
+   "type": "shadowing",
+   "q_uz": "Harf nomlarini eshiting va baland ovozda takrorlang",
+   "q_ar": "ط ظ",
+   "options": [],
+   "answer": "",
+   "explain_uz": "",
+   "audio": "a0/a0-10-harflar.mp3",
+   "audio_text": "طَاء، ظَاء",
    "root": "",
    "pattern": "",
    "words": []
@@ -322,57 +192,15 @@
  ],
  "srs_cards": [
   {
-   "type": "root",
-   "front": "ك ت ب",
-   "back": "yozish (kitob, maktab, kotib)",
+   "type": "word",
+   "front": "ط",
+   "back": "to (qalin) — qorin + tik tayoq, nuqtasiz — QALIN «t»",
    "deck": "msa"
   },
   {
    "type": "word",
-   "front": "كَتَبَ",
-   "back": "kataba — yozdi · u/erkak",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "كُتُبُ",
-   "back": "kutub — kitoblar",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "ذَهَبَ",
-   "back": "zahaba — ketdi, bordi · u/erkak",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "شَرِبَ",
-   "back": "shariba — ichdi · u/erkak",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "فَتَحَ",
-   "back": "fataha — ochdi · u/erkak",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "جَلَسَ",
-   "back": "jalasa — o'tirdi · u/erkak",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "سَمِعَ",
-   "back": "sami'a — eshitdi · u/erkak",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "دَرَسَ",
-   "back": "darasa — o'qidi, o'rgandi (dars, madrasa) · u/erkak",
+   "front": "ظ",
+   "back": "zo (qalin) — qorin + tayoq, TEPADA 1 nuqta — QALIN «z»",
    "deck": "msa"
   }
  ]

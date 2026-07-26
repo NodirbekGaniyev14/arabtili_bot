@@ -3,80 +3,205 @@
  "level": "A0",
  "module": "letters",
  "order": 9,
- "title_uz": "Ulanmaydigan 6 harf",
- "title_ar": "الحُرُوفُ غَيْرُ المُتَّصِلَة",
- "can_do_uz": "So'z ichidagi «uzilish»larni ko'rib, ular ا د ذ ر ز و harflaridan keyin bo'lishini tushunaman.",
- "duration_min": 25,
- "prerequisites": ["a0-08"],
+ "title_uz": "ص va ض",
+ "title_ar": "صَاد وَضَاد",
+ "can_do_uz": "sod va dod harflarini shakli, nuqtasi va tovushi bo'yicha ajrataman.",
+ "duration_min": 15,
+ "prerequisites": [
+  "a0-08"
+ ],
  "harakat_level": "full",
- "hook_uz": "Sirni ochamiz: nega ba'zi so'zlar ichida «yoriq» bor? Chunki OLTITA harf — ا د ذ ر ز و — o'zidan keyingi harfga qo'l bermaydi! Masalan دَرْس (dars) so'zida د dan keyin uzilish bor. Bu yoriqlarni ko'ra olsangiz, so'zlar «rasm»dan tanish shakllarga aylanadi.",
+ "hook_uz": "Endi arab tilining o'ziga xosligi boshlanadi: QALIN tovushlar. ص — qalin «s», ض — qalin «d». Qalin aytishda til orqasi yuqoriga ko'tariladi, tovush «to'q» va «og'ir» chiqadi. Arablar o'z tilini «ض tili» deb ataydi — bu tovush boshqa tillarda deyarli yo'q!",
  "grammar": {
-  "point_ar": "ا د ذ ر ز و",
-  "explanation_uz": "Bu 6 harf o'zidan KEYINGI harfga ulanmaydi (oldingisidan qabul qiladi, lekin keyingisiga qo'l uzatmaydi). Shuning uchun so'z ichida ulardan keyin doim kichik UZILISH bo'ladi: دَرْس (د dan keyin), وَرَق (و va ر dan keyin). Uzilish so'z tugadi degani EMAS — bu shunchaki shu 6 harfning xususiyati. Eslab qolish: «Alif, Dol, Zol, Ro, Zo, Vov — olti do'st yolg'iz yuradi».",
+  "point_ar": "ص ض",
+  "explanation_uz": "ص (sod) — tuxumsimon qorin + tishcha, nuqtasiz, QALIN «s». ض (dod) — ayni shakl, TEPADA 1 nuqta, QALIN «d». Farqni his qiling: س da til tekis, og'iz tor; ص da til orqasi ko'tariladi, og'iz kengroq, tovush to'qroq. Ikkalasi ulanadi: صـ ـصـ ـص · ضـ ـضـ ـض.",
   "table": [
-   {"ar": "ا د ذ ر ز و", "uz": "keyingi harfga ulanmaydigan 6 harf", "form": "qoida"},
-   {"ar": "دَرْس", "uz": "د dan keyin uzilish — «d | ars»", "form": "misol"},
-   {"ar": "وَرَق", "uz": "و dan ham, ر dan ham keyin uzilish", "form": "misol"},
-   {"ar": "زَوْج", "uz": "ز dan keyin, و dan keyin uzilish", "form": "misol"}
+   {
+    "ar": "ص",
+    "uz": "sod — tuxumsimon qorin, nuqtasiz — QALIN «s»",
+    "form": "صـ ـصـ ـص"
+   },
+   {
+    "ar": "ض",
+    "uz": "dod — qorin, TEPADA 1 nuqta — QALIN «d»",
+    "form": "ضـ ـضـ ـض"
+   }
   ],
   "common_mistakes_uz": [
-   "Uzilishni «so'z tugadi» deb o'ylash — so'z davom etadi, faqat harf ulanmagan.",
-   "6 harfni yodlamaslik — ا د ذ ر ز و ni qo'shiq kabi takrorlang.",
-   "Bu harflar OLDINGI harfdan ham ulanmaydi deb o'ylash — ular oldingisiga ulanadi (ـد ـر), faqat keyingisiga emas."
+   "ص ni oddiy س deb aytish — qalinlik yo'qolsa so'z ma'nosi o'zgaradi.",
+   "ض ni oddiy د deb aytish — ض og'ir, to'q «d».",
+   "ص va ض ni nuqtasiz-nuqtali farqiga qaramay chalkashtirish."
   ]
  },
  "roots": [],
  "vocabulary": [
-  {"ar": "دَرْس", "translit": "dars", "uz": "dars — o'zbekcha 'dars' aynan shu! د dan keyin uzilishni ko'ring", "root": "د ر س", "pattern": "", "pos": "ot", "audio": "a0/dars.mp3", "example_ar": "د + ر + س", "example_uz": "dol | ro | sin — ikki uzilish", "srs": true},
-  {"ar": "وَرْد", "translit": "vard", "uz": "atirgul — و+ر+د, uchala harf ham «yolg'iz yuruvchi»!", "root": "و ر د", "pattern": "", "pos": "ot", "audio": "a0/ward.mp3", "example_ar": "و + ر + د", "example_uz": "vov | ro | dol — hammasi uzuq", "srs": true},
-  {"ar": "وَرَق", "translit": "varaq", "uz": "qog'oz — o'zbekcha 'varaq' shundan!", "root": "و ر ق", "pattern": "", "pos": "ot", "audio": "a0/waraq.mp3", "example_ar": "و + ر + ق", "example_uz": "vov | ro | qof", "srs": true},
-  {"ar": "وَزْن", "translit": "vazn", "uz": "og'irlik, vazn — o'zbekcha 'vazn' shundan!", "root": "و ز ن", "pattern": "", "pos": "ot", "audio": "a0/wazn.mp3", "example_ar": "و + ز + ن", "example_uz": "vov | zo | nun", "srs": true},
-  {"ar": "زَوْج", "translit": "zavj", "uz": "juft, turmush o'rtog'i — 'juft'lik ma'nosi", "root": "ز و ج", "pattern": "", "pos": "ot", "audio": "a0/zawj.mp3", "example_ar": "ز + و + ج", "example_uz": "zo | vov | jim", "srs": true},
-  {"ar": "بَرْد", "translit": "bard", "uz": "sovuq — ب ulanadi, ر va د uzadi", "root": "ب ر د", "pattern": "", "pos": "ot", "audio": "a0/bard.mp3", "example_ar": "بـ + ر + د", "example_uz": "bo (ulangan) | ro | dol", "srs": true}
+  {
+   "ar": "ص",
+   "translit": "ṣād (ṣ)",
+   "uz": "sod — tuxumsimon qorin, nuqtasiz — QALIN «s»",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "a0/harf_sad.mp3",
+   "audio_text": "صَاد",
+   "example_ar": "صـ ـصـ ـص",
+   "example_uz": "boshida · o'rtasida · oxirida",
+   "srs": true
+  },
+  {
+   "ar": "ض",
+   "translit": "ḍād (ḍ)",
+   "uz": "dod — qorin, TEPADA 1 nuqta — QALIN «d»",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "a0/harf_dad.mp3",
+   "audio_text": "ضَاد",
+   "example_ar": "ضـ ـضـ ـض",
+   "example_uz": "boshida · o'rtasida · oxirida",
+   "srs": true
+  }
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "درس. ورد. ورق",
+   "text_ar": "ص ض",
    "questions": [
-    {"q_uz": "درس so'zida uzilish qayerda?", "a": "د dan keyin (va ر dan keyin)"},
-    {"q_uz": "ورد so'zida nechta harf bor?", "a": "3 ta: و ر د"},
-    {"q_uz": "Nega bu so'zlar «uzuq-uzuq» ko'rinadi?", "a": "Harflari keyingisiga ulanmaydigan harflardan"}
+    {
+     "q_uz": "Bu qatorda nechta harf bor?",
+     "a": "2 ta"
+    },
+    {
+     "q_uz": "Qaysi tomondan o'qiymiz?",
+     "a": "O'ngdan chapga"
+    }
    ]
   },
   "listening": {
-   "audio": "a0/a0-09-suzlar.mp3",
-   "transcript_ar": "دَرْس. وَرْد. وَرَق",
+   "audio": "a0/harf_sad.mp3",
+   "transcript_ar": "صَاد",
    "questions": [
-    {"q_uz": "Nechta so'z eshitildi?", "a": "3 ta"},
-    {"q_uz": "'atirgul' nechanchi bo'lib eshitildi?", "a": "Ikkinchi (وَرْد)"}
+    {
+     "q_uz": "Qaysi harf nomi eshitildi?",
+     "a": "Sod (ص)"
+    }
    ]
   },
   "speaking": {
-   "task_uz": "Audio ortidan takrorlang: dars, vard, varaq. 6 do'stni qo'shiq kabi ayting: «alif, dol, zol, ro, zo, vov».",
-   "target_ar": ["دَرْس", "وَرْد", "وَرَق"],
+   "task_uz": "Harf nomlarini audio ortidan uch martadan takrorlang: sod, dod.",
+   "target_ar": [
+    "ص",
+    "ض"
+   ],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Daftaringizga درس so'zini ko'chiring — د dan keyin ataylab kichik oraliq qoldiring. Keyin 6 harfni yozing: ا د ذ ر ز و.",
+   "task_uz": "Daftaringizga har harfdan bir qatordan yozing (o'ngdan chapga). Nuqtalarni aniq joyiga qo'ying.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "Quyidagilardan qaysi biri o'zidan KEYINGI harfga ulanmaydi?", "q_ar": "", "options": ["ر", "ب", "م", "س"], "answer": "ر", "explain_uz": "ر — 6 «yolg'iz yuruvchi» harfdan biri (ا د ذ ر ز و).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "درس so'zida uzilish (yoriq) qayerda?", "q_ar": "دَرْس", "options": ["د dan keyin", "س dan keyin", "so'z boshida", "uzilish yo'q"], "answer": "د dan keyin", "explain_uz": "د keyingi harfga ulanmaydi — shuning uchun د | رس.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Eshiting: bu so'zning ma'nosi nima?", "q_ar": "", "options": ["atirgul", "qog'oz", "dars", "sovuq"], "answer": "atirgul", "explain_uz": "«Vard» — atirgul. Uchala harfi ham ulanmaydigan!", "audio": "a0/ward.mp3", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Ulanmaydigan 6 harf qaysilar?", "q_ar": "", "options": ["ا د ذ ر ز و", "ب ت ث ن ي", "ج ح خ ع غ ف", "س ش ص ض ط ظ"], "answer": "ا د ذ ر ز و", "explain_uz": "«Alif, dol, zol, ro, zo, vov — olti do'st yolg'iz yuradi».", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "So'z ichidagi uzilish (yoriq) nimani anglatadi?", "q_ar": "", "options": ["So'z davom etadi, faqat harf ulanmagan", "So'z tugadi", "Yangi gap boshlandi", "Xato yozilgan"], "answer": "So'z davom etadi, faqat harf ulanmagan", "explain_uz": "Uzilish — ulanmaydigan harf belgisi, so'z chegarasi emas.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "order_words", "q_uz": "Harflarni ulab ورد (atirgul) so'zini yig'ing (vov, ro, dol)", "q_ar": "", "options": [], "answer": "و ر د", "explain_uz": "و | ر | د — uchala harf ham keyingisiga ulanmaydi.", "audio": "a0/ward.mp3", "root": "", "pattern": "", "words": ["و", "ر", "د"]},
-  {"type": "mcq", "q_uz": "Eshiting: bu so'zning ma'nosi nima?", "q_ar": "", "options": ["qog'oz", "vazn", "juft", "uy"], "answer": "qog'oz", "explain_uz": "«Varaq» — qog'oz. O'zbekcha 'varaq' shundan.", "audio": "a0/waraq.mp3", "root": "", "pattern": "", "words": []}
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_ar": "",
+   "options": [
+    "ص",
+    "ض",
+    "ا"
+   ],
+   "answer": "ص",
+   "explain_uz": "«Sod» — tuxumsimon qorin, nuqtasiz — QALIN «s».",
+   "audio": "a0/harf_sad.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_ar": "",
+   "options": [
+    "ض",
+    "ص",
+    "ا"
+   ],
+   "answer": "ض",
+   "explain_uz": "«Dod» — qorin, TEPADA 1 nuqta — QALIN «d».",
+   "audio": "a0/harf_dad.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi harf NUQTASIZ?",
+   "q_ar": "",
+   "options": [
+    "ص",
+    "ض"
+   ],
+   "answer": "ص",
+   "explain_uz": "ص (sod) — nuqtasiz.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "ص harfi so'z BOSHIDA qanday ko'rinadi?",
+   "q_ar": "",
+   "options": [
+    "صـ",
+    "ـصـ",
+    "ـص"
+   ],
+   "answer": "صـ",
+   "explain_uz": "So'z boshidagi shakl: صـ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
+   "q_ar": "",
+   "options": [],
+   "answer": "ض",
+   "explain_uz": "«Dod» — qorin, TEPADA 1 nuqta — QALIN «d».",
+   "audio": "a0/harf_dad.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "shadowing",
+   "q_uz": "Harf nomlarini eshiting va baland ovozda takrorlang",
+   "q_ar": "ص ض",
+   "options": [],
+   "answer": "",
+   "explain_uz": "",
+   "audio": "a0/a0-09-harflar.mp3",
+   "audio_text": "صَاد، ضَاد",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
  ],
  "srs_cards": [
-  {"type": "word", "front": "دَرْس", "back": "dars (dars)", "deck": "msa"},
-  {"type": "word", "front": "وَرْد", "back": "atirgul (vard)", "deck": "msa"},
-  {"type": "word", "front": "وَرَق", "back": "qog'oz (varaq)", "deck": "msa"},
-  {"type": "word", "front": "وَزْن", "back": "og'irlik, vazn (vazn)", "deck": "msa"},
-  {"type": "word", "front": "زَوْج", "back": "juft, turmush o'rtog'i (zavj)", "deck": "msa"},
-  {"type": "word", "front": "بَرْد", "back": "sovuq (bard)", "deck": "msa"}
+  {
+   "type": "word",
+   "front": "ص",
+   "back": "sod — tuxumsimon qorin, nuqtasiz — QALIN «s»",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "ض",
+   "back": "dod — qorin, TEPADA 1 nuqta — QALIN «d»",
+   "deck": "msa"
+  }
  ]
 }

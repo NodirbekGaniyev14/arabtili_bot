@@ -3,78 +3,205 @@
  "level": "A0",
  "module": "letters",
  "order": 8,
- "title_uz": "Ulanish shakllari",
- "title_ar": "أَشْكَالُ الحُرُوف",
- "can_do_uz": "Harfning so'z boshida, o'rtasida va oxirida qanday shakl olishini taniyman va harflardan so'z «yig'ilishini» ko'raman.",
- "duration_min": 25,
- "prerequisites": ["a0-07"],
+ "title_uz": "س va ش",
+ "title_ar": "سِين وَشِين",
+ "can_do_uz": "sin va shin harflarini shakli, nuqtasi va tovushi bo'yicha ajrataman.",
+ "duration_min": 15,
+ "prerequisites": [
+  "a0-07"
+ ],
  "harakat_level": "full",
- "hook_uz": "28 harfni bilasiz — endi SEHRLI qadam: harflar qo'l ushlashib so'zga aylanadi! ب + ي + ت = بيت. Bugun harflarning ulanish shakllarini o'rganamiz. So'zlarni hali O'QISHINGIZ SHART EMAS — faqat harflarning bir-biriga qanday ulanishini ko'rish va eshitish yetarli. O'qish harakatlardan keyin!",
+ "hook_uz": "Uch tishli taroq keldi! Nuqtasiz bo'lsa س («s»), tepasiga 3 nuqta qo'ysangiz ش («sh»). Bu ikkalasi o'zbekcha tovushlar — qiyin emas, faqat shaklni yodlang.",
  "grammar": {
-  "point_ar": "بـ ـبـ ـب",
-  "explanation_uz": "Har bir harfning 4 ko'rinishi bor: YOLG'IZ (ب), BOSHIDA (بـ — dumi qisqarib keyingisiga ulanadi), O'RTADA (ـبـ — ikki tomonga ulanadi), OXIRIDA (ـب — oldingisidan qabul qiladi). Tanani tanisangiz, hamma shaklini taniysiz — nuqtalar joyida qoladi. Misol: ب ي ت harflari qo'shilsa بيت bo'ladi (o'ngdan: بـ keyin ـيـ keyin ـت).",
+  "point_ar": "س ش",
+  "explanation_uz": "س (sin) — uch tishli taroq, nuqtasiz, oddiy «s» (suv). ش (shin) — ayni taroq, TEPADA 3 nuqta, «sh» (shahar). Ikkalasi ham ULANADI va uch shaklga ega: سـ ـسـ ـس · شـ ـشـ ـش. Taroq tishlarini yozganda uchtasini ham aniq chizing.",
   "table": [
-   {"ar": "ب + ي + ت = بيت", "uz": "harflar qo'shilib so'z hosil qiladi", "form": "yig'ish"},
-   {"ar": "مـ ـمـ ـم", "uz": "م: boshida · o'rtasida · oxirida", "form": "shakllar"},
-   {"ar": "كـ ـكـ ـك", "uz": "ك: boshida · o'rtasida · oxirida", "form": "shakllar"},
-   {"ar": "م + ك + ت + ب = مكتب", "uz": "4 harf → bitta so'z (maktab)", "form": "yig'ish"}
+   {
+    "ar": "س",
+    "uz": "sin — uch tishli taroq, nuqtasiz — «s»",
+    "form": "سـ ـسـ ـس"
+   },
+   {
+    "ar": "ش",
+    "uz": "shin — taroq, TEPADA 3 nuqta — «sh»",
+    "form": "شـ ـشـ ـش"
+   }
   ],
   "common_mistakes_uz": [
-   "Har shaklni alohida yangi harf deb o'ylash — tana bitta, faqat dumlari o'zgaradi.",
-   "O'rta shaklda nuqtalarni unutish — nuqtalar har doim joyida qoladi.",
-   "So'zni darhol o'qishga urinish — hozir faqat harflarni ajratib TOPING, o'qish keyin."
+   "ش va ث ni chalkashtirish — ikkalasida 3 nuqta, lekin ش taroqli, ث kosachali.",
+   "Taroq tishlarini ikkita qilib yozish — uchta bo'lishi kerak.",
+   "س ni ص bilan almashtirish — ص qorinli va QALIN tovush beradi (keyingi darsda)."
   ]
  },
  "roots": [],
  "vocabulary": [
-  {"ar": "بَيْت", "translit": "bayt", "uz": "uy — ب+ي+ت dan yig'ilgan. Eshiting va harflarini ajratib toping (o'qish shart emas!)", "root": "ب ي ت", "pattern": "", "pos": "ot", "audio": "a0/bayt.mp3", "example_ar": "بـ + ـيـ + ـت", "example_uz": "bo + yo + to = bayt (uy)", "srs": true},
-  {"ar": "مَكْتَب", "translit": "maktab", "uz": "maktab, ish stoli — م+ك+ت+ب. O'zbekcha 'maktab' shundan!", "root": "ك ت ب", "pattern": "", "pos": "ot", "audio": "a0/maktab.mp3", "example_ar": "مـ + ـكـ + ـتـ + ـب", "example_uz": "mim + kof + to + bo", "srs": true},
-  {"ar": "قَلَم", "translit": "qalam", "uz": "qalam — ق+ل+م. O'zbekcha 'qalam' aynan shu!", "root": "ق ل م", "pattern": "", "pos": "ot", "audio": "a0/qalam.mp3", "example_ar": "قـ + ـلـ + ـم", "example_uz": "qof + lom + mim", "srs": true},
-  {"ar": "جَمَل", "translit": "jamal", "uz": "tuya — ج+م+ل. Harflarning o'rta shakllariga qarang", "root": "ج م ل", "pattern": "", "pos": "ot", "audio": "a0/jamal.mp3", "example_ar": "جـ + ـمـ + ـل", "example_uz": "jim + mim + lom", "srs": true},
-  {"ar": "سَكَن", "translit": "sakan", "uz": "turar joy — س+ك+ن. 'Maskan' so'zi shu o'zakdan", "root": "س ك ن", "pattern": "", "pos": "ot", "audio": "a0/sakan.mp3", "example_ar": "سـ + ـكـ + ـن", "example_uz": "sin + kof + nun", "srs": true}
+  {
+   "ar": "س",
+   "translit": "sīn (s)",
+   "uz": "sin — uch tishli taroq, nuqtasiz — «s»",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "a0/harf_sin.mp3",
+   "audio_text": "سِين",
+   "example_ar": "سـ ـسـ ـس",
+   "example_uz": "boshida · o'rtasida · oxirida",
+   "srs": true
+  },
+  {
+   "ar": "ش",
+   "translit": "shīn (sh)",
+   "uz": "shin — taroq, TEPADA 3 nuqta — «sh»",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "a0/harf_shin.mp3",
+   "audio_text": "شِين",
+   "example_ar": "شـ ـشـ ـش",
+   "example_uz": "boshida · o'rtasida · oxirida",
+   "srs": true
+  }
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "بيت. مكتب. قلم",
+   "text_ar": "س ش",
    "questions": [
-    {"q_uz": "بيت so'zida nechta harf bor?", "a": "3 ta: ب ي ت"},
-    {"q_uz": "مكتب so'zining BIRINCHI harfi qaysi? (o'ngdan!)", "a": "م (mim)"},
-    {"q_uz": "قلم so'zining OXIRGI harfi qaysi?", "a": "م (mim)"}
+    {
+     "q_uz": "Bu qatorda nechta harf bor?",
+     "a": "2 ta"
+    },
+    {
+     "q_uz": "Qaysi tomondan o'qiymiz?",
+     "a": "O'ngdan chapga"
+    }
    ]
   },
   "listening": {
-   "audio": "a0/a0-08-suzlar.mp3",
-   "transcript_ar": "بَيْت. مَكْتَب. قَلَم",
+   "audio": "a0/harf_sin.mp3",
+   "transcript_ar": "سِين",
    "questions": [
-    {"q_uz": "Nechta so'z eshitildi?", "a": "3 ta"},
-    {"q_uz": "'qalam' nechanchi bo'lib eshitildi?", "a": "Uchinchi"}
+    {
+     "q_uz": "Qaysi harf nomi eshitildi?",
+     "a": "Sin (س)"
+    }
    ]
   },
   "speaking": {
-   "task_uz": "Audio ortidan takrorlang: bayt, maktab, qalam. Aytayotganda so'zning harflarini ko'z bilan kuzatib boring — qaysi harf qayerda?",
-   "target_ar": ["بَيْت", "مَكْتَب", "قَلَم"],
+   "task_uz": "Harf nomlarini audio ortidan uch martadan takrorlang: sin, shin.",
+   "target_ar": [
+    "س",
+    "ش"
+   ],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Daftaringizga م harfining uch shaklini yozing: مـ ـمـ ـم. Keyin بيت so'zini harflab ko'chiring: avval ب، keyin ي ni ulang, oxirida ت.",
+   "task_uz": "Daftaringizga har harfdan bir qatordan yozing (o'ngdan chapga). Nuqtalarni aniq joyiga qo'ying.",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "'ـكـ' shakli harfning qaysi holatini bildiradi?", "q_ar": "", "options": ["So'z o'rtasida", "So'z boshida", "So'z oxirida", "Yolg'iz"], "answer": "So'z o'rtasida", "explain_uz": "Ikki tomonida ulanish chizig'i bor — demak o'rtada.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "ب + ي + ت harflari ulansa qaysi so'z hosil bo'ladi?", "q_ar": "", "options": ["بيت", "تيب", "يبت", "بتي"], "answer": "بيت", "explain_uz": "O'ngdan chapga: بـ + ـيـ + ـت = بيت (uy).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "order_words", "q_uz": "Harflarni to'g'ri tartibda ulab بيت so'zini yig'ing (o'ngdan chapga: bo, yo, to)", "q_ar": "", "options": [], "answer": "ب ي ت", "explain_uz": "بـ (boshida) + ـيـ (o'rtada) + ـت (oxirida) = بيت.", "audio": "a0/bayt.mp3", "root": "", "pattern": "", "words": ["ب", "ي", "ت"]},
-  {"type": "mcq", "q_uz": "Eshiting: bu so'zning ma'nosi nima?", "q_ar": "", "options": ["qalam", "maktab", "uy", "tuya"], "answer": "qalam", "explain_uz": "«Qalam» — o'zbekcha qalam aynan shu arabcha so'zdan.", "audio": "a0/qalam.mp3", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "جمل so'zida ج harfi qaysi holatda?", "q_ar": "جمل", "options": ["So'z boshida", "So'z o'rtasida", "So'z oxirida", "Yolg'iz"], "answer": "So'z boshida", "explain_uz": "O'ngdan birinchi — جـ (bosh shakli).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "مكتب so'zida nechta harf bor?", "q_ar": "مكتب", "options": ["4", "3", "5", "6"], "answer": "4", "explain_uz": "م + ك + ت + ب = 4 harf (maktab).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "order_words", "q_uz": "Harflarni ulab قلم so'zini yig'ing (qof, lom, mim)", "q_ar": "", "options": [], "answer": "ق ل م", "explain_uz": "قـ + ـلـ + ـم = قلم (qalam).", "audio": "a0/qalam.mp3", "root": "", "pattern": "", "words": ["ق", "ل", "م"]}
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_ar": "",
+   "options": [
+    "س",
+    "ش",
+    "ا"
+   ],
+   "answer": "س",
+   "explain_uz": "«Sin» — uch tishli taroq, nuqtasiz — «s».",
+   "audio": "a0/harf_sin.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_ar": "",
+   "options": [
+    "ش",
+    "س",
+    "ا"
+   ],
+   "answer": "ش",
+   "explain_uz": "«Shin» — taroq, TEPADA 3 nuqta — «sh».",
+   "audio": "a0/harf_shin.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi harf NUQTASIZ?",
+   "q_ar": "",
+   "options": [
+    "س",
+    "ش"
+   ],
+   "answer": "س",
+   "explain_uz": "س (sin) — nuqtasiz.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "س harfi so'z BOSHIDA qanday ko'rinadi?",
+   "q_ar": "",
+   "options": [
+    "سـ",
+    "ـسـ",
+    "ـس"
+   ],
+   "answer": "سـ",
+   "explain_uz": "So'z boshidagi shakl: سـ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
+   "q_ar": "",
+   "options": [],
+   "answer": "ش",
+   "explain_uz": "«Shin» — taroq, TEPADA 3 nuqta — «sh».",
+   "audio": "a0/harf_shin.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "shadowing",
+   "q_uz": "Harf nomlarini eshiting va baland ovozda takrorlang",
+   "q_ar": "س ش",
+   "options": [],
+   "answer": "",
+   "explain_uz": "",
+   "audio": "a0/a0-08-harflar.mp3",
+   "audio_text": "سِين، شِين",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
  ],
  "srs_cards": [
-  {"type": "word", "front": "بَيْت", "back": "uy (bayt) — ب+ي+ت", "deck": "msa"},
-  {"type": "word", "front": "مَكْتَب", "back": "maktab, ish stoli (maktab)", "deck": "msa"},
-  {"type": "word", "front": "قَلَم", "back": "qalam (qalam)", "deck": "msa"},
-  {"type": "word", "front": "جَمَل", "back": "tuya (jamal)", "deck": "msa"},
-  {"type": "word", "front": "سَكَن", "back": "turar joy (sakan) — 'maskan' shundan", "deck": "msa"}
+  {
+   "type": "word",
+   "front": "س",
+   "back": "sin — uch tishli taroq, nuqtasiz — «s»",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "ش",
+   "back": "shin — taroq, TEPADA 3 nuqta — «sh»",
+   "deck": "msa"
+  }
  ]
 }

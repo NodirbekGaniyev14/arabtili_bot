@@ -1,0 +1,106 @@
+{
+ "id": "a0-40",
+ "level": "A0",
+ "module": "roots-intro",
+ "order": 40,
+ "title_uz": "O'zak (جذر) tushunchasi",
+ "title_ar": "الجَذْر",
+ "can_do_uz": "So'zning 3 harfli o'zagini ajrata olaman va bir o'zakdan yasalgan so'zlarni bir-biriga bog'layman",
+ "duration_min": 30,
+ "prerequisites": ["a0-39"],
+ "harakat_level": "full",
+ "hook_uz": "Siz 'kitob', 'maktab', 'kotib', 'kutubxona' so'zlarini bilasiz. To'rttasi ham bitta arabcha o'zakdan — ك-ت-ب (yozmoq). Bugun shu sirni ochamiz: bitta o'zakdan o'nlab so'z yasaladi.",
+ "grammar": {
+  "point_ar": "الجَذْر الثُّلاثِيّ",
+  "explanation_uz": "Arab tilida ko'p so'zlar 3 ta asosiy undosh harfdan — o'zakdan yasaladi. Bu 3 harf so'zning ma'no yadrosini saqlaydi. Masalan ك-ت-ب 'yozish' bilan bog'liq barcha so'zlarda bor: كِتاب (kitob), مَكْتَب (yozuv joyi), كاتِب (yozuvchi). O'zakni bilsangiz — yangi so'zning ma'nosini taxmin qila olasiz.",
+  "table": [
+   {"ar": "كِتاب", "uz": "kitob", "form": "ك-ت-ب"},
+   {"ar": "مَكْتَب", "uz": "ish stoli / ofis", "form": "ك-ت-ب"},
+   {"ar": "كاتِب", "uz": "yozuvchi, kotib", "form": "ك-ت-ب"},
+   {"ar": "مَدْرَسة", "uz": "maktab", "form": "د-ر-س"}
+  ],
+  "common_mistakes_uz": [
+   "O'zak harflarini qo'shimcha harflar (م، ا، و) bilan aralashtirish — ular vazn qo'shimchasi, o'zak emas",
+   "O'zakni har doim 3 harf deb o'ylash — ba'zan 4 harfli bo'ladi, lekin asosiysi 3 harfli"
+  ]
+ },
+ "roots": [
+  {
+   "root": "ك ت ب",
+   "meaning_uz": "yozmoq",
+   "uz_cognates": ["kitob", "maktab", "kotib", "maktub", "kutubxona"],
+   "audio": "roots/ktb.mp3",
+   "derived": [
+    {"ar": "كِتاب", "uz": "kitob", "pattern": "فِعال"},
+    {"ar": "مَكْتَب", "uz": "ish stoli, ofis", "pattern": "مَفْعَل"},
+    {"ar": "مَكْتَبة", "uz": "kutubxona", "pattern": "مَفْعَلة"},
+    {"ar": "كاتِب", "uz": "yozuvchi, kotib", "pattern": "فاعِل"},
+    {"ar": "مَكْتوب", "uz": "yozilgan (xat)", "pattern": "مَفْعول"}
+   ]
+  },
+  {
+   "root": "د ر س",
+   "meaning_uz": "o'qimoq",
+   "uz_cognates": ["dars", "madrasa", "mudarris"],
+   "audio": "roots/drs.mp3",
+   "derived": [
+    {"ar": "دَرْس", "uz": "dars", "pattern": "فَعْل"},
+    {"ar": "مَدْرَسة", "uz": "maktab", "pattern": "مَفْعَلة"},
+    {"ar": "مُدَرِّس", "uz": "o'qituvchi", "pattern": "مُفَعِّل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {"ar": "كِتاب", "translit": "kitāb", "uz": "kitob", "root": "ك ت ب", "pattern": "فِعال", "pos": "noun", "audio": "a0/kitab.mp3", "example_ar": "هٰذا كِتابٌ", "example_uz": "Bu — kitob", "srs": true},
+  {"ar": "مَكْتَب", "translit": "maktab", "uz": "ish stoli, ofis", "root": "ك ت ب", "pattern": "مَفْعَل", "pos": "noun", "audio": "a0/maktab.mp3", "example_ar": "", "example_uz": "", "srs": true},
+  {"ar": "مَكْتَبة", "translit": "maktaba", "uz": "kutubxona", "root": "ك ت ب", "pattern": "مَفْعَلة", "pos": "noun", "audio": "a0/maktaba.mp3", "example_ar": "", "example_uz": "", "srs": true},
+  {"ar": "كاتِب", "translit": "kātib", "uz": "yozuvchi, kotib", "root": "ك ت ب", "pattern": "فاعِل", "pos": "noun", "audio": "a0/katib.mp3", "example_ar": "", "example_uz": "", "srs": true},
+  {"ar": "دَرْس", "translit": "dars", "uz": "dars", "root": "د ر س", "pattern": "فَعْل", "pos": "noun", "audio": "a0/dars.mp3", "example_ar": "", "example_uz": "", "srs": true},
+  {"ar": "مَدْرَسة", "translit": "madrasa", "uz": "maktab", "root": "د ر س", "pattern": "مَفْعَلة", "pos": "noun", "audio": "a0/madrasa.mp3", "example_ar": "", "example_uz": "", "srs": true},
+  {"ar": "مُدَرِّس", "translit": "mudarris", "uz": "o'qituvchi", "root": "د ر س", "pattern": "مُفَعِّل", "pos": "noun", "audio": "a0/mudarris.mp3", "example_ar": "", "example_uz": "", "srs": true},
+  {"ar": "عِلْم", "translit": "ʿilm", "uz": "ilm, fan", "root": "ع ل م", "pattern": "فِعْل", "pos": "noun", "audio": "a0/ilm.mp3", "example_ar": "", "example_uz": "", "srs": true},
+  {"ar": "عالِم", "translit": "ʿālim", "uz": "olim", "root": "ع ل م", "pattern": "فاعِل", "pos": "noun", "audio": "a0/alim.mp3", "example_ar": "", "example_uz": "", "srs": true},
+  {"ar": "مُعَلِّم", "translit": "muʿallim", "uz": "muallim, o'qituvchi", "root": "ع ل م", "pattern": "مُفَعِّل", "pos": "noun", "audio": "a0/muallim.mp3", "example_ar": "", "example_uz": "", "srs": true}
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "كِتاب · مَكْتَب · كاتِب",
+   "questions": [
+    {"q_uz": "Bu uch so'z qaysi bitta o'zakdan yasalgan?", "a": "ك-ت-ب"}
+   ]
+  },
+  "listening": {
+   "audio": "a0/madrasa.mp3",
+   "transcript_ar": "مَدْرَسة",
+   "questions": [
+    {"q_uz": "Eshitilgan so'zning ma'nosi nima?", "a": "maktab"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Quyidagi so'zlarni ovoz chiqarib o'qing va o'zagini ayting: كِتاب، مَكْتَب، مَدْرَسة",
+   "target_ar": ["كِتاب", "مَكْتَب", "مَدْرَسة"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "ك-ت-ب o'zagidan yasalgan 2 ta so'zni ko'chirib yozing",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {"type": "mcq", "q_uz": "«مَكْتَب» (ofis) qaysi o'zakdan?", "options": ["ك ت ب", "د ر س", "ع ل م", "ق ر أ"], "answer": "ك ت ب", "explain_uz": "Kitob, kotib bilan bir xil o'zak — ك-ت-ب (yozish)."},
+  {"type": "match_root", "q_ar": "مَكْتَبة", "answer": "ك ت ب"},
+  {"type": "mcq", "q_uz": "«مُدَرِّس» (o'qituvchi) qaysi o'zakdan?", "options": ["د ر س", "ك ت ب", "ع ل م", "س ل م"], "answer": "د ر س", "explain_uz": "Dars, madrasa bilan bir o'zak — د-ر-س."},
+  {"type": "translate_ar_uz", "q_ar": "مَكْتَبة", "answer": "kutubxona"},
+  {"type": "build_word", "root": "ك ت ب", "pattern": "فاعِل", "answer": "كاتِب"},
+  {"type": "dictation", "q_uz": "Eshiting va yozing", "audio": "a0/madrasa.mp3", "answer": "مَدْرَسة"},
+  {"type": "mcq", "q_uz": "Arabcha o'zak odatda nechta harfdan iborat?", "options": ["2", "3", "5", "7"], "answer": "3", "explain_uz": "Ko'pchilik so'zlar 3 harfli o'zakka asoslanadi."}
+ ],
+ "srs_cards": [
+  {"type": "word", "front": "كِتاب", "back": "kitob · ism · o'zak: ك-ت-ب", "deck": "msa"},
+  {"type": "word", "front": "مَكْتَبة", "back": "kutubxona · ism · o'zak: ك-ت-ب", "deck": "msa"},
+  {"type": "word", "front": "مُدَرِّس", "back": "o'qituvchi · ism · o'zak: د-ر-س", "deck": "msa"},
+  {"type": "root", "front": "ك ت ب", "back": "yozmoq → kitob, maktab, kotib, maktub, kutubxona", "deck": "msa"},
+  {"type": "root", "front": "د ر س", "back": "o'qimoq → dars, madrasa, mudarris", "deck": "msa"}
+ ]
+}

@@ -1,351 +1,79 @@
 {
  "id": "a0-15",
  "level": "A0",
- "module": "harakat",
+ "module": "letters",
  "order": 15,
- "title_uz": "Ta marbuta (ة)",
- "title_ar": "التَّاء المَرْبُوطة",
- "can_do_uz": "Muannaslik belgisi bo'lgan ta marbuta (ة) harfini tanib, so'z oxirida to'g'ri o'qiy olaman.",
- "duration_min": 30,
- "prerequisites": [
-  "a0-14"
- ],
+ "title_uz": "Nuqtali harflar drilli",
+ "title_ar": "تَدْرِيبُ الحُرُوفِ المَنْقُوطَة",
+ "can_do_uz": "Nuqtali harflarni nuqta soni va joyiga qarab tez ajrataman.",
+ "duration_min": 15,
+ "prerequisites": ["a0-14"],
  "harakat_level": "full",
- "hook_uz": "O'zbekchada \"maktab\" so'zi arabchadan kelgan — مَدْرَسة. So'z oxiridagi mana shu dumaloq harf — ة (ta marbuta) — bu narsaning \"ayol jinsi\" (muannas) ekanini bildiradi. Uni tanib olsangiz, arabcha so'zlarning yarmi ochiladi!",
+ "hook_uz": "28 harfni ko'rdingiz. Endi eng chalkash joyni mustahkamlaymiz: NUQTALI harflar. Arab yozuvida ko'p harf bir xil tanaga ega — farq faqat nuqtada. Bugun yangi harf yo'q, faqat tez tanish mashqi. Ko'zingizni o'rgatamiz.",
  "grammar": {
-  "point_ar": "التَّاء المَرْبُوطة",
-  "explanation_uz": "Ta marbuta (ة) — \"bog'langan ta\" degani. Bu ه harfiga ikkita nuqta qo'yilgan shakl (ة). U faqat so'z OXIRIDA keladi va odatda so'zning ayol jinsida (muannas) ekanini bildiradi. Oldida deyarli har doim fatha (a) tovushi bo'ladi. To'xtab o'qiganda \"h\" yoki deyarli jimgina, davom etib o'qiganda esa \"t\" bo'lib eshitiladi. Boshlang'ich darajada uni oddiygina qisqa \"a\" deb o'qishingiz kifoya: مَدْرَسة = madrasa.",
+  "point_ar": "الحُرُوفُ المَنْقُوطَة",
+  "explanation_uz": "Nuqta arab yozuvining kaliti. Bir tanaga turli nuqta qo'yilsa — boshqa harf: ب (pastda 1) · ت (tepada 2) · ث (tepada 3) · ن (tepada 1). Nuqtani ikki narsaga qarab aniqlang: (1) SONI — 1, 2 yoki 3; (2) JOYI — tepada yoki pastda. Pastda nuqtalilar: ب (1), ي (2). Tepada: ت (2), ث (3), ن (1), ج (1 ichida), خ (1), ذ (1), ز (1), ش (3), ض (1), ظ (1), غ (1), ف (1), ق (2).",
   "table": [
-   {
-    "ar": "ة",
-    "uz": "so'z oxirida (ulangan shakl)",
-    "form": "oxiri"
-   },
-   {
-    "ar": "ـة",
-    "uz": "oldingi harfga ulanadi",
-    "form": "ulangan"
-   },
-   {
-    "ar": "مَدْرَسة",
-    "uz": "maktab (madrasa)",
-    "form": "misol"
-   },
-   {
-    "ar": "سَاعة",
-    "uz": "soat",
-    "form": "misol"
-   },
-   {
-    "ar": "مَدِينة",
-    "uz": "shahar",
-    "form": "misol"
-   }
+   {"ar": "ب", "uz": "PASTDA 1 nuqta", "form": "b"},
+   {"ar": "ت", "uz": "TEPADA 2 nuqta", "form": "t"},
+   {"ar": "ث", "uz": "TEPADA 3 nuqta", "form": "s (tishlararo)"},
+   {"ar": "ن", "uz": "TEPADA 1 nuqta", "form": "n"},
+   {"ar": "ي", "uz": "PASTDA 2 nuqta", "form": "y"},
+   {"ar": "ق", "uz": "TEPADA 2 nuqta", "form": "q"},
+   {"ar": "ش", "uz": "TEPADA 3 nuqta", "form": "sh"}
   ],
   "common_mistakes_uz": [
-   "ة ni oddiy ت (ta) deb o'qib yuborish — u so'z oxirida yumshoq \"a/h\" bo'ladi.",
-   "ة ni ه (ha) bilan chalkashtirish — ta marbutada ustida IKKITA nuqta bor.",
-   "ة ni so'z o'rtasida yozish — u FAQAT so'z oxirida keladi.",
-   "Oldidagi fatha (a) ni unutish — ta marbutadan oldin deyarli doim \"a\" tovushi bo'ladi."
+   "ب va ن ni chalkashtirish — ikkalasida 1 nuqta, lekin joyi boshqa (past/tepa).",
+   "ت va ق ni faqat nuqta soniga qarab ajratmaslik — tanasi ham boshqa.",
+   "3 nuqtali ث va ش ni chalkashtirish — ث kosachali, ش taroqli."
   ]
  },
- "roots": [
-  {
-   "root": "د ر س",
-   "meaning_uz": "o'qish, dars berish",
-   "uz_cognates": [
-    "dars",
-    "madrasa",
-    "mudarris"
-   ],
-   "derived": [
-    {
-     "ar": "مَدْرَسة",
-     "uz": "maktab, madrasa",
-     "pattern": "مَفْعَلة"
-    },
-    {
-     "ar": "دَرْس",
-     "uz": "dars",
-     "pattern": "فَعْل"
-    }
-   ]
-  }
- ],
+ "roots": [],
  "vocabulary": [
-  {
-   "ar": "مَدْرَسة",
-   "translit": "madrasa",
-   "uz": "maktab, madrasa (o'zbekcha \"maktab\" ham arabchadan)",
-   "root": "د ر س",
-   "pattern": "مَفْعَلة",
-   "pos": "ot",
-   "audio": "a0/madrasa.mp3",
-   "example_ar": "هٰذِهِ مَدْرَسة.",
-   "example_uz": "Bu maktab.",
-   "srs": true
-  },
-  {
-   "ar": "سَاعة",
-   "translit": "saa'a",
-   "uz": "soat",
-   "root": "س و ع",
-   "pattern": "فَاعِلة",
-   "pos": "ot",
-   "audio": "a0/saaa.mp3",
-   "example_ar": "هٰذِهِ سَاعة.",
-   "example_uz": "Bu soat.",
-   "srs": true
-  },
-  {
-   "ar": "مَدِينة",
-   "translit": "madiina",
-   "uz": "shahar (Madina shahri nomi ham shundan)",
-   "root": "م د ن",
-   "pattern": "فَعِيلة",
-   "pos": "ot",
-   "audio": "a0/madiina.mp3",
-   "example_ar": "مَكّة مَدِينة.",
-   "example_uz": "Makka — shahar.",
-   "srs": true
-  },
-  {
-   "ar": "طَالِبة",
-   "translit": "taaliba",
-   "uz": "talaba (qiz)",
-   "root": "ط ل ب",
-   "pattern": "فَاعِلة",
-   "pos": "ot",
-   "audio": "a0/taaliba.mp3",
-   "example_ar": "هٰذِهِ طَالِبة.",
-   "example_uz": "Bu talaba (qiz).",
-   "srs": true
-  },
-  {
-   "ar": "كَبِيرة",
-   "translit": "kabiira",
-   "uz": "katta (muannas shakli)",
-   "root": "ك ب ر",
-   "pattern": "فَعِيلة",
-   "pos": "sifat",
-   "audio": "a0/kabiira.mp3",
-   "example_ar": "مَدِينة كَبِيرة.",
-   "example_uz": "Katta shahar.",
-   "srs": true
-  },
-  {
-   "ar": "غُرْفة",
-   "translit": "g'urfa",
-   "uz": "xona",
-   "root": "غ ر ف",
-   "pattern": "فُعْلة",
-   "pos": "ot",
-   "audio": "a0/gurfa.mp3",
-   "example_ar": "هٰذِهِ غُرْفة كَبِيرة.",
-   "example_uz": "Bu katta xona.",
-   "srs": true
-  }
+  {"ar": "ب", "translit": "bā (b)", "uz": "bo — PASTDA 1 nuqta", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_ba.mp3", "audio_text": "بَاء", "example_ar": "بـ ـبـ ـب", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
+  {"ar": "ن", "translit": "nūn (n)", "uz": "nun — TEPADA 1 nuqta", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_nun.mp3", "audio_text": "نُون", "example_ar": "نـ ـنـ ـن", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
+  {"ar": "ي", "translit": "yā (y)", "uz": "yo — PASTDA 2 nuqta", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_ya.mp3", "audio_text": "يَاء", "example_ar": "يـ ـيـ ـي", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
+  {"ar": "ق", "translit": "qāf (q)", "uz": "qof — TEPADA 2 nuqta", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_qaf.mp3", "audio_text": "قَاف", "example_ar": "قـ ـقـ ـق", "example_uz": "boshida · o'rtasida · oxirida", "srs": true},
+  {"ar": "ش", "translit": "shīn (sh)", "uz": "shin — TEPADA 3 nuqta", "root": "", "pattern": "", "pos": "harf", "audio": "a0/harf_shin.mp3", "audio_text": "شِين", "example_ar": "شـ ـشـ ـش", "example_uz": "boshida · o'rtasida · oxirida", "srs": true}
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "هٰذِهِ مَدِينة كَبِيرة. فِي المَدِينة مَدْرَسة. المَدْرَسة كَبِيرة. فِي المَدْرَسة غُرْفة. الطَّالِبة فِي الغُرْفة.",
+   "text_ar": "ب ت ث ن ي ق ش",
    "questions": [
-    {
-     "q_uz": "Shahar qanday? (matndan arabcha so'z toping)",
-     "a": "كَبِيرة"
-    },
-    {
-     "q_uz": "Maktab qayerda joylashgan?",
-     "a": "المَدِينة — shaharda"
-    },
-    {
-     "q_uz": "Talaba (qiz) qayerda?",
-     "a": "الغُرْفة — xonada"
-    }
+    {"q_uz": "Qaysilarida nuqta PASTDA?", "a": "ب (1) va ي (2)"},
+    {"q_uz": "Uch nuqtali harflar qaysi?", "a": "ث (kosacha) va ش (taroq)"}
    ]
   },
   "listening": {
-   "audio": "a0/madrasa.mp3",
-   "transcript_ar": "مَدْرَسة، سَاعة، مَدِينة، طَالِبة، غُرْفة",
-   "questions": [
-    {
-     "q_uz": "Eshitgan so'zlaringizning oxirida qaysi harf takrorlanadi?",
-     "a": "ة (ta marbuta)"
-    },
-    {
-     "q_uz": "\"Soat\" so'zi qaysi?",
-     "a": "سَاعة"
-    }
-   ]
+   "audio": "a0/harf_nun.mp3",
+   "transcript_ar": "نُون",
+   "questions": [{"q_uz": "Qaysi harf?", "a": "Nun — tepada 1 nuqta"}]
   },
   "speaking": {
-   "task_uz": "Quyidagi so'zlarni baland ovozda ayting va ta marbutani (ة) qisqa \"a\" bilan tugating: مَدْرَسة، مَدِينة، سَاعة.",
-   "target_ar": [
-    "مَدْرَسة",
-    "مَدِينة",
-    "سَاعة"
-   ],
+   "task_uz": "Nuqta joyini ayting: «bo — pastda bir», «nun — tepada bir», «to — tepada ikki», «so — tepada uch».",
+   "target_ar": ["ب", "ن", "ت", "ث"],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "مَدْرَسة so'zini ko'chirib yozing va oxiridagi ta marbuta (ة) ustida ikkita nuqtani unutmang. So'ngra سَاعة so'zini yozing.",
+   "task_uz": "Bir tanaga turli nuqta qo'yib yozing: kosachaga pastda 1 (ب), tepada 2 (ت), tepada 3 (ث).",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {
-   "type": "mcq",
-   "q_uz": "Ta marbuta (ة) so'zning qaysi qismida keladi?",
-   "q_ar": "",
-   "options": [
-    "boshida",
-    "o'rtasida",
-    "oxirida",
-    "istalgan joyda"
-   ],
-   "answer": "oxirida",
-   "explain_uz": "Ta marbuta faqat so'z oxirida keladi.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "ة harfi ustida nechta nuqta bor?",
-   "q_ar": "",
-   "options": [
-    "nuqta yo'q",
-    "bitta",
-    "ikkita",
-    "uchta"
-   ],
-   "answer": "ikkita",
-   "explain_uz": "ة = ه ustiga ikkita nuqta qo'yilgan shakl.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_ar_uz",
-   "q_uz": "",
-   "q_ar": "مَدْرَسة",
-   "options": [],
-   "answer": "maktab (madrasa)",
-   "explain_uz": "O'zbekcha \"maktab\" ham arabchadan olingan.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "translate_uz_ar",
-   "q_uz": "soat",
-   "q_ar": "",
-   "options": [],
-   "answer": "سَاعة",
-   "explain_uz": "Oxirida ta marbuta (ة) bor.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "match_root",
-   "q_uz": "مَدْرَسة so'zining o'zagini tanlang.",
-   "q_ar": "",
-   "options": [
-    "د ر س",
-    "م د ن",
-    "ك ب ر"
-   ],
-   "answer": "د ر س",
-   "explain_uz": "\"dars\" va \"madrasa\" bir o'zakdan (د ر س).",
-   "audio": "",
-   "root": "د ر س",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "fill_blank",
-   "q_uz": "Bo'sh joyni to'ldiring: مَدِين_ (shahar)",
-   "q_ar": "",
-   "options": [],
-   "answer": "ة",
-   "explain_uz": "Muannas ot oxirida ta marbuta keladi: مَدِينة.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  },
-  {
-   "type": "mcq",
-   "q_uz": "ة dan oldin odatda qaysi harakat keladi?",
-   "q_ar": "",
-   "options": [
-    "fatha (a)",
-    "kasra (i)",
-    "damma (u)",
-    "sukun"
-   ],
-   "answer": "fatha (a)",
-   "explain_uz": "Ta marbutadan oldin deyarli doim fatha (a) tovushi bo'ladi.",
-   "audio": "",
-   "root": "",
-   "pattern": "",
-   "words": []
-  }
+  {"type": "mcq", "q_uz": "Qaysi harfda nuqta PASTDA va 1 ta?", "q_ar": "", "options": ["ب", "ن", "ت", "ث"], "answer": "ب", "explain_uz": "ب (bo) — pastda 1 nuqta.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "TEPADA 1 nuqtali harf qaysi?", "q_ar": "", "options": ["ن", "ب", "ي", "ت"], "answer": "ن", "explain_uz": "ن (nun) — tepada 1 nuqta.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "PASTDA 2 nuqtali harf qaysi?", "q_ar": "", "options": ["ي", "ت", "ق", "ب"], "answer": "ي", "explain_uz": "ي (yo) — pastda 2 nuqta.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "Eshiting: bu qaysi harfning nomi?", "q_ar": "", "options": ["ق", "ف", "ت", "ن"], "answer": "ق", "explain_uz": "«Qof» — tepada 2 nuqta, «q» tovushi.", "audio": "a0/harf_qaf.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "ب va ن ning farqi nimada?", "q_ar": "", "options": ["nuqta joyi: ب-pastda, ن-tepada", "nuqta soni", "tana shakli", "farq yo'q"], "answer": "nuqta joyi: ب-pastda, ن-tepada", "explain_uz": "Ikkalasida 1 nuqta, farq faqat joyida.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "mcq", "q_uz": "3 nuqtali harflar qaysi juftlik?", "q_ar": "", "options": ["ث va ش", "ت va ق", "ب va ن", "ي va ز"], "answer": "ث va ش", "explain_uz": "ث (kosacha, 3 tepada) va ش (taroq, 3 tepada).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "dictation", "q_uz": "Eshiting va shu harfni klaviaturadan bosing.", "q_ar": "", "options": [], "answer": "ش", "explain_uz": "«Shin» — 3 nuqtali taroq.", "audio": "a0/harf_shin.mp3", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
-  {
-   "type": "word",
-   "front": "مَدْرَسة",
-   "back": "maktab, madrasa (o'zak: د ر س)",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "سَاعة",
-   "back": "soat",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "مَدِينة",
-   "back": "shahar (Madina)",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "طَالِبة",
-   "back": "talaba (qiz)",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "كَبِيرة",
-   "back": "katta (muannas)",
-   "deck": "msa"
-  },
-  {
-   "type": "word",
-   "front": "غُرْفة",
-   "back": "xona",
-   "deck": "msa"
-  },
-  {
-   "type": "root",
-   "front": "د ر س",
-   "back": "o'qish, dars berish → دَرْس (dars), مَدْرَسة (maktab)",
-   "deck": "msa"
-  },
-  {
-   "type": "pattern",
-   "front": "مَفْعَلة",
-   "back": "joy oti vazni (muannas): مَدْرَسة (maktab)",
-   "deck": "msa"
-  }
+  {"type": "word", "front": "ب", "back": "bo — pastda 1 nuqta", "deck": "msa"},
+  {"type": "word", "front": "ن", "back": "nun — tepada 1 nuqta", "deck": "msa"},
+  {"type": "word", "front": "ت", "back": "to — tepada 2 nuqta", "deck": "msa"},
+  {"type": "word", "front": "ث", "back": "so — tepada 3 nuqta", "deck": "msa"},
+  {"type": "word", "front": "ي", "back": "yo — pastda 2 nuqta", "deck": "msa"}
  ]
 }
