@@ -69,18 +69,30 @@ Qoidalar:
 def _fallback_plan(answers: dict, test: dict) -> GeneratedPlan:
     """AI ishlamay qolsa — oddiy qoidaviy reja (onboarding hech qachon buzilmasin)."""
     minutes = int(answers.get("daily_minutes", 20))
-    correct = int(test.get("correct", 0))
-    total = int(test.get("total", 0))
-    ratio = correct / total if total else 0.0
 
-    if answers.get("self_level") == "zero" or total == 0:
+    # Daraja — bosqichli placement testi natijasidan (services/placement.py).
+    # Ilgari bu yerda oddiy foiz ishlatilardi (>=80% -> A2) va oson savollar
+    # tufayli deyarli hamma A2 ga tushib qolardi.
+    from services import placement as placement_svc
+
+    tier_results = test.get("tiers")
+    if isinstance(tier_results, dict) and tier_results:
+        level = placement_svc.decide_level(
+            {t: bool(v) for t, v in tier_results.items() if t in placement_svc.TIERS}
+        )
+    elif answers.get("self_level") == "zero":
         level = "A0"
-    elif ratio < 0.5:
-        level = "A0"
-    elif ratio < 0.8:
-        level = "A1"
     else:
-        level = "A2"
+        # Eski shakldagi natija (faqat correct/total) — ehtiyotkor baho
+        correct = int(test.get("correct", 0))
+        total = int(test.get("total", 0))
+        ratio = correct / total if total else 0.0
+        if total == 0 or ratio < 0.6:
+            level = "A0"
+        elif ratio < 0.9:
+            level = "A1"
+        else:
+            level = "A2"
 
     days = DURATION_DAYS.get(answers.get("duration", "6oy"), 180)
     modules = list(MODULES.keys())

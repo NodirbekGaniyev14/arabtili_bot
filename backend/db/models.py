@@ -259,4 +259,6 @@ class Plan(Base):
     motivation: Mapped[str] = mapped_column(Text, default="")
     # v2 curriculum: foydalanuvchi kursni qaysi darsdan boshlaydi
     start_lesson: Mapped[str] = mapped_column(String(12), default="a0-01")
+    # Daraja qaysi versiyadagi placement testi bilan aniqlangan (services/placement.py)
+    placement_version: Mapped[int] = mapped_column(Integer, default=0)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)

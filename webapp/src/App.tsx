@@ -11,6 +11,8 @@ import Review from "./pages/Review";
 import RootLab from "./pages/RootLab";
 import Exam from "./pages/Exam";
 import Checkpoint from "./pages/Checkpoint";
+import Challenge from "./pages/Challenge";
+import Placement from "./pages/Placement";
 import WeakPractice from "./pages/WeakPractice";
 import RolePlay from "./pages/RolePlay";
 import LessonPlayerV2 from "./pages/v2/LessonPlayerV2";
@@ -40,6 +42,8 @@ export default function App() {
   const [showRootLab, setShowRootLab] = useState(false);
   const [showExam, setShowExam] = useState(false);
   const [checkpointPct, setCheckpointPct] = useState<number | null>(null);
+  const [showChallenge, setShowChallenge] = useState(false);
+  const [retestDone, setRetestDone] = useState(false);
   const [showWeak, setShowWeak] = useState(false);
   const [showRolePlay, setShowRolePlay] = useState(false);
 
@@ -105,6 +109,27 @@ export default function App() {
   const displayName = me?.name || tgName;
   const stats = me?.stats ?? EMPTY_STATS;
 
+  // Eski foydalanuvchilar: daraja eski (noto'g'ri) usulda aniqlangan bo'lsa —
+  // bir martalik qayta daraja testi. O'tkazib yuborib bo'lmaydi.
+  const needsRetest =
+    !retestDone &&
+    !!me?.plan &&
+    (me.plan.placement_version ?? 0) < (me.plan.placement_current ?? 0);
+
+  if (needsRetest) {
+    return (
+      <div className="min-h-screen">
+        <ArabicBg />
+        <Placement
+          onDone={() => {
+            setRetestDone(true);
+            api.getMe().then(setMe).catch(() => {});
+          }}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen">
       <ArabicBg />
@@ -119,6 +144,7 @@ export default function App() {
             onGoReview={() => setTab("review")}
             onOpenRootLab={() => setShowRootLab(true)}
             onOpenExam={() => setShowExam(true)}
+            onOpenChallenge={() => setShowChallenge(true)}
             onOpenWeak={() => setShowWeak(true)}
             onOpenRolePlay={() => setShowRolePlay(true)}
             onGoLessons={() => setTab("lessons")}
@@ -146,6 +172,15 @@ export default function App() {
         <Exam
           onClose={() => {
             setShowExam(false);
+            api.getMe().then(setMe).catch(() => {});
+          }}
+        />
+      )}
+
+      {showChallenge && (
+        <Challenge
+          onClose={() => {
+            setShowChallenge(false);
             api.getMe().then(setMe).catch(() => {});
           }}
         />

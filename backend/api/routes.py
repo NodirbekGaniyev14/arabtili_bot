@@ -23,6 +23,7 @@ from services.course import course_all_levels, start_lesson_for
 from services.achievements import check_and_award, list_achievements
 from services.ai import XP_BY_MINUTES
 from services.league import leaderboard
+from services import placement as placement_svc
 from services.srs import GRADES, apply_grade, seed_user_words
 from services.stats import (
     _today,
@@ -47,6 +48,10 @@ def plan_to_dict(plan: Plan) -> dict:
         "module_order": json.loads(plan.module_order_json),
         "weekly_schedule": json.loads(plan.weekly_schedule_json),
         "motivation": plan.motivation,
+        # Daraja qaysi versiyadagi placement testi bilan aniqlangan.
+        # Joriy versiyadan past bo'lsa — ilova bir martalik qayta test so'raydi.
+        "placement_version": plan.placement_version or 0,
+        "placement_current": placement_svc.PLACEMENT_VERSION,
     }
 
 
@@ -190,10 +195,101 @@ async def review_answer(
 
 @router.get("/leaderboard")
 async def leaderboard_route(
+    period: str = "week",
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
-    return await leaderboard(session, user.id)
+    if period not in ("week", "month", "all"):
+        period = "week"
+    return await leaderboard(session, user.id, period)
+
+
+# ──────────────── Daraja aniqlash testi (placement, AI'siz) ────────────────
+
+
+@router.get("/placement/next")
+async def placement_next(
+    passed: str = "",
+    user: User = Depends(get_current_user),
+):
+    """Keyingi bosqich savollari.
+
+    `passed` — shu paytgacha bo'lgan natijalar, masalan "A0:1,A1:0".
+    Bo'sh bo'lsa test boshidan (A0) beriladi.
+    """
+    results: dict[str, bool] = {}
+    for part in filter(None, passed.split(",")):
+        tier, _, ok = part.partition(":")
+        if tier in placement_svc.TIERS:
+            results[tier] = ok == "1"
+
+    tier = placement_svc.next_tier(results)
+    if tier is None:
+        level = placement_svc.decide_level(results)
+        return {
+            "done": True,
+            "level": level,
+            "reason": placement_svc.level_reason(level, results),
+        }
+    return {
+        "done": False,
+        "tier": tier,
+        "tier_title": placement_svc.tier_title(tier),
+        "tier_index": placement_svc.TIERS.index(tier) + 1,
+        "tier_count": len(placement_svc.TIERS),
+        "pass_ratio": placement_svc.pass_ratio(),
+        "items": placement_svc.tier_questions(tier),
+    }
+
+
+class PlacementFinish(BaseModel):
+    """Test tugagach yakuniy natija — daraja saqlanadi."""
+
+    results: dict[str, bool] = Field(default_factory=dict)
+
+
+@router.post("/placement/finish")
+async def placement_finish(
+    body: PlacementFinish,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    results = {
+        t: bool(v) for t, v in body.results.items() if t in placement_svc.TIERS
+    }
+    level = placement_svc.decide_level(results)
+    reason = placement_svc.level_reason(level, results)
+    start = start_lesson_for(level)
+
+    plan = (
+        await session.execute(
+            select(Plan).where(Plan.user_id == user.id).order_by(Plan.id.desc()).limit(1)
+        )
+    ).scalar_one_or_none()
+
+    if plan:
+        plan.level = level
+        plan.level_reason = reason
+        plan.start_lesson = start
+        plan.placement_version = placement_svc.PLACEMENT_VERSION
+        session.add(plan)
+        await session.commit()
+
+    session.add(
+        Placement(
+            user_id=user.id,
+            answers_json=json.dumps({"source": "placement_v2"}, ensure_ascii=False),
+            test_json=json.dumps(results, ensure_ascii=False),
+        )
+    )
+    await session.commit()
+
+    return {
+        "level": level,
+        "reason": reason,
+        "start_lesson": start,
+        "saved": plan is not None,
+    }
 
 
 @router.get("/achievements")

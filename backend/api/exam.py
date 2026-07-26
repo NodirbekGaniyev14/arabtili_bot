@@ -8,8 +8,9 @@ from pydantic import BaseModel, Field
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.models import Certificate, ExamAttempt, Plan, User, XpLog
+from db.models import Certificate, ExamAttempt, Plan, Progress, User, XpLog
 from db.session import get_session
+from services import challenge as challenge_svc
 from services import checkpoint as checkpoint_svc
 from services import exam as exam_svc
 from services.certificate import issue_certificate
@@ -376,6 +377,156 @@ async def checkpoint_submit(
         "xp_earned": xp,
         "srs_reset": reset_n,
         "locked": False,
+    }
+
+
+# ──────────────────────── Haftalik chellenj ────────────────────────
+
+
+async def _done_lessons(session: AsyncSession, user_id: int) -> list[str]:
+    """Foydalanuvchi tugatgan darslar — kurikulum tartibida."""
+    from services.curriculum import lesson_order
+
+    rows = (
+        await session.execute(
+            select(Progress.lesson_id).where(Progress.user_id == user_id).distinct()
+        )
+    ).scalars().all()
+    done = set(rows)
+    return [lid for lid in lesson_order() if lid in done]
+
+
+async def _week_attempt(session: AsyncSession, user_id: int) -> ExamAttempt | None:
+    return (
+        await session.execute(
+            select(ExamAttempt)
+            .where(
+                ExamAttempt.user_id == user_id,
+                ExamAttempt.kind == "weekly",
+                ExamAttempt.checkpoint == challenge_svc.week_key(),
+                ExamAttempt.finished_at.isnot(None),
+            )
+            .order_by(ExamAttempt.total_score.desc())
+            .limit(1)
+        )
+    ).scalar_one_or_none()
+
+
+@router.get("/api/challenge/info")
+async def challenge_info(
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    lessons = await _done_lessons(session, user.id)
+    best = await _week_attempt(session, user.id)
+    return {
+        "week": challenge_svc.week_key(),
+        "week_label": challenge_svc.week_label(),
+        "available": len(lessons) > 0,
+        "lessons_pool": len(lessons),
+        "questions": challenge_svc.N_QUESTIONS,
+        "pass_score": challenge_svc.PASS,
+        "xp_reward": challenge_svc.XP_REWARD,
+        "attempted": best is not None,
+        "passed": bool(best and best.passed),
+        "best_score": best.total_score if best else None,
+    }
+
+
+@router.post("/api/challenge/start")
+async def challenge_start(
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    lessons = await _done_lessons(session, user.id)
+    data = challenge_svc.build_challenge(lessons, user.id)
+    if not data:
+        raise HTTPException(
+            status_code=404,
+            detail="Avval kamida bitta darsni tugating — chellenj shu darslardan tuziladi",
+        )
+
+    attempt = ExamAttempt(
+        user_id=user.id,
+        level=await _user_level(session, user.id),
+        kind="weekly",
+        checkpoint=data["week"],
+        questions_json=json.dumps(data, ensure_ascii=False),
+    )
+    session.add(attempt)
+    await session.commit()
+    await session.refresh(attempt)
+    return {"attempt_id": attempt.id, **data}
+
+
+class ChallengeSubmit(BaseModel):
+    attempt_id: int
+    correct: int = Field(ge=0)
+    total: int = Field(ge=1)
+    wrong_words: list[str] = Field(default_factory=list)
+
+
+@router.post("/api/challenge/submit")
+async def challenge_submit(
+    body: ChallengeSubmit,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    attempt = (
+        await session.execute(
+            select(ExamAttempt).where(
+                ExamAttempt.id == body.attempt_id,
+                ExamAttempt.user_id == user.id,
+                ExamAttempt.kind == "weekly",
+            )
+        )
+    ).scalar_one_or_none()
+    if attempt is None:
+        raise HTTPException(status_code=404, detail="Urinish topilmadi")
+    if attempt.finished_at is not None:
+        raise HTTPException(status_code=409, detail="Bu urinish yakunlangan")
+
+    # XP shu hafta uchun allaqachon berilganmi?
+    already_paid = (
+        await session.execute(
+            select(ExamAttempt.id).where(
+                ExamAttempt.user_id == user.id,
+                ExamAttempt.kind == "weekly",
+                ExamAttempt.checkpoint == attempt.checkpoint,
+                ExamAttempt.passed == 1,
+                ExamAttempt.id != attempt.id,
+            ).limit(1)
+        )
+    ).scalar_one_or_none() is not None
+
+    result = challenge_svc.grade(body.correct, body.total)
+
+    attempt.finished_at = exam_svc._now()
+    attempt.total_score = result["score"]
+    attempt.passed = 1 if result["passed"] else 0
+    session.add(attempt)
+
+    xp = challenge_svc.XP_REWARD if (result["passed"] and not already_paid) else 0
+    if xp:
+        session.add(
+            XpLog(
+                user_id=user.id,
+                amount=xp,
+                source=f"challenge:{attempt.checkpoint}",
+            )
+        )
+    await session.commit()
+
+    from services.srs import reset_words
+
+    reset_n = await reset_words(session, user.id, body.wrong_words)
+
+    return {
+        **result,
+        "week": attempt.checkpoint,
+        "xp_earned": xp,
+        "xp_already_claimed": already_paid,
+        "srs_reset": reset_n,
     }
 
 

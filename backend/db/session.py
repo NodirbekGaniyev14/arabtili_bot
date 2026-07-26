@@ -30,6 +30,7 @@ _MIGRATIONS = {
     },
     "plans": {
         "start_lesson": "VARCHAR(12) DEFAULT 'a0-01'",
+        "placement_version": "INTEGER DEFAULT 0",
     },
     "certificates": {
         "kind": "VARCHAR(8) DEFAULT 'level'",

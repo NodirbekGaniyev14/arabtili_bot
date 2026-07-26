@@ -1,10 +1,9 @@
-"""Haftalik liga — XP reytingi va liga darajalari.
+"""XP reytingi va liga darajalari.
 
-Reyting jonli ko'rinishi uchun bir nechta demo raqib qo'shiladi (is_demo=1).
-Ular haqiqiy foydalanuvchilar bilan aralashmaydi (statistika/yutuqlar alohida).
+Reyting davrlari: haftalik / oylik / umumiy. Faqat HAQIQIY foydalanuvchilar
+(demo raqiblar olib tashlangan).
 """
 
-import random
 from datetime import datetime, timedelta, timezone
 
 from sqlalchemy import func, select
@@ -19,16 +18,6 @@ LEAGUES = [
     {"id": "silver", "name": "Kumush", "icon": "🥈", "min_xp": 100},
     {"id": "gold", "name": "Oltin", "icon": "🥇", "min_xp": 300},
     {"id": "emerald", "name": "Zumrad", "icon": "💎", "min_xp": 600},
-]
-
-DEMO_RIVALS = [
-    ("Diyor", 340),
-    ("Malika", 285),
-    ("Sardor", 210),
-    ("Nilufar", 155),
-    ("Jasur", 120),
-    ("Kamola", 80),
-    ("Bekzod", 45),
 ]
 
 
@@ -50,85 +39,46 @@ def league_for(weekly_xp: int) -> dict:
     return result
 
 
-def _fill_week_xp(session: AsyncSession, user_id: int, base_xp: int, week_start: datetime) -> None:
-    """Demo raqibga hafta ichiga taqsimlangan XP yozadi."""
-    remaining = base_xp + random.randint(-15, 15)
-    day = 0
-    while remaining > 0:
-        chunk = min(remaining, random.randint(20, 60))
-        session.add(
-            XpLog(
-                user_id=user_id,
-                amount=chunk,
-                source="demo",
-                created_at=week_start + timedelta(days=day % 6, hours=12),
-            )
-        )
-        remaining -= chunk
-        day += 1
+async def _ranked_rows(session: AsyncSession, since: datetime | None):
+    """XP bo'yicha saralangan qatorlar — FAQAT haqiqiy foydalanuvchilar.
 
-
-async def seed_demo_rivals(session: AsyncSession) -> None:
-    """Demo raqiblarni yaratadi va HAR HAFTA ularga yangi XP yozadi.
-
-    Avval faqat bir marta seed qilinardi — natijada ikkinchi haftadan
-    boshlab reyting bo'shab qolardi (haftalik so'rov XpLog'ga tayanadi).
+    `since=None` — butun davr (umumiy reyting).
     """
-    week_start = _week_start_utc()
-
-    demos = (
-        await session.execute(select(User).where(User.is_demo == 1))
-    ).scalars().all()
-
-    if not demos:
-        for i, (name, base_xp) in enumerate(DEMO_RIVALS):
-            user = User(tg_id=-(1000 + i), name=name, is_demo=1)
-            session.add(user)
-            await session.flush()  # user.id kerak
-            _fill_week_xp(session, user.id, base_xp, week_start)
-        await session.commit()
-        return
-
-    # Mavjud demo raqiblarda shu haftaga XP bormi?
-    have_xp = set(
-        (
-            await session.execute(
-                select(XpLog.user_id)
-                .where(XpLog.created_at >= week_start, XpLog.source == "demo")
-                .distinct()
-            )
-        ).scalars().all()
-    )
-    base_by_name = dict(DEMO_RIVALS)
-    added = False
-    for u in demos:
-        if u.id in have_xp:
-            continue
-        _fill_week_xp(session, u.id, base_by_name.get(u.name, 120), week_start)
-        added = True
-    if added:
-        await session.commit()
-
-
-async def _ranked_rows(session: AsyncSession, week_start: datetime):
-    """Haftalik XP bo'yicha saralangan qatorlar (demo raqiblar ham kiradi)."""
-    rows = (
-        await session.execute(
-            select(
-                User.id,
-                User.name,
-                User.is_demo,
-                func.coalesce(func.sum(XpLog.amount), 0).label("xp"),
-            )
-            .join(XpLog, XpLog.user_id == User.id)
-            # DIQQAT: datetime obyekti beriladi, isoformat() MATNI emas —
-            # aks holda SQLite "2026-07-19 20:00" < "2026-07-19T19:00" deb
-            # hisoblab, hafta boshi kunidagi XP'ni tushirib qoldiradi.
-            .where(XpLog.created_at >= week_start)
-            .group_by(User.id)
+    q = (
+        select(
+            User.id,
+            User.name,
+            User.is_demo,
+            func.coalesce(func.sum(XpLog.amount), 0).label("xp"),
         )
-    ).all()
+        .join(XpLog, XpLog.user_id == User.id)
+        .where(User.is_demo == 0)
+        .group_by(User.id)
+    )
+    if since is not None:
+        # DIQQAT: datetime obyekti beriladi, isoformat() MATNI emas —
+        # aks holda SQLite "2026-07-19 20:00" < "2026-07-19T19:00" deb
+        # hisoblab, davr boshidagi XP'ni tushirib qoldiradi.
+        q = q.where(XpLog.created_at >= since)
+    rows = (await session.execute(q)).all()
     return sorted(rows, key=lambda r: r.xp, reverse=True)
+
+
+def _month_start_utc() -> datetime:
+    """Joriy oy boshi (1-sana 00:00 Toshkent) — naive UTC."""
+    now_utc = datetime.now(timezone.utc).replace(tzinfo=None)
+    local = now_utc + TASHKENT_OFFSET
+    first_local = local.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+    return first_local - TASHKENT_OFFSET
+
+
+def period_start(period: str) -> datetime | None:
+    """'week' | 'month' | 'all' -> davr boshi (all uchun None)."""
+    if period == "month":
+        return _month_start_utc()
+    if period == "all":
+        return None
+    return _week_start_utc()
 
 
 async def refresh_ranks(session: AsyncSession) -> list[tuple[User, int, int]]:
@@ -182,11 +132,30 @@ async def weekly_top3(
     ]
 
 
-async def leaderboard(session: AsyncSession, me_id: int) -> dict:
-    await seed_demo_rivals(session)
-    ranked = await _ranked_rows(session, _week_start_utc())
+async def _levels_by_user(session: AsyncSession, user_ids: list[int]) -> dict[int, str]:
+    """user_id -> daraja (oxirgi Plan bo'yicha). Rejasi yo'qlarga A0."""
+    if not user_ids:
+        return {}
+    from db.models import Plan
+
+    rows = (
+        await session.execute(
+            select(Plan.user_id, Plan.level, Plan.id)
+            .where(Plan.user_id.in_(user_ids))
+            .order_by(Plan.id)
+        )
+    ).all()
+    return {uid: lvl for uid, lvl, _ in rows}  # keyingi yozuv oldingisini bosadi
+
+
+async def leaderboard(
+    session: AsyncSession, me_id: int, period: str = "week"
+) -> dict:
+    """Reyting: haftalik / oylik / umumiy. Demo raqiblar yo'q."""
+    ranked = await _ranked_rows(session, period_start(period))
 
     my_xp = next((r.xp for r in ranked if r.id == me_id), 0)
+    levels = await _levels_by_user(session, [r.id for r in ranked] + [me_id])
 
     entries = []
     my_rank = None
@@ -199,8 +168,9 @@ async def leaderboard(session: AsyncSession, me_id: int) -> dict:
                 "rank": pos,
                 "name": r.name or "Foydalanuvchi",
                 "xp": int(r.xp),
+                "level": levels.get(r.id, "A0"),
                 "is_me": is_me,
-                "is_demo": bool(r.is_demo),
+                "is_demo": False,
             }
         )
 
@@ -212,15 +182,24 @@ async def leaderboard(session: AsyncSession, me_id: int) -> dict:
                 "rank": my_rank,
                 "name": "Siz",
                 "xp": 0,
+                "level": levels.get(me_id, "A0"),
                 "is_me": True,
                 "is_demo": False,
             }
         )
 
+    # Liga faqat HAFTALIK XP bo'yicha aniqlanadi
+    weekly_xp = my_xp
+    if period != "week":
+        week_rows = await _ranked_rows(session, _week_start_utc())
+        weekly_xp = next((r.xp for r in week_rows if r.id == me_id), 0)
+
     return {
-        "league": league_for(int(my_xp)),
+        "period": period,
+        "league": league_for(int(weekly_xp)),
         "all_leagues": LEAGUES,
         "my_rank": my_rank,
-        "my_weekly_xp": int(my_xp),
+        "my_weekly_xp": int(weekly_xp),
+        "my_period_xp": int(my_xp),
         "entries": entries,
     }

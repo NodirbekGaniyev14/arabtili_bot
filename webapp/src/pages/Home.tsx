@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import XPRing from "../components/XPRing";
-import { api, type ExamInfo, type Stats } from "../lib/api";
+import { api, type ChallengeInfo, type ExamInfo, type Stats } from "../lib/api";
 
 interface HomeProps {
   name: string;
@@ -11,6 +11,7 @@ interface HomeProps {
   onGoReview: () => void;
   onOpenRootLab: () => void;
   onOpenExam: () => void;
+  onOpenChallenge: () => void;
   onOpenWeak: () => void;
   onOpenRolePlay: () => void;
   onGoLessons: () => void;
@@ -33,6 +34,7 @@ export default function Home({
   onOpenRootLab,
   onOpenExam,
   onOpenWeak,
+  onOpenChallenge,
   onOpenRolePlay,
   onGoLessons,
 }: HomeProps) {
@@ -41,9 +43,21 @@ export default function Home({
 
   // Imtihon kartasi darajani va qulf holatini ko'rsatadi
   const [exam, setExam] = useState<ExamInfo | null>(null);
+  const [chal, setChal] = useState<ChallengeInfo | null>(null);
   useEffect(() => {
     api.getExamInfo().then(setExam).catch(() => {});
+    api.getChallengeInfo().then(setChal).catch(() => {});
   }, [stats.lessons]);
+
+  const chalDesc = !chal
+    ? "har dushanba"
+    : !chal.available
+      ? "avval dars tugating"
+      : chal.passed
+        ? `✅ ${chal.best_score}%`
+        : chal.attempted
+          ? `↻ ${chal.best_score}% · qayta`
+          : `${chal.questions} savol · +${chal.xp_reward} XP`;
 
   const examDesc = !exam
     ? "4 bo'lim · vaqtli"
@@ -172,6 +186,12 @@ export default function Home({
             label="Imtihon"
             desc={examDesc}
             onClick={onOpenExam}
+          />
+          <ModeCard
+            ar="تحدّي"
+            label="Haftalik chellenj"
+            desc={chalDesc}
+            onClick={onOpenChallenge}
           />
           <ModeCard
             ar="ضعيف"

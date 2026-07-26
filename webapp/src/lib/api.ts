@@ -9,6 +9,10 @@ export interface PlanData {
   module_order: string[];
   weekly_schedule: { day: number; tasks: string[] }[];
   motivation: string;
+  /** Daraja qaysi versiyadagi placement testi bilan aniqlangan */
+  placement_version: number;
+  /** Joriy placement versiyasi — undan past bo'lsa qayta test so'raladi */
+  placement_current: number;
 }
 
 export interface NextLesson {
@@ -148,16 +152,83 @@ export interface LeaderboardEntry {
   rank: number;
   name: string;
   xp: number;
+  /** Foydalanuvchining joriy darajasi (A0/A1/A2/B1) */
+  level: string;
   is_me: boolean;
   is_demo: boolean;
 }
 
+export type LeaderPeriod = "week" | "month" | "all";
+
 export interface LeaderboardData {
+  period: LeaderPeriod;
   league: League;
   all_leagues: League[];
   my_rank: number;
   my_weekly_xp: number;
+  my_period_xp: number;
   entries: LeaderboardEntry[];
+}
+
+/** Daraja aniqlash testi (placement) */
+export interface PlacementTier {
+  done: false;
+  tier: string;
+  tier_title: string;
+  tier_index: number;
+  tier_count: number;
+  pass_ratio: number;
+  items: MicroTestItem[];
+}
+
+export interface PlacementDone {
+  done: true;
+  level: string;
+  reason: string;
+}
+
+export type PlacementStep = PlacementTier | PlacementDone;
+
+export interface PlacementResult {
+  level: string;
+  reason: string;
+  start_lesson: string;
+  saved: boolean;
+}
+
+/** Haftalik chellenj */
+export interface ChallengeInfo {
+  week: number;
+  week_label: string;
+  available: boolean;
+  lessons_pool: number;
+  questions: number;
+  pass_score: number;
+  xp_reward: number;
+  attempted: boolean;
+  passed: boolean;
+  best_score: number | null;
+}
+
+export interface ChallengeData {
+  attempt_id: number;
+  week: number;
+  week_label: string;
+  items: MicroTestItem[];
+  pass_score: number;
+  xp_reward: number;
+  lessons_pool: number;
+}
+
+export interface ChallengeResult {
+  score: number;
+  passed: boolean;
+  correct: number;
+  total: number;
+  week: number;
+  xp_earned: number;
+  xp_already_claimed: boolean;
+  srs_reset: number;
 }
 
 export interface AchievementsData {
@@ -472,7 +543,28 @@ export const api = {
       method: "POST",
       body: JSON.stringify({ word_id: wordId, grade }),
     }),
-  getLeaderboard: () => request<LeaderboardData>("/api/leaderboard"),
+  getLeaderboard: (period: LeaderPeriod = "week") =>
+    request<LeaderboardData>(`/api/leaderboard?period=${period}`),
+  getPlacementStep: (passed: string) =>
+    request<PlacementStep>(`/api/placement/next?passed=${encodeURIComponent(passed)}`),
+  finishPlacement: (results: Record<string, boolean>) =>
+    request<PlacementResult>("/api/placement/finish", {
+      method: "POST",
+      body: JSON.stringify({ results }),
+    }),
+  getChallengeInfo: () => request<ChallengeInfo>("/api/challenge/info"),
+  startChallenge: () =>
+    request<ChallengeData>("/api/challenge/start", { method: "POST", body: "{}" }),
+  submitChallenge: (payload: {
+    attempt_id: number;
+    correct: number;
+    total: number;
+    wrong_words: string[];
+  }) =>
+    request<ChallengeResult>("/api/challenge/submit", {
+      method: "POST",
+      body: JSON.stringify(payload),
+    }),
   getAchievements: () => request<AchievementsData>("/api/achievements"),
   getProfile: () => request<ProfileData>("/api/profile"),
   updateGoal: (dailyMinutes: number) =>

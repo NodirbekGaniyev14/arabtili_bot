@@ -1,0 +1,47 @@
+{
+ "version": "2.0",
+ "note": "Daraja aniqlash testi — 4 bosqich, har birida 5 savol. Bosqich >=80% (5 dan 4) bo'lsa o'tilgan hisoblanadi. Daraja = o'tilmagan BIRINCHI bosqich; hammasi o'tilsa B1.",
+ "pass_ratio": 0.8,
+ "tiers": {
+  "A0": {
+   "title_uz": "Harflar va o'qish",
+   "questions": [
+    {"type": "mcq", "q_uz": "Bu harf qanday o'qiladi?", "q_ar": "ب", "options": ["b", "t", "n", "s"], "answer": "b", "explain_uz": "ب — «bo», pastda 1 nuqta.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "Qaysi harf «m» tovushini beradi?", "q_ar": "", "options": ["م", "ن", "ت", "ك"], "answer": "م", "explain_uz": "م — «mim».", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "Bu qanday o'qiladi?", "q_ar": "بُ", "options": ["bu", "ba", "bi", "ab"], "answer": "bu", "explain_uz": "Damma — «u» tovushi.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "Arab tilida yozuv qaysi yo'nalishda?", "q_ar": "", "options": ["O'ngdan chapga", "Chapdan o'ngga", "Yuqoridan pastga", "Pastdan yuqoriga"], "answer": "O'ngdan chapga", "explain_uz": "Arabcha o'ngdan chapga yoziladi.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "Bu so'zni o'qing:", "q_ar": "بَيْت", "options": ["bayt (uy)", "bāb (eshik)", "bint (qiz)", "tabb"], "answer": "bayt (uy)", "explain_uz": "بَيْت — «bayt», uy.", "audio": "", "root": "", "pattern": "", "words": []}
+   ]
+  },
+  "A1": {
+   "title_uz": "So'z va sodda gap",
+   "questions": [
+    {"type": "mcq", "q_uz": "Bu so'zning ma'nosi?", "q_ar": "كِتَاب", "options": ["kitob", "qalam", "uy", "suv"], "answer": "kitob", "explain_uz": "كِتَاب — kitob.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "Jumla ma'nosi?", "q_ar": "أَنَا طَالِبٌ", "options": ["Men talabaman", "U o'qituvchi", "Bu kitob", "Sen qayerdansan?"], "answer": "Men talabaman", "explain_uz": "أَنَا — men, طَالِب — talaba.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "«U (ayol) yozdi» qaysi?", "q_ar": "", "options": ["كَتَبَتْ", "كَتَبَ", "يَكْتُبُ", "كَتَبْتُ"], "answer": "كَتَبَتْ", "explain_uz": "Ayol shakli — oxiriga ـَتْ qo'shiladi.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "«Bu katta uy» qaysi?", "q_ar": "", "options": ["هَذَا بَيْتٌ كَبِيرٌ", "هَذَا البَيْتُ الكَبِيرُ", "بَيْتٌ كَبِيرٌ هَذَا", "هَذِهِ بَيْتٌ كَبِيرٌ"], "answer": "هَذَا بَيْتٌ كَبِيرٌ", "explain_uz": "Ishora + noaniq xabar = to'liq gap.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "«يَذْهَبُ» qaysi zamon?", "q_ar": "", "options": ["Hozirgi-kelasi (muzori')", "O'tgan (moziy)", "Buyruq", "Majhul"], "answer": "Hozirgi-kelasi (muzori')", "explain_uz": "Boshida يـ prefiksi — muzori'.", "audio": "", "root": "", "pattern": "", "words": []}
+   ]
+  },
+  "A2": {
+   "title_uz": "Sarf, olmoshlar, fe'l boblari",
+   "questions": [
+    {"type": "mcq", "q_uz": "«Ular (ayollar) yozdilar» qaysi?", "q_ar": "", "options": ["كَتَبْنَ", "كَتَبْنَا", "كَتَبُوا", "كَتَبَتَا"], "answer": "كَتَبْنَ", "explain_uz": "G'oyiba jam' — كَتَبْنَ; كَتَبْنَا esa «biz yozdik».", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "«Sizlar ikkovingiz» qaysi olmosh?", "q_ar": "", "options": ["أَنْتُمَا", "أَنْتُمْ", "أَنْتُنَّ", "هُمَا"], "answer": "أَنْتُمَا", "explain_uz": "Muxotab musanna — أَنْتُمَا.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "«عَلَّمَ» qaysi bobda va nima ma'noda?", "q_ar": "", "options": ["II bob — o'rgatdi", "V bob — o'rgandi", "IV bob — xabar berdi", "I bob — bildi"], "answer": "II bob — o'rgatdi", "explain_uz": "O'rta harf shaddali — II bob (فَعَّلَ).", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "«Bu kitoblar» to'g'ri shakli qaysi?", "q_ar": "", "options": ["هَذِهِ الكُتُبُ", "هَؤُلَاءِ الكُتُبُ", "هَذَانِ الكُتُبُ", "هَذَا الكُتُبُ"], "answer": "هَذِهِ الكُتُبُ", "explain_uz": "Jonsiz ko'plikka birlik ayol shakli: هَذِهِ.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "اِسْتَخْدَمَ ning muzori' shakli qaysi?", "q_ar": "", "options": ["يَسْتَخْدِمُ", "يَسْتَخْدَمُ", "يُسْتَخْدِمُ", "يَتَخَدَّمُ"], "answer": "يَسْتَخْدِمُ", "explain_uz": "X bob: hamza tushadi, o'rta harf kasra.", "audio": "", "root": "", "pattern": "", "words": []}
+   ]
+  },
+  "B1": {
+   "title_uz": "Yuqori grammatika",
+   "questions": [
+    {"type": "mcq", "q_uz": "«يَكْتُبُ» ning hozirgi zamon majhuli?", "q_ar": "", "options": ["يُكْتَبُ", "يُكْتِبُ", "كُتِبَ", "يَكْتُبْ"], "answer": "يُكْتَبُ", "explain_uz": "Majhul muzori': prefiks damma, o'rta harf fatha.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "«لَوْ» qanday shart bildiradi?", "q_ar": "", "options": ["Noreal (bo'lmagan) shart", "Real shart", "Vaqt shartisiz", "Buyruq"], "answer": "Noreal (bo'lmagan) shart", "explain_uz": "لَوْ — amalga oshmagan shart uchun.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "«جَاءَ الطَّالِبُ مُسْرِعًا» dagi «مُسْرِعًا» nima?", "q_ar": "", "options": ["Hol (الحال)", "Tamyiz (التمييز)", "Maf'ul mutlaq", "Sifat"], "answer": "Hol (الحال)", "explain_uz": "Harakat holatini bildiradi — hol, mansub.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "«أَنْ» dan keyin muzori' qaysi holatda keladi?", "q_ar": "", "options": ["Mansub (فَتْحَة)", "Marfu' (ضَمَّة)", "Majzum (سُكُون)", "Majrur (كَسْرَة)"], "answer": "Mansub (فَتْحَة)", "explain_uz": "أَنْ · لَنْ · كَيْ · حَتَّى — muzori'ni mansub qiladi.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "«الَّذِي» qaysi turkumga kiradi?", "q_ar": "", "options": ["Nisbiy olmosh", "Ishora olmoshi", "Shart yuklamasi", "So'roq olmoshi"], "answer": "Nisbiy olmosh", "explain_uz": "الَّذِي · الَّتِي — nisbiy olmoshlar (sifatlovchi gap uchun).", "audio": "", "root": "", "pattern": "", "words": []}
+   ]
+  }
+ }
+}
