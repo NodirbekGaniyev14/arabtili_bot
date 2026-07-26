@@ -144,7 +144,13 @@ async def _remap_a0_lessons(conn) -> None:
     """Bir martalik migratsiya: eski A0 dars ID'lari yangi (kengaytirilgan)
     tartibga ko'chiriladi. Meta kaliti orqali qayta ishlamaydi.
 
-    Xarita kesishgani uchun CASE ishlatiladi (bir o'tishda, to'qnashuvsiz)."""
+    IKKI BOSQICH — TO'QNASHUVNI OLDINI OLISH UCHUN.
+    Xarita zich va nomonoton (masalan 2->4, 4->7). Bitta CASE UPDATE
+    qatorlarni KETMA-KET yangilaydi, shuning uchun oraliqda ikki qator bir
+    xil ID ga tushib, lesson_ratings dagi UNIQUE(user_id, lesson_id) buziladi
+    (server startup shu sababli yiqilgan edi). Yechim: avval vaqtinchalik
+    'zz-<yangi>' prefiksiga, keyin 'a0-<yangi>' ga — hech qanday oraliqda
+    a0 ID'lari to'qnashmaydi."""
     key = "a0_expand_v1"
     row = (
         await conn.exec_driver_sql("SELECT value FROM meta WHERE key = ?", (key,))
@@ -152,17 +158,23 @@ async def _remap_a0_lessons(conn) -> None:
     if row:
         return
 
-    cases = " ".join(
-        f"WHEN 'a0-{old:02d}' THEN 'a0-{new:02d}'" for old, new in _A0_REMAP.items()
+    to_tmp = " ".join(
+        f"WHEN 'a0-{old:02d}' THEN 'zz-{new:02d}'" for old, new in _A0_REMAP.items()
     )
     for table, col in (
         ("progress", "lesson_id"),
         ("lesson_ratings", "lesson_id"),
         ("plans", "start_lesson"),
     ):
+        # 1) eski a0-* -> vaqtinchalik zz-* (yangi raqam bilan, to'qnashuvsiz)
         await conn.exec_driver_sql(
-            f"UPDATE {table} SET {col} = CASE {col} {cases} ELSE {col} END "
+            f"UPDATE {table} SET {col} = CASE {col} {to_tmp} ELSE {col} END "
             f"WHERE {col} LIKE 'a0-%'"
+        )
+        # 2) zz-* -> a0-* (barchasi allaqachon noyob yangi raqamda)
+        await conn.exec_driver_sql(
+            f"UPDATE {table} SET {col} = 'a0-' || substr({col}, 4) "
+            f"WHERE {col} LIKE 'zz-%'"
         )
     await conn.exec_driver_sql(
         "INSERT INTO meta (key, value) VALUES (?, 'done')", (key,)
@@ -170,11 +182,23 @@ async def _remap_a0_lessons(conn) -> None:
 
 
 async def init_db():
+    import logging
+
     from db.models import Base
 
+    log = logging.getLogger("uvicorn.error")
+
+    # Sxema + ustunlar — bu bo'lmasa API umuman ishlamaydi, xato bo'lsa ko'taramiz.
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
         await _ensure_columns(conn)
-        await _shift_a2_lessons(conn)
-        await _remove_b1_quran_module(conn)
-        await _remap_a0_lessons(conn)
+
+    # Kontent migratsiyalari — HAR BIRI ALOHIDA transaksiyada.
+    # Biri xato bersa ham server ishga tushadi (progress joyida qoladi);
+    # xatoni log'ga yozamiz, meta yozilmaganidan keyingi startda qayta urinadi.
+    for fn in (_shift_a2_lessons, _remove_b1_quran_module, _remap_a0_lessons):
+        try:
+            async with engine.begin() as conn:
+                await fn(conn)
+        except Exception:  # noqa: BLE001
+            log.exception("Migratsiya xatosi (%s) — o'tkazib yuborildi", fn.__name__)
