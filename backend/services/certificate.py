@@ -93,9 +93,11 @@ def render_png(
     _center(d, 480, name or "O'rganuvchi", _font(48), INK, W)
     _center(d, 548, f"Arabiy {level} kursini tugatdi", _font(26), EMERALD_DARK, W)
     _center(d, 590, f"Yakuniy imtihon: {total} / 100", _font(26), EMERALD_DARK, W)
+    # 4-bo'lim darajaga qarab: A0/A1 — gapirish, A2+ — matn o'qish
+    fourth_uz = "Matn" if scores.get("fourth") == "passage" else "Gapirish"
     parts = (
         f"O'qish {scores.get('reading', 0)}  ·  Tinglash {scores.get('listening', 0)}"
-        f"  ·  Yozish {scores.get('writing', 0)}  ·  Gapirish {scores.get('speaking', 0)}"
+        f"  ·  Yozish {scores.get('writing', 0)}  ·  {fourth_uz} {scores.get('speaking', 0)}"
     )
     _center(d, 634, parts, _font(22), INK, W)
 

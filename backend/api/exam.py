@@ -138,7 +138,9 @@ class SubmitBody(BaseModel):
     reading_correct: int = Field(ge=0)
     listening_correct: int = Field(ge=0)
     writing_score: int = Field(ge=0, le=100)
-    speaking_score: int = Field(ge=0, le=100)
+    speaking_score: int = Field(default=0, ge=0, le=100)
+    # A2+ da gapirish o'rniga matn o'qish bo'limi
+    passage_correct: int = Field(default=0, ge=0)
     holder_name: str = Field(default="", max_length=100)
 
 
@@ -168,6 +170,7 @@ async def exam_submit(
         body.listening_correct,
         body.writing_score,
         body.speaking_score,
+        body.passage_correct,
     )
 
     attempt.finished_at = exam_svc._now()
@@ -203,7 +206,10 @@ async def exam_submit(
         holder = body.holder_name.strip() or user.name
         cert = await issue_certificate(
             session, user.id, holder, attempt.level, result["total"],
-            {k: result[k] for k in ("reading", "listening", "writing", "speaking")},
+            {
+                k: result[k]
+                for k in ("reading", "listening", "writing", "speaking", "fourth")
+            },
         )
         cert_data = {
             "cert_id": cert.cert_id,
@@ -645,7 +651,9 @@ async def verify(code: str, session: AsyncSession = Depends(get_session)):
             f'<p style="margin:4px">Yakuniy imtihon: <b>{cert.score}/100</b></p>'
             f'<p style="margin:4px;font-size:13px;color:#8A8071">'
             f'O\'qish {scores.get("reading","—")} · Tinglash {scores.get("listening","—")} · '
-            f'Yozish {scores.get("writing","—")} · Gapirish {scores.get("speaking","—")}</p>'
+            f'Yozish {scores.get("writing","—")} · '
+            f'{"Matn" if scores.get("fourth") == "passage" else "Gapirish"} '
+            f'{scores.get("speaking","—")}</p>'
         )
 
     return HTMLResponse(f"""<html><head><meta name="viewport" content="width=device-width,initial-scale=1">

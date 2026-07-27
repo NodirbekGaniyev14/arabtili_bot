@@ -27,6 +27,29 @@ def _attempt(minutes: int = 30, started_ago_min: int = 5) -> ExamAttempt:
     )
 
 
+def _passage_attempt(n_passages: int = 2, per: int = 3) -> ExamAttempt:
+    """A2+ imtihoni: gapirish o'rnida matn bo'limi."""
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
+    return ExamAttempt(
+        user_id=1,
+        level="A2",
+        started_at=now - timedelta(minutes=5),
+        questions_json=json.dumps(
+            {
+                "minutes": 40,
+                "reading": [{}] * 10,
+                "listening": [{}] * 8,
+                "writing": [{}] * 2,
+                "speaking": [],
+                "passages": [
+                    {"id": f"p{i}", "questions": [{}] * per}
+                    for i in range(n_passages)
+                ],
+            }
+        ),
+    )
+
+
 # ── Baholash ──
 
 
@@ -82,6 +105,58 @@ def test_negative_and_oversized_manual_scores_clamped():
     r = ex.grade(_attempt(), 0, 0, -50, 500)
     assert r["writing"] == 0
     assert r["speaking"] == 100
+
+
+# ── Matn bo'limi (A2+) ──
+
+
+def test_fourth_section_is_speaking_by_default():
+    assert ex.grade(_attempt(), 8, 8, 100, 100)["fourth"] == "speaking"
+
+
+def test_fourth_section_is_passage_when_passages_present():
+    r = ex.grade(_passage_attempt(), 10, 8, 100, 0, passage_correct=6)
+    assert r["fourth"] == "passage"
+    assert r["speaking"] == 100  # 6/6 to'g'ri
+    assert r["total"] == 100
+
+
+def test_passage_score_is_ratio_of_all_questions():
+    r = ex.grade(_passage_attempt(n_passages=2, per=3), 10, 8, 100, 0, 3)
+    assert r["speaking"] == 50  # 3/6
+
+
+def test_speaking_score_ignored_when_passages_present():
+    """Mijoz speaking_score=100 yuborsa ham matn bali hisoblanadi."""
+    r = ex.grade(_passage_attempt(), 10, 8, 100, 100, passage_correct=0)
+    assert r["speaking"] == 0
+
+
+def test_passage_correct_clamped():
+    r = ex.grade(_passage_attempt(), 10, 8, 100, 0, passage_correct=999)
+    assert r["speaking"] == 100
+    r = ex.grade(_passage_attempt(), 10, 8, 100, 0, passage_correct=-5)
+    assert r["speaking"] == 0
+
+
+def test_build_exam_a2_has_passages_and_no_speaking():
+    exam = ex.build_exam("A2")
+    assert exam["speaking"] == []
+    assert len(exam["passages"]) == 2
+    assert ex.passage_questions(exam) == 6
+
+
+def test_build_exam_b1_has_three_passages():
+    exam = ex.build_exam("B1")
+    assert exam["speaking"] == []
+    assert len(exam["passages"]) == 3
+
+
+@pytest.mark.parametrize("level", ["A0", "A1"])
+def test_build_exam_low_levels_keep_speaking(level):
+    exam = ex.build_exam(level)
+    assert exam["passages"] == []
+    assert len(exam["speaking"]) > 0
 
 
 # ── Daraja zanjiri ──

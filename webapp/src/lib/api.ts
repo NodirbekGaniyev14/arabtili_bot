@@ -522,6 +522,14 @@ export interface ExamSpeaking {
   audio: string;
 }
 
+/** A2 va yuqorida gapirish o'rniga: matn + tagidagi savollar */
+export interface ExamPassage {
+  id: string;
+  title_uz: string;
+  text_ar: string;
+  questions: MicroTestItem[];
+}
+
 export interface ExamData {
   attempt_id: number;
   level: string;
@@ -530,13 +538,16 @@ export interface ExamData {
   listening: MicroTestItem[];
   writing: ExamWriting[];
   speaking: ExamSpeaking[];
+  passages: ExamPassage[];
 }
 
 export interface ExamResult {
   reading: number;
   listening: number;
   writing: number;
+  /** 4-bo'lim bali — gapirish yoki matn o'qish (`fourth` ga qarab) */
   speaking: number;
+  fourth: "speaking" | "passage";
   total: number;
   passed: boolean;
   timed_out: boolean;
@@ -684,6 +695,7 @@ export const api = {
     listening_correct: number;
     writing_score: number;
     speaking_score: number;
+    passage_correct: number;
     holder_name: string;
   }) =>
     request<ExamResult>("/api/exam/submit", {

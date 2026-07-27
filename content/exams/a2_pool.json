@@ -1,6 +1,6 @@
 {
  "level": "A2",
- "config": {"reading": 10, "listening": 8, "writing": 2, "speaking": 3, "minutes": 40},
+ "config": {"reading": 10, "listening": 8, "writing": 2, "speaking": 0, "passages": 2, "minutes": 40},
  "reading": [
   {"type": "mcq", "q_uz": "«o'rgatdi» (II bob) qaysi?", "q_ar": "", "options": ["عَلَّمَ", "عَلِمَ", "تَعَلَّمَ", "أَعْلَمَ"], "answer": "عَلَّمَ"},
   {"type": "mcq", "q_uz": "«o'rgandi» (V bob) qaysi?", "q_ar": "", "options": ["تَعَلَّمَ", "عَلَّمَ", "اِسْتَعْلَمَ", "عَالِم"], "answer": "تَعَلَّمَ"},
@@ -46,12 +46,57 @@
   {"task_uz": "Saudiyaga safar haqida 4 gap yozing: aeroport, taksi, mehmonxona, Haram."},
   {"task_uz": "«كَتَبَ» ni majhulga aylantiring va solishtirma daraja (أَفْعَل) bilan bir gap tuzing."}
  ],
- "speaking": [
-  {"q_ar": "عَلَّمَ المُدَرِّسُ الطُّلَّابَ، وَتَعَلَّمَ الطُّلَّابُ.", "audio": "a2/allama.mp3"},
-  {"q_ar": "كَانَ الجَوُّ جَمِيلًا أَمْسِ.", "audio": "a2/kana.mp3"},
-  {"q_ar": "أَبْغَى أَرُوح الحَرَم، بِكَمْ التَّوْصِيلَة؟", "audio": "hj/abgha.mp3"},
-  {"q_ar": "طُفْتُ حَوْلَ الكَعْبَةِ وَسَعَيْتُ بَيْنَ الصَّفَا وَالمَرْوَةِ.", "audio": "a2/tawaf.mp3"},
-  {"q_ar": "اِقْرَأْ وَاُكْتُبْ وَاِسْمَعْ جَيِّدًا.", "audio": "a2/iqra.mp3"},
-  {"q_ar": "حَصَلْتُ عَلَى شَهَادَةِ المُسْتَوَى A2.", "audio": "a2/shahada_cert.mp3"}
+ "speaking": [],
+ "passages": [
+  {
+   "id": "a2-p-yawm",
+   "title_uz": "Somiyning kuni",
+   "text_ar": "يَسْتَيْقِظُ سَامِي فِي السَّاعَةِ السَّادِسَةِ صَبَاحًا. يَغْسِلُ وَجْهَهُ ثُمَّ يَتَنَاوَلُ الفُطُورَ مَعَ أُسْرَتِهِ. يَذْهَبُ إِلَى المَدْرَسَةِ بِالحَافِلَةِ لِأَنَّ بَيْتَهُ بَعِيدٌ عَنْهَا. بَعْدَ الدُّرُوسِ يَرْجِعُ إِلَى البَيْتِ وَيَسْتَرِيحُ قَلِيلًا، ثُمَّ يَكْتُبُ وَاجِبَاتِهِ. وَفِي المَسَاءِ يُسَاعِدُ أَخَاهُ الصَّغِيرَ فِي دَرْسِ الحِسَابِ.",
+   "questions": [
+    {"type": "mcq", "q_uz": "Somiy soat nechada uyg'onadi?", "q_ar": "", "options": ["Oltida", "Yettida", "Beshda", "Sakkizda"], "answer": "Oltida"},
+    {"type": "mcq", "q_uz": "Maktabga nima bilan boradi?", "q_ar": "", "options": ["Avtobusda", "Piyoda", "Mashinada", "Poyezdda"], "answer": "Avtobusda"},
+    {"type": "mcq", "q_uz": "Kechqurun nima qiladi?", "q_ar": "", "options": ["Ukasiga hisob darsida yordam beradi", "Do'stlari bilan o'ynaydi", "Bozorga boradi", "Erta uxlaydi"], "answer": "Ukasiga hisob darsida yordam beradi"}
+   ]
+  },
+  {
+   "id": "a2-p-suq",
+   "title_uz": "Bozorda",
+   "text_ar": "ذَهَبَتْ مَرْيَمُ إِلَى السُّوقِ يَوْمَ الجُمُعَةِ. اِشْتَرَتْ خُبْزًا وَجُبْنًا وَتُفَّاحًا. سَأَلَتِ البَائِعَ عَنِ السِّعْرِ فَقَالَ: عِشْرُونَ رِيَالًا. دَفَعَتْ مَرْيَمُ المَبْلَغَ وَشَكَرَتْهُ. ثُمَّ رَجَعَتْ إِلَى البَيْتِ مَاشِيَةً لِأَنَّ السُّوقَ قَرِيبٌ مِنْ بَيْتِهَا.",
+   "questions": [
+    {"type": "mcq", "q_uz": "Maryam qaysi kuni bozorga bordi?", "q_ar": "", "options": ["Juma", "Shanba", "Dushanba", "Payshanba"], "answer": "Juma"},
+    {"type": "mcq", "q_uz": "U nimani SOTIB OLMADI?", "q_ar": "", "options": ["Go'sht", "Non", "Pishloq", "Olma"], "answer": "Go'sht"},
+    {"type": "mcq", "q_uz": "Uyga qanday qaytdi va nega?", "q_ar": "", "options": ["Piyoda — bozor uyiga yaqin", "Avtobusda — bozor uzoq", "Taksida — yuki og'ir edi", "Do'sti bilan mashinada"], "answer": "Piyoda — bozor uyiga yaqin"}
+   ]
+  },
+  {
+   "id": "a2-p-safar",
+   "title_uz": "Samarqandga safar",
+   "text_ar": "سَافَرَ خَالِدٌ إِلَى مَدِينَةِ سَمَرْقَنْدَ فِي الصَّيْفِ. رَكِبَ القِطَارَ فِي الصَّبَاحِ وَوَصَلَ بَعْدَ ثَلَاثِ سَاعَاتٍ. زَارَ المَسَاجِدَ القَدِيمَةَ وَالأَسْوَاقَ، وَالْتَقَطَ صُوَرًا كَثِيرَةً. أَعْجَبَتْهُ المَدِينَةُ جِدًّا، وَقَرَّرَ أَنْ يَعُودَ إِلَيْهَا فِي العَامِ القَادِمِ.",
+   "questions": [
+    {"type": "mcq", "q_uz": "Xolid qaysi transportda ketdi?", "q_ar": "", "options": ["Poyezdda", "Samolyotda", "Avtobusda", "Mashinada"], "answer": "Poyezdda"},
+    {"type": "mcq", "q_uz": "Yo'l qancha vaqt oldi?", "q_ar": "", "options": ["Uch soat", "Bir soat", "Besh soat", "Yarim kun"], "answer": "Uch soat"},
+    {"type": "mcq", "q_uz": "Safar oxirida nima qaror qildi?", "q_ar": "", "options": ["Kelasi yil yana kelishga", "Shu yerda qolishga", "Boshqa shaharga ketishga", "Do'stlarini chaqirishga"], "answer": "Kelasi yil yana kelishga"}
+   ]
+  },
+  {
+   "id": "a2-p-usra",
+   "title_uz": "Ahmadning oilasi",
+   "text_ar": "أُسْرَةُ أَحْمَدَ صَغِيرَةٌ. وَالِدُهُ مُهَنْدِسٌ يَعْمَلُ فِي شَرِكَةٍ كَبِيرَةٍ، وَوَالِدَتُهُ مُدَرِّسَةٌ فِي مَدْرَسَةٍ اِبْتِدَائِيَّةٍ. وَلَهُ أُخْتٌ وَاحِدَةٌ اِسْمُهَا زَيْنَبُ، وَهِيَ طَالِبَةٌ فِي الجَامِعَةِ. يَجْتَمِعُونَ كُلَّ مَسَاءٍ حَوْلَ المَائِدَةِ وَيَتَحَدَّثُونَ عَنْ يَوْمِهِمْ.",
+   "questions": [
+    {"type": "mcq", "q_uz": "Ahmadning otasi kim bo'lib ishlaydi?", "q_ar": "", "options": ["Muhandis", "O'qituvchi", "Shifokor", "Savdogar"], "answer": "Muhandis"},
+    {"type": "mcq", "q_uz": "Zaynab kim?", "q_ar": "", "options": ["Ahmadning singlisi, universitet talabasi", "Ahmadning onasi", "Ahmadning ustozi", "Ahmadning qo'shnisi"], "answer": "Ahmadning singlisi, universitet talabasi"},
+    {"type": "mcq", "q_uz": "Oila har oqshom nima qiladi?", "q_ar": "", "options": ["Dasturxon atrofida yig'ilib suhbatlashadi", "Sayrga chiqadi", "Mehmonga boradi", "Kitob o'qiydi"], "answer": "Dasturxon atrofida yig'ilib suhbatlashadi"}
+   ]
+  },
+  {
+   "id": "a2-p-madrasa",
+   "title_uz": "Bizning maktab",
+   "text_ar": "مَدْرَسَتُنَا جَدِيدَةٌ وَوَاسِعَةٌ. فِيهَا عِشْرُونَ فَصْلًا وَمَكْتَبَةٌ كَبِيرَةٌ وَمَلْعَبٌ لِكُرَةِ القَدَمِ. يَبْدَأُ الدَّوَامُ فِي السَّاعَةِ الثَّامِنَةِ وَيَنْتَهِي فِي السَّاعَةِ الوَاحِدَةِ. المُدَرِّسُونَ يُسَاعِدُونَ الطُّلَّابَ، وَالطُّلَّابُ يُحِبُّونَ المَكْتَبَةَ لِأَنَّ فِيهَا كُتُبًا كَثِيرَةً.",
+   "questions": [
+    {"type": "mcq", "q_uz": "Maktabda nechta sinf bor?", "q_ar": "", "options": ["Yigirmata", "O'nta", "O'ttizta", "Sakkizta"], "answer": "Yigirmata"},
+    {"type": "mcq", "q_uz": "Darslar soat nechada tugaydi?", "q_ar": "", "options": ["Birda", "Sakkizda", "Uchda", "O'n ikkida"], "answer": "Birda"},
+    {"type": "mcq", "q_uz": "O'quvchilar kutubxonani nega yaxshi ko'rishadi?", "q_ar": "", "options": ["Unda kitob ko'p", "U yangi bino", "U kattaligi uchun", "U maydonga yaqin"], "answer": "Unda kitob ko'p"}
+   ]
+  }
  ]
 }

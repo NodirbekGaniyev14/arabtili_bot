@@ -19,6 +19,7 @@ type Stage =
   | { k: "listening" }
   | { k: "writing"; i: number }
   | { k: "speaking"; i: number }
+  | { k: "passage"; i: number }
   | { k: "result" };
 
 const SECTION_TITLES: Record<string, string> = {
@@ -37,7 +38,13 @@ export default function Exam({ onClose }: { onClose: () => void }) {
   const [deadline, setDeadline] = useState<number | null>(null);
   const [leftSec, setLeftSec] = useState(0);
 
-  const scores = useRef({ reading: 0, listening: 0, writing: 0, speakingDone: 0 });
+  const scores = useRef({
+    reading: 0,
+    listening: 0,
+    writing: 0,
+    speakingDone: 0,
+    passage: 0,
+  });
   const writingTexts = useRef<string[]>([]);
   const submitted = useRef(false);
 
@@ -106,6 +113,7 @@ export default function Exam({ onClose }: { onClose: () => void }) {
         listening_correct: scores.current.listening,
         writing_score: wr,
         speaking_score: sp,
+        passage_correct: scores.current.passage,
         holder_name: holderName,
       });
       setResult(r);
@@ -114,6 +122,13 @@ export default function Exam({ onClose }: { onClose: () => void }) {
     } catch {
       setError("Topshirishda xatolik");
     }
+  };
+
+  /** Yozishdan keyingi 4-bo'lim: A2+ da matn o'qish, pastda gapirish */
+  const afterWriting = (e: ExamData) => {
+    if (e.passages?.length) setStage({ k: "passage", i: 0 });
+    else if (e.speaking.length) setStage({ k: "speaking", i: 0 });
+    else finish();
   };
 
   const mm = Math.floor(leftSec / 60);
@@ -254,7 +269,13 @@ export default function Exam({ onClose }: { onClose: () => void }) {
                     <p>📖 O'qish: {sel.counts.reading} savol · 25%</p>
                     <p>🎧 Tinglash: {sel.counts.listening} savol · 25%</p>
                     <p>✍️ Yozish: {sel.counts.writing} topshiriq · 25%</p>
-                    <p>🗣 Gapirish: {sel.counts.speaking} topshiriq · 25%</p>
+                    {sel.counts.passages ? (
+                      <p>
+                        📚 Matn o'qish: {sel.counts.passages} ta matn · 25%
+                      </p>
+                    ) : (
+                      <p>🗣 Gapirish: {sel.counts.speaking} topshiriq · 25%</p>
+                    )}
                     <p className="pt-1 text-ink-soft">
                       O'tish uchun umumiy <b>80%+</b> yetarli.
                       Yiqilsangiz — 24 soatdan keyin yangi savollar bilan.
@@ -315,14 +336,8 @@ export default function Exam({ onClose }: { onClose: () => void }) {
                   setStage({ k: "listening" });
                 } else {
                   scores.current.listening = correct;
-                  setStage(
-                    exam.writing.length
-                      ? { k: "writing", i: 0 }
-                      : exam.speaking.length
-                        ? { k: "speaking", i: 0 }
-                        : { k: "result" }
-                  );
-                  if (!exam.writing.length && !exam.speaking.length) finish();
+                  if (exam.writing.length) setStage({ k: "writing", i: 0 });
+                  else afterWriting(exam);
                 }
               }}
             />
@@ -349,13 +364,48 @@ export default function Exam({ onClose }: { onClose: () => void }) {
               onClick={() => {
                 if (stage.i + 1 < exam.writing.length)
                   setStage({ k: "writing", i: stage.i + 1 });
-                else if (exam.speaking.length) setStage({ k: "speaking", i: 0 });
-                else finish();
+                else afterWriting(exam);
               }}
               className="mt-4 w-full rounded-2xl bg-emerald-deep py-3.5 text-white font-extrabold active:scale-[0.98] transition-transform"
             >
               Keyingi
             </button>
+          </div>
+        )}
+
+        {/* MATN O'QISH (A2+) — matn tepada, savollar tagida */}
+        {stage.k === "passage" && exam && exam.passages[stage.i] && (
+          <div className="pt-4">
+            <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft mb-1">
+              📚 MATN · {stage.i + 1}/{exam.passages.length}
+            </div>
+            <div className="rounded-2xl bg-card border border-cardline p-4">
+              <div className="text-sm font-extrabold text-emerald-deep">
+                {exam.passages[stage.i].title_uz}
+              </div>
+              <p
+                dir="rtl"
+                className="mt-2 font-arabic text-[22px] leading-[2.1] text-right"
+              >
+                {exam.passages[stage.i].text_ar}
+              </p>
+            </div>
+            <p className="mt-3 text-xs text-ink-soft font-semibold">
+              Matnni o'qing va quyidagi savollarga javob bering:
+            </p>
+            <div className="mt-2">
+              <QuizRunner
+                key={`p${stage.i}`}
+                items={exam.passages[stage.i].questions}
+                label="SAVOL"
+                onFinish={(correct) => {
+                  scores.current.passage += correct;
+                  if (stage.i + 1 < exam.passages.length)
+                    setStage({ k: "passage", i: stage.i + 1 });
+                  else finish();
+                }}
+              />
+            </div>
           </div>
         )}
 
@@ -430,7 +480,10 @@ export default function Exam({ onClose }: { onClose: () => void }) {
                   ["📖 O'qish", result.reading],
                   ["🎧 Tinglash", result.listening],
                   ["✍️ Yozish", result.writing],
-                  ["🗣 Gapirish", result.speaking],
+                  [
+                    result.fourth === "passage" ? "📚 Matn" : "🗣 Gapirish",
+                    result.speaking,
+                  ],
                 ] as const
               ).map(([label, val]) => (
                 <div key={label} className="rounded-xl bg-card border border-cardline p-2.5">

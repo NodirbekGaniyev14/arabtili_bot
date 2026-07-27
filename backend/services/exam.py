@@ -177,8 +177,15 @@ def build_exam(level: str) -> dict | None:
         "reading": sample(pool["reading"], cfg["reading"]),
         "listening": sample(pool["listening"], cfg["listening"]),
         "writing": sample(pool["writing"], cfg["writing"]),
-        "speaking": sample(pool["speaking"], cfg["speaking"]),
+        # 4-bo'lim: A0/A1 da gapirish, A2 va yuqorida matn o'qish (passages)
+        "speaking": sample(pool.get("speaking", []), cfg.get("speaking", 0)),
+        "passages": sample(pool.get("passages", []), cfg.get("passages", 0)),
     }
+
+
+def passage_questions(exam: dict) -> int:
+    """Matn bo'limidagi savollar soni."""
+    return sum(len(p.get("questions", [])) for p in exam.get("passages") or [])
 
 
 async def start_attempt(
@@ -201,8 +208,14 @@ def grade(
     listening_correct: int,
     writing_score: int,
     speaking_score: int,
+    passage_correct: int = 0,
 ) -> dict:
-    """Bo'lim ballari (0-100) va yakuniy natija."""
+    """Bo'lim ballari (0-100) va yakuniy natija.
+
+    4-bo'lim darajaga qarab o'zgaradi: A0/A1 da gapirish, A2 va yuqorida
+    matn o'qish. Ball baribir `speaking` kalitida qaytadi (DB ustuni o'sha),
+    `fourth` esa qaysi bo'lim ekanini bildiradi.
+    """
     exam = json.loads(attempt.questions_json)
     n_r = max(1, len(exam["reading"]))
     n_l = max(1, len(exam["listening"]))
@@ -210,7 +223,14 @@ def grade(
     s_reading = round(100 * min(reading_correct, n_r) / n_r)
     s_listening = round(100 * min(listening_correct, n_l) / n_l)
     s_writing = max(0, min(100, writing_score))
-    s_speaking = max(0, min(100, speaking_score))
+
+    n_p = passage_questions(exam)
+    if n_p:
+        fourth = "passage"
+        s_speaking = round(100 * min(max(0, passage_correct), n_p) / n_p)
+    else:
+        fourth = "speaking"
+        s_speaking = max(0, min(100, speaking_score))
 
     total = round((s_reading + s_listening + s_writing + s_speaking) / 4)
     passed = total >= PASS_TOTAL  # umumiy 80%+ — bo'lim minimumi olib tashlandi
@@ -227,6 +247,7 @@ def grade(
         "listening": s_listening,
         "writing": s_writing,
         "speaking": s_speaking,
+        "fourth": fourth,
         "total": total,
         "passed": passed,
         "timed_out": timed_out,

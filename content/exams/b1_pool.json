@@ -1,6 +1,6 @@
 {
  "level": "B1",
- "config": {"reading": 10, "listening": 8, "writing": 2, "speaking": 3, "minutes": 45},
+ "config": {"reading": 10, "listening": 8, "writing": 2, "speaking": 0, "passages": 3, "minutes": 45},
  "reading": [
   {"type": "mcq", "q_uz": "«يَكْتُبُ» ning hozirgi zamon majhuli?", "q_ar": "", "options": ["يُكْتَبُ", "يُكْتِبُ", "كُتِبَ", "يَكْتُبْ"], "answer": "يُكْتَبُ"},
   {"type": "mcq", "q_uz": "«قَالَ» ning o'tgan zamon majhuli?", "q_ar": "", "options": ["قِيلَ", "قُوِلَ", "يُقَالُ", "قَيَّلَ"], "answer": "قِيلَ"},
@@ -42,11 +42,57 @@
   {"task_uz": "Uch gapni majhulga aylantiring: كتبَ الطالبُ الرسالةَ / يفتحُ العاملُ البابَ / باعَ التاجرُ البضاعةَ."},
   {"task_uz": "Shart gaplar yozing: bittasi إذا bilan (real), bittasi لو bilan (xayoliy, javobda لَـ)."}
  ],
- "speaking": [
-  {"q_ar": "كُتِبَ التَّقْرِيرُ مِنْ قِبَلِ المُدِيرِ، وَنُشِرَ فِي المَوْقِعِ الرَّسْمِيِّ.", "audio": "b1/nushira.mp3"},
-  {"q_ar": "إِنْ تَزْرَعْ خَيْرًا تَحْصُدْ خَيْرًا، وَلَوْ عَلِمْتُ لَجِئْتُ مُسْرِعًا.", "audio": "b1/khayr.mp3"},
-  {"q_ar": "سَأَتَحَدَّثُ اليَوْمَ عَنْ أَهَمِّيَّةِ العِلْمِ، وَعَرْضِي يَتَكَوَّنُ مِنْ ثَلَاثَةِ أَجْزَاءٍ.", "audio": "b1/ard_taqdimi.mp3"},
-  {"q_ar": "أَحْتَرِمُ رَأْيَكَ، لٰكِنِّي أَخْتَلِفُ مَعَكَ، وَالدَّلِيلُ عَلَى ذٰلِكَ وَاضِحٌ.", "audio": "b1/dalil.mp3"},
-  {"q_ar": "اِزْدَادَتِ المَدِينَةُ سُكَّانًا، وَجَاءَ النَّاسُ إِلَيْهَا طَلَبًا لِلرِّزْقِ.", "audio": "b1/rizq.mp3"}
+ "speaking": [],
+ "passages": [
+  {
+   "id": "b1-p-bia",
+   "title_uz": "Atrof-muhitni asrash",
+   "text_ar": "تُعَدُّ حماية البيئة من أهم القضايا في عصرنا. فقد ازداد التلوث في المدن الكبيرة بسبب المصانع وكثرة السيارات. وقد أُنشئت في كثير من الدول مراكز لإعادة التدوير، كما سُنَّت قوانين تمنع رمي النفايات في الأنهار. ويرى الخبراء أن التوعية في المدارس أهم من العقوبات، لأن الطفل الذي يتعلم اليوم سيحمي بلده غدا.",
+   "questions": [
+    {"type": "mcq", "q_uz": "Katta shaharlarda ifloslanish nima sababdan ortgan?", "q_ar": "", "options": ["Zavodlar va mashinalarning ko'payishi", "Aholining kamayishi", "Daryolarning qurishi", "Maktablarning yopilishi"], "answer": "Zavodlar va mashinalarning ko'payishi"},
+    {"type": "mcq", "q_uz": "Ko'p davlatlarda nima tashkil etilgan?", "q_ar": "", "options": ["Qayta ishlash markazlari", "Yangi zavodlar", "Suv omborlari", "Sport majmualari"], "answer": "Qayta ishlash markazlari"},
+    {"type": "mcq", "q_uz": "Mutaxassislar fikricha nima muhimroq?", "q_ar": "", "options": ["Maktablarda ongni oshirish", "Jarimalarni oshirish", "Zavodlarni yopish", "Yangi qonun chiqarish"], "answer": "Maktablarda ongni oshirish"}
+   ]
+  },
+  {
+   "id": "b1-p-taalum",
+   "title_uz": "Masofaviy ta'lim",
+   "text_ar": "انتشر التعليم عن بُعد في السنوات الأخيرة انتشارا واسعا. فالطالب يستطيع أن يحضر الدرس وهو في بيته، وأن يُعيد مشاهدة الدرس متى شاء. لكن هذا النوع من التعليم يحتاج إلى انضباط ذاتي كبير، إذ لا يوجد مراقب. ولذلك يُفضّل بعض المعلمين الجمع بين الدراسة في القاعة والدراسة عبر الشبكة.",
+   "questions": [
+    {"type": "mcq", "q_uz": "Matnda masofaviy ta'limning qanday afzalligi aytilgan?", "q_ar": "", "options": ["Darsni uyda ko'rib, xohlaganda qayta ko'rish", "Darslar tekin bo'lishi", "Imtihon bo'lmasligi", "O'qituvchi kerak emasligi"], "answer": "Darsni uyda ko'rib, xohlaganda qayta ko'rish"},
+    {"type": "mcq", "q_uz": "Bu ta'lim turi nimani talab qiladi?", "q_ar": "", "options": ["Kuchli o'z-o'zini nazorat qilishni", "Qimmat jihozni", "Ko'p vaqtni", "Guruh bilan ishlashni"], "answer": "Kuchli o'z-o'zini nazorat qilishni"},
+    {"type": "mcq", "q_uz": "Ba'zi o'qituvchilar nimani afzal ko'rishadi?", "q_ar": "", "options": ["Sinf va onlayn o'qishni birlashtirishni", "Faqat onlayn o'qishni", "Faqat sinfda o'qishni", "Ta'limni to'xtatishni"], "answer": "Sinf va onlayn o'qishni birlashtirishni"}
+   ]
+  },
+  {
+   "id": "b1-p-sihha",
+   "title_uz": "Sog'liq va sport",
+   "text_ar": "ينصح الأطباء بممارسة الرياضة ثلاث مرات في الأسبوع على الأقل. فالمشي السريع نصف ساعة يوميا يُقوّي القلب ويُخفّض الوزن. كما يُنصح بتقليل السكر والإكثار من الخضار والفواكه. وقد أثبتت دراسات حديثة أن النوم المبكر لا يقل أهمية عن الغذاء الصحي.",
+   "questions": [
+    {"type": "mcq", "q_uz": "Shifokorlar haftasiga necha marta sport bilan shug'ullanishni maslahat beradi?", "q_ar": "", "options": ["Kamida uch marta", "Har kuni", "Bir marta", "Besh marta"], "answer": "Kamida uch marta"},
+    {"type": "mcq", "q_uz": "Yarim soatlik tez yurish nima beradi?", "q_ar": "", "options": ["Yurakni mustahkamlaydi va vaznni kamaytiradi", "Uyquni uzaytiradi", "Ishtahani oshiradi", "Ko'zni davolaydi"], "answer": "Yurakni mustahkamlaydi va vaznni kamaytiradi"},
+    {"type": "mcq", "q_uz": "So'nggi tadqiqotlar nimani isbotladi?", "q_ar": "", "options": ["Erta uxlash sog'lom ovqatdan kam ahamiyatli emas", "Sport ovqatdan muhimroq", "Shakar foydali", "Meva vaznni oshiradi"], "answer": "Erta uxlash sog'lom ovqatdan kam ahamiyatli emas"}
+   ]
+  },
+  {
+   "id": "b1-p-lugha",
+   "title_uz": "Arab tili",
+   "text_ar": "تُعَدّ اللغة العربية من أقدم اللغات الحية، ويتحدث بها أكثر من أربعمائة مليون إنسان. وتمتاز بنظام الجذور، فمن جذر واحد تُشتق عشرات الكلمات. وقد دخلت كلمات عربية كثيرة إلى اللغة الأوزبكية، مثل «كتاب» و«مكتب» و«وقت». ولذلك يجد الطالب الأوزبكي سهولة في حفظ المفردات.",
+   "questions": [
+    {"type": "mcq", "q_uz": "Arab tilida qancha odam so'zlashadi?", "q_ar": "", "options": ["To'rt yuz milliondan ortiq", "Yuz million", "Ellik million", "Bir milliard"], "answer": "To'rt yuz milliondan ortiq"},
+    {"type": "mcq", "q_uz": "Arab tilining o'ziga xos xususiyati nima?", "q_ar": "", "options": ["O'zak tizimi — bitta o'zakdan o'nlab so'z", "Harflar soni", "Yozuv yo'nalishi", "Qadimiyligi"], "answer": "O'zak tizimi — bitta o'zakdan o'nlab so'z"},
+    {"type": "mcq", "q_uz": "O'zbek o'quvchi nega so'zlarni oson yodlaydi?", "q_ar": "", "options": ["O'zbek tiliga ko'p arabcha so'z kirgan", "Arab tili sodda", "So'zlar qisqa", "Grammatika yo'q"], "answer": "O'zbek tiliga ko'p arabcha so'z kirgan"}
+   ]
+  },
+  {
+   "id": "b1-p-madina",
+   "title_uz": "Shaharga ko'chish",
+   "text_ar": "انتقل كثير من الناس من القرى إلى المدن بحثا عن العمل. وقد أدى ذلك إلى ازدحام الطرق وارتفاع أسعار المساكن. ومع ذلك، توفر المدينة خدمات أفضل في التعليم والعلاج. ويرى بعض الباحثين أن الحل يكمن في تطوير القرى نفسها، لا في توسيع المدن.",
+   "questions": [
+    {"type": "mcq", "q_uz": "Odamlar nega shaharga ko'chishdi?", "q_ar": "", "options": ["Ish izlab", "Havo yaxshi bo'lgani uchun", "Qarindoshlari chaqirgani uchun", "Uy arzon bo'lgani uchun"], "answer": "Ish izlab"},
+    {"type": "mcq", "q_uz": "Bu nimaga olib keldi?", "q_ar": "", "options": ["Yo'llar tirbandligi va uy narxining oshishiga", "Maktablar yopilishiga", "Qishloqlar kengayishiga", "Narxlar tushishiga"], "answer": "Yo'llar tirbandligi va uy narxining oshishiga"},
+    {"type": "mcq", "q_uz": "Ba'zi tadqiqotchilar yechimni nimada ko'rishadi?", "q_ar": "", "options": ["Qishloqlarning o'zini rivojlantirishda", "Shaharlarni kengaytirishda", "Ko'chishni taqiqlashda", "Yangi yo'l qurishda"], "answer": "Qishloqlarning o'zini rivojlantirishda"}
+   ]
+  }
  ]
 }
