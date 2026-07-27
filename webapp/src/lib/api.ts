@@ -172,15 +172,6 @@ export interface LeaderboardData {
   my_weekly_xp: number;
   my_period_xp: number;
   entries: LeaderboardEntry[];
-  /** Liga mexanikasi — ko'tarilish/tushish zonalari */
-  league_rank: number;
-  league_size: number;
-  promote_zone: boolean;
-  relegate_zone: boolean;
-  promote_top: number;
-  relegate_bottom: number;
-  min_xp_to_promote: number;
-  next_league: League | null;
 }
 
 /** Ma'lumotnoma — grammatika va lug'at */

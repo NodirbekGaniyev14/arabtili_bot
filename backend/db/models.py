@@ -234,15 +234,22 @@ class ClientError(Base):
 
 
 class WeeklyAward(Base):
-    """Haftalik reyting sovrini (top-3) — hafta boshiga bir marta beriladi."""
+    """Reyting sovrini: haftalik top-3 yoki oylik top-5.
+
+    Bir davr uchun bir marta beriladi. `week_start` — davr kaliti:
+    haftalik uchun dushanba sanasi "YYYY-MM-DD", oylik uchun "YYYY-MM".
+    Ular hech qachon to'qnashmaydi (uzunligi farq qiladi), shuning uchun
+    (user_id, week_start) unikal konstreynti ikkala davr uchun ham to'g'ri.
+    """
 
     __tablename__ = "weekly_awards"
     __table_args__ = (UniqueConstraint("user_id", "week_start", name="uq_award_week"),)
 
     id: Mapped[int] = mapped_column(primary_key=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
-    week_start: Mapped[str] = mapped_column(String(10), index=True)  # YYYY-MM-DD
-    rank: Mapped[int] = mapped_column(Integer)  # 1 | 2 | 3
+    week_start: Mapped[str] = mapped_column(String(10), index=True)  # davr kaliti
+    period: Mapped[str] = mapped_column(String(8), default="week")  # week | month
+    rank: Mapped[int] = mapped_column(Integer)  # haftada 1-3, oyda 1-5
     weekly_xp: Mapped[int] = mapped_column(Integer, default=0)
     cert_id: Mapped[str] = mapped_column(String(24), default="")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)

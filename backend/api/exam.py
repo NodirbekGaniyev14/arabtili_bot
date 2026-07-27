@@ -588,12 +588,15 @@ async def verify(code: str, session: AsyncSession = Depends(get_session)):
         )
 
     scores = json.loads(cert.scores_json or "{}")
-    if (cert.kind or "level") == "weekly":
-        rank = scores.get("rank", cert.level.lstrip("W") or "—")
+    kind = cert.kind or "level"
+    if kind in ("weekly", "week", "month"):
+        rank = scores.get("rank", cert.level.lstrip("WM") or "—")
+        period_uz = "Oylik" if kind == "month" else "Haftalik"
+        label = scores.get("label") or scores.get("week", "—")
         body = (
-            f'<p style="margin:4px">Haftalik reyting: <b>{rank}-o\'rin</b></p>'
-            f'<p style="margin:4px">Haftalik XP: <b>{cert.score}</b></p>'
-            f'<p style="margin:4px;font-size:13px;color:#8A8071">Hafta: {scores.get("week","—")}</p>'
+            f'<p style="margin:4px">{period_uz} reyting: <b>{rank}-o\'rin</b></p>'
+            f'<p style="margin:4px">{period_uz} XP: <b>{cert.score}</b></p>'
+            f'<p style="margin:4px;font-size:13px;color:#8A8071">Davr: {label}</p>'
         )
     else:
         body = (

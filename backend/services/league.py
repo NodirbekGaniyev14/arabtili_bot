@@ -34,15 +34,13 @@ def _week_start_utc() -> datetime:
 LEAGUE_BY_ID = {lg["id"]: lg for lg in LEAGUES}
 LEAGUE_ORDER = [lg["id"] for lg in LEAGUES]
 
-# Haftalik harakat qoidalari
-PROMOTE_TOP = 3          # ligadagi eng yaxshi 3 kishi yuqoriga ko'tariladi
-RELEGATE_BOTTOM = 3      # eng pastdagi 3 kishi pastga tushadi
-MIN_FOR_RELEGATION = 8   # ligada shundan kam ishtirokchi bo'lsa — tushirilmaydi
-MIN_XP_TO_PROMOTE = 50   # nol-faol odam "g'olib" bo'lib ko'tarilmasin
-
 
 def league_for(weekly_xp: int) -> dict:
-    """XP bo'yicha liga (faqat BOSHLANG'ICH tayinlash uchun)."""
+    """Liga — haftalik XP bo'yicha yorliq (ko'tarilish/tushish yo'q).
+
+    Hamma bitta umumiy reytingda; liga shunchaki shu haftada qancha XP
+    to'plaganingizga qarab beriladigan nishon.
+    """
     result = LEAGUES[0]
     for lg in LEAGUES:
         if weekly_xp >= lg["min_xp"]:
@@ -52,81 +50,6 @@ def league_for(weekly_xp: int) -> dict:
 
 def league_by_id(league_id: str) -> dict:
     return LEAGUE_BY_ID.get(league_id or "bronze", LEAGUES[0])
-
-
-def _shift(league_id: str, step: int) -> str:
-    i = LEAGUE_ORDER.index(league_id) if league_id in LEAGUE_ORDER else 0
-    return LEAGUE_ORDER[max(0, min(len(LEAGUE_ORDER) - 1, i + step))]
-
-
-async def league_standings(
-    session: AsyncSession, league_id: str, since: datetime | None
-) -> list:
-    """Bitta liga ichidagi saralangan qatorlar."""
-    rows = await _ranked_rows(session, since)
-    ids = {
-        uid
-        for uid, lg in (
-            await session.execute(select(User.id, User.league_id).where(User.is_demo == 0))
-        ).all()
-        if (lg or "bronze") == league_id
-    }
-    return [r for r in rows if r.id in ids]
-
-
-async def apply_league_movement(
-    session: AsyncSession, week_start: datetime
-) -> list[tuple[User, str, str]]:
-    """Hafta yakunida ligalarni qayta taqsimlaydi.
-
-    Har liga ichida haftalik XP bo'yicha saralanadi: yuqori PROMOTE_TOP
-    ko'tariladi, quyi RELEGATE_BOTTOM tushadi. Kichik ligada (ishtirokchi
-    MIN_FOR_RELEGATION dan kam) hech kim tushirilmaydi — 3 kishilik
-    guruhda "oxirgi o'rin" jazoga loyiq emas.
-
-    Qaytaradi: [(user, eski_liga, yangi_liga), ...]
-    """
-    users = (
-        await session.execute(select(User).where(User.is_demo == 0))
-    ).scalars().all()
-    if not users:
-        return []
-
-    xp_by_id = {
-        r.id: int(r.xp) for r in await _ranked_rows(session, week_start)
-    }
-
-    by_league: dict[str, list[User]] = {}
-    for u in users:
-        by_league.setdefault(u.league_id or "bronze", []).append(u)
-
-    moved: list[tuple[User, str, str]] = []
-    for league_id, members in by_league.items():
-        members.sort(key=lambda u: xp_by_id.get(u.id, 0), reverse=True)
-        top_i = LEAGUE_ORDER.index(league_id) if league_id in LEAGUE_ORDER else 0
-
-        # Ko'tarilish — eng yuqori daraja bo'lmasa va XP yetarli bo'lsa
-        if top_i < len(LEAGUE_ORDER) - 1:
-            for u in members[:PROMOTE_TOP]:
-                if xp_by_id.get(u.id, 0) >= MIN_XP_TO_PROMOTE:
-                    new = _shift(league_id, +1)
-                    moved.append((u, league_id, new))
-                    u.league_id = new
-                    session.add(u)
-
-        # Tushish — guruh yetarlicha katta bo'lsa va eng past daraja bo'lmasa
-        if top_i > 0 and len(members) >= MIN_FOR_RELEGATION:
-            for u in members[-RELEGATE_BOTTOM:]:
-                if any(u.id == m.id for m, _, _ in moved):
-                    continue  # ko'tarilganni tushirmaymiz
-                new = _shift(league_id, -1)
-                moved.append((u, league_id, new))
-                u.league_id = new
-                session.add(u)
-
-    if moved:
-        await session.commit()
-    return moved
 
 
 async def _ranked_rows(session: AsyncSession, since: datetime | None):
@@ -204,22 +127,32 @@ async def refresh_ranks(session: AsyncSession) -> list[tuple[User, int, int]]:
     return dropped
 
 
-async def weekly_top3(
-    session: AsyncSession, week_start: datetime, min_participants: int = 3
+async def top_winners(
+    session: AsyncSession,
+    since: datetime,
+    top_n: int,
+    min_participants: int,
 ) -> list[tuple[int, str, int, int]]:
-    """O'tgan hafta g'oliblari: [(user_id, ism, xp, o'rin), ...].
+    """Davr g'oliblari: [(user_id, ism, xp, o'rin), ...].
 
-    Faqat HAQIQIY foydalanuvchilar. Ishtirokchi kam bo'lsa — bo'sh ro'yxat
-    (bir kishilik "g'alaba" uchun sertifikat berilmaydi).
+    Faqat HAQIQIY foydalanuvchilar. Ishtirokchi min_participants dan kam
+    bo'lsa — bo'sh ro'yxat (bir kishilik "g'alaba" uchun sovrin yo'q).
     """
-    ranked = await _ranked_rows(session, week_start)
+    ranked = await _ranked_rows(session, since)
     real = [r for r in ranked if not r.is_demo and r.xp > 0]
     if len(real) < min_participants:
         return []
     return [
         (r.id, r.name or "O'rganuvchi", int(r.xp), pos)
-        for pos, r in enumerate(real[:3], start=1)
+        for pos, r in enumerate(real[:top_n], start=1)
     ]
+
+
+async def weekly_top3(
+    session: AsyncSession, week_start: datetime, min_participants: int = 3
+) -> list[tuple[int, str, int, int]]:
+    """Haftalik top-3 (top_winners ustidagi qulaylik)."""
+    return await top_winners(session, week_start, 3, min_participants)
 
 
 async def _streaks_by_user(
@@ -293,13 +226,8 @@ async def leaderboard(
     ids = [r.id for r in ranked] + [me_id]
     levels = await _levels_by_user(session, ids)
     streaks = await _streaks_by_user(session, ids)
-    league_of = {
-        uid: (lg or "bronze")
-        for uid, lg in (
-            await session.execute(select(User.id, User.league_id))
-        ).all()
-    }
 
+    # Hamma bitta umumiy ro'yxatda — liga bo'yicha bo'linish yo'q
     entries = []
     my_rank = None
     for pos, r in enumerate(ranked, start=1):
@@ -313,7 +241,6 @@ async def leaderboard(
                 "xp": int(r.xp),
                 "level": levels.get(r.id, "A0"),
                 "streak": streaks.get(r.id, 0),
-                "league": league_of.get(r.id, "bronze"),
                 "is_me": is_me,
                 "is_demo": False,
             }
@@ -329,57 +256,23 @@ async def leaderboard(
                 "xp": 0,
                 "level": levels.get(me_id, "A0"),
                 "streak": streaks.get(me_id, 0),
-                "league": league_of.get(me_id, "bronze"),
                 "is_me": True,
                 "is_demo": False,
             }
         )
 
+    # Liga — faqat HAFTALIK XP bo'yicha yorliq (ko'tarilish/tushish yo'q)
     weekly_xp = my_xp
-    week_rows = ranked
     if period != "week":
         week_rows = await _ranked_rows(session, _week_start_utc())
         weekly_xp = next((r.xp for r in week_rows if r.id == me_id), 0)
 
-    # Liga — SAQLANGAN daraja (haftalik ko'tarilish/tushish natijasi)
-    my_league_id = league_of.get(me_id, "bronze")
-    cohort = [r for r in week_rows if league_of.get(r.id, "bronze") == my_league_id]
-    my_league_rank = next(
-        (i for i, r in enumerate(cohort, start=1) if r.id == me_id), len(cohort) + 1
-    )
-    size = max(len(cohort), 1)
-    top_i = LEAGUE_ORDER.index(my_league_id) if my_league_id in LEAGUE_ORDER else 0
-
-    in_promote = (
-        top_i < len(LEAGUE_ORDER) - 1
-        and my_league_rank <= PROMOTE_TOP
-        and int(weekly_xp) >= MIN_XP_TO_PROMOTE
-    )
-    in_relegate = (
-        top_i > 0
-        and size >= MIN_FOR_RELEGATION
-        and my_league_rank > size - RELEGATE_BOTTOM
-    )
-
     return {
         "period": period,
-        "league": league_by_id(my_league_id),
+        "league": league_for(int(weekly_xp)),
         "all_leagues": LEAGUES,
         "my_rank": my_rank,
         "my_weekly_xp": int(weekly_xp),
         "my_period_xp": int(my_xp),
         "entries": entries,
-        # Liga mexanikasi
-        "league_rank": my_league_rank,
-        "league_size": size,
-        "promote_zone": in_promote,
-        "relegate_zone": in_relegate,
-        "promote_top": PROMOTE_TOP,
-        "relegate_bottom": RELEGATE_BOTTOM,
-        "min_xp_to_promote": MIN_XP_TO_PROMOTE,
-        "next_league": (
-            league_by_id(_shift(my_league_id, +1))
-            if top_i < len(LEAGUE_ORDER) - 1
-            else None
-        ),
     }

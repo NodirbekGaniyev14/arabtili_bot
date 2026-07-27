@@ -161,28 +161,6 @@ export default function Rating() {
                 ))}
               </div>
 
-              {/* Ligadagi o'rin va zona */}
-              <div className="mt-3 rounded-2xl bg-white/10 px-3 py-2 text-[13px] font-semibold">
-                Ligada: <b>{data.league_rank}</b> / {data.league_size}
-                {data.promote_zone && data.next_league && (
-                  <div className="mt-1 text-gold-soft font-extrabold">
-                    ⬆ Ko'tarilish zonasi — {data.next_league.name} ligasiga
-                    chiqyapsiz!
-                  </div>
-                )}
-                {data.relegate_zone && (
-                  <div className="mt-1 text-white/90 font-extrabold">
-                    ⬇ Tushish zonasi — bu hafta XP to'plang!
-                  </div>
-                )}
-                {!data.promote_zone && !data.relegate_zone && (
-                  <div className="mt-1 text-white/70">
-                    {data.next_league
-                      ? `Top-${data.promote_top} ga kirsangiz ${data.next_league.name} ligasiga ko'tarilasiz`
-                      : "Eng yuqori ligadasiz — ushlab turing!"}
-                  </div>
-                )}
-              </div>
             </section>
           )}
 
@@ -245,6 +223,16 @@ export default function Rating() {
               <p className="text-sm font-extrabold">🏆 Haftalik sovrin</p>
               <p className="mt-0.5 text-xs font-semibold text-ink-soft leading-relaxed">
                 Dushanba tongida hafta yakunlanadi — <b>1, 2 va 3-o'rin</b> egalariga
+                sertifikat botga yuboriladi va profilda saqlanadi.
+              </p>
+            </div>
+          )}
+
+          {period === "month" && (
+            <div className="rounded-2xl bg-gold-soft/60 border border-gold/30 px-4 py-3 text-center">
+              <p className="text-sm font-extrabold">🏆 Oylik sovrin</p>
+              <p className="mt-0.5 text-xs font-semibold text-ink-soft leading-relaxed">
+                Oy boshida o'tgan oy yakunlanadi — <b>top-5</b> ishtirokchiga
                 sertifikat botga yuboriladi va profilda saqlanadi.
               </p>
             </div>

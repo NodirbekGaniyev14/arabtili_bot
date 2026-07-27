@@ -16,8 +16,8 @@ os.environ.setdefault("DEV_AUTH", "0")
 
 
 @pytest_asyncio.fixture
-async def session(tmp_path):
-    """Toza bazadagi AsyncSession."""
+async def session_factory(tmp_path):
+    """Toza bazaga bog'langan sessiya yaratuvchi (SessionLocal o'rniga qo'yiladi)."""
     from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 
     from db.models import Base
@@ -26,10 +26,15 @@ async def session(tmp_path):
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
 
-    maker = async_sessionmaker(engine, expire_on_commit=False)
-    async with maker() as s:
-        yield s
+    yield async_sessionmaker(engine, expire_on_commit=False)
     await engine.dispose()
+
+
+@pytest_asyncio.fixture
+async def session(session_factory):
+    """Toza bazadagi AsyncSession."""
+    async with session_factory() as s:
+        yield s
 
 
 @pytest.fixture

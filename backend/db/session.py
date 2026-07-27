@@ -39,6 +39,9 @@ _MIGRATIONS = {
     "certificates": {
         "kind": "VARCHAR(8) DEFAULT 'level'",
     },
+    "weekly_awards": {
+        "period": "VARCHAR(8) DEFAULT 'week'",
+    },
     "exam_attempts": {
         "kind": "VARCHAR(8) DEFAULT 'level'",
         "checkpoint": "INTEGER DEFAULT 0",

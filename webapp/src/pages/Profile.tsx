@@ -238,8 +238,13 @@ export default function Profile({
           </div>
           <div className="flex gap-3 overflow-x-auto pb-1 -mx-4 px-4">
             {certs.map((c) => {
-              const weekly = c.kind === "weekly";
-              const rank = weekly ? c.level.replace("W", "") : "";
+              // "week"/"weekly" — haftalik, "month" — oylik, aks holda daraja kursi
+              const isRank = ["week", "weekly", "month"].includes(c.kind);
+              const monthly = c.kind === "month";
+              const rank = isRank ? c.level.replace(/[WM]/, "") : "";
+              const medal =
+                rank === "1" ? "🥇" : rank === "2" ? "🥈" : rank === "3" ? "🥉" : "🎗";
+              const periodWord = monthly ? "Oylik" : "Haftalik";
               return (
                 <a
                   key={c.cert_id}
@@ -248,14 +253,12 @@ export default function Profile({
                   rel="noreferrer"
                   className="shrink-0 w-40 rounded-2xl bg-card border border-gold/40 p-3 text-center active:scale-[0.98] transition-transform"
                 >
-                  <div className="text-3xl">
-                    {weekly ? (rank === "1" ? "🥇" : rank === "2" ? "🥈" : "🥉") : "🎓"}
-                  </div>
+                  <div className="text-3xl">{isRank ? medal : "🎓"}</div>
                   <div className="mt-1 text-sm font-extrabold leading-tight">
-                    {weekly ? `Haftalik ${rank}-o'rin` : `${c.level} kursi`}
+                    {isRank ? `${periodWord} ${rank}-o'rin` : `${c.level} kursi`}
                   </div>
                   <div className="text-[11px] text-ink-soft font-semibold">
-                    {weekly ? `${c.score} XP` : `${c.score}/100`} · {c.issued_at}
+                    {isRank ? `${c.score} XP` : `${c.score}/100`} · {c.issued_at}
                   </div>
                 </a>
               );

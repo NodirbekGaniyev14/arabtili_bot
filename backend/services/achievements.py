@@ -59,8 +59,8 @@ BADGES: list[dict] = [
     {"id": "exam_ace", "icon": "💯", "title": "A'lo imtihon", "desc": "Imtihonda 95+ ball oldingiz", "check": lambda m: m["best_exam"] >= 95},
     {"id": "weekly_winner", "icon": "🥇", "title": "Hafta g'olibi", "desc": "Haftalik reytingda 1-o'rin", "check": lambda m: m["best_weekly_rank"] == 1},
     {"id": "weekly_podium", "icon": "🏆", "title": "Sovrindor", "desc": "Haftalik reytingda top-3 ga kirdingiz", "check": lambda m: 1 <= m["best_weekly_rank"] <= 3},
-    {"id": "league_gold", "icon": "🥇", "title": "Oltin liga", "desc": "Oltin ligaga ko'tarildingiz", "check": lambda m: m["league_rank_idx"] >= 2},
-    {"id": "league_emerald", "icon": "💎", "title": "Zumrad liga", "desc": "Zumrad ligaga ko'tarildingiz", "check": lambda m: m["league_rank_idx"] >= 3},
+    {"id": "league_gold", "icon": "🥇", "title": "Oltin liga", "desc": "Bir haftada Oltin ligaga yetdingiz (300+ XP)", "check": lambda m: m["league_rank_idx"] >= 2},
+    {"id": "league_emerald", "icon": "💎", "title": "Zumrad liga", "desc": "Bir haftada Zumrad ligaga yetdingiz (600+ XP)", "check": lambda m: m["league_rank_idx"] >= 3},
 ]
 
 BADGE_BY_ID = {b["id"]: b for b in BADGES}
@@ -168,12 +168,18 @@ async def _metrics(session: AsyncSession, user_id: int, streak: int) -> dict:
         )
     ).scalar() or 0
 
-    league_id = (
-        await session.execute(select(User.league_id).where(User.id == user_id))
-    ).scalar() or "bronze"
-    from services.league import LEAGUE_ORDER
+    # Liga — hozirgi haftalik XP bo'yicha yorliq (ko'tarilish/tushish yo'q).
+    # Badge bir marta berilsa qoladi: odam biror hafta oltin/zumradga yetsa yetarli.
+    from services.league import LEAGUE_ORDER, _week_start_utc, league_for
 
-    league_idx = LEAGUE_ORDER.index(league_id) if league_id in LEAGUE_ORDER else 0
+    week_xp = (
+        await session.execute(
+            select(func.coalesce(func.sum(XpLog.amount), 0)).where(
+                XpLog.user_id == user_id, XpLog.created_at >= _week_start_utc()
+            )
+        )
+    ).scalar() or 0
+    league_idx = LEAGUE_ORDER.index(league_for(int(week_xp))["id"])
 
     return {
         "lessons": len(done),
