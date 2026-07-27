@@ -61,13 +61,18 @@ export default function Home({
           ? `↻ ${chal.best_score}% · qayta`
           : `${chal.questions} savol · +${chal.xp_reward} XP`;
 
+  // Ochiq imtihonlar soni — past darajalar ham hisobga olinadi
+  const openExams =
+    exam?.levels?.filter((l) => l.available && l.unlocked).length ?? 0;
   const examDesc = !exam
     ? "4 bo'lim · vaqtli"
-    : !exam.available
-      ? "tez orada"
-      : exam.unlocked
-        ? `${exam.level} · 4 bo'lim`
-        : `🔒 ${exam.lessons_done}/${exam.lessons_needed} dars`;
+    : exam.unlocked && exam.available
+      ? `${exam.level} · 4 bo'lim`
+      : openExams > 0
+        ? `${openExams} daraja ochiq`
+        : !exam.available
+          ? "tez orada"
+          : `🔒 ${exam.lessons_done}/${exam.lessons_needed} dars`;
 
   return (
     <div className="px-4 pt-4 space-y-4">

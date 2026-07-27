@@ -31,21 +31,27 @@ async def _user_level(session: AsyncSession, user_id: int) -> str:
     return plan.level if plan else "A0"
 
 
-@router.get("/api/exam/info")
-async def exam_info(
-    user: User = Depends(get_current_user),
-    session: AsyncSession = Depends(get_session),
-):
-    level = await _user_level(session, user.id)
+async def _level_exam_state(session: AsyncSession, user_id: int, level: str, user_level: str) -> dict:
+    """Bitta daraja imtihonining holati."""
     available = exam_svc.exam_available(level)
-    cooldown = await exam_svc.cooldown_until(session, user.id, level)
-    passed = await exam_svc.already_passed(session, user.id, level)
+    cooldown = await exam_svc.cooldown_until(session, user_id, level)
+    passed = await exam_svc.already_passed(session, user_id, level)
     pool = exam_svc.load_pool(level) if available else None
 
-    done, total = await exam_svc.level_progress(session, user.id, level)
+    done, total = await exam_svc.level_progress(session, user_id, level)
     needed = exam_svc.unlock_threshold(total)
-    # Bir marta o'tgan bo'lsa — qayta topshirish har doim ochiq
-    unlocked = done >= needed or passed
+
+    # Foydalanuvchi darajasidan PAST darajalar har doim ochiq — o'sha bosqichdan
+    # o'tib kelgan (yoki daraja testi shunday aniqlagan), qayta topshira oladi.
+    below_current = exam_svc.LEVEL_ORDER.index(level) < exam_svc.LEVEL_ORDER.index(
+        user_level
+    ) if level in exam_svc.LEVEL_ORDER and user_level in exam_svc.LEVEL_ORDER else False
+    # Yuqori darajalar — reja darajasidan oshib ketolmaydi
+    above_current = exam_svc.LEVEL_ORDER.index(level) > exam_svc.LEVEL_ORDER.index(
+        user_level
+    ) if level in exam_svc.LEVEL_ORDER and user_level in exam_svc.LEVEL_ORDER else False
+
+    unlocked = (not above_current) and (below_current or passed or done >= needed)
 
     return {
         "level": level,
@@ -54,31 +60,66 @@ async def exam_info(
         "cooldown_until": cooldown.isoformat() if cooldown else None,
         "minutes": pool["config"]["minutes"] if pool else 0,
         "counts": pool["config"] if pool else {},
-        # Darslar qulfi (80%)
         "unlocked": unlocked,
+        "locked_reason": (
+            "above" if above_current else ("lessons" if not unlocked else "")
+        ),
         "lessons_done": done,
         "lessons_total": total,
         "lessons_needed": needed,
-        "next_level": exam_svc.next_level(level),
+        "percent": round(done / total * 100) if total else 0,
+    }
+
+
+@router.get("/api/exam/info")
+async def exam_info(
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Barcha darajalar imtihoni holati + joriy daraja."""
+    user_level = await _user_level(session, user.id)
+    levels = [
+        await _level_exam_state(session, user.id, lvl, user_level)
+        for lvl in exam_svc.LEVEL_ORDER
+    ]
+    current = next((x for x in levels if x["level"] == user_level), levels[0])
+
+    return {
+        # Joriy daraja holati — eski mijozlar uchun ham to'g'ri ishlaydi
+        **current,
+        "user_level": user_level,
+        "levels": levels,
+        "next_level": exam_svc.next_level(user_level),
     }
 
 
 @router.post("/api/exam/start")
 async def exam_start(
+    level: str = "",
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
-    level = await _user_level(session, user.id)
+    user_level = await _user_level(session, user.id)
+    level = (level or user_level).upper()
+    if level not in exam_svc.LEVEL_ORDER:
+        raise HTTPException(status_code=400, detail="Noma'lum daraja")
+
     if not exam_svc.exam_available(level):
         raise HTTPException(status_code=404, detail="Bu daraja uchun imtihon hali yo'q")
 
-    done, total = await exam_svc.level_progress(session, user.id, level)
-    needed = exam_svc.unlock_threshold(total)
-    already = await exam_svc.already_passed(session, user.id, level)
-    if done < needed and not already:
+    state = await _level_exam_state(session, user.id, level, user_level)
+    if not state["unlocked"]:
+        if state["locked_reason"] == "above":
+            raise HTTPException(
+                status_code=403,
+                detail=f"{level} imtihoni hali ochilmagan — avval {user_level} ni tugating",
+            )
         raise HTTPException(
             status_code=403,
-            detail=f"Imtihon uchun {needed} ta dars kerak — hozir {done} ta tugatilgan",
+            detail=(
+                f"Imtihon uchun {state['lessons_needed']} ta dars kerak — "
+                f"hozir {state['lessons_done']} ta tugatilgan"
+            ),
         )
 
     cooldown = await exam_svc.cooldown_until(session, user.id, level)

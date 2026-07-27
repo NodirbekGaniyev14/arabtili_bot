@@ -437,18 +437,28 @@ export interface ProfileData {
 
 /* ─────────────── Imtihon (K3) ─────────────── */
 
-export interface ExamInfo {
+/** Bitta daraja imtihonining holati */
+export interface ExamLevelState {
   level: string;
   available: boolean;
   already_passed: boolean;
   cooldown_until: string | null;
   minutes: number;
   counts: Record<string, number>;
-  /** Darslar qulfi — daraja darslarining 80% tugagach ochiladi */
+  /** Ochiqmi: past darajalar doim ochiq, joriy — 80% dars, yuqori — yopiq */
   unlocked: boolean;
+  /** "above" — reja darajasidan yuqori, "lessons" — darslar yetmadi */
+  locked_reason: string;
   lessons_done: number;
   lessons_total: number;
   lessons_needed: number;
+  percent: number;
+}
+
+export interface ExamInfo extends ExamLevelState {
+  /** Foydalanuvchining reja darajasi */
+  user_level: string;
+  levels: ExamLevelState[];
   next_level: string | null;
 }
 
@@ -663,7 +673,11 @@ export const api = {
   getExamInfo: () => request<ExamInfo>("/api/exam/info"),
   getMyCertificates: () =>
     request<{ certificates: MyCertificate[] }>("/api/my-certificates"),
-  startExam: () => request<ExamData>("/api/exam/start", { method: "POST", body: "{}" }),
+  startExam: (level = "") =>
+    request<ExamData>(
+      `/api/exam/start${level ? `?level=${encodeURIComponent(level)}` : ""}`,
+      { method: "POST", body: "{}" }
+    ),
   submitExam: (payload: {
     attempt_id: number;
     reading_correct: number;

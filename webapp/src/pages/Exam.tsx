@@ -28,6 +28,7 @@ const SECTION_TITLES: Record<string, string> = {
 
 export default function Exam({ onClose }: { onClose: () => void }) {
   const [info, setInfo] = useState<ExamInfo | null>(null);
+  const [active, setActive] = useState<string>("");
   const [exam, setExam] = useState<ExamData | null>(null);
   const [stage, setStage] = useState<Stage>({ k: "info" });
   const [holderName, setHolderName] = useState("");
@@ -41,8 +42,17 @@ export default function Exam({ onClose }: { onClose: () => void }) {
   const submitted = useRef(false);
 
   useEffect(() => {
-    api.getExamInfo().then(setInfo).catch(() => setError("Ma'lumot yuklanmadi"));
+    api
+      .getExamInfo()
+      .then((d) => {
+        setInfo(d);
+        setActive(d.user_level || d.level); // ochilganda joriy daraja tanlangan
+      })
+      .catch(() => setError("Ma'lumot yuklanmadi"));
   }, []);
+
+  // Tanlangan daraja holati (eski javob kelsa — joriy darajaga qaytamiz)
+  const sel = info?.levels?.find((l) => l.level === active) ?? info;
 
   // Timer
   useEffect(() => {
@@ -61,7 +71,7 @@ export default function Exam({ onClose }: { onClose: () => void }) {
 
   const start = async () => {
     try {
-      const e = await api.startExam();
+      const e = await api.startExam(sel?.level || "");
       setExam(e);
       setDeadline(Date.now() + e.minutes * 60_000);
       setStage({ k: "reading" });
@@ -140,72 +150,131 @@ export default function Exam({ onClose }: { onClose: () => void }) {
           </div>
         )}
 
-        {/* INFO */}
-        {stage.k === "info" && info && !error && (
-          <div className="pt-6 text-center">
-            <div className="text-6xl">📋</div>
-            <h1 className="mt-2 text-2xl font-extrabold">
-              {info.level} kursi yakuniy imtihoni
-            </h1>
-            {info.already_passed && (
-              <p className="mt-2 text-sm font-bold text-emerald-deep">
-                ✅ Siz bu imtihondan o'tgansiz — qayta topshirish ixtiyoriy
-              </p>
-            )}
-            {!info.available ? (
-              <p className="mt-4 text-ink-soft font-semibold">
-                Bu daraja uchun imtihon tez orada qo'shiladi.
-              </p>
-            ) : !info.unlocked ? (
-              <div className="mt-5 rounded-2xl bg-card border border-cardline p-5">
-                <div className="text-4xl">🔒</div>
-                <p className="mt-2 font-extrabold">Imtihon hali ochilmagan</p>
-                <p className="mt-1 text-sm text-ink-soft font-semibold">
-                  {info.level} darajasining kamida{" "}
-                  <b>{info.lessons_needed} ta darsini</b> tugatish kerak.
-                </p>
-                <div className="mt-4 h-3 rounded-full bg-cardline overflow-hidden">
-                  <div
-                    className="h-full rounded-full bg-emerald-deep transition-all duration-500"
-                    style={{
-                      width: `${Math.min(100, Math.round((info.lessons_done / Math.max(1, info.lessons_needed)) * 100))}%`,
-                    }}
-                  />
-                </div>
-                <p className="mt-2 text-sm font-bold">
-                  {info.lessons_done} / {info.lessons_total} dars tugatildi
-                </p>
-                <p className="mt-1 text-xs text-ink-soft font-semibold">
-                  Imtihonga {Math.max(0, info.lessons_needed - info.lessons_done)} ta dars qoldi
-                </p>
+        {/* INFO — daraja tablari + tanlangan daraja holati */}
+        {stage.k === "info" && info && sel && !error && (
+          <div className="pt-4">
+            {/* Daraja tanlagichi — Darslar sahifasidagi kabi */}
+            {info.levels?.length > 0 && (
+              <div className="grid grid-cols-4 gap-2">
+                {info.levels.map((lvl) => {
+                  const isActive = lvl.level === sel.level;
+                  return (
+                    <button
+                      key={lvl.level}
+                      onClick={() => setActive(lvl.level)}
+                      className={`relative rounded-2xl py-2.5 px-1 text-center transition-transform active:scale-95 border ${
+                        isActive
+                          ? "bg-emerald-deep text-white border-emerald-deep shadow-md"
+                          : "bg-card text-ink border-cardline"
+                      }`}
+                    >
+                      <div className="text-base font-extrabold leading-none">
+                        {lvl.level}
+                      </div>
+                      <div
+                        className={`text-[10px] font-bold mt-1 ${
+                          isActive ? "text-gold-soft" : "text-ink-soft"
+                        }`}
+                      >
+                        {lvl.already_passed
+                          ? "✅"
+                          : lvl.unlocked
+                            ? "ochiq"
+                            : "🔒"}
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
-            ) : (
-              <>
-                <div className="mt-5 rounded-2xl bg-card border border-cardline p-4 text-left text-sm font-semibold space-y-1.5">
-                  <p>⏱ Vaqt: <b>{info.minutes} daqiqa</b></p>
-                  <p>📖 O'qish: {info.counts.reading} savol · 25%</p>
-                  <p>🎧 Tinglash: {info.counts.listening} savol · 25%</p>
-                  <p>✍️ Yozish: {info.counts.writing} topshiriq · 25%</p>
-                  <p>🗣 Gapirish: {info.counts.speaking} topshiriq · 25%</p>
-                  <p className="pt-1 text-ink-soft">
-                    O'tish uchun umumiy <b>80%+</b> yetarli.
-                    Yiqilsangiz — 24 soatdan keyin yangi savollar bilan.
-                  </p>
-                </div>
-                {info.cooldown_until ? (
-                  <p className="mt-4 text-sm font-bold text-terracotta">
-                    ⏳ Qayta topshirish uchun 24 soat kutish kerak
-                  </p>
-                ) : (
-                  <button
-                    onClick={() => setStage({ k: "name" })}
-                    className="mt-6 w-full rounded-2xl bg-emerald-deep py-4 text-white font-extrabold text-lg active:scale-[0.98] transition-transform"
-                  >
-                    Imtihonni boshlash
-                  </button>
-                )}
-              </>
             )}
+
+            <div className="pt-5 text-center">
+              <div className="text-5xl">📋</div>
+              <h1 className="mt-2 text-2xl font-extrabold">
+                {sel.level} kursi yakuniy imtihoni
+              </h1>
+              {sel.level !== info.user_level && (
+                <p className="mt-1 text-xs text-ink-soft font-semibold">
+                  Sizning darajangiz: {info.user_level}
+                </p>
+              )}
+              {sel.already_passed && (
+                <p className="mt-2 text-sm font-bold text-emerald-deep">
+                  ✅ Siz bu imtihondan o'tgansiz — qayta topshirish ixtiyoriy
+                </p>
+              )}
+
+              {!sel.available ? (
+                <p className="mt-4 text-ink-soft font-semibold">
+                  Bu daraja uchun imtihon tez orada qo'shiladi.
+                </p>
+              ) : !sel.unlocked ? (
+                <div className="mt-5 rounded-2xl bg-card border border-cardline p-5">
+                  <div className="text-4xl">🔒</div>
+                  {sel.locked_reason === "above" ? (
+                    <>
+                      <p className="mt-2 font-extrabold">
+                        {sel.level} imtihoni hali ochilmagan
+                      </p>
+                      <p className="mt-1 text-sm text-ink-soft font-semibold">
+                        Avval <b>{info.user_level}</b> darajasini tugatib,
+                        uning imtihonidan o'ting.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="mt-2 font-extrabold">Imtihon hali ochilmagan</p>
+                      <p className="mt-1 text-sm text-ink-soft font-semibold">
+                        {sel.level} darajasining kamida{" "}
+                        <b>{sel.lessons_needed} ta darsini</b> tugatish kerak.
+                      </p>
+                      <div className="mt-4 h-3 rounded-full bg-cardline overflow-hidden">
+                        <div
+                          className="h-full rounded-full bg-emerald-deep transition-all duration-500"
+                          style={{
+                            width: `${Math.min(100, Math.round((sel.lessons_done / Math.max(1, sel.lessons_needed)) * 100))}%`,
+                          }}
+                        />
+                      </div>
+                      <p className="mt-2 text-sm font-bold">
+                        {sel.lessons_done} / {sel.lessons_total} dars tugatildi
+                      </p>
+                      <p className="mt-1 text-xs text-ink-soft font-semibold">
+                        Imtihonga{" "}
+                        {Math.max(0, sel.lessons_needed - sel.lessons_done)} ta dars
+                        qoldi
+                      </p>
+                    </>
+                  )}
+                </div>
+              ) : (
+                <>
+                  <div className="mt-5 rounded-2xl bg-card border border-cardline p-4 text-left text-sm font-semibold space-y-1.5">
+                    <p>⏱ Vaqt: <b>{sel.minutes} daqiqa</b></p>
+                    <p>📖 O'qish: {sel.counts.reading} savol · 25%</p>
+                    <p>🎧 Tinglash: {sel.counts.listening} savol · 25%</p>
+                    <p>✍️ Yozish: {sel.counts.writing} topshiriq · 25%</p>
+                    <p>🗣 Gapirish: {sel.counts.speaking} topshiriq · 25%</p>
+                    <p className="pt-1 text-ink-soft">
+                      O'tish uchun umumiy <b>80%+</b> yetarli.
+                      Yiqilsangiz — 24 soatdan keyin yangi savollar bilan.
+                    </p>
+                  </div>
+                  {sel.cooldown_until ? (
+                    <p className="mt-4 text-sm font-bold text-terracotta">
+                      ⏳ Qayta topshirish uchun 24 soat kutish kerak
+                    </p>
+                  ) : (
+                    <button
+                      onClick={() => setStage({ k: "name" })}
+                      className="mt-6 w-full rounded-2xl bg-emerald-deep py-4 text-white font-extrabold text-lg active:scale-[0.98] transition-transform"
+                    >
+                      Imtihonni boshlash
+                    </button>
+                  )}
+                </>
+              )}
+            </div>
           </div>
         )}
 
