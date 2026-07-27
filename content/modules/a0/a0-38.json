@@ -27,7 +27,7 @@
  },
  "roots": [],
  "vocabulary": [
-  {"ar": "بَابْ", "translit": "bāb", "uz": "eshik", "root": "", "pattern": "", "pos": "ot", "audio": "a0/bab.mp3", "example_ar": "بَابْ", "example_uz": "eshik", "srs": true},
+  {"ar": "بَابْ", "translit": "bāb", "uz": "eshik", "root": "", "pattern": "", "pos": "ot", "audio_text": "بَاب", "audio": "a0/bab.mp3", "example_ar": "بَابْ", "example_uz": "eshik", "srs": true},
   {"ar": "نُور", "translit": "nūr", "uz": "nur, yorug'lik", "root": "", "pattern": "", "pos": "ot", "audio": "a0/nur.mp3", "example_ar": "نُور", "example_uz": "nur", "srs": true},
   {"ar": "دِين", "translit": "dīn", "uz": "din, e'tiqod", "root": "", "pattern": "", "pos": "ot", "audio": "a0/din.mp3", "example_ar": "دِين", "example_uz": "din", "srs": true},
   {"ar": "يَدْ", "translit": "yad", "uz": "qo'l", "root": "", "pattern": "", "pos": "ot", "audio": "a0/yad.mp3", "example_ar": "يَدْ", "example_uz": "qo'l", "srs": true},
@@ -44,6 +44,7 @@
    ]
   },
   "listening": {
+   "audio_text": "بَاب",
    "audio": "a0/bab.mp3",
    "transcript_ar": "بَابْ",
    "questions": [{"q_uz": "Qaysi so'z eshitildi?", "a": "«bāb» (eshik)"}]

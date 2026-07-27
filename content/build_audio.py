@@ -1,82 +1,181 @@
 """Kontentdagi barcha arabcha matnlar uchun mp3 generatsiya qiladi (edge-tts).
 
-Ishlatish:  python content/build_audio.py
-Fayllar webapp/public/audio/ ga yoziladi (mavjudlari qayta yaratilmaydi).
+Ishlatish:
+    python content/build_audio.py            # o'zgarganini qayta yaratadi
+    python content/build_audio.py --check    # faqat tekshiradi (CI uchun)
+    python content/build_audio.py --force    # hammasini qaytadan yaratadi
+
+MUHIM: fayl mavjudligiga emas, MATN O'ZGARGANIGA qarab qayta yaratiladi.
+Manifest (audio_manifest.json) har fayl uchun matn xeshini saqlaydi — dars
+matni o'zgarsa audio ham yangilanadi. Ilgari mavjud fayl shunchaki
+o'tkazib yuborilardi va dars boshqa harfning ovozini chalardi.
 """
 
+import argparse
 import asyncio
+import hashlib
 import json
 import sys
+from collections import defaultdict
 from pathlib import Path
 
 import edge_tts
 
 VOICE = "ar-SA-HamedNeural"
 RATE = "-20%"  # o'rganuvchilar uchun sekinroq talaffuz
+CONCURRENCY = 8
 
 CONTENT_DIR = Path(__file__).parent
 OUT_DIR = Path(__file__).parent.parent / "webapp" / "public" / "audio"
+MANIFEST = CONTENT_DIR / "audio_manifest.json"
 
 # Bu fayllarda audio maydonlari yo'q — o'tkazib yuboriladi
-SKIP_FILES = {"curriculum.json"}
+SKIP_FILES = {"curriculum.json", "audio_manifest.json"}
 
 
-def collect_tasks() -> dict[str, str]:
-    """audio fayl yo'li (ichki papka bo'lishi mumkin) -> aytiladigan matn"""
-    tasks: dict[str, str] = {}
+def _text_of(obj: dict) -> str | None:
+    return (
+        obj.get("audio_text")
+        or obj.get("ar")
+        or obj.get("arabic")
+        or obj.get("hejazi_ar")
+        or obj.get("transcript_ar")
+        or obj.get("root")
+    )
 
-    def scan(obj):
+
+def collect(with_sources: bool = False):
+    """audio fayl yo'li -> matn (with_sources: fayl -> matn -> manbalar)."""
+    found: dict[str, dict[str, list[str]]] = defaultdict(lambda: defaultdict(list))
+
+    def scan(obj, src: str):
         if isinstance(obj, dict):
             audio = obj.get("audio")
             if audio:
-                text = (
-                    obj.get("audio_text")
-                    or obj.get("ar")
-                    or obj.get("arabic")
-                    or obj.get("hejazi_ar")
-                    or obj.get("transcript_ar")
-                    or obj.get("root")
-                )
+                text = _text_of(obj)
                 if text:
-                    tasks.setdefault(audio, text)
+                    found[audio][text].append(src)
             for v in obj.values():
-                scan(v)
+                scan(v, src)
         elif isinstance(obj, list):
             for v in obj:
-                scan(v)
+                scan(v, src)
 
-    # v1 (modules/*.json) + v2 (modules/{a0..}/*.json, roots/patterns/hejazi.json)
     for f in sorted(CONTENT_DIR.rglob("*.json")):
         if f.name in SKIP_FILES:
             continue
-        scan(json.loads(f.read_text(encoding="utf-8")))
-    return tasks
+        scan(json.loads(f.read_text(encoding="utf-8")), f.stem)
+
+    if with_sources:
+        return found
+    return {name: next(iter(texts)) for name, texts in found.items()}
 
 
-async def main():
+def find_conflicts() -> dict[str, dict[str, list[str]]]:
+    """Bitta audio fayliga BIR NECHA xil matn biriktirilgan joylar.
+
+    Bu jim buzuqlik: qaysi matn birinchi uchrasa, o'sha yoziladi va qolgan
+    darslar boshqa so'zning (yoki harfning) ovozini chaladi.
+    """
+    return {
+        name: dict(texts)
+        for name, texts in collect(with_sources=True).items()
+        if len(texts) > 1
+    }
+
+
+def _key(text: str) -> str:
+    """Matn + ovoz + tezlik xeshi — shulardan biri o'zgarsa qayta yaratiladi."""
+    return hashlib.sha256(f"{VOICE}|{RATE}|{text}".encode()).hexdigest()[:16]
+
+
+def load_manifest() -> dict[str, str]:
+    if not MANIFEST.exists():
+        return {}
+    try:
+        return json.loads(MANIFEST.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+async def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--check", action="store_true", help="faqat tekshirish")
+    ap.add_argument("--force", action="store_true", help="hammasini qayta yaratish")
+    args = ap.parse_args()
+
     if sys.stdout and hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
+    conflicts = find_conflicts()
+    if conflicts:
+        print(f"❌ {len(conflicts)} ta audio fayliga bir nechta matn biriktirilgan:\n")
+        for name, texts in sorted(conflicts.items()):
+            print(f"  {name}")
+            for t, srcs in texts.items():
+                print(f"      {t!r}  <- {sorted(set(srcs))}")
+        print("\nHar bir audio faylga BITTA matn bo'lishi kerak.")
+        return 1
+
+    tasks = collect()
+    manifest = {} if args.force else load_manifest()
+
+    stale = [
+        (n, t)
+        for n, t in tasks.items()
+        if manifest.get(n) != _key(t) or not (OUT_DIR / n).exists()
+    ]
+
+    if args.check:
+        if stale:
+            print(f"❌ {len(stale)} ta audio eskirgan yoki yo'q:")
+            for n, t in stale[:20]:
+                print(f"  - {n}  ({t})")
+            return 1
+        print(f"✅ {len(tasks)} ta audio dolzarb.")
+        return 0
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    tasks = collect_tasks()
-    made = skipped = failed = 0
+    made = failed = 0
+    sem = asyncio.Semaphore(CONCURRENCY)
+    done = 0
 
-    for filename, text in tasks.items():
-        out = OUT_DIR / filename
+    async def one(name: str, text: str):
+        nonlocal made, failed, done
+        out = OUT_DIR / name
         out.parent.mkdir(parents=True, exist_ok=True)  # a0/, hj/, roots/ kabi
-        if out.exists() and out.stat().st_size > 0:
-            skipped += 1
-            continue
-        try:
-            await edge_tts.Communicate(text, VOICE, rate=RATE).save(str(out))
-            made += 1
-            print(f"  + {filename}  ({text})")
-        except Exception as e:
-            failed += 1
-            print(f"  ! {filename} XATO: {e}")
+        async with sem:
+            for attempt in range(3):  # tarmoq uzilishi bo'lsa qayta urinadi
+                try:
+                    await edge_tts.Communicate(text, VOICE, rate=RATE).save(str(out))
+                    manifest[name] = _key(text)
+                    made += 1
+                    break
+                except Exception as e:
+                    if attempt == 2:
+                        failed += 1
+                        print(f"  ! {name} XATO: {e}", flush=True)
+                    else:
+                        await asyncio.sleep(1 + attempt)
+        done += 1
+        if done % 50 == 0:
+            print(f"  ... {done}/{len(stale)}", flush=True)
 
-    print(f"\nJami: {len(tasks)} | yangi: {made} | mavjud: {skipped} | xato: {failed}")
+    await asyncio.gather(*(one(n, t) for n, t in stale))
+
+    # Kontentdan olib tashlangan yozuvlarni manifestdan tozalaymiz
+    manifest = {n: h for n, h in manifest.items() if n in tasks}
+    MANIFEST.write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=1, sort_keys=True),
+        encoding="utf-8",
+    )
+
+    print(
+        f"\nJami: {len(tasks)} | yangilandi: {made} | "
+        f"o'zgarmagan: {len(tasks) - len(stale)} | xato: {failed}"
+    )
+    return 1 if failed else 0
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    raise SystemExit(asyncio.run(main()))

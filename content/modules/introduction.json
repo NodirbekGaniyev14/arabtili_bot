@@ -28,7 +28,7 @@
         { "kind": "phrase", "ar": "مِنْ أَيْنَ أَنْتَ؟", "translit": "min ayna anta?", "uz": "Qayerdansiz?", "audio": "intro_minayna.mp3" },
         { "kind": "phrase", "ar": "أَنَا مِنْ أُوزْبَكِستَان", "translit": "anā min Uzbakistān", "uz": "Men O'zbekistondanman", "audio": "intro_uzbakistan.mp3" },
         { "kind": "phrase", "ar": "أَيْنَ تَسْكُن؟", "translit": "ayna taskun?", "uz": "Qayerda yashaysiz?", "audio": "intro_aynataskun.mp3" },
-        { "kind": "phrase", "ar": "أَسْكُنُ فِي طَشْقَنْد", "translit": "askunu fī Tashqand", "uz": "Toshkentda yashayman", "audio": "intro_tashqand.mp3" }
+        { "kind": "phrase", "ar": "أَسْكُنُ فِي طَشْقَنْد", "translit": "askunu fī Tashqand", "uz": "Toshkentda yashayman", "audio": "intro_tashqand_jumla.mp3" }
       ],
       "exercises": [
         { "type": "choice", "prompt": "«Qayerdansiz?» arabchada qanday?", "options": ["مِنْ أَيْنَ أَنْتَ؟", "مَا اسْمُك؟", "أَيْنَ تَسْكُن؟", "كَمْ عُمْرُك؟"] },
@@ -81,7 +81,7 @@
       "title": "Yosh va oila",
       "new_items": [
         { "kind": "phrase", "ar": "كَمْ عُمْرُك؟", "translit": "kam 'umruk?", "uz": "Necha yoshdasiz?", "audio": "intro_umruk.mp3" },
-        { "kind": "phrase", "ar": "هٰذِهِ عَائِلَتِي", "translit": "hādhihi 'ā'ilatī", "uz": "Bu mening oilam", "audio": "intro_aila.mp3" },
+        { "kind": "phrase", "ar": "هٰذِهِ عَائِلَتِي", "translit": "hādhihi 'ā'ilatī", "uz": "Bu mening oilam", "audio": "intro_aila_jumla.mp3" },
         { "kind": "phrase", "ar": "عِنْدِي أَخ", "translit": "'indī akh", "uz": "Mening akam bor", "audio": "intro_indiakh.mp3" },
         { "kind": "phrase", "ar": "أَنَا مُتَزَوِّج", "translit": "anā mutazawwij", "uz": "Men uylanganman", "audio": "intro_mutazawwij.mp3" }
       ],

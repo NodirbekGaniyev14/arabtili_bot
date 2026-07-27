@@ -75,7 +75,7 @@
    "root": "ب ي ت",
    "pattern": "",
    "pos": "ot",
-   "audio": "a0/bayt.mp3",
+   "audio": "a0/bayt_tanwin.mp3",
    "example_ar": "بَيْتٌ",
    "example_uz": "bir uy",
    "srs": true
@@ -87,7 +87,7 @@
    "root": "ب و ب",
    "pattern": "",
    "pos": "ot",
-   "audio": "a0/bab.mp3",
+   "audio": "a0/bab_tanwin.mp3",
    "example_ar": "بابٌ",
    "example_uz": "bir eshik",
    "srs": true
@@ -99,7 +99,7 @@
    "root": "و ل د",
    "pattern": "",
    "pos": "ot",
-   "audio": "a0/walad.mp3",
+   "audio": "a0/walad_tanwin.mp3",
    "example_ar": "وَلَدٌ",
    "example_uz": "bir bola",
    "srs": true
@@ -111,7 +111,7 @@
    "root": "ق ل م",
    "pattern": "",
    "pos": "ot",
-   "audio": "a0/qalam.mp3",
+   "audio": "a0/qalam_tanwin.mp3",
    "example_ar": "قَلَمٌ",
    "example_uz": "bir qalam",
    "srs": true
@@ -137,7 +137,7 @@
    ]
   },
   "listening": {
-   "audio": "a0/kitab.mp3",
+   "audio": "a0/kitab_tanwin.mp3",
    "transcript_ar": "كِتابٌ",
    "questions": [
     {

@@ -38,7 +38,7 @@
   }
  ],
  "vocabulary": [
-  {"ar": "طَلَبًا لِـ", "translit": "ṭalaban li-", "uz": "…ni izlab (o'zbekcha 'talab')", "root": "ط ل ب", "pattern": "", "pos": "masdar", "audio": "b1/talaban.mp3", "example_ar": "هاجرَ طلبًا للرزقِ.", "example_uz": "Rizq izlab hijrat qildi.", "srs": true},
+  {"ar": "طَلَبًا لِـ", "translit": "ṭalaban li-", "uz": "…ni izlab (o'zbekcha 'talab')", "root": "ط ل ب", "pattern": "", "pos": "masdar", "audio_text": "طَلَبًا", "audio": "b1/talaban.mp3", "example_ar": "هاجرَ طلبًا للرزقِ.", "example_uz": "Rizq izlab hijrat qildi.", "srs": true},
   {"ar": "خَوْفًا مِن", "translit": "khawfan min", "uz": "…dan qo'rqib (o'zbekcha 'xavf')", "root": "خ و ف", "pattern": "", "pos": "masdar", "audio": "b1/khawfan.mp3", "example_ar": "أسرعَ خوفًا من التأخيرِ.", "example_uz": "Kechikishdan qo'rqib shoshildi.", "srs": true},
   {"ar": "حُبًّا لِـ", "translit": "ḥubban li-", "uz": "…ni sevib (muhabbat bilan)", "root": "ح ب ب", "pattern": "", "pos": "masdar", "audio": "b1/hubban.mp3", "example_ar": "يخدمُ وطنَهُ حبًّا لهُ.", "example_uz": "Vatanini sevib unga xizmat qiladi.", "srs": true},
   {"ar": "رَغْبَةً فِي", "translit": "raghbatan fī", "uz": "…ni istab (o'zbekcha 'rag'bat')", "root": "ر غ ب", "pattern": "", "pos": "masdar", "audio": "b1/raghbatan.mp3", "example_ar": "يعملُ رغبةً في التقدمِ.", "example_uz": "Taraqqiyotni istab ishlaydi.", "srs": true},

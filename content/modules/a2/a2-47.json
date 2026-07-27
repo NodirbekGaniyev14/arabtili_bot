@@ -58,7 +58,7 @@
   {"msa_ar": "أُرِيدُ", "hejazi_ar": "أَبْغَى", "translit": "abghā", "uz": "Xohlayman", "audio": "hj/abgha.mp3"},
   {"msa_ar": "كَثِير", "hejazi_ar": "وَاجِد", "translit": "wājid", "uz": "Ko'p", "audio": "hj/wajid.mp3"},
   {"msa_ar": "أَيْنَ؟", "hejazi_ar": "وِين؟", "translit": "wēn?", "uz": "Qayerda?", "audio": "hj/wen.mp3"},
-  {"msa_ar": "جَيِّد / بِخَيْر", "hejazi_ar": "تَمَام / زَيْن", "translit": "tamām / zayn", "uz": "Zo'r / yaxshi", "audio": "hj/tamam.mp3"},
+  {"msa_ar": "جَيِّد / بِخَيْر", "hejazi_ar": "تَمَام / زَيْن", "translit": "tamām / zayn", "uz": "Zo'r / yaxshi", "audio": "hj/tamam_zayn.mp3"},
   {"msa_ar": "نَعَمْ", "hejazi_ar": "أَيْوَه", "translit": "aywah", "uz": "Ha", "audio": "hj/aywah.mp3"},
   {"msa_ar": "اِنْتَظِرْ", "hejazi_ar": "اِسْتَنَّى", "translit": "istannā", "uz": "Kut", "audio": "hj/istanna.mp3"},
   {"msa_ar": "لَيْسَ هُنَاكَ مُشْكِلَة", "hejazi_ar": "مَافِي مُشْكِلَة", "translit": "māfī mushkila", "uz": "Muammo yo'q", "audio": "hj/mafi_mushkila.mp3"}

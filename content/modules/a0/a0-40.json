@@ -56,7 +56,7 @@
   {"ar": "مَكْتَبة", "translit": "maktaba", "uz": "kutubxona", "root": "ك ت ب", "pattern": "مَفْعَلة", "pos": "noun", "audio": "a0/maktaba.mp3", "example_ar": "", "example_uz": "", "srs": true},
   {"ar": "كاتِب", "translit": "kātib", "uz": "yozuvchi, kotib", "root": "ك ت ب", "pattern": "فاعِل", "pos": "noun", "audio": "a0/katib.mp3", "example_ar": "", "example_uz": "", "srs": true},
   {"ar": "دَرْس", "translit": "dars", "uz": "dars", "root": "د ر س", "pattern": "فَعْل", "pos": "noun", "audio": "a0/dars.mp3", "example_ar": "", "example_uz": "", "srs": true},
-  {"ar": "مَدْرَسة", "translit": "madrasa", "uz": "maktab", "root": "د ر س", "pattern": "مَفْعَلة", "pos": "noun", "audio": "a0/madrasa.mp3", "example_ar": "", "example_uz": "", "srs": true},
+  {"ar": "مَدْرَسة", "translit": "madrasa", "uz": "maktab", "root": "د ر س", "pattern": "مَفْعَلة", "pos": "noun", "audio_text": "مَدْرَسَة", "audio": "a0/madrasa.mp3", "example_ar": "", "example_uz": "", "srs": true},
   {"ar": "مُدَرِّس", "translit": "mudarris", "uz": "o'qituvchi", "root": "د ر س", "pattern": "مُفَعِّل", "pos": "noun", "audio": "a0/mudarris.mp3", "example_ar": "", "example_uz": "", "srs": true},
   {"ar": "عِلْم", "translit": "ʿilm", "uz": "ilm, fan", "root": "ع ل م", "pattern": "فِعْل", "pos": "noun", "audio": "a0/ilm.mp3", "example_ar": "", "example_uz": "", "srs": true},
   {"ar": "عالِم", "translit": "ʿālim", "uz": "olim", "root": "ع ل م", "pattern": "فاعِل", "pos": "noun", "audio": "a0/alim.mp3", "example_ar": "", "example_uz": "", "srs": true},
@@ -71,6 +71,7 @@
    ]
   },
   "listening": {
+   "audio_text": "مَدْرَسَة",
    "audio": "a0/madrasa.mp3",
    "transcript_ar": "مَدْرَسة",
    "questions": [

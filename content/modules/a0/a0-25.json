@@ -28,7 +28,7 @@
  "roots": [],
  "vocabulary": [
   {"ar": "مَنْ", "translit": "man", "uz": "kim (so'roq so'zi)", "root": "", "pattern": "", "pos": "ot", "audio": "a0/man.mp3", "example_ar": "مَنْ؟", "example_uz": "Kim?", "srs": true},
-  {"ar": "مَا", "translit": "mā", "uz": "nima (so'roq so'zi)", "root": "", "pattern": "", "pos": "ot", "audio": "a0/maa.mp3", "example_ar": "مَا؟", "example_uz": "Nima?", "srs": true},
+  {"ar": "مَا", "translit": "mā", "uz": "nima (so'roq so'zi)", "root": "", "pattern": "", "pos": "ot", "audio": "a0/ma_soroq.mp3", "example_ar": "مَا؟", "example_uz": "Nima?", "srs": true},
   {"ar": "كَمْ", "translit": "kam", "uz": "nechta (so'roq so'zi)", "root": "", "pattern": "", "pos": "ot", "audio": "a0/kam.mp3", "example_ar": "كَمْ؟", "example_uz": "Nechta?", "srs": true},
   {"ar": "لَكَ", "translit": "laka", "uz": "senga (erkak)", "root": "", "pattern": "", "pos": "predlog", "audio": "a0/laka.mp3", "example_ar": "لَكَ", "example_uz": "senga", "srs": true}
  ],
