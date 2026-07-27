@@ -9,8 +9,9 @@ from aiogram.types import (
 from sqlalchemy import select
 
 from config import settings
-from db.models import Feedback, User
+from db.models import User
 from db.session import SessionLocal
+from services import feedback as feedback_svc
 
 router = Router()
 
@@ -75,23 +76,9 @@ async def cmd_fikr(message: Message, bot: Bot):
             session.add(user)
             await session.commit()
             await session.refresh(user)
-        session.add(
-            Feedback(user_id=user.id, text=text, source="bot", context="/fikr")
+        fb = await feedback_svc.save(
+            session, user.id, text, source="bot", context="/fikr"
         )
-        await session.commit()
-
-    # Adminga yetkazamiz
-    if settings.admin_id:
-        uname = f"@{tg.username}" if tg.username else "—"
-        safe = text.replace("<", "&lt;").replace(">", "&gt;")
-        try:
-            await bot.send_message(
-                settings.admin_id,
-                f"💬 <b>Yangi fikr</b> ({tg.first_name}, {uname}, "
-                f"ID <code>{tg.id}</code>)\n\n{safe}",
-                parse_mode="HTML",
-            )
-        except Exception:
-            pass
+        await feedback_svc.notify_admin(bot, fb, user)
 
     await message.answer("Rahmat! Fikringiz men uchun juda muhim. 🌟")

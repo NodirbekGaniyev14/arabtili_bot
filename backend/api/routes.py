@@ -5,10 +5,8 @@ from pydantic import BaseModel, Field
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from config import settings
 from db.models import (
     ClientError,
-    Feedback,
     Placement,
     Plan,
     Progress,
@@ -23,7 +21,9 @@ from services.course import course_all_levels, start_lesson_for
 from services.achievements import check_and_award, list_achievements
 from services.ai import XP_BY_MINUTES
 from services.league import leaderboard
+from services import feedback as feedback_svc
 from services import placement as placement_svc
+from services import profile as profile_svc
 from services.srs import GRADES, apply_grade, seed_user_words
 from services.stats import (
     _today,
@@ -553,26 +553,12 @@ async def submit_feedback(
     session: AsyncSession = Depends(get_session),
 ):
     """Ilova ichidan yuborilgan fikr — saqlanadi va adminga yetkaziladi."""
-    text = body.text.strip()
-    session.add(
-        Feedback(user_id=user.id, text=text, source="app", context=body.context)
+    fb = await feedback_svc.save(
+        session, user.id, body.text.strip(), source="app", context=body.context
     )
-    await session.commit()
-
-    bot = getattr(request.app.state, "bot", None)
-    if bot and settings.admin_id:
-        uname = f"@{user.username}" if user.username else "—"
-        safe = text.replace("<", "&lt;").replace(">", "&gt;")
-        ctx = f" · {body.context}" if body.context else ""
-        try:
-            await bot.send_message(
-                settings.admin_id,
-                f"💬 <b>Ilovadan fikr</b> ({user.name}, {uname}, "
-                f"ID <code>{user.tg_id}</code>{ctx})\n\n{safe}",
-                parse_mode="HTML",
-            )
-        except Exception:
-            pass
+    await feedback_svc.notify_admin(
+        getattr(request.app.state, "bot", None), fb, user
+    )
     return {"ok": True}
 
 
@@ -622,6 +608,27 @@ async def update_goal(
         "daily_minutes": plan.daily_minutes,
         "daily_xp_goal": plan.daily_xp_goal,
     }
+
+
+class NameBody(BaseModel):
+    name: str = Field(max_length=100)
+
+
+@router.post("/settings/name")
+async def update_name(
+    body: NameBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Foydalanuvchi o'z ismini o'zgartiradi (sertifikat va reytingda ko'rinadi)."""
+    name, error = profile_svc.validate_name(body.name)
+    if error:
+        raise HTTPException(status_code=400, detail=error)
+
+    user.name = name
+    session.add(user)
+    await session.commit()
+    return {"name": user.name}
 
 
 class OnboardingBody(BaseModel):

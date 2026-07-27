@@ -193,7 +193,10 @@ export default function App() {
         {tab === "review" && <Review onDone={refreshMe} />}
         {tab === "rating" && <Rating />}
         {tab === "profile" && (
-          <Profile onOpenPlacement={() => setShowPlacement(true)} />
+          <Profile
+            onOpenPlacement={() => setShowPlacement(true)}
+            onProfileChange={refreshMe}
+          />
         )}
       </main>
 

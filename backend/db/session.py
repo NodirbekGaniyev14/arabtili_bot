@@ -46,6 +46,10 @@ _MIGRATIONS = {
         "kind": "VARCHAR(8) DEFAULT 'level'",
         "checkpoint": "INTEGER DEFAULT 0",
     },
+    "feedback": {
+        "reply_text": "TEXT DEFAULT ''",
+        "replied_at": "DATETIME",
+    },
 }
 
 

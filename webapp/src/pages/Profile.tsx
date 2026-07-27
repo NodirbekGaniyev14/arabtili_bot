@@ -63,8 +63,11 @@ function StatCard({
 
 export default function Profile({
   onOpenPlacement,
+  onProfileChange,
 }: {
   onOpenPlacement?: () => void;
+  /** Ism o'zgargach bosh sahifadagi salomlashuv ham yangilansin */
+  onProfileChange?: () => void;
 } = {}) {
   const [data, setData] = useState<ProfileData | null>(null);
   const [error, setError] = useState(false);
@@ -73,6 +76,29 @@ export default function Profile({
   const [resetting, setResetting] = useState(false);
   const [fb, setFb] = useState("");
   const [fbState, setFbState] = useState<"idle" | "sending" | "sent">("idle");
+
+  // Ism tahriri
+  const [editName, setEditName] = useState<string | null>(null);
+  const [nameErr, setNameErr] = useState("");
+  const [savingName, setSavingName] = useState(false);
+
+  const saveName = async () => {
+    if (editName === null || savingName) return;
+    setSavingName(true);
+    setNameErr("");
+    try {
+      const res = await api.updateName(editName);
+      setData((d) => (d ? { ...d, name: res.name } : d));
+      setEditName(null);
+      onProfileChange?.();
+      tg()?.HapticFeedback?.notificationOccurred?.("success");
+    } catch (e) {
+      const d = (e as { detail?: string }).detail;
+      setNameErr(d || "Saqlanmadi, qayta urinib ko'ring");
+    } finally {
+      setSavingName(false);
+    }
+  };
 
   const sendFeedback = async () => {
     const text = fb.trim();
@@ -182,7 +208,56 @@ export default function Profile({
             {data.level}
           </div>
         </div>
-        <h1 className="text-2xl font-extrabold mt-2">{data.name || "Foydalanuvchi"}</h1>
+        {editName === null ? (
+          <button
+            onClick={() => {
+              setEditName(data.name || "");
+              setNameErr("");
+            }}
+            className="mt-2 flex items-center gap-1.5 active:opacity-60"
+          >
+            <h1 className="text-2xl font-extrabold">
+              {data.name || "Foydalanuvchi"}
+            </h1>
+            <span className="text-base text-ink-soft leading-none">✏️</span>
+          </button>
+        ) : (
+          <div className="mt-2 w-full max-w-xs">
+            <input
+              value={editName}
+              onChange={(e) => setEditName(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && saveName()}
+              maxLength={40}
+              autoFocus
+              placeholder="Ism Familiya"
+              className="w-full rounded-2xl border-2 border-emerald-deep/50 bg-card px-4 py-3 text-center text-lg font-extrabold outline-none focus:border-emerald-deep"
+            />
+            {nameErr && (
+              <p className="mt-1.5 text-xs font-bold text-terracotta">{nameErr}</p>
+            )}
+            <div className="mt-2 grid grid-cols-2 gap-2">
+              <button
+                onClick={() => {
+                  setEditName(null);
+                  setNameErr("");
+                }}
+                className="rounded-xl bg-card border border-cardline py-2.5 text-sm font-extrabold active:scale-95 transition-transform"
+              >
+                Bekor
+              </button>
+              <button
+                onClick={saveName}
+                disabled={savingName || !editName.trim()}
+                className="rounded-xl bg-emerald-deep py-2.5 text-sm font-extrabold text-white disabled:opacity-40 active:scale-95 transition-transform"
+              >
+                {savingName ? "..." : "Saqlash"}
+              </button>
+            </div>
+            <p className="mt-1.5 text-[11px] text-ink-soft font-semibold">
+              Reyting va yangi sertifikatlarda shu ism ko'rinadi
+            </p>
+          </div>
+        )}
         {data.target_level && (
           <p className="text-sm text-ink-soft font-semibold">
             Maqsad: {formatTargetDate(data.target_date)} gacha {data.target_level}

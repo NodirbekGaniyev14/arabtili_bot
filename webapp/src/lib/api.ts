@@ -570,7 +570,21 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
       ...(init?.headers ?? {}),
     },
   });
-  if (!res.ok) throw new Error(`API xatosi: ${res.status}`);
+  if (!res.ok) {
+    // Server tushuntirgan sababni ham olib chiqamiz (masalan ism validatsiyasi)
+    let detail = "";
+    try {
+      detail = (await res.clone().json())?.detail ?? "";
+    } catch {
+      /* JSON emas — status kifoya */
+    }
+    const err = new Error(
+      `API xatosi: ${res.status}${detail ? ` — ${detail}` : ""}`
+    );
+    (err as Error & { status: number; detail: string }).status = res.status;
+    (err as Error & { status: number; detail: string }).detail = detail;
+    throw err;
+  }
   return res.json();
 }
 
@@ -637,6 +651,11 @@ export const api = {
       "/api/settings/goal",
       { method: "POST", body: JSON.stringify({ daily_minutes: dailyMinutes }) }
     ),
+  updateName: (name: string) =>
+    request<{ name: string }>("/api/settings/name", {
+      method: "POST",
+      body: JSON.stringify({ name }),
+    }),
   getRoots: () =>
     request<{ roots: RootSummary[]; seen_count: number; total: number }>(
       "/api/roots"

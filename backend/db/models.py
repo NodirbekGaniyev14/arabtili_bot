@@ -202,6 +202,9 @@ class Feedback(Base):
     source: Mapped[str] = mapped_column(String(16), default="app")  # app | bot
     context: Mapped[str] = mapped_column(String(64), default="")  # sahifa/dars
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+    # Admin javobi — faqat fikr egasiga DM qilinadi, anonim ("Arabiy jamoasi")
+    reply_text: Mapped[str] = mapped_column(Text, default="")
+    replied_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
 
 
 class LessonRating(Base):

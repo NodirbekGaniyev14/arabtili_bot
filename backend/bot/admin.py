@@ -2,13 +2,14 @@
 
 import asyncio
 
-from aiogram import Bot, Router
+from aiogram import Bot, F, Router
 from aiogram.filters import Command
 from aiogram.types import Message
 
 from config import settings
 from db.session import SessionLocal
 from services import admin
+from services import feedback as feedback_svc
 
 router = Router()
 
@@ -81,6 +82,56 @@ async def cmd_user(message: Message):
     async with SessionLocal() as session:
         text = await admin.user_detail(session, int(parts[1].strip()))
     await message.answer(text, parse_mode="HTML")
+
+
+async def _send_reply(bot: Bot, feedback_id: int, text: str) -> str:
+    """Fikr egasiga anonim javob yuboradi. Natija — adminga ko'rsatiladigan matn."""
+    async with SessionLocal() as session:
+        row = await feedback_svc.load_with_user(session, feedback_id)
+        if row is None:
+            return f"❌ #F{feedback_id} topilmadi"
+        fb, user = row
+        try:
+            await bot.send_message(
+                user.tg_id, feedback_svc.reply_notice(fb, text), parse_mode="HTML"
+            )
+        except Exception as e:
+            return f"❌ Yetkazilmadi (#F{feedback_id}): {e}"
+        await feedback_svc.mark_replied(session, fb, text)
+    return f"✅ Javob yuborildi — #F{feedback_id} ({user.name or user.tg_id})"
+
+
+@router.message(Command("javob"))
+async def cmd_javob(message: Message, bot: Bot):
+    """/javob <fikr_id> <matn> — fikr egasiga anonim javob."""
+    if not _is_admin(message):
+        return
+    parts = (message.text or "").split(maxsplit=2)
+    if len(parts) < 3 or not parts[1].strip().isdigit() or not parts[2].strip():
+        await message.answer(
+            "Foydalanish: <code>/javob &lt;fikr_id&gt; javob matni</code>\n"
+            "Yoki fikr xabariga oddiy reply qiling.\n\n"
+            "Javob faqat o'sha odamga boradi, sizning ismingiz ko'rsatilmaydi.",
+            parse_mode="HTML",
+        )
+        return
+    await message.answer(await _send_reply(bot, int(parts[1]), parts[2].strip()))
+
+
+@router.message(F.reply_to_message.text.regexp(r"#F\d+"))
+async def reply_to_feedback(message: Message, bot: Bot):
+    """Admin fikr xabariga reply qilsa — o'sha odamga javob ketadi.
+
+    Filtr faqat `#F<id>` yorlig'i bor xabarlarga tushadi, shuning uchun
+    boshqa replylar odatdagidek qayta ishlanadi.
+    """
+    if not _is_admin(message):
+        return
+    fb_id = feedback_svc.feedback_id_from_text(message.reply_to_message.text or "")
+    text = (message.text or "").strip()
+    if fb_id is None or not text:
+        return
+    await message.answer(await _send_reply(bot, fb_id, text))
 
 
 @router.message(Command("broadcast"))
