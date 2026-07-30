@@ -5,7 +5,8 @@
   "A0": 42,
   "A1": 40,
   "A2": 54,
-  "B1": 42
+  "B1": 42,
+  "B2": 50
  },
  "lessons": [
   {
@@ -2846,6 +2847,804 @@
    "type": "exam",
    "prerequisites": [
     "b1-41"
+   ]
+  },
+  {
+   "id": "b2-01",
+   "level": "B2",
+   "module": "nahw-adv",
+   "order": 1,
+   "title_uz": "To'liq i'rob tizimi",
+   "topic": "Marfu'/mansub/majrur/majzum belgilari bir jadvalda",
+   "words_target": 9,
+   "note": "B1 i'robini umumlashtirish",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": []
+  },
+  {
+   "id": "b2-02",
+   "level": "B2",
+   "module": "nahw-adv",
+   "order": 2,
+   "title_uz": "Qalb fe'llari — ikki maf'ul",
+   "topic": "ظنَّ · حسِبَ · وجدَ: iki maf'ulli jumla",
+   "words_target": 9,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-01"
+   ]
+  },
+  {
+   "id": "b2-03",
+   "level": "B2",
+   "module": "nahw-adv",
+   "order": 3,
+   "title_uz": "Yaqinlik va boshlash fe'llari",
+   "topic": "كادَ · عسى · بدأَ · أخذَ + muzori' javob",
+   "words_target": 9,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-02"
+   ]
+  },
+  {
+   "id": "b2-04",
+   "level": "B2",
+   "module": "nahw-adv",
+   "order": 4,
+   "title_uz": "Tobe'lar 1: بدل va توكيد",
+   "topic": "Almashinuvchi va ta'kid — i'robda ergashish",
+   "words_target": 9,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-03"
+   ]
+  },
+  {
+   "id": "b2-05",
+   "level": "B2",
+   "module": "nahw-adv",
+   "order": 5,
+   "title_uz": "Tobe'lar 2: عطف va صفة",
+   "topic": "Murakkab birikmalarda moslashuv",
+   "words_target": 9,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-04"
+   ]
+  },
+  {
+   "id": "b2-06",
+   "level": "B2",
+   "module": "nahw-adv",
+   "order": 6,
+   "title_uz": "الممنوع من الصرف",
+   "topic": "Tanvin olmaydigan otlar — amaliy 5 sabab",
+   "words_target": 9,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-05"
+   ]
+  },
+  {
+   "id": "b2-07",
+   "level": "B2",
+   "module": "nahw-adv",
+   "order": 7,
+   "title_uz": "Nido, istig'osa, ta'ajjub",
+   "topic": "يا أيُّها · ما أجملَ! · أفعِلْ بِـ",
+   "words_target": 9,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-06"
+   ]
+  },
+  {
+   "id": "b2-08",
+   "level": "B2",
+   "module": "nahw-adv",
+   "order": 8,
+   "title_uz": "Qasam va uning javobi",
+   "topic": "والله لَـ… · qasam javobida لام va إنَّ",
+   "words_target": 9,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-07"
+   ]
+  },
+  {
+   "id": "b2-09",
+   "level": "B2",
+   "module": "nahw-adv",
+   "order": 9,
+   "title_uz": "Taqdim-ta'xir va e'tiroziy jumla",
+   "topic": "Uslubiy so'z tartibi, jumla ichida izoh",
+   "words_target": 9,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-08"
+   ]
+  },
+  {
+   "id": "b2-10",
+   "level": "B2",
+   "module": "nahw-adv",
+   "order": 10,
+   "title_uz": "I'rob ustaxonasi",
+   "topic": "Gazeta jumlasini to'liq tahlil qilish",
+   "words_target": 8,
+   "note": "Amaliyot darsi",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-09"
+   ]
+  },
+  {
+   "id": "b2-11",
+   "level": "B2",
+   "module": "sarf-adv",
+   "order": 11,
+   "title_uz": "الإعلال والإبدال",
+   "topic": "و/ي almashinishi va tushishi qoidalari",
+   "words_target": 9,
+   "note": "Illatli fe'l ildizi",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-10"
+   ]
+  },
+  {
+   "id": "b2-12",
+   "level": "B2",
+   "module": "sarf-adv",
+   "order": 12,
+   "title_uz": "مصدر ميمي · اسم المرّة والهيئة",
+   "topic": "مَقْتَل · ضَرْبَة · جِلْسَة",
+   "words_target": 9,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-11"
+   ]
+  },
+  {
+   "id": "b2-13",
+   "level": "B2",
+   "module": "sarf-adv",
+   "order": 13,
+   "title_uz": "النسبة والمصدر الصناعي",
+   "topic": "إنسانيّة · حرّيّة · مسؤوليّة",
+   "words_target": 10,
+   "note": "O'zbekchada bor: insoniyat",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-12"
+   ]
+  },
+  {
+   "id": "b2-14",
+   "level": "B2",
+   "module": "sarf-adv",
+   "order": 14,
+   "title_uz": "التصغير",
+   "topic": "كُتَيِّب · جُنَيْه — kichraytirish ma'nolari",
+   "words_target": 9,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-13"
+   ]
+  },
+  {
+   "id": "b2-15",
+   "level": "B2",
+   "module": "sarf-adv",
+   "order": 15,
+   "title_uz": "جمع الجمع va nodir ko'pliklar",
+   "topic": "أفاضل · بيوتات · nodir vaznlar",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-14"
+   ]
+  },
+  {
+   "id": "b2-16",
+   "level": "B2",
+   "module": "sarf-adv",
+   "order": 16,
+   "title_uz": "Sarf ustaxonasi",
+   "topic": "Bitta o'zakdan 20 so'z yasash",
+   "words_target": 10,
+   "note": "Amaliyot darsi",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-15"
+   ]
+  },
+  {
+   "id": "b2-17",
+   "level": "B2",
+   "module": "balagha",
+   "order": 17,
+   "title_uz": "التشبيه",
+   "topic": "O'xshatish — matnda tanib olish",
+   "words_target": 9,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-16"
+   ]
+  },
+  {
+   "id": "b2-18",
+   "level": "B2",
+   "module": "balagha",
+   "order": 18,
+   "title_uz": "الاستعارة والمجاز",
+   "topic": "Majoziy ma'no, gazeta sarlavhalari",
+   "words_target": 9,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-17"
+   ]
+  },
+  {
+   "id": "b2-19",
+   "level": "B2",
+   "module": "balagha",
+   "order": 19,
+   "title_uz": "الكناية va idiomalar",
+   "topic": "التعبيرات الاصطلاحية — 30 ibora",
+   "words_target": 12,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-18"
+   ]
+  },
+  {
+   "id": "b2-20",
+   "level": "B2",
+   "module": "balagha",
+   "order": 20,
+   "title_uz": "الجناس والسجع",
+   "topic": "Sarlavha, reklama va maqol uslubi",
+   "words_target": 9,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-19"
+   ]
+  },
+  {
+   "id": "b2-21",
+   "level": "B2",
+   "module": "balagha",
+   "order": 21,
+   "title_uz": "الإيجاز والإطناب",
+   "topic": "Gazeta uslubi vs adabiy uslub",
+   "words_target": 9,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-20"
+   ]
+  },
+  {
+   "id": "b2-22",
+   "level": "B2",
+   "module": "vocab-adv",
+   "order": 22,
+   "title_uz": "Barqaror birikmalar 1",
+   "topic": "أخذ قرارًا · بذل جهدًا · لعب دورًا",
+   "words_target": 14,
+   "note": "Collocations",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-21"
+   ]
+  },
+  {
+   "id": "b2-23",
+   "level": "B2",
+   "module": "vocab-adv",
+   "order": 23,
+   "title_uz": "Barqaror birikmalar 2",
+   "topic": "OAV va ish iboralari",
+   "words_target": 14,
+   "note": "Collocations",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-22"
+   ]
+  },
+  {
+   "id": "b2-24",
+   "level": "B2",
+   "module": "vocab-adv",
+   "order": 24,
+   "title_uz": "Nozik farqlar",
+   "topic": "عمل/وظيفة/مهنة · كبير/ضخم/عظيم",
+   "words_target": 14,
+   "note": "Sinonim nozikligi",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-23"
+   ]
+  },
+  {
+   "id": "b2-25",
+   "level": "B2",
+   "module": "vocab-adv",
+   "order": 25,
+   "title_uz": "Bank va moliya",
+   "topic": "Kredit, foiz, hisob-kitob, o'tkazma",
+   "words_target": 14,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-24"
+   ]
+  },
+  {
+   "id": "b2-26",
+   "level": "B2",
+   "module": "vocab-adv",
+   "order": 26,
+   "title_uz": "Savdo, eksport, logistika",
+   "topic": "Shartnoma, yuk, bojxona, yetkazish",
+   "words_target": 14,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-25"
+   ]
+  },
+  {
+   "id": "b2-27",
+   "level": "B2",
+   "module": "vocab-adv",
+   "order": 27,
+   "title_uz": "Qurilish va ishlab chiqarish",
+   "topic": "Loyiha, jihoz, xavfsizlik, muddat",
+   "words_target": 14,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-26"
+   ]
+  },
+  {
+   "id": "b2-28",
+   "level": "B2",
+   "module": "vocab-adv",
+   "order": 28,
+   "title_uz": "IT va raqamli xizmatlar",
+   "topic": "Ilova, ma'lumot, xavfsizlik, hisob",
+   "words_target": 14,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-27"
+   ]
+  },
+  {
+   "id": "b2-29",
+   "level": "B2",
+   "module": "vocab-adv",
+   "order": 29,
+   "title_uz": "Tibbiyot — kengaytirilgan",
+   "topic": "Tashxis, tahlil, jarrohlik, retsept",
+   "words_target": 14,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-28"
+   ]
+  },
+  {
+   "id": "b2-30",
+   "level": "B2",
+   "module": "vocab-adv",
+   "order": 30,
+   "title_uz": "Ta'lim va akademik til",
+   "topic": "Tadqiqot, manba, ilmiy ish",
+   "words_target": 14,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-29"
+   ]
+  },
+  {
+   "id": "b2-31",
+   "level": "B2",
+   "module": "vocab-adv",
+   "order": 31,
+   "title_uz": "Ekologiya va energiya",
+   "topic": "Iqlim, chiqindi, qayta tiklanuvchi energiya",
+   "words_target": 14,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-30"
+   ]
+  },
+  {
+   "id": "b2-32",
+   "level": "B2",
+   "module": "saudi-work",
+   "order": 32,
+   "title_uz": "Ish suhbati (المقابلة)",
+   "topic": "O'zini tanishtirish, tajriba, savol-javob",
+   "words_target": 12,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-31"
+   ]
+  },
+  {
+   "id": "b2-33",
+   "level": "B2",
+   "module": "saudi-work",
+   "order": 33,
+   "title_uz": "Shartnoma va hujjatlar",
+   "topic": "Iqoma, jawazat, ta'minot, ta'til",
+   "words_target": 12,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-32"
+   ]
+  },
+  {
+   "id": "b2-34",
+   "level": "B2",
+   "module": "saudi-work",
+   "order": 34,
+   "title_uz": "Ofisda muloqot",
+   "topic": "Yig'ilish, topshiriq, muddat, hisobot",
+   "words_target": 12,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-33"
+   ]
+  },
+  {
+   "id": "b2-35",
+   "level": "B2",
+   "module": "saudi-work",
+   "order": 35,
+   "title_uz": "Mijoz bilan telefon",
+   "topic": "Shikoyat, uzr, yechim taklif qilish",
+   "words_target": 12,
+   "note": "",
+   "hejazi": true,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-34"
+   ]
+  },
+  {
+   "id": "b2-36",
+   "level": "B2",
+   "module": "saudi-work",
+   "order": 36,
+   "title_uz": "Hijoziy ish tili",
+   "topic": "Ko'chadagi 40 ish iborasi — ustaxona",
+   "words_target": 12,
+   "note": "Intensiv",
+   "hejazi": true,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-35"
+   ]
+  },
+  {
+   "id": "b2-37",
+   "level": "B2",
+   "module": "skills-adv",
+   "order": 37,
+   "title_uz": "O'qish: original gazeta maqolasi",
+   "topic": "To'liq tahlil bilan",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-36"
+   ]
+  },
+  {
+   "id": "b2-38",
+   "level": "B2",
+   "module": "skills-adv",
+   "order": 38,
+   "title_uz": "O'qish: fikr maqolasi",
+   "topic": "Muallif pozitsiyasi va dalillari",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-37"
+   ]
+  },
+  {
+   "id": "b2-39",
+   "level": "B2",
+   "module": "skills-adv",
+   "order": 39,
+   "title_uz": "O'qish: hisobot va statistika",
+   "topic": "Raqam, foiz, tendensiya o'qish",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-38"
+   ]
+  },
+  {
+   "id": "b2-40",
+   "level": "B2",
+   "module": "skills-adv",
+   "order": 40,
+   "title_uz": "O'qish: adabiy parcha",
+   "topic": "Qisqa hikoyadan bo'lak",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-39"
+   ]
+  },
+  {
+   "id": "b2-41",
+   "level": "B2",
+   "module": "skills-adv",
+   "order": 41,
+   "title_uz": "Tinglash: yangiliklar nashri",
+   "topic": "Normal tezlik, qayd olish",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-40"
+   ]
+  },
+  {
+   "id": "b2-42",
+   "level": "B2",
+   "module": "skills-adv",
+   "order": 42,
+   "title_uz": "Tinglash: podkast/munozara",
+   "topic": "Ikki kishi, turli fikr",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-41"
+   ]
+  },
+  {
+   "id": "b2-43",
+   "level": "B2",
+   "module": "skills-adv",
+   "order": 43,
+   "title_uz": "Tinglash: akademik ma'ruza",
+   "topic": "Asosiy fikrni ajratish",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-42"
+   ]
+  },
+  {
+   "id": "b2-44",
+   "level": "B2",
+   "module": "skills-adv",
+   "order": 44,
+   "title_uz": "Yozish: rasmiy hisobot va e-xat",
+   "topic": "Format va rasmiy iboralar",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-43"
+   ]
+  },
+  {
+   "id": "b2-45",
+   "level": "B2",
+   "module": "skills-adv",
+   "order": 45,
+   "title_uz": "Yozish: insho (dalil ⇄ qarshi dalil)",
+   "topic": "Kirish · tana · xulosa tuzilmasi",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-44"
+   ]
+  },
+  {
+   "id": "b2-46",
+   "level": "B2",
+   "module": "skills-adv",
+   "order": 46,
+   "title_uz": "Gapirish: taqdimot va munozara",
+   "topic": "AI bilan 6 vaziyat",
+   "words_target": 6,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-45"
+   ]
+  },
+  {
+   "id": "b2-47",
+   "level": "B2",
+   "module": "review",
+   "order": 47,
+   "title_uz": "Takrorlash: grammatika",
+   "topic": "B2 nahv va sarfi bo'ylab",
+   "words_target": 8,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-46"
+   ]
+  },
+  {
+   "id": "b2-48",
+   "level": "B2",
+   "module": "review",
+   "order": 48,
+   "title_uz": "Takrorlash: lug'at + o'zak",
+   "topic": "B2 lug'ati va o'zaklari bo'ylab",
+   "words_target": 10,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-47"
+   ]
+  },
+  {
+   "id": "b2-49",
+   "level": "B2",
+   "module": "review",
+   "order": 49,
+   "title_uz": "Sinov imtihoni",
+   "topic": "Mashq rejimidagi to'liq imtihon",
+   "words_target": 0,
+   "note": "",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "lesson",
+   "prerequisites": [
+    "b2-48"
+   ]
+  },
+  {
+   "id": "b2-50",
+   "level": "B2",
+   "module": "exam",
+   "order": 50,
+   "title_uz": "B2 IMTIHONI",
+   "topic": "4 ko'nikma bo'yicha yakuniy imtihon",
+   "words_target": 0,
+   "note": "80% → Sertifikat B2",
+   "hejazi": false,
+   "harakat_level": "ambiguous_only",
+   "type": "exam",
+   "prerequisites": [
+    "b2-49"
    ]
   }
  ]

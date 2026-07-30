@@ -18,7 +18,7 @@ COOLDOWN_HOURS = 24
 PASS_TOTAL = 80  # yakuniy 80%+ yetarli (bo'lim bo'yicha minimal talab yo'q)
 GRACE_MINUTES = 3
 
-LEVEL_ORDER = ["A0", "A1", "A2", "B1"]
+LEVEL_ORDER = ["A0", "A1", "A2", "B1", "B2"]
 UNLOCK_RATIO = 0.8  # daraja darslarining 80% tugagach imtihon ochiladi
 
 

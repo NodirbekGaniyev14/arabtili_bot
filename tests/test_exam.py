@@ -164,7 +164,7 @@ def test_build_exam_low_levels_keep_speaking(level):
 
 @pytest.mark.parametrize(
     "level,expected",
-    [("A0", "A1"), ("A1", "A2"), ("A2", "B1"), ("B1", None), ("XX", None)],
+    [("A0", "A1"), ("A1", "A2"), ("A2", "B1"), ("B1", "B2"), ("B2", None), ("XX", None)],
 )
 def test_next_level(level, expected):
     assert ex.next_level(level) == expected

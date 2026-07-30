@@ -511,9 +511,15 @@ Har bir dars: MSA + Hijoziy + **AI bilan rol o'yini**.
 
 ## 9. B2 — 2-BOSQICH
 
+> **YANGILANDI (2026-07-30, K15):** B2 endi **50 darslik daraja** sifatida qo'shilmoqda
+> (yuqori nahv, yuqori sarf, balog'at, yuqori lug'at, Saudiyada ish, ko'nikmalar,
+> takror + imtihon). To'liq reja: **`docs/B2_PLAN.md`**. Quyidagi ogohlantirish
+> kuchida qoladi: 50 dars B2 **poydevorini** beradi, CEFR B2 ravonligi uchun
+> undan keyin amaliyot oqimi kerak — u alohida mahsulot bo'ladi.
+
 ⚠️ **B2 ni birinchi versiyada VA'DA QILMANG.** Jahon standarti: **700+ soat**. Ilova ichida bera olmaysiz — real kitob, real suhbat, real muhit kerak.
 
-**To'g'ri pozitsiya: "Davomiy amaliyot rejimi" (Practice Mode)** — dars emas, kunlik oqim:
+**B2 dan KEYINGI qadam: "Davomiy amaliyot rejimi" (Practice Mode)** — dars emas, kunlik oqim:
 
 - Har kuni: 1 yangilik maqolasi + AI tahlil
 - Har kuni: 1 podkast parchasi + tushunish savoli

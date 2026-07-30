@@ -38,11 +38,18 @@ MODULE_META: dict[str, tuple[str, str]] = {
     "adv-grammar": ("Yuqori grammatika", "النَّحو المُتقدّم"),
     "vocab": ("Lug'at boyligi", "المُفردات"),
     "review": ("Umumiy takror", "المُراجعة"),
+    # B2 (K15 — docs/B2_PLAN.md)
+    "nahw-adv": ("Yuqori nahv", "النَّحْو المُتَقَدِّم"),
+    "sarf-adv": ("Yuqori sarf", "الصَّرْف المُتَقَدِّم"),
+    "balagha": ("Uslub va balog'at", "البَلاغة"),
+    "vocab-adv": ("Yuqori lug'at", "المُفْرَدات المُتَقَدِّمة"),
+    "saudi-work": ("Saudiyada ish", "العَمَل في السُّعوديّة"),
+    "skills-adv": ("Ko'nikmalar", "المَهارات المُتَقَدِّمة"),
     # umumiy
     "exam": ("Daraja imtihoni", "الامتِحان"),
 }
 
-LEVELS = ["A0", "A1", "A2", "B1"]
+LEVELS = ["A0", "A1", "A2", "B1", "B2"]
 
 
 def module_title(module_id: str) -> tuple[str, str]:
@@ -149,6 +156,7 @@ def _level_name(level: str) -> str:
         "A1": "Elementar",
         "A2": "O'rta-quyi",
         "B1": "O'rta",
+        "B2": "O'rta-yuqori",
     }.get(level, level)
 
 
@@ -232,7 +240,7 @@ def _level_modules(level: str, done: set[str]) -> list[dict]:
 
 
 def course_all_levels(done: set[str], current_level: str = "A0") -> dict:
-    """Darslar sahifasi — 4 daraja (A0/A1/A2/B1) alohida, har birida progress %.
+    """Darslar sahifasi — 5 daraja (A0/A1/A2/B1/B2) alohida, har birida progress %.
 
     Har daraja: modullar, tugatilgan/jami darslar soni, foiz, kontent bor-yo'qligi.
     Foydalanuvchi qaysi darajada ekanini adashtirmasligi uchun.

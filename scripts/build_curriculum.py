@@ -1,4 +1,4 @@
-"""content/curriculum.json ni yasaydi — 160 darsning meta-ma'lumoti.
+"""content/curriculum.json ni yasaydi — 228 darsning meta-ma'lumoti (A0-B2).
 
 Manba: docs/ARABIY_CURRICULUM.md (§5-8 jadvallari).
 Ishlatish: python scripts/build_curriculum.py
@@ -209,6 +209,64 @@ B1 = [  # 1-14 adv-grammar, 15-26 vocab, 27-38 skills, 39-41 review, 42 exam
     ("B1 IMTIHONI", "4 ko'nikma bo'yicha yakuniy imtihon", 0, "80% → Sertifikat B1", False),
 ]
 
+B2 = [  # 1-10 nahw-adv, 11-16 sarf-adv, 17-21 balagha, 22-31 vocab-adv,
+        # 32-36 saudi-work (hijoziy), 37-46 skills-adv, 47-49 review, 50 exam
+        #
+        # B2 = real matnga o'tish darajasi: harakat faqat chalkash so'zlarda,
+        # matnlar 60-120 so'z, har darsda i'rob yoki uslub savoli bor.
+        # Reja: docs/B2_PLAN.md
+    ("To'liq i'rob tizimi", "Marfu'/mansub/majrur/majzum belgilari bir jadvalda", 9, "B1 i'robini umumlashtirish", False),
+    ("Qalb fe'llari — ikki maf'ul", "ظنَّ · حسِبَ · وجدَ: iki maf'ulli jumla", 9, "", False),
+    ("Yaqinlik va boshlash fe'llari", "كادَ · عسى · بدأَ · أخذَ + muzori' javob", 9, "", False),
+    ("Tobe'lar 1: بدل va توكيد", "Almashinuvchi va ta'kid — i'robda ergashish", 9, "", False),
+    ("Tobe'lar 2: عطف va صفة", "Murakkab birikmalarda moslashuv", 9, "", False),
+    ("الممنوع من الصرف", "Tanvin olmaydigan otlar — amaliy 5 sabab", 9, "", False),
+    ("Nido, istig'osa, ta'ajjub", "يا أيُّها · ما أجملَ! · أفعِلْ بِـ", 9, "", False),
+    ("Qasam va uning javobi", "والله لَـ… · qasam javobida لام va إنَّ", 9, "", False),
+    ("Taqdim-ta'xir va e'tiroziy jumla", "Uslubiy so'z tartibi, jumla ichida izoh", 9, "", False),
+    ("I'rob ustaxonasi", "Gazeta jumlasini to'liq tahlil qilish", 8, "Amaliyot darsi", False),
+    ("الإعلال والإبدال", "و/ي almashinishi va tushishi qoidalari", 9, "Illatli fe'l ildizi", False),
+    ("مصدر ميمي · اسم المرّة والهيئة", "مَقْتَل · ضَرْبَة · جِلْسَة", 9, "", False),
+    ("النسبة والمصدر الصناعي", "إنسانيّة · حرّيّة · مسؤوليّة", 10, "O'zbekchada bor: insoniyat", False),
+    ("التصغير", "كُتَيِّب · جُنَيْه — kichraytirish ma'nolari", 9, "", False),
+    ("جمع الجمع va nodir ko'pliklar", "أفاضل · بيوتات · nodir vaznlar", 10, "", False),
+    ("Sarf ustaxonasi", "Bitta o'zakdan 20 so'z yasash", 10, "Amaliyot darsi", False),
+    ("التشبيه", "O'xshatish — matnda tanib olish", 9, "", False),
+    ("الاستعارة والمجاز", "Majoziy ma'no, gazeta sarlavhalari", 9, "", False),
+    ("الكناية va idiomalar", "التعبيرات الاصطلاحية — 30 ibora", 12, "", False),
+    ("الجناس والسجع", "Sarlavha, reklama va maqol uslubi", 9, "", False),
+    ("الإيجاز والإطناب", "Gazeta uslubi vs adabiy uslub", 9, "", False),
+    ("Barqaror birikmalar 1", "أخذ قرارًا · بذل جهدًا · لعب دورًا", 14, "Collocations", False),
+    ("Barqaror birikmalar 2", "OAV va ish iboralari", 14, "Collocations", False),
+    ("Nozik farqlar", "عمل/وظيفة/مهنة · كبير/ضخم/عظيم", 14, "Sinonim nozikligi", False),
+    ("Bank va moliya", "Kredit, foiz, hisob-kitob, o'tkazma", 14, "", False),
+    ("Savdo, eksport, logistika", "Shartnoma, yuk, bojxona, yetkazish", 14, "", False),
+    ("Qurilish va ishlab chiqarish", "Loyiha, jihoz, xavfsizlik, muddat", 14, "", False),
+    ("IT va raqamli xizmatlar", "Ilova, ma'lumot, xavfsizlik, hisob", 14, "", False),
+    ("Tibbiyot — kengaytirilgan", "Tashxis, tahlil, jarrohlik, retsept", 14, "", False),
+    ("Ta'lim va akademik til", "Tadqiqot, manba, ilmiy ish", 14, "", False),
+    ("Ekologiya va energiya", "Iqlim, chiqindi, qayta tiklanuvchi energiya", 14, "", False),
+    ("Ish suhbati (المقابلة)", "O'zini tanishtirish, tajriba, savol-javob", 12, "", True),
+    ("Shartnoma va hujjatlar", "Iqoma, jawazat, ta'minot, ta'til", 12, "", True),
+    ("Ofisda muloqot", "Yig'ilish, topshiriq, muddat, hisobot", 12, "", True),
+    ("Mijoz bilan telefon", "Shikoyat, uzr, yechim taklif qilish", 12, "", True),
+    ("Hijoziy ish tili", "Ko'chadagi 40 ish iborasi — ustaxona", 12, "Intensiv", True),
+    ("O'qish: original gazeta maqolasi", "To'liq tahlil bilan", 8, "", False),
+    ("O'qish: fikr maqolasi", "Muallif pozitsiyasi va dalillari", 8, "", False),
+    ("O'qish: hisobot va statistika", "Raqam, foiz, tendensiya o'qish", 8, "", False),
+    ("O'qish: adabiy parcha", "Qisqa hikoyadan bo'lak", 8, "", False),
+    ("Tinglash: yangiliklar nashri", "Normal tezlik, qayd olish", 6, "", False),
+    ("Tinglash: podkast/munozara", "Ikki kishi, turli fikr", 6, "", False),
+    ("Tinglash: akademik ma'ruza", "Asosiy fikrni ajratish", 6, "", False),
+    ("Yozish: rasmiy hisobot va e-xat", "Format va rasmiy iboralar", 8, "", False),
+    ("Yozish: insho (dalil ⇄ qarshi dalil)", "Kirish · tana · xulosa tuzilmasi", 8, "", False),
+    ("Gapirish: taqdimot va munozara", "AI bilan 6 vaziyat", 6, "", False),
+    ("Takrorlash: grammatika", "B2 nahv va sarfi bo'ylab", 8, "", False),
+    ("Takrorlash: lug'at + o'zak", "B2 lug'ati va o'zaklari bo'ylab", 10, "", False),
+    ("Sinov imtihoni", "Mashq rejimidagi to'liq imtihon", 0, "", False),
+    ("B2 IMTIHONI", "4 ko'nikma bo'yicha yakuniy imtihon", 0, "80% → Sertifikat B2", False),
+]
+
 
 def module_for(level: str, order: int) -> str:
     if level == "A0":
@@ -236,11 +294,20 @@ def module_for(level: str, order: int) -> str:
         if order <= 47: return "saudi"
         if order <= 53: return "skills"
         return "exam"
-    # B1
-    if order <= 14: return "adv-grammar"
-    if order <= 26: return "vocab"
-    if order <= 38: return "skills"
-    if order <= 41: return "review"
+    if level == "B1":
+        if order <= 14: return "adv-grammar"
+        if order <= 26: return "vocab"
+        if order <= 38: return "skills"
+        if order <= 41: return "review"
+        return "exam"
+    # B2
+    if order <= 10: return "nahw-adv"
+    if order <= 16: return "sarf-adv"
+    if order <= 21: return "balagha"
+    if order <= 31: return "vocab-adv"
+    if order <= 36: return "saudi-work"
+    if order <= 46: return "skills-adv"
+    if order <= 49: return "review"
     return "exam"
 
 
@@ -249,6 +316,7 @@ HARAKAT_BY_LEVEL = {
     "A1": "full",
     "A2": "new_words_only",
     "B1": "ambiguous_only",
+    "B2": "ambiguous_only",
 }
 
 # Ulanish/shakl darslari harakatsiz birikma ko'rsatadi (بت, كتب — hali o'qilmaydi),
@@ -258,7 +326,7 @@ HARAKAT_NONE = {"a0-17", "a0-18", "a0-19", "a0-20"}
 
 def build() -> dict:
     lessons = []
-    for level, rows in (("A0", A0), ("A1", A1), ("A2", A2), ("B1", B1)):
+    for level, rows in (("A0", A0), ("A1", A1), ("A2", A2), ("B1", B1), ("B2", B2)):
         prefix = level.lower()
         for i, (title, topic, words, note, hejazi) in enumerate(rows, start=1):
             lid = f"{prefix}-{i:02d}"
@@ -301,4 +369,5 @@ if __name__ == "__main__":
     )
     total = sum(data["counts"].values())
     print(f"curriculum.json yozildi: {total} dars {data['counts']}")
-    assert total == 178, f"178 emas: {total}"
+    # A0 42 + A1 40 + A2 54 + B1 42 + B2 50 (K15 rejasi: docs/B2_PLAN.md)
+    assert total == 228, f"228 emas: {total}"

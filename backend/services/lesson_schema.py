@@ -145,7 +145,7 @@ class SrsCard(BaseModel):
 
 class LessonV2(BaseModel):
     id: str
-    level: Literal["A0", "A1", "A2", "B1"]
+    level: Literal["A0", "A1", "A2", "B1", "B2"]
     module: str
     order: int
     title_uz: str

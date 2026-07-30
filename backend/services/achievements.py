@@ -30,6 +30,7 @@ BADGES: list[dict] = [
     {"id": "level_a1", "icon": "🥇", "title": "A1 tugadi", "desc": "Elementar darajaning barcha darslari", "check": lambda m: m["level_done"].get("A1")},
     {"id": "level_a2", "icon": "🏅", "title": "A2 tugadi", "desc": "O'rta-quyi darajaning barcha darslari", "check": lambda m: m["level_done"].get("A2")},
     {"id": "level_b1", "icon": "🎖", "title": "B1 tugadi", "desc": "O'rta darajaning barcha darslari", "check": lambda m: m["level_done"].get("B1")},
+    {"id": "level_b2", "icon": "🏆", "title": "B2 tugadi", "desc": "O'rta-yuqori darajaning barcha darslari", "check": lambda m: m["level_done"].get("B2")},
 
     # ── Modul ustalari ──
     {"id": "harakat_master", "icon": "◌َ", "title": "Harakat ustasi", "desc": "Harakatlar modulini tugatdingiz", "check": lambda m: m["module_done"].get("harakat")},

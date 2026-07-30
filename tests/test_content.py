@@ -22,9 +22,9 @@ WRITTEN = sorted(written_lesson_ids())
 CURRICULUM = load_curriculum()
 
 
-def test_curriculum_has_all_four_levels():
+def test_curriculum_has_all_levels():
     levels = {m["level"] for m in CURRICULUM.values()}
-    assert levels == {"A0", "A1", "A2", "B1"}
+    assert levels == {"A0", "A1", "A2", "B1", "B2"}
 
 
 def test_every_written_lesson_is_in_curriculum():

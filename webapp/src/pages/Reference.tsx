@@ -14,7 +14,7 @@ import {
 import { playAudio } from "../lib/audio";
 
 type Tab = "grammar" | "vocab";
-const LEVELS = ["A0", "A1", "A2", "B1"] as const;
+const LEVELS = ["A0", "A1", "A2", "B1", "B2"] as const;
 
 export default function Reference({ onClose }: { onClose: () => void }) {
   const [tab, setTab] = useState<Tab>("grammar");

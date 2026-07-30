@@ -198,6 +198,10 @@ async def exam_submit(
             )
         ).scalar_one_or_none()
         nxt = exam_svc.next_level(attempt.level)
+        # Kontenti hali yozilmagan darajaga ko'tarmaymiz (masalan B2 tayyor
+        # bo'lmaganda) — aks holda foydalanuvchi bo'sh darajaga tushib qoladi.
+        if nxt and not exam_svc.level_lesson_ids(nxt):
+            nxt = None
         if plan and nxt and plan.level == attempt.level:
             plan.level = nxt
             session.add(plan)

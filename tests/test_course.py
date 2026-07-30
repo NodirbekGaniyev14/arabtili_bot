@@ -62,10 +62,17 @@ def test_second_lesson_locked_until_first_done():
 
 
 def test_start_lesson_for_each_level():
+    """Kontenti bor daraja o'z darsidan boshlanadi; kontenti yo'q daraja
+    (K15 da B2) yozilgan eng birinchi darsga qaytadi — hech kim boshi berk
+    ko'chada qolmaydi."""
     for level in LEVELS:
         lid = start_lesson_for(level)
         assert lid in WRITTEN
-        assert lid.lower().startswith(level.lower())
+        has_content = any(w.startswith(level.lower() + "-") for w in WRITTEN)
+        if has_content:
+            assert lid.lower().startswith(level.lower())
+        else:
+            assert lid == sorted(WRITTEN)[0] or lid.startswith("a0-")
 
 
 def test_next_lesson_advances_along_path():

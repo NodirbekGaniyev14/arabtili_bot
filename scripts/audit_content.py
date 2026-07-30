@@ -141,7 +141,7 @@ def audit_structure() -> tuple[list[str], list[str]]:
     cur = json.loads((CONTENT / "curriculum.json").read_text(encoding="utf-8"))["lessons"]
     written = {f.stem for f in (CONTENT / "modules").rglob("*.json")}
 
-    for lvl in ("A0", "A1", "A2", "B1"):
+    for lvl in ("A0", "A1", "A2", "B1", "B2"):
         ids = [l for l in cur if l["level"] == lvl and l["type"] == "lesson"]
         runs = [k for k, _ in groupby(ids, key=lambda l: l["module"])]
         seen: set[str] = set()
@@ -155,7 +155,10 @@ def audit_structure() -> tuple[list[str], list[str]]:
                 )
             seen.add(m)
         missing = [l["id"] for l in ids if l["id"] not in written]
-        if missing:
+        if missing and len(missing) == len(ids):
+            # Daraja hali boshlanmagan (masalan B2 skeleti) — muammo emas
+            notes.append(f"{lvl}: kontent hali yozilmagan ({len(ids)} dars kutilmoqda)")
+        elif missing:
             problems.append(f"{lvl}: kontenti yo'q darslar — {missing}")
 
     return problems, notes
@@ -163,13 +166,13 @@ def audit_structure() -> tuple[list[str], list[str]]:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--level", default="", help="a0 | a1 | a2 | b1")
+    ap.add_argument("--level", default="", help="a0 | a1 | a2 | b1 | b2")
     args = ap.parse_args()
 
     if sys.stdout and hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-    levels = [args.level] if args.level else ["a0", "a1", "a2", "b1"]
+    levels = [args.level] if args.level else ["a0", "a1", "a2", "b1", "b2"]
     total = 0
     by_level: dict[str, dict[str, list[str]]] = defaultdict(dict)
 

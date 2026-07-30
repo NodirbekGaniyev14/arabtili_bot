@@ -52,8 +52,8 @@ export default function Lessons({ onOpen, onOpenCheckpoint }: LessonsProps) {
     <div className="px-4 pt-4 space-y-4">
       <h1 className="text-[26px] font-extrabold">Darslar</h1>
 
-      {/* Daraja tanlagichi — A0 / A1 / A2 / B1 */}
-      <div className="grid grid-cols-4 gap-2">
+      {/* Daraja tanlagichi — A0 / A1 / A2 / B1 / B2 */}
+      <div className="grid grid-cols-5 gap-1.5">
         {data.levels.map((lvl) => {
           const isActive = lvl.level === active;
           return (

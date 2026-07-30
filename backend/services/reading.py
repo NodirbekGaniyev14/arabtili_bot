@@ -20,7 +20,7 @@ from functools import lru_cache
 from config import BASE_DIR
 
 READING_DIR = BASE_DIR / "content" / "reading"
-LEVELS = ("A2", "B1")
+LEVELS = ("A2", "B1", "B2")
 
 
 @lru_cache(maxsize=8)

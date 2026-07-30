@@ -113,9 +113,17 @@ async def test_state_has_all_fields(session, make_user):
         assert key in st
 
 
-async def test_all_four_levels_have_pools(session, make_user):
+async def test_levels_with_content_have_pools(session, make_user):
+    """Kontenti yozilgan har daraja uchun imtihon banki bo'lishi shart.
+
+    Kontenti hali yozilmagan daraja (K15 da B2) imtihonsiz turadi — ilovada
+    «tayyorlanmoqda» ko'rinadi, boshlash mumkin emas.
+    """
     user = await make_user()
     for lvl in ex.LEVEL_ORDER:
         st = await _state(session, user.id, lvl, "B1")
+        if not ex.level_lesson_ids(lvl):
+            assert st["available"] is False, f"{lvl}: kontent yo'q, imtihon ochiq"
+            continue
         assert st["available"] is True, f"{lvl} uchun imtihon pooli yo'q"
         assert st["minutes"] > 0
