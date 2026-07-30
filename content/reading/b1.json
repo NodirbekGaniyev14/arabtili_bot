@@ -1,0 +1,930 @@
+{
+ "level": "B1",
+ "note": "B1 o'qish bosqichlari — har 4 darsda bitta matn. Harakat minimal (real matn), yangi so'zlar lug'atchada.",
+ "stages": [
+  {
+   "stage": 1,
+   "lesson_id": "b1-01",
+   "title_uz": "Kitob qanday nashr qilinadi",
+   "harakat": "partial",
+   "words": 61,
+   "audio": "read/b1-01.mp3",
+   "text_ar": "كُتِبَ هذا الكتاب في سنتين. جُمِعَت المعلومات من مصادر كثيرة، ثم رُتِّبَت الفصول وأُرسِلَت إلى دار النشر. قُرِئَ النصّ مرتين قبل الطباعة، وصُحِّحَت الأخطاء اللغوية. طُبِعَ الكتاب في ألف نسخة، ووُزِّعَ على المكتبات في المدينة. يُقال إنّ الطبعة الأولى بِيعَت في شهر واحد، ولذلك سيُطبَع الكتاب مرة أخرى في السنة القادمة. لم يُذكَر اسم المؤلف على الغلاف، لكنه معروف بين القرّاء.",
+   "glossary": [
+    {
+     "ar": "جُمِعَت",
+     "uz": "to'plandi (majhul)"
+    },
+    {
+     "ar": "دار",
+     "uz": "uy, idora (دار النشر — nashriyot)"
+    },
+    {
+     "ar": "صُحِّحَت",
+     "uz": "tuzatildi"
+    },
+    {
+     "ar": "نسخة",
+     "uz": "nusxa"
+    },
+    {
+     "ar": "الغلاف",
+     "uz": "muqova"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "«كُتِبَ» qanday shakl?",
+     "q_ar": "كُتِبَ",
+     "options": [
+      "Majhul (yozildi)",
+      "Ma'lum (yozdi)",
+      "Buyruq (yoz!)",
+      "Masdar (yozish)"
+     ],
+     "answer": "Majhul (yozildi)",
+     "explain_uz": "كَتَبَ → كُتِبَ: birinchi harf damma, oxirgidan avvalgisi kasra.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Kitob necha nusxada chop etildi?",
+     "q_ar": "",
+     "options": [
+      "1000",
+      "100",
+      "2000",
+      "500"
+     ],
+     "answer": "1000",
+     "explain_uz": "«طُبِعَ الكتاب في ألف نسخة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Muqovada nima yo'q?",
+     "q_ar": "",
+     "options": [
+      "Muallifning ismi",
+      "Kitob nomi",
+      "Nashriyot nomi",
+      "Narx"
+     ],
+     "answer": "Muallifning ismi",
+     "explain_uz": "«لم يُذكَر اسم المؤلف على الغلاف».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 2,
+   "lesson_id": "b1-05",
+   "title_uz": "Agar mehnat qilsang",
+   "harakat": "partial",
+   "words": 65,
+   "audio": "read/b1-05.mp3",
+   "text_ar": "إذا اجتهد الطالب نجح، وإن أهمل خسر وقته. مَن يزرع اليوم يحصد غدًا، وما تفعله من خير يعود إليك. لو عرفتُ قيمة الوقت في صغري لتعلمتُ أكثر. يقول أستاذي: إن قرأتَ صفحة كل يوم قرأتَ كتابًا في الشهر. وإذا لم تجد وقتًا طويلًا فاستخدم الدقائق القصيرة بين الأعمال. من صبر على التعلم وصل إلى هدفه، ولو كان الطريق طويلًا. لذلك ضع خطة صغيرة والتزم بها.",
+   "glossary": [
+    {
+     "ar": "أهمل",
+     "uz": "e'tiborsiz qoldirdi"
+    },
+    {
+     "ar": "يحصد",
+     "uz": "hosil yig'adi"
+    },
+    {
+     "ar": "قيمة",
+     "uz": "qadr, qiymat"
+    },
+    {
+     "ar": "خطة",
+     "uz": "reja"
+    },
+    {
+     "ar": "التزم",
+     "uz": "amal qildi, sodiq bo'ldi"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "«لو عرفتُ ... لتعلمتُ أكثر» qanday shart?",
+     "q_ar": "لو",
+     "options": [
+      "Noreal (bo'lmagan) shart",
+      "Real shart",
+      "Buyruq",
+      "Inkor"
+     ],
+     "answer": "Noreal (bo'lmagan) shart",
+     "explain_uz": "لَوْ — o'tmishda amalga oshmagan shart uchun.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Ustoz qanday maslahat berdi?",
+     "q_ar": "",
+     "options": [
+      "Kuniga bir sahifa o'qish",
+      "Kuniga bir kitob o'qish",
+      "Faqat dam olish",
+      "Uzoq vaqt kutish"
+     ],
+     "answer": "Kuniga bir sahifa o'qish",
+     "explain_uz": "«إن قرأتَ صفحة كل يوم قرأتَ كتابًا في الشهر».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Uzoq vaqt topilmasa nima qilish kerak?",
+     "q_ar": "",
+     "options": [
+      "Ishlar orasidagi qisqa daqiqalardan foydalanish",
+      "Butun kunni bo'sh qoldirish",
+      "O'qishni tashlash",
+      "Ertaga qoldirish"
+     ],
+     "answer": "Ishlar orasidagi qisqa daqiqalardan foydalanish",
+     "explain_uz": "«فاستخدم الدقائق القصيرة بين الأعمال».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 3,
+   "lesson_id": "b1-09",
+   "title_uz": "Ish kuni",
+   "harakat": "partial",
+   "words": 65,
+   "audio": "read/b1-09.mp3",
+   "text_ar": "وصل المهندس إلى المكتب مبكرًا، حاملًا حاسوبه وملفاته. لم يحضر أحد إلا سكرتيرة المدير، فجلس يعمل هادئًا. راجع التقرير سريعًا وكتب ملاحظاته واضحةً على الصفحة الأخيرة. لم يبق في المشروع غير مرحلة واحدة، ولذلك كان الجميع مسرورين. قال المدير: لا أحد أفضل منك في هذا العمل، سوى المهندس القديم الذي تركنا. عمل الفريق ساعتين متواصلتين ثم خرجوا للغداء، ورجعوا نشيطين لإكمال التقرير قبل نهاية اليوم.",
+   "glossary": [
+    {
+     "ar": "حاملًا",
+     "uz": "olib (hol shakli)"
+    },
+    {
+     "ar": "إلا",
+     "uz": "dan boshqa"
+    },
+    {
+     "ar": "التقرير",
+     "uz": "hisobot"
+    },
+    {
+     "ar": "مرحلة",
+     "uz": "bosqich"
+    },
+    {
+     "ar": "متواصلتين",
+     "uz": "uzluksiz (ikki)"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "«حاملًا حاسوبه» — qanday konstruksiya?",
+     "q_ar": "حاملًا",
+     "options": [
+      "Hol (الحال)",
+      "Tamyiz",
+      "Maf'ul mutlaq",
+      "Sifat"
+     ],
+     "answer": "Hol (الحال)",
+     "explain_uz": "Harakat qanday holatda bajarilganini bildiradi — hol, nasb holatida.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Ofisda kim bor edi?",
+     "q_ar": "",
+     "options": [
+      "Faqat direktorning kotibasi",
+      "Butun jamoa",
+      "Hech kim",
+      "Eski muhandis"
+     ],
+     "answer": "Faqat direktorning kotibasi",
+     "explain_uz": "«لم يحضر أحد إلا سكرتيرة المدير».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Loyihada nima qoldi?",
+     "q_ar": "",
+     "options": [
+      "Bitta bosqich",
+      "Uch bosqich",
+      "Hech narsa",
+      "Hisobot yozish"
+     ],
+     "answer": "Bitta bosqich",
+     "explain_uz": "«لم يبق في المشروع غير مرحلة واحدة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 4,
+   "lesson_id": "b1-13",
+   "title_uz": "Kelasi yil rejalari",
+   "harakat": "partial",
+   "words": 68,
+   "audio": "read/b1-13.mp3",
+   "text_ar": "لم أزر مدينة الرياض من قبل، ولكنني أريد أن أسافر إليها في الصيف القادم. لن أذهب وحدي؛ سأدعو صديقي كي نتعلم اللغة معًا هناك. لا تنسَ أنّ الدراسة تحتاج إلى مال، لذلك بدأت أعمل حتى أجمع المبلغ اللازم. لم أشترِ التذكرة بعد، لأن الأسعار ترتفع في الصيف. أخبرني موظف الشركة أنّ الحجز المبكر أرخص بكثير، فقررت أن أحجز في الربيع. إذا نجحت الخطة فسأكتب عنها مقالًا قصيرًا لأصدقائي.",
+   "glossary": [
+    {
+     "ar": "وحدي",
+     "uz": "yolg'iz"
+    },
+    {
+     "ar": "كي",
+     "uz": "uchun (maqsad)"
+    },
+    {
+     "ar": "المبلغ",
+     "uz": "summa"
+    },
+    {
+     "ar": "ترتفع",
+     "uz": "ko'tariladi"
+    },
+    {
+     "ar": "الحجز",
+     "uz": "bron"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "«لن أذهب» nimani bildiradi?",
+     "q_ar": "لن أذهب",
+     "options": [
+      "Kelasi zamon inkori",
+      "O'tgan zamon inkori",
+      "Buyruq",
+      "Shart"
+     ],
+     "answer": "Kelasi zamon inkori",
+     "explain_uz": "لَنْ + mansub muzori' = kelasi zamonni inkor qiladi.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Nega chiptani hali sotib olmadi?",
+     "q_ar": "",
+     "options": [
+      "Yozda narxlar ko'tariladi",
+      "Pul yo'q",
+      "Rejasi o'zgardi",
+      "Do'sti kelmaydi"
+     ],
+     "answer": "Yozda narxlar ko'tariladi",
+     "explain_uz": "«لأن الأسعار ترتفع في الصيف».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qachon bron qilishga qaror qildi?",
+     "q_ar": "",
+     "options": [
+      "Bahorda",
+      "Yozda",
+      "Qishda",
+      "Kuzda"
+     ],
+     "answer": "Bahorda",
+     "explain_uz": "«فقررت أن أحجز في الربيع».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 5,
+   "lesson_id": "b1-17",
+   "title_uz": "Universitetda",
+   "harakat": "minimal",
+   "words": 72,
+   "audio": "read/b1-17.mp3",
+   "text_ar": "تعتبر الجامعة مرحلة مهمة في حياة الطالب. يختار الطالب تخصصه في السنة الأولى، ثم يدرس مواد إجبارية واختيارية. تبدأ المحاضرات في الصباح وتنتهي بعد الظهر، وبينها فترة للراحة. يقدم الأساتذة الشرح ثم يطلبون أبحاثًا قصيرة، ويناقشون النتائج في الصف. من لا يحضر المحاضرات يجد صعوبة في الامتحانات، لأن الأسئلة تعتمد على الشرح لا على الكتاب فقط. توفر المكتبة الجامعية مراجع كثيرة وأماكن هادئة للمراجعة، ولذلك ينصح الأساتذة بالجلوس فيها ساعة كل يوم.",
+   "glossary": [
+    {
+     "ar": "تخصصه",
+     "uz": "mutaxassisligini"
+    },
+    {
+     "ar": "إجبارية",
+     "uz": "majburiy"
+    },
+    {
+     "ar": "المحاضرات",
+     "uz": "ma'ruzalar"
+    },
+    {
+     "ar": "أبحاثًا",
+     "uz": "tadqiqotlar"
+    },
+    {
+     "ar": "مراجع",
+     "uz": "manbalar, adabiyotlar"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Talaba mutaxassislikni qachon tanlaydi?",
+     "q_ar": "",
+     "options": [
+      "Birinchi yilda",
+      "Oxirgi yilda",
+      "Imtihondan keyin",
+      "Ikkinchi semestrda"
+     ],
+     "answer": "Birinchi yilda",
+     "explain_uz": "«يختار الطالب تخصصه في السنة الأولى».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Nega ma'ruzaga kelmagan qiynaladi?",
+     "q_ar": "",
+     "options": [
+      "Savollar tushuntirishga asoslanadi",
+      "Kitob yo'q",
+      "Imtihon og'zaki",
+      "Vaqt kam"
+     ],
+     "answer": "Savollar tushuntirishga asoslanadi",
+     "explain_uz": "«الأسئلة تعتمد على الشرح لا على الكتاب فقط».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Ustozlar nimani maslahat beradi?",
+     "q_ar": "",
+     "options": [
+      "Kuniga bir soat kutubxonada o'tirishni",
+      "Ma'ruzani yozib olishni",
+      "Ko'p dam olishni",
+      "Kitob sotib olishni"
+     ],
+     "answer": "Kuniga bir soat kutubxonada o'tirishni",
+     "explain_uz": "«ينصح الأساتذة بالجلوس فيها ساعة كل يوم».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 6,
+   "lesson_id": "b1-21",
+   "title_uz": "Yangilik: kitob ko'rgazmasi",
+   "harakat": "minimal",
+   "words": 75,
+   "audio": "read/b1-21.mp3",
+   "text_ar": "افتتح معرض الكتاب الدولي أبوابه أمس في العاصمة، بمشاركة أكثر من ثلاثمئة دار نشر من عشرين دولة. وقال منظمو المعرض إنّ عدد الزوار في اليوم الأول تجاوز خمسة عشر ألفًا، وهو رقم أعلى من العام الماضي. ويشمل البرنامج ندوات ثقافية ولقاءات مع مؤلفين، إضافة إلى ورش للأطفال. وأشار المتحدث الرسمي إلى أنّ الكتب العلمية كانت الأكثر مبيعًا، بينما ارتفع الطلب على الروايات المترجمة. ويستمر المعرض عشرة أيام، وتُفتح القاعات من الرابعة عصرًا حتى العاشرة مساءً.",
+   "glossary": [
+    {
+     "ar": "معرض",
+     "uz": "ko'rgazma"
+    },
+    {
+     "ar": "تجاوز",
+     "uz": "oshib ketdi"
+    },
+    {
+     "ar": "ندوات",
+     "uz": "seminar, anjumanlar"
+    },
+    {
+     "ar": "الأكثر",
+     "uz": "eng ko'p"
+    },
+    {
+     "ar": "الروايات",
+     "uz": "romanlar"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Birinchi kunda necha tashrifchi bo'ldi?",
+     "q_ar": "",
+     "options": [
+      "15 000 dan ko'p",
+      "300",
+      "20 000",
+      "5 000"
+     ],
+     "answer": "15 000 dan ko'p",
+     "explain_uz": "«تجاوز خمسة عشر ألفًا».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Eng ko'p sotilgan kitoblar qanday?",
+     "q_ar": "",
+     "options": [
+      "Ilmiy kitoblar",
+      "Bolalar kitoblari",
+      "Tarjima romanlar",
+      "Lug'atlar"
+     ],
+     "answer": "Ilmiy kitoblar",
+     "explain_uz": "«الكتب العلمية كانت الأكثر مبيعًا».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Ko'rgazma qancha davom etadi?",
+     "q_ar": "",
+     "options": [
+      "10 kun",
+      "20 kun",
+      "1 hafta",
+      "1 oy"
+     ],
+     "answer": "10 kun",
+     "explain_uz": "«يستمر المعرض عشرة أيام».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 7,
+   "lesson_id": "b1-25",
+   "title_uz": "Maktab musobaqasi",
+   "harakat": "minimal",
+   "words": 71,
+   "audio": "read/b1-25.mp3",
+   "text_ar": "أُقيمت مباراة كرة القدم بين فريقي المدرستين على الملعب البلدي. بدأ اللقاء في الخامسة، وحضره عدد كبير من الطلاب وأولياء الأمور. سجّل الفريق الأول هدفًا في الدقيقة العشرين، ثم تعادل الفريق الثاني قبل نهاية الشوط الأول. في الشوط الثاني لعب اللاعبون بحماس، ولكن الحكم أوقف المباراة دقيقتين بسبب إصابة بسيطة. انتهت المباراة بفوز الفريق الثاني بهدفين مقابل هدف. قال المدرب: النتيجة مهمة، لكن الأهم أن يتعلم اللاعبون احترام الخصم والعمل معًا.",
+   "glossary": [
+    {
+     "ar": "أُقيمت",
+     "uz": "o'tkazildi"
+    },
+    {
+     "ar": "تعادل",
+     "uz": "durang qildi"
+    },
+    {
+     "ar": "الشوط",
+     "uz": "yarim (o'yin bo'limi)"
+    },
+    {
+     "ar": "الحكم",
+     "uz": "hakam"
+    },
+    {
+     "ar": "الخصم",
+     "uz": "raqib"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Musobaqa qanday yakunlandi?",
+     "q_ar": "",
+     "options": [
+      "2:1 ikkinchi jamoa g'alabasi",
+      "1:1 durang",
+      "2:0 birinchi jamoa",
+      "O'yin to'xtatildi"
+     ],
+     "answer": "2:1 ikkinchi jamoa g'alabasi",
+     "explain_uz": "«بفوز الفريق الثاني بهدفين مقابل هدف».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Nega hakam o'yinni to'xtatdi?",
+     "q_ar": "",
+     "options": [
+      "Yengil jarohat sababli",
+      "Yomg'ir sababli",
+      "Janjal sababli",
+      "Vaqt tugagani uchun"
+     ],
+     "answer": "Yengil jarohat sababli",
+     "explain_uz": "«بسبب إصابة بسيطة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Murabbiy uchun eng muhimi nima?",
+     "q_ar": "",
+     "options": [
+      "Raqibni hurmat qilish va jamoa bo'lib ishlash",
+      "G'alaba",
+      "Ko'p gol urish",
+      "Tomoshabin soni"
+     ],
+     "answer": "Raqibni hurmat qilish va jamoa bo'lib ishlash",
+     "explain_uz": "«الأهم أن يتعلم اللاعبون احترام الخصم والعمل معًا».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 8,
+   "lesson_id": "b1-29",
+   "title_uz": "Maqola: texnologiya va til",
+   "harakat": "minimal",
+   "words": 79,
+   "audio": "read/b1-29.mp3",
+   "text_ar": "تغيّرت طريقة تعلم اللغات في السنوات الأخيرة بسبب التطبيقات الذكية. أصبح المتعلم قادرًا على سماع النطق الصحيح وتكرار الكلمة عشرات المرات دون معلم. ويرى بعض الخبراء أنّ هذه الوسائل تساعد على البداية فقط، أما الطلاقة فتحتاج إلى حديث مع أشخاص حقيقيين. وتشير دراسة حديثة إلى أنّ الطالب الذي يستخدم التطبيق عشرين دقيقة يوميًا يتقدم أسرع من الذي يدرس ساعتين مرة في الأسبوع. ومع ذلك يحذّر الباحثون من الاعتماد الكامل على الترجمة الآلية، لأنها تفقد المعنى الدقيق في النصوص الطويلة.",
+   "glossary": [
+    {
+     "ar": "الوسائل",
+     "uz": "vositalar"
+    },
+    {
+     "ar": "الطلاقة",
+     "uz": "ravonlik"
+    },
+    {
+     "ar": "تشير",
+     "uz": "ishora qiladi"
+    },
+    {
+     "ar": "يحذّر",
+     "uz": "ogohlantiradi"
+    },
+    {
+     "ar": "الآلية",
+     "uz": "avtomatik, mashina"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Ekspertlarga ko'ra ilovalar nimaga yordam beradi?",
+     "q_ar": "",
+     "options": [
+      "Faqat boshlashga",
+      "Ravonlikka",
+      "Yozishga",
+      "Imtihonga"
+     ],
+     "answer": "Faqat boshlashga",
+     "explain_uz": "«تساعد على البداية فقط».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Tadqiqot nima deydi?",
+     "q_ar": "",
+     "options": [
+      "Kunda 20 daqiqa haftada 2 soatdan samaraliroq",
+      "Haftada 2 soat yetarli",
+      "Ilova foydasiz",
+      "Til o'rganish qiyinlashdi"
+     ],
+     "answer": "Kunda 20 daqiqa haftada 2 soatdan samaraliroq",
+     "explain_uz": "Matndagi taqqoslash: har kun oz — haftada bir ko'pdan tez.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Mashina tarjimasining kamchiligi nima?",
+     "q_ar": "",
+     "options": [
+      "Uzun matnlarda aniq ma'noni yo'qotadi",
+      "Sekin ishlaydi",
+      "Qimmat",
+      "Ovozi yo'q"
+     ],
+     "answer": "Uzun matnlarda aniq ma'noni yo'qotadi",
+     "explain_uz": "«تفقد المعنى الدقيق في النصوص الطويلة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 9,
+   "lesson_id": "b1-33",
+   "title_uz": "Iqtisodiy xabar",
+   "harakat": "minimal",
+   "words": 77,
+   "audio": "read/b1-33.mp3",
+   "text_ar": "أعلنت وزارة الاقتصاد أمس عن نمو الصادرات بنسبة سبعة في المئة خلال الأشهر الستة الأولى من هذا العام. وأوضح التقرير أنّ الزيادة جاءت من المنتجات الغذائية والصناعية، بينما بقيت أسعار المواد الأولية مستقرة. وأضاف المتحدث أنّ عدد الشركات الصغيرة الجديدة ارتفع إلى أربعة آلاف شركة، معظمها في مجال التقنية والخدمات. من جهة أخرى، انخفض معدل التضخم قليلًا بعد قرارات البنك المركزي الأخيرة. ويتوقع الخبراء أن يستمر النمو في النصف الثاني إذا لم تتغير الأسعار العالمية بشكل كبير.",
+   "glossary": [
+    {
+     "ar": "الصادرات",
+     "uz": "eksport"
+    },
+    {
+     "ar": "بنسبة",
+     "uz": "foizda, nisbatda"
+    },
+    {
+     "ar": "مستقرة",
+     "uz": "barqaror"
+    },
+    {
+     "ar": "التضخم",
+     "uz": "inflatsiya"
+    },
+    {
+     "ar": "يتوقع",
+     "uz": "kutadi, taxmin qiladi"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Eksport qancha o'sdi?",
+     "q_ar": "",
+     "options": [
+      "7%",
+      "6%",
+      "4%",
+      "17%"
+     ],
+     "answer": "7%",
+     "explain_uz": "«بنسبة سبعة في المئة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Yangi kichik firmalar soni qancha?",
+     "q_ar": "",
+     "options": [
+      "4000",
+      "400",
+      "7000",
+      "40 000"
+     ],
+     "answer": "4000",
+     "explain_uz": "«ارتفع إلى أربعة آلاف شركة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Inflatsiya bilan nima bo'ldi?",
+     "q_ar": "",
+     "options": [
+      "Bir oz pasaydi",
+      "Ko'tarildi",
+      "O'zgarmadi",
+      "Ikki barobar oshdi"
+     ],
+     "answer": "Bir oz pasaydi",
+     "explain_uz": "«انخفض معدل التضخم قليلًا».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 10,
+   "lesson_id": "b1-37",
+   "title_uz": "Taqdimot matni",
+   "harakat": "minimal",
+   "words": 75,
+   "audio": "read/b1-37.mp3",
+   "text_ar": "السلام عليكم، اسمي كريم وسأتحدث اليوم عن مشروعنا الصغير. بدأت الفكرة قبل سنة عندما لاحظنا أنّ كثيرًا من الطلاب لا يجدون كتبًا مستعملة بسعر مناسب. أنشأنا موقعًا بسيطًا يربط البائع بالمشتري داخل المدينة، ثم أضفنا خدمة التوصيل. في الشهر الأول سجّل الموقع مئتي مستخدم، واليوم لدينا ثلاثة آلاف. أهم درس تعلمناه هو أنّ البداية الصغيرة أفضل من الانتظار الطويل. في المرحلة القادمة نخطط لإضافة تطبيق للهاتف، وأرجو أن تشاركونا آراءكم بعد العرض. شكرًا لحسن استماعكم.",
+   "glossary": [
+    {
+     "ar": "لاحظنا",
+     "uz": "sezdik, payqadik"
+    },
+    {
+     "ar": "مستعملة",
+     "uz": "ishlatilgan (ikkinchi qo'l)"
+    },
+    {
+     "ar": "أنشأنا",
+     "uz": "yaratdik"
+    },
+    {
+     "ar": "التوصيل",
+     "uz": "yetkazib berish"
+    },
+    {
+     "ar": "نخطط",
+     "uz": "reja qilamiz"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Loyiha qanday muammoni hal qiladi?",
+     "q_ar": "",
+     "options": [
+      "Arzon ishlatilgan kitob topish",
+      "Kitob nashr qilish",
+      "Til o'rganish",
+      "Transport"
+     ],
+     "answer": "Arzon ishlatilgan kitob topish",
+     "explain_uz": "«لا يجدون كتبًا مستعملة بسعر مناسب».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Hozir nechta foydalanuvchi bor?",
+     "q_ar": "",
+     "options": [
+      "3000",
+      "200",
+      "300",
+      "1000"
+     ],
+     "answer": "3000",
+     "explain_uz": "«اليوم لدينا ثلاثة آلاف».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Eng muhim saboq nima?",
+     "q_ar": "",
+     "options": [
+      "Kichik boshlash uzoq kutishdan yaxshi",
+      "Pul kerak",
+      "Reklama muhim",
+      "Ilova zarur"
+     ],
+     "answer": "Kichik boshlash uzoq kutishdan yaxshi",
+     "explain_uz": "«البداية الصغيرة أفضل من الانتظار الطويل».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 11,
+   "lesson_id": "b1-41",
+   "title_uz": "Yakuniy matn: til va sabr",
+   "harakat": "minimal",
+   "words": 87,
+   "audio": "read/b1-41.mp3",
+   "text_ar": "يقول الباحثون إنّ تعلم اللغة يشبه بناء بيت: لا يظهر السقف في اليوم الأول. من درس العربية سنة كاملة يعرف أنّ التقدم يأتي على مراحل، وأنّ الأخطاء جزء من الطريق. في البداية يحفظ المتعلم كلمات قصيرة، ثم يفهم الجمل، وبعد ذلك يقرأ نصوصًا بدون حركات. الذين يتوقفون بعد شهرين لا يرون النتيجة، أما الذين يستمرون بهدوء فيصلون. ولو سألت أي طالب ناجح عن سرّه لأجاب: خمس عشرة دقيقة كل يوم، دون انقطاع. لذلك لا تقارن نفسك بغيرك، بل بنفسك قبل شهر. المهم أن تفتح الكتاب غدًا أيضًا.",
+   "glossary": [
+    {
+     "ar": "يشبه",
+     "uz": "o'xshaydi"
+    },
+    {
+     "ar": "السقف",
+     "uz": "tom, shift"
+    },
+    {
+     "ar": "مراحل",
+     "uz": "bosqichlar"
+    },
+    {
+     "ar": "انقطاع",
+     "uz": "uzilish, to'xtash"
+    },
+    {
+     "ar": "تقارن",
+     "uz": "solishtirasan"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Til o'rganish nimaga o'xshatilgan?",
+     "q_ar": "",
+     "options": [
+      "Uy qurishga",
+      "Sayohatga",
+      "Sportga",
+      "Bozorga"
+     ],
+     "answer": "Uy qurishga",
+     "explain_uz": "«تعلم اللغة يشبه بناء بيت».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Muvaffaqiyatli talabaning siri nima?",
+     "q_ar": "",
+     "options": [
+      "Kunda 15 daqiqa, uzilishsiz",
+      "Haftada 5 soat",
+      "Ko'p kitob sotib olish",
+      "Tez o'qish"
+     ],
+     "answer": "Kunda 15 daqiqa, uzilishsiz",
+     "explain_uz": "«خمس عشرة دقيقة كل يوم، دون انقطاع».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Matn kim bilan solishtirishni maslahat beradi?",
+     "q_ar": "",
+     "options": [
+      "Bir oy oldingi o'zingiz bilan",
+      "Boshqalar bilan",
+      "O'qituvchi bilan",
+      "Hech kim bilan"
+     ],
+     "answer": "Bir oy oldingi o'zingiz bilan",
+     "explain_uz": "«لا تقارن نفسك بغيرك، بل بنفسك قبل شهر».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  }
+ ]
+}

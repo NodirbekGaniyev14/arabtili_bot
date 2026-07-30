@@ -1,0 +1,1182 @@
+{
+ "level": "A2",
+ "note": "Bosqichma-bosqich o'qish. Har 4 darsda bitta matn. Harakat: 1-6 to'liq, 7-11 qisman, 12-14 minimal.",
+ "stages": [
+  {
+   "stage": 1,
+   "lesson_id": "a2-01",
+   "title_uz": "Ahmadning kuni",
+   "harakat": "full",
+   "words": 33,
+   "audio": "read/a2-01.mp3",
+   "text_ar": "يَسْتَيْقِظُ أَحْمَدُ فِي السَّاعَةِ السَّادِسَةِ صَبَاحًا. يَشْرَبُ الشَّايَ ثُمَّ يَذْهَبُ إِلَى الْمَدْرَسَةِ. فِي الْمَدْرَسَةِ يَدْرُسُ اللُّغَةَ الْعَرَبِيَّةَ وَالْحِسَابَ. بَعْدَ الدَّرْسِ رَجَعَ إِلَى الْبَيْتِ وَأَكَلَ الْغَدَاءَ مَعَ أُسْرَتِهِ. فِي الْمَسَاءِ كَتَبَ الْوَاجِبَ وَنَامَ مُبَكِّرًا.",
+   "glossary": [
+    {
+     "ar": "يَسْتَيْقِظُ",
+     "uz": "uyg'onadi"
+    },
+    {
+     "ar": "الْغَدَاءَ",
+     "uz": "tushlik"
+    },
+    {
+     "ar": "أُسْرَتِهِ",
+     "uz": "oilasi bilan"
+    },
+    {
+     "ar": "الْوَاجِبَ",
+     "uz": "uy vazifasi"
+    },
+    {
+     "ar": "مُبَكِّرًا",
+     "uz": "erta"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Ahmad soat nechada uyg'onadi?",
+     "q_ar": "",
+     "options": [
+      "6 da",
+      "7 da",
+      "8 da",
+      "5 da"
+     ],
+     "answer": "6 da",
+     "explain_uz": "«السَّاعَةِ السَّادِسَةِ» — soat oltida.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Maktabda nimalarni o'qiydi?",
+     "q_ar": "",
+     "options": [
+      "Arab tili va hisob",
+      "Fizika va kimyo",
+      "Tarix va geografiya",
+      "Faqat arab tili"
+     ],
+     "answer": "Arab tili va hisob",
+     "explain_uz": "«اللُّغَةَ الْعَرَبِيَّةَ وَالْحِسَابَ».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "«رَجَعَ» qaysi zamon?",
+     "q_ar": "رَجَعَ",
+     "options": [
+      "Moziy (o'tgan)",
+      "Muzori' (hozirgi)",
+      "Amr (buyruq)",
+      "Masdar"
+     ],
+     "answer": "Moziy (o'tgan)",
+     "explain_uz": "رَجَعَ — moziy: qaytdi. Muzori'i: يَرْجِعُ.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 2,
+   "lesson_id": "a2-05",
+   "title_uz": "Talabaning haftasi",
+   "harakat": "full",
+   "words": 33,
+   "audio": "read/a2-05.mp3",
+   "text_ar": "فِي الصَّبَاحِ يَسْتَيْقِظُ الطَّالِبُ مُبَكِّرًا وَيَتَنَاوَلُ فُطُورَهُ. بَعْدَ ذَلِكَ يَتَعَلَّمُ الدَّرْسَ الْجَدِيدَ وَيُسَاعِدُ أَخَاهُ الصَّغِيرَ. هُوَ يَسْتَخْدِمُ الْحَاسُوبَ لِيَكْتُبَ الْوَاجِبَ، ثُمَّ يُسَافِرُ فِي نِهَايَةِ الْأُسْبُوعِ إِلَى بَيْتِ جَدِّهِ. نَحْنُ نَتَعَلَّمُ مِنْهُ الِاجْتِهَادَ وَالنِّظَامَ.",
+   "glossary": [
+    {
+     "ar": "يَتَنَاوَلُ",
+     "uz": "yeydi, iste'mol qiladi"
+    },
+    {
+     "ar": "فُطُورَهُ",
+     "uz": "nonushtasini"
+    },
+    {
+     "ar": "يَسْتَخْدِمُ",
+     "uz": "foydalanadi"
+    },
+    {
+     "ar": "جَدِّهِ",
+     "uz": "bobosining"
+    },
+    {
+     "ar": "الِاجْتِهَادَ",
+     "uz": "tirishqoqlik"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "«يَتَنَاوَلُ فُطُورَهُ» nima degani?",
+     "q_ar": "",
+     "options": [
+      "Nonushta qiladi",
+      "Choy damlaydi",
+      "Kitob o'qiydi",
+      "Uyquga yotadi"
+     ],
+     "answer": "Nonushta qiladi",
+     "explain_uz": "فُطُور — nonushta.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "«يُسَاعِدُ» qaysi bob?",
+     "q_ar": "يُسَاعِدُ",
+     "options": [
+      "III bob (فَاعَلَ)",
+      "II bob (فَعَّلَ)",
+      "IV bob (أَفْعَلَ)",
+      "X bob (اِسْتَفْعَلَ)"
+     ],
+     "answer": "III bob (فَاعَلَ)",
+     "explain_uz": "سَاعَدَ / يُسَاعِدُ — III bob, o'zaro harakat.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Hafta oxirida qayerga boradi?",
+     "q_ar": "",
+     "options": [
+      "Bobosining uyiga",
+      "Bozorga",
+      "Maktabga",
+      "Shifokorga"
+     ],
+     "answer": "Bobosining uyiga",
+     "explain_uz": "«يُسَافِرُ ... إِلَى بَيْتِ جَدِّهِ».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 3,
+   "lesson_id": "a2-09",
+   "title_uz": "Bizning yangi uyimiz",
+   "harakat": "full",
+   "words": 32,
+   "audio": "read/a2-09.mp3",
+   "text_ar": "هَذَا بَيْتُنَا الْجَدِيدُ. هُوَ قَرِيبٌ مِنَ الْمَدْرَسَةِ. هَذِهِ غُرْفَتِي وَتِلْكَ غُرْفَةُ أَخِي. كِتَابُهُ عَلَى الْمَكْتَبِ وَكِتَابِي فِي الْحَقِيبَةِ. هَؤُلَاءِ أَصْدِقَائِي وَأُولَئِكَ جِيرَانُنَا. هُمْ يَزُورُونَنَا فِي الْعُطْلَةِ، وَنَحْنُ نَشْرَبُ الشَّايَ مَعَهُمْ فِي الْحَدِيقَةِ.",
+   "glossary": [
+    {
+     "ar": "تِلْكَ",
+     "uz": "u (uzoqdagi, muannas)"
+    },
+    {
+     "ar": "هَؤُلَاءِ",
+     "uz": "bular"
+    },
+    {
+     "ar": "أُولَئِكَ",
+     "uz": "ular (uzoqdagilar)"
+    },
+    {
+     "ar": "جِيرَانُنَا",
+     "uz": "qo'shnilarimiz"
+    },
+    {
+     "ar": "الْعُطْلَةِ",
+     "uz": "ta'til"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Kimning kitobi stol ustida?",
+     "q_ar": "",
+     "options": [
+      "Akasining",
+      "Mening",
+      "Qo'shnining",
+      "Do'stimning"
+     ],
+     "answer": "Akasining",
+     "explain_uz": "«كِتَابُهُ عَلَى الْمَكْتَبِ» — uning (akasining) kitobi.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "«أُولَئِكَ» nimani ko'rsatadi?",
+     "q_ar": "أُولَئِكَ",
+     "options": [
+      "Uzoqdagi ko'pchilikni",
+      "Yaqindagi bitta narsani",
+      "Uzoqdagi bitta muannasni",
+      "Gapiruvchining o'zini"
+     ],
+     "answer": "Uzoqdagi ko'pchilikni",
+     "explain_uz": "هَؤُلَاءِ — yaqin ko'plik, أُولَئِكَ — uzoq ko'plik.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qo'shnilar bilan nima qiladilar?",
+     "q_ar": "",
+     "options": [
+      "Bog'da choy ichadilar",
+      "Bozorga boradilar",
+      "Futbol o'ynaydilar",
+      "Kitob o'qiydilar"
+     ],
+     "answer": "Bog'da choy ichadilar",
+     "explain_uz": "«نَشْرَبُ الشَّايَ مَعَهُمْ فِي الْحَدِيقَةِ».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 4,
+   "lesson_id": "a2-13",
+   "title_uz": "Direktorning xati",
+   "harakat": "full",
+   "words": 32,
+   "audio": "read/a2-13.mp3",
+   "text_ar": "أَرْسَلَ الْمُدِيرُ رِسَالَةً إِلَى الْمُوَظَّفِينَ. أَخْبَرَهُمْ أَنَّ الِاجْتِمَاعَ سَيَكُونُ فِي السَّاعَةِ الْعَاشِرَةِ. أَعْلَمَ الْجَمِيعَ بِالْمَوْضُوعِ وَأَرْسَلَ الْمِلَفَّ أَيْضًا. حَضَرَ الْمُوَظَّفُونَ فِي الْوَقْتِ وَقَدَّمُوا أَفْكَارَهُمْ. بَعْدَ الِاجْتِمَاعِ أَكْمَلَ كُلُّ وَاحِدٍ عَمَلَهُ وَخَرَجُوا مَسْرُورِينَ.",
+   "glossary": [
+    {
+     "ar": "أَرْسَلَ",
+     "uz": "yubordi"
+    },
+    {
+     "ar": "الْمُوَظَّفِينَ",
+     "uz": "xodimlarga"
+    },
+    {
+     "ar": "الِاجْتِمَاعَ",
+     "uz": "yig'ilish"
+    },
+    {
+     "ar": "الْمِلَفَّ",
+     "uz": "fayl, papka"
+    },
+    {
+     "ar": "مَسْرُورِينَ",
+     "uz": "xursand holda"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Yig'ilish soat nechada bo'ladi?",
+     "q_ar": "",
+     "options": [
+      "10 da",
+      "9 da",
+      "12 da",
+      "4 da"
+     ],
+     "answer": "10 da",
+     "explain_uz": "«السَّاعَةِ الْعَاشِرَةِ» — soat o'nda.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "«أَرْسَلَ» qaysi bob va ma'nosi?",
+     "q_ar": "أَرْسَلَ",
+     "options": [
+      "IV bob — sababiyat (yubordi)",
+      "II bob — kuchaytirish",
+      "VIII bob — qaytim",
+      "VI bob — o'zaro"
+     ],
+     "answer": "IV bob — sababiyat (yubordi)",
+     "explain_uz": "أَفْعَلَ vazni: أَرْسَلَ — «yuborish»ga sabab bo'ldi.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Xodimlar yig'ilishda nima qildilar?",
+     "q_ar": "",
+     "options": [
+      "Fikrlarini taqdim etdilar",
+      "Uyga ketdilar",
+      "Xat yozdilar",
+      "Kutib turdilar"
+     ],
+     "answer": "Fikrlarini taqdim etdilar",
+     "explain_uz": "«قَدَّمُوا أَفْكَارَهُمْ» — fikrlarini taqdim etdilar.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 5,
+   "lesson_id": "a2-17",
+   "title_uz": "Kutubxonada imtihonga tayyorgarlik",
+   "harakat": "full",
+   "words": 33,
+   "audio": "read/a2-17.mp3",
+   "text_ar": "اِجْتَمَعَ الطُّلَّابُ فِي الْمَكْتَبَةِ لِيَسْتَعِدُّوا لِلِامْتِحَانِ. اِسْتَمَعُوا إِلَى شَرْحِ الْمُعَلِّمِ ثُمَّ اِخْتَارُوا كُتُبًا مُفِيدَةً. اِنْتَظَرَ أَحْمَدُ صَدِيقَهُ عِنْدَ الْبَابِ، وَبَعْدَ قَلِيلٍ رَجَعَا إِلَى الصَّفِّ. اِشْتَرَكَ الْجَمِيعُ فِي الْمُنَاقَشَةِ، وَانْتَهَى الدَّرْسُ فِي السَّاعَةِ الثَّالِثَةِ.",
+   "glossary": [
+    {
+     "ar": "اِجْتَمَعَ",
+     "uz": "to'plandi"
+    },
+    {
+     "ar": "لِيَسْتَعِدُّوا",
+     "uz": "tayyorlanish uchun"
+    },
+    {
+     "ar": "اِخْتَارُوا",
+     "uz": "tanladilar"
+    },
+    {
+     "ar": "اِشْتَرَكَ",
+     "uz": "qatnashdi"
+    },
+    {
+     "ar": "الْمُنَاقَشَةِ",
+     "uz": "muhokama"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Talabalar qayerda to'plandi?",
+     "q_ar": "",
+     "options": [
+      "Kutubxonada",
+      "Bozorda",
+      "Uyda",
+      "Bog'da"
+     ],
+     "answer": "Kutubxonada",
+     "explain_uz": "«فِي الْمَكْتَبَةِ».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "«اِجْتَمَعَ» qaysi bob?",
+     "q_ar": "اِجْتَمَعَ",
+     "options": [
+      "VIII bob (اِفْتَعَلَ)",
+      "VII bob (اِنْفَعَلَ)",
+      "V bob (تَفَعَّلَ)",
+      "III bob (فَاعَلَ)"
+     ],
+     "answer": "VIII bob (اِفْتَعَلَ)",
+     "explain_uz": "ج م ع o'zagi + اِفْتَعَلَ = اِجْتَمَعَ (to'planish).",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Dars soat nechada tugadi?",
+     "q_ar": "",
+     "options": [
+      "3 da",
+      "2 da",
+      "5 da",
+      "1 da"
+     ],
+     "answer": "3 da",
+     "explain_uz": "«انْتَهَى الدَّرْسُ فِي السَّاعَةِ الثَّالِثَةِ».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 6,
+   "lesson_id": "a2-21",
+   "title_uz": "Ilm — nur",
+   "harakat": "full",
+   "words": 36,
+   "audio": "read/a2-21.mp3",
+   "text_ar": "الْعِلْمُ نُورٌ. الْمُعَلِّمُ يُعَلِّمُ وَالطَّالِبُ يَتَعَلَّمُ. فِي هَذِهِ الْمَدْرَسَةِ تَعْلِيمٌ جَيِّدٌ وَمُعَلِّمُونَ مَعْرُوفُونَ. الْعَالِمُ يَبْحَثُ عَنِ الْمَعْلُومَاتِ فِي الْكُتُبِ وَعَلَى الشَّبَكَةِ. مَنْ تَعَلَّمَ فِي الصِّغَرِ اِسْتَفَادَ فِي الْكِبَرِ. هَذَا مَعْلُومٌ لِلْجَمِيعِ، وَلِذَلِكَ نَطْلُبُ الْعِلْمَ كُلَّ يَوْمٍ.",
+   "glossary": [
+    {
+     "ar": "الْعَالِمُ",
+     "uz": "olim"
+    },
+    {
+     "ar": "الْمَعْلُومَاتِ",
+     "uz": "ma'lumotlar"
+    },
+    {
+     "ar": "اِسْتَفَادَ",
+     "uz": "foyda oldi"
+    },
+    {
+     "ar": "مَعْلُومٌ",
+     "uz": "ma'lum"
+    },
+    {
+     "ar": "الشَّبَكَةِ",
+     "uz": "internet, tarmoq"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "«يُعَلِّمُ» qaysi bob?",
+     "q_ar": "يُعَلِّمُ",
+     "options": [
+      "II bob (فَعَّلَ)",
+      "I bob",
+      "V bob (تَفَعَّلَ)",
+      "X bob (اِسْتَفْعَلَ)"
+     ],
+     "answer": "II bob (فَعَّلَ)",
+     "explain_uz": "عَلَّمَ / يُعَلِّمُ — II bob: o'rgatish (kuchaytirish).",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "«الْعَالِمُ» nima degani?",
+     "q_ar": "الْعَالِمُ",
+     "options": [
+      "Olim",
+      "O'quvchi",
+      "Ma'lum",
+      "Ta'lim"
+     ],
+     "answer": "Olim",
+     "explain_uz": "فَاعِل vazni — bajaruvchi: bilgan kishi.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Matnning asosiy fikri nima?",
+     "q_ar": "",
+     "options": [
+      "Ilm olish har kun kerak",
+      "Maktab yaqin",
+      "Kitoblar qimmat",
+      "Internet zararli"
+     ],
+     "answer": "Ilm olish har kun kerak",
+     "explain_uz": "«نَطْلُبُ الْعِلْمَ كُلَّ يَوْمٍ».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 7,
+   "lesson_id": "a2-25",
+   "title_uz": "Bozorga piyoda",
+   "harakat": "partial",
+   "words": 38,
+   "audio": "read/a2-25.mp3",
+   "text_ar": "مَشى الرجل إلى السوق واشترى خبزًا وفاكهة. دَعا صديقه ليأتي معه، لكنّ صديقه بَقِيَ في البيت. بَنى جارنا بيتًا جديدًا في الحيّ ونَسِيَ أن يشتري الأبواب. رَأى الناس البيت وقالوا: ما أجمله! سَعى الرجل كثيرًا حتى أكمل عمله.",
+   "glossary": [
+    {
+     "ar": "مَشى",
+     "uz": "yurdi (naqis fe'l)"
+    },
+    {
+     "ar": "دَعا",
+     "uz": "chaqirdi"
+    },
+    {
+     "ar": "بَنى",
+     "uz": "qurdi"
+    },
+    {
+     "ar": "نَسِيَ",
+     "uz": "unutdi"
+    },
+    {
+     "ar": "سَعى",
+     "uz": "harakat qildi, urindi"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Erkak bozordan nima oldi?",
+     "q_ar": "",
+     "options": [
+      "Non va meva",
+      "Kitob va daftar",
+      "Eshik va deraza",
+      "Choy va shakar"
+     ],
+     "answer": "Non va meva",
+     "explain_uz": "«اشترى خبزًا وفاكهة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "«مَشى» so'zining o'zagi qaysi?",
+     "q_ar": "مَشى",
+     "options": [
+      "م ش ي",
+      "م ش و",
+      "ش ي م",
+      "م س ي"
+     ],
+     "answer": "م ش ي",
+     "explain_uz": "Naqis fe'l — oxirgi harfi ي: مَشى / يَمْشِي.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qo'shni nimani unutdi?",
+     "q_ar": "",
+     "options": [
+      "Eshiklarni sotib olishni",
+      "Uyni qurishni",
+      "Do'stini chaqirishni",
+      "Bozorga borishni"
+     ],
+     "answer": "Eshiklarni sotib olishni",
+     "explain_uz": "«نَسِيَ أن يشتري الأبواب».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 8,
+   "lesson_id": "a2-29",
+   "title_uz": "Vaqt puldan qimmat",
+   "harakat": "partial",
+   "words": 41,
+   "audio": "read/a2-29.mp3",
+   "text_ar": "إنَّ الوقتَ أغلى من المال. قال المعلم: إنَّ الطالبَ المجتهدَ ينجح دائمًا. لكنَّ بعض الطلاب لا يهتمون بالدرس، وكأنَّ الامتحان بعيد. لعلَّ هذا الأسبوع يكون بدايةً جديدةً لهم. اعلم أنَّ النجاح يحتاج إلى صبر وعمل، وأنَّ الوقت لا يعود إذا ذهب.",
+   "glossary": [
+    {
+     "ar": "أغلى",
+     "uz": "qimmatroq"
+    },
+    {
+     "ar": "المجتهدَ",
+     "uz": "tirishqoq"
+    },
+    {
+     "ar": "يهتمون",
+     "uz": "e'tibor beradilar"
+    },
+    {
+     "ar": "لعلَّ",
+     "uz": "ehtimol, shoyad"
+    },
+    {
+     "ar": "صبر",
+     "uz": "sabr"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "«إنَّ» dan keyingi ism qanday holatda bo'ladi?",
+     "q_ar": "إنَّ الوقتَ",
+     "options": [
+      "Mansub (nasb — fatha)",
+      "Marfu' (raf' — damma)",
+      "Majrur (jarr — kasra)",
+      "O'zgarmaydi"
+     ],
+     "answer": "Mansub (nasb — fatha)",
+     "explain_uz": "إنَّ va opa-singillari ismni nasb qiladi: الوقتَ.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Muallim nima dedi?",
+     "q_ar": "",
+     "options": [
+      "Tirishqoq talaba doim muvaffaq bo'ladi",
+      "Imtihon uzoq",
+      "Vaqt qaytadi",
+      "Pul muhim"
+     ],
+     "answer": "Tirishqoq talaba doim muvaffaq bo'ladi",
+     "explain_uz": "«إنَّ الطالبَ المجتهدَ ينجح دائمًا».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "«لعلَّ» nima ma'noni beradi?",
+     "q_ar": "لعلَّ",
+     "options": [
+      "Ehtimol, shoyad",
+      "Albatta",
+      "Hech qachon",
+      "Chunki"
+     ],
+     "answer": "Ehtimol, shoyad",
+     "explain_uz": "لعلَّ — umid/ehtimol bildiradi.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 9,
+   "lesson_id": "a2-33",
+   "title_uz": "Kutubxonaga xarid",
+   "harakat": "partial",
+   "words": 46,
+   "audio": "read/a2-33.mp3",
+   "text_ar": "في المكتبة أكثر من ثلاثمئة كتاب. اشترى المدير مئةً وخمسين كرسيًا للقاعة الكبيرة. سعر الكرسي خمسون ريالًا، والمجموع سبعة آلاف وخمسمئة ريال. حضر الحفلَ ألفُ طالبٍ وتسعُ معلماتٍ. بدأ البرنامج في الساعة الرابعة والنصف وانتهى بعد ساعتين. قال المدير: نشتري في السنة القادمة مئة حاسوب جديد.",
+   "glossary": [
+    {
+     "ar": "ثلاثمئة",
+     "uz": "uch yuz"
+    },
+    {
+     "ar": "كرسيًا",
+     "uz": "stul"
+    },
+    {
+     "ar": "المجموع",
+     "uz": "jami"
+    },
+    {
+     "ar": "القادمة",
+     "uz": "kelasi"
+    },
+    {
+     "ar": "حاسوب",
+     "uz": "kompyuter"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Kutubxonada nechta kitob bor?",
+     "q_ar": "",
+     "options": [
+      "300 dan ko'p",
+      "150",
+      "1000",
+      "50"
+     ],
+     "answer": "300 dan ko'p",
+     "explain_uz": "«أكثر من ثلاثمئة كتاب».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Bitta stulning narxi qancha?",
+     "q_ar": "",
+     "options": [
+      "50 riyol",
+      "150 riyol",
+      "7500 riyol",
+      "40 riyol"
+     ],
+     "answer": "50 riyol",
+     "explain_uz": "«سعر الكرسي خمسون ريالًا».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Dastur necha soat davom etdi?",
+     "q_ar": "",
+     "options": [
+      "2 soat",
+      "1 soat",
+      "4 soat",
+      "Yarim soat"
+     ],
+     "answer": "2 soat",
+     "explain_uz": "«بدأ ... الرابعة والنصف وانتهى بعد ساعتين».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 10,
+   "lesson_id": "a2-37",
+   "title_uz": "Haramayn poyezdida",
+   "harakat": "partial",
+   "words": 56,
+   "audio": "read/a2-37.mp3",
+   "text_ar": "سافر خالد من جدة إلى المدينة بقطار الحرمين. حجز التذكرة عبر التطبيق ودفع بالبطاقة. وصل إلى المحطة قبل نصف ساعة وانتظر في الصالة. القطار سريع جدًا؛ يقطع المسافة في ساعتين فقط. في الطريق شاهد الجبال والصحراء من النافذة. عند الوصول أخذ سيارة أجرة إلى الفندق ودفع أربعين ريالًا. قال خالد: السفر بالقطار أرخص وأسرع من السيارة.",
+   "glossary": [
+    {
+     "ar": "حجز",
+     "uz": "bron qildi"
+    },
+    {
+     "ar": "التذكرة",
+     "uz": "chipta"
+    },
+    {
+     "ar": "المحطة",
+     "uz": "vokzal, bekat"
+    },
+    {
+     "ar": "يقطع",
+     "uz": "bosib o'tadi"
+    },
+    {
+     "ar": "أجرة",
+     "uz": "haq, ijara (سيارة أجرة — taksi)"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Xolid chiptani qanday oldi?",
+     "q_ar": "",
+     "options": [
+      "Ilova orqali, karta bilan",
+      "Kassadan naqd pulga",
+      "Do'sti orqali",
+      "Bekatda navbatda"
+     ],
+     "answer": "Ilova orqali, karta bilan",
+     "explain_uz": "«حجز التذكرة عبر التطبيق ودفع بالبطاقة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Yo'l qancha vaqt oldi?",
+     "q_ar": "",
+     "options": [
+      "2 soat",
+      "Yarim soat",
+      "4 soat",
+      "40 daqiqa"
+     ],
+     "answer": "2 soat",
+     "explain_uz": "«يقطع المسافة في ساعتين فقط».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Taksi uchun qancha to'ladi?",
+     "q_ar": "",
+     "options": [
+      "40 riyol",
+      "20 riyol",
+      "50 riyol",
+      "100 riyol"
+     ],
+     "answer": "40 riyol",
+     "explain_uz": "«دفع أربعين ريالًا».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 11,
+   "lesson_id": "a2-41",
+   "title_uz": "Shifokorda va dorixonada",
+   "harakat": "partial",
+   "words": 59,
+   "audio": "read/a2-41.mp3",
+   "text_ar": "شعر سعيد بألم في رأسه وحرارة عالية، فذهب إلى العيادة. سأله الطبيب: متى بدأ الألم؟ قال: منذ يومين، ولا أستطيع النوم. فحص الطبيب حرارته وقال: عندك زكام بسيط، لا تقلق. كتب له وصفة ونصحه بشرب الماء والراحة. في الصيدلية اشترى الدواء بعشرين ريالًا وسأل الصيدلي: كم حبة في اليوم؟ قال الصيدلي: حبة واحدة بعد الأكل، ثلاث مرات في اليوم.",
+   "glossary": [
+    {
+     "ar": "العيادة",
+     "uz": "poliklinika, qabulxona"
+    },
+    {
+     "ar": "فحص",
+     "uz": "tekshirdi"
+    },
+    {
+     "ar": "زكام",
+     "uz": "shamollash"
+    },
+    {
+     "ar": "وصفة",
+     "uz": "retsept"
+    },
+    {
+     "ar": "حبة",
+     "uz": "tabletka, dona"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Saidga nima bo'ldi?",
+     "q_ar": "",
+     "options": [
+      "Boshi og'rib, isitmasi chiqdi",
+      "Oyog'i sindi",
+      "Ko'zi og'ridi",
+      "Tishi og'ridi"
+     ],
+     "answer": "Boshi og'rib, isitmasi chiqdi",
+     "explain_uz": "«ألم في رأسه وحرارة عالية».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Shifokor tashxisi qanday?",
+     "q_ar": "",
+     "options": [
+      "Oddiy shamollash",
+      "Og'ir kasallik",
+      "Allergiya",
+      "Sinish"
+     ],
+     "answer": "Oddiy shamollash",
+     "explain_uz": "«عندك زكام بسيط».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Dorini qanday ichadi?",
+     "q_ar": "",
+     "options": [
+      "Ovqatdan keyin 1 dona, kunda 3 marta",
+      "Kunda 1 marta 3 dona",
+      "Ovqatdan oldin 2 dona",
+      "Faqat kechqurun"
+     ],
+     "answer": "Ovqatdan keyin 1 dona, kunda 3 marta",
+     "explain_uz": "«حبة واحدة بعد الأكل، ثلاث مرات في اليوم».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 12,
+   "lesson_id": "a2-45",
+   "title_uz": "Makka va Madina",
+   "harakat": "minimal",
+   "words": 68,
+   "audio": "read/a2-45.mp3",
+   "text_ar": "مكة والمدينة مدينتان مهمتان في المملكة العربية السعودية. تقع مكة في الغرب بين الجبال، وتبعد عن جدة نحو سبعين كيلومترًا. أما المدينة فهي في الشمال، وتشتهر بالتمر والهدوء. يزور الناس المدينتين في كل فصول السنة، ولذلك الطرق واسعة والفنادق كثيرة. من جدة يمكن الوصول بالسيارة أو بالقطار. في الصيف الجو حار جدًا، لذلك ينصح الأطباء بشرب كثير من الماء ولبس ملابس خفيفة. الأسعار في المواسم أغلى من غيرها.",
+   "glossary": [
+    {
+     "ar": "تقع",
+     "uz": "joylashgan"
+    },
+    {
+     "ar": "تبعد",
+     "uz": "uzoqlikda"
+    },
+    {
+     "ar": "تشتهر",
+     "uz": "mashhur"
+    },
+    {
+     "ar": "التمر",
+     "uz": "xurmo"
+    },
+    {
+     "ar": "المواسم",
+     "uz": "mavsumlar"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Makka Jiddadan qancha uzoqda?",
+     "q_ar": "",
+     "options": [
+      "Taxminan 70 km",
+      "700 km",
+      "17 km",
+      "7 km"
+     ],
+     "answer": "Taxminan 70 km",
+     "explain_uz": "«تبعد عن جدة نحو سبعين كيلومترًا».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Madina nima bilan mashhur?",
+     "q_ar": "",
+     "options": [
+      "Xurmo va osoyishtalik",
+      "Tog'lar",
+      "Dengiz",
+      "Bozorlar"
+     ],
+     "answer": "Xurmo va osoyishtalik",
+     "explain_uz": "«تشتهر بالتمر والهدوء».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Yozda shifokorlar nimani maslahat beradi?",
+     "q_ar": "",
+     "options": [
+      "Ko'p suv ichish va engil kiyim",
+      "Ko'p yurish",
+      "Issiq choy ichish",
+      "Uyda qolish"
+     ],
+     "answer": "Ko'p suv ichish va engil kiyim",
+     "explain_uz": "«ينصح الأطباء بشرب كثير من الماء ولبس ملابس خفيفة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 13,
+   "lesson_id": "a2-49",
+   "title_uz": "Soatsoz qo'shni (hikoya)",
+   "harakat": "minimal",
+   "words": 67,
+   "audio": "read/a2-49.mp3",
+   "text_ar": "كان لي جار قديم اسمه عمر. كان رجلًا بسيطًا يعمل في محل صغير لإصلاح الساعات. في كل صباح يفتح المحل مبكرًا ويجلس قرب النافذة. لم يكن عنده زبائن كثيرون، لكنه كان سعيدًا بعمله. سألته مرة: لماذا لا تبيع المحل وتستريح؟ ضحك وقال: العمل يحفظ الإنسان من الملل. بعد سنوات مرضت يده ولم يستطع الإصلاح، فعلّم ابنه المهنة. اليوم الابن يعمل في المحل نفسه، وصورة الأب على الحائط.",
+   "glossary": [
+    {
+     "ar": "إصلاح",
+     "uz": "ta'mirlash"
+    },
+    {
+     "ar": "زبائن",
+     "uz": "mijozlar"
+    },
+    {
+     "ar": "الملل",
+     "uz": "zerikish"
+    },
+    {
+     "ar": "المهنة",
+     "uz": "kasb"
+    },
+    {
+     "ar": "الحائط",
+     "uz": "devor"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Umar nima ish qilardi?",
+     "q_ar": "",
+     "options": [
+      "Soat ta'mirlardi",
+      "Non yopardi",
+      "Kitob sotardi",
+      "Taksi haydardi"
+     ],
+     "answer": "Soat ta'mirlardi",
+     "explain_uz": "«محل صغير لإصلاح الساعات».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Nega do'konni sotmadi?",
+     "q_ar": "",
+     "options": [
+      "Ish odamni zerikishdan saqlaydi",
+      "Narxi arzon edi",
+      "O'g'li so'radi",
+      "Mijozlar ko'p edi"
+     ],
+     "answer": "Ish odamni zerikishdan saqlaydi",
+     "explain_uz": "«العمل يحفظ الإنسان من الملل».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Hozir do'konda kim ishlaydi?",
+     "q_ar": "",
+     "options": [
+      "O'g'li",
+      "Umarning o'zi",
+      "Qo'shni",
+      "Hech kim"
+     ],
+     "answer": "O'g'li",
+     "explain_uz": "«اليوم الابن يعمل في المحل نفسه».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 14,
+   "lesson_id": "a2-53",
+   "title_uz": "O'quv yili yakuni",
+   "harakat": "minimal",
+   "words": 78,
+   "audio": "read/a2-53.mp3",
+   "text_ar": "في نهاية السنة الدراسية جمع المعلم طلابه وقال: تعلمتم في هذه السنة أشياء كثيرة. عرفتم الأفعال في الماضي والمضارع، ودرستم الأبواب من الأول إلى العاشر، وقرأتم نصوصًا قصيرة بدون حركات. من كان يخاف من العربية في أول السنة يقرأ الآن جملًا كاملة. قال أحد الطلاب: كانت الأفعال المعتلة أصعب شيء، لكن التمرين حل المشكلة. أضاف آخر: الكلمات الجديدة تبقى في الذاكرة إذا استخدمناها في الكلام. وعد المعلم بأن السنة القادمة ستكون أجمل، لأن الطلاب سيقرأون الأخبار والقصص الطويلة.",
+   "glossary": [
+    {
+     "ar": "نصوصًا",
+     "uz": "matnlar"
+    },
+    {
+     "ar": "المعتلة",
+     "uz": "illatli (fe'llar)"
+    },
+    {
+     "ar": "التمرين",
+     "uz": "mashq"
+    },
+    {
+     "ar": "الذاكرة",
+     "uz": "xotira"
+    },
+    {
+     "ar": "وعد",
+     "uz": "va'da berdi"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Talabalar bu yil nimalarni o'rgandilar?",
+     "q_ar": "",
+     "options": [
+      "Moziy/muzori', boblar va matn o'qish",
+      "Faqat harflarni",
+      "Faqat lug'atni",
+      "She'r yozishni"
+     ],
+     "answer": "Moziy/muzori', boblar va matn o'qish",
+     "explain_uz": "Matnda uchtasi sanab o'tilgan.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Talabaga nima eng qiyin bo'ldi?",
+     "q_ar": "",
+     "options": [
+      "Illatli fe'llar",
+      "Sonlar",
+      "Olmoshlar",
+      "Harakatlar"
+     ],
+     "answer": "Illatli fe'llar",
+     "explain_uz": "«كانت الأفعال المعتلة أصعب شيء».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Kelasi yil nima o'qiladi?",
+     "q_ar": "",
+     "options": [
+      "Yangiliklar va uzun hikoyalar",
+      "Faqat grammatika",
+      "Faqat tinglash",
+      "Hech narsa"
+     ],
+     "answer": "Yangiliklar va uzun hikoyalar",
+     "explain_uz": "«سيقرأون الأخبار والقصص الطويلة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  }
+ ]
+}

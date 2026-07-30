@@ -61,7 +61,13 @@ class Placement(Base):
 
 
 class Progress(Base):
-    """Tugatilgan darslar (har tugatish alohida yozuv)."""
+    """Dars urinishlari (har urinish alohida yozuv).
+
+    `passed` — mikro-test 60% dan yuqori bo'lganmi. Faqat `passed=1` yozuvi
+    darsni TUGATILGAN qiladi (keyingi darsni ochadi); yiqilgan urinish ham
+    saqlanadi, chunki urinish soni qayta topshirishda boshqa savollar
+    tanlash uchun ishlatiladi (services/lesson_test.py).
+    """
 
     __tablename__ = "progress"
 
@@ -71,6 +77,7 @@ class Progress(Base):
     correct: Mapped[int] = mapped_column(Integer, default=0)
     total: Mapped[int] = mapped_column(Integer, default=0)
     xp_earned: Mapped[int] = mapped_column(Integer, default=0)
+    passed: Mapped[int] = mapped_column(Integer, default=1)
     completed_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
 
 

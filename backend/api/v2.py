@@ -19,8 +19,10 @@ from services.curriculum import (
     load_lesson_v2,
     written_lesson_ids,
 )
+from services.lesson_test import PASS_SCORE, build_test
+from services.reading import passage_for
 from services.srs import reset_words, seed_from_srs_cards
-from services.stats import completed_lesson_ids, user_stats
+from services.stats import completed_lesson_ids, lesson_attempt_count, user_stats
 from services.telegram_auth import get_current_user
 
 router = APIRouter(prefix="/api/v2")
@@ -28,23 +30,39 @@ router = APIRouter(prefix="/api/v2")
 CHECKPOINT_EVERY = 5
 CHECKPOINT_QUESTIONS = 15
 CHECKPOINT_PASS = 70  # foiz
+FAIL_XP = 5  # yiqilgan urinish uchun ham ozgina XP (streak uzilmasin)
 
 
 @router.get("/lessons/{lesson_id}")
 async def lesson_v2(
     lesson_id: str,
     user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
 ):
     meta = load_curriculum().get(lesson_id)
     data = load_lesson_v2(lesson_id)
     if not meta or not data:
         raise HTTPException(status_code=404, detail="Dars topilmadi")
-    return {**data, "meta": {
-        "title_uz": meta["title_uz"],
-        "level": meta["level"],
-        "order": meta["order"],
-        "module": meta["module"],
-    }}
+
+    # Mikro-test urinishga qarab yig'iladi — qayta topshirganda boshqa savollar
+    attempts = await lesson_attempt_count(session, user.id, lesson_id)
+    test = build_test(lesson_id, attempts)
+
+    return {
+        **data,
+        "micro_test": test["items"],
+        "test_attempt": test["attempt"],
+        "pass_score": PASS_SCORE,
+        "attempts_made": attempts,
+        # A2+ darslarda bosqichma-bosqich o'qish matni (services/reading.py)
+        "passage": passage_for(lesson_id),
+        "meta": {
+            "title_uz": meta["title_uz"],
+            "level": meta["level"],
+            "order": meta["order"],
+            "module": meta["module"],
+        },
+    }
 
 
 class CompleteV2Body(BaseModel):
@@ -81,16 +99,21 @@ async def complete_v2(
     correct = min(body.correct, body.total)
     perfect = correct == body.total
     score = round(100 * correct / body.total)
-    passed = score >= 60  # spec §11
+    passed = score >= PASS_SCORE  # spec §11 — 60% dan past bo'lsa dars o'tilmaydi
 
     done_before = await completed_lesson_ids(session, user.id)
     first_time = lesson_id not in done_before
-    xp = (10 + 2 * correct + (5 if perfect else 0)) if first_time else (5 + correct)
+    if not passed:
+        # Dars tugatilmadi: keyingi dars ochilmaydi, XP faqat urinish uchun
+        xp = FAIL_XP
+    else:
+        xp = (10 + 2 * correct + (5 if perfect else 0)) if first_time else (5 + correct)
 
     session.add(
         Progress(
             user_id=user.id, lesson_id=lesson_id,
             correct=correct, total=body.total, xp_earned=xp,
+            passed=1 if passed else 0,
         )
     )
     session.add(XpLog(user_id=user.id, amount=xp, source=f"lesson:{lesson_id}"))
@@ -115,12 +138,14 @@ async def complete_v2(
         "perfect": perfect,
         "score": score,
         "passed": passed,
+        "pass_score": PASS_SCORE,
         "first_time": first_time,
         "srs_added": added,
         "srs_reset": len(body.wrong_words),
         "stats": stats,
         "new_badges": new_badges,
-        "checkpoint_available": len(cp) >= 2,
+        # Yiqilgan darsdan keyin nazorat testi taklif qilinmaydi
+        "checkpoint_available": passed and len(cp) >= 2,
     }
 
 

@@ -1,46 +1,708 @@
 {
  "level": "B1",
- "config": {"reading": 10, "listening": 8, "writing": 2, "speaking": 0, "passages": 3, "minutes": 45},
+ "config": {
+  "reading": 10,
+  "listening": 8,
+  "writing": 2,
+  "speaking": 0,
+  "passages": 3,
+  "minutes": 45
+ },
  "reading": [
-  {"type": "mcq", "q_uz": "«يَكْتُبُ» ning hozirgi zamon majhuli?", "q_ar": "", "options": ["يُكْتَبُ", "يُكْتِبُ", "كُتِبَ", "يَكْتُبْ"], "answer": "يُكْتَبُ"},
-  {"type": "mcq", "q_uz": "«قَالَ» ning o'tgan zamon majhuli?", "q_ar": "", "options": ["قِيلَ", "قُوِلَ", "يُقَالُ", "قَيَّلَ"], "answer": "قِيلَ"},
-  {"type": "mcq", "q_uz": "«Men o'qigan kitob» to'g'ri qaysi?", "q_ar": "", "options": ["الكتابُ الذي قرأتُهُ", "الكتابُ الذي قرأتُ", "كتابٌ الذي قرأتُهُ", "الكتابُ التي قرأتُهُ"], "answer": "الكتابُ الذي قرأتُهُ"},
-  {"type": "mcq", "q_uz": "Jonsiz ko'plik (الكتب) uchun nisbiy olmosh?", "q_ar": "", "options": ["الَّتِي", "الَّذِينَ", "الَّذِي", "اللَّوَاتِي"], "answer": "الَّتِي"},
-  {"type": "mcq", "q_uz": "«إنْ تدرسْ ____» — javob fe'li qaysi shaklda?", "q_ar": "", "options": ["تنجحْ (majzum)", "تنجحُ (marfu')", "تنجحَ (mansub)", "نجحتَ (o'tgan)"], "answer": "تنجحْ (majzum)"},
-  {"type": "mcq", "q_uz": "«لو درستَ ____» — to'g'ri javob?", "q_ar": "", "options": ["لَنجحتَ", "نجحتَ", "تنجحْ", "فنجحتَ"], "answer": "لَنجحتَ"},
-  {"type": "mcq", "q_uz": "«جاء الولدُ ضاحكًا» — ضاحكًا nima?", "q_ar": "", "options": ["hol (nasb)", "tamyiz", "sifat", "xabar"], "answer": "hol (nasb)"},
-  {"type": "mcq", "q_uz": "«عشرون ____» (yigirma talaba) — to'g'ri shakl?", "q_ar": "", "options": ["طالبًا", "طالبٌ", "طلابًا", "الطالبَ"], "answer": "طالبًا"},
-  {"type": "mcq", "q_uz": "«ما جاء إلا أحمدُ» ma'nosi?", "q_ar": "", "options": ["faqat Ahmad keldi", "Ahmad kelmadi", "Ahmaddan boshqa keldi", "Ahmad ham keldi"], "answer": "faqat Ahmad keldi"},
-  {"type": "mcq", "q_uz": "«فهمتُ الدرسَ فهمًا عميقًا» — فهمًا nima?", "q_ar": "", "options": ["maf'ul mutlaq", "hol", "tamyiz", "maf'ul bihi"], "answer": "maf'ul mutlaq"},
-  {"type": "mcq", "q_uz": "«سافرتُ طلبًا للعلمِ» — طلبًا nima?", "q_ar": "", "options": ["maf'ul li-ajlih (maqsad)", "maf'ul mutlaq", "hol", "tamyiz"], "answer": "maf'ul li-ajlih (maqsad)"},
-  {"type": "mcq", "q_uz": "«لن ____ هذا اليومَ» (unutmayman)?", "q_ar": "", "options": ["أنسى", "أنسْ", "نسيتُ", "أنسَ"], "answer": "أنسى"},
-  {"type": "mcq", "q_uz": "«لم يذهبْ» qanday ma'no?", "q_ar": "", "options": ["bormadi (o'tgan inkor)", "bormaydi (kelasi)", "borma! (taqiq)", "boradi"], "answer": "bormadi (o'tgan inkor)"},
-  {"type": "mcq", "q_uz": "«عَالِم» ning ko'pligi?", "q_ar": "", "options": ["عُلَمَاء", "عَالِمُون", "عُلُوم", "أَعْلَام"], "answer": "عُلَمَاء"},
-  {"type": "mcq", "q_uz": "«إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ» dagi إنّما ma'nosi?", "q_ar": "", "options": ["faqat (cheklash)", "balki", "chunki", "yoki"], "answer": "faqat (cheklash)"},
-  {"type": "mcq", "q_uz": "«لَمْ يَلِدْ وَلَمْ يُولَدْ» — ikkinchi fe'l qanaqa?", "q_ar": "", "options": ["majhul + majzum", "ma'lum + mansub", "amr", "masdar"], "answer": "majhul + majzum"},
-  {"type": "mcq", "q_uz": "Rasmiy xat qaysi formula bilan yakunlanadi?", "q_ar": "", "options": ["وتفضّلوا بقَبولِ فائقِ الاحترامِ", "مع السلامة يا صاحبي", "إلى اللقاءِ", "وداعًا"], "answer": "وتفضّلوا بقَبولِ فائقِ الاحترامِ"},
-  {"type": "mcq", "q_uz": "«أُقيمَ المهرجانُ» — gazeta uslubida nega majhul?", "q_ar": "", "options": ["bajaruvchi muhim emas, voqea muhim", "xato yozilgan", "she'riy uslub", "buyruq ma'nosi"], "answer": "bajaruvchi muhim emas, voqea muhim"},
-  {"type": "mcq", "q_uz": "«التعليم» va «التعلّم» farqi?", "q_ar": "", "options": ["o'qitish / o'rganish", "o'rganish / o'qitish", "maktab / dars", "bir xil"], "answer": "o'qitish / o'rganish"}
+  {
+   "type": "mcq",
+   "q_uz": "«يَكْتُبُ» ning hozirgi zamon majhuli?",
+   "q_ar": "",
+   "options": [
+    "يُكْتَبُ",
+    "يُكْتِبُ",
+    "كُتِبَ",
+    "يَكْتُبْ"
+   ],
+   "answer": "يُكْتَبُ"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«قَالَ» ning o'tgan zamon majhuli?",
+   "q_ar": "",
+   "options": [
+    "قِيلَ",
+    "قُوِلَ",
+    "يُقَالُ",
+    "قَيَّلَ"
+   ],
+   "answer": "قِيلَ"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«Men o'qigan kitob» to'g'ri qaysi?",
+   "q_ar": "",
+   "options": [
+    "الكتابُ الذي قرأتُهُ",
+    "الكتابُ الذي قرأتُ",
+    "كتابٌ الذي قرأتُهُ",
+    "الكتابُ التي قرأتُهُ"
+   ],
+   "answer": "الكتابُ الذي قرأتُهُ"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Jonsiz ko'plik (الكتب) uchun nisbiy olmosh?",
+   "q_ar": "",
+   "options": [
+    "الَّتِي",
+    "الَّذِينَ",
+    "الَّذِي",
+    "اللَّوَاتِي"
+   ],
+   "answer": "الَّتِي"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«إنْ تدرسْ ____» — javob fe'li qaysi shaklda?",
+   "q_ar": "",
+   "options": [
+    "تنجحْ (majzum)",
+    "تنجحُ (marfu')",
+    "تنجحَ (mansub)",
+    "نجحتَ (o'tgan)"
+   ],
+   "answer": "تنجحْ (majzum)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«لو درستَ ____» — to'g'ri javob?",
+   "q_ar": "",
+   "options": [
+    "لَنجحتَ",
+    "نجحتَ",
+    "تنجحْ",
+    "فنجحتَ"
+   ],
+   "answer": "لَنجحتَ"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«جاء الولدُ ضاحكًا» — ضاحكًا nima?",
+   "q_ar": "",
+   "options": [
+    "hol (nasb)",
+    "tamyiz",
+    "sifat",
+    "xabar"
+   ],
+   "answer": "hol (nasb)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«عشرون ____» (yigirma talaba) — to'g'ri shakl?",
+   "q_ar": "",
+   "options": [
+    "طالبًا",
+    "طالبٌ",
+    "طلابًا",
+    "الطالبَ"
+   ],
+   "answer": "طالبًا"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«ما جاء إلا أحمدُ» ma'nosi?",
+   "q_ar": "",
+   "options": [
+    "faqat Ahmad keldi",
+    "Ahmad kelmadi",
+    "Ahmaddan boshqa keldi",
+    "Ahmad ham keldi"
+   ],
+   "answer": "faqat Ahmad keldi"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«فهمتُ الدرسَ فهمًا عميقًا» — فهمًا nima?",
+   "q_ar": "",
+   "options": [
+    "maf'ul mutlaq",
+    "hol",
+    "tamyiz",
+    "maf'ul bihi"
+   ],
+   "answer": "maf'ul mutlaq"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«سافرتُ طلبًا للعلمِ» — طلبًا nima?",
+   "q_ar": "",
+   "options": [
+    "maf'ul li-ajlih (maqsad)",
+    "maf'ul mutlaq",
+    "hol",
+    "tamyiz"
+   ],
+   "answer": "maf'ul li-ajlih (maqsad)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«لن ____ هذا اليومَ» (unutmayman)?",
+   "q_ar": "",
+   "options": [
+    "أنسى",
+    "أنسْ",
+    "نسيتُ",
+    "أنسَ"
+   ],
+   "answer": "أنسى"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«لم يذهبْ» qanday ma'no?",
+   "q_ar": "",
+   "options": [
+    "bormadi (o'tgan inkor)",
+    "bormaydi (kelasi)",
+    "borma! (taqiq)",
+    "boradi"
+   ],
+   "answer": "bormadi (o'tgan inkor)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«عَالِم» ning ko'pligi?",
+   "q_ar": "",
+   "options": [
+    "عُلَمَاء",
+    "عَالِمُون",
+    "عُلُوم",
+    "أَعْلَام"
+   ],
+   "answer": "عُلَمَاء"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ» dagi إنّما ma'nosi?",
+   "q_ar": "",
+   "options": [
+    "faqat (cheklash)",
+    "balki",
+    "chunki",
+    "yoki"
+   ],
+   "answer": "faqat (cheklash)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«لَمْ يَلِدْ وَلَمْ يُولَدْ» — ikkinchi fe'l qanaqa?",
+   "q_ar": "",
+   "options": [
+    "majhul + majzum",
+    "ma'lum + mansub",
+    "amr",
+    "masdar"
+   ],
+   "answer": "majhul + majzum"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Rasmiy xat qaysi formula bilan yakunlanadi?",
+   "q_ar": "",
+   "options": [
+    "وتفضّلوا بقَبولِ فائقِ الاحترامِ",
+    "مع السلامة يا صاحبي",
+    "إلى اللقاءِ",
+    "وداعًا"
+   ],
+   "answer": "وتفضّلوا بقَبولِ فائقِ الاحترامِ"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«أُقيمَ المهرجانُ» — gazeta uslubida nega majhul?",
+   "q_ar": "",
+   "options": [
+    "bajaruvchi muhim emas, voqea muhim",
+    "xato yozilgan",
+    "she'riy uslub",
+    "buyruq ma'nosi"
+   ],
+   "answer": "bajaruvchi muhim emas, voqea muhim"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«التعليم» va «التعلّم» farqi?",
+   "q_ar": "",
+   "options": [
+    "o'qitish / o'rganish",
+    "o'rganish / o'qitish",
+    "maktab / dars",
+    "bir xil"
+   ],
+   "answer": "o'qitish / o'rganish"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«يَقُولُ» ning hozirgi zamon majhuli?",
+   "q_ar": "",
+   "options": [
+    "يُقَالُ",
+    "قِيلَ",
+    "يَقُولُ",
+    "قَوَّلَ"
+   ],
+   "answer": "يُقَالُ"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«Men uchrashgan talabalar» qaysi?",
+   "q_ar": "",
+   "options": [
+    "الطُّلَّابُ الَّذِينَ لَقِيتُهُمْ",
+    "الطُّلَّابُ الَّتِي لَقِيتُهُمْ",
+    "الطُّلَّابُ الَّذِي لَقِيتُ",
+    "طُلَّابٌ الَّذِينَ لَقِيتُهُمْ"
+   ],
+   "answer": "الطُّلَّابُ الَّذِينَ لَقِيتُهُمْ"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«Agar harakat qilsang, muvaffaq bo'lasan» (real shart) qaysi?",
+   "q_ar": "",
+   "options": [
+    "إِذَا اجْتَهَدْتَ نَجَحْتَ",
+    "لَوِ اجْتَهَدْتَ لَنَجَحْتَ",
+    "لَنْ تَجْتَهِدَ فَتَنْجَحَ",
+    "لَمْ تَجْتَهِدْ نَجَحْتَ"
+   ],
+   "answer": "إِذَا اجْتَهَدْتَ نَجَحْتَ"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«جَاءَ الطَّالِبُ مُسْرِعًا» — «مُسْرِعًا» nima?",
+   "q_ar": "",
+   "options": [
+    "Hol (الحال)",
+    "Tamyiz",
+    "Maf'ul mutlaq",
+    "Sifat"
+   ],
+   "answer": "Hol (الحال)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«اِشْتَرَيْتُ كِيلُو تُفَّاحًا» — «تُفَّاحًا» nima?",
+   "q_ar": "",
+   "options": [
+    "Tamyiz (التمييز)",
+    "Hol",
+    "Maf'ul bih",
+    "Mubtada"
+   ],
+   "answer": "Tamyiz (التمييز)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«Hech kim kelmadi, faqat Ahmad» qaysi?",
+   "q_ar": "",
+   "options": [
+    "لَمْ يَحْضُرْ أَحَدٌ إِلَّا أَحْمَدَ",
+    "لَمْ يَحْضُرْ أَحَدٌ غَيْرَ يَحْضُرُ",
+    "مَا حَضَرَ إِلَّا لَا أَحَدَ",
+    "حَضَرَ أَحَدٌ سِوَى"
+   ],
+   "answer": "لَمْ يَحْضُرْ أَحَدٌ إِلَّا أَحْمَدَ"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«لَنْ» dan keyin fe'l qanday bo'ladi?",
+   "q_ar": "",
+   "options": [
+    "Mansub (fatha)",
+    "Majzum (sukun)",
+    "Marfu' (damma)",
+    "O'zgarmaydi"
+   ],
+   "answer": "Mansub (fatha)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«لَمْ» dan keyin fe'l qanday bo'ladi?",
+   "q_ar": "",
+   "options": [
+    "Majzum (sukun)",
+    "Mansub (fatha)",
+    "Marfu' (damma)",
+    "Moziyga aylanadi"
+   ],
+   "answer": "Majzum (sukun)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«كُتُب» qanday ko'plik?",
+   "q_ar": "",
+   "options": [
+    "Singan ko'plik (جمع تكسير)",
+    "Muzakkar solim ko'plik",
+    "Muannas solim ko'plik",
+    "Tasniya"
+   ],
+   "answer": "Singan ko'plik (جمع تكسير)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«شَكَرْتُهُ شُكْرًا جَزِيلًا» — «شُكْرًا» nima?",
+   "q_ar": "",
+   "options": [
+    "Maf'ul mutlaq",
+    "Hol",
+    "Tamyiz",
+    "Sifat"
+   ],
+   "answer": "Maf'ul mutlaq"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«اِقْتِصَاد» so'zining ma'nosi?",
+   "q_ar": "اِقْتِصَاد",
+   "options": [
+    "iqtisod",
+    "siyosat",
+    "jamiyat",
+    "sanoat"
+   ],
+   "answer": "iqtisod"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«Ish uchun keldim» (maf'ul li-ajlih) qaysi?",
+   "q_ar": "",
+   "options": [
+    "حَضَرْتُ طَلَبًا لِلْعَمَلِ",
+    "حَضَرْتُ عَمَلًا",
+    "حَضَرْتُ بِالعَمَلِ",
+    "حَضَرْتُ العَمَلَ"
+   ],
+   "answer": "حَضَرْتُ طَلَبًا لِلْعَمَلِ"
+  }
  ],
  "listening": [
-  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/qila.mp3", "options": ["deyildi (majhul)", "dedi", "aytadi", "gapir!"], "answer": "deyildi (majhul)"},
-  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/nushira.mp3", "options": ["nashr etildi", "yozildi", "o'qildi", "ochildi"], "answer": "nashr etildi"},
-  {"type": "mcq", "q_uz": "Eshitgan iborani toping", "audio": "b1/min_qibali.mp3", "options": ["tomonidan", "oldida", "uchun", "bilan"], "answer": "tomonidan"},
-  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/mumtaz.mp3", "options": ["a'lo (mumtoz)", "yomon", "o'rtacha", "qiyin"], "answer": "a'lo (mumtoz)"},
-  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/tijara.mp3", "options": ["savdo, tijorat", "sanoat", "ta'lim", "tibbiyot"], "answer": "savdo, tijorat"},
-  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/jawwal.mp3", "options": ["mobil telefon", "kompyuter", "televizor", "soat"], "answer": "mobil telefon"},
-  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/taqwa.mp3", "options": ["taqvo", "tavba", "savob", "ibodat"], "answer": "taqvo"},
-  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/rihla.mp3", "options": ["reys, safar", "xat", "shahar", "mehmonxona"], "answer": "reys, safar"},
-  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/dalil.mp3", "options": ["dalil, isbot", "savol", "javob", "fikr"], "answer": "dalil, isbot"},
-  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/khulasa.mp3", "options": ["xulosa", "kirish", "sarlavha", "mavzu"], "answer": "xulosa"},
-  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/munazara.mp3", "options": ["munozara", "muzokara", "ma'ruza", "muloqot"], "answer": "munozara"},
-  {"type": "mcq", "q_uz": "Eshitgan so'z ma'nosi?", "audio": "b1/turath.mp3", "options": ["madaniy meros", "tarix", "muzey", "kitob"], "answer": "madaniy meros"}
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/qila.mp3",
+   "options": [
+    "deyildi (majhul)",
+    "dedi",
+    "aytadi",
+    "gapir!"
+   ],
+   "answer": "deyildi (majhul)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/nushira.mp3",
+   "options": [
+    "nashr etildi",
+    "yozildi",
+    "o'qildi",
+    "ochildi"
+   ],
+   "answer": "nashr etildi"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan iborani toping",
+   "audio": "b1/min_qibali.mp3",
+   "options": [
+    "tomonidan",
+    "oldida",
+    "uchun",
+    "bilan"
+   ],
+   "answer": "tomonidan"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/mumtaz.mp3",
+   "options": [
+    "a'lo (mumtoz)",
+    "yomon",
+    "o'rtacha",
+    "qiyin"
+   ],
+   "answer": "a'lo (mumtoz)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/tijara.mp3",
+   "options": [
+    "savdo, tijorat",
+    "sanoat",
+    "ta'lim",
+    "tibbiyot"
+   ],
+   "answer": "savdo, tijorat"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/jawwal.mp3",
+   "options": [
+    "mobil telefon",
+    "kompyuter",
+    "televizor",
+    "soat"
+   ],
+   "answer": "mobil telefon"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/taqwa.mp3",
+   "options": [
+    "taqvo",
+    "tavba",
+    "savob",
+    "ibodat"
+   ],
+   "answer": "taqvo"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/rihla.mp3",
+   "options": [
+    "reys, safar",
+    "xat",
+    "shahar",
+    "mehmonxona"
+   ],
+   "answer": "reys, safar"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/dalil.mp3",
+   "options": [
+    "dalil, isbot",
+    "savol",
+    "javob",
+    "fikr"
+   ],
+   "answer": "dalil, isbot"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/khulasa.mp3",
+   "options": [
+    "xulosa",
+    "kirish",
+    "sarlavha",
+    "mavzu"
+   ],
+   "answer": "xulosa"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/munazara.mp3",
+   "options": [
+    "munozara",
+    "muzokara",
+    "ma'ruza",
+    "muloqot"
+   ],
+   "answer": "munozara"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/turath.mp3",
+   "options": [
+    "madaniy meros",
+    "tarix",
+    "muzey",
+    "kitob"
+   ],
+   "answer": "madaniy meros"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/akhbar.mp3",
+   "options": [
+    "yangiliklar",
+    "maqola",
+    "gazeta",
+    "e'lon"
+   ],
+   "answer": "yangiliklar"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/iqtisad.mp3",
+   "options": [
+    "iqtisod",
+    "siyosat",
+    "savdo",
+    "sanoat"
+   ],
+   "answer": "iqtisod"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/ilam.mp3",
+   "options": [
+    "OAV (media)",
+    "e'lon",
+    "ta'lim",
+    "ilm"
+   ],
+   "answer": "OAV (media)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/bahth.mp3",
+   "options": [
+    "tadqiqot",
+    "savol",
+    "javob",
+    "kitob"
+   ],
+   "answer": "tadqiqot"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/hadaf.mp3",
+   "options": [
+    "maqsad",
+    "natija",
+    "sabab",
+    "reja"
+   ],
+   "answer": "maqsad"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/fursa.mp3",
+   "options": [
+    "imkoniyat",
+    "vaqt",
+    "ish",
+    "muammo"
+   ],
+   "answer": "imkoniyat"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan fe'l ma'nosi?",
+   "audio": "b1/irtafaa.mp3",
+   "options": [
+    "ko'tarildi",
+    "pasaydi",
+    "to'xtadi",
+    "boshlandi"
+   ],
+   "answer": "ko'tarildi"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan fe'l ma'nosi?",
+   "audio": "b1/inkhafada.mp3",
+   "options": [
+    "pasaydi",
+    "ko'tarildi",
+    "o'sdi",
+    "tugadi"
+   ],
+   "answer": "pasaydi"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan fe'l ma'nosi?",
+   "audio": "b1/iftataha.mp3",
+   "options": [
+    "ochdi (ochilish marosimi)",
+    "yopdi",
+    "boshladi",
+    "tugatdi"
+   ],
+   "answer": "ochdi (ochilish marosimi)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/ilaj.mp3",
+   "options": [
+    "davolash",
+    "kasallik",
+    "dori",
+    "og'riq"
+   ],
+   "answer": "davolash"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/hakam.mp3",
+   "options": [
+    "hakam",
+    "jamoa",
+    "murabbiy",
+    "o'yinchi"
+   ],
+   "answer": "hakam"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/hasub.mp3",
+   "options": [
+    "kompyuter",
+    "telefon",
+    "internet",
+    "ilova"
+   ],
+   "answer": "kompyuter"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b1/biaa.mp3",
+   "options": [
+    "atrof-muhit",
+    "tabiat",
+    "havo",
+    "suv"
+   ],
+   "answer": "atrof-muhit"
+  }
  ],
  "writing": [
-  {"task_uz": "Rasmiy ariza yozing (5-6 gap): til kursiga qabul so'rovi — murojaat, salom, maqsad (أتقدّم بطلب...), asos, yakun formulasi."},
-  {"task_uz": "«Ilm ahamiyati» mavzusida qisqa insho yozing (5-6 gap): kirish (يُعدّ...), 2 dalil (بالإضافة إلى ذلك bilan), xulosa (وفي الختام)."},
-  {"task_uz": "Uch gapni majhulga aylantiring: كتبَ الطالبُ الرسالةَ / يفتحُ العاملُ البابَ / باعَ التاجرُ البضاعةَ."},
-  {"task_uz": "Shart gaplar yozing: bittasi إذا bilan (real), bittasi لو bilan (xayoliy, javobda لَـ)."}
+  {
+   "task_uz": "Rasmiy ariza yozing (5-6 gap): til kursiga qabul so'rovi — murojaat, salom, maqsad (أتقدّم بطلب...), asos, yakun formulasi."
+  },
+  {
+   "task_uz": "«Ilm ahamiyati» mavzusida qisqa insho yozing (5-6 gap): kirish (يُعدّ...), 2 dalil (بالإضافة إلى ذلك bilan), xulosa (وفي الختام)."
+  },
+  {
+   "task_uz": "Uch gapni majhulga aylantiring: كتبَ الطالبُ الرسالةَ / يفتحُ العاملُ البابَ / باعَ التاجرُ البضاعةَ."
+  },
+  {
+   "task_uz": "Shart gaplar yozing: bittasi إذا bilan (real), bittasi لو bilan (xayoliy, javobda لَـ)."
+  },
+  {
+   "task_uz": "«Texnologiya ta'limga qanday ta'sir qiladi» mavzusida 5-6 gap yozing (kirish, 2 dalil, xulosa)."
+  },
+  {
+   "task_uz": "Do'stingizga rasmiy bo'lmagan xat yozing (4-5 gap): salom, xabar, taklif, yakun."
+  }
  ],
  "speaking": [],
  "passages": [
@@ -49,9 +711,42 @@
    "title_uz": "Atrof-muhitni asrash",
    "text_ar": "تُعَدُّ حماية البيئة من أهم القضايا في عصرنا. فقد ازداد التلوث في المدن الكبيرة بسبب المصانع وكثرة السيارات. وقد أُنشئت في كثير من الدول مراكز لإعادة التدوير، كما سُنَّت قوانين تمنع رمي النفايات في الأنهار. ويرى الخبراء أن التوعية في المدارس أهم من العقوبات، لأن الطفل الذي يتعلم اليوم سيحمي بلده غدا.",
    "questions": [
-    {"type": "mcq", "q_uz": "Katta shaharlarda ifloslanish nima sababdan ortgan?", "q_ar": "", "options": ["Zavodlar va mashinalarning ko'payishi", "Aholining kamayishi", "Daryolarning qurishi", "Maktablarning yopilishi"], "answer": "Zavodlar va mashinalarning ko'payishi"},
-    {"type": "mcq", "q_uz": "Ko'p davlatlarda nima tashkil etilgan?", "q_ar": "", "options": ["Qayta ishlash markazlari", "Yangi zavodlar", "Suv omborlari", "Sport majmualari"], "answer": "Qayta ishlash markazlari"},
-    {"type": "mcq", "q_uz": "Mutaxassislar fikricha nima muhimroq?", "q_ar": "", "options": ["Maktablarda ongni oshirish", "Jarimalarni oshirish", "Zavodlarni yopish", "Yangi qonun chiqarish"], "answer": "Maktablarda ongni oshirish"}
+    {
+     "type": "mcq",
+     "q_uz": "Katta shaharlarda ifloslanish nima sababdan ortgan?",
+     "q_ar": "",
+     "options": [
+      "Zavodlar va mashinalarning ko'payishi",
+      "Aholining kamayishi",
+      "Daryolarning qurishi",
+      "Maktablarning yopilishi"
+     ],
+     "answer": "Zavodlar va mashinalarning ko'payishi"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Ko'p davlatlarda nima tashkil etilgan?",
+     "q_ar": "",
+     "options": [
+      "Qayta ishlash markazlari",
+      "Yangi zavodlar",
+      "Suv omborlari",
+      "Sport majmualari"
+     ],
+     "answer": "Qayta ishlash markazlari"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Mutaxassislar fikricha nima muhimroq?",
+     "q_ar": "",
+     "options": [
+      "Maktablarda ongni oshirish",
+      "Jarimalarni oshirish",
+      "Zavodlarni yopish",
+      "Yangi qonun chiqarish"
+     ],
+     "answer": "Maktablarda ongni oshirish"
+    }
    ]
   },
   {
@@ -59,9 +754,42 @@
    "title_uz": "Masofaviy ta'lim",
    "text_ar": "انتشر التعليم عن بُعد في السنوات الأخيرة انتشارا واسعا. فالطالب يستطيع أن يحضر الدرس وهو في بيته، وأن يُعيد مشاهدة الدرس متى شاء. لكن هذا النوع من التعليم يحتاج إلى انضباط ذاتي كبير، إذ لا يوجد مراقب. ولذلك يُفضّل بعض المعلمين الجمع بين الدراسة في القاعة والدراسة عبر الشبكة.",
    "questions": [
-    {"type": "mcq", "q_uz": "Matnda masofaviy ta'limning qanday afzalligi aytilgan?", "q_ar": "", "options": ["Darsni uyda ko'rib, xohlaganda qayta ko'rish", "Darslar tekin bo'lishi", "Imtihon bo'lmasligi", "O'qituvchi kerak emasligi"], "answer": "Darsni uyda ko'rib, xohlaganda qayta ko'rish"},
-    {"type": "mcq", "q_uz": "Bu ta'lim turi nimani talab qiladi?", "q_ar": "", "options": ["Kuchli o'z-o'zini nazorat qilishni", "Qimmat jihozni", "Ko'p vaqtni", "Guruh bilan ishlashni"], "answer": "Kuchli o'z-o'zini nazorat qilishni"},
-    {"type": "mcq", "q_uz": "Ba'zi o'qituvchilar nimani afzal ko'rishadi?", "q_ar": "", "options": ["Sinf va onlayn o'qishni birlashtirishni", "Faqat onlayn o'qishni", "Faqat sinfda o'qishni", "Ta'limni to'xtatishni"], "answer": "Sinf va onlayn o'qishni birlashtirishni"}
+    {
+     "type": "mcq",
+     "q_uz": "Matnda masofaviy ta'limning qanday afzalligi aytilgan?",
+     "q_ar": "",
+     "options": [
+      "Darsni uyda ko'rib, xohlaganda qayta ko'rish",
+      "Darslar tekin bo'lishi",
+      "Imtihon bo'lmasligi",
+      "O'qituvchi kerak emasligi"
+     ],
+     "answer": "Darsni uyda ko'rib, xohlaganda qayta ko'rish"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Bu ta'lim turi nimani talab qiladi?",
+     "q_ar": "",
+     "options": [
+      "Kuchli o'z-o'zini nazorat qilishni",
+      "Qimmat jihozni",
+      "Ko'p vaqtni",
+      "Guruh bilan ishlashni"
+     ],
+     "answer": "Kuchli o'z-o'zini nazorat qilishni"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Ba'zi o'qituvchilar nimani afzal ko'rishadi?",
+     "q_ar": "",
+     "options": [
+      "Sinf va onlayn o'qishni birlashtirishni",
+      "Faqat onlayn o'qishni",
+      "Faqat sinfda o'qishni",
+      "Ta'limni to'xtatishni"
+     ],
+     "answer": "Sinf va onlayn o'qishni birlashtirishni"
+    }
    ]
   },
   {
@@ -69,9 +797,42 @@
    "title_uz": "Sog'liq va sport",
    "text_ar": "ينصح الأطباء بممارسة الرياضة ثلاث مرات في الأسبوع على الأقل. فالمشي السريع نصف ساعة يوميا يُقوّي القلب ويُخفّض الوزن. كما يُنصح بتقليل السكر والإكثار من الخضار والفواكه. وقد أثبتت دراسات حديثة أن النوم المبكر لا يقل أهمية عن الغذاء الصحي.",
    "questions": [
-    {"type": "mcq", "q_uz": "Shifokorlar haftasiga necha marta sport bilan shug'ullanishni maslahat beradi?", "q_ar": "", "options": ["Kamida uch marta", "Har kuni", "Bir marta", "Besh marta"], "answer": "Kamida uch marta"},
-    {"type": "mcq", "q_uz": "Yarim soatlik tez yurish nima beradi?", "q_ar": "", "options": ["Yurakni mustahkamlaydi va vaznni kamaytiradi", "Uyquni uzaytiradi", "Ishtahani oshiradi", "Ko'zni davolaydi"], "answer": "Yurakni mustahkamlaydi va vaznni kamaytiradi"},
-    {"type": "mcq", "q_uz": "So'nggi tadqiqotlar nimani isbotladi?", "q_ar": "", "options": ["Erta uxlash sog'lom ovqatdan kam ahamiyatli emas", "Sport ovqatdan muhimroq", "Shakar foydali", "Meva vaznni oshiradi"], "answer": "Erta uxlash sog'lom ovqatdan kam ahamiyatli emas"}
+    {
+     "type": "mcq",
+     "q_uz": "Shifokorlar haftasiga necha marta sport bilan shug'ullanishni maslahat beradi?",
+     "q_ar": "",
+     "options": [
+      "Kamida uch marta",
+      "Har kuni",
+      "Bir marta",
+      "Besh marta"
+     ],
+     "answer": "Kamida uch marta"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Yarim soatlik tez yurish nima beradi?",
+     "q_ar": "",
+     "options": [
+      "Yurakni mustahkamlaydi va vaznni kamaytiradi",
+      "Uyquni uzaytiradi",
+      "Ishtahani oshiradi",
+      "Ko'zni davolaydi"
+     ],
+     "answer": "Yurakni mustahkamlaydi va vaznni kamaytiradi"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "So'nggi tadqiqotlar nimani isbotladi?",
+     "q_ar": "",
+     "options": [
+      "Erta uxlash sog'lom ovqatdan kam ahamiyatli emas",
+      "Sport ovqatdan muhimroq",
+      "Shakar foydali",
+      "Meva vaznni oshiradi"
+     ],
+     "answer": "Erta uxlash sog'lom ovqatdan kam ahamiyatli emas"
+    }
    ]
   },
   {
@@ -79,9 +840,42 @@
    "title_uz": "Arab tili",
    "text_ar": "تُعَدّ اللغة العربية من أقدم اللغات الحية، ويتحدث بها أكثر من أربعمائة مليون إنسان. وتمتاز بنظام الجذور، فمن جذر واحد تُشتق عشرات الكلمات. وقد دخلت كلمات عربية كثيرة إلى اللغة الأوزبكية، مثل «كتاب» و«مكتب» و«وقت». ولذلك يجد الطالب الأوزبكي سهولة في حفظ المفردات.",
    "questions": [
-    {"type": "mcq", "q_uz": "Arab tilida qancha odam so'zlashadi?", "q_ar": "", "options": ["To'rt yuz milliondan ortiq", "Yuz million", "Ellik million", "Bir milliard"], "answer": "To'rt yuz milliondan ortiq"},
-    {"type": "mcq", "q_uz": "Arab tilining o'ziga xos xususiyati nima?", "q_ar": "", "options": ["O'zak tizimi — bitta o'zakdan o'nlab so'z", "Harflar soni", "Yozuv yo'nalishi", "Qadimiyligi"], "answer": "O'zak tizimi — bitta o'zakdan o'nlab so'z"},
-    {"type": "mcq", "q_uz": "O'zbek o'quvchi nega so'zlarni oson yodlaydi?", "q_ar": "", "options": ["O'zbek tiliga ko'p arabcha so'z kirgan", "Arab tili sodda", "So'zlar qisqa", "Grammatika yo'q"], "answer": "O'zbek tiliga ko'p arabcha so'z kirgan"}
+    {
+     "type": "mcq",
+     "q_uz": "Arab tilida qancha odam so'zlashadi?",
+     "q_ar": "",
+     "options": [
+      "To'rt yuz milliondan ortiq",
+      "Yuz million",
+      "Ellik million",
+      "Bir milliard"
+     ],
+     "answer": "To'rt yuz milliondan ortiq"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Arab tilining o'ziga xos xususiyati nima?",
+     "q_ar": "",
+     "options": [
+      "O'zak tizimi — bitta o'zakdan o'nlab so'z",
+      "Harflar soni",
+      "Yozuv yo'nalishi",
+      "Qadimiyligi"
+     ],
+     "answer": "O'zak tizimi — bitta o'zakdan o'nlab so'z"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "O'zbek o'quvchi nega so'zlarni oson yodlaydi?",
+     "q_ar": "",
+     "options": [
+      "O'zbek tiliga ko'p arabcha so'z kirgan",
+      "Arab tili sodda",
+      "So'zlar qisqa",
+      "Grammatika yo'q"
+     ],
+     "answer": "O'zbek tiliga ko'p arabcha so'z kirgan"
+    }
    ]
   },
   {
@@ -89,9 +883,214 @@
    "title_uz": "Shaharga ko'chish",
    "text_ar": "انتقل كثير من الناس من القرى إلى المدن بحثا عن العمل. وقد أدى ذلك إلى ازدحام الطرق وارتفاع أسعار المساكن. ومع ذلك، توفر المدينة خدمات أفضل في التعليم والعلاج. ويرى بعض الباحثين أن الحل يكمن في تطوير القرى نفسها، لا في توسيع المدن.",
    "questions": [
-    {"type": "mcq", "q_uz": "Odamlar nega shaharga ko'chishdi?", "q_ar": "", "options": ["Ish izlab", "Havo yaxshi bo'lgani uchun", "Qarindoshlari chaqirgani uchun", "Uy arzon bo'lgani uchun"], "answer": "Ish izlab"},
-    {"type": "mcq", "q_uz": "Bu nimaga olib keldi?", "q_ar": "", "options": ["Yo'llar tirbandligi va uy narxining oshishiga", "Maktablar yopilishiga", "Qishloqlar kengayishiga", "Narxlar tushishiga"], "answer": "Yo'llar tirbandligi va uy narxining oshishiga"},
-    {"type": "mcq", "q_uz": "Ba'zi tadqiqotchilar yechimni nimada ko'rishadi?", "q_ar": "", "options": ["Qishloqlarning o'zini rivojlantirishda", "Shaharlarni kengaytirishda", "Ko'chishni taqiqlashda", "Yangi yo'l qurishda"], "answer": "Qishloqlarning o'zini rivojlantirishda"}
+    {
+     "type": "mcq",
+     "q_uz": "Odamlar nega shaharga ko'chishdi?",
+     "q_ar": "",
+     "options": [
+      "Ish izlab",
+      "Havo yaxshi bo'lgani uchun",
+      "Qarindoshlari chaqirgani uchun",
+      "Uy arzon bo'lgani uchun"
+     ],
+     "answer": "Ish izlab"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Bu nimaga olib keldi?",
+     "q_ar": "",
+     "options": [
+      "Yo'llar tirbandligi va uy narxining oshishiga",
+      "Maktablar yopilishiga",
+      "Qishloqlar kengayishiga",
+      "Narxlar tushishiga"
+     ],
+     "answer": "Yo'llar tirbandligi va uy narxining oshishiga"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Ba'zi tadqiqotchilar yechimni nimada ko'rishadi?",
+     "q_ar": "",
+     "options": [
+      "Qishloqlarning o'zini rivojlantirishda",
+      "Shaharlarni kengaytirishda",
+      "Ko'chishni taqiqlashda",
+      "Yangi yo'l qurishda"
+     ],
+     "answer": "Qishloqlarning o'zini rivojlantirishda"
+    }
+   ]
+  },
+  {
+   "id": "b1-p-riyada",
+   "title_uz": "Sport va salomatlik",
+   "text_ar": "يؤكد الأطباء أن المشي نصف ساعة يوميا يقلل من أمراض القلب. ولا يحتاج هذا النوع من الرياضة إلى مال أو أدوات، بل يحتاج إلى انتظام فقط. وقد أظهرت دراسة حديثة أن الذين يمارسون الرياضة ثلاث مرات في الأسبوع ينامون نوما أفضل، ويشعرون بضغط نفسي أقل. لكن الخبراء يحذرون من البدء بتمارين شديدة، لأن الجسم يحتاج إلى تدرج.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Shifokorlar nimani tasdiqlaydi?",
+     "q_ar": "",
+     "options": [
+      "Kunda yarim soat yurish yurak kasalliklarini kamaytiradi",
+      "Sport pul talab qiladi",
+      "Uyqu muhim emas",
+      "Og'ir mashq kerak"
+     ],
+     "answer": "Kunda yarim soat yurish yurak kasalliklarini kamaytiradi"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Tadqiqot nima ko'rsatdi?",
+     "q_ar": "",
+     "options": [
+      "Haftada 3 marta shug'ullanuvchilar yaxshi uxlaydi",
+      "Sport stressni oshiradi",
+      "Yurish foydasiz",
+      "Uyqu o'zgarmaydi"
+     ],
+     "answer": "Haftada 3 marta shug'ullanuvchilar yaxshi uxlaydi"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Mutaxassislar nimadan ogohlantiradi?",
+     "q_ar": "",
+     "options": [
+      "Kuchli mashqlar bilan boshlashdan",
+      "Yurishdan",
+      "Ko'p suv ichishdan",
+      "Ertalab mashq qilishdan"
+     ],
+     "answer": "Kuchli mashqlar bilan boshlashdan"
+    }
+   ]
+  },
+  {
+   "id": "b1-p-madina-dhakiya",
+   "title_uz": "Aqlli shahar",
+   "text_ar": "بدأت بعض المدن تستخدم أنظمة ذكية لتنظيم حركة السيارات. فقد رُبطت إشارات المرور بحاسوب مركزي يحسب عدد السيارات كل دقيقة، ثم يغير مدة الإشارة تلقائيا. وقد انخفض زمن الانتظار بنسبة عشرين في المئة في الشوارع الرئيسة. ويرى المهندسون أن الخطوة القادمة هي ربط الحافلات بالتطبيقات، حتى يعرف الراكب موعد وصول الحافلة بدقة.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Aqlli tizim nimani hisoblaydi?",
+     "q_ar": "",
+     "options": [
+      "Har daqiqada mashinalar sonini",
+      "Yo'lovchilar sonini",
+      "Chiroq narxini",
+      "Yo'l uzunligini"
+     ],
+     "answer": "Har daqiqada mashinalar sonini"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Kutish vaqti qancha kamaydi?",
+     "q_ar": "",
+     "options": [
+      "20%",
+      "10%",
+      "50%",
+      "5%"
+     ],
+     "answer": "20%"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Keyingi qadam nima?",
+     "q_ar": "",
+     "options": [
+      "Avtobuslarni ilovalarga bog'lash",
+      "Yangi yo'l qurish",
+      "Chiroqlarni olib tashlash",
+      "Taksilarni ko'paytirish"
+     ],
+     "answer": "Avtobuslarni ilovalarga bog'lash"
+    }
+   ]
+  },
+  {
+   "id": "b1-p-mutarjim",
+   "title_uz": "Tarjimon kasbi",
+   "text_ar": "يظن كثير من الناس أن المترجم ينقل الكلمات فقط، والحقيقة أنه ينقل المعنى والثقافة معا. فالمترجم الجيد يقرأ النص كله قبل أن يبدأ، ويبحث عن المصطلحات في مصادر موثوقة. وقد ساعدت البرامج الحديثة في تسريع العمل، لكنها لم تستطع أن تفهم السياق كإنسان. ولهذا ما زال الطلب على المترجمين مرتفعا في المؤتمرات والمحاكم والمستشفيات.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Yaxshi tarjimon nima qiladi?",
+     "q_ar": "",
+     "options": [
+      "Boshlashdan oldin butun matnni o'qiydi",
+      "Faqat so'zlarni almashtiradi",
+      "Lug'atsiz ishlaydi",
+      "Faqat dastur ishlatadi"
+     ],
+     "answer": "Boshlashdan oldin butun matnni o'qiydi"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Dasturlar nimani qila olmaydi?",
+     "q_ar": "",
+     "options": [
+      "Kontekstni inson kabi tushunish",
+      "Tez ishlash",
+      "So'z topish",
+      "Matn saqlash"
+     ],
+     "answer": "Kontekstni inson kabi tushunish"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Tarjimonlarga talab qayerda yuqori?",
+     "q_ar": "",
+     "options": [
+      "Konferensiya, sud va shifoxonalarda",
+      "Faqat maktablarda",
+      "Faqat gazetalarda",
+      "Faqat bozorda"
+     ],
+     "answer": "Konferensiya, sud va shifoxonalarda"
+    }
+   ]
+  },
+  {
+   "id": "b1-p-mashru-saghir",
+   "title_uz": "Kichik biznes",
+   "text_ar": "افتتحت سلمى محلا صغيرا لبيع الحلويات المنزلية بعد أن فقدت عملها. لم يكن معها مال كثير، فبدأت من مطبخ بيتها، وأعلنت عن منتجاتها في وسائل التواصل. في الشهر الأول لم تحصل إلا على عشرة طلبات، لكنها لم تتوقف. وبعد سنة أصبح لديها ثلاث عاملات ومحل في وسط المدينة. تقول سلمى: النجاح ليس فكرة عظيمة، بل خطوة صغيرة تتكرر كل يوم.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Salma ishni qanday boshladi?",
+     "q_ar": "",
+     "options": [
+      "Uy oshxonasidan",
+      "Katta do'kondan",
+      "Bank krediti bilan",
+      "Sherik bilan"
+     ],
+     "answer": "Uy oshxonasidan"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Birinchi oyda nechta buyurtma oldi?",
+     "q_ar": "",
+     "options": [
+      "10",
+      "3",
+      "100",
+      "30"
+     ],
+     "answer": "10"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Uning fikricha muvaffaqiyat nima?",
+     "q_ar": "",
+     "options": [
+      "Har kun takrorlanadigan kichik qadam",
+      "Katta g'oya",
+      "Ko'p pul",
+      "Omad"
+     ],
+     "answer": "Har kun takrorlanadigan kichik qadam"
+    }
    ]
   }
  ]

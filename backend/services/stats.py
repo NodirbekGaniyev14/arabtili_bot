@@ -109,10 +109,32 @@ async def resolve_streak(
 
 
 async def completed_lesson_ids(session: AsyncSession, user_id: int) -> set[str]:
+    """TUGATILGAN darslar — mikro-testdan 60%+ olingan urinishlar (spec §11).
+
+    Yiqilgan urinish ham `progress` da saqlanadi, lekin darsni ochilgan
+    hisoblamaydi: keyingi dars qulfda qoladi.
+    """
     rows = await session.execute(
-        select(Progress.lesson_id).where(Progress.user_id == user_id).distinct()
+        select(Progress.lesson_id)
+        .where(Progress.user_id == user_id, Progress.passed == 1)
+        .distinct()
     )
     return set(rows.scalars())
+
+
+async def lesson_attempt_count(
+    session: AsyncSession, user_id: int, lesson_id: str
+) -> int:
+    """Shu darsga nechta urinish bo'lgan (o'tgan ham, yiqilgan ham)."""
+    from sqlalchemy import func
+
+    return (
+        await session.execute(
+            select(func.count())
+            .select_from(Progress)
+            .where(Progress.user_id == user_id, Progress.lesson_id == lesson_id)
+        )
+    ).scalar_one()
 
 
 async def profile_extras(session: AsyncSession, user_id: int) -> dict:

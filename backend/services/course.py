@@ -117,11 +117,15 @@ def _lesson_card(lesson_id: str) -> dict:
     meta = cur[lesson_id]
     mod = meta["module"]
     title_uz, title_ar = module_title(mod)
-    # Modul ichidagi pozitsiya
-    same_mod = [
+    # Modul bo'lagi ichidagi pozitsiya (Darslar sahifasidagi karta bilan bir xil)
+    level_ids = [
         l for l in lesson_order()
-        if cur[l]["module"] == mod and cur[l]["level"] == meta["level"]
+        if cur[l]["level"] == meta["level"] and cur[l]["type"] == "lesson"
     ]
+    same_mod = next(
+        (ids for _, ids in _module_segments(level_ids, cur) if lesson_id in ids),
+        [lesson_id],
+    )
     pos = same_mod.index(lesson_id) + 1 if lesson_id in same_mod else 1
     return {
         "id": lesson_id,
@@ -148,6 +152,26 @@ def _level_name(level: str) -> str:
     }.get(level, level)
 
 
+def _module_segments(level_ids: list[str], cur: dict[str, dict]) -> list[tuple[str, list[str]]]:
+    """Darslarni kurikulum tartibida modul bo'laklariga ajratadi.
+
+    Ba'zi modullar kursda IKKI JOYDA turadi: masalan A0 «O'qish qoidalari»
+    a0-17..20 da, keyin a0-37 (quyosh/oy harflari) shadda o'rgatilgandan
+    keyin qaytadi. Ilgari bunday darslar bitta kartaga yig'ilardi va oxirgi
+    dumaloq abadiy qulflangan ko'rinardi (qulf zanjiri kurs tartibi bo'yicha,
+    karta esa modul bo'yicha) — foydalanuvchi "5-dars ochilmayapti" deb
+    yozgan xato aynan shu. Endi har bo'lak alohida karta.
+    """
+    segments: list[tuple[str, list[str]]] = []
+    for lid in level_ids:
+        m = cur[lid]["module"]
+        if segments and segments[-1][0] == m:
+            segments[-1][1].append(lid)
+        else:
+            segments.append((m, [lid]))
+    return segments
+
+
 def _level_modules(level: str, done: set[str]) -> list[dict]:
     """Bitta darajaning dars modullari + qulf holati (imtihonsiz)."""
     cur = load_curriculum()
@@ -160,16 +184,17 @@ def _level_modules(level: str, done: set[str]) -> list[dict]:
     ]
     written_seq = [lid for lid in level_ids if lid in written]
 
-    seen_mods: list[str] = []
-    for lid in level_ids:
-        m = cur[lid]["module"]
-        if m not in seen_mods:
-            seen_mods.append(m)
+    segments = _module_segments(level_ids, cur)
+    seg_count: dict[str, int] = {}
 
     modules: list[dict] = []
-    for m in seen_mods:
-        m_ids = [lid for lid in level_ids if cur[lid]["module"] == m]
+    for m, m_ids in segments:
+        seg_count[m] = seg_count.get(m, 0) + 1
+        nth = seg_count[m]
         title_uz, title_ar = module_title(m)
+        card_id = m if nth == 1 else f"{m}-{nth}"
+        if nth > 1:
+            title_uz = f"{title_uz} (davomi)"
 
         lessons = []
         for lid in m_ids:
@@ -194,7 +219,7 @@ def _level_modules(level: str, done: set[str]) -> list[dict]:
 
         modules.append(
             {
-                "id": m,
+                "id": card_id,
                 "title": title_uz,
                 "arabic_title": title_ar,
                 "available": any(l["available"] for l in lessons),

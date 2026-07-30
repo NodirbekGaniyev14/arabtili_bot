@@ -1,54 +1,630 @@
 {
  "level": "A0",
- "config": { "reading": 8, "listening": 8, "writing": 2, "speaking": 3, "minutes": 30 },
+ "config": {
+  "reading": 8,
+  "listening": 8,
+  "writing": 2,
+  "speaking": 3,
+  "minutes": 30
+ },
  "reading": [
-  { "type": "mcq", "q_uz": "Bu qaysi harf?", "q_ar": "ب", "options": ["bā (b)", "tā (t)", "nun (n)", "yā (y)"], "answer": "bā (b)" },
-  { "type": "mcq", "q_uz": "Bu qaysi harf?", "q_ar": "ش", "options": ["shin (sh)", "sin (s)", "sod (s)", "sā (th)"], "answer": "shin (sh)" },
-  { "type": "mcq", "q_uz": "Bu qaysi harf?", "q_ar": "ق", "options": ["qof (q)", "fā (f)", "kaf (k)", "g'ayn (g')"], "answer": "qof (q)" },
-  { "type": "mcq", "q_uz": "Bu qaysi harf?", "q_ar": "ع", "options": ["ayn", "g'ayn", "hā", "hamza"], "answer": "ayn" },
-  { "type": "mcq", "q_uz": "«x» tovushini beradigan harf qaysi?", "options": ["خ", "ح", "ج", "ه"], "answer": "خ" },
-  { "type": "mcq", "q_uz": "«m» tovushini beradigan harf qaysi?", "options": ["م", "ن", "و", "ه"], "answer": "م" },
-  { "type": "mcq", "q_uz": "Bu qanday o'qiladi?", "q_ar": "بَ", "options": ["ba", "bi", "bu", "b"], "answer": "ba" },
-  { "type": "mcq", "q_uz": "Bu qanday o'qiladi?", "q_ar": "تُ", "options": ["tu", "ta", "ti", "t"], "answer": "tu" },
-  { "type": "mcq", "q_uz": "Bu qanday o'qiladi?", "q_ar": "مِ", "options": ["mi", "ma", "mu", "m"], "answer": "mi" },
-  { "type": "mcq", "q_uz": "Bu so'zni o'qing:", "q_ar": "بَيْت", "options": ["bayt (uy)", "bāb (eshik)", "bint (qiz)", "tab"], "answer": "bayt (uy)" },
-  { "type": "mcq", "q_uz": "Bu so'zni o'qing:", "q_ar": "كِتاب", "options": ["kitāb (kitob)", "kātib (kotib)", "maktab", "kutub"], "answer": "kitāb (kitob)" },
-  { "type": "mcq", "q_uz": "«مَدْرَسة» so'zining ma'nosi?", "q_ar": "مَدْرَسة", "options": ["maktab", "kutubxona", "eshik", "dars"], "answer": "maktab" },
-  { "type": "mcq", "q_uz": "«مَاء» so'zining ma'nosi?", "q_ar": "مَاء", "options": ["suv", "non", "uy", "qalam"], "answer": "suv" },
-  { "type": "mcq", "q_uz": "«قَلَم» so'zining ma'nosi?", "q_ar": "قَلَم", "options": ["qalam", "kitob", "daftar", "stol"], "answer": "qalam" },
-  { "type": "match_root", "q_uz": "Bu so'zning o'zagini toping", "q_ar": "مَكْتَب", "answer": "ك ت ب", "root": "ك ت ب" },
-  { "type": "match_root", "q_uz": "Bu so'zning o'zagini toping", "q_ar": "مُدَرِّس", "answer": "د ر س", "root": "د ر س" },
-  { "type": "mcq", "q_uz": "«ال» artikli qo'shilganda qaysi harflar assimilyatsiya bo'ladi?", "options": ["Quyosh harflari", "Oy harflari", "Hamma harflar", "Hech qaysi"], "answer": "Quyosh harflari" },
-  { "type": "mcq", "q_uz": "Sukun belgisi nimani bildiradi?", "options": ["Unli yo'q", "«a» tovushi", "Ikkilangan harf", "Cho'ziq unli"], "answer": "Unli yo'q" }
+  {
+   "type": "mcq",
+   "q_uz": "Bu qaysi harf?",
+   "q_ar": "ب",
+   "options": [
+    "bā (b)",
+    "tā (t)",
+    "nun (n)",
+    "yā (y)"
+   ],
+   "answer": "bā (b)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Bu qaysi harf?",
+   "q_ar": "ش",
+   "options": [
+    "shin (sh)",
+    "sin (s)",
+    "sod (s)",
+    "sā (th)"
+   ],
+   "answer": "shin (sh)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Bu qaysi harf?",
+   "q_ar": "ق",
+   "options": [
+    "qof (q)",
+    "fā (f)",
+    "kaf (k)",
+    "g'ayn (g')"
+   ],
+   "answer": "qof (q)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Bu qaysi harf?",
+   "q_ar": "ع",
+   "options": [
+    "ayn",
+    "g'ayn",
+    "hā",
+    "hamza"
+   ],
+   "answer": "ayn"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«x» tovushini beradigan harf qaysi?",
+   "options": [
+    "خ",
+    "ح",
+    "ج",
+    "ه"
+   ],
+   "answer": "خ"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«m» tovushini beradigan harf qaysi?",
+   "options": [
+    "م",
+    "ن",
+    "و",
+    "ه"
+   ],
+   "answer": "م"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Bu qanday o'qiladi?",
+   "q_ar": "بَ",
+   "options": [
+    "ba",
+    "bi",
+    "bu",
+    "b"
+   ],
+   "answer": "ba"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Bu qanday o'qiladi?",
+   "q_ar": "تُ",
+   "options": [
+    "tu",
+    "ta",
+    "ti",
+    "t"
+   ],
+   "answer": "tu"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Bu qanday o'qiladi?",
+   "q_ar": "مِ",
+   "options": [
+    "mi",
+    "ma",
+    "mu",
+    "m"
+   ],
+   "answer": "mi"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Bu so'zni o'qing:",
+   "q_ar": "بَيْت",
+   "options": [
+    "bayt (uy)",
+    "bāb (eshik)",
+    "bint (qiz)",
+    "tab"
+   ],
+   "answer": "bayt (uy)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Bu so'zni o'qing:",
+   "q_ar": "كِتاب",
+   "options": [
+    "kitāb (kitob)",
+    "kātib (kotib)",
+    "maktab",
+    "kutub"
+   ],
+   "answer": "kitāb (kitob)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مَدْرَسة» so'zining ma'nosi?",
+   "q_ar": "مَدْرَسة",
+   "options": [
+    "maktab",
+    "kutubxona",
+    "eshik",
+    "dars"
+   ],
+   "answer": "maktab"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مَاء» so'zining ma'nosi?",
+   "q_ar": "مَاء",
+   "options": [
+    "suv",
+    "non",
+    "uy",
+    "qalam"
+   ],
+   "answer": "suv"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«قَلَم» so'zining ma'nosi?",
+   "q_ar": "قَلَم",
+   "options": [
+    "qalam",
+    "kitob",
+    "daftar",
+    "stol"
+   ],
+   "answer": "qalam"
+  },
+  {
+   "type": "match_root",
+   "q_uz": "Bu so'zning o'zagini toping",
+   "q_ar": "مَكْتَب",
+   "answer": "ك ت ب",
+   "root": "ك ت ب"
+  },
+  {
+   "type": "match_root",
+   "q_uz": "Bu so'zning o'zagini toping",
+   "q_ar": "مُدَرِّس",
+   "answer": "د ر س",
+   "root": "د ر س"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«ال» artikli qo'shilganda qaysi harflar assimilyatsiya bo'ladi?",
+   "options": [
+    "Quyosh harflari",
+    "Oy harflari",
+    "Hamma harflar",
+    "Hech qaysi"
+   ],
+   "answer": "Quyosh harflari"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Sukun belgisi nimani bildiradi?",
+   "options": [
+    "Unli yo'q",
+    "«a» tovushi",
+    "Ikkilangan harf",
+    "Cho'ziq unli"
+   ],
+   "answer": "Unli yo'q"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Bu qaysi harf?",
+   "q_ar": "ط",
+   "options": [
+    "to (qattiq t)",
+    "ta (t)",
+    "dol (d)",
+    "zo (z)"
+   ],
+   "answer": "to (qattiq t)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Bu qanday o'qiladi?",
+   "q_ar": "نُ",
+   "options": [
+    "nu",
+    "na",
+    "ni",
+    "n"
+   ],
+   "answer": "nu"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Bu so'zni o'qing:",
+   "q_ar": "شَمْس",
+   "options": [
+    "shams (quyosh)",
+    "qamar (oy)",
+    "sams",
+    "shamm"
+   ],
+   "answer": "shams (quyosh)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«نُور» so'zining ma'nosi?",
+   "q_ar": "نُور",
+   "options": [
+    "nur",
+    "olov",
+    "suv",
+    "kun"
+   ],
+   "answer": "nur"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Shadda (ّ) nimani bildiradi?",
+   "q_ar": "",
+   "options": [
+    "Harf ikkilanadi",
+    "Unli yo'q",
+    "Cho'ziq unli",
+    "«u» tovushi"
+   ],
+   "answer": "Harf ikkilanadi"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Ta marbuta (ة) ko'pincha nimani ko'rsatadi?",
+   "q_ar": "",
+   "options": [
+    "Muannaslik (ayol jinsi)",
+    "Ko'plikni",
+    "Fe'lni",
+    "Savolni"
+   ],
+   "answer": "Muannaslik (ayol jinsi)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«سُوق» so'zining ma'nosi?",
+   "q_ar": "سُوق",
+   "options": [
+    "bozor",
+    "ko'cha",
+    "uy",
+    "yo'l"
+   ],
+   "answer": "bozor"
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«عالِم» so'zining o'zagini toping",
+   "q_ar": "عالِم",
+   "answer": "ع ل م",
+   "root": "ع ل م"
+  }
  ],
  "listening": [
-  { "type": "mcq", "q_uz": "Eshiting va harfni toping", "audio": "ba.mp3", "options": ["ب", "ت", "ث", "ن"], "answer": "ب" },
-  { "type": "mcq", "q_uz": "Eshiting va harfni toping", "audio": "jim.mp3", "options": ["ج", "ح", "خ", "ز"], "answer": "ج" },
-  { "type": "mcq", "q_uz": "Eshiting va harfni toping", "audio": "sin.mp3", "options": ["س", "ش", "ص", "ث"], "answer": "س" },
-  { "type": "mcq", "q_uz": "Eshiting va harfni toping", "audio": "qof.mp3", "options": ["ق", "ك", "غ", "ف"], "answer": "ق" },
-  { "type": "mcq", "q_uz": "Eshiting va harfni toping", "audio": "ayn.mp3", "options": ["ع", "غ", "ح", "ء"], "answer": "ع" },
-  { "type": "mcq", "q_uz": "Eshiting va harfni toping", "audio": "mim.mp3", "options": ["م", "ن", "ب", "و"], "answer": "م" },
-  { "type": "mcq", "q_uz": "Eshiting va so'zni toping", "audio": "bayt.mp3", "options": ["بَيْت", "بَاب", "بِنْت", "نَبْت"], "answer": "بَيْت" },
-  { "type": "mcq", "q_uz": "Eshiting va so'zni toping", "audio": "kitab.mp3", "options": ["كِتاب", "قَلَم", "مَكْتَب", "بَيْت"], "answer": "كِتاب" },
-  { "type": "mcq", "q_uz": "Eshiting va so'zni toping", "audio": "a0/madrasa.mp3", "options": ["مَدْرَسة", "مُدَرِّس", "دَرْس", "مَكْتَبة"], "answer": "مَدْرَسة" },
-  { "type": "mcq", "q_uz": "Eshiting va so'zni toping", "audio": "a0/muallim.mp3", "options": ["مُعَلِّم", "عالِم", "عِلْم", "مَعْلومات"], "answer": "مُعَلِّم" },
-  { "type": "dictation", "q_uz": "Eshiting va yozing", "audio": "bab.mp3", "answer": "بَاب" },
-  { "type": "dictation", "q_uz": "Eshiting va yozing", "audio": "a0/dars.mp3", "answer": "دَرْس" },
-  { "type": "dictation", "q_uz": "Eshiting va yozing", "audio": "maa.mp3", "answer": "مَاء" },
-  { "type": "dictation", "q_uz": "Eshiting va yozing", "audio": "a0/ilm.mp3", "answer": "عِلْم" }
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va harfni toping",
+   "audio": "ba.mp3",
+   "options": [
+    "ب",
+    "ت",
+    "ث",
+    "ن"
+   ],
+   "answer": "ب"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va harfni toping",
+   "audio": "jim.mp3",
+   "options": [
+    "ج",
+    "ح",
+    "خ",
+    "ز"
+   ],
+   "answer": "ج"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va harfni toping",
+   "audio": "sin.mp3",
+   "options": [
+    "س",
+    "ش",
+    "ص",
+    "ث"
+   ],
+   "answer": "س"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va harfni toping",
+   "audio": "qof.mp3",
+   "options": [
+    "ق",
+    "ك",
+    "غ",
+    "ف"
+   ],
+   "answer": "ق"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va harfni toping",
+   "audio": "ayn.mp3",
+   "options": [
+    "ع",
+    "غ",
+    "ح",
+    "ء"
+   ],
+   "answer": "ع"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va harfni toping",
+   "audio": "mim.mp3",
+   "options": [
+    "م",
+    "ن",
+    "ب",
+    "و"
+   ],
+   "answer": "م"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va so'zni toping",
+   "audio": "bayt.mp3",
+   "options": [
+    "بَيْت",
+    "بَاب",
+    "بِنْت",
+    "نَبْت"
+   ],
+   "answer": "بَيْت"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va so'zni toping",
+   "audio": "kitab.mp3",
+   "options": [
+    "كِتاب",
+    "قَلَم",
+    "مَكْتَب",
+    "بَيْت"
+   ],
+   "answer": "كِتاب"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va so'zni toping",
+   "audio": "a0/madrasa.mp3",
+   "options": [
+    "مَدْرَسة",
+    "مُدَرِّس",
+    "دَرْس",
+    "مَكْتَبة"
+   ],
+   "answer": "مَدْرَسة"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va so'zni toping",
+   "audio": "a0/muallim.mp3",
+   "options": [
+    "مُعَلِّم",
+    "عالِم",
+    "عِلْم",
+    "مَعْلومات"
+   ],
+   "answer": "مُعَلِّم"
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshiting va yozing",
+   "audio": "bab.mp3",
+   "answer": "بَاب"
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshiting va yozing",
+   "audio": "a0/dars.mp3",
+   "answer": "دَرْس"
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshiting va yozing",
+   "audio": "maa.mp3",
+   "answer": "مَاء"
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshiting va yozing",
+   "audio": "a0/ilm.mp3",
+   "answer": "عِلْم"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va harfni toping",
+   "audio": "a0/harf_ta.mp3",
+   "options": [
+    "ت",
+    "ث",
+    "ب",
+    "ن"
+   ],
+   "answer": "ت"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va harfni toping",
+   "audio": "a0/harf_dad.mp3",
+   "options": [
+    "ض",
+    "د",
+    "ص",
+    "ظ"
+   ],
+   "answer": "ض"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va harfni toping",
+   "audio": "a0/harf_kha.mp3",
+   "options": [
+    "خ",
+    "ح",
+    "ج",
+    "غ"
+   ],
+   "answer": "خ"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va harfni toping",
+   "audio": "a0/harf_lam.mp3",
+   "options": [
+    "ل",
+    "ك",
+    "م",
+    "ن"
+   ],
+   "answer": "ل"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va so'zni toping",
+   "audio": "a0/qalam.mp3",
+   "options": [
+    "قَلَم",
+    "قَلْب",
+    "عِلْم",
+    "كَلَام"
+   ],
+   "answer": "قَلَم"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va so'zni toping",
+   "audio": "a0/shams.mp3",
+   "options": [
+    "شَمْس",
+    "قَمَر",
+    "سُوق",
+    "دَرْس"
+   ],
+   "answer": "شَمْس"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va so'zni toping",
+   "audio": "a0/maktaba.mp3",
+   "options": [
+    "مَكْتَبة",
+    "مَدْرَسة",
+    "مَكْتَب",
+    "مُدَرِّس"
+   ],
+   "answer": "مَكْتَبة"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting va so'zni toping",
+   "audio": "a0/suq.mp3",
+   "options": [
+    "سُوق",
+    "شَمْس",
+    "صَيْف",
+    "سَاعة"
+   ],
+   "answer": "سُوق"
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshiting va yozing",
+   "audio": "a0/nur.mp3",
+   "answer": "نُور"
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshiting va yozing",
+   "audio": "a0/bint.mp3",
+   "answer": "بِنْت"
+  },
+  {
+   "type": "dictation",
+   "q_uz": "Eshiting va yozing",
+   "audio": "a0/qalam.mp3",
+   "answer": "قَلَم"
+  }
  ],
  "writing": [
-  { "task_uz": "ك ت ب o'zagidan 2 ta so'z yozing (masalan: kitob, maktab so'zlarining arabchasini)" },
-  { "task_uz": "O'zingiz bilgan 3 ta arabcha so'zni harakatlari bilan yozing" },
-  { "task_uz": "«بَيْت» va «بِنْت» so'zlarini yozing — nuqtalar farqiga e'tibor bering" },
-  { "task_uz": "د ر س o'zagidan 2 ta so'z yozing" }
+  {
+   "task_uz": "ك ت ب o'zagidan 2 ta so'z yozing (masalan: kitob, maktab so'zlarining arabchasini)"
+  },
+  {
+   "task_uz": "O'zingiz bilgan 3 ta arabcha so'zni harakatlari bilan yozing"
+  },
+  {
+   "task_uz": "«بَيْت» va «بِنْت» so'zlarini yozing — nuqtalar farqiga e'tibor bering"
+  },
+  {
+   "task_uz": "د ر س o'zagidan 2 ta so'z yozing"
+  },
+  {
+   "task_uz": "«شَمْس» va «قَمَر» so'zlarini yozing (quyosh va oy harflari farqi)."
+  },
+  {
+   "task_uz": "«مَدْرَسة» so'zini yozing — ta marbuta bilan tugashini unutmang."
+  },
+  {
+   "task_uz": "Uch harfli 2 so'z yozing va har birini harakatlar bilan belgilang."
+  }
  ],
  "speaking": [
-  { "q_ar": "السَّلامُ عَلَيْكُم", "audio": "salam.mp3" },
-  { "q_ar": "كِتاب", "audio": "kitab.mp3" },
-  { "q_ar": "مَدْرَسة", "audio": "a0/madrasa.mp3" },
-  { "q_ar": "مُعَلِّم", "audio": "a0/muallim.mp3" },
-  { "q_ar": "شُكْرًا", "audio": "shukran.mp3" },
-  { "q_ar": "بَيْت", "audio": "bayt.mp3" }
+  {
+   "q_ar": "السَّلامُ عَلَيْكُم",
+   "audio": "salam.mp3"
+  },
+  {
+   "q_ar": "كِتاب",
+   "audio": "kitab.mp3"
+  },
+  {
+   "q_ar": "مَدْرَسة",
+   "audio": "a0/madrasa.mp3"
+  },
+  {
+   "q_ar": "مُعَلِّم",
+   "audio": "a0/muallim.mp3"
+  },
+  {
+   "q_ar": "شُكْرًا",
+   "audio": "shukran.mp3"
+  },
+  {
+   "q_ar": "بَيْت",
+   "audio": "bayt.mp3"
+  },
+  {
+   "q_ar": "قَلَم",
+   "audio": "a0/qalam.mp3"
+  },
+  {
+   "q_ar": "شَمْس",
+   "audio": "a0/shams.mp3"
+  },
+  {
+   "q_ar": "صَبَاحُ الخَيْر",
+   "audio": "sabah.mp3"
+  },
+  {
+   "q_ar": "مُدَرِّس",
+   "audio": "a0/mudarris.mp3"
+  }
  ]
 }

@@ -11,6 +11,7 @@ Yakuniy daraja imtihonidan (services/exam.py) farqi:
 import random
 
 from services.curriculum import lesson_order, load_curriculum, load_lesson_v2
+from services.qbank import pick_fresh
 
 PASS = 80  # o'tish chegarasi (%)
 N_QUESTIONS = 12
@@ -109,8 +110,17 @@ def question_bank(lessons: list[str]) -> list[dict]:
     return bank
 
 
-def build_mini(level: str, percent: int, seed: int | None = None) -> dict | None:
-    """Checkpoint uchun imtihon yig'adi: N_QUESTIONS ta savol."""
+def build_mini(
+    level: str,
+    percent: int,
+    seed: int | None = None,
+    seen_hashes: set[str] | None = None,
+) -> dict | None:
+    """Checkpoint uchun imtihon yig'adi: N_QUESTIONS ta savol.
+
+    `seen_hashes` — oldingi urinishlarda tushgan savollar (qayta topshirishda
+    boshqa savollar berish uchun, services/qbank.py).
+    """
     cps = {c["percent"]: c for c in checkpoints_for(level)}
     cp = cps.get(percent)
     if not cp:
@@ -119,22 +129,21 @@ def build_mini(level: str, percent: int, seed: int | None = None) -> dict | None
     lessons = level_lessons(level)[: cp["upto"]]
     rnd = random.Random(seed)
 
-    bank = question_bank(lessons)
-    rnd.shuffle(bank)
-    items = bank[:N_QUESTIONS]
+    items = pick_fresh(question_bank(lessons), N_QUESTIONS, seen_hashes, rnd)
 
     # Yetmasa — lug'atdan yasalgan test savollari bilan to'ldiramiz
     if len(items) < N_QUESTIONS:
-        extra = _vocab_mcq(lessons, rnd)
-        rnd.shuffle(extra)
-        seen = {i.get("answer") for i in items}
+        extra = pick_fresh(
+            _vocab_mcq(lessons, rnd), N_QUESTIONS - len(items) + 10, seen_hashes, rnd
+        )
+        answers = {i.get("answer") for i in items}
         for it in extra:
             if len(items) >= N_QUESTIONS:
                 break
-            if it["answer"] in seen:
+            if it["answer"] in answers:
                 continue
             items.append(it)
-            seen.add(it["answer"])
+            answers.add(it["answer"])
 
     if not items:
         return None

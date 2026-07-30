@@ -376,6 +376,21 @@ export interface MicroTestItem {
   words: string[];
 }
 
+/** A2+ darslardagi bosqichma-bosqich o'qish matni (content/reading/*.json). */
+export interface ReadingPassage {
+  stage: number;
+  stages_total: number;
+  level: string;
+  lesson_id: string;
+  title_uz: string;
+  harakat: "full" | "partial" | "minimal";
+  words: number;
+  audio: string;
+  text_ar: string;
+  glossary: { ar: string; uz: string }[];
+  questions: MicroTestItem[];
+}
+
 export interface LessonV2Data {
   id: string;
   level: string;
@@ -392,6 +407,11 @@ export interface LessonV2Data {
   hejazi: V2HejaziItem[];
   skills: V2Skills;
   micro_test: MicroTestItem[];
+  // Mikro-test urinishga qarab yig'iladi (qayta topshirishda boshqa savollar)
+  test_attempt: number;
+  pass_score: number;
+  attempts_made: number;
+  passage: ReadingPassage | null;
   srs_cards: { type: string; front: string; back: string; deck: string }[];
   meta: { title_uz: string; level: string; order: number; module: string };
 }
@@ -401,6 +421,7 @@ export interface CompleteV2Response {
   perfect: boolean;
   score: number;
   passed: boolean;
+  pass_score: number;
   first_time: boolean;
   srs_added: number;
   srs_reset: number;

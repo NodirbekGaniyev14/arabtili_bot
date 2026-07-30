@@ -50,6 +50,11 @@ _MIGRATIONS = {
         "reply_text": "TEXT DEFAULT ''",
         "replied_at": "DATETIME",
     },
+    # Eski yozuvlar 1 bo'lib qoladi: 60% qoidasi kuchga kirgunicha tugatilgan
+    # darslar qayta qulflanmaydi.
+    "progress": {
+        "passed": "INTEGER DEFAULT 1",
+    },
 }
 
 

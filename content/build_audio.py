@@ -9,12 +9,19 @@ MUHIM: fayl mavjudligiga emas, MATN O'ZGARGANIGA qarab qayta yaratiladi.
 Manifest (audio_manifest.json) har fayl uchun matn xeshini saqlaydi — dars
 matni o'zgarsa audio ham yangilanadi. Ilgari mavjud fayl shunchaki
 o'tkazib yuborilardi va dars boshqa harfning ovozini chalardi.
+
+ESHITILISH (2026-07-30): yakka harf va bo'g'in ("بَ") juda qisqa chiqib
+eshitilmasdi. Endi matn uzunligiga qarab tezlik tanlanadi va 1-2 harfli
+matn IKKI MARTA, orasida pauza bilan aytiladi. Ovoz balandligi ham
+oshirildi (`VOLUME`). Tezlik/balandlik o'zgarsa manifest xeshi ham
+o'zgaradi — hamma fayl avtomatik qayta yaratiladi.
 """
 
 import argparse
 import asyncio
 import hashlib
 import json
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -23,7 +30,33 @@ import edge_tts
 
 VOICE = "ar-SA-HamedNeural"
 RATE = "-20%"  # o'rganuvchilar uchun sekinroq talaffuz
+SHORT_RATE = "-35%"  # 3-4 harfli so'z
+TINY_RATE = "-45%"  # 1-2 harf: yakka harf yoki bo'g'in
+VOLUME = "+25%"  # telefon karnayida ham aniq eshitilishi uchun
 CONCURRENCY = 8
+
+# Harakatlar, sukun, tanvin, tatweel — "harf sanog'i"ga kirmaydi
+_MARKS = re.compile(r"[ً-ْٰـۖ-ۭ\s]")
+
+
+def core_letters(text: str) -> int:
+    """Matndagi haqiqiy harflar soni (harakatlar hisobga olinmaydi)."""
+    return len(_MARKS.sub("", text))
+
+
+def voice_plan(text: str) -> tuple[str, str]:
+    """(aytiladigan matn, tezlik) — qisqa matn sekinroq va takrorlanadi.
+
+    Yakka harf/bo'g'in ("بَ") bir marta aytilganda 0.3 sekund chiqadi va
+    o'quvchi ulgurmaydi — shuning uchun ikki marta, orasida arabcha vergul
+    (pauza) bilan aytiladi.
+    """
+    n = core_letters(text)
+    if n <= 2:
+        return f"{text}، {text}", TINY_RATE
+    if n <= 4:
+        return text, SHORT_RATE
+    return text, RATE
 
 CONTENT_DIR = Path(__file__).parent
 OUT_DIR = Path(__file__).parent.parent / "webapp" / "public" / "audio"
@@ -40,6 +73,7 @@ def _text_of(obj: dict) -> str | None:
         or obj.get("arabic")
         or obj.get("hejazi_ar")
         or obj.get("transcript_ar")
+        or obj.get("text_ar")  # o'qish matnlari (content/reading/*.json)
         or obj.get("root")
     )
 
@@ -85,8 +119,11 @@ def find_conflicts() -> dict[str, dict[str, list[str]]]:
 
 
 def _key(text: str) -> str:
-    """Matn + ovoz + tezlik xeshi — shulardan biri o'zgarsa qayta yaratiladi."""
-    return hashlib.sha256(f"{VOICE}|{RATE}|{text}".encode()).hexdigest()[:16]
+    """Matn + ovoz + tezlik + balandlik xeshi — biri o'zgarsa qayta yaratiladi."""
+    spoken, rate = voice_plan(text)
+    return hashlib.sha256(
+        f"{VOICE}|{rate}|{VOLUME}|{spoken}".encode()
+    ).hexdigest()[:16]
 
 
 def load_manifest() -> dict[str, str]:
@@ -144,10 +181,13 @@ async def main() -> int:
         nonlocal made, failed, done
         out = OUT_DIR / name
         out.parent.mkdir(parents=True, exist_ok=True)  # a0/, hj/, roots/ kabi
+        spoken, rate = voice_plan(text)
         async with sem:
             for attempt in range(3):  # tarmoq uzilishi bo'lsa qayta urinadi
                 try:
-                    await edge_tts.Communicate(text, VOICE, rate=RATE).save(str(out))
+                    await edge_tts.Communicate(
+                        spoken, VOICE, rate=rate, volume=VOLUME
+                    ).save(str(out))
                     manifest[name] = _key(text)
                     made += 1
                     break

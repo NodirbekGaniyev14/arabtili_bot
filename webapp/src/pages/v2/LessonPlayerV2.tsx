@@ -8,10 +8,11 @@ import {
   type CheckpointData,
   type CompleteV2Response,
   type LessonV2Data,
+  type ReadingPassage,
   type Stats,
 } from "../../lib/api";
 import { playAudio } from "../../lib/audio";
-import ArabicText, { buildLookup } from "./ArabicText";
+import ArabicText, { buildLookup, stripHarakat, type RevealInfo } from "./ArabicText";
 import { QuizRunner } from "./exercises";
 
 const tg = () => window.Telegram?.WebApp;
@@ -23,6 +24,7 @@ type Phase =
   | { k: "vocab"; i: number }
   | { k: "hejazi" }
   | { k: "skill"; i: number } // 0 reading · 1 listening · 2 speaking · 3 writing
+  | { k: "passage" } // A2+ bosqichma-bosqich o'qish matni
   | { k: "test" }
   | { k: "result" }
   | { k: "cp" }
@@ -44,6 +46,12 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
     wrong: string[];
   } | null>(null);
   const [reward, setReward] = useState<CompleteV2Response | null>(null);
+  // O'qish matni savollari — dars natijasiga qo'shiladi
+  const [passageResult, setPassageResult] = useState<{
+    correct: number;
+    total: number;
+    wrong: string[];
+  } | null>(null);
   const [cp, setCp] = useState<CheckpointData | null>(null);
   const [cpResult, setCpResult] = useState<{
     score: number;
@@ -75,6 +83,7 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
     if (s?.listening?.audio) list.push({ k: "skill", i: 1 });
     if (s?.speaking?.task_uz) list.push({ k: "skill", i: 2 });
     if (s?.writing?.task_uz) list.push({ k: "skill", i: 3 });
+    if (lesson.passage?.text_ar) list.push({ k: "passage" });
     if (lesson.micro_test.length) list.push({ k: "test" });
     return list;
   }, [lesson]);
@@ -109,6 +118,25 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
       .catch(() => setError(true));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase]);
+
+  /** Yiqilgandan keyin qayta urinish: savollar serverdan YANGI variantda keladi. */
+  const retry = (from: "test" | "hook") => {
+    submitted.current = false;
+    setTestResult(null);
+    setPassageResult(null);
+    setReward(null);
+    setCp(null);
+    setCpResult(null);
+    setRated(0);
+    setLesson(null);
+    api
+      .getLessonV2(lessonId)
+      .then((l) => {
+        setLesson(l);
+        setPhase(from === "test" ? { k: "test" } : { k: "hook" });
+      })
+      .catch(() => setError(true));
+  };
 
   if (error) {
     return (
@@ -326,15 +354,38 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
         />
       )}
 
+      {/* ── O'QISH MATNI (A2+) ── */}
+      {phase.k === "passage" && lesson.passage && (
+        <PassagePhase
+          key={lesson.passage.lesson_id}
+          passage={lesson.passage}
+          lookup={lookup}
+          onDone={(correct, total, wrong) => {
+            setPassageResult({ correct, total, wrong });
+            next();
+          }}
+        />
+      )}
+
       {/* ── MIKRO-TEST ── */}
       {phase.k === "test" && (
         <div className="pt-4">
+          <div className="text-[11px] font-bold text-ink-soft mb-2">
+            O'tish uchun {lesson.pass_score ?? 60}% kerak
+            {lesson.test_attempt > 0 && " · yangi savollar"}
+          </div>
           <QuizRunner
+            key={`test-${lesson.test_attempt}`}
             items={lesson.micro_test}
             rootPool={lesson.roots.map((r) => r.root)}
             label="MIKRO-TEST"
             onFinish={(correct, total, wrong) => {
-              setTestResult({ correct, total, wrong });
+              // O'qish savollari ham yakuniy natijaga qo'shiladi
+              setTestResult({
+                correct: correct + (passageResult?.correct ?? 0),
+                total: total + (passageResult?.total ?? 0),
+                wrong: [...wrong, ...(passageResult?.wrong ?? [])],
+              });
               setPhase({ k: "result" });
             }}
           />
@@ -346,7 +397,11 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
         <div className="min-h-[75vh] flex flex-col items-center justify-center text-center gap-3">
           <div className="text-6xl">{reward?.perfect ? "🌟" : reward?.passed !== false ? "🎉" : "💪"}</div>
           <h1 className="text-2xl font-extrabold">
-            {reward?.perfect ? "Mukammal!" : "Dars tugadi!"}
+            {reward && !reward.passed
+              ? "Dars o'tilmadi"
+              : reward?.perfect
+                ? "Mukammal!"
+                : "Dars tugadi!"}
           </h1>
           {testResult && (
             <p className="text-ink-soft font-semibold">
@@ -357,9 +412,16 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
           {reward ? (
             <>
               {!reward.passed && (
-                <p className="text-sm text-terracotta font-bold px-8">
-                  60% dan past — darsni keyinroq qayta o'tish tavsiya etiladi
-                </p>
+                <div className="rounded-2xl bg-terracotta/10 border border-terracotta/40 p-4 text-sm font-bold text-left">
+                  <p className="text-terracotta">
+                    O'tish uchun {reward.pass_score ?? 60}% kerak — keyingi dars
+                    hozircha qulflangan.
+                  </p>
+                  <p className="mt-1.5 text-ink-soft font-semibold">
+                    Qayta topshirganda savollar boshqa bo'ladi: yodlab emas,
+                    tushunib o'tishingiz kerak.
+                  </p>
+                </div>
               )}
               <div className="rounded-2xl bg-gold-soft border border-gold/30 px-8 py-4">
                 <span className="text-3xl font-extrabold text-emerald-dark">
@@ -429,12 +491,35 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
                   📋 Nazorat testi (oxirgi 5 dars)
                 </button>
               )}
-              <button
-                onClick={() => onFinish(reward.stats)}
-                className="w-full rounded-2xl bg-emerald-deep py-4 text-white font-extrabold text-lg active:scale-[0.98] transition-transform"
-              >
-                Davom etish
-              </button>
+              {reward.passed ? (
+                <button
+                  onClick={() => onFinish(reward.stats)}
+                  className="w-full rounded-2xl bg-emerald-deep py-4 text-white font-extrabold text-lg active:scale-[0.98] transition-transform"
+                >
+                  Davom etish
+                </button>
+              ) : (
+                <>
+                  <button
+                    onClick={() => retry("test")}
+                    className="w-full rounded-2xl bg-emerald-deep py-4 text-white font-extrabold text-lg active:scale-[0.98] transition-transform"
+                  >
+                    🔁 Testni qayta topshirish
+                  </button>
+                  <button
+                    onClick={() => retry("hook")}
+                    className="w-full rounded-2xl bg-card border border-cardline py-3.5 font-extrabold active:scale-[0.98] transition-transform"
+                  >
+                    📖 Darsni qaytadan ko'rish
+                  </button>
+                  <button
+                    onClick={() => onFinish(reward.stats)}
+                    className="text-sm font-bold text-ink-soft underline underline-offset-4 py-1"
+                  >
+                    Keyinroq qaytaman
+                  </button>
+                </>
+              )}
             </>
           ) : (
             <div className="w-8 h-8 rounded-lg bg-emerald-deep animate-pulse" />
@@ -488,6 +573,112 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
         </div>
       )}
     </Shell>
+  );
+}
+
+/* ── O'qish matni fazasi (A2 dan boshlab, bosqichma-bosqich) ── */
+
+const HARAKAT_LABEL: Record<string, string> = {
+  full: "harakatlar to'liq",
+  partial: "harakatlar qisman",
+  minimal: "harakatsiz matn",
+};
+
+function PassagePhase({
+  passage,
+  lookup,
+  onDone,
+}: {
+  passage: ReadingPassage;
+  lookup: Map<string, RevealInfo>;
+  onDone: (correct: number, total: number, wrong: string[]) => void;
+}) {
+  const [step, setStep] = useState<"read" | "quiz">("read");
+  const [showText, setShowText] = useState(true);
+
+  // Dars lug'ati + matn lug'atchasi (tap-to-reveal shu ikkisidan qidiradi)
+  const merged = useMemo(() => {
+    const m = new Map(lookup);
+    for (const g of passage.glossary) {
+      const key = stripHarakat(g.ar).replace(/[.,؟!·:؛]/g, "");
+      if (!m.has(key)) m.set(key, { ar: g.ar, uz: g.uz });
+    }
+    return m;
+  }, [lookup, passage]);
+
+  const textPanel = (
+    <div className="rounded-2xl bg-card border border-cardline p-5 text-[26px] leading-loose">
+      <ArabicText text={passage.text_ar} lookup={merged} />
+    </div>
+  );
+
+  if (step === "read") {
+    return (
+      <div className="pt-4">
+        <SectionLabel
+          text={`📖 O'QISH · ${passage.stage}/${passage.stages_total}-BOSQICH`}
+        />
+        <div className="flex items-center justify-between mb-2">
+          <span className="font-extrabold">{passage.title_uz}</span>
+          <span className="text-[11px] font-bold text-ink-soft">
+            {passage.words} so'z · {HARAKAT_LABEL[passage.harakat] ?? ""}
+          </span>
+        </div>
+        {textPanel}
+        <div className="mt-3 flex items-center gap-3">
+          <button
+            onClick={() => playAudio(passage.audio)}
+            className="w-12 h-12 rounded-full bg-emerald-deep text-white text-lg flex items-center justify-center active:scale-90 transition-transform"
+            aria-label="Matnni eshitish"
+          >
+            🔊
+          </button>
+          <p className="text-[11px] text-ink-soft font-semibold flex-1">
+            Avval o'zingiz o'qing, keyin eshitib solishtiring. Har so'zga bosib
+            ma'nosini ko'rish mumkin.
+          </p>
+        </div>
+
+        {passage.glossary.length > 0 && (
+          <div className="mt-4 rounded-2xl bg-gold-soft/50 border border-gold/30 p-4">
+            <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft mb-2">
+              YANGI SO'ZLAR
+            </div>
+            {passage.glossary.map((g) => (
+              <div
+                key={g.ar}
+                className="flex items-center justify-between gap-3 py-1"
+              >
+                <span className="text-[13px] font-bold flex-1">{g.uz}</span>
+                <span className="font-arabic text-xl" dir="rtl">
+                  {g.ar}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <NextBtn onClick={() => setStep("quiz")} label="Savollarga o'tish" />
+      </div>
+    );
+  }
+
+  return (
+    <div className="pt-4">
+      <SectionLabel text="📖 MATN SAVOLLARI" />
+      <button
+        onClick={() => setShowText((v) => !v)}
+        className="mb-3 text-xs font-extrabold text-emerald-deep underline underline-offset-4"
+      >
+        {showText ? "Matnni yashirish" : "Matnni ko'rish"}
+      </button>
+      {showText && <div className="mb-4 text-[20px]">{textPanel}</div>}
+      <QuizRunner
+        items={passage.questions}
+        label="O'QISH"
+        onFinish={onDone}
+      />
+    </div>
   );
 }
 

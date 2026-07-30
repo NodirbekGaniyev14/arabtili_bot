@@ -128,7 +128,9 @@ async def exam_start(
             status_code=429,
             detail=f"Qayta topshirish: {cooldown.isoformat()} dan keyin",
         )
-    exam = exam_svc.build_exam(level)
+    # Qayta topshirishda oldingi urinishlar savollari chetlab o'tiladi
+    seen = await exam_svc.seen_questions(session, user.id, level)
+    exam = exam_svc.build_exam(level, seen)
     attempt = await exam_svc.start_attempt(session, user.id, level, exam)
     return {"attempt_id": attempt.id, **exam}
 
@@ -350,7 +352,29 @@ async def checkpoint_start(
             detail=f"Mini-imtihon uchun {cp['need']} ta dars kerak — hozir {done} ta",
         )
 
-    mini = checkpoint_svc.build_mini(level, percent)
+    # Oldingi urinishlarda tushgan savollarni chetlab o'tamiz
+    from services.qbank import qhash
+
+    prev = (
+        await session.execute(
+            select(ExamAttempt.questions_json).where(
+                ExamAttempt.user_id == user.id,
+                ExamAttempt.level == level,
+                ExamAttempt.kind == "mini",
+                ExamAttempt.checkpoint == percent,
+            )
+        )
+    ).scalars().all()
+    seen: set[str] = set()
+    for raw in prev:
+        try:
+            for it in json.loads(raw or "{}").get("items") or []:
+                if isinstance(it, dict):
+                    seen.add(qhash(it))
+        except ValueError:
+            continue
+
+    mini = checkpoint_svc.build_mini(level, percent, seen_hashes=seen)
     if not mini:
         raise HTTPException(status_code=404, detail="Savol banki bo'sh")
 
@@ -436,7 +460,9 @@ async def _done_lessons(session: AsyncSession, user_id: int) -> list[str]:
 
     rows = (
         await session.execute(
-            select(Progress.lesson_id).where(Progress.user_id == user_id).distinct()
+            select(Progress.lesson_id)
+            .where(Progress.user_id == user_id, Progress.passed == 1)
+            .distinct()
         )
     ).scalars().all()
     done = set(rows)

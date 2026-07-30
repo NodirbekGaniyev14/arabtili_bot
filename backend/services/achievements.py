@@ -78,7 +78,7 @@ async def _metrics(session: AsyncSession, user_id: int, streak: int) -> dict:
         (
             await session.execute(
                 select(Progress.lesson_id)
-                .where(Progress.user_id == user_id)
+                .where(Progress.user_id == user_id, Progress.passed == 1)
                 .distinct()
             )
         ).scalars()

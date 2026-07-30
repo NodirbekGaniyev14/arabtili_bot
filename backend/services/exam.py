@@ -11,6 +11,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from config import BASE_DIR
 from db.models import ExamAttempt, Progress
 from services.curriculum import load_curriculum, written_lesson_ids
+from services.qbank import pick_fresh, qhash
 
 EXAMS_DIR = BASE_DIR / "content" / "exams"
 COOLDOWN_HOURS = 24
@@ -48,7 +49,9 @@ async def level_progress(
         return 0, 0
     done_rows = (
         await session.execute(
-            select(Progress.lesson_id).where(Progress.user_id == user_id).distinct()
+            select(Progress.lesson_id)
+            .where(Progress.user_id == user_id, Progress.passed == 1)
+            .distinct()
         )
     ).scalars().all()
     return len(ids & set(done_rows)), len(ids)
@@ -159,17 +162,48 @@ async def already_passed(
     return row is not None
 
 
-def build_exam(level: str) -> dict | None:
-    """Pooldan tasodifiy imtihon yig'adi."""
+async def seen_questions(
+    session: AsyncSession, user_id: int, level: str
+) -> set[str]:
+    """Foydalanuvchi shu daraja imtihonida ILGARI KO'RGAN savollar xeshi.
+
+    Yiqilgandan keyin 24 soat o'tib qayta topshirilganda AYNAN o'sha test
+    tushmasligi kerak (foydalanuvchi talabi) — shuning uchun oldingi
+    urinishlardagi savollar chetlab o'tiladi.
+    """
+    rows = (
+        await session.execute(
+            select(ExamAttempt.questions_json).where(
+                ExamAttempt.user_id == user_id,
+                ExamAttempt.level == level,
+                ExamAttempt.kind == "level",
+            )
+        )
+    ).scalars().all()
+
+    seen: set[str] = set()
+    for raw in rows:
+        try:
+            data = json.loads(raw or "{}")
+        except ValueError:
+            continue
+        for section in ("reading", "listening", "writing", "speaking", "passages"):
+            for item in data.get(section) or []:
+                if isinstance(item, dict):
+                    seen.add(qhash(item))
+    return seen
+
+
+def build_exam(level: str, seen: set[str] | None = None) -> dict | None:
+    """Pooldan imtihon yig'adi — imkon qadar KO'RILMAGAN savollardan."""
     pool = load_pool(level)
     if not pool:
         return None
     cfg = pool["config"]
+    rnd = random.Random()
 
     def sample(items: list, n: int) -> list:
-        items = list(items)
-        random.shuffle(items)
-        return items[: min(n, len(items))]
+        return pick_fresh(list(items), n, seen, rnd)
 
     return {
         "level": level,
