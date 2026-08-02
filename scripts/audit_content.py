@@ -70,9 +70,18 @@ def check_items(
             problems.append(f"{tag}: audio fayl topilmadi — {it['audio']!r}")
 
 
+# Lotin harfiga o'xshab ketadigan kirill harflari — yozuvda jimgina sizib
+# kiradi (masalan «fоil» dagi «о»), matn qidiruvda va TTS da buziladi.
+CYRILLIC_LOOKALIKES = "оеасрухОЕАСРУХіїқғҳ"
+
+
 def audit_lesson(path: Path) -> list[str]:
     problems: list[str] = []
-    data = json.loads(path.read_text(encoding="utf-8"))
+    raw = path.read_text(encoding="utf-8")
+    found = {c: raw.count(c) for c in CYRILLIC_LOOKALIKES if c in raw}
+    if found:
+        problems.append(f"KIRILL harflari sizib kirgan: {found}")
+    data = json.loads(raw)
 
     micro = data.get("micro_test") or []
     if len(micro) < MIN_MICRO_TEST:
