@@ -1,0 +1,310 @@
+{
+ "id": "b2-16",
+ "level": "B2",
+ "module": "sarf-adv",
+ "order": 16,
+ "title_uz": "Sarf ustaxonasi",
+ "title_ar": "وَرْشَةُ الصَّرْفِ: مِنَ الجَذْرِ إِلَى عِشْرِينَ كَلِمَةً",
+ "can_do_uz": "Bitta o'zakdan yigirmatagacha so'z yasay va ularning ma'nolarini vazndan chiqara olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-15"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Bitta o'zak — yigirma so'z. ع م ل ni oling: عَمَلَ (ishladi), عَامِل (ishchi), مَعْمَل (zavod), عَمَلِيَّة (operatsiya), اِسْتِعْمَال (foydalanish), مُعَامَلَة (muomala)... Hammasi bir ildizdan. Bu — arab tilining eng katta tejamkorligi: 20 so'zni alohida yodlash o'rniga bitta o'zak va vaznlarni bilasiz. Bugun shu mahoratni mustahkamlaymiz.",
+ "grammar": {
+  "point_ar": "الاِشْتِقَاقُ مِنَ الجَذْرِ الوَاحِدِ",
+  "explanation_uz": "ISHTIQOQ (الاِشْتِقَاق) — bir o'zakdan so'z yasash. Ish tartibi: (1) o'zakni aniqlang, (2) kerakli MA'NO uchun vaznni tanlang, (3) o'zak harflarini vaznga joylang. ASOSIY VAZNLAR JADVALI. Bajaruvchi — فَاعِل (عَامِل ishchi), مُفَعِّل (مُعَلِّم o'qituvchi), مُفْتَعِل (مُسْتَعْمِل foydalanuvchi). Bajarilgan — مَفْعُول (مَعْمُول qilingan), مُفَعَّل (مُعَلَّم o'rgatilgan). Joy — مَفْعَل/مَفْعِل (مَعْمَل zavod, مَكْتَب ofis). Asbob — مِفْعَال/مِفْعَل (مِفْتَاح kalit, مِقْيَاس o'lchagich). Masdarlar — فَعْل (عَمَل ish), تَفْعِيل (تَعْلِيم ta'lim), إِفْعَال (إِعْلَام axborot), اِسْتِفْعَال (اِسْتِعْمَال foydalanish), مُفَاعَلَة (مُعَامَلَة muomala). Mavhum ot — فِعَالَة/ـِيَّة (عَمَلِيَّة operatsiya). Sifat — فَعِيل (عَظِيم ulug'), فَعَّال (فَعَّال samarali). AMALIY QOIDA: notanish so'z uchrasa — o'zakni ajrating, vaznni taniysiz, ma'noni 80% aniqlaysiz.",
+  "table": [
+   {"ar": "عَمِلَ", "uz": "ishladi (I bob fe'l)", "form": "فَعِلَ"},
+   {"ar": "عَامِل", "uz": "ishchi (bajaruvchi)", "form": "فَاعِل"},
+   {"ar": "مَعْمَل", "uz": "zavod (joy)", "form": "مَفْعَل"},
+   {"ar": "عَمَلِيَّة", "uz": "operatsiya, jarayon", "form": "فَعَلِيَّة"},
+   {"ar": "اِسْتِعْمَال", "uz": "foydalanish (X bob masdari)", "form": "اِسْتِفْعَال"},
+   {"ar": "مُعَامَلَة", "uz": "muomala (III bob masdari)", "form": "مُفَاعَلَة"}
+  ],
+  "common_mistakes_uz": [
+   "Vaznni e'tiborsiz qoldirib faqat o'zakdan ma'no chiqarish: مَعْمَل (zavod) ≠ عَامِل (ishchi).",
+   "مِفْعَال (asbob) va مَفْعَل (joy) ni chalkashtirish: مِفْتَاح kalit, مَفْتَح ochilish joyi.",
+   "Har o'zakdan har vaznni yasash mumkin deb o'ylash — ba'zi shakllar tilda ishlatilmaydi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع م ل",
+   "meaning_uz": "ish qilish, amal",
+   "uz_cognates": ["amal", "muomala", "amaliyot"],
+   "derived": [
+    {"ar": "عَامِل", "uz": "ishchi; omil", "pattern": "فَاعِل"},
+    {"ar": "مَعْمَل", "uz": "zavod, laboratoriya", "pattern": "مَفْعَل"},
+    {"ar": "عَمَلِيَّة", "uz": "operatsiya, jarayon", "pattern": "فَعَلِيَّة"},
+    {"ar": "اِسْتِعْمَال", "uz": "foydalanish", "pattern": "اِسْتِفْعَال"},
+    {"ar": "مُعَامَلَة", "uz": "muomala", "pattern": "مُفَاعَلَة"}
+   ]
+  },
+  {
+   "root": "ك ت ب",
+   "meaning_uz": "yozish",
+   "uz_cognates": ["kitob", "kotib", "maktab", "maktub"],
+   "derived": [
+    {"ar": "كَاتِب", "uz": "yozuvchi", "pattern": "فَاعِل"},
+    {"ar": "مَكْتَبَة", "uz": "kutubxona", "pattern": "مَفْعَلَة"},
+    {"ar": "مُكَاتَبَة", "uz": "yozishmalar", "pattern": "مُفَاعَلَة"},
+    {"ar": "اِكْتِتَاب", "uz": "obuna, yozilish", "pattern": "اِفْتِعَال"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "اِشْتِقَاق",
+   "translit": "ishtiqāq",
+   "uz": "so'z yasalishi (o'zakdan)",
+   "root": "ش ق ق",
+   "pattern": "اِفْتِعَال",
+   "pos": "ot",
+   "audio": "b2/ishtiqaq2.mp3",
+   "example_ar": "الاِشْتِقَاقُ أَسَاسُ العَرَبِيَّةِ.",
+   "example_uz": "Ishtiqoq — arab tilining asosi.",
+   "srs": true
+  },
+  {
+   "ar": "مَعْمَل",
+   "translit": "maʿmal",
+   "uz": "zavod, laboratoriya",
+   "root": "ع م ل",
+   "pattern": "مَفْعَل",
+   "pos": "ot",
+   "audio": "b2/mamal.mp3",
+   "example_ar": "يَعْمَلُ فِي مَعْمَلٍ كَبِيرٍ.",
+   "example_uz": "Katta zavodda ishlaydi.",
+   "srs": true
+  },
+  {
+   "ar": "عَمَلِيَّة",
+   "translit": "ʿamaliyya",
+   "uz": "operatsiya, jarayon (o'zbekcha 'amaliyot')",
+   "root": "ع م ل",
+   "pattern": "فَعَلِيَّة",
+   "pos": "ot",
+   "audio": "b2/amaliyya.mp3",
+   "example_ar": "نَجَحَتِ العَمَلِيَّةُ.",
+   "example_uz": "Operatsiya muvaffaqiyatli o'tdi.",
+   "srs": true
+  },
+  {
+   "ar": "اِسْتِعْمَال",
+   "translit": "istiʿmāl",
+   "uz": "foydalanish, ishlatish (o'zbekcha 'iste'mol')",
+   "root": "ع م ل",
+   "pattern": "اِسْتِفْعَال",
+   "pos": "ot",
+   "audio": "b2/istimal.mp3",
+   "example_ar": "اِسْتِعْمَالُ الهَاتِفِ مَمْنُوعٌ.",
+   "example_uz": "Telefondan foydalanish man qilingan.",
+   "srs": true
+  },
+  {
+   "ar": "مُعَامَلَة",
+   "translit": "muʿāmala",
+   "uz": "muomala, munosabat (o'zbekcha 'muomala')",
+   "root": "ع م ل",
+   "pattern": "مُفَاعَلَة",
+   "pos": "ot",
+   "audio": "b2/muamala.mp3",
+   "example_ar": "مُعَامَلَتُهُ حَسَنَةٌ.",
+   "example_uz": "Uning muomalasi yaxshi.",
+   "srs": true
+  },
+  {
+   "ar": "مِقْيَاس",
+   "translit": "miqyās",
+   "uz": "o'lchagich, mezon (asbob vazni)",
+   "root": "ق ي س",
+   "pattern": "مِفْعَال",
+   "pos": "ot",
+   "audio": "b2/miqyas.mp3",
+   "example_ar": "المِقْيَاسُ دَقِيقٌ.",
+   "example_uz": "O'lchagich aniq.",
+   "srs": true
+  },
+  {
+   "ar": "فَعَّال",
+   "translit": "faʿʿāl",
+   "uz": "samarali, faol (o'zbekcha 'faol')",
+   "root": "ف ع ل",
+   "pattern": "فَعَّال",
+   "pos": "sifat",
+   "audio": "b2/faaal.mp3",
+   "example_ar": "حَلٌّ فَعَّالٌ وَسَرِيعٌ.",
+   "example_uz": "Samarali va tez yechim.",
+   "srs": true
+  },
+  {
+   "ar": "مُكَاتَبَة",
+   "translit": "mukātaba",
+   "uz": "yozishmalar",
+   "root": "ك ت ب",
+   "pattern": "مُفَاعَلَة",
+   "pos": "ot",
+   "audio": "b2/mukataba.mp3",
+   "example_ar": "اِسْتَمَرَّتِ المُكَاتَبَةُ سَنَةً.",
+   "example_uz": "Yozishmalar bir yil davom etdi.",
+   "srs": true
+  },
+  {
+   "ar": "وَزْن",
+   "translit": "wazn",
+   "uz": "vazn, qolip (o'zbekcha 'vazn')",
+   "root": "و ز ن",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/wazn_form.mp3",
+   "example_ar": "الوَزْنُ يُحَدِّدُ المَعْنَى.",
+   "example_uz": "Vazn ma'noni belgilaydi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "من جذر «ع م ل» تخرج كلمات كثيرة: عامل في المعمل، وعملية في المستشفى، واستعمال للهاتف، ومعاملة بين الناس. ومن «ك ت ب» تخرج: كاتب ومكتبة ومكاتبة واكتتاب. يقول الأستاذ: لا تحفظ الكلمات وحدها، بل احفظ الجذر والوزن، فالوزن يحدّد المعنى. من فهم هذا صار قاموسه فعّالًا، وقرأ نصًّا جديدًا دون خوف.",
+   "questions": [
+    {"q_uz": "«معمل» va «عامل» farqi nimada?", "a": "مَفْعَل — joy (zavod), فَاعِل — bajaruvchi (ishchi)"},
+    {"q_uz": "Ustoz qanday maslahat berdi?", "a": "So'zni emas, o'zak va vaznni yodlang"},
+    {"q_uz": "«اكتتاب» qaysi o'zakdan?", "a": "ك ت ب — obuna, yozilish"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-16-listen.mp3",
+   "transcript_ar": "عَامِلٌ فِي مَعْمَلٍ، وَعَمَلِيَّةٌ فِي المُسْتَشْفَى، وَاسْتِعْمَالٌ لِلْهَاتِفِ، وَمُعَامَلَةٌ بَيْنَ النَّاسِ.",
+   "questions": [
+    {"q_uz": "Nechta so'z bitta o'zakdan?", "a": "To'rttasi ham ع م ل o'zagidan"},
+    {"q_uz": "Qaysi so'z joyni bildiradi?", "a": "مَعْمَل — zavod"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "ع م ل o'zagidan beshta so'zni ovoz chiqarib ayting va har birining ma'nosini qo'shing.",
+   "target_ar": ["عَامِل", "مَعْمَل", "عَمَلِيَّة", "اِسْتِعْمَال", "مُعَامَلَة"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Bitta o'zak tanlang (masalan د ر س yoki ن ظ ر) va undan kamida 8 so'z yozing: bajaruvchi, bajarilgan, joy, asbob, masdar, mavhum ot.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«مَعْمَل» qaysi ma'noni beradi?",
+   "q_ar": "مَعْمَل",
+   "options": ["Zavod (joy)", "Ishchi", "Ish", "Foydalanish"],
+   "answer": "Zavod (joy)",
+   "explain_uz": "مَفْعَل — joy vazni.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "build_word",
+   "q_uz": "O'zak va vazndan so'z yasang",
+   "q_ar": "",
+   "options": [],
+   "answer": "مِفْتَاح",
+   "explain_uz": "ف ت ح + مِفْعَال = مِفْتَاح (kalit — asbob).",
+   "audio": "",
+   "root": "ف ت ح",
+   "pattern": "مِفْعَال",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«اِسْتِعْمَال» qaysi bobning masdari?",
+   "q_ar": "اِسْتِعْمَال",
+   "options": ["X bob (اِسْتَفْعَلَ)", "III bob (فَاعَلَ)", "II bob (فَعَّلَ)", "VIII bob (اِفْتَعَلَ)"],
+   "answer": "X bob (اِسْتَفْعَلَ)",
+   "explain_uz": "اِسْتِفْعَال — X bob masdari.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Asbob (qurol) vazni qaysi?",
+   "q_ar": "",
+   "options": ["مِفْعَال", "مَفْعَل", "فَاعِل", "فَعِيل"],
+   "answer": "مِفْعَال",
+   "explain_uz": "مِفْتَاح, مِقْيَاس — asbob vaznlari.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "مُعَامَلَة",
+   "options": [],
+   "answer": "muomala",
+   "explain_uz": "مُعَامَلَة — muomala, munosabat.",
+   "audio": "b2/muamala.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«مُكَاتَبَة، اِكْتِتَاب، مَكْتَبَة» qaysi o'zakdan?",
+   "q_ar": "مُكَاتَبَة",
+   "options": ["ك ت ب", "ك ب ت", "ت ك ب", "ك ث ب"],
+   "answer": "ك ت ب",
+   "explain_uz": "Hammasi «yozish» o'zagidan.",
+   "audio": "",
+   "root": "ك ت ب",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Notanish so'z uchrasa birinchi nima qilasiz?",
+   "q_ar": "",
+   "options": [
+    "O'zakni ajratib, vaznni aniqlayman",
+    "Darrov lug'atga qarayman",
+    "Tashlab ketaman",
+    "Tarjimonga beraman"
+   ],
+   "answer": "O'zakni ajratib, vaznni aniqlayman",
+   "explain_uz": "O'zak + vazn ma'noning 80% ini beradi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Vazn ma'noni belgilaydi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "الوَزْنُ يُحَدِّدُ المَعْنَى",
+   "explain_uz": "Mubtado (marfu') + fe'lli xabar + maf'ul.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["الوَزْنُ", "يُحَدِّدُ", "المَعْنَى"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع م ل", "back": "ish — omil/ma'mal/amaliyot/iste'mol", "deck": "msa"},
+  {"type": "root", "front": "ك ت ب", "back": "yozish — kotib/maktaba/mukotaba", "deck": "msa"},
+  {"type": "pattern", "front": "مِفْعَال", "back": "asbob vazni: مِفْتَاح, مِقْيَاس", "deck": "msa"},
+  {"type": "pattern", "front": "مُفَاعَلَة", "back": "III bob masdari: مُعَامَلَة, مُكَاتَبَة", "deck": "msa"},
+  {"type": "word", "front": "اِشْتِقَاق", "back": "so'z yasalishi", "deck": "msa"},
+  {"type": "word", "front": "مَعْمَل", "back": "zavod, laboratoriya", "deck": "msa"},
+  {"type": "word", "front": "عَمَلِيَّة", "back": "operatsiya, jarayon", "deck": "msa"},
+  {"type": "word", "front": "اِسْتِعْمَال", "back": "foydalanish", "deck": "msa"},
+  {"type": "word", "front": "مُعَامَلَة", "back": "muomala", "deck": "msa"},
+  {"type": "word", "front": "مِقْيَاس", "back": "o'lchagich, mezon", "deck": "msa"},
+  {"type": "word", "front": "فَعَّال", "back": "samarali, faol", "deck": "msa"},
+  {"type": "word", "front": "وَزْن", "back": "vazn, qolip", "deck": "msa"}
+ ]
+}

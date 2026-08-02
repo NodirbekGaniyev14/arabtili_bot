@@ -1,0 +1,320 @@
+{
+ "id": "b2-18",
+ "level": "B2",
+ "module": "balagha",
+ "order": 18,
+ "title_uz": "الاستعارة والمجاز",
+ "title_ar": "الاِسْتِعَارَةُ وَالمَجَازُ",
+ "can_do_uz": "Matndagi majoziy ma'noni haqiqiy ma'nodan ajrata olaman va gazeta sarlavhalarini to'g'ri tushunaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-17"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«Bozor qizidi», «narxlar uchdi», «hukumat qo'l cho'zdi» — bularning hech biri so'zma-so'z emas. Arab gazetasi ham xuddi shunday yozadi: «اِرْتَفَعَتِ الأَسْعَارُ» (narxlar ko'tarildi), «الحَرْبُ أَكَلَتِ الأَخْضَرَ وَاليَابِسَ». Agar majozni bilmasangiz, matnni noto'g'ri tushunasiz. Isti'ora — bu «qisqartirilgan tashbeh»: o'xshatishning bir tomoni butunlay tushib qoladi.",
+ "grammar": {
+  "point_ar": "الحَقِيقَةُ وَالمَجَازُ · الاِسْتِعَارَةُ التَّصْرِيحِيَّةُ وَالمَكْنِيَّةُ",
+  "explanation_uz": "HAQIQAT (الحَقِيقَة) — so'z o'z ma'nosida: رَأَيْتُ أَسَدًا فِي الغَابَةِ (o'rmonda sher ko'rdim). MAJOZ (المَجَاز) — so'z ko'chma ma'noda, va buni ko'rsatuvchi QARINA (belgi) bo'ladi: رَأَيْتُ أَسَدًا يَحْمِلُ سِلَاحًا (qurol ko'targan «sher» — demak inson). ISTI'ORA (الاِسْتِعَارَة) — tashbehning bir tomoni tushirilgan turi. Ikki xil: 1) TASRIHIYA (تَصْرِيحِيَّة) — o'xshatiluvchi tushirilgan, faqat o'xshatilgan narsa qolgan: رَأَيْتُ أَسَدًا فِي المَحْكَمَةِ (sudda «sherni» ko'rdim = jasur odam). 2) MAKNIYA (مَكْنِيَّة) — o'xshatilgan narsa tushirilgan, faqat uning belgisi qolgan: نَطَقَتِ الحَقِيقَةُ (haqiqat gapirdi — haqiqat insonga o'xshatilgan, «gapirish» belgisi qolgan). MAJOZ MURSAL (المَجَاز المُرْسَل) — o'xshatishsiz ko'chim, bog'lanish boshqa: شَرِبْتُ كَأْسًا (piyola emas, ichidagini ichdim — idish/mazmun bog'lanishi). GAZETA MISOLLARI: «فَتَحَتِ الحُكُومَةُ البَابَ لِلاِسْتِثْمَارِ» (eshik ochdi = imkon berdi), «الاِقْتِصَادُ يَتَنَفَّسُ» (iqtisod nafas oladi = tiklanmoqda).",
+  "table": [
+   {"ar": "رَأَيْتُ أَسَدًا فِي الغَابَةِ", "uz": "Haqiqiy ma'no — o'rmondagi sher", "form": "حَقِيقَة"},
+   {"ar": "رَأَيْتُ أَسَدًا يَحْمِلُ سِلَاحًا", "uz": "Majoz — jasur inson (qarina: qurol)", "form": "اِسْتِعَارَة تَصْرِيحِيَّة"},
+   {"ar": "نَطَقَتِ الحَقِيقَةُ", "uz": "Haqiqat gapirdi — jonlantirish", "form": "اِسْتِعَارَة مَكْنِيَّة"},
+   {"ar": "شَرِبْتُ كَأْسًا", "uz": "Piyolani emas, ichidagini ichdim", "form": "مَجَاز مُرْسَل"},
+   {"ar": "فَتَحَتِ الحُكُومَةُ البَابَ", "uz": "Imkon yaratdi (eshik ochdi)", "form": "مَجَاز"},
+   {"ar": "الاِقْتِصَادُ يَتَنَفَّسُ", "uz": "Iqtisod tiklanmoqda", "form": "اِسْتِعَارَة مَكْنِيَّة"}
+  ],
+  "common_mistakes_uz": [
+   "Majozni so'zma-so'z tarjima qilish: «sher qurol ko'tardi» ✗ → «jasur odam».",
+   "Qarinani (ko'chma ma'noni ko'rsatuvchi belgi) izlamaslik — usiz haqiqat/majoz farqi bilinmaydi.",
+   "Har ko'chma ma'noni isti'ora deyish — o'xshatishsiz ko'chim majoz mursal deyiladi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع و ر",
+   "meaning_uz": "qarzga olish — isti'ora «so'zni qarzga olish»",
+   "uz_cognates": ["oriyat", "isti'ora"],
+   "derived": [
+    {"ar": "اِسْتِعَارَة", "uz": "ko'chim, majoziy qo'llash", "pattern": "اِسْتِفْعَالَة"},
+    {"ar": "اِسْتَعَارَ", "uz": "qarzga oldi", "pattern": "اِسْتَفْعَلَ"},
+    {"ar": "عَارِيَة", "uz": "vaqtincha berilgan narsa", "pattern": "فَاعِلَة"}
+   ]
+  },
+  {
+   "root": "ج و ز",
+   "meaning_uz": "o'tish, ruxsat",
+   "uz_cognates": ["majoz", "joiz"],
+   "derived": [
+    {"ar": "مَجَاز", "uz": "ko'chma ma'no", "pattern": "مَفْعَل"},
+    {"ar": "جَائِز", "uz": "mumkin, joiz", "pattern": "فَاعِل"},
+    {"ar": "إِجَازَة", "uz": "ta'til; ruxsat", "pattern": "إِفْعَالَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "اِسْتِعَارَة",
+   "translit": "istiʿāra",
+   "uz": "isti'ora — ko'chma qo'llash",
+   "root": "ع و ر",
+   "pattern": "اِسْتِفْعَالَة",
+   "pos": "ot",
+   "audio": "b2/istiara.mp3",
+   "example_ar": "الاِسْتِعَارَةُ تَشْبِيهٌ مُخْتَصَرٌ.",
+   "example_uz": "Isti'ora — qisqartirilgan o'xshatish.",
+   "srs": true
+  },
+  {
+   "ar": "مَجَاز",
+   "translit": "majāz",
+   "uz": "majoz, ko'chma ma'no (o'zbekcha 'majoz')",
+   "root": "ج و ز",
+   "pattern": "مَفْعَل",
+   "pos": "ot",
+   "audio": "b2/majaz.mp3",
+   "example_ar": "الجُمْلَةُ فِيهَا مَجَازٌ وَاضِحٌ.",
+   "example_uz": "Jumlada aniq majoz bor.",
+   "srs": true
+  },
+  {
+   "ar": "حَقِيقَة",
+   "translit": "ḥaqīqa",
+   "uz": "haqiqat; asl ma'no (o'zbekcha 'haqiqat')",
+   "root": "ح ق ق",
+   "pattern": "فَعِيلَة",
+   "pos": "ot",
+   "audio": "b2/haqiqa.mp3",
+   "example_ar": "هَذَا كَلَامٌ عَلَى الحَقِيقَةِ.",
+   "example_uz": "Bu — asl ma'nodagi gap.",
+   "srs": true
+  },
+  {
+   "ar": "قَرِينَة",
+   "translit": "qarīna",
+   "uz": "qarina — ko'chma ma'noni ko'rsatuvchi belgi",
+   "root": "ق ر ن",
+   "pattern": "فَعِيلَة",
+   "pos": "ot",
+   "audio": "b2/qarina.mp3",
+   "example_ar": "القَرِينَةُ تَمْنَعُ المَعْنَى الحَقِيقِيَّ.",
+   "example_uz": "Qarina asl ma'noni to'sadi.",
+   "srs": true
+  },
+  {
+   "ar": "سِلَاح",
+   "translit": "silāḥ",
+   "uz": "qurol (o'zbekcha 'silah')",
+   "root": "س ل ح",
+   "pattern": "فِعَال",
+   "pos": "ot",
+   "audio": "b2/silah.mp3",
+   "example_ar": "العِلْمُ سِلَاحٌ قَوِيٌّ.",
+   "example_uz": "Ilm — kuchli qurol.",
+   "srs": true
+  },
+  {
+   "ar": "يَتَنَفَّسُ",
+   "translit": "yatanaffasu",
+   "uz": "nafas oladi (majozda: tiklanadi)",
+   "root": "ن ف س",
+   "pattern": "يَتَفَعَّلُ",
+   "pos": "fe'l",
+   "audio": "b2/yatanaffas.mp3",
+   "example_ar": "الاِقْتِصَادُ يَتَنَفَّسُ مِنْ جَدِيدٍ.",
+   "example_uz": "Iqtisod yangidan nafas olmoqda.",
+   "srs": true
+  },
+  {
+   "ar": "نَطَقَ",
+   "translit": "naṭaqa",
+   "uz": "gapirdi, tilga keldi",
+   "root": "ن ط ق",
+   "pattern": "فَعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/nataqa.mp3",
+   "example_ar": "نَطَقَتِ الأَرْقَامُ بِالحَقِيقَةِ.",
+   "example_uz": "Raqamlar haqiqatni so'zladi.",
+   "srs": true
+  },
+  {
+   "ar": "أَخْضَر",
+   "translit": "akhḍar",
+   "uz": "yashil, ko'kargan",
+   "root": "خ ض ر",
+   "pattern": "أَفْعَل",
+   "pos": "sifat",
+   "audio": "b2/akhdar.mp3",
+   "example_ar": "الوَادِي أَخْضَرُ بَعْدَ المَطَرِ.",
+   "example_uz": "Yomg'irdan keyin vodiy yashil.",
+   "srs": true
+  },
+  {
+   "ar": "اِسْتِثْمَار",
+   "translit": "istithmār",
+   "uz": "investitsiya, sarmoya kiritish",
+   "root": "ث م ر",
+   "pattern": "اِسْتِفْعَال",
+   "pos": "ot",
+   "audio": "b2/istithmar.mp3",
+   "example_ar": "فَتَحَتِ الحُكُومَةُ البَابَ لِلاِسْتِثْمَارِ.",
+   "example_uz": "Hukumat investitsiyaga yo'l ochdi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "كتبت الصحيفة: الاقتصاد يتنفّس من جديد بعد سنة صعبة. وأضافت أنّ الحكومة فتحت الباب للاستثمار، وأنّ الأرقام نطقت بالحقيقة. في الصفحة الأخيرة مقال آخر يقول: رأينا أسدًا في قاعة المحكمة، دافع عن الضعفاء بلا خوف. القارئ الذكي يعرف أنّ الأسد هنا رجل شجاع، لأن القرينة واضحة: القاعة والدفاع.",
+   "questions": [
+    {"q_uz": "«الاقتصاد يتنفّس» — bu qanday uslub?", "a": "Isti'ora makniya — iqtisod jonlantirilgan"},
+    {"q_uz": "«أسدًا في قاعة المحكمة» kimni bildiradi?", "a": "Jasur odamni — isti'ora tasrihiya"},
+    {"q_uz": "Qarina qaysi so'zlarda ko'rinadi?", "a": "«Sud zali» va «himoya qildi» — ular haqiqiy sherni inkor qiladi"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-18-listen.mp3",
+   "transcript_ar": "نَطَقَتِ الأَرْقَامُ بِالحَقِيقَةِ، وَالاِقْتِصَادُ يَتَنَفَّسُ. وَالعِلْمُ سِلَاحٌ قَوِيٌّ.",
+   "questions": [
+    {"q_uz": "«نطقت الأرقام» nimani anglatadi?", "a": "Raqamlar aniq ko'rsatdi (jonlantirish)"},
+    {"q_uz": "«العلم سلاح» qanday uslub?", "a": "Baliy tashbeh/majoz — ilm qurolga qiyoslangan"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch majoziy jumlani ayting va ma'nosini o'zbekcha izohlang.",
+   "target_ar": ["الاِقْتِصَادُ يَتَنَفَّسُ", "نَطَقَتِ الأَرْقَامُ", "العِلْمُ سِلَاحٌ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Ikki majoziy jumla yozing: bittasi isti'ora tasrihiya, bittasi makniya (jonlantirish) bo'lsin, qarinasini ko'rsating.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«رَأَيْتُ أَسَدًا يَحْمِلُ سِلَاحًا» — «أَسَد» kim?",
+   "q_ar": "رَأَيْتُ أَسَدًا يَحْمِلُ سِلَاحًا",
+   "options": ["Jasur inson", "Haqiqiy sher", "Askar hayvoni", "Ramziy hayvon bog'i"],
+   "answer": "Jasur inson",
+   "explain_uz": "Qarina — «qurol ko'targan» — haqiqiy sherni inkor qiladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«نَطَقَتِ الحَقِيقَةُ» qanday isti'ora?",
+   "q_ar": "نَطَقَتِ الحَقِيقَةُ",
+   "options": [
+    "Makniya (jonlantirish)",
+    "Tasrihiya",
+    "Majoz mursal",
+    "Haqiqat"
+   ],
+   "answer": "Makniya (jonlantirish)",
+   "explain_uz": "O'xshatilgan narsa (inson) tushirilgan, belgisi (gapirish) qolgan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«شَرِبْتُ كَأْسًا» nimani bildiradi?",
+   "q_ar": "شَرِبْتُ كَأْسًا",
+   "options": [
+    "Piyoladagi ichimlikni ichdim",
+    "Piyolani yedim",
+    "Piyolani sotib oldim",
+    "Piyolani sindirdim"
+   ],
+   "answer": "Piyoladagi ichimlikni ichdim",
+   "explain_uz": "Majoz mursal — idish/mazmun bog'lanishi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qarina (القَرِينَة) nima?",
+   "q_ar": "القَرِينَة",
+   "options": [
+    "Ko'chma ma'noni ko'rsatuvchi belgi",
+    "O'xshatish vositasi",
+    "Grammatik holat",
+    "So'z turkumi"
+   ],
+   "answer": "Ko'chma ma'noni ko'rsatuvchi belgi",
+   "explain_uz": "U asl ma'noni «to'sadi».",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "اِسْتِثْمَار",
+   "options": [],
+   "answer": "investitsiya",
+   "explain_uz": "اِسْتِثْمَار — sarmoya kiritish.",
+   "audio": "b2/istithmar.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«مَجَاز، جَائِز، إِجَازَة» qaysi o'zakdan?",
+   "q_ar": "مَجَاز",
+   "options": ["ج و ز", "ج ز ي", "ز و ج", "ج ز أ"],
+   "answer": "ج و ز",
+   "explain_uz": "ج و ز — o'tish, ruxsat o'zagi.",
+   "audio": "",
+   "root": "ج و ز",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«فَتَحَتِ الحُكُومَةُ البَابَ لِلاِسْتِثْمَارِ» ma'nosi?",
+   "q_ar": "فَتَحَتِ الحُكُومَةُ البَابَ",
+   "options": [
+    "Investitsiyaga imkon yaratdi",
+    "Bino eshigini ochdi",
+    "Yangi ofis ochdi",
+    "Chegarani yopdi"
+   ],
+   "answer": "Investitsiyaga imkon yaratdi",
+   "explain_uz": "«Eshik ochish» — imkoniyat berish majozi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Ilm — kuchli qurol»",
+   "q_ar": "",
+   "options": [],
+   "answer": "العِلْمُ سِلَاحٌ قَوِيٌّ",
+   "explain_uz": "Mubtado + xabar + sifat (baliy tashbeh).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["العِلْمُ", "سِلَاحٌ", "قَوِيٌّ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع و ر", "back": "qarzga olish — isti'ora/oriyat", "deck": "msa"},
+  {"type": "root", "front": "ج و ز", "back": "o'tish — majoz/joiz", "deck": "msa"},
+  {"type": "word", "front": "اِسْتِعَارَة", "back": "isti'ora — ko'chma qo'llash", "deck": "msa"},
+  {"type": "word", "front": "مَجَاز", "back": "majoz, ko'chma ma'no", "deck": "msa"},
+  {"type": "word", "front": "حَقِيقَة", "back": "haqiqat, asl ma'no", "deck": "msa"},
+  {"type": "word", "front": "قَرِينَة", "back": "qarina — ko'chma ma'no belgisi", "deck": "msa"},
+  {"type": "word", "front": "سِلَاح", "back": "qurol", "deck": "msa"},
+  {"type": "word", "front": "يَتَنَفَّسُ", "back": "nafas oladi (tiklanadi)", "deck": "msa"},
+  {"type": "word", "front": "نَطَقَ", "back": "gapirdi, tilga keldi", "deck": "msa"},
+  {"type": "word", "front": "اِسْتِثْمَار", "back": "investitsiya", "deck": "msa"}
+ ]
+}

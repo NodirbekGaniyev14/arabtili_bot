@@ -1,0 +1,305 @@
+{
+ "id": "b2-14",
+ "level": "B2",
+ "module": "sarf-adv",
+ "order": 14,
+ "title_uz": "التصغير",
+ "title_ar": "التَّصْغِيرُ",
+ "can_do_uz": "Kichraytirish shaklini yasay olaman va uning ma'no ohangini (kichiklik, erkalash, kamsitish) farqlay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-13"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "O'zbekchada «kitobcha», «uycha», «bolakay» bor. Arabchada ham shu bor, lekin qo'shimcha bilan emas — VAZN bilan: كِتَاب → كُتَيِّب (kitobcha, bukletcha), وَلَد → وُلَيْد (bolakay), نَهْر → نُهَيْر (kichik daryo). Qolip bitta: فُعَيْل. Ma'no esa uch xil: kichiklik, erkalash yoki kamsitish. Gazetada «كُتَيِّب إرشادي» (yo'riqnoma bukleti) kabi ishlatiladi.",
+ "grammar": {
+  "point_ar": "التَّصْغِيرُ عَلَى وَزْنِ فُعَيْل وَفُعَيْعِل",
+  "explanation_uz": "TASG'IR (التَّصْغِير) — otni kichraytirish. QOIDA: birinchi harf DAMMA, ikkinchi harf FATHA, keyin ي (sokin) qo'shiladi. 1) Uch harfli ot → فُعَيْل: وَلَد → وُلَيْد، نَهْر → نُهَيْر، جَبَل → جُبَيْل، بَيْت → بُيَيْت. 2) To'rt harfli ot → فُعَيْعِل: دَفْتَر → دُفَيْتِر، مَكْتَب → مُكَيْتِب. 3) Cho'ziq unlili so'zlarda ikkilanish bo'lishi mumkin: كِتَاب → كُتَيِّب. 4) Muannas ة ni qaytaradi: شَجَرَة → شُجَيْرَة، حَدِيقَة → حُدَيْقَة. MA'NO OHANGLARI uchta: (a) KICHIKLIK: نُهَيْر — kichik daryo, جُبَيْل — tepalik; (b) ERKALASH/mehr: بُنَيّ — o'g'ilcham, أُخَيَّة — singilcham; (c) KAMSITISH/kichraytirib ko'rsatish: شُوَيْعِر — «shoircha» (past darajali shoir). Zamonaviy tilda ba'zi tasg'irlar MUSTAQIL so'zga aylangan: كُتَيِّب (buklet), قُبَيْل (biroz oldin), بُعَيْد (biroz keyin).",
+  "table": [
+   {"ar": "وَلَد ← وُلَيْد", "uz": "bola → bolakay", "form": "فُعَيْل"},
+   {"ar": "نَهْر ← نُهَيْر", "uz": "daryo → kichik daryo", "form": "فُعَيْل"},
+   {"ar": "كِتَاب ← كُتَيِّب", "uz": "kitob → buklet, kitobcha", "form": "فُعَيِّل"},
+   {"ar": "شَجَرَة ← شُجَيْرَة", "uz": "daraxt → butacha (ة qaytdi)", "form": "فُعَيْلَة"},
+   {"ar": "دَفْتَر ← دُفَيْتِر", "uz": "daftar → daftarcha (4 harfli)", "form": "فُعَيْعِل"},
+   {"ar": "قَبْل ← قُبَيْل", "uz": "oldin → biroz oldin (mustaqil ma'no)", "form": "ظَرْف"}
+  ],
+  "common_mistakes_uz": [
+   "Tasg'irni har doim «kichik» deb tarjima qilish — ba'zan erkalash yoki kamsitish ohangi bor.",
+   "Muannas ة ni tushirib qoldirish: شَجَرَة → شُجَيْر ✗ → شُجَيْرَة ✓.",
+   "قُبَيْل / بُعَيْد ni «kichik oldin» deb tarjima qilish — ular «biroz oldin/keyin» degani."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ص غ ر",
+   "meaning_uz": "kichiklik",
+   "uz_cognates": ["sag'ir", "tasg'ir"],
+   "derived": [
+    {"ar": "صَغِير", "uz": "kichik", "pattern": "فَعِيل"},
+    {"ar": "تَصْغِير", "uz": "kichraytirish", "pattern": "تَفْعِيل"},
+    {"ar": "أَصْغَر", "uz": "eng kichik", "pattern": "أَفْعَل"}
+   ]
+  },
+  {
+   "root": "ك ت ب",
+   "meaning_uz": "yozish",
+   "uz_cognates": ["kitob", "kotib", "maktab"],
+   "derived": [
+    {"ar": "كِتَاب", "uz": "kitob", "pattern": "فِعَال"},
+    {"ar": "كُتَيِّب", "uz": "buklet, kitobcha", "pattern": "فُعَيِّل"},
+    {"ar": "مَكْتَبَة", "uz": "kutubxona", "pattern": "مَفْعَلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "تَصْغِير",
+   "translit": "taṣghīr",
+   "uz": "kichraytirish (grammatik atama)",
+   "root": "ص غ ر",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tasghir.mp3",
+   "example_ar": "التَّصْغِيرُ لَهُ ثَلَاثَةُ مَعَانٍ.",
+   "example_uz": "Tasg'irning uchta ma'nosi bor.",
+   "srs": true
+  },
+  {
+   "ar": "كُتَيِّب",
+   "translit": "kutayyib",
+   "uz": "buklet, kitobcha",
+   "root": "ك ت ب",
+   "pattern": "فُعَيِّل",
+   "pos": "ot",
+   "audio": "b2/kutayyib.mp3",
+   "example_ar": "وَزَّعُوا كُتَيِّبًا إِرْشَادِيًّا.",
+   "example_uz": "Yo'riqnoma bukletini tarqatishdi.",
+   "srs": true
+  },
+  {
+   "ar": "شُجَيْرَة",
+   "translit": "shujayra",
+   "uz": "butacha, kichik daraxt",
+   "root": "ش ج ر",
+   "pattern": "فُعَيْلَة",
+   "pos": "ot",
+   "audio": "b2/shujayra.mp3",
+   "example_ar": "زَرَعْنَا شُجَيْرَةً فِي الحَدِيقَةِ.",
+   "example_uz": "Bog'ga butacha ekdik.",
+   "srs": true
+  },
+  {
+   "ar": "نُهَيْر",
+   "translit": "nuhayr",
+   "uz": "kichik daryo, soy",
+   "root": "ن ه ر",
+   "pattern": "فُعَيْل",
+   "pos": "ot",
+   "audio": "b2/nuhayr.mp3",
+   "example_ar": "يَمُرُّ نُهَيْرٌ قُرْبَ القَرْيَةِ.",
+   "example_uz": "Qishloq yonidan soy oqadi.",
+   "srs": true
+  },
+  {
+   "ar": "قُبَيْل",
+   "translit": "qubayl",
+   "uz": "biroz oldin",
+   "root": "ق ب ل",
+   "pattern": "فُعَيْل",
+   "pos": "ravish",
+   "audio": "b2/qubayl.mp3",
+   "example_ar": "وَصَلَ قُبَيْلَ الغُرُوبِ.",
+   "example_uz": "Quyosh botishidan biroz oldin yetib keldi.",
+   "srs": true
+  },
+  {
+   "ar": "بُعَيْد",
+   "translit": "buʿayd",
+   "uz": "biroz keyin",
+   "root": "ب ع د",
+   "pattern": "فُعَيْل",
+   "pos": "ravish",
+   "audio": "b2/buayd.mp3",
+   "example_ar": "بَدَأَ العَمَلُ بُعَيْدَ الظُّهْرِ.",
+   "example_uz": "Ish tushdan biroz keyin boshlandi.",
+   "srs": true
+  },
+  {
+   "ar": "صَغِير",
+   "translit": "ṣaghīr",
+   "uz": "kichik (o'zbekcha 'sag'ir')",
+   "root": "ص غ ر",
+   "pattern": "فَعِيل",
+   "pos": "sifat",
+   "audio": "b2/saghir.mp3",
+   "example_ar": "مَشْرُوعٌ صَغِيرٌ نَاجِحٌ.",
+   "example_uz": "Muvaffaqiyatli kichik loyiha.",
+   "srs": true
+  },
+  {
+   "ar": "إِرْشَادِيّ",
+   "translit": "irshādī",
+   "uz": "yo'riqnoma, ko'rsatma beruvchi",
+   "root": "ر ش د",
+   "pattern": "إِفْعَالِيّ",
+   "pos": "sifat",
+   "audio": "b2/irshadi.mp3",
+   "example_ar": "دَلِيلٌ إِرْشَادِيٌّ لِلطُّلَّابِ.",
+   "example_uz": "Talabalar uchun yo'riqnoma qo'llanma.",
+   "srs": true
+  },
+  {
+   "ar": "مَعْنًى",
+   "translit": "maʿnan",
+   "uz": "ma'no (o'zbekcha 'ma'no')",
+   "root": "ع ن ي",
+   "pattern": "مَفْعَل",
+   "pos": "ot",
+   "audio": "b2/mana_meaning.mp3",
+   "example_ar": "لِكُلِّ كَلِمَةٍ مَعْنًى.",
+   "example_uz": "Har so'zning ma'nosi bor.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "وزّعت الجامعة كتيّبًا إرشاديًّا على الطلاب الجدد. في الصفحة الأولى صورة لحديقة صغيرة فيها شجيرات وممرّ ضيّق، وبجانبها نهير هادئ. كتب أحد الطلاب في تعليقه: وصلت قبيل الظهر وخرجت بعيده بساعة، ووجدت المكان جميلًا. لاحظ المعلم أنّ صيغة التصغير هنا لا تعني السخرية، بل الصغر الحقيقي والمودّة.",
+   "questions": [
+    {"q_uz": "«كتيّب» qanday so'z?", "a": "كِتَاب ning tasg'iri — buklet"},
+    {"q_uz": "«قبيل الظهر» va «بعيده» nimani bildiradi?", "a": "Tushdan biroz oldin va biroz keyin"},
+    {"q_uz": "Bu matnda tasg'ir qanday ohangda?", "a": "Haqiqiy kichiklik va mehr — kamsitish emas"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-14-listen.mp3",
+   "transcript_ar": "زَرَعْنَا شُجَيْرَةً صَغِيرَةً، وَقَرَأْتُ كُتَيِّبًا إِرْشَادِيًّا قُبَيْلَ الظُّهْرِ.",
+   "questions": [
+    {"q_uz": "Nima ekildi?", "a": "Kichik butacha (shujayra)"},
+    {"q_uz": "Buklet qachon o'qildi?", "a": "Tushdan biroz oldin"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch tasg'ir shaklini ayting: «bola → bolakay», «kitob → kitobcha», «daraxt → butacha».",
+   "target_ar": ["وَلَد ← وُلَيْد", "كِتَاب ← كُتَيِّب", "شَجَرَة ← شُجَيْرَة"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Uch so'zning tasg'irini yozing va har birining ma'no ohangini (kichiklik/erkalash/kamsitish) ko'rsating.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Uch harfli otning tasg'ir vazni qaysi?",
+   "q_ar": "",
+   "options": ["فُعَيْل", "فَعِيل", "مَفْعُول", "فَاعِل"],
+   "answer": "فُعَيْل",
+   "explain_uz": "وَلَد → وُلَيْد: damma + fatha + sokin ي.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«شَجَرَة» ning tasg'iri qaysi?",
+   "q_ar": "شَجَرَة",
+   "options": ["شُجَيْرَة", "شُجَيْر", "شَجِيرَة", "شُجُور"],
+   "answer": "شُجَيْرَة",
+   "explain_uz": "Muannas ة saqlanadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«قُبَيْل» nima degani?",
+   "q_ar": "قُبَيْل",
+   "options": ["Biroz oldin", "Kichik qabul", "Keyinroq", "Uzoqda"],
+   "answer": "Biroz oldin",
+   "explain_uz": "Tasg'ir mustaqil ravishga aylangan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Tasg'ir qaysi ma'noni BERMAYDI?",
+   "q_ar": "",
+   "options": [
+    "Kelasi zamon",
+    "Kichiklik",
+    "Erkalash",
+    "Kamsitish"
+   ],
+   "answer": "Kelasi zamon",
+   "explain_uz": "Tasg'ir zamon bildirmaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "كُتَيِّب",
+   "options": [],
+   "answer": "buklet",
+   "explain_uz": "كُتَيِّب — kitobcha, buklet.",
+   "audio": "b2/kutayyib.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«تَصْغِير، صَغِير، أَصْغَر» qaysi o'zakdan?",
+   "q_ar": "تَصْغِير",
+   "options": ["ص غ ر", "س غ ر", "ص ع ر", "ض غ ر"],
+   "answer": "ص غ ر",
+   "explain_uz": "ص غ ر — kichiklik o'zagi.",
+   "audio": "",
+   "root": "ص غ ر",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "To'rt harfli «دَفْتَر» ning tasg'iri qaysi?",
+   "q_ar": "دَفْتَر",
+   "options": ["دُفَيْتِر", "دُفَيْر", "دَفِيتَر", "دُفْتُر"],
+   "answer": "دُفَيْتِر",
+   "explain_uz": "To'rt harfli otlar فُعَيْعِل vaznida keladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Yo'riqnoma bukletini tarqatishdi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "وَزَّعُوا كُتَيِّبًا إِرْشَادِيًّا",
+   "explain_uz": "Fe'l + maf'ul (mansub) + nisba sifati.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["وَزَّعُوا", "كُتَيِّبًا", "إِرْشَادِيًّا"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ص غ ر", "back": "kichiklik — sag'ir/tasg'ir", "deck": "msa"},
+  {"type": "pattern", "front": "فُعَيْل", "back": "tasg'ir vazni: وُلَيْد, نُهَيْر", "deck": "msa"},
+  {"type": "word", "front": "تَصْغِير", "back": "kichraytirish", "deck": "msa"},
+  {"type": "word", "front": "كُتَيِّب", "back": "buklet, kitobcha", "deck": "msa"},
+  {"type": "word", "front": "شُجَيْرَة", "back": "butacha", "deck": "msa"},
+  {"type": "word", "front": "نُهَيْر", "back": "soy, kichik daryo", "deck": "msa"},
+  {"type": "word", "front": "قُبَيْل", "back": "biroz oldin", "deck": "msa"},
+  {"type": "word", "front": "بُعَيْد", "back": "biroz keyin", "deck": "msa"},
+  {"type": "word", "front": "إِرْشَادِيّ", "back": "yo'riqnoma beruvchi", "deck": "msa"},
+  {"type": "word", "front": "مَعْنًى", "back": "ma'no", "deck": "msa"}
+ ]
+}

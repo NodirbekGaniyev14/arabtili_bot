@@ -1,0 +1,312 @@
+{
+ "id": "b2-12",
+ "level": "B2",
+ "module": "sarf-adv",
+ "order": 12,
+ "title_uz": "مصدر ميمي · اسم المرّة والهيئة",
+ "title_ar": "المَصْدَرُ المِيمِيُّ وَاسْمُ المَرَّةِ وَالهَيْئَةِ",
+ "can_do_uz": "«Bir marta urish», «shunday o'tirish» kabi ma'nolarni maxsus vaznlar bilan ifodalay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-11"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«ضَرْبَة» — bir marta urish. «جِلْسَة» — o'tirish tarzi (majlis, sessiya). «مَقْتَل» — o'ldirilish joyi/hodisasi. Uch vazn, uch aniq ma'no. Yangiliklarda doim uchraydi: «جَلْسَة البَرْلَمَان» (parlament sessiyasi), «ضَرْبَة اقْتِصَادِيَّة» (iqtisodiy zarba). Bu vaznlarni bilsangiz, notanish so'zning ma'nosini o'zak + vazndan chiqarasiz.",
+ "grammar": {
+  "point_ar": "مَفْعَل · فَعْلَة · فِعْلَة",
+  "explanation_uz": "Uchta maxsus masdar turi. 1) MASDAR MIYMIY (المَصْدَر المِيمِيّ) — mim bilan boshlanadi, oddiy masdar bilan bir ma'noda, lekin kuchliroq/rasmiyroq: مَفْعَل vazni — قَتَلَ → مَقْتَل (o'ldirish/halok bo'lish), رَجَعَ → مَرْجِع (qaytish, manba), سَعَى → مَسْعَى (harakat, intilish). Ko'pincha joy oti bilan bir xil ko'rinadi — kontekst ajratadi. 2) ISM MARRA (اِسْمُ المَرَّة) — harakatning BIR MARTA bajarilishi: فَعْلَة vazni — ضَرَبَ → ضَرْبَة (bir zarba), نَظَرَ → نَظْرَة (bir qarash), زَارَ → زَوْرَة (bir tashrif). Agar masdar allaqachon ة bilan tugasa, «وَاحِدَة» qo'shiladi: رَحْمَة وَاحِدَة. 3) ISM HAY'A (اِسْمُ الهَيْئَة) — harakatning TARZI/holati: فِعْلَة vazni — جَلَسَ → جِلْسَة (o'tirish tarzi; majlis), مَشَى → مِشْيَة (yurish tarzi), أَكَلَ → إِكْلَة (yeyish tarzi). DIQQAT: فَعْلَة va فِعْلَة faqat harakat bilan farqlanadi — fatha «bir marta», kasra «tarz». Zamonaviy tilda جَلْسَة (sessiya) fatha bilan keladi va «yig'ilish» ma'nosini beradi.",
+  "table": [
+   {"ar": "قَتَلَ ← مَقْتَل", "uz": "o'ldirish hodisasi/joyi", "form": "مَصْدَر مِيمِيّ"},
+   {"ar": "رَجَعَ ← مَرْجِع", "uz": "manba, qaytish joyi", "form": "مَصْدَر مِيمِيّ"},
+   {"ar": "ضَرَبَ ← ضَرْبَة", "uz": "bir zarba", "form": "اِسْم المَرَّة"},
+   {"ar": "نَظَرَ ← نَظْرَة", "uz": "bir qarash", "form": "اِسْم المَرَّة"},
+   {"ar": "جَلَسَ ← جِلْسَة", "uz": "o'tirish tarzi", "form": "اِسْم الهَيْئَة"},
+   {"ar": "مَشَى ← مِشْيَة", "uz": "yurish tarzi", "form": "اِسْم الهَيْئَة"}
+  ],
+  "common_mistakes_uz": [
+   "فَعْلَة va فِعْلَة ni farqlamaslik: ضَرْبَة (bir marta) ≠ ضِرْبَة (tarz).",
+   "Masdar miymiyni doim «joy» deb tarjima qilish — kontekstga qarang: مَرْجِع «manba» ham bo'ladi.",
+   "ة bilan tugagan masdarga yana ة qo'shish: رَحْمَة → رَحْمَتَة ✗ → رَحْمَة وَاحِدَة ✓."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ض ر ب",
+   "meaning_uz": "urish, zarba berish",
+   "uz_cognates": ["zarba", "mizrob"],
+   "derived": [
+    {"ar": "ضَرْب", "uz": "urish (umumiy)", "pattern": "فَعْل"},
+    {"ar": "ضَرْبَة", "uz": "bir zarba", "pattern": "فَعْلَة"},
+    {"ar": "مَضْرِب", "uz": "raketka; urish joyi", "pattern": "مَفْعِل"}
+   ]
+  },
+  {
+   "root": "ج ل س",
+   "meaning_uz": "o'tirish",
+   "uz_cognates": ["majlis", "jalsa"],
+   "derived": [
+    {"ar": "جُلُوس", "uz": "o'tirish (umumiy)", "pattern": "فُعُول"},
+    {"ar": "جِلْسَة", "uz": "o'tirish tarzi; sessiya", "pattern": "فِعْلَة"},
+    {"ar": "مَجْلِس", "uz": "majlis, kengash", "pattern": "مَفْعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "ضَرْبَة",
+   "translit": "ḍarba",
+   "uz": "bir zarba (o'zbekcha 'zarba')",
+   "root": "ض ر ب",
+   "pattern": "فَعْلَة",
+   "pos": "ot",
+   "audio": "b2/darba.mp3",
+   "example_ar": "كَانَتْ ضَرْبَةً قَوِيَّةً.",
+   "example_uz": "Bu kuchli zarba edi.",
+   "srs": true
+  },
+  {
+   "ar": "نَظْرَة",
+   "translit": "naẓra",
+   "uz": "bir qarash, nigoh (o'zbekcha 'nazar')",
+   "root": "ن ظ ر",
+   "pattern": "فَعْلَة",
+   "pos": "ot",
+   "audio": "b2/nazra.mp3",
+   "example_ar": "أَلْقَى نَظْرَةً سَرِيعَةً.",
+   "example_uz": "Tez bir qarash tashladi.",
+   "srs": true
+  },
+  {
+   "ar": "جِلْسَة",
+   "translit": "jilsa",
+   "uz": "o'tirish tarzi; (jalsa) sessiya",
+   "root": "ج ل س",
+   "pattern": "فِعْلَة",
+   "pos": "ot",
+   "audio": "b2/jilsa.mp3",
+   "example_ar": "جِلْسَتُهُ مُرِيحَةٌ.",
+   "example_uz": "Uning o'tirishi qulay.",
+   "srs": true
+  },
+  {
+   "ar": "مِشْيَة",
+   "translit": "mishya",
+   "uz": "yurish tarzi",
+   "root": "م ش ي",
+   "pattern": "فِعْلَة",
+   "pos": "ot",
+   "audio": "b2/mishya.mp3",
+   "example_ar": "أَعْرِفُهُ مِنْ مِشْيَتِهِ.",
+   "example_uz": "Uni yurishidan taniyman.",
+   "srs": true
+  },
+  {
+   "ar": "مَرْجِع",
+   "translit": "marjiʿ",
+   "uz": "manba, murojaat qilinadigan joy",
+   "root": "ر ج ع",
+   "pattern": "مَفْعِل",
+   "pos": "ot",
+   "audio": "b2/marji.mp3",
+   "example_ar": "هَذَا الكِتَابُ مَرْجِعٌ مُهِمٌّ.",
+   "example_uz": "Bu kitob muhim manba.",
+   "srs": true
+  },
+  {
+   "ar": "مَسْعَى",
+   "translit": "masʿā",
+   "uz": "intilish, sa'y-harakat",
+   "root": "س ع ي",
+   "pattern": "مَفْعَل",
+   "pos": "ot",
+   "audio": "b2/masa_effort.mp3",
+   "example_ar": "مَسْعَاهُ نَبِيلٌ.",
+   "example_uz": "Uning intilishi olijanob.",
+   "srs": true
+  },
+  {
+   "ar": "مَقْتَل",
+   "translit": "maqtal",
+   "uz": "o'ldirilish (hodisasi/joyi)",
+   "root": "ق ت ل",
+   "pattern": "مَفْعَل",
+   "pos": "ot",
+   "audio": "b2/maqtal.mp3",
+   "example_ar": "تَحَدَّثَ التَّقْرِيرُ عَنْ مَقْتَلِ الحَادِثِ.",
+   "example_uz": "Hisobot halokat haqida gapirdi.",
+   "srs": true
+  },
+  {
+   "ar": "جَلْسَة",
+   "translit": "jalsa",
+   "uz": "sessiya, majlis (zamonaviy ma'no)",
+   "root": "ج ل س",
+   "pattern": "فَعْلَة",
+   "pos": "ot",
+   "audio": "b2/jalsa.mp3",
+   "example_ar": "بَدَأَتْ جَلْسَةُ البَرْلَمَانِ.",
+   "example_uz": "Parlament sessiyasi boshlandi.",
+   "srs": true
+  },
+  {
+   "ar": "زِيَارَة",
+   "translit": "ziyāra",
+   "uz": "tashrif, ziyorat (o'zbekcha 'ziyorat')",
+   "root": "ز و ر",
+   "pattern": "فِعَالَة",
+   "pos": "ot",
+   "audio": "b2/ziyara.mp3",
+   "example_ar": "كَانَتْ زِيَارَةً قَصِيرَةً.",
+   "example_uz": "Bu qisqa tashrif edi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "بدأت جلسة المجلس في الساعة العاشرة، وألقى الرئيس نظرةً سريعةً على جدول الأعمال. قال أحد الأعضاء: هذا التقرير مرجعٌ مهمٌّ لكل باحث، ومسعى الفريق واضح. ثم تحدّث خبيرٌ عن ضربةٍ اقتصاديةٍ أصابت السوق العام الماضي، وأضاف أنّ زيارة الوفد الأجنبي قد تفتح بابًا جديدًا للاستثمار.",
+   "questions": [
+    {"q_uz": "«نظرةً سريعةً» — qaysi vazn va ma'no?", "a": "فَعْلَة — bir marta qarash (ism marra)"},
+    {"q_uz": "«مرجع» qaysi turdagi so'z?", "a": "Masdar miymiy — bu yerda «manba» ma'nosida"},
+    {"q_uz": "«جلسة المجلس» nimani bildiradi?", "a": "Kengash sessiyasi — zamonaviy ma'no"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-12-listen.mp3",
+   "transcript_ar": "أَلْقَى نَظْرَةً سَرِيعَةً ثُمَّ جَلَسَ. كَانَتْ جِلْسَتُهُ مُرِيحَةً، وَالزِّيَارَةُ قَصِيرَةً.",
+   "questions": [
+    {"q_uz": "«نظرةً» nechta qarashni bildiradi?", "a": "Bitta — ism marra"},
+    {"q_uz": "«جِلْسَته» nimani tasvirlaydi?", "a": "O'tirish tarzini (ism hay'a)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch so'zni jumla ichida ayting: «bir zarba», «bir qarash», «yurish tarzi».",
+   "target_ar": ["كَانَتْ ضَرْبَةً قَوِيَّةً", "أَلْقَى نَظْرَةً سَرِيعَةً", "أَعْرِفُهُ مِنْ مِشْيَتِهِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Uch gap yozing: bittasida ism marra (فَعْلَة), bittasida ism hay'a (فِعْلَة), bittasida masdar miymiy (مَفْعَل).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«ضَرْبَة» qaysi ma'noni beradi?",
+   "q_ar": "ضَرْبَة",
+   "options": ["Bir marta urish", "Urish tarzi", "Urish joyi", "Uruvchi"],
+   "answer": "Bir marta urish",
+   "explain_uz": "فَعْلَة — ism marra (bir marta).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«جِلْسَة» (kasra bilan) nimani bildiradi?",
+   "q_ar": "جِلْسَة",
+   "options": ["O'tirish TARZI", "Bir marta o'tirish", "O'tirish joyi", "O'tiruvchi"],
+   "answer": "O'tirish TARZI",
+   "explain_uz": "فِعْلَة — ism hay'a (tarz).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مَرْجِع» qaysi turkumga kiradi?",
+   "q_ar": "مَرْجِع",
+   "options": [
+    "Masdar miymiy / joy oti",
+    "Ism marra",
+    "Ism hay'a",
+    "Sifat"
+   ],
+   "answer": "Masdar miymiy / joy oti",
+   "explain_uz": "مَفْعِل vazni — «manba, qaytish joyi».",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«رَحْمَة» dan ism marra qanday yasaladi?",
+   "q_ar": "رَحْمَة",
+   "options": [
+    "رَحْمَة وَاحِدَة",
+    "رَحْمَتَة",
+    "رِحْمَة",
+    "مَرْحَمَة"
+   ],
+   "answer": "رَحْمَة وَاحِدَة",
+   "explain_uz": "Masdar ة bilan tugasa «وَاحِدَة» qo'shiladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "زِيَارَة",
+   "options": [],
+   "answer": "tashrif",
+   "explain_uz": "زِيَارَة — tashrif, ziyorat.",
+   "audio": "b2/ziyara.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«جِلْسَة، مَجْلِس، جُلُوس» qaysi o'zakdan?",
+   "q_ar": "مَجْلِس",
+   "options": ["ج ل س", "ج ل ل", "ج س م", "ح ل س"],
+   "answer": "ج ل س",
+   "explain_uz": "ج ل س — o'tirish o'zagi (majlis).",
+   "audio": "",
+   "root": "ج ل س",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Yangilikda «جَلْسَة البَرْلَمَان» nima degani?",
+   "q_ar": "جَلْسَة البَرْلَمَان",
+   "options": ["Parlament sessiyasi", "Parlament binosi", "Parlament a'zosi", "Parlament qarori"],
+   "answer": "Parlament sessiyasi",
+   "explain_uz": "Zamonaviy tilda جَلْسَة — yig'ilish/sessiya.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Tez bir qarash tashladi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "أَلْقَى نَظْرَةً سَرِيعَةً",
+   "explain_uz": "Fe'l + ism marra (mansub) + sifat.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["أَلْقَى", "نَظْرَةً", "سَرِيعَةً"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ض ر ب", "back": "urish — zarba/mazrib", "deck": "msa"},
+  {"type": "root", "front": "ج ل س", "back": "o'tirish — majlis/jalsa", "deck": "msa"},
+  {"type": "pattern", "front": "فَعْلَة", "back": "ism marra — bir marta: ضَرْبَة, نَظْرَة", "deck": "msa"},
+  {"type": "pattern", "front": "فِعْلَة", "back": "ism hay'a — tarz: جِلْسَة, مِشْيَة", "deck": "msa"},
+  {"type": "word", "front": "ضَرْبَة", "back": "bir zarba", "deck": "msa"},
+  {"type": "word", "front": "نَظْرَة", "back": "bir qarash", "deck": "msa"},
+  {"type": "word", "front": "جِلْسَة", "back": "o'tirish tarzi", "deck": "msa"},
+  {"type": "word", "front": "مِشْيَة", "back": "yurish tarzi", "deck": "msa"},
+  {"type": "word", "front": "مَرْجِع", "back": "manba", "deck": "msa"},
+  {"type": "word", "front": "مَسْعَى", "back": "intilish", "deck": "msa"},
+  {"type": "word", "front": "جَلْسَة", "back": "sessiya, majlis", "deck": "msa"},
+  {"type": "word", "front": "زِيَارَة", "back": "tashrif", "deck": "msa"}
+ ]
+}

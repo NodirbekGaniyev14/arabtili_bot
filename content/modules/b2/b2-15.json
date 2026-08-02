@@ -1,0 +1,312 @@
+{
+ "id": "b2-15",
+ "level": "B2",
+ "module": "sarf-adv",
+ "order": 15,
+ "title_uz": "جمع الجمع va nodir ko'pliklar",
+ "title_ar": "جَمْعُ الجَمْعِ وَأَوْزَانُ الجُمُوعِ النَّادِرَة",
+ "can_do_uz": "Ko'plikning ko'pligi va nodir ko'plik vaznlarini tanib, ularning birligini topa olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-14"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«بُيُوت» — uylar. Lekin «بُيُوتَات» ham bor: bu «uylar to'plamlari», ya'ni xonadonlar, sulolalar. Ko'plikning ko'pligi (جَمْعُ الجَمْعِ) arabchada real hodisa. Yana bir muammo: أَفَاضِل، أَصَاغِر، أَكَابِر kabi nodir vaznlar lug'atda birlik shaklida turmaydi. B2 da bularni ko'rasiz — endi birligini topish usulini o'rganamiz.",
+ "grammar": {
+  "point_ar": "جَمْعُ الجَمْعِ وَأَوْزَانُ الجُمُوعِ القَلِيلَةِ وَالكَثِيرَةِ",
+  "explanation_uz": "1) OZ SONLI KO'PLIK (جَمْعُ القِلَّة — 3 dan 10 gacha) vaznlari to'rtta: أَفْعُل (أَنْفُس), أَفْعَال (أَقْلَام), أَفْعِلَة (أَطْعِمَة), فِعْلَة (فِتْيَة). 2) KO'P SONLI KO'PLIK (جَمْعُ الكَثْرَة — 10 dan ortiq) vaznlari ko'p: فُعُول (بُيُوت), فِعَال (رِجَال), فُعَّال (كُتَّاب), فَعَلَة (طَلَبَة), فَوَاعِل (شَوَارِع), أَفَاعِل (أَفَاضِل), مَفَاعِل (مَدَارِس), فَعَائِل (رَسَائِل). 3) JAM'UL-JUMU' (جَمْعُ الجَمْعِ) — ko'plikni yana ko'plik qilish: بَيْت → بُيُوت → بُيُوتَات (xonadonlar, sulolalar), رَجُل → رِجَال → رِجَالَات (taniqli kishilar), طَرِيق → طُرُق → طُرُقَات (yo'llar tarmog'i). Ma'nosi «guruh-guruh», «turkum» ohangini beradi. AMALIY USUL: notanish ko'plikni ko'rsangiz — (a) uch o'zak harfini ajrating, (b) mos vazndan birlikni tiklang: أَفَاضِل → فَاضِل, رَسَائِل → رِسَالَة, شَوَارِع → شَارِع. Ko'pchilik jam' vaznlari MAMNU' MIN AS-SARF (b2-06): مَدَارِس، رَسَائِل، شَوَارِع — tanvin olmaydi.",
+  "table": [
+   {"ar": "قَلَم ← أَقْلَام", "uz": "qalam → qalamlar (oz sonli)", "form": "أَفْعَال"},
+   {"ar": "بَيْت ← بُيُوت ← بُيُوتَات", "uz": "uy → uylar → xonadonlar", "form": "جَمْع الجَمْع"},
+   {"ar": "رِسَالَة ← رَسَائِل", "uz": "xat → xatlar", "form": "فَعَائِل"},
+   {"ar": "شَارِع ← شَوَارِع", "uz": "ko'cha → ko'chalar", "form": "فَوَاعِل"},
+   {"ar": "فَاضِل ← أَفَاضِل", "uz": "fozil → fozillar", "form": "أَفَاعِل"},
+   {"ar": "طَالِب ← طَلَبَة", "uz": "talaba → talabalar", "form": "فَعَلَة"}
+  ],
+  "common_mistakes_uz": [
+   "Ko'plikdan yana ko'plik yasashni har so'zga qo'llash — jam'ul-jumu' faqat ba'zi so'zlarda bor.",
+   "أَفَاضِل ni «afzalliklar» deb tarjima qilish — bu «fozil kishilar» (birligi فَاضِل).",
+   "Nodir ko'plikni lug'atdan o'sha holida qidirish — avval birlik shakliga qaytaring."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ج م ع",
+   "meaning_uz": "to'plash, jamlash",
+   "uz_cognates": ["jamoa", "jami", "majmua"],
+   "derived": [
+    {"ar": "جَمْع", "uz": "ko'plik; to'plash", "pattern": "فَعْل"},
+    {"ar": "مَجْمُوعَة", "uz": "guruh, to'plam", "pattern": "مَفْعُولَة"},
+    {"ar": "جَمِيع", "uz": "hammasi", "pattern": "فَعِيل"}
+   ]
+  },
+  {
+   "root": "ر س ل",
+   "meaning_uz": "yuborish",
+   "uz_cognates": ["risola", "rasul", "irsol"],
+   "derived": [
+    {"ar": "رِسَالَة", "uz": "xat, risola", "pattern": "فِعَالَة"},
+    {"ar": "رَسَائِل", "uz": "xatlar", "pattern": "فَعَائِل"},
+    {"ar": "مُرَاسِل", "uz": "muxbir", "pattern": "مُفَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "رَسَائِل",
+   "translit": "rasāʾil",
+   "uz": "xatlar, risolalar (birligi رِسَالَة)",
+   "root": "ر س ل",
+   "pattern": "فَعَائِل",
+   "pos": "ot",
+   "audio": "b2/rasail.mp3",
+   "example_ar": "وَصَلَتْ رَسَائِلُ كَثِيرَةٌ.",
+   "example_uz": "Ko'p xat keldi.",
+   "srs": true
+  },
+  {
+   "ar": "شَوَارِع",
+   "translit": "shawāriʿ",
+   "uz": "ko'chalar (birligi شَارِع)",
+   "root": "ش ر ع",
+   "pattern": "فَوَاعِل",
+   "pos": "ot",
+   "audio": "b2/shawari.mp3",
+   "example_ar": "شَوَارِعُ المَدِينَةِ وَاسِعَةٌ.",
+   "example_uz": "Shahar ko'chalari keng.",
+   "srs": true
+  },
+  {
+   "ar": "أَفَاضِل",
+   "translit": "afāḍil",
+   "uz": "fozil kishilar (birligi فَاضِل)",
+   "root": "ف ض ل",
+   "pattern": "أَفَاعِل",
+   "pos": "ot",
+   "audio": "b2/afadil.mp3",
+   "example_ar": "حَضَرَ أَفَاضِلُ المَدِينَةِ.",
+   "example_uz": "Shaharning obro'li kishilari keldi.",
+   "srs": true
+  },
+  {
+   "ar": "بُيُوتَات",
+   "translit": "buyūtāt",
+   "uz": "xonadonlar, sulolalar (ko'plikning ko'pligi)",
+   "root": "ب ي ت",
+   "pattern": "فُعُولَات",
+   "pos": "ot",
+   "audio": "b2/buyutat.mp3",
+   "example_ar": "بُيُوتَاتُ العِلْمِ مَعْرُوفَةٌ.",
+   "example_uz": "Ilm xonadonlari mashhur.",
+   "srs": true
+  },
+  {
+   "ar": "طُرُقَات",
+   "translit": "ṭuruqāt",
+   "uz": "yo'llar tarmog'i (طُرُق ning ko'pligi)",
+   "root": "ط ر ق",
+   "pattern": "فُعُلَات",
+   "pos": "ot",
+   "audio": "b2/turuqat.mp3",
+   "example_ar": "طُرُقَاتُ الرِّيفِ ضَيِّقَةٌ.",
+   "example_uz": "Qishloq yo'llari tor.",
+   "srs": true
+  },
+  {
+   "ar": "طَلَبَة",
+   "translit": "ṭalaba",
+   "uz": "talabalar (طَالِب ning ko'pligi)",
+   "root": "ط ل ب",
+   "pattern": "فَعَلَة",
+   "pos": "ot",
+   "audio": "b2/talaba_pl.mp3",
+   "example_ar": "الطَّلَبَةُ فِي القَاعَةِ.",
+   "example_uz": "Talabalar zalda.",
+   "srs": true
+  },
+  {
+   "ar": "مَجْمُوعَة",
+   "translit": "majmūʿa",
+   "uz": "guruh, to'plam (o'zbekcha 'majmua')",
+   "root": "ج م ع",
+   "pattern": "مَفْعُولَة",
+   "pos": "ot",
+   "audio": "b2/majmua.mp3",
+   "example_ar": "قَسَّمَ الطُّلَّابَ إِلَى مَجْمُوعَاتٍ.",
+   "example_uz": "Talabalarni guruhlarga bo'ldi.",
+   "srs": true
+  },
+  {
+   "ar": "أَقْلَام",
+   "translit": "aqlām",
+   "uz": "qalamlar (oz sonli ko'plik)",
+   "root": "ق ل م",
+   "pattern": "أَفْعَال",
+   "pos": "ot",
+   "audio": "b2/aqlam_pl.mp3",
+   "example_ar": "اِشْتَرَيْتُ أَقْلَامًا جَدِيدَةً.",
+   "example_uz": "Yangi qalamlar sotib oldim.",
+   "srs": true
+  },
+  {
+   "ar": "مُفْرَد",
+   "translit": "mufrad",
+   "uz": "birlik shakli",
+   "root": "ف ر د",
+   "pattern": "مُفْعَل",
+   "pos": "ot",
+   "audio": "b2/mufrad_form.mp3",
+   "example_ar": "مَا مُفْرَدُ «رَسَائِل»؟",
+   "example_uz": "«Rasoil» ning birligi nima?",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "في المكتبة رسائلُ قديمة كتبها أفاضلُ المدينة قبل مئة عام. تحدّثت الرسائل عن شوارعَ ضيّقة وطرقاتٍ ترابية، وعن بيوتاتٍ اشتهرت بالعلم والكرم. جمع الباحث هذه الوثائق في مجموعة واحدة، ووزّعها على الطلبة ليقرؤوها. قال: من عرف مفرد الكلمة وجد معناها بسهولة، فلا تخف من الجموع الغريبة.",
+   "questions": [
+    {"q_uz": "«أفاضل» ning birligi nima?", "a": "فَاضِل — fozil, obro'li kishi"},
+    {"q_uz": "«بيوتات» qanday ko'plik?", "a": "Jam'ul-jumu' — xonadonlar, sulolalar"},
+    {"q_uz": "Tadqiqotchi qanday maslahat berdi?", "a": "Birlik shaklini topsang ma'no oson topiladi"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-15-listen.mp3",
+   "transcript_ar": "وَصَلَتْ رَسَائِلُ كَثِيرَةٌ، وَشَوَارِعُ المَدِينَةِ مُزْدَحِمَةٌ. وَالطَّلَبَةُ فِي القَاعَةِ.",
+   "questions": [
+    {"q_uz": "Nima keldi?", "a": "Ko'p xatlar (rasoil)"},
+    {"q_uz": "Ko'chalar qanday?", "a": "Gavjum (muzdahima)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch juftlikni ayting: «risola → rasoil», «shori' → shavori'», «fozil → afodil».",
+   "target_ar": ["رِسَالَة ← رَسَائِل", "شَارِع ← شَوَارِع", "فَاضِل ← أَفَاضِل"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Uch nodir ko'plikni yozing va har birining birlik shaklini ko'rsating.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«رَسَائِل» ning birligi qaysi?",
+   "q_ar": "رَسَائِل",
+   "options": ["رِسَالَة", "رَسُول", "مُرَاسِل", "إِرْسَال"],
+   "answer": "رِسَالَة",
+   "explain_uz": "فَعَائِل vazni — birligi فِعَالَة.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«بُيُوتَات» qanday shakl?",
+   "q_ar": "بُيُوتَات",
+   "options": [
+    "Ko'plikning ko'pligi",
+    "Oddiy ko'plik",
+    "Ikkilik",
+    "Birlik"
+   ],
+   "answer": "Ko'plikning ko'pligi",
+   "explain_uz": "بَيْت → بُيُوت → بُيُوتَات.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«شَوَارِع» ning birligi qaysi?",
+   "q_ar": "شَوَارِع",
+   "options": ["شَارِع", "شِرَاع", "شَرْع", "مَشْرُوع"],
+   "answer": "شَارِع",
+   "explain_uz": "فَوَاعِل vazni — birligi فَاعِل.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi vazn OZ SONLI ko'plikka (3-10) kiradi?",
+   "q_ar": "",
+   "options": ["أَفْعَال", "فُعُول", "فَوَاعِل", "مَفَاعِيل"],
+   "answer": "أَفْعَال",
+   "explain_uz": "Jam' qilla vaznlari: أَفْعُل, أَفْعَال, أَفْعِلَة, فِعْلَة.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "مَجْمُوعَة",
+   "options": [],
+   "answer": "guruh",
+   "explain_uz": "مَجْمُوعَة — guruh, to'plam (majmua).",
+   "audio": "b2/majmua.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«رَسَائِل، مُرَاسِل، رِسَالَة» qaysi o'zakdan?",
+   "q_ar": "رَسَائِل",
+   "options": ["ر س ل", "ر ء س", "س ر ل", "ر س م"],
+   "answer": "ر س ل",
+   "explain_uz": "ر س ل — yuborish o'zagi (risola, rasul).",
+   "audio": "",
+   "root": "ر س ل",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«أَفَاضِل» nimani bildiradi?",
+   "q_ar": "أَفَاضِل",
+   "options": [
+    "Fozil, obro'li kishilar",
+    "Afzalliklar",
+    "Ortiqcha narsalar",
+    "Bo'sh joylar"
+   ],
+   "answer": "Fozil, obro'li kishilar",
+   "explain_uz": "Birligi فَاضِل — fozil kishi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Shahar ko'chalari keng»",
+   "q_ar": "",
+   "options": [],
+   "answer": "شَوَارِعُ المَدِينَةِ وَاسِعَةٌ",
+   "explain_uz": "Idofa (marfu' + majrur) + xabar.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["شَوَارِعُ", "المَدِينَةِ", "وَاسِعَةٌ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ج م ع", "back": "to'plash — jam'/majmua", "deck": "msa"},
+  {"type": "root", "front": "ر س ل", "back": "yuborish — risola/rasoil", "deck": "msa"},
+  {"type": "pattern", "front": "فَعَائِل", "back": "ko'plik: رَسَائِل, وَسَائِل", "deck": "msa"},
+  {"type": "pattern", "front": "فَوَاعِل", "back": "ko'plik: شَوَارِع, عَوَامِل", "deck": "msa"},
+  {"type": "word", "front": "رَسَائِل", "back": "xatlar", "deck": "msa"},
+  {"type": "word", "front": "شَوَارِع", "back": "ko'chalar", "deck": "msa"},
+  {"type": "word", "front": "أَفَاضِل", "back": "fozil kishilar", "deck": "msa"},
+  {"type": "word", "front": "بُيُوتَات", "back": "xonadonlar, sulolalar", "deck": "msa"},
+  {"type": "word", "front": "طُرُقَات", "back": "yo'llar tarmog'i", "deck": "msa"},
+  {"type": "word", "front": "طَلَبَة", "back": "talabalar", "deck": "msa"},
+  {"type": "word", "front": "مَجْمُوعَة", "back": "guruh, to'plam", "deck": "msa"},
+  {"type": "word", "front": "مُفْرَد", "back": "birlik shakli", "deck": "msa"}
+ ]
+}

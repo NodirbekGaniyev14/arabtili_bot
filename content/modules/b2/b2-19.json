@@ -1,0 +1,309 @@
+{
+ "id": "b2-19",
+ "level": "B2",
+ "module": "balagha",
+ "order": 19,
+ "title_uz": "الكناية va idiomalar",
+ "title_ar": "الكِنَايَةُ وَالتَّعْبِيرَاتُ الاِصْطِلَاحِيَّةُ",
+ "can_do_uz": "Kinoya va barqaror iboralarni tanib, ularni so'zma-so'z emas, ma'nosi bo'yicha tushunaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-18"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«Qo'li ochiq» — o'zbekchada saxiy degani. Arabchada ham aynan shunday: «يَدُهُ مَبْسُوطَة». Bu KINOYA (الكِنَايَة) — to'g'ridan-to'g'ri aytish o'rniga belgisini aytish. Yana idiomalar bor: «عَلَى قَدَمٍ وَسَاقٍ» (jadal sur'atda), «فِي المِشْمِشِ» (hech qachon). Bularni so'zma-so'z tarjima qilsangiz kulgili chiqadi. Bugun 30 ta eng kerakli iborani olamiz.",
+ "grammar": {
+  "point_ar": "الكِنَايَةُ: ذِكْرُ اللَّازِمِ وَإِرَادَةُ المَلْزُومِ",
+  "explanation_uz": "KINOYA (الكِنَايَة) — ma'noni to'g'ridan aytmay, uning BELGISI orqali ifodalash. Isti'oradan farqi: kinoyada ASL MA'NO ham to'g'ri bo'lishi mumkin. Misol: «فُلَانٌ كَثِيرُ الرَّمَادِ» (kuli ko'p) — mehmondo'st degani (ko'p ovqat pishiradi), lekin kul haqiqatan ko'p bo'lishi ham mumkin. TURLARI: (1) sifat kinoyasi — يَدُهُ مَبْسُوطَة (saxiy), نَقِيُّ الثَّوْبِ (pok); (2) shaxs kinoyasi — اِبْنُ الصَّحْرَاءِ (badaviy); (3) nisbat kinoyasi — الكَرَمُ فِي بَيْتِهِ (uyi saxovatli). IDIOMALAR (التَّعْبِيرَات الاِصْطِلَاحِيَّة) — barqaror birikmalar, ma'nosi qismlaridan chiqmaydi: عَلَى قَدَمٍ وَسَاقٍ (jadal ketmoqda), بَيْنَ عَشِيَّةٍ وَضُحَاهَا (bir kechada), رَأْسًا عَلَى عَقِبٍ (ostin-ustun), عَلَى حَدِّ سَوَاءٍ (barobar), فِي المِشْمِشِ (hech qachon), يَدًا بِيَدٍ (hamkorlikda), عَلَى قِدَمِ الزَّمَانِ (azaldan), ضَرَبَ عُصْفُورَيْنِ بِحَجَرٍ (bir o'q bilan ikki quyon). QOIDA: idiomani BUTUN holda yodlang, so'zlarga bo'lmang.",
+  "table": [
+   {"ar": "يَدُهُ مَبْسُوطَة", "uz": "Qo'li ochiq — saxiy", "form": "كِنَايَة"},
+   {"ar": "كَثِيرُ الرَّمَادِ", "uz": "Kuli ko'p — mehmondo'st", "form": "كِنَايَة"},
+   {"ar": "عَلَى قَدَمٍ وَسَاقٍ", "uz": "Jadal sur'atda ketmoqda", "form": "تَعْبِير"},
+   {"ar": "بَيْنَ عَشِيَّةٍ وَضُحَاهَا", "uz": "Bir kechada, juda tez", "form": "تَعْبِير"},
+   {"ar": "يَدًا بِيَدٍ", "uz": "Qo'l-qo'lda, hamkorlikda", "form": "تَعْبِير"},
+   {"ar": "ضَرَبَ عُصْفُورَيْنِ بِحَجَرٍ", "uz": "Bir o'q bilan ikki quyon", "form": "مَثَل"}
+  ],
+  "common_mistakes_uz": [
+   "Idiomani so'zma-so'z tarjima qilish: «فِي المِشْمِشِ» — «o'rikda» emas, «hech qachon».",
+   "Kinoyani isti'ora deb belgilash — kinoyada asl ma'no ham to'g'ri bo'lishi mumkin.",
+   "Idiomaning so'zlarini o'zgartirish: «عَلَى رِجْلٍ وَسَاقٍ» ✗ — birikma qat'iy."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ك ن ي",
+   "meaning_uz": "ishora bilan aytish, laqab qo'yish",
+   "uz_cognates": ["kinoya", "kunya"],
+   "derived": [
+    {"ar": "كِنَايَة", "uz": "kinoya", "pattern": "فِعَالَة"},
+    {"ar": "كُنْيَة", "uz": "kunya (Abu Ahmad kabi)", "pattern": "فُعْلَة"},
+    {"ar": "كَنَّى", "uz": "kinoya bilan aytdi", "pattern": "فَعَّلَ"}
+   ]
+  },
+  {
+   "root": "ص ط ل ح",
+   "meaning_uz": "kelishuv — «istiloh» (atama) shundan",
+   "uz_cognates": ["istiloh", "islohot"],
+   "derived": [
+    {"ar": "اِصْطِلَاح", "uz": "atama, istiloh", "pattern": "اِفْتِعَال"},
+    {"ar": "اِصْطِلَاحِيّ", "uz": "atamaviy, idiomatik", "pattern": "اِفْتِعَالِيّ"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "كِنَايَة",
+   "translit": "kināya",
+   "uz": "kinoya — belgisi orqali ifodalash",
+   "root": "ك ن ي",
+   "pattern": "فِعَالَة",
+   "pos": "ot",
+   "audio": "b2/kinaya.mp3",
+   "example_ar": "الكِنَايَةُ أَبْلَغُ مِنَ التَّصْرِيحِ.",
+   "example_uz": "Kinoya ochiq aytishdan ta'sirliroq.",
+   "srs": true
+  },
+  {
+   "ar": "تَعْبِير",
+   "translit": "taʿbīr",
+   "uz": "ibora, ifoda (o'zbekcha 'ta'bir')",
+   "root": "ع ب ر",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tabir.mp3",
+   "example_ar": "هَذَا تَعْبِيرٌ اِصْطِلَاحِيٌّ.",
+   "example_uz": "Bu — barqaror ibora.",
+   "srs": true
+  },
+  {
+   "ar": "اِصْطِلَاحِيّ",
+   "translit": "iṣṭilāḥī",
+   "uz": "idiomatik, atamaviy",
+   "root": "ص ل ح",
+   "pattern": "اِفْتِعَالِيّ",
+   "pos": "sifat",
+   "audio": "b2/istilahi.mp3",
+   "example_ar": "المَعْنَى الاِصْطِلَاحِيُّ مُخْتَلِفٌ.",
+   "example_uz": "Idiomatik ma'no boshqacha.",
+   "srs": true
+  },
+  {
+   "ar": "مَبْسُوط",
+   "translit": "mabsūṭ",
+   "uz": "ochiq, yozilgan; (kinoyada) saxiy",
+   "root": "ب س ط",
+   "pattern": "مَفْعُول",
+   "pos": "sifat",
+   "audio": "b2/mabsut.mp3",
+   "example_ar": "يَدُهُ مَبْسُوطَةٌ لِلْفُقَرَاءِ.",
+   "example_uz": "Qo'li kambag'allarga ochiq.",
+   "srs": true
+  },
+  {
+   "ar": "كَرَم",
+   "translit": "karam",
+   "uz": "saxovat (o'zbekcha 'karam')",
+   "root": "ك ر م",
+   "pattern": "فَعَل",
+   "pos": "ot",
+   "audio": "b2/karam.mp3",
+   "example_ar": "الكَرَمُ صِفَةٌ مَحْمُودَةٌ.",
+   "example_uz": "Saxovat — maqtovli sifat.",
+   "srs": true
+  },
+  {
+   "ar": "عَلَى قَدَمٍ وَسَاقٍ",
+   "translit": "ʿalā qadamin wa sāqin",
+   "uz": "jadal sur'atda (ish qizg'in ketmoqda)",
+   "root": "",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/ala_qadam.mp3",
+   "example_ar": "العَمَلُ عَلَى قَدَمٍ وَسَاقٍ.",
+   "example_uz": "Ish jadal ketmoqda.",
+   "srs": true
+  },
+  {
+   "ar": "يَدًا بِيَدٍ",
+   "translit": "yadan bi-yadin",
+   "uz": "hamkorlikda, qo'l-qo'lda",
+   "root": "",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/yadan_biyad.mp3",
+   "example_ar": "نَعْمَلُ يَدًا بِيَدٍ.",
+   "example_uz": "Hamkorlikda ishlaymiz.",
+   "srs": true
+  },
+  {
+   "ar": "بَيْنَ عَشِيَّةٍ وَضُحَاهَا",
+   "translit": "bayna ʿashiyyatin wa ḍuḥāhā",
+   "uz": "bir kechada, juda tez",
+   "root": "",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/bayna_ashiyya.mp3",
+   "example_ar": "تَغَيَّرَ السُّوقُ بَيْنَ عَشِيَّةٍ وَضُحَاهَا.",
+   "example_uz": "Bozor bir kechada o'zgardi.",
+   "srs": true
+  },
+  {
+   "ar": "عَلَى حَدٍّ سَوَاءٍ",
+   "translit": "ʿalā ḥaddin sawāʾin",
+   "uz": "barobar, teng darajada",
+   "root": "",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/ala_haddin.mp3",
+   "example_ar": "الجَمِيعُ مَسْؤُولُونَ عَلَى حَدٍّ سَوَاءٍ.",
+   "example_uz": "Hamma barobar mas'ul.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "قال المدير في اجتماعه: العمل على قدم وساق، وسننهي المشروع في موعده. أضاف: نجاحنا سببه أننا نعمل يدًا بيد، والجميع مسؤولون على حدّ سواء. ثم أشار إلى زميل قديم وقال: يده مبسوطة دائمًا، وبيته لا يخلو من ضيف. تغيّر حال الشركة بين عشية وضحاها بعد هذا التعاون.",
+   "questions": [
+    {"q_uz": "«العمل على قدم وساق» nima degani?", "a": "Ish jadal, qizg'in ketmoqda"},
+    {"q_uz": "«يده مبسوطة» qanday kinoya?", "a": "Saxiylik kinoyasi — qo'li ochiq"},
+    {"q_uz": "«بين عشية وضحاها» ma'nosi?", "a": "Juda tez, bir kechada"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-19-listen.mp3",
+   "transcript_ar": "العَمَلُ عَلَى قَدَمٍ وَسَاقٍ، وَنَحْنُ نَعْمَلُ يَدًا بِيَدٍ. وَالجَمِيعُ مَسْؤُولُونَ عَلَى حَدٍّ سَوَاءٍ.",
+   "questions": [
+    {"q_uz": "Nechta idioma eshitildi?", "a": "Uchta: على قدم وساق, يدًا بيد, على حدّ سواء"},
+    {"q_uz": "Mas'uliyat qanday taqsimlangan?", "a": "Barobar — hamma teng mas'ul"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch iborani jumla ichida ayting: «ish jadal ketmoqda», «hamkorlikda ishlaymiz», «hamma barobar mas'ul».",
+   "target_ar": ["العَمَلُ عَلَى قَدَمٍ وَسَاقٍ", "نَعْمَلُ يَدًا بِيَدٍ", "الجَمِيعُ مَسْؤُولُونَ عَلَى حَدٍّ سَوَاءٍ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Uch gap yozing: har birida bitta idioma yoki kinoya ishlating va qavs ichida o'zbekcha ma'nosini yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«يَدُهُ مَبْسُوطَة» nima degani?",
+   "q_ar": "يَدُهُ مَبْسُوطَة",
+   "options": ["U saxiy", "Uning qo'li kasal", "U ishsiz", "U kuchli"],
+   "answer": "U saxiy",
+   "explain_uz": "Saxiylik kinoyasi — «qo'li ochiq».",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«عَلَى قَدَمٍ وَسَاقٍ» ma'nosi?",
+   "q_ar": "عَلَى قَدَمٍ وَسَاقٍ",
+   "options": ["Jadal sur'atda ketmoqda", "Piyoda yurmoqda", "To'xtab qolgan", "Oyoq og'rimoqda"],
+   "answer": "Jadal sur'atda ketmoqda",
+   "explain_uz": "Barqaror ibora — ish qizg'in.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Kinoya bilan isti'oraning farqi nimada?",
+   "q_ar": "",
+   "options": [
+    "Kinoyada asl ma'no ham to'g'ri bo'lishi mumkin",
+    "Kinoya faqat she'rda bo'ladi",
+    "Isti'orada vosita bor",
+    "Farqi yo'q"
+   ],
+   "answer": "Kinoyada asl ma'no ham to'g'ri bo'lishi mumkin",
+   "explain_uz": "Isti'orada asl ma'no qarina bilan inkor qilinadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«بَيْنَ عَشِيَّةٍ وَضُحَاهَا» nimani bildiradi?",
+   "q_ar": "بَيْنَ عَشِيَّةٍ وَضُحَاهَا",
+   "options": ["Juda tez, bir kechada", "Kechqurun", "Ertalab", "Uzoq vaqt davomida"],
+   "answer": "Juda tez, bir kechada",
+   "explain_uz": "Kechqurun bilan ertalab orasida — ya'ni juda qisqa vaqtda.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "كَرَم",
+   "options": [],
+   "answer": "saxovat",
+   "explain_uz": "كَرَم — saxovat, karam.",
+   "audio": "b2/karam.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«كِنَايَة، كُنْيَة، كَنَّى» qaysi o'zakdan?",
+   "q_ar": "كِنَايَة",
+   "options": ["ك ن ي", "ك و ن", "ن ك ي", "ك ن ن"],
+   "answer": "ك ن ي",
+   "explain_uz": "ك ن ي — ishora bilan aytish o'zagi.",
+   "audio": "",
+   "root": "ك ن ي",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Idioma bilan ishlashning to'g'ri usuli qaysi?",
+   "q_ar": "",
+   "options": [
+    "Butun holda yodlash",
+    "So'zma-so'z tarjima qilish",
+    "So'zlarini almashtirish",
+    "E'tiborsiz qoldirish"
+   ],
+   "answer": "Butun holda yodlash",
+   "explain_uz": "Ma'no qismlardan chiqmaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Hamkorlikda ishlaymiz»",
+   "q_ar": "",
+   "options": [],
+   "answer": "نَعْمَلُ يَدًا بِيَدٍ",
+   "explain_uz": "Fe'l + barqaror ibora.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["نَعْمَلُ", "يَدًا", "بِيَدٍ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ك ن ي", "back": "kinoya — ishora bilan aytish", "deck": "msa"},
+  {"type": "word", "front": "كِنَايَة", "back": "kinoya", "deck": "msa"},
+  {"type": "word", "front": "تَعْبِير", "back": "ibora, ifoda", "deck": "msa"},
+  {"type": "word", "front": "اِصْطِلَاحِيّ", "back": "idiomatik", "deck": "msa"},
+  {"type": "word", "front": "مَبْسُوط", "back": "ochiq; (kinoya) saxiy", "deck": "msa"},
+  {"type": "word", "front": "كَرَم", "back": "saxovat", "deck": "msa"},
+  {"type": "phrase", "front": "عَلَى قَدَمٍ وَسَاقٍ", "back": "jadal sur'atda", "deck": "msa"},
+  {"type": "phrase", "front": "يَدًا بِيَدٍ", "back": "hamkorlikda", "deck": "msa"},
+  {"type": "phrase", "front": "بَيْنَ عَشِيَّةٍ وَضُحَاهَا", "back": "bir kechada, juda tez", "deck": "msa"},
+  {"type": "phrase", "front": "عَلَى حَدٍّ سَوَاءٍ", "back": "barobar, teng darajada", "deck": "msa"}
+ ]
+}

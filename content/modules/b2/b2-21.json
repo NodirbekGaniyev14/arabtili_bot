@@ -1,0 +1,318 @@
+{
+ "id": "b2-21",
+ "level": "B2",
+ "module": "balagha",
+ "order": 21,
+ "title_uz": "الإيجاز والإطناب",
+ "title_ar": "الإِيجَازُ وَالإِطْنَابُ: أُسْلُوبُ الخَبَرِ وَالأَدَبِ",
+ "can_do_uz": "Gazeta uslubi bilan adabiy uslubni farqlay olaman va matnni qisqartira yoki kengaytira olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-20"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Xabar matni: «وَقَعَ حَادِثٌ فِي الطَّرِيقِ السَّرِيعِ» — 5 so'z, hammasi kerakli. Adabiy matn: o'sha voqeani yarim sahifada tasvirlaydi. Bu ikki uslub — IJOZ (qisqalik) va ITNOB (kengaytirish). Ikkalasi ham «to'g'ri», lekin MAQSADI boshqa. B2 da siz matn turini birinchi jumlasidanoq taniysiz — bu tez o'qish uchun juda muhim.",
+ "grammar": {
+  "point_ar": "الإِيجَازُ · الإِطْنَابُ · المُسَاوَاةُ",
+  "explanation_uz": "Uslubning uch darajasi. 1) IJOZ (الإِيجَاز) — ma'noni eng kam so'z bilan berish. Ikki turi: (a) ijoz qisar (قِصَر) — so'z kam, ma'no keng: «الوَقْتُ ذَهَبٌ»; (b) ijoz hazf (حَذْف) — bo'lak tushiriladi, kontekst tiklaydi: «قَالُوا: نَعَمْ» (kimga aytdi — kontekstdan ma'lum). GAZETA uslubi shu: birinchi jumlada KIM, NIMA, QAYERDA, QACHON. 2) ITNOB (الإِطْنَاب) — ma'noni kengaytirish: sifatlar, takror, izoh, misol qo'shish. Adabiyot, xutba, ta'sirchan matnlarda. Turlari: تَكْرَار (takror — ta'kid uchun), اِعْتِرَاض (qistirma izoh), ذِكْرُ الخَاصِّ بَعْدَ العَامِّ (umumiydan keyin xususiyni aytish). 3) MUSOVOT (المُسَاوَاة) — so'z va ma'no muvozanati; ilmiy va rasmiy matnlar shunday. QANDAY TANIYSIZ: xabar matni — qisqa jumlalar, raqamlar, fe'l boshda; adabiy matn — uzun jumlalar, ko'p sifat, majoz; rasmiy matn — atamalar, aniqlik, qistirma izohlar.",
+  "table": [
+   {"ar": "الوَقْتُ ذَهَبٌ", "uz": "Vaqt — oltin (ijoz qisar)", "form": "إِيجَاز"},
+   {"ar": "وَقَعَ حَادِثٌ فِي الطَّرِيقِ", "uz": "Yo'lda hodisa yuz berdi (xabar uslubi)", "form": "إِيجَاز"},
+   {"ar": "قَالُوا: نَعَمْ", "uz": "«Ha» dedilar (bo'lak tushirilgan)", "form": "إِيجَاز حَذْف"},
+   {"ar": "جَاءَ الرَّبِيعُ بِخُضْرَتِهِ وَعِطْرِهِ وَأَلْوَانِهِ", "uz": "Bahor keldi — yashilligi, atri, ranglari bilan", "form": "إِطْنَاب"},
+   {"ar": "حَضَرَ الطُّلَّابُ وَخَاصَّةً المُتَفَوِّقُونَ", "uz": "Talabalar, xususan a'lochilar keldi", "form": "ذِكْر الخَاصّ"},
+   {"ar": "التَّقْرِيرُ دَقِيقٌ وَشَامِلٌ وَمُوَثَّقٌ", "uz": "Hisobot aniq, keng qamrovli va hujjatli", "form": "إِطْنَاب"}
+  ],
+  "common_mistakes_uz": [
+   "Har qanday uzun matnni «yomon uslub» deb hisoblash — itnob maqsadli bo'lsa to'g'ri.",
+   "Xabar matnini adabiy uslubda yozish — o'quvchi asosiy ma'lumotni yo'qotadi.",
+   "Ijozni «to'liqsiz jumla» deb tushunish — tushirilgan bo'lak kontekstdan tiklanadi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "و ج ز",
+   "meaning_uz": "qisqartirish, ixchamlik",
+   "uz_cognates": ["ijoz", "vajiz"],
+   "derived": [
+    {"ar": "إِيجَاز", "uz": "qisqalik", "pattern": "إِفْعَال"},
+    {"ar": "مُوجَز", "uz": "qisqacha bayon, xulosa", "pattern": "مُفْعَل"},
+    {"ar": "وَجِيز", "uz": "qisqa, ixcham", "pattern": "فَعِيل"}
+   ]
+  },
+  {
+   "root": "ط ن ب",
+   "meaning_uz": "cho'zish, uzaytirish",
+   "uz_cognates": [],
+   "derived": [
+    {"ar": "إِطْنَاب", "uz": "kengaytirish", "pattern": "إِفْعَال"},
+    {"ar": "مُطْنِب", "uz": "so'zni cho'zuvchi", "pattern": "مُفْعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "إِيجَاز",
+   "translit": "ījāz",
+   "uz": "qisqalik, ixchamlik (o'zbekcha 'ijoz')",
+   "root": "و ج ز",
+   "pattern": "إِفْعَال",
+   "pos": "ot",
+   "audio": "b2/ijaz.mp3",
+   "example_ar": "الإِيجَازُ سِمَةُ لُغَةِ الأَخْبَارِ.",
+   "example_uz": "Qisqalik — xabar tilining belgisi.",
+   "srs": true
+  },
+  {
+   "ar": "إِطْنَاب",
+   "translit": "iṭnāb",
+   "uz": "kengaytirish, batafsillik",
+   "root": "ط ن ب",
+   "pattern": "إِفْعَال",
+   "pos": "ot",
+   "audio": "b2/itnab.mp3",
+   "example_ar": "الإِطْنَابُ مُنَاسِبٌ لِلْأَدَبِ.",
+   "example_uz": "Kengaytirish adabiyotga mos.",
+   "srs": true
+  },
+  {
+   "ar": "مُوجَز",
+   "translit": "mūjaz",
+   "uz": "qisqacha bayon, xulosa",
+   "root": "و ج ز",
+   "pattern": "مُفْعَل",
+   "pos": "ot",
+   "audio": "b2/mujaz.mp3",
+   "example_ar": "إِلَيْكُمْ مُوجَزَ الأَنْبَاءِ.",
+   "example_uz": "Mana sizga yangiliklar xulosasi.",
+   "srs": true
+  },
+  {
+   "ar": "شَامِل",
+   "translit": "shāmil",
+   "uz": "keng qamrovli, to'liq",
+   "root": "ش م ل",
+   "pattern": "فَاعِل",
+   "pos": "sifat",
+   "audio": "b2/shamil.mp3",
+   "example_ar": "تَقْرِيرٌ شَامِلٌ عَنِ المَشْرُوعِ.",
+   "example_uz": "Loyiha haqida keng qamrovli hisobot.",
+   "srs": true
+  },
+  {
+   "ar": "مُوَثَّق",
+   "translit": "muwaththaq",
+   "uz": "hujjatlashtirilgan, tasdiqlangan",
+   "root": "و ث ق",
+   "pattern": "مُفَعَّل",
+   "pos": "sifat",
+   "audio": "b2/muwaththaq.mp3",
+   "example_ar": "خَبَرٌ مُوَثَّقٌ بِالأَرْقَامِ.",
+   "example_uz": "Raqamlar bilan tasdiqlangan xabar.",
+   "srs": true
+  },
+  {
+   "ar": "تَكْرَار",
+   "translit": "takrār",
+   "uz": "takrorlash (o'zbekcha 'takror')",
+   "root": "ك ر ر",
+   "pattern": "تَفْعَال",
+   "pos": "ot",
+   "audio": "b2/takrar.mp3",
+   "example_ar": "التَّكْرَارُ لِلتَّأْكِيدِ.",
+   "example_uz": "Takror — ta'kid uchun.",
+   "srs": true
+  },
+  {
+   "ar": "خُلَاصَة",
+   "translit": "khulāṣa",
+   "uz": "xulosa (o'zbekcha 'xulosa')",
+   "root": "خ ل ص",
+   "pattern": "فُعَالَة",
+   "pos": "ot",
+   "audio": "b2/khulasa.mp3",
+   "example_ar": "خُلَاصَةُ الكَلَامِ وَاضِحَةٌ.",
+   "example_uz": "Gapning xulosasi aniq.",
+   "srs": true
+  },
+  {
+   "ar": "أُسْلُوب خَبَرِيّ",
+   "translit": "uslūb khabarī",
+   "uz": "xabar uslubi (jurnalistik)",
+   "root": "خ ب ر",
+   "pattern": "فَعَلِيّ",
+   "pos": "ot",
+   "audio": "b2/uslub_khabari.mp3",
+   "example_ar": "الأُسْلُوبُ الخَبَرِيُّ قَصِيرٌ وَمُبَاشِرٌ.",
+   "example_uz": "Xabar uslubi qisqa va to'g'ridan-to'g'ri.",
+   "srs": true
+  },
+  {
+   "ar": "مُبَاشِر",
+   "translit": "mubāshir",
+   "uz": "to'g'ridan-to'g'ri, bevosita",
+   "root": "ب ش ر",
+   "pattern": "مُفَاعِل",
+   "pos": "sifat",
+   "audio": "b2/mubashir.mp3",
+   "example_ar": "بَثٌّ مُبَاشِرٌ مِنَ المَوْقِعِ.",
+   "example_uz": "Joydan to'g'ridan-to'g'ri efir.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "إليكم موجز الأنباء: وقع حادث في الطريق السريع صباح اليوم، ولم تقع إصابات خطيرة. هذا أسلوب خبري: قصير، مباشر، موثّق بالأرقام. أما الكاتب الأدبي فيصف المشهد نفسه في صفحة كاملة: الطريق، والصمت، والضوء، وخوف الناس. كلا الأسلوبين صحيح، لكن لكلٍّ مقام. وخلاصة الكلام: اعرف هدفك أولًا، ثم اختر الإيجاز أو الإطناب.",
+   "questions": [
+    {"q_uz": "Xabar uslubining uch belgisi qaysi?", "a": "Qisqa, to'g'ridan-to'g'ri, raqamlar bilan tasdiqlangan"},
+    {"q_uz": "Adabiy yozuvchi nima qiladi?", "a": "Bir sahifada sahnani batafsil tasvirlaydi (itnob)"},
+    {"q_uz": "Matn xulosasi nima?", "a": "Avval maqsadni bil, keyin ijoz yoki itnobni tanla"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-21-listen.mp3",
+   "transcript_ar": "إِلَيْكُمْ مُوجَزَ الأَنْبَاءِ: وَقَعَ حَادِثٌ فِي الطَّرِيقِ السَّرِيعِ، وَلَمْ تَقَعْ إِصَابَاتٌ خَطِيرَةٌ.",
+   "questions": [
+    {"q_uz": "Bu qanday uslub?", "a": "Xabar uslubi — ijoz (qisqa, aniq)"},
+    {"q_uz": "Jarohat bo'lganmi?", "a": "Jiddiy jarohat bo'lmagan"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Bitta voqeani ikki xil ayting: avval xabar uslubida (1 jumla), keyin kengaytirilgan holda (3 jumla).",
+   "target_ar": ["وَقَعَ حَادِثٌ فِي الطَّرِيقِ", "الأُسْلُوبُ الخَبَرِيُّ مُبَاشِرٌ", "خُلَاصَةُ الكَلَامِ وَاضِحَةٌ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Bir voqeani ikki uslubda yozing: (1) xabar uslubida 2 jumla, (2) adabiy uslubda 4 jumla — farqni ko'rsating.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«الوَقْتُ ذَهَبٌ» qaysi uslubga misol?",
+   "q_ar": "الوَقْتُ ذَهَبٌ",
+   "options": ["Ijoz (qisqalik)", "Itnob (kengaytirish)", "Musovot", "Saj'"],
+   "answer": "Ijoz (qisqalik)",
+   "explain_uz": "Kam so'z — keng ma'no.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Xabar (jurnalistik) uslubining belgisi qaysi?",
+   "q_ar": "",
+   "options": [
+    "Qisqa jumlalar, raqamlar, fe'l boshda",
+    "Uzun jumlalar va ko'p majoz",
+    "She'riy vazn",
+    "Ko'p takror"
+   ],
+   "answer": "Qisqa jumlalar, raqamlar, fe'l boshda",
+   "explain_uz": "Xabar matnida kim/nima/qayerda/qachon birinchi jumlada.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«حَضَرَ الطُّلَّابُ وَخَاصَّةً المُتَفَوِّقُونَ» qaysi itnob turi?",
+   "q_ar": "وَخَاصَّةً المُتَفَوِّقُونَ",
+   "options": [
+    "Umumiydan keyin xususiyni aytish",
+    "Takror",
+    "Qistirma",
+    "Ijoz hazf"
+   ],
+   "answer": "Umumiydan keyin xususiyni aytish",
+   "explain_uz": "ذِكْرُ الخَاصِّ بَعْدَ العَامِّ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«قَالُوا: نَعَمْ» — bu qanday ijoz?",
+   "q_ar": "قَالُوا: نَعَمْ",
+   "options": [
+    "Ijoz hazf (bo'lak tushirilgan)",
+    "Ijoz qisar",
+    "Itnob",
+    "Musovot"
+   ],
+   "answer": "Ijoz hazf (bo'lak tushirilgan)",
+   "explain_uz": "Kimga aytgani kontekstdan tiklanadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "مُوجَز",
+   "options": [],
+   "answer": "xulosa",
+   "explain_uz": "مُوجَز — qisqacha bayon (yangiliklar xulosasi).",
+   "audio": "b2/mujaz.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«إِيجَاز، مُوجَز، وَجِيز» qaysi o'zakdan?",
+   "q_ar": "إِيجَاز",
+   "options": ["و ج ز", "ء ج ز", "و ج ب", "ج و ز"],
+   "answer": "و ج ز",
+   "explain_uz": "و ج ز — qisqartirish o'zagi.",
+   "audio": "",
+   "root": "و ج ز",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Musovot (المُسَاوَاة) nima?",
+   "q_ar": "المُسَاوَاة",
+   "options": [
+    "So'z va ma'no muvozanati",
+    "Ortiqcha so'zlar",
+    "Juda qisqa yozish",
+    "Qofiya"
+   ],
+   "answer": "So'z va ma'no muvozanati",
+   "explain_uz": "Ilmiy va rasmiy matnlar uslubi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Tez yo'lda hodisa yuz berdi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "وَقَعَ حَادِثٌ فِي الطَّرِيقِ السَّرِيعِ",
+   "explain_uz": "Fe'l + noaniq foil + jarr birikmasi + sifat.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["وَقَعَ", "حَادِثٌ", "فِي", "الطَّرِيقِ", "السَّرِيعِ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "و ج ز", "back": "qisqalik — ijoz/mujaz/vajiz", "deck": "msa"},
+  {"type": "word", "front": "إِيجَاز", "back": "qisqalik", "deck": "msa"},
+  {"type": "word", "front": "إِطْنَاب", "back": "kengaytirish", "deck": "msa"},
+  {"type": "word", "front": "مُوجَز", "back": "qisqacha bayon, xulosa", "deck": "msa"},
+  {"type": "word", "front": "شَامِل", "back": "keng qamrovli", "deck": "msa"},
+  {"type": "word", "front": "مُوَثَّق", "back": "hujjatlashtirilgan", "deck": "msa"},
+  {"type": "word", "front": "تَكْرَار", "back": "takrorlash", "deck": "msa"},
+  {"type": "word", "front": "خُلَاصَة", "back": "xulosa", "deck": "msa"},
+  {"type": "word", "front": "مُبَاشِر", "back": "to'g'ridan-to'g'ri", "deck": "msa"}
+ ]
+}

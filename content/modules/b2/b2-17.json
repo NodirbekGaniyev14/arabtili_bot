@@ -1,0 +1,311 @@
+{
+ "id": "b2-17",
+ "level": "B2",
+ "module": "balagha",
+ "order": 17,
+ "title_uz": "التشبيه",
+ "title_ar": "التَّشْبِيهُ وَأَرْكَانُهُ",
+ "can_do_uz": "Matndagi o'xshatishni topib, uning to'rt ustunini ajrata olaman va o'zim o'xshatish tuza olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-16"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«U sherdek jasur» — o'zbekchada ham bor. Arabchada bu TASHBEH (التَّشْبِيه) deyiladi va uning ANIQ tuzilishi bor: kim o'xshatiladi, nimaga, qaysi sifatda, qaysi vosita bilan. Vosita tushib qolsa o'xshatish kuchayadi: «هُوَ أَسَدٌ» — «u sher» (sherdek emas!). B2 dan boshlab matnda shu farqni ko'rasiz — bu adabiy va publitsistik uslubning kalitidir.",
+ "grammar": {
+  "point_ar": "أَرْكَانُ التَّشْبِيهِ الأَرْبَعَةُ",
+  "explanation_uz": "TASHBEH — ikki narsani umumiy sifatda tenglashtirish. To'rt ustuni (أَرْكَان): 1) المُشَبَّه — o'xshatiluvchi (الجُنْدِيُّ), 2) المُشَبَّه بِهِ — o'xshatilgan narsa (الأَسَد), 3) أَدَاةُ التَّشْبِيهِ — vosita (كَ، مِثْل، كَأَنَّ، يُشْبِهُ), 4) وَجْهُ الشَّبَهِ — umumiy sifat (الشَّجَاعَة). To'liq misol: الجُنْدِيُّ كَالأَسَدِ فِي الشَّجَاعَةِ. TURLARI: (a) TO'LIQ (مُرْسَل مُفَصَّل) — hamma ustunlar bor; (b) MURSAL MUJMAL — sifat aytilmagan: هُوَ كَالأَسَدِ; (c) MUAKKAD — vosita tushirilgan: هُوَ أَسَدٌ فِي الشَّجَاعَةِ; (d) BALIG' (بَلِيغ — eng kuchli) — na vosita, na sifat: هُوَ أَسَدٌ. Qanchalik kam qism qolsa, o'xshatish shunchalik KUCHLI. Vositalar: كَ (dek), مِثْل (kabi), كَأَنَّ (go'yo), يُشْبِهُ (o'xshaydi), شَبِيه بِـ (o'xshash). Gazeta tilida: «الاِقْتِصَادُ كَالجِسْمِ» (iqtisod tanaga o'xshaydi).",
+  "table": [
+   {"ar": "الجُنْدِيُّ كَالأَسَدِ فِي الشَّجَاعَةِ", "uz": "To'liq: 4 ustun ham bor", "form": "مُفَصَّل"},
+   {"ar": "هُوَ كَالأَسَدِ", "uz": "Sifat aytilmagan", "form": "مُجْمَل"},
+   {"ar": "هُوَ أَسَدٌ فِي الشَّجَاعَةِ", "uz": "Vosita tushirilgan — kuchliroq", "form": "مُؤَكَّد"},
+   {"ar": "هُوَ أَسَدٌ", "uz": "Na vosita, na sifat — eng kuchli", "form": "بَلِيغ"},
+   {"ar": "كَأَنَّ العِلْمَ نُورٌ", "uz": "Go'yo ilm nurdek", "form": "كَأَنَّ"},
+   {"ar": "الوَقْتُ يُشْبِهُ السَّيْفَ", "uz": "Vaqt qilichga o'xshaydi", "form": "يُشْبِهُ"}
+  ],
+  "common_mistakes_uz": [
+   "«هُوَ أَسَدٌ» ni so'zma-so'z «u — sher» deb tarjima qilish — bu baliy tashbeh, «sherdek jasur» degani.",
+   "Vositani (كَ) sifat bilan chalkashtirish: كَ — vosita, الشَّجَاعَة — vajhu shabah.",
+   "Har o'xshashlikni tashbeh deb belgilash — umumiy sifat bo'lishi shart."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ش ب ه",
+   "meaning_uz": "o'xshash bo'lish",
+   "uz_cognates": ["tashbih", "shubha", "mushobih"],
+   "derived": [
+    {"ar": "تَشْبِيه", "uz": "o'xshatish", "pattern": "تَفْعِيل"},
+    {"ar": "شَبِيه", "uz": "o'xshash", "pattern": "فَعِيل"},
+    {"ar": "مُشَابَهَة", "uz": "o'xshashlik", "pattern": "مُفَاعَلَة"}
+   ]
+  },
+  {
+   "root": "ش ج ع",
+   "meaning_uz": "jasurlik",
+   "uz_cognates": ["shijoat", "shuja"],
+   "derived": [
+    {"ar": "شَجَاعَة", "uz": "jasorat", "pattern": "فَعَالَة"},
+    {"ar": "شُجَاع", "uz": "jasur", "pattern": "فُعَال"},
+    {"ar": "تَشْجِيع", "uz": "rag'batlantirish", "pattern": "تَفْعِيل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "تَشْبِيه",
+   "translit": "tashbīh",
+   "uz": "o'xshatish (o'zbekcha 'tashbih')",
+   "root": "ش ب ه",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tashbih.mp3",
+   "example_ar": "التَّشْبِيهُ يُقَرِّبُ المَعْنَى.",
+   "example_uz": "O'xshatish ma'noni yaqinlashtiradi.",
+   "srs": true
+  },
+  {
+   "ar": "أَدَاة",
+   "translit": "adāt",
+   "uz": "vosita, asbob (grammatikada: yordamchi so'z)",
+   "root": "أ د و",
+   "pattern": "فَعَالَة",
+   "pos": "ot",
+   "audio": "b2/adat.mp3",
+   "example_ar": "«كَ» أَدَاةُ تَشْبِيهٍ.",
+   "example_uz": "«Ka» — o'xshatish vositasi.",
+   "srs": true
+  },
+  {
+   "ar": "شَجَاعَة",
+   "translit": "shajāʿa",
+   "uz": "jasorat (o'zbekcha 'shijoat')",
+   "root": "ش ج ع",
+   "pattern": "فَعَالَة",
+   "pos": "ot",
+   "audio": "b2/shajaa.mp3",
+   "example_ar": "عُرِفَ بِالشَّجَاعَةِ.",
+   "example_uz": "Jasorati bilan tanilgan.",
+   "srs": true
+  },
+  {
+   "ar": "أَسَد",
+   "translit": "asad",
+   "uz": "sher (o'zbekcha 'asad')",
+   "root": "أ س د",
+   "pattern": "فَعَل",
+   "pos": "ot",
+   "audio": "b2/asad_lion.mp3",
+   "example_ar": "هُوَ أَسَدٌ فِي المَعْرَكَةِ.",
+   "example_uz": "U jangda sherdek.",
+   "srs": true
+  },
+  {
+   "ar": "كَأَنَّ",
+   "translit": "kaʾanna",
+   "uz": "go'yo, xuddi (kuchli o'xshatish)",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "b2/kaanna.mp3",
+   "example_ar": "كَأَنَّ العِلْمَ نُورٌ.",
+   "example_uz": "Go'yo ilm — nur.",
+   "srs": true
+  },
+  {
+   "ar": "شَبِيه",
+   "translit": "shabīh",
+   "uz": "o'xshash",
+   "root": "ش ب ه",
+   "pattern": "فَعِيل",
+   "pos": "sifat",
+   "audio": "b2/shabih.mp3",
+   "example_ar": "رَأْيُهُ شَبِيهٌ بِرَأْيِي.",
+   "example_uz": "Uning fikri meniki bilan o'xshash.",
+   "srs": true
+  },
+  {
+   "ar": "بَلِيغ",
+   "translit": "balīgh",
+   "uz": "ta'sirchan, balog'atli (uslub haqida)",
+   "root": "ب ل غ",
+   "pattern": "فَعِيل",
+   "pos": "sifat",
+   "audio": "b2/baligh.mp3",
+   "example_ar": "أُسْلُوبٌ بَلِيغٌ وَمُؤَثِّرٌ.",
+   "example_uz": "Ta'sirchan va kuchli uslub.",
+   "srs": true
+  },
+  {
+   "ar": "صُورَة",
+   "translit": "ṣūra",
+   "uz": "surat, obraz (o'zbekcha 'surat')",
+   "root": "ص و ر",
+   "pattern": "فُعْلَة",
+   "pos": "ot",
+   "audio": "b2/sura_image.mp3",
+   "example_ar": "التَّشْبِيهُ يَرْسُمُ صُورَةً.",
+   "example_uz": "O'xshatish obraz chizadi.",
+   "srs": true
+  },
+  {
+   "ar": "مُؤَثِّر",
+   "translit": "muʾaththir",
+   "uz": "ta'sirli",
+   "root": "أ ث ر",
+   "pattern": "مُفَعِّل",
+   "pos": "sifat",
+   "audio": "b2/muaththir.mp3",
+   "example_ar": "خِطَابٌ مُؤَثِّرٌ.",
+   "example_uz": "Ta'sirli nutq.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "قال الكاتب في مقاله: الاقتصاد كالجسم، إذا مرض عضو تألّم الكلّ. وأضاف: الوقت يشبه السيف، إن لم تقطعه قطعك. ثم وصف فريق العمل فقال: هم أسود في الميدان، لا يعرفون التعب. لاحظ القارئ أنّ الجملة الأخيرة تشبيه بليغ، لأن الأداة ووجه الشبه محذوفان، ولذلك كانت أقوى صورة في المقال.",
+   "questions": [
+    {"q_uz": "«الاقتصاد كالجسم» — vosita qaysi?", "a": "كَ (ka) — o'xshatish vositasi"},
+    {"q_uz": "«هم أسود في الميدان» qanday tashbeh?", "a": "Baliy — vosita ham, sifat ham tushirilgan"},
+    {"q_uz": "Nega baliy tashbeh kuchliroq?", "a": "Qism kamaygani sari o'xshatish kuchayadi"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-17-listen.mp3",
+   "transcript_ar": "الجُنْدِيُّ كَالأَسَدِ فِي الشَّجَاعَةِ. وَكَأَنَّ العِلْمَ نُورٌ يَهْدِي صَاحِبَهُ.",
+   "questions": [
+    {"q_uz": "Birinchi jumlada vajhu shabah qaysi?", "a": "الشجاعة — jasorat"},
+    {"q_uz": "Ikkinchi jumlada qaysi vosita ishlatilgan?", "a": "كَأَنَّ — go'yo"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch o'xshatishni ayting: to'liq, vositasiz va baliy shaklda.",
+   "target_ar": ["الجُنْدِيُّ كَالأَسَدِ فِي الشَّجَاعَةِ", "هُوَ أَسَدٌ فِي الشَّجَاعَةِ", "هُوَ أَسَدٌ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Ikki o'xshatish yozing: birinchisi to'liq (4 ustun), ikkinchisi baliy (vositasiz va sifatsiz).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Tashbehning nechta ustuni bor?",
+   "q_ar": "",
+   "options": ["To'rtta", "Ikkita", "Uchta", "Beshta"],
+   "answer": "To'rtta",
+   "explain_uz": "Mushabbah, mushabbah bihi, ado, vajhu shabah.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«هُوَ أَسَدٌ» qanday tashbeh?",
+   "q_ar": "هُوَ أَسَدٌ",
+   "options": ["Baliy (eng kuchli)", "To'liq", "Mursal mujmal", "Tashbeh emas"],
+   "answer": "Baliy (eng kuchli)",
+   "explain_uz": "Vosita ham, sifat ham tushirilgan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«الجُنْدِيُّ كَالأَسَدِ فِي الشَّجَاعَةِ» da «الشَّجَاعَة» nima?",
+   "q_ar": "فِي الشَّجَاعَةِ",
+   "options": [
+    "Vajhu shabah (umumiy sifat)",
+    "Vosita",
+    "Mushabbah",
+    "Mushabbah bihi"
+   ],
+   "answer": "Vajhu shabah (umumiy sifat)",
+   "explain_uz": "Ikkalasini bog'laydigan umumiy xususiyat.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi so'z o'xshatish VOSITASI emas?",
+   "q_ar": "",
+   "options": ["لَكِنَّ", "كَ", "مِثْل", "كَأَنَّ"],
+   "answer": "لَكِنَّ",
+   "explain_uz": "لَكِنَّ — zidlash bog'lovchisi, tashbeh vositasi emas.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "شَجَاعَة",
+   "options": [],
+   "answer": "jasorat",
+   "explain_uz": "شَجَاعَة — jasorat, shijoat.",
+   "audio": "b2/shajaa.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«تَشْبِيه، شَبِيه، مُشَابَهَة» qaysi o'zakdan?",
+   "q_ar": "تَشْبِيه",
+   "options": ["ش ب ه", "ش ه ب", "س ب ه", "ش ب ب"],
+   "answer": "ش ب ه",
+   "explain_uz": "ش ب ه — o'xshashlik o'zagi.",
+   "audio": "",
+   "root": "ش ب ه",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«الاقتصاد كالجسم» — bu qanday uslub vazifasini bajaradi?",
+   "q_ar": "الاِقْتِصَادُ كَالجِسْمِ",
+   "options": [
+    "Murakkab tushunchani tanish obraz orqali tushuntiradi",
+    "Faqat bezak beradi",
+    "Ma'noni yashiradi",
+    "Inkor qiladi"
+   ],
+   "answer": "Murakkab tushunchani tanish obraz orqali tushuntiradi",
+   "explain_uz": "Tashbeh ma'noni yaqinlashtiradi (يُقَرِّبُ المَعْنَى).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Askar jasoratda sherdek»",
+   "q_ar": "",
+   "options": [],
+   "answer": "الجُنْدِيُّ كَالأَسَدِ فِي الشَّجَاعَةِ",
+   "explain_uz": "Mushabbah + vosita + mushabbah bihi + vajhu shabah.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["الجُنْدِيُّ", "كَالأَسَدِ", "فِي", "الشَّجَاعَةِ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ش ب ه", "back": "o'xshashlik — tashbih/shabih", "deck": "msa"},
+  {"type": "root", "front": "ش ج ع", "back": "jasurlik — shijoat/shuja", "deck": "msa"},
+  {"type": "word", "front": "تَشْبِيه", "back": "o'xshatish", "deck": "msa"},
+  {"type": "word", "front": "أَدَاة", "back": "vosita, yordamchi so'z", "deck": "msa"},
+  {"type": "word", "front": "شَجَاعَة", "back": "jasorat", "deck": "msa"},
+  {"type": "word", "front": "أَسَد", "back": "sher", "deck": "msa"},
+  {"type": "word", "front": "كَأَنَّ", "back": "go'yo, xuddi", "deck": "msa"},
+  {"type": "word", "front": "شَبِيه", "back": "o'xshash", "deck": "msa"},
+  {"type": "word", "front": "بَلِيغ", "back": "ta'sirchan, balog'atli", "deck": "msa"},
+  {"type": "word", "front": "صُورَة", "back": "surat, obraz", "deck": "msa"},
+  {"type": "word", "front": "مُؤَثِّر", "back": "ta'sirli", "deck": "msa"}
+ ]
+}

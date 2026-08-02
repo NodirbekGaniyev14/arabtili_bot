@@ -1,0 +1,315 @@
+{
+ "id": "b2-11",
+ "level": "B2",
+ "module": "sarf-adv",
+ "order": 11,
+ "title_uz": "الإعلال والإبدال",
+ "title_ar": "الإِعْلَالُ وَالإِبْدَالُ",
+ "can_do_uz": "Illatli fe'lda harf nega tushib qolgani yoki almashganini tushuntira olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-10"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«قَالَ» ning o'zagi ق و ل — lekin و qayerga ketdi? «يَعِدُ» ning o'zagi و ع د — و nega yo'qoldi? Bu tasodif emas: و va ي «kasal harflar» bo'lgani uchun ular ma'lum sharoitda cho'ziladi, alifga aylanadi yoki umuman tushib qoladi. Bu jarayon — I'LOL (الإِعْلَال). B2 da buni bilish shart: shundagina lug'atdan to'g'ri o'zakni topasiz va noma'lum fe'lni ham tanib olasiz.",
+ "grammar": {
+  "point_ar": "الإِعْلَالُ بِالقَلْبِ وَالحَذْفِ وَالتَّسْكِينِ",
+  "explanation_uz": "I'LOL (الإِعْلَال) — illat harflari (و، ي، ا) ning o'zgarishi. Uch turi bor. 1) QALB (القَلْب — aylanish): و yoki ي fathadan keyin kelsa ALIFga aylanadi: قَوَلَ → قَالَ، بَيَعَ → بَاعَ، دَعَوَ → دَعَا. 2) HAZF (الحَذْف — tushish): (a) misol fe'lning و si muzori'da tushadi: وَعَدَ → يَعِدُ، وَصَلَ → يَصِلُ; (b) noqis fe'lning oxirgi illat harfi jazm holatida tushadi: لَمْ يَمْشِ، لَمْ يَدْعُ; (c) ikki sokin uchrashsa biri tushadi: قَالَ + تُ → قُلْتُ. 3) TASKIN (التَّسْكِين — sukunlash): damma yoki kasra og'ir bo'lgani uchun tushiriladi: يَقْوُلُ → يَقُولُ، يَبْيِعُ → يَبِيعُ. IBDOL (الإِبْدَال) — bir harf boshqasiga almashadi: اِتَّصَلَ asli اِوْتَصَلَ edi (و → ت), مِيزَان asli مِوْزَان (و → ي). Amaliy foyda: لَمْ يَقُلْ ni ko'rsangiz o'zak ق و ل ekanini bilasiz; يَصِلُ ni ko'rsangiz lug'atdan وَصَلَ ni qidirasiz.",
+  "table": [
+   {"ar": "قَوَلَ ← قَالَ", "uz": "و fathadan keyin alifga aylandi", "form": "قَلْب"},
+   {"ar": "بَيَعَ ← بَاعَ", "uz": "ي alifga aylandi", "form": "قَلْب"},
+   {"ar": "وَعَدَ ← يَعِدُ", "uz": "Misol fe'lning و si muzori'da tushdi", "form": "حَذْف"},
+   {"ar": "قَالَ + تُ ← قُلْتُ", "uz": "Ikki sokin uchrashdi — alif tushdi", "form": "حَذْف"},
+   {"ar": "لَمْ يَمْشِ", "uz": "Jazmda oxirgi illat harfi tushdi", "form": "حَذْف"},
+   {"ar": "اِوْتَصَلَ ← اِتَّصَلَ", "uz": "و → ت ga almashdi (ibdol)", "form": "إِبْدَال"}
+  ],
+  "common_mistakes_uz": [
+   "«قَالَ» o'zagini ق ا ل deb yozish — alif asli و: ق و ل.",
+   "Muzori'da tushgan و ni o'zakdan ham o'chirish: يَعِدُ ning o'zagi baribir و ع د.",
+   "Jazmda noqis fe'l oxirini saqlash: لَمْ يَمْشِي ✗ → لَمْ يَمْشِ ✓."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع ل ل",
+   "meaning_uz": "kasallik, sabab — «illat harflari» shundan",
+   "uz_cognates": ["illat", "ma'lul", "ta'lil"],
+   "derived": [
+    {"ar": "إِعْلَال", "uz": "illat harfining o'zgarishi", "pattern": "إِفْعَال"},
+    {"ar": "عِلَّة", "uz": "illat, sabab", "pattern": "فِعْلَة"},
+    {"ar": "مُعْتَلّ", "uz": "illatli (fe'l)", "pattern": "مُفْتَعِل"}
+   ]
+  },
+  {
+   "root": "ب د ل",
+   "meaning_uz": "almashtirish",
+   "uz_cognates": ["badal", "tabdil"],
+   "derived": [
+    {"ar": "إِبْدَال", "uz": "harfni almashtirish", "pattern": "إِفْعَال"},
+    {"ar": "مُبْدَل", "uz": "almashtirilgan", "pattern": "مُفْعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "إِعْلَال",
+   "translit": "iʿlāl",
+   "uz": "i'lol — illat harfining aylanishi/tushishi",
+   "root": "ع ل ل",
+   "pattern": "إِفْعَال",
+   "pos": "ot",
+   "audio": "b2/ilal.mp3",
+   "example_ar": "الإِعْلَالُ يُغَيِّرُ شَكْلَ الفِعْلِ.",
+   "example_uz": "I'lol fe'l shaklini o'zgartiradi.",
+   "srs": true
+  },
+  {
+   "ar": "إِبْدَال",
+   "translit": "ibdāl",
+   "uz": "ibdol — bir harfning boshqasiga almashishi",
+   "root": "ب د ل",
+   "pattern": "إِفْعَال",
+   "pos": "ot",
+   "audio": "b2/ibdal.mp3",
+   "example_ar": "فِي «اِتَّصَلَ» إِبْدَالٌ.",
+   "example_uz": "«Ittasala» da ibdol bor.",
+   "srs": true
+  },
+  {
+   "ar": "عِلَّة",
+   "translit": "ʿilla",
+   "uz": "illat, sabab (o'zbekcha 'illat')",
+   "root": "ع ل ل",
+   "pattern": "فِعْلَة",
+   "pos": "ot",
+   "audio": "b2/illa.mp3",
+   "example_ar": "حُرُوفُ العِلَّةِ ثَلَاثَةٌ.",
+   "example_uz": "Illat harflari uchta.",
+   "srs": true
+  },
+  {
+   "ar": "مُعْتَلّ",
+   "translit": "muʿtall",
+   "uz": "illatli (o'zagida و/ي bor fe'l)",
+   "root": "ع ل ل",
+   "pattern": "مُفْتَعِل",
+   "pos": "sifat",
+   "audio": "b2/mutall.mp3",
+   "example_ar": "«قَالَ» فِعْلٌ مُعْتَلٌّ.",
+   "example_uz": "«Qola» — illatli fe'l.",
+   "srs": true
+  },
+  {
+   "ar": "حَذْف",
+   "translit": "ḥadhf",
+   "uz": "tushirish, o'chirish",
+   "root": "ح ذ ف",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/hadhf.mp3",
+   "example_ar": "فِي «يَعِدُ» حَذْفٌ لِلْوَاوِ.",
+   "example_uz": "«Ya'idu» da vov tushirilgan.",
+   "srs": true
+  },
+  {
+   "ar": "قَلْب",
+   "translit": "qalb",
+   "uz": "aylantirish (bu yerda: harfni alifga aylantirish)",
+   "root": "ق ل ب",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/qalb_change.mp3",
+   "example_ar": "قَلْبُ الوَاوِ أَلِفًا.",
+   "example_uz": "Vovning alifga aylanishi.",
+   "srs": true
+  },
+  {
+   "ar": "سَاكِن",
+   "translit": "sākin",
+   "uz": "sokin — harakatsiz harf",
+   "root": "س ك ن",
+   "pattern": "فَاعِل",
+   "pos": "sifat",
+   "audio": "b2/sakin.mp3",
+   "example_ar": "اِلْتَقَى سَاكِنَانِ فَحُذِفَ أَحَدُهُمَا.",
+   "example_uz": "Ikki sokin uchrashdi va biri tushdi.",
+   "srs": true
+  },
+  {
+   "ar": "مِيزَان",
+   "translit": "mīzān",
+   "uz": "tarozi; vazn (asli مِوْزَان — ibdol namunasi)",
+   "root": "و ز ن",
+   "pattern": "مِفْعَال",
+   "pos": "ot",
+   "audio": "b2/mizan.mp3",
+   "example_ar": "المِيزَانُ الصَّرْفِيُّ مُهِمٌّ.",
+   "example_uz": "Sarf tarozisi (vazn) muhim.",
+   "srs": true
+  },
+  {
+   "ar": "اِتَّصَلَ",
+   "translit": "ittaṣala",
+   "uz": "bog'landi, aloqa qildi (asli اِوْتَصَلَ)",
+   "root": "و ص ل",
+   "pattern": "اِفْتَعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/ittasala.mp3",
+   "example_ar": "اِتَّصَلَ بِي أَمْسِ.",
+   "example_uz": "Kecha menga qo'ng'iroq qildi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "يسأل الطالب: لماذا نقول «قال» ولا نقول «قَوَلَ»؟ يجيب المعلم: لأن الواو وقعت بعد فتحة فقُلبت ألفًا، وهذا إعلال بالقلب. ثم يسأل: وأين ذهبت الواو في «يعد»؟ فيجيب: حُذفت في المضارع، لأن أصلها «وعد». وفي الجزم تُحذف آخر حرف علة: لم يمشِ، لم يدعُ. أما «اتّصل» فأصلها «اوتصل»، فأُبدلت الواو تاءً. من فهم هذه القواعد وجد الجذر بسرعة في المعجم.",
+   "questions": [
+    {"q_uz": "«قال» da qanday i'lol bor?", "a": "Qalb — و fathadan keyin alifga aylangan"},
+    {"q_uz": "«يعد» ning o'zagi qaysi?", "a": "و ع د — و muzori'da tushib qolgan"},
+    {"q_uz": "«اتّصل» asli qanday edi?", "a": "اوتصل — و harfi ت ga almashgan (ibdol)"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-11-listen.mp3",
+   "transcript_ar": "قَالَ أَصْلُهَا قَوَلَ، وَبَاعَ أَصْلُهَا بَيَعَ. وَيَعِدُ أَصْلُهَا يَوْعِدُ، فَحُذِفَتِ الوَاوُ.",
+   "questions": [
+    {"q_uz": "«باع» qaysi o'zakdan?", "a": "ب ي ع — ي alifga aylangan"},
+    {"q_uz": "«يعد» da nima sodir bo'lgan?", "a": "Vov tushirilgan (hazf)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch juftlikni ayting: «qawala → qola», «bay'a → boa», «wa'ada → ya'idu».",
+   "target_ar": ["قَوَلَ ← قَالَ", "بَيَعَ ← بَاعَ", "وَعَدَ ← يَعِدُ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Uchta illatli fe'lni asl o'zagi bilan yozing va qanday i'lol sodir bo'lganini bir jumlada tushuntiring.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«قَالَ» so'zining o'zagi qaysi?",
+   "q_ar": "قَالَ",
+   "options": ["ق و ل", "ق ا ل", "ق ي ل", "ق ل ل"],
+   "answer": "ق و ل",
+   "explain_uz": "Alif asli و — fathadan keyin aylangan (qalb).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«يَعِدُ» da nima sodir bo'lgan?",
+   "q_ar": "يَعِدُ",
+   "options": [
+    "Vov tushgan (hazf)",
+    "Vov alifga aylangan",
+    "Vov ta'ga almashgan",
+    "Hech narsa"
+   ],
+   "answer": "Vov tushgan (hazf)",
+   "explain_uz": "Misol fe'lning و si muzori'da tushadi: وَعَدَ → يَعِدُ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi shakl TO'G'RI?",
+   "q_ar": "",
+   "options": ["لَمْ يَمْشِ", "لَمْ يَمْشِي", "لَمْ يَمْشَى", "لَمْ يَمْشُو"],
+   "answer": "لَمْ يَمْشِ",
+   "explain_uz": "Jazmda noqis fe'lning oxirgi illat harfi tushadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«قُلْتُ» da alif nega yo'q?",
+   "q_ar": "قُلْتُ",
+   "options": [
+    "Ikki sokin uchrashgani uchun tushgan",
+    "Alif hech qachon yozilmaydi",
+    "Bu boshqa o'zak",
+    "Damma alifni yutgan"
+   ],
+   "answer": "Ikki sokin uchrashgani uchun tushgan",
+   "explain_uz": "قَالَ + تُ → qolgan alif va sokin ل uchrashadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«اِتَّصَلَ» dagi ت qayerdan kelgan?",
+   "q_ar": "اِتَّصَلَ",
+   "options": [
+    "Ibdol — و ت ga almashgan",
+    "O'zakda ت bor",
+    "VIII bob prefiksi",
+    "Xato yozuv"
+   ],
+   "answer": "Ibdol — و ت ga almashgan",
+   "explain_uz": "اِوْتَصَلَ → اِتَّصَلَ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "مُعْتَلّ",
+   "options": [],
+   "answer": "illatli",
+   "explain_uz": "مُعْتَلّ — o'zagida و/ي bo'lgan fe'l.",
+   "audio": "b2/mutall.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«إِعْلَال، عِلَّة، مُعْتَلّ» qaysi o'zakdan?",
+   "q_ar": "إِعْلَال",
+   "options": ["ع ل ل", "ع ل م", "ع ل و", "ء ل ل"],
+   "answer": "ع ل ل",
+   "explain_uz": "ع ل ل — illat, kasallik o'zagi.",
+   "audio": "",
+   "root": "ع ل ل",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Illat harflari uchta»",
+   "q_ar": "",
+   "options": [],
+   "answer": "حُرُوفُ العِلَّةِ ثَلَاثَةٌ",
+   "explain_uz": "Idofa + xabar (marfu').",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["حُرُوفُ", "العِلَّةِ", "ثَلَاثَةٌ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع ل ل", "back": "illat — i'lol/mu'tall", "deck": "msa"},
+  {"type": "root", "front": "و ص ل", "back": "yetib borish — ittasala/wasl", "deck": "msa"},
+  {"type": "word", "front": "إِعْلَال", "back": "illat harfining o'zgarishi", "deck": "msa"},
+  {"type": "word", "front": "إِبْدَال", "back": "harf almashishi", "deck": "msa"},
+  {"type": "word", "front": "عِلَّة", "back": "illat, sabab", "deck": "msa"},
+  {"type": "word", "front": "مُعْتَلّ", "back": "illatli fe'l", "deck": "msa"},
+  {"type": "word", "front": "حَذْف", "back": "tushirish", "deck": "msa"},
+  {"type": "word", "front": "قَلْب", "back": "aylantirish (alifga)", "deck": "msa"},
+  {"type": "word", "front": "سَاكِن", "back": "sokin harf", "deck": "msa"},
+  {"type": "word", "front": "مِيزَان", "back": "tarozi; sarf vazni", "deck": "msa"},
+  {"type": "word", "front": "اِتَّصَلَ", "back": "bog'landi, qo'ng'iroq qildi", "deck": "msa"}
+ ]
+}

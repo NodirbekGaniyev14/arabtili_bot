@@ -1,0 +1,319 @@
+{
+ "id": "b2-20",
+ "level": "B2",
+ "module": "balagha",
+ "order": 20,
+ "title_uz": "الجناس والسجع",
+ "title_ar": "الجِنَاسُ وَالسَّجْعُ فِي العَنَاوِينِ",
+ "can_do_uz": "Sarlavha va shiorlardagi ohangdosh so'z o'yinini tanib, uning ta'sirini izohlay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-19"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Reklama va sarlavhalar nega esda qoladi? Chunki ularda OHANG bor. «صَنَعَ فَنَفَعَ», «الصَّيْفُ ضَيَّعْتِ اللَّبَنَ». Arabchada bu ikki vosita: JINOS (جِنَاس) — bir xil eshitiladigan, boshqa ma'noli so'zlar; SAJ' (سَجْع) — jumla oxirlarining qofiyalanishi. Gazeta sarlavhasi, shior, maqol — hammasi shu bilan yasaladi. Ularni tanish B2 uslub sezgisining bir qismidir.",
+ "grammar": {
+  "point_ar": "الجِنَاسُ التَّامُّ وَالنَّاقِصُ · السَّجْعُ فِي الفَوَاصِلِ",
+  "explanation_uz": "1) JINOS (الجِنَاس) — talaffuzi bir xil yoki yaqin, ma'nosi boshqa so'zlar. TO'LIQ jinos (تَامّ) — harflar, tartib va harakatlar aynan bir xil: «يَقِينِي بِاللهِ يَقِينِي» (ishonchim meni saqlaydi), «سَاعَة» (soat asbobi) va «سَاعَة» (bir soat vaqt). NOQIS jinos (نَاقِص) — bitta harf yoki harakat farq qiladi: جُبْن (qo'rqoqlik) va جُبْن (pishloq) — kontekst ajratadi; بَيْن va بَنِين; حَال va حَوْل. 2) SAJ' (السَّجْع) — nasrdagi qofiya: jumlalar oxiri bir xil tovushga tugaydi: «الصَّبْرُ مِفْتَاحُ الفَرَجِ، وَالعَجَلَةُ مِفْتَاحُ الحَرَجِ» (فَرَج / حَرَج). Sharti: bo'laklar UZUNLIGI ham yaqin bo'lishi kerak, aks holda sun'iy chiqadi. QAYERDA UCHRAYDI: gazeta sarlavhasi («تَعْلِيمٌ بِلَا تَمْيِيزٍ»), reklama shiori, maqol, xutba va rasmiy nutq. TARJIMA MASLAHATI: jinos va saj'ni boshqa tilga aynan ko'chirib bo'lmaydi — ma'noni saqlab, o'zbekcha ohangdoshlik topishga harakat qiling.",
+  "table": [
+   {"ar": "يَقِينِي بِاللهِ يَقِينِي", "uz": "Ishonchim — meni saqlaydi (to'liq jinos)", "form": "جِنَاس تَامّ"},
+   {"ar": "جُبْن / جُبْن", "uz": "qo'rqoqlik / pishloq", "form": "جِنَاس"},
+   {"ar": "حَال / حَوْل", "uz": "holat / atrofida (noqis jinos)", "form": "جِنَاس نَاقِص"},
+   {"ar": "الصَّبْرُ مِفْتَاحُ الفَرَجِ", "uz": "Sabr — yechim kaliti (saj'ning 1-bo'lagi)", "form": "سَجْع"},
+   {"ar": "وَالعَجَلَةُ مِفْتَاحُ الحَرَجِ", "uz": "Shoshqaloqlik — muammo kaliti (qofiya: فرج/حرج)", "form": "سَجْع"},
+   {"ar": "تَعْلِيمٌ بِلَا تَمْيِيزٍ", "uz": "Kamsitishsiz ta'lim (sarlavha ohangi)", "form": "عُنْوَان"}
+  ],
+  "common_mistakes_uz": [
+   "Jinosli so'zlarni bir xil ma'noda tarjima qilish — ular OMONIM, kontekst ajratadi.",
+   "Saj'ni she'r deb o'ylash — saj' nasrda bo'ladi, vazn talab qilinmaydi.",
+   "Ohangdoshlikni saqlash uchun ma'noni buzish — avval ma'no, keyin uslub."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ج ن س",
+   "meaning_uz": "tur, jins — jinos «bir turdagi so'zlar» degani",
+   "uz_cognates": ["jins", "jinsdosh"],
+   "derived": [
+    {"ar": "جِنَاس", "uz": "so'z o'yini", "pattern": "فِعَال"},
+    {"ar": "جِنْس", "uz": "tur, jins", "pattern": "فِعْل"},
+    {"ar": "مُتَجَانِس", "uz": "bir jinsli, uyg'un", "pattern": "مُتَفَاعِل"}
+   ]
+  },
+  {
+   "root": "ع ن و",
+   "meaning_uz": "belgilash, sarlavha qo'yish",
+   "uz_cognates": ["unvon"],
+   "derived": [
+    {"ar": "عُنْوَان", "uz": "sarlavha, manzil", "pattern": "فُعْلَان"},
+    {"ar": "عَنْوَنَ", "uz": "sarlavha qo'ydi", "pattern": "فَعْلَلَ"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "جِنَاس",
+   "translit": "jinās",
+   "uz": "jinos — ohangdosh so'z o'yini",
+   "root": "ج ن س",
+   "pattern": "فِعَال",
+   "pos": "ot",
+   "audio": "b2/jinas.mp3",
+   "example_ar": "الجِنَاسُ يُجَمِّلُ العُنْوَانَ.",
+   "example_uz": "Jinos sarlavhani chiroyli qiladi.",
+   "srs": true
+  },
+  {
+   "ar": "سَجْع",
+   "translit": "sajʿ",
+   "uz": "saj' — nasrdagi qofiya",
+   "root": "س ج ع",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/saja.mp3",
+   "example_ar": "السَّجْعُ يُسْتَعْمَلُ فِي الخُطَبِ.",
+   "example_uz": "Saj' nutqlarda ishlatiladi.",
+   "srs": true
+  },
+  {
+   "ar": "عُنْوَان",
+   "translit": "ʿunwān",
+   "uz": "sarlavha; manzil (o'zbekcha 'unvon')",
+   "root": "ع ن و",
+   "pattern": "فُعْلَان",
+   "pos": "ot",
+   "audio": "b2/unwan.mp3",
+   "example_ar": "عُنْوَانُ المَقَالِ قَصِيرٌ.",
+   "example_uz": "Maqola sarlavhasi qisqa.",
+   "srs": true
+  },
+  {
+   "ar": "شِعَار",
+   "translit": "shiʿār",
+   "uz": "shior (o'zbekcha 'shior')",
+   "root": "ش ع ر",
+   "pattern": "فِعَال",
+   "pos": "ot",
+   "audio": "b2/shiar.mp3",
+   "example_ar": "رَفَعُوا شِعَارًا وَاضِحًا.",
+   "example_uz": "Aniq shior ko'tarishdi.",
+   "srs": true
+  },
+  {
+   "ar": "فَرَج",
+   "translit": "faraj",
+   "uz": "yengillik, muammoning yechilishi",
+   "root": "ف ر ج",
+   "pattern": "فَعَل",
+   "pos": "ot",
+   "audio": "b2/faraj.mp3",
+   "example_ar": "الصَّبْرُ مِفْتَاحُ الفَرَجِ.",
+   "example_uz": "Sabr — yengillik kaliti.",
+   "srs": true
+  },
+  {
+   "ar": "عَجَلَة",
+   "translit": "ʿajala",
+   "uz": "shoshqaloqlik; g'ildirak",
+   "root": "ع ج ل",
+   "pattern": "فَعَلَة",
+   "pos": "ot",
+   "audio": "b2/ajala.mp3",
+   "example_ar": "العَجَلَةُ تُفْسِدُ العَمَلَ.",
+   "example_uz": "Shoshqaloqlik ishni buzadi.",
+   "srs": true
+  },
+  {
+   "ar": "تَمْيِيز",
+   "translit": "tamyīz",
+   "uz": "ajratish; kamsitish (kontekstga qarab)",
+   "root": "م ي ز",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tamyiz_disc.mp3",
+   "example_ar": "تَعْلِيمٌ بِلَا تَمْيِيزٍ.",
+   "example_uz": "Kamsitishsiz ta'lim.",
+   "srs": true
+  },
+  {
+   "ar": "مُتَجَانِس",
+   "translit": "mutajānis",
+   "uz": "uyg'un, bir jinsli",
+   "root": "ج ن س",
+   "pattern": "مُتَفَاعِل",
+   "pos": "sifat",
+   "audio": "b2/mutajanis.mp3",
+   "example_ar": "أُسْلُوبٌ مُتَجَانِسٌ وَجَمِيلٌ.",
+   "example_uz": "Uyg'un va chiroyli uslub.",
+   "srs": true
+  },
+  {
+   "ar": "إِيقَاع",
+   "translit": "īqāʿ",
+   "uz": "ohang, ritm",
+   "root": "و ق ع",
+   "pattern": "إِفْعَال",
+   "pos": "ot",
+   "audio": "b2/iqa.mp3",
+   "example_ar": "لِلْجُمْلَةِ إِيقَاعٌ جَمِيلٌ.",
+   "example_uz": "Jumlaning chiroyli ohangi bor.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "اختارت الصحيفة عنوانًا قصيرًا: «تعليم بلا تمييز». وكتب المحرّر: الصبر مفتاح الفرج، والعجلة مفتاح الحرج، فلا تستعجلوا الحكم. لاحظ القارئ أنّ الجملتين متساويتان في الطول ومتشابهتان في النهاية، وهذا هو السجع. أما في الإعلان التجاري فقد استعملوا الجناس: «صنع فنفع»، وهو إيقاع قصير يبقى في الذاكرة.",
+   "questions": [
+    {"q_uz": "«الصبر مفتاح الفرج، والعجلة مفتاح الحرج» — bu qanday vosita?", "a": "Saj' — jumla oxirlari qofiyalangan (faraj/haraj)"},
+    {"q_uz": "«صنع فنفع» qanday uslub?", "a": "Jinos — ohangdosh so'zlar, ma'no boshqa"},
+    {"q_uz": "Saj'ning sharti nima?", "a": "Bo'laklar uzunligi ham yaqin bo'lishi kerak"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-20-listen.mp3",
+   "transcript_ar": "الصَّبْرُ مِفْتَاحُ الفَرَجِ، وَالعَجَلَةُ مِفْتَاحُ الحَرَجِ. وَشِعَارُنَا: تَعْلِيمٌ بِلَا تَمْيِيزٍ.",
+   "questions": [
+    {"q_uz": "Qofiyalangan ikki so'z qaysi?", "a": "الفرج va الحرج"},
+    {"q_uz": "Shior nima haqida?", "a": "Kamsitishsiz ta'lim"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Saj'li maqolni ohang bilan ayting va shiorni takrorlang.",
+   "target_ar": ["الصَّبْرُ مِفْتَاحُ الفَرَجِ", "وَالعَجَلَةُ مِفْتَاحُ الحَرَجِ", "تَعْلِيمٌ بِلَا تَمْيِيزٍ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Ikki qismli saj'li jumla yozing (oxirlari qofiyalansin) va bitta qisqa shior tuzing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Saj' (السَّجْع) nima?",
+   "q_ar": "السَّجْع",
+   "options": [
+    "Nasrdagi qofiya",
+    "She'r vazni",
+    "So'z o'yini",
+    "Ko'chma ma'no"
+   ],
+   "answer": "Nasrdagi qofiya",
+   "explain_uz": "Jumla oxirlari bir tovushga tugaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Jinos (الجِنَاس) qanday hodisani bildiradi?",
+   "q_ar": "الجِنَاس",
+   "options": [
+    "Talaffuzi bir xil, ma'nosi boshqa so'zlar",
+    "Bir xil ma'noli so'zlar",
+    "Qarama-qarshi ma'nolar",
+    "Uzun jumlalar"
+   ],
+   "answer": "Talaffuzi bir xil, ma'nosi boshqa so'zlar",
+   "explain_uz": "Omonimlik asosidagi so'z o'yini.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«حَال / حَوْل» qanday jinos?",
+   "q_ar": "حَال / حَوْل",
+   "options": ["Noqis (bitta harf farqi)", "To'liq", "Saj'", "Jinos emas"],
+   "answer": "Noqis (bitta harf farqi)",
+   "explain_uz": "Jinos noqis — bir harf yoki harakat farq qiladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Saj'ning muhim sharti qaysi?",
+   "q_ar": "",
+   "options": [
+    "Bo'laklar uzunligi yaqin bo'lishi",
+    "She'riy vazn bo'lishi",
+    "Uzun jumlalar bo'lishi",
+    "Faqat Qur'onda ishlatilishi"
+   ],
+   "answer": "Bo'laklar uzunligi yaqin bo'lishi",
+   "explain_uz": "Aks holda ohang sun'iy chiqadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "عُنْوَان",
+   "options": [],
+   "answer": "sarlavha",
+   "explain_uz": "عُنْوَان — sarlavha; manzil.",
+   "audio": "b2/unwan.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«جِنَاس، جِنْس، مُتَجَانِس» qaysi o'zakdan?",
+   "q_ar": "مُتَجَانِس",
+   "options": ["ج ن س", "ج ل س", "ج ن ب", "ح ن س"],
+   "answer": "ج ن س",
+   "explain_uz": "ج ن س — tur, jins o'zagi.",
+   "audio": "",
+   "root": "ج ن س",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Jinos va saj'ni tarjima qilishda nima muhim?",
+   "q_ar": "",
+   "options": [
+    "Avval ma'noni saqlash, keyin ohang izlash",
+    "Faqat ohangni saqlash",
+    "So'zma-so'z ko'chirish",
+    "Tashlab ketish"
+   ],
+   "answer": "Avval ma'noni saqlash, keyin ohang izlash",
+   "explain_uz": "Ohang uchun ma'no buzilmasligi kerak.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Maqolni tuzing: «Sabr — yengillik kaliti»",
+   "q_ar": "",
+   "options": [],
+   "answer": "الصَّبْرُ مِفْتَاحُ الفَرَجِ",
+   "explain_uz": "Mubtado + idofa xabari.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["الصَّبْرُ", "مِفْتَاحُ", "الفَرَجِ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ج ن س", "back": "tur, jins — jinos/mutajanis", "deck": "msa"},
+  {"type": "root", "front": "ع ن و", "back": "sarlavha — unvon", "deck": "msa"},
+  {"type": "word", "front": "جِنَاس", "back": "so'z o'yini (ohangdosh)", "deck": "msa"},
+  {"type": "word", "front": "سَجْع", "back": "nasrdagi qofiya", "deck": "msa"},
+  {"type": "word", "front": "عُنْوَان", "back": "sarlavha, manzil", "deck": "msa"},
+  {"type": "word", "front": "شِعَار", "back": "shior", "deck": "msa"},
+  {"type": "word", "front": "فَرَج", "back": "yengillik, yechim", "deck": "msa"},
+  {"type": "word", "front": "عَجَلَة", "back": "shoshqaloqlik", "deck": "msa"},
+  {"type": "word", "front": "تَمْيِيز", "back": "ajratish; kamsitish", "deck": "msa"},
+  {"type": "word", "front": "إِيقَاع", "back": "ohang, ritm", "deck": "msa"}
+ ]
+}

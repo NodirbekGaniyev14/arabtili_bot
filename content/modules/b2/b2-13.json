@@ -1,0 +1,312 @@
+{
+ "id": "b2-13",
+ "level": "B2",
+ "module": "sarf-adv",
+ "order": 13,
+ "title_uz": "النسبة والمصدر الصناعي",
+ "title_ar": "النِّسْبَةُ وَالمَصْدَرُ الصِّنَاعِيُّ",
+ "can_do_uz": "«Iqtisodiy», «insoniylik», «mas'uliyat» kabi so'zlarni o'zim yasay va tanib olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-12"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«Insoniyat», «hurriyat», «mas'uliyat» — bu so'zlarni o'zbekchada bilasiz. Ularning hammasi arabchada BITTA qolipdan chiqadi: ot + ـِيَّة. Va «iqtisodiy», «ilmiy», «rasmiy» — boshqa qolip: ot + ـِيّ. Ikki qo'shimcha, yuzlab so'z. Bugun shu ikkisini yasashni o'rganasiz — endi lug'atsiz ham yangi so'z tuza olasiz.",
+ "grammar": {
+  "point_ar": "النِّسْبَةُ (ـِيّ) وَالمَصْدَرُ الصِّنَاعِيُّ (ـِيَّة)",
+  "explanation_uz": "1) NISBA (النِّسْبَة) — otga ـِيّ (muannasda ـِيَّة) qo'shib SIFAT yasash: «...ga oid». عِلْم → عِلْمِيّ (ilmiy), اِقْتِصَاد → اِقْتِصَادِيّ (iqtisodiy), رَسْم → رَسْمِيّ (rasmiy), مِصْر → مِصْرِيّ (misrlik). QOIDALAR: (a) oxiridagi ة tushadi: مَكَّة → مَكِّيّ; (b) oxiridagi ا/ى ham tushadi yoki و ga aylanadi: دُنْيَا → دُنْيَوِيّ; (c) ko'plik shakli birlikka qaytariladi: كُتُب → كِتَابِيّ; (d) ba'zi so'zlarda o'zgarish bor: مَدِينَة → مَدَنِيّ (fuqarolik), يَد → يَدَوِيّ (qo'lda ishlangan). 2) MASDAR SINOIY (المَصْدَر الصِّنَاعِيّ) — nisbaga ة qo'shib MAVHUM OT yasash: «...lik». إِنْسَان → إِنْسَانِيَّة (insoniylik), حُرّ → حُرِّيَّة (hurriyat), مَسْؤُول → مَسْؤُولِيَّة (mas'uliyat), أَهَمّ → أَهَمِّيَّة (ahamiyat), قَوْم → قَوْمِيَّة (millatchilik). MUHIM FARQ: nisba SIFAT (اِقْتِصَادِيّ — iqtisodiy), masdar sinoiy esa OT (اِقْتِصَادِيَّة — iqtisodiylik/iqtisod tizimi). Kontekst ajratadi: خُطَّة اقْتِصَادِيَّة (sifat) ≠ الاِقْتِصَادِيَّة الحُرَّة (ot).",
+  "table": [
+   {"ar": "عِلْم ← عِلْمِيّ", "uz": "ilm → ilmiy (sifat)", "form": "نِسْبَة"},
+   {"ar": "رَسْم ← رَسْمِيّ", "uz": "rasm → rasmiy", "form": "نِسْبَة"},
+   {"ar": "مَكَّة ← مَكِّيّ", "uz": "Makka → makkalik (ة tushdi)", "form": "نِسْبَة"},
+   {"ar": "إِنْسَان ← إِنْسَانِيَّة", "uz": "inson → insoniylik (ot)", "form": "مَصْدَر صِنَاعِيّ"},
+   {"ar": "مَسْؤُول ← مَسْؤُولِيَّة", "uz": "mas'ul → mas'uliyat", "form": "مَصْدَر صِنَاعِيّ"},
+   {"ar": "حُرّ ← حُرِّيَّة", "uz": "erkin → erkinlik", "form": "مَصْدَر صِنَاعِيّ"}
+  ],
+  "common_mistakes_uz": [
+   "Nisbada ة ni saqlash: مَكَّةِيّ ✗ → مَكِّيّ ✓.",
+   "Sifat va mavhum otni chalkashtirish: اِقْتِصَادِيّ (iqtisodiy) ≠ اِقْتِصَادِيَّة (iqtisodiylik).",
+   "Ko'plikdan nisba yasash: كُتُبِيّ ✗ → كِتَابِيّ ✓ (avval birlikka qaytariladi)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ن س ب",
+   "meaning_uz": "bog'liqlik, nisbat",
+   "uz_cognates": ["nisbat", "munosabat", "mansub"],
+   "derived": [
+    {"ar": "نِسْبَة", "uz": "nisbat, foiz", "pattern": "فِعْلَة"},
+    {"ar": "مُنَاسَبَة", "uz": "munosabat, tadbir", "pattern": "مُفَاعَلَة"},
+    {"ar": "مُنَاسِب", "uz": "mos, munosib", "pattern": "مُفَاعِل"}
+   ]
+  },
+  {
+   "root": "ح ر ر",
+   "meaning_uz": "erkinlik",
+   "uz_cognates": ["hurriyat", "hur"],
+   "derived": [
+    {"ar": "حُرّ", "uz": "erkin", "pattern": "فُعْل"},
+    {"ar": "حُرِّيَّة", "uz": "erkinlik", "pattern": "فُعْلِيَّة"},
+    {"ar": "تَحْرِير", "uz": "ozod qilish; tahrir", "pattern": "تَفْعِيل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "نِسْبَة",
+   "translit": "nisba",
+   "uz": "nisbat, foiz (o'zbekcha 'nisbat')",
+   "root": "ن س ب",
+   "pattern": "فِعْلَة",
+   "pos": "ot",
+   "audio": "b2/nisba.mp3",
+   "example_ar": "اِرْتَفَعَتِ النِّسْبَةُ إِلَى عَشَرَةٍ.",
+   "example_uz": "Ko'rsatkich o'ngacha ko'tarildi.",
+   "srs": true
+  },
+  {
+   "ar": "مَسْؤُولِيَّة",
+   "translit": "masʾūliyya",
+   "uz": "mas'uliyat (o'zbekcha 'mas'uliyat')",
+   "root": "س أ ل",
+   "pattern": "مَفْعُولِيَّة",
+   "pos": "ot",
+   "audio": "b2/masuliyya.mp3",
+   "example_ar": "تَحَمَّلَ المَسْؤُولِيَّةَ كَامِلَةً.",
+   "example_uz": "To'liq mas'uliyatni o'z zimmasiga oldi.",
+   "srs": true
+  },
+  {
+   "ar": "إِنْسَانِيَّة",
+   "translit": "insāniyya",
+   "uz": "insoniylik (o'zbekcha 'insoniyat')",
+   "root": "أ ن س",
+   "pattern": "فِعْلَانِيَّة",
+   "pos": "ot",
+   "audio": "b2/insaniyya.mp3",
+   "example_ar": "الإِنْسَانِيَّةُ قَبْلَ كُلِّ شَيْءٍ.",
+   "example_uz": "Insoniylik hamma narsadan oldin.",
+   "srs": true
+  },
+  {
+   "ar": "حُرِّيَّة",
+   "translit": "ḥurriyya",
+   "uz": "erkinlik (o'zbekcha 'hurriyat')",
+   "root": "ح ر ر",
+   "pattern": "فُعْلِيَّة",
+   "pos": "ot",
+   "audio": "b2/hurriyya.mp3",
+   "example_ar": "حُرِّيَّةُ الرَّأْيِ مَحْمِيَّةٌ.",
+   "example_uz": "Fikr erkinligi himoyalangan.",
+   "srs": true
+  },
+  {
+   "ar": "رَسْمِيّ",
+   "translit": "rasmī",
+   "uz": "rasmiy (o'zbekcha 'rasmiy')",
+   "root": "ر س م",
+   "pattern": "فَعْلِيّ",
+   "pos": "sifat",
+   "audio": "b2/rasmi.mp3",
+   "example_ar": "صَدَرَ بَيَانٌ رَسْمِيٌّ.",
+   "example_uz": "Rasmiy bayonot chiqdi.",
+   "srs": true
+  },
+  {
+   "ar": "عِلْمِيّ",
+   "translit": "ʿilmī",
+   "uz": "ilmiy (o'zbekcha 'ilmiy')",
+   "root": "ع ل م",
+   "pattern": "فِعْلِيّ",
+   "pos": "sifat",
+   "audio": "b2/ilmi.mp3",
+   "example_ar": "بَحْثٌ عِلْمِيٌّ جَدِيدٌ.",
+   "example_uz": "Yangi ilmiy tadqiqot.",
+   "srs": true
+  },
+  {
+   "ar": "مَدَنِيّ",
+   "translit": "madanī",
+   "uz": "fuqarolik, shaharlik (مَدِينَة dan)",
+   "root": "م د ن",
+   "pattern": "فَعَلِيّ",
+   "pos": "sifat",
+   "audio": "b2/madani.mp3",
+   "example_ar": "القَانُونُ المَدَنِيُّ.",
+   "example_uz": "Fuqarolik qonuni.",
+   "srs": true
+  },
+  {
+   "ar": "يَدَوِيّ",
+   "translit": "yadawī",
+   "uz": "qo'lda ishlangan (يَد dan)",
+   "root": "ي د ي",
+   "pattern": "فَعَوِيّ",
+   "pos": "sifat",
+   "audio": "b2/yadawi.mp3",
+   "example_ar": "صِنَاعَةٌ يَدَوِيَّةٌ.",
+   "example_uz": "Qo'l mehnati (hunarmandchilik).",
+   "srs": true
+  },
+  {
+   "ar": "قَوْمِيَّة",
+   "translit": "qawmiyya",
+   "uz": "millatchilik, milliylik",
+   "root": "ق و م",
+   "pattern": "فَعْلِيَّة",
+   "pos": "ot",
+   "audio": "b2/qawmiyya.mp3",
+   "example_ar": "تَحَدَّثَ عَنِ القَوْمِيَّةِ وَالهُوِيَّةِ.",
+   "example_uz": "Milliylik va o'ziga xoslik haqida gapirdi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "نشر مركز علمي تقريرًا رسميًّا عن نسبة البطالة بين الشباب. أكّد التقرير أنّ المسؤولية مشتركة بين الحكومة والقطاع الخاص، وأنّ حرية اختيار المهنة تحتاج إلى تدريب حقيقي. وأشار الباحثون إلى أهمية الصناعات اليدوية في المدن الصغيرة، لأنها تفتح فرصًا سريعة. وفي الختام دعا التقرير إلى نظرة إنسانية في معالجة المشكلة.",
+   "questions": [
+    {"q_uz": "«رسميًّا» va «علمي» qanday yasalgan?", "a": "Nisba — ot + ـِيّ (sifat)"},
+    {"q_uz": "«المسؤولية» va «حرية» qanday so'zlar?", "a": "Masdar sinoiy — mavhum ot (ـِيَّة)"},
+    {"q_uz": "«الصناعات اليدوية» nimani bildiradi?", "a": "Qo'l mehnati sanoatini (hunarmandchilik)"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-13-listen.mp3",
+   "transcript_ar": "المَسْؤُولِيَّةُ مُشْتَرَكَةٌ، وَالحُرِّيَّةُ مَسْؤُولِيَّةٌ أَيْضًا. صَدَرَ بَيَانٌ رَسْمِيٌّ عَنِ المَرْكَزِ العِلْمِيِّ.",
+   "questions": [
+    {"q_uz": "Qaysi ikki mavhum ot eshitildi?", "a": "المسؤولية va الحرية"},
+    {"q_uz": "Bayonot qanday edi?", "a": "Rasmiy — ilmiy markazdan"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch so'zni yasab ayting: «ilm → ilmiy», «mas'ul → mas'uliyat», «hur → hurriyat».",
+   "target_ar": ["عِلْم ← عِلْمِيّ", "مَسْؤُول ← مَسْؤُولِيَّة", "حُرّ ← حُرِّيَّة"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "To'rt so'z yasang: ikkitasi nisba (sifat), ikkitasi masdar sinoiy (mavhum ot) — har birini gapda ishlating.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«مَكَّة» dan nisba qanday yasaladi?",
+   "q_ar": "مَكَّة",
+   "options": ["مَكِّيّ", "مَكَّةِيّ", "مَكَّاوِيّ", "مَكَّانِيّ"],
+   "answer": "مَكِّيّ",
+   "explain_uz": "Nisbada oxirgi ة tushadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مَسْؤُولِيَّة» qanday so'z?",
+   "q_ar": "مَسْؤُولِيَّة",
+   "options": [
+    "Masdar sinoiy (mavhum ot)",
+    "Nisba (sifat)",
+    "Ism marra",
+    "Fe'l"
+   ],
+   "answer": "Masdar sinoiy (mavhum ot)",
+   "explain_uz": "ـِيَّة qo'shimchasi mavhum ot yasaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«خُطَّة اقْتِصَادِيَّة» dagi ikkinchi so'z nima?",
+   "q_ar": "خُطَّة اقْتِصَادِيَّة",
+   "options": [
+    "Sifat (nisba, muannas)",
+    "Mavhum ot",
+    "Fe'l",
+    "Ravish"
+   ],
+   "answer": "Sifat (nisba, muannas)",
+   "explain_uz": "Bu yerda «iqtisodiy reja» — sifat sifatida ishlagan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مَدِينَة» dan yasalgan nisba qaysi?",
+   "q_ar": "مَدِينَة",
+   "options": ["مَدَنِيّ", "مَدِينِيّ", "مُدُنِيّ", "مَدَائِنِيّ"],
+   "answer": "مَدَنِيّ",
+   "explain_uz": "Nostandart o'zgarish: مَدِينَة → مَدَنِيّ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "حُرِّيَّة",
+   "options": [],
+   "answer": "erkinlik",
+   "explain_uz": "حُرِّيَّة — hurriyat, erkinlik.",
+   "audio": "b2/hurriyya.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«نِسْبَة، مُنَاسَبَة، مُنَاسِب» qaysi o'zakdan?",
+   "q_ar": "مُنَاسَبَة",
+   "options": ["ن س ب", "ن ص ب", "س ب ن", "ن س خ"],
+   "answer": "ن س ب",
+   "explain_uz": "ن س ب — nisbat, bog'liqlik.",
+   "audio": "",
+   "root": "ن س ب",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«كُتُب» dan nisba qanday yasaladi?",
+   "q_ar": "كُتُب",
+   "options": ["كِتَابِيّ", "كُتُبِيّ", "كَاتِبِيّ", "مَكْتَبِيّ"],
+   "answer": "كِتَابِيّ",
+   "explain_uz": "Avval birlikka qaytariladi: كُتُب → كِتَاب → كِتَابِيّ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Rasmiy bayonot chiqdi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "صَدَرَ بَيَانٌ رَسْمِيٌّ",
+   "explain_uz": "Fe'l + foil (noaniq) + nisba sifati.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["صَدَرَ", "بَيَانٌ", "رَسْمِيٌّ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ن س ب", "back": "nisbat — nisba/munosabat", "deck": "msa"},
+  {"type": "root", "front": "ح ر ر", "back": "erkinlik — hurriyat/tahrir", "deck": "msa"},
+  {"type": "pattern", "front": "ـِيّ", "back": "nisba — sifat yasaydi: عِلْمِيّ, رَسْمِيّ", "deck": "msa"},
+  {"type": "pattern", "front": "ـِيَّة", "back": "masdar sinoiy — mavhum ot: حُرِّيَّة", "deck": "msa"},
+  {"type": "word", "front": "نِسْبَة", "back": "nisbat, foiz", "deck": "msa"},
+  {"type": "word", "front": "مَسْؤُولِيَّة", "back": "mas'uliyat", "deck": "msa"},
+  {"type": "word", "front": "إِنْسَانِيَّة", "back": "insoniylik", "deck": "msa"},
+  {"type": "word", "front": "حُرِّيَّة", "back": "erkinlik", "deck": "msa"},
+  {"type": "word", "front": "رَسْمِيّ", "back": "rasmiy", "deck": "msa"},
+  {"type": "word", "front": "عِلْمِيّ", "back": "ilmiy", "deck": "msa"},
+  {"type": "word", "front": "مَدَنِيّ", "back": "fuqarolik", "deck": "msa"},
+  {"type": "word", "front": "قَوْمِيَّة", "back": "milliylik", "deck": "msa"}
+ ]
+}
