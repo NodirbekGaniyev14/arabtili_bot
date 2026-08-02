@@ -1,0 +1,371 @@
+{
+ "id": "b2-34",
+ "level": "B2",
+ "module": "saudi-work",
+ "order": 34,
+ "title_uz": "Ofisda muloqot",
+ "title_ar": "التَّوَاصُلُ فِي المَكْتَبِ",
+ "can_do_uz": "Yig'ilishda gapira, topshiriq bera va muddat haqida kelisha olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-33"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Ofisda kun shu jumlalar bilan o'tadi: «عِنْدَنَا اِجْتِمَاع السَّاعَة عَشَرَة» (soat 10 da yig'ilish bor), «مُمْكِن تُرْسِل لِي التَّقْرِير؟» (hisobotni yuborasizmi?), «المَوْعِد النِّهَائِيّ يَوْم الخَمِيس» (oxirgi muddat — payshanba). Rasmiy fusha bilan hijoziy o'rtasidagi muvozanat — ofisda kerak bo'ladigan asosiy ko'nikma.",
+ "grammar": {
+  "point_ar": "لُغَةُ الاِجْتِمَاعَاتِ وَالمَهَامِّ",
+  "explanation_uz": "OFIS TILI uch guruh. 1) YIG'ILISH: عَقَدْنَا اِجْتِمَاعًا (yig'ilish o'tkazdik), جَدْوَلُ الأَعْمَالِ (kun tartibi), مَحْضَرُ الاِجْتِمَاعِ (bayonnoma), نُنَاقِشُ البَنْدَ الأَوَّلَ (birinchi bandni muhokama qilamiz), أَتَّفِقُ مَعَكَ (roziman), لَدَيَّ مُلَاحَظَةٌ (bir izohim bor). 2) TOPSHIRIQ: مُهِمَّة (vazifa), مُكَلَّف بِـ (…ga mas'ul), المَوْعِد النِّهَائِيّ (deadline), أَنْجَزَ (bajardi), مُتَابَعَة (nazorat/kuzatuv), تَذْكِير (eslatma). 3) MUOMALA QOLIPLARI: «هَلْ يُمْكِنُكَ…؟» (…qila olasizmi?), «لَوْ سَمَحْتَ» (iltimos), «سَأُرْسِلُهُ خِلَالَ سَاعَةٍ» (bir soat ichida yuboraman), «أَعْتَذِرُ عَنِ التَّأْخِيرِ» (kechikkanim uchun uzr). MUHIM: rasmiy elektron xatda «تَحِيَّة طَيِّبَة وَبَعْد» bilan boshlanadi va «وَتَفَضَّلُوا بِقَبُولِ فَائِقِ الاِحْتِرَامِ» bilan tugaydi.",
+  "table": [
+   {"ar": "جَدْوَلُ الأَعْمَالِ", "uz": "Kun tartibi (yig'ilish rejasi)", "form": "إِضَافَة"},
+   {"ar": "مَحْضَرُ الاِجْتِمَاعِ", "uz": "Yig'ilish bayonnomasi", "form": "إِضَافَة"},
+   {"ar": "المَوْعِدُ النِّهَائِيُّ", "uz": "Oxirgi muddat (deadline)", "form": "نَعْت"},
+   {"ar": "أَنَا مُكَلَّفٌ بِالتَّقْرِيرِ", "uz": "Men hisobotga mas'ulman", "form": "مُكَلَّف بِـ"},
+   {"ar": "هَلْ يُمْكِنُكَ إِرْسَالُهُ؟", "uz": "Uni yubora olasizmi?", "form": "طَلَب مُهَذَّب"},
+   {"ar": "أَعْتَذِرُ عَنِ التَّأْخِيرِ", "uz": "Kechikkanim uchun uzr", "form": "اِعْتِذَار"}
+  ],
+  "common_mistakes_uz": [
+   "Buyruq shaklini to'g'ridan-to'g'ri ishlatish: أَرْسِلْ! ✗ → هَلْ يُمْكِنُكَ إِرْسَالُهُ؟ ✓ (muloyimroq).",
+   "مُهِمَّة (vazifa) va مُهِمّ (muhim) ni chalkashtirish.",
+   "Rasmiy xatni salomlashuvsiz boshlash — «تَحِيَّة طَيِّبَة وَبَعْد» qolipi kutiladi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ج م ع",
+   "meaning_uz": "to'planish",
+   "uz_cognates": ["jamoa", "ijtimoiy", "majmua"],
+   "derived": [
+    {"ar": "اِجْتِمَاع", "uz": "yig'ilish", "pattern": "اِفْتِعَال"},
+    {"ar": "مُجْتَمَع", "uz": "jamiyat", "pattern": "مُفْتَعَل"},
+    {"ar": "جَمَاعِيّ", "uz": "jamoaviy", "pattern": "فَعَالِيّ"}
+   ]
+  },
+  {
+   "root": "ك ل ف",
+   "meaning_uz": "yuklash, topshirish",
+   "uz_cognates": ["taklif", "mukallaf"],
+   "derived": [
+    {"ar": "مُكَلَّف", "uz": "mas'ul qilingan", "pattern": "مُفَعَّل"},
+    {"ar": "تَكْلِيف", "uz": "topshiriq berish", "pattern": "تَفْعِيل"},
+    {"ar": "تَكْلِفَة", "uz": "xarajat", "pattern": "تَفْعِلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "جَدْوَل الأَعْمَال",
+   "translit": "jadwal al-aʿmāl",
+   "uz": "kun tartibi (yig'ilish rejasi)",
+   "root": "ج د ل",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/jadwal_amal.mp3",
+   "example_ar": "أَرْسَلْتُ جَدْوَلَ الأَعْمَالِ.",
+   "example_uz": "Kun tartibini yubordim.",
+   "srs": true
+  },
+  {
+   "ar": "مَحْضَر",
+   "translit": "maḥḍar",
+   "uz": "bayonnoma (yig'ilish qaydnomasi)",
+   "root": "ح ض ر",
+   "pattern": "مَفْعَل",
+   "pos": "ot",
+   "audio": "b2/mahdar.mp3",
+   "example_ar": "كَتَبَ السِّكْرِتِيرُ المَحْضَرَ.",
+   "example_uz": "Kotib bayonnomani yozdi.",
+   "srs": true
+  },
+  {
+   "ar": "مُهِمَّة",
+   "translit": "muhimma",
+   "uz": "vazifa, topshiriq",
+   "root": "ه م م",
+   "pattern": "مُفْعِلَة",
+   "pos": "ot",
+   "audio": "b2/muhimma.mp3",
+   "example_ar": "أَنْجَزْتُ المُهِمَّةَ فِي وَقْتِهَا.",
+   "example_uz": "Vazifani o'z vaqtida bajardim.",
+   "srs": true
+  },
+  {
+   "ar": "مُكَلَّف بِـ",
+   "translit": "mukallaf bi-",
+   "uz": "…ga mas'ul, topshirilgan",
+   "root": "ك ل ف",
+   "pattern": "مُفَعَّل",
+   "pos": "sifat",
+   "audio": "b2/mukallaf.mp3",
+   "example_ar": "أَنَا مُكَلَّفٌ بِالتَّقْرِيرِ الشَّهْرِيِّ.",
+   "example_uz": "Men oylik hisobotga mas'ulman.",
+   "srs": true
+  },
+  {
+   "ar": "المَوْعِد النِّهَائِيّ",
+   "translit": "al-mawʿid an-nihāʾī",
+   "uz": "oxirgi muddat (deadline)",
+   "root": "و ع د",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/mawid_nihai.mp3",
+   "example_ar": "المَوْعِدُ النِّهَائِيُّ يَوْمُ الخَمِيسِ.",
+   "example_uz": "Oxirgi muddat — payshanba.",
+   "srs": true
+  },
+  {
+   "ar": "أَنْجَزَ",
+   "translit": "anjaza",
+   "uz": "bajardi, yakunladi",
+   "root": "ن ج ز",
+   "pattern": "أَفْعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/anjaza.mp3",
+   "example_ar": "أَنْجَزَ الفَرِيقُ العَمَلَ.",
+   "example_uz": "Jamoa ishni yakunladi.",
+   "srs": true
+  },
+  {
+   "ar": "مُتَابَعَة",
+   "translit": "mutābaʿa",
+   "uz": "kuzatib borish, nazorat",
+   "root": "ت ب ع",
+   "pattern": "مُفَاعَلَة",
+   "pos": "ot",
+   "audio": "b2/mutabaa.mp3",
+   "example_ar": "تَحْتَاجُ المُهِمَّةُ إِلَى مُتَابَعَةٍ.",
+   "example_uz": "Vazifa nazoratni talab qiladi.",
+   "srs": true
+  },
+  {
+   "ar": "تَذْكِير",
+   "translit": "tadhkīr",
+   "uz": "eslatma",
+   "root": "ذ ك ر",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tadhkir.mp3",
+   "example_ar": "أَرْسَلْتُ تَذْكِيرًا بِالمَوْعِدِ.",
+   "example_uz": "Muddat haqida eslatma yubordim.",
+   "srs": true
+  },
+  {
+   "ar": "مُلَاحَظَة",
+   "translit": "mulāḥaẓa",
+   "uz": "izoh, mulohaza",
+   "root": "ل ح ظ",
+   "pattern": "مُفَاعَلَة",
+   "pos": "ot",
+   "audio": "b2/mulahaza.mp3",
+   "example_ar": "لَدَيَّ مُلَاحَظَةٌ بَسِيطَةٌ.",
+   "example_uz": "Kichik bir izohim bor.",
+   "srs": true
+  },
+  {
+   "ar": "اِعْتِذَار",
+   "translit": "iʿtidhār",
+   "uz": "uzr so'rash",
+   "root": "ع ذ ر",
+   "pattern": "اِفْتِعَال",
+   "pos": "ot",
+   "audio": "b2/itidhar.mp3",
+   "example_ar": "أَعْتَذِرُ عَنِ التَّأْخِيرِ.",
+   "example_uz": "Kechikkanim uchun uzr so'rayman.",
+   "srs": true
+  },
+  {
+   "ar": "تَحِيَّة طَيِّبَة وَبَعْد",
+   "translit": "taḥiyya ṭayyiba wa baʿd",
+   "uz": "rasmiy xat boshlanishi (salomlashuv)",
+   "root": "ح ي ي",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/tahiyya_tayyiba.mp3",
+   "example_ar": "تَحِيَّةً طَيِّبَةً وَبَعْدُ، أَكْتُبُ إِلَيْكُمْ بِخُصُوصِ…",
+   "example_uz": "Hurmat ila, sizga … yuzasidan yozmoqdaman.",
+   "srs": true
+  },
+  {
+   "ar": "بِخُصُوصِ",
+   "translit": "bi-khuṣūṣi",
+   "uz": "…yuzasidan, …haqida",
+   "root": "خ ص ص",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/bikhusus.mp3",
+   "example_ar": "أَكْتُبُ بِخُصُوصِ الطَّلَبِ.",
+   "example_uz": "Ariza yuzasidan yozmoqdaman.",
+   "srs": true
+  }
+ ],
+ "hejazi": [
+  {
+   "msa_ar": "هَلْ يُمْكِنُكَ إِرْسَالُهُ الآنَ؟",
+   "hejazi_ar": "مُمْكِن تِرْسِلُه دَحِين؟",
+   "translit": "mumkin tirsiluh daḥīn",
+   "uz": "Hozir yubora olasizmi?",
+   "audio": "hj/mumkin_tirsiluh.mp3"
+  },
+  {
+   "msa_ar": "اِنْتَهَيْتُ مِنَ العَمَلِ",
+   "hejazi_ar": "خَلَّصْت الشُّغْل",
+   "translit": "khallast ash-shughl",
+   "uz": "Ishni tugatdim",
+   "audio": "hj/khallast_shughl.mp3"
+  },
+  {
+   "msa_ar": "سَأُخْبِرُكَ بَعْدَ قَلِيلٍ",
+   "hejazi_ar": "بَقُول لَك بَعْد شْوَي",
+   "translit": "baqūl lak baʿd shwayy",
+   "uz": "Birozdan keyin aytaman",
+   "audio": "hj/baqul_lak.mp3"
+  }
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "أرسل المدير جدول الأعمال قبل الاجتماع بيوم. ناقش الفريق ثلاثة بنود، وكتب السكرتير محضر الاجتماع. قال أحد الموظفين: لديّ ملاحظة بسيطة على الجدول الزمني، فالموعد النهائي قريب جدًّا. اتّفق الجميع على تمديد المهلة يومين مع متابعة أسبوعية. وفي نهاية اليوم أرسل المسؤول تذكيرًا بالمهامّ، واعتذر عن تأخير الرد صباحًا.",
+   "questions": [
+    {"q_uz": "Kun tartibi qachon yuborildi?", "a": "Yig'ilishdan bir kun oldin"},
+    {"q_uz": "Xodimning izohi nima edi?", "a": "Oxirgi muddat juda yaqin"},
+    {"q_uz": "Qanday kelishuvga erishildi?", "a": "Muddatni ikki kunga uzaytirish va haftalik nazorat"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-34-listen.mp3",
+   "transcript_ar": "المَوْعِدُ النِّهَائِيُّ يَوْمُ الخَمِيسِ. أَنَا مُكَلَّفٌ بِالتَّقْرِيرِ، وَسَأُرْسِلُهُ خِلَالَ سَاعَةٍ.",
+   "questions": [
+    {"q_uz": "Deadline qachon?", "a": "Payshanba"},
+    {"q_uz": "Hisobot qachon yuboriladi?", "a": "Bir soat ichida"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch ofis jumlasini ayting: hisobotga mas'ulman, bir soat ichida yuboraman, kechikkanim uchun uzr.",
+   "target_ar": ["أَنَا مُكَلَّفٌ بِالتَّقْرِيرِ", "سَأُرْسِلُهُ خِلَالَ سَاعَةٍ", "أَعْتَذِرُ عَنِ التَّأْخِيرِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Hamkasbga rasmiy elektron xat yozing (5 gap): salomlashuv, mavzu (بخصوص), so'rov, muddat, yakun.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«المَوْعِد النِّهَائِيّ» nima?",
+   "q_ar": "المَوْعِد النِّهَائِيّ",
+   "options": ["Oxirgi muddat", "Yig'ilish vaqti", "Ish boshlash sanasi", "Ta'til"],
+   "answer": "Oxirgi muddat",
+   "explain_uz": "Deadline — ish topshiriladigan so'nggi kun.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مَحْضَر الاِجْتِمَاع» nima?",
+   "q_ar": "مَحْضَر الاِجْتِمَاع",
+   "options": ["Bayonnoma", "Kun tartibi", "Taklifnoma", "Hisobot"],
+   "answer": "Bayonnoma",
+   "explain_uz": "Yig'ilishda gaplashilganlar qaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Muloyim so'rov qaysi?",
+   "q_ar": "",
+   "options": [
+    "هَلْ يُمْكِنُكَ إِرْسَالُهُ؟",
+    "أَرْسِلْ!",
+    "يَجِبُ أَنْ تُرْسِلَ",
+    "لَنْ تُرْسِلَ"
+   ],
+   "answer": "هَلْ يُمْكِنُكَ إِرْسَالُهُ؟",
+   "explain_uz": "Ofisda buyruq o'rniga savol shakli.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مُكَلَّف بِالتَّقْرِيرِ» ma'nosi?",
+   "q_ar": "مُكَلَّف بِالتَّقْرِيرِ",
+   "options": ["Hisobotga mas'ul", "Hisobotni o'qigan", "Hisobotdan xabardor", "Hisobotni rad etgan"],
+   "answer": "Hisobotga mas'ul",
+   "explain_uz": "كَلَّفَ — topshiriq yuklash.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "مُلَاحَظَة",
+   "options": [],
+   "answer": "izoh",
+   "explain_uz": "مُلَاحَظَة — mulohaza, izoh.",
+   "audio": "b2/mulahaza.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«اِجْتِمَاع، مُجْتَمَع، جَمَاعِيّ» qaysi o'zakdan?",
+   "q_ar": "مُجْتَمَع",
+   "options": ["ج م ع", "ج م ل", "ج ع م", "ح م ع"],
+   "answer": "ج م ع",
+   "explain_uz": "ج م ع — to'planish o'zagi.",
+   "audio": "",
+   "root": "ج م ع",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Hijoziyda «ishni tugatdim» qanday?",
+   "q_ar": "",
+   "options": [
+    "خَلَّصْت الشُّغْل",
+    "أَنْجَزْتُ العَمَلَ",
+    "مُمْكِن تِرْسِلُه؟",
+    "بَقُول لَك بَعْدَيْن"
+   ],
+   "answer": "خَلَّصْت الشُّغْل",
+   "explain_uz": "Hijoziyda خَلَّص — tugatmoq, شُغْل — ish.",
+   "audio": "hj/khallast_shughl.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Kechikkanim uchun uzr so'rayman»",
+   "q_ar": "",
+   "options": [],
+   "answer": "أَعْتَذِرُ عَنِ التَّأْخِيرِ",
+   "explain_uz": "Fe'l + عَنْ + majrur.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["أَعْتَذِرُ", "عَنِ", "التَّأْخِيرِ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ج م ع", "back": "to'planish — ijtimo/mujtama", "deck": "msa"},
+  {"type": "root", "front": "ك ل ف", "back": "topshiriq — mukallaf/taklif", "deck": "msa"},
+  {"type": "phrase", "front": "جَدْوَل الأَعْمَال", "back": "kun tartibi", "deck": "msa"},
+  {"type": "word", "front": "مَحْضَر", "back": "bayonnoma", "deck": "msa"},
+  {"type": "word", "front": "مُهِمَّة", "back": "vazifa", "deck": "msa"},
+  {"type": "phrase", "front": "المَوْعِد النِّهَائِيّ", "back": "oxirgi muddat", "deck": "msa"},
+  {"type": "word", "front": "أَنْجَزَ", "back": "bajardi", "deck": "msa"},
+  {"type": "word", "front": "مُتَابَعَة", "back": "nazorat, kuzatuv", "deck": "msa"},
+  {"type": "word", "front": "تَذْكِير", "back": "eslatma", "deck": "msa"},
+  {"type": "word", "front": "مُلَاحَظَة", "back": "izoh", "deck": "msa"},
+  {"type": "word", "front": "اِعْتِذَار", "back": "uzr so'rash", "deck": "msa"},
+  {"type": "phrase", "front": "مُمْكِن تِرْسِلُه دَحِين؟", "back": "hozir yubora olasizmi? (hijoziy)", "deck": "hejazi"},
+  {"type": "phrase", "front": "خَلَّصْت الشُّغْل", "back": "ishni tugatdim (hijoziy)", "deck": "hejazi"}
+ ]
+}

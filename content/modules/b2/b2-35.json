@@ -1,0 +1,375 @@
+{
+ "id": "b2-35",
+ "level": "B2",
+ "module": "saudi-work",
+ "order": 35,
+ "title_uz": "Mijoz bilan telefon",
+ "title_ar": "التَّعَامُلُ مَعَ العَمِيلِ عَبْرَ الهَاتِفِ",
+ "can_do_uz": "Telefonda mijoz shikoyatini tinglab, uzr so'rab, yechim taklif qila olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-34"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Mijoz jahli chiqqan holda qo'ng'iroq qiladi. Uch qadam ishlaydi: TINGLASH («أَفْهَمُ اِنْزِعَاجَكَ» — bezovtaligingizni tushunaman), UZR («نَعْتَذِرُ عَنِ الإِزْعَاجِ»), YECHIM («سَنَحُلُّ المُشْكِلَةَ خِلَالَ ٢٤ سَاعَةً»). Bu uch qolip bilan har qanday og'ir suhbatni boshqarish mumkin — Saudiyada xizmat ko'rsatish sohasida kundalik ish.",
+ "grammar": {
+  "point_ar": "أُسْلُوبُ خِدْمَةِ العُمَلَاءِ: التَّعَاطُفُ وَالحَلُّ",
+  "explanation_uz": "Qo'ng'iroqning tuzilishi. 1) OCHISH: «شَرِكَةُ… مَعَكَ فُلَان، كَيْفَ أَخْدِمُكَ؟» (…kompaniyasi, men falonchiman, qanday yordam beray?). 2) MUAMMONI ANIQLASH: «هَلْ يُمْكِنُكَ تَوْضِيحُ المُشْكِلَةِ؟» (muammoni aniqlashtirasizmi?), «مُنْذُ مَتَى؟» (qachondan beri?), «مَا رَقْمُ الطَّلَبِ؟» (buyurtma raqami?). 3) HAMDARDLIK: «أَفْهَمُ اِنْزِعَاجَكَ» (bezovtaligingizni tushunaman), «مَعَكَ حَقٌّ» (haqsiz), «نَعْتَذِرُ عَنِ الإِزْعَاجِ» (bezovtalik uchun uzr). 4) YECHIM: «سَنُعَالِجُ الأَمْرَ فَوْرًا» (masalani darhol hal qilamiz), «سَأُحَوِّلُكَ إِلَى القِسْمِ المُخْتَصِّ» (tegishli bo'limga ulayman), «سَنُعَوِّضُكَ» (kompensatsiya beramiz), «خِلَالَ ٢٤ سَاعَةً» (24 soat ichida). 5) YAKUN: «هَلْ هُنَاكَ شَيْءٌ آخَرُ؟» (yana biror narsa bormi?), «شُكْرًا لِتَوَاصُلِكَ مَعَنَا». QOIDA: mijozga «أَنْتَ مُخْطِئٌ» (siz xatosiz) demaslik — o'rniga «رُبَّمَا حَدَثَ سُوءُ فَهْمٍ» (tushunmovchilik bo'lgandir).",
+  "table": [
+   {"ar": "كَيْفَ أَخْدِمُكَ؟", "uz": "Qanday yordam beray?", "form": "اِفْتِتَاح"},
+   {"ar": "أَفْهَمُ اِنْزِعَاجَكَ", "uz": "Bezovtaligingizni tushunaman", "form": "تَعَاطُف"},
+   {"ar": "نَعْتَذِرُ عَنِ الإِزْعَاجِ", "uz": "Bezovtalik uchun uzr", "form": "اِعْتِذَار"},
+   {"ar": "سَنُعَالِجُ الأَمْرَ فَوْرًا", "uz": "Masalani darhol hal qilamiz", "form": "حَلّ"},
+   {"ar": "سَأُحَوِّلُكَ إِلَى القِسْمِ المُخْتَصِّ", "uz": "Tegishli bo'limga ulayman", "form": "تَحْوِيل"},
+   {"ar": "شُكْرًا لِتَوَاصُلِكَ مَعَنَا", "uz": "Bog'langaningiz uchun rahmat", "form": "خِتَام"}
+  ],
+  "common_mistakes_uz": [
+   "Mijozga to'g'ridan «أَنْتَ مُخْطِئٌ» deyish — muloqot buziladi; «سُوءُ فَهْمٍ» yumshoqroq.",
+   "Uzr so'rashni tashlab, darrov yechimga o'tish — mijoz eshitilmagandek his qiladi.",
+   "«Bir daqiqa» ni لَحْظَة deb aytmay, uzoq kuttirish — muddatni aniq ayting."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع م ل",
+   "meaning_uz": "ish; mijoz (عَمِيل) shu o'zakdan",
+   "uz_cognates": ["amal", "muomala"],
+   "derived": [
+    {"ar": "عَمِيل", "uz": "mijoz", "pattern": "فَعِيل"},
+    {"ar": "مُعَامَلَة", "uz": "muomala", "pattern": "مُفَاعَلَة"},
+    {"ar": "تَعَامُل", "uz": "muomala qilish", "pattern": "تَفَاعُل"}
+   ]
+  },
+  {
+   "root": "ز ع ج",
+   "meaning_uz": "bezovta qilish",
+   "uz_cognates": [],
+   "derived": [
+    {"ar": "إِزْعَاج", "uz": "bezovta qilish", "pattern": "إِفْعَال"},
+    {"ar": "اِنْزِعَاج", "uz": "bezovtalik, noqulaylik", "pattern": "اِنْفِعَال"},
+    {"ar": "مُزْعِج", "uz": "bezovta qiluvchi", "pattern": "مُفْعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "عَمِيل",
+   "translit": "ʿamīl",
+   "uz": "mijoz",
+   "root": "ع م ل",
+   "pattern": "فَعِيل",
+   "pos": "ot",
+   "audio": "b2/amil_client.mp3",
+   "example_ar": "العَمِيلُ يَنْتَظِرُ الرَّدَّ.",
+   "example_uz": "Mijoz javob kutmoqda.",
+   "srs": true
+  },
+  {
+   "ar": "شَكْوَى",
+   "translit": "shakwā",
+   "uz": "shikoyat",
+   "root": "ش ك و",
+   "pattern": "فَعْلَى",
+   "pos": "ot",
+   "audio": "b2/shakwa.mp3",
+   "example_ar": "سَجَّلْنَا الشَّكْوَى فِي النِّظَامِ.",
+   "example_uz": "Shikoyatni tizimga kiritdik.",
+   "srs": true
+  },
+  {
+   "ar": "اِنْزِعَاج",
+   "translit": "inziʿāj",
+   "uz": "bezovtalik, noqulaylik",
+   "root": "ز ع ج",
+   "pattern": "اِنْفِعَال",
+   "pos": "ot",
+   "audio": "b2/inziaj.mp3",
+   "example_ar": "أَفْهَمُ اِنْزِعَاجَكَ تَمَامًا.",
+   "example_uz": "Bezovtaligingizni to'liq tushunaman.",
+   "srs": true
+  },
+  {
+   "ar": "تَعْوِيض",
+   "translit": "taʿwīḍ",
+   "uz": "kompensatsiya, o'rnini qoplash",
+   "root": "ع و ض",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tawid.mp3",
+   "example_ar": "سَنُقَدِّمُ لَكَ تَعْوِيضًا.",
+   "example_uz": "Sizga kompensatsiya taqdim etamiz.",
+   "srs": true
+  },
+  {
+   "ar": "القِسْم المُخْتَصّ",
+   "translit": "al-qism al-mukhtaṣṣ",
+   "uz": "tegishli (mutaxassis) bo'lim",
+   "root": "خ ص ص",
+   "pattern": "مُفْتَعِل",
+   "pos": "ot",
+   "audio": "b2/qism_mukhtass.mp3",
+   "example_ar": "سَأُحَوِّلُكَ إِلَى القِسْمِ المُخْتَصِّ.",
+   "example_uz": "Sizni tegishli bo'limga ulayman.",
+   "srs": true
+  },
+  {
+   "ar": "رَقْم الطَّلَب",
+   "translit": "raqm aṭ-ṭalab",
+   "uz": "buyurtma raqami",
+   "root": "ر ق م",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/raqm_talab.mp3",
+   "example_ar": "مَا رَقْمُ الطَّلَبِ مِنْ فَضْلِكَ؟",
+   "example_uz": "Iltimos, buyurtma raqamingiz nechchi?",
+   "srs": true
+  },
+  {
+   "ar": "سُوء فَهْم",
+   "translit": "sūʾ fahm",
+   "uz": "tushunmovchilik",
+   "root": "ف ه م",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/su_fahm.mp3",
+   "example_ar": "رُبَّمَا حَدَثَ سُوءُ فَهْمٍ.",
+   "example_uz": "Ehtimol, tushunmovchilik bo'lgan.",
+   "srs": true
+  },
+  {
+   "ar": "فَوْرًا",
+   "translit": "fawran",
+   "uz": "darhol, zudlik bilan",
+   "root": "ف و ر",
+   "pattern": "فَعْل",
+   "pos": "ravish",
+   "audio": "b2/fawran.mp3",
+   "example_ar": "سَنُعَالِجُ الأَمْرَ فَوْرًا.",
+   "example_uz": "Masalani darhol hal qilamiz.",
+   "srs": true
+  },
+  {
+   "ar": "مُتَابَعَة الطَّلَب",
+   "translit": "mutābaʿat aṭ-ṭalab",
+   "uz": "buyurtmani kuzatish",
+   "root": "ت ب ع",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/mutabaat_talab.mp3",
+   "example_ar": "يُمْكِنُكَ مُتَابَعَةُ الطَّلَبِ عَبْرَ التَّطْبِيقِ.",
+   "example_uz": "Buyurtmani ilova orqali kuzatishingiz mumkin.",
+   "srs": true
+  },
+  {
+   "ar": "اِسْتِرْجَاع",
+   "translit": "istirjāʿ",
+   "uz": "qaytarish (mahsulot/pul)",
+   "root": "ر ج ع",
+   "pattern": "اِسْتِفْعَال",
+   "pos": "ot",
+   "audio": "b2/istirja.mp3",
+   "example_ar": "سِيَاسَةُ الاِسْتِرْجَاعِ أُسْبُوعَانِ.",
+   "example_uz": "Qaytarish muddati — ikki hafta.",
+   "srs": true
+  },
+  {
+   "ar": "رِضَا",
+   "translit": "riḍā",
+   "uz": "mamnuniyat, rozilik",
+   "root": "ر ض و",
+   "pattern": "فِعَل",
+   "pos": "ot",
+   "audio": "b2/rida.mp3",
+   "example_ar": "رِضَا العَمِيلِ أَوَّلًا.",
+   "example_uz": "Mijoz mamnuniyati — birinchi o'rinda.",
+   "srs": true
+  },
+  {
+   "ar": "لَحْظَة",
+   "translit": "laḥẓa",
+   "uz": "bir lahza, bir daqiqa",
+   "root": "ل ح ظ",
+   "pattern": "فَعْلَة",
+   "pos": "ot",
+   "audio": "b2/lahza.mp3",
+   "example_ar": "لَحْظَةً مِنْ فَضْلِكَ.",
+   "example_uz": "Bir daqiqa, iltimos.",
+   "srs": true
+  }
+ ],
+ "hejazi": [
+  {
+   "msa_ar": "لَحْظَةً مِنْ فَضْلِكَ",
+   "hejazi_ar": "لَحْظَة لَو سَمَحْت",
+   "translit": "laḥẓa law samaḥt",
+   "uz": "Bir daqiqa, iltimos",
+   "audio": "hj/lahza_law.mp3"
+  },
+  {
+   "msa_ar": "لَا تَقْلَقْ، سَنَحُلُّهَا",
+   "hejazi_ar": "لَا تِشِيل هَمّ، بِنْحُلَّهَا",
+   "translit": "lā tishīl hamm, binḥullahā",
+   "uz": "Xavotir olmang, hal qilamiz",
+   "audio": "hj/la_tishil_hamm.mp3"
+  },
+  {
+   "msa_ar": "المُشْكِلَةُ اِنْتَهَتْ",
+   "hejazi_ar": "المُشْكِلَة خَلَاص اِنْحَلَّت",
+   "translit": "al-mushkila khalāṣ inḥallat",
+   "uz": "Muammo hal bo'ldi",
+   "audio": "hj/mushkila_inhallat.mp3"
+  }
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "اتّصل عميل غاضب وقال إنّ الطلب تأخّر أسبوعًا. ردّ الموظف بهدوء: أفهم انزعاجك، ونعتذر عن الإزعاج. طلب رقم الطلب ثم راجع النظام، ووجد أنّ الشحنة توقفت في المستودع. قال: ربما حدث سوء فهم في العنوان، وسنعالج الأمر فورًا. ثم عرض تعويضًا بسيطًا وشرح سياسة الاسترجاع، وفي النهاية شكر العميل على تواصله.",
+   "questions": [
+    {"q_uz": "Mijoz nimadan shikoyat qildi?", "a": "Buyurtma bir haftaga kechikkanidan"},
+    {"q_uz": "Xodim birinchi nima qildi?", "a": "Hamdardlik bildirib, uzr so'radi"},
+    {"q_uz": "Muammo sababi nima bo'ldi?", "a": "Manzilda tushunmovchilik — yuk omborda to'xtagan"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-35-listen.mp3",
+   "transcript_ar": "أَفْهَمُ اِنْزِعَاجَكَ، وَنَعْتَذِرُ عَنِ الإِزْعَاجِ. سَنُعَالِجُ الأَمْرَ فَوْرًا وَنُقَدِّمُ تَعْوِيضًا.",
+   "questions": [
+    {"q_uz": "Xodim qanday boshladi?", "a": "Hamdardlik va uzr bilan"},
+    {"q_uz": "Nima taklif qilindi?", "a": "Darhol hal qilish va kompensatsiya"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch qadamni ayting: hamdardlik, uzr, yechim (muddat bilan).",
+   "target_ar": ["أَفْهَمُ اِنْزِعَاجَكَ", "نَعْتَذِرُ عَنِ الإِزْعَاجِ", "سَنَحُلُّ المُشْكِلَةَ خِلَالَ يَوْمٍ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Mijozga uzr xati yozing (4 gap): muammoni tan olish, sabab, yechim va muddat, kompensatsiya.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Mijoz shikoyatiga birinchi javob qaysi?",
+   "q_ar": "",
+   "options": [
+    "أَفْهَمُ اِنْزِعَاجَكَ",
+    "أَنْتَ مُخْطِئٌ",
+    "هَذَا لَيْسَ خَطَأَنَا",
+    "اِتَّصِلْ لَاحِقًا"
+   ],
+   "answer": "أَفْهَمُ اِنْزِعَاجَكَ",
+   "explain_uz": "Avval hamdardlik — keyin yechim.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«سَأُحَوِّلُكَ إِلَى القِسْمِ المُخْتَصِّ» nima degani?",
+   "q_ar": "القِسْم المُخْتَصّ",
+   "options": ["Tegishli bo'limga ulayman", "Boshqa kompaniyaga yuboraman", "Qo'ng'iroqni tugataman", "Ertaga bog'lanaman"],
+   "answer": "Tegishli bo'limga ulayman",
+   "explain_uz": "مُخْتَصّ — mutaxassis/tegishli.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«سُوء فَهْم» ni nega ishlatamiz?",
+   "q_ar": "سُوء فَهْم",
+   "options": [
+    "Ayblovni yumshatish uchun",
+    "Mijozni ayblash uchun",
+    "Suhbatni tugatish uchun",
+    "Narxni oshirish uchun"
+   ],
+   "answer": "Ayblovni yumshatish uchun",
+   "explain_uz": "«Tushunmovchilik» — neytral ifoda.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«تَعْوِيض» nima?",
+   "q_ar": "تَعْوِيض",
+   "options": ["Kompensatsiya", "Chegirma so'rovi", "Shikoyat", "Kechikish"],
+   "answer": "Kompensatsiya",
+   "explain_uz": "Zararning o'rnini qoplash.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "شَكْوَى",
+   "options": [],
+   "answer": "shikoyat",
+   "explain_uz": "شَكْوَى — mijoz shikoyati.",
+   "audio": "b2/shakwa.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«إِزْعَاج، اِنْزِعَاج، مُزْعِج» qaysi o'zakdan?",
+   "q_ar": "اِنْزِعَاج",
+   "options": ["ز ع ج", "ز ج ع", "ع ز ج", "ز ع م"],
+   "answer": "ز ع ج",
+   "explain_uz": "ز ع ج — bezovta qilish o'zagi.",
+   "audio": "",
+   "root": "ز ع ج",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Hijoziyda «xavotir olmang, hal qilamiz» qanday?",
+   "q_ar": "",
+   "options": [
+    "لَا تِشِيل هَمّ، بِنْحُلَّهَا",
+    "لَا تَقْلَقْ، سَنَحُلُّهَا",
+    "لَحْظَة لَو سَمَحْت",
+    "المُشْكِلَة اِنْحَلَّت"
+   ],
+   "answer": "لَا تِشِيل هَمّ، بِنْحُلَّهَا",
+   "explain_uz": "Hijoziy iborasi: «tashvish ko'tarma».",
+   "audio": "hj/la_tishil_hamm.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Masalani darhol hal qilamiz»",
+   "q_ar": "",
+   "options": [],
+   "answer": "سَنُعَالِجُ الأَمْرَ فَوْرًا",
+   "explain_uz": "سَـ + muzori' + maf'ul + ravish.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["سَنُعَالِجُ", "الأَمْرَ", "فَوْرًا"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ز ع ج", "back": "bezovta qilish — iz'oj/inzi'oj", "deck": "msa"},
+  {"type": "word", "front": "عَمِيل", "back": "mijoz", "deck": "msa"},
+  {"type": "word", "front": "شَكْوَى", "back": "shikoyat", "deck": "msa"},
+  {"type": "word", "front": "اِنْزِعَاج", "back": "bezovtalik", "deck": "msa"},
+  {"type": "word", "front": "تَعْوِيض", "back": "kompensatsiya", "deck": "msa"},
+  {"type": "phrase", "front": "القِسْم المُخْتَصّ", "back": "tegishli bo'lim", "deck": "msa"},
+  {"type": "phrase", "front": "سُوء فَهْم", "back": "tushunmovchilik", "deck": "msa"},
+  {"type": "word", "front": "فَوْرًا", "back": "darhol", "deck": "msa"},
+  {"type": "word", "front": "اِسْتِرْجَاع", "back": "qaytarish", "deck": "msa"},
+  {"type": "word", "front": "رِضَا", "back": "mamnuniyat", "deck": "msa"},
+  {"type": "phrase", "front": "لَا تِشِيل هَمّ، بِنْحُلَّهَا", "back": "xavotir olmang, hal qilamiz (hijoziy)", "deck": "hejazi"},
+  {"type": "phrase", "front": "المُشْكِلَة خَلَاص اِنْحَلَّت", "back": "muammo hal bo'ldi (hijoziy)", "deck": "hejazi"}
+ ]
+}

@@ -285,9 +285,13 @@ def validate_lesson(
     for h in lesson.hejazi:
         if not ARABIC_ANY.search(h.hejazi_ar):
             errors.append(f"Hejazi arabcha emas: {h.hejazi_ar!r}")
+    # Hijoziy iborani xato deck bilan qo'yish: karta matni darsning hejazi
+    # ro'yxatidagi ibora bo'lsa-yu, deck 'msa' bo'lsa — ogohlantiramiz.
+    # (MSA iboralari phrase turida bo'lishi mumkin, ular ogohlantirilmaydi.)
+    hejazi_fronts = {h.hejazi_ar.strip() for h in lesson.hejazi}
     for c in lesson.srs_cards:
-        if c.type == "phrase" and c.deck != "hejazi" and lesson.hejazi:
-            warnings.append(f"phrase karta deck=msa: {c.front!r} — tekshiring")
+        if c.type == "phrase" and c.deck != "hejazi" and c.front.strip() in hejazi_fronts:
+            warnings.append(f"hijoziy ibora deck=msa: {c.front!r} — hejazi bo'lishi kerak")
 
     # 9. Umumiy
     if not lesson.can_do_uz.strip():

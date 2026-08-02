@@ -1,0 +1,367 @@
+{
+ "id": "b2-28",
+ "level": "B2",
+ "module": "vocab-adv",
+ "order": 28,
+ "title_uz": "IT va raqamli xizmatlar",
+ "title_ar": "التِّقْنِيَةُ وَالخِدْمَاتُ الرَّقْمِيَّةُ",
+ "can_do_uz": "Ilova, hisob va xavfsizlik bilan bog'liq raqamli xizmat matnlarini tushunaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-27"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Telefoningizdagi arabcha ilova: «تَسْجِيلُ الدُّخُولِ» (kirish), «كَلِمَةُ المُرُورِ» (parol), «تَحْدِيث» (yangilanish), «إِعْدَادَات» (sozlamalar). Bu so'zlarni bilsangiz, istalgan arabcha ilovani ishlatasiz — bank, taksi, davlat xizmatlari. Saudiyada ko'p ish shu ilovalar orqali bo'ladi (Absher, Tawakkalna). Bugun shu tilni olamiz.",
+ "grammar": {
+  "point_ar": "مُصْطَلَحَاتُ التَّطْبِيقَاتِ وَالحِسَابَاتِ",
+  "explanation_uz": "Raqamli xizmatlar tili — asosan masdar va ism birikmalari. HISOB: تَسْجِيلُ الدُّخُولِ (kirish), تَسْجِيلُ الخُرُوجِ (chiqish), إِنْشَاءُ حِسَابٍ (hisob yaratish), كَلِمَةُ المُرُورِ (parol), اِسْمُ المُسْتَخْدِمِ (foydalanuvchi nomi), رَمْزُ التَّحَقُّقِ (tasdiqlash kodi). AMALLAR: تَحْمِيل / تَنْزِيل (yuklab olish), رَفْع (yuklash), تَحْدِيث (yangilash), إِلْغَاء (bekor qilish), حَذْف (o'chirish), مُشَارَكَة (ulashish). MUAMMOLAR: خَلَل (nosozlik), بَطِيء (sekin), اِنْقِطَاع (uzilish), تَعْطِيل (ishdan chiqarish). XAVFSIZLIK: خُصُوصِيَّة (maxfiylik), أَمَان (xavfsizlik), تَشْفِير (shifrlash), اِخْتِرَاق (buzib kirish). QOLIP: ko'p atamalar «masdar + idofa» shaklida — تَسْجِيلُ الدُّخُولِ, رَمْزُ التَّحَقُّقِ. Ilova tugmalarida esa buyruq: أَرْسِلْ (yubor), اِحْفَظْ (saqla), أَلْغِ (bekor qil).",
+  "table": [
+   {"ar": "تَسْجِيلُ الدُّخُولِ", "uz": "tizimga kirish", "form": "مَصْدَر + إِضَافَة"},
+   {"ar": "كَلِمَةُ المُرُورِ", "uz": "parol", "form": "إِضَافَة"},
+   {"ar": "رَمْزُ التَّحَقُّقِ", "uz": "tasdiqlash kodi (SMS)", "form": "إِضَافَة"},
+   {"ar": "تَحْدِيثُ التَّطْبِيقِ", "uz": "ilovani yangilash", "form": "مَصْدَر"},
+   {"ar": "اِنْقِطَاعُ الخِدْمَةِ", "uz": "xizmatning uzilishi", "form": "إِضَافَة"},
+   {"ar": "إِعْدَادَاتُ الخُصُوصِيَّةِ", "uz": "maxfiylik sozlamalari", "form": "إِضَافَة"}
+  ],
+  "common_mistakes_uz": [
+   "تَحْمِيل (yuklab olish) va رَفْع (serverga yuklash) ni chalkashtirish.",
+   "«Parolni unutdim» ni نَسِيتُ الرَّمْزَ deb aytish — to'g'risi نَسِيتُ كَلِمَةَ المُرُورِ.",
+   "حَذْف (o'chirish) va إِلْغَاء (bekor qilish) ni bir xil deb hisoblash."
+  ]
+ },
+ "roots": [
+  {
+   "root": "س ج ل",
+   "meaning_uz": "yozib qo'yish, ro'yxatga olish",
+   "uz_cognates": ["sijil", "ro'yxat"],
+   "derived": [
+    {"ar": "تَسْجِيل", "uz": "ro'yxatdan o'tish; yozib olish", "pattern": "تَفْعِيل"},
+    {"ar": "سِجِلّ", "uz": "reyestr, daftar", "pattern": "فِعِلّ"},
+    {"ar": "مُسَجَّل", "uz": "ro'yxatga olingan", "pattern": "مُفَعَّل"}
+   ]
+  },
+  {
+   "root": "ح ق ق",
+   "meaning_uz": "haqiqat, tekshirish",
+   "uz_cognates": ["tahqiq", "haqiqat"],
+   "derived": [
+    {"ar": "تَحَقُّق", "uz": "tasdiqlash, tekshiruv", "pattern": "تَفَعُّل"},
+    {"ar": "تَحْقِيق", "uz": "tekshiruv, tergov", "pattern": "تَفْعِيل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "تَطْبِيق",
+   "translit": "taṭbīq",
+   "uz": "ilova (mobil dastur)",
+   "root": "ط ب ق",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tatbiq.mp3",
+   "example_ar": "حَمِّلِ التَّطْبِيقَ مِنَ المَتْجَرِ.",
+   "example_uz": "Ilovani do'kondan yuklab oling.",
+   "srs": true
+  },
+  {
+   "ar": "تَسْجِيل الدُّخُول",
+   "translit": "tasjīl ad-dukhūl",
+   "uz": "tizimga kirish (login)",
+   "root": "س ج ل",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tasjil_dukhul.mp3",
+   "example_ar": "فَشِلَ تَسْجِيلُ الدُّخُولِ.",
+   "example_uz": "Tizimga kirish amalga oshmadi.",
+   "srs": true
+  },
+  {
+   "ar": "كَلِمَة المُرُور",
+   "translit": "kalimat al-murūr",
+   "uz": "parol",
+   "root": "م ر ر",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/kalimat_murur.mp3",
+   "example_ar": "غَيِّرْ كَلِمَةَ المُرُورِ شَهْرِيًّا.",
+   "example_uz": "Parolni har oy o'zgartiring.",
+   "srs": true
+  },
+  {
+   "ar": "رَمْز التَّحَقُّق",
+   "translit": "ramz at-taḥaqquq",
+   "uz": "tasdiqlash kodi",
+   "root": "ر م ز",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/ramz_tahaqquq.mp3",
+   "example_ar": "وَصَلَ رَمْزُ التَّحَقُّقِ بِرِسَالَةٍ.",
+   "example_uz": "Tasdiqlash kodi SMS bilan keldi.",
+   "srs": true
+  },
+  {
+   "ar": "تَحْدِيث",
+   "translit": "taḥdīth",
+   "uz": "yangilash, yangilanish",
+   "root": "ح د ث",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tahdith.mp3",
+   "example_ar": "يَتَوَفَّرُ تَحْدِيثٌ جَدِيدٌ.",
+   "example_uz": "Yangi yangilanish mavjud.",
+   "srs": true
+  },
+  {
+   "ar": "إِعْدَادَات",
+   "translit": "iʿdādāt",
+   "uz": "sozlamalar",
+   "root": "ع د د",
+   "pattern": "إِفْعَالَات",
+   "pos": "ot",
+   "audio": "b2/idadat.mp3",
+   "example_ar": "اِفْتَحِ الإِعْدَادَاتِ ثُمَّ الخُصُوصِيَّةَ.",
+   "example_uz": "Sozlamalarni, keyin maxfiylikni oching.",
+   "srs": true
+  },
+  {
+   "ar": "خُصُوصِيَّة",
+   "translit": "khuṣūṣiyya",
+   "uz": "maxfiylik, shaxsiylik",
+   "root": "خ ص ص",
+   "pattern": "فُعُولِيَّة",
+   "pos": "ot",
+   "audio": "b2/khususiyya.mp3",
+   "example_ar": "سِيَاسَةُ الخُصُوصِيَّةِ وَاضِحَةٌ.",
+   "example_uz": "Maxfiylik siyosati aniq.",
+   "srs": true
+  },
+  {
+   "ar": "تَحْمِيل",
+   "translit": "taḥmīl",
+   "uz": "yuklab olish (download)",
+   "root": "ح م ل",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tahmil.mp3",
+   "example_ar": "التَّحْمِيلُ بَطِيءٌ اليَوْمَ.",
+   "example_uz": "Bugun yuklash sekin.",
+   "srs": true
+  },
+  {
+   "ar": "خَلَل",
+   "translit": "khalal",
+   "uz": "nosozlik, xatolik (tizimda)",
+   "root": "خ ل ل",
+   "pattern": "فَعَل",
+   "pos": "ot",
+   "audio": "b2/khalal.mp3",
+   "example_ar": "هُنَاكَ خَلَلٌ فِي النِّظَامِ.",
+   "example_uz": "Tizimda nosozlik bor.",
+   "srs": true
+  },
+  {
+   "ar": "اِنْقِطَاع",
+   "translit": "inqiṭāʿ",
+   "uz": "uzilish (aloqa/xizmat)",
+   "root": "ق ط ع",
+   "pattern": "اِنْفِعَال",
+   "pos": "ot",
+   "audio": "b2/inqita.mp3",
+   "example_ar": "اِنْقِطَاعٌ مُؤَقَّتٌ لِلْخِدْمَةِ.",
+   "example_uz": "Xizmatning vaqtinchalik uzilishi.",
+   "srs": true
+  },
+  {
+   "ar": "تَشْفِير",
+   "translit": "tashfīr",
+   "uz": "shifrlash",
+   "root": "ش ف ر",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tashfir.mp3",
+   "example_ar": "البَيَانَاتُ مَحْمِيَّةٌ بِالتَّشْفِيرِ.",
+   "example_uz": "Ma'lumotlar shifrlash bilan himoyalangan.",
+   "srs": true
+  },
+  {
+   "ar": "بَيَانَات",
+   "translit": "bayānāt",
+   "uz": "ma'lumotlar (data)",
+   "root": "ب ي ن",
+   "pattern": "فَعَالَات",
+   "pos": "ot",
+   "audio": "b2/bayanat.mp3",
+   "example_ar": "لَا تُشَارِكْ بَيَانَاتِكَ الشَّخْصِيَّةَ.",
+   "example_uz": "Shaxsiy ma'lumotlaringizni ulashmang.",
+   "srs": true
+  },
+  {
+   "ar": "مُسْتَخْدِم",
+   "translit": "mustakhdim",
+   "uz": "foydalanuvchi",
+   "root": "خ د م",
+   "pattern": "مُسْتَفْعِل",
+   "pos": "ot",
+   "audio": "b2/mustakhdim2.mp3",
+   "example_ar": "اِسْمُ المُسْتَخْدِمِ غَيْرُ صَحِيحٍ.",
+   "example_uz": "Foydalanuvchi nomi noto'g'ri.",
+   "srs": true
+  },
+  {
+   "ar": "إِلْغَاء",
+   "translit": "ilghāʾ",
+   "uz": "bekor qilish",
+   "root": "ل غ و",
+   "pattern": "إِفْعَال",
+   "pos": "ot",
+   "audio": "b2/ilgha.mp3",
+   "example_ar": "يُمْكِنُ إِلْغَاءُ الطَّلَبِ خِلَالَ سَاعَةٍ.",
+   "example_uz": "Buyurtmani bir soat ichida bekor qilish mumkin.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أعلنت الشركة عن تحديث جديد للتطبيق. يتيح التحديث تسجيل الدخول برمز التحقّق بدل كلمة المرور، ويضيف إعدادات خصوصية أوضح. وأشار البيان إلى أنّ البيانات محمية بالتشفير، وأنّ المستخدم يستطيع إلغاء الحساب في أي وقت. وفي حالة حدوث خلل أو انقطاع مؤقت للخدمة، يمكن التواصل مع الدعم الفني عبر التطبيق نفسه.",
+   "questions": [
+    {"q_uz": "Yangilanish nimani o'zgartiradi?", "a": "Parol o'rniga tasdiqlash kodi bilan kirish"},
+    {"q_uz": "Ma'lumotlar qanday himoyalangan?", "a": "Shifrlash bilan (بالتشفير)"},
+    {"q_uz": "Nosozlikda nima qilish kerak?", "a": "Ilova orqali texnik yordamga murojaat qilish"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-28-listen.mp3",
+   "transcript_ar": "وَصَلَ رَمْزُ التَّحَقُّقِ بِرِسَالَةٍ. غَيِّرْ كَلِمَةَ المُرُورِ، وَافْتَحِ الإِعْدَادَاتِ.",
+   "questions": [
+    {"q_uz": "Nima keldi?", "a": "Tasdiqlash kodi SMS bilan"},
+    {"q_uz": "Qanday ko'rsatma berildi?", "a": "Parolni o'zgartirish va sozlamalarni ochish"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch jumlani ayting: parolni unutdim, ilovani yangiladim, tizimda nosozlik bor.",
+   "target_ar": ["نَسِيتُ كَلِمَةَ المُرُورِ", "حَدَّثْتُ التَّطْبِيقَ", "هُنَاكَ خَلَلٌ فِي النِّظَامِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Texnik yordamga 4 gapli murojaat yozing: muammo, qachon boshlangani, qilingan harakatlar, so'rov.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«كَلِمَةُ المُرُورِ» nima?",
+   "q_ar": "كَلِمَةُ المُرُورِ",
+   "options": ["Parol", "Foydalanuvchi nomi", "Kod", "Sozlama"],
+   "answer": "Parol",
+   "explain_uz": "So'zma-so'z «o'tish so'zi».",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«تَحْمِيل» va «رَفْع» farqi?",
+   "q_ar": "",
+   "options": [
+    "Yuklab olish / serverga yuklash",
+    "Ikkalasi bir xil",
+    "Yangilash / o'chirish",
+    "Kirish / chiqish"
+   ],
+   "answer": "Yuklab olish / serverga yuklash",
+   "explain_uz": "تَحْمِيل = download, رَفْع = upload.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«رَمْزُ التَّحَقُّقِ» qayerdan keladi?",
+   "q_ar": "رَمْزُ التَّحَقُّقِ",
+   "options": ["SMS yoki ilova orqali", "Bank kartasidan", "Pasportdan", "Shartnomadan"],
+   "answer": "SMS yoki ilova orqali",
+   "explain_uz": "Tasdiqlash kodi — bir martalik kod.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«اِنْقِطَاعٌ مُؤَقَّتٌ لِلْخِدْمَةِ» ma'nosi?",
+   "q_ar": "اِنْقِطَاعٌ مُؤَقَّتٌ",
+   "options": ["Xizmat vaqtincha uzildi", "Xizmat butunlay yopildi", "Xizmat tez ishlaydi", "Xizmat yangilandi"],
+   "answer": "Xizmat vaqtincha uzildi",
+   "explain_uz": "مُؤَقَّت — vaqtinchalik.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "بَيَانَات",
+   "options": [],
+   "answer": "ma'lumotlar",
+   "explain_uz": "بَيَانَات — data, ma'lumotlar.",
+   "audio": "b2/bayanat.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«تَسْجِيل، سِجِلّ، مُسَجَّل» qaysi o'zakdan?",
+   "q_ar": "تَسْجِيل",
+   "options": ["س ج ل", "س ج د", "ج ل س", "ش ج ل"],
+   "answer": "س ج ل",
+   "explain_uz": "س ج ل — yozib qo'yish o'zagi.",
+   "audio": "",
+   "root": "س ج ل",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«إِلْغَاء» nima degani?",
+   "q_ar": "إِلْغَاء",
+   "options": ["Bekor qilish", "Saqlash", "Yuborish", "Yangilash"],
+   "answer": "Bekor qilish",
+   "explain_uz": "Buyurtma/hisobni bekor qilish.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Tizimda nosozlik bor»",
+   "q_ar": "",
+   "options": [],
+   "answer": "هُنَاكَ خَلَلٌ فِي النِّظَامِ",
+   "explain_uz": "هُنَاكَ + noaniq ism + jarr birikmasi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["هُنَاكَ", "خَلَلٌ", "فِي", "النِّظَامِ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "س ج ل", "back": "yozib qo'yish — tasjil/sijil", "deck": "msa"},
+  {"type": "word", "front": "تَطْبِيق", "back": "ilova", "deck": "msa"},
+  {"type": "phrase", "front": "تَسْجِيل الدُّخُول", "back": "tizimga kirish", "deck": "msa"},
+  {"type": "phrase", "front": "كَلِمَة المُرُور", "back": "parol", "deck": "msa"},
+  {"type": "phrase", "front": "رَمْز التَّحَقُّق", "back": "tasdiqlash kodi", "deck": "msa"},
+  {"type": "word", "front": "تَحْدِيث", "back": "yangilanish", "deck": "msa"},
+  {"type": "word", "front": "إِعْدَادَات", "back": "sozlamalar", "deck": "msa"},
+  {"type": "word", "front": "خُصُوصِيَّة", "back": "maxfiylik", "deck": "msa"},
+  {"type": "word", "front": "خَلَل", "back": "nosozlik", "deck": "msa"},
+  {"type": "word", "front": "اِنْقِطَاع", "back": "uzilish", "deck": "msa"},
+  {"type": "word", "front": "تَشْفِير", "back": "shifrlash", "deck": "msa"},
+  {"type": "word", "front": "بَيَانَات", "back": "ma'lumotlar", "deck": "msa"},
+  {"type": "word", "front": "إِلْغَاء", "back": "bekor qilish", "deck": "msa"}
+ ]
+}

@@ -1,0 +1,368 @@
+{
+ "id": "b2-23",
+ "level": "B2",
+ "module": "vocab-adv",
+ "order": 23,
+ "title_uz": "Barqaror birikmalar 2",
+ "title_ar": "المُتَلَازِمَاتُ اللَّفْظِيَّةُ (٢): لُغَةُ الإِعْلَامِ وَالعَمَلِ",
+ "can_do_uz": "Yangilik va ish yozishmalarida uchraydigan barqaror iboralarni tanib ishlata olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-22"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Yangiliklar tili — takrorlanuvchi iboralar tili. «أَعْلَنَ عَنْ», «أَشَارَ إِلَى», «مِنْ جِهَةٍ أُخْرَى», «تَجْدُرُ الإِشَارَةُ إِلَى». Bir marta yodlasangiz, har maqolada uchratasiz va tezroq o'qiysiz. Bu iboralar matnning SKELETI: ular fikrni bog'laydi, yangi mavzuga o'tkazadi, manbani ko'rsatadi. Ularsiz yozganingiz «tarjima» bo'lib qoladi.",
+ "grammar": {
+  "point_ar": "عِبَارَاتُ الرَّبْطِ فِي لُغَةِ الأَخْبَارِ",
+  "explanation_uz": "Media va rasmiy tilda uch guruh ibora bor. 1) MANBA VA XABAR: أَعْلَنَ عَنْ (e'lon qildi), أَشَارَ إِلَى (ishora qildi), أَفَادَ بِأَنَّ (xabar berdi), نَقَلَتْ وَكَالَةُ الأَنْبَاءِ (agentlik xabar qildi), وَفْقًا لِـ (…ga ko'ra), بِحَسَبِ (…ga muvofiq). 2) FIKRNI BOG'LASH: مِنْ جِهَةٍ أُخْرَى (boshqa tomondan), بِالإِضَافَةِ إِلَى (bundan tashqari), عَلَى الرَّغْمِ مِنْ (…ga qaramay), نَتِيجَةً لِذَلِكَ (natijada), فِي المُقَابِل (aksincha, evaziga), تَجْدُرُ الإِشَارَةُ إِلَى أَنَّ (ta'kidlash joizki). 3) VAQT VA MIQDOR: فِي غُضُونِ (…ichida), عَلَى مَدَى (…davomida), مَا يُقَارِبُ (taxminan), عَلَى الأَقَلّ (kamida). GRAMMATIK ESLATMA: أَعْلَنَ عَنْ dan keyin majrur ism keladi, أَشَارَ إِلَى ham majrur oladi; أَفَادَ بِأَنَّ dan keyin esa إِنَّ emas, أَنَّ + mansub ism.",
+  "table": [
+   {"ar": "أَعْلَنَ عَنْ خُطَّةٍ", "uz": "reja haqida e'lon qildi", "form": "عَنْ + مَجْرُور"},
+   {"ar": "أَشَارَ إِلَى أَنَّ...", "uz": "…ligini ta'kidladi", "form": "إِلَى + أَنَّ"},
+   {"ar": "وَفْقًا لِلتَّقْرِيرِ", "uz": "hisobotga ko'ra", "form": "مَصْدَر مَنْصُوب"},
+   {"ar": "عَلَى الرَّغْمِ مِنْ ذَلِكَ", "uz": "shunga qaramay", "form": "رَبْط"},
+   {"ar": "مِنْ جِهَةٍ أُخْرَى", "uz": "boshqa tomondan", "form": "اِنْتِقَال"},
+   {"ar": "فِي غُضُونِ أُسْبُوعٍ", "uz": "bir hafta ichida", "form": "زَمَن"}
+  ],
+  "common_mistakes_uz": [
+   "أَعْلَنَ dan keyin عَنْ ni tushirib qoldirish yoki noto'g'ri predlog qo'yish.",
+   "أَفَادَ بِأَنَّ o'rniga أَفَادَ إِنَّ yozish — إِنَّ faqat gap boshida.",
+   "«bundan tashqari» ni har jumlada takrorlash — bog'lovchilar almashtirilib turadi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ش و ر",
+   "meaning_uz": "ishora qilish, maslahat",
+   "uz_cognates": ["ishora", "mashvarat", "mushovir"],
+   "derived": [
+    {"ar": "أَشَارَ", "uz": "ishora qildi", "pattern": "أَفْعَلَ"},
+    {"ar": "إِشَارَة", "uz": "ishora, signal", "pattern": "إِفْعَالَة"},
+    {"ar": "مُسْتَشَار", "uz": "maslahatchi", "pattern": "مُسْتَفْعَل"}
+   ]
+  },
+  {
+   "root": "ع ل ن",
+   "meaning_uz": "oshkora qilish",
+   "uz_cognates": ["e'lon", "alonat"],
+   "derived": [
+    {"ar": "أَعْلَنَ", "uz": "e'lon qildi", "pattern": "أَفْعَلَ"},
+    {"ar": "إِعْلَان", "uz": "e'lon, reklama", "pattern": "إِفْعَال"},
+    {"ar": "عَلَنِيّ", "uz": "oshkora", "pattern": "فَعَلِيّ"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "أَعْلَنَ عَنْ",
+   "translit": "aʿlana ʿan",
+   "uz": "…haqida e'lon qildi",
+   "root": "ع ل ن",
+   "pattern": "أَفْعَلَ",
+   "pos": "ibora",
+   "audio": "b2/alana_an.mp3",
+   "example_ar": "أَعْلَنَتِ الوِزَارَةُ عَنْ خُطَّةٍ جَدِيدَةٍ.",
+   "example_uz": "Vazirlik yangi reja haqida e'lon qildi.",
+   "srs": true
+  },
+  {
+   "ar": "أَشَارَ إِلَى",
+   "translit": "ashāra ilā",
+   "uz": "…ga ishora qildi, ta'kidladi",
+   "root": "ش و ر",
+   "pattern": "أَفْعَلَ",
+   "pos": "ibora",
+   "audio": "b2/ashara_ila.mp3",
+   "example_ar": "أَشَارَ التَّقْرِيرُ إِلَى تَحَسُّنٍ وَاضِحٍ.",
+   "example_uz": "Hisobot aniq yaxshilanishga ishora qildi.",
+   "srs": true
+  },
+  {
+   "ar": "أَفَادَ بِأَنَّ",
+   "translit": "afāda bi-anna",
+   "uz": "…deb xabar berdi",
+   "root": "ف ي د",
+   "pattern": "أَفْعَلَ",
+   "pos": "ibora",
+   "audio": "b2/afada_bianna.mp3",
+   "example_ar": "أَفَادَ المَصْدَرُ بِأَنَّ العَمَلَ مُسْتَمِرٌّ.",
+   "example_uz": "Manba ish davom etayotganini xabar qildi.",
+   "srs": true
+  },
+  {
+   "ar": "وَفْقًا لِـ",
+   "translit": "wafqan li-",
+   "uz": "…ga ko'ra, muvofiq",
+   "root": "و ف ق",
+   "pattern": "فَعْل",
+   "pos": "ibora",
+   "audio": "b2/wafqan_li.mp3",
+   "example_ar": "وَفْقًا لِلْإِحْصَاءَاتِ الرَّسْمِيَّةِ.",
+   "example_uz": "Rasmiy statistikaga ko'ra.",
+   "srs": true
+  },
+  {
+   "ar": "عَلَى الرَّغْمِ مِنْ",
+   "translit": "ʿalā r-raghmi min",
+   "uz": "…ga qaramay",
+   "root": "ر غ م",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/ala_raghm.mp3",
+   "example_ar": "عَلَى الرَّغْمِ مِنَ الصُّعُوبَاتِ نَجَحُوا.",
+   "example_uz": "Qiyinchiliklarga qaramay muvaffaq bo'lishdi.",
+   "srs": true
+  },
+  {
+   "ar": "مِنْ جِهَةٍ أُخْرَى",
+   "translit": "min jihatin ukhrā",
+   "uz": "boshqa tomondan",
+   "root": "و ج ه",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/min_jiha.mp3",
+   "example_ar": "مِنْ جِهَةٍ أُخْرَى، اِرْتَفَعَتِ الأَسْعَارُ.",
+   "example_uz": "Boshqa tomondan, narxlar ko'tarildi.",
+   "srs": true
+  },
+  {
+   "ar": "بِالإِضَافَةِ إِلَى",
+   "translit": "bil-iḍāfati ilā",
+   "uz": "bundan tashqari, qo'shimcha ravishda",
+   "root": "ض ي ف",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/bil_idafa.mp3",
+   "example_ar": "بِالإِضَافَةِ إِلَى ذَلِكَ، زَادَ الطَّلَبُ.",
+   "example_uz": "Bundan tashqari, talab oshdi.",
+   "srs": true
+  },
+  {
+   "ar": "نَتِيجَةً لِذَلِكَ",
+   "translit": "natījatan li-dhālika",
+   "uz": "natijada",
+   "root": "ن ت ج",
+   "pattern": "فَعِيلَة",
+   "pos": "ibora",
+   "audio": "b2/natijatan.mp3",
+   "example_ar": "نَتِيجَةً لِذَلِكَ تَحَسَّنَ الأَدَاءُ.",
+   "example_uz": "Natijada ish sifati yaxshilandi.",
+   "srs": true
+  },
+  {
+   "ar": "تَجْدُرُ الإِشَارَةُ",
+   "translit": "tajduru l-ishāra",
+   "uz": "ta'kidlash joizki",
+   "root": "ج د ر",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/tajduru.mp3",
+   "example_ar": "تَجْدُرُ الإِشَارَةُ إِلَى أَنَّ المَشْرُوعَ مَجَّانِيٌّ.",
+   "example_uz": "Ta'kidlash joizki, loyiha bepul.",
+   "srs": true
+  },
+  {
+   "ar": "فِي غُضُونِ",
+   "translit": "fī ghuḍūni",
+   "uz": "…ichida (vaqt)",
+   "root": "غ ض ن",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/fi_ghudun.mp3",
+   "example_ar": "سَيَنْتَهِي العَمَلُ فِي غُضُونِ شَهْرٍ.",
+   "example_uz": "Ish bir oy ichida tugaydi.",
+   "srs": true
+  },
+  {
+   "ar": "عَلَى مَدَى",
+   "translit": "ʿalā madā",
+   "uz": "…davomida",
+   "root": "م د ي",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/ala_mada.mp3",
+   "example_ar": "عَلَى مَدَى عَشْرِ سَنَوَاتٍ.",
+   "example_uz": "O'n yil davomida.",
+   "srs": true
+  },
+  {
+   "ar": "مَا يُقَارِبُ",
+   "translit": "mā yuqāribu",
+   "uz": "taxminan, qariyb",
+   "root": "ق ر ب",
+   "pattern": "يُفَاعِلُ",
+   "pos": "ibora",
+   "audio": "b2/ma_yuqarib.mp3",
+   "example_ar": "حَضَرَ مَا يُقَارِبُ أَلْفَ شَخْصٍ.",
+   "example_uz": "Qariyb ming kishi qatnashdi.",
+   "srs": true
+  },
+  {
+   "ar": "مَصْدَر",
+   "translit": "maṣdar",
+   "uz": "manba (o'zbekcha 'manba/masdar')",
+   "root": "ص د ر",
+   "pattern": "مَفْعَل",
+   "pos": "ot",
+   "audio": "b2/masdar_source.mp3",
+   "example_ar": "قَالَ مَصْدَرٌ مَسْؤُولٌ.",
+   "example_uz": "Mas'ul manba aytdi.",
+   "srs": true
+  },
+  {
+   "ar": "إِحْصَاءَات",
+   "translit": "iḥṣāʾāt",
+   "uz": "statistika, raqamlar",
+   "root": "ح ص ي",
+   "pattern": "إِفْعَاءَات",
+   "pos": "ot",
+   "audio": "b2/ihsaat.mp3",
+   "example_ar": "الإِحْصَاءَاتُ الرَّسْمِيَّةُ وَاضِحَةٌ.",
+   "example_uz": "Rasmiy statistika aniq.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أعلنت الوزارة عن خطة جديدة لدعم الشركات الصغيرة. وأشار البيان إلى أنّ الدعم سيصل في غضون شهرين، ووفقًا للإحصاءات الرسمية استفادت العام الماضي ما يقارب ثلاثة آلاف شركة. وأفاد مصدر مسؤول بأنّ الميزانية ارتفعت على الرغم من الظروف الصعبة. من جهة أخرى، تجدر الإشارة إلى أنّ التسجيل مجاني، وبالإضافة إلى ذلك ستُعقد ورش تدريبية على مدى ثلاثة أشهر.",
+   "questions": [
+    {"q_uz": "Yordam qachon yetib boradi?", "a": "Ikki oy ichida (في غضون شهرين)"},
+    {"q_uz": "O'tgan yili nechta kompaniya foydalangan?", "a": "Qariyb 3000 ta"},
+    {"q_uz": "«تجدر الإشارة إلى» nima uchun ishlatilgan?", "a": "Muhim qo'shimcha ma'lumotni ta'kidlash uchun"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-23-listen.mp3",
+   "transcript_ar": "أَعْلَنَتِ الوِزَارَةُ عَنْ خُطَّةٍ، وَأَشَارَ البَيَانُ إِلَى أَنَّ الدَّعْمَ سَيَصِلُ فِي غُضُونِ شَهْرَيْنِ.",
+   "questions": [
+    {"q_uz": "Kim e'lon qildi?", "a": "Vazirlik"},
+    {"q_uz": "Muddat qancha?", "a": "Ikki oy ichida"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch xabar iborasini ayting: «vazirlik e'lon qildi», «hisobotga ko'ra», «shunga qaramay».",
+   "target_ar": ["أَعْلَنَتِ الوِزَارَةُ عَنْ", "وَفْقًا لِلتَّقْرِيرِ", "عَلَى الرَّغْمِ مِنْ ذَلِكَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "5 gapli qisqa xabar yozing: manba iborasi, bog'lovchi (بالإضافة/على الرغم), vaqt iborasi (في غضون) va raqam bo'lsin.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«أَعْلَنَ» dan keyin qaysi predlog keladi?",
+   "q_ar": "أَعْلَنَ ... خُطَّةٍ",
+   "options": ["عَنْ", "إِلَى", "فِي", "مَعَ"],
+   "answer": "عَنْ",
+   "explain_uz": "أَعْلَنَ عَنْ + majrur ism.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«…ga qaramay» qaysi ibora?",
+   "q_ar": "",
+   "options": [
+    "عَلَى الرَّغْمِ مِنْ",
+    "بِالإِضَافَةِ إِلَى",
+    "نَتِيجَةً لِذَلِكَ",
+    "فِي غُضُونِ"
+   ],
+   "answer": "عَلَى الرَّغْمِ مِنْ",
+   "explain_uz": "Zidlash bog'lovchisi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«فِي غُضُونِ أُسْبُوعٍ» nimani bildiradi?",
+   "q_ar": "فِي غُضُونِ أُسْبُوعٍ",
+   "options": ["Bir hafta ichida", "Bir haftadan keyin", "Har hafta", "Hafta oxirida"],
+   "answer": "Bir hafta ichida",
+   "explain_uz": "Muddat ichida degani.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«أَفَادَ» dan keyin to'g'ri shakl qaysi?",
+   "q_ar": "أَفَادَ المَصْدَرُ ...",
+   "options": ["بِأَنَّ العَمَلَ مُسْتَمِرٌّ", "إِنَّ العَمَلَ مُسْتَمِرٌّ", "أَنْ العَمَلُ", "بِإِنَّ العَمَلِ"],
+   "answer": "بِأَنَّ العَمَلَ مُسْتَمِرٌّ",
+   "explain_uz": "أَفَادَ بِأَنَّ + mansub ism.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "إِحْصَاءَات",
+   "options": [],
+   "answer": "statistika",
+   "explain_uz": "إِحْصَاءَات — raqamlar, statistika.",
+   "audio": "b2/ihsaat.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«أَشَارَ، إِشَارَة، مُسْتَشَار» qaysi o'zakdan?",
+   "q_ar": "إِشَارَة",
+   "options": ["ش و ر", "ش ي ر", "ء ش ر", "ش ر ر"],
+   "answer": "ش و ر",
+   "explain_uz": "ش و ر — ishora, maslahat o'zagi.",
+   "audio": "",
+   "root": "ش و ر",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مَا يُقَارِبُ أَلْفَ شَخْصٍ» ma'nosi?",
+   "q_ar": "مَا يُقَارِبُ أَلْفَ شَخْصٍ",
+   "options": ["Qariyb ming kishi", "Aniq ming kishi", "Mingdan ko'p", "Mingdan kam emas"],
+   "answer": "Qariyb ming kishi",
+   "explain_uz": "Taxminiy miqdor iborasi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Rasmiy statistikaga ko'ra»",
+   "q_ar": "",
+   "options": [],
+   "answer": "وَفْقًا لِلْإِحْصَاءَاتِ الرَّسْمِيَّةِ",
+   "explain_uz": "وَفْقًا لِـ + majrur ism + sifat.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["وَفْقًا", "لِلْإِحْصَاءَاتِ", "الرَّسْمِيَّةِ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع ل ن", "back": "oshkora — e'lon/a'lana", "deck": "msa"},
+  {"type": "root", "front": "ش و ر", "back": "ishora — ashara/mustashor", "deck": "msa"},
+  {"type": "phrase", "front": "أَعْلَنَ عَنْ", "back": "…haqida e'lon qildi", "deck": "msa"},
+  {"type": "phrase", "front": "أَشَارَ إِلَى", "back": "…ga ishora qildi", "deck": "msa"},
+  {"type": "phrase", "front": "أَفَادَ بِأَنَّ", "back": "…deb xabar berdi", "deck": "msa"},
+  {"type": "phrase", "front": "وَفْقًا لِـ", "back": "…ga ko'ra", "deck": "msa"},
+  {"type": "phrase", "front": "عَلَى الرَّغْمِ مِنْ", "back": "…ga qaramay", "deck": "msa"},
+  {"type": "phrase", "front": "مِنْ جِهَةٍ أُخْرَى", "back": "boshqa tomondan", "deck": "msa"},
+  {"type": "phrase", "front": "بِالإِضَافَةِ إِلَى", "back": "bundan tashqari", "deck": "msa"},
+  {"type": "phrase", "front": "فِي غُضُونِ", "back": "…ichida (vaqt)", "deck": "msa"},
+  {"type": "phrase", "front": "تَجْدُرُ الإِشَارَةُ", "back": "ta'kidlash joizki", "deck": "msa"},
+  {"type": "word", "front": "مَصْدَر", "back": "manba", "deck": "msa"},
+  {"type": "word", "front": "إِحْصَاءَات", "back": "statistika", "deck": "msa"}
+ ]
+}

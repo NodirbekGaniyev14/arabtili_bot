@@ -1,0 +1,367 @@
+{
+ "id": "b2-27",
+ "level": "B2",
+ "module": "vocab-adv",
+ "order": 27,
+ "title_uz": "Qurilish va ishlab chiqarish",
+ "title_ar": "البِنَاءُ وَالصِّنَاعَةُ وَالسَّلَامَةُ",
+ "can_do_uz": "Qurilish maydoni va zavoddagi ko'rsatmalarni, xavfsizlik qoidalarini tushunaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-26"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Saudiyada ishlaydigan o'zbeklarning katta qismi qurilishda. U yerda kunlik so'zlar: وَرْشَة (ustaxona/maydon), خُوذَة (kaska), سِقَالَة (iskala), مَوْقِع (ob'ekt), تَسْلِيم (topshirish). Xavfsizlik ko'rsatmalari ham arabcha: «اِرْتَدِ الخُوذَةَ» (kaskani kiy), «مَمْنُوعُ الدُّخُولِ» (kirish taqiqlangan). Bu darsda shu so'zlarni beramiz — ish joyida kerak bo'ladi.",
+ "grammar": {
+  "point_ar": "لُغَةُ المَوَاقِعِ: الأَمْرُ وَالنَّهْيُ وَالتَّعْلِيمَاتُ",
+  "explanation_uz": "Ish joyidagi ko'rsatmalar ikki shaklda keladi. 1) BUYRUQ (الأَمْر): اِرْتَدِ الخُوذَةَ (kaskani kiy), اِسْتَخْدِمِ الحِزَامَ (kamardan foydalan), تَوَقَّفْ (to'xta), اِنْتَبِهْ (diqqat). 2) TAQIQ (النَّهْي): لَا تَقْتَرِبْ (yaqinlashma), لَا تَدْخُلْ بِدُونِ إِذْنٍ (ruxsatsiz kirma). Belgilarda ko'pincha ot shakli ishlatiladi: مَمْنُوعُ الدُّخُولِ (kirish taqiqlangan), مَنْطِقَةُ خَطَرٍ (xavfli hudud), اِرْتِدَاءُ الخُوذَةِ إِلْزَامِيٌّ (kaska kiyish majburiy). ISH JARAYONI so'zlari: مَشْرُوع (loyiha), مَرْحَلَة (bosqich), مَوْقِع (ob'ekt), تَنْفِيذ (amalga oshirish), جَدْوَل زَمَنِيّ (jadval), تَسْلِيم (topshirish), صِيَانَة (texnik xizmat), عُطْل (nosozlik). SIFATLAR: إِلْزَامِيّ (majburiy), مُؤَقَّت (vaqtinchalik), دَائِم (doimiy).",
+  "table": [
+   {"ar": "اِرْتَدِ الخُوذَةَ", "uz": "Kaskani kiy (buyruq)", "form": "أَمْر"},
+   {"ar": "مَمْنُوعُ الدُّخُولِ", "uz": "Kirish taqiqlangan (belgi)", "form": "لَافِتَة"},
+   {"ar": "مَنْطِقَةُ خَطَرٍ", "uz": "Xavfli hudud", "form": "إِضَافَة"},
+   {"ar": "اِرْتِدَاءُ الخُوذَةِ إِلْزَامِيٌّ", "uz": "Kaska kiyish majburiy", "form": "جُمْلَة اِسْمِيَّة"},
+   {"ar": "الجَدْوَلُ الزَّمَنِيُّ", "uz": "Ish jadvali (muddatlar)", "form": "إِضَافَة"},
+   {"ar": "تَمَّ تَسْلِيمُ المَرْحَلَةِ الأُولَى", "uz": "Birinchi bosqich topshirildi", "form": "تَمَّ + مَصْدَر"}
+  ],
+  "common_mistakes_uz": [
+   "«تَمَّ + masdar» ni fe'l deb o'ylash: تَمَّ التَّسْلِيمُ = «topshirildi» (majhul ma'no).",
+   "خُوذَة (kaska) va قُبَّعَة (shapka) ni chalkashtirish — xavfsizlikda خُوذَة.",
+   "صِيَانَة (texnik xizmat) ni تَصْلِيح (ta'mirlash) bilan almashtirish — birinchisi rejali."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ب ن ي",
+   "meaning_uz": "qurish",
+   "uz_cognates": ["bino", "banno"],
+   "derived": [
+    {"ar": "بِنَاء", "uz": "qurilish; bino", "pattern": "فِعَال"},
+    {"ar": "مَبْنَى", "uz": "bino", "pattern": "مَفْعَل"},
+    {"ar": "بَنَّاء", "uz": "quruvchi, banno", "pattern": "فَعَّال"}
+   ]
+  },
+  {
+   "root": "س ل م",
+   "meaning_uz": "sog'lom bo'lish, topshirish",
+   "uz_cognates": ["salom", "taslim", "salomatlik"],
+   "derived": [
+    {"ar": "تَسْلِيم", "uz": "topshirish", "pattern": "تَفْعِيل"},
+    {"ar": "سَلَامَة", "uz": "xavfsizlik, sog'lomlik", "pattern": "فَعَالَة"},
+    {"ar": "سَلِيم", "uz": "sog'lom, butun", "pattern": "فَعِيل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "مَوْقِع",
+   "translit": "mawqiʿ",
+   "uz": "ob'ekt, joy (qurilish maydoni); sayt",
+   "root": "و ق ع",
+   "pattern": "مَفْعِل",
+   "pos": "ot",
+   "audio": "b2/mawqi.mp3",
+   "example_ar": "المَوْقِعُ مُغْلَقٌ اليَوْمَ.",
+   "example_uz": "Ob'ekt bugun yopiq.",
+   "srs": true
+  },
+  {
+   "ar": "خُوذَة",
+   "translit": "khūdha",
+   "uz": "kaska (himoya bosh kiyimi)",
+   "root": "خ و ذ",
+   "pattern": "فُعْلَة",
+   "pos": "ot",
+   "audio": "b2/khudha.mp3",
+   "example_ar": "اِرْتِدَاءُ الخُوذَةِ إِلْزَامِيٌّ.",
+   "example_uz": "Kaska kiyish majburiy.",
+   "srs": true
+  },
+  {
+   "ar": "سِقَالَة",
+   "translit": "siqāla",
+   "uz": "iskala (qurilish taxtasi)",
+   "root": "س ق ل",
+   "pattern": "فِعَالَة",
+   "pos": "ot",
+   "audio": "b2/siqala.mp3",
+   "example_ar": "لَا تَصْعَدِ السِّقَالَةَ بِدُونِ حِزَامٍ.",
+   "example_uz": "Kamarsiz iskalaga chiqma.",
+   "srs": true
+  },
+  {
+   "ar": "سَلَامَة",
+   "translit": "salāma",
+   "uz": "xavfsizlik, eson-omonlik",
+   "root": "س ل م",
+   "pattern": "فَعَالَة",
+   "pos": "ot",
+   "audio": "b2/salama.mp3",
+   "example_ar": "قَوَاعِدُ السَّلَامَةِ مُهِمَّةٌ.",
+   "example_uz": "Xavfsizlik qoidalari muhim.",
+   "srs": true
+  },
+  {
+   "ar": "إِلْزَامِيّ",
+   "translit": "ilzāmī",
+   "uz": "majburiy",
+   "root": "ل ز م",
+   "pattern": "إِفْعَالِيّ",
+   "pos": "sifat",
+   "audio": "b2/ilzami.mp3",
+   "example_ar": "التَّدْرِيبُ إِلْزَامِيٌّ لِلْجَمِيعِ.",
+   "example_uz": "Trening hamma uchun majburiy.",
+   "srs": true
+  },
+  {
+   "ar": "مَرْحَلَة",
+   "translit": "marḥala",
+   "uz": "bosqich",
+   "root": "ر ح ل",
+   "pattern": "مَفْعَلَة",
+   "pos": "ot",
+   "audio": "b2/marhala2.mp3",
+   "example_ar": "اِنْتَهَتِ المَرْحَلَةُ الأُولَى.",
+   "example_uz": "Birinchi bosqich tugadi.",
+   "srs": true
+  },
+  {
+   "ar": "تَنْفِيذ",
+   "translit": "tanfīdh",
+   "uz": "amalga oshirish, bajarish",
+   "root": "ن ف ذ",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tanfidh.mp3",
+   "example_ar": "بَدَأَ تَنْفِيذُ المَشْرُوعِ.",
+   "example_uz": "Loyihani amalga oshirish boshlandi.",
+   "srs": true
+  },
+  {
+   "ar": "جَدْوَل زَمَنِيّ",
+   "translit": "jadwal zamanī",
+   "uz": "ish jadvali (muddatlar bo'yicha)",
+   "root": "ج د ل",
+   "pattern": "فَعْوَل",
+   "pos": "ot",
+   "audio": "b2/jadwal_zamani.mp3",
+   "example_ar": "الجَدْوَلُ الزَّمَنِيُّ وَاضِحٌ.",
+   "example_uz": "Ish jadvali aniq.",
+   "srs": true
+  },
+  {
+   "ar": "صِيَانَة",
+   "translit": "ṣiyāna",
+   "uz": "texnik xizmat, saqlash",
+   "root": "ص و ن",
+   "pattern": "فِعَالَة",
+   "pos": "ot",
+   "audio": "b2/siyana.mp3",
+   "example_ar": "الصِّيَانَةُ الدَّوْرِيَّةُ ضَرُورِيَّةٌ.",
+   "example_uz": "Davriy texnik xizmat zarur.",
+   "srs": true
+  },
+  {
+   "ar": "عُطْل",
+   "translit": "ʿuṭl",
+   "uz": "nosozlik, buzilish",
+   "root": "ع ط ل",
+   "pattern": "فُعْل",
+   "pos": "ot",
+   "audio": "b2/utl.mp3",
+   "example_ar": "حَدَثَ عُطْلٌ فِي الآلَةِ.",
+   "example_uz": "Mashinada nosozlik yuz berdi.",
+   "srs": true
+  },
+  {
+   "ar": "آلَة",
+   "translit": "āla",
+   "uz": "mashina, uskuna",
+   "root": "أ و ل",
+   "pattern": "فَعْلَة",
+   "pos": "ot",
+   "audio": "b2/ala_machine.mp3",
+   "example_ar": "الآلَةُ تَعْمَلُ جَيِّدًا.",
+   "example_uz": "Uskuna yaxshi ishlaydi.",
+   "srs": true
+  },
+  {
+   "ar": "مُهَنْدِس مَوْقِع",
+   "translit": "muhandis mawqiʿ",
+   "uz": "ob'ekt muhandisi",
+   "root": "ه ن د س",
+   "pattern": "مُفَعْلِل",
+   "pos": "ot",
+   "audio": "b2/muhandis_mawqi.mp3",
+   "example_ar": "مُهَنْدِسُ المَوْقِعِ مَسْؤُولٌ عَنِ الجَوْدَةِ.",
+   "example_uz": "Ob'ekt muhandisi sifat uchun mas'ul.",
+   "srs": true
+  },
+  {
+   "ar": "جَوْدَة",
+   "translit": "jawda",
+   "uz": "sifat",
+   "root": "ج و د",
+   "pattern": "فَعْلَة",
+   "pos": "ot",
+   "audio": "b2/jawda.mp3",
+   "example_ar": "مُرَاقَبَةُ الجَوْدَةِ يَوْمِيَّةٌ.",
+   "example_uz": "Sifat nazorati kunlik.",
+   "srs": true
+  },
+  {
+   "ar": "مَمْنُوعُ الدُّخُول",
+   "translit": "mamnūʿ ad-dukhūl",
+   "uz": "kirish taqiqlangan",
+   "root": "م ن ع",
+   "pattern": "مَفْعُول",
+   "pos": "ibora",
+   "audio": "b2/mamnu_dukhul.mp3",
+   "example_ar": "مَمْنُوعُ الدُّخُولِ لِغَيْرِ العَامِلِينَ.",
+   "example_uz": "Ishchilardan boshqaga kirish taqiqlangan.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "على باب الموقع لافتة كبيرة: ممنوع الدخول لغير العاملين، وارتداء الخوذة إلزامي. يقول مهندس الموقع: الجدول الزمني واضح، وقد انتهت المرحلة الأولى وتمّ تسليمها في موعدها. أما المرحلة الثانية فبدأ تنفيذها أمس. وأضاف أنّ الصيانة الدورية للآلات ضرورية، لأن أي عطل يؤخّر العمل ويرفع التكلفة. مراقبة الجودة تتمّ يوميًّا قبل نهاية الدوام.",
+   "questions": [
+    {"q_uz": "Ob'ektga kirish sharti nima?", "a": "Faqat ishchilar; kaska kiyish majburiy"},
+    {"q_uz": "Birinchi bosqich holati?", "a": "Tugagan va muddatida topshirilgan"},
+    {"q_uz": "Nega davriy texnik xizmat kerak?", "a": "Nosozlik ishni kechiktiradi va xarajatni oshiradi"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-27-listen.mp3",
+   "transcript_ar": "اِرْتِدَاءُ الخُوذَةِ إِلْزَامِيٌّ، وَمَمْنُوعُ الدُّخُولِ لِغَيْرِ العَامِلِينَ. الصِّيَانَةُ الدَّوْرِيَّةُ ضَرُورِيَّةٌ.",
+   "questions": [
+    {"q_uz": "Qanday talab aytildi?", "a": "Kaska kiyish majburiy"},
+    {"q_uz": "Kim kira oladi?", "a": "Faqat ishchilar"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch ko'rsatmani ayting: kaskani kiy, kamarsiz iskalaga chiqma, xavfli hudud.",
+   "target_ar": ["اِرْتَدِ الخُوذَةَ", "لَا تَصْعَدِ السِّقَالَةَ بِدُونِ حِزَامٍ", "مَنْطِقَةُ خَطَرٍ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Ob'ekt uchun 4 qatorli xavfsizlik ko'rsatmasi yozing (2 buyruq, 2 taqiq).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«خُوذَة» nima?",
+   "q_ar": "خُوذَة",
+   "options": ["Kaska", "Shapka", "Ko'zoynak", "Qo'lqop"],
+   "answer": "Kaska",
+   "explain_uz": "Qurilishdagi himoya bosh kiyimi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مَمْنُوعُ الدُّخُولِ» qanday belgi?",
+   "q_ar": "مَمْنُوعُ الدُّخُولِ",
+   "options": ["Kirish taqiqlangan", "Chiqish yo'q", "Ish tugadi", "Ehtiyot bo'ling"],
+   "answer": "Kirish taqiqlangan",
+   "explain_uz": "Ot shaklidagi taqiq belgisi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«تَمَّ تَسْلِيمُ المَرْحَلَةِ» nima degani?",
+   "q_ar": "تَمَّ تَسْلِيمُ المَرْحَلَةِ",
+   "options": ["Bosqich topshirildi", "Bosqich boshlandi", "Bosqich to'xtadi", "Bosqich uzaytirildi"],
+   "answer": "Bosqich topshirildi",
+   "explain_uz": "تَمَّ + masdar = majhul ma'no.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«صِيَانَة» va «تَصْلِيح» farqi?",
+   "q_ar": "",
+   "options": [
+    "Birinchisi rejali xizmat, ikkinchisi ta'mirlash",
+    "Ikkalasi bir xil",
+    "Birinchisi ta'mirlash",
+    "Ikkinchisi tozalash"
+   ],
+   "answer": "Birinchisi rejali xizmat, ikkinchisi ta'mirlash",
+   "explain_uz": "صِيَانَة — profilaktika, تَصْلِيح — buzilganini tuzatish.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "جَوْدَة",
+   "options": [],
+   "answer": "sifat",
+   "explain_uz": "جَوْدَة — mahsulot sifati.",
+   "audio": "b2/jawda.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«تَسْلِيم، سَلَامَة، سَلِيم» qaysi o'zakdan?",
+   "q_ar": "سَلَامَة",
+   "options": ["س ل م", "ص ل ح", "س ل ب", "ش ل م"],
+   "answer": "س ل م",
+   "explain_uz": "س ل م — sog'lomlik, topshirish o'zagi.",
+   "audio": "",
+   "root": "س ل م",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«عُطْل» nima?",
+   "q_ar": "عُطْل",
+   "options": ["Nosozlik", "Ta'til", "Bosqich", "Xarajat"],
+   "answer": "Nosozlik",
+   "explain_uz": "Mashina/uskunaning buzilishi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Kaska kiyish majburiy»",
+   "q_ar": "",
+   "options": [],
+   "answer": "اِرْتِدَاءُ الخُوذَةِ إِلْزَامِيٌّ",
+   "explain_uz": "Idofa (mubtado) + xabar.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["اِرْتِدَاءُ", "الخُوذَةِ", "إِلْزَامِيٌّ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ب ن ي", "back": "qurish — bino/banno", "deck": "msa"},
+  {"type": "root", "front": "س ل م", "back": "topshirish, salomatlik — taslim/salama", "deck": "msa"},
+  {"type": "word", "front": "مَوْقِع", "back": "ob'ekt, joy", "deck": "msa"},
+  {"type": "word", "front": "خُوذَة", "back": "kaska", "deck": "msa"},
+  {"type": "word", "front": "سَلَامَة", "back": "xavfsizlik", "deck": "msa"},
+  {"type": "word", "front": "إِلْزَامِيّ", "back": "majburiy", "deck": "msa"},
+  {"type": "word", "front": "مَرْحَلَة", "back": "bosqich", "deck": "msa"},
+  {"type": "word", "front": "تَنْفِيذ", "back": "amalga oshirish", "deck": "msa"},
+  {"type": "word", "front": "صِيَانَة", "back": "texnik xizmat", "deck": "msa"},
+  {"type": "word", "front": "عُطْل", "back": "nosozlik", "deck": "msa"},
+  {"type": "word", "front": "جَوْدَة", "back": "sifat", "deck": "msa"},
+  {"type": "phrase", "front": "مَمْنُوعُ الدُّخُول", "back": "kirish taqiqlangan", "deck": "msa"}
+ ]
+}

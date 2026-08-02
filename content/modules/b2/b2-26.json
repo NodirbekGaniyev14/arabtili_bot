@@ -1,0 +1,363 @@
+{
+ "id": "b2-26",
+ "level": "B2",
+ "module": "vocab-adv",
+ "order": 26,
+ "title_uz": "Savdo, eksport, logistika",
+ "title_ar": "التِّجَارَةُ وَالتَّصْدِيرُ وَالخِدْمَاتُ اللُّوجِسْتِيَّةُ",
+ "can_do_uz": "Shartnoma, yuk va yetkazib berish haqidagi matnlarni tushunaman va oddiy so'rov yoza olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-25"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "O'zbekistondan Saudiyaga mahsulot yuborish — real ish. Unda uch narsa kerak: عَقْد (shartnoma), شَحْن (yuk jo'natish), جُمْرُك (bojxona). Har biri o'z so'z guruhini olib keladi: فَاتُورَة (hisob-faktura), شَهَادَة المَنْشَأ (kelib chiqish sertifikati), مَوْعِد التَّسْلِيم (yetkazib berish muddati). Bu darsdan keyin savdo elektron xatini tushunasiz.",
+ "grammar": {
+  "point_ar": "لُغَةُ العُقُودِ وَالشَّحْنِ",
+  "explanation_uz": "Savdo tilida barqaror birikmalar: وَقَّعَ عَقْدًا (shartnoma imzoladi), أَبْرَمَ صَفْقَةً (bitim tuzdi), صَدَّرَ بِضَاعَةً (mahsulot eksport qildi), اِسْتَوْرَدَ (import qildi), شَحَنَ الطَّلَبِيَّةَ (buyurtmani jo'natdi), خَلَّصَ البِضَاعَةَ مِنَ الجُمْرُكِ (bojxonadan chiqardi), سَلَّمَ فِي المَوْعِدِ (muddatida topshirdi). HUJJATLAR: فَاتُورَة (hisob-faktura), بُولِيصَة شَحْن (yuk xati), شَهَادَة المَنْشَأ (kelib chiqish sertifikati), قَائِمَة التَّعْبِئَة (qadoqlash ro'yxati). SHART IBORALARI: «سَارِي المَفْعُولِ» (kuchda), «قَابِلٌ لِلتَّجْدِيدِ» (uzaytirilishi mumkin), «حَسَبَ الاِتِّفَاقِ» (kelishuvga muvofiq), «فِي حَالَةِ التَّأْخِيرِ» (kechikish holatida). Rasmiy xatda ko'p ishlatiladigan fe'l — يُرْجَى (iltimos qilinadi) va نُفِيدُكُمْ بِأَنَّ (ma'lum qilamizki).",
+  "table": [
+   {"ar": "وَقَّعَ عَقْدًا", "uz": "shartnoma imzoladi", "form": "مُتَلَازِم"},
+   {"ar": "صَدَّرَ بِضَاعَةً", "uz": "mahsulot eksport qildi", "form": "مُتَلَازِم"},
+   {"ar": "اِسْتَوْرَدَ مِنَ الخَارِجِ", "uz": "chetdan import qildi", "form": "مُتَلَازِم"},
+   {"ar": "شَحَنَ الطَّلَبِيَّةَ", "uz": "buyurtmani jo'natdi", "form": "مُتَلَازِم"},
+   {"ar": "التَّخْلِيصُ الجُمْرُكِيُّ", "uz": "bojxona rasmiylashtiruvi", "form": "إِضَافَة"},
+   {"ar": "سَارِي المَفْعُولِ", "uz": "kuchda (amal qiladi)", "form": "تَعْبِير"}
+  ],
+  "common_mistakes_uz": [
+   "صَدَّرَ (eksport) va اِسْتَوْرَدَ (import) ni almashtirib yuborish.",
+   "«Shartnoma tuzdim» ni عَمِلْتُ عَقْدًا deb aytish → وَقَّعْتُ عَقْدًا ✓.",
+   "فَاتُورَة (hisob-faktura) ni قَائِمَة (ro'yxat) bilan chalkashtirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ت ج ر",
+   "meaning_uz": "savdo qilish",
+   "uz_cognates": ["tijorat", "tojir"],
+   "derived": [
+    {"ar": "تِجَارَة", "uz": "savdo, tijorat", "pattern": "فِعَالَة"},
+    {"ar": "تَاجِر", "uz": "savdogar", "pattern": "فَاعِل"},
+    {"ar": "تِجَارِيّ", "uz": "tijorat (sifat)", "pattern": "فِعَالِيّ"}
+   ]
+  },
+  {
+   "root": "ص د ر",
+   "meaning_uz": "chiqish, ko'krak — «eksport» shundan",
+   "uz_cognates": ["sadr", "masdar", "eksport=tasdir"],
+   "derived": [
+    {"ar": "صَدَّرَ", "uz": "eksport qildi", "pattern": "فَعَّلَ"},
+    {"ar": "تَصْدِير", "uz": "eksport", "pattern": "تَفْعِيل"},
+    {"ar": "صَادِرَات", "uz": "eksport mahsulotlari", "pattern": "فَاعِلَات"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "عَقْد",
+   "translit": "ʿaqd",
+   "uz": "shartnoma (o'zbekcha 'aqd')",
+   "root": "ع ق د",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/aqd_contract.mp3",
+   "example_ar": "وَقَّعْنَا عَقْدًا لِسَنَةٍ.",
+   "example_uz": "Bir yillik shartnoma imzoladik.",
+   "srs": true
+  },
+  {
+   "ar": "صَفْقَة",
+   "translit": "ṣafqa",
+   "uz": "bitim, kelishuv",
+   "root": "ص ف ق",
+   "pattern": "فَعْلَة",
+   "pos": "ot",
+   "audio": "b2/safqa.mp3",
+   "example_ar": "أَبْرَمَتِ الشَّرِكَةُ صَفْقَةً كَبِيرَةً.",
+   "example_uz": "Kompaniya katta bitim tuzdi.",
+   "srs": true
+  },
+  {
+   "ar": "تَصْدِير",
+   "translit": "taṣdīr",
+   "uz": "eksport",
+   "root": "ص د ر",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tasdir.mp3",
+   "example_ar": "اِرْتَفَعَ التَّصْدِيرُ هَذَا العَامَ.",
+   "example_uz": "Bu yil eksport oshdi.",
+   "srs": true
+  },
+  {
+   "ar": "اِسْتِيرَاد",
+   "translit": "istīrād",
+   "uz": "import",
+   "root": "و ر د",
+   "pattern": "اِسْتِفْعَال",
+   "pos": "ot",
+   "audio": "b2/istirad.mp3",
+   "example_ar": "اِنْخَفَضَ الاِسْتِيرَادُ قَلِيلًا.",
+   "example_uz": "Import biroz kamaydi.",
+   "srs": true
+  },
+  {
+   "ar": "بِضَاعَة",
+   "translit": "biḍāʿa",
+   "uz": "mol, mahsulot",
+   "root": "ب ض ع",
+   "pattern": "فِعَالَة",
+   "pos": "ot",
+   "audio": "b2/bidaa2.mp3",
+   "example_ar": "وَصَلَتِ البِضَاعَةُ سَلِيمَةً.",
+   "example_uz": "Mahsulot butun holda yetib keldi.",
+   "srs": true
+  },
+  {
+   "ar": "شَحْن",
+   "translit": "shaḥn",
+   "uz": "yuk jo'natish, shipping",
+   "root": "ش ح ن",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/shahn.mp3",
+   "example_ar": "تَكْلِفَةُ الشَّحْنِ مُرْتَفِعَةٌ.",
+   "example_uz": "Yuk narxi yuqori.",
+   "srs": true
+  },
+  {
+   "ar": "جُمْرُك",
+   "translit": "jumruk",
+   "uz": "bojxona (o'zbekcha 'bojxona')",
+   "root": "ج م ر ك",
+   "pattern": "فُعْلُل",
+   "pos": "ot",
+   "audio": "b2/jumruk.mp3",
+   "example_ar": "الرُّسُومُ الجُمْرُكِيَّةُ مُنْخَفِضَةٌ.",
+   "example_uz": "Bojxona to'lovlari past.",
+   "srs": true
+  },
+  {
+   "ar": "فَاتُورَة",
+   "translit": "fātūra",
+   "uz": "hisob-faktura",
+   "root": "ف ت ر",
+   "pattern": "فَاعُولَة",
+   "pos": "ot",
+   "audio": "b2/fatura2.mp3",
+   "example_ar": "أَرْسَلْتُ الفَاتُورَةَ بِالبَرِيدِ.",
+   "example_uz": "Hisob-fakturani pochta orqali yubordim.",
+   "srs": true
+  },
+  {
+   "ar": "طَلَبِيَّة",
+   "translit": "ṭalabiyya",
+   "uz": "buyurtma (savdoda)",
+   "root": "ط ل ب",
+   "pattern": "فَعَلِيَّة",
+   "pos": "ot",
+   "audio": "b2/talabiyya.mp3",
+   "example_ar": "الطَّلَبِيَّةُ جَاهِزَةٌ لِلشَّحْنِ.",
+   "example_uz": "Buyurtma jo'natishga tayyor.",
+   "srs": true
+  },
+  {
+   "ar": "مَوْعِد التَّسْلِيم",
+   "translit": "mawʿid at-taslīm",
+   "uz": "yetkazib berish muddati",
+   "root": "س ل م",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/mawid_taslim.mp3",
+   "example_ar": "مَوْعِدُ التَّسْلِيمِ يَوْمُ الأَحَدِ.",
+   "example_uz": "Yetkazib berish muddati — yakshanba.",
+   "srs": true
+  },
+  {
+   "ar": "مُوَرِّد",
+   "translit": "muwarrid",
+   "uz": "yetkazib beruvchi (postavshchik)",
+   "root": "و ر د",
+   "pattern": "مُفَعِّل",
+   "pos": "ot",
+   "audio": "b2/muwarrid.mp3",
+   "example_ar": "المُوَرِّدُ مَوْثُوقٌ.",
+   "example_uz": "Yetkazib beruvchi ishonchli.",
+   "srs": true
+  },
+  {
+   "ar": "مُسْتَوْرِد",
+   "translit": "mustawrid",
+   "uz": "import qiluvchi",
+   "root": "و ر د",
+   "pattern": "مُسْتَفْعِل",
+   "pos": "ot",
+   "audio": "b2/mustawrid.mp3",
+   "example_ar": "المُسْتَوْرِدُ يَدْفَعُ الرُّسُومَ.",
+   "example_uz": "Import qiluvchi to'lovlarni to'laydi.",
+   "srs": true
+  },
+  {
+   "ar": "سَارِي المَفْعُول",
+   "translit": "sārī l-mafʿūl",
+   "uz": "kuchda, amal qiladi",
+   "root": "س ر ي",
+   "pattern": "فَاعِل",
+   "pos": "ibora",
+   "audio": "b2/sari_maful.mp3",
+   "example_ar": "العَقْدُ سَارِي المَفْعُولِ سَنَتَيْنِ.",
+   "example_uz": "Shartnoma ikki yil kuchda.",
+   "srs": true
+  },
+  {
+   "ar": "تَكْلِفَة",
+   "translit": "taklifa",
+   "uz": "xarajat, tannarx",
+   "root": "ك ل ف",
+   "pattern": "تَفْعِلَة",
+   "pos": "ot",
+   "audio": "b2/taklifa.mp3",
+   "example_ar": "تَكْلِفَةُ الإِنْتَاجِ اِرْتَفَعَتْ.",
+   "example_uz": "Ishlab chiqarish xarajati oshdi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "وقّعت الشركة عقدًا مع مورّد جديد، والعقد ساري المفعول سنتين وقابل للتجديد. تشمل الصفقة تصدير بضاعة إلى ثلاث دول، وتحمّل المستورد الرسوم الجمركية. أفاد المدير بأنّ الطلبية الأولى جاهزة للشحن، وأنّ موعد التسليم بعد أسبوعين. وأشار إلى أنّ تكلفة الشحن ارتفعت، ولذلك أُرسلت فاتورة معدّلة إلى العميل.",
+   "questions": [
+    {"q_uz": "Shartnoma qancha muddatga?", "a": "Ikki yil, uzaytirish mumkin"},
+    {"q_uz": "Bojxona to'lovini kim to'laydi?", "a": "Import qiluvchi (المستورد)"},
+    {"q_uz": "Nega yangi hisob-faktura yuborildi?", "a": "Yuk narxi oshgani uchun"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-26-listen.mp3",
+   "transcript_ar": "الطَّلَبِيَّةُ جَاهِزَةٌ لِلشَّحْنِ، وَمَوْعِدُ التَّسْلِيمِ بَعْدَ أُسْبُوعَيْنِ. وَالعَقْدُ سَارِي المَفْعُولِ.",
+   "questions": [
+    {"q_uz": "Buyurtma holati qanday?", "a": "Jo'natishga tayyor"},
+    {"q_uz": "Yetkazib berish qachon?", "a": "Ikki haftadan keyin"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch savdo jumlasini ayting: shartnoma imzoladik, mahsulot jo'natildi, muddat qachon?",
+   "target_ar": ["وَقَّعْنَا عَقْدًا", "شُحِنَتِ البِضَاعَةُ", "مَتَى مَوْعِدُ التَّسْلِيمِ؟"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Yetkazib beruvchiga rasmiy elektron xat yozing (4 gap): buyurtma holati, muddat, xarajat va hisob-faktura haqida.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«تَصْدِير» nima degani?",
+   "q_ar": "تَصْدِير",
+   "options": ["Eksport", "Import", "Bojxona", "Yetkazib berish"],
+   "answer": "Eksport",
+   "explain_uz": "صَدَّرَ — chetga chiqarish.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«Shartnoma imzoladik» qaysi?",
+   "q_ar": "",
+   "options": ["وَقَّعْنَا عَقْدًا", "عَمِلْنَا عَقْدًا", "كَتَبْنَا صَفْقَةً", "شَحَنَّا عَقْدًا"],
+   "answer": "وَقَّعْنَا عَقْدًا",
+   "explain_uz": "وَقَّعَ عَقْدًا — barqaror birikma.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«سَارِي المَفْعُولِ» ma'nosi?",
+   "q_ar": "سَارِي المَفْعُولِ",
+   "options": ["Kuchda, amal qiladi", "Bekor qilingan", "Imzolanmagan", "Uzaytirilgan"],
+   "answer": "Kuchda, amal qiladi",
+   "explain_uz": "Hujjat amalda ekanini bildiradi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Bojxona to'lovi arabchada qaysi?",
+   "q_ar": "",
+   "options": ["الرُّسُومُ الجُمْرُكِيَّةُ", "تَكْلِفَةُ الشَّحْنِ", "الفَائِدَةُ البَنْكِيَّةُ", "قَائِمَةُ التَّعْبِئَةِ"],
+   "answer": "الرُّسُومُ الجُمْرُكِيَّةُ",
+   "explain_uz": "جُمْرُك — bojxona.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "تَكْلِفَة",
+   "options": [],
+   "answer": "xarajat",
+   "explain_uz": "تَكْلِفَة — tannarx, xarajat.",
+   "audio": "b2/taklifa.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«تَصْدِير، صَادِرَات، صَدَّرَ» qaysi o'zakdan?",
+   "q_ar": "صَادِرَات",
+   "options": ["ص د ر", "ص ر د", "س د ر", "ص د ق"],
+   "answer": "ص د ر",
+   "explain_uz": "ص د ر — chiqish o'zagi.",
+   "audio": "",
+   "root": "ص د ر",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مُوَرِّد» kim?",
+   "q_ar": "مُوَرِّد",
+   "options": ["Yetkazib beruvchi", "Import qiluvchi", "Xaridor", "Bojxonachi"],
+   "answer": "Yetkazib beruvchi",
+   "explain_uz": "مُوَرِّد — mahsulot yetkazib beruvchi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Buyurtma jo'natishga tayyor»",
+   "q_ar": "",
+   "options": [],
+   "answer": "الطَّلَبِيَّةُ جَاهِزَةٌ لِلشَّحْنِ",
+   "explain_uz": "Mubtado + xabar + jarr birikmasi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["الطَّلَبِيَّةُ", "جَاهِزَةٌ", "لِلشَّحْنِ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ت ج ر", "back": "savdo — tijorat/tojir", "deck": "msa"},
+  {"type": "root", "front": "ص د ر", "back": "chiqish — tasdir/sodirot", "deck": "msa"},
+  {"type": "word", "front": "عَقْد", "back": "shartnoma", "deck": "msa"},
+  {"type": "word", "front": "صَفْقَة", "back": "bitim", "deck": "msa"},
+  {"type": "word", "front": "تَصْدِير", "back": "eksport", "deck": "msa"},
+  {"type": "word", "front": "اِسْتِيرَاد", "back": "import", "deck": "msa"},
+  {"type": "word", "front": "بِضَاعَة", "back": "mahsulot, mol", "deck": "msa"},
+  {"type": "word", "front": "شَحْن", "back": "yuk jo'natish", "deck": "msa"},
+  {"type": "word", "front": "جُمْرُك", "back": "bojxona", "deck": "msa"},
+  {"type": "word", "front": "فَاتُورَة", "back": "hisob-faktura", "deck": "msa"},
+  {"type": "word", "front": "طَلَبِيَّة", "back": "buyurtma", "deck": "msa"},
+  {"type": "phrase", "front": "سَارِي المَفْعُول", "back": "kuchda, amal qiladi", "deck": "msa"},
+  {"type": "word", "front": "تَكْلِفَة", "back": "xarajat", "deck": "msa"}
+ ]
+}

@@ -1,0 +1,366 @@
+{
+ "id": "b2-24",
+ "level": "B2",
+ "module": "vocab-adv",
+ "order": 24,
+ "title_uz": "Nozik farqlar",
+ "title_ar": "الفُرُوقُ الدَّقِيقَةُ بَيْنَ المُتَرَادِفَاتِ",
+ "can_do_uz": "Ma'nosi yaqin so'zlardan kontekstga mos keladiganini tanlay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-23"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«Ish» — عَمَل, وَظِيفَة yoki مِهْنَة? Uchalasi ham «ish», lekin: عَمَل — umumiy mehnat, وَظِيفَة — lavozim (maosh bilan), مِهْنَة — kasb (o'rganilgan). Noto'g'ri tanlasangiz, ma'no siljiydi. B2 da lug'atning KENGLIGI emas, ANIQLIGI muhim. Bugun 7 juft-uchlikni ajratamiz.",
+ "grammar": {
+  "point_ar": "المُتَرَادِفَاتُ لَيْسَتْ مُتَطَابِقَةً",
+  "explanation_uz": "Arabchada «to'liq sinonim» deyarli yo'q — har so'zning o'z ohangi bor. ASOSIY FARQLAR. 1) ISH: عَمَل (umumiy mehnat/amal) · وَظِيفَة (lavozim, maoshli o'rin) · مِهْنَة (kasb, o'rganilgan hunar) · شُغْل (kundalik yumush, ko'proq so'zlashuvda). 2) KATTA: كَبِير (o'lcham/yosh) · ضَخْم (juda katta, ulkan hajm) · عَظِيم (ulug', qadr-qimmat) · وَاسِع (keng, maydon). 3) BILISH: عَرَفَ (tanish bo'lish, tanidi) · عَلِمَ (bilim sifatida bildi) · دَرَى (xabardor bo'lish). 4) QARASH: نَظَرَ (qaradi) · شَاهَدَ (tomosha qildi, kuzatdi) · لَاحَظَ (payqadi) · رَأَى (ko'rdi; fikr bildirdi). 5) TEZ: سَرِيع (tez harakatli) · عَاجِل (shoshilinch, kechiktirib bo'lmas) · فَوْرِيّ (darhol). 6) MUAMMO: مُشْكِلَة (hal talab masala) · قَضِيَّة (masala/ish, sud ishi ham) · أَزْمَة (inqiroz). 7) SABAB: سَبَب (oddiy sabab) · دَافِع (turtki, motiv) · عَامِل (omil, ta'sir qiluvchi kuch). MASLAHAT: so'zni yolg'iz emas, TIPIK BIRIKMASI bilan yodlang.",
+  "table": [
+   {"ar": "عَمَل / وَظِيفَة / مِهْنَة", "uz": "mehnat / lavozim / kasb", "form": "فُرُوق"},
+   {"ar": "كَبِير / ضَخْم / عَظِيم", "uz": "katta / ulkan / ulug'", "form": "فُرُوق"},
+   {"ar": "عَرَفَ / عَلِمَ", "uz": "tanidi / bilim sifatida bildi", "form": "فُرُوق"},
+   {"ar": "لَاحَظَ / شَاهَدَ", "uz": "payqadi / kuzatdi", "form": "فُرُوق"},
+   {"ar": "عَاجِل / سَرِيع", "uz": "shoshilinch / tez", "form": "فُرُوق"},
+   {"ar": "مُشْكِلَة / أَزْمَة", "uz": "muammo / inqiroz", "form": "فُرُوق"}
+  ],
+  "common_mistakes_uz": [
+   "«Ishga joylashdim» ni عَمَل bilan aytish: حَصَلْتُ عَلَى وَظِيفَةٍ ✓ (lavozim).",
+   "«Katta odam» ma'nosida ضَخْم ishlatish — u hajm haqida; obro' uchun عَظِيم.",
+   "Har «muammo» ni أَزْمَة deyish — inqiroz juda kuchli so'z, kundalik masalaga mos emas."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ر د ف",
+   "meaning_uz": "ergashish — «muroddif» (sinonim) shundan",
+   "uz_cognates": ["muraddaf yo'q — sinonim"],
+   "derived": [
+    {"ar": "مُتَرَادِف", "uz": "sinonim", "pattern": "مُتَفَاعِل"},
+    {"ar": "رَدِيف", "uz": "ergashuvchi, hamroh", "pattern": "فَعِيل"}
+   ]
+  },
+  {
+   "root": "ف ر ق",
+   "meaning_uz": "ajratish, farq",
+   "uz_cognates": ["farq", "tafovut", "firqa"],
+   "derived": [
+    {"ar": "فَرْق", "uz": "farq", "pattern": "فَعْل"},
+    {"ar": "تَفْرِيق", "uz": "ajratish", "pattern": "تَفْعِيل"},
+    {"ar": "فَارِق", "uz": "ajratuvchi, farqli", "pattern": "فَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "وَظِيفَة",
+   "translit": "waẓīfa",
+   "uz": "lavozim, maoshli ish o'rni (o'zbekcha 'vazifa')",
+   "root": "و ظ ف",
+   "pattern": "فَعِيلَة",
+   "pos": "ot",
+   "audio": "b2/wazifa_job.mp3",
+   "example_ar": "حَصَلَ عَلَى وَظِيفَةٍ جَدِيدَةٍ.",
+   "example_uz": "Yangi ishga (lavozimga) joylashdi.",
+   "srs": true
+  },
+  {
+   "ar": "مِهْنَة",
+   "translit": "mihna",
+   "uz": "kasb, hunar",
+   "root": "م ه ن",
+   "pattern": "فِعْلَة",
+   "pos": "ot",
+   "audio": "b2/mihna.mp3",
+   "example_ar": "مِهْنَةُ الطِّبِّ صَعْبَةٌ.",
+   "example_uz": "Tabiblik kasbi qiyin.",
+   "srs": true
+  },
+  {
+   "ar": "ضَخْم",
+   "translit": "ḍakhm",
+   "uz": "ulkan, juda katta (hajm)",
+   "root": "ض خ م",
+   "pattern": "فَعْل",
+   "pos": "sifat",
+   "audio": "b2/dakhm.mp3",
+   "example_ar": "مَشْرُوعٌ ضَخْمٌ فِي المَدِينَةِ.",
+   "example_uz": "Shaharda ulkan loyiha.",
+   "srs": true
+  },
+  {
+   "ar": "عَظِيم",
+   "translit": "ʿaẓīm",
+   "uz": "ulug', buyuk (qadr)",
+   "root": "ع ظ م",
+   "pattern": "فَعِيل",
+   "pos": "sifat",
+   "audio": "b2/azim.mp3",
+   "example_ar": "عَالِمٌ عَظِيمٌ فِي تَارِيخِنَا.",
+   "example_uz": "Tariximizdagi buyuk olim.",
+   "srs": true
+  },
+  {
+   "ar": "لَاحَظَ",
+   "translit": "lāḥaẓa",
+   "uz": "payqadi, e'tibor berdi",
+   "root": "ل ح ظ",
+   "pattern": "فَاعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/lahaza.mp3",
+   "example_ar": "لَاحَظْتُ خَطَأً صَغِيرًا.",
+   "example_uz": "Kichik xatoni payqadim.",
+   "srs": true
+  },
+  {
+   "ar": "شَاهَدَ",
+   "translit": "shāhada",
+   "uz": "tomosha qildi, kuzatdi",
+   "root": "ش ه د",
+   "pattern": "فَاعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/shahada_watch.mp3",
+   "example_ar": "شَاهَدْنَا المُبَارَاةَ مَعًا.",
+   "example_uz": "Musobaqani birga tomosha qildik.",
+   "srs": true
+  },
+  {
+   "ar": "عَاجِل",
+   "translit": "ʿājil",
+   "uz": "shoshilinch, kechiktirib bo'lmas",
+   "root": "ع ج ل",
+   "pattern": "فَاعِل",
+   "pos": "sifat",
+   "audio": "b2/ajil.mp3",
+   "example_ar": "خَبَرٌ عَاجِلٌ مِنَ العَاصِمَةِ.",
+   "example_uz": "Poytaxtdan shoshilinch xabar.",
+   "srs": true
+  },
+  {
+   "ar": "فَوْرِيّ",
+   "translit": "fawrī",
+   "uz": "darhol bo'ladigan, tezkor",
+   "root": "ف و ر",
+   "pattern": "فَعْلِيّ",
+   "pos": "sifat",
+   "audio": "b2/fawri.mp3",
+   "example_ar": "رَدٌّ فَوْرِيٌّ عَلَى الطَّلَبِ.",
+   "example_uz": "So'rovga darhol javob.",
+   "srs": true
+  },
+  {
+   "ar": "قَضِيَّة",
+   "translit": "qaḍiyya",
+   "uz": "masala; sud ishi (o'zbekcha 'qaziya')",
+   "root": "ق ض ي",
+   "pattern": "فَعِيلَة",
+   "pos": "ot",
+   "audio": "b2/qadiyya.mp3",
+   "example_ar": "قَضِيَّةُ التَّعْلِيمِ مُهِمَّةٌ.",
+   "example_uz": "Ta'lim masalasi muhim.",
+   "srs": true
+  },
+  {
+   "ar": "أَزْمَة",
+   "translit": "azma",
+   "uz": "inqiroz",
+   "root": "أ ز م",
+   "pattern": "فَعْلَة",
+   "pos": "ot",
+   "audio": "b2/azma.mp3",
+   "example_ar": "أَزْمَةٌ اِقْتِصَادِيَّةٌ عَالَمِيَّةٌ.",
+   "example_uz": "Jahon iqtisodiy inqirozi.",
+   "srs": true
+  },
+  {
+   "ar": "دَافِع",
+   "translit": "dāfiʿ",
+   "uz": "turtki, motiv",
+   "root": "د ف ع",
+   "pattern": "فَاعِل",
+   "pos": "ot",
+   "audio": "b2/dafi.mp3",
+   "example_ar": "الدَّافِعُ الأَسَاسِيُّ هُوَ التَّعَلُّمُ.",
+   "example_uz": "Asosiy turtki — o'rganish.",
+   "srs": true
+  },
+  {
+   "ar": "عَامِل",
+   "translit": "ʿāmil",
+   "uz": "omil; ishchi (kontekstga qarab)",
+   "root": "ع م ل",
+   "pattern": "فَاعِل",
+   "pos": "ot",
+   "audio": "b2/amil_factor.mp3",
+   "example_ar": "الوَقْتُ عَامِلٌ مُهِمٌّ.",
+   "example_uz": "Vaqt — muhim omil.",
+   "srs": true
+  },
+  {
+   "ar": "فَرْق",
+   "translit": "farq",
+   "uz": "farq (o'zbekcha 'farq')",
+   "root": "ف ر ق",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/farq.mp3",
+   "example_ar": "الفَرْقُ بَيْنَهُمَا دَقِيقٌ.",
+   "example_uz": "Ular orasidagi farq nozik.",
+   "srs": true
+  },
+  {
+   "ar": "مُتَرَادِف",
+   "translit": "mutarādif",
+   "uz": "sinonim, ma'nodosh",
+   "root": "ر د ف",
+   "pattern": "مُتَفَاعِل",
+   "pos": "ot",
+   "audio": "b2/mutaradif.mp3",
+   "example_ar": "لَا يُوجَدُ مُتَرَادِفٌ تَامٌّ.",
+   "example_uz": "To'liq sinonim mavjud emas.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "يقول خبير اللغة: لا يوجد مترادف تامّ. الفرق بين «وظيفة» و«مهنة» دقيق: الأولى مكان عمل براتب، والثانية حرفة تُتعلّم. وكذلك «مشكلة» شيء يُحلّ، أما «أزمة» فحالة خطيرة تحتاج قرارات عاجلة. لاحظ الطلاب هذا الفرق حين قرؤوا خبرًا عاجلًا عن أزمة اقتصادية، ثم شاهدوا تقريرًا آخر عن مشروع ضخم كان الوقت فيه عاملًا حاسمًا.",
+   "questions": [
+    {"q_uz": "«وظيفة» va «مهنة» farqi?", "a": "Vazifa — maoshli ish o'rni; mihna — o'rganilgan kasb"},
+    {"q_uz": "«أزمة» qachon ishlatiladi?", "a": "Jiddiy, shoshilinch qaror talab qiladigan holatda"},
+    {"q_uz": "«عاملًا حاسمًا» nima degani?", "a": "Hal qiluvchi omil"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-24-listen.mp3",
+   "transcript_ar": "الفَرْقُ بَيْنَ الوَظِيفَةِ وَالمِهْنَةِ دَقِيقٌ. وَالأَزْمَةُ أَخْطَرُ مِنَ المُشْكِلَةِ.",
+   "questions": [
+    {"q_uz": "Qaysi ikki juft taqqoslandi?", "a": "Vazifa/mihna va azma/mushkila"},
+    {"q_uz": "Qaysi biri jiddiyroq?", "a": "Azma (inqiroz) — mushkiladan xavfliroq"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch juftni farqi bilan ayting: vazifa/mihna, kabir/azim, mushkila/azma.",
+   "target_ar": ["وَظِيفَة وَمِهْنَة", "كَبِير وَعَظِيم", "مُشْكِلَة وَأَزْمَة"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Uch gap yozing: har birida yaqin ma'noli so'zlardan MOSini tanlang va nega tanlaganingizni qavsda yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«Ishga (lavozimga) joylashdim» — qaysi so'z?",
+   "q_ar": "",
+   "options": ["وَظِيفَة", "مِهْنَة", "شُغْل", "عَمَل"],
+   "answer": "وَظِيفَة",
+   "explain_uz": "وَظِيفَة — maoshli ish o'rni.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«Buyuk olim» uchun qaysi sifat?",
+   "q_ar": "عَالِمٌ ...",
+   "options": ["عَظِيم", "ضَخْم", "وَاسِع", "طَوِيل"],
+   "answer": "عَظِيم",
+   "explain_uz": "عَظِيم — qadr-qimmat; ضَخْم — hajm.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«Kichik xatoni payqadim» — qaysi fe'l?",
+   "q_ar": "",
+   "options": ["لَاحَظْتُ", "شَاهَدْتُ", "نَظَرْتُ", "دَرَيْتُ"],
+   "answer": "لَاحَظْتُ",
+   "explain_uz": "لَاحَظَ — payqash, e'tibor berish.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«أَزْمَة» qachon to'g'ri keladi?",
+   "q_ar": "أَزْمَة",
+   "options": [
+    "Jiddiy inqiroz holatida",
+    "Har kundalik muammoda",
+    "Kichik nosozlikda",
+    "Oddiy savolda"
+   ],
+   "answer": "Jiddiy inqiroz holatida",
+   "explain_uz": "Kundalik masala — مُشْكِلَة.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "دَافِع",
+   "options": [],
+   "answer": "turtki",
+   "explain_uz": "دَافِع — motiv, turtki.",
+   "audio": "b2/dafi.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«فَرْق، تَفْرِيق، فَارِق» qaysi o'zakdan?",
+   "q_ar": "تَفْرِيق",
+   "options": ["ف ر ق", "ف ق ر", "ر ف ق", "ف ر ج"],
+   "answer": "ف ر ق",
+   "explain_uz": "ف ر ق — ajratish o'zagi.",
+   "audio": "",
+   "root": "ف ر ق",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«خَبَرٌ عَاجِلٌ» nima degani?",
+   "q_ar": "خَبَرٌ عَاجِلٌ",
+   "options": ["Shoshilinch xabar", "Uzun xabar", "Eski xabar", "Yolg'on xabar"],
+   "answer": "Shoshilinch xabar",
+   "explain_uz": "عَاجِل — kechiktirib bo'lmaydigan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Vaqt — muhim omil»",
+   "q_ar": "",
+   "options": [],
+   "answer": "الوَقْتُ عَامِلٌ مُهِمٌّ",
+   "explain_uz": "Mubtado + xabar + sifat.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["الوَقْتُ", "عَامِلٌ", "مُهِمٌّ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ف ر ق", "back": "ajratish — farq/tafriq", "deck": "msa"},
+  {"type": "word", "front": "وَظِيفَة", "back": "lavozim, ish o'rni", "deck": "msa"},
+  {"type": "word", "front": "مِهْنَة", "back": "kasb, hunar", "deck": "msa"},
+  {"type": "word", "front": "ضَخْم", "back": "ulkan (hajm)", "deck": "msa"},
+  {"type": "word", "front": "عَظِيم", "back": "ulug', buyuk", "deck": "msa"},
+  {"type": "word", "front": "لَاحَظَ", "back": "payqadi", "deck": "msa"},
+  {"type": "word", "front": "شَاهَدَ", "back": "tomosha qildi", "deck": "msa"},
+  {"type": "word", "front": "عَاجِل", "back": "shoshilinch", "deck": "msa"},
+  {"type": "word", "front": "قَضِيَّة", "back": "masala; sud ishi", "deck": "msa"},
+  {"type": "word", "front": "أَزْمَة", "back": "inqiroz", "deck": "msa"},
+  {"type": "word", "front": "دَافِع", "back": "turtki, motiv", "deck": "msa"},
+  {"type": "word", "front": "عَامِل", "back": "omil", "deck": "msa"}
+ ]
+}

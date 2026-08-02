@@ -1,0 +1,362 @@
+{
+ "id": "b2-31",
+ "level": "B2",
+ "module": "vocab-adv",
+ "order": 31,
+ "title_uz": "Ekologiya va energiya",
+ "title_ar": "البِيئَةُ وَالطَّاقَةُ",
+ "can_do_uz": "Iqlim, chiqindi va energiya haqidagi yangiliklarni tushunaman va fikr bildira olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-30"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Saudiyada «رُؤْيَة ٢٠٣٠» dasturining katta qismi — energiya va ekologiya. Yangiliklar tili: «الطَّاقَة المُتَجَدِّدَة» (qayta tiklanuvchi energiya), «تَغَيُّر المُنَاخ» (iqlim o'zgarishi), «إِعَادَة التَّدْوِير» (qayta ishlash). Bu so'zlar imtihon matnlarida ham, ish e'lonlarida ham chiqadi — B2 lug'atining zamonaviy qismi.",
+ "grammar": {
+  "point_ar": "لُغَةُ البِيئَةِ: المُقَارَنَةُ وَالنِّسَبُ",
+  "explanation_uz": "Ekologiya matnlarida ikki narsa ko'p uchraydi. 1) TAQQOSLASH: أَكْثَرُ نَظَافَةً (tozaroq), أَقَلُّ تَلْوِيثًا (kamroq ifloslantiruvchi), يَتَفَوَّقُ عَلَى (ustun keladi), بِالمُقَارَنَةِ مَعَ (…bilan solishtirganda). Diqqat: أَفْعَل vaznidan keyin TAMYIZ mansub keladi — أَكْثَرُ اِسْتِخْدَامًا. 2) FOIZ VA MIQDOR: بِنِسْبَةِ عِشْرِينَ فِي المِئَةِ (20 foizga), اِرْتَفَعَ / اِنْخَفَضَ (oshdi / kamaydi), بَلَغَ (…ga yetdi), يُشَكِّلُ (…ni tashkil qiladi). Yana ko'p ishlatiladigan fe'llar: يُلَوِّثُ (ifloslantiradi), يَسْتَهْلِكُ (iste'mol qiladi), يُوَفِّرُ (tejaydi), يُعِيدُ تَدْوِيرَ (qayta ishlaydi), يَحْمِي (himoya qiladi). Rasmiy matnda ko'pincha majhul: تُسْتَخْدَمُ الطَّاقَةُ الشَّمْسِيَّةُ (quyosh energiyasi ishlatiladi).",
+  "table": [
+   {"ar": "الطَّاقَةُ المُتَجَدِّدَةُ", "uz": "qayta tiklanuvchi energiya", "form": "نَعْت"},
+   {"ar": "تَغَيُّرُ المُنَاخِ", "uz": "iqlim o'zgarishi", "form": "إِضَافَة"},
+   {"ar": "إِعَادَةُ التَّدْوِيرِ", "uz": "qayta ishlash", "form": "إِضَافَة"},
+   {"ar": "أَقَلُّ تَلْوِيثًا", "uz": "kamroq ifloslantiruvchi", "form": "تَمْيِيز"},
+   {"ar": "اِرْتَفَعَ بِنِسْبَةِ ١٥٪", "uz": "15 foizga oshdi", "form": "نِسْبَة"},
+   {"ar": "تُسْتَخْدَمُ الطَّاقَةُ الشَّمْسِيَّةُ", "uz": "quyosh energiyasi ishlatiladi", "form": "مَجْهُول"}
+  ],
+  "common_mistakes_uz": [
+   "أَفْعَل dan keyin tamyizni marfu' qoldirish: أَكْثَرُ اِسْتِخْدَامٌ ✗ → اِسْتِخْدَامًا ✓.",
+   "بِيئَة (atrof-muhit) va طَبِيعَة (tabiat) ni bir xil deb hisoblash.",
+   "«Chiqindi» ni faqat وَسَخ deyish — rasmiy so'z نُفَايَات."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ب و أ",
+   "meaning_uz": "joylashish — «bi'a» (muhit) shundan",
+   "uz_cognates": ["bio emas — muhit"],
+   "derived": [
+    {"ar": "بِيئَة", "uz": "atrof-muhit", "pattern": "فِعْلَة"},
+    {"ar": "بِيئِيّ", "uz": "ekologik", "pattern": "فِعْلِيّ"}
+   ]
+  },
+  {
+   "root": "ج د د",
+   "meaning_uz": "yangilanish",
+   "uz_cognates": ["jadid", "tajdid"],
+   "derived": [
+    {"ar": "مُتَجَدِّد", "uz": "qayta tiklanuvchi", "pattern": "مُتَفَعِّل"},
+    {"ar": "تَجْدِيد", "uz": "yangilash", "pattern": "تَفْعِيل"},
+    {"ar": "جَدِيد", "uz": "yangi", "pattern": "فَعِيل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "بِيئَة",
+   "translit": "bīʾa",
+   "uz": "atrof-muhit",
+   "root": "ب و أ",
+   "pattern": "فِعْلَة",
+   "pos": "ot",
+   "audio": "b2/bia_env.mp3",
+   "example_ar": "حِمَايَةُ البِيئَةِ مَسْؤُولِيَّةُ الجَمِيعِ.",
+   "example_uz": "Atrof-muhitni himoya qilish — hammaning mas'uliyati.",
+   "srs": true
+  },
+  {
+   "ar": "طَاقَة",
+   "translit": "ṭāqa",
+   "uz": "energiya, quvvat",
+   "root": "ط و ق",
+   "pattern": "فَعَالَة",
+   "pos": "ot",
+   "audio": "b2/taqa.mp3",
+   "example_ar": "الطَّاقَةُ الشَّمْسِيَّةُ رَخِيصَةٌ.",
+   "example_uz": "Quyosh energiyasi arzon.",
+   "srs": true
+  },
+  {
+   "ar": "مُتَجَدِّدَة",
+   "translit": "mutajaddida",
+   "uz": "qayta tiklanuvchi",
+   "root": "ج د د",
+   "pattern": "مُتَفَعِّلَة",
+   "pos": "sifat",
+   "audio": "b2/mutajaddida.mp3",
+   "example_ar": "مَصَادِرُ الطَّاقَةِ المُتَجَدِّدَةِ تَزْدَادُ.",
+   "example_uz": "Qayta tiklanuvchi energiya manbalari ko'paymoqda.",
+   "srs": true
+  },
+  {
+   "ar": "تَلَوُّث",
+   "translit": "talawwuth",
+   "uz": "ifloslanish",
+   "root": "ل و ث",
+   "pattern": "تَفَعُّل",
+   "pos": "ot",
+   "audio": "b2/talawwuth.mp3",
+   "example_ar": "تَلَوُّثُ الهَوَاءِ مُشْكِلَةٌ كَبِيرَةٌ.",
+   "example_uz": "Havo ifloslanishi katta muammo.",
+   "srs": true
+  },
+  {
+   "ar": "نُفَايَات",
+   "translit": "nufāyāt",
+   "uz": "chiqindilar",
+   "root": "ن ف ي",
+   "pattern": "فُعَالَات",
+   "pos": "ot",
+   "audio": "b2/nufayat.mp3",
+   "example_ar": "تُجْمَعُ النُّفَايَاتُ يَوْمِيًّا.",
+   "example_uz": "Chiqindilar har kuni yig'iladi.",
+   "srs": true
+  },
+  {
+   "ar": "إِعَادَة التَّدْوِير",
+   "translit": "iʿādat at-tadwīr",
+   "uz": "qayta ishlash (retsikling)",
+   "root": "د و ر",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/iadat_tadwir.mp3",
+   "example_ar": "مَرْكَزٌ لِإِعَادَةِ التَّدْوِيرِ.",
+   "example_uz": "Qayta ishlash markazi.",
+   "srs": true
+  },
+  {
+   "ar": "مُنَاخ",
+   "translit": "munākh",
+   "uz": "iqlim",
+   "root": "ن و خ",
+   "pattern": "مُفَاعَل",
+   "pos": "ot",
+   "audio": "b2/munakh.mp3",
+   "example_ar": "تَغَيُّرُ المُنَاخِ يُؤَثِّرُ عَلَى الزِّرَاعَةِ.",
+   "example_uz": "Iqlim o'zgarishi qishloq xo'jaligiga ta'sir qiladi.",
+   "srs": true
+  },
+  {
+   "ar": "اِسْتِهْلَاك",
+   "translit": "istihlāk",
+   "uz": "iste'mol",
+   "root": "ه ل ك",
+   "pattern": "اِسْتِفْعَال",
+   "pos": "ot",
+   "audio": "b2/istihlak.mp3",
+   "example_ar": "اِنْخَفَضَ اِسْتِهْلَاكُ المِيَاهِ.",
+   "example_uz": "Suv iste'moli kamaydi.",
+   "srs": true
+  },
+  {
+   "ar": "تَوْفِير",
+   "translit": "tawfīr",
+   "uz": "tejash; ta'minlash",
+   "root": "و ف ر",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tawfir.mp3",
+   "example_ar": "تَوْفِيرُ الكَهْرَبَاءِ مُهِمٌّ.",
+   "example_uz": "Elektrni tejash muhim.",
+   "srs": true
+  },
+  {
+   "ar": "اِنْبِعَاثَات",
+   "translit": "inbiʿāthāt",
+   "uz": "chiqindi gazlar, emissiya",
+   "root": "ب ع ث",
+   "pattern": "اِنْفِعَالَات",
+   "pos": "ot",
+   "audio": "b2/inbiathat.mp3",
+   "example_ar": "تَقْلِيلُ الاِنْبِعَاثَاتِ هَدَفٌ عَالَمِيٌّ.",
+   "example_uz": "Emissiyani kamaytirish — jahon maqsadi.",
+   "srs": true
+  },
+  {
+   "ar": "مَحْمِيَّة",
+   "translit": "maḥmiyya",
+   "uz": "qo'riqxona",
+   "root": "ح م ي",
+   "pattern": "مَفْعُولَة",
+   "pos": "ot",
+   "audio": "b2/mahmiyya.mp3",
+   "example_ar": "زُرْنَا مَحْمِيَّةً طَبِيعِيَّةً.",
+   "example_uz": "Tabiiy qo'riqxonaga bordik.",
+   "srs": true
+  },
+  {
+   "ar": "مُسْتَدَام",
+   "translit": "mustadām",
+   "uz": "barqaror (rivojlanish haqida)",
+   "root": "د و م",
+   "pattern": "مُسْتَفْعَل",
+   "pos": "sifat",
+   "audio": "b2/mustadam.mp3",
+   "example_ar": "التَّنْمِيَةُ المُسْتَدَامَةُ هَدَفٌ رَئِيسٌ.",
+   "example_uz": "Barqaror rivojlanish — asosiy maqsad.",
+   "srs": true
+  },
+  {
+   "ar": "زِرَاعَة",
+   "translit": "zirāʿa",
+   "uz": "qishloq xo'jaligi, ekin ekish",
+   "root": "ز ر ع",
+   "pattern": "فِعَالَة",
+   "pos": "ot",
+   "audio": "b2/ziraa.mp3",
+   "example_ar": "الزِّرَاعَةُ تَحْتَاجُ إِلَى مِيَاهٍ كَثِيرَةٍ.",
+   "example_uz": "Qishloq xo'jaligi ko'p suv talab qiladi.",
+   "srs": true
+  },
+  {
+   "ar": "حِمَايَة",
+   "translit": "ḥimāya",
+   "uz": "himoya qilish",
+   "root": "ح م ي",
+   "pattern": "فِعَالَة",
+   "pos": "ot",
+   "audio": "b2/himaya.mp3",
+   "example_ar": "حِمَايَةُ المِيَاهِ ضَرُورِيَّةٌ.",
+   "example_uz": "Suvni himoya qilish zarur.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أعلنت الوزارة أنّ استهلاك الكهرباء انخفض بنسبة خمسة عشر في المئة بعد التوسّع في الطاقة الشمسية. وأشار التقرير إلى أنّ مصادر الطاقة المتجدّدة أقلّ تلويثًا بالمقارنة مع الوقود التقليدي. كما بدأت المدن الكبرى مشاريع لإعادة التدوير، وتُجمع النفايات وتُفرز يوميًّا. ويرى الخبراء أنّ التنمية المستدامة تحتاج إلى وعي المجتمع قبل القوانين، خاصة في مجال المياه والزراعة.",
+   "questions": [
+    {"q_uz": "Elektr iste'moli qancha kamaydi?", "a": "15 foizga"},
+    {"q_uz": "Nega qayta tiklanuvchi energiya afzal?", "a": "An'anaviy yoqilg'iga qaraganda kamroq ifloslantiradi"},
+    {"q_uz": "Ekspertlar fikricha nima birinchi kerak?", "a": "Jamiyat ongi — qonunlardan oldin"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-31-listen.mp3",
+   "transcript_ar": "اِنْخَفَضَ اِسْتِهْلَاكُ الكَهْرَبَاءِ بِنِسْبَةِ خَمْسَةَ عَشَرَ فِي المِئَةِ. وَالطَّاقَةُ المُتَجَدِّدَةُ أَقَلُّ تَلْوِيثًا.",
+   "questions": [
+    {"q_uz": "Qancha kamaydi?", "a": "15 foiz"},
+    {"q_uz": "Qayta tiklanuvchi energiya haqida nima aytildi?", "a": "Kamroq ifloslantiradi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch jumlani ayting: atrof-muhitni himoya qilish muhim, chiqindilarni qayta ishlaymiz, quyosh energiyasi arzon.",
+   "target_ar": ["حِمَايَةُ البِيئَةِ مُهِمَّةٌ", "نُعِيدُ تَدْوِيرَ النُّفَايَاتِ", "الطَّاقَةُ الشَّمْسِيَّةُ رَخِيصَةٌ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Ekologiya haqida 5 gapli fikr yozing: muammo, raqam, sabab, yechim, tavsiya.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«الطَّاقَة المُتَجَدِّدَة» nima?",
+   "q_ar": "الطَّاقَة المُتَجَدِّدَة",
+   "options": ["Qayta tiklanuvchi energiya", "Yadro energiyasi", "Yoqilg'i", "Elektr tarmog'i"],
+   "answer": "Qayta tiklanuvchi energiya",
+   "explain_uz": "Quyosh, shamol kabi manbalar.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«أَقَلُّ تَلْوِيثًا» — «تَلْوِيثًا» qanday?",
+   "q_ar": "أَقَلُّ تَلْوِيثًا",
+   "options": ["Tamyiz (mansub)", "Foil (marfu')", "Sifat", "Maf'ul bih"],
+   "answer": "Tamyiz (mansub)",
+   "explain_uz": "أَفْعَل vaznidan keyin tamyiz mansub keladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«نُفَايَات» nima?",
+   "q_ar": "نُفَايَات",
+   "options": ["Chiqindilar", "Manbalar", "Gazlar", "Suvlar"],
+   "answer": "Chiqindilar",
+   "explain_uz": "Rasmiy so'z — maishiy/sanoat chiqindisi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«التَّنْمِيَة المُسْتَدَامَة» ma'nosi?",
+   "q_ar": "التَّنْمِيَة المُسْتَدَامَة",
+   "options": ["Barqaror rivojlanish", "Tez o'sish", "Sanoatlashtirish", "Qishloq xo'jaligi"],
+   "answer": "Barqaror rivojlanish",
+   "explain_uz": "Kelajak resurslarini saqlab rivojlanish.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "مُنَاخ",
+   "options": [],
+   "answer": "iqlim",
+   "explain_uz": "مُنَاخ — iqlim (ob-havo emas).",
+   "audio": "b2/munakh.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«حِمَايَة، مَحْمِيَّة، يَحْمِي» qaysi o'zakdan?",
+   "q_ar": "مَحْمِيَّة",
+   "options": ["ح م ي", "ح م د", "ح ي م", "خ م ي"],
+   "answer": "ح م ي",
+   "explain_uz": "ح م ي — himoya qilish o'zagi.",
+   "audio": "",
+   "root": "ح م ي",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«اِنْخَفَضَ بِنِسْبَةِ ١٥٪» nima degani?",
+   "q_ar": "اِنْخَفَضَ بِنِسْبَةِ ١٥٪",
+   "options": ["15 foizga kamaydi", "15 foizga oshdi", "15 barobar kamaydi", "15 ta bo'ldi"],
+   "answer": "15 foizga kamaydi",
+   "explain_uz": "اِنْخَفَضَ — pasaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Havo ifloslanishi katta muammo»",
+   "q_ar": "",
+   "options": [],
+   "answer": "تَلَوُّثُ الهَوَاءِ مُشْكِلَةٌ كَبِيرَةٌ",
+   "explain_uz": "Idofa (mubtado) + xabar + sifat.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["تَلَوُّثُ", "الهَوَاءِ", "مُشْكِلَةٌ", "كَبِيرَةٌ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ج د د", "back": "yangilanish — mutajaddid/tajdid", "deck": "msa"},
+  {"type": "root", "front": "ح م ي", "back": "himoya — himoya/mahmiyya", "deck": "msa"},
+  {"type": "word", "front": "بِيئَة", "back": "atrof-muhit", "deck": "msa"},
+  {"type": "word", "front": "طَاقَة", "back": "energiya", "deck": "msa"},
+  {"type": "word", "front": "مُتَجَدِّدَة", "back": "qayta tiklanuvchi", "deck": "msa"},
+  {"type": "word", "front": "تَلَوُّث", "back": "ifloslanish", "deck": "msa"},
+  {"type": "word", "front": "نُفَايَات", "back": "chiqindilar", "deck": "msa"},
+  {"type": "phrase", "front": "إِعَادَة التَّدْوِير", "back": "qayta ishlash", "deck": "msa"},
+  {"type": "word", "front": "مُنَاخ", "back": "iqlim", "deck": "msa"},
+  {"type": "word", "front": "اِسْتِهْلَاك", "back": "iste'mol", "deck": "msa"},
+  {"type": "word", "front": "اِنْبِعَاثَات", "back": "emissiya", "deck": "msa"},
+  {"type": "word", "front": "مُسْتَدَام", "back": "barqaror", "deck": "msa"},
+  {"type": "word", "front": "حِمَايَة", "back": "himoya qilish", "deck": "msa"}
+ ]
+}

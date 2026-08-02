@@ -1,0 +1,368 @@
+{
+ "id": "b2-22",
+ "level": "B2",
+ "module": "vocab-adv",
+ "order": 22,
+ "title_uz": "Barqaror birikmalar 1",
+ "title_ar": "المُتَلَازِمَاتُ اللَّفْظِيَّةُ (١)",
+ "can_do_uz": "«Qaror qabul qildi», «harakat qildi» kabi birikmalarda TO'G'RI fe'lni tanlay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-21"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«Qaror qildim» ni arabchada «عَمِلْتُ قَرَارًا» deb aytsangiz — noto'g'ri. To'g'risi: «اِتَّخَذْتُ قَرَارًا». Har otning O'Z fe'li bor: قَرَار bilan اِتَّخَذَ, جُهْد bilan بَذَلَ, دَوْر bilan لَعِبَ. Bularni MUTALOZIMA (المُتَلَازِمَات) deyiladi — birga yuradigan so'zlar. Ularni bilmasa, grammatikangiz to'g'ri, tilingiz esa «begona» eshitiladi. Bugun 14 ta eng kerakligini olamiz.",
+ "grammar": {
+  "point_ar": "الفِعْلُ المُنَاسِبُ لِكُلِّ اسْمٍ",
+  "explanation_uz": "MUTALOZIMA (المُتَلَازِم اللَّفْظِيّ / collocation) — tilda barqaror birga keladigan so'zlar. Ularni tarjima bilan emas, BUTUN holda yodlash kerak. Asosiy qoliplar: (1) اِتَّخَذَ + قَرَارًا/إِجْرَاءً/مَوْقِفًا — qaror/chora/pozitsiya QABUL QILDI; (2) بَذَلَ + جُهْدًا/وَقْتًا — kuch/vaqt SARFLADI; (3) لَعِبَ + دَوْرًا — rol O'YNADI; (4) حَقَّقَ + نَجَاحًا/هَدَفًا/أَرْبَاحًا — muvaffaqiyat/maqsad/foyda QO'LGA KIRITDI; (5) وَاجَهَ + تَحَدِّيًا/صُعُوبَةً — muammoga DUCH KELDI; (6) قَدَّمَ + طَلَبًا/اِسْتِقَالَةً — ariza/iste'fo TOPSHIRDI; (7) أَجْرَى + مُقَابَلَةً/دِرَاسَةً — intervyu/tadqiqot O'TKAZDI; (8) عَقَدَ + اِجْتِمَاعًا/صَفْقَةً — yig'ilish/bitim TUZDI. DIQQAT: عَمِلَ («qildi») ko'p hollarda ISHLAMAYDI — u umumiy fe'l. Rasmiy matnda aniq fe'lni tanlash — B2 belgisi.",
+  "table": [
+   {"ar": "اِتَّخَذَ قَرَارًا", "uz": "qaror qabul qildi", "form": "قَرَار"},
+   {"ar": "بَذَلَ جُهْدًا", "uz": "kuch sarfladi", "form": "جُهْد"},
+   {"ar": "لَعِبَ دَوْرًا مُهِمًّا", "uz": "muhim rol o'ynadi", "form": "دَوْر"},
+   {"ar": "حَقَّقَ نَجَاحًا كَبِيرًا", "uz": "katta muvaffaqiyatga erishdi", "form": "نَجَاح"},
+   {"ar": "وَاجَهَ تَحَدِّيًا", "uz": "muammoga duch keldi", "form": "تَحَدٍّ"},
+   {"ar": "عَقَدَ اِجْتِمَاعًا", "uz": "yig'ilish o'tkazdi", "form": "اِجْتِمَاع"}
+  ],
+  "common_mistakes_uz": [
+   "Har joyda عَمِلَ ishlatish: عَمِلَ قَرَارًا ✗ → اِتَّخَذَ قَرَارًا ✓.",
+   "«Rol o'ynadi» ni so'zma-so'z: لَعِبَ لُعْبَةً دَوْرًا ✗ → لَعِبَ دَوْرًا ✓.",
+   "Birikmadagi otni ko'plikka aylantirish odat bo'lmagan joyda: بَذَلَ جُهُودًا (to'g'ri) lekin بَذَلَ أَوْقَاتًا ✗."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ل ز م",
+   "meaning_uz": "birga bo'lish, zarur bo'lish",
+   "uz_cognates": ["lozim", "mulozim"],
+   "derived": [
+    {"ar": "مُتَلَازِم", "uz": "birga yuruvchi (birikma)", "pattern": "مُتَفَاعِل"},
+    {"ar": "لَازِم", "uz": "zarur, lozim", "pattern": "فَاعِل"},
+    {"ar": "اِلْتِزَام", "uz": "majburiyat", "pattern": "اِفْتِعَال"}
+   ]
+  },
+  {
+   "root": "ح ق ق",
+   "meaning_uz": "haqiqat, ro'yobga chiqarish",
+   "uz_cognates": ["haqiqat", "tahqiq", "huquq"],
+   "derived": [
+    {"ar": "حَقَّقَ", "uz": "amalga oshirdi, erishdi", "pattern": "فَعَّلَ"},
+    {"ar": "تَحْقِيق", "uz": "tekshiruv; amalga oshirish", "pattern": "تَفْعِيل"},
+    {"ar": "إِنْجَاز", "uz": "yutuq (boshqa o'zak)", "pattern": "إِفْعَال"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "اِتَّخَذَ قَرَارًا",
+   "translit": "ittakhadha qarāran",
+   "uz": "qaror qabul qildi",
+   "root": "أ خ ذ",
+   "pattern": "اِفْتَعَلَ",
+   "pos": "ibora",
+   "audio": "b2/ittakhadha_qarar.mp3",
+   "example_ar": "اِتَّخَذَ المَجْلِسُ قَرَارًا سَرِيعًا.",
+   "example_uz": "Kengash tez qaror qabul qildi.",
+   "srs": true
+  },
+  {
+   "ar": "بَذَلَ جُهْدًا",
+   "translit": "badhala juhdan",
+   "uz": "kuch sarfladi, harakat qildi",
+   "root": "ب ذ ل",
+   "pattern": "فَعَلَ",
+   "pos": "ibora",
+   "audio": "b2/badhala_juhd.mp3",
+   "example_ar": "بَذَلَ الفَرِيقُ جُهْدًا كَبِيرًا.",
+   "example_uz": "Jamoa katta kuch sarfladi.",
+   "srs": true
+  },
+  {
+   "ar": "لَعِبَ دَوْرًا",
+   "translit": "laʿiba dawran",
+   "uz": "rol o'ynadi",
+   "root": "ل ع ب",
+   "pattern": "فَعِلَ",
+   "pos": "ibora",
+   "audio": "b2/laiba_dawr.mp3",
+   "example_ar": "لَعِبَ التَّعْلِيمُ دَوْرًا أَسَاسِيًّا.",
+   "example_uz": "Ta'lim asosiy rol o'ynadi.",
+   "srs": true
+  },
+  {
+   "ar": "حَقَّقَ نَجَاحًا",
+   "translit": "ḥaqqaqa najāḥan",
+   "uz": "muvaffaqiyatga erishdi",
+   "root": "ح ق ق",
+   "pattern": "فَعَّلَ",
+   "pos": "ibora",
+   "audio": "b2/haqqaqa_najah.mp3",
+   "example_ar": "حَقَّقَ المَشْرُوعُ نَجَاحًا مَلْحُوظًا.",
+   "example_uz": "Loyiha sezilarli muvaffaqiyatga erishdi.",
+   "srs": true
+  },
+  {
+   "ar": "وَاجَهَ تَحَدِّيًا",
+   "translit": "wājaha taḥaddiyan",
+   "uz": "muammoga duch keldi",
+   "root": "و ج ه",
+   "pattern": "فَاعَلَ",
+   "pos": "ibora",
+   "audio": "b2/wajaha_tahaddi.mp3",
+   "example_ar": "وَاجَهْنَا تَحَدِّيًا مَالِيًّا.",
+   "example_uz": "Moliyaviy muammoga duch keldik.",
+   "srs": true
+  },
+  {
+   "ar": "قَدَّمَ طَلَبًا",
+   "translit": "qaddama ṭalaban",
+   "uz": "ariza topshirdi",
+   "root": "ق د م",
+   "pattern": "فَعَّلَ",
+   "pos": "ibora",
+   "audio": "b2/qaddama_talab.mp3",
+   "example_ar": "قَدَّمْتُ طَلَبًا لِلْوَظِيفَةِ.",
+   "example_uz": "Ish uchun ariza topshirdim.",
+   "srs": true
+  },
+  {
+   "ar": "أَجْرَى مُقَابَلَةً",
+   "translit": "ajrā muqābalatan",
+   "uz": "intervyu o'tkazdi",
+   "root": "ج ر ي",
+   "pattern": "أَفْعَلَ",
+   "pos": "ibora",
+   "audio": "b2/ajra_muqabala.mp3",
+   "example_ar": "أَجْرَتِ الصَّحِيفَةُ مُقَابَلَةً مَعَهُ.",
+   "example_uz": "Gazeta u bilan intervyu o'tkazdi.",
+   "srs": true
+  },
+  {
+   "ar": "عَقَدَ اِجْتِمَاعًا",
+   "translit": "ʿaqada ijtimāʿan",
+   "uz": "yig'ilish o'tkazdi",
+   "root": "ع ق د",
+   "pattern": "فَعَلَ",
+   "pos": "ibora",
+   "audio": "b2/aqada_ijtima.mp3",
+   "example_ar": "عَقَدَ المُدِيرُ اِجْتِمَاعًا طَارِئًا.",
+   "example_uz": "Direktor shoshilinch yig'ilish o'tkazdi.",
+   "srs": true
+  },
+  {
+   "ar": "جُهْد",
+   "translit": "juhd",
+   "uz": "kuch, harakat (o'zbekcha 'jahd')",
+   "root": "ج ه د",
+   "pattern": "فُعْل",
+   "pos": "ot",
+   "audio": "b2/juhd.mp3",
+   "example_ar": "الجُهْدُ المُشْتَرَكُ يُثْمِرُ.",
+   "example_uz": "Birgalikdagi harakat samara beradi.",
+   "srs": true
+  },
+  {
+   "ar": "قَرَار",
+   "translit": "qarār",
+   "uz": "qaror (o'zbekcha 'qaror')",
+   "root": "ق ر ر",
+   "pattern": "فَعَال",
+   "pos": "ot",
+   "audio": "b2/qarar.mp3",
+   "example_ar": "القَرَارُ نِهَائِيٌّ.",
+   "example_uz": "Qaror yakuniy.",
+   "srs": true
+  },
+  {
+   "ar": "تَحَدٍّ",
+   "translit": "taḥaddin",
+   "uz": "muammo, sinov (challenge)",
+   "root": "ح د و",
+   "pattern": "تَفَعُّل",
+   "pos": "ot",
+   "audio": "b2/tahaddi.mp3",
+   "example_ar": "هَذَا تَحَدٍّ كَبِيرٌ.",
+   "example_uz": "Bu katta sinov.",
+   "srs": true
+  },
+  {
+   "ar": "دَوْر",
+   "translit": "dawr",
+   "uz": "rol; navbat (o'zbekcha 'davra')",
+   "root": "د و ر",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/dawr_role.mp3",
+   "example_ar": "دَوْرُهُ فِي المَشْرُوعِ كَبِيرٌ.",
+   "example_uz": "Uning loyihadagi roli katta.",
+   "srs": true
+  },
+  {
+   "ar": "مَلْحُوظ",
+   "translit": "malḥūẓ",
+   "uz": "sezilarli",
+   "root": "ل ح ظ",
+   "pattern": "مَفْعُول",
+   "pos": "sifat",
+   "audio": "b2/malhuz.mp3",
+   "example_ar": "تَحَسُّنٌ مَلْحُوظٌ فِي الأَدَاءِ.",
+   "example_uz": "Ish sifatida sezilarli yaxshilanish.",
+   "srs": true
+  },
+  {
+   "ar": "طَارِئ",
+   "translit": "ṭāriʾ",
+   "uz": "shoshilinch, favqulodda",
+   "root": "ط ر أ",
+   "pattern": "فَاعِل",
+   "pos": "sifat",
+   "audio": "b2/tari.mp3",
+   "example_ar": "اِجْتِمَاعٌ طَارِئٌ اليَوْمَ.",
+   "example_uz": "Bugun shoshilinch yig'ilish.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "عقد المجلس اجتماعًا طارئًا واتخذ قرارًا سريعًا بشأن الميزانية. قال الرئيس: بذلنا جهدًا كبيرًا هذا العام، وحققنا نجاحًا ملحوظًا رغم أننا واجهنا تحدّيًا ماليًّا. وأضاف أنّ الفريق الشابّ لعب دورًا أساسيًّا في النتيجة. وفي نهاية الجلسة قدّم أحد الأعضاء طلبًا لزيادة عدد الموظفين، وأجرت الصحيفة مقابلة قصيرة معه.",
+   "questions": [
+    {"q_uz": "Kengash nima qildi?", "a": "Shoshilinch yig'ilish o'tkazdi va tez qaror qabul qildi"},
+    {"q_uz": "«لعب دورًا أساسيًّا» kim haqida?", "a": "Yosh jamoa haqida — asosiy rol o'ynagan"},
+    {"q_uz": "Oxirida nima bo'ldi?", "a": "A'zo ariza topshirdi, gazeta u bilan intervyu o'tkazdi"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-22-listen.mp3",
+   "transcript_ar": "اِتَّخَذَ المَجْلِسُ قَرَارًا، وَبَذَلَ الفَرِيقُ جُهْدًا كَبِيرًا، وَحَقَّقْنَا نَجَاحًا مَلْحُوظًا.",
+   "questions": [
+    {"q_uz": "Qaysi uch birikma eshitildi?", "a": "Qaror qabul qildi, kuch sarfladi, muvaffaqiyatga erishdi"},
+    {"q_uz": "Natija qanday?", "a": "Sezilarli muvaffaqiyat"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch birikmani jumla ichida ayting: qaror qabul qildim, kuch sarfladik, muhim rol o'ynadi.",
+   "target_ar": ["اِتَّخَذْتُ قَرَارًا", "بَذَلْنَا جُهْدًا", "لَعِبَ دَوْرًا مُهِمًّا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Ish haqidagi 4 gapli xabar yozing: har gapda bitta barqaror birikma ishlating.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«Qaror qabul qildi» — to'g'ri birikma qaysi?",
+   "q_ar": "",
+   "options": ["اِتَّخَذَ قَرَارًا", "عَمِلَ قَرَارًا", "فَعَلَ قَرَارًا", "كَتَبَ قَرَارًا"],
+   "answer": "اِتَّخَذَ قَرَارًا",
+   "explain_uz": "قَرَار ning doimiy fe'li — اِتَّخَذَ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«جُهْد» qaysi fe'l bilan keladi?",
+   "q_ar": "جُهْد",
+   "options": ["بَذَلَ", "لَعِبَ", "عَقَدَ", "أَجْرَى"],
+   "answer": "بَذَلَ",
+   "explain_uz": "بَذَلَ جُهْدًا — kuch sarfladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«Yig'ilish o'tkazdi» qaysi?",
+   "q_ar": "",
+   "options": ["عَقَدَ اِجْتِمَاعًا", "بَذَلَ اِجْتِمَاعًا", "لَعِبَ اِجْتِمَاعًا", "حَقَّقَ اِجْتِمَاعًا"],
+   "answer": "عَقَدَ اِجْتِمَاعًا",
+   "explain_uz": "عَقَدَ — yig'ilish/bitim uchun.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«أَجْرَى» qaysi ot bilan birikadi?",
+   "q_ar": "أَجْرَى",
+   "options": ["مُقَابَلَةً / دِرَاسَةً", "قَرَارًا", "جُهْدًا", "دَوْرًا"],
+   "answer": "مُقَابَلَةً / دِرَاسَةً",
+   "explain_uz": "Intervyu yoki tadqiqot o'tkazish.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "تَحَدٍّ",
+   "options": [],
+   "answer": "muammo",
+   "explain_uz": "تَحَدٍّ — sinov, muammo (challenge).",
+   "audio": "b2/tahaddi.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«حَقَّقَ، تَحْقِيق، حَقِيقَة» qaysi o'zakdan?",
+   "q_ar": "تَحْقِيق",
+   "options": ["ح ق ق", "ح ك ك", "خ ق ق", "ح ق ب"],
+   "answer": "ح ق ق",
+   "explain_uz": "ح ق ق — haqiqat, ro'yobga chiqarish.",
+   "audio": "",
+   "root": "ح ق ق",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Nega «عَمِلَ» ni har joyda ishlatib bo'lmaydi?",
+   "q_ar": "عَمِلَ",
+   "options": [
+    "Har otning o'z barqaror fe'li bor",
+    "عَمِلَ eskirgan so'z",
+    "U faqat she'rda ishlatiladi",
+    "U inkor fe'li"
+   ],
+   "answer": "Har otning o'z barqaror fe'li bor",
+   "explain_uz": "Mutalozima — so'zlar juft bo'lib yuradi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Jamoa katta kuch sarfladi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "بَذَلَ الفَرِيقُ جُهْدًا كَبِيرًا",
+   "explain_uz": "Fe'l + foil + maf'ul + sifat.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["بَذَلَ", "الفَرِيقُ", "جُهْدًا", "كَبِيرًا"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ح ق ق", "back": "haqiqat — haqqaqa/tahqiq", "deck": "msa"},
+  {"type": "phrase", "front": "اِتَّخَذَ قَرَارًا", "back": "qaror qabul qildi", "deck": "msa"},
+  {"type": "phrase", "front": "بَذَلَ جُهْدًا", "back": "kuch sarfladi", "deck": "msa"},
+  {"type": "phrase", "front": "لَعِبَ دَوْرًا", "back": "rol o'ynadi", "deck": "msa"},
+  {"type": "phrase", "front": "حَقَّقَ نَجَاحًا", "back": "muvaffaqiyatga erishdi", "deck": "msa"},
+  {"type": "phrase", "front": "وَاجَهَ تَحَدِّيًا", "back": "muammoga duch keldi", "deck": "msa"},
+  {"type": "phrase", "front": "قَدَّمَ طَلَبًا", "back": "ariza topshirdi", "deck": "msa"},
+  {"type": "phrase", "front": "أَجْرَى مُقَابَلَةً", "back": "intervyu o'tkazdi", "deck": "msa"},
+  {"type": "phrase", "front": "عَقَدَ اِجْتِمَاعًا", "back": "yig'ilish o'tkazdi", "deck": "msa"},
+  {"type": "word", "front": "جُهْد", "back": "kuch, harakat", "deck": "msa"},
+  {"type": "word", "front": "قَرَار", "back": "qaror", "deck": "msa"},
+  {"type": "word", "front": "مَلْحُوظ", "back": "sezilarli", "deck": "msa"},
+  {"type": "word", "front": "طَارِئ", "back": "shoshilinch", "deck": "msa"}
+ ]
+}

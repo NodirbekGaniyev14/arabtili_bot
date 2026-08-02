@@ -1,0 +1,537 @@
+{
+ "id": "b2-36",
+ "level": "B2",
+ "module": "saudi-work",
+ "order": 36,
+ "title_uz": "Hijoziy ish tili",
+ "title_ar": "وَرْشَةُ اللَّهْجَةِ الحِجَازِيَّةِ فِي العَمَلِ",
+ "can_do_uz": "Ish joyidagi hijoziy iboralarni tushunaman va kundalik muloqotda ishlata olaman.",
+ "duration_min": 30,
+ "prerequisites": [
+  "b2-35"
+ ],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Rasmiy hujjat — fusha. Lekin ustaxonada, do'konda, taksida — hijoziy. «وَش رَأْيَك؟», «كَم السَّاعَة؟», «خَلَاص», «يَلَّا نِبْدَأ», «طَيِّب». Bu 40 ta ibora sizni «tushunadigan» qiladi. Bu dars — ustaxona: qoidalar emas, ishlaydigan iboralar. Har birining fusha jufti ham berilgan, chunki yozma ishda fusha kerak.",
+ "grammar": {
+  "point_ar": "خَصَائِصُ اللَّهْجَةِ الحِجَازِيَّةِ فِي بِيئَةِ العَمَلِ",
+  "explanation_uz": "Hijoziyning ish muhitidagi asosiy farqlari. 1) MUZORI' oldiga بِـ qo'yiladi: أَكْتُبُ → بَكْتُب, نَبْدَأُ → بِنْبِدَا. 2) SAVOL so'zlari boshqacha: مَاذَا → وَش/إِيش, لِمَاذَا → لَيْش, أَيْنَ → وِين, مَتَى → مَتَى (bir xil), كَيْفَ → كِيف. 3) I'ROB TUSHADI: الأَوْرَاقُ جَاهِزَةٌ → الأَوْرَاق جَاهْزَة. 4) KENG TARQALGAN SO'ZLAR: خَلَاص (bo'ldi/tugadi), طَيِّب (mayli), يَلَّا (qani), دَحِين (hozir), بَعْدَيْن (keyinroq), شْوَي (ozgina), أَبْغَى (istayman), زَيْن (yaxshi), عَادِي (odatiy, muammo yo'q), أَكِيد (albatta), تَمَام (yaxshi/ok), مَافِي مُشْكِلَة (muammo yo'q). 5) ODOB: rahmat — «مَشْكُور» yoki «تِسْلَم»; javob — «العَفْو». MUHIM: rasmiy elektron xat va hujjatda hijoziy ISHLATILMAYDI — u og'zaki muloqot tili.",
+  "table": [
+   {
+    "ar": "أُرِيدُ ← أَبْغَى",
+    "uz": "istayman",
+    "form": "لَهْجَة"
+   },
+   {
+    "ar": "مَاذَا ← وَش / إِيش",
+    "uz": "nima",
+    "form": "سُؤَال"
+   },
+   {
+    "ar": "أَيْنَ ← وِين",
+    "uz": "qayerda",
+    "form": "سُؤَال"
+   },
+   {
+    "ar": "الآنَ ← دَحِين",
+    "uz": "hozir",
+    "form": "زَمَن"
+   },
+   {
+    "ar": "اِنْتَهَى ← خَلَاص",
+    "uz": "bo'ldi, tugadi",
+    "form": "تَعْبِير"
+   },
+   {
+    "ar": "لَا تُوجَدُ مُشْكِلَةٌ ← مَافِي مُشْكِلَة",
+    "uz": "muammo yo'q",
+    "form": "تَعْبِير"
+   }
+  ],
+  "common_mistakes_uz": [
+   "Hijoziyni rasmiy xatda ishlatish — hujjat tili fusha bo'lishi kerak.",
+   "«مَشْكُور» ni fusha deb o'ylash — rasmiy holatda «شُكْرًا» to'g'ri.",
+   "بِـ prefiksini fusha muzori'ga qo'shib yuborish: بَأَكْتُبُ ✗ (fushada yo'q)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ب غ ي",
+   "meaning_uz": "istash, xohlash — hijoziy أَبْغَى shundan",
+   "uz_cognates": [],
+   "derived": [
+    {
+     "ar": "أَبْغَى",
+     "uz": "istayman (hijoziy)",
+     "pattern": "أَفْعَل"
+    },
+    {
+     "ar": "بُغْيَة",
+     "uz": "maqsad, istak",
+     "pattern": "فُعْلَة"
+    }
+   ]
+  },
+  {
+   "root": "ش ك ر",
+   "meaning_uz": "minnatdorchilik",
+   "uz_cognates": [
+    "shukr",
+    "shukron"
+   ],
+   "derived": [
+    {
+     "ar": "شُكْرًا",
+     "uz": "rahmat (fusha)",
+     "pattern": "فُعْل"
+    },
+    {
+     "ar": "مَشْكُور",
+     "uz": "rahmat (hijoziy uslubda)",
+     "pattern": "مَفْعُول"
+    },
+    {
+     "ar": "شَاكِر",
+     "uz": "minnatdor",
+     "pattern": "فَاعِل"
+    }
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "خَلَاص",
+   "translit": "khalāṣ",
+   "uz": "bo'ldi, tugadi, kelishdik",
+   "root": "خ ل ص",
+   "pattern": "فَعَال",
+   "pos": "ibora",
+   "audio": "b2/khalas2.mp3",
+   "example_ar": "خَلَاص، بِنْشُوفَك بُكْرَة.",
+   "example_uz": "Bo'ldi, ertaga ko'rishamiz.",
+   "srs": true
+  },
+  {
+   "ar": "طَيِّب",
+   "translit": "ṭayyib",
+   "uz": "mayli, yaxshi",
+   "root": "ط ي ب",
+   "pattern": "فَعِّل",
+   "pos": "ibora",
+   "audio": "b2/tayyib2.mp3",
+   "example_ar": "طَيِّب، نِبْدَا مِن بُكْرَة.",
+   "example_uz": "Mayli, ertadan boshlaymiz.",
+   "srs": true
+  },
+  {
+   "ar": "دَحِين",
+   "translit": "daḥīn",
+   "uz": "hozir (hijoziy)",
+   "root": "",
+   "pattern": "",
+   "pos": "ravish",
+   "audio": "b2/dahin.mp3",
+   "example_ar": "مُمْكِن تِجِي دَحِين؟",
+   "example_uz": "Hozir kela olasizmi?",
+   "srs": true
+  },
+  {
+   "ar": "بَعْدَيْن",
+   "translit": "baʿdēn",
+   "uz": "keyinroq (hijoziy)",
+   "root": "ب ع د",
+   "pattern": "",
+   "pos": "ravish",
+   "audio": "b2/badayn.mp3",
+   "example_ar": "بَنْتَكَلَّم بَعْدَيْن.",
+   "example_uz": "Keyinroq gaplashamiz.",
+   "srs": true
+  },
+  {
+   "ar": "أَبْغَى",
+   "translit": "abghā",
+   "uz": "istayman (hijoziy)",
+   "root": "ب غ ي",
+   "pattern": "أَفْعَل",
+   "pos": "fe'l",
+   "audio": "b2/abgha2.mp3",
+   "example_ar": "أَبْغَى أَشُوف المُدِير.",
+   "example_uz": "Direktorni ko'rmoqchiman.",
+   "srs": true
+  },
+  {
+   "ar": "وِين",
+   "translit": "wēn",
+   "uz": "qayerda (hijoziy)",
+   "root": "",
+   "pattern": "",
+   "pos": "savol",
+   "audio": "b2/wen2.mp3",
+   "example_ar": "وِين المَوْقِع؟",
+   "example_uz": "Ob'ekt qayerda?",
+   "srs": true
+  },
+  {
+   "ar": "وَش",
+   "translit": "wesh",
+   "uz": "nima (hijoziy)",
+   "root": "",
+   "pattern": "",
+   "pos": "savol",
+   "audio": "b2/wesh.mp3",
+   "example_ar": "وَش المَطْلُوب مِنِّي؟",
+   "example_uz": "Mendan nima talab qilinadi?",
+   "srs": true
+  },
+  {
+   "ar": "مَافِي مُشْكِلَة",
+   "translit": "māfī mushkila",
+   "uz": "muammo yo'q",
+   "root": "",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/mafi_mushkila.mp3",
+   "example_ar": "مَافِي مُشْكِلَة، بَسَاعْدَك.",
+   "example_uz": "Muammo yo'q, yordam beraman.",
+   "srs": true
+  },
+  {
+   "ar": "مَشْكُور",
+   "translit": "mashkūr",
+   "uz": "rahmat (og'zaki, hijoziy)",
+   "root": "ش ك ر",
+   "pattern": "مَفْعُول",
+   "pos": "ibora",
+   "audio": "b2/mashkur.mp3",
+   "example_ar": "مَشْكُور عَلَى المُسَاعَدَة.",
+   "example_uz": "Yordam uchun rahmat.",
+   "srs": true
+  },
+  {
+   "ar": "عَادِي",
+   "translit": "ʿādī",
+   "uz": "odatiy, muammo emas",
+   "root": "ع و د",
+   "pattern": "فَاعِل",
+   "pos": "sifat",
+   "audio": "b2/adi2.mp3",
+   "example_ar": "عَادِي، نِقْدَر نُأَجِّلُه.",
+   "example_uz": "Muammo emas, keyinga qoldiramiz.",
+   "srs": true
+  },
+  {
+   "ar": "شْوَي",
+   "translit": "shwayy",
+   "uz": "ozgina, biroz",
+   "root": "ش و ي",
+   "pattern": "",
+   "pos": "ravish",
+   "audio": "b2/shwayy2.mp3",
+   "example_ar": "اِسْتَنَّى شْوَي.",
+   "example_uz": "Biroz kuting.",
+   "srs": true
+  },
+  {
+   "ar": "يَلَّا نِبْدَا",
+   "translit": "yalla nibda",
+   "uz": "qani boshladik",
+   "root": "ب د أ",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/yalla_nibda.mp3",
+   "example_ar": "يَلَّا نِبْدَا الشُّغْل.",
+   "example_uz": "Qani, ishni boshlaymiz.",
+   "srs": true
+  }
+ ],
+ "hejazi": [
+  {
+   "msa_ar": "مَاذَا تُرِيدُ؟",
+   "hejazi_ar": "وَش تَبْغَى؟",
+   "translit": "wesh tabghā",
+   "uz": "Nima xohlaysiz?",
+   "audio": "hj/wesh_tabgha.mp3"
+  },
+  {
+   "msa_ar": "اِنْتَظِرْ قَلِيلًا",
+   "hejazi_ar": "اِسْتَنَّى شْوَي",
+   "translit": "istannā shwayy",
+   "uz": "Biroz kuting",
+   "audio": "hj/istanna_shwayy.mp3"
+  },
+  {
+   "msa_ar": "سَأُسَاعِدُكَ",
+   "hejazi_ar": "بَسَاعْدَك",
+   "translit": "basāʿdak",
+   "uz": "Sizga yordam beraman",
+   "audio": "hj/basadak.mp3"
+  },
+  {
+   "msa_ar": "هَلْ فَهِمْتَ؟",
+   "hejazi_ar": "فِهِمْت وَلَّا؟",
+   "translit": "fihimt wallā",
+   "uz": "Tushundingizmi?",
+   "audio": "hj/fihimt_walla.mp3"
+  },
+  {
+   "msa_ar": "لَا يُوجَدُ وَقْتٌ",
+   "hejazi_ar": "مَافِي وَقْت",
+   "translit": "māfī waqt",
+   "uz": "Vaqt yo'q",
+   "audio": "hj/mafi_waqt.mp3"
+  }
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "في الورشة صباحًا يقول المشرف: يلّا نبدا الشغل، والموقع لازم يخلص اليوم. يسأل عامل: وين الأدوات؟ يردّ: عند الباب، وش تبغى بالضبط؟ يقول العامل: أبغى خوذة جديدة. يقول المشرف: مافي مشكلة، استنّى شوي وبجيب لك وحدة. بعد ساعتين: خلاص، خلّصنا. يقول العامل: مشكور، والمشرف يردّ: العفو، تسلم.",
+   "questions": [
+    {
+     "q_uz": "«يلّا نبدا الشغل» fusha bilan qanday?",
+     "a": "هَيَّا نَبْدَأُ العَمَلَ"
+    },
+    {
+     "q_uz": "Ishchi nima so'radi?",
+     "a": "Yangi kaska (أبغى خوذة جديدة)"
+    },
+    {
+     "q_uz": "«مشكور» ga qanday javob berildi?",
+     "a": "«العفو، تسلم» — arzimaydi"
+    }
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-36-listen.mp3",
+   "transcript_ar": "يَلَّا نِبْدَا الشُّغْل. وِين الأَدَوَات؟ مَافِي مُشْكِلَة، اِسْتَنَّى شْوَي.",
+   "questions": [
+    {
+     "q_uz": "Nima so'raldi?",
+     "a": "Asboblar qayerdaligi"
+    },
+    {
+     "q_uz": "Javob qanday bo'ldi?",
+     "a": "Muammo yo'q, biroz kuting"
+    }
+   ]
+  },
+  "speaking": {
+   "task_uz": "Beshta hijoziy iborani ayting: nima xohlaysiz? qayerda? hozir, keyinroq, muammo yo'q.",
+   "target_ar": [
+    "وَش تَبْغَى؟",
+    "وِين المَوْقِع؟",
+    "دَحِين",
+    "بَعْدَيْن",
+    "مَافِي مُشْكِلَة"
+   ],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Ish joyidagi qisqa dialog yozing (6 qator): hijoziyda gapiring, so'ng har qatorning fusha muqobilini qavsda bering.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«أَبْغَى» fushada qaysi?",
+   "q_ar": "أَبْغَى",
+   "options": [
+    "أُرِيدُ",
+    "أَعْرِفُ",
+    "أَذْهَبُ",
+    "أَقُولُ"
+   ],
+   "answer": "أُرِيدُ",
+   "explain_uz": "Hijoziyda «istayman».",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«وِين» nima degani?",
+   "q_ar": "وِين",
+   "options": [
+    "Qayerda",
+    "Nima",
+    "Nega",
+    "Qachon"
+   ],
+   "answer": "Qayerda",
+   "explain_uz": "Fushada أَيْنَ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Hijoziyda muzori' oldiga qaysi harf qo'shiladi?",
+   "q_ar": "",
+   "options": [
+    "بِـ",
+    "سَـ",
+    "لَـ",
+    "أَـ"
+   ],
+   "answer": "بِـ",
+   "explain_uz": "بَكْتُب, بِنْبِدَا — hozirgi/kelasi ma'no.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مَافِي مُشْكِلَة» ma'nosi?",
+   "q_ar": "مَافِي مُشْكِلَة",
+   "options": [
+    "Muammo yo'q",
+    "Katta muammo",
+    "Muammoni hal qilaman",
+    "Muammoni bilmayman"
+   ],
+   "answer": "Muammo yo'q",
+   "explain_uz": "Fushada: لَا تُوجَدُ مُشْكِلَةٌ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Rasmiy elektron xatda qaysi til ishlatiladi?",
+   "q_ar": "",
+   "options": [
+    "Fusha",
+    "Hijoziy",
+    "Aralash",
+    "Farqi yo'q"
+   ],
+   "answer": "Fusha",
+   "explain_uz": "Hijoziy — og'zaki muloqot tili.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "دَحِين",
+   "options": [],
+   "answer": "hozir",
+   "explain_uz": "Hijoziyda الآنَ o'rniga.",
+   "audio": "b2/dahin.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مَشْكُور» ga odatdagi javob?",
+   "q_ar": "مَشْكُور",
+   "options": [
+    "العَفْو",
+    "خَلَاص",
+    "يَلَّا",
+    "طَيِّب"
+   ],
+   "answer": "العَفْو",
+   "explain_uz": "«Arzimaydi» ma'nosida.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Hijoziy gapni tuzing: «Qani, ishni boshlaymiz»",
+   "q_ar": "",
+   "options": [],
+   "answer": "يَلَّا نِبْدَا الشُّغْل",
+   "explain_uz": "Hijoziyda الشُّغْل — ish.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": [
+    "يَلَّا",
+    "نِبْدَا",
+    "الشُّغْل"
+   ]
+  }
+ ],
+ "srs_cards": [
+  {
+   "type": "root",
+   "front": "ش ك ر",
+   "back": "minnatdorchilik — shukran/mashkur",
+   "deck": "msa"
+  },
+  {
+   "type": "phrase",
+   "front": "خَلَاص",
+   "back": "bo'ldi, tugadi (hijoziy)",
+   "deck": "hejazi"
+  },
+  {
+   "type": "phrase",
+   "front": "طَيِّب",
+   "back": "mayli (hijoziy)",
+   "deck": "hejazi"
+  },
+  {
+   "type": "phrase",
+   "front": "دَحِين",
+   "back": "hozir (hijoziy)",
+   "deck": "hejazi"
+  },
+  {
+   "type": "phrase",
+   "front": "بَعْدَيْن",
+   "back": "keyinroq (hijoziy)",
+   "deck": "hejazi"
+  },
+  {
+   "type": "phrase",
+   "front": "أَبْغَى",
+   "back": "istayman (hijoziy)",
+   "deck": "hejazi"
+  },
+  {
+   "type": "phrase",
+   "front": "وِين",
+   "back": "qayerda (hijoziy)",
+   "deck": "hejazi"
+  },
+  {
+   "type": "phrase",
+   "front": "وَش",
+   "back": "nima (hijoziy)",
+   "deck": "hejazi"
+  },
+  {
+   "type": "phrase",
+   "front": "مَافِي مُشْكِلَة",
+   "back": "muammo yo'q (hijoziy)",
+   "deck": "hejazi"
+  },
+  {
+   "type": "phrase",
+   "front": "مَشْكُور",
+   "back": "rahmat (hijoziy)",
+   "deck": "hejazi"
+  },
+  {
+   "type": "phrase",
+   "front": "اِسْتَنَّى شْوَي",
+   "back": "biroz kuting (hijoziy)",
+   "deck": "hejazi"
+  },
+  {
+   "type": "phrase",
+   "front": "يَلَّا نِبْدَا",
+   "back": "qani boshladik (hijoziy)",
+   "deck": "hejazi"
+  }
+ ]
+}

@@ -1,0 +1,373 @@
+{
+ "id": "b2-30",
+ "level": "B2",
+ "module": "vocab-adv",
+ "order": 30,
+ "title_uz": "Ta'lim va akademik til",
+ "title_ar": "التَّعْلِيمُ وَاللُّغَةُ الأَكَادِيمِيَّةُ",
+ "can_do_uz": "Universitet, tadqiqot va ilmiy matn bilan bog'liq atamalarni tushunaman va ishlata olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-29"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Ilmiy maqola boshlanadi: «تَهْدِفُ هَذِهِ الدِّرَاسَةُ إِلَى...» (bu tadqiqot …ni maqsad qiladi). Keyin: «تُشِيرُ النَّتَائِجُ إِلَى» (natijalar ko'rsatadi), «وَفْقًا لِلْمَصَادِرِ» (manbalarga ko'ra), «فِي الخِتَامِ» (xulosada). Bu qoliplar HAR ilmiy matnda takrorlanadi. Ularni bilsangiz, maqolaning skeletini darrov ko'rasiz va o'zingiz ham akademik uslubda yoza olasiz.",
+ "grammar": {
+  "point_ar": "قَوَالِبُ الكِتَابَةِ الأَكَادِيمِيَّةِ",
+  "explanation_uz": "Akademik matn qoliplari (يُسْتَخْدَم فِي كُلِّ بَحْثٍ): KIRISH — تَهْدِفُ هَذِهِ الدِّرَاسَةُ إِلَى (bu tadqiqot maqsadi), تَتَنَاوَلُ هَذِهِ الوَرَقَةُ (bu maqola …ni ko'rib chiqadi), تَكْمُنُ أَهَمِّيَّةُ البَحْثِ فِي (tadqiqot ahamiyati …da). USUL — اِعْتَمَدَ البَاحِثُ عَلَى (tadqiqotchi …ga tayandi), تَمَّ جَمْعُ البَيَانَاتِ (ma'lumotlar to'plandi), شَمِلَتِ العَيِّنَةُ (namuna …ni qamradi). NATIJA — تُشِيرُ النَّتَائِجُ إِلَى أَنَّ (natijalar …ligini ko'rsatadi), أَظْهَرَتِ الدِّرَاسَةُ (tadqiqot ko'rsatdi), يَتَّضِحُ مِمَّا سَبَقَ (yuqoridagidan ko'rinadiki). XULOSA — فِي الخِتَامِ (xulosada), نَسْتَنْتِجُ أَنَّ (xulosa qilamizki), يُوصِي البَاحِثُ بِـ (tadqiqotchi …ni tavsiya qiladi). USLUB QOIDASI: akademik matnda 1-shaxs kam ishlatiladi, majhul va «تَمَّ + masdar» ko'p: تَمَّ تَحْلِيلُ النَّتَائِجِ (natijalar tahlil qilindi).",
+  "table": [
+   {"ar": "تَهْدِفُ هَذِهِ الدِّرَاسَةُ إِلَى", "uz": "Bu tadqiqot …ni maqsad qiladi", "form": "مُقَدِّمَة"},
+   {"ar": "اِعْتَمَدَ البَاحِثُ عَلَى", "uz": "Tadqiqotchi …ga tayandi", "form": "مَنْهَج"},
+   {"ar": "تُشِيرُ النَّتَائِجُ إِلَى أَنَّ", "uz": "Natijalar …ligini ko'rsatadi", "form": "نَتَائِج"},
+   {"ar": "تَمَّ تَحْلِيلُ البَيَانَاتِ", "uz": "Ma'lumotlar tahlil qilindi", "form": "مَبْنِيّ لِلْمَجْهُول"},
+   {"ar": "يُوصِي البَاحِثُ بِـ", "uz": "Tadqiqotchi …ni tavsiya qiladi", "form": "تَوْصِيَة"},
+   {"ar": "فِي الخِتَامِ", "uz": "Xulosada", "form": "خَاتِمَة"}
+  ],
+  "common_mistakes_uz": [
+   "Akademik matnda so'zlashuv iboralarini ishlatish — uslub buziladi.",
+   "مَرْجِع (manba) va مَصْدَر (birlamchi manba) ni farqlamaslik.",
+   "«تَمَّ» ni har jumlada takrorlash — majhul shakl bilan almashtirib turing."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ب ح ث",
+   "meaning_uz": "izlash, tadqiq qilish",
+   "uz_cognates": ["bahs", "tadqiqot"],
+   "derived": [
+    {"ar": "بَحْث", "uz": "tadqiqot, izlanish", "pattern": "فَعْل"},
+    {"ar": "بَاحِث", "uz": "tadqiqotchi", "pattern": "فَاعِل"},
+    {"ar": "مَبْحَث", "uz": "bo'lim, mavzu", "pattern": "مَفْعَل"}
+   ]
+  },
+  {
+   "root": "د ر س",
+   "meaning_uz": "o'qish, o'rganish",
+   "uz_cognates": ["dars", "madrasa", "mudarris"],
+   "derived": [
+    {"ar": "دِرَاسَة", "uz": "tadqiqot; o'qish", "pattern": "فِعَالَة"},
+    {"ar": "دِرَاسِيّ", "uz": "o'quv (sifat)", "pattern": "فِعَالِيّ"},
+    {"ar": "تَدْرِيس", "uz": "o'qitish", "pattern": "تَفْعِيل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "دِرَاسَة",
+   "translit": "dirāsa",
+   "uz": "tadqiqot; o'qish",
+   "root": "د ر س",
+   "pattern": "فِعَالَة",
+   "pos": "ot",
+   "audio": "b2/dirasa2.mp3",
+   "example_ar": "نُشِرَتْ دِرَاسَةٌ جَدِيدَةٌ.",
+   "example_uz": "Yangi tadqiqot chop etildi.",
+   "srs": true
+  },
+  {
+   "ar": "بَاحِث",
+   "translit": "bāḥith",
+   "uz": "tadqiqotchi",
+   "root": "ب ح ث",
+   "pattern": "فَاعِل",
+   "pos": "ot",
+   "audio": "b2/bahith.mp3",
+   "example_ar": "يَعْمَلُ البَاحِثُ فِي الجَامِعَةِ.",
+   "example_uz": "Tadqiqotchi universitetda ishlaydi.",
+   "srs": true
+  },
+  {
+   "ar": "مَنْهَج",
+   "translit": "manhaj",
+   "uz": "metod; o'quv dasturi",
+   "root": "ن ه ج",
+   "pattern": "مَفْعَل",
+   "pos": "ot",
+   "audio": "b2/manhaj.mp3",
+   "example_ar": "المَنْهَجُ الوَصْفِيُّ مُنَاسِبٌ.",
+   "example_uz": "Tavsifiy metod mos keladi.",
+   "srs": true
+  },
+  {
+   "ar": "عَيِّنَة",
+   "translit": "ʿayyina",
+   "uz": "namuna (tadqiqotda: tanlanma)",
+   "root": "ع ي ن",
+   "pattern": "فَعِّلَة",
+   "pos": "ot",
+   "audio": "b2/ayyina.mp3",
+   "example_ar": "شَمِلَتِ العَيِّنَةُ مِئَةَ طَالِبٍ.",
+   "example_uz": "Tanlanma yuz talabani qamradi.",
+   "srs": true
+  },
+  {
+   "ar": "نَتَائِج",
+   "translit": "natāʾij",
+   "uz": "natijalar (birligi نَتِيجَة)",
+   "root": "ن ت ج",
+   "pattern": "فَعَائِل",
+   "pos": "ot",
+   "audio": "b2/nataij.mp3",
+   "example_ar": "النَّتَائِجُ وَاضِحَةٌ وَمُقْنِعَةٌ.",
+   "example_uz": "Natijalar aniq va ishonarli.",
+   "srs": true
+  },
+  {
+   "ar": "مَصَادِر",
+   "translit": "maṣādir",
+   "uz": "manbalar (birligi مَصْدَر)",
+   "root": "ص د ر",
+   "pattern": "مَفَاعِل",
+   "pos": "ot",
+   "audio": "b2/masadir.mp3",
+   "example_ar": "اِعْتَمَدَ عَلَى مَصَادِرَ مَوْثُوقَةٍ.",
+   "example_uz": "Ishonchli manbalarga tayandi.",
+   "srs": true
+  },
+  {
+   "ar": "أُطْرُوحَة",
+   "translit": "uṭrūḥa",
+   "uz": "dissertatsiya",
+   "root": "ط ر ح",
+   "pattern": "أُفْعُولَة",
+   "pos": "ot",
+   "audio": "b2/utruha.mp3",
+   "example_ar": "نَاقَشَ أُطْرُوحَتَهُ أَمْسِ.",
+   "example_uz": "Kecha dissertatsiyasini himoya qildi.",
+   "srs": true
+  },
+  {
+   "ar": "مُحَاضَرَة",
+   "translit": "muḥāḍara",
+   "uz": "ma'ruza",
+   "root": "ح ض ر",
+   "pattern": "مُفَاعَلَة",
+   "pos": "ot",
+   "audio": "b2/muhadara.mp3",
+   "example_ar": "المُحَاضَرَةُ تَبْدَأُ الثَّامِنَةَ.",
+   "example_uz": "Ma'ruza soat sakkizda boshlanadi.",
+   "srs": true
+  },
+  {
+   "ar": "مَرْجِع عِلْمِيّ",
+   "translit": "marjiʿ ʿilmī",
+   "uz": "ilmiy manba (adabiyot)",
+   "root": "ر ج ع",
+   "pattern": "مَفْعِل",
+   "pos": "ot",
+   "audio": "b2/marji_ilmi.mp3",
+   "example_ar": "هَذَا الكِتَابُ مَرْجِعٌ عِلْمِيٌّ مُهِمٌّ.",
+   "example_uz": "Bu kitob muhim ilmiy manba.",
+   "srs": true
+  },
+  {
+   "ar": "تَوْصِيَة",
+   "translit": "tawṣiya",
+   "uz": "tavsiya",
+   "root": "و ص ي",
+   "pattern": "تَفْعِلَة",
+   "pos": "ot",
+   "audio": "b2/tawsiya.mp3",
+   "example_ar": "تَضَمَّنَ البَحْثُ تَوْصِيَاتٍ عَمَلِيَّةً.",
+   "example_uz": "Tadqiqot amaliy tavsiyalarni o'z ichiga oldi.",
+   "srs": true
+  },
+  {
+   "ar": "اِسْتِنْتَاج",
+   "translit": "istintāj",
+   "uz": "xulosa chiqarish",
+   "root": "ن ت ج",
+   "pattern": "اِسْتِفْعَال",
+   "pos": "ot",
+   "audio": "b2/istintaj.mp3",
+   "example_ar": "الاِسْتِنْتَاجُ مَبْنِيٌّ عَلَى الأَرْقَامِ.",
+   "example_uz": "Xulosa raqamlarga asoslangan.",
+   "srs": true
+  },
+  {
+   "ar": "أَكَادِيمِيّ",
+   "translit": "akādīmī",
+   "uz": "akademik",
+   "root": "",
+   "pattern": "",
+   "pos": "sifat",
+   "audio": "b2/akadimi.mp3",
+   "example_ar": "أُسْلُوبٌ أَكَادِيمِيٌّ رَصِينٌ.",
+   "example_uz": "Vazmin akademik uslub.",
+   "srs": true
+  },
+  {
+   "ar": "مُقْنِع",
+   "translit": "muqniʿ",
+   "uz": "ishonarli",
+   "root": "ق ن ع",
+   "pattern": "مُفْعِل",
+   "pos": "sifat",
+   "audio": "b2/muqni.mp3",
+   "example_ar": "دَلِيلٌ مُقْنِعٌ وَوَاضِحٌ.",
+   "example_uz": "Ishonarli va aniq dalil.",
+   "srs": true
+  },
+  {
+   "ar": "فَرْضِيَّة",
+   "translit": "farḍiyya",
+   "uz": "gipoteza, faraz",
+   "root": "ف ر ض",
+   "pattern": "فَعْلِيَّة",
+   "pos": "ot",
+   "audio": "b2/fardiyya.mp3",
+   "example_ar": "أَثْبَتَتِ الدِّرَاسَةُ الفَرْضِيَّةَ.",
+   "example_uz": "Tadqiqot gipotezani tasdiqladi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "تهدف هذه الدراسة إلى قياس أثر القراءة اليومية في تحصيل الطلاب. اعتمد الباحث على منهج وصفي، وشملت العيّنة مئتي طالب من ثلاث جامعات. تمّ جمع البيانات عبر استبانة ومقابلات قصيرة. تشير النتائج إلى أنّ الطلاب الذين يقرؤون نصف ساعة يوميًّا حقّقوا درجات أعلى. وفي الختام يوصي الباحث بإضافة حصة قراءة أسبوعية، ويقترح دراسة أخرى بعيّنة أكبر.",
+   "questions": [
+    {"q_uz": "Tadqiqot maqsadi nima?", "a": "Kunlik o'qishning talabalar o'zlashtirishiga ta'sirini o'lchash"},
+    {"q_uz": "Tanlanma qanday edi?", "a": "Uch universitetdan 200 talaba"},
+    {"q_uz": "Tavsiya nima?", "a": "Haftalik o'qish soatini qo'shish"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-30-listen.mp3",
+   "transcript_ar": "تَهْدِفُ هَذِهِ الدِّرَاسَةُ إِلَى قِيَاسِ أَثَرِ القِرَاءَةِ. تُشِيرُ النَّتَائِجُ إِلَى تَحَسُّنٍ وَاضِحٍ.",
+   "questions": [
+    {"q_uz": "Tadqiqot nimani o'lchaydi?", "a": "O'qishning ta'sirini"},
+    {"q_uz": "Natija qanday?", "a": "Aniq yaxshilanish ko'rsatadi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch akademik qolipni ayting: tadqiqot maqsadi, natijalar ko'rsatadi, xulosada tavsiya.",
+   "target_ar": ["تَهْدِفُ هَذِهِ الدِّرَاسَةُ إِلَى", "تُشِيرُ النَّتَائِجُ إِلَى أَنَّ", "فِي الخِتَامِ يُوصِي البَاحِثُ بِـ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Kichik tadqiqot xulosasi yozing (5 gap): maqsad, metod, tanlanma, natija, tavsiya.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«تَهْدِفُ هَذِهِ الدِّرَاسَةُ إِلَى» qayerda ishlatiladi?",
+   "q_ar": "تَهْدِفُ هَذِهِ الدِّرَاسَةُ إِلَى",
+   "options": ["Kirish qismida", "Xulosada", "Manbalarda", "Ilovada"],
+   "answer": "Kirish qismida",
+   "explain_uz": "Tadqiqot maqsadini bayon qiladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«عَيِّنَة» tadqiqotda nimani bildiradi?",
+   "q_ar": "عَيِّنَة",
+   "options": ["Tanlanma (ishtirokchilar)", "Natija", "Manba", "Metod"],
+   "answer": "Tanlanma (ishtirokchilar)",
+   "explain_uz": "شَمِلَتِ العَيِّنَةُ مِئَةَ طَالِبٍ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«تَمَّ جَمْعُ البَيَانَاتِ» qanday shakl?",
+   "q_ar": "تَمَّ جَمْعُ البَيَانَاتِ",
+   "options": [
+    "Majhul ma'noli akademik qolip",
+    "Buyruq",
+    "Savol",
+    "Inkor"
+   ],
+   "answer": "Majhul ma'noli akademik qolip",
+   "explain_uz": "تَمَّ + masdar = «…qilindi».",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«أُطْرُوحَة» nima?",
+   "q_ar": "أُطْرُوحَة",
+   "options": ["Dissertatsiya", "Ma'ruza", "Maqola", "Kitob"],
+   "answer": "Dissertatsiya",
+   "explain_uz": "Ilmiy daraja uchun yozilgan ish.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "فَرْضِيَّة",
+   "options": [],
+   "answer": "gipoteza",
+   "explain_uz": "فَرْضِيَّة — tekshiriladigan faraz.",
+   "audio": "b2/fardiyya.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«بَحْث، بَاحِث، مَبْحَث» qaysi o'zakdan?",
+   "q_ar": "بَاحِث",
+   "options": ["ب ح ث", "ب ث ح", "ح ب ث", "ب ح ر"],
+   "answer": "ب ح ث",
+   "explain_uz": "ب ح ث — izlash, tadqiq qilish.",
+   "audio": "",
+   "root": "ب ح ث",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Akademik uslubda nima kam ishlatiladi?",
+   "q_ar": "",
+   "options": [
+    "So'zlashuv iboralari va 1-shaxs",
+    "Majhul shakl",
+    "Atamalar",
+    "Raqamlar"
+   ],
+   "answer": "So'zlashuv iboralari va 1-shaxs",
+   "explain_uz": "Akademik matn xolis va rasmiy bo'ladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Natijalar aniq va ishonarli»",
+   "q_ar": "",
+   "options": [],
+   "answer": "النَّتَائِجُ وَاضِحَةٌ وَمُقْنِعَةٌ",
+   "explain_uz": "Mubtado + ikki xabar (atf bilan).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["النَّتَائِجُ", "وَاضِحَةٌ", "وَمُقْنِعَةٌ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ب ح ث", "back": "tadqiqot — bahs/bohis", "deck": "msa"},
+  {"type": "root", "front": "د ر س", "back": "o'rganish — dirosa/tadris", "deck": "msa"},
+  {"type": "word", "front": "دِرَاسَة", "back": "tadqiqot", "deck": "msa"},
+  {"type": "word", "front": "بَاحِث", "back": "tadqiqotchi", "deck": "msa"},
+  {"type": "word", "front": "مَنْهَج", "back": "metod; dastur", "deck": "msa"},
+  {"type": "word", "front": "عَيِّنَة", "back": "tanlanma, namuna", "deck": "msa"},
+  {"type": "word", "front": "نَتَائِج", "back": "natijalar", "deck": "msa"},
+  {"type": "word", "front": "مَصَادِر", "back": "manbalar", "deck": "msa"},
+  {"type": "word", "front": "أُطْرُوحَة", "back": "dissertatsiya", "deck": "msa"},
+  {"type": "word", "front": "مُحَاضَرَة", "back": "ma'ruza", "deck": "msa"},
+  {"type": "word", "front": "تَوْصِيَة", "back": "tavsiya", "deck": "msa"},
+  {"type": "word", "front": "اِسْتِنْتَاج", "back": "xulosa chiqarish", "deck": "msa"},
+  {"type": "word", "front": "فَرْضِيَّة", "back": "gipoteza", "deck": "msa"}
+ ]
+}

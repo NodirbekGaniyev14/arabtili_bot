@@ -1,0 +1,363 @@
+{
+ "id": "b2-25",
+ "level": "B2",
+ "module": "vocab-adv",
+ "order": 25,
+ "title_uz": "Bank va moliya",
+ "title_ar": "المُصْطَلَحَاتُ المَصْرِفِيَّةُ وَالمَالِيَّةُ",
+ "can_do_uz": "Bankda hisob ochish, o'tkazma qilish va kredit shartlarini tushunish uchun kerakli so'zlarni bilaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-24"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Saudiyada ish boshlaganda birinchi ish — bank hisobi. «حِسَاب جَارٍ» (joriy hisob), «تَحْوِيل» (o'tkazma), «رَصِيد» (qoldiq), «فَائِدَة» (foiz). Bu so'zlar bankomat ekranida ham, shartnomada ham chiqadi. A2 da «pul» va «narx» ni o'rgangansiz — endi rasmiy moliya tili.",
+ "grammar": {
+  "point_ar": "لُغَةُ المَصْرِفِ: الأَفْعَالُ وَالمُصْطَلَحَاتُ",
+  "explanation_uz": "Bank tilida barqaror birikmalar ko'p: فَتَحَ حِسَابًا (hisob ochdi), حَوَّلَ مَبْلَغًا (summa o'tkazdi), سَحَبَ نَقْدًا (naqd yechdi), أَوْدَعَ مَبْلَغًا (pul qo'ydi), سَدَّدَ القَرْضَ (kreditni to'ladi), حَصَلَ عَلَى قَرْضٍ (kredit oldi). MUHIM ATAMALAR: حِسَاب جَارٍ (joriy hisob), حِسَاب تَوْفِير (jamg'arma hisobi), رَصِيد (qoldiq), فَائِدَة (foiz), قَرْض (kredit), قِسْط (bo'lib to'lash qismi), رَسْم (yig'im, komissiya), صَرَّاف آلِيّ (bankomat), تَحْوِيل بَنْكِيّ (bank o'tkazmasi), عُمْلَة (valyuta), سِعْر الصَّرْفِ (kurs). RASMIY IBORALAR: «يُرْجَى تَعْبِئَةُ النَّمُوذَجِ» (shaklni to'ldiring), «الحَدُّ الأَدْنَى لِلرَّصِيدِ» (minimal qoldiq), «رُسُومٌ شَهْرِيَّةٌ» (oylik yig'im). DIQQAT: فَائِدَة so'zi ikki ma'noli — «foyda» va «bank foizi»; kontekst ajratadi.",
+  "table": [
+   {"ar": "فَتَحَ حِسَابًا جَارِيًا", "uz": "joriy hisob ochdi", "form": "مُتَلَازِم"},
+   {"ar": "حَوَّلَ مَبْلَغًا", "uz": "summani o'tkazdi", "form": "مُتَلَازِم"},
+   {"ar": "سَحَبَ مِنَ الصَّرَّافِ الآلِيِّ", "uz": "bankomatdan yechdi", "form": "مُتَلَازِم"},
+   {"ar": "سَدَّدَ القِسْطَ", "uz": "bo'lib to'lash qismini to'ladi", "form": "مُتَلَازِم"},
+   {"ar": "سِعْرُ الصَّرْفِ", "uz": "valyuta kursi", "form": "إِضَافَة"},
+   {"ar": "الحَدُّ الأَدْنَى لِلرَّصِيدِ", "uz": "minimal qoldiq", "form": "إِضَافَة"}
+  ],
+  "common_mistakes_uz": [
+   "«Pul o'tkazdim» ni أَرْسَلْتُ فُلُوسًا deb aytish — rasmiy tilda حَوَّلْتُ مَبْلَغًا.",
+   "قَرْض (kredit) va قِسْط (bo'lak to'lov) ni chalkashtirish.",
+   "فَائِدَة ni doim «foyda» deb tarjima qilish — bankda «foiz» degani."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ص ر ف",
+   "meaning_uz": "almashtirish, sarflash",
+   "uz_cognates": ["sarf", "masraf", "sarrof"],
+   "derived": [
+    {"ar": "مَصْرِف", "uz": "bank", "pattern": "مَفْعِل"},
+    {"ar": "صَرَّاف", "uz": "kassir; صَرَّاف آلِيّ — bankomat", "pattern": "فَعَّال"},
+    {"ar": "سِعْرُ الصَّرْفِ", "uz": "valyuta kursi", "pattern": "إِضَافَة"}
+   ]
+  },
+  {
+   "root": "ح س ب",
+   "meaning_uz": "hisoblash",
+   "uz_cognates": ["hisob", "hisobot", "muhosib"],
+   "derived": [
+    {"ar": "حِسَاب", "uz": "hisob (bank hisobi ham)", "pattern": "فِعَال"},
+    {"ar": "مُحَاسِب", "uz": "buxgalter", "pattern": "مُفَاعِل"},
+    {"ar": "حَاسُوب", "uz": "kompyuter", "pattern": "فَاعُول"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "مَصْرِف",
+   "translit": "maṣrif",
+   "uz": "bank (rasmiy so'z; بَنْك ham ishlatiladi)",
+   "root": "ص ر ف",
+   "pattern": "مَفْعِل",
+   "pos": "ot",
+   "audio": "b2/masrif.mp3",
+   "example_ar": "المَصْرِفُ مَفْتُوحٌ حَتَّى الرَّابِعَةِ.",
+   "example_uz": "Bank soat to'rtgacha ochiq.",
+   "srs": true
+  },
+  {
+   "ar": "حِسَاب جَارٍ",
+   "translit": "ḥisāb jārin",
+   "uz": "joriy hisob",
+   "root": "ح س ب",
+   "pattern": "فِعَال",
+   "pos": "ot",
+   "audio": "b2/hisab_jari.mp3",
+   "example_ar": "فَتَحْتُ حِسَابًا جَارِيًا.",
+   "example_uz": "Joriy hisob ochdim.",
+   "srs": true
+  },
+  {
+   "ar": "رَصِيد",
+   "translit": "raṣīd",
+   "uz": "hisobdagi qoldiq, balans",
+   "root": "ر ص د",
+   "pattern": "فَعِيل",
+   "pos": "ot",
+   "audio": "b2/rasid.mp3",
+   "example_ar": "الرَّصِيدُ غَيْرُ كَافٍ.",
+   "example_uz": "Qoldiq yetarli emas.",
+   "srs": true
+  },
+  {
+   "ar": "تَحْوِيل",
+   "translit": "taḥwīl",
+   "uz": "o'tkazma (pul o'tkazish)",
+   "root": "ح و ل",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tahwil.mp3",
+   "example_ar": "تَحْوِيلٌ بَنْكِيٌّ دَاخِلِيٌّ.",
+   "example_uz": "Ichki bank o'tkazmasi.",
+   "srs": true
+  },
+  {
+   "ar": "قَرْض",
+   "translit": "qarḍ",
+   "uz": "kredit, qarz (o'zbekcha 'qarz')",
+   "root": "ق ر ض",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/qard.mp3",
+   "example_ar": "حَصَلَ عَلَى قَرْضٍ صَغِيرٍ.",
+   "example_uz": "Kichik kredit oldi.",
+   "srs": true
+  },
+  {
+   "ar": "قِسْط",
+   "translit": "qisṭ",
+   "uz": "bo'lib to'lash qismi (o'zbekcha 'qism')",
+   "root": "ق س ط",
+   "pattern": "فِعْل",
+   "pos": "ot",
+   "audio": "b2/qist.mp3",
+   "example_ar": "أَدْفَعُ القِسْطَ كُلَّ شَهْرٍ.",
+   "example_uz": "Har oy bo'lib to'lovni to'layman.",
+   "srs": true
+  },
+  {
+   "ar": "فَائِدَة",
+   "translit": "fāʾida",
+   "uz": "foiz (bankda); foyda (o'zbekcha 'foyda')",
+   "root": "ف ي د",
+   "pattern": "فَاعِلَة",
+   "pos": "ot",
+   "audio": "b2/faida.mp3",
+   "example_ar": "نِسْبَةُ الفَائِدَةِ مُنْخَفِضَةٌ.",
+   "example_uz": "Foiz stavkasi past.",
+   "srs": true
+  },
+  {
+   "ar": "صَرَّاف آلِيّ",
+   "translit": "ṣarrāf ālī",
+   "uz": "bankomat",
+   "root": "ص ر ف",
+   "pattern": "فَعَّال",
+   "pos": "ot",
+   "audio": "b2/sarraf_ali.mp3",
+   "example_ar": "الصَّرَّافُ الآلِيُّ قَرِيبٌ مِنَ البَابِ.",
+   "example_uz": "Bankomat eshik yonida.",
+   "srs": true
+  },
+  {
+   "ar": "عُمْلَة",
+   "translit": "ʿumla",
+   "uz": "valyuta, pul birligi",
+   "root": "ع م ل",
+   "pattern": "فُعْلَة",
+   "pos": "ot",
+   "audio": "b2/umla.mp3",
+   "example_ar": "العُمْلَةُ المَحَلِّيَّةُ هِيَ الرِّيَال.",
+   "example_uz": "Mahalliy valyuta — riyol.",
+   "srs": true
+  },
+  {
+   "ar": "سِعْر الصَّرْف",
+   "translit": "siʿr aṣ-ṣarf",
+   "uz": "valyuta kursi",
+   "root": "ص ر ف",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/sir_sarf.mp3",
+   "example_ar": "تَغَيَّرَ سِعْرُ الصَّرْفِ اليَوْمَ.",
+   "example_uz": "Bugun valyuta kursi o'zgardi.",
+   "srs": true
+  },
+  {
+   "ar": "رَسْم",
+   "translit": "rasm",
+   "uz": "yig'im, komissiya (bankda)",
+   "root": "ر س م",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/rasm_fee.mp3",
+   "example_ar": "هُنَاكَ رَسْمٌ شَهْرِيٌّ بَسِيطٌ.",
+   "example_uz": "Kichik oylik yig'im bor.",
+   "srs": true
+  },
+  {
+   "ar": "أَوْدَعَ",
+   "translit": "awdaʿa",
+   "uz": "pul qo'ydi, omonatga topshirdi",
+   "root": "و د ع",
+   "pattern": "أَفْعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/awdaa.mp3",
+   "example_ar": "أَوْدَعْتُ مَبْلَغًا فِي الحِسَابِ.",
+   "example_uz": "Hisobga summa qo'ydim.",
+   "srs": true
+  },
+  {
+   "ar": "سَدَّدَ",
+   "translit": "saddada",
+   "uz": "to'ladi, qarzni yopdi",
+   "root": "س د د",
+   "pattern": "فَعَّلَ",
+   "pos": "fe'l",
+   "audio": "b2/saddada.mp3",
+   "example_ar": "سَدَّدَ القَرْضَ قَبْلَ المَوْعِدِ.",
+   "example_uz": "Kreditni muddatidan oldin to'ladi.",
+   "srs": true
+  },
+  {
+   "ar": "نَمُوذَج",
+   "translit": "namūdhaj",
+   "uz": "shakl, blank (o'zbekcha 'namuna')",
+   "root": "ن م ذ ج",
+   "pattern": "فَعُولَل",
+   "pos": "ot",
+   "audio": "b2/namudhaj.mp3",
+   "example_ar": "يُرْجَى تَعْبِئَةُ النَّمُوذَجِ.",
+   "example_uz": "Iltimos, shaklni to'ldiring.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "دخل سعيد المصرف وطلب فتح حساب جارٍ. قال الموظف: يُرجى تعبئة النموذج وإحضار الهوية. سأل سعيد عن الرسوم، فأجاب: هناك رسم شهري بسيط، والحدّ الأدنى للرصيد مئة ريال. ثم أودع مبلغًا صغيرًا وطلب بطاقة للصرّاف الآلي. وقبل الخروج سأل عن نسبة الفائدة على القرض، لأنه ينوي شراء سيارة ويدفع الأقساط شهريًّا.",
+   "questions": [
+    {"q_uz": "Said bankda nima qildi?", "a": "Joriy hisob ochdi va pul qo'ydi"},
+    {"q_uz": "Minimal qoldiq qancha?", "a": "100 riyol"},
+    {"q_uz": "Nega foiz stavkasini so'radi?", "a": "Mashina olib, bo'lib to'lamoqchi"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-25-listen.mp3",
+   "transcript_ar": "يُرْجَى تَعْبِئَةُ النَّمُوذَجِ. الحَدُّ الأَدْنَى لِلرَّصِيدِ مِئَةُ رِيَالٍ، وَالرُّسُومُ شَهْرِيَّةٌ.",
+   "questions": [
+    {"q_uz": "Nima qilish so'raldi?", "a": "Shaklni to'ldirish"},
+    {"q_uz": "Yig'im qanchalik tez-tez?", "a": "Oylik"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Bankdagi uch jumlani ayting: hisob ochmoqchiman, pul o'tkazmoqchiman, qoldig'im qancha?",
+   "target_ar": ["أُرِيدُ فَتْحَ حِسَابٍ جَارٍ", "أُرِيدُ تَحْوِيلَ مَبْلَغٍ", "كَمْ رَصِيدِي؟"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Bankka rasmiy so'rov yozing (4 gap): hisob turi, o'tkazma, komissiya haqida savol.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«رَصِيد» nima degani?",
+   "q_ar": "رَصِيد",
+   "options": ["Hisobdagi qoldiq", "Kredit", "Komissiya", "Valyuta"],
+   "answer": "Hisobdagi qoldiq",
+   "explain_uz": "رَصِيد — balans.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«Pul o'tkazdim» rasmiy tilda qaysi?",
+   "q_ar": "",
+   "options": ["حَوَّلْتُ مَبْلَغًا", "أَرْسَلْتُ فُلُوسًا", "أَعْطَيْتُ نُقُودًا", "دَفَعْتُ حِسَابًا"],
+   "answer": "حَوَّلْتُ مَبْلَغًا",
+   "explain_uz": "تَحْوِيل — bank o'tkazmasi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Bankda «فَائِدَة» nimani bildiradi?",
+   "q_ar": "فَائِدَة",
+   "options": ["Foiz stavkasi", "Foydali kitob", "Yig'im", "Qoldiq"],
+   "answer": "Foiz stavkasi",
+   "explain_uz": "Kontekst: نِسْبَةُ الفَائِدَةِ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«صَرَّاف آلِيّ» nima?",
+   "q_ar": "صَرَّاف آلِيّ",
+   "options": ["Bankomat", "Kassir", "Valyuta kursi", "Bank filiali"],
+   "answer": "Bankomat",
+   "explain_uz": "So'zma-so'z: «avtomatik kassir».",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "قِسْط",
+   "options": [],
+   "answer": "bo'lib to'lash",
+   "explain_uz": "قِسْط — muddatli to'lovning bir qismi.",
+   "audio": "b2/qist.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«مَصْرِف، صَرَّاف، سِعْرُ الصَّرْفِ» qaysi o'zakdan?",
+   "q_ar": "مَصْرِف",
+   "options": ["ص ر ف", "ص ف ر", "س ر ف", "ض ر ف"],
+   "answer": "ص ر ف",
+   "explain_uz": "ص ر ف — almashtirish, sarflash.",
+   "audio": "",
+   "root": "ص ر ف",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«يُرْجَى تَعْبِئَةُ النَّمُوذَجِ» nima degani?",
+   "q_ar": "يُرْجَى تَعْبِئَةُ النَّمُوذَجِ",
+   "options": ["Iltimos, shaklni to'ldiring", "Shakl tugadi", "Namuna ko'rsating", "Hisobni yoping"],
+   "answer": "Iltimos, shaklni to'ldiring",
+   "explain_uz": "Rasmiy iltimos shakli.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Joriy hisob ochdim»",
+   "q_ar": "",
+   "options": [],
+   "answer": "فَتَحْتُ حِسَابًا جَارِيًا",
+   "explain_uz": "Fe'l + maf'ul (mansub) + sifat.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["فَتَحْتُ", "حِسَابًا", "جَارِيًا"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ص ر ف", "back": "almashtirish — masrif/sarrof", "deck": "msa"},
+  {"type": "root", "front": "ح س ب", "back": "hisoblash — hisob/muhosib", "deck": "msa"},
+  {"type": "word", "front": "مَصْرِف", "back": "bank", "deck": "msa"},
+  {"type": "word", "front": "رَصِيد", "back": "qoldiq, balans", "deck": "msa"},
+  {"type": "word", "front": "تَحْوِيل", "back": "o'tkazma", "deck": "msa"},
+  {"type": "word", "front": "قَرْض", "back": "kredit", "deck": "msa"},
+  {"type": "word", "front": "قِسْط", "back": "bo'lib to'lash", "deck": "msa"},
+  {"type": "word", "front": "فَائِدَة", "back": "foiz; foyda", "deck": "msa"},
+  {"type": "word", "front": "عُمْلَة", "back": "valyuta", "deck": "msa"},
+  {"type": "word", "front": "رَسْم", "back": "yig'im, komissiya", "deck": "msa"},
+  {"type": "word", "front": "أَوْدَعَ", "back": "pul qo'ydi", "deck": "msa"},
+  {"type": "word", "front": "سَدَّدَ", "back": "to'ladi", "deck": "msa"},
+  {"type": "word", "front": "نَمُوذَج", "back": "shakl, blank", "deck": "msa"}
+ ]
+}

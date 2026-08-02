@@ -1,0 +1,365 @@
+{
+ "id": "b2-33",
+ "level": "B2",
+ "module": "saudi-work",
+ "order": 33,
+ "title_uz": "Shartnoma va hujjatlar",
+ "title_ar": "عَقْدُ العَمَلِ وَالوَثَائِقُ",
+ "can_do_uz": "Mehnat shartnomasi bandlarini va iqoma/ruxsatnoma hujjatlarini tushunaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-32"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Chet elda ishlaganda eng muhim qog'oz — «عَقْد العَمَل» (mehnat shartnomasi) va «إِقَامَة» (yashash guvohnomasi). Ularda «مُدَّة العَقْد» (muddat), «فَتْرَة التَّجْرِبَة» (sinov muddati), «إِجَازَة سَنَوِيَّة» (yillik ta'til), «تَذْكِرَة عَوْدَة» (qaytish chiptasi) yozilgan. Bu bandlarni tushunmasdan imzo qo'yish — xato. Bugun shu so'zlar.",
+ "grammar": {
+  "point_ar": "بُنُودُ العَقْدِ وَلُغَةُ الوَثَائِقِ",
+  "explanation_uz": "Shartnoma tilida (لُغَة العُقُود) uch xususiyat bor. 1) BAND (بَنْد) tuzilishi: «يَلْتَزِمُ الطَّرَفُ الأَوَّلُ بِـ…» (birinchi tomon …ni zimmasiga oladi), «يَحِقُّ لِلطَّرَفِ الثَّانِي…» (ikkinchi tomon huquqli), «فِي حَالَةِ الإِخْلَالِ بِالعَقْدِ» (shartnoma buzilgan holatda). 2) MUDDAT VA HUQUQ: مُدَّة العَقْد (muddat), فَتْرَة التَّجْرِبَة (sinov muddati), قَابِل لِلتَّجْدِيدِ (uzaytiriladi), إِنْهَاء العَقْد (bekor qilish), إِشْعَار مُسْبَق (oldindan ogohlantirish), مُكَافَأَة نِهَايَة الخِدْمَةِ (ish yakuni to'lovi). 3) HUJJATLAR: إِقَامَة (yashash guvohnomasi), تَأْشِيرَة (viza), جَوَاز سَفَر (pasport), رُخْصَة عَمَل (ish ruxsatnomasi), تَأْمِين طِبِّيّ (tibbiy sug'urta). GRAMMATIK BELGI: shartnomada majhul va «يَجِبُ / يُمْنَعُ / يُسْمَحُ» shakllari ko'p: «يُمْنَعُ العَمَلُ لَدَى جِهَةٍ أُخْرَى» (boshqa joyda ishlash taqiqlanadi).",
+  "table": [
+   {"ar": "مُدَّةُ العَقْدِ سَنَتَانِ", "uz": "Shartnoma muddati — 2 yil", "form": "بَنْد"},
+   {"ar": "فَتْرَةُ التَّجْرِبَةِ ثَلَاثَةُ أَشْهُرٍ", "uz": "Sinov muddati — 3 oy", "form": "بَنْد"},
+   {"ar": "قَابِلٌ لِلتَّجْدِيدِ", "uz": "Uzaytirilishi mumkin", "form": "صِفَة"},
+   {"ar": "إِشْعَارٌ مُسْبَقٌ شَهْرٌ", "uz": "Bir oy oldin ogohlantirish", "form": "شَرْط"},
+   {"ar": "يَشْمَلُ العَقْدُ السَّكَنَ", "uz": "Shartnomaga turar joy kiradi", "form": "بَنْد"},
+   {"ar": "مُكَافَأَةُ نِهَايَةِ الخِدْمَةِ", "uz": "Ish yakuni bo'yicha to'lov", "form": "حَقّ"}
+  ],
+  "common_mistakes_uz": [
+   "إِقَامَة (yashash guvohnomasi) va تَأْشِيرَة (viza) ni bir xil deb o'ylash.",
+   "«Shartnomani bekor qildim» ni أَلْغَيْتُ العَقْدَ deyish — rasmiy so'z أَنْهَيْتُ العَقْدَ.",
+   "فَتْرَة التَّجْرِبَة davomida huquqlar yo'q deb o'ylash — huquqlar shartnomada yozilgan."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع ق د",
+   "meaning_uz": "bog'lash, tugun",
+   "uz_cognates": ["aqd", "aqida", "uqda"],
+   "derived": [
+    {"ar": "عَقْد", "uz": "shartnoma", "pattern": "فَعْل"},
+    {"ar": "تَعَاقُد", "uz": "shartnoma tuzish", "pattern": "تَفَاعُل"},
+    {"ar": "مُتَعَاقِد", "uz": "shartnoma tomoni, pudratchi", "pattern": "مُتَفَاعِل"}
+   ]
+  },
+  {
+   "root": "و ث ق",
+   "meaning_uz": "ishonch, hujjatlash",
+   "uz_cognates": ["vasiqa", "ishonch"],
+   "derived": [
+    {"ar": "وَثِيقَة", "uz": "hujjat", "pattern": "فَعِيلَة"},
+    {"ar": "تَوْثِيق", "uz": "hujjatlashtirish", "pattern": "تَفْعِيل"},
+    {"ar": "مَوْثُوق", "uz": "ishonchli", "pattern": "مَفْعُول"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "بَنْد",
+   "translit": "band",
+   "uz": "shartnoma bandi",
+   "root": "ب ن د",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/band.mp3",
+   "example_ar": "اِقْرَأِ البَنْدَ الخَامِسَ بِعِنَايَةٍ.",
+   "example_uz": "Beshinchi bandni diqqat bilan o'qing.",
+   "srs": true
+  },
+  {
+   "ar": "مُدَّة العَقْد",
+   "translit": "muddat al-ʿaqd",
+   "uz": "shartnoma muddati",
+   "root": "م د د",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/muddat_aqd.mp3",
+   "example_ar": "مُدَّةُ العَقْدِ سَنَتَانِ.",
+   "example_uz": "Shartnoma muddati ikki yil.",
+   "srs": true
+  },
+  {
+   "ar": "فَتْرَة التَّجْرِبَة",
+   "translit": "fatrat at-tajriba",
+   "uz": "sinov muddati",
+   "root": "ج ر ب",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/fatrat_tajriba.mp3",
+   "example_ar": "فَتْرَةُ التَّجْرِبَةِ ثَلَاثَةُ أَشْهُرٍ.",
+   "example_uz": "Sinov muddati uch oy.",
+   "srs": true
+  },
+  {
+   "ar": "إِقَامَة",
+   "translit": "iqāma",
+   "uz": "yashash guvohnomasi (iqoma)",
+   "root": "ق و م",
+   "pattern": "إِفْعَالَة",
+   "pos": "ot",
+   "audio": "b2/iqama_res.mp3",
+   "example_ar": "جَدَّدْتُ الإِقَامَةَ هَذَا الشَّهْرَ.",
+   "example_uz": "Bu oy iqomani yangiladim.",
+   "srs": true
+  },
+  {
+   "ar": "تَأْشِيرَة",
+   "translit": "taʾshīra",
+   "uz": "viza",
+   "root": "أ ش ر",
+   "pattern": "تَفْعِيلَة",
+   "pos": "ot",
+   "audio": "b2/tashira.mp3",
+   "example_ar": "التَّأْشِيرَةُ صَالِحَةٌ سِتَّةَ أَشْهُرٍ.",
+   "example_uz": "Viza olti oy amal qiladi.",
+   "srs": true
+  },
+  {
+   "ar": "رُخْصَة عَمَل",
+   "translit": "rukhṣat ʿamal",
+   "uz": "ish ruxsatnomasi",
+   "root": "ر خ ص",
+   "pattern": "فُعْلَة",
+   "pos": "ot",
+   "audio": "b2/rukhsat_amal.mp3",
+   "example_ar": "رُخْصَةُ العَمَلِ إِلْزَامِيَّةٌ.",
+   "example_uz": "Ish ruxsatnomasi majburiy.",
+   "srs": true
+  },
+  {
+   "ar": "تَأْمِين طِبِّيّ",
+   "translit": "taʾmīn ṭibbī",
+   "uz": "tibbiy sug'urta",
+   "root": "أ م ن",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tamin_tibbi.mp3",
+   "example_ar": "التَّأْمِينُ الطِّبِّيُّ يَشْمَلُ الأُسْرَةَ.",
+   "example_uz": "Tibbiy sug'urta oilani qamrab oladi.",
+   "srs": true
+  },
+  {
+   "ar": "إِجَازَة سَنَوِيَّة",
+   "translit": "ijāza sanawiyya",
+   "uz": "yillik ta'til",
+   "root": "ج و ز",
+   "pattern": "إِفْعَالَة",
+   "pos": "ot",
+   "audio": "b2/ijaza_sanawiyya.mp3",
+   "example_ar": "الإِجَازَةُ السَّنَوِيَّةُ ثَلَاثُونَ يَوْمًا.",
+   "example_uz": "Yillik ta'til — 30 kun.",
+   "srs": true
+  },
+  {
+   "ar": "إِشْعَار مُسْبَق",
+   "translit": "ishʿār musbaq",
+   "uz": "oldindan ogohlantirish",
+   "root": "ش ع ر",
+   "pattern": "إِفْعَال",
+   "pos": "ot",
+   "audio": "b2/ishar_musbaq.mp3",
+   "example_ar": "يَجِبُ إِشْعَارٌ مُسْبَقٌ قَبْلَ الاِسْتِقَالَةِ.",
+   "example_uz": "Ishdan bo'shashdan oldin ogohlantirish shart.",
+   "srs": true
+  },
+  {
+   "ar": "اِسْتِقَالَة",
+   "translit": "istiqāla",
+   "uz": "iste'fo, ishdan bo'shash",
+   "root": "ق و ل",
+   "pattern": "اِسْتِفْعَالَة",
+   "pos": "ot",
+   "audio": "b2/istiqala.mp3",
+   "example_ar": "قَدَّمَ اِسْتِقَالَتَهُ أَمْسِ.",
+   "example_uz": "Kecha iste'fo arizasini topshirdi.",
+   "srs": true
+  },
+  {
+   "ar": "مُكَافَأَة",
+   "translit": "mukāfaʾa",
+   "uz": "mukofot, kompensatsiya",
+   "root": "ك ف أ",
+   "pattern": "مُفَاعَلَة",
+   "pos": "ot",
+   "audio": "b2/mukafaa.mp3",
+   "example_ar": "مُكَافَأَةُ نِهَايَةِ الخِدْمَةِ مَضْمُونَةٌ.",
+   "example_uz": "Ish yakuni to'lovi kafolatlangan.",
+   "srs": true
+  },
+  {
+   "ar": "وَثِيقَة",
+   "translit": "wathīqa",
+   "uz": "hujjat (o'zbekcha 'vasiqa')",
+   "root": "و ث ق",
+   "pattern": "فَعِيلَة",
+   "pos": "ot",
+   "audio": "b2/wathiqa.mp3",
+   "example_ar": "أَحْضِرِ الوَثَائِقَ الأَصْلِيَّةَ.",
+   "example_uz": "Asl hujjatlarni olib keling.",
+   "srs": true
+  }
+ ],
+ "hejazi": [
+  {
+   "msa_ar": "مَتَى تَنْتَهِي الإِقَامَةُ؟",
+   "hejazi_ar": "مَتَى تِخْلَص الإِقَامَة؟",
+   "translit": "matā tikhlas al-iqāma",
+   "uz": "Iqoma qachon tugaydi?",
+   "audio": "hj/matta_tikhlas.mp3"
+  },
+  {
+   "msa_ar": "الأَوْرَاقُ جَاهِزَةٌ",
+   "hejazi_ar": "الأَوْرَاق جَاهْزَة",
+   "translit": "al-awrāq jāhza",
+   "uz": "Hujjatlar tayyor",
+   "audio": "hj/awraq_jahza.mp3"
+  },
+  {
+   "msa_ar": "أُرِيدُ تَجْدِيدَ العَقْدِ",
+   "hejazi_ar": "أَبْغَى أُجَدِّد العَقْد",
+   "translit": "abghā ujaddid al-ʿaqd",
+   "uz": "Shartnomani yangilamoqchiman",
+   "audio": "hj/abgha_ujaddid.mp3"
+  }
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "قبل التوقيع اقرأ العقد جيدًا. البند الأول يحدّد مدة العقد وهي سنتان، وفترة التجربة ثلاثة أشهر. ويشمل العقد السكن والتأمين الطبي وتذكرة عودة سنوية. الإجازة السنوية ثلاثون يومًا، ويجب إشعار مسبق شهر قبل الاستقالة. وفي حالة إنهاء العقد من الشركة تُدفع مكافأة نهاية الخدمة. أحضر الوثائق الأصلية: جواز السفر ورخصة العمل.",
+   "questions": [
+    {"q_uz": "Sinov muddati qancha?", "a": "Uch oy"},
+    {"q_uz": "Shartnomaga nimalar kiradi?", "a": "Turar joy, tibbiy sug'urta va yillik qaytish chiptasi"},
+    {"q_uz": "Iste'fodan oldin nima kerak?", "a": "Bir oy oldin ogohlantirish"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-33-listen.mp3",
+   "transcript_ar": "مُدَّةُ العَقْدِ سَنَتَانِ، وَفَتْرَةُ التَّجْرِبَةِ ثَلَاثَةُ أَشْهُرٍ. الإِجَازَةُ السَّنَوِيَّةُ ثَلَاثُونَ يَوْمًا.",
+   "questions": [
+    {"q_uz": "Shartnoma qancha muddatga?", "a": "Ikki yil"},
+    {"q_uz": "Ta'til necha kun?", "a": "30 kun"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch savolni ayting: shartnoma muddati qancha? sinov muddati bormi? sug'urta kiradimi?",
+   "target_ar": ["كَمْ مُدَّةُ العَقْدِ؟", "هَلْ هُنَاكَ فَتْرَةُ تَجْرِبَةٍ؟", "هَلْ يَشْمَلُ العَقْدُ التَّأْمِينَ؟"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Kadrlar bo'limiga rasmiy so'rov yozing (4 gap): iqomani yangilash, kerakli hujjatlar, muddat, minnatdorchilik.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«إِقَامَة» nima?",
+   "q_ar": "إِقَامَة",
+   "options": ["Yashash guvohnomasi", "Viza", "Ish ruxsatnomasi", "Pasport"],
+   "answer": "Yashash guvohnomasi",
+   "explain_uz": "Saudiyada rezidentlik hujjati.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«فَتْرَة التَّجْرِبَة» nima?",
+   "q_ar": "فَتْرَة التَّجْرِبَة",
+   "options": ["Sinov muddati", "Ta'til", "Shartnoma muddati", "Ogohlantirish"],
+   "answer": "Sinov muddati",
+   "explain_uz": "Ish boshidagi sinov davri.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Iste'fodan oldin nima talab qilinadi?",
+   "q_ar": "",
+   "options": ["إِشْعَار مُسْبَق", "مُكَافَأَة", "تَأْشِيرَة", "رُخْصَة"],
+   "answer": "إِشْعَار مُسْبَق",
+   "explain_uz": "Oldindan ogohlantirish (odatda 1 oy).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مُكَافَأَة نِهَايَة الخِدْمَة» nima?",
+   "q_ar": "مُكَافَأَة نِهَايَة الخِدْمَة",
+   "options": ["Ish yakuni bo'yicha to'lov", "Oylik bonus", "Ta'til puli", "Sug'urta"],
+   "answer": "Ish yakuni bo'yicha to'lov",
+   "explain_uz": "Shartnoma tugaganda beriladigan kompensatsiya.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "وَثِيقَة",
+   "options": [],
+   "answer": "hujjat",
+   "explain_uz": "وَثِيقَة — rasmiy hujjat.",
+   "audio": "b2/wathiqa.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«عَقْد، تَعَاقُد، مُتَعَاقِد» qaysi o'zakdan?",
+   "q_ar": "تَعَاقُد",
+   "options": ["ع ق د", "ع ق ل", "ق ع د", "ع د ق"],
+   "answer": "ع ق د",
+   "explain_uz": "ع ق د — bog'lash, shartnoma o'zagi.",
+   "audio": "",
+   "root": "ع ق د",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Hijoziyda «hujjatlar tayyor» qanday?",
+   "q_ar": "",
+   "options": [
+    "الأَوْرَاق جَاهْزَة",
+    "الوَثَائِقُ جَاهِزَةٌ",
+    "مَتَى تِخْلَص الإِقَامَة؟",
+    "أَبْغَى أُجَدِّد"
+   ],
+   "answer": "الأَوْرَاق جَاهْزَة",
+   "explain_uz": "Hijoziyda i'rob tushadi va أَوْرَاق ishlatiladi.",
+   "audio": "hj/awraq_jahza.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Shartnoma muddati ikki yil»",
+   "q_ar": "",
+   "options": [],
+   "answer": "مُدَّةُ العَقْدِ سَنَتَانِ",
+   "explain_uz": "Idofa (mubtado) + xabar (ikkilik).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["مُدَّةُ", "العَقْدِ", "سَنَتَانِ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع ق د", "back": "shartnoma — aqd/taoqud", "deck": "msa"},
+  {"type": "root", "front": "و ث ق", "back": "hujjat — vasiqa/tavsiq", "deck": "msa"},
+  {"type": "word", "front": "بَنْد", "back": "shartnoma bandi", "deck": "msa"},
+  {"type": "phrase", "front": "مُدَّة العَقْد", "back": "shartnoma muddati", "deck": "msa"},
+  {"type": "phrase", "front": "فَتْرَة التَّجْرِبَة", "back": "sinov muddati", "deck": "msa"},
+  {"type": "word", "front": "إِقَامَة", "back": "yashash guvohnomasi", "deck": "msa"},
+  {"type": "word", "front": "تَأْشِيرَة", "back": "viza", "deck": "msa"},
+  {"type": "phrase", "front": "رُخْصَة عَمَل", "back": "ish ruxsatnomasi", "deck": "msa"},
+  {"type": "phrase", "front": "تَأْمِين طِبِّيّ", "back": "tibbiy sug'urta", "deck": "msa"},
+  {"type": "word", "front": "اِسْتِقَالَة", "back": "iste'fo", "deck": "msa"},
+  {"type": "word", "front": "مُكَافَأَة", "back": "mukofot, kompensatsiya", "deck": "msa"},
+  {"type": "phrase", "front": "مَتَى تِخْلَص الإِقَامَة؟", "back": "iqoma qachon tugaydi? (hijoziy)", "deck": "hejazi"}
+ ]
+}

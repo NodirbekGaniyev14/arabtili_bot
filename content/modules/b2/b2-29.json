@@ -1,0 +1,363 @@
+{
+ "id": "b2-29",
+ "level": "B2",
+ "module": "vocab-adv",
+ "order": 29,
+ "title_uz": "Tibbiyot — kengaytirilgan",
+ "title_ar": "المُصْطَلَحَاتُ الطِّبِّيَّةُ المُوَسَّعَةُ",
+ "can_do_uz": "Shifokorga shikoyatimni aniq ayta olaman va tashxis, tahlil, retsept haqidagi gaplarni tushunaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-28"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "A2 da «boshim og'riyapti» ni o'rgangansiz. B2 da esa: «تَشْخِيص» (tashxis), «تَحْلِيل دَم» (qon tahlili), «وَصْفَة طِبِّيَّة» (retsept), «مَوْعِد» (qabul vaqti), «عَمَلِيَّة جِرَاحِيَّة» (jarrohlik). Chet elda kasalxonaga borganda bu so'zlar aniqlikni beradi — noto'g'ri tushunish sog'liqqa zarar. Shuning uchun bu dars amaliy.",
+ "grammar": {
+  "point_ar": "لُغَةُ العِيَادَةِ: الشَّكْوَى وَالتَّشْخِيصُ وَالعِلَاجُ",
+  "explanation_uz": "Uch bosqichli suhbat quriladi. 1) SHIKOYAT (الشَّكْوَى): أَشْعُرُ بِـ (…ni his qilaman), أُعَانِي مِنْ (…dan aziyat chekaman), يُؤْلِمُنِي (…og'riyapti), مُنْذُ يَوْمَيْنِ (ikki kundan beri). 2) TEKSHIRUV: فَحْص (ko'rik), تَحْلِيل دَم (qon tahlili), أَشِعَّة (rentgen), قِيَاسُ الضَّغْطِ (bosim o'lchash), عَيِّنَة (namuna). 3) TASHXIS VA DAVO: تَشْخِيص (tashxis), اِلْتِهَاب (yallig'lanish), مُضَادّ حَيَوِيّ (antibiotik), وَصْفَة طِبِّيَّة (retsept), جُرْعَة (doza), عَمَلِيَّة جِرَاحِيَّة (jarrohlik), مَوْعِد المُرَاجَعَةِ (keyingi qabul). MUHIM QOLIP: «أُعَانِي مِنْ + majrur»: أُعَانِي مِنْ صُدَاعٍ مُزْمِنٍ (surunkali bosh og'rig'idan aziyat chekaman). Ko'rsatma beruvchi jumla: «تَنَاوَلْ حَبَّةً كُلَّ ثَمَانِ سَاعَاتٍ» (har 8 soatda bir tabletka iching).",
+  "table": [
+   {"ar": "أُعَانِي مِنْ صُدَاعٍ", "uz": "Bosh og'rig'idan aziyat chekaman", "form": "شَكْوَى"},
+   {"ar": "يُؤْلِمُنِي ظَهْرِي", "uz": "Belim og'riyapti", "form": "شَكْوَى"},
+   {"ar": "تَحْلِيلُ دَمٍ", "uz": "Qon tahlili", "form": "فَحْص"},
+   {"ar": "اِلْتِهَابٌ بَسِيطٌ", "uz": "Yengil yallig'lanish", "form": "تَشْخِيص"},
+   {"ar": "وَصْفَةٌ طِبِّيَّةٌ", "uz": "Retsept", "form": "عِلَاج"},
+   {"ar": "مَوْعِدُ المُرَاجَعَةِ", "uz": "Keyingi qabul vaqti", "form": "مُتَابَعَة"}
+  ],
+  "common_mistakes_uz": [
+   "أُعَانِي dan keyin مِنْ ni tushirib qoldirish: أُعَانِي صُدَاعًا ✗ → أُعَانِي مِنْ صُدَاعٍ ✓.",
+   "دَوَاء (dori) va وَصْفَة (retsept) ni chalkashtirish.",
+   "«Operatsiya» ni faqat عَمَلِيَّة deyish — tibbiyotda عَمَلِيَّة جِرَاحِيَّة aniqroq."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ط ب ب",
+   "meaning_uz": "davolash",
+   "uz_cognates": ["tabib", "tibbiyot"],
+   "derived": [
+    {"ar": "طَبِيب", "uz": "shifokor", "pattern": "فَعِيل"},
+    {"ar": "طِبِّيّ", "uz": "tibbiy", "pattern": "فِعْلِيّ"},
+    {"ar": "مُسْتَشْفَى", "uz": "kasalxona (boshqa o'zak)", "pattern": "مُسْتَفْعَل"}
+   ]
+  },
+  {
+   "root": "ع ل ج",
+   "meaning_uz": "davolash, chora ko'rish",
+   "uz_cognates": ["iloj", "muolaja"],
+   "derived": [
+    {"ar": "عِلَاج", "uz": "davolash, muolaja", "pattern": "فِعَال"},
+    {"ar": "مُعَالَجَة", "uz": "davolash jarayoni", "pattern": "مُفَاعَلَة"},
+    {"ar": "عَالَجَ", "uz": "davoladi", "pattern": "فَاعَلَ"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "تَشْخِيص",
+   "translit": "tashkhīṣ",
+   "uz": "tashxis",
+   "root": "ش خ ص",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tashkhis.mp3",
+   "example_ar": "التَّشْخِيصُ يَحْتَاجُ إِلَى تَحَالِيلَ.",
+   "example_uz": "Tashxis uchun tahlillar kerak.",
+   "srs": true
+  },
+  {
+   "ar": "أُعَانِي مِنْ",
+   "translit": "uʿānī min",
+   "uz": "…dan aziyat chekaman",
+   "root": "ع ن ي",
+   "pattern": "أُفَاعِلُ",
+   "pos": "ibora",
+   "audio": "b2/uani_min.mp3",
+   "example_ar": "أُعَانِي مِنْ أَلَمٍ فِي الظَّهْرِ.",
+   "example_uz": "Belimda og'riqdan aziyat chekaman.",
+   "srs": true
+  },
+  {
+   "ar": "فَحْص",
+   "translit": "faḥṣ",
+   "uz": "ko'rik, tekshiruv",
+   "root": "ف ح ص",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/fahs.mp3",
+   "example_ar": "الفَحْصُ الشَّامِلُ مَرَّةً فِي السَّنَةِ.",
+   "example_uz": "To'liq ko'rik yiliga bir marta.",
+   "srs": true
+  },
+  {
+   "ar": "تَحْلِيل دَم",
+   "translit": "taḥlīl dam",
+   "uz": "qon tahlili",
+   "root": "ح ل ل",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tahlil_dam.mp3",
+   "example_ar": "نَتِيجَةُ تَحْلِيلِ الدَّمِ جَيِّدَةٌ.",
+   "example_uz": "Qon tahlili natijasi yaxshi.",
+   "srs": true
+  },
+  {
+   "ar": "أَشِعَّة",
+   "translit": "ashiʿʿa",
+   "uz": "rentgen, nurlar",
+   "root": "ش ع ع",
+   "pattern": "أَفْعِلَة",
+   "pos": "ot",
+   "audio": "b2/ashia.mp3",
+   "example_ar": "طَلَبَ الطَّبِيبُ أَشِعَّةً لِلصَّدْرِ.",
+   "example_uz": "Shifokor ko'krak rentgenini so'radi.",
+   "srs": true
+  },
+  {
+   "ar": "اِلْتِهَاب",
+   "translit": "iltihāb",
+   "uz": "yallig'lanish",
+   "root": "ل ه ب",
+   "pattern": "اِفْتِعَال",
+   "pos": "ot",
+   "audio": "b2/iltihab.mp3",
+   "example_ar": "عِنْدَكَ اِلْتِهَابٌ بَسِيطٌ.",
+   "example_uz": "Sizda yengil yallig'lanish bor.",
+   "srs": true
+  },
+  {
+   "ar": "مُضَادّ حَيَوِيّ",
+   "translit": "muḍādd ḥayawī",
+   "uz": "antibiotik",
+   "root": "ض د د",
+   "pattern": "مُفَاعِل",
+   "pos": "ot",
+   "audio": "b2/mudadd_hayawi.mp3",
+   "example_ar": "لَا تَأْخُذِ المُضَادَّ الحَيَوِيَّ بِدُونِ وَصْفَةٍ.",
+   "example_uz": "Retseptsiz antibiotik ichmang.",
+   "srs": true
+  },
+  {
+   "ar": "وَصْفَة طِبِّيَّة",
+   "translit": "waṣfa ṭibbiyya",
+   "uz": "retsept",
+   "root": "و ص ف",
+   "pattern": "فَعْلَة",
+   "pos": "ot",
+   "audio": "b2/wasfa_tibbiyya.mp3",
+   "example_ar": "كَتَبَ لِي وَصْفَةً طِبِّيَّةً.",
+   "example_uz": "Menga retsept yozib berdi.",
+   "srs": true
+  },
+  {
+   "ar": "جُرْعَة",
+   "translit": "jurʿa",
+   "uz": "doza (dori miqdori)",
+   "root": "ج ر ع",
+   "pattern": "فُعْلَة",
+   "pos": "ot",
+   "audio": "b2/jura.mp3",
+   "example_ar": "الجُرْعَةُ حَبَّةٌ وَاحِدَةٌ.",
+   "example_uz": "Doza — bitta tabletka.",
+   "srs": true
+  },
+  {
+   "ar": "عَمَلِيَّة جِرَاحِيَّة",
+   "translit": "ʿamaliyya jirāḥiyya",
+   "uz": "jarrohlik amaliyoti",
+   "root": "ج ر ح",
+   "pattern": "فِعَالِيَّة",
+   "pos": "ot",
+   "audio": "b2/amaliyya_jirahiyya.mp3",
+   "example_ar": "نَجَحَتِ العَمَلِيَّةُ الجِرَاحِيَّةُ.",
+   "example_uz": "Jarrohlik muvaffaqiyatli o'tdi.",
+   "srs": true
+  },
+  {
+   "ar": "مُزْمِن",
+   "translit": "muzmin",
+   "uz": "surunkali (kasallik)",
+   "root": "ز م ن",
+   "pattern": "مُفْعِل",
+   "pos": "sifat",
+   "audio": "b2/muzmin.mp3",
+   "example_ar": "مَرَضٌ مُزْمِنٌ يَحْتَاجُ مُتَابَعَةً.",
+   "example_uz": "Surunkali kasallik kuzatuvni talab qiladi.",
+   "srs": true
+  },
+  {
+   "ar": "مُرَاجَعَة",
+   "translit": "murājaʿa",
+   "uz": "qayta ko'rik, murojaat",
+   "root": "ر ج ع",
+   "pattern": "مُفَاعَلَة",
+   "pos": "ot",
+   "audio": "b2/murajaa.mp3",
+   "example_ar": "مَوْعِدُ المُرَاجَعَةِ بَعْدَ أُسْبُوعٍ.",
+   "example_uz": "Qayta ko'rik bir haftadan keyin.",
+   "srs": true
+  },
+  {
+   "ar": "ضَغْط الدَّم",
+   "translit": "ḍaghṭ ad-dam",
+   "uz": "qon bosimi",
+   "root": "ض غ ط",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/daght_dam.mp3",
+   "example_ar": "ضَغْطُ الدَّمِ مُرْتَفِعٌ قَلِيلًا.",
+   "example_uz": "Qon bosimi biroz yuqori.",
+   "srs": true
+  },
+  {
+   "ar": "عِلَاج",
+   "translit": "ʿilāj",
+   "uz": "davolash, muolaja (o'zbekcha 'iloj')",
+   "root": "ع ل ج",
+   "pattern": "فِعَال",
+   "pos": "ot",
+   "audio": "b2/ilaj2.mp3",
+   "example_ar": "العِلَاجُ يَسْتَمِرُّ شَهْرًا.",
+   "example_uz": "Davolash bir oy davom etadi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "دخل المريض العيادة وقال: أعاني من ألم في الظهر منذ أسبوع، ويزداد في الصباح. طلب الطبيب أشعّة وتحليل دم، ثم قاس ضغط الدم فوجده مرتفعًا قليلًا. بعد النتيجة قال: التشخيص التهاب بسيط، لا داعي لعملية جراحية. كتب وصفة طبية وشرح الجرعة: حبة كل ثماني ساعات لمدة خمسة أيام، وحدّد موعد المراجعة بعد أسبوع.",
+   "questions": [
+    {"q_uz": "Bemor nimadan shikoyat qildi?", "a": "Bir haftadan beri bel og'rig'idan"},
+    {"q_uz": "Tashxis nima?", "a": "Yengil yallig'lanish — jarrohlik kerak emas"},
+    {"q_uz": "Doza qanday?", "a": "Har 8 soatda 1 tabletka, 5 kun davomida"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-29-listen.mp3",
+   "transcript_ar": "التَّشْخِيصُ اِلْتِهَابٌ بَسِيطٌ. الجُرْعَةُ حَبَّةٌ كُلَّ ثَمَانِ سَاعَاتٍ، وَمَوْعِدُ المُرَاجَعَةِ بَعْدَ أُسْبُوعٍ.",
+   "questions": [
+    {"q_uz": "Tashxis nima?", "a": "Yengil yallig'lanish"},
+    {"q_uz": "Qayta ko'rik qachon?", "a": "Bir haftadan keyin"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Shifokorga uch jumla ayting: bel og'rig'idan aziyat chekaman, ikki kundan beri, retsept kerakmi?",
+   "target_ar": ["أُعَانِي مِنْ أَلَمٍ فِي الظَّهْرِ", "مُنْذُ يَوْمَيْنِ", "هَلْ أَحْتَاجُ وَصْفَةً طِبِّيَّةً؟"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Shifokorga yozma shikoyat tayyorlang (4 gap): belgi, muddat, oldin qabul qilingan dori, savol.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«أُعَانِي مِنْ» dan keyin ism qanday holatda?",
+   "q_ar": "أُعَانِي مِنْ صُدَاعٍ",
+   "options": ["Majrur (kasra)", "Mansub (fatha)", "Marfu' (damma)", "Majzum"],
+   "answer": "Majrur (kasra)",
+   "explain_uz": "مِنْ — jarr harfi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«وَصْفَة طِبِّيَّة» nima?",
+   "q_ar": "وَصْفَة طِبِّيَّة",
+   "options": ["Retsept", "Dori", "Tahlil", "Tashxis"],
+   "answer": "Retsept",
+   "explain_uz": "Shifokor yozib beradigan hujjat.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مُزْمِن» qanday kasallik?",
+   "q_ar": "مُزْمِن",
+   "options": ["Surunkali", "O'tkir", "Yuqumli", "Yengil"],
+   "answer": "Surunkali",
+   "explain_uz": "Uzoq davom etadigan kasallik.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«الجُرْعَة» nimani bildiradi?",
+   "q_ar": "الجُرْعَة",
+   "options": ["Doza", "Retsept", "Yallig'lanish", "Ko'rik"],
+   "answer": "Doza",
+   "explain_uz": "Bir marta qabul qilinadigan miqdor.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "تَشْخِيص",
+   "options": [],
+   "answer": "tashxis",
+   "explain_uz": "تَشْخِيص — kasallikni aniqlash.",
+   "audio": "b2/tashkhis.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«عِلَاج، مُعَالَجَة، عَالَجَ» qaysi o'zakdan?",
+   "q_ar": "مُعَالَجَة",
+   "options": ["ع ل ج", "ع ج ل", "ل ع ج", "ع ل ق"],
+   "answer": "ع ل ج",
+   "explain_uz": "ع ل ج — davolash o'zagi (iloj).",
+   "audio": "",
+   "root": "ع ل ج",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مُضَادّ حَيَوِيّ» nima?",
+   "q_ar": "مُضَادّ حَيَوِيّ",
+   "options": ["Antibiotik", "Vitamin", "Og'riq qoldiruvchi", "Vaksina"],
+   "answer": "Antibiotik",
+   "explain_uz": "So'zma-so'z «hayotga qarshi (mikroblarga)».",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Belimda og'riqdan aziyat chekaman»",
+   "q_ar": "",
+   "options": [],
+   "answer": "أُعَانِي مِنْ أَلَمٍ فِي الظَّهْرِ",
+   "explain_uz": "Fe'l + مِنْ + majrur + jarr birikmasi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["أُعَانِي", "مِنْ", "أَلَمٍ", "فِي", "الظَّهْرِ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع ل ج", "back": "davolash — iloj/muolaja", "deck": "msa"},
+  {"type": "root", "front": "ط ب ب", "back": "tabobat — tabib/tibbiy", "deck": "msa"},
+  {"type": "word", "front": "تَشْخِيص", "back": "tashxis", "deck": "msa"},
+  {"type": "phrase", "front": "أُعَانِي مِنْ", "back": "…dan aziyat chekaman", "deck": "msa"},
+  {"type": "word", "front": "فَحْص", "back": "ko'rik", "deck": "msa"},
+  {"type": "phrase", "front": "تَحْلِيل دَم", "back": "qon tahlili", "deck": "msa"},
+  {"type": "word", "front": "اِلْتِهَاب", "back": "yallig'lanish", "deck": "msa"},
+  {"type": "phrase", "front": "وَصْفَة طِبِّيَّة", "back": "retsept", "deck": "msa"},
+  {"type": "word", "front": "جُرْعَة", "back": "doza", "deck": "msa"},
+  {"type": "word", "front": "مُزْمِن", "back": "surunkali", "deck": "msa"},
+  {"type": "word", "front": "مُرَاجَعَة", "back": "qayta ko'rik", "deck": "msa"},
+  {"type": "phrase", "front": "ضَغْط الدَّم", "back": "qon bosimi", "deck": "msa"},
+  {"type": "word", "front": "عِلَاج", "back": "davolash", "deck": "msa"}
+ ]
+}

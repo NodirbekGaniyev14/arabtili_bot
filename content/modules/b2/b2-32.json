@@ -1,0 +1,370 @@
+{
+ "id": "b2-32",
+ "level": "B2",
+ "module": "saudi-work",
+ "order": 32,
+ "title_uz": "Ish suhbati (المقابلة)",
+ "title_ar": "مُقَابَلَةُ العَمَلِ",
+ "can_do_uz": "Ish suhbatida o'zimni tanishtira, tajribamni ayta va savollarga javob bera olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-31"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Saudiyada ish suhbati odatda uch savoldan boshlanadi: «حَدِّثْنِي عَنْ نَفْسِكَ» (o'zingiz haqingizda gapiring), «مَا خِبْرَتُكَ؟» (tajribangiz qanday?), «لِمَاذَا تُرِيدُ العَمَلَ مَعَنَا؟» (nega biz bilan ishlamoqchisiz?). Javobingiz tayyor bo'lsa — yarim ish bitgan. Bu darsda rasmiy javob qoliplari va suhbatdan keyingi xat berilgan.",
+ "grammar": {
+  "point_ar": "لُغَةُ المُقَابَلَةِ: التَّقْدِيمُ لِلنَّفْسِ وَالخِبْرَةُ",
+  "explanation_uz": "SUHBAT QOLIPLARI. O'zini tanishtirish: «اِسْمِي… وَأَعْمَلُ فِي مَجَالِ…» (ismim… va … sohasida ishlayman), «تَخَرَّجْتُ مِنْ… عَامَ…» (…ni … yilda tugatganman), «لَدَيَّ خِبْرَةٌ خَمْسُ سَنَوَاتٍ» (5 yillik tajribam bor). Kuchli tomonlar: «أُجِيدُ العَمَلَ ضِمْنَ فَرِيقٍ» (jamoada ishlashni bilaman), «أَتْقَنُ اللُّغَةَ العَرَبِيَّةَ وَالإِنْجِلِيزِيَّةَ» (ikki tilni bilaman), «أَتَعَامَلُ مَعَ الضَّغْطِ بِهُدُوءٍ» (bosim ostida xotirjam ishlayman). Savol berish: «مَا طَبِيعَةُ العَمَلِ؟» (ish qanday?), «هَلْ يَشْمَلُ العَقْدُ السَّكَنَ؟» (shartnomaga turar joy kiradimi?), «مَتَى تَبْدَأُ المُبَاشَرَةُ؟» (qachon ishga kirishiladi?). ODOB: rasmiy nutqda «أَنْتَ» o'rniga «حَضْرَتُكَ» yoki «سِيَادَتُكَ» ishlatiladi; suhbat oxirida «شُكْرًا عَلَى وَقْتِكُمْ» (vaqtingiz uchun rahmat) deyiladi. Hijoziyda esa suhbatdan keyin norasmiy: «إِنْ شَاءَ اللَّهُ نَتْوَاصَل» (aloqada bo'lamiz).",
+  "table": [
+   {"ar": "حَدِّثْنِي عَنْ نَفْسِكَ", "uz": "O'zingiz haqingizda gapiring", "form": "سُؤَال"},
+   {"ar": "لَدَيَّ خِبْرَةُ خَمْسِ سَنَوَاتٍ", "uz": "5 yillik tajribam bor", "form": "جَوَاب"},
+   {"ar": "تَخَرَّجْتُ مِنْ جَامِعَةِ…", "uz": "…universitetini tugatganman", "form": "جَوَاب"},
+   {"ar": "أُجِيدُ العَمَلَ ضِمْنَ فَرِيقٍ", "uz": "Jamoada ishlay olaman", "form": "مَهَارَة"},
+   {"ar": "مَا طَبِيعَةُ العَمَلِ؟", "uz": "Ishning mohiyati qanday?", "form": "سُؤَال المُتَقَدِّم"},
+   {"ar": "شُكْرًا عَلَى وَقْتِكُمْ", "uz": "Vaqtingiz uchun rahmat", "form": "خِتَام"}
+  ],
+  "common_mistakes_uz": [
+   "«Tajribam bor» ni عِنْدِي تَجْرِبَة deyish — ish kontekstida خِبْرَة to'g'ri (تَجْرِبَة = tajriba-sinov).",
+   "Rasmiy suhbatda hijoziy so'zlashuvni aralashtirish — avval fusha, keyin muhit bo'yicha.",
+   "Maosh haqida birinchi savolni o'zingiz berish — odatda ish tavsifidan keyin so'raladi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ق ب ل",
+   "meaning_uz": "qabul qilish, yuzma-yuz bo'lish",
+   "uz_cognates": ["qabul", "muqobil", "istiqbol"],
+   "derived": [
+    {"ar": "مُقَابَلَة", "uz": "suhbat, uchrashuv", "pattern": "مُفَاعَلَة"},
+    {"ar": "مُقَابِل", "uz": "qarshisidagi; evaz", "pattern": "مُفَاعِل"},
+    {"ar": "اِسْتِقْبَال", "uz": "kutib olish", "pattern": "اِسْتِفْعَال"}
+   ]
+  },
+  {
+   "root": "خ ب ر",
+   "meaning_uz": "bilish, tajriba",
+   "uz_cognates": ["xabar", "xabardor", "ekspert=xabir"],
+   "derived": [
+    {"ar": "خِبْرَة", "uz": "ish tajribasi", "pattern": "فِعْلَة"},
+    {"ar": "خَبِير", "uz": "ekspert", "pattern": "فَعِيل"},
+    {"ar": "مُخْتَبَر", "uz": "laboratoriya", "pattern": "مُفْتَعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "مُقَابَلَة",
+   "translit": "muqābala",
+   "uz": "ish suhbati, intervyu",
+   "root": "ق ب ل",
+   "pattern": "مُفَاعَلَة",
+   "pos": "ot",
+   "audio": "b2/muqabala2.mp3",
+   "example_ar": "عِنْدِي مُقَابَلَةٌ غَدًا.",
+   "example_uz": "Ertaga ish suhbatim bor.",
+   "srs": true
+  },
+  {
+   "ar": "خِبْرَة",
+   "translit": "khibra",
+   "uz": "ish tajribasi",
+   "root": "خ ب ر",
+   "pattern": "فِعْلَة",
+   "pos": "ot",
+   "audio": "b2/khibra.mp3",
+   "example_ar": "لَدَيَّ خِبْرَةٌ فِي البِنَاءِ.",
+   "example_uz": "Qurilishda tajribam bor.",
+   "srs": true
+  },
+  {
+   "ar": "سِيرَة ذَاتِيَّة",
+   "translit": "sīra dhātiyya",
+   "uz": "rezyume (CV)",
+   "root": "س ي ر",
+   "pattern": "فِعْلَة",
+   "pos": "ot",
+   "audio": "b2/sira_dhatiyya.mp3",
+   "example_ar": "أَرْسَلْتُ سِيرَتِي الذَّاتِيَّةَ.",
+   "example_uz": "Rezyumemni yubordim.",
+   "srs": true
+  },
+  {
+   "ar": "شَهَادَة",
+   "translit": "shahāda",
+   "uz": "diplom, sertifikat (o'zbekcha 'shahodatnoma')",
+   "root": "ش ه د",
+   "pattern": "فَعَالَة",
+   "pos": "ot",
+   "audio": "b2/shahada_cert.mp3",
+   "example_ar": "شَهَادَتِي مُعْتَمَدَةٌ.",
+   "example_uz": "Diplomim tan olingan.",
+   "srs": true
+  },
+  {
+   "ar": "مَجَال",
+   "translit": "majāl",
+   "uz": "soha, yo'nalish",
+   "root": "ج و ل",
+   "pattern": "مَفْعَل",
+   "pos": "ot",
+   "audio": "b2/majal.mp3",
+   "example_ar": "أَعْمَلُ فِي مَجَالِ التِّقْنِيَةِ.",
+   "example_uz": "Texnologiya sohasida ishlayman.",
+   "srs": true
+  },
+  {
+   "ar": "مَهَارَة",
+   "translit": "mahāra",
+   "uz": "mahorat, ko'nikma",
+   "root": "م ه ر",
+   "pattern": "فَعَالَة",
+   "pos": "ot",
+   "audio": "b2/mahara.mp3",
+   "example_ar": "مَهَارَاتُ التَّوَاصُلِ مُهِمَّةٌ.",
+   "example_uz": "Muloqot ko'nikmalari muhim.",
+   "srs": true
+  },
+  {
+   "ar": "أُجِيدُ",
+   "translit": "ujīdu",
+   "uz": "yaxshi bilaman, uddalayman",
+   "root": "ج و د",
+   "pattern": "أُفْعِلُ",
+   "pos": "fe'l",
+   "audio": "b2/ujidu.mp3",
+   "example_ar": "أُجِيدُ العَمَلَ ضِمْنَ فَرِيقٍ.",
+   "example_uz": "Jamoada ishlashni uddalayman.",
+   "srs": true
+  },
+  {
+   "ar": "رَاتِب",
+   "translit": "rātib",
+   "uz": "maosh",
+   "root": "ر ت ب",
+   "pattern": "فَاعِل",
+   "pos": "ot",
+   "audio": "b2/ratib.mp3",
+   "example_ar": "الرَّاتِبُ شَهْرِيٌّ.",
+   "example_uz": "Maosh oylik.",
+   "srs": true
+  },
+  {
+   "ar": "مُبَاشَرَة",
+   "translit": "mubāshara",
+   "uz": "ishga kirishish (boshlash sanasi)",
+   "root": "ب ش ر",
+   "pattern": "مُفَاعَلَة",
+   "pos": "ot",
+   "audio": "b2/mubashara.mp3",
+   "example_ar": "المُبَاشَرَةُ بَعْدَ أُسْبُوعَيْنِ.",
+   "example_uz": "Ishga kirishish ikki haftadan keyin.",
+   "srs": true
+  },
+  {
+   "ar": "دَوَام",
+   "translit": "dawām",
+   "uz": "ish vaqti, smena",
+   "root": "د و م",
+   "pattern": "فَعَال",
+   "pos": "ot",
+   "audio": "b2/dawam.mp3",
+   "example_ar": "الدَّوَامُ مِنَ الثَّامِنَةِ إِلَى الرَّابِعَةِ.",
+   "example_uz": "Ish vaqti 8 dan 4 gacha.",
+   "srs": true
+  },
+  {
+   "ar": "تَخَرَّجَ",
+   "translit": "takharraja",
+   "uz": "bitirdi (o'quv yurtini)",
+   "root": "خ ر ج",
+   "pattern": "تَفَعَّلَ",
+   "pos": "fe'l",
+   "audio": "b2/takharraja.mp3",
+   "example_ar": "تَخَرَّجْتُ عَامَ أَلْفَيْنِ وَعِشْرِينَ.",
+   "example_uz": "2020-yilda bitirganman.",
+   "srs": true
+  },
+  {
+   "ar": "طَبِيعَة العَمَل",
+   "translit": "ṭabīʿat al-ʿamal",
+   "uz": "ishning mohiyati/mazmuni",
+   "root": "ط ب ع",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/tabiat_amal.mp3",
+   "example_ar": "مَا طَبِيعَةُ العَمَلِ بِالضَّبْطِ؟",
+   "example_uz": "Ish aynan nimadan iborat?",
+   "srs": true
+  }
+ ],
+ "hejazi": [
+  {
+   "msa_ar": "سَنَتَوَاصَلُ مَعَكَ لَاحِقًا",
+   "hejazi_ar": "بِنْتَوَاصَل مَعَاك بَعْدَيْن",
+   "translit": "bintawāsal maʿāk baʿdēn",
+   "uz": "Keyinroq aloqaga chiqamiz",
+   "audio": "hj/bintawasal.mp3"
+  },
+  {
+   "msa_ar": "مَا رَأْيُكَ؟",
+   "hejazi_ar": "إِيش رَأْيَك؟",
+   "translit": "ēsh raʾyak",
+   "uz": "Fikringiz qanday?",
+   "audio": "hj/esh_rayak.mp3"
+  },
+  {
+   "msa_ar": "أَنَا جَاهِزٌ لِلْبَدْءِ",
+   "hejazi_ar": "أَنَا جَاهِز أَبْدَأ",
+   "translit": "ana jāhiz abda",
+   "uz": "Boshlashga tayyorman",
+   "audio": "hj/ana_jahiz.mp3"
+  }
+ ],
+ "skills": {
+  "reading": {
+   "text_ar": "بدأت المقابلة بسؤال: حدّثني عن نفسك. أجاب المتقدّم: اسمي كريم، تخرّجت عام ألفين وعشرين، ولديّ خبرة ثلاث سنوات في مجال الصيانة. أجيد العمل ضمن فريق وأتعامل مع الضغط بهدوء. سأل المدير عن مهارات التواصل، ثم شرح طبيعة العمل والدوام والراتب. في النهاية قال: سنتواصل معك لاحقًا، وشكرًا على وقتك.",
+   "questions": [
+    {"q_uz": "Nomzod qanday tajribaga ega?", "a": "Ta'mirlash sohasida 3 yil"},
+    {"q_uz": "Direktor nimalarni tushuntirdi?", "a": "Ishning mohiyati, ish vaqti va maosh"},
+    {"q_uz": "Suhbat qanday yakunlandi?", "a": "«Keyinroq bog'lanamiz» va minnatdorchilik bilan"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-32-listen.mp3",
+   "transcript_ar": "حَدِّثْنِي عَنْ نَفْسِكَ. لَدَيَّ خِبْرَةُ ثَلَاثِ سَنَوَاتٍ، وَأُجِيدُ العَمَلَ ضِمْنَ فَرِيقٍ.",
+   "questions": [
+    {"q_uz": "Birinchi savol nima?", "a": "O'zingiz haqingizda gapiring"},
+    {"q_uz": "Nomzod qanday kuchli tomonini aytdi?", "a": "Jamoada ishlashni uddalashi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "O'zingizni 3 gapda tanishtiring: ism, ta'lim, tajriba. Keyin bitta savol bering.",
+   "target_ar": ["اِسْمِي… وَأَعْمَلُ فِي مَجَالِ…", "لَدَيَّ خِبْرَةُ ثَلَاثِ سَنَوَاتٍ", "مَا طَبِيعَةُ العَمَلِ؟"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Suhbatdan keyingi minnatdorchilik xatini yozing (4 gap): rahmat, qiziqish, kuchli tomon, kutish.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«خِبْرَة» nima degani?",
+   "q_ar": "خِبْرَة",
+   "options": ["Ish tajribasi", "Tajriba-sinov", "Diplom", "Mahorat"],
+   "answer": "Ish tajribasi",
+   "explain_uz": "تَجْرِبَة esa sinov/eksperiment.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«سِيرَة ذَاتِيَّة» nima?",
+   "q_ar": "سِيرَة ذَاتِيَّة",
+   "options": ["Rezyume (CV)", "Shartnoma", "Diplom", "Ariza"],
+   "answer": "Rezyume (CV)",
+   "explain_uz": "So'zma-so'z «shaxsiy tarjimai hol».",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«المُبَاشَرَة» ish kontekstida nima?",
+   "q_ar": "المُبَاشَرَة",
+   "options": ["Ishga kirishish sanasi", "Ish haqi", "Ta'til", "Suhbat"],
+   "answer": "Ishga kirishish sanasi",
+   "explain_uz": "Qachon ishni boshlash.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«أُجِيدُ العَمَلَ ضِمْنَ فَرِيقٍ» ma'nosi?",
+   "q_ar": "أُجِيدُ العَمَلَ ضِمْنَ فَرِيقٍ",
+   "options": [
+    "Jamoada ishlashni uddalayman",
+    "Yolg'iz ishlashni yoqtiraman",
+    "Jamoani boshqaraman",
+    "Jamoa qidiryapman"
+   ],
+   "answer": "Jamoada ishlashni uddalayman",
+   "explain_uz": "أَجَادَ — yaxshi bajarish.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "رَاتِب",
+   "options": [],
+   "answer": "maosh",
+   "explain_uz": "رَاتِب — oylik ish haqi.",
+   "audio": "b2/ratib.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«مُقَابَلَة، اِسْتِقْبَال، مُقَابِل» qaysi o'zakdan?",
+   "q_ar": "مُقَابَلَة",
+   "options": ["ق ب ل", "ك ب ل", "ق ل ب", "ق ب س"],
+   "answer": "ق ب ل",
+   "explain_uz": "ق ب ل — qarshi turish, qabul qilish.",
+   "audio": "",
+   "root": "ق ب ل",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Hijoziyda «keyinroq aloqaga chiqamiz» qanday?",
+   "q_ar": "",
+   "options": [
+    "بِنْتَوَاصَل مَعَاك بَعْدَيْن",
+    "سَنَتَوَاصَلُ مَعَكَ لَاحِقًا",
+    "إِيش رَأْيَك؟",
+    "أَنَا جَاهِز"
+   ],
+   "answer": "بِنْتَوَاصَل مَعَاك بَعْدَيْن",
+   "explain_uz": "Hijoziy: بِـ prefiksi + بَعْدَيْن (keyinroq).",
+   "audio": "hj/bintawasal.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Qurilishda tajribam bor»",
+   "q_ar": "",
+   "options": [],
+   "answer": "لَدَيَّ خِبْرَةٌ فِي البِنَاءِ",
+   "explain_uz": "لَدَيَّ + noaniq ism + jarr birikmasi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["لَدَيَّ", "خِبْرَةٌ", "فِي", "البِنَاءِ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "خ ب ر", "back": "bilish, tajriba — xibra/xabir", "deck": "msa"},
+  {"type": "root", "front": "ق ب ل", "back": "qabul — muqobala/istiqbol", "deck": "msa"},
+  {"type": "word", "front": "مُقَابَلَة", "back": "ish suhbati", "deck": "msa"},
+  {"type": "word", "front": "خِبْرَة", "back": "ish tajribasi", "deck": "msa"},
+  {"type": "phrase", "front": "سِيرَة ذَاتِيَّة", "back": "rezyume", "deck": "msa"},
+  {"type": "word", "front": "مَجَال", "back": "soha", "deck": "msa"},
+  {"type": "word", "front": "مَهَارَة", "back": "mahorat", "deck": "msa"},
+  {"type": "word", "front": "رَاتِب", "back": "maosh", "deck": "msa"},
+  {"type": "word", "front": "مُبَاشَرَة", "back": "ishga kirishish", "deck": "msa"},
+  {"type": "word", "front": "دَوَام", "back": "ish vaqti", "deck": "msa"},
+  {"type": "phrase", "front": "بِنْتَوَاصَل مَعَاك بَعْدَيْن", "back": "keyinroq aloqaga chiqamiz (hijoziy)", "deck": "hejazi"},
+  {"type": "phrase", "front": "إِيش رَأْيَك؟", "back": "fikringiz qanday? (hijoziy)", "deck": "hejazi"}
+ ]
+}
