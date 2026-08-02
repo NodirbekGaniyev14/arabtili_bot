@@ -4,11 +4,11 @@ Muammo: ilgari daraja AI fallback'ida test foizidan chiqarilardi
 (`ratio >= 0.8 -> A2`), savollar esa 6 ta juda oson savol edi — natijada
 deyarli hamma A2 ga tushardi.
 
-Endi: 4 bosqichli (A0 -> B1) test. Har bosqich 5 savol, >=80% (5 dan 4)
+Endi: 5 bosqichli (A0 -> B2) test. Har bosqich 5 savol, >=80% (5 dan 4)
 bo'lsa «o'tilgan». Bosqichlar pastdan yuqoriga beriladi va birinchi
 yiqilishda to'xtaydi (adaptiv).
 
-DARAJA = o'tilmagan BIRINCHI bosqich. Hammasi o'tilsa — B1.
+DARAJA = o'tilmagan BIRINCHI bosqich. Hammasi o'tilsa — B2.
 """
 
 import json
@@ -18,7 +18,9 @@ from config import BASE_DIR
 
 PLACEMENT_PATH = BASE_DIR / "content" / "placement.json"
 
-TIERS = ["A0", "A1", "A2", "B1"]
+TIERS = ["A0", "A1", "A2", "B1", "B2"]
+# B2 bosqichi qo'shildi, ammo versiya ataylab oshirilmadi: eski foydalanuvchilar
+# testni qaytadan topshirmaydi (K15.5 qarori).
 PLACEMENT_VERSION = 2  # Plan.placement_version shu qiymatga yetsa qayta test so'ralmaydi
 
 
@@ -54,11 +56,11 @@ def next_tier(results: dict[str, bool]) -> str | None:
 
 
 def decide_level(results: dict[str, bool]) -> str:
-    """Daraja = o'tilmagan birinchi bosqich; hammasi o'tilsa B1."""
+    """Daraja = o'tilmagan birinchi bosqich; hammasi o'tilsa B2."""
     for t in TIERS:
         if not results.get(t, False):
             return t
-    return "B1"
+    return TIERS[-1]
 
 
 def level_reason(level: str, results: dict[str, bool]) -> str:
@@ -74,11 +76,12 @@ def level_reason(level: str, results: dict[str, bool]) -> str:
         "A1": "so'z va sodda gaplar",
         "A2": "sarf, olmoshlar va fe'l boblari",
         "B1": "yuqori grammatika",
+        "B2": "nozik nahv va uslub",
     }
-    if level == "B1":
+    if len(passed) == len(TIERS):
         return (
-            f"Barcha bosqichlarni o'tdingiz — {names['A2']} ham mustahkam. "
-            "B1 darajasidan davom etamiz."
+            f"Barcha bosqichlarni o'tdingiz — {names['B1']} ham mustahkam. "
+            f"{TIERS[-1]} darajasidan davom etamiz."
         )
     return (
         f"{names[last].capitalize()} bo'yicha bilimingiz yetarli, "

@@ -32,7 +32,7 @@ class DayTasks(BaseModel):
 
 
 class GeneratedPlan(BaseModel):
-    level: Literal["A0", "A1", "A2", "B1"]
+    level: Literal["A0", "A1", "A2", "B1", "B2"]
     level_reason: str
     target_level: Literal["A1", "A2", "B1", "B2"]
     target_date: str

@@ -1,4 +1,4 @@
-/** Daraja aniqlash testi — bosqichli (A0 → B1), AI'siz.
+/** Daraja aniqlash testi — bosqichli (A0 → B2), AI'siz.
  *
  * Har bosqich 5 savol. Bosqich ≥80% bo'lsa keyingisi beriladi, yiqilsa test
  * to'xtaydi. Daraja = o'tilmagan birinchi bosqich.
@@ -98,7 +98,7 @@ export default function Placement({
               BOSQICH {stage.index}/{stage.count}
             </div>
             <div className="text-6xl">
-              {stage.tier === "A0" ? "🔤" : stage.tier === "A1" ? "📖" : stage.tier === "A2" ? "🧩" : "🎓"}
+              {stage.tier === "A0" ? "🔤" : stage.tier === "A1" ? "📖" : stage.tier === "A2" ? "🧩" : stage.tier === "B1" ? "🎓" : "🏆"}
             </div>
             <h1 className="text-2xl font-extrabold">{stage.title}</h1>
             <p className="text-sm text-ink-soft font-semibold max-w-72">

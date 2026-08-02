@@ -1,6 +1,6 @@
 {
  "version": "2.0",
- "note": "Daraja aniqlash testi — 4 bosqich, har birida 5 savol. Bosqich >=80% (5 dan 4) bo'lsa o'tilgan hisoblanadi. Daraja = o'tilmagan BIRINCHI bosqich; hammasi o'tilsa B1.",
+ "note": "Daraja aniqlash testi — 5 bosqich, har birida 5 savol. Bosqich >=80% (5 dan 4) bo'lsa o'tilgan hisoblanadi. Daraja = o'tilmagan BIRINCHI bosqich; hammasi o'tilsa B2.",
  "pass_ratio": 0.8,
  "tiers": {
   "A0": {
@@ -41,6 +41,16 @@
     {"type": "mcq", "q_uz": "«جَاءَ الطَّالِبُ مُسْرِعًا» dagi «مُسْرِعًا» nima?", "q_ar": "", "options": ["Hol (الحال)", "Tamyiz (التمييز)", "Maf'ul mutlaq", "Sifat"], "answer": "Hol (الحال)", "explain_uz": "Harakat holatini bildiradi — hol, mansub.", "audio": "", "root": "", "pattern": "", "words": []},
     {"type": "mcq", "q_uz": "«أَنْ» dan keyin muzori' qaysi holatda keladi?", "q_ar": "", "options": ["Mansub (فَتْحَة)", "Marfu' (ضَمَّة)", "Majzum (سُكُون)", "Majrur (كَسْرَة)"], "answer": "Mansub (فَتْحَة)", "explain_uz": "أَنْ · لَنْ · كَيْ · حَتَّى — muzori'ni mansub qiladi.", "audio": "", "root": "", "pattern": "", "words": []},
     {"type": "mcq", "q_uz": "«الَّذِي» qaysi turkumga kiradi?", "q_ar": "", "options": ["Nisbiy olmosh", "Ishora olmoshi", "Shart yuklamasi", "So'roq olmoshi"], "answer": "Nisbiy olmosh", "explain_uz": "الَّذِي · الَّتِي — nisbiy olmoshlar (sifatlovchi gap uchun).", "audio": "", "root": "", "pattern": "", "words": []}
+   ]
+  },
+  "B2": {
+   "title_uz": "Nozik nahv, sarf va uslub",
+   "questions": [
+    {"type": "mcq", "q_uz": "«ظَنَنْتُ الرَّجُلَ صَادِقًا» — «صَادِقًا» nima?", "q_ar": "", "options": ["Ikkinchi maf'ul", "Hol", "Tamyiz", "Sifat"], "answer": "Ikkinchi maf'ul", "explain_uz": "ظَنَّ ikki maf'ul oladi: birinchisi ega o'rnida, ikkinchisi xabar o'rnida — ikkalasi ham mansub.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "Qaysi jumla TO'G'RI?", "q_ar": "", "options": ["مَرَرْتُ بِمَدَارِسَ", "مَرَرْتُ بِمَدَارِسٍ", "مَرَرْتُ بِمَدَارِسُ", "مَرَرْتُ بِمَدَارِسًا"], "answer": "مَرَرْتُ بِمَدَارِسَ", "explain_uz": "مَفَاعِل vazni — mamnu' minas-sarf: tanvin olmaydi, jarr o'rnida fatha bilan keladi.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "«اِتَّصَلَ» dagi ت qayerdan kelgan?", "q_ar": "", "options": ["Ibdol — و harfi ت ga almashgan", "O'zakning asl harfi", "VIII bobning prefiksi", "Ayol jinsi belgisi"], "answer": "Ibdol — و harfi ت ga almashgan", "explain_uz": "O'zak و ص ل; VIII bobda و harfi ت ga aylanib idg'om bo'ladi: اِوْتَصَلَ > اِتَّصَلَ.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "«نَطَقَتِ الأَرْقَامُ» — bu qaysi uslub?", "q_ar": "", "options": ["Isti'ora makniya (jonlantirish)", "Ochiq tashbeh", "Kinoya", "Haqiqiy ma'no"], "answer": "Isti'ora makniya (jonlantirish)", "explain_uz": "Raqamlarga gapirish xususiyati berilgan — o'xshatilmish yashiringan, belgisi qoldirilgan.", "audio": "", "root": "", "pattern": "", "words": []},
+    {"type": "mcq", "q_uz": "«يَا طَالِبَ العِلْمِ» — munodo nega mansub?", "q_ar": "", "options": ["Muzof bo'lgani uchun", "Atoqli ot bo'lgani uchun", "ال borligi uchun", "Ko'plik bo'lgani uchun"], "answer": "Muzof bo'lgani uchun", "explain_uz": "Munodo muzof bo'lsa mansub bo'ladi; yakka atoqli ot bo'lsa damma bilan mabniy qoladi.", "audio": "", "root": "", "pattern": "", "words": []}
    ]
   }
  }

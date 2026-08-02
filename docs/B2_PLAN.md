@@ -1,6 +1,7 @@
 # B2 DARAJA — REJA (K15)
 
-Holat: **reja tasdiqlangan (2026-07-30)**. K15.1 skeleti bajarildi.
+Holat: **BAJARILDI (2026-08-02)** — K15.1…K15.5 to'liq. 49 dars + imtihon,
+12 o'qish bosqichi, 102 savollik imtihon banki, daraja aniqlash testida B2 bosqichi.
 
 **Tasdiqlangan qarorlar:** 50 dars · kontent QO'LDA yoziladi (API generatsiya emas) ·
 B2 bepul (obuna keyin) · daraja aniqlash testi versiyasi bump QILINMAYDI — eski
@@ -186,11 +187,12 @@ adabiy parcha. Har bosqich: audio, 6 so'zlik lug'atcha, **4 baholanadigan savol*
 | `webapp/src/pages/Reference.tsx` | `LEVELS += "B2"` | ✅ K15.1 |
 | `scripts/audit_content.py` | B2 darajasi + «kontent hali yozilmagan» eslatmasi | ✅ K15.1 |
 | `tests/test_b2.py` | skelet kafolatlari (16 test) | ✅ K15.1 |
-| `content/modules/b2/*.json` | 49 dars + imtihon tuguni | K15.2–K15.4 |
-| `content/reading/b2.json` | 12 o'qish bosqichi | K15.4 |
-| `content/exams/b2_pool.json` | imtihon banki | K15.5 |
-| `backend/services/placement.py` + `content/placement.json` | B2 bosqichi (5 savol). `PLACEMENT_VERSION` **bump qilinmaydi** — eski foydalanuvchilar qayta test topshirmaydi | K15.5 |
-| `backend/services/ai.py` | `level` Literal ga B2 (onboarding B2 ni tavsiya qilishi uchun) | K15.5 |
+| `content/modules/b2/*.json` | 49 dars + imtihon tuguni | ✅ K15.2–K15.4 |
+| `content/reading/b2.json` | 12 o'qish bosqichi | ✅ K15.4 |
+| `content/exams/b2_pool.json` | imtihon banki: o'qish 46 · tinglash 35 · yozish 9 · matn 12 | ✅ K15.5 |
+| `backend/services/placement.py` + `content/placement.json` | B2 bosqichi (5 savol). `PLACEMENT_VERSION` **bump qilinmadi** — eski foydalanuvchilar qayta test topshirmaydi | ✅ K15.5 |
+| `backend/services/ai.py` | `level` Literal ga B2 (onboarding B2 ni tavsiya qilishi uchun) | ✅ K15.5 |
+| `tests/test_placement.py` | daraja aniqlash testi kafolatlari (15 test) | ✅ K15.5 |
 | `docs/ARABIY_CURRICULUM.md` | §9: B2 = 50 dars + keyin amaliyot oqimi | ✅ K15.1 |
 
 Migratsiya SHART EMAS: yangi daraja, mavjud ID'lar tegilmaydi.
@@ -202,15 +204,16 @@ Migratsiya SHART EMAS: yangi daraja, mavjud ID'lar tegilmaydi.
 | Bosqich | Ish | Natija |
 |---|---|---|
 | **K15.1** ✅ | Skelet: kurikulum 228 dars, kod B2 ni taniydi, tablar 5 ta, 16 yangi test | B2 tabi «tayyorlanmoqda» bilan ko'rinadi, deploy xavfsiz |
-| **K15.2** | b2-01…21 (nahv + sarf + balog'at) + audio | 21 dars jonli |
-| **K15.3** | b2-22…36 (lug'at + Saudiya ish) + audio | 36 dars jonli |
-| **K15.4** | b2-37…49 (ko'nikmalar + takror) + `reading/b2.json` 12 bosqich | 49 dars + o'qish moduli |
-| **K15.5** | `b2_pool.json` imtihon banki + sertifikat + yakuniy tekshiruv | B2 to'liq, sertifikat beriladi |
+| **K15.2** ✅ | b2-01…21 (nahv + sarf + balog'at) + audio | 21 dars jonli |
+| **K15.3** ✅ | b2-22…36 (lug'at + Saudiya ish) + audio | 36 dars jonli |
+| **K15.4** ✅ | b2-37…49 (ko'nikmalar + takror) + `reading/b2.json` 12 bosqich | 49 dars + o'qish moduli |
+| **K15.5** ✅ | `b2_pool.json` imtihon banki + placement B2 bosqichi + yakuniy tekshiruv | B2 to'liq, sertifikat beriladi |
 
 Har bosqich oxirida: `validate_content.py` + `audit_content.py` + `pytest` 0 xato,
 `build_audio.py`, `npm run build`, commit + push.
 
-Taxminiy hajm: ~50 dars JSON (~450 KB), ~500 audio, 12 o'qish matni, ~90 imtihon savoli.
+Yakuniy hajm: 223 dars validatsiyadan o'tdi (0 xato) · 2248 audio fayl ·
+12 o'qish bosqichi · 102 imtihon savoli (46+35+9+12) · 1224 test.
 
 ---
 

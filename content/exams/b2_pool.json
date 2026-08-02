@@ -1,0 +1,1535 @@
+{
+ "level": "B2",
+ "config": {
+  "reading": 12,
+  "listening": 10,
+  "writing": 3,
+  "speaking": 0,
+  "passages": 4,
+  "minutes": 55
+ },
+ "reading": [
+  {
+   "type": "mcq",
+   "q_uz": "«ظَنَنْتُ الرَّجُلَ صَادِقًا» — «صَادِقًا» nima?",
+   "q_ar": "",
+   "options": [
+    "Ikkinchi maf'ul",
+    "Hol",
+    "Tamyiz",
+    "Sifat"
+   ],
+   "answer": "Ikkinchi maf'ul"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«إِنَّ» dan keyingi ism qanday holatda?",
+   "q_ar": "",
+   "options": [
+    "Mansub",
+    "Marfu'",
+    "Majrur",
+    "Majzum"
+   ],
+   "answer": "Mansub"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«كَانَ» ning xabari qanday holatda?",
+   "q_ar": "",
+   "options": [
+    "Mansub",
+    "Marfu'",
+    "Majrur",
+    "Majzum"
+   ],
+   "answer": "Mansub"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Jazm qaysi so'z turiga xos?",
+   "q_ar": "",
+   "options": [
+    "Faqat fe'lga",
+    "Faqat otga",
+    "Ikkalasiga",
+    "Harfga"
+   ],
+   "answer": "Faqat fe'lga"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«حَضَرَ الطُّلَّابُ كُلُّهُمْ» — «كُلُّهُمْ» nima?",
+   "q_ar": "",
+   "options": [
+    "Ta'kid",
+    "Badal",
+    "Sifat",
+    "Hol"
+   ],
+   "answer": "Ta'kid"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«جَاءَ صَدِيقِي أَحْمَدُ» — «أَحْمَدُ» nima?",
+   "q_ar": "",
+   "options": [
+    "Badal",
+    "Sifat",
+    "Hol",
+    "Tamyiz"
+   ],
+   "answer": "Badal"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi jumla TO'G'RI?",
+   "q_ar": "",
+   "options": [
+    "مَرَرْتُ بِمَدَارِسَ",
+    "مَرَرْتُ بِمَدَارِسٍ",
+    "مَرَرْتُ بِمَدَارِسُ",
+    "مَرَرْتُ بِمَدَارِسًا"
+   ],
+   "answer": "مَرَرْتُ بِمَدَارِسَ"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«فِي المَدَارِسِ» — nega kasra?",
+   "q_ar": "",
+   "options": [
+    "ال mamnu'likni bekor qiladi",
+    "Xato yozuv",
+    "Predlog kuchli",
+    "مَفَاعِل doim kasra oladi"
+   ],
+   "answer": "ال mamnu'likni bekor qiladi"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«يَا طَالِبَ العِلْمِ» — munodo nega mansub?",
+   "q_ar": "",
+   "options": [
+    "Muzof bo'lgani uchun",
+    "Atoqli ot bo'lgani uchun",
+    "ال borligi uchun",
+    "Ko'plik bo'lgani uchun"
+   ],
+   "answer": "Muzof bo'lgani uchun"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«يَا ... النَّاسُ» bo'shliqqa nima kerak?",
+   "q_ar": "",
+   "options": [
+    "أَيُّهَا",
+    "أَيَّتُهَا",
+    "هَذَا",
+    "إِنَّ"
+   ],
+   "answer": "أَيُّهَا"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Ta'ajjub qolipini toping",
+   "q_ar": "",
+   "options": [
+    "مَا أَجْمَلَ العِلْمَ!",
+    "العِلْمُ جَمِيلٌ",
+    "هَلِ العِلْمُ جَمِيلٌ؟",
+    "لَيْسَ العِلْمُ جَمِيلًا"
+   ],
+   "answer": "مَا أَجْمَلَ العِلْمَ!"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qasam javobi moziy fe'l bilan qanday keladi?",
+   "q_ar": "",
+   "options": [
+    "لَقَدْ + moziy",
+    "لَـ + moziy",
+    "أَنْ + moziy",
+    "مَا + moziy"
+   ],
+   "answer": "لَقَدْ + moziy"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«فِي البَيْتِ ضَيْفٌ» — nega bu tartib?",
+   "q_ar": "",
+   "options": [
+    "Xabar noaniq bo'lgani uchun",
+    "Xato tartib",
+    "She'riy uslub",
+    "Savol shakli"
+   ],
+   "answer": "Xabar noaniq bo'lgani uchun"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qistirma jumlaning i'robdagi o'rni?",
+   "q_ar": "",
+   "options": [
+    "O'rni yo'q",
+    "Doim marfu'",
+    "Doim mansub",
+    "Doim majrur"
+   ],
+   "answer": "O'rni yo'q"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«كَادَ المَطَرُ يَنْزِلُ» ma'nosi?",
+   "q_ar": "",
+   "options": [
+    "Yomg'ir yog'ay dedi",
+    "Yomg'ir yog'di",
+    "Yomg'ir yog'adi",
+    "Yomg'ir yog'magan"
+   ],
+   "answer": "Yomg'ir yog'ay dedi"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Boshlash fe'lidan keyin أَنْ qo'yiladimi?",
+   "q_ar": "",
+   "options": [
+    "Yo'q",
+    "Ha, doim",
+    "Faqat moziyda",
+    "Faqat inkorda"
+   ],
+   "answer": "Yo'q"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«لَنْ» dan keyin fe'l qanday?",
+   "q_ar": "",
+   "options": [
+    "Mansub",
+    "Majzum",
+    "Marfu'",
+    "Mabniy"
+   ],
+   "answer": "Mansub"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«لَمْ» dan keyin fe'l qanday?",
+   "q_ar": "",
+   "options": [
+    "Majzum",
+    "Mansub",
+    "Marfu'",
+    "Majrur"
+   ],
+   "answer": "Majzum"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«قَالَ» so'zining o'zagi qaysi?",
+   "q_ar": "",
+   "options": [
+    "ق و ل",
+    "ق ا ل",
+    "ق ي ل",
+    "ق ل ل"
+   ],
+   "answer": "ق و ل"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«يَعِدُ» da nima sodir bo'lgan?",
+   "q_ar": "",
+   "options": [
+    "Vov tushgan (hazf)",
+    "Vov alifga aylangan",
+    "Vov ta'ga almashgan",
+    "Hech narsa"
+   ],
+   "answer": "Vov tushgan (hazf)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«اِتَّصَلَ» dagi ت qayerdan?",
+   "q_ar": "",
+   "options": [
+    "Ibdol — و ت ga almashgan",
+    "O'zakda bor",
+    "VIII bob prefiksi",
+    "Xato"
+   ],
+   "answer": "Ibdol — و ت ga almashgan"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«ضَرْبَة» qaysi ma'noni beradi?",
+   "q_ar": "",
+   "options": [
+    "Bir marta urish",
+    "Urish tarzi",
+    "Urish joyi",
+    "Uruvchi"
+   ],
+   "answer": "Bir marta urish"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«جِلْسَة» (kasra bilan) nima?",
+   "q_ar": "",
+   "options": [
+    "O'tirish tarzi",
+    "Bir marta o'tirish",
+    "O'tirish joyi",
+    "O'tiruvchi"
+   ],
+   "answer": "O'tirish tarzi"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مَسْؤُولِيَّة» qanday so'z?",
+   "q_ar": "",
+   "options": [
+    "Masdar sinoiy (mavhum ot)",
+    "Nisba (sifat)",
+    "Ism marra",
+    "Fe'l"
+   ],
+   "answer": "Masdar sinoiy (mavhum ot)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مَكَّة» dan nisba qanday?",
+   "q_ar": "",
+   "options": [
+    "مَكِّيّ",
+    "مَكَّةِيّ",
+    "مَكَّاوِيّ",
+    "مَكَّانِيّ"
+   ],
+   "answer": "مَكِّيّ"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Uch harfli otning tasg'ir vazni?",
+   "q_ar": "",
+   "options": [
+    "فُعَيْل",
+    "فَعِيل",
+    "مَفْعُول",
+    "فَاعِل"
+   ],
+   "answer": "فُعَيْل"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«رَسَائِل» ning birligi?",
+   "q_ar": "",
+   "options": [
+    "رِسَالَة",
+    "رَسُول",
+    "مُرَاسِل",
+    "إِرْسَال"
+   ],
+   "answer": "رِسَالَة"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«شَوَارِع» ning birligi?",
+   "q_ar": "",
+   "options": [
+    "شَارِع",
+    "شِرَاع",
+    "شَرْع",
+    "مَشْرُوع"
+   ],
+   "answer": "شَارِع"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مِفْعَال» vazni nimani bildiradi?",
+   "q_ar": "",
+   "options": [
+    "Asbob",
+    "Joy",
+    "Bajaruvchi",
+    "Masdar"
+   ],
+   "answer": "Asbob"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مَفْعَل» vazni odatda nimani bildiradi?",
+   "q_ar": "",
+   "options": [
+    "Joy",
+    "Asbob",
+    "Bajaruvchi",
+    "Sifat"
+   ],
+   "answer": "Joy"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«هُوَ أَسَدٌ» qanday tashbeh?",
+   "q_ar": "",
+   "options": [
+    "Baliy (eng kuchli)",
+    "To'liq",
+    "Mursal mujmal",
+    "Tashbeh emas"
+   ],
+   "answer": "Baliy (eng kuchli)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«نَطَقَتِ الأَرْقَامُ» qanday uslub?",
+   "q_ar": "",
+   "options": [
+    "Isti'ora makniya (jonlantirish)",
+    "Tashbeh",
+    "Kinoya",
+    "Haqiqat"
+   ],
+   "answer": "Isti'ora makniya (jonlantirish)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«يَدُهُ مَبْسُوطَة» nima degani?",
+   "q_ar": "",
+   "options": [
+    "U saxiy",
+    "Qo'li kasal",
+    "U ishsiz",
+    "U kuchli"
+   ],
+   "answer": "U saxiy"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«عَلَى قَدَمٍ وَسَاقٍ» ma'nosi?",
+   "q_ar": "",
+   "options": [
+    "Jadal sur'atda",
+    "Piyoda",
+    "To'xtagan",
+    "Sekin"
+   ],
+   "answer": "Jadal sur'atda"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Xabar uslubining belgisi qaysi?",
+   "q_ar": "",
+   "options": [
+    "Qisqa jumla, raqam, fe'l boshda",
+    "Uzun jumla va majoz",
+    "She'riy vazn",
+    "Ko'p takror"
+   ],
+   "answer": "Qisqa jumla, raqam, fe'l boshda"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«غَيْرَ أَنَّ» dan keyingi ism qanday?",
+   "q_ar": "",
+   "options": [
+    "Mansub",
+    "Marfu'",
+    "Majrur",
+    "Majzum"
+   ],
+   "answer": "Mansub"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«Qaror qabul qildi» qaysi?",
+   "q_ar": "",
+   "options": [
+    "اِتَّخَذَ قَرَارًا",
+    "عَمِلَ قَرَارًا",
+    "فَعَلَ قَرَارًا",
+    "كَتَبَ قَرَارًا"
+   ],
+   "answer": "اِتَّخَذَ قَرَارًا"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«جُهْد» qaysi fe'l bilan keladi?",
+   "q_ar": "",
+   "options": [
+    "بَذَلَ",
+    "لَعِبَ",
+    "عَقَدَ",
+    "أَجْرَى"
+   ],
+   "answer": "بَذَلَ"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«وَظِيفَة» va «مِهْنَة» farqi?",
+   "q_ar": "",
+   "options": [
+    "Lavozim / o'rganilgan kasb",
+    "Kasb / lavozim",
+    "Farqi yo'q",
+    "Ish vaqti / ish joyi"
+   ],
+   "answer": "Lavozim / o'rganilgan kasb"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«أَزْمَة» qachon ishlatiladi?",
+   "q_ar": "",
+   "options": [
+    "Jiddiy inqirozda",
+    "Har kundalik masalada",
+    "Kichik nosozlikda",
+    "Oddiy savolda"
+   ],
+   "answer": "Jiddiy inqirozda"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«رَصِيد» nima?",
+   "q_ar": "",
+   "options": [
+    "Hisobdagi qoldiq",
+    "Kredit",
+    "Komissiya",
+    "Valyuta"
+   ],
+   "answer": "Hisobdagi qoldiq"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«تَصْدِير» nima?",
+   "q_ar": "",
+   "options": [
+    "Eksport",
+    "Import",
+    "Bojxona",
+    "Yetkazish"
+   ],
+   "answer": "Eksport"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«إِقَامَة» (Saudiyada) nima?",
+   "q_ar": "",
+   "options": [
+    "Yashash guvohnomasi",
+    "Viza",
+    "Ish ruxsatnomasi",
+    "Pasport"
+   ],
+   "answer": "Yashash guvohnomasi"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«تَشْخِيص» nima?",
+   "q_ar": "",
+   "options": [
+    "Tashxis",
+    "Retsept",
+    "Doza",
+    "Ko'rik"
+   ],
+   "answer": "Tashxis"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«نُفَايَات» nima?",
+   "q_ar": "",
+   "options": [
+    "Chiqindilar",
+    "Manbalar",
+    "Gazlar",
+    "Suvlar"
+   ],
+   "answer": "Chiqindilar"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مُرْفَق طَيَّهُ» nima degani?",
+   "q_ar": "",
+   "options": [
+    "Ilova qilinmoqda",
+    "Keyinroq yuboriladi",
+    "Yo'qotilgan",
+    "Bekor qilindi"
+   ],
+   "answer": "Ilova qilinmoqda"
+  }
+ ],
+ "listening": [
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/irab.mp3",
+   "options": [
+    "i'rob",
+    "sarf",
+    "vazn",
+    "o'zak"
+   ],
+   "answer": "i'rob"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/qarar.mp3",
+   "options": [
+    "qaror",
+    "hisobot",
+    "reja",
+    "muddat"
+   ],
+   "answer": "qaror"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/tahaddi.mp3",
+   "options": [
+    "muammo, sinov",
+    "yechim",
+    "natija",
+    "maqsad"
+   ],
+   "answer": "muammo, sinov"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/masrif.mp3",
+   "options": [
+    "bank",
+    "bozor",
+    "ofis",
+    "kassa"
+   ],
+   "answer": "bank"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/qard.mp3",
+   "options": [
+    "kredit",
+    "qoldiq",
+    "foiz",
+    "karta"
+   ],
+   "answer": "kredit"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/tahwil.mp3",
+   "options": [
+    "o'tkazma",
+    "yechish",
+    "to'lov",
+    "hisob"
+   ],
+   "answer": "o'tkazma"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/jumruk.mp3",
+   "options": [
+    "bojxona",
+    "ombor",
+    "port",
+    "soliq"
+   ],
+   "answer": "bojxona"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/shahn.mp3",
+   "options": [
+    "yuk jo'natish",
+    "buyurtma",
+    "shartnoma",
+    "hisob-faktura"
+   ],
+   "answer": "yuk jo'natish"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/aqd_contract.mp3",
+   "options": [
+    "shartnoma",
+    "bitim",
+    "ariza",
+    "hujjat"
+   ],
+   "answer": "shartnoma"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/khudha.mp3",
+   "options": [
+    "kaska",
+    "qo'lqop",
+    "ko'zoynak",
+    "kiyim"
+   ],
+   "answer": "kaska"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/siyana.mp3",
+   "options": [
+    "texnik xizmat",
+    "nosozlik",
+    "bosqich",
+    "sifat"
+   ],
+   "answer": "texnik xizmat"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/tatbiq.mp3",
+   "options": [
+    "ilova (dastur)",
+    "sozlama",
+    "yangilanish",
+    "parol"
+   ],
+   "answer": "ilova (dastur)"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/tahdith.mp3",
+   "options": [
+    "yangilanish",
+    "o'chirish",
+    "bekor qilish",
+    "kirish"
+   ],
+   "answer": "yangilanish"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/bayanat.mp3",
+   "options": [
+    "ma'lumotlar",
+    "bayonot",
+    "hisobot",
+    "shakl"
+   ],
+   "answer": "ma'lumotlar"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/iltihab.mp3",
+   "options": [
+    "yallig'lanish",
+    "isitma",
+    "og'riq",
+    "shamollash"
+   ],
+   "answer": "yallig'lanish"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/jura.mp3",
+   "options": [
+    "doza",
+    "retsept",
+    "tahlil",
+    "ko'rik"
+   ],
+   "answer": "doza"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/muzmin.mp3",
+   "options": [
+    "surunkali",
+    "o'tkir",
+    "yengil",
+    "yuqumli"
+   ],
+   "answer": "surunkali"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/dirasa2.mp3",
+   "options": [
+    "tadqiqot",
+    "ma'ruza",
+    "dissertatsiya",
+    "manba"
+   ],
+   "answer": "tadqiqot"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/fardiyya.mp3",
+   "options": [
+    "gipoteza",
+    "natija",
+    "metod",
+    "xulosa"
+   ],
+   "answer": "gipoteza"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/munakh.mp3",
+   "options": [
+    "iqlim",
+    "havo",
+    "yomg'ir",
+    "harorat"
+   ],
+   "answer": "iqlim"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/istihlak.mp3",
+   "options": [
+    "iste'mol",
+    "tejash",
+    "ishlab chiqarish",
+    "eksport"
+   ],
+   "answer": "iste'mol"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/khibra.mp3",
+   "options": [
+    "ish tajribasi",
+    "diplom",
+    "mahorat",
+    "kasb"
+   ],
+   "answer": "ish tajribasi"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/ratib.mp3",
+   "options": [
+    "maosh",
+    "mukofot",
+    "ta'til",
+    "smena"
+   ],
+   "answer": "maosh"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/istiqala.mp3",
+   "options": [
+    "iste'fo",
+    "ta'til",
+    "shartnoma",
+    "ogohlantirish"
+   ],
+   "answer": "iste'fo"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/shakwa.mp3",
+   "options": [
+    "shikoyat",
+    "so'rov",
+    "javob",
+    "taklif"
+   ],
+   "answer": "shikoyat"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/tawid.mp3",
+   "options": [
+    "kompensatsiya",
+    "chegirma",
+    "jarima",
+    "to'lov"
+   ],
+   "answer": "kompensatsiya"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/murasil.mp3",
+   "options": [
+    "muxbir",
+    "vakil",
+    "boshlovchi",
+    "tahlilchi"
+   ],
+   "answer": "muxbir"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/tasrih.mp3",
+   "options": [
+    "bayonot",
+    "sarlavha",
+    "iqtibos",
+    "hisobot"
+   ],
+   "answer": "bayonot"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/hujja.mp3",
+   "options": [
+    "dalil",
+    "fikr",
+    "bahs",
+    "xulosa"
+   ],
+   "answer": "dalil"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/mulakhkhas.mp3",
+   "options": [
+    "konspekt, qisqacha bayon",
+    "ma'ruza",
+    "slayd",
+    "kitob"
+   ],
+   "answer": "konspekt, qisqacha bayon"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/taqrir2.mp3",
+   "options": [
+    "hisobot",
+    "qaror",
+    "ariza",
+    "xat"
+   ],
+   "answer": "hisobot"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan so'z ma'nosi?",
+   "audio": "b2/munazara.mp3",
+   "options": [
+    "munozara",
+    "taqdimot",
+    "suhbat",
+    "ma'ruza"
+   ],
+   "answer": "munozara"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan jumla nima haqida?",
+   "audio": "b2/b2-25-listen.mp3",
+   "options": [
+    "Bank shakli va yig'imlari",
+    "Shartnoma muddati",
+    "Kasalxona",
+    "Ta'lim"
+   ],
+   "answer": "Bank shakli va yig'imlari"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan jumla nima haqida?",
+   "audio": "b2/b2-33-listen.mp3",
+   "options": [
+    "Shartnoma muddati va ta'til",
+    "Bank hisobi",
+    "Yangiliklar",
+    "Tahlil"
+   ],
+   "answer": "Shartnoma muddati va ta'til"
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshitgan jumla nima haqida?",
+   "audio": "b2/b2-41-listen.mp3",
+   "options": [
+    "Yangiliklar nashri",
+    "Ish suhbati",
+    "Tibbiy ko'rik",
+    "Ma'ruza"
+   ],
+   "answer": "Yangiliklar nashri"
+  }
+ ],
+ "writing": [
+  {
+   "task_uz": "Kadrlar bo'limiga rasmiy xat yozing (5-6 gap): shartnomani yangilash so'rovi — murojaat, salom, maqsad, asos, ilova, yakun formulasi."
+  },
+  {
+   "task_uz": "«Masofaviy ish: foyda va zarar» mavzusida insho yozing (6 gap): kirish, 2 dalil, qarshi dalil va javob, xulosa."
+  },
+  {
+   "task_uz": "Qisqa hisobot yozing (5 gap): maqsad, raqam, taqqoslash, muammo, tavsiya."
+  },
+  {
+   "task_uz": "Mijozga uzr xati yozing (5 gap): muammoni tan olish, sabab, yechim, muddat, kompensatsiya."
+  },
+  {
+   "task_uz": "«Sun'iy intellekt va ish o'rinlari» mavzusida fikr matni yozing (6 gap): pozitsiya, 2 dalil, qarshi dalil, xulosa."
+  },
+  {
+   "task_uz": "Yetkazib beruvchiga rasmiy e-xat yozing (5 gap): buyurtma holati, muddat, xarajat, hisob-faktura, so'rov."
+  },
+  {
+   "task_uz": "Bir voqeani ikki uslubda yozing: (1) xabar uslubida 2 gap, (2) adabiy uslubda 3 gap."
+  },
+  {
+   "task_uz": "Ish suhbatidan keyingi minnatdorchilik xatini yozing (5 gap): rahmat, qiziqish, kuchli tomon, ilova, yakun."
+  },
+  {
+   "task_uz": "«Suvni tejash» mavzusida qisqa taqdimot matni yozing (6 gap): mavzu, uch qism rejasi, raqam, taklif, yakun."
+  }
+ ],
+ "speaking": [],
+ "passages": [
+  {
+   "id": "b2-p-tawzif",
+   "title_uz": "Ish yarmarkasi",
+   "text_ar": "انطلق معرض التوظيف بمشاركة تسعين شركة، وزاره في اليوم الأول سبعة آلاف شخص. قال المنظّمون إنّ الشركات تبحث عن مهارات عملية أكثر من الشهادات، وإنّ إتقان لغة أجنبية صار ميزة في الفرز الأول. ويقدّم المعرض ورشًا مجانية عن كتابة السيرة الذاتية.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Nechta kompaniya qatnashdi?",
+     "q_ar": "",
+     "options": [
+      "90",
+      "70",
+      "9",
+      "700"
+     ],
+     "answer": "90"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Kompaniyalar nimani qidirmoqda?",
+     "q_ar": "",
+     "options": [
+      "Amaliy ko'nikmalarni",
+      "Faqat diplomni",
+      "Uzoq tajribani",
+      "Yoshlikni"
+     ],
+     "answer": "Amaliy ko'nikmalarni"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Yarmarkada nima bepul taklif etiladi?",
+     "q_ar": "",
+     "options": [
+      "Rezyume yozish bo'yicha mashg'ulot",
+      "Transport",
+      "Tushlik",
+      "Diplom"
+     ],
+     "answer": "Rezyume yozish bo'yicha mashg'ulot"
+    }
+   ]
+  },
+  {
+   "id": "b2-p-miyah",
+   "title_uz": "Suv iste'moli",
+   "text_ar": "أعلنت الوزارة برنامجًا لترشيد استهلاك المياه يستمرّ ثلاث سنوات. ويشمل تركيب أجهزة توفير في المباني الحكومية ودعمًا للمزارعين. ووفقًا للإحصاءات، تذهب سبعون في المئة من المياه إلى الزراعة. والهدف خفض الاستهلاك عشرة في المئة في المرحلة الأولى.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Dastur qancha davom etadi?",
+     "q_ar": "",
+     "options": [
+      "3 yil",
+      "1 yil",
+      "10 yil",
+      "6 oy"
+     ],
+     "answer": "3 yil"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Suvning 70% qayerga ketadi?",
+     "q_ar": "",
+     "options": [
+      "Qishloq xo'jaligiga",
+      "Uy-ro'zg'orga",
+      "Sanoatga",
+      "Bog'larga"
+     ],
+     "answer": "Qishloq xo'jaligiga"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Birinchi bosqich maqsadi?",
+     "q_ar": "",
+     "options": [
+      "Iste'molni 10% kamaytirish",
+      "Narxni oshirish",
+      "Quduq qazish",
+      "Eksport qilish"
+     ],
+     "answer": "Iste'molni 10% kamaytirish"
+    }
+   ]
+  },
+  {
+   "id": "b2-p-raqmi",
+   "title_uz": "Raqamli xizmatlar",
+   "text_ar": "تشير نتائج التقرير إلى أنّ ثمانية وسبعين في المئة من المعاملات تمّت عبر التطبيق، بعد أن كانت أربعة وخمسين في المئة قبل عامين. وانخفض زمن الإنجاز من أربعة أيام إلى يوم واحد. غير أنّ الدراسة رصدت صعوبة التسجيل لكبار السنّ وضعف الشبكة في الريف.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Ilova orqali qancha muomala bajarildi?",
+     "q_ar": "",
+     "options": [
+      "78%",
+      "54%",
+      "24%",
+      "88%"
+     ],
+     "answer": "78%"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Bajarish vaqti qanday o'zgardi?",
+     "q_ar": "",
+     "options": [
+      "4 kundan 1 kunga",
+      "1 kundan 4 kunga",
+      "O'zgarmadi",
+      "2 kundan 5 kunga"
+     ],
+     "answer": "4 kundan 1 kunga"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qanday muammo aniqlandi?",
+     "q_ar": "",
+     "options": [
+      "Keksalar ro'yxatdan o'tishi va qishloqda internet",
+      "Narx",
+      "Til",
+      "Ish vaqti"
+     ],
+     "answer": "Keksalar ro'yxatdan o'tishi va qishloqda internet"
+    }
+   ]
+  },
+  {
+   "id": "b2-p-dawam",
+   "title_uz": "Ish soatlari",
+   "text_ar": "يرى كثير من الخبراء أنّ ساعات العمل الطويلة لا تعني إنتاجية أعلى. فالتركيز يتراجع بعد الساعة السابعة من العمل المتواصل، وتزداد الأخطاء. كما أنّ الموظف المرهق يغيب أكثر. ولذلك ينصح التقرير بتقييم الأداء بالمخرجات ومنح مرونة معقولة في تنظيم اليوم.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Ekspertlar fikri qanday?",
+     "q_ar": "",
+     "options": [
+      "Uzoq soat unumdorlikni oshirmaydi",
+      "Uzoq soat shart",
+      "Farqi yo'q",
+      "Ish haqi muhim"
+     ],
+     "answer": "Uzoq soat unumdorlikni oshirmaydi"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Diqqat qachon pasayadi?",
+     "q_ar": "",
+     "options": [
+      "7-soatdan keyin",
+      "1-soatdan keyin",
+      "Tushlikdan oldin",
+      "Har doim"
+     ],
+     "answer": "7-soatdan keyin"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qanday tavsiya berilgan?",
+     "q_ar": "",
+     "options": [
+      "Natija bo'yicha baholash",
+      "Nazoratni kuchaytirish",
+      "Soatni oshirish",
+      "Maoshni kamaytirish"
+     ],
+     "answer": "Natija bo'yicha baholash"
+    }
+   ]
+  },
+  {
+   "id": "b2-p-maktaba2",
+   "title_uz": "Kutubxona tajribasi",
+   "text_ar": "بعد سنة من الافتتاح سجّلت المكتبة أربعين ألف عضو، ثلثهم من طلاب المدارس. وأكثر ما يُطلب الكتب العلمية المبسّطة ثم الروايات المترجمة. وتواجه المكتبة ضيق المساحة مساءً ونقص الموظفين، ولذلك بدأت برنامج تطوّع للطلاب.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Nechta a'zo ro'yxatga olindi?",
+     "q_ar": "",
+     "options": [
+      "40 000",
+      "4 000",
+      "14 000",
+      "400"
+     ],
+     "answer": "40 000"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Eng ko'p nima so'raladi?",
+     "q_ar": "",
+     "options": [
+      "Soddalashtirilgan ilmiy kitoblar",
+      "Lug'atlar",
+      "Gazetalar",
+      "She'riy to'plamlar"
+     ],
+     "answer": "Soddalashtirilgan ilmiy kitoblar"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qanday yechim boshlandi?",
+     "q_ar": "",
+     "options": [
+      "Talabalar uchun ko'ngillilik dasturi",
+      "Yangi bino qurish",
+      "To'lovni oshirish",
+      "Ish vaqtini qisqartirish"
+     ],
+     "answer": "Talabalar uchun ko'ngillilik dasturi"
+    }
+   ]
+  },
+  {
+   "id": "b2-p-mashari",
+   "title_uz": "Kichik loyihalar",
+   "text_ar": "شملت الدراسة أربعمئة مشروع صغير في ثلاث مدن. واستمرّ اثنان وستون في المئة منها أكثر من سنتين، بينما توقّف الباقي في السنة الأولى. وكان أكثر الأسباب تكرارًا ضعف التخطيط المالي. أما المشاريع التي حصلت على تدريب أوّلي فحقّقت نتائج أفضل بنحو الثلث.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Nechta loyiha o'rganildi?",
+     "q_ar": "",
+     "options": [
+      "400",
+      "40",
+      "4000",
+      "62"
+     ],
+     "answer": "400"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Eng ko'p uchragan sabab?",
+     "q_ar": "",
+     "options": [
+      "Moliyaviy rejaning zaifligi",
+      "Xodim yetishmasligi",
+      "Soliq",
+      "Reklama"
+     ],
+     "answer": "Moliyaviy rejaning zaifligi"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Trening olganlar natijasi?",
+     "q_ar": "",
+     "options": [
+      "Uchdan bir yaxshiroq",
+      "Ikki barobar yomon",
+      "Bir xil",
+      "Yarim barobar kam"
+     ],
+     "answer": "Uchdan bir yaxshiroq"
+    }
+   ]
+  },
+  {
+   "id": "b2-p-darrajat",
+   "title_uz": "Velosiped yo'lakchalari",
+   "text_ar": "يرى الكاتب أنّ مسارات الدراجات ضرورة لا رفاهية، لأنّ نصف الرحلات داخل المدينة أقلّ من ثلاثة كيلومترات. ويضيف أنّ للدراجة أثرًا إيجابيًّا على الصحة والهواء. وقد يقول البعض إنّ الجوّ حارّ، غير أنّ المسارات المظلّلة تحلّ جزءًا من المشكلة. ويقترح البدء بمسار تجريبي واحد.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Muallif pozitsiyasi qanday?",
+     "q_ar": "",
+     "options": [
+      "Yo'lakchalar zarur",
+      "Ular ortiqcha",
+      "Fikr bildirmagan",
+      "Qaror hokimiyatniki"
+     ],
+     "answer": "Yo'lakchalar zarur"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qaysi raqam keltirilgan?",
+     "q_ar": "",
+     "options": [
+      "Safarlarning yarmi 3 km dan qisqa",
+      "Aholining yarmi velosipedchi",
+      "Har uchinchi odam",
+      "10% yo'llar"
+     ],
+     "answer": "Safarlarning yarmi 3 km dan qisqa"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qanday boshlash taklif qilingan?",
+     "q_ar": "",
+     "options": [
+      "Bitta sinov yo'lakchasi",
+      "Butun shahar bo'ylab",
+      "Mashinalarni taqiqlash",
+      "Hech narsa"
+     ],
+     "answer": "Bitta sinov yo'lakchasi"
+    }
+   ]
+  },
+  {
+   "id": "b2-p-dhaka",
+   "title_uz": "Sun'iy intellekt va ish",
+   "text_ar": "تغيّر الأدوات الجديدة المهامّ أكثر ممّا تلغي المهن. فالموظف الذي كان يجمع البيانات صار يفسّرها ويتّخذ القرار. وتشير دراسة إلى أنّ الشركات التي دمجت الأدوات مع تدريب داخلي رفعت إنتاجيتها نحو الخُمس، بينما لم تحقّق الشركات التي اكتفت بالشراء فرقًا يُذكر.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Yangi vositalar nimani o'zgartiradi?",
+     "q_ar": "",
+     "options": [
+      "Vazifalarni, kasblarni emas",
+      "Faqat maoshni",
+      "Faqat ish vaqtini",
+      "Hech narsani"
+     ],
+     "answer": "Vazifalarni, kasblarni emas"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qaysi kompaniyalar yutdi?",
+     "q_ar": "",
+     "options": [
+      "Trening bilan birga joriy etganlar",
+      "Faqat dastur sotib olganlar",
+      "Xodim qisqartirganlar",
+      "Hech qaysi"
+     ],
+     "answer": "Trening bilan birga joriy etganlar"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Unumdorlik qancha oshdi?",
+     "q_ar": "",
+     "options": [
+      "Taxminan beshdan bir",
+      "Ikki barobar",
+      "Uchdan bir",
+      "O'n barobar"
+     ],
+     "answer": "Taxminan beshdan bir"
+    }
+   ]
+  },
+  {
+   "id": "b2-p-muqabala2",
+   "title_uz": "Intervyu: muhandis",
+   "text_ar": "تخرّجت المهندسة قبل أربع سنوات وبدأت في شركة صغيرة براتب متواضع، غير أنّ التدريب كان ممتازًا. وتقول إنّ أصعب موقف كان مشروعًا تأخّر شهرين بسبب خلل في التصميم، وإنّها تعلّمت أنّ الاعتراف بالخطأ مبكرًا أرخص من إخفائه. وتنصح الشباب بالبدء بما لديهم.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Birinchi ishida nima yaxshi edi?",
+     "q_ar": "",
+     "options": [
+      "Trening",
+      "Maosh",
+      "Ofis",
+      "Ish vaqti"
+     ],
+     "answer": "Trening"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qanday saboq oldi?",
+     "q_ar": "",
+     "options": [
+      "Xatoni erta tan olish arzonroq",
+      "Xatoni yashirish kerak",
+      "Loyihani tashlash kerak",
+      "Dizaynga ishonmaslik"
+     ],
+     "answer": "Xatoni erta tan olish arzonroq"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Yoshlarga maslahati?",
+     "q_ar": "",
+     "options": [
+      "Borini bilan boshlash",
+      "Ideal imkoniyatni kutish",
+      "Chet elga ketish",
+      "Ixtisosni almashtirish"
+     ],
+     "answer": "Borini bilan boshlash"
+    }
+   ]
+  },
+  {
+   "id": "b2-p-daftar",
+   "title_uz": "Adabiy parcha: eski daftar",
+   "text_ar": "فتح الصندوق القديم ووجد دفترًا صغيرًا بغلاف أزرق باهت، عليه اسمه بخطّ طفولي. في الصفحة الأولى جملة واحدة: سأصير مهندسًا وأبني بيتًا لأمي. ابتسم ثم صمت طويلًا، ومرّت أمام عينيه سنوات المدرسة. وفي تلك اللحظة قرّر أن يتّصل بها الآن، لا غدًا.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Qutida nima topildi?",
+     "q_ar": "",
+     "options": [
+      "Eski daftar",
+      "Xat",
+      "Surat",
+      "Kalit"
+     ],
+     "answer": "Eski daftar"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Daftarda nima yozilgan edi?",
+     "q_ar": "",
+     "options": [
+      "Muhandis bo'lib onasiga uy qurish",
+      "Chet elga ketish",
+      "Sport orzusi",
+      "Do'stlar ro'yxati"
+     ],
+     "answer": "Muhandis bo'lib onasiga uy qurish"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qanday qaror qildi?",
+     "q_ar": "",
+     "options": [
+      "Onasiga hozir qo'ng'iroq qilish",
+      "Ertaga borish",
+      "Daftarni tashlash",
+      "Ish almashtirish"
+     ],
+     "answer": "Onasiga hozir qo'ng'iroq qilish"
+    }
+   ]
+  },
+  {
+   "id": "b2-p-mustashfa",
+   "title_uz": "Shifoxona xabari",
+   "text_ar": "افتُتح أمس مستشفى جديد يضمّ مئتي سرير وأربع غرف عمليات. وقال وزير الصحة إنّ المستشفى سيخدم أكثر من مئة ألف نسمة في المنطقة الشرقية. ويشمل المشروع عيادات خارجية وقسمًا للطوارئ يعمل على مدار الساعة. يُذكر أنّ العمل استغرق ثمانية عشر شهرًا.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Shifoxonada nechta o'rin bor?",
+     "q_ar": "",
+     "options": [
+      "200",
+      "20",
+      "2000",
+      "400"
+     ],
+     "answer": "200"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Shoshilinch bo'lim qanday ishlaydi?",
+     "q_ar": "",
+     "options": [
+      "Kecha-kunduz",
+      "Faqat kunduzi",
+      "Faqat ish kunlari",
+      "Haftada uch kun"
+     ],
+     "answer": "Kecha-kunduz"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qurilish qancha davom etdi?",
+     "q_ar": "",
+     "options": [
+      "18 oy",
+      "8 oy",
+      "28 oy",
+      "10 oy"
+     ],
+     "answer": "18 oy"
+    }
+   ]
+  },
+  {
+   "id": "b2-p-taalum2",
+   "title_uz": "O'rganish odati",
+   "text_ar": "تشير التجربة إلى أنّ من يقرأ خمس عشرة دقيقة يوميًّا يتقدّم أكثر ممّن يدرس ساعتين في نهاية الأسبوع، لأنّ الذاكرة تُبنى بالتكرار المتباعد. وقد يقول قائل إنّ الوقت ضيّق، غير أنّ الدقائق بين المهامّ تكفي إذا استُعملت بوعي. والمقارنة الصحيحة تكون مع النفس قبل شهر.",
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Qaysi rejim samaraliroq?",
+     "q_ar": "",
+     "options": [
+      "Kuniga 15 daqiqa",
+      "Haftada 2 soat",
+      "Oyda bir kun",
+      "Imtihon oldidan"
+     ],
+     "answer": "Kuniga 15 daqiqa"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Xotira qanday quriladi?",
+     "q_ar": "",
+     "options": [
+      "Oraliqli takror bilan",
+      "Bir kunlik zo'riqish bilan",
+      "Faqat yozish bilan",
+      "Faqat tinglash bilan"
+     ],
+     "answer": "Oraliqli takror bilan"
+    },
+    {
+     "type": "mcq",
+     "q_uz": "To'g'ri taqqoslash qanday?",
+     "q_ar": "",
+     "options": [
+      "Bir oy oldingi o'zi bilan",
+      "Boshqalar bilan",
+      "O'qituvchi bilan",
+      "Guruh o'rtachasi bilan"
+     ],
+     "answer": "Bir oy oldingi o'zi bilan"
+    }
+   ]
+  }
+ ]
+}

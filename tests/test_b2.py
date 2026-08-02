@@ -140,6 +140,80 @@ def test_exam_not_available_without_pool():
         assert ex.exam_available("B2") is False
 
 
+# ── B2 imtihon banki (K15.5) ──
+
+POOL = ex.load_pool("B2")
+
+
+def test_b2_pool_config_matches_plan():
+    assert POOL is not None, "content/exams/b2_pool.json yo'q"
+    assert POOL["config"] == {
+        "reading": 12,
+        "listening": 10,
+        "writing": 3,
+        "speaking": 0,
+        "passages": 4,
+        "minutes": 55,
+    }
+
+
+@pytest.mark.parametrize("section", ["reading", "listening", "writing", "passages"])
+def test_b2_bank_is_three_times_the_exam(section):
+    """Bank 3 barobar — uch marta TO'LIQ boshqa savollar bilan topshirish uchun."""
+    need = POOL["config"][section]
+    assert len(POOL[section]) >= need * 3, f"{section}: bank kichik"
+
+
+def test_b2_listening_audio_files_exist():
+    from config import BASE_DIR
+
+    for item in POOL["listening"]:
+        path = BASE_DIR / "webapp" / "public" / "audio" / item["audio"]
+        assert path.exists(), f"audio yo'q: {item['audio']}"
+
+
+def test_b2_answers_are_among_options():
+    def check(items):
+        for it in items:
+            assert it["answer"] in it["options"]
+            assert len(set(it["options"])) == len(it["options"])
+
+    check(POOL["reading"])
+    check(POOL["listening"])
+    for p in POOL["passages"]:
+        assert len(p["questions"]) == 3
+        check(p["questions"])
+
+
+def test_b2_exam_builds_and_is_full_size():
+    exam = ex.build_exam("B2")
+    cfg = POOL["config"]
+    for section in ("reading", "listening", "writing", "passages"):
+        assert len(exam[section]) == cfg[section]
+    assert exam["minutes"] == 55
+    assert ex.passage_questions(exam) == 12
+
+
+def test_b2_retake_gives_different_questions():
+    """24 soatdan keyingi qayta topshirishda savollar takrorlanmaydi."""
+    from services.qbank import qhash
+
+    first = ex.build_exam("B2")
+    seen = {
+        qhash(it)
+        for s in ("reading", "listening", "writing", "passages")
+        for it in first[s]
+    }
+    second = ex.build_exam("B2", seen=seen)
+    for section in ("reading", "listening", "passages"):
+        overlap = {qhash(i) for i in second[section]} & seen
+        assert not overlap, f"{section}: takrorlangan savol bor"
+
+
+def test_b2_exam_is_now_available():
+    assert ex.exam_available("B2") is True
+
+
 @pytest.mark.asyncio
 async def test_b1_pass_does_not_promote_to_empty_b2(session, make_user):
     """B1 imtihonidan o'tgan foydalanuvchi kontenti yo'q B2 ga ko'tarilmaydi."""
