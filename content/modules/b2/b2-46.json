@@ -1,0 +1,303 @@
+{
+ "id": "b2-46",
+ "level": "B2",
+ "module": "skills-adv",
+ "order": 46,
+ "title_uz": "Gapirish: taqdimot va munozara",
+ "title_ar": "العَرْضُ التَّقْدِيمِيُّ وَالمُنَاظَرَةُ",
+ "can_do_uz": "Qisqa taqdimot qila olaman va munozarada fikrimni dalil bilan himoya qila olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-45"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Taqdimot uch qismdan iborat: nima aytishingizni ayting, ayting, aytganingizni takrorlang. Arabchada tayyor qoliplar bor: «سَأَتَحَدَّثُ اليَوْمَ عَنْ», «نَنْتَقِلُ إِلَى النُّقْطَةِ الثَّانِيَةِ», «فِي الخِتَامِ أَشْكُرُكُمْ». Munozarada esa: «أَتَّفِقُ جُزْئِيًّا», «دَلِيلِي عَلَى ذَلِكَ». Shu iboralar bilan gapirish ishonchli chiqadi.",
+ "grammar": {
+  "point_ar": "قَوَالِبُ العَرْضِ وَالمُنَاظَرَةِ",
+  "explanation_uz": "TAQDIMOT QOLIPLARI. Ochilish: «السَّلَامُ عَلَيْكُمْ، سَأَتَحَدَّثُ اليَوْمَ عَنْ…» / «مَوْضُوعُ عَرْضِي هُوَ…». Reja: «سَأُقَسِّمُ العَرْضَ إِلَى ثَلَاثَةِ أَجْزَاءٍ». O'tish: «نَنْتَقِلُ إِلَى النُّقْطَةِ الثَّانِيَةِ»، «وَبِالنِّسْبَةِ لِـ…». Ko'rsatish: «كَمَا تَرَوْنَ فِي الشَّرِيحَةِ» (slaydda ko'rib turganingizdek). Yakun: «فِي الخِتَامِ، أَشْكُرُكُمْ عَلَى حُسْنِ الاِسْتِمَاعِ»، «هَلْ لَدَيْكُمْ أَسْئِلَةٌ؟». MUNOZARA (المُنَاظَرَة): pozitsiya — «مَوْقِفِي هُوَ…»; dalil — «دَلِيلِي عَلَى ذَلِكَ أَنَّ…»; qisman rozilik — «أَتَّفِقُ جُزْئِيًّا، لَكِنْ…»; savolga javob — «سُؤَالٌ جَيِّدٌ، وَالإِجَابَةُ…»; bilmaslikni tan olish — «لَا أَمْلِكُ الرَّقْمَ الآنَ، سَأُرْسِلُهُ لَاحِقًا». NUTQ TEXNIKASI: qisqa jumlalar; har fikrdan keyin pauza; raqamni sekin ayting; ko'z bilan aloqa.",
+  "table": [
+   {"ar": "سَأَتَحَدَّثُ اليَوْمَ عَنْ…", "uz": "Bugun … haqida gapiraman", "form": "اِفْتِتَاح"},
+   {"ar": "سَأُقَسِّمُ العَرْضَ إِلَى ثَلَاثَةِ أَجْزَاءٍ", "uz": "Taqdimotni uch qismga bo'laman", "form": "خُطَّة"},
+   {"ar": "نَنْتَقِلُ إِلَى النُّقْطَةِ الثَّانِيَةِ", "uz": "Ikkinchi masalaga o'tamiz", "form": "اِنْتِقَال"},
+   {"ar": "كَمَا تَرَوْنَ فِي الشَّرِيحَةِ", "uz": "Slaydda ko'rib turganingizdek", "form": "إِشَارَة"},
+   {"ar": "دَلِيلِي عَلَى ذَلِكَ أَنَّ…", "uz": "Buning dalili shuki…", "form": "حُجَّة"},
+   {"ar": "هَلْ لَدَيْكُمْ أَسْئِلَةٌ؟", "uz": "Savollaringiz bormi?", "form": "خِتَام"}
+  ],
+  "common_mistakes_uz": [
+   "Taqdimotni rejasiz boshlash — tinglovchi yo'qotadi; avval «uch qism» deb ayting.",
+   "Savolga javob bermay, mavzuni o'zgartirish — «سُؤَالٌ جَيِّدٌ» bilan boshlang.",
+   "Bilmagan raqamni taxmin qilib aytish — «سَأُرْسِلُهُ لَاحِقًا» ishonchliroq."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع ر ض",
+   "meaning_uz": "ko'rsatish, taqdim etish",
+   "uz_cognates": ["ma'ruza", "arz", "e'tiroz"],
+   "derived": [
+    {"ar": "عَرْض", "uz": "taqdimot; taklif", "pattern": "فَعْل"},
+    {"ar": "عَارِض", "uz": "taqdim etuvchi", "pattern": "فَاعِل"},
+    {"ar": "مَعْرِض", "uz": "ko'rgazma", "pattern": "مَفْعِل"}
+   ]
+  },
+  {
+   "root": "ن ظ ر",
+   "meaning_uz": "qarash, ko'rish",
+   "uz_cognates": ["nazar", "manzara", "nazariya"],
+   "derived": [
+    {"ar": "مُنَاظَرَة", "uz": "munozara, debat", "pattern": "مُفَاعَلَة"},
+    {"ar": "وِجْهَة نَظَر", "uz": "nuqtai nazar", "pattern": "إِضَافَة"},
+    {"ar": "نَظَرِيَّة", "uz": "nazariya", "pattern": "فَعَلِيَّة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "عَرْض تَقْدِيمِيّ",
+   "translit": "ʿarḍ taqdīmī",
+   "uz": "taqdimot (prezentatsiya)",
+   "root": "ع ر ض",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/ard_taqdimi2.mp3",
+   "example_ar": "أَعْدَدْتُ عَرْضًا تَقْدِيمِيًّا قَصِيرًا.",
+   "example_uz": "Qisqa taqdimot tayyorladim.",
+   "srs": true
+  },
+  {
+   "ar": "مُنَاظَرَة",
+   "translit": "munāẓara",
+   "uz": "munozara, debat",
+   "root": "ن ظ ر",
+   "pattern": "مُفَاعَلَة",
+   "pos": "ot",
+   "audio": "b2/munazara.mp3",
+   "example_ar": "شَارَكْتُ فِي مُنَاظَرَةٍ طُلَّابِيَّةٍ.",
+   "example_uz": "Talabalar munozarasida qatnashdim.",
+   "srs": true
+  },
+  {
+   "ar": "وِجْهَة نَظَر",
+   "translit": "wijhat naẓar",
+   "uz": "nuqtai nazar",
+   "root": "ن ظ ر",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/wijhat_nazar.mp3",
+   "example_ar": "مِنْ وِجْهَةِ نَظَرِي، الحَلُّ مُمْكِنٌ.",
+   "example_uz": "Mening nuqtai nazarimdan, yechim mumkin.",
+   "srs": true
+  },
+  {
+   "ar": "دَلِيل",
+   "translit": "dalīl",
+   "uz": "dalil, isbot; qo'llanma",
+   "root": "د ل ل",
+   "pattern": "فَعِيل",
+   "pos": "ot",
+   "audio": "b2/dalil2.mp3",
+   "example_ar": "دَلِيلِي عَلَى ذَلِكَ الأَرْقَامُ.",
+   "example_uz": "Buning dalili — raqamlar.",
+   "srs": true
+  },
+  {
+   "ar": "جُزْئِيًّا",
+   "translit": "juzʾiyyan",
+   "uz": "qisman",
+   "root": "ج ز أ",
+   "pattern": "فُعْلِيًّا",
+   "pos": "ravish",
+   "audio": "b2/juziyyan.mp3",
+   "example_ar": "أَتَّفِقُ جُزْئِيًّا مَعَ هَذَا الرَّأْيِ.",
+   "example_uz": "Bu fikr bilan qisman roziman.",
+   "srs": true
+  },
+  {
+   "ar": "حُسْن الاِسْتِمَاع",
+   "translit": "ḥusn al-istimāʿ",
+   "uz": "diqqat bilan tinglash (rahmat iborasida)",
+   "root": "س م ع",
+   "pattern": "إِضَافَة",
+   "pos": "ibora",
+   "audio": "b2/husn_istima2.mp3",
+   "example_ar": "أَشْكُرُكُمْ عَلَى حُسْنِ الاِسْتِمَاعِ.",
+   "example_uz": "Diqqat bilan tinglaganingiz uchun rahmat.",
+   "srs": true
+  },
+  {
+   "ar": "أَجْزَاء",
+   "translit": "ajzāʾ",
+   "uz": "qismlar (birligi جُزْء)",
+   "root": "ج ز أ",
+   "pattern": "أَفْعَال",
+   "pos": "ot",
+   "audio": "b2/ajza.mp3",
+   "example_ar": "العَرْضُ مِنْ ثَلَاثَةِ أَجْزَاءٍ.",
+   "example_uz": "Taqdimot uch qismdan iborat.",
+   "srs": true
+  },
+  {
+   "ar": "إِقْنَاع",
+   "translit": "iqnāʿ",
+   "uz": "ishontirish",
+   "root": "ق ن ع",
+   "pattern": "إِفْعَال",
+   "pos": "ot",
+   "audio": "b2/iqna2.mp3",
+   "example_ar": "الإِقْنَاعُ يَحْتَاجُ إِلَى دَلِيلٍ.",
+   "example_uz": "Ishontirish dalil talab qiladi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "السلام عليكم. سأتحدّث اليوم عن أهمية التدريب العملي، وسأقسّم العرض إلى ثلاثة أجزاء: الواقع، المشكلة، والحلّ. أولًا، كما ترون في الشريحة، ثلث الخريجين فقط يجدون عملًا في السنة الأولى. ننتقل إلى النقطة الثانية: السبب في رأيي هو ضعف التدريب. دليلي على ذلك أنّ الشركات تطلب خبرة عملية. وفي الختام، أقترح شراكة بين الجامعة والشركات. أشكركم على حسن الاستماع، هل لديكم أسئلة؟",
+   "questions": [
+    {"q_uz": "Taqdimot necha qismdan iborat?", "a": "Uchta: holat, muammo, yechim"},
+    {"q_uz": "Qanday raqam keltirildi?", "a": "Bitiruvchilarning uchdan biri birinchi yilda ish topadi"},
+    {"q_uz": "Taklif nima?", "a": "Universitet va kompaniyalar hamkorligi"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-46-listen.mp3",
+   "transcript_ar": "سَأَتَحَدَّثُ اليَوْمَ عَنْ أَهَمِّيَّةِ التَّدْرِيبِ. سَأُقَسِّمُ العَرْضَ إِلَى ثَلَاثَةِ أَجْزَاءٍ. أَشْكُرُكُمْ عَلَى حُسْنِ الاِسْتِمَاعِ.",
+   "questions": [
+    {"q_uz": "Mavzu nima?", "a": "Amaliyot (trening) ahamiyati"},
+    {"q_uz": "Nechta qismga bo'lingan?", "a": "Uchta"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Bir daqiqalik taqdimot qiling: mavzu, uch qism rejasi, bitta dalil, yakun va savol taklifi.",
+   "target_ar": ["سَأَتَحَدَّثُ اليَوْمَ عَنْ…", "سَأُقَسِّمُ العَرْضَ إِلَى ثَلَاثَةِ أَجْزَاءٍ", "هَلْ لَدَيْكُمْ أَسْئِلَةٌ؟"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Taqdimot matnini yozing (6 gap): ochilish, reja, dalil, raqam, taklif, yakun.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Taqdimotni qanday boshlash to'g'ri?",
+   "q_ar": "",
+   "options": [
+    "Mavzu va reja bilan",
+    "Darrov raqamlar bilan",
+    "Savol bilan",
+    "Xulosa bilan"
+   ],
+   "answer": "Mavzu va reja bilan",
+   "explain_uz": "Tinglovchi yo'l xaritasini oladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«أَتَّفِقُ جُزْئِيًّا» nima degani?",
+   "q_ar": "أَتَّفِقُ جُزْئِيًّا",
+   "options": ["Qisman roziman", "To'liq roziman", "Rozi emasman", "Bilmayman"],
+   "answer": "Qisman roziman",
+   "explain_uz": "Munozarada nozik pozitsiya.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Bilmagan raqam so'ralsa nima deyish to'g'ri?",
+   "q_ar": "",
+   "options": [
+    "لَا أَمْلِكُ الرَّقْمَ الآنَ، سَأُرْسِلُهُ لَاحِقًا",
+    "Taxminiy raqam aytish",
+    "Savolni e'tiborsiz qoldirish",
+    "Mavzuni o'zgartirish"
+   ],
+   "answer": "لَا أَمْلِكُ الرَّقْمَ الآنَ، سَأُرْسِلُهُ لَاحِقًا",
+   "explain_uz": "Ishonchlilik — aniqlikdan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«كَمَا تَرَوْنَ فِي الشَّرِيحَةِ» qachon aytiladi?",
+   "q_ar": "كَمَا تَرَوْنَ فِي الشَّرِيحَةِ",
+   "options": ["Slaydga ishora qilganda", "Yakunlashda", "Savol berganda", "Uzr so'raganda"],
+   "answer": "Slaydga ishora qilganda",
+   "explain_uz": "Ko'rsatish iborasi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "مُنَاظَرَة",
+   "options": [],
+   "answer": "munozara",
+   "explain_uz": "مُنَاظَرَة — debat, munozara.",
+   "audio": "b2/munazara.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«عَرْض، مَعْرِض، عَارِض» qaysi o'zakdan?",
+   "q_ar": "مَعْرِض",
+   "options": ["ع ر ض", "ع ر ف", "ر ع ض", "ع ض ر"],
+   "answer": "ع ر ض",
+   "explain_uz": "ع ر ض — ko'rsatish o'zagi.",
+   "audio": "",
+   "root": "ع ر ض",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Munozarada dalilni qanday kiritasiz?",
+   "q_ar": "",
+   "options": [
+    "دَلِيلِي عَلَى ذَلِكَ أَنَّ…",
+    "خَلَاص…",
+    "مَا أَدْرِي…",
+    "بَعْدَيْن…"
+   ],
+   "answer": "دَلِيلِي عَلَى ذَلِكَ أَنَّ…",
+   "explain_uz": "Pozitsiyani asoslash qolipi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Bugun ta'lim haqida gapiraman»",
+   "q_ar": "",
+   "options": [],
+   "answer": "سَأَتَحَدَّثُ اليَوْمَ عَنِ التَّعْلِيمِ",
+   "explain_uz": "سَـ + muzori' + vaqt + عَنْ + majrur.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["سَأَتَحَدَّثُ", "اليَوْمَ", "عَنِ", "التَّعْلِيمِ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع ر ض", "back": "taqdim — ard/ma'rid", "deck": "msa"},
+  {"type": "root", "front": "ن ظ ر", "back": "qarash — munozara/nazariya", "deck": "msa"},
+  {"type": "phrase", "front": "عَرْض تَقْدِيمِيّ", "back": "taqdimot", "deck": "msa"},
+  {"type": "word", "front": "مُنَاظَرَة", "back": "munozara", "deck": "msa"},
+  {"type": "phrase", "front": "وِجْهَة نَظَر", "back": "nuqtai nazar", "deck": "msa"},
+  {"type": "word", "front": "دَلِيل", "back": "dalil", "deck": "msa"},
+  {"type": "word", "front": "جُزْئِيًّا", "back": "qisman", "deck": "msa"},
+  {"type": "phrase", "front": "حُسْن الاِسْتِمَاع", "back": "diqqat bilan tinglash", "deck": "msa"},
+  {"type": "word", "front": "أَجْزَاء", "back": "qismlar", "deck": "msa"},
+  {"type": "word", "front": "إِقْنَاع", "back": "ishontirish", "deck": "msa"}
+ ]
+}

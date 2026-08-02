@@ -1,0 +1,1218 @@
+{
+ "level": "B2",
+ "note": "B2 o'qish bosqichlari — har 4 darsda bitta matn. Harakat minimal (real matn). Janrlar: xabar, hisobot, fikr maqolasi, intervyu, adabiy parcha.",
+ "stages": [
+  {
+   "stage": 1,
+   "lesson_id": "b2-01",
+   "title_uz": "Xabar: yangi kutubxona",
+   "harakat": "minimal",
+   "words": 80,
+   "audio": "read/b2-01.mp3",
+   "text_ar": "افتتحت البلدية أمس مكتبة عامة جديدة في وسط المدينة، بعد عمل استمرّ سنة كاملة. وقال المتحدث الرسمي إنّ المكتبة تضمّ خمسين ألف كتاب وقاعتين للقراءة، إضافة إلى قسم خاص بالأطفال. ووفقًا للبيان، ستكون العضوية مجانية للطلاب، بينما يدفع الآخرون رسمًا سنويًّا رمزيًّا. وتفتح المكتبة أبوابها من الثامنة صباحًا حتى العاشرة مساءً، ما عدا يوم الجمعة. يُذكر أنّ المدينة كانت تملك مكتبة واحدة فقط، وقد ازداد عدد الطلاب فيها ثلاث مرات خلال خمس سنوات، ولذلك جاء المشروع الجديد استجابةً لحاجة حقيقية.",
+   "glossary": [
+    {
+     "ar": "البلدية",
+     "uz": "shahar hokimiyati"
+    },
+    {
+     "ar": "تضمّ",
+     "uz": "o'z ichiga oladi"
+    },
+    {
+     "ar": "العضوية",
+     "uz": "a'zolik"
+    },
+    {
+     "ar": "رمزيًّا",
+     "uz": "ramziy (juda oz)"
+    },
+    {
+     "ar": "استجابةً",
+     "uz": "javob tariqasida"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Kutubxonada nechta kitob bor?",
+     "q_ar": "",
+     "options": [
+      "50 000",
+      "5 000",
+      "500 000",
+      "15 000"
+     ],
+     "answer": "50 000",
+     "explain_uz": "«تضمّ خمسين ألف كتاب».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Talabalar uchun a'zolik qanday?",
+     "q_ar": "",
+     "options": [
+      "Bepul",
+      "Yillik to'lovli",
+      "Oylik to'lovli",
+      "Faqat yozda bepul"
+     ],
+     "answer": "Bepul",
+     "explain_uz": "«العضوية مجانية للطلاب».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Kutubxona qaysi kuni yopiq?",
+     "q_ar": "",
+     "options": [
+      "Juma",
+      "Shanba",
+      "Yakshanba",
+      "Payshanba"
+     ],
+     "answer": "Juma",
+     "explain_uz": "«ما عدا يوم الجمعة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Loyiha nima uchun boshlangan?",
+     "q_ar": "",
+     "options": [
+      "Talabalar soni uch barobar oshgani uchun",
+      "Eski bino buzilgani uchun",
+      "Turizm uchun",
+      "Xayriya uchun"
+     ],
+     "answer": "Talabalar soni uch barobar oshgani uchun",
+     "explain_uz": "«ازداد عدد الطلاب ثلاث مرات».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 2,
+   "lesson_id": "b2-05",
+   "title_uz": "Hisobot: kichik biznes",
+   "harakat": "minimal",
+   "words": 83,
+   "audio": "read/b2-05.mp3",
+   "text_ar": "يقدّم هذا التقرير صورة عامة عن المشاريع الصغيرة خلال العام الماضي. تمّ جمع البيانات من ثلاث مدن، وشملت العيّنة أربعمئة مشروع. تشير النتائج إلى أنّ اثنين وستين في المئة من المشاريع استمرّت أكثر من سنتين، بينما توقّف الباقي في السنة الأولى. وكان السبب الأكثر تكرارًا هو ضعف التخطيط المالي، ثم قلّة الخبرة الإدارية. من جهة أخرى، حقّقت المشاريع التي حصلت على تدريب أوّلي نتائج أفضل بنحو الثلث. ويوصي التقرير بثلاثة إجراءات: دورة إلزامية قبل التمويل، ومتابعة ربع سنوية، ودليل إرشادي مبسّط باللغة المحلية.",
+   "glossary": [
+    {
+     "ar": "العيّنة",
+     "uz": "tanlanma"
+    },
+    {
+     "ar": "تكرارًا",
+     "uz": "takrorlanish jihatidan"
+    },
+    {
+     "ar": "التمويل",
+     "uz": "moliyalashtirish"
+    },
+    {
+     "ar": "إجراءات",
+     "uz": "choralar"
+    },
+    {
+     "ar": "مبسّط",
+     "uz": "soddalashtirilgan"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Tanlanma qanchani qamragan?",
+     "q_ar": "",
+     "options": [
+      "400 loyiha, 3 shahar",
+      "40 loyiha, 1 shahar",
+      "4000 loyiha",
+      "62 loyiha"
+     ],
+     "answer": "400 loyiha, 3 shahar",
+     "explain_uz": "«شملت العيّنة أربعمئة مشروع» va «ثلاث مدن».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Eng ko'p uchragan muvaffaqiyatsizlik sababi?",
+     "q_ar": "",
+     "options": [
+      "Moliyaviy rejaning zaifligi",
+      "Xodim yetishmasligi",
+      "Yuqori soliq",
+      "Reklama yo'qligi"
+     ],
+     "answer": "Moliyaviy rejaning zaifligi",
+     "explain_uz": "«ضعف التخطيط المالي».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Trening olgan loyihalar qanday natija ko'rsatgan?",
+     "q_ar": "",
+     "options": [
+      "Taxminan uchdan bir yaxshiroq",
+      "Ikki barobar yomonroq",
+      "Farqi yo'q",
+      "Yarim barobar kam"
+     ],
+     "answer": "Taxminan uchdan bir yaxshiroq",
+     "explain_uz": "«أفضل بنحو الثلث».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Hisobot nechta chorani tavsiya qiladi?",
+     "q_ar": "",
+     "options": [
+      "Uchta",
+      "Ikkita",
+      "To'rtta",
+      "Beshta"
+     ],
+     "answer": "Uchta",
+     "explain_uz": "Kurs, choraklik nazorat, qo'llanma.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 3,
+   "lesson_id": "b2-09",
+   "title_uz": "Fikr: shaharda velosiped",
+   "harakat": "minimal",
+   "words": 91,
+   "audio": "read/b2-09.mp3",
+   "text_ar": "يثير موضوع مسارات الدراجات جدلًا في مدينتنا، وأرى أنّها ضرورة لا رفاهية. أولًا، حركة السير في المركز بطيئة، والمسافات القصيرة تستهلك وقتًا طويلًا بالسيارة. على سبيل المثال، تشير دراسة محلية إلى أنّ نصف الرحلات داخل المدينة أقلّ من ثلاثة كيلومترات. بالإضافة إلى ذلك، للدراجة أثر إيجابي على الصحة وعلى تلوّث الهواء. وقد يقول البعض إنّ الجوّ حارّ ولا يناسب الدراجات، غير أنّ هذا الرأي يغفل أنّ المسارات المظلّلة والاستخدام الصباحي يحلّان جزءًا كبيرًا من المشكلة. وبناءً على ما سبق، ينبغي البدء بمسار تجريبي في شارع واحد، ثم التوسّع تدريجيًّا حسب النتائج.",
+   "glossary": [
+    {
+     "ar": "مسارات",
+     "uz": "yo'lakchalar, yo'nalishlar"
+    },
+    {
+     "ar": "رفاهية",
+     "uz": "hashamat, ortiqcha qulaylik"
+    },
+    {
+     "ar": "تستهلك",
+     "uz": "sarflaydi"
+    },
+    {
+     "ar": "المظلّلة",
+     "uz": "soyabonli"
+    },
+    {
+     "ar": "التوسّع",
+     "uz": "kengaytirish"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Muallif pozitsiyasi qanday?",
+     "q_ar": "",
+     "options": [
+      "Velosiped yo'lakchalari zarurat",
+      "Ular ortiqcha hashamat",
+      "Mavzu ahamiyatsiz",
+      "Qaror hokimiyatga havola"
+     ],
+     "answer": "Velosiped yo'lakchalari zarurat",
+     "explain_uz": "«ضرورة لا رفاهية».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qanday raqam dalil sifatida keltirilgan?",
+     "q_ar": "",
+     "options": [
+      "Safarlarning yarmi 3 km dan qisqa",
+      "Aholining yarmi velosiped minadi",
+      "Uchdan bir shahar markazida ishlaydi",
+      "Har o'ninchi odam sport bilan shug'ullanadi"
+     ],
+     "answer": "Safarlarning yarmi 3 km dan qisqa",
+     "explain_uz": "«نصف الرحلات… أقلّ من ثلاثة كيلومترات».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qarshi dalil nima edi?",
+     "q_ar": "",
+     "options": [
+      "Havo issiq",
+      "Yo'l tor",
+      "Velosiped qimmat",
+      "Xavfsizlik yo'q"
+     ],
+     "answer": "Havo issiq",
+     "explain_uz": "«الجوّ حارّ ولا يناسب».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Muallif qanday yechim taklif qiladi?",
+     "q_ar": "",
+     "options": [
+      "Bitta ko'chada sinov yo'lakchasi",
+      "Butun shaharda darhol qurish",
+      "Mashinalarni taqiqlash",
+      "Hech narsa qilmaslik"
+     ],
+     "answer": "Bitta ko'chada sinov yo'lakchasi",
+     "explain_uz": "«مسار تجريبي في شارع واحد».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 4,
+   "lesson_id": "b2-13",
+   "title_uz": "Intervyu: yosh muhandis",
+   "harakat": "minimal",
+   "words": 86,
+   "audio": "read/b2-13.mp3",
+   "text_ar": "المحاور: حدّثنا عن بدايتك.\nالمهندسة: تخرّجت قبل أربع سنوات، وبدأت في شركة صغيرة. كان الراتب متواضعًا، غير أنّ التدريب كان ممتازًا.\nالمحاور: وما أصعب موقف واجهتِه؟\nالمهندسة: مشروع تأخّر شهرين بسبب خلل في التصميم. تعلّمت وقتها أنّ الاعتراف بالخطأ مبكرًا أرخص من إخفائه.\nالمحاور: ينصح كثيرون بالتخصّص المبكر، ما رأيك؟\nالمهندسة: أتّفق جزئيًّا. في السنتين الأوليين جرّب كل شيء، ثم تخصّص. من جهة أخرى، المهارات الإنسانية لا تقلّ أهمية عن التقنية.\nالمحاور: كلمة أخيرة؟\nالمهندسة: لا تنتظر الفرصة المثالية، ابدأ بما لديك وطوّر نفسك في الطريق.",
+   "glossary": [
+    {
+     "ar": "متواضعًا",
+     "uz": "kamtarona (kam)"
+    },
+    {
+     "ar": "خلل",
+     "uz": "nosozlik"
+    },
+    {
+     "ar": "إخفاء",
+     "uz": "yashirish"
+    },
+    {
+     "ar": "التخصّص",
+     "uz": "ixtisoslashuv"
+    },
+    {
+     "ar": "طوّر",
+     "uz": "rivojlantir"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Muhandis ayolning birinchi ishida nima yaxshi edi?",
+     "q_ar": "",
+     "options": [
+      "Trening (tajriba)",
+      "Maosh",
+      "Ish vaqti",
+      "Ofis"
+     ],
+     "answer": "Trening (tajriba)",
+     "explain_uz": "«الراتب متواضعًا، غير أنّ التدريب كان ممتازًا».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qiyin holatdan qanday saboq oldi?",
+     "q_ar": "",
+     "options": [
+      "Xatoni erta tan olish arzonroq",
+      "Xatoni yashirish kerak",
+      "Loyihani tashlab ketish kerak",
+      "Dizaynga ishonmaslik kerak"
+     ],
+     "answer": "Xatoni erta tan olish arzonroq",
+     "explain_uz": "«الاعتراف بالخطأ مبكرًا أرخص من إخفائه».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Erta ixtisoslashuv haqida fikri qanday?",
+     "q_ar": "",
+     "options": [
+      "Qisman rozi: avval sinab ko'rish kerak",
+      "To'liq rozi",
+      "Umuman qarshi",
+      "Fikr bildirmadi"
+     ],
+     "answer": "Qisman rozi: avval sinab ko'rish kerak",
+     "explain_uz": "«أتّفق جزئيًّا… جرّب كل شيء ثم تخصّص».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Yakuniy maslahati nima?",
+     "q_ar": "",
+     "options": [
+      "Borini bilan boshlang",
+      "Ideal imkoniyatni kuting",
+      "Chet elga ketish",
+      "Diplomni almashtirish"
+     ],
+     "answer": "Borini bilan boshlang",
+     "explain_uz": "«ابدأ بما لديك».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 5,
+   "lesson_id": "b2-17",
+   "title_uz": "Xabar: suv tejash dasturi",
+   "harakat": "minimal",
+   "words": 88,
+   "audio": "read/b2-17.mp3",
+   "text_ar": "أعلنت وزارة البيئة عن برنامج وطني لترشيد استهلاك المياه، يبدأ من الشهر القادم ويستمرّ ثلاث سنوات. ويشمل البرنامج تركيب أجهزة توفير في المباني الحكومية، وحملة توعية في المدارس، ودعمًا ماليًّا للمزارعين الذين ينتقلون إلى الريّ بالتنقيط. ووفقًا لإحصاءات رسمية، يذهب سبعون في المئة من المياه إلى الزراعة، بينما تشكّل الاستخدامات المنزلية أقلّ من الخُمس. وصرّح المتحدث بأنّ الهدف خفض الاستهلاك عشرة في المئة خلال المرحلة الأولى، مؤكّدًا أنّ الأسعار لن ترتفع. من جهة أخرى، طالب خبراء بربط الدعم بنتائج قابلة للقياس، لأنّ البرامج السابقة لم تُقيَّم بشكل دقيق.",
+   "glossary": [
+    {
+     "ar": "ترشيد",
+     "uz": "oqilona sarflash"
+    },
+    {
+     "ar": "توعية",
+     "uz": "ong oshirish"
+    },
+    {
+     "ar": "الريّ بالتنقيط",
+     "uz": "tomchilatib sug'orish"
+    },
+    {
+     "ar": "الخُمس",
+     "uz": "beshdan bir"
+    },
+    {
+     "ar": "قابلة للقياس",
+     "uz": "o'lchash mumkin bo'lgan"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Suvning katta qismi qayerga ketadi?",
+     "q_ar": "",
+     "options": [
+      "Qishloq xo'jaligiga (70%)",
+      "Uy-ro'zg'orga",
+      "Sanoatga",
+      "Bog'larga"
+     ],
+     "answer": "Qishloq xo'jaligiga (70%)",
+     "explain_uz": "«سبعون في المئة… إلى الزراعة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Birinchi bosqich maqsadi nima?",
+     "q_ar": "",
+     "options": [
+      "Iste'molni 10% kamaytirish",
+      "Narxlarni oshirish",
+      "Yangi quduq qazish",
+      "Eksportni oshirish"
+     ],
+     "answer": "Iste'molni 10% kamaytirish",
+     "explain_uz": "«خفض الاستهلاك عشرة في المئة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Fermerlarga qanday yordam beriladi?",
+     "q_ar": "",
+     "options": [
+      "Tomchilatib sug'orishga o'tsa moliyaviy qo'llab-quvvatlash",
+      "Bepul yer",
+      "Soliqdan ozod qilish",
+      "Yangi texnika sovg'a qilish"
+     ],
+     "answer": "Tomchilatib sug'orishga o'tsa moliyaviy qo'llab-quvvatlash",
+     "explain_uz": "«دعمًا ماليًّا… الريّ بالتنقيط».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Ekspertlar nimani talab qildi?",
+     "q_ar": "",
+     "options": [
+      "Yordamni o'lchanadigan natijaga bog'lashni",
+      "Dasturni bekor qilishni",
+      "Narxlarni oshirishni",
+      "Maktablarni chetlab o'tishni"
+     ],
+     "answer": "Yordamni o'lchanadigan natijaga bog'lashni",
+     "explain_uz": "«ربط الدعم بنتائج قابلة للقياس».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 6,
+   "lesson_id": "b2-21",
+   "title_uz": "Adabiy parcha: eski daftar",
+   "harakat": "minimal",
+   "words": 81,
+   "audio": "read/b2-21.mp3",
+   "text_ar": "كان المطر خفيفًا حين فتح الصندوق القديم في زاوية الغرفة. وجد فيه دفترًا صغيرًا بغلاف أزرق باهت، كتب عليه اسمه بخطّ طفولي غير مستقيم. جلس على الأرض ونسي كوب الشاي على الطاولة. في الصفحة الأولى جملة واحدة: «سأصير مهندسًا وأبني بيتًا لأمي». ابتسم ثم صمت طويلًا. مرّت أمام عينيه سنوات المدرسة، وصوت أمّه وهي توقظه فجرًا، ورائحة الخبز في الصباح. وفي تلك اللحظة قرّر شيئًا بسيطًا: سيتّصل بها الآن، لا غدًا. أغلق الدفتر بهدوء، ووضعه في الرفّ حيث يراه كل صباح.",
+   "glossary": [
+    {
+     "ar": "باهت",
+     "uz": "xira, oqargan"
+    },
+    {
+     "ar": "طفولي",
+     "uz": "bolalarcha"
+    },
+    {
+     "ar": "توقظه",
+     "uz": "uni uyg'otardi"
+    },
+    {
+     "ar": "رائحة",
+     "uz": "hid"
+    },
+    {
+     "ar": "الرفّ",
+     "uz": "javon"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Qutida nima topildi?",
+     "q_ar": "",
+     "options": [
+      "Eski daftar",
+      "Xat",
+      "Surat",
+      "Kalit"
+     ],
+     "answer": "Eski daftar",
+     "explain_uz": "«وجد فيه دفترًا صغيرًا».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Daftarning birinchi sahifasida nima yozilgan edi?",
+     "q_ar": "",
+     "options": [
+      "Muhandis bo'lib, onasiga uy qurish",
+      "Chet elga ketish",
+      "Sport bilan shug'ullanish",
+      "Do'st topish"
+     ],
+     "answer": "Muhandis bo'lib, onasiga uy qurish",
+     "explain_uz": "«سأصير مهندسًا وأبني بيتًا لأمي».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qahramon qanday qaror qildi?",
+     "q_ar": "",
+     "options": [
+      "Onasiga hozir qo'ng'iroq qilish",
+      "Ertaga borish",
+      "Daftarni tashlab yuborish",
+      "Ishni almashtirish"
+     ],
+     "answer": "Onasiga hozir qo'ng'iroq qilish",
+     "explain_uz": "«سيتّصل بها الآن، لا غدًا».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Parchaning umumiy ohangi qanday?",
+     "q_ar": "",
+     "options": [
+      "Sog'inch va yumshoq qaror",
+      "G'azab",
+      "Qo'rquv",
+      "Kulgi"
+     ],
+     "answer": "Sog'inch va yumshoq qaror",
+     "explain_uz": "Xotira, ona ovozi, non hidi — sog'inch tasviri.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 7,
+   "lesson_id": "b2-25",
+   "title_uz": "Hisobot: raqamli xizmatlar",
+   "harakat": "minimal",
+   "words": 85,
+   "audio": "read/b2-25.mp3",
+   "text_ar": "يتناول هذا التقرير استخدام الخدمات الحكومية الرقمية خلال العامين الماضيين. تمّ تحليل بيانات مليون ونصف معاملة، كما أُجريت مقابلات مع مئتي مستخدم. تشير النتائج إلى أنّ ثمانية وسبعين في المئة من المعاملات تمّت عبر التطبيق، مقارنةً بأربعة وخمسين في المئة قبل عامين. وانخفض متوسط زمن إنجاز المعاملة من أربعة أيام إلى يوم واحد. غير أنّ الدراسة رصدت مشكلتين: صعوبة التسجيل لكبار السنّ، وضعف الشبكة في المناطق الريفية. ويوصي التقرير بإطلاق نسخة مبسّطة من التطبيق، وتدريب موظفي المراكز على مساعدة المراجعين، ونشر دليل قصير بلغة واضحة.",
+   "glossary": [
+    {
+     "ar": "معاملة",
+     "uz": "muomala, xizmat operatsiyasi"
+    },
+    {
+     "ar": "متوسط",
+     "uz": "o'rtacha"
+    },
+    {
+     "ar": "رصدت",
+     "uz": "aniqladi, qayd etdi"
+    },
+    {
+     "ar": "المراجعين",
+     "uz": "murojaat qiluvchilar"
+    },
+    {
+     "ar": "إطلاق",
+     "uz": "ishga tushirish"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Ilova orqali qancha muomala amalga oshgan?",
+     "q_ar": "",
+     "options": [
+      "78%",
+      "54%",
+      "24%",
+      "88%"
+     ],
+     "answer": "78%",
+     "explain_uz": "«ثمانية وسبعين في المئة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Muomala vaqti qanday o'zgardi?",
+     "q_ar": "",
+     "options": [
+      "4 kundan 1 kunga",
+      "1 kundan 4 kunga",
+      "O'zgarmadi",
+      "2 kundan 3 kunga"
+     ],
+     "answer": "4 kundan 1 kunga",
+     "explain_uz": "«من أربعة أيام إلى يوم واحد».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qanday ikki muammo aniqlandi?",
+     "q_ar": "",
+     "options": [
+      "Keksalar uchun ro'yxatdan o'tish va qishloqda internet",
+      "Narx va til",
+      "Xavfsizlik va reklama",
+      "Ish vaqti va joylashuv"
+     ],
+     "answer": "Keksalar uchun ro'yxatdan o'tish va qishloqda internet",
+     "explain_uz": "«صعوبة التسجيل لكبار السنّ، وضعف الشبكة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Tavsiyalardan biri qaysi?",
+     "q_ar": "",
+     "options": [
+      "Ilovaning soddalashtirilgan versiyasi",
+      "Ilovani yopish",
+      "To'lovni oshirish",
+      "Faqat qog'ozga qaytish"
+     ],
+     "answer": "Ilovaning soddalashtirilgan versiyasi",
+     "explain_uz": "«نسخة مبسّطة من التطبيق».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 8,
+   "lesson_id": "b2-29",
+   "title_uz": "Fikr: ish va sog'liq muvozanati",
+   "harakat": "minimal",
+   "words": 88,
+   "audio": "read/b2-29.mp3",
+   "text_ar": "يُثار كثيرًا سؤال: هل ساعات العمل الطويلة تعني إنتاجية أعلى؟ في رأيي، الإجابة لا. أولًا، تشير دراسات عديدة إلى أنّ التركيز يتراجع بوضوح بعد الساعة السابعة من العمل المتواصل، فتزداد الأخطاء ويطول زمن إصلاحها. ثانيًا، الموظف المرهق يغيب أكثر، وتكلفة الغياب تفوق ما توفّره الساعات الإضافية. وقد يقول البعض إنّ بعض المهن تفرض ساعات طويلة، وهذا صحيح جزئيًّا، غير أنّ الاستثناء لا يصلح قاعدةً عامة. وخلاصة القول: النتيجة تُقاس بما يُنجَز لا بما يُقضى من وقت، ولذلك ينبغي تقييم الأداء بالمخرجات، ومنح الموظفين مرونة معقولة في تنظيم يومهم.",
+   "glossary": [
+    {
+     "ar": "يُثار",
+     "uz": "ko'tariladi (savol)"
+    },
+    {
+     "ar": "المتواصل",
+     "uz": "uzluksiz"
+    },
+    {
+     "ar": "المرهق",
+     "uz": "charchagan"
+    },
+    {
+     "ar": "تفوق",
+     "uz": "oshib ketadi"
+    },
+    {
+     "ar": "المخرجات",
+     "uz": "natijalar (chiqim)"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Muallifning javobi qanday?",
+     "q_ar": "",
+     "options": [
+      "Uzoq soatlar unumdorlikni oshirmaydi",
+      "Uzoq soatlar shart",
+      "Savol ahamiyatsiz",
+      "Faqat ish haqi muhim"
+     ],
+     "answer": "Uzoq soatlar unumdorlikni oshirmaydi",
+     "explain_uz": "«في رأيي، الإجابة لا».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Diqqat qachon pasayadi?",
+     "q_ar": "",
+     "options": [
+      "Uzluksiz ishning 7-soatidan keyin",
+      "Birinchi soatdan keyin",
+      "Tushlikdan oldin",
+      "Har doim bir xil"
+     ],
+     "answer": "Uzluksiz ishning 7-soatidan keyin",
+     "explain_uz": "«بعد الساعة السابعة من العمل المتواصل».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qarshi dalilga qanday javob berilgan?",
+     "q_ar": "",
+     "options": [
+      "Istisno umumiy qoida bo'la olmaydi",
+      "Qarshi dalil to'liq to'g'ri",
+      "Qarshi dalil e'tiborsiz qoldirilgan",
+      "Statistika yo'q"
+     ],
+     "answer": "Istisno umumiy qoida bo'la olmaydi",
+     "explain_uz": "«الاستثناء لا يصلح قاعدةً عامة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Yakuniy tavsiya nima?",
+     "q_ar": "",
+     "options": [
+      "Natija bo'yicha baholash va moslashuvchan grafik",
+      "Ish soatini oshirish",
+      "Nazoratni kuchaytirish",
+      "Maoshni kamaytirish"
+     ],
+     "answer": "Natija bo'yicha baholash va moslashuvchan grafik",
+     "explain_uz": "«تقييم الأداء بالمخرجات… مرونة معقولة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 9,
+   "lesson_id": "b2-33",
+   "title_uz": "Xabar: ish yarmarkasi",
+   "harakat": "minimal",
+   "words": 89,
+   "audio": "read/b2-33.mp3",
+   "text_ar": "انطلق أمس معرض التوظيف السنوي بمشاركة مئة وعشرين شركة من قطاعات مختلفة، أبرزها الإنشاءات والتقنية والخدمات الصحية. ووفقًا للمنظّمين، بلغ عدد الزوّار في اليوم الأول تسعة آلاف، وأُجريت أكثر من ألفي مقابلة سريعة داخل المعرض. وقال مدير المعرض إنّ الشركات تبحث هذا العام عن مهارات عملية أكثر من الشهادات، مشيرًا إلى أنّ إتقان لغة أجنبية صار ميزة حاسمة في الفرز الأول. ويقدّم المعرض ورشًا مجانية عن كتابة السيرة الذاتية والمقابلة الشخصية. يُذكر أنّ نسبة التوظيف بعد معرض العام الماضي بلغت اثني عشر في المئة من المتقدّمين خلال ستة أشهر.",
+   "glossary": [
+    {
+     "ar": "انطلق",
+     "uz": "boshlandi"
+    },
+    {
+     "ar": "المنظّمين",
+     "uz": "tashkilotchilar"
+    },
+    {
+     "ar": "إتقان",
+     "uz": "mukammal bilish"
+    },
+    {
+     "ar": "الفرز",
+     "uz": "saralash"
+    },
+    {
+     "ar": "المتقدّمين",
+     "uz": "ariza topshirganlar"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Nechta kompaniya qatnashdi?",
+     "q_ar": "",
+     "options": [
+      "120",
+      "12",
+      "1200",
+      "20"
+     ],
+     "answer": "120",
+     "explain_uz": "«مئة وعشرين شركة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Kompaniyalar bu yil nimani qidirmoqda?",
+     "q_ar": "",
+     "options": [
+      "Amaliy ko'nikmalarni",
+      "Faqat diplomlarni",
+      "Yoshlikni",
+      "Uzoq tajribani"
+     ],
+     "answer": "Amaliy ko'nikmalarni",
+     "explain_uz": "«مهارات عملية أكثر من الشهادات».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Chet tili bilish nimaga aylandi?",
+     "q_ar": "",
+     "options": [
+      "Birinchi saralashda hal qiluvchi ustunlik",
+      "Ixtiyoriy talab",
+      "Majburiy shart emas",
+      "Faqat IT uchun kerak"
+     ],
+     "answer": "Birinchi saralashda hal qiluvchi ustunlik",
+     "explain_uz": "«ميزة حاسمة في الفرز الأول».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "O'tgan yilgi yarmarkadan keyingi ishga joylashish darajasi?",
+     "q_ar": "",
+     "options": [
+      "6 oyda 12%",
+      "6 oyda 50%",
+      "1 oyda 12%",
+      "1 yilda 2%"
+     ],
+     "answer": "6 oyda 12%",
+     "explain_uz": "«اثني عشر في المئة… خلال ستة أشهر».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 10,
+   "lesson_id": "b2-37",
+   "title_uz": "Intervyu: kutubxona direktori",
+   "harakat": "minimal",
+   "words": 80,
+   "audio": "read/b2-37.mp3",
+   "text_ar": "المحاور: بعد سنة من الافتتاح، كيف تقيّمون التجربة؟\nالمديرة: الإقبال فاق التوقّعات؛ سجّلنا أربعين ألف عضو، ثلثهم من طلاب المدارس.\nالمحاور: وما أكثر ما يُطلب؟\nالمديرة: الكتب العلمية المبسّطة، ثم الروايات المترجمة. لاحظنا أيضًا طلبًا متزايدًا على قاعات الدراسة الهادئة.\nالمحاور: هل تواجهون صعوبات؟\nالمديرة: نعم، أبرزها ضيق المساحة في المساء، ونقص الموظفين المدرّبين. ولذلك بدأنا برنامج تطوّع للطلاب.\nالمحاور: خطّتكم للعام القادم؟\nالمديرة: فرع صغير في الحيّ الشرقي، ومكتبة رقمية تتيح الاستعارة عن بُعد، بالإضافة إلى ورش أسبوعية للأطفال.",
+   "glossary": [
+    {
+     "ar": "الإقبال",
+     "uz": "qiziqish, kelish (talab)"
+    },
+    {
+     "ar": "فاق",
+     "uz": "oshib ketdi"
+    },
+    {
+     "ar": "متزايد",
+     "uz": "ortib borayotgan"
+    },
+    {
+     "ar": "تطوّع",
+     "uz": "ko'ngillilik"
+    },
+    {
+     "ar": "الاستعارة",
+     "uz": "ijaraga olish (kitob)"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Nechta a'zo ro'yxatdan o'tgan?",
+     "q_ar": "",
+     "options": [
+      "40 000",
+      "4 000",
+      "14 000",
+      "400"
+     ],
+     "answer": "40 000",
+     "explain_uz": "«أربعين ألف عضو».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Eng ko'p nima so'raladi?",
+     "q_ar": "",
+     "options": [
+      "Soddalashtirilgan ilmiy kitoblar",
+      "Tarixiy hujjatlar",
+      "Gazetalar",
+      "Lug'atlar"
+     ],
+     "answer": "Soddalashtirilgan ilmiy kitoblar",
+     "explain_uz": "«الكتب العلمية المبسّطة».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Asosiy qiyinchiliklar qaysi?",
+     "q_ar": "",
+     "options": [
+      "Kechqurun joy torligi va malakali xodim yetishmasligi",
+      "Kitob narxi",
+      "Elektr uzilishi",
+      "Talab yo'qligi"
+     ],
+     "answer": "Kechqurun joy torligi va malakali xodim yetishmasligi",
+     "explain_uz": "«ضيق المساحة… ونقص الموظفين المدرّبين».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Kelasi yil rejasi nima?",
+     "q_ar": "",
+     "options": [
+      "Filial, raqamli kutubxona va bolalar mashg'ulotlari",
+      "Yopilish",
+      "Faqat narx oshirish",
+      "Faqat kitob sotib olish"
+     ],
+     "answer": "Filial, raqamli kutubxona va bolalar mashg'ulotlari",
+     "explain_uz": "«فرع صغير… مكتبة رقمية… ورش أسبوعية».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 11,
+   "lesson_id": "b2-41",
+   "title_uz": "Maqola: sun'iy intellekt va ish",
+   "harakat": "minimal",
+   "words": 94,
+   "audio": "read/b2-41.mp3",
+   "text_ar": "تتحدّث تقارير كثيرة عن أثر الذكاء الاصطناعي في سوق العمل، وتتراوح التوقّعات بين تفاؤل كبير وقلق واسع. الواقع أنّ الأدوات الجديدة تُغيّر المهامّ أكثر ممّا تُلغي المهن. فالموظف الذي كان يقضي ساعات في جمع البيانات صار ينفق وقته في تفسيرها واتخاذ القرار. وتشير دراسة حديثة إلى أنّ الشركات التي دمجت هذه الأدوات مع تدريب داخلي رفعت إنتاجيتها نحو الخُمس، بينما لم تحقّق الشركات التي اكتفت بشراء البرامج فرقًا يُذكر. ولذلك فإنّ السؤال الصحيح ليس: هل ستأخذ الآلة وظيفتي؟ بل: أيّ جزء من عملي يمكن أن تتولّاه الآلة حتى أتفرّغ لما يحتاج إلى حكم إنساني؟",
+   "glossary": [
+    {
+     "ar": "تتراوح",
+     "uz": "…orasida o'zgarib turadi"
+    },
+    {
+     "ar": "تُلغي",
+     "uz": "bekor qiladi"
+    },
+    {
+     "ar": "دمجت",
+     "uz": "birlashtirdi, joriy etdi"
+    },
+    {
+     "ar": "يُذكر",
+     "uz": "e'tiborga arziydigan"
+    },
+    {
+     "ar": "تتولّاه",
+     "uz": "uni zimmasiga oladi"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Muallif fikricha, yangi vositalar nimani o'zgartiradi?",
+     "q_ar": "",
+     "options": [
+      "Kasblarni emas, vazifalarni",
+      "Faqat maoshni",
+      "Faqat ish vaqtini",
+      "Hech narsani"
+     ],
+     "answer": "Kasblarni emas, vazifalarni",
+     "explain_uz": "«تُغيّر المهامّ أكثر ممّا تُلغي المهن».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qaysi kompaniyalar unumdorlikni oshirdi?",
+     "q_ar": "",
+     "options": [
+      "Vositani ichki trening bilan birga joriy etganlar",
+      "Faqat dastur sotib olganlar",
+      "Xodimni qisqartirganlar",
+      "Hech qaysi"
+     ],
+     "answer": "Vositani ichki trening bilan birga joriy etganlar",
+     "explain_uz": "«دمجت… مع تدريب داخلي».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Unumdorlik qancha oshgan?",
+     "q_ar": "",
+     "options": [
+      "Taxminan beshdan bir",
+      "Ikki barobar",
+      "Uchdan bir",
+      "O'n barobar"
+     ],
+     "answer": "Taxminan beshdan bir",
+     "explain_uz": "«نحو الخُمس».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Muallifga ko'ra to'g'ri savol qaysi?",
+     "q_ar": "",
+     "options": [
+      "Ishimning qaysi qismini mashina bajarishi mumkin?",
+      "Mashina ishimni oladimi?",
+      "Qachon ishsiz qolaman?",
+      "Qaysi dastur arzon?"
+     ],
+     "answer": "Ishimning qaysi qismini mashina bajarishi mumkin?",
+     "explain_uz": "Matn oxiridagi qayta shakllantirilgan savol.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  },
+  {
+   "stage": 12,
+   "lesson_id": "b2-45",
+   "title_uz": "Yakuniy matn: o'rganish yo'li",
+   "harakat": "minimal",
+   "words": 92,
+   "audio": "read/b2-45.mp3",
+   "text_ar": "حين بدأتَ هذه الرحلة كنتَ تقرأ الحرف وحده، واليوم تقرأ مقالًا كاملًا بلا حركات. هذا التقدّم لم يأتِ من موهبة خاصة، بل من عادة صغيرة تكرّرت طويلًا. تشير التجربة إلى أنّ من يقرأ خمس عشرة دقيقة يوميًّا يتقدّم أكثر ممّن يدرس ساعتين في نهاية الأسبوع فقط، لأنّ الذاكرة تُبنى بالتكرار المتباعد لا بالجهد المتراكم في يوم واحد. وقد يقول قائل إنّ الوقت ضيّق، غير أنّ الدقائق الموجودة بين المهامّ تكفي إذا استُعملت بوعي. وفي الختام: لا تقارن نفسك بغيرك، بل بنفسك قبل شهر؛ وافتح النصّ غدًا أيضًا، فالطريق يُقاس بالخطوات لا بالنيّات.",
+   "glossary": [
+    {
+     "ar": "موهبة",
+     "uz": "iste'dod"
+    },
+    {
+     "ar": "المتباعد",
+     "uz": "oraliqli (interval bilan)"
+    },
+    {
+     "ar": "المتراكم",
+     "uz": "to'plangan"
+    },
+    {
+     "ar": "بوعي",
+     "uz": "ongli ravishda"
+    },
+    {
+     "ar": "النيّات",
+     "uz": "niyatlar"
+    }
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "q_uz": "Matnga ko'ra taraqqiyot sababi nima?",
+     "q_ar": "",
+     "options": [
+      "Uzoq takrorlangan kichik odat",
+      "Tug'ma iste'dod",
+      "Qimmat kurs",
+      "Chet elga borish"
+     ],
+     "answer": "Uzoq takrorlangan kichik odat",
+     "explain_uz": "«عادة صغيرة تكرّرت طويلًا».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Qaysi rejim samaraliroq?",
+     "q_ar": "",
+     "options": [
+      "Kuniga 15 daqiqa",
+      "Haftada 2 soat",
+      "Oyda bir kun",
+      "Faqat imtihon oldidan"
+     ],
+     "answer": "Kuniga 15 daqiqa",
+     "explain_uz": "Oraliqli takror to'plangan mehnatdan kuchli.",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "«Vaqt yo'q» degan e'tirozga javob nima?",
+     "q_ar": "",
+     "options": [
+      "Ishlar orasidagi daqiqalar yetadi",
+      "Vaqt haqiqatan yo'q",
+      "Ish tashlash kerak",
+      "Kechasi o'qish kerak"
+     ],
+     "answer": "Ishlar orasidagi daqiqalar yetadi",
+     "explain_uz": "«الدقائق الموجودة بين المهامّ تكفي».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    },
+    {
+     "type": "mcq",
+     "q_uz": "Yakuniy maslahat qanday?",
+     "q_ar": "",
+     "options": [
+      "O'zingizni bir oy oldingi o'zingiz bilan solishtiring",
+      "Boshqalar bilan raqobatlashing",
+      "Natijani kuting",
+      "Rejani o'zgartiring"
+     ],
+     "answer": "O'zingizni bir oy oldingi o'zingiz bilan solishtiring",
+     "explain_uz": "«بل بنفسك قبل شهر».",
+     "audio": "",
+     "root": "",
+     "pattern": "",
+     "words": []
+    }
+   ]
+  }
+ ]
+}

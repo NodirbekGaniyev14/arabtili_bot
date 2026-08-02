@@ -1,0 +1,301 @@
+{
+ "id": "b2-47",
+ "level": "B2",
+ "module": "review",
+ "order": 47,
+ "title_uz": "Takrorlash: grammatika",
+ "title_ar": "مُرَاجَعَةُ النَّحْوِ وَالصَّرْفِ",
+ "can_do_uz": "B2 nahv va sarf mavzularini bir tizimda ko'rib, jumlani tez tahlil qila olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-46"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Yigirma oltita dars — bitta jadval. I'rob, tobe'lar, qalb fe'llari, mamnu' min as-sarf, i'lol, nisba, tasg'ir… Bularning hammasi bitta savolga xizmat qiladi: «Bu so'z gapda nima qilyapti?». Bugun butun B2 grammatikasini bir joyga yig'amiz va tez tahlil mashqini qilamiz.",
+ "grammar": {
+  "point_ar": "خَرِيطَةُ نَحْوِ B2 وَصَرْفِهِ",
+  "explanation_uz": "NAHV XARITASI. (1) I'ROB: rafʿ — ega/mubtado/xabar; nasb — maf'ul, hol, tamyiz, إِنَّ ismi, كَانَ xabari; jarr — predlog va idofa; jazm — لَمْ / لا النَّاهِيَة dan keyingi fe'l. (2) NOSIXLAR: كَانَ (ism marfu', xabar mansub), إِنَّ (ism mansub, xabar marfu'), ظَنَّ oilasi (ikki maf'ul, ikkalasi mansub), كَادَ/عَسَى/بَدَأَ (xabari muzori' fe'l). (3) TOBE'LAR: na't, atf, badal, ta'kid — hammasi oldingi so'z i'robini takrorlaydi. (4) USLUBLAR: nido (يَا + munodo), ta'ajjub (مَا أَفْعَلَ + mansub), qasam (javob: لَقَدْ / مَا / لَـ…نَّ), taqdim-ta'xir, qistirma jumla. (5) MAMNU' MIN AS-SARF: tanvinsiz, jarrda fatha; ال yoki idofa bilan kasra qaytadi. SARF XARITASI. (a) i'lol: qalb (قَوَلَ→قَالَ), hazf (وَعَدَ→يَعِدُ, لَمْ يَمْشِ), taskin; ibdol (اِوْتَصَلَ→اِتَّصَلَ). (b) Maxsus masdarlar: مَفْعَل (miymiy), فَعْلَة (marra), فِعْلَة (hay'a). (c) Yasovchi qo'shimchalar: ـِيّ (nisba), ـِيَّة (masdar sinoiy). (d) Tasg'ir: فُعَيْل. (e) Ko'plik vaznlari: أَفْعَال (oz), فَعَائِل/فَوَاعِل/مَفَاعِل (ko'p), jam'ul-jumu'.",
+  "table": [
+   {"ar": "كَانَ الطَّالِبُ مُجْتَهِدًا", "uz": "كَانَ: ism marfu', xabar mansub", "form": "نَاسِخ"},
+   {"ar": "إِنَّ الطَّالِبَ مُجْتَهِدٌ", "uz": "إِنَّ: ism mansub, xabar marfu'", "form": "نَاسِخ"},
+   {"ar": "ظَنَنْتُ الطَّالِبَ مُجْتَهِدًا", "uz": "Qalb fe'li: ikkala maf'ul mansub", "form": "مَفْعُولَانِ"},
+   {"ar": "لَمْ يَكْتُبْ", "uz": "لَمْ: fe'l majzum", "form": "جَزْم"},
+   {"ar": "مَرَرْتُ بِمَدَارِسَ", "uz": "Mamnu': jarrda fatha, tanvinsiz", "form": "مَمْنُوع"},
+   {"ar": "وَعَدَ ← يَعِدُ", "uz": "I'lol: و muzori'da tushdi", "form": "حَذْف"}
+  ],
+  "common_mistakes_uz": [
+   "كَانَ va إِنَّ ning ta'sirini almashtirib yuborish — ular teskari ishlaydi.",
+   "Tobe'ni yangi vazifa deb belgilash — u faqat oldingi so'z i'robini takrorlaydi.",
+   "Mamnu' so'zga ال qo'shilganda ham fatha qoldirish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ر ج ع",
+   "meaning_uz": "qaytish, takrorlash",
+   "uz_cognates": ["ruju", "marja"],
+   "derived": [
+    {"ar": "مُرَاجَعَة", "uz": "takrorlash, qayta ko'rish", "pattern": "مُفَاعَلَة"},
+    {"ar": "مَرْجِع", "uz": "manba", "pattern": "مَفْعِل"},
+    {"ar": "رَاجَعَ", "uz": "qayta ko'rdi", "pattern": "فَاعَلَ"}
+   ]
+  },
+  {
+   "root": "ق ع د",
+   "meaning_uz": "o'tirish; qoida",
+   "uz_cognates": ["qoida", "qoidaviy"],
+   "derived": [
+    {"ar": "قَاعِدَة", "uz": "qoida, asos", "pattern": "فَاعِلَة"},
+    {"ar": "قَوَاعِد", "uz": "qoidalar, grammatika", "pattern": "فَوَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "مُرَاجَعَة شَامِلَة",
+   "translit": "murājaʿa shāmila",
+   "uz": "umumiy takrorlash",
+   "root": "ر ج ع",
+   "pattern": "مُفَاعَلَة",
+   "pos": "ot",
+   "audio": "b2/murajaa_shamila.mp3",
+   "example_ar": "بَدَأْنَا مُرَاجَعَةً شَامِلَةً.",
+   "example_uz": "Umumiy takrorlashni boshladik.",
+   "srs": true
+  },
+  {
+   "ar": "قَوَاعِد",
+   "translit": "qawāʿid",
+   "uz": "qoidalar, grammatika",
+   "root": "ق ع د",
+   "pattern": "فَوَاعِل",
+   "pos": "ot",
+   "audio": "b2/qawaid2.mp3",
+   "example_ar": "قَوَاعِدُ النَّحْوِ مُنَظَّمَةٌ.",
+   "example_uz": "Nahv qoidalari tizimli.",
+   "srs": true
+  },
+  {
+   "ar": "نَاسِخ",
+   "translit": "nāsikh",
+   "uz": "nosix — jumlani o'zgartiruvchi (كان, إنّ)",
+   "root": "ن س خ",
+   "pattern": "فَاعِل",
+   "pos": "ot",
+   "audio": "b2/nasikh.mp3",
+   "example_ar": "كَانَ وَإِنَّ مِنَ النَّوَاسِخِ.",
+   "example_uz": "كان va إنّ — nosixlardan.",
+   "srs": true
+  },
+  {
+   "ar": "تَابِع",
+   "translit": "tābiʿ",
+   "uz": "tobe' (sifat, badal, ta'kid, atf)",
+   "root": "ت ب ع",
+   "pattern": "فَاعِل",
+   "pos": "ot",
+   "audio": "b2/tabi.mp3",
+   "example_ar": "التَّابِعُ يَتْبَعُ مَا قَبْلَهُ.",
+   "example_uz": "Tobe' o'zidan oldingiga ergashadi.",
+   "srs": true
+  },
+  {
+   "ar": "خَرِيطَة",
+   "translit": "kharīṭa",
+   "uz": "xarita (bu yerda: umumiy sxema)",
+   "root": "خ ر ط",
+   "pattern": "فَعِيلَة",
+   "pos": "ot",
+   "audio": "b2/kharita.mp3",
+   "example_ar": "خَرِيطَةُ القَوَاعِدِ تُسَاعِدُ عَلَى التَّذَكُّرِ.",
+   "example_uz": "Qoidalar xaritasi eslab qolishga yordam beradi.",
+   "srs": true
+  },
+  {
+   "ar": "تَطْبِيق",
+   "translit": "taṭbīq",
+   "uz": "qo'llash, amaliyot",
+   "root": "ط ب ق",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tatbiq2.mp3",
+   "example_ar": "القَاعِدَةُ بِلَا تَطْبِيقٍ تُنْسَى.",
+   "example_uz": "Amaliyotsiz qoida unutiladi.",
+   "srs": true
+  },
+  {
+   "ar": "مُرَاجِع",
+   "translit": "murājiʿ",
+   "uz": "takrorlovchi; tekshiruvchi",
+   "root": "ر ج ع",
+   "pattern": "مُفَاعِل",
+   "pos": "ot",
+   "audio": "b2/muraji.mp3",
+   "example_ar": "المُرَاجِعُ الجَيِّدُ يَخْتَبِرُ نَفْسَهُ.",
+   "example_uz": "Yaxshi takrorlovchi o'zini sinaydi.",
+   "srs": true
+  },
+  {
+   "ar": "خَطَأ شَائِع",
+   "translit": "khaṭaʾ shāʾiʿ",
+   "uz": "keng tarqalgan xato",
+   "root": "خ ط أ",
+   "pattern": "فَعَل",
+   "pos": "ot",
+   "audio": "b2/khata_shai.mp3",
+   "example_ar": "هَذَا خَطَأٌ شَائِعٌ بَيْنَ الطُّلَّابِ.",
+   "example_uz": "Bu talabalar orasida keng tarqalgan xato.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "لنراجع معًا: إنّ الطالبَ مجتهدٌ، وكان الطالبُ مجتهدًا. لاحظ الفرق: إنّ تنصب الاسم وترفع الخبر، وكان ترفع الاسم وتنصب الخبر. وفي جملة «ظننت الطالبَ مجتهدًا» نصب الفعلُ مفعولين. أما «لم يكتبْ» فالفعل مجزوم، و«مررت بمدارسَ» فيها ممنوع من الصرف. وتذكّر أنّ التوابع — النعت والعطف والبدل والتوكيد — تتبع ما قبلها في الإعراب دائمًا.",
+   "questions": [
+    {"q_uz": "إنّ va كان farqi nimada?", "a": "إنّ ismni nasb, xabarni rafʿ; كان teskari"},
+    {"q_uz": "«ظننت الطالبَ مجتهدًا» da nechta maf'ul bor?", "a": "Ikkita, ikkalasi ham mansub"},
+    {"q_uz": "Tobe'lar qanday ishlaydi?", "a": "Oldingi so'zning i'robini takrorlaydi"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-47-listen.mp3",
+   "transcript_ar": "إِنَّ الطَّالِبَ مُجْتَهِدٌ، وَكَانَ الطَّالِبُ مُجْتَهِدًا. وَالتَّوَابِعُ تَتْبَعُ مَا قَبْلَهَا.",
+   "questions": [
+    {"q_uz": "Qaysi ikki nosix aytildi?", "a": "إنّ va كان"},
+    {"q_uz": "Tobe'lar haqida nima aytildi?", "a": "Oldingisiga ergashadi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch qoidani ovoz chiqarib ayting: إنّ ta'siri, كان ta'siri, jazm sharti.",
+   "target_ar": ["إِنَّ تَنْصِبُ الاِسْمَ وَتَرْفَعُ الخَبَرَ", "كَانَ تَرْفَعُ الاِسْمَ وَتَنْصِبُ الخَبَرَ", "لَمْ تَجْزِمُ الفِعْلَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Beshta jumla yozing: har birida boshqa qoida (إنّ, كان, qalb fe'li, jazm, mamnu' min as-sarf) ishlatilsin.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«إِنَّ» jumlaga qanday ta'sir qiladi?",
+   "q_ar": "إِنَّ",
+   "options": [
+    "Ismni nasb, xabarni rafʿ qiladi",
+    "Ismni rafʿ, xabarni nasb qiladi",
+    "Ikkalasini nasb qiladi",
+    "Hech narsani o'zgartirmaydi"
+   ],
+   "answer": "Ismni nasb, xabarni rafʿ qiladi",
+   "explain_uz": "إِنَّ الطَّالِبَ مُجْتَهِدٌ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«كَانَ» qanday ishlaydi?",
+   "q_ar": "كَانَ",
+   "options": [
+    "Ismni rafʿ, xabarni nasb qiladi",
+    "Ismni nasb, xabarni rafʿ qiladi",
+    "Fe'lni jazm qiladi",
+    "Ikki maf'ul oladi"
+   ],
+   "answer": "Ismni rafʿ, xabarni nasb qiladi",
+   "explain_uz": "كَانَ الطَّالِبُ مُجْتَهِدًا.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi so'z mamnu' min as-sarf?",
+   "q_ar": "",
+   "options": ["مَدَارِس", "كِتَاب", "طَالِب", "قَلَم"],
+   "answer": "مَدَارِس",
+   "explain_uz": "مَفَاعِل vazni — tanvinsiz, jarrda fatha.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«وَعَدَ → يَعِدُ» da nima sodir bo'lgan?",
+   "q_ar": "يَعِدُ",
+   "options": ["Hazf (و tushdi)", "Qalb", "Ibdol", "Tasg'ir"],
+   "answer": "Hazf (و tushdi)",
+   "explain_uz": "Misol fe'lning و si muzori'da tushadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Tobe'lar (التَّوَابِع) qaysilar?",
+   "q_ar": "",
+   "options": [
+    "Na't, atf, badal, ta'kid",
+    "Fe'l, foil, maf'ul",
+    "Hol, tamyiz, istisno",
+    "Nido, qasam, ta'ajjub"
+   ],
+   "answer": "Na't, atf, badal, ta'kid",
+   "explain_uz": "To'rt tobe' — hammasi i'robda ergashadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "قَوَاعِد",
+   "options": [],
+   "answer": "qoidalar",
+   "explain_uz": "قَوَاعِد — grammatika qoidalari.",
+   "audio": "b2/qawaid2.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«مُرَاجَعَة، مَرْجِع، رَاجَعَ» qaysi o'zakdan?",
+   "q_ar": "مُرَاجَعَة",
+   "options": ["ر ج ع", "ر ج و", "ج ر ع", "ر ح ج"],
+   "answer": "ر ج ع",
+   "explain_uz": "ر ج ع — qaytish o'zagi.",
+   "audio": "",
+   "root": "ر ج ع",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Talaba tirishqoq edi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "كَانَ الطَّالِبُ مُجْتَهِدًا",
+   "explain_uz": "كان + marfu' ism + mansub xabar.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["كَانَ", "الطَّالِبُ", "مُجْتَهِدًا"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ر ج ع", "back": "qaytish — murojaa/marji", "deck": "msa"},
+  {"type": "root", "front": "ق ع د", "back": "qoida — qoida/qavoid", "deck": "msa"},
+  {"type": "phrase", "front": "مُرَاجَعَة شَامِلَة", "back": "umumiy takrorlash", "deck": "msa"},
+  {"type": "word", "front": "قَوَاعِد", "back": "qoidalar", "deck": "msa"},
+  {"type": "word", "front": "نَاسِخ", "back": "nosix (كان, إنّ)", "deck": "msa"},
+  {"type": "word", "front": "تَابِع", "back": "tobe'", "deck": "msa"},
+  {"type": "word", "front": "خَرِيطَة", "back": "xarita, sxema", "deck": "msa"},
+  {"type": "word", "front": "تَطْبِيق", "back": "qo'llash", "deck": "msa"},
+  {"type": "phrase", "front": "خَطَأ شَائِع", "back": "keng tarqalgan xato", "deck": "msa"}
+ ]
+}

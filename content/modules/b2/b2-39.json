@@ -1,0 +1,305 @@
+{
+ "id": "b2-39",
+ "level": "B2",
+ "module": "skills-adv",
+ "order": 39,
+ "title_uz": "O'qish: hisobot va statistika",
+ "title_ar": "قِرَاءَةُ التَّقَارِيرِ وَالإِحْصَاءَاتِ",
+ "can_do_uz": "Raqamli hisobotdagi o'sish, pasayish va nisbatlarni to'g'ri o'qiy va izohlay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-38"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Hisobotda so'z kam, raqam ko'p: «اِرْتَفَعَ ٧٪», «بَلَغَ الضِّعْفَ», «يُشَكِّلُ ثُلُثَ». Bu iboralar bir marta o'rganiladi va har hisobotda takrorlanadi. Raqam tilini bilsangiz, jadval va grafikni izohlay olasiz — bu ish va imtihonda kerak.",
+ "grammar": {
+  "point_ar": "لُغَةُ الأَرْقَامِ: الاِرْتِفَاعُ وَالاِنْخِفَاضُ وَالنِّسَبُ",
+  "explanation_uz": "O'SISH: اِرْتَفَعَ / زَادَ / نَمَا / تَضَاعَفَ (ikki barobar oshdi) / سَجَّلَ نُمُوًّا. PASAYISH: اِنْخَفَضَ / تَرَاجَعَ / هَبَطَ / سَجَّلَ تَرَاجُعًا. BARQARORLIK: اِسْتَقَرَّ / بَقِيَ ثَابِتًا / لَمْ يَتَغَيَّرْ. MIQDOR IFODASI: بِنِسْبَةِ ٧٪ (7 foizga), بَلَغَ ١٢٠٠ (1200 ga yetdi), يُشَكِّلُ ثُلُثَ (uchdan birini tashkil qiladi), مَا يُقَارِبُ (taxminan), عَلَى الأَقَلِّ (kamida), أَقْصَى/أَدْنَى حَدٍّ (maksimum/minimum). TAQQOSLASH: مُقَارَنَةً بِـ (…bilan solishtirganda), مُقَابِلَ (…ga qarshi/evaziga), بَيْنَمَا (…bo'lsa esa), فِي حِينِ أَنَّ (holbuki). VAQT: خِلَالَ الرُّبْعِ الأَوَّلِ (birinchi chorakda), عَلَى أَسَاسٍ سَنَوِيٍّ (yillik hisobda), مُنْذُ بِدَايَةِ العَامِ (yil boshidan). GRAMMATIK ESLATMA: foiz «فِي المِئَةِ», ulush esa idofa bilan: ثُلُث، رُبْع، نِصْف.",
+  "table": [
+   {"ar": "اِرْتَفَعَ بِنِسْبَةِ ٧٪", "uz": "7 foizga oshdi", "form": "اِرْتِفَاع"},
+   {"ar": "تَرَاجَعَ قَلِيلًا", "uz": "biroz pasaydi", "form": "اِنْخِفَاض"},
+   {"ar": "بَلَغَ أَلْفًا وَمِئَتَيْنِ", "uz": "1200 ga yetdi", "form": "مِقْدَار"},
+   {"ar": "يُشَكِّلُ ثُلُثَ الإِجْمَالِيِّ", "uz": "umumiy hajmning uchdan birini tashkil qiladi", "form": "نِسْبَة"},
+   {"ar": "مُقَارَنَةً بِالعَامِ المَاضِي", "uz": "o'tgan yil bilan solishtirganda", "form": "مُقَارَنَة"},
+   {"ar": "بَيْنَمَا اِسْتَقَرَّتِ الأَسْعَارُ", "uz": "narxlar esa barqaror qoldi", "form": "تَقَابُل"}
+  ],
+  "common_mistakes_uz": [
+   "«oshdi» va «ikki barobar oshdi» ni chalkashtirish: زَادَ ≠ تَضَاعَفَ.",
+   "Foizni idofa bilan aytish: نِسْبَة ٧ المِئَة ✗ → بِنِسْبَةِ سَبْعَةٍ فِي المِئَةِ ✓.",
+   "بَيْنَمَا (holbuki) ni «keyin» deb tarjima qilish — u qarama-qarshilikni bildiradi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ر ف ع",
+   "meaning_uz": "ko'tarish",
+   "uz_cognates": ["rafʿ", "murofaa"],
+   "derived": [
+    {"ar": "اِرْتِفَاع", "uz": "ko'tarilish, o'sish", "pattern": "اِفْتِعَال"},
+    {"ar": "مُرْتَفِع", "uz": "yuqori", "pattern": "مُفْتَعِل"},
+    {"ar": "رَفَعَ", "uz": "ko'tardi", "pattern": "فَعَلَ"}
+   ]
+  },
+  {
+   "root": "ح ص ي",
+   "meaning_uz": "sanash, hisoblash",
+   "uz_cognates": ["ihsoiyot"],
+   "derived": [
+    {"ar": "إِحْصَاء", "uz": "statistika, sanoq", "pattern": "إِفْعَال"},
+    {"ar": "إِحْصَائِيّ", "uz": "statistik", "pattern": "إِفْعَالِيّ"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "اِرْتِفَاع",
+   "translit": "irtifāʿ",
+   "uz": "o'sish, ko'tarilish",
+   "root": "ر ف ع",
+   "pattern": "اِفْتِعَال",
+   "pos": "ot",
+   "audio": "b2/irtifa.mp3",
+   "example_ar": "اِرْتِفَاعٌ مَلْحُوظٌ فِي الطَّلَبِ.",
+   "example_uz": "Talabda sezilarli o'sish.",
+   "srs": true
+  },
+  {
+   "ar": "اِنْخِفَاض",
+   "translit": "inkhifāḍ",
+   "uz": "pasayish",
+   "root": "خ ف ض",
+   "pattern": "اِنْفِعَال",
+   "pos": "ot",
+   "audio": "b2/inkhifad.mp3",
+   "example_ar": "اِنْخِفَاضٌ طَفِيفٌ فِي الأَسْعَارِ.",
+   "example_uz": "Narxlarda ozgina pasayish.",
+   "srs": true
+  },
+  {
+   "ar": "تَضَاعَفَ",
+   "translit": "taḍāʿafa",
+   "uz": "ikki barobar oshdi",
+   "root": "ض ع ف",
+   "pattern": "تَفَاعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/tadaafa.mp3",
+   "example_ar": "تَضَاعَفَ عَدَدُ المُسْتَخْدِمِينَ.",
+   "example_uz": "Foydalanuvchilar soni ikki barobar oshdi.",
+   "srs": true
+  },
+  {
+   "ar": "بَلَغَ",
+   "translit": "balagha",
+   "uz": "…ga yetdi (miqdor)",
+   "root": "ب ل غ",
+   "pattern": "فَعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/balagha.mp3",
+   "example_ar": "بَلَغَ الإِنْتَاجُ أَلْفَ طُنٍّ.",
+   "example_uz": "Ishlab chiqarish ming tonnaga yetdi.",
+   "srs": true
+  },
+  {
+   "ar": "يُشَكِّلُ",
+   "translit": "yushakkilu",
+   "uz": "…ni tashkil qiladi",
+   "root": "ش ك ل",
+   "pattern": "يُفَعِّلُ",
+   "pos": "fe'l",
+   "audio": "b2/yushakkil.mp3",
+   "example_ar": "يُشَكِّلُ الشَّبَابُ نِصْفَ السُّكَّانِ.",
+   "example_uz": "Yoshlar aholining yarmini tashkil qiladi.",
+   "srs": true
+  },
+  {
+   "ar": "إِجْمَالِيّ",
+   "translit": "ijmālī",
+   "uz": "umumiy, jami",
+   "root": "ج م ل",
+   "pattern": "إِفْعَالِيّ",
+   "pos": "sifat",
+   "audio": "b2/ijmali.mp3",
+   "example_ar": "الإِنْتَاجُ الإِجْمَالِيُّ اِرْتَفَعَ.",
+   "example_uz": "Umumiy ishlab chiqarish oshdi.",
+   "srs": true
+  },
+  {
+   "ar": "مُعَدَّل",
+   "translit": "muʿaddal",
+   "uz": "o'rtacha ko'rsatkich, stavka",
+   "root": "ع د ل",
+   "pattern": "مُفَعَّل",
+   "pos": "ot",
+   "audio": "b2/muaddal.mp3",
+   "example_ar": "مُعَدَّلُ النُّمُوِّ ثَلَاثَةٌ فِي المِئَةِ.",
+   "example_uz": "O'sish sur'ati 3 foiz.",
+   "srs": true
+  },
+  {
+   "ar": "طَفِيف",
+   "translit": "ṭafīf",
+   "uz": "juda oz, arzimas (o'zgarish)",
+   "root": "ط ف ف",
+   "pattern": "فَعِيل",
+   "pos": "sifat",
+   "audio": "b2/tafif.mp3",
+   "example_ar": "تَغَيُّرٌ طَفِيفٌ فَقَطْ.",
+   "example_uz": "Faqat arzimas o'zgarish.",
+   "srs": true
+  },
+  {
+   "ar": "بَيْنَمَا",
+   "translit": "baynamā",
+   "uz": "holbuki, …bo'lsa esa",
+   "root": "ب ي ن",
+   "pattern": "",
+   "pos": "bog'lovchi",
+   "audio": "b2/baynama.mp3",
+   "example_ar": "اِرْتَفَعَ الطَّلَبُ بَيْنَمَا ثَبَتَ العَرْضُ.",
+   "example_uz": "Talab oshdi, taklif esa o'zgarmadi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "يُظهر التقرير السنوي أنّ الإنتاج الإجمالي ارتفع بنسبة سبعة في المئة مقارنةً بالعام الماضي، وبلغ ألفًا ومئتي طنّ. وتضاعف عدد العملاء الجدد في الربع الثاني، بينما استقرّت الأسعار تقريبًا. ويشكّل السوق المحلي ثلث المبيعات، أما الباقي فللتصدير. وسجّل قطاع الخدمات تراجعًا طفيفًا، ويرى المحللون أنّ السبب موسمي ولا يدعو إلى القلق.",
+   "questions": [
+    {"q_uz": "Umumiy ishlab chiqarish qancha bo'ldi?", "a": "1200 tonna, 7% o'sish bilan"},
+    {"q_uz": "Mahalliy bozor ulushi qancha?", "a": "Sotuvning uchdan biri"},
+    {"q_uz": "Xizmat sektori haqida nima deyilgan?", "a": "Arzimas pasayish; sabab mavsumiy, xavotirli emas"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-39-listen.mp3",
+   "transcript_ar": "اِرْتَفَعَ الإِنْتَاجُ بِنِسْبَةِ سَبْعَةٍ فِي المِئَةِ وَبَلَغَ أَلْفَ طُنٍّ، بَيْنَمَا اِسْتَقَرَّتِ الأَسْعَارُ.",
+   "questions": [
+    {"q_uz": "O'sish qancha?", "a": "7 foiz"},
+    {"q_uz": "Narxlar bilan nima bo'ldi?", "a": "Barqaror qoldi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch raqamli jumlani ayging: 7% oshdi, 1200 ga yetdi, uchdan birini tashkil qiladi.",
+   "target_ar": ["اِرْتَفَعَ بِنِسْبَةِ سَبْعَةٍ فِي المِئَةِ", "بَلَغَ أَلْفًا وَمِئَتَيْنِ", "يُشَكِّلُ ثُلُثَ الإِجْمَالِيِّ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Qisqa statistik xulosa yozing (4 gap): o'sish, pasayish, ulush, taqqoslash.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«تَضَاعَفَ» nima degani?",
+   "q_ar": "تَضَاعَفَ",
+   "options": ["Ikki barobar oshdi", "Biroz oshdi", "Pasaydi", "O'zgarmadi"],
+   "answer": "Ikki barobar oshdi",
+   "explain_uz": "ضِعْف — ikki barobar.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«بَيْنَمَا» qanday ma'no beradi?",
+   "q_ar": "بَيْنَمَا",
+   "options": ["Qarama-qarshilik (…bo'lsa esa)", "Ketma-ketlik (keyin)", "Sabab", "Maqsad"],
+   "answer": "Qarama-qarshilik (…bo'lsa esa)",
+   "explain_uz": "Ikki holatni qiyoslaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«يُشَكِّلُ ثُلُثَ الإِجْمَالِيِّ» ma'nosi?",
+   "q_ar": "يُشَكِّلُ ثُلُثَ الإِجْمَالِيِّ",
+   "options": ["Jamining uchdan birini tashkil qiladi", "Uch barobar ko'p", "Uchinchi o'rinda", "Uch foiz"],
+   "answer": "Jamining uchdan birini tashkil qiladi",
+   "explain_uz": "ثُلُث — uchdan bir.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«تَرَاجَعَ» qaysi guruhga kiradi?",
+   "q_ar": "تَرَاجَعَ",
+   "options": ["Pasayish", "O'sish", "Barqarorlik", "Taqqoslash"],
+   "answer": "Pasayish",
+   "explain_uz": "اِنْخَفَضَ bilan bir ma'noda.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "مُعَدَّل",
+   "options": [],
+   "answer": "o'rtacha",
+   "explain_uz": "مُعَدَّل — o'rtacha ko'rsatkich/stavka.",
+   "audio": "b2/muaddal.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«اِرْتِفَاع، مُرْتَفِع، رَفَعَ» qaysi o'zakdan?",
+   "q_ar": "مُرْتَفِع",
+   "options": ["ر ف ع", "ر ف ق", "ف ر ع", "ر ع ف"],
+   "answer": "ر ف ع",
+   "explain_uz": "ر ف ع — ko'tarish o'zagi.",
+   "audio": "",
+   "root": "ر ف ع",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Foizni to'g'ri ifodalash qaysi?",
+   "q_ar": "",
+   "options": [
+    "بِنِسْبَةِ سَبْعَةٍ فِي المِئَةِ",
+    "نِسْبَة سَبْعَة المِئَة",
+    "سَبْعَة نِسْبَة مِئَة",
+    "فِي مِئَةِ سَبْعَةٍ"
+   ],
+   "answer": "بِنِسْبَةِ سَبْعَةٍ فِي المِئَةِ",
+   "explain_uz": "Standart qolip.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Ishlab chiqarish ming tonnaga yetdi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "بَلَغَ الإِنْتَاجُ أَلْفَ طُنٍّ",
+   "explain_uz": "Fe'l + foil (marfu') + miqdor (mansub).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["بَلَغَ", "الإِنْتَاجُ", "أَلْفَ", "طُنٍّ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ر ف ع", "back": "ko'tarish — irtifo'/murtafi'", "deck": "msa"},
+  {"type": "root", "front": "ح ص ي", "back": "sanash — ihso/ihsoiy", "deck": "msa"},
+  {"type": "word", "front": "اِرْتِفَاع", "back": "o'sish", "deck": "msa"},
+  {"type": "word", "front": "اِنْخِفَاض", "back": "pasayish", "deck": "msa"},
+  {"type": "word", "front": "تَضَاعَفَ", "back": "ikki barobar oshdi", "deck": "msa"},
+  {"type": "word", "front": "بَلَغَ", "back": "…ga yetdi", "deck": "msa"},
+  {"type": "word", "front": "يُشَكِّلُ", "back": "…ni tashkil qiladi", "deck": "msa"},
+  {"type": "word", "front": "إِجْمَالِيّ", "back": "umumiy", "deck": "msa"},
+  {"type": "word", "front": "مُعَدَّل", "back": "o'rtacha ko'rsatkich", "deck": "msa"},
+  {"type": "word", "front": "طَفِيف", "back": "arzimas (o'zgarish)", "deck": "msa"},
+  {"type": "word", "front": "بَيْنَمَا", "back": "holbuki, …bo'lsa esa", "deck": "msa"}
+ ]
+}

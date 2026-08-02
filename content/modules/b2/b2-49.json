@@ -1,0 +1,307 @@
+{
+ "id": "b2-49",
+ "level": "B2",
+ "module": "review",
+ "order": 49,
+ "title_uz": "Sinov imtihoni",
+ "title_ar": "الاِمْتِحَانُ التَّجْرِيبِيُّ",
+ "can_do_uz": "B2 imtihoni tuzilishini bilaman va vaqtni to'g'ri taqsimlab sinov topshira olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-48"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Yakuniy imtihon: 55 daqiqa, to'rt bo'lim — o'qish (12), tinglash (10), yozish (3 topshiriq), matnlar (4 matn × 3 savol). O'tish chegarasi 80%. Bu dars — mashq rejimi: tuzilma, vaqt taqsimoti va tipik xatolar. Bu yerda yiqilish yo'q, faqat tayyorgarlik.",
+ "grammar": {
+  "point_ar": "خُطَّةُ الاِمْتِحَانِ وَإِدَارَةُ الوَقْتِ",
+  "explanation_uz": "IMTIHON TUZILMASI. (1) القِرَاءَة — 12 savol: grammatika, lug'at, uslub. Tavsiya: 15 daqiqa, har savolga ~1 daqiqa; bilmagan savolni belgilab keyinga qoldiring. (2) الاِسْتِمَاع — 10 savol: yangilik, suhbat, ma'ruza parchalari. Tavsiya: audio boshlanishidan oldin savollarni o'qing. (3) الكِتَابَة — 3 topshiriq: rasmiy xat, hisobot xulosasi, dalilli insho. Tavsiya: 15 daqiqa; skeletni 2 daqiqada rejalashtiring (kirish/dalil/xulosa). (4) النُّصُوص (passages) — 4 matn × 3 savol: gazeta, hisobot, fikr maqolasi, adabiy parcha. Tavsiya: avval savolni, keyin matnni o'qing. UMUMIY QOIDALAR: 80% o'tish; yiqilsangiz 24 soatdan keyin BOSHQA savollar bilan qayta topshirasiz; har savol bir xil ball. TIPIK XATOLAR: bitta savolga uzoq o'tirish, tinglashda hamma so'zni yozishga urinish, inshoda rejasiz boshlash, vaqt oxirida bo'sh javob qoldirish (taxmin qilib bo'lsa ham to'ldiring).",
+  "table": [
+   {"ar": "القِرَاءَة — ١٢ سُؤَالًا", "uz": "O'qish — 12 savol (~15 daqiqa)", "form": "قِسْم"},
+   {"ar": "الاِسْتِمَاع — ١٠ أَسْئِلَة", "uz": "Tinglash — 10 savol", "form": "قِسْم"},
+   {"ar": "الكِتَابَة — ٣ مَهَامَّ", "uz": "Yozish — 3 topshiriq (~15 daqiqa)", "form": "قِسْم"},
+   {"ar": "النُّصُوص — ٤ نُصُوصٍ", "uz": "Matnlar — 4 ta, har biriga 3 savol", "form": "قِسْم"},
+   {"ar": "دَرَجَةُ النَّجَاحِ ٨٠٪", "uz": "O'tish balli — 80%", "form": "شَرْط"},
+   {"ar": "إِعَادَة بَعْدَ ٢٤ سَاعَةً", "uz": "Qayta topshirish 24 soatdan keyin", "form": "قَاعِدَة"}
+  ],
+  "common_mistakes_uz": [
+   "Bitta qiyin savolga 5 daqiqa sarflash — belgilab keyinga qoldiring.",
+   "Insho yozishni rejasiz boshlash — 2 daqiqalik skelet vaqtni tejaydi.",
+   "Bo'sh javob qoldirish — noto'g'ri javob ham bo'sh javobdan yomon emas."
+  ]
+ },
+ "roots": [
+  {
+   "root": "م ح ن",
+   "meaning_uz": "sinov, imtihon",
+   "uz_cognates": ["imtihon", "mehnat emas"],
+   "derived": [
+    {"ar": "اِمْتِحَان", "uz": "imtihon", "pattern": "اِفْتِعَال"},
+    {"ar": "مُمْتَحِن", "uz": "imtihon oluvchi", "pattern": "مُفْتَعِل"},
+    {"ar": "مُمْتَحَن", "uz": "imtihon topshiruvchi", "pattern": "مُفْتَعَل"}
+   ]
+  },
+  {
+   "root": "ن ج ح",
+   "meaning_uz": "muvaffaqiyat",
+   "uz_cognates": ["najot emas — muvaffaqiyat"],
+   "derived": [
+    {"ar": "نَجَاح", "uz": "muvaffaqiyat, o'tish", "pattern": "فَعَال"},
+    {"ar": "نَاجِح", "uz": "muvaffaq bo'lgan", "pattern": "فَاعِل"},
+    {"ar": "نَجَحَ", "uz": "o'tdi, muvaffaq bo'ldi", "pattern": "فَعَلَ"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "اِمْتِحَان تَجْرِيبِيّ",
+   "translit": "imtiḥān tajrībī",
+   "uz": "sinov imtihoni",
+   "root": "م ح ن",
+   "pattern": "اِفْتِعَال",
+   "pos": "ot",
+   "audio": "b2/imtihan_tajribi2.mp3",
+   "example_ar": "أَدَّيْتُ اِمْتِحَانًا تَجْرِيبِيًّا أَمْسِ.",
+   "example_uz": "Kecha sinov imtihoni topshirdim.",
+   "srs": true
+  },
+  {
+   "ar": "دَرَجَة النَّجَاح",
+   "translit": "darajat an-najāḥ",
+   "uz": "o'tish balli",
+   "root": "ن ج ح",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/darajat_najah.mp3",
+   "example_ar": "دَرَجَةُ النَّجَاحِ ثَمَانُونَ فِي المِئَةِ.",
+   "example_uz": "O'tish balli — 80 foiz.",
+   "srs": true
+  },
+  {
+   "ar": "إِدَارَة الوَقْت",
+   "translit": "idārat al-waqt",
+   "uz": "vaqtni boshqarish",
+   "root": "د و ر",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/idarat_waqt.mp3",
+   "example_ar": "إِدَارَةُ الوَقْتِ نِصْفُ النَّجَاحِ.",
+   "example_uz": "Vaqtni boshqarish — muvaffaqiyatning yarmi.",
+   "srs": true
+  },
+  {
+   "ar": "قِسْم",
+   "translit": "qism",
+   "uz": "bo'lim (imtihon qismi)",
+   "root": "ق س م",
+   "pattern": "فِعْل",
+   "pos": "ot",
+   "audio": "b2/qism2.mp3",
+   "example_ar": "الاِمْتِحَانُ أَرْبَعَةُ أَقْسَامٍ.",
+   "example_uz": "Imtihon to'rt bo'limdan iborat.",
+   "srs": true
+  },
+  {
+   "ar": "مَهَمَّة كِتَابِيَّة",
+   "translit": "mahamma kitābiyya",
+   "uz": "yozma topshiriq",
+   "root": "ه م م",
+   "pattern": "مُفْعِلَة",
+   "pos": "ot",
+   "audio": "b2/mahamma_kitabiyya.mp3",
+   "example_ar": "المَهَمَّةُ الكِتَابِيَّةُ الأُولَى رِسَالَةٌ رَسْمِيَّةٌ.",
+   "example_uz": "Birinchi yozma topshiriq — rasmiy xat.",
+   "srs": true
+  },
+  {
+   "ar": "تَخْطِيط",
+   "translit": "takhṭīṭ",
+   "uz": "rejalashtirish",
+   "root": "خ ط ط",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/takhtit.mp3",
+   "example_ar": "التَّخْطِيطُ قَبْلَ الكِتَابَةِ يُوَفِّرُ الوَقْتَ.",
+   "example_uz": "Yozishdan oldin rejalash vaqtni tejaydi.",
+   "srs": true
+  },
+  {
+   "ar": "إِجَابَة نَمُوذَجِيَّة",
+   "translit": "ijāba namūdhajiyya",
+   "uz": "namunaviy javob",
+   "root": "ج و ب",
+   "pattern": "إِفْعَالَة",
+   "pos": "ot",
+   "audio": "b2/ijaba_namudhajiyya.mp3",
+   "example_ar": "قَارِنْ إِجَابَتَكَ بِالإِجَابَةِ النَّمُوذَجِيَّةِ.",
+   "example_uz": "Javobingizni namunaviy javob bilan solishtiring.",
+   "srs": true
+  },
+  {
+   "ar": "شَهَادَة إِتْمَام",
+   "translit": "shahādat itmām",
+   "uz": "tugatganlik sertifikati",
+   "root": "ت م م",
+   "pattern": "إِفْعَال",
+   "pos": "ot",
+   "audio": "b2/shahadat_itmam.mp3",
+   "example_ar": "تُمْنَحُ شَهَادَةُ الإِتْمَامِ بَعْدَ النَّجَاحِ.",
+   "example_uz": "Sertifikat imtihondan o'tgach beriladi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "الامتحان أربعة أقسام: القراءة اثنا عشر سؤالًا، والاستماع عشرة، والكتابة ثلاث مهامّ، والنصوص أربعة نصوص لكلٍّ ثلاثة أسئلة. المدة خمس وخمسون دقيقة، ودرجة النجاح ثمانون في المئة. نصيحتنا: خطّط قبل الكتابة، ولا تقف طويلًا عند سؤال صعب، واقرأ الأسئلة قبل الاستماع. وإذا لم تنجح، يمكنك الإعادة بعد أربع وعشرين ساعة بأسئلة مختلفة تمامًا.",
+   "questions": [
+    {"q_uz": "Imtihon necha bo'lim va qancha vaqt?", "a": "To'rt bo'lim, 55 daqiqa"},
+    {"q_uz": "Qanday maslahat berilgan?", "a": "Rejalash, qiyin savolda to'xtamaslik, tinglashdan oldin savollarni o'qish"},
+    {"q_uz": "Yiqilgan holda nima bo'ladi?", "a": "24 soatdan keyin butunlay boshqa savollar bilan qayta topshiriladi"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-49-listen.mp3",
+   "transcript_ar": "الاِمْتِحَانُ أَرْبَعَةُ أَقْسَامٍ وَمُدَّتُهُ خَمْسٌ وَخَمْسُونَ دَقِيقَةً. دَرَجَةُ النَّجَاحِ ثَمَانُونَ فِي المِئَةِ.",
+   "questions": [
+    {"q_uz": "Imtihon qancha davom etadi?", "a": "55 daqiqa"},
+    {"q_uz": "O'tish balli qancha?", "a": "80 foiz"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Imtihon rejasini ovoz chiqarib ayting: bo'limlar, vaqt, o'tish balli.",
+   "target_ar": ["الاِمْتِحَانُ أَرْبَعَةُ أَقْسَامٍ", "المُدَّةُ خَمْسٌ وَخَمْسُونَ دَقِيقَةً", "دَرَجَةُ النَّجَاحِ ثَمَانُونَ فِي المِئَةِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Sinov sifatida qisqa rasmiy xat yozing (5 gap) va 2 daqiqada uning skeletini rejalashtiring.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "B2 imtihonining o'tish balli qancha?",
+   "q_ar": "",
+   "options": ["80%", "60%", "70%", "90%"],
+   "answer": "80%",
+   "explain_uz": "Daraja imtihonlari uchun umumiy qoida.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Yiqilgan holda qayta topshirish qanday?",
+   "q_ar": "",
+   "options": [
+    "24 soatdan keyin, boshqa savollar bilan",
+    "Darhol, o'sha savollar bilan",
+    "Bir haftadan keyin",
+    "Qayta topshirilmaydi"
+   ],
+   "answer": "24 soatdan keyin, boshqa savollar bilan",
+   "explain_uz": "Savollar takrorlanmaydi (K14 mexanizmi).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Tinglash bo'limida to'g'ri taktika qaysi?",
+   "q_ar": "",
+   "options": [
+    "Audiodan oldin savollarni o'qish",
+    "Hamma so'zni yozib olish",
+    "Faqat oxirini tinglash",
+    "Ko'zni yumib tinglash"
+   ],
+   "answer": "Audiodan oldin savollarni o'qish",
+   "explain_uz": "Nimani izlashni bilgan quloq tezroq ilg'aydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Insho yozishni qanday boshlash kerak?",
+   "q_ar": "",
+   "options": [
+    "2 daqiqalik skelet rejasi bilan",
+    "Darrov yozishni boshlab",
+    "Xulosadan boshlab",
+    "Lug'at ko'chirishdan"
+   ],
+   "answer": "2 daqiqalik skelet rejasi bilan",
+   "explain_uz": "Reja vaqtni tejaydi va tuzilma beradi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "تَخْطِيط",
+   "options": [],
+   "answer": "rejalashtirish",
+   "explain_uz": "تَخْطِيط — reja tuzish.",
+   "audio": "b2/takhtit.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«اِمْتِحَان، مُمْتَحِن، مُمْتَحَن» qaysi o'zakdan?",
+   "q_ar": "اِمْتِحَان",
+   "options": ["م ح ن", "م ن ح", "ح م ن", "م ح م"],
+   "answer": "م ح ن",
+   "explain_uz": "م ح ن — sinov o'zagi.",
+   "audio": "",
+   "root": "م ح ن",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Vaqt tugayotganda bo'sh savol bilan nima qilish kerak?",
+   "q_ar": "",
+   "options": [
+    "Eng ehtimolli variantni belgilash",
+    "Bo'sh qoldirish",
+    "Hammasini bir xil belgilash",
+    "Imtihonni tugatish"
+   ],
+   "answer": "Eng ehtimolli variantni belgilash",
+   "explain_uz": "Bo'sh javob — aniq nol.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Imtihon to'rt bo'limdan iborat»",
+   "q_ar": "",
+   "options": [],
+   "answer": "الاِمْتِحَانُ أَرْبَعَةُ أَقْسَامٍ",
+   "explain_uz": "Mubtado + son birikmasi (xabar).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["الاِمْتِحَانُ", "أَرْبَعَةُ", "أَقْسَامٍ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "م ح ن", "back": "sinov — imtihon/mumtahin", "deck": "msa"},
+  {"type": "root", "front": "ن ج ح", "back": "muvaffaqiyat — najoh/nojih", "deck": "msa"},
+  {"type": "phrase", "front": "اِمْتِحَان تَجْرِيبِيّ", "back": "sinov imtihoni", "deck": "msa"},
+  {"type": "phrase", "front": "دَرَجَة النَّجَاح", "back": "o'tish balli", "deck": "msa"},
+  {"type": "phrase", "front": "إِدَارَة الوَقْت", "back": "vaqtni boshqarish", "deck": "msa"},
+  {"type": "word", "front": "قِسْم", "back": "bo'lim", "deck": "msa"},
+  {"type": "word", "front": "تَخْطِيط", "back": "rejalashtirish", "deck": "msa"},
+  {"type": "phrase", "front": "إِجَابَة نَمُوذَجِيَّة", "back": "namunaviy javob", "deck": "msa"},
+  {"type": "phrase", "front": "شَهَادَة إِتْمَام", "back": "tugatganlik sertifikati", "deck": "msa"}
+ ]
+}

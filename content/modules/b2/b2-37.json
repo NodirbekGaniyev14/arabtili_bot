@@ -1,0 +1,303 @@
+{
+ "id": "b2-37",
+ "level": "B2",
+ "module": "skills-adv",
+ "order": 37,
+ "title_uz": "O'qish: original gazeta maqolasi",
+ "title_ar": "قِرَاءَةُ الخَبَرِ الصَّحَفِيِّ",
+ "can_do_uz": "Gazeta xabarining tuzilishini tanib, asosiy ma'lumotni 30 soniyada ajratib olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-36"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Gazeta xabari teskari piramida bilan yoziladi: eng muhimi — birinchi jumlada. Shu bitta jumlada KIM, NIMA, QAYERDA, QACHON bor. Qolgani — tafsilot. Shuni bilsangiz, maqolani boshidan oxirigacha o'qimasdan ham mazmunini olasiz. Bu — B2 ning eng amaliy ko'nikmasi: tez o'qish.",
+ "grammar": {
+  "point_ar": "بِنْيَةُ الخَبَرِ: العُنْوَانُ وَالمُقَدِّمَةُ وَالتَّفَاصِيلُ",
+  "explanation_uz": "XABAR TUZILISHI. 1) العُنْوَان (sarlavha) — ko'pincha fe'lsiz yoki qisqa fe'l bilan: «اِرْتِفَاعُ الصَّادِرَاتِ ١٠٪». 2) المُقَدِّمَة / اللَّيْد (kirish jumla) — beshta savolga javob: مَنْ (kim), مَاذَا (nima), أَيْنَ (qayerda), مَتَى (qachon), لِمَاذَا (nega). 3) التَّفَاصِيل (tafsilot) — raqamlar, iqtiboslar, kontekst. 4) الاِقْتِبَاس (iqtibos) — «قَالَ فُلَان: …» yoki «وَفْقًا لِـ». XABAR TILI BELGILARI: fe'l ko'pincha jumla boshida (أَعْلَنَتْ، اِرْتَفَعَ، وَقَّعَتْ); majhul ko'p (عُقِدَ الاِجْتِمَاعُ); vaqt aniq (أَمْسِ، صَبَاحَ اليَوْمِ); manba ko'rsatiladi (مَصَادِر رَسْمِيَّة). TEZ O'QISH USULI: sarlavha → birinchi jumla → raqamlar → oxirgi xulosa jumlasi. Shu to'rt nuqta 80% ma'noni beradi.",
+  "table": [
+   {"ar": "اِرْتِفَاعُ الصَّادِرَاتِ", "uz": "Eksportning o'sishi (sarlavha, fe'lsiz)", "form": "عُنْوَان"},
+   {"ar": "أَعْلَنَتِ الوِزَارَةُ أَمْسِ…", "uz": "Vazirlik kecha e'lon qildi… (kirish)", "form": "مُقَدِّمَة"},
+   {"ar": "وَفْقًا لِمَصَادِرَ رَسْمِيَّةٍ", "uz": "Rasmiy manbalarga ko'ra", "form": "مَصْدَر"},
+   {"ar": "قَالَ المُتَحَدِّثُ: …", "uz": "Vakil aytdi: … (iqtibos)", "form": "اِقْتِبَاس"},
+   {"ar": "بِنِسْبَةِ عَشَرَةٍ فِي المِئَةِ", "uz": "10 foizga", "form": "رَقْم"},
+   {"ar": "يُذْكَرُ أَنَّ…", "uz": "Ta'kidlash joizki… (kontekst)", "form": "خَلْفِيَّة"}
+  ],
+  "common_mistakes_uz": [
+   "Maqolani birinchi so'zdan oxirgisiga qadar tarjima qilish — avval skelet, keyin tafsilot.",
+   "Sarlavhani gap deb o'qish — sarlavhada ko'pincha fe'l tushirilgan.",
+   "Iqtibos va muallif fikrini aralashtirish: «قَالَ» dan keyingisi — manba so'zi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "خ ب ر",
+   "meaning_uz": "xabar berish",
+   "uz_cognates": ["xabar", "muxbir", "axborot"],
+   "derived": [
+    {"ar": "خَبَر", "uz": "xabar", "pattern": "فَعَل"},
+    {"ar": "أَخْبَار", "uz": "yangiliklar", "pattern": "أَفْعَال"},
+    {"ar": "مُخْبِر", "uz": "xabarchi", "pattern": "مُفْعِل"}
+   ]
+  },
+  {
+   "root": "ص ح ف",
+   "meaning_uz": "sahifa, matbuot",
+   "uz_cognates": ["sahifa", "suhbat emas — matbuot"],
+   "derived": [
+    {"ar": "صَحِيفَة", "uz": "gazeta", "pattern": "فَعِيلَة"},
+    {"ar": "صَحَفِيّ", "uz": "jurnalist", "pattern": "فَعَلِيّ"},
+    {"ar": "صَحَافَة", "uz": "matbuot", "pattern": "فَعَالَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "عُنْوَان رَئِيسِيّ",
+   "translit": "ʿunwān raʾīsī",
+   "uz": "bosh sarlavha",
+   "root": "ع ن و",
+   "pattern": "فُعْلَان",
+   "pos": "ot",
+   "audio": "b2/unwan_raisi.mp3",
+   "example_ar": "العُنْوَانُ الرَّئِيسِيُّ قَصِيرٌ وَقَوِيٌّ.",
+   "example_uz": "Bosh sarlavha qisqa va kuchli.",
+   "srs": true
+  },
+  {
+   "ar": "مُقَدِّمَة",
+   "translit": "muqaddima",
+   "uz": "kirish qismi (lid)",
+   "root": "ق د م",
+   "pattern": "مُفَعِّلَة",
+   "pos": "ot",
+   "audio": "b2/muqaddima.mp3",
+   "example_ar": "المُقَدِّمَةُ تُجِيبُ عَنْ خَمْسَةِ أَسْئِلَةٍ.",
+   "example_uz": "Kirish besh savolga javob beradi.",
+   "srs": true
+  },
+  {
+   "ar": "اِقْتِبَاس",
+   "translit": "iqtibās",
+   "uz": "iqtibos, keltirilgan gap",
+   "root": "ق ب س",
+   "pattern": "اِفْتِعَال",
+   "pos": "ot",
+   "audio": "b2/iqtibas.mp3",
+   "example_ar": "اِقْتِبَاسٌ مِنْ كَلَامِ الوَزِيرِ.",
+   "example_uz": "Vazir so'zidan iqtibos.",
+   "srs": true
+  },
+  {
+   "ar": "مُتَحَدِّث",
+   "translit": "mutaḥaddith",
+   "uz": "vakil, so'zlovchi (matbuot vakili)",
+   "root": "ح د ث",
+   "pattern": "مُتَفَعِّل",
+   "pos": "ot",
+   "audio": "b2/mutahaddith.mp3",
+   "example_ar": "صَرَّحَ المُتَحَدِّثُ الرَّسْمِيُّ.",
+   "example_uz": "Rasmiy vakil bayonot berdi.",
+   "srs": true
+  },
+  {
+   "ar": "صَرَّحَ",
+   "translit": "ṣarraḥa",
+   "uz": "bayonot berdi, oshkora aytdi",
+   "root": "ص ر ح",
+   "pattern": "فَعَّلَ",
+   "pos": "fe'l",
+   "audio": "b2/sarraha.mp3",
+   "example_ar": "صَرَّحَ بِأَنَّ العَمَلَ مُسْتَمِرٌّ.",
+   "example_uz": "Ish davom etayotganini bildirdi.",
+   "srs": true
+  },
+  {
+   "ar": "يُذْكَرُ أَنَّ",
+   "translit": "yudhkaru anna",
+   "uz": "ta'kidlash joizki (kontekst jumlasi)",
+   "root": "ذ ك ر",
+   "pattern": "يُفْعَلُ",
+   "pos": "ibora",
+   "audio": "b2/yudhkaru.mp3",
+   "example_ar": "يُذْكَرُ أَنَّ المَشْرُوعَ بَدَأَ العَامَ المَاضِيَ.",
+   "example_uz": "Ta'kidlash joizki, loyiha o'tgan yili boshlangan.",
+   "srs": true
+  },
+  {
+   "ar": "وَكَالَة أَنْبَاء",
+   "translit": "wakālat anbāʾ",
+   "uz": "axborot agentligi",
+   "root": "و ك ل",
+   "pattern": "فَعَالَة",
+   "pos": "ot",
+   "audio": "b2/wakalat_anba.mp3",
+   "example_ar": "نَقَلَتْ وَكَالَةُ الأَنْبَاءِ الخَبَرَ.",
+   "example_uz": "Axborot agentligi xabarni yetkazdi.",
+   "srs": true
+  },
+  {
+   "ar": "تَقْرِير مُفَصَّل",
+   "translit": "taqrīr mufaṣṣal",
+   "uz": "batafsil hisobot",
+   "root": "ق ر ر",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/taqrir_mufassal.mp3",
+   "example_ar": "نَشَرَتِ الصَّحِيفَةُ تَقْرِيرًا مُفَصَّلًا.",
+   "example_uz": "Gazeta batafsil hisobot chop etdi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "ارتفاع الصادرات الزراعية ١٢٪\n\nأعلنت وزارة التجارة أمس أنّ الصادرات الزراعية ارتفعت اثني عشر في المئة خلال النصف الأول من العام. ووفقًا لمصادر رسمية، شملت الزيادة التمور والخضار الطازجة، وذهب معظمها إلى أسواق آسيوية. وصرّح المتحدث الرسمي بأنّ الوزارة تعمل على تسهيل إجراءات الشحن والتخليص الجمركي. يُذكر أنّ برنامج دعم المزارعين بدأ العام الماضي، وقد استفاد منه أكثر من ثلاثة آلاف مزارع.",
+   "questions": [
+    {"q_uz": "Sarlavhada nima aytilgan?", "a": "Qishloq xo'jaligi eksporti 12% oshgani"},
+    {"q_uz": "Kirish jumlasi qaysi savollarga javob beradi?", "a": "Kim (vazirlik), nima (eksport o'sdi), qachon (kecha/yilning birinchi yarmi)"},
+    {"q_uz": "Kontekst jumlasi nima haqida?", "a": "O'tgan yildan beri fermerlarni qo'llash dasturi ishlayotgani"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-37-listen.mp3",
+   "transcript_ar": "أَعْلَنَتِ الوِزَارَةُ أَنَّ الصَّادِرَاتِ اِرْتَفَعَتِ اثْنَيْ عَشَرَ فِي المِئَةِ. وَصَرَّحَ المُتَحَدِّثُ بِأَنَّ العَمَلَ مُسْتَمِرٌّ.",
+   "questions": [
+    {"q_uz": "Qancha o'sish?", "a": "12 foiz"},
+    {"q_uz": "Vakil nima dedi?", "a": "Ish davom etmoqda"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Bitta xabarni 3 jumlada aytib bering: sarlavha, kirish, raqam.",
+   "target_ar": ["اِرْتِفَاعُ الصَّادِرَاتِ", "أَعْلَنَتِ الوِزَارَةُ أَمْسِ", "بِنِسْبَةِ اثْنَيْ عَشَرَ فِي المِئَةِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Qisqa xabar yozing (4 gap): sarlavha + kirish jumlasi (5 savolga javob) + raqam + iqtibos.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Gazeta xabarida eng muhim ma'lumot qayerda?",
+   "q_ar": "",
+   "options": ["Birinchi jumlada", "Oxirgi xatboshida", "O'rtada", "Izohda"],
+   "answer": "Birinchi jumlada",
+   "explain_uz": "Teskari piramida — muhimi boshida.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«يُذْكَرُ أَنَّ» nima uchun ishlatiladi?",
+   "q_ar": "يُذْكَرُ أَنَّ",
+   "options": [
+    "Kontekst/fon ma'lumotini berish",
+    "Iqtibos keltirish",
+    "Sarlavha yozish",
+    "Inkor qilish"
+   ],
+   "answer": "Kontekst/fon ma'lumotini berish",
+   "explain_uz": "Xabarga qo'shimcha tarixiy izoh.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«صَرَّحَ المُتَحَدِّثُ» kim haqida?",
+   "q_ar": "صَرَّحَ المُتَحَدِّثُ",
+   "options": ["Rasmiy vakil bayonot berdi", "Jurnalist yozdi", "O'quvchi izoh qoldirdi", "Ekspert tahlil qildi"],
+   "answer": "Rasmiy vakil bayonot berdi",
+   "explain_uz": "مُتَحَدِّث رَسْمِيّ — matbuot vakili.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Xabar sarlavhasining belgisi qaysi?",
+   "q_ar": "",
+   "options": [
+    "Qisqa, ko'pincha fe'lsiz",
+    "Uzun va tavsifiy",
+    "Savol shaklida",
+    "Iqtibos bilan"
+   ],
+   "answer": "Qisqa, ko'pincha fe'lsiz",
+   "explain_uz": "«اِرْتِفَاعُ الصَّادِرَاتِ ١٢٪».",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "اِقْتِبَاس",
+   "options": [],
+   "answer": "iqtibos",
+   "explain_uz": "اِقْتِبَاس — keltirilgan gap.",
+   "audio": "b2/iqtibas.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«صَحِيفَة، صَحَفِيّ، صَحَافَة» qaysi o'zakdan?",
+   "q_ar": "صَحَافَة",
+   "options": ["ص ح ف", "ص ح ح", "س ح ف", "ص ف ح"],
+   "answer": "ص ح ف",
+   "explain_uz": "ص ح ف — sahifa, matbuot o'zagi.",
+   "audio": "",
+   "root": "ص ح ف",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Tez o'qishda qaysi to'rt nuqta tekshiriladi?",
+   "q_ar": "",
+   "options": [
+    "Sarlavha, birinchi jumla, raqamlar, xulosa",
+    "Har bir xatboshi",
+    "Faqat iqtiboslar",
+    "Faqat oxirgi jumla"
+   ],
+   "answer": "Sarlavha, birinchi jumla, raqamlar, xulosa",
+   "explain_uz": "Shu to'rttasi 80% ma'noni beradi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Vazirlik kecha e'lon qildi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "أَعْلَنَتِ الوِزَارَةُ أَمْسِ",
+   "explain_uz": "Fe'l + foil + vaqt (xabar uslubi).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["أَعْلَنَتِ", "الوِزَارَةُ", "أَمْسِ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ص ح ف", "back": "matbuot — sahifa/sahafiy", "deck": "msa"},
+  {"type": "root", "front": "خ ب ر", "back": "xabar — axbor/muxbir", "deck": "msa"},
+  {"type": "phrase", "front": "عُنْوَان رَئِيسِيّ", "back": "bosh sarlavha", "deck": "msa"},
+  {"type": "word", "front": "مُقَدِّمَة", "back": "kirish (lid)", "deck": "msa"},
+  {"type": "word", "front": "اِقْتِبَاس", "back": "iqtibos", "deck": "msa"},
+  {"type": "word", "front": "مُتَحَدِّث", "back": "matbuot vakili", "deck": "msa"},
+  {"type": "word", "front": "صَرَّحَ", "back": "bayonot berdi", "deck": "msa"},
+  {"type": "phrase", "front": "يُذْكَرُ أَنَّ", "back": "ta'kidlash joizki", "deck": "msa"},
+  {"type": "phrase", "front": "وَكَالَة أَنْبَاء", "back": "axborot agentligi", "deck": "msa"},
+  {"type": "phrase", "front": "تَقْرِير مُفَصَّل", "back": "batafsil hisobot", "deck": "msa"}
+ ]
+}

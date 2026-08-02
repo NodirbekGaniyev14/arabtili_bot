@@ -1,0 +1,315 @@
+{
+ "id": "b2-48",
+ "level": "B2",
+ "module": "review",
+ "order": 48,
+ "title_uz": "Takrorlash: lug'at va o'zaklar",
+ "title_ar": "مُرَاجَعَةُ المُفْرَدَاتِ وَالجُذُورِ",
+ "can_do_uz": "B2 lug'atini o'zak va vazn bo'yicha guruhlab, notanish so'z ma'nosini taxmin qila olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-47"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "B2 da 500 ga yaqin yangi so'z o'rgandingiz. Ularni yakka holda emas, OILA bo'lib eslash kerak: ع ق د → عَقْد، تَعَاقُد، مُتَعَاقِد؛ ص د ر → تَصْدِير، صَادِرَات، مَصْدَر. Shu usul bilan xotira uch barobar tejaladi va notanish so'z ham «tanish» bo'lib chiqadi.",
+ "grammar": {
+  "point_ar": "تَجْمِيعُ المُفْرَدَاتِ حَسَبَ الجَذْرِ وَالوَزْنِ",
+  "explanation_uz": "TAKRORLASH USULI. 1) O'ZAK OILALARI: bitta o'zakdan chiqqan so'zlarni bir kartaga yig'ing — ع م ل: عَامِل (ishchi/omil), مَعْمَل (zavod), عَمَلِيَّة (operatsiya), اِسْتِعْمَال (foydalanish), مُعَامَلَة (muomala). 2) VAZN OILALARI: bir vazndagi so'zlarni solishtiring — مُفَاعَلَة: مُعَامَلَة، مُرَاجَعَة، مُنَاظَرَة، مُكَاتَبَة (hammasi «o'zaro harakat»). 3) MAVZU BLOKLARI: bank (رَصِيد، تَحْوِيل، قَرْض), savdo (عَقْد، شَحْن، جُمْرُك), IT (تَطْبِيق، تَحْدِيث، بَيَانَات), tibbiyot (تَشْخِيص، جُرْعَة، عِلَاج). 4) BARQAROR BIRIKMALAR: fe'l + ot juftini butun holda: اِتَّخَذَ قَرَارًا، بَذَلَ جُهْدًا، عَقَدَ اِجْتِمَاعًا. TAXMIN QOIDASI: notanish so'z uchrasa — (a) o'zakni ajrating, (b) vaznni aniqlang (foil? maf'ul? joy? asbob?), (c) kontekst bilan solishtiring. Uch qadam 80% hollarda to'g'ri ma'no beradi.",
+  "table": [
+   {"ar": "ع م ل → عَامِل · مَعْمَل · اِسْتِعْمَال", "uz": "Bitta o'zak — uch xil ma'no", "form": "أُسْرَة جَذْر"},
+   {"ar": "مُفَاعَلَة: مُعَامَلَة · مُرَاجَعَة", "uz": "Bir vazn — o'zaro harakat", "form": "أُسْرَة وَزْن"},
+   {"ar": "فَاعِل = bajaruvchi", "uz": "كَاتِب, عَامِل, بَاحِث", "form": "وَزْن"},
+   {"ar": "مَفْعُول = bajarilgan", "uz": "مَكْتُوب, مَمْنُوع, مَوْثُوق", "form": "وَزْن"},
+   {"ar": "مَفْعَل/مَفْعِل = joy", "uz": "مَعْمَل, مَكْتَب, مَرْجِع", "form": "وَزْن"},
+   {"ar": "مِفْعَال = asbob", "uz": "مِفْتَاح, مِقْيَاس", "form": "وَزْن"}
+  ],
+  "common_mistakes_uz": [
+   "So'zlarni ro'yxat bo'lib yodlash — o'zak/vazn oilasi bilan yodlash uch barobar samarali.",
+   "Vaznni e'tiborsiz qoldirib faqat o'zakdan ma'no chiqarish: عَامِل ≠ مَعْمَل.",
+   "Barqaror birikmani bo'lib yodlash — u butun holda eslanadi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ج ذ ر",
+   "meaning_uz": "ildiz, o'zak",
+   "uz_cognates": ["jazr (ildiz)"],
+   "derived": [
+    {"ar": "جَذْر", "uz": "o'zak, ildiz", "pattern": "فَعْل"},
+    {"ar": "جُذُور", "uz": "o'zaklar", "pattern": "فُعُول"},
+    {"ar": "جَذْرِيّ", "uz": "tub, radikal", "pattern": "فَعْلِيّ"}
+   ]
+  },
+  {
+   "root": "ح ف ظ",
+   "meaning_uz": "saqlash, yodlash",
+   "uz_cognates": ["hifz", "hofiz", "muhofaza"],
+   "derived": [
+    {"ar": "حِفْظ", "uz": "yodlash, saqlash", "pattern": "فِعْل"},
+    {"ar": "مُحَافَظَة", "uz": "saqlash; viloyat", "pattern": "مُفَاعَلَة"},
+    {"ar": "ذَاكِرَة", "uz": "xotira (boshqa o'zak)", "pattern": "فَاعِلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "جَذْر",
+   "translit": "jadhr",
+   "uz": "o'zak, ildiz",
+   "root": "ج ذ ر",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/jadhr.mp3",
+   "example_ar": "لِكُلِّ كَلِمَةٍ جَذْرٌ.",
+   "example_uz": "Har so'zning o'zagi bor.",
+   "srs": true
+  },
+  {
+   "ar": "أُسْرَة الكَلِمَة",
+   "translit": "usrat al-kalima",
+   "uz": "so'z oilasi (bir o'zakdan)",
+   "root": "أ س ر",
+   "pattern": "فُعْلَة",
+   "pos": "ot",
+   "audio": "b2/usrat_kalima.mp3",
+   "example_ar": "اِحْفَظِ الكَلِمَاتِ فِي أُسْرَةٍ وَاحِدَةٍ.",
+   "example_uz": "So'zlarni bir oila bo'lib yodlang.",
+   "srs": true
+  },
+  {
+   "ar": "حِفْظ",
+   "translit": "ḥifẓ",
+   "uz": "yodlash, eslab qolish",
+   "root": "ح ف ظ",
+   "pattern": "فِعْل",
+   "pos": "ot",
+   "audio": "b2/hifz.mp3",
+   "example_ar": "الحِفْظُ بِلَا فَهْمٍ ضَعِيفٌ.",
+   "example_uz": "Tushunmasdan yodlash zaif.",
+   "srs": true
+  },
+  {
+   "ar": "ذَاكِرَة",
+   "translit": "dhākira",
+   "uz": "xotira",
+   "root": "ذ ك ر",
+   "pattern": "فَاعِلَة",
+   "pos": "ot",
+   "audio": "b2/dhakira2.mp3",
+   "example_ar": "التَّكْرَارُ يُثَبِّتُ الذَّاكِرَةَ.",
+   "example_uz": "Takror xotirani mustahkamlaydi.",
+   "srs": true
+  },
+  {
+   "ar": "تَخْمِين",
+   "translit": "takhmīn",
+   "uz": "taxmin qilish",
+   "root": "خ م ن",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/takhmin.mp3",
+   "example_ar": "تَخْمِينُ المَعْنَى مِنَ السِّيَاقِ مَهَارَةٌ.",
+   "example_uz": "Kontekstdan ma'no taxmin qilish — ko'nikma.",
+   "srs": true
+  },
+  {
+   "ar": "سِيَاق",
+   "translit": "siyāq",
+   "uz": "kontekst, matn muhiti",
+   "root": "س و ق",
+   "pattern": "فِعَال",
+   "pos": "ot",
+   "audio": "b2/siyaq.mp3",
+   "example_ar": "السِّيَاقُ يُحَدِّدُ المَعْنَى.",
+   "example_uz": "Kontekst ma'noni belgilaydi.",
+   "srs": true
+  },
+  {
+   "ar": "مُتَرَادِفَات",
+   "translit": "mutarādifāt",
+   "uz": "sinonimlar",
+   "root": "ر د ف",
+   "pattern": "مُتَفَاعِلَات",
+   "pos": "ot",
+   "audio": "b2/mutaradifat.mp3",
+   "example_ar": "المُتَرَادِفَاتُ لَيْسَتْ مُتَطَابِقَةً.",
+   "example_uz": "Sinonimlar aynan bir xil emas.",
+   "srs": true
+  },
+  {
+   "ar": "بِطَاقَة مُفْرَدَات",
+   "translit": "biṭāqat mufradāt",
+   "uz": "so'z kartochkasi",
+   "root": "ف ر د",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/bitaqat_mufradat.mp3",
+   "example_ar": "أَسْتَخْدِمُ بِطَاقَاتِ المُفْرَدَاتِ يَوْمِيًّا.",
+   "example_uz": "Har kuni so'z kartochkalaridan foydalanaman.",
+   "srs": true
+  },
+  {
+   "ar": "مُرَاجَعَة دَوْرِيَّة",
+   "translit": "murājaʿa dawriyya",
+   "uz": "davriy takrorlash (SRS)",
+   "root": "د و ر",
+   "pattern": "فَعْلِيَّة",
+   "pos": "ot",
+   "audio": "b2/murajaa_dawriyya.mp3",
+   "example_ar": "المُرَاجَعَةُ الدَّوْرِيَّةُ تَمْنَعُ النِّسْيَانَ.",
+   "example_uz": "Davriy takrorlash unutishning oldini oladi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أفضل طريقة لحفظ المفردات هي تجميعها في أُسر. خذ جذر «ع م ل»: عامل ومعمل وعملية واستعمال ومعاملة. كلها من أصل واحد، والوزن هو الذي يحدّد المعنى: فاعل للفاعل، ومَفعَل للمكان، ومِفعال للأداة. وإذا قابلتك كلمة جديدة، فلا تفتح المعجم فورًا؛ حدّد الجذر، ثم الوزن، ثم انظر إلى السياق. المراجعة الدورية بعد يوم وبعد أسبوع تثبّت الذاكرة أكثر من ساعة حفظ واحدة.",
+   "questions": [
+    {"q_uz": "So'zlarni qanday yodlash tavsiya qilinadi?", "a": "O'zak oilalari bo'lib guruhlab"},
+    {"q_uz": "Ma'noni nima belgilaydi?", "a": "Vazn — foil, joy, asbob va h.k."},
+    {"q_uz": "Notanish so'zda birinchi qadam nima?", "a": "Lug'atga emas, o'zak va vaznga qarash"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-48-listen.mp3",
+   "transcript_ar": "حَدِّدِ الجَذْرَ، ثُمَّ الوَزْنَ، ثُمَّ اُنْظُرْ إِلَى السِّيَاقِ. وَالمُرَاجَعَةُ الدَّوْرِيَّةُ تُثَبِّتُ الذَّاكِرَةَ.",
+   "questions": [
+    {"q_uz": "Uch qadam qaysi?", "a": "O'zak, vazn, kontekst"},
+    {"q_uz": "Xotirani nima mustahkamlaydi?", "a": "Davriy takrorlash"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Bitta o'zakdan besh so'zni ovoz chiqarib ayting va ma'nolarini qo'shing.",
+   "target_ar": ["عَامِل", "مَعْمَل", "عَمَلِيَّة", "اِسْتِعْمَال", "مُعَامَلَة"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Uch o'zak tanlang va har biridan 4 so'z yozing, ma'nosi va vaznini ko'rsating.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "So'zni yodlashning eng samarali yo'li qaysi?",
+   "q_ar": "",
+   "options": [
+    "O'zak oilasi bilan guruhlab",
+    "Alifbo tartibida ro'yxat qilib",
+    "Faqat tarjimasini yozib",
+    "Faqat eshitib"
+   ],
+   "answer": "O'zak oilasi bilan guruhlab",
+   "explain_uz": "Bir o'zak — bir necha so'z, xotira tejaladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مَفْعَل» vazni odatda nimani bildiradi?",
+   "q_ar": "مَفْعَل",
+   "options": ["Joy", "Bajaruvchi", "Asbob", "Sifat"],
+   "answer": "Joy",
+   "explain_uz": "مَعْمَل (zavod), مَكْتَب (ofis).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مِفْعَال» qaysi ma'noni beradi?",
+   "q_ar": "مِفْعَال",
+   "options": ["Asbob", "Joy", "Bajaruvchi", "Masdar"],
+   "answer": "Asbob",
+   "explain_uz": "مِفْتَاح (kalit), مِقْيَاس (o'lchagich).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Notanish so'zda uch qadam qaysi?",
+   "q_ar": "",
+   "options": [
+    "O'zak → vazn → kontekst",
+    "Lug'at → tarjima → yodlash",
+    "Tarjimon → kontekst → yozish",
+    "Eshitish → takrorlash → unutish"
+   ],
+   "answer": "O'zak → vazn → kontekst",
+   "explain_uz": "80% hollarda to'g'ri ma'no beradi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "سِيَاق",
+   "options": [],
+   "answer": "kontekst",
+   "explain_uz": "سِيَاق — matn muhiti.",
+   "audio": "b2/siyaq.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«مُعَامَلَة، مُرَاجَعَة، مُنَاظَرَة» qaysi VAZNDA?",
+   "q_ar": "مُعَامَلَة",
+   "options": ["مُفَاعَلَة", "مَفْعُولَة", "فَعِيلَة", "إِفْعَال"],
+   "answer": "مُفَاعَلَة",
+   "explain_uz": "III bob masdari — o'zaro harakat.",
+   "audio": "",
+   "root": "ع م ل",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Davriy takrorlash nima beradi?",
+   "q_ar": "المُرَاجَعَة الدَّوْرِيَّة",
+   "options": [
+    "Unutishning oldini oladi",
+    "Yangi so'z qo'shadi",
+    "Grammatikani almashtiradi",
+    "Talaffuzni to'g'rilaydi"
+   ],
+   "answer": "Unutishning oldini oladi",
+   "explain_uz": "SRS tamoyili — takror interval bilan.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Kontekst ma'noni belgilaydi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "السِّيَاقُ يُحَدِّدُ المَعْنَى",
+   "explain_uz": "Mubtado + fe'lli xabar + maf'ul.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["السِّيَاقُ", "يُحَدِّدُ", "المَعْنَى"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ج ذ ر", "back": "o'zak — jazr/juzur", "deck": "msa"},
+  {"type": "root", "front": "ح ف ظ", "back": "saqlash — hifz/muhofaza", "deck": "msa"},
+  {"type": "word", "front": "جَذْر", "back": "o'zak", "deck": "msa"},
+  {"type": "phrase", "front": "أُسْرَة الكَلِمَة", "back": "so'z oilasi", "deck": "msa"},
+  {"type": "word", "front": "حِفْظ", "back": "yodlash", "deck": "msa"},
+  {"type": "word", "front": "ذَاكِرَة", "back": "xotira", "deck": "msa"},
+  {"type": "word", "front": "تَخْمِين", "back": "taxmin qilish", "deck": "msa"},
+  {"type": "word", "front": "سِيَاق", "back": "kontekst", "deck": "msa"},
+  {"type": "word", "front": "مُتَرَادِفَات", "back": "sinonimlar", "deck": "msa"},
+  {"type": "phrase", "front": "مُرَاجَعَة دَوْرِيَّة", "back": "davriy takrorlash", "deck": "msa"}
+ ]
+}

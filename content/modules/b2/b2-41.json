@@ -1,0 +1,297 @@
+{
+ "id": "b2-41",
+ "level": "B2",
+ "module": "skills-adv",
+ "order": 41,
+ "title_uz": "Tinglash: yangiliklar nashri",
+ "title_ar": "الاِسْتِمَاعُ إِلَى نَشْرَةِ الأَخْبَارِ",
+ "can_do_uz": "Normal tezlikdagi yangiliklar nashridan asosiy xabarlarni va raqamlarni ilg'ay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-40"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Yangiliklar diktori tez gapiradi, lekin BIR XIL qolipda: «أَهْلًا بِكُمْ فِي نَشْرَةِ الأَخْبَارِ», «نَبْدَأُ بِـ», «وَفِي خَبَرٍ آخَرَ», «وَفِي الخِتَامِ». Bu ko'rsatkichlar sizga «hozir yangi mavzu boshlanadi» deb signal beradi. Ularni bilsangiz, tezlik muammo bo'lmaydi — quloq skeletni ilg'aydi.",
+ "grammar": {
+  "point_ar": "مُؤَشِّرَاتُ النَّشْرَةِ: الاِنْتِقَالُ بَيْنَ الأَخْبَارِ",
+  "explanation_uz": "NASHR QOLIPLARI. Ochilish: «أَهْلًا بِكُمْ فِي نَشْرَةِ الأَخْبَارِ»، «إِلَيْكُمْ أَبْرَزَ العَنَاوِينِ» (asosiy sarlavhalar). O'tish: «نَبْدَأُ بِـ» (…dan boshlaymiz), «وَفِي خَبَرٍ آخَرَ» (boshqa xabarda), «وَعَلَى صَعِيدٍ آخَرَ» (boshqa yo'nalishda), «وَفِيمَا يَتَعَلَّقُ بِـ» (…ga kelsak). Manba: «أَفَادَ مُرَاسِلُنَا» (muxbirimiz xabar berdi), «نَقْلًا عَنْ» (…dan iqtibosan). Yakun: «وَفِي الخِتَامِ» (yakunda), «هَذَا وَشُكْرًا لِمُتَابَعَتِكُمْ». QULOQ USULI: (1) sarlavhalar ro'yxatini ilg'ang — nashr boshida beriladi; (2) har xabarda faqat KIM+NIMA+RAQAM ni yozing; (3) o'tish iboralarini eshitganda yangi mavzuga tayyorlaning. Ob-havo va sport odatda oxirida keladi.",
+  "table": [
+   {"ar": "إِلَيْكُمْ أَبْرَزَ العَنَاوِينِ", "uz": "Asosiy sarlavhalar", "form": "اِفْتِتَاح"},
+   {"ar": "نَبْدَأُ بِـ…", "uz": "…dan boshlaymiz", "form": "اِنْتِقَال"},
+   {"ar": "وَفِي خَبَرٍ آخَرَ", "uz": "Boshqa xabarda", "form": "اِنْتِقَال"},
+   {"ar": "أَفَادَ مُرَاسِلُنَا", "uz": "Muxbirimiz xabar berdi", "form": "مَصْدَر"},
+   {"ar": "وَفِيمَا يَتَعَلَّقُ بِـ", "uz": "…ga kelsak", "form": "اِنْتِقَال"},
+   {"ar": "وَفِي الخِتَامِ", "uz": "Yakunda", "form": "خِتَام"}
+  ],
+  "common_mistakes_uz": [
+   "Har so'zni tushunishga urinish — avval skelet (kim/nima/raqam), keyin tafsilot.",
+   "«وَعَلَى صَعِيدٍ آخَرَ» ni «boshqa tomonda joylashgan» deb tarjima qilish — bu mavzu almashuvi.",
+   "Sarlavhalar ro'yxatini o'tkazib yuborish — u butun nashrning xaritasi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ن ش ر",
+   "meaning_uz": "yoyish, chop etish",
+   "uz_cognates": ["nashr", "noshir", "intishor"],
+   "derived": [
+    {"ar": "نَشْرَة", "uz": "eshittirish, byulleten", "pattern": "فَعْلَة"},
+    {"ar": "نَاشِر", "uz": "noshir", "pattern": "فَاعِل"},
+    {"ar": "اِنْتِشَار", "uz": "tarqalish", "pattern": "اِفْتِعَال"}
+   ]
+  },
+  {
+   "root": "ر س ل",
+   "meaning_uz": "yuborish",
+   "uz_cognates": ["risola", "irsol"],
+   "derived": [
+    {"ar": "مُرَاسِل", "uz": "muxbir", "pattern": "مُفَاعِل"},
+    {"ar": "مُرَاسَلَة", "uz": "yozishma", "pattern": "مُفَاعَلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "نَشْرَة الأَخْبَار",
+   "translit": "nashrat al-akhbār",
+   "uz": "yangiliklar nashri",
+   "root": "ن ش ر",
+   "pattern": "إِضَافَة",
+   "pos": "ot",
+   "audio": "b2/nashrat_akhbar.mp3",
+   "example_ar": "أُشَاهِدُ نَشْرَةَ الأَخْبَارِ مَسَاءً.",
+   "example_uz": "Kechqurun yangiliklar nashrini ko'raman.",
+   "srs": true
+  },
+  {
+   "ar": "مُرَاسِل",
+   "translit": "murāsil",
+   "uz": "muxbir",
+   "root": "ر س ل",
+   "pattern": "مُفَاعِل",
+   "pos": "ot",
+   "audio": "b2/murasil.mp3",
+   "example_ar": "أَفَادَ مُرَاسِلُنَا مِنَ المَوْقِعِ.",
+   "example_uz": "Muxbirimiz voqea joyidan xabar berdi.",
+   "srs": true
+  },
+  {
+   "ar": "عَاجِل",
+   "translit": "ʿājil",
+   "uz": "shoshilinch (xabar)",
+   "root": "ع ج ل",
+   "pattern": "فَاعِل",
+   "pos": "sifat",
+   "audio": "b2/ajil2.mp3",
+   "example_ar": "خَبَرٌ عَاجِلٌ مِنَ العَاصِمَةِ.",
+   "example_uz": "Poytaxtdan shoshilinch xabar.",
+   "srs": true
+  },
+  {
+   "ar": "عَلَى صَعِيدٍ آخَرَ",
+   "translit": "ʿalā ṣaʿīdin ākhara",
+   "uz": "boshqa yo'nalishda (mavzu almashuvi)",
+   "root": "ص ع د",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/ala_said.mp3",
+   "example_ar": "وَعَلَى صَعِيدٍ آخَرَ، اِفْتُتِحَ مَعْرِضٌ جَدِيدٌ.",
+   "example_uz": "Boshqa tomondan, yangi ko'rgazma ochildi.",
+   "srs": true
+  },
+  {
+   "ar": "بَثّ مُبَاشِر",
+   "translit": "bathth mubāshir",
+   "uz": "jonli efir",
+   "root": "ب ث ث",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/bathth_mubashir.mp3",
+   "example_ar": "الحَدَثُ فِي بَثٍّ مُبَاشِرٍ.",
+   "example_uz": "Voqea jonli efirda.",
+   "srs": true
+  },
+  {
+   "ar": "تَصْرِيح",
+   "translit": "taṣrīḥ",
+   "uz": "bayonot",
+   "root": "ص ر ح",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tasrih.mp3",
+   "example_ar": "تَصْرِيحٌ رَسْمِيٌّ لِلْوَزِيرِ.",
+   "example_uz": "Vazirning rasmiy bayonoti.",
+   "srs": true
+  },
+  {
+   "ar": "حَصِيلَة",
+   "translit": "ḥaṣīla",
+   "uz": "yakuniy natija, hosila (raqam)",
+   "root": "ح ص ل",
+   "pattern": "فَعِيلَة",
+   "pos": "ot",
+   "audio": "b2/hasila.mp3",
+   "example_ar": "حَصِيلَةُ الحَادِثِ ثَلَاثَةُ مُصَابِينَ.",
+   "example_uz": "Hodisa natijasi — uch jarohatlangan.",
+   "srs": true
+  },
+  {
+   "ar": "مُتَابَعَة",
+   "translit": "mutābaʿa",
+   "uz": "kuzatib borish (efirni)",
+   "root": "ت ب ع",
+   "pattern": "مُفَاعَلَة",
+   "pos": "ot",
+   "audio": "b2/mutabaa2.mp3",
+   "example_ar": "شُكْرًا لِمُتَابَعَتِكُمْ.",
+   "example_uz": "Kuzatganingiz uchun rahmat.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أهلًا بكم في نشرة الأخبار. إليكم أبرز العناوين: افتتاح مستشفى جديد في المنطقة الشرقية، وارتفاع الصادرات سبعة في المئة، ومباراة الفريق الوطني مساء غد. نبدأ بالخبر الأول: افتُتح المستشفى صباح اليوم بحضور وزير الصحة، ويضمّ مئتي سرير. وفي خبر آخر، أفاد مراسلنا بأنّ حصيلة الحادث ثلاثة مصابين، حالتهم مستقرّة. وعلى صعيد آخر، أعلنت الوزارة عن برنامج تدريبي جديد. وفي الختام، شكرًا لمتابعتكم.",
+   "questions": [
+    {"q_uz": "Nechta asosiy sarlavha berildi?", "a": "Uchta: shifoxona ochilishi, eksport o'sishi, futbol o'yini"},
+    {"q_uz": "Shifoxona haqida qanday raqam aytildi?", "a": "200 ta o'rin"},
+    {"q_uz": "«وعلى صعيد آخر» qanday signal?", "a": "Yangi, boshqa mavzuga o'tish"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-41-listen.mp3",
+   "transcript_ar": "أَهْلًا بِكُمْ فِي نَشْرَةِ الأَخْبَارِ. نَبْدَأُ بِافْتِتَاحِ مُسْتَشْفًى جَدِيدٍ يَضُمُّ مِئَتَيْ سَرِيرٍ. وَفِي خَبَرٍ آخَرَ، اِرْتَفَعَتِ الصَّادِرَاتُ سَبْعَةً فِي المِئَةِ. وَفِي الخِتَامِ، شُكْرًا لِمُتَابَعَتِكُمْ.",
+   "questions": [
+    {"q_uz": "Birinchi xabar nima haqida?", "a": "200 o'rinli yangi shifoxona ochilishi"},
+    {"q_uz": "Ikkinchi xabardagi raqam?", "a": "Eksport 7 foizga oshgan"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Qisqa nashr o'qing: ochilish iborasi + bitta xabar + yakun iborasi.",
+   "target_ar": ["أَهْلًا بِكُمْ فِي نَشْرَةِ الأَخْبَارِ", "نَبْدَأُ بِـ…", "وَفِي الخِتَامِ، شُكْرًا لِمُتَابَعَتِكُمْ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "3 xabarli qisqa nashr matnini yozing: sarlavhalar ro'yxati, ikkita xabar (raqam bilan), yakun.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«وَفِي خَبَرٍ آخَرَ» nimani bildiradi?",
+   "q_ar": "وَفِي خَبَرٍ آخَرَ",
+   "options": ["Yangi mavzuga o'tish", "Xabarni takrorlash", "Manba ko'rsatish", "Yakunlash"],
+   "answer": "Yangi mavzuga o'tish",
+   "explain_uz": "Nashrdagi o'tish ko'rsatkichi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«حَصِيلَة الحَادِث» nima?",
+   "q_ar": "حَصِيلَة الحَادِث",
+   "options": ["Hodisa natijasi (raqamlar)", "Hodisa sababi", "Hodisa joyi", "Hodisa vaqti"],
+   "answer": "Hodisa natijasi (raqamlar)",
+   "explain_uz": "Jabrlanganlar/zarar soni.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Tinglashda birinchi navbatda nima yoziladi?",
+   "q_ar": "",
+   "options": [
+    "Kim + nima + raqam",
+    "Har bir sifat",
+    "Barcha ismlar",
+    "Diktor ohangi"
+   ],
+   "answer": "Kim + nima + raqam",
+   "explain_uz": "Skelet — keyin tafsilot.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«أَفَادَ مُرَاسِلُنَا» nimani bildiradi?",
+   "q_ar": "أَفَادَ مُرَاسِلُنَا",
+   "options": ["Muxbir xabar berdi", "Vazir bayonot berdi", "Tomoshabin yozdi", "Agentlik tarqatdi"],
+   "answer": "Muxbir xabar berdi",
+   "explain_uz": "مُرَاسِل — voqea joyidagi jurnalist.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "تَصْرِيح",
+   "options": [],
+   "answer": "bayonot",
+   "explain_uz": "تَصْرِيح — rasmiy bayonot.",
+   "audio": "b2/tasrih.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«نَشْرَة، نَاشِر، اِنْتِشَار» qaysi o'zakdan?",
+   "q_ar": "اِنْتِشَار",
+   "options": ["ن ش ر", "ش ن ر", "ن ص ر", "ن ش ط"],
+   "answer": "ن ش ر",
+   "explain_uz": "ن ش ر — yoyish, chop etish.",
+   "audio": "",
+   "root": "ن ش ر",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Nashr boshidagi sarlavhalar ro'yxati nima uchun muhim?",
+   "q_ar": "",
+   "options": [
+    "Butun nashrning xaritasini beradi",
+    "Faqat bezak uchun",
+    "Reklama uchun",
+    "Vaqtni to'ldirish uchun"
+   ],
+   "answer": "Butun nashrning xaritasini beradi",
+   "explain_uz": "Qaysi mavzular kelishini oldindan bilasiz.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Yakunda, kuzatganingiz uchun rahmat»",
+   "q_ar": "",
+   "options": [],
+   "answer": "وَفِي الخِتَامِ شُكْرًا لِمُتَابَعَتِكُمْ",
+   "explain_uz": "Nashr yakuni qolipi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["وَفِي", "الخِتَامِ", "شُكْرًا", "لِمُتَابَعَتِكُمْ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ن ش ر", "back": "yoyish — nashr/noshir", "deck": "msa"},
+  {"type": "root", "front": "ر س ل", "back": "yuborish — murosil/risola", "deck": "msa"},
+  {"type": "phrase", "front": "نَشْرَة الأَخْبَار", "back": "yangiliklar nashri", "deck": "msa"},
+  {"type": "word", "front": "مُرَاسِل", "back": "muxbir", "deck": "msa"},
+  {"type": "word", "front": "عَاجِل", "back": "shoshilinch", "deck": "msa"},
+  {"type": "phrase", "front": "عَلَى صَعِيدٍ آخَرَ", "back": "boshqa yo'nalishda", "deck": "msa"},
+  {"type": "phrase", "front": "بَثّ مُبَاشِر", "back": "jonli efir", "deck": "msa"},
+  {"type": "word", "front": "تَصْرِيح", "back": "bayonot", "deck": "msa"},
+  {"type": "word", "front": "حَصِيلَة", "back": "yakuniy natija", "deck": "msa"},
+  {"type": "word", "front": "مُتَابَعَة", "back": "kuzatish", "deck": "msa"}
+ ]
+}

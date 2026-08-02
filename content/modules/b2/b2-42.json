@@ -1,0 +1,316 @@
+{
+ "id": "b2-42",
+ "level": "B2",
+ "module": "skills-adv",
+ "order": 42,
+ "title_uz": "Tinglash: podkast va munozara",
+ "title_ar": "الاِسْتِمَاعُ إِلَى بُودْكَاست وَحِوَارٍ",
+ "can_do_uz": "Ikki kishi bahsida kim nimani qo'llab-quvvatlayotganini va dalillarini ajrata olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-41"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Podkast — yangilikdan qiyinroq: gapiruvchilar bir-birini bo'ladi, fikr o'zgaradi, hazil bo'ladi. Lekin bu yerda ham signal so'zlar bor: «أَتَّفِقُ مَعَكَ» (roziman), «لَكِنْ فِي رَأْيِي» (lekin menimcha), «دَعْنِي أُوَضِّحُ» (izohlab beray). Shu marker so'zlar suhbat xaritasini chizadi.",
+ "grammar": {
+  "point_ar": "مُؤَشِّرَاتُ الحِوَارِ: الاِتِّفَاقُ وَالاِعْتِرَاضُ وَالمُقَاطَعَةُ",
+  "explanation_uz": "SUHBAT MARKERLARI. Rozilik: أَتَّفِقُ مَعَكَ (roziman), هَذَا صَحِيحٌ (to'g'ri), بِالضَّبْطِ (aynan). Qisman rozilik: نَعَمْ، لَكِنْ… (ha, lekin), إِلَى حَدٍّ مَا (ma'lum darajada). Qarshilik: لَا أَتَّفِقُ (rozi emasman), مَعَ اِحْتِرَامِي (hurmat bilan, lekin), عَلَى العَكْسِ. Izoh so'rash: مَاذَا تَقْصِدُ؟ (nimani nazarda tutyapsiz?), هَلْ يُمْكِنُ التَّوْضِيحُ؟ Izoh berish: دَعْنِي أُوَضِّحُ (izohlay), بِمَعْنَى آخَرَ (boshqacha aytganda), أَقْصِدُ أَنَّ (aytmoqchimanki). So'z olish: لَوْ سَمَحْتَ، أُرِيدُ أَنْ أُضِيفَ (ruxsat bersangiz, qo'shimcha qilmoqchiman). Yakun: خُلَاصَةُ الحِوَارِ (suhbat xulosasi). QULOQ USULI: har gapiruvchiga alohida «ustun» tuting — kim nimani qo'llab-quvvatlaydi; marker so'z eshitilganda pozitsiya o'zgarganini belgilang.",
+  "table": [
+   {"ar": "أَتَّفِقُ مَعَكَ تَمَامًا", "uz": "Siz bilan to'liq roziman", "form": "اِتِّفَاق"},
+   {"ar": "نَعَمْ، لَكِنْ…", "uz": "Ha, lekin… (qisman rozilik)", "form": "تَحَفُّظ"},
+   {"ar": "مَعَ اِحْتِرَامِي، أَخْتَلِفُ", "uz": "Hurmat bilan, rozi emasman", "form": "اِعْتِرَاض"},
+   {"ar": "دَعْنِي أُوَضِّحُ", "uz": "Izohlab beray", "form": "تَوْضِيح"},
+   {"ar": "مَاذَا تَقْصِدُ بِـ…؟", "uz": "…deganda nimani nazarda tutyapsiz?", "form": "اِسْتِفْسَار"},
+   {"ar": "بِمَعْنًى آخَرَ", "uz": "Boshqacha aytganda", "form": "إِعَادَة صِيَاغَة"}
+  ],
+  "common_mistakes_uz": [
+   "«نَعَمْ، لَكِنْ» ni to'liq rozilik deb tushunish — bu qisman e'tiroz.",
+   "«مَعَ اِحْتِرَامِي» ni maqtov deb o'ylash — undan keyin qarshi fikr keladi.",
+   "Har gapiruvchining pozitsiyasini aralashtirish — alohida qayd yuriting."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ح و ر",
+   "meaning_uz": "suhbat, muloqot",
+   "uz_cognates": ["muhovara", "hovar"],
+   "derived": [
+    {"ar": "حِوَار", "uz": "suhbat, dialog", "pattern": "فِعَال"},
+    {"ar": "مُحَاوِر", "uz": "suhbatdosh, boshlovchi", "pattern": "مُفَاعِل"},
+    {"ar": "مُحَاوَرَة", "uz": "muloqot", "pattern": "مُفَاعَلَة"}
+   ]
+  },
+  {
+   "root": "و ض ح",
+   "meaning_uz": "aniqlik",
+   "uz_cognates": ["vozeh", "tavzih"],
+   "derived": [
+    {"ar": "تَوْضِيح", "uz": "izohlash", "pattern": "تَفْعِيل"},
+    {"ar": "وَاضِح", "uz": "aniq, ravshan", "pattern": "فَاعِل"},
+    {"ar": "أَوْضَحَ", "uz": "aniqlashtirdi", "pattern": "أَفْعَلَ"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "حِوَار",
+   "translit": "ḥiwār",
+   "uz": "suhbat, dialog",
+   "root": "ح و ر",
+   "pattern": "فِعَال",
+   "pos": "ot",
+   "audio": "b2/hiwar2.mp3",
+   "example_ar": "حِوَارٌ هَادِئٌ بَيْنَ خَبِيرَيْنِ.",
+   "example_uz": "Ikki ekspert o'rtasidagi xotirjam suhbat.",
+   "srs": true
+  },
+  {
+   "ar": "مُحَاوِر",
+   "translit": "muḥāwir",
+   "uz": "boshlovchi, suhbatdosh",
+   "root": "ح و ر",
+   "pattern": "مُفَاعِل",
+   "pos": "ot",
+   "audio": "b2/muhawir2.mp3",
+   "example_ar": "سَأَلَ المُحَاوِرُ سُؤَالًا صَعْبًا.",
+   "example_uz": "Boshlovchi qiyin savol berdi.",
+   "srs": true
+  },
+  {
+   "ar": "ضَيْف",
+   "translit": "ḍayf",
+   "uz": "mehmon (efirda)",
+   "root": "ض ي ف",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/dayf2.mp3",
+   "example_ar": "ضَيْفُ الحَلْقَةِ بَاحِثٌ اِقْتِصَادِيٌّ.",
+   "example_uz": "Ko'rsatuv mehmoni — iqtisodchi tadqiqotchi.",
+   "srs": true
+  },
+  {
+   "ar": "حَلْقَة",
+   "translit": "ḥalqa",
+   "uz": "epizod, ko'rsatuv qismi",
+   "root": "ح ل ق",
+   "pattern": "فَعْلَة",
+   "pos": "ot",
+   "audio": "b2/halqa2.mp3",
+   "example_ar": "حَلْقَةُ اليَوْمِ عَنِ التَّعْلِيمِ.",
+   "example_uz": "Bugungi epizod ta'lim haqida.",
+   "srs": true
+  },
+  {
+   "ar": "أَتَّفِقُ مَعَ",
+   "translit": "attafiqu maʿa",
+   "uz": "…bilan roziman",
+   "root": "و ف ق",
+   "pattern": "أَفْتَعِلُ",
+   "pos": "ibora",
+   "audio": "b2/attafiqu.mp3",
+   "example_ar": "أَتَّفِقُ مَعَكَ فِي هَذِهِ النُّقْطَةِ.",
+   "example_uz": "Bu masalada siz bilan roziman.",
+   "srs": true
+  },
+  {
+   "ar": "دَعْنِي أُوَضِّحُ",
+   "translit": "daʿnī uwaḍḍiḥu",
+   "uz": "izohlab beray",
+   "root": "و ض ح",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/dani_uwaddih.mp3",
+   "example_ar": "دَعْنِي أُوَضِّحُ الفِكْرَةَ.",
+   "example_uz": "G'oyani izohlab beray.",
+   "srs": true
+  },
+  {
+   "ar": "بِمَعْنًى آخَرَ",
+   "translit": "bi-maʿnan ākhara",
+   "uz": "boshqacha aytganda",
+   "root": "ع ن ي",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/bimana_akhar.mp3",
+   "example_ar": "بِمَعْنًى آخَرَ، النَّتِيجَةُ وَاحِدَةٌ.",
+   "example_uz": "Boshqacha aytganda, natija bir xil.",
+   "srs": true
+  },
+  {
+   "ar": "نُقْطَة",
+   "translit": "nuqṭa",
+   "uz": "nuqta, masala (suhbatda)",
+   "root": "ن ق ط",
+   "pattern": "فُعْلَة",
+   "pos": "ot",
+   "audio": "b2/nuqta.mp3",
+   "example_ar": "هَذِهِ نُقْطَةٌ مُهِمَّةٌ جِدًّا.",
+   "example_uz": "Bu juda muhim masala.",
+   "srs": true
+  },
+  {
+   "ar": "مَعَ اِحْتِرَامِي",
+   "translit": "maʿa iḥtirāmī",
+   "uz": "hurmat bilan (e'tirozdan oldin)",
+   "root": "ح ر م",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/maa_ihtirami.mp3",
+   "example_ar": "مَعَ اِحْتِرَامِي، لَا أَتَّفِقُ.",
+   "example_uz": "Hurmat bilan, rozi emasman.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "المحاور: أهلًا بكم في حلقة جديدة. ضيفنا اليوم باحث في التعليم. سؤالي الأول: هل التعليم عن بُعد أفضل؟\nالضيف: أتّفق مع فكرة المرونة، لكن في رأيي الحضور أهمّ للطلاب الصغار.\nالمحاور: ماذا تقصد بالمرونة؟\nالضيف: دعني أوضّح: الطالب يعيد المحاضرة متى شاء. بمعنى آخر، الوقت ملك له.\nالمحاور: مع احترامي، ألا يقلّ التركيز في البيت؟\nالضيف: هذه نقطة مهمّة، ولذلك أقترح الجمع بين الطريقتين.",
+   "questions": [
+    {"q_uz": "Mehmonning pozitsiyasi qanday?", "a": "Moslashuvchanlik yaxshi, lekin kichik yoshdagilarga darsga borish muhim"},
+    {"q_uz": "«ماذا تقصد بالمرونة؟» qanday marker?", "a": "Izoh so'rash (istifsor)"},
+    {"q_uz": "Suhbat qanday yakunlandi?", "a": "Ikki usulni birlashtirish taklifi bilan"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-42-listen.mp3",
+   "transcript_ar": "أَتَّفِقُ مَعَكَ فِي هَذِهِ النُّقْطَةِ، لَكِنْ فِي رَأْيِي الحُضُورُ أَهَمُّ. دَعْنِي أُوَضِّحُ.",
+   "questions": [
+    {"q_uz": "Gapiruvchi to'liq rozimi?", "a": "Yo'q — qisman: «lekin menimcha…»"},
+    {"q_uz": "Keyin nima qilmoqchi?", "a": "Fikrini izohlab bermoqchi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch markerni ayting: roziman, hurmat bilan rozi emasman, izohlab beray.",
+   "target_ar": ["أَتَّفِقُ مَعَكَ", "مَعَ اِحْتِرَامِي، أَخْتَلِفُ", "دَعْنِي أُوَضِّحُ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Ikki kishilik qisqa munozara yozing (6 qator): savol, pozitsiya, izoh so'rash, izoh, e'tiroz, murosa.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«نَعَمْ، لَكِنْ…» qanday pozitsiya?",
+   "q_ar": "نَعَمْ، لَكِنْ",
+   "options": ["Qisman rozilik", "To'liq rozilik", "To'liq rad", "Savol"],
+   "answer": "Qisman rozilik",
+   "explain_uz": "«Ha» dan keyin e'tiroz keladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مَعَ اِحْتِرَامِي» dan keyin odatda nima keladi?",
+   "q_ar": "مَعَ اِحْتِرَامِي",
+   "options": ["Qarshi fikr", "Maqtov", "Savol", "Xulosa"],
+   "answer": "Qarshi fikr",
+   "explain_uz": "Muloyim e'tiroz qolipi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«بِمَعْنًى آخَرَ» nima uchun ishlatiladi?",
+   "q_ar": "بِمَعْنًى آخَرَ",
+   "options": [
+    "Fikrni qayta ifodalash",
+    "Yangi mavzu boshlash",
+    "Manba ko'rsatish",
+    "Suhbatni tugatish"
+   ],
+   "answer": "Fikrni qayta ifodalash",
+   "explain_uz": "Aytilganni soddaroq qilib takrorlash.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Podkast tinglashda qanday qayd yuritiladi?",
+   "q_ar": "",
+   "options": [
+    "Har gapiruvchiga alohida ustun",
+    "Faqat birinchi gapiruvchi",
+    "Faqat raqamlar",
+    "Qayd shart emas"
+   ],
+   "answer": "Har gapiruvchiga alohida ustun",
+   "explain_uz": "Pozitsiyalarni aralashtirmaslik uchun.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "حَلْقَة",
+   "options": [],
+   "answer": "epizod",
+   "explain_uz": "حَلْقَة — ko'rsatuv/podkast qismi.",
+   "audio": "b2/halqa2.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«حِوَار، مُحَاوِر، مُحَاوَرَة» qaysi o'zakdan?",
+   "q_ar": "مُحَاوِر",
+   "options": ["ح و ر", "ح ر و", "خ و ر", "ح و ل"],
+   "answer": "ح و ر",
+   "explain_uz": "ح و ر — suhbat o'zagi.",
+   "audio": "",
+   "root": "ح و ر",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«دَعْنِي أُوَضِّحُ» kim aytadi?",
+   "q_ar": "دَعْنِي أُوَضِّحُ",
+   "options": [
+    "Fikrini tushuntirmoqchi bo'lgan kishi",
+    "Savol beruvchi",
+    "Tinglovchi",
+    "Muxbir"
+   ],
+   "answer": "Fikrini tushuntirmoqchi bo'lgan kishi",
+   "explain_uz": "«Izohlashimga ruxsat bering».",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Bu masalada siz bilan roziman»",
+   "q_ar": "",
+   "options": [],
+   "answer": "أَتَّفِقُ مَعَكَ فِي هَذِهِ النُّقْطَةِ",
+   "explain_uz": "Fe'l + مَعَ + jarr birikmasi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["أَتَّفِقُ", "مَعَكَ", "فِي", "هَذِهِ", "النُّقْطَةِ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ح و ر", "back": "suhbat — hiwor/muhovir", "deck": "msa"},
+  {"type": "root", "front": "و ض ح", "back": "aniqlik — tavzih/vozih", "deck": "msa"},
+  {"type": "word", "front": "حِوَار", "back": "suhbat", "deck": "msa"},
+  {"type": "word", "front": "مُحَاوِر", "back": "boshlovchi", "deck": "msa"},
+  {"type": "word", "front": "ضَيْف", "back": "mehmon (efirda)", "deck": "msa"},
+  {"type": "word", "front": "حَلْقَة", "back": "epizod", "deck": "msa"},
+  {"type": "phrase", "front": "أَتَّفِقُ مَعَ", "back": "…bilan roziman", "deck": "msa"},
+  {"type": "phrase", "front": "دَعْنِي أُوَضِّحُ", "back": "izohlab beray", "deck": "msa"},
+  {"type": "phrase", "front": "بِمَعْنًى آخَرَ", "back": "boshqacha aytganda", "deck": "msa"},
+  {"type": "phrase", "front": "مَعَ اِحْتِرَامِي", "back": "hurmat bilan (e'tiroz)", "deck": "msa"},
+  {"type": "word", "front": "نُقْطَة", "back": "masala, nuqta", "deck": "msa"}
+ ]
+}

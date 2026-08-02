@@ -1,0 +1,309 @@
+{
+ "id": "b2-44",
+ "level": "B2",
+ "module": "skills-adv",
+ "order": 44,
+ "title_uz": "Yozish: rasmiy hisobot va e-xat",
+ "title_ar": "كِتَابَةُ التَّقْرِيرِ وَالبَرِيدِ الرَّسْمِيِّ",
+ "can_do_uz": "Rasmiy elektron xat va qisqa hisobotni to'g'ri format bilan yoza olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-43"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Rasmiy xatning skeleti doim bir xil: murojaat → salom → maqsad → tafsilot → so'rov → yakun. Arabchada bu qoliplar tayyor: «إِلَى السَّيِّدِ المُحْتَرَمِ», «تَحِيَّةً طَيِّبَةً وَبَعْدُ», «أَكْتُبُ إِلَيْكُمْ بِخُصُوصِ», «وَتَفَضَّلُوا بِقَبُولِ فَائِقِ الاِحْتِرَامِ». Ularni bir marta yodlab, har xatda ishlatasiz.",
+ "grammar": {
+  "point_ar": "قَوَالِبُ الرِّسَالَةِ الرَّسْمِيَّةِ وَالتَّقْرِيرِ",
+  "explanation_uz": "RASMIY XAT TUZILMASI. 1) Murojaat: إِلَى السَّيِّدِ/السَّيِّدَةِ المُحْتَرَمِ(ةِ)، إِلَى مَنْ يَهُمُّهُ الأَمْرُ (kimga tegishli bo'lsa). 2) Salom: تَحِيَّةً طَيِّبَةً وَبَعْدُ. 3) Maqsad: أَكْتُبُ إِلَيْكُمْ بِخُصُوصِ… / أَتَقَدَّمُ بِطَلَبِ… 4) Tafsilot: qisqa xatboshi, faktlar va sanalar. 5) So'rov: أَرْجُو التَّكَرُّمَ بِـ (iltimos qilaman), نَأْمُلُ مِنْكُمْ (umid qilamiz). 6) Yakun: وَتَفَضَّلُوا بِقَبُولِ فَائِقِ الاِحْتِرَامِ، وَلَكُمْ جَزِيلُ الشُّكْرِ. HISOBOT (التَّقْرِير) TUZILMASI: العُنْوَان (sarlavha) → المُقَدِّمَة (maqsad) → العَرْض (faktlar/raqamlar) → التَّحْلِيل (tahlil) → التَّوْصِيَات (tavsiyalar) → الخَاتِمَة. USLUB: 1-shaxs kam, «تَمَّ» va majhul ko'p; qisqa jumlalar; raqam va sana aniq. XATO BO'LMASIN: rasmiy xatda hijoziy so'z, emodji, qisqartma ishlatilmaydi.",
+  "table": [
+   {"ar": "إِلَى مَنْ يَهُمُّهُ الأَمْرُ", "uz": "Kimga tegishli bo'lsa", "form": "مُخَاطَبَة"},
+   {"ar": "تَحِيَّةً طَيِّبَةً وَبَعْدُ", "uz": "Hurmat ila (salom qolipi)", "form": "تَحِيَّة"},
+   {"ar": "أَكْتُبُ إِلَيْكُمْ بِخُصُوصِ", "uz": "Sizga … yuzasidan yozmoqdaman", "form": "هَدَف"},
+   {"ar": "أَرْجُو التَّكَرُّمَ بِـ", "uz": "Iltimos qilaman (rasmiy so'rov)", "form": "طَلَب"},
+   {"ar": "مُرْفَقٌ طَيَّهُ", "uz": "Ilova qilinmoqda", "form": "مُرْفَق"},
+   {"ar": "وَتَفَضَّلُوا بِقَبُولِ فَائِقِ الاِحْتِرَامِ", "uz": "Hurmat bilan (yakun)", "form": "خِتَام"}
+  ],
+  "common_mistakes_uz": [
+   "Rasmiy xatni salomsiz boshlash yoki «سَلَام» bilan tugatish — yakun qolipi boshqa.",
+   "Hisobotda 1-shaxsni ko'p ishlatish: «رَأَيْتُ» ✗ → «تَبَيَّنَ أَنَّ» / «تَمَّ رَصْدُ» ✓.",
+   "«مُرْفَق» so'zini unutib, faylni izohsiz yuborish."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ر ف ق",
+   "meaning_uz": "hamrohlik, qo'shib berish",
+   "uz_cognates": ["rafiq", "muroffaqa"],
+   "derived": [
+    {"ar": "مُرْفَق", "uz": "ilova (fayl)", "pattern": "مُفْعَل"},
+    {"ar": "إِرْفَاق", "uz": "ilova qilish", "pattern": "إِفْعَال"}
+   ]
+  },
+  {
+   "root": "ك ر م",
+   "meaning_uz": "saxovat, hurmat",
+   "uz_cognates": ["karam", "ikrom", "muhtaram"],
+   "derived": [
+    {"ar": "التَّكَرُّم", "uz": "marhamat qilish", "pattern": "تَفَعُّل"},
+    {"ar": "مُحْتَرَم", "uz": "hurmatli", "pattern": "مُفْتَعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "رِسَالَة رَسْمِيَّة",
+   "translit": "risāla rasmiyya",
+   "uz": "rasmiy xat",
+   "root": "ر س ل",
+   "pattern": "فِعَالَة",
+   "pos": "ot",
+   "audio": "b2/risala_rasmiyya.mp3",
+   "example_ar": "أَرْسَلْتُ رِسَالَةً رَسْمِيَّةً لِلْإِدَارَةِ.",
+   "example_uz": "Ma'muriyatga rasmiy xat yubordim.",
+   "srs": true
+  },
+  {
+   "ar": "مُحْتَرَم",
+   "translit": "muḥtaram",
+   "uz": "hurmatli (murojaatda)",
+   "root": "ح ر م",
+   "pattern": "مُفْتَعَل",
+   "pos": "sifat",
+   "audio": "b2/muhtaram.mp3",
+   "example_ar": "إِلَى السَّيِّدِ المُحْتَرَمِ.",
+   "example_uz": "Hurmatli janobga.",
+   "srs": true
+  },
+  {
+   "ar": "بِخُصُوصِ",
+   "translit": "bi-khuṣūṣi",
+   "uz": "…yuzasidan",
+   "root": "خ ص ص",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/bikhusus2.mp3",
+   "example_ar": "أَكْتُبُ بِخُصُوصِ العَقْدِ.",
+   "example_uz": "Shartnoma yuzasidan yozmoqdaman.",
+   "srs": true
+  },
+  {
+   "ar": "أَرْجُو التَّكَرُّمَ",
+   "translit": "arjū at-takarrum",
+   "uz": "iltimos qilaman (rasmiy)",
+   "root": "ك ر م",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/arju_takarrum.mp3",
+   "example_ar": "أَرْجُو التَّكَرُّمَ بِالمُوَافَقَةِ.",
+   "example_uz": "Rozilik berishingizni so'rayman.",
+   "srs": true
+  },
+  {
+   "ar": "مُرْفَق",
+   "translit": "murfaq",
+   "uz": "ilova (fayl/hujjat)",
+   "root": "ر ف ق",
+   "pattern": "مُفْعَل",
+   "pos": "ot",
+   "audio": "b2/murfaq.mp3",
+   "example_ar": "مُرْفَقٌ طَيَّهُ نُسْخَةٌ مِنَ العَقْدِ.",
+   "example_uz": "Shartnoma nusxasi ilova qilinmoqda.",
+   "srs": true
+  },
+  {
+   "ar": "تَقْرِير",
+   "translit": "taqrīr",
+   "uz": "hisobot",
+   "root": "ق ر ر",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/taqrir2.mp3",
+   "example_ar": "التَّقْرِيرُ يَتَكَوَّنُ مِنْ خَمْسَةِ أَقْسَامٍ.",
+   "example_uz": "Hisobot besh qismdan iborat.",
+   "srs": true
+  },
+  {
+   "ar": "تَوْصِيَات",
+   "translit": "tawṣiyāt",
+   "uz": "tavsiyalar",
+   "root": "و ص ي",
+   "pattern": "تَفْعِلَات",
+   "pos": "ot",
+   "audio": "b2/tawsiyat.mp3",
+   "example_ar": "قِسْمُ التَّوْصِيَاتِ فِي النِّهَايَةِ.",
+   "example_uz": "Tavsiyalar bo'limi oxirida.",
+   "srs": true
+  },
+  {
+   "ar": "تَبَيَّنَ أَنَّ",
+   "translit": "tabayyana anna",
+   "uz": "ma'lum bo'ldiki (xolis uslub)",
+   "root": "ب ي ن",
+   "pattern": "تَفَعَّلَ",
+   "pos": "ibora",
+   "audio": "b2/tabayyana.mp3",
+   "example_ar": "تَبَيَّنَ أَنَّ التَّأْخِيرَ إِدَارِيٌّ.",
+   "example_uz": "Ma'lum bo'ldiki, kechikish ma'muriy sababli.",
+   "srs": true
+  },
+  {
+   "ar": "فَائِق الاِحْتِرَام",
+   "translit": "fāʾiq al-iḥtirām",
+   "uz": "yuksak hurmat (yakun qolipi)",
+   "root": "ف و ق",
+   "pattern": "فَاعِل",
+   "pos": "ibora",
+   "audio": "b2/faiq_ihtiram.mp3",
+   "example_ar": "وَتَفَضَّلُوا بِقَبُولِ فَائِقِ الاِحْتِرَامِ.",
+   "example_uz": "Yuksak hurmat bilan.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "إلى السيد مدير الموارد البشرية المحترم، تحيةً طيبةً وبعد:\nأكتب إليكم بخصوص تجديد عقد العمل الذي ينتهي في الشهر القادم. لقد أنهيت فترة التجربة بنجاح، وتبيّن من تقرير المتابعة أنّ الأداء كان ضمن المستوى المطلوب. لذلك أرجو التكرّم بالنظر في طلب التجديد لسنة إضافية. مرفق طيّه نسخة من العقد الحالي وتقرير الأداء. وتفضّلوا بقبول فائق الاحترام.",
+   "questions": [
+    {"q_uz": "Xat maqsadi nima?", "a": "Shartnomani bir yilga uzaytirishni so'rash"},
+    {"q_uz": "Qanday dalil keltirilgan?", "a": "Sinov muddati muvaffaqiyatli tugagan, ish sifati talab darajasida"},
+    {"q_uz": "Xatga nima ilova qilingan?", "a": "Joriy shartnoma nusxasi va ish natijalari hisoboti"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-44-listen.mp3",
+   "transcript_ar": "تَحِيَّةً طَيِّبَةً وَبَعْدُ، أَكْتُبُ إِلَيْكُمْ بِخُصُوصِ تَجْدِيدِ العَقْدِ. أَرْجُو التَّكَرُّمَ بِالنَّظَرِ فِي الطَّلَبِ.",
+   "questions": [
+    {"q_uz": "Xat mavzusi nima?", "a": "Shartnomani yangilash"},
+    {"q_uz": "Qanday so'rov bildirildi?", "a": "Arizani ko'rib chiqish"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Rasmiy xat qoliplarini ovoz chiqarib ayting: murojaat, salom, maqsad, yakun.",
+   "target_ar": ["إِلَى السَّيِّدِ المُحْتَرَمِ", "تَحِيَّةً طَيِّبَةً وَبَعْدُ", "وَتَفَضَّلُوا بِقَبُولِ فَائِقِ الاِحْتِرَامِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Rasmiy elektron xat yozing (6 gap): murojaat, salom, maqsad, dalil, so'rov, yakun. Ilova haqida ham yozing.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Rasmiy xat qanday yakunlanadi?",
+   "q_ar": "",
+   "options": [
+    "وَتَفَضَّلُوا بِقَبُولِ فَائِقِ الاِحْتِرَامِ",
+    "مَعَ السَّلَامَةِ",
+    "إِلَى اللِّقَاءِ",
+    "خَلَاص شُكْرًا"
+   ],
+   "answer": "وَتَفَضَّلُوا بِقَبُولِ فَائِقِ الاِحْتِرَامِ",
+   "explain_uz": "Standart rasmiy yakun.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«مُرْفَق طَيَّهُ» nima degani?",
+   "q_ar": "مُرْفَق طَيَّهُ",
+   "options": ["Ilova qilinmoqda", "Keyinroq yuboriladi", "Yo'qotilgan", "Bekor qilindi"],
+   "answer": "Ilova qilinmoqda",
+   "explain_uz": "Xatga qo'shilgan hujjat.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Hisobot uslubida qaysi ifoda mos?",
+   "q_ar": "",
+   "options": ["تَبَيَّنَ أَنَّ…", "أَنَا رَأَيْتُ أَنَّ…", "وَاللَّهِ إِنَّ…", "يَا أَخِي…"],
+   "answer": "تَبَيَّنَ أَنَّ…",
+   "explain_uz": "Xolis, majhulga yaqin uslub.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Hisobotning tuzilmasi qaysi?",
+   "q_ar": "",
+   "options": [
+    "Sarlavha → kirish → faktlar → tahlil → tavsiyalar → xulosa",
+    "Salom → hazil → xulosa",
+    "Sarlavha → xulosa → salom",
+    "Faqat raqamlar"
+   ],
+   "answer": "Sarlavha → kirish → faktlar → tahlil → tavsiyalar → xulosa",
+   "explain_uz": "Standart hisobot skeleti.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "تَوْصِيَات",
+   "options": [],
+   "answer": "tavsiyalar",
+   "explain_uz": "تَوْصِيَات — hisobot tavsiyalari.",
+   "audio": "b2/tawsiyat.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«مُرْفَق، إِرْفَاق، رَفِيق» qaysi o'zakdan?",
+   "q_ar": "إِرْفَاق",
+   "options": ["ر ف ق", "ر ق ف", "ف ر ق", "ر ف ع"],
+   "answer": "ر ف ق",
+   "explain_uz": "ر ف ق — hamrohlik, qo'shish.",
+   "audio": "",
+   "root": "ر ف ق",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Rasmiy xatda nima ishlatilmaydi?",
+   "q_ar": "",
+   "options": ["Hijoziy so'zlar va qisqartmalar", "Sana", "Ilova", "Rasmiy murojaat"],
+   "answer": "Hijoziy so'zlar va qisqartmalar",
+   "explain_uz": "Hujjat tili — fusha.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Shartnoma yuzasidan sizga yozmoqdaman»",
+   "q_ar": "",
+   "options": [],
+   "answer": "أَكْتُبُ إِلَيْكُمْ بِخُصُوصِ العَقْدِ",
+   "explain_uz": "Fe'l + إِلَى + مَوْضُوع.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["أَكْتُبُ", "إِلَيْكُمْ", "بِخُصُوصِ", "العَقْدِ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ر ف ق", "back": "ilova — murfaq/irfoq", "deck": "msa"},
+  {"type": "root", "front": "ك ر م", "back": "hurmat — takarrum/muhtaram", "deck": "msa"},
+  {"type": "phrase", "front": "رِسَالَة رَسْمِيَّة", "back": "rasmiy xat", "deck": "msa"},
+  {"type": "word", "front": "مُحْتَرَم", "back": "hurmatli", "deck": "msa"},
+  {"type": "phrase", "front": "بِخُصُوصِ", "back": "…yuzasidan", "deck": "msa"},
+  {"type": "phrase", "front": "أَرْجُو التَّكَرُّمَ", "back": "iltimos qilaman", "deck": "msa"},
+  {"type": "word", "front": "مُرْفَق", "back": "ilova", "deck": "msa"},
+  {"type": "word", "front": "تَقْرِير", "back": "hisobot", "deck": "msa"},
+  {"type": "word", "front": "تَوْصِيَات", "back": "tavsiyalar", "deck": "msa"},
+  {"type": "phrase", "front": "تَبَيَّنَ أَنَّ", "back": "ma'lum bo'ldiki", "deck": "msa"},
+  {"type": "phrase", "front": "فَائِق الاِحْتِرَام", "back": "yuksak hurmat (yakun)", "deck": "msa"}
+ ]
+}

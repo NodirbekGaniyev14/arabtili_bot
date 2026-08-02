@@ -1,0 +1,305 @@
+{
+ "id": "b2-40",
+ "level": "B2",
+ "module": "skills-adv",
+ "order": 40,
+ "title_uz": "O'qish: adabiy parcha",
+ "title_ar": "قِرَاءَةُ نَصٍّ أَدَبِيٍّ",
+ "can_do_uz": "Qisqa hikoya parchasidagi tasvir, tuyg'u va muallif ohangini tushunaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-39"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Gazeta faktni beradi, adabiyot — HOLATNI. «كَانَ الشَّارِعُ صَامِتًا» (ko'cha jim edi) — bu ma'lumot emas, kayfiyat. Adabiy matnda hol, sifat va majoz ko'p, ular tuyg'uni chizadi. B2 da bu matnlarni tarjimasiz «his qilish» boshlanadi.",
+ "grammar": {
+  "point_ar": "أَدَوَاتُ السَّرْدِ: الوَصْفُ وَالحَالُ وَالزَّمَنُ",
+  "explanation_uz": "HIKOYA VOSITALARI. 1) ZAMON: moziy — asosiy hikoya zamoni (دَخَلَ، جَلَسَ); كَانَ + muzori' — davomli o'tmish (كَانَ يَقْرَأُ — o'qib o'tirardi); قَدْ + moziy — tugallangan (قَدْ وَصَلَ). 2) HOL (الحَال): harakat qanday bajarilganini beradi — دَخَلَ مُبْتَسِمًا (jilmayib kirdi), خَرَجَ صَامِتًا (jim chiqdi). 3) TASVIR: sifatlar zanjiri (شَارِعٌ ضَيِّقٌ قَدِيمٌ), majoz (الصَّمْتُ يَمْلَأُ الغُرْفَةَ — sukunat xonani to'ldirardi). 4) BOG'LOVCHILAR: ثُمَّ، بَعْدَ ذَلِكَ، فَجْأَةً (birdan), وَفِي تِلْكَ اللَّحْظَةِ (o'sha lahzada). 5) DIALOG: قَالَ… ثُمَّ صَمَتَ; hikoyada dialog qisqa bo'ladi. O'QISH USULI: (a) kim/qayerda/qachon; (b) qanday kayfiyat (so'z tanlovi!); (c) burilish nuqtasi (فَجْأَةً); (d) muallif munosabati — to'g'ridan aytmaydi, tasvir orqali beradi.",
+  "table": [
+   {"ar": "كَانَ يَقْرَأُ كُلَّ مَسَاءٍ", "uz": "Har oqshom o'qir edi (davomli o'tmish)", "form": "كَانَ + مُضَارِع"},
+   {"ar": "دَخَلَ مُبْتَسِمًا", "uz": "Jilmayib kirdi (hol)", "form": "حَال"},
+   {"ar": "فَجْأَةً تَوَقَّفَ", "uz": "Birdan to'xtadi", "form": "اِنْتِقَال"},
+   {"ar": "الصَّمْتُ يَمْلَأُ الغُرْفَةَ", "uz": "Sukunat xonani to'ldirardi (majoz)", "form": "اِسْتِعَارَة"},
+   {"ar": "قَدْ عَادَ أَخِيرًا", "uz": "Nihoyat qaytdi (tugallangan)", "form": "قَدْ + مَاضٍ"},
+   {"ar": "شَارِعٌ ضَيِّقٌ قَدِيمٌ", "uz": "Tor, eski ko'cha (sifatlar zanjiri)", "form": "وَصْف"}
+  ],
+  "common_mistakes_uz": [
+   "«كَانَ يَفْعَلُ» ni oddiy o'tgan zamon deb tarjima qilish — u DAVOMLI/odatiy harakat.",
+   "Holni sifat deb belgilash: دَخَلَ مُبْتَسِمًا — «jilmayib», holat; رَجُلٌ مُبْتَسِمٌ — sifat.",
+   "Adabiy matndan «asosiy fakt» qidirish — u yerda kayfiyat va munosabat muhim."
+  ]
+ },
+ "roots": [
+  {
+   "root": "س ر د",
+   "meaning_uz": "hikoya qilish, ketma-ket aytish",
+   "uz_cognates": [],
+   "derived": [
+    {"ar": "سَرْد", "uz": "hikoya qilish, bayon", "pattern": "فَعْل"},
+    {"ar": "سَارِد", "uz": "hikoyachi (rovi)", "pattern": "فَاعِل"}
+   ]
+  },
+  {
+   "root": "ص م ت",
+   "meaning_uz": "sukut, jimlik",
+   "uz_cognates": ["samt (sukut)"],
+   "derived": [
+    {"ar": "صَمْت", "uz": "sukunat", "pattern": "فَعْل"},
+    {"ar": "صَامِت", "uz": "jim", "pattern": "فَاعِل"},
+    {"ar": "صَمَتَ", "uz": "jim bo'ldi", "pattern": "فَعَلَ"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "سَرْد",
+   "translit": "sard",
+   "uz": "hikoya qilish, bayon",
+   "root": "س ر د",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/sard.mp3",
+   "example_ar": "السَّرْدُ بَطِيءٌ وَجَمِيلٌ.",
+   "example_uz": "Hikoya sekin va chiroyli.",
+   "srs": true
+  },
+  {
+   "ar": "مَشْهَد",
+   "translit": "mashhad",
+   "uz": "manzara, sahna",
+   "root": "ش ه د",
+   "pattern": "مَفْعَل",
+   "pos": "ot",
+   "audio": "b2/mashhad.mp3",
+   "example_ar": "مَشْهَدٌ هَادِئٌ فِي القَرْيَةِ.",
+   "example_uz": "Qishloqdagi tinch manzara.",
+   "srs": true
+  },
+  {
+   "ar": "صَمْت",
+   "translit": "ṣamt",
+   "uz": "sukunat, jimlik",
+   "root": "ص م ت",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/samt.mp3",
+   "example_ar": "سَادَ الصَّمْتُ فِي الغُرْفَةِ.",
+   "example_uz": "Xonada sukunat hukm surdi.",
+   "srs": true
+  },
+  {
+   "ar": "فَجْأَةً",
+   "translit": "fajʾatan",
+   "uz": "birdan, to'satdan",
+   "root": "ف ج أ",
+   "pattern": "فَعْلَة",
+   "pos": "ravish",
+   "audio": "b2/fajatan2.mp3",
+   "example_ar": "فَجْأَةً سَمِعْنَا صَوْتًا.",
+   "example_uz": "Birdan ovoz eshitdik.",
+   "srs": true
+  },
+  {
+   "ar": "مُبْتَسِم",
+   "translit": "mubtasim",
+   "uz": "jilmaygan",
+   "root": "ب س م",
+   "pattern": "مُفْتَعِل",
+   "pos": "sifat",
+   "audio": "b2/mubtasim.mp3",
+   "example_ar": "دَخَلَ مُبْتَسِمًا.",
+   "example_uz": "Jilmayib kirdi.",
+   "srs": true
+  },
+  {
+   "ar": "ذِكْرَى",
+   "translit": "dhikrā",
+   "uz": "xotira, esdalik",
+   "root": "ذ ك ر",
+   "pattern": "فِعْلَى",
+   "pos": "ot",
+   "audio": "b2/dhikra.mp3",
+   "example_ar": "عَادَتْ إِلَيْهِ ذِكْرَى قَدِيمَةٌ.",
+   "example_uz": "Unga eski xotira qaytdi.",
+   "srs": true
+  },
+  {
+   "ar": "حَنِين",
+   "translit": "ḥanīn",
+   "uz": "sog'inch",
+   "root": "ح ن ن",
+   "pattern": "فَعِيل",
+   "pos": "ot",
+   "audio": "b2/hanin2.mp3",
+   "example_ar": "فِي صَوْتِهِ حَنِينٌ إِلَى الطُّفُولَةِ.",
+   "example_uz": "Ovozida bolalikka sog'inch bor.",
+   "srs": true
+  },
+  {
+   "ar": "زُقَاق",
+   "translit": "zuqāq",
+   "uz": "tor ko'cha, berk ko'cha",
+   "root": "ز ق ق",
+   "pattern": "فُعَال",
+   "pos": "ot",
+   "audio": "b2/zuqaq.mp3",
+   "example_ar": "سَكَنَ فِي زُقَاقٍ ضَيِّقٍ.",
+   "example_uz": "Tor ko'chada yashardi.",
+   "srs": true
+  },
+  {
+   "ar": "هَادِئ",
+   "translit": "hādiʾ",
+   "uz": "tinch, osoyishta",
+   "root": "ه د أ",
+   "pattern": "فَاعِل",
+   "pos": "sifat",
+   "audio": "b2/hadi.mp3",
+   "example_ar": "مَسَاءٌ هَادِئٌ وَبَارِدٌ.",
+   "example_uz": "Tinch va salqin oqshom.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "كان يجلس كل مساء عند باب البيت في زقاق ضيّق قديم. يقرأ صفحة أو صفحتين، ثم ينظر إلى السماء صامتًا. لم يكن ينتظر أحدًا، غير أنّ عينيه كانتا تبحثان عن شيء بعيد. وفي ذلك المساء دخل جاره مبتسمًا وقال: عادت ابنتك من السفر. فجأة سقط الكتاب من يده، وارتسمت على وجهه ذكرى قديمة، وقال بصوت فيه حنين: الحمد لله، أخيرًا.",
+   "questions": [
+    {"q_uz": "«كان يجلس كل مساء» qanday zamon?", "a": "Davomli/odatiy o'tmish — har oqshom o'tirardi"},
+    {"q_uz": "«دخل مبتسمًا» dagi «مبتسمًا» nima?", "a": "Hol — qanday kirgani"},
+    {"q_uz": "Matn oxiridagi kayfiyat qanday?", "a": "Sog'inch va yengillik — xotira va «nihoyat» so'zi orqali"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-40-listen.mp3",
+   "transcript_ar": "كَانَ يَجْلِسُ كُلَّ مَسَاءٍ صَامِتًا. وَفَجْأَةً دَخَلَ جَارُهُ مُبْتَسِمًا.",
+   "questions": [
+    {"q_uz": "U nima qilardi?", "a": "Har oqshom jim o'tirardi"},
+    {"q_uz": "Nima bo'ldi?", "a": "Birdan qo'shnisi jilmayib kirdi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch tasvirli jumlani ayting: har oqshom o'qir edi, jim o'tirardi, birdan ovoz eshitdik.",
+   "target_ar": ["كَانَ يَقْرَأُ كُلَّ مَسَاءٍ", "جَلَسَ صَامِتًا", "فَجْأَةً سَمِعْنَا صَوْتًا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Kichik sahna yozing (5 gap): joy tasviri, odatiy harakat (كان + muzori'), hol, burilish (فجأة), yakuniy tuyg'u.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«كَانَ يَقْرَأُ» qanday ma'no beradi?",
+   "q_ar": "كَانَ يَقْرَأُ",
+   "options": ["O'qir edi (davomli)", "O'qidi (bir marta)", "O'qiydi", "O'qimadi"],
+   "answer": "O'qir edi (davomli)",
+   "explain_uz": "كَانَ + muzori' — odatiy/davomli o'tmish.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«خَرَجَ صَامِتًا» dagi «صَامِتًا» nima?",
+   "q_ar": "خَرَجَ صَامِتًا",
+   "options": ["Hol", "Sifat", "Tamyiz", "Maf'ul"],
+   "answer": "Hol",
+   "explain_uz": "Chiqish holatini bildiradi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«الصَّمْتُ يَمْلَأُ الغُرْفَةَ» qanday vosita?",
+   "q_ar": "الصَّمْتُ يَمْلَأُ الغُرْفَةَ",
+   "options": ["Isti'ora (jonlantirish)", "Tashbeh", "Tamyiz", "Fakt"],
+   "answer": "Isti'ora (jonlantirish)",
+   "explain_uz": "Sukunat inson kabi «to'ldiradi».",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Hikoyada burilish nuqtasini belgilovchi so'z qaysi?",
+   "q_ar": "",
+   "options": ["فَجْأَةً", "دَائِمًا", "عَادَةً", "أَحْيَانًا"],
+   "answer": "فَجْأَةً",
+   "explain_uz": "«Birdan» — voqea o'zgarishi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "حَنِين",
+   "options": [],
+   "answer": "sog'inch",
+   "explain_uz": "حَنِين — o'tmishga sog'inch.",
+   "audio": "b2/hanin2.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«صَمْت، صَامِت، صَمَتَ» qaysi o'zakdan?",
+   "q_ar": "صَامِت",
+   "options": ["ص م ت", "س م ت", "ص م د", "ص و ت"],
+   "answer": "ص م ت",
+   "explain_uz": "ص م ت — jimlik o'zagi.",
+   "audio": "",
+   "root": "ص م ت",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Adabiy matnni o'qishda birinchi navbatda nimaga e'tibor beriladi?",
+   "q_ar": "",
+   "options": [
+    "Kayfiyat va so'z tanlovi",
+    "Raqamlar",
+    "Manba",
+    "Sarlavha shakli"
+   ],
+   "answer": "Kayfiyat va so'z tanlovi",
+   "explain_uz": "Adabiyot holat va munosabatni beradi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Birdan qo'shnisi jilmayib kirdi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "فَجْأَةً دَخَلَ جَارُهُ مُبْتَسِمًا",
+   "explain_uz": "Ravish + fe'l + foil + hol.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["فَجْأَةً", "دَخَلَ", "جَارُهُ", "مُبْتَسِمًا"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ص م ت", "back": "jimlik — samt/somit", "deck": "msa"},
+  {"type": "root", "front": "س ر د", "back": "hikoya qilish — sard/sorid", "deck": "msa"},
+  {"type": "word", "front": "سَرْد", "back": "hikoya, bayon", "deck": "msa"},
+  {"type": "word", "front": "مَشْهَد", "back": "manzara, sahna", "deck": "msa"},
+  {"type": "word", "front": "صَمْت", "back": "sukunat", "deck": "msa"},
+  {"type": "word", "front": "فَجْأَةً", "back": "birdan", "deck": "msa"},
+  {"type": "word", "front": "مُبْتَسِم", "back": "jilmaygan", "deck": "msa"},
+  {"type": "word", "front": "ذِكْرَى", "back": "xotira", "deck": "msa"},
+  {"type": "word", "front": "حَنِين", "back": "sog'inch", "deck": "msa"},
+  {"type": "word", "front": "زُقَاق", "back": "tor ko'cha", "deck": "msa"},
+  {"type": "word", "front": "هَادِئ", "back": "tinch", "deck": "msa"}
+ ]
+}

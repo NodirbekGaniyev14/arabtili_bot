@@ -1,0 +1,320 @@
+{
+ "id": "b2-38",
+ "level": "B2",
+ "module": "skills-adv",
+ "order": 38,
+ "title_uz": "O'qish: fikr maqolasi",
+ "title_ar": "قِرَاءَةُ مَقَالِ الرَّأْيِ",
+ "can_do_uz": "Muallif pozitsiyasini va uning dalillarini xabardan ajrata olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-37"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Xabar — faktlar. Fikr maqolasi — BAHO. «أَعْتَقِدُ», «مِنَ الخَطَإِ أَنْ», «لَا شَكَّ أَنَّ» — bularning har biri muallif pozitsiyasini bildiradi. B2 o'quvchisi ikkisini adashtirmasligi kerak: fakt bilan fikrni ajratish — tanqidiy o'qish asosidir.",
+ "grammar": {
+  "point_ar": "لُغَةُ الرَّأْيِ: المَوْقِفُ وَالحُجَّةُ",
+  "explanation_uz": "FIKR BILDIRISH qoliplari. Pozitsiya: أَعْتَقِدُ أَنَّ (menimcha), أَرَى أَنَّ (fikrimcha), مِنْ وِجْهَةِ نَظَرِي (mening nuqtai nazarimdan), لَا شَكَّ أَنَّ (shubhasiz). Rozilik: أَتَّفِقُ مَعَ (roziman), مَعَ فُلَانٍ حَقٌّ (haq). Qarshilik: أَخْتَلِفُ مَعَ (rozi emasman), مِنَ الخَطَإِ أَنْ (…xato), عَلَى العَكْسِ (aksincha), غَيْرَ أَنَّ (lekin). DALIL: عَلَى سَبِيلِ المِثَالِ (masalan), تُشِيرُ الأَرْقَامُ إِلَى (raqamlar ko'rsatadi), التَّجْرِبَةُ تُثْبِتُ (tajriba isbotlaydi). XULOSA: لِذَلِكَ (shuning uchun), وَخُلَاصَةُ القَوْلِ (xullas), يَجِبُ عَلَيْنَا أَنْ (biz …qilishimiz kerak). MATN TUZILMASI: (1) muammo, (2) muallif pozitsiyasi, (3) 2-3 dalil, (4) qarshi fikr va rad, (5) xulosa/chaqiriq. FAKT/FIKR FARQI: «اِرْتَفَعَتِ الأَسْعَارُ ١٠٪» — fakt; «الأَسْعَارُ مُرْتَفِعَةٌ جِدًّا» — baho.",
+  "table": [
+   {"ar": "أَعْتَقِدُ أَنَّ…", "uz": "Menimcha…", "form": "مَوْقِف"},
+   {"ar": "لَا شَكَّ أَنَّ…", "uz": "Shubhasiz…", "form": "تَأْكِيد"},
+   {"ar": "عَلَى العَكْسِ", "uz": "Aksincha", "form": "اِعْتِرَاض"},
+   {"ar": "عَلَى سَبِيلِ المِثَالِ", "uz": "Masalan", "form": "حُجَّة"},
+   {"ar": "غَيْرَ أَنَّ…", "uz": "Lekin, biroq", "form": "اِسْتِدْرَاك"},
+   {"ar": "وَخُلَاصَةُ القَوْلِ", "uz": "Xullas, xulosa qilib aytganda", "form": "خَاتِمَة"}
+  ],
+  "common_mistakes_uz": [
+   "Muallif fikrini fakt deb qabul qilish — «أَعْتَقِدُ» belgisiga qarang.",
+   "غَيْرَ أَنَّ dan keyin ismni marfu' qoldirish — u إِنَّ kabi nasb qiladi.",
+   "Dalilsiz fikrni «kuchli» deb baholash — B2 da dalil talab qilinadi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ر أ ي",
+   "meaning_uz": "ko'rish, fikr",
+   "uz_cognates": ["ra'y", "ro'y"],
+   "derived": [
+    {"ar": "رَأْي", "uz": "fikr", "pattern": "فَعْل"},
+    {"ar": "مِرْآة", "uz": "oyna", "pattern": "مِفْعَال"},
+    {"ar": "رُؤْيَة", "uz": "ko'rish; qarash, vizyon", "pattern": "فُعْلَة"}
+   ]
+  },
+  {
+   "root": "ح ج ج",
+   "meaning_uz": "dalil keltirish",
+   "uz_cognates": ["hujjat", "isbot"],
+   "derived": [
+    {"ar": "حُجَّة", "uz": "dalil, asos", "pattern": "فُعْلَة"},
+    {"ar": "اِحْتِجَاج", "uz": "e'tiroz, norozilik", "pattern": "اِفْتِعَال"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "مَقَال رَأْي",
+   "translit": "maqāl raʾy",
+   "uz": "fikr maqolasi (kolonka)",
+   "root": "ق و ل",
+   "pattern": "مَفْعَال",
+   "pos": "ot",
+   "audio": "b2/maqal_ray.mp3",
+   "example_ar": "قَرَأْتُ مَقَالَ رَأْيٍ مُثِيرًا.",
+   "example_uz": "Qiziqarli fikr maqolasini o'qidim.",
+   "srs": true
+  },
+  {
+   "ar": "حُجَّة",
+   "translit": "ḥujja",
+   "uz": "dalil, asos (o'zbekcha 'hujjat')",
+   "root": "ح ج ج",
+   "pattern": "فُعْلَة",
+   "pos": "ot",
+   "audio": "b2/hujja.mp3",
+   "example_ar": "حُجَّتُهُ قَوِيَّةٌ وَمُقْنِعَةٌ.",
+   "example_uz": "Uning dalili kuchli va ishonarli.",
+   "srs": true
+  },
+  {
+   "ar": "أَعْتَقِدُ أَنَّ",
+   "translit": "aʿtaqidu anna",
+   "uz": "menimcha, …deb hisoblayman",
+   "root": "ع ق د",
+   "pattern": "أَفْتَعِلُ",
+   "pos": "ibora",
+   "audio": "b2/atqidu_anna.mp3",
+   "example_ar": "أَعْتَقِدُ أَنَّ الحَلَّ بَسِيطٌ.",
+   "example_uz": "Menimcha, yechim oddiy.",
+   "srs": true
+  },
+  {
+   "ar": "أَخْتَلِفُ مَعَ",
+   "translit": "akhtalifu maʿa",
+   "uz": "…bilan rozi emasman",
+   "root": "خ ل ف",
+   "pattern": "أَفْتَعِلُ",
+   "pos": "ibora",
+   "audio": "b2/akhtalifu.mp3",
+   "example_ar": "أَخْتَلِفُ مَعَ هَذَا الرَّأْيِ.",
+   "example_uz": "Bu fikr bilan rozi emasman.",
+   "srs": true
+  },
+  {
+   "ar": "عَلَى العَكْسِ",
+   "translit": "ʿalā l-ʿaks",
+   "uz": "aksincha",
+   "root": "ع ك س",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/ala_aks.mp3",
+   "example_ar": "عَلَى العَكْسِ، النَّتِيجَةُ إِيجَابِيَّةٌ.",
+   "example_uz": "Aksincha, natija ijobiy.",
+   "srs": true
+  },
+  {
+   "ar": "غَيْرَ أَنَّ",
+   "translit": "ghayra anna",
+   "uz": "lekin, biroq (rasmiy)",
+   "root": "غ ي ر",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/ghayra_anna.mp3",
+   "example_ar": "الفِكْرَةُ جَيِّدَةٌ، غَيْرَ أَنَّ التَّنْفِيذَ صَعْبٌ.",
+   "example_uz": "G'oya yaxshi, lekin amalga oshirish qiyin.",
+   "srs": true
+  },
+  {
+   "ar": "إِيجَابِيّ",
+   "translit": "ījābī",
+   "uz": "ijobiy",
+   "root": "و ج ب",
+   "pattern": "إِفْعَالِيّ",
+   "pos": "sifat",
+   "audio": "b2/ijabi.mp3",
+   "example_ar": "أَثَرٌ إِيجَابِيٌّ عَلَى السُّوقِ.",
+   "example_uz": "Bozorga ijobiy ta'sir.",
+   "srs": true
+  },
+  {
+   "ar": "سَلْبِيّ",
+   "translit": "salbī",
+   "uz": "salbiy",
+   "root": "س ل ب",
+   "pattern": "فَعْلِيّ",
+   "pos": "sifat",
+   "audio": "b2/salbi.mp3",
+   "example_ar": "لَهُ جَانِبٌ سَلْبِيٌّ أَيْضًا.",
+   "example_uz": "Uning salbiy tomoni ham bor.",
+   "srs": true
+  },
+  {
+   "ar": "خُلَاصَة القَوْل",
+   "translit": "khulāṣat al-qawl",
+   "uz": "xullas, xulosa qilib aytganda",
+   "root": "خ ل ص",
+   "pattern": "إِضَافَة",
+   "pos": "ibora",
+   "audio": "b2/khulasat_qawl.mp3",
+   "example_ar": "وَخُلَاصَةُ القَوْلِ: نَحْتَاجُ إِلَى خُطَّةٍ.",
+   "example_uz": "Xullas: bizga reja kerak.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أعتقد أنّ تعليم اللغات في المدارس يحتاج إلى مراجعة. لا شكّ أنّ الطلاب يدرسون سنوات طويلة، غير أنّ كثيرًا منهم لا يستطيع إجراء حوار بسيط. على سبيل المثال، تشير الأرقام إلى أنّ أقلّ من ثلث الخريجين يستخدم اللغة في عمله. يقول بعضهم إنّ المشكلة في الطالب، لكنّني أختلف مع هذا الرأي: المنهج يركّز على القواعد ويهمل الكلام. وخلاصة القول، نحتاج إلى ساعات محادثة أكثر وامتحان شفوي حقيقي.",
+   "questions": [
+    {"q_uz": "Muallifning pozitsiyasi qanday?", "a": "Til ta'limini qayta ko'rib chiqish kerak"},
+    {"q_uz": "Qanday dalil keltirilgan?", "a": "Bitiruvchilarning uchdan biridan kami tilni ishda ishlatadi"},
+    {"q_uz": "Qarshi fikr nima va muallif unga qanday javob berdi?", "a": "«Muammo talabada» — muallif rozi emas: dastur gapirishga e'tibor bermaydi"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-38-listen.mp3",
+   "transcript_ar": "أَعْتَقِدُ أَنَّ المَنْهَجَ يَحْتَاجُ إِلَى مُرَاجَعَةٍ. غَيْرَ أَنَّ التَّغْيِيرَ يَحْتَاجُ إِلَى وَقْتٍ.",
+   "questions": [
+    {"q_uz": "Gapiruvchi nima deb hisoblaydi?", "a": "Dastur qayta ko'rib chiqilishi kerak"},
+    {"q_uz": "Qanday e'tiroz bildirdi?", "a": "O'zgarish vaqt talab qiladi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Bir mavzuda fikr bildiring: pozitsiya + bitta dalil + xulosa.",
+   "target_ar": ["أَعْتَقِدُ أَنَّ…", "عَلَى سَبِيلِ المِثَالِ…", "وَخُلَاصَةُ القَوْلِ…"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "5 gapli fikr matni yozing: muammo, pozitsiya, dalil, qarshi fikr va rad, xulosa.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi jumla FAKT?",
+   "q_ar": "",
+   "options": [
+    "اِرْتَفَعَتِ الأَسْعَارُ عَشَرَةً فِي المِئَةِ",
+    "الأَسْعَارُ مُرْتَفِعَةٌ جِدًّا",
+    "أَعْتَقِدُ أَنَّ الأَسْعَارَ غَالِيَةٌ",
+    "مِنَ الخَطَإِ رَفْعُ الأَسْعَارِ"
+   ],
+   "answer": "اِرْتَفَعَتِ الأَسْعَارُ عَشَرَةً فِي المِئَةِ",
+   "explain_uz": "Raqamli, tekshiriladigan ma'lumot — fakt.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«غَيْرَ أَنَّ» dan keyingi ism qanday holatda?",
+   "q_ar": "غَيْرَ أَنَّ التَّنْفِيذَ صَعْبٌ",
+   "options": ["Mansub", "Marfu'", "Majrur", "Majzum"],
+   "answer": "Mansub",
+   "explain_uz": "أَنَّ — إِنَّ oilasidan, ismini nasb qiladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Dalil keltirish iborasi qaysi?",
+   "q_ar": "",
+   "options": [
+    "عَلَى سَبِيلِ المِثَالِ",
+    "أَعْتَقِدُ أَنَّ",
+    "خُلَاصَةُ القَوْلِ",
+    "عَلَى العَكْسِ"
+   ],
+   "answer": "عَلَى سَبِيلِ المِثَالِ",
+   "explain_uz": "Misol orqali dalil.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Fikr maqolasining odatiy tuzilmasi qaysi?",
+   "q_ar": "",
+   "options": [
+    "Muammo → pozitsiya → dalillar → qarshi fikr → xulosa",
+    "Sarlavha → raqamlar → iqtibos",
+    "Kirish → tarjima → lug'at",
+    "Savol → javob → savol"
+   ],
+   "answer": "Muammo → pozitsiya → dalillar → qarshi fikr → xulosa",
+   "explain_uz": "Fikr matnining klassik skeleti.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "حُجَّة",
+   "options": [],
+   "answer": "dalil",
+   "explain_uz": "حُجَّة — asos, dalil.",
+   "audio": "b2/hujja.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«رَأْي، رُؤْيَة، مِرْآة» qaysi o'zakdan?",
+   "q_ar": "رُؤْيَة",
+   "options": ["ر أ ي", "ر و ي", "ء ر ي", "ر ي أ"],
+   "answer": "ر أ ي",
+   "explain_uz": "ر أ ي — ko'rish, fikr o'zagi.",
+   "audio": "",
+   "root": "ر أ ي",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«عَلَى العَكْسِ» qachon ishlatiladi?",
+   "q_ar": "عَلَى العَكْسِ",
+   "options": [
+    "Oldingi fikrga qarshi turishda",
+    "Misol keltirishda",
+    "Xulosa qilishda",
+    "Manba ko'rsatishda"
+   ],
+   "answer": "Oldingi fikrga qarshi turishda",
+   "explain_uz": "«Aksincha» — zid pozitsiya.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Menimcha, yechim oddiy»",
+   "q_ar": "",
+   "options": [],
+   "answer": "أَعْتَقِدُ أَنَّ الحَلَّ بَسِيطٌ",
+   "explain_uz": "أَنَّ + mansub ism + marfu' xabar.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["أَعْتَقِدُ", "أَنَّ", "الحَلَّ", "بَسِيطٌ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ر أ ي", "back": "fikr — ra'y/ru'ya", "deck": "msa"},
+  {"type": "root", "front": "ح ج ج", "back": "dalil — hujja/ihtijoj", "deck": "msa"},
+  {"type": "phrase", "front": "مَقَال رَأْي", "back": "fikr maqolasi", "deck": "msa"},
+  {"type": "word", "front": "حُجَّة", "back": "dalil", "deck": "msa"},
+  {"type": "phrase", "front": "أَعْتَقِدُ أَنَّ", "back": "menimcha", "deck": "msa"},
+  {"type": "phrase", "front": "أَخْتَلِفُ مَعَ", "back": "rozi emasman", "deck": "msa"},
+  {"type": "phrase", "front": "عَلَى العَكْسِ", "back": "aksincha", "deck": "msa"},
+  {"type": "phrase", "front": "غَيْرَ أَنَّ", "back": "lekin, biroq", "deck": "msa"},
+  {"type": "word", "front": "إِيجَابِيّ", "back": "ijobiy", "deck": "msa"},
+  {"type": "word", "front": "سَلْبِيّ", "back": "salbiy", "deck": "msa"},
+  {"type": "phrase", "front": "خُلَاصَة القَوْل", "back": "xullas", "deck": "msa"}
+ ]
+}

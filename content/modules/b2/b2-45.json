@@ -1,0 +1,310 @@
+{
+ "id": "b2-45",
+ "level": "B2",
+ "module": "skills-adv",
+ "order": 45,
+ "title_uz": "Yozish: insho (dalil ⇄ qarshi dalil)",
+ "title_ar": "كِتَابَةُ المَقَالِ: الحُجَّةُ وَالحُجَّةُ المُضَادَّةُ",
+ "can_do_uz": "Kirish, dalillar, qarshi dalil va xulosadan iborat insho yoza olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-44"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Yaxshi insho — bahs emas, TUZILMA. To'rt qism: kirish (mavzu + pozitsiya), ikki dalil (misol bilan), qarshi dalil va unga javob, xulosa. Har qismning o'z iborasi bor. Shu skeletni bilsangiz, 250 so'zli insho 20 daqiqada yoziladi — imtihonda ham, ishda ham.",
+ "grammar": {
+  "point_ar": "بِنَاءُ المَقَالِ: مُقَدِّمَة · حُجَج · حُجَّة مُضَادَّة · خَاتِمَة",
+  "explanation_uz": "INSHO SKELETI. 1) KIRISH: mavzu — «يُثِيرُ مَوْضُوعُ… جَدَلًا وَاسِعًا» (…mavzusi keng bahsga sabab); pozitsiya — «وَأَرَى أَنَّ…». 2) BIRINCHI DALIL: «أَوَّلًا، …» + misol «عَلَى سَبِيلِ المِثَالِ» + raqam «تُشِيرُ الأَرْقَامُ إِلَى». 3) IKKINCHI DALIL: «بِالإِضَافَةِ إِلَى ذَلِكَ» / «كَمَا أَنَّ». 4) QARSHI DALIL: «قَدْ يَقُولُ البَعْضُ إِنَّ…» (ba'zilar aytishi mumkinki), keyin javob: «غَيْرَ أَنَّ هَذَا الرَّأْيَ يُغْفِلُ…» (bu fikr …ni e'tibordan chetda qoldiradi). 5) XULOSA: «وَخُلَاصَةُ القَوْلِ» / «وَبِنَاءً عَلَى مَا سَبَقَ» + tavsiya «يَجِبُ / يَنْبَغِي». BOG'LOVCHILAR: لِذَلِكَ (shuning uchun), نَتِيجَةً لِذَلِكَ (natijada), مِنْ نَاحِيَةٍ أُخْرَى (boshqa tomondan), عَلَى سَبِيلِ المِثَالِ. USLUB: har xatboshi bitta fikr; jumlalar qisqa; birinchi shaxs kam.",
+  "table": [
+   {"ar": "يُثِيرُ هَذَا المَوْضُوعُ جَدَلًا", "uz": "Bu mavzu bahsga sabab bo'lmoqda", "form": "مُقَدِّمَة"},
+   {"ar": "وَأَرَى أَنَّ…", "uz": "Va menimcha…", "form": "مَوْقِف"},
+   {"ar": "أَوَّلًا… بِالإِضَافَةِ إِلَى ذَلِكَ…", "uz": "Birinchidan… bundan tashqari…", "form": "حُجَج"},
+   {"ar": "قَدْ يَقُولُ البَعْضُ إِنَّ…", "uz": "Ba'zilar aytishi mumkinki…", "form": "حُجَّة مُضَادَّة"},
+   {"ar": "غَيْرَ أَنَّ هَذَا يُغْفِلُ…", "uz": "Lekin bu …ni e'tibordan qoldiradi", "form": "رَدّ"},
+   {"ar": "وَبِنَاءً عَلَى مَا سَبَقَ", "uz": "Yuqoridagilarga asoslanib", "form": "خَاتِمَة"}
+  ],
+  "common_mistakes_uz": [
+   "Qarshi dalilni yozib, unga javob bermaslik — insho zaiflashadi.",
+   "Har xatboshida bir necha fikrni aralashtirish — bitta xatboshi = bitta fikr.",
+   "Xulosada yangi dalil kiritish — xulosa faqat umumlashtiradi va tavsiya beradi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ج د ل",
+   "meaning_uz": "bahs, tortishuv",
+   "uz_cognates": ["jadal", "mujodala"],
+   "derived": [
+    {"ar": "جَدَل", "uz": "bahs, munozara", "pattern": "فَعَل"},
+    {"ar": "جَدَلِيّ", "uz": "bahsli", "pattern": "فَعَلِيّ"},
+    {"ar": "مُجَادَلَة", "uz": "tortishuv", "pattern": "مُفَاعَلَة"}
+   ]
+  },
+  {
+   "root": "ض د د",
+   "meaning_uz": "qarshilik",
+   "uz_cognates": ["zid", "azdod"],
+   "derived": [
+    {"ar": "مُضَادّ", "uz": "qarshi, zid", "pattern": "مُفَاعِل"},
+    {"ar": "ضِدّ", "uz": "zid, qarshi", "pattern": "فِعْل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "مَقَال",
+   "translit": "maqāl",
+   "uz": "maqola, insho",
+   "root": "ق و ل",
+   "pattern": "مَفْعَال",
+   "pos": "ot",
+   "audio": "b2/maqal2.mp3",
+   "example_ar": "كَتَبْتُ مَقَالًا قَصِيرًا.",
+   "example_uz": "Qisqa maqola yozdim.",
+   "srs": true
+  },
+  {
+   "ar": "جَدَل",
+   "translit": "jadal",
+   "uz": "bahs, munozara",
+   "root": "ج د ل",
+   "pattern": "فَعَل",
+   "pos": "ot",
+   "audio": "b2/jadal.mp3",
+   "example_ar": "أَثَارَ المَوْضُوعُ جَدَلًا وَاسِعًا.",
+   "example_uz": "Mavzu keng bahsga sabab bo'ldi.",
+   "srs": true
+  },
+  {
+   "ar": "حُجَّة مُضَادَّة",
+   "translit": "ḥujja muḍādda",
+   "uz": "qarshi dalil",
+   "root": "ض د د",
+   "pattern": "مُفَاعِلَة",
+   "pos": "ot",
+   "audio": "b2/hujja_mudadda.mp3",
+   "example_ar": "ذَكَرَ الكَاتِبُ حُجَّةً مُضَادَّةً.",
+   "example_uz": "Muallif qarshi dalilni keltirdi.",
+   "srs": true
+  },
+  {
+   "ar": "قَدْ يَقُولُ البَعْضُ",
+   "translit": "qad yaqūlu l-baʿḍ",
+   "uz": "ba'zilar aytishi mumkin",
+   "root": "ق و ل",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/qad_yaqul.mp3",
+   "example_ar": "قَدْ يَقُولُ البَعْضُ إِنَّ التَّكْلِفَةَ عَالِيَةٌ.",
+   "example_uz": "Ba'zilar xarajat yuqori deyishi mumkin.",
+   "srs": true
+  },
+  {
+   "ar": "يُغْفِلُ",
+   "translit": "yughfilu",
+   "uz": "e'tibordan chetda qoldiradi",
+   "root": "غ ف ل",
+   "pattern": "يُفْعِلُ",
+   "pos": "fe'l",
+   "audio": "b2/yughfil.mp3",
+   "example_ar": "هَذَا الرَّأْيُ يُغْفِلُ الجَانِبَ العَمَلِيَّ.",
+   "example_uz": "Bu fikr amaliy tomonni e'tibordan qoldiradi.",
+   "srs": true
+  },
+  {
+   "ar": "بِنَاءً عَلَى",
+   "translit": "bināʾan ʿalā",
+   "uz": "…ga asoslanib",
+   "root": "ب ن ي",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/binaan_ala.mp3",
+   "example_ar": "بِنَاءً عَلَى مَا سَبَقَ، نُوصِي بِـ…",
+   "example_uz": "Yuqoridagilarga asoslanib, tavsiya qilamiz…",
+   "srs": true
+  },
+  {
+   "ar": "يَنْبَغِي",
+   "translit": "yanbaghī",
+   "uz": "kerak, lozim",
+   "root": "ب غ ي",
+   "pattern": "يَنْفَعِلُ",
+   "pos": "fe'l",
+   "audio": "b2/yanbaghi.mp3",
+   "example_ar": "يَنْبَغِي أَنْ نَبْدَأَ مِنَ المَدَارِسِ.",
+   "example_uz": "Maktablardan boshlashimiz kerak.",
+   "srs": true
+  },
+  {
+   "ar": "فِقْرَة",
+   "translit": "fiqra",
+   "uz": "xatboshi, abzats",
+   "root": "ف ق ر",
+   "pattern": "فِعْلَة",
+   "pos": "ot",
+   "audio": "b2/fiqra2.mp3",
+   "example_ar": "كُلُّ فِقْرَةٍ فِكْرَةٌ وَاحِدَةٌ.",
+   "example_uz": "Har xatboshi — bitta fikr.",
+   "srs": true
+  },
+  {
+   "ar": "مُقْنِع",
+   "translit": "muqniʿ",
+   "uz": "ishonarli",
+   "root": "ق ن ع",
+   "pattern": "مُفْعِل",
+   "pos": "sifat",
+   "audio": "b2/muqni2.mp3",
+   "example_ar": "حُجَّةٌ مُقْنِعَةٌ وَمَدْعُومَةٌ بِالأَرْقَامِ.",
+   "example_uz": "Raqamlar bilan asoslangan ishonarli dalil.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "يثير موضوع العمل عن بُعد جدلًا واسعًا، وأرى أنّه مفيد إذا نُظّم جيدًا. أولًا، يوفّر الوقت والتكلفة على الموظف والشركة معًا؛ على سبيل المثال، تشير الأرقام إلى انخفاض مصاريف النقل بنحو الثلث. بالإضافة إلى ذلك، يمنح مرونة للأسر. وقد يقول البعض إنّ الإنتاجية تقلّ في البيت، غير أنّ هذا الرأي يغفل أنّ الإنتاجية ترتبط بالإدارة لا بالمكان. وبناءً على ما سبق، ينبغي اعتماد نظام مختلط.",
+   "questions": [
+    {"q_uz": "Muallif pozitsiyasi qanday?", "a": "Masofaviy ish yaxshi tashkil qilinsa foydali"},
+    {"q_uz": "Qarshi dalil nima va javob nima?", "a": "«Uyda unumdorlik kamayadi» — javob: unumdorlik boshqaruvga bog'liq, joyga emas"},
+    {"q_uz": "Xulosada nima tavsiya qilingan?", "a": "Aralash (gibrid) tizimni joriy etish"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-45-listen.mp3",
+   "transcript_ar": "قَدْ يَقُولُ البَعْضُ إِنَّ الإِنْتَاجِيَّةَ تَقِلُّ، غَيْرَ أَنَّ هَذَا الرَّأْيَ يُغْفِلُ دَوْرَ الإِدَارَةِ.",
+   "questions": [
+    {"q_uz": "Qarshi dalil nima?", "a": "Unumdorlik kamayadi"},
+    {"q_uz": "Unga qanday javob berildi?", "a": "Bu fikr boshqaruv rolini e'tibordan qoldiradi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Insho skeletini ovoz chiqarib ayting: mavzu, pozitsiya, bir dalil, qarshi dalil va javob, xulosa.",
+   "target_ar": ["يُثِيرُ هَذَا المَوْضُوعُ جَدَلًا", "وَأَرَى أَنَّ…", "قَدْ يَقُولُ البَعْضُ إِنَّ…", "وَبِنَاءً عَلَى مَا سَبَقَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "180–250 so'zli insho yozing: kirish + 2 dalil (misol/raqam bilan) + qarshi dalil va javob + xulosa (tavsiya bilan).",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Inshoning to'rt qismi qaysi?",
+   "q_ar": "",
+   "options": [
+    "Kirish, dalillar, qarshi dalil, xulosa",
+    "Salom, mavzu, hazil, yakun",
+    "Sarlavha, raqamlar, iqtibos, manba",
+    "Savol, javob, savol, javob"
+   ],
+   "answer": "Kirish, dalillar, qarshi dalil, xulosa",
+   "explain_uz": "Standart dalilli insho tuzilmasi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«قَدْ يَقُولُ البَعْضُ إِنَّ…» qaysi qismda keladi?",
+   "q_ar": "قَدْ يَقُولُ البَعْضُ",
+   "options": ["Qarshi dalil qismida", "Kirishda", "Birinchi dalilda", "Xulosada"],
+   "answer": "Qarshi dalil qismida",
+   "explain_uz": "Boshqa fikrni keltirish qolipi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Xulosada nima QILINMAYDI?",
+   "q_ar": "",
+   "options": [
+    "Yangi dalil kiritish",
+    "Umumlashtirish",
+    "Tavsiya berish",
+    "Pozitsiyani takrorlash"
+   ],
+   "answer": "Yangi dalil kiritish",
+   "explain_uz": "Xulosa yangi ma'lumot bermaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«يُغْفِلُ» nima degani?",
+   "q_ar": "يُغْفِلُ",
+   "options": ["E'tibordan chetda qoldiradi", "Ta'kidlaydi", "Isbotlaydi", "Rad etadi"],
+   "answer": "E'tibordan chetda qoldiradi",
+   "explain_uz": "Qarshi dalilga javobda ishlatiladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "جَدَل",
+   "options": [],
+   "answer": "bahs",
+   "explain_uz": "جَدَل — munozara, bahs.",
+   "audio": "b2/jadal.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«مُضَادّ، ضِدّ، أَضْدَاد» qaysi o'zakdan?",
+   "q_ar": "مُضَادّ",
+   "options": ["ض د د", "ص د د", "ض ر ر", "ض د ي"],
+   "answer": "ض د د",
+   "explain_uz": "ض د د — qarshilik o'zagi.",
+   "audio": "",
+   "root": "ض د د",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Har xatboshida nechta asosiy fikr bo'ladi?",
+   "q_ar": "",
+   "options": ["Bitta", "Ikkita", "Uchta", "Cheklov yo'q"],
+   "answer": "Bitta",
+   "explain_uz": "كُلُّ فِقْرَةٍ فِكْرَةٌ وَاحِدَةٌ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Yuqoridagilarga asoslanib, tavsiya qilamiz»",
+   "q_ar": "",
+   "options": [],
+   "answer": "بِنَاءً عَلَى مَا سَبَقَ نُوصِي",
+   "explain_uz": "Xulosa qolipi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["بِنَاءً", "عَلَى", "مَا", "سَبَقَ", "نُوصِي"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ج د ل", "back": "bahs — jadal/mujodala", "deck": "msa"},
+  {"type": "root", "front": "ض د د", "back": "qarshilik — muzodd/zid", "deck": "msa"},
+  {"type": "word", "front": "مَقَال", "back": "maqola, insho", "deck": "msa"},
+  {"type": "word", "front": "جَدَل", "back": "bahs", "deck": "msa"},
+  {"type": "phrase", "front": "حُجَّة مُضَادَّة", "back": "qarshi dalil", "deck": "msa"},
+  {"type": "phrase", "front": "قَدْ يَقُولُ البَعْضُ", "back": "ba'zilar aytishi mumkin", "deck": "msa"},
+  {"type": "word", "front": "يُغْفِلُ", "back": "e'tibordan qoldiradi", "deck": "msa"},
+  {"type": "phrase", "front": "بِنَاءً عَلَى", "back": "…ga asoslanib", "deck": "msa"},
+  {"type": "word", "front": "يَنْبَغِي", "back": "kerak, lozim", "deck": "msa"},
+  {"type": "word", "front": "فِقْرَة", "back": "xatboshi", "deck": "msa"},
+  {"type": "word", "front": "مُقْنِع", "back": "ishonarli", "deck": "msa"}
+ ]
+}

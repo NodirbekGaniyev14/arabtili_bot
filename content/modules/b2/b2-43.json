@@ -1,0 +1,292 @@
+{
+ "id": "b2-43",
+ "level": "B2",
+ "module": "skills-adv",
+ "order": 43,
+ "title_uz": "Tinglash: akademik ma'ruza",
+ "title_ar": "الاِسْتِمَاعُ إِلَى مُحَاضَرَةٍ",
+ "can_do_uz": "Ma'ruzaning tuzilishini ilg'ab, asosiy fikr va misollarni qayd qila olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-42"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Ma'ruzachi doim yo'l ko'rsatadi: «سَنَتَنَاوَلُ ثَلَاثَ نُقَاطٍ» (uch masalani ko'rib chiqamiz), «أَوَّلًا… ثَانِيًا…», «وَهُنَا نُقْطَةٌ مُهِمَّةٌ», «لِنُلَخِّصْ» (xulosa qilaylik). Bu «yo'l belgilari» qayd olishni osonlashtiradi: siz gapni emas, TUZILMANI yozasiz.",
+ "grammar": {
+  "point_ar": "مُؤَشِّرَاتُ المُحَاضَرَةِ وَتَدْوِينُ المُلَاحَظَاتِ",
+  "explanation_uz": "MA'RUZA MARKERLARI. Reja: «سَنَتَنَاوَلُ ثَلَاثَ نُقَاطٍ» (uch masala), «الهَدَفُ مِنْ هَذِهِ المُحَاضَرَةِ». Tartib: أَوَّلًا / ثَانِيًا / ثَالِثًا, «نَنْتَقِلُ الآنَ إِلَى» (endi …ga o'tamiz). Ta'kid: «وَهُنَا نُقْطَةٌ مُهِمَّةٌ» (mana bu muhim), «لَاحِظُوا أَنَّ» (e'tibor bering), «الأَهَمُّ مِنْ ذَلِكَ» (bundan muhimi). Misol: «عَلَى سَبِيلِ المِثَالِ», «خُذُوا مِثَالًا». Xulosa: «لِنُلَخِّصْ» (xulosa qilaylik), «بِاخْتِصَارٍ» (qisqasi), «فِي الخِتَامِ». QAYD OLISH (تَدْوِين المُلَاحَظَات) USULI: (1) sarlavha + sana; (2) har «أَوَّلًا/ثَانِيًا» ni alohida qatorga; (3) ta'kid markerlaridan keyingi jumlani to'liq yozing; (4) misollarni qisqartma bilan belgilang; (5) oxirida 3 qatorli xulosa. GRAMMATIK ESLATMA: ma'ruzada majhul va «تَمَّ + masdar» ko'p; shuningdek «يُمْكِنُ القَوْلُ إِنَّ» (aytish mumkinki).",
+  "table": [
+   {"ar": "سَنَتَنَاوَلُ ثَلَاثَ نُقَاطٍ", "uz": "Uch masalani ko'rib chiqamiz", "form": "خُطَّة"},
+   {"ar": "أَوَّلًا… ثَانِيًا…", "uz": "Birinchidan… ikkinchidan…", "form": "تَرْتِيب"},
+   {"ar": "نَنْتَقِلُ الآنَ إِلَى", "uz": "Endi …ga o'tamiz", "form": "اِنْتِقَال"},
+   {"ar": "لَاحِظُوا أَنَّ…", "uz": "E'tibor bering: …", "form": "تَأْكِيد"},
+   {"ar": "خُذُوا مِثَالًا", "uz": "Misol oling", "form": "مِثَال"},
+   {"ar": "لِنُلَخِّصْ", "uz": "Xulosa qilaylik", "form": "خُلَاصَة"}
+  ],
+  "common_mistakes_uz": [
+   "Ma'ruzani so'zma-so'z yozishga urinish — tuzilmani yozing, gapni emas.",
+   "«لَاحِظُوا أَنَّ» dan keyingi jumlani o'tkazib yuborish — bu ko'pincha imtihon savoli.",
+   "Misolni asosiy fikr deb qayd qilish — misol dalil, xulosa emas."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ح ض ر",
+   "meaning_uz": "hozir bo'lish, tayyorlash",
+   "uz_cognates": ["hozir", "hazrat", "muhozara"],
+   "derived": [
+    {"ar": "مُحَاضَرَة", "uz": "ma'ruza", "pattern": "مُفَاعَلَة"},
+    {"ar": "مُحَاضِر", "uz": "ma'ruzachi", "pattern": "مُفَاعِل"},
+    {"ar": "حُضُور", "uz": "hozir bo'lish, davomat", "pattern": "فُعُول"}
+   ]
+  },
+  {
+   "root": "ل خ ص",
+   "meaning_uz": "qisqartirish, xulosa",
+   "uz_cognates": ["xulosa"],
+   "derived": [
+    {"ar": "مُلَخَّص", "uz": "qisqacha bayon", "pattern": "مُفَعَّل"},
+    {"ar": "تَلْخِيص", "uz": "xulosalash", "pattern": "تَفْعِيل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "مُحَاضِر",
+   "translit": "muḥāḍir",
+   "uz": "ma'ruzachi, lektor",
+   "root": "ح ض ر",
+   "pattern": "مُفَاعِل",
+   "pos": "ot",
+   "audio": "b2/muhadir.mp3",
+   "example_ar": "المُحَاضِرُ يَشْرَحُ بِبُطْءٍ.",
+   "example_uz": "Ma'ruzachi sekin tushuntiradi.",
+   "srs": true
+  },
+  {
+   "ar": "مُلَخَّص",
+   "translit": "mulakhkhaṣ",
+   "uz": "qisqacha bayon, konspekt",
+   "root": "ل خ ص",
+   "pattern": "مُفَعَّل",
+   "pos": "ot",
+   "audio": "b2/mulakhkhas.mp3",
+   "example_ar": "كَتَبْتُ مُلَخَّصًا فِي صَفْحَةٍ.",
+   "example_uz": "Bir sahifada konspekt yozdim.",
+   "srs": true
+  },
+  {
+   "ar": "تَدْوِين المُلَاحَظَات",
+   "translit": "tadwīn al-mulāḥaẓāt",
+   "uz": "qayd olish (konspekt yozish)",
+   "root": "د و ن",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tadwin.mp3",
+   "example_ar": "تَدْوِينُ المُلَاحَظَاتِ مَهَارَةٌ مُهِمَّةٌ.",
+   "example_uz": "Qayd olish — muhim ko'nikma.",
+   "srs": true
+  },
+  {
+   "ar": "نُقَاط رَئِيسَة",
+   "translit": "nuqāṭ raʾīsa",
+   "uz": "asosiy masalalar",
+   "root": "ن ق ط",
+   "pattern": "فُعَال",
+   "pos": "ot",
+   "audio": "b2/nuqat_raisa.mp3",
+   "example_ar": "المُحَاضَرَةُ لَهَا ثَلَاثُ نُقَاطٍ رَئِيسَةٍ.",
+   "example_uz": "Ma'ruzaning uchta asosiy masalasi bor.",
+   "srs": true
+  },
+  {
+   "ar": "لَاحِظُوا أَنَّ",
+   "translit": "lāḥiẓū anna",
+   "uz": "e'tibor bering: …",
+   "root": "ل ح ظ",
+   "pattern": "",
+   "pos": "ibora",
+   "audio": "b2/lahizu_anna.mp3",
+   "example_ar": "لَاحِظُوا أَنَّ النَّتِيجَةَ تَتَكَرَّرُ.",
+   "example_uz": "E'tibor bering: natija takrorlanadi.",
+   "srs": true
+  },
+  {
+   "ar": "بِاخْتِصَارٍ",
+   "translit": "bi-ikhtiṣār",
+   "uz": "qisqasi",
+   "root": "خ ص ر",
+   "pattern": "اِفْتِعَال",
+   "pos": "ibora",
+   "audio": "b2/bikhtisar.mp3",
+   "example_ar": "بِاخْتِصَارٍ، الفِكْرَةُ وَاضِحَةٌ.",
+   "example_uz": "Qisqasi, g'oya aniq.",
+   "srs": true
+  },
+  {
+   "ar": "شَرِيحَة",
+   "translit": "sharīḥa",
+   "uz": "slayd (taqdimotda)",
+   "root": "ش ر ح",
+   "pattern": "فَعِيلَة",
+   "pos": "ot",
+   "audio": "b2/shariha.mp3",
+   "example_ar": "اُنْظُرُوا إِلَى الشَّرِيحَةِ التَّالِيَةِ.",
+   "example_uz": "Keyingi slaydga qarang.",
+   "srs": true
+  },
+  {
+   "ar": "مِثَال تَطْبِيقِيّ",
+   "translit": "mithāl taṭbīqī",
+   "uz": "amaliy misol",
+   "root": "ط ب ق",
+   "pattern": "تَفْعِيلِيّ",
+   "pos": "ot",
+   "audio": "b2/mithal_tatbiqi.mp3",
+   "example_ar": "خُذُوا مِثَالًا تَطْبِيقِيًّا.",
+   "example_uz": "Amaliy misol oling.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أهلًا بكم. سنتناول اليوم ثلاث نقاط رئيسة: مفهوم التعلّم الذاتي، أدواته، ثم نتائجه. أولًا، التعلّم الذاتي لا يعني غياب المعلم، بل تغيّر دوره. ثانيًا، من أدواته المكتبات الرقمية والتطبيقات. لاحظوا أنّ الأداة بلا خطة لا تكفي. خذوا مثالًا تطبيقيًّا: طالب يقرأ عشرين دقيقة يوميًّا يتقدّم أسرع من زميله الذي يقرأ ساعتين مرة في الأسبوع. وباختصار، النظام أهمّ من المدّة. لنلخّص: مفهوم، أدوات، ونتيجة واحدة واضحة.",
+   "questions": [
+    {"q_uz": "Ma'ruza nechta masalani qamraydi?", "a": "Uchta: tushuncha, vositalar, natijalar"},
+    {"q_uz": "«لاحظوا أنّ» dan keyin qanday fikr aytildi?", "a": "Rejasiz vositaning o'zi yetarli emas"},
+    {"q_uz": "Amaliy misol nimani ko'rsatadi?", "a": "Muntazamlik davomiylikdan muhimroq"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-43-listen.mp3",
+   "transcript_ar": "سَنَتَنَاوَلُ ثَلَاثَ نُقَاطٍ. أَوَّلًا المَفْهُومُ، ثَانِيًا الأَدَوَاتُ، ثَالِثًا النَّتَائِجُ. لَاحِظُوا أَنَّ النِّظَامَ أَهَمُّ مِنَ المُدَّةِ.",
+   "questions": [
+    {"q_uz": "Reja qanday?", "a": "Tushuncha, vositalar, natijalar"},
+    {"q_uz": "Ta'kidlangan fikr qaysi?", "a": "Muntazamlik davomiylikdan muhimroq"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Mini-ma'ruza rejasini ayting: uch masala, birinchidan/ikkinchidan, xulosa iborasi.",
+   "target_ar": ["سَنَتَنَاوَلُ ثَلَاثَ نُقَاطٍ", "أَوَّلًا… ثَانِيًا…", "لِنُلَخِّصْ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Ma'ruza konspektini yozing (6 qator): sarlavha, 3 masala, ta'kid jumlasi, xulosa.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«لِنُلَخِّصْ» qachon aytiladi?",
+   "q_ar": "لِنُلَخِّصْ",
+   "options": ["Xulosa qismida", "Boshida", "Misol keltirishda", "Savol berishda"],
+   "answer": "Xulosa qismida",
+   "explain_uz": "«Xulosa qilaylik».",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qayd olishda nima yoziladi?",
+   "q_ar": "",
+   "options": [
+    "Tuzilma va ta'kidlangan jumlalar",
+    "Har bir so'z",
+    "Faqat sana",
+    "Faqat misollar"
+   ],
+   "answer": "Tuzilma va ta'kidlangan jumlalar",
+   "explain_uz": "Skelet + urg'u berilgan fikrlar.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«لَاحِظُوا أَنَّ» nima signal beradi?",
+   "q_ar": "لَاحِظُوا أَنَّ",
+   "options": ["Muhim fikr keladi", "Mavzu tugadi", "Misol keladi", "Savol keladi"],
+   "answer": "Muhim fikr keladi",
+   "explain_uz": "Ta'kid markeri.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«شَرِيحَة» taqdimotda nima?",
+   "q_ar": "شَرِيحَة",
+   "options": ["Slayd", "Bo'lim", "Jadval", "Ilova"],
+   "answer": "Slayd",
+   "explain_uz": "Ekrandagi bir sahifa.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "مُلَخَّص",
+   "options": [],
+   "answer": "konspekt",
+   "explain_uz": "مُلَخَّص — qisqacha bayon.",
+   "audio": "b2/mulakhkhas.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«مُحَاضَرَة، مُحَاضِر، حُضُور» qaysi o'zakdan?",
+   "q_ar": "حُضُور",
+   "options": ["ح ض ر", "ح ص ر", "خ ض ر", "ح ض ن"],
+   "answer": "ح ض ر",
+   "explain_uz": "ح ض ر — hozir bo'lish o'zagi.",
+   "audio": "",
+   "root": "ح ض ر",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Misol (مِثَال) ma'ruzada qanday vazifa bajaradi?",
+   "q_ar": "",
+   "options": ["Dalil beradi", "Xulosa bo'ladi", "Reja bo'ladi", "Savol bo'ladi"],
+   "answer": "Dalil beradi",
+   "explain_uz": "Asosiy fikrni tasdiqlaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Uch asosiy masalani ko'rib chiqamiz»",
+   "q_ar": "",
+   "options": [],
+   "answer": "سَنَتَنَاوَلُ ثَلَاثَ نُقَاطٍ رَئِيسَةٍ",
+   "explain_uz": "سَـ + muzori' + son birikmasi + sifat.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["سَنَتَنَاوَلُ", "ثَلَاثَ", "نُقَاطٍ", "رَئِيسَةٍ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ح ض ر", "back": "hozir bo'lish — muhozara/huzur", "deck": "msa"},
+  {"type": "root", "front": "ل خ ص", "back": "xulosalash — mulaxxas/talxis", "deck": "msa"},
+  {"type": "word", "front": "مُحَاضِر", "back": "ma'ruzachi", "deck": "msa"},
+  {"type": "word", "front": "مُلَخَّص", "back": "konspekt", "deck": "msa"},
+  {"type": "phrase", "front": "تَدْوِين المُلَاحَظَات", "back": "qayd olish", "deck": "msa"},
+  {"type": "phrase", "front": "نُقَاط رَئِيسَة", "back": "asosiy masalalar", "deck": "msa"},
+  {"type": "phrase", "front": "لَاحِظُوا أَنَّ", "back": "e'tibor bering", "deck": "msa"},
+  {"type": "phrase", "front": "بِاخْتِصَارٍ", "back": "qisqasi", "deck": "msa"},
+  {"type": "word", "front": "شَرِيحَة", "back": "slayd", "deck": "msa"},
+  {"type": "phrase", "front": "مِثَال تَطْبِيقِيّ", "back": "amaliy misol", "deck": "msa"}
+ ]
+}
