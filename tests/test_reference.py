@@ -98,8 +98,12 @@ def test_duplicate_words_merged_with_lesson_list():
 
 
 def test_grammar_covers_all_levels():
+    """Ma'lumotnoma kontenti yozilgan HAR darajani qamraydi (B2 yozilgani sari o'sadi)."""
+    from services.curriculum import written_lesson_ids
+
+    written_levels = {lid.split("-")[0].upper() for lid in written_lesson_ids()}
     levels = {g["level"] for g in search_grammar("")["items"]}
-    assert levels == {"A0", "A1", "A2", "B1"}
+    assert levels == written_levels
 
 
 def test_grammar_search_by_uzbek_term():

@@ -1,0 +1,316 @@
+{
+ "id": "b2-07",
+ "level": "B2",
+ "module": "nahw-adv",
+ "order": 7,
+ "title_uz": "Nido, istig'osa, ta'ajjub",
+ "title_ar": "أَسَالِيبُ النِّدَاءِ وَالاِسْتِغَاثَةِ وَالتَّعَجُّبِ",
+ "can_do_uz": "Murojaat qila olaman, yordam so'ray olaman va «Qanday go'zal!» kabi hayrat gaplarini tuza olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-06"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«Ey talabalar!», «Voy, qanday chiroyli!», «Yordam bering!» — bularning har biri arabchada ANIQ shakl talab qiladi. يَا dan keyingi so'z ba'zan damma, ba'zan fatha oladi — bu tasodif emas, qoida. Ta'ajjub esa ikki qolipda keladi: مَا أَجْمَلَ! va أَجْمِلْ بِـ! Bir marta yodlab qo'ysangiz, nutqingiz «kitobiy» emas, jonli chiqadi.",
+ "grammar": {
+  "point_ar": "يَا + المُنَادَى · مَا أَفْعَلَ! · أَفْعِلْ بِـ!",
+  "explanation_uz": "1) NIDO (النِّدَاء) — murojaat. Harflari: يَا (eng keng), أَيُّهَا / أَيَّتُهَا (rasmiy). Munodo (murojaat qilinuvchi) ikki holatda: (a) MABNIY damma — agar u atoqli ot yoki bitta so'z bo'lsa: يَا أَحْمَدُ، يَا طَالِبُ. (b) MANSUB — agar u idofa bo'lsa yoki noaniq umumiy bo'lsa: يَا طَالِبَ العِلْمِ، يَا رَجُلًا كَرِيمًا. ال bilan boshlanuvchiga to'g'ridan-to'g'ri يَا qo'yilmaydi — o'rtaga أَيُّهَا qo'yiladi: يَا أَيُّهَا النَّاسُ، أَيُّهَا السَّادَةُ. 2) ISTIG'OSA (الاِسْتِغَاثَة) — yordam so'rash: يَا لَلْأَطِبَّاءِ لِلْمَرِيضِ! (Shifokorlar, bemorga yordam!) — yordamchi لَـ fatha bilan, yordam so'ralayotgan لِـ kasra bilan. 3) TA'AJJUB (التَّعَجُّب) — hayrat. Ikki qolip: مَا أَفْعَلَ + mansub ism: مَا أَجْمَلَ الطَّبِيعَةَ! (tabiat naqadar go'zal!) va أَفْعِلْ بِـ + majrur ism: أَجْمِلْ بِالطَّبِيعَةِ! Ikkalasi bir ma'no, birinchisi ko'proq ishlatiladi.",
+  "table": [
+   {"ar": "يَا أَحْمَدُ", "uz": "Ey Ahmad! (mabniy damma)", "form": "مُنَادَى مُفْرَد"},
+   {"ar": "يَا طَالِبَ العِلْمِ", "uz": "Ey ilm talabgori! (idofa → mansub)", "form": "مُنَادَى مُضَاف"},
+   {"ar": "يَا أَيُّهَا النَّاسُ", "uz": "Ey odamlar! (ال bilan → أَيُّهَا)", "form": "أَيُّهَا"},
+   {"ar": "يَا أَيَّتُهَا الطَّالِبَاتُ", "uz": "Ey talabalar (ayollar)!", "form": "أَيَّتُهَا"},
+   {"ar": "مَا أَجْمَلَ الطَّبِيعَةَ!", "uz": "Tabiat naqadar go'zal!", "form": "تَعَجُّب"},
+   {"ar": "أَجْمِلْ بِالطَّبِيعَةِ!", "uz": "Tabiat qanday go'zal! (ikkinchi qolip)", "form": "تَعَجُّب"}
+  ],
+  "common_mistakes_uz": [
+   "ال li so'zga to'g'ridan-to'g'ri يَا qo'yish: يَا النَّاسُ ✗ → يَا أَيُّهَا النَّاسُ ✓.",
+   "Idofali munodoni damma bilan qoldirish: يَا طَالِبُ العِلْمِ ✗ → يَا طَالِبَ العِلْمِ ✓.",
+   "Ta'ajjubda ismni marfu' qoldirish: مَا أَجْمَلَ الطَّبِيعَةُ ✗ → الطَّبِيعَةَ ✓."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ن د و",
+   "meaning_uz": "chaqirish, murojaat qilish",
+   "uz_cognates": ["nido", "munodiy"],
+   "derived": [
+    {"ar": "نِدَاء", "uz": "chaqiriq, murojaat", "pattern": "فِعَال"},
+    {"ar": "نَادَى", "uz": "chaqirdi", "pattern": "فَاعَلَ"},
+    {"ar": "مُنَادَى", "uz": "murojaat qilinuvchi", "pattern": "مُفَاعَل"}
+   ]
+  },
+  {
+   "root": "ع ج ب",
+   "meaning_uz": "hayron qolish, yoqish",
+   "uz_cognates": ["ajab", "ajoyib", "ta'ajjub"],
+   "derived": [
+    {"ar": "تَعَجُّب", "uz": "hayrat", "pattern": "تَفَعُّل"},
+    {"ar": "أَعْجَبَ", "uz": "yoqdi, hayratlantirdi", "pattern": "أَفْعَلَ"},
+    {"ar": "عَجِيب", "uz": "ajoyib, g'alati", "pattern": "فَعِيل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "نِدَاء",
+   "translit": "nidāʾ",
+   "uz": "chaqiriq, murojaat (o'zbekcha 'nido')",
+   "root": "ن د و",
+   "pattern": "فِعَال",
+   "pos": "ot",
+   "audio": "b2/nida.mp3",
+   "example_ar": "أَدَاةُ النِّدَاءِ «يَا».",
+   "example_uz": "Nido vositasi — «yā».",
+   "srs": true
+  },
+  {
+   "ar": "مُنَادَى",
+   "translit": "munādā",
+   "uz": "murojaat qilinuvchi (grammatik atama)",
+   "root": "ن د و",
+   "pattern": "مُفَاعَل",
+   "pos": "ot",
+   "audio": "b2/munada.mp3",
+   "example_ar": "المُنَادَى المُفْرَدُ مَبْنِيٌّ عَلَى الضَّمِّ.",
+   "example_uz": "Yakka munodo damma bilan mabniy.",
+   "srs": true
+  },
+  {
+   "ar": "أَيُّهَا",
+   "translit": "ayyuhā",
+   "uz": "ey (ال li so'zga murojaat, muzakkar)",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "b2/ayyuha.mp3",
+   "example_ar": "يَا أَيُّهَا السَّادَةُ.",
+   "example_uz": "Hurmatli janoblar!",
+   "srs": true
+  },
+  {
+   "ar": "تَعَجُّب",
+   "translit": "taʿajjub",
+   "uz": "hayrat (o'zbekcha 'taajjub')",
+   "root": "ع ج ب",
+   "pattern": "تَفَعُّل",
+   "pos": "ot",
+   "audio": "b2/taajjub.mp3",
+   "example_ar": "أُسْلُوبُ التَّعَجُّبِ قَصِيرٌ وَقَوِيٌّ.",
+   "example_uz": "Hayrat uslubi qisqa va kuchli.",
+   "srs": true
+  },
+  {
+   "ar": "اِسْتِغَاثَة",
+   "translit": "istighātha",
+   "uz": "yordam so'rash",
+   "root": "غ و ث",
+   "pattern": "اِسْتِفْعَال",
+   "pos": "ot",
+   "audio": "b2/istighatha.mp3",
+   "example_ar": "يَا لَلْأَطِبَّاءِ لِلْمَرِيضِ!",
+   "example_uz": "Shifokorlar, bemorga yordam!",
+   "srs": true
+  },
+  {
+   "ar": "سَادَة",
+   "translit": "sāda",
+   "uz": "janoblar, hurmatli kishilar",
+   "root": "س و د",
+   "pattern": "فَعَلَة",
+   "pos": "ot",
+   "audio": "b2/sada.mp3",
+   "example_ar": "أَيُّهَا السَّادَةُ، أَهْلًا بِكُمْ.",
+   "example_uz": "Hurmatli janoblar, xush kelibsiz.",
+   "srs": true
+  },
+  {
+   "ar": "طَبِيعَة",
+   "translit": "ṭabīʿa",
+   "uz": "tabiat (o'zbekcha 'tabiat')",
+   "root": "ط ب ع",
+   "pattern": "فَعِيلَة",
+   "pos": "ot",
+   "audio": "b2/tabia.mp3",
+   "example_ar": "مَا أَجْمَلَ الطَّبِيعَةَ!",
+   "example_uz": "Tabiat naqadar go'zal!",
+   "srs": true
+  },
+  {
+   "ar": "عَجِيب",
+   "translit": "ʿajīb",
+   "uz": "ajoyib, g'alati (o'zbekcha 'ajib')",
+   "root": "ع ج ب",
+   "pattern": "فَعِيل",
+   "pos": "sifat",
+   "audio": "b2/ajib.mp3",
+   "example_ar": "هَذَا خَبَرٌ عَجِيبٌ.",
+   "example_uz": "Bu ajoyib xabar.",
+   "srs": true
+  },
+  {
+   "ar": "كَرِيم",
+   "translit": "karīm",
+   "uz": "saxiy, olijanob (o'zbekcha 'karam')",
+   "root": "ك ر م",
+   "pattern": "فَعِيل",
+   "pos": "sifat",
+   "audio": "b2/karim.mp3",
+   "example_ar": "يَا رَجُلًا كَرِيمًا، سَاعِدْنَا.",
+   "example_uz": "Ey saxiy inson, bizga yordam bering.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "وقف المدير أمام الحضور وقال: أيها السادة، شكرًا لحضوركم. ثم التفت إلى الطلاب وقال: يا طالبَ العلمِ، الطريق طويل لكنه جميل. ما أصعبَ البدايةَ وما أحلى النهايةَ! وفي آخر الكلمة سمعنا نداءً من الخارج: يا للأطباء! رجل يحتاج مساعدة. فخرج الجميع بسرعة، وقال أحدهم: ما أسرعَ الناسَ حين يكون الأمر جادًّا!",
+   "questions": [
+    {"q_uz": "«أيها السادة» nega «يا السادة» emas?", "a": "ال li so'zga to'g'ridan-to'g'ri يا qo'yilmaydi"},
+    {"q_uz": "«يا طالبَ العلمِ» nega mansub?", "a": "Munodo idofa (muzof) bo'lgani uchun"},
+    {"q_uz": "«يا للأطباء!» qanday uslub?", "a": "Istig'osa — yordamga chaqirish"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-07-listen.mp3",
+   "transcript_ar": "يَا أَيُّهَا الطُّلَّابُ، مَا أَجْمَلَ العِلْمَ! وَيَا طَالِبَ العِلْمِ، اِصْبِرْ قَلِيلًا.",
+   "questions": [
+    {"q_uz": "Birinchi murojaat qanday tuzilgan?", "a": "يا أيها + ال li ot"},
+    {"q_uz": "Ta'ajjub jumlasi qaysi?", "a": "ما أجملَ العلمَ! — ilm naqadar go'zal"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch murojaatni ayting: «Ey Ahmad!», «Hurmatli janoblar!», «Tabiat naqadar go'zal!».",
+   "target_ar": ["يَا أَحْمَدُ", "أَيُّهَا السَّادَةُ", "مَا أَجْمَلَ الطَّبِيعَةَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Uch gap yozing: bittasi يا bilan yakka murojaat, bittasi أيها bilan rasmiy murojaat, bittasi ما أفعل! qolipida ta'ajjub.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«يَا ... النَّاسُ» — bo'sh joyga nima kerak?",
+   "q_ar": "يَا ... النَّاسُ",
+   "options": ["أَيُّهَا", "أَيَّتُهَا", "هَذَا", "أَنْتُمْ"],
+   "answer": "أَيُّهَا",
+   "explain_uz": "ال li muzakkar otga أَيُّهَا orqali murojaat qilinadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi jumla TO'G'RI?",
+   "q_ar": "",
+   "options": [
+    "يَا طَالِبَ العِلْمِ",
+    "يَا طَالِبُ العِلْمِ",
+    "يَا طَالِبٍ العِلْمِ",
+    "يَا طَالِبًا العِلْمِ"
+   ],
+   "answer": "يَا طَالِبَ العِلْمِ",
+   "explain_uz": "Munodo muzof bo'lsa — mansub.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«يَا أَحْمَدُ» da «أَحْمَدُ» qanday?",
+   "q_ar": "يَا أَحْمَدُ",
+   "options": [
+    "Damma bilan mabniy",
+    "Marfu' — ega",
+    "Mansub — maf'ul",
+    "Majrur — jarr"
+   ],
+   "answer": "Damma bilan mabniy",
+   "explain_uz": "Yakka atoqli munodo damma bilan mabniy bo'ladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Ta'ajjub qolipini toping",
+   "q_ar": "",
+   "options": [
+    "مَا أَجْمَلَ الطَّبِيعَةَ!",
+    "الطَّبِيعَةُ جَمِيلَةٌ",
+    "هَلِ الطَّبِيعَةُ جَمِيلَةٌ؟",
+    "لَيْسَتِ الطَّبِيعَةُ جَمِيلَةً"
+   ],
+   "answer": "مَا أَجْمَلَ الطَّبِيعَةَ!",
+   "explain_uz": "مَا أَفْعَلَ + mansub ism = ta'ajjub.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«يَا لَلْأَطِبَّاءِ لِلْمَرِيضِ!» qanday uslub?",
+   "q_ar": "يَا لَلْأَطِبَّاءِ",
+   "options": ["Istig'osa (yordam so'rash)", "Ta'ajjub", "Oddiy nido", "Qasam"],
+   "answer": "Istig'osa (yordam so'rash)",
+   "explain_uz": "Yordamchi لَـ bilan, yordam so'ralayotgan لِـ bilan keladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "عَجِيب",
+   "options": [],
+   "answer": "ajoyib",
+   "explain_uz": "عَجِيب — ajoyib, hayratlanarli.",
+   "audio": "b2/ajib.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«تَعَجُّب، أَعْجَبَ، عَجِيب» qaysi o'zakdan?",
+   "q_ar": "تَعَجُّب",
+   "options": ["ع ج ب", "ع ج ل", "ج ع ب", "ع ب ج"],
+   "answer": "ع ج ب",
+   "explain_uz": "ع ج ب — hayrat o'zagi (ajab, ajoyib).",
+   "audio": "",
+   "root": "ع ج ب",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Ey talabalar, ilm naqadar go'zal!»",
+   "q_ar": "",
+   "options": [],
+   "answer": "يَا أَيُّهَا الطُّلَّابُ مَا أَجْمَلَ العِلْمَ",
+   "explain_uz": "Nido + ta'ajjub qolipi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["يَا", "أَيُّهَا", "الطُّلَّابُ", "مَا", "أَجْمَلَ", "العِلْمَ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ن د و", "back": "chaqirish — nido/munodo", "deck": "msa"},
+  {"type": "root", "front": "ع ج ب", "back": "hayrat — taajjub/ajoyib", "deck": "msa"},
+  {"type": "word", "front": "نِدَاء", "back": "chaqiriq, murojaat", "deck": "msa"},
+  {"type": "word", "front": "مُنَادَى", "back": "murojaat qilinuvchi", "deck": "msa"},
+  {"type": "word", "front": "أَيُّهَا", "back": "ey (ال li otga)", "deck": "msa"},
+  {"type": "word", "front": "تَعَجُّب", "back": "hayrat uslubi", "deck": "msa"},
+  {"type": "word", "front": "اِسْتِغَاثَة", "back": "yordam so'rash", "deck": "msa"},
+  {"type": "word", "front": "سَادَة", "back": "janoblar", "deck": "msa"},
+  {"type": "word", "front": "طَبِيعَة", "back": "tabiat", "deck": "msa"},
+  {"type": "word", "front": "عَجِيب", "back": "ajoyib", "deck": "msa"},
+  {"type": "word", "front": "كَرِيم", "back": "saxiy, olijanob", "deck": "msa"}
+ ]
+}

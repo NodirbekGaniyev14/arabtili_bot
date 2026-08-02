@@ -1,0 +1,321 @@
+{
+ "id": "b2-02",
+ "level": "B2",
+ "module": "nahw-adv",
+ "order": 2,
+ "title_uz": "Qalb fe'llari — ikki maf'ul",
+ "title_ar": "أَفْعَالُ القُلُوبِ وَالمَفْعُولَانِ",
+ "can_do_uz": "«Men uni o'qituvchi deb bildim» kabi ikki to'ldiruvchili gaplarni tuza va tanib olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-01"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "O'zbekchada «Men uni do'st DEB bildim» deymiz — «deb» yordamchi so'zi bor. Arabchada bunday yordamchi YO'Q: ظَنَنْتُ الرَّجُلَ صَادِقًا — ikkala so'z ham mansub bo'ladi va shu bilan «deb bildim» ma'nosi chiqadi. Bu qalb fe'llari (أفعال القلوب): ular ko'z bilan emas, aql va his bilan bog'liq — o'ylash, bilish, hisoblash. Gazetada, ilmiy matnda juda tez-tez uchraydi.",
+ "grammar": {
+  "point_ar": "ظَنَّ وَأَخَوَاتُهَا — تَنْصِبُ مَفْعُولَيْنِ",
+  "explanation_uz": "Qalb fe'llari (أَفْعَالُ القُلُوبِ) — ظَنَّ (o'yladi), حَسِبَ (hisobladi), خَالَ (gumon qildi), زَعَمَ (da'vo qildi), عَلِمَ (bildi), رَأَى (fikrladi, «deb bildi»), وَجَدَ (topdi, ma'lum qildi), اِعْتَبَرَ (hisobladi). Ular MUBTADO va XABARni oladi va ikkalasini ham NASB qiladi — natijada IKKI maf'ul paydo bo'ladi: الرَّجُلُ صَادِقٌ (mubtado + xabar) → ظَنَنْتُ الرَّجُلَ صَادِقًا (birinchi maf'ul + ikkinchi maf'ul). Birinchi maf'ul — kim/nima haqida, ikkinchi maf'ul — u haqida NIMA deyilgan. Ikkinchi maf'ul jumla ham bo'lishi mumkin: وَجَدْتُ الكِتَابَ يُفِيدُ. MUHIM farq: عَلِمَ va رَأَى «aniq bilish» (يَقِين) bildiradi, ظَنَّ va حَسِبَ esa «gumon» (شَكّ). Agar شَكّ ma'nosi bo'lmasa — أَنَّ bilan ham aytiladi: عَلِمْتُ أَنَّ الرَّجُلَ صَادِقٌ (bu yerda أَنَّ dan keyin oddiy jumla).",
+  "table": [
+   {"ar": "الرَّجُلُ صَادِقٌ", "uz": "Erkak rostgo'y (oddiy ismli gap)", "form": "مُبْتَدَأ + خَبَر"},
+   {"ar": "ظَنَنْتُ الرَّجُلَ صَادِقًا", "uz": "Erkakni rostgo'y deb o'yladim", "form": "مَفْعُولَانِ"},
+   {"ar": "حَسِبْتُ الاِمْتِحَانَ سَهْلًا", "uz": "Imtihonni oson deb hisobladim", "form": "شَكّ"},
+   {"ar": "عَلِمْتُ الخَبَرَ صَحِيحًا", "uz": "Xabarni to'g'ri deb bildim", "form": "يَقِين"},
+   {"ar": "وَجَدْتُ الكِتَابَ مُفِيدًا", "uz": "Kitobni foydali deb topdim", "form": "يَقِين"},
+   {"ar": "اِعْتَبَرَهُ صَدِيقًا", "uz": "Uni do'st deb hisobladi (olmosh + maf'ul)", "form": "ضَمِير + مَفْعُول"}
+  ],
+  "common_mistakes_uz": [
+   "Ikkinchi maf'ulni marfu' qoldirish: ظَنَنْتُ الرَّجُلَ صَادِقٌ ✗ → صَادِقًا ✓.",
+   "Qalb fe'lini oddiy fe'l kabi bitta maf'ul bilan ishlatish — ma'no chala qoladi.",
+   "ظَنَّ (gumon) va عَلِمَ (aniq bilish) ni farqlamaslik: gazetada زَعَمَ «da'vo qildi» — muallif ishonmayotganini bildiradi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ظ ن ن",
+   "meaning_uz": "gumon qilish, o'ylash",
+   "uz_cognates": ["zan", "gumon"],
+   "derived": [
+    {"ar": "ظَنَّ", "uz": "o'yladi, gumon qildi", "pattern": "فَعَلَ"},
+    {"ar": "ظَنّ", "uz": "gumon, taxmin", "pattern": "فَعْل"},
+    {"ar": "مَظْنُون", "uz": "gumon qilingan", "pattern": "مَفْعُول"}
+   ]
+  },
+  {
+   "root": "ع ب ر",
+   "meaning_uz": "o'tish, ibrat olish — «e'tibor» shundan",
+   "uz_cognates": ["ibrat", "e'tibor", "ibora"],
+   "derived": [
+    {"ar": "اِعْتَبَرَ", "uz": "hisobladi, e'tiborga oldi", "pattern": "اِفْتَعَلَ"},
+    {"ar": "اِعْتِبَار", "uz": "e'tibor, hisobga olish", "pattern": "اِفْتِعَال"},
+    {"ar": "عِبَارَة", "uz": "ibora", "pattern": "فِعَالَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "ظَنَّ",
+   "translit": "ẓanna",
+   "uz": "o'yladi, gumon qildi (ikki maf'ul oladi)",
+   "root": "ظ ن ن",
+   "pattern": "فَعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/zanna.mp3",
+   "example_ar": "ظَنَنْتُ الطَّرِيقَ قَصِيرًا.",
+   "example_uz": "Yo'lni qisqa deb o'ylagandim.",
+   "srs": true
+  },
+  {
+   "ar": "حَسِبَ",
+   "translit": "ḥasiba",
+   "uz": "hisobladi, deb bildi (gumon bilan)",
+   "root": "ح س ب",
+   "pattern": "فَعِلَ",
+   "pos": "fe'l",
+   "audio": "b2/hasiba.mp3",
+   "example_ar": "حَسِبْتُ الاِمْتِحَانَ سَهْلًا.",
+   "example_uz": "Imtihonni oson deb hisobladim.",
+   "srs": true
+  },
+  {
+   "ar": "زَعَمَ",
+   "translit": "zaʿama",
+   "uz": "da'vo qildi (muallif ishonmaydi)",
+   "root": "ز ع م",
+   "pattern": "فَعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/zaama.mp3",
+   "example_ar": "زَعَمَ أَنَّهُ خَبِيرٌ.",
+   "example_uz": "U o'zini ekspert deb da'vo qildi.",
+   "srs": true
+  },
+  {
+   "ar": "اِعْتَبَرَ",
+   "translit": "iʿtabara",
+   "uz": "hisobladi, deb qaradi (o'zbekcha 'e'tibor')",
+   "root": "ع ب ر",
+   "pattern": "اِفْتَعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/itabara.mp3",
+   "example_ar": "اِعْتَبَرَ الفَرِيقَ الأَقْوَى.",
+   "example_uz": "Jamoani eng kuchli deb hisobladi.",
+   "srs": true
+  },
+  {
+   "ar": "وَجَدَ",
+   "translit": "wajada",
+   "uz": "topdi; «deb topdi» (aniq bilish)",
+   "root": "و ج د",
+   "pattern": "فَعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/wajada_found.mp3",
+   "example_ar": "وَجَدْتُ الكِتَابَ مُفِيدًا.",
+   "example_uz": "Kitobni foydali deb topdim.",
+   "srs": true
+  },
+  {
+   "ar": "مَفْعُولَانِ",
+   "translit": "mafʿūlān",
+   "uz": "ikki to'ldiruvchi (grammatik atama)",
+   "root": "ف ع ل",
+   "pattern": "مَفْعُول",
+   "pos": "ot",
+   "audio": "b2/mafulan.mp3",
+   "example_ar": "ظَنَّ تَنْصِبُ مَفْعُولَيْنِ.",
+   "example_uz": "ظنّ ikki maf'ulni nasb qiladi.",
+   "srs": true
+  },
+  {
+   "ar": "يَقِين",
+   "translit": "yaqīn",
+   "uz": "aniq bilish, shubhasizlik (o'zbekcha 'yaqin — ishonch')",
+   "root": "ي ق ن",
+   "pattern": "فَعِيل",
+   "pos": "ot",
+   "audio": "b2/yaqin.mp3",
+   "example_ar": "عَلِمَ تُفِيدُ اليَقِينَ.",
+   "example_uz": "عَلِمَ aniq bilishni bildiradi.",
+   "srs": true
+  },
+  {
+   "ar": "شَكّ",
+   "translit": "shakk",
+   "uz": "shubha, gumon (o'zbekcha 'shak-shubha')",
+   "root": "ش ك ك",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/shakk.mp3",
+   "example_ar": "ظَنَّ تُفِيدُ الشَّكَّ.",
+   "example_uz": "ظنّ shubhani bildiradi.",
+   "srs": true
+  },
+  {
+   "ar": "صَادِق",
+   "translit": "ṣādiq",
+   "uz": "rostgo'y, samimiy (o'zbekcha 'sodiq')",
+   "root": "ص د ق",
+   "pattern": "فَاعِل",
+   "pos": "sifat",
+   "audio": "b2/sadiq_true.mp3",
+   "example_ar": "ظَنَنْتُ الرَّجُلَ صَادِقًا.",
+   "example_uz": "Erkakni rostgo'y deb o'yladim.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "قرأت أمس مقالًا وجدته مفيدًا جدًا. كان الكاتب يظنّ القارئ العربي بعيدًا عن الكتاب، لكنه بعد دراسة ميدانية اعتبر النتيجة مفاجئة: نصف الشباب يقرؤون على الهاتف كل يوم. زعم بعض النقاد أنّ القراءة على الشاشة لا تُحسب قراءة، غير أنّ الباحثين علموا الأمر مختلفًا. أنا شخصيًا حسبت الموضوع بسيطًا، ثم وجدته أعمق مما ظننت.",
+   "questions": [
+    {"q_uz": "Maqola muallifi avval nima deb o'ylagan edi?", "a": "Arab o'quvchisini kitobdan uzoq deb (يظنّ القارئ بعيدًا)"},
+    {"q_uz": "«زعم بعض النقاد» iborasi qanday ohang beradi?", "a": "Muallif bu da'voga ishonmayotganini bildiradi"},
+    {"q_uz": "Matn oxirida yozuvchi fikri qanday o'zgardi?", "a": "Mavzuni oddiy deb hisoblagan, keyin chuqurroq deb topgan"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-02-listen.mp3",
+   "transcript_ar": "ظَنَنْتُ الاِمْتِحَانَ صَعْبًا، ثُمَّ وَجَدْتُهُ سَهْلًا. وَاعْتَبَرَ المُعَلِّمُ النَّتِيجَةَ مُمْتَازَةً.",
+   "questions": [
+    {"q_uz": "Imtihon aslida qanday chiqdi?", "a": "Oson (وجدته سهلًا)"},
+    {"q_uz": "O'qituvchi natijani qanday baholadi?", "a": "A'lo deb hisobladi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch gap ayting: «Yo'lni qisqa deb o'ylagandim», «Kitobni foydali deb topdim», «Uni do'st deb hisobladim».",
+   "target_ar": ["ظَنَنْتُ الطَّرِيقَ قَصِيرًا", "وَجَدْتُ الكِتَابَ مُفِيدًا", "اِعْتَبَرْتُهُ صَدِيقًا"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Ikki gap yozing: bittasida ظَنَّ (gumon), bittasida عَلِمَ yoki وَجَدَ (aniq bilish) — ikkala maf'ulni ham mansub qiling.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi jumla TO'G'RI?",
+   "q_ar": "",
+   "options": [
+    "ظَنَنْتُ الرَّجُلَ صَادِقًا",
+    "ظَنَنْتُ الرَّجُلُ صَادِقٌ",
+    "ظَنَنْتُ الرَّجُلِ صَادِقٍ",
+    "ظَنَنْتُ الرَّجُلَ صَادِقٌ"
+   ],
+   "answer": "ظَنَنْتُ الرَّجُلَ صَادِقًا",
+   "explain_uz": "Qalb fe'li IKKALA so'zni ham nasb qiladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«زَعَمَ» so'zi matnga qanday ohang beradi?",
+   "q_ar": "زَعَمَ",
+   "options": [
+    "Muallif da'voga ishonmaydi",
+    "Muallif to'liq ishonadi",
+    "Bu rasmiy tasdiq",
+    "Bu buyruq"
+   ],
+   "answer": "Muallif da'voga ishonmaydi",
+   "explain_uz": "زَعَمَ — «da'vo qildi», odatda shubha bilan ishlatiladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi fe'l ANIQ bilishni (يَقِين) bildiradi?",
+   "q_ar": "",
+   "options": ["عَلِمَ", "ظَنَّ", "حَسِبَ", "خَالَ"],
+   "answer": "عَلِمَ",
+   "explain_uz": "عَلِمَ va رَأَى — yaqin; ظَنَّ, حَسِبَ, خَالَ — shakk.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«وَجَدْتُ الكِتَابَ مُفِيدًا» — «مُفِيدًا» nima?",
+   "q_ar": "وَجَدْتُ الكِتَابَ مُفِيدًا",
+   "options": [
+    "Ikkinchi maf'ul",
+    "Hol",
+    "Tamyiz",
+    "Sifat (na't)"
+   ],
+   "answer": "Ikkinchi maf'ul",
+   "explain_uz": "Asli xabar edi: الكِتَابُ مُفِيدٌ → qalb fe'lidan keyin ikkinchi maf'ul.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "اِعْتَبَرَ",
+   "options": [],
+   "answer": "hisobladi",
+   "explain_uz": "اِعْتَبَرَ — deb hisobladi, e'tiborga oldi.",
+   "audio": "b2/itabara.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«اِعْتِبَار، عِبَارَة، اِعْتَبَرَ» qaysi o'zakdan?",
+   "q_ar": "اِعْتِبَار",
+   "options": ["ع ب ر", "ع ر ب", "ب ع ر", "ع ب د"],
+   "answer": "ع ب ر",
+   "explain_uz": "ع ب ر — o'tish, ibrat: e'tibor, ibora.",
+   "audio": "",
+   "root": "ع ب ر",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«الاِمْتِحَانُ سَهْلٌ» ni حَسِبْتُ bilan aytsak?",
+   "q_ar": "",
+   "options": [
+    "حَسِبْتُ الاِمْتِحَانَ سَهْلًا",
+    "حَسِبْتُ الاِمْتِحَانُ سَهْلًا",
+    "حَسِبْتُ الاِمْتِحَانِ سَهْلٍ",
+    "حَسِبْتُ الاِمْتِحَانَ سَهْلٌ"
+   ],
+   "answer": "حَسِبْتُ الاِمْتِحَانَ سَهْلًا",
+   "explain_uz": "Mubtado va xabar ikkala maf'ulga aylanib nasb bo'ladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Jamoani eng kuchli deb hisobladi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "اِعْتَبَرَ الفَرِيقَ الأَقْوَى",
+   "explain_uz": "Fe'l + birinchi maf'ul + ikkinchi maf'ul.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["اِعْتَبَرَ", "الفَرِيقَ", "الأَقْوَى"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ظ ن ن", "back": "gumon qilish — zann/mazhnun", "deck": "msa"},
+  {"type": "root", "front": "ع ب ر", "back": "o'tish, ibrat — e'tibor/ibora", "deck": "msa"},
+  {"type": "word", "front": "ظَنَّ", "back": "o'yladi, gumon qildi (2 maf'ul)", "deck": "msa"},
+  {"type": "word", "front": "حَسِبَ", "back": "hisobladi (gumon bilan)", "deck": "msa"},
+  {"type": "word", "front": "زَعَمَ", "back": "da'vo qildi (ishonchsiz)", "deck": "msa"},
+  {"type": "word", "front": "اِعْتَبَرَ", "back": "deb hisobladi", "deck": "msa"},
+  {"type": "word", "front": "وَجَدَ", "back": "topdi; deb topdi", "deck": "msa"},
+  {"type": "word", "front": "يَقِين", "back": "aniq bilish", "deck": "msa"},
+  {"type": "word", "front": "شَكّ", "back": "shubha, gumon", "deck": "msa"},
+  {"type": "word", "front": "صَادِق", "back": "rostgo'y, sodiq", "deck": "msa"},
+  {"type": "pattern", "front": "اِفْتَعَلَ", "back": "VIII bob: اِعْتَبَرَ, اِجْتَمَعَ", "deck": "msa"}
+ ]
+}

@@ -1,0 +1,315 @@
+{
+ "id": "b2-03",
+ "level": "B2",
+ "module": "nahw-adv",
+ "order": 3,
+ "title_uz": "Yaqinlik va boshlash fe'llari",
+ "title_ar": "أَفْعَالُ المُقَارَبَةِ وَالرَّجَاءِ وَالشُّرُوعِ",
+ "can_do_uz": "«Deyarli tugadi», «boshladi», «umid qilamanki» ma'nolarini كَادَ · عَسَى · بَدَأَ orqali ifodalay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-02"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«Yiqilishimga sal qoldi» — o'zbekchada uch so'z. Arabchada bitta fe'l: كِدْتُ أَسْقُطُ. Bu guruh كَانَ ning qarindoshlari: ular mubtadoni oladi, xabar o'rniga esa MUZORI' FE'L keladi. Uch ma'no: yaqinlik (كَادَ — sal qoldi), umid (عَسَى — shoyad), boshlash (بَدَأَ، أَخَذَ، شَرَعَ — boshladi). Yangiliklar tilida doim uchraydi: «kadat al-mufawadat tanjah» — muzokaralar deyarli muvaffaq bo'lay dedi.",
+ "grammar": {
+  "point_ar": "كَادَ وَعَسَى وَبَدَأَ — الخَبَرُ جُمْلَةٌ فِعْلِيَّةٌ",
+  "explanation_uz": "Bu fe'llar كَانَ ning «opa-singillari» kabi ishlaydi: ismni RAFʿ qiladi (اِسْمُهَا), xabari (خَبَرُهَا) esa har doim MUZORI' FE'L bo'ladi. Uch guruh. 1) المُقَارَبَة (yaqinlik): كَادَ، أَوْشَكَ — «sal qoldi, deyarli». Xabari odatda أَنْ SIZ keladi: كَادَ المَطَرُ يَنْزِلُ (yomg'ir yog'ay dedi). 2) الرَّجَاء (umid): عَسَى، حَرَى — «shoyad, umid qilamanki». Xabari odatda أَنْ BILAN: عَسَى الطَّالِبُ أَنْ يَنْجَحَ. 3) الشُّرُوع (boshlash): بَدَأَ، أَخَذَ، شَرَعَ، جَعَلَ — «boshladi». Xabari HECH QACHON أَنْ olmaydi: بَدَأَ الطِّفْلُ يَمْشِي (bola yura boshladi). Diqqat: كَادَ inkor bilan kelsa ma'no teskari bo'ladi — لَمْ يَكَدْ يَصِلُ = «yetib kelay demadi», ya'ni juda kech yetdi.",
+  "table": [
+   {"ar": "كَادَ المَطَرُ يَنْزِلُ", "uz": "Yomg'ir yog'ay dedi (sal qoldi)", "form": "مُقَارَبَة"},
+   {"ar": "أَوْشَكَ الوَقْتُ يَنْتَهِي", "uz": "Vaqt tugay dedi", "form": "مُقَارَبَة"},
+   {"ar": "عَسَى اللهُ أَنْ يُيَسِّرَ", "uz": "Shoyad oson qilsa", "form": "رَجَاء + أَنْ"},
+   {"ar": "بَدَأَ الطِّفْلُ يَمْشِي", "uz": "Bola yura boshladi", "form": "شُرُوع"},
+   {"ar": "أَخَذَ الجَوُّ يَبْرُدُ", "uz": "Havo sovuy boshladi", "form": "شُرُوع"},
+   {"ar": "شَرَعَ الفَرِيقُ يَعْمَلُ", "uz": "Jamoa ishlashga kirishdi", "form": "شُرُوع"}
+  ],
+  "common_mistakes_uz": [
+   "Boshlash fe'llaridan keyin أَنْ qo'yish: بَدَأَ أَنْ يَكْتُبُ ✗ → بَدَأَ يَكْتُبُ ✓.",
+   "كَادَ dan keyin ismli xabar qo'yish: كَادَ الوَقْتُ قَصِيرًا ✗ — xabari fe'l bo'lishi shart.",
+   "لَمْ يَكَدْ ni «deyarli qildi» deb tarjima qilish — aslida «zo'rg'a/juda kech qildi»."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ب د أ",
+   "meaning_uz": "boshlanish",
+   "uz_cognates": ["ibtido", "badiiy emas", "mabda"],
+   "derived": [
+    {"ar": "بَدَأَ", "uz": "boshladi", "pattern": "فَعَلَ"},
+    {"ar": "بِدَايَة", "uz": "boshlanish", "pattern": "فِعَالَة"},
+    {"ar": "مَبْدَأ", "uz": "tamoyil, prinsip", "pattern": "مَفْعَل"}
+   ]
+  },
+  {
+   "root": "و ش ك",
+   "meaning_uz": "yaqinlashish, sal qolish",
+   "uz_cognates": [],
+   "derived": [
+    {"ar": "أَوْشَكَ", "uz": "sal qoldi, arang yetdi", "pattern": "أَفْعَلَ"},
+    {"ar": "وَشِيك", "uz": "yaqin, tez orada bo'ladigan", "pattern": "فَعِيل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "كَادَ",
+   "translit": "kāda",
+   "uz": "sal qoldi, deyarli (xabari muzori' fe'l)",
+   "root": "ك و د",
+   "pattern": "فَعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/kada.mp3",
+   "example_ar": "كَادَ المَطَرُ يَنْزِلُ.",
+   "example_uz": "Yomg'ir yog'ay dedi.",
+   "srs": true
+  },
+  {
+   "ar": "أَوْشَكَ",
+   "translit": "awshaka",
+   "uz": "yaqin qoldi, arang yetay dedi",
+   "root": "و ش ك",
+   "pattern": "أَفْعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/awshaka.mp3",
+   "example_ar": "أَوْشَكَ الوَقْتُ يَنْتَهِي.",
+   "example_uz": "Vaqt tugay dedi.",
+   "srs": true
+  },
+  {
+   "ar": "عَسَى",
+   "translit": "ʿasā",
+   "uz": "shoyad, umid qilamanki",
+   "root": "ع س ي",
+   "pattern": "فَعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/asa_hope.mp3",
+   "example_ar": "عَسَى الطَّالِبُ أَنْ يَنْجَحَ.",
+   "example_uz": "Shoyad talaba muvaffaq bo'lsa.",
+   "srs": true
+  },
+  {
+   "ar": "شَرَعَ",
+   "translit": "sharaʿa",
+   "uz": "kirishdi, boshladi",
+   "root": "ش ر ع",
+   "pattern": "فَعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/sharaa.mp3",
+   "example_ar": "شَرَعَ الفَرِيقُ يَعْمَلُ.",
+   "example_uz": "Jamoa ishga kirishdi.",
+   "srs": true
+  },
+  {
+   "ar": "بِدَايَة",
+   "translit": "bidāya",
+   "uz": "boshlanish (o'zbekcha 'ibtido')",
+   "root": "ب د أ",
+   "pattern": "فِعَالَة",
+   "pos": "ot",
+   "audio": "b2/bidaya_start.mp3",
+   "example_ar": "بِدَايَةُ الطَّرِيقِ صَعْبَةٌ.",
+   "example_uz": "Yo'lning boshlanishi qiyin.",
+   "srs": true
+  },
+  {
+   "ar": "مَبْدَأ",
+   "translit": "mabdaʾ",
+   "uz": "tamoyil, prinsip",
+   "root": "ب د أ",
+   "pattern": "مَفْعَل",
+   "pos": "ot",
+   "audio": "b2/mabda.mp3",
+   "example_ar": "هَذَا مَبْدَأٌ مُهِمٌّ.",
+   "example_uz": "Bu muhim tamoyil.",
+   "srs": true
+  },
+  {
+   "ar": "وَشِيك",
+   "translit": "washīk",
+   "uz": "tez orada bo'ladigan, yaqin",
+   "root": "و ش ك",
+   "pattern": "فَعِيل",
+   "pos": "sifat",
+   "audio": "b2/washik.mp3",
+   "example_ar": "الاِتِّفَاقُ وَشِيكٌ.",
+   "example_uz": "Kelishuv juda yaqin.",
+   "srs": true
+  },
+  {
+   "ar": "مُفَاوَضَات",
+   "translit": "mufāwaḍāt",
+   "uz": "muzokaralar",
+   "root": "ف و ض",
+   "pattern": "مُفَاعَلَة",
+   "pos": "ot",
+   "audio": "b2/mufawadat.mp3",
+   "example_ar": "كَادَتِ المُفَاوَضَاتُ تَنْجَحُ.",
+   "example_uz": "Muzokaralar muvaffaq bo'lay dedi.",
+   "srs": true
+  },
+  {
+   "ar": "تَدْرِيجِيًّا",
+   "translit": "tadrījiyyan",
+   "uz": "asta-sekin, bosqichma-bosqich",
+   "root": "د ر ج",
+   "pattern": "تَفْعِيل",
+   "pos": "ravish",
+   "audio": "b2/tadrijiyyan.mp3",
+   "example_ar": "أَخَذَ الجَوُّ يَبْرُدُ تَدْرِيجِيًّا.",
+   "example_uz": "Havo asta-sekin sovuy boshladi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "كادت المفاوضات تفشل في اليوم الأول، لكن الطرفين أخذا يتحدثان بهدوء بعد استراحة قصيرة. أوشك الوقت ينتهي حين شرع الوفد الثاني يقدّم اقتراحًا جديدًا. قال المتحدث: عسى أن نصل إلى اتفاق وشيك، فالخلاف لم يعد كبيرًا. وبدأ الصحفيون يكتبون تقاريرهم قبل الإعلان الرسمي، لأن النتيجة كانت واضحة تدريجيًا.",
+   "questions": [
+    {"q_uz": "Birinchi kuni nima bo'lay dedi?", "a": "Muzokaralar barbod bo'lay dedi (كادت تفشل)"},
+    {"q_uz": "«شرع الوفد يقدّم» nimani bildiradi?", "a": "Delegatsiya taklif berishga kirishdi (boshlash fe'li)"},
+    {"q_uz": "Vakil nimaga umid bildirdi?", "a": "Yaqin orada kelishuvga erishishga (عسى أن نصل)"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-03-listen.mp3",
+   "transcript_ar": "كَادَ القِطَارُ يَتَحَرَّكُ حِينَ وَصَلْتُ. بَدَأْتُ أَجْرِي، وَأَوْشَكْتُ أَفْقِدُ الرِّحْلَةَ.",
+   "questions": [
+    {"q_uz": "Poyezd nima qilay dedi?", "a": "Jo'nab ketay dedi (كاد يتحرك)"},
+    {"q_uz": "Gapiruvchi nima qildi?", "a": "Yugura boshladi va safarni deyarli boy berdi"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch gap ayting: «Yomg'ir yog'ay dedi», «Bola yura boshladi», «Shoyad muvaffaq bo'lsa».",
+   "target_ar": ["كَادَ المَطَرُ يَنْزِلُ", "بَدَأَ الطِّفْلُ يَمْشِي", "عَسَى أَنْ يَنْجَحَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Uch gap yozing: bittasi كَادَ bilan, bittasi بَدَأَ yoki أَخَذَ bilan, bittasi عَسَى أَنْ bilan.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi jumla TO'G'RI?",
+   "q_ar": "",
+   "options": [
+    "بَدَأَ الطِّفْلُ يَمْشِي",
+    "بَدَأَ الطِّفْلُ أَنْ يَمْشِيَ",
+    "بَدَأَ الطِّفْلُ مَاشِيًا فَقَطْ",
+    "بَدَأَ الطِّفْلَ يَمْشِي"
+   ],
+   "answer": "بَدَأَ الطِّفْلُ يَمْشِي",
+   "explain_uz": "Boshlash fe'llari أَنْ olmaydi, ismi esa marfu'.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«كَادَ» qaysi ma'noni beradi?",
+   "q_ar": "كَادَ",
+   "options": ["Sal qoldi, deyarli", "Boshladi", "Umid qilaman", "Tugatdi"],
+   "answer": "Sal qoldi, deyarli",
+   "explain_uz": "كَادَ — المُقَارَبَة (yaqinlik) fe'li.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«عَسَى» dan keyin odatda nima keladi?",
+   "q_ar": "عَسَى",
+   "options": [
+    "أَنْ + mansub muzori'",
+    "Ismli xabar",
+    "Moziy fe'l",
+    "Buyruq"
+   ],
+   "answer": "أَنْ + mansub muzori'",
+   "explain_uz": "عَسَى الطَّالِبُ أَنْ يَنْجَحَ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«لَمْ يَكَدْ يَصِلُ» ma'nosi?",
+   "q_ar": "لَمْ يَكَدْ يَصِلُ",
+   "options": [
+    "Zo'rg'a / juda kech yetdi",
+    "Osongina yetdi",
+    "Umuman yetmadi",
+    "Yetishni boshladi"
+   ],
+   "answer": "Zo'rg'a / juda kech yetdi",
+   "explain_uz": "كَادَ inkor bilan kelsa ma'no teskari tomonga buriladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "مُفَاوَضَات",
+   "options": [],
+   "answer": "muzokaralar",
+   "explain_uz": "مُفَاوَضَات — muzokaralar (III bob masdaridan).",
+   "audio": "b2/mufawadat.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«بِدَايَة، مَبْدَأ، بَدَأَ» qaysi o'zakdan?",
+   "q_ar": "بِدَايَة",
+   "options": ["ب د أ", "ب د ل", "ب ي د", "د ب ب"],
+   "answer": "ب د أ",
+   "explain_uz": "ب د أ — boshlanish o'zagi.",
+   "audio": "",
+   "root": "ب د أ",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«أَخَذَ الجَوُّ يَبْرُدُ» qaysi guruhga kiradi?",
+   "q_ar": "أَخَذَ الجَوُّ يَبْرُدُ",
+   "options": ["Boshlash (الشُّرُوع)", "Umid (الرَّجَاء)", "Yaqinlik (المُقَارَبَة)", "Inkor"],
+   "answer": "Boshlash (الشُّرُوع)",
+   "explain_uz": "أَخَذَ bu yerda «boshladi» ma'nosida.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Vaqt tugay dedi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "أَوْشَكَ الوَقْتُ يَنْتَهِي",
+   "explain_uz": "Fe'l + marfu' ism + muzori' xabar.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["أَوْشَكَ", "الوَقْتُ", "يَنْتَهِي"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ب د أ", "back": "boshlanish — bidoya/mabda", "deck": "msa"},
+  {"type": "root", "front": "و ش ك", "back": "yaqinlashish — awshaka/washik", "deck": "msa"},
+  {"type": "word", "front": "كَادَ", "back": "sal qoldi, deyarli", "deck": "msa"},
+  {"type": "word", "front": "أَوْشَكَ", "back": "yaqin qoldi", "deck": "msa"},
+  {"type": "word", "front": "عَسَى", "back": "shoyad, umid qilamanki", "deck": "msa"},
+  {"type": "word", "front": "شَرَعَ", "back": "kirishdi, boshladi", "deck": "msa"},
+  {"type": "word", "front": "بِدَايَة", "back": "boshlanish", "deck": "msa"},
+  {"type": "word", "front": "مَبْدَأ", "back": "tamoyil, prinsip", "deck": "msa"},
+  {"type": "word", "front": "وَشِيك", "back": "tez orada bo'ladigan", "deck": "msa"},
+  {"type": "word", "front": "مُفَاوَضَات", "back": "muzokaralar", "deck": "msa"},
+  {"type": "word", "front": "تَدْرِيجِيًّا", "back": "asta-sekin", "deck": "msa"}
+ ]
+}

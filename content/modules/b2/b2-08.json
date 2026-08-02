@@ -1,0 +1,310 @@
+{
+ "id": "b2-08",
+ "level": "B2",
+ "module": "nahw-adv",
+ "order": 8,
+ "title_uz": "Qasam va uning javobi",
+ "title_ar": "أُسْلُوبُ القَسَمِ وَجَوَابُهُ",
+ "can_do_uz": "Qasam iboralarini tanib, ulardan keyingi javob jumlasini to'g'ri tuza olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-07"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«Rostini aytsam...», «Ishonavering...» — o'zbekchada ishonch bildiruvchi iboralar bor. Arabchada bu QASAM (القَسَم) uslubi: qisqa qism qasam ichadi, ikkinchi qism esa VA'DA yoki TASDIQ bo'ladi. Muhimi — javob qismi maxsus belgilar bilan keladi: لَـ, إِنَّ, لَقَدْ, مَا. Bu shakl adabiyotda, nutqda va rasmiy bayonotlarda tez-tez uchraydi.",
+ "grammar": {
+  "point_ar": "القَسَمُ: أَدَاةٌ + مُقْسَمٌ بِهِ + جَوَابٌ",
+  "explanation_uz": "Qasam uch qismdan iborat: ADO (harf) + QASAM ICHILGAN NARSA (majrur) + JAVOB. Harflari: وَ (eng keng: وَاللهِ), بِـ (fe'l bilan: أُقْسِمُ بِاللهِ), تَـ (kam: تَاللهِ). Qasamdan keyingi ism doim MAJRUR. JAVOB (جَوَابُ القَسَمِ) shakli mazmunga qarab o'zgaradi. 1) Ijobiy va ISMLI javob: لَـ yoki إِنَّ ... لَـ bilan: وَاللهِ إِنَّ الطَّالِبَ لَمُجْتَهِدٌ. 2) Ijobiy MOZIY fe'l: لَقَدْ bilan: وَاللهِ لَقَدْ نَجَحَ. 3) Ijobiy KELASI: لَـ + نَّ (nuni tavkid): وَاللهِ لَأَجْتَهِدَنَّ (albatta tirishaman). 4) INKOR javob: مَا yoki لَا bilan: وَاللهِ مَا تَأَخَّرْتُ. Nutqda qasam ko'pincha yashiriladi, faqat javob belgisi qoladi: لَأَفْعَلَنَّ (albatta qilaman). Rasmiy matnda esa أُقْسِمُ / أُؤَكِّدُ ishlatiladi.",
+  "table": [
+   {"ar": "وَاللهِ لَقَدْ نَجَحَ", "uz": "Xudo haqi, u albatta muvaffaq bo'ldi", "form": "مَاضٍ + لَقَدْ"},
+   {"ar": "وَاللهِ لَأَجْتَهِدَنَّ", "uz": "Albatta tirishaman (kelasi)", "form": "لَـ + نَّ"},
+   {"ar": "وَاللهِ مَا تَأَخَّرْتُ", "uz": "Kechikmadim (inkor javob)", "form": "نَفْي"},
+   {"ar": "إِنَّ الطَّالِبَ لَمُجْتَهِدٌ", "uz": "Talaba, albatta, tirishqoq", "form": "إِنَّ + لَـ"},
+   {"ar": "أُقْسِمُ بِاللهِ", "uz": "Qasam ichaman (rasmiy)", "form": "بِـ"},
+   {"ar": "لَأَفْعَلَنَّ", "uz": "Albatta qilaman (qasam yashiringan)", "form": "قَسَم مُقَدَّر"}
+  ],
+  "common_mistakes_uz": [
+   "Qasamdan keyingi ismni marfu' qoldirish: وَاللهُ ✗ → وَاللهِ ✓ (majrur).",
+   "Moziy javobga لَـ ni yolg'iz qo'yish: وَاللهِ لَنَجَحَ ✗ → لَقَدْ نَجَحَ ✓.",
+   "Kelasi javobda nuni tavkidni tushirib qoldirish: لَأَجْتَهِدُ ✗ → لَأَجْتَهِدَنَّ ✓."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ق س م",
+   "meaning_uz": "bo'lish; qasam ichish",
+   "uz_cognates": ["qasam", "qismat", "taqsim"],
+   "derived": [
+    {"ar": "قَسَم", "uz": "qasam", "pattern": "فَعَل"},
+    {"ar": "أَقْسَمَ", "uz": "qasam ichdi", "pattern": "أَفْعَلَ"},
+    {"ar": "تَقْسِيم", "uz": "taqsimlash", "pattern": "تَفْعِيل"}
+   ]
+  },
+  {
+   "root": "ج و ب",
+   "meaning_uz": "javob berish",
+   "uz_cognates": ["javob", "ijobat"],
+   "derived": [
+    {"ar": "جَوَاب", "uz": "javob", "pattern": "فَعَال"},
+    {"ar": "أَجَابَ", "uz": "javob berdi", "pattern": "أَفْعَلَ"},
+    {"ar": "إِجَابَة", "uz": "javob berish", "pattern": "إِفْعَالَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "قَسَم",
+   "translit": "qasam",
+   "uz": "qasam, ont (o'zbekcha 'qasam')",
+   "root": "ق س م",
+   "pattern": "فَعَل",
+   "pos": "ot",
+   "audio": "b2/qasam.mp3",
+   "example_ar": "أُسْلُوبُ القَسَمِ يُؤَكِّدُ الكَلَامَ.",
+   "example_uz": "Qasam uslubi gapni kuchaytiradi.",
+   "srs": true
+  },
+  {
+   "ar": "أَقْسَمَ",
+   "translit": "aqsama",
+   "uz": "qasam ichdi",
+   "root": "ق س م",
+   "pattern": "أَفْعَلَ",
+   "pos": "fe'l",
+   "audio": "b2/aqsama.mp3",
+   "example_ar": "أَقْسَمَ بِأَنَّهُ صَادِقٌ.",
+   "example_uz": "Rostgo'y ekaniga qasam ichdi.",
+   "srs": true
+  },
+  {
+   "ar": "جَوَاب",
+   "translit": "jawāb",
+   "uz": "javob (o'zbekcha 'javob')",
+   "root": "ج و ب",
+   "pattern": "فَعَال",
+   "pos": "ot",
+   "audio": "b2/jawab.mp3",
+   "example_ar": "جَوَابُ القَسَمِ يَأْتِي بَعْدَهُ.",
+   "example_uz": "Qasam javobi undan keyin keladi.",
+   "srs": true
+  },
+  {
+   "ar": "لَقَدْ",
+   "translit": "laqad",
+   "uz": "albatta, haqiqatan (moziy javobda)",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "b2/laqad.mp3",
+   "example_ar": "وَاللهِ لَقَدْ نَجَحَ.",
+   "example_uz": "Xudo haqi, u albatta muvaffaq bo'ldi.",
+   "srs": true
+  },
+  {
+   "ar": "تَوْكِيد نُونِيّ",
+   "translit": "tawkīd nūnī",
+   "uz": "nuni tavkid — «albatta» kuchaytiruvchi ن",
+   "root": "و ك د",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tawkid_nuni.mp3",
+   "example_ar": "لَأَجْتَهِدَنَّ فِيهِ تَوْكِيدٌ نُونِيٌّ.",
+   "example_uz": "«La-ajtahidanna» da nuni tavkid bor.",
+   "srs": true
+  },
+  {
+   "ar": "وَعْد",
+   "translit": "waʿd",
+   "uz": "va'da",
+   "root": "و ع د",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/wad.mp3",
+   "example_ar": "الوَعْدُ دَيْنٌ.",
+   "example_uz": "Va'da — qarz.",
+   "srs": true
+  },
+  {
+   "ar": "صِدْق",
+   "translit": "ṣidq",
+   "uz": "rostgo'ylik, samimiylik",
+   "root": "ص د ق",
+   "pattern": "فِعْل",
+   "pos": "ot",
+   "audio": "b2/sidq.mp3",
+   "example_ar": "الصِّدْقُ أَسَاسُ الثِّقَةِ.",
+   "example_uz": "Rostgo'ylik — ishonch asosi.",
+   "srs": true
+  },
+  {
+   "ar": "ثِقَة",
+   "translit": "thiqa",
+   "uz": "ishonch",
+   "root": "و ث ق",
+   "pattern": "فِعَة",
+   "pos": "ot",
+   "audio": "b2/thiqa.mp3",
+   "example_ar": "بَيْنَهُمَا ثِقَةٌ كَبِيرَةٌ.",
+   "example_uz": "Ular orasida katta ishonch bor.",
+   "srs": true
+  },
+  {
+   "ar": "بَيَان",
+   "translit": "bayān",
+   "uz": "bayonot, e'lon (o'zbekcha 'bayon')",
+   "root": "ب ي ن",
+   "pattern": "فَعَال",
+   "pos": "ot",
+   "audio": "b2/bayan_stmt.mp3",
+   "example_ar": "صَدَرَ بَيَانٌ رَسْمِيٌّ.",
+   "example_uz": "Rasmiy bayonot e'lon qilindi.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "صدر بيان رسمي قال فيه المسؤول: أقسم بالله لقد بذلنا كل جهد، ووالله ما تأخّرنا يومًا واحدًا. وأضاف: لنكملنّ المشروع قبل نهاية العام، فالوعد دَين والصدق أساس الثقة. سأل صحفي: وإن تأخّر التمويل؟ فأجاب: إنّ الفريق لقادر على الحل، ولو تأخّر المال شهرًا.",
+   "questions": [
+    {"q_uz": "«لقد بذلنا» — nega لقد?", "a": "Qasam javobi moziy fe'l bo'lgani uchun"},
+    {"q_uz": "«ما تأخّرنا» qanday javob?", "a": "Inkor javobi — ما bilan"},
+    {"q_uz": "«لنكملنّ» nimani bildiradi?", "a": "Kelasi zamon qasam javobi: albatta tugatamiz"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-08-listen.mp3",
+   "transcript_ar": "وَاللهِ لَقَدْ نَجَحَ الفَرِيقُ، وَوَاللهِ مَا تَأَخَّرْنَا. لَنُكْمِلَنَّ العَمَلَ فِي مَوْعِدِهِ.",
+   "questions": [
+    {"q_uz": "Nechta qasam javobi eshitildi?", "a": "Uchta: moziy (لقد نجح), inkor (ما تأخّرنا), kelasi (لنكملنّ)"},
+    {"q_uz": "Ish qachon tugatiladi?", "a": "O'z muddatida — albatta"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch qasam gapini ayting: moziy javob, inkor javob va kelasi zamon javobi bilan.",
+   "target_ar": ["وَاللهِ لَقَدْ نَجَحَ", "وَاللهِ مَا تَأَخَّرْتُ", "وَاللهِ لَأَجْتَهِدَنَّ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Rasmiy bayonot uslubida 3 gap yozing: bittasida لقد, bittasida ما (inkor), bittasida لَـ...نَّ bo'lsin.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Qasamdan keyingi ism qanday holatda?",
+   "q_ar": "وَاللهِ",
+   "options": ["Majrur (kasra)", "Marfu' (damma)", "Mansub (fatha)", "Majzum"],
+   "answer": "Majrur (kasra)",
+   "explain_uz": "وَ — qasam harfi, undan keyingi ism majrur.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Moziy fe'l bilan ijobiy javob qanday keladi?",
+   "q_ar": "",
+   "options": ["لَقَدْ + moziy", "لَـ + moziy", "مَا + moziy", "أَنْ + moziy"],
+   "answer": "لَقَدْ + moziy",
+   "explain_uz": "وَاللهِ لَقَدْ نَجَحَ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«لَأَجْتَهِدَنَّ» nimani bildiradi?",
+   "q_ar": "لَأَجْتَهِدَنَّ",
+   "options": [
+    "Kelasi zamon — albatta tirishaman",
+    "O'tgan zamon — tirishdim",
+    "Inkor — tirishmayman",
+    "Buyruq — tirish!"
+   ],
+   "answer": "Kelasi zamon — albatta tirishaman",
+   "explain_uz": "لَـ + muzori' + nuni tavkid (نَّ).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Inkor javobi qaysi harflar bilan keladi?",
+   "q_ar": "",
+   "options": ["مَا yoki لَا", "لَقَدْ yoki إِنَّ", "أَنْ yoki كَيْ", "بَلْ yoki ثُمَّ"],
+   "answer": "مَا yoki لَا",
+   "explain_uz": "وَاللهِ مَا تَأَخَّرْتُ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "بَيَان",
+   "options": [],
+   "answer": "bayonot",
+   "explain_uz": "بَيَان — rasmiy bayonot, e'lon.",
+   "audio": "b2/bayan_stmt.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«جَوَاب، إِجَابَة، أَجَابَ» qaysi o'zakdan?",
+   "q_ar": "إِجَابَة",
+   "options": ["ج و ب", "ج ب ر", "و ج ب", "ج ي ب"],
+   "answer": "ج و ب",
+   "explain_uz": "ج و ب — javob berish o'zagi.",
+   "audio": "",
+   "root": "ج و ب",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«إِنَّ الطَّالِبَ لَمُجْتَهِدٌ» dagi لَـ nima?",
+   "q_ar": "لَمُجْتَهِدٌ",
+   "options": [
+    "Ta'kid lomi (qasam javobida)",
+    "Predlog",
+    "Inkor",
+    "Bog'lovchi"
+   ],
+   "answer": "Ta'kid lomi (qasam javobida)",
+   "explain_uz": "إِنَّ ... لَـ — kuchaytirilgan tasdiq.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Xudo haqi, kechikmadim»",
+   "q_ar": "",
+   "options": [],
+   "answer": "وَاللهِ مَا تَأَخَّرْتُ",
+   "explain_uz": "Qasam + inkor javobi (ما).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["وَاللهِ", "مَا", "تَأَخَّرْتُ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ق س م", "back": "qasam/taqsim — bo'lish, ont ichish", "deck": "msa"},
+  {"type": "root", "front": "ج و ب", "back": "javob — jawab/ijaba", "deck": "msa"},
+  {"type": "word", "front": "قَسَم", "back": "qasam", "deck": "msa"},
+  {"type": "word", "front": "أَقْسَمَ", "back": "qasam ichdi", "deck": "msa"},
+  {"type": "word", "front": "جَوَاب", "back": "javob", "deck": "msa"},
+  {"type": "word", "front": "لَقَدْ", "back": "albatta (moziy javobda)", "deck": "msa"},
+  {"type": "word", "front": "وَعْد", "back": "va'da", "deck": "msa"},
+  {"type": "word", "front": "صِدْق", "back": "rostgo'ylik", "deck": "msa"},
+  {"type": "word", "front": "ثِقَة", "back": "ishonch", "deck": "msa"},
+  {"type": "word", "front": "بَيَان", "back": "bayonot", "deck": "msa"}
+ ]
+}

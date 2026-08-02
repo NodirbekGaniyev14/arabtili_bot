@@ -1,0 +1,306 @@
+{
+ "id": "b2-01",
+ "level": "B2",
+ "module": "nahw-adv",
+ "order": 1,
+ "title_uz": "To'liq i'rob tizimi",
+ "title_ar": "نِظَامُ الإِعْرَابِ الكَامِل",
+ "can_do_uz": "So'z oxiridagi harakatga qarab uning gapdagi vazifasini (rafʿ/nasb/jarr/jazm) aniqlay olaman.",
+ "duration_min": 30,
+ "prerequisites": [],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "A1 da «so'z oxiri o'zgaradi» dedik, A2–B1 da har mavzuda alohida ko'rdik. Endi hammasi BITTA jadvalga sig'adi: to'rt holat, ularning belgilari va qachon qo'llanishi. Shu jadvalni bir marta yodda saqlasangiz, gazeta jumlasini ham, ilmiy matnni ham «suyagigacha» ko'rasiz. I'rob — arab tilining skeleti emas, uning MANTIG'I: kim qildi, nimani qildi, qayerda — hammasi oxirgi harakatda yozilgan.",
+ "grammar": {
+  "point_ar": "الرَّفْعُ وَالنَّصْبُ وَالجَرُّ وَالجَزْمُ",
+  "explanation_uz": "Arab tilida so'zning gapdagi VAZIFASI uning oxirgi harakati bilan ko'rsatiladi — bu i'rob (الإِعْرَاب). To'rt holat bor. RAFʿ (رَفْع, belgisi damma «ـُ») — ega (foil), mubtado va xabar: كَتَبَ الطَّالِبُ. NASB (نَصْب, belgisi fatha «ـَ») — to'ldiruvchi (maf'ul bih), hol, tamyiz, إنَّ ning ismi, كان ning xabari: قَرَأْتُ الكِتَابَ. JARR (جَرّ, belgisi kasra «ـِ») — predlogdan keyin va idofada ikkinchi so'z: فِي البَيْتِ · بَابُ البَيْتِ. JAZM (جَزْم, belgisi sukun «ـْ») — FAQAT fe'lda, لَمْ va لا الناهية dan keyin: لَمْ يَكْتُبْ. Ko'plik va ikkilikda harakat o'rniga HARF o'zgaradi: مُعَلِّمُونَ (rafʿ) → مُعَلِّمِينَ (nasb/jarr), كِتَابَانِ → كِتَابَيْنِ. Ba'zi so'zlar esa MABNIY (مَبْنِيّ) — hech o'zgarmaydi: هَذَا، الَّذِي، مَنْ، أَنْتَ. Ular gapda vazifa bajaradi, lekin belgisi ko'rinmaydi — shuning uchun «فِي مَحَلِّ رَفْعٍ» (rafʿ o'rnida) deyiladi.",
+  "table": [
+   {"ar": "كَتَبَ الطَّالِبُ", "uz": "Talaba yozdi — ega, rafʿ (damma)", "form": "رَفْع"},
+   {"ar": "قَرَأْتُ الكِتَابَ", "uz": "Kitobni o'qidim — to'ldiruvchi, nasb (fatha)", "form": "نَصْب"},
+   {"ar": "فِي المَدْرَسَةِ", "uz": "Maktabda — predlogdan keyin, jarr (kasra)", "form": "جَرّ"},
+   {"ar": "لَمْ يَكْتُبْ", "uz": "Yozmadi — لَمْ dan keyin fe'l, jazm (sukun)", "form": "جَزْم"},
+   {"ar": "المُعَلِّمُونَ / المُعَلِّمِينَ", "uz": "O'qituvchilar: rafʿ ون, nasb/jarr ين", "form": "جَمْع سَالِم"},
+   {"ar": "هَذَا فِي مَحَلِّ رَفْعٍ", "uz": "Bu — mabniy, «rafʿ o'rnida»", "form": "مَبْنِيّ"}
+  ],
+  "common_mistakes_uz": [
+   "Jazmni otga qo'llash — jazm FAQAT muzori' fe'lda bo'ladi, otda hech qachon.",
+   "Sog'lom ko'plikda harakat qidirish: مُعَلِّمِينَ da nasb «ين» harfi bilan, fatha bilan emas.",
+   "Mabniy so'zlarni (هَذَا، الَّذِي، مَنْ) i'roblashga urinish — ular o'zgarmaydi, faqat «mahallan» vazifasi aytiladi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع ر ب",
+   "meaning_uz": "aniq ifodalash, arabcha gapirish — i'rob shundan",
+   "uz_cognates": ["arab", "i'rob", "arabiy"],
+   "derived": [
+    {"ar": "إِعْرَاب", "uz": "i'rob — so'z oxirini belgilash", "pattern": "إِفْعَال"},
+    {"ar": "مُعْرَب", "uz": "i'roblanuvchi (o'zgaruvchi)", "pattern": "مُفْعَل"},
+    {"ar": "أَعْرَبَ", "uz": "i'rob qildi, aniq ifodaladi", "pattern": "أَفْعَلَ"}
+   ]
+  },
+  {
+   "root": "ن ص ب",
+   "meaning_uz": "tikka o'rnatish — nasb holati shundan",
+   "uz_cognates": ["nasb", "mansub", "nusrat emas"],
+   "derived": [
+    {"ar": "نَصْب", "uz": "nasb holati (fatha)", "pattern": "فَعْل"},
+    {"ar": "مَنْصُوب", "uz": "mansub — nasb holatidagi so'z", "pattern": "مَفْعُول"},
+    {"ar": "نَاصِب", "uz": "nasb qiluvchi (masalan أَنْ)", "pattern": "فَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "إِعْرَاب",
+   "translit": "iʿrāb",
+   "uz": "i'rob — so'z oxirining gapdagi vazifaga qarab o'zgarishi",
+   "root": "ع ر ب",
+   "pattern": "إِفْعَال",
+   "pos": "ot",
+   "audio": "b2/irab.mp3",
+   "example_ar": "الإِعْرَابُ مِفْتَاحُ فَهْمِ الجُمْلَةِ.",
+   "example_uz": "I'rob — jumlani tushunish kaliti.",
+   "srs": true
+  },
+  {
+   "ar": "عَلَامَة",
+   "translit": "ʿalāma",
+   "uz": "belgi, alomat (o'zbekcha 'alomat')",
+   "root": "ع ل م",
+   "pattern": "فَعَالَة",
+   "pos": "ot",
+   "audio": "b2/alama_sign.mp3",
+   "example_ar": "عَلَامَةُ الرَّفْعِ الضَّمَّةُ.",
+   "example_uz": "Rafʿ belgisi — damma.",
+   "srs": true
+  },
+  {
+   "ar": "رَفْع",
+   "translit": "rafʿ",
+   "uz": "rafʿ holati — ega/mubtado (belgisi damma)",
+   "root": "ر ف ع",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/rafa_case.mp3",
+   "example_ar": "الفَاعِلُ دَائِمًا فِي حَالَةِ الرَّفْعِ.",
+   "example_uz": "Foil (ega) doim rafʿ holatida.",
+   "srs": true
+  },
+  {
+   "ar": "نَصْب",
+   "translit": "naṣb",
+   "uz": "nasb holati — to'ldiruvchi/hol (belgisi fatha)",
+   "root": "ن ص ب",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/nasb_case.mp3",
+   "example_ar": "المَفْعُولُ بِهِ فِي حَالَةِ النَّصْبِ.",
+   "example_uz": "To'ldiruvchi nasb holatida.",
+   "srs": true
+  },
+  {
+   "ar": "جَرّ",
+   "translit": "jarr",
+   "uz": "jarr holati — predlog va idofadan keyin (belgisi kasra)",
+   "root": "ج ر ر",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/jarr_case.mp3",
+   "example_ar": "حَرْفُ الجَرِّ يَجُرُّ الاِسْمَ بَعْدَهُ.",
+   "example_uz": "Jarr harfi o'zidan keyingi otni jarr qiladi.",
+   "srs": true
+  },
+  {
+   "ar": "جَزْم",
+   "translit": "jazm",
+   "uz": "jazm — faqat muzori' fe'lda (belgisi sukun)",
+   "root": "ج ز م",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/jazm_case.mp3",
+   "example_ar": "لَمْ وَلا النَّاهِيَةُ تَجْزِمَانِ الفِعْلَ.",
+   "example_uz": "لم va lā nohiya fe'lni jazm qiladi.",
+   "srs": true
+  },
+  {
+   "ar": "مَحَلّ",
+   "translit": "maḥall",
+   "uz": "o'rin — «فِي مَحَلِّ رَفْعٍ» (rafʿ o'rnida)",
+   "root": "ح ل ل",
+   "pattern": "مَفْعَل",
+   "pos": "ot",
+   "audio": "b2/mahall.mp3",
+   "example_ar": "الضَّمِيرُ فِي مَحَلِّ رَفْعِ فَاعِلٍ.",
+   "example_uz": "Olmosh — ega o'rnida (rafʿ).",
+   "srs": true
+  },
+  {
+   "ar": "مُعْرَب",
+   "translit": "muʿrab",
+   "uz": "i'roblanuvchi — oxiri o'zgaradigan so'z",
+   "root": "ع ر ب",
+   "pattern": "مُفْعَل",
+   "pos": "sifat",
+   "audio": "b2/murab.mp3",
+   "example_ar": "أَكْثَرُ الأَسْمَاءِ مُعْرَبَةٌ.",
+   "example_uz": "Otlarning ko'pchiligi i'roblanuvchi.",
+   "srs": true
+  },
+  {
+   "ar": "مَبْنِيّ",
+   "translit": "mabnī",
+   "uz": "mabniy — oxiri hech o'zgarmaydigan so'z",
+   "root": "ب ن ي",
+   "pattern": "مَفْعُول",
+   "pos": "sifat",
+   "audio": "b2/mabni.mp3",
+   "example_ar": "أَسْمَاءُ الإِشَارَةِ مَبْنِيَّةٌ.",
+   "example_uz": "Ko'rsatish olmoshlari mabniy.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "يقول المعلم: الإعراب ليس زينة، بل هو معنى. انظر إلى الجملتين: «سأل محمدٌ عليًّا» و«سأل محمدًا عليٌّ». الحروف نفسها، لكن السائل تغيّر، لأن الفاعل مرفوع والمفعول به منصوب. وفي الجمع السالم لا نبحث عن الحركة، بل عن الحرف: المهندسون حضروا، ورأيت المهندسين. أما أسماء الإشارة والموصول فمبنية، ولذلك نقول: في محل رفع أو في محل نصب. من عرف علامة كل حالة قرأ النص بسرعة، وفهم من فعل ومن وقع عليه الفعل.",
+   "questions": [
+    {"q_uz": "«سأل محمدٌ عليًّا» da kim so'radi?", "a": "Muhammad — chunki u marfu' (damma) ega"},
+    {"q_uz": "Sog'lom ko'plikda holat qanday ko'rsatiladi?", "a": "Harakat bilan emas, harf bilan: ون rafʿ, ين nasb/jarr"},
+    {"q_uz": "Nega «في محل رفع» deyiladi?", "a": "So'z mabniy — oxiri o'zgarmaydi, faqat vazifasi rafʿ o'rnida"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-01-listen.mp3",
+   "transcript_ar": "عَلَامَةُ الرَّفْعِ الضَّمَّةُ، وَعَلَامَةُ النَّصْبِ الفَتْحَةُ، وَعَلَامَةُ الجَرِّ الكَسْرَةُ، وَعَلَامَةُ الجَزْمِ السُّكُونُ. وَالجَزْمُ لِلْفِعْلِ فَقَطْ.",
+   "questions": [
+    {"q_uz": "Jarr belgisi qaysi?", "a": "Kasra"},
+    {"q_uz": "Jazm nimaga xos?", "a": "Faqat fe'lga (muzori')"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "To'rt holatni belgisi bilan ovoz chiqarib ayting: rafʿ — damma, nasb — fatha, jarr — kasra, jazm — sukun.",
+   "target_ar": ["الرَّفْعُ بِالضَّمَّةِ", "النَّصْبُ بِالفَتْحَةِ", "الجَرُّ بِالكَسْرَةِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Bitta gapni ikki xil yozing: avval «Ali Muhammadni ko'rdi», keyin «Muhammad Alini ko'rdi» — faqat oxirgi harakatlar bilan farqlang.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Rafʿ holatining asosiy belgisi qaysi?",
+   "q_ar": "",
+   "options": ["Damma (ـُ)", "Fatha (ـَ)", "Kasra (ـِ)", "Sukun (ـْ)"],
+   "answer": "Damma (ـُ)",
+   "explain_uz": "عَلَامَةُ الرَّفْعِ الضَّمَّةُ — ega va mubtado shu holatda.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Jazm qaysi so'z turiga qo'llanadi?",
+   "q_ar": "",
+   "options": ["Faqat fe'lga", "Faqat otga", "Ham otga, ham fe'lga", "Faqat harfga"],
+   "answer": "Faqat fe'lga",
+   "explain_uz": "Jazm — muzori' fe'lda, لَمْ va لا النَّاهِيَة dan keyin.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«قَرَأْتُ الكِتَابَ» da «الكِتَابَ» qanday holatda?",
+   "q_ar": "قَرَأْتُ الكِتَابَ",
+   "options": ["Nasb — maf'ul bih", "Rafʿ — foil", "Jarr — idofa", "Jazm"],
+   "answer": "Nasb — maf'ul bih",
+   "explain_uz": "To'ldiruvchi doim mansub: الكِتَابَ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«رَأَيْتُ المُهَنْدِسِينَ» — nega «ين»?",
+   "q_ar": "المُهَنْدِسِينَ",
+   "options": [
+    "Sog'lom ko'plik nasbda «ين» oladi",
+    "Bu ikkilik shakli",
+    "Bu jarr, chunki predlog bor",
+    "Bu mabniy so'z"
+   ],
+   "answer": "Sog'lom ko'plik nasbda «ين» oladi",
+   "explain_uz": "Jamʿ muzakkar solim: rafʿ ون, nasb va jarr ين.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi so'z MABNIY (o'zgarmaydi)?",
+   "q_ar": "",
+   "options": ["هَذَا", "كِتَاب", "مُعَلِّم", "مَدْرَسَة"],
+   "answer": "هَذَا",
+   "explain_uz": "Ko'rsatish olmoshlari mabniy — faqat «mahallan» vazifasi aytiladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "إِعْرَاب",
+   "options": [],
+   "answer": "i'rob",
+   "explain_uz": "إِعْرَاب — so'z oxirining vazifaga qarab o'zgarishi.",
+   "audio": "b2/irab.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«مَنْصُوب، نَاصِب، نَصْب» qaysi o'zakdan?",
+   "q_ar": "مَنْصُوب",
+   "options": ["ن ص ب", "ن س ب", "ص و ب", "ن ص ر"],
+   "answer": "ن ص ب",
+   "explain_uz": "ن ص ب — tikka o'rnatish; nasb holati shu o'zakdan.",
+   "audio": "",
+   "root": "ن ص ب",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni to'g'ri tartibda tuzing: «Talaba darsni o'qidi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "قَرَأَ الطَّالِبُ الدَّرْسَ",
+   "explain_uz": "Fe'l + foil (marfu') + maf'ul bih (mansub).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["قَرَأَ", "الطَّالِبُ", "الدَّرْسَ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع ر ب", "back": "aniq ifodalash — i'rob/mu'rab/a'raba", "deck": "msa"},
+  {"type": "root", "front": "ن ص ب", "back": "tikka o'rnatish — nasb/mansub/nosib", "deck": "msa"},
+  {"type": "word", "front": "إِعْرَاب", "back": "i'rob — so'z oxiri holati", "deck": "msa"},
+  {"type": "word", "front": "عَلَامَة", "back": "belgi, alomat", "deck": "msa"},
+  {"type": "word", "front": "رَفْع", "back": "rafʿ — damma holati (ega)", "deck": "msa"},
+  {"type": "word", "front": "نَصْب", "back": "nasb — fatha holati (to'ldiruvchi)", "deck": "msa"},
+  {"type": "word", "front": "جَرّ", "back": "jarr — kasra holati (predlogdan keyin)", "deck": "msa"},
+  {"type": "word", "front": "جَزْم", "back": "jazm — sukun (faqat fe'lda)", "deck": "msa"},
+  {"type": "word", "front": "مَحَلّ", "back": "o'rin — «fi mahalli rafʿin»", "deck": "msa"},
+  {"type": "word", "front": "مَبْنِيّ", "back": "mabniy — o'zgarmas so'z", "deck": "msa"},
+  {"type": "pattern", "front": "مَفْعُول", "back": "harakat tushgan narsa: مَنْصُوب, مَبْنِيّ", "deck": "msa"}
+ ]
+}

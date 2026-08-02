@@ -1,0 +1,316 @@
+{
+ "id": "b2-04",
+ "level": "B2",
+ "module": "nahw-adv",
+ "order": 4,
+ "title_uz": "Tobe'lar 1: بدل va توكيد",
+ "title_ar": "التَّوَابِعُ: البَدَلُ وَالتَّوْكِيدُ",
+ "can_do_uz": "«Direktor Ahmad keldi», «Talabalarning HAMMASI keldi» kabi tobe' konstruksiyalarni tuza va i'roblay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-03"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«Do'stim Ahmad keldi» — bu yerda «Ahmad» do'stimning O'RNINI bosadi: badal. «Talabalarning hammasi keldi» — «hammasi» ta'kid. Arabchada bu ikkisi TOBE' (تَابِع) deyiladi: ular oldingi so'zning i'robini AYNAN takrorlaydi. Bir marta tushunsangiz, uzun rasmiy jumlalarda kim kimga tegishli ekanini adashmay ajratasiz — ayniqsa yangiliklarda: «قال الوزير أحمدُ» yoki «حضر الطلابُ كلُّهم».",
+ "grammar": {
+  "point_ar": "البَدَلُ وَالتَّوْكِيدُ يَتْبَعَانِ المُبْدَلَ مِنْهُ فِي الإِعْرَابِ",
+  "explanation_uz": "TOBE' (تَابِع) — oldingi so'zning i'robini takrorlaydigan so'z. Bu darsda ikkitasi. 1) BADAL (البَدَل) — asosiy so'zning o'rnini bosadigan aniqlashtiruvchi: جَاءَ صَدِيقِي أَحْمَدُ (do'stim Ahmad keldi) — أَحْمَدُ ham marfu', chunki صَدِيقِي marfu'. Turlari: بَدَلُ كُلٍّ مِنْ كُلٍّ (to'liq: الوَزِيرُ أَحْمَدُ), بَدَلُ بَعْضٍ مِنْ كُلٍّ (qismi: أَكَلْتُ الرَّغِيفَ نِصْفَهُ), بَدَلُ اِشْتِمَال (xususiyati: أَعْجَبَنِي الكِتَابُ أُسْلُوبُهُ). 2) TA'KID (التَّوْكِيد) — ma'noni kuchaytiradi. Lafziy ta'kid — so'zni takrorlash: نَعَمْ نَعَمْ. Ma'naviy ta'kid — maxsus so'zlar: نَفْس، عَيْن، كُلّ، جَمِيع، كِلَا، كِلْتَا: حَضَرَ الطُّلَّابُ كُلُّهُمْ (talabalar hammasi keldi), رَأَيْتُ المُدِيرَ نَفْسَهُ (direktorning o'zini ko'rdim). Ta'kid so'zi HAR DOIM ulangan olmosh oladi va asosiy so'zning i'robini takrorlaydi.",
+  "table": [
+   {"ar": "جَاءَ صَدِيقِي أَحْمَدُ", "uz": "Do'stim Ahmad keldi (to'liq badal)", "form": "بَدَلُ كُلٍّ"},
+   {"ar": "أَكَلْتُ الرَّغِيفَ نِصْفَهُ", "uz": "Nonning yarmini yedim (qism badali)", "form": "بَدَلُ بَعْضٍ"},
+   {"ar": "أَعْجَبَنِي الكِتَابُ أُسْلُوبُهُ", "uz": "Kitobning uslubi yoqdi (ishtimol badali)", "form": "بَدَلُ اِشْتِمَال"},
+   {"ar": "حَضَرَ الطُّلَّابُ كُلُّهُمْ", "uz": "Talabalarning hammasi keldi", "form": "تَوْكِيد مَعْنَوِيّ"},
+   {"ar": "رَأَيْتُ المُدِيرَ نَفْسَهُ", "uz": "Direktorning o'zini ko'rdim", "form": "تَوْكِيد + نَصْب"},
+   {"ar": "نَجَحَ الطَّالِبَانِ كِلَاهُمَا", "uz": "Ikkala talaba ham muvaffaq bo'ldi", "form": "كِلَا"}
+  ],
+  "common_mistakes_uz": [
+   "Badalni sifat deb o'ylash: sifat TAVSIFLAYDI (رَجُلٌ طَوِيلٌ), badal esa ALMASHTIRADI (الرَّجُلُ أَحْمَدُ).",
+   "Ta'kid so'ziga olmosh qo'shmaslik: الطُّلَّابُ كُلُّ ✗ → الطُّلَّابُ كُلُّهُمْ ✓.",
+   "Tobe'ning i'robini asosiy so'zdan farqli qilish — tobe' HAR DOIM ergashadi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ب د ل",
+   "meaning_uz": "almashtirish",
+   "uz_cognates": ["badal", "tabdil", "mubodala"],
+   "derived": [
+    {"ar": "بَدَل", "uz": "badal, o'rin bosuvchi", "pattern": "فَعَل"},
+    {"ar": "تَبْدِيل", "uz": "almashtirish", "pattern": "تَفْعِيل"},
+    {"ar": "اِسْتَبْدَلَ", "uz": "almashtirib oldi", "pattern": "اِسْتَفْعَلَ"}
+   ]
+  },
+  {
+   "root": "و ك د",
+   "meaning_uz": "mustahkamlash, ta'kidlash",
+   "uz_cognates": ["ta'kid", "muakkad"],
+   "derived": [
+    {"ar": "تَوْكِيد", "uz": "ta'kid", "pattern": "تَفْعِيل"},
+    {"ar": "أَكَّدَ", "uz": "ta'kidladi, tasdiqladi", "pattern": "فَعَّلَ"},
+    {"ar": "مُؤَكَّد", "uz": "tasdiqlangan, aniq", "pattern": "مُفَعَّل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "بَدَل",
+   "translit": "badal",
+   "uz": "badal — oldingi so'z o'rnini bosuvchi (o'zbekcha 'badal')",
+   "root": "ب د ل",
+   "pattern": "فَعَل",
+   "pos": "ot",
+   "audio": "b2/badal.mp3",
+   "example_ar": "البَدَلُ يَتْبَعُ مَا قَبْلَهُ.",
+   "example_uz": "Badal o'zidan oldingiga ergashadi.",
+   "srs": true
+  },
+  {
+   "ar": "تَوْكِيد",
+   "translit": "tawkīd",
+   "uz": "ta'kid — ma'noni kuchaytirish",
+   "root": "و ك د",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tawkid.mp3",
+   "example_ar": "التَّوْكِيدُ يُقَوِّي المَعْنَى.",
+   "example_uz": "Ta'kid ma'noni kuchaytiradi.",
+   "srs": true
+  },
+  {
+   "ar": "أَكَّدَ",
+   "translit": "akkada",
+   "uz": "ta'kidladi, tasdiqladi",
+   "root": "و ك د",
+   "pattern": "فَعَّلَ",
+   "pos": "fe'l",
+   "audio": "b2/akkada.mp3",
+   "example_ar": "أَكَّدَ الوَزِيرُ الخَبَرَ.",
+   "example_uz": "Vazir xabarni tasdiqladi.",
+   "srs": true
+  },
+  {
+   "ar": "نَفْس",
+   "translit": "nafs",
+   "uz": "o'zi, ayni (ta'kidda: المُدِيرُ نَفْسُهُ)",
+   "root": "ن ف س",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/nafs_self.mp3",
+   "example_ar": "جَاءَ الوَزِيرُ نَفْسُهُ.",
+   "example_uz": "Vazirning o'zi keldi.",
+   "srs": true
+  },
+  {
+   "ar": "جَمِيع",
+   "translit": "jamīʿ",
+   "uz": "hammasi, barchasi",
+   "root": "ج م ع",
+   "pattern": "فَعِيل",
+   "pos": "ot",
+   "audio": "b2/jami_all.mp3",
+   "example_ar": "حَضَرَ الطُّلَّابُ جَمِيعُهُمْ.",
+   "example_uz": "Talabalarning barchasi keldi.",
+   "srs": true
+  },
+  {
+   "ar": "كِلَا",
+   "translit": "kilā",
+   "uz": "ikkalasi ham (muzakkar); muannasi كِلْتَا",
+   "root": "ك ل و",
+   "pattern": "فِعَل",
+   "pos": "ot",
+   "audio": "b2/kila.mp3",
+   "example_ar": "نَجَحَ الطَّالِبَانِ كِلَاهُمَا.",
+   "example_uz": "Ikkala talaba ham muvaffaq bo'ldi.",
+   "srs": true
+  },
+  {
+   "ar": "أُسْلُوب",
+   "translit": "uslūb",
+   "uz": "uslub (o'zbekcha 'uslub')",
+   "root": "س ل ب",
+   "pattern": "أُفْعُول",
+   "pos": "ot",
+   "audio": "b2/uslub.mp3",
+   "example_ar": "أَعْجَبَنِي الكِتَابُ أُسْلُوبُهُ.",
+   "example_uz": "Kitobning uslubi menga yoqdi.",
+   "srs": true
+  },
+  {
+   "ar": "رَغِيف",
+   "translit": "raghīf",
+   "uz": "non (bir dona non)",
+   "root": "ر غ ف",
+   "pattern": "فَعِيل",
+   "pos": "ot",
+   "audio": "b2/raghif.mp3",
+   "example_ar": "أَكَلْتُ الرَّغِيفَ نِصْفَهُ.",
+   "example_uz": "Nonning yarmini yedim.",
+   "srs": true
+  },
+  {
+   "ar": "مُؤَكَّد",
+   "translit": "muʾakkad",
+   "uz": "tasdiqlangan, aniq",
+   "root": "و ك د",
+   "pattern": "مُفَعَّل",
+   "pos": "sifat",
+   "audio": "b2/muakkad.mp3",
+   "example_ar": "الخَبَرُ مُؤَكَّدٌ.",
+   "example_uz": "Xabar tasdiqlangan.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أكّد الوزير أحمدُ في المؤتمر أنّ المشروع سينتهي هذا العام. حضر الاجتماعَ المهندسون كلُّهم، وجاء المدير نفسُه ليجيب عن الأسئلة. قال أحد الصحفيين: أعجبني التقريرُ وضوحُه، لكن الميزانيةَ نصفَها ما زالت غير واضحة. أجاب الوزير: كلا الأمرين مهمّ، وسننشر التفاصيل جميعَها الأسبوع القادم.",
+   "questions": [
+    {"q_uz": "«الوزير أحمدُ» — «أحمدُ» qanday tobe'?", "a": "Badal (badalu kullin min kullin), shuning uchun u ham marfu'"},
+    {"q_uz": "«المهندسون كلُّهم» nimani bildiradi?", "a": "Ta'kid — muhandislarning hammasi kelgani"},
+    {"q_uz": "«أعجبني التقريرُ وضوحُه» qanday badal?", "a": "Ishtimol badali — hisobotning aniqligi yoqqan"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-04-listen.mp3",
+   "transcript_ar": "حَضَرَ الطُّلَّابُ كُلُّهُمْ، وَجَاءَ المُدِيرُ نَفْسُهُ. وَقَرَأْتُ الكِتَابَ نِصْفَهُ فَقَطْ.",
+   "questions": [
+    {"q_uz": "Kim keldi?", "a": "Talabalarning hammasi va direktorning o'zi"},
+    {"q_uz": "Kitob qanchasi o'qildi?", "a": "Yarmi (qism badali)"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch gap ayting: «Do'stim Ahmad keldi», «Talabalarning hammasi keldi», «Direktorning o'zini ko'rdim».",
+   "target_ar": ["جَاءَ صَدِيقِي أَحْمَدُ", "حَضَرَ الطُّلَّابُ كُلُّهُمْ", "رَأَيْتُ المُدِيرَ نَفْسَهُ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Ikki gap yozing: birinchisida badal (ism + aniqlashtiruvchi ism), ikkinchisida ta'kid (كُلّ yoki نَفْس + olmosh) bo'lsin.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "«جَاءَ صَدِيقِي أَحْمَدُ» da «أَحْمَدُ» nima?",
+   "q_ar": "جَاءَ صَدِيقِي أَحْمَدُ",
+   "options": ["Badal (بَدَل)", "Sifat (نَعْت)", "Hol", "Tamyiz"],
+   "answer": "Badal (بَدَل)",
+   "explain_uz": "Ism o'rnini bosadi va uning i'robini takrorlaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi jumla TO'G'RI?",
+   "q_ar": "",
+   "options": [
+    "حَضَرَ الطُّلَّابُ كُلُّهُمْ",
+    "حَضَرَ الطُّلَّابُ كُلُّ",
+    "حَضَرَ الطُّلَّابُ كُلَّهُمْ",
+    "حَضَرَ الطُّلَّابَ كُلُّهُمْ"
+   ],
+   "answer": "حَضَرَ الطُّلَّابُ كُلُّهُمْ",
+   "explain_uz": "Ta'kid olmosh oladi va asosiy so'z i'robini takrorlaydi (marfu').",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«أَكَلْتُ الرَّغِيفَ نِصْفَهُ» — qaysi badal turi?",
+   "q_ar": "أَكَلْتُ الرَّغِيفَ نِصْفَهُ",
+   "options": [
+    "Qism badali (بَدَلُ بَعْضٍ)",
+    "To'liq badal",
+    "Ishtimol badali",
+    "Lafziy ta'kid"
+   ],
+   "answer": "Qism badali (بَدَلُ بَعْضٍ)",
+   "explain_uz": "Nonning YARMI — butunning qismi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Badal bilan sifatning farqi nimada?",
+   "q_ar": "",
+   "options": [
+    "Badal almashtiradi, sifat tavsiflaydi",
+    "Badal tavsiflaydi, sifat almashtiradi",
+    "Farqi yo'q",
+    "Badal faqat fe'lda bo'ladi"
+   ],
+   "answer": "Badal almashtiradi, sifat tavsiflaydi",
+   "explain_uz": "الرَّجُلُ أَحْمَدُ (badal) ≠ رَجُلٌ طَوِيلٌ (sifat).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "أَكَّدَ",
+   "options": [],
+   "answer": "tasdiqladi",
+   "explain_uz": "أَكَّدَ — ta'kidladi, tasdiqladi (II bob).",
+   "audio": "b2/akkada.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«تَوْكِيد، أَكَّدَ، مُؤَكَّد» qaysi o'zakdan?",
+   "q_ar": "تَوْكِيد",
+   "options": ["و ك د", "ء ك د", "و ق د", "ك ي د"],
+   "answer": "و ك د",
+   "explain_uz": "و ك د — mustahkamlash o'zagi.",
+   "audio": "",
+   "root": "و ك د",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«نَجَحَ الطَّالِبَانِ كِلَاهُمَا» — «كِلَاهُمَا» nima?",
+   "q_ar": "كِلَاهُمَا",
+   "options": ["Ta'kid (ikkilik uchun)", "Badal", "Hol", "Maf'ul"],
+   "answer": "Ta'kid (ikkilik uchun)",
+   "explain_uz": "كِلَا / كِلْتَا — ikkilikni ta'kidlaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Vazirning o'zi keldi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "جَاءَ الوَزِيرُ نَفْسُهُ",
+   "explain_uz": "Fe'l + foil (marfu') + ta'kid (marfu' + olmosh).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["جَاءَ", "الوَزِيرُ", "نَفْسُهُ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ب د ل", "back": "almashtirish — badal/tabdil", "deck": "msa"},
+  {"type": "root", "front": "و ك د", "back": "mustahkamlash — ta'kid/akkada", "deck": "msa"},
+  {"type": "word", "front": "بَدَل", "back": "badal — o'rin bosuvchi", "deck": "msa"},
+  {"type": "word", "front": "تَوْكِيد", "back": "ta'kid", "deck": "msa"},
+  {"type": "word", "front": "أَكَّدَ", "back": "tasdiqladi, ta'kidladi", "deck": "msa"},
+  {"type": "word", "front": "نَفْس", "back": "o'zi (ta'kidda)", "deck": "msa"},
+  {"type": "word", "front": "جَمِيع", "back": "hammasi, barchasi", "deck": "msa"},
+  {"type": "word", "front": "كِلَا", "back": "ikkalasi ham", "deck": "msa"},
+  {"type": "word", "front": "أُسْلُوب", "back": "uslub", "deck": "msa"},
+  {"type": "word", "front": "مُؤَكَّد", "back": "tasdiqlangan, aniq", "deck": "msa"},
+  {"type": "pattern", "front": "تَفْعِيل", "back": "II bob masdari: تَوْكِيد, تَبْدِيل", "deck": "msa"}
+ ]
+}

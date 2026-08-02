@@ -1,0 +1,314 @@
+{
+ "id": "b2-10",
+ "level": "B2",
+ "module": "nahw-adv",
+ "order": 10,
+ "title_uz": "I'rob ustaxonasi",
+ "title_ar": "وَرْشَةُ الإِعْرَابِ",
+ "can_do_uz": "Gazetadagi uzun jumlani bo'laklarga ajratib, har bo'lakning vazifasini ayta olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-09"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Endi to'qqiz darsning hammasi bitta ishga birlashadi: REAL jumlani tahlil qilish. Usul oddiy — 4 qadam: (1) fe'lni top, (2) egani top, (3) to'ldiruvchi va jarr birikmalarini ajrat, (4) tobe'lar va qistirmalarni belgila. Shu tartib bilan istalgan uzun jumla 30 soniyada ochiladi. Bu — B2 ning asosiy ko'nikmasi: tarjima qilmasdan tushunish.",
+ "grammar": {
+  "point_ar": "خُطُواتُ الإِعْرَابِ الأَرْبَع",
+  "explanation_uz": "TAHLIL TARTIBI. 1-qadam: FE'Lni topish — jumla fe'lli (فِعْلِيَّة) yoki ismli (اِسْمِيَّة) ekanini aniqlaydi. 2-qadam: FOIL (ega) — fe'ldan keyingi marfu' ism yoki yashirin olmosh. 3-qadam: MAF'UL va JARR birikmalari — mansub so'z to'ldiruvchi, predlogdan keyingi so'z majrur. 4-qadam: TOBE'lar (sifat, badal, ta'kid, atf) va QISTIRMA — ular asosiy skeletga qo'shimcha. Foydali belgilar: ال + damma ko'pincha mubtado/foil; tanvin fatha (ـًا) ko'pincha hol yoki tamyiz; إِنَّ dan keyin mansub ism; كَانَ dan keyin marfu' ism va mansub xabar; لَمْ dan keyin majzum fe'l. NAMUNA: «أَعْلَنَ الوَزِيرُ الجَدِيدُ، وَهُوَ خَبِيرٌ، خُطَّةً اقْتِصَادِيَّةً فِي المُؤْتَمَرِ». Tahlil: أَعْلَنَ — fe'l (moziy); الوَزِيرُ — foil (marfu'); الجَدِيدُ — sifat (foilga ergashgan); وَهُوَ خَبِيرٌ — qistirma; خُطَّةً — maf'ul bih (mansub); اقْتِصَادِيَّةً — sifat (maf'ulga ergashgan); فِي المُؤْتَمَرِ — jarr birikmasi (joy).",
+  "table": [
+   {"ar": "أَعْلَنَ", "uz": "1-qadam: fe'l (moziy) → jumla fe'lli", "form": "فِعْل"},
+   {"ar": "الوَزِيرُ", "uz": "2-qadam: foil, marfu' (damma)", "form": "فَاعِل"},
+   {"ar": "الجَدِيدُ", "uz": "4-qadam: sifat — foilga ergashadi", "form": "نَعْت"},
+   {"ar": "وَهُوَ خَبِيرٌ", "uz": "4-qadam: qistirma — i'robda o'rni yo'q", "form": "اِعْتِرَاضِيَّة"},
+   {"ar": "خُطَّةً", "uz": "3-qadam: maf'ul bih, mansub", "form": "مَفْعُول بِهِ"},
+   {"ar": "فِي المُؤْتَمَرِ", "uz": "3-qadam: jarr birikmasi — joy", "form": "جَارّ وَمَجْرُور"}
+  ],
+  "common_mistakes_uz": [
+   "Sifatni maf'ul deb belgilash — sifat oldingi so'z i'robini takrorlaydi, yangi vazifa emas.",
+   "Qistirmani asosiy skeletga qo'shish — avval uni «o'chirib» ko'ring, jumla soddalashadi.",
+   "Yashirin egani unutish: قَرَأَ الدَّرْسَ — bu yerda foil «هُوَ» (yashirin)."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ح ل ل",
+   "meaning_uz": "yechish, tahlil qilish",
+   "uz_cognates": ["tahlil", "hal qilmoq", "mahal"],
+   "derived": [
+    {"ar": "تَحْلِيل", "uz": "tahlil", "pattern": "تَفْعِيل"},
+    {"ar": "حَلَّلَ", "uz": "tahlil qildi", "pattern": "فَعَّلَ"},
+    {"ar": "مُحَلِّل", "uz": "tahlilchi", "pattern": "مُفَعِّل"}
+   ]
+  },
+  {
+   "root": "و ر ش",
+   "meaning_uz": "ustaxona, amaliy mashg'ulot",
+   "uz_cognates": ["vorkshop emas — ustaxona"],
+   "derived": [
+    {"ar": "وَرْشَة", "uz": "ustaxona, amaliy dars", "pattern": "فَعْلَة"},
+    {"ar": "وَرَش", "uz": "ustaxonalar (ko'plik: وِرَش)", "pattern": "فِعَل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "تَحْلِيل",
+   "translit": "taḥlīl",
+   "uz": "tahlil (o'zbekcha 'tahlil')",
+   "root": "ح ل ل",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tahlil.mp3",
+   "example_ar": "تَحْلِيلُ الجُمْلَةِ يُسَهِّلُ الفَهْمَ.",
+   "example_uz": "Jumla tahlili tushunishni osonlashtiradi.",
+   "srs": true
+  },
+  {
+   "ar": "وَرْشَة",
+   "translit": "warsha",
+   "uz": "ustaxona, amaliy mashg'ulot",
+   "root": "و ر ش",
+   "pattern": "فَعْلَة",
+   "pos": "ot",
+   "audio": "b2/warsha.mp3",
+   "example_ar": "هَذِهِ وَرْشَةٌ عَمَلِيَّةٌ.",
+   "example_uz": "Bu — amaliy mashg'ulot.",
+   "srs": true
+  },
+  {
+   "ar": "خُطْوَة",
+   "translit": "khuṭwa",
+   "uz": "qadam, bosqich",
+   "root": "خ ط و",
+   "pattern": "فُعْلَة",
+   "pos": "ot",
+   "audio": "b2/khutwa.mp3",
+   "example_ar": "الخُطْوَةُ الأُولَى إِيجَادُ الفِعْلِ.",
+   "example_uz": "Birinchi qadam — fe'lni topish.",
+   "srs": true
+  },
+  {
+   "ar": "مُؤْتَمَر",
+   "translit": "muʾtamar",
+   "uz": "konferensiya, anjuman",
+   "root": "أ م ر",
+   "pattern": "مُفْتَعَل",
+   "pos": "ot",
+   "audio": "b2/mutamar.mp3",
+   "example_ar": "عُقِدَ المُؤْتَمَرُ فِي العَاصِمَةِ.",
+   "example_uz": "Anjuman poytaxtda o'tkazildi.",
+   "srs": true
+  },
+  {
+   "ar": "اِقْتِصَادِيّ",
+   "translit": "iqtiṣādī",
+   "uz": "iqtisodiy (o'zbekcha 'iqtisodiy')",
+   "root": "ق ص د",
+   "pattern": "اِفْتِعَالِيّ",
+   "pos": "sifat",
+   "audio": "b2/iqtisadi.mp3",
+   "example_ar": "أَعْلَنَ خُطَّةً اقْتِصَادِيَّةً.",
+   "example_uz": "Iqtisodiy rejani e'lon qildi.",
+   "srs": true
+  },
+  {
+   "ar": "مُحَلِّل",
+   "translit": "muḥallil",
+   "uz": "tahlilchi",
+   "root": "ح ل ل",
+   "pattern": "مُفَعِّل",
+   "pos": "ot",
+   "audio": "b2/muhallil.mp3",
+   "example_ar": "قَالَ المُحَلِّلُ رَأْيَهُ.",
+   "example_uz": "Tahlilchi fikrini aytdi.",
+   "srs": true
+  },
+  {
+   "ar": "مُصْطَلَح",
+   "translit": "muṣṭalaḥ",
+   "uz": "atama, termin",
+   "root": "ص ل ح",
+   "pattern": "مُفْتَعَل",
+   "pos": "ot",
+   "audio": "b2/mustalah.mp3",
+   "example_ar": "الإِعْرَابُ مُصْطَلَحٌ نَحْوِيٌّ.",
+   "example_uz": "I'rob — nahv atamasi.",
+   "srs": true
+  },
+  {
+   "ar": "نَحْوِيّ",
+   "translit": "naḥwī",
+   "uz": "nahvga oid, grammatik",
+   "root": "ن ح و",
+   "pattern": "فَعْلِيّ",
+   "pos": "sifat",
+   "audio": "b2/nahwi.mp3",
+   "example_ar": "التَّحْلِيلُ النَّحْوِيُّ مُفِيدٌ.",
+   "example_uz": "Grammatik tahlil foydali.",
+   "srs": true
+  },
+  {
+   "ar": "هَيْكَل",
+   "translit": "haykal",
+   "uz": "skelet, tuzilma",
+   "root": "ه ك ل",
+   "pattern": "فَعْلَل",
+   "pos": "ot",
+   "audio": "b2/haykal.mp3",
+   "example_ar": "هَيْكَلُ الجُمْلَةِ بَسِيطٌ.",
+   "example_uz": "Jumlaning skeleti oddiy.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "أعلن الوزيرُ الجديدُ، وهو خبير اقتصادي، خطةً اقتصاديةً في المؤتمر. وقال المحللون كلُّهم إنّ الخطة واقعية، لكنها تحتاج إلى وقت. وفي التقرير الرسمي، الذي نُشر أمس، أرقامٌ دقيقةٌ عن الصادرات والاستثمار. لم تذكر الوزارة تفاصيلَ التمويل، بل وعدت ببيان آخر قريبًا.",
+   "questions": [
+    {"q_uz": "Birinchi jumlada foil va maf'ul qaysi?", "a": "Foil — الوزيرُ (marfu'), maf'ul — خطةً (mansub)"},
+    {"q_uz": "«كلُّهم» qanday tobe'?", "a": "Ta'kid — المحللون ga ergashgan, marfu'"},
+    {"q_uz": "«لم تذكر» dagi fe'l holati?", "a": "Majzum — لَمْ dan keyin"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-10-listen.mp3",
+   "transcript_ar": "أَعْلَنَ الوَزِيرُ خُطَّةً جَدِيدَةً فِي المُؤْتَمَرِ، وَقَالَ المُحَلِّلُونَ إِنَّهَا وَاقِعِيَّةٌ.",
+   "questions": [
+    {"q_uz": "Ega kim?", "a": "الوزيرُ — marfu' foil"},
+    {"q_uz": "«إنّها واقعية» — إنّ dan keyin nima?", "a": "Ulangan olmosh (ismi) va marfu' xabar"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Bitta jumlani ovoz chiqarib tahlil qiling: «قَرَأَ الطَّالِبُ المُجْتَهِدُ الكِتَابَ فِي المَكْتَبَةِ» — fe'l, foil, sifat, maf'ul, jarr birikmasi.",
+   "target_ar": ["قَرَأَ الطَّالِبُ المُجْتَهِدُ الكِتَابَ فِي المَكْتَبَةِ", "الفَاعِلُ مَرْفُوعٌ", "المَفْعُولُ مَنْصُوبٌ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Bitta gazeta jumlasini yozing (kamida 8 so'z) va uni to'rt qadam bo'yicha tahlil qiling: fe'l, foil, maf'ul/jarr, tobe'lar.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Tahlilning BIRINCHI qadami nima?",
+   "q_ar": "",
+   "options": [
+    "Fe'lni topish",
+    "Sifatlarni sanash",
+    "Qistirmani o'chirish",
+    "Tarjima qilish"
+   ],
+   "answer": "Fe'lni topish",
+   "explain_uz": "Fe'l jumla turini (fe'lli/ismli) aniqlaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«أَعْلَنَ الوَزِيرُ خُطَّةً» — «خُطَّةً» nima?",
+   "q_ar": "أَعْلَنَ الوَزِيرُ خُطَّةً",
+   "options": ["Maf'ul bih (mansub)", "Foil (marfu')", "Hol", "Sifat"],
+   "answer": "Maf'ul bih (mansub)",
+   "explain_uz": "Tanvin fatha + fe'l ta'siri = to'ldiruvchi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«لَمْ تَذْكُرِ الوِزَارَةُ» — fe'l qanday holatda?",
+   "q_ar": "لَمْ تَذْكُرْ",
+   "options": ["Majzum", "Mansub", "Marfu'", "Mabniy"],
+   "answer": "Majzum",
+   "explain_uz": "لَمْ muzori'ni jazm qiladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«قَرَأَ الدَّرْسَ» da foil qayerda?",
+   "q_ar": "قَرَأَ الدَّرْسَ",
+   "options": [
+    "Yashirin olmosh (هُوَ)",
+    "الدَّرْسَ",
+    "Foil yo'q",
+    "قَرَأَ ning o'zi"
+   ],
+   "answer": "Yashirin olmosh (هُوَ)",
+   "explain_uz": "Foil ko'rinmasa — yashirin olmosh hisoblanadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "مُؤْتَمَر",
+   "options": [],
+   "answer": "konferensiya",
+   "explain_uz": "مُؤْتَمَر — anjuman, konferensiya.",
+   "audio": "b2/mutamar.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«تَحْلِيل، مُحَلِّل، حَلَّلَ» qaysi o'zakdan?",
+   "q_ar": "تَحْلِيل",
+   "options": ["ح ل ل", "ح ل م", "خ ل ل", "ح ل ق"],
+   "answer": "ح ل ل",
+   "explain_uz": "ح ل ل — yechish, tahlil qilish.",
+   "audio": "",
+   "root": "ح ل ل",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qistirma jumlani tahlilda nima qilish kerak?",
+   "q_ar": "",
+   "options": [
+    "Vaqtincha «o'chirib» asosiy skeletni ko'rish",
+    "Foil deb belgilash",
+    "Maf'ul deb belgilash",
+    "Tashlab yuborib tarjima qilmaslik"
+   ],
+   "answer": "Vaqtincha «o'chirib» asosiy skeletni ko'rish",
+   "explain_uz": "Qistirma i'robga ta'sir qilmaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Tirishqoq talaba kutubxonada kitob o'qidi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "قَرَأَ الطَّالِبُ المُجْتَهِدُ الكِتَابَ فِي المَكْتَبَةِ",
+   "explain_uz": "Fe'l + foil + sifat + maf'ul + jarr birikmasi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["قَرَأَ", "الطَّالِبُ", "المُجْتَهِدُ", "الكِتَابَ", "فِي", "المَكْتَبَةِ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ح ل ل", "back": "yechish — tahlil/muhallil", "deck": "msa"},
+  {"type": "word", "front": "تَحْلِيل", "back": "tahlil", "deck": "msa"},
+  {"type": "word", "front": "وَرْشَة", "back": "ustaxona, amaliy mashg'ulot", "deck": "msa"},
+  {"type": "word", "front": "خُطْوَة", "back": "qadam, bosqich", "deck": "msa"},
+  {"type": "word", "front": "مُؤْتَمَر", "back": "konferensiya", "deck": "msa"},
+  {"type": "word", "front": "اِقْتِصَادِيّ", "back": "iqtisodiy", "deck": "msa"},
+  {"type": "word", "front": "مُحَلِّل", "back": "tahlilchi", "deck": "msa"},
+  {"type": "word", "front": "مُصْطَلَح", "back": "atama, termin", "deck": "msa"},
+  {"type": "word", "front": "نَحْوِيّ", "back": "grammatik (nahvga oid)", "deck": "msa"},
+  {"type": "word", "front": "هَيْكَل", "back": "skelet, tuzilma", "deck": "msa"}
+ ]
+}

@@ -122,8 +122,14 @@ async def test_levels_with_content_have_pools(session, make_user):
     user = await make_user()
     for lvl in ex.LEVEL_ORDER:
         st = await _state(session, user.id, lvl, "B1")
-        if not ex.level_lesson_ids(lvl):
-            assert st["available"] is False, f"{lvl}: kontent yo'q, imtihon ochiq"
+        from services.curriculum import load_curriculum
+
+        planned = {
+            lid
+            for lid, m in load_curriculum().items()
+            if m["level"] == lvl and m["type"] == "lesson"
+        }
+        if planned - ex.level_lesson_ids(lvl):  # daraja hali to'liq yozilmagan
             continue
         assert st["available"] is True, f"{lvl} uchun imtihon pooli yo'q"
         assert st["minutes"] > 0

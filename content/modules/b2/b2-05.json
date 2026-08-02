@@ -1,0 +1,321 @@
+{
+ "id": "b2-05",
+ "level": "B2",
+ "module": "nahw-adv",
+ "order": 5,
+ "title_uz": "Tobe'lar 2: عطف va صفة",
+ "title_ar": "التَّوَابِعُ: العَطْفُ وَالنَّعْتُ",
+ "can_do_uz": "Uzun jumlada bog'lovchi bilan ulangan bo'laklarni va ko'p sifatli birikmalarni to'g'ri i'roblay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-04"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "Gazeta jumlasi ba'zan uzun bo'ladi: «Vazir, uning yordamchisi va yangi tayinlangan direktor uchrashuvda qatnashdi». Bunday jumlada kim ega, kim to'ldiruvchi — faqat i'rob ayta oladi. Bog'lovchi (عَطْف) ulangan so'zga OLDINGI so'zning i'robini beradi, sifat (نَعْت) esa tavsiflanmish bilan TO'RT narsada mos keladi. Shu ikkisi B2 matnini «uzun» emas, «tartibli» qilib ko'rsatadi.",
+ "grammar": {
+  "point_ar": "العَطْفُ بِالحُرُوفِ وَالنَّعْتُ بِالمُطَابَقَةِ",
+  "explanation_uz": "1) ATF (العَطْف) — bog'lovchi harf bilan ulash. Harflar: وَ (va), فَ (keyin, darhol), ثُمَّ (so'ng), أَوْ (yoki), أَمْ (yoki — savolda), لَكِنْ (lekin), بَلْ (balki), لا (emas). Ulangan so'z (المَعْطُوف) oldingisining (المَعْطُوف عَلَيْهِ) i'robini AYNAN oladi: قَرَأْتُ الكِتَابَ وَالمَجَلَّةَ — ikkalasi ham mansub. فَ va ثُمَّ orasidagi farq: فَ — darhol ketma-ketlik, ثُمَّ — vaqt oralig'i bilan. 2) NA'T (النَّعْت / الصِّفَة) — sifat tavsiflanmishga TO'RT narsada moslashadi: i'rob (rafʿ/nasb/jarr), son (birlik/ikkilik/ko'plik), jins (muzakkar/muannas), aniqlik (ال bor-yo'qligi): الطَّالِبُ المُجْتَهِدُ (aniq), طَالِبٌ مُجْتَهِدٌ (noaniq). Aqlsiz narsalarning ko'pligi MUANNAS BIRLIK sifat oladi: كُتُبٌ مُفِيدَةٌ (foydali kitoblar). Sifat bir nechta bo'lsa hammasi ergashadi: مَقَالٌ طَوِيلٌ مُفِيدٌ. Sifat jumla ham bo'lishi mumkin (b2-03 da ko'rilgan sifatlovchi gap): رَجُلٌ يَعْمَلُ بِجِدٍّ.",
+  "table": [
+   {"ar": "قَرَأْتُ الكِتَابَ وَالمَجَلَّةَ", "uz": "Kitob va jurnalni o'qidim (ikkisi mansub)", "form": "عَطْف"},
+   {"ar": "دَخَلَ فَجَلَسَ", "uz": "Kirdi-yu, o'tirdi (darhol)", "form": "فَ"},
+   {"ar": "كَتَبَ ثُمَّ رَاجَعَ", "uz": "Yozdi, so'ng qayta ko'rdi (vaqt bilan)", "form": "ثُمَّ"},
+   {"ar": "الطَّالِبُ المُجْتَهِدُ", "uz": "Tirishqoq talaba (aniq + aniq)", "form": "نَعْت"},
+   {"ar": "كُتُبٌ مُفِيدَةٌ", "uz": "Foydali kitoblar (aqlsiz ko'plik → muannas birlik)", "form": "مُطَابَقَة"},
+   {"ar": "مَقَالٌ طَوِيلٌ مُفِيدٌ", "uz": "Uzun, foydali maqola (ikki sifat)", "form": "نَعْتَانِ"}
+  ],
+  "common_mistakes_uz": [
+   "Aqlsiz ko'plikka ko'plik sifat qo'yish: كُتُبٌ مُفِيدُونَ ✗ → كُتُبٌ مُفِيدَةٌ ✓.",
+   "Aniqlikda moslashmaslik: الطَّالِبُ مُجْتَهِدٌ — bu sifat emas, ISMLI GAP («talaba tirishqoq»).",
+   "Ma'tufni boshqa holatda qoldirish: رَأَيْتُ المُدِيرَ وَالمُهَنْدِسُ ✗ → وَالمُهَنْدِسَ ✓."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ع ط ف",
+   "meaning_uz": "burish, moyillik — bog'lash",
+   "uz_cognates": ["atf", "otifa (his)"],
+   "derived": [
+    {"ar": "عَطْف", "uz": "bog'lash, atf", "pattern": "فَعْل"},
+    {"ar": "مَعْطُوف", "uz": "bog'langan (so'z)", "pattern": "مَفْعُول"},
+    {"ar": "عَاطِفَة", "uz": "his-tuyg'u", "pattern": "فَاعِلَة"}
+   ]
+  },
+  {
+   "root": "ط ب ق",
+   "meaning_uz": "mos kelish, qatlam",
+   "uz_cognates": ["mutobiq", "tabaqa"],
+   "derived": [
+    {"ar": "مُطَابَقَة", "uz": "moslashuv", "pattern": "مُفَاعَلَة"},
+    {"ar": "طَابَقَ", "uz": "mos keldi", "pattern": "فَاعَلَ"},
+    {"ar": "مُطَابِق", "uz": "mos, muvofiq", "pattern": "مُفَاعِل"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "عَطْف",
+   "translit": "ʿaṭf",
+   "uz": "bog'lash (grammatik atama)",
+   "root": "ع ط ف",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/atf.mp3",
+   "example_ar": "حُرُوفُ العَطْفِ تَرْبِطُ الجُمَلَ.",
+   "example_uz": "Bog'lovchi harflar jumlalarni bog'laydi.",
+   "srs": true
+  },
+  {
+   "ar": "مَعْطُوف",
+   "translit": "maʿṭūf",
+   "uz": "bog'langan so'z (oldingisining i'robini oladi)",
+   "root": "ع ط ف",
+   "pattern": "مَفْعُول",
+   "pos": "ot",
+   "audio": "b2/matuf.mp3",
+   "example_ar": "المَعْطُوفُ يَتْبَعُ المَعْطُوفَ عَلَيْهِ.",
+   "example_uz": "Ma'tuf o'zidan oldingiga ergashadi.",
+   "srs": true
+  },
+  {
+   "ar": "نَعْت",
+   "translit": "naʿt",
+   "uz": "sifat (na't) — tavsiflovchi",
+   "root": "ن ع ت",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/nat_adj.mp3",
+   "example_ar": "النَّعْتُ يُطَابِقُ المَنْعُوتَ.",
+   "example_uz": "Sifat tavsiflanmishga moslashadi.",
+   "srs": true
+  },
+  {
+   "ar": "مُطَابَقَة",
+   "translit": "muṭābaqa",
+   "uz": "moslashuv (i'rob, son, jins, aniqlik)",
+   "root": "ط ب ق",
+   "pattern": "مُفَاعَلَة",
+   "pos": "ot",
+   "audio": "b2/mutabaqa.mp3",
+   "example_ar": "المُطَابَقَةُ فِي أَرْبَعَةِ أُمُورٍ.",
+   "example_uz": "Moslashuv to'rt narsada bo'ladi.",
+   "srs": true
+  },
+  {
+   "ar": "مُجْتَهِد",
+   "translit": "mujtahid",
+   "uz": "tirishqoq (o'zbekcha 'mujtahid')",
+   "root": "ج ه د",
+   "pattern": "مُفْتَعِل",
+   "pos": "sifat",
+   "audio": "b2/mujtahid.mp3",
+   "example_ar": "الطَّالِبُ المُجْتَهِدُ يَنْجَحُ.",
+   "example_uz": "Tirishqoq talaba muvaffaq bo'ladi.",
+   "srs": true
+  },
+  {
+   "ar": "مَجَلَّة",
+   "translit": "majalla",
+   "uz": "jurnal (o'zbekcha 'majalla')",
+   "root": "ج ل ل",
+   "pattern": "مَفْعَلَة",
+   "pos": "ot",
+   "audio": "b2/majalla.mp3",
+   "example_ar": "قَرَأْتُ الكِتَابَ وَالمَجَلَّةَ.",
+   "example_uz": "Kitob va jurnalni o'qidim.",
+   "srs": true
+  },
+  {
+   "ar": "بَلْ",
+   "translit": "bal",
+   "uz": "balki, aksincha (bog'lovchi)",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "b2/bal.mp3",
+   "example_ar": "لَمْ يَتَأَخَّرْ بَلْ جَاءَ مُبَكِّرًا.",
+   "example_uz": "Kechikmadi, aksincha erta keldi.",
+   "srs": true
+  },
+  {
+   "ar": "ثُمَّ",
+   "translit": "thumma",
+   "uz": "so'ng, keyin (vaqt oralig'i bilan)",
+   "root": "",
+   "pattern": "",
+   "pos": "harf",
+   "audio": "b2/thumma.mp3",
+   "example_ar": "كَتَبَ التَّقْرِيرَ ثُمَّ رَاجَعَهُ.",
+   "example_uz": "Hisobotni yozdi, so'ng qayta ko'rdi.",
+   "srs": true
+  },
+  {
+   "ar": "دَقِيق",
+   "translit": "daqīq",
+   "uz": "aniq, nozik (o'zbekcha 'daqiq')",
+   "root": "د ق ق",
+   "pattern": "فَعِيل",
+   "pos": "sifat",
+   "audio": "b2/daqiq_precise.mp3",
+   "example_ar": "تَقْرِيرٌ دَقِيقٌ وَوَاضِحٌ.",
+   "example_uz": "Aniq va ravshan hisobot.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "نشرت المجلةُ العلميةُ الجديدةُ تقريرًا دقيقًا وواضحًا عن التعليم في المنطقة. جمع الباحثون البياناتِ ثم حلّلوها، فكتبوا خلاصةً قصيرة. لم يعتمد الفريقُ على مصدر واحد، بل على مصادرَ كثيرةٍ رسميةٍ وشعبيةٍ. وشارك في العمل الأستاذُ وطلابُه والمهندسون المتطوعون، وكلُّهم عملوا بلا أجر.",
+   "questions": [
+    {"q_uz": "«المجلةُ العلميةُ الجديدةُ» — nechta sifat va ular nimaga mos?", "a": "Ikki sifat; ikkalasi ham marfu', muannas, aniq (ال bilan)"},
+    {"q_uz": "«بل على مصادرَ كثيرةٍ» qanday ma'no beradi?", "a": "Aksincha — bitta manbaga emas, ko'p manbaga tayangan"},
+    {"q_uz": "«الأستاذُ وطلابُه والمهندسون» qaysi holatda?", "a": "Hammasi marfu' — bog'langan so'zlar oldingisining i'robini oladi"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-05-listen.mp3",
+   "transcript_ar": "قَرَأْتُ الكِتَابَ وَالمَجَلَّةَ، ثُمَّ كَتَبْتُ تَقْرِيرًا دَقِيقًا. لَمْ أَتَأَخَّرْ بَلْ سَلَّمْتُهُ مُبَكِّرًا.",
+   "questions": [
+    {"q_uz": "Nimalar o'qildi?", "a": "Kitob va jurnal (ikkisi ham mansub)"},
+    {"q_uz": "Hisobot qachon topshirildi?", "a": "Erta — kechikmagan"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Ikki gap ayting: «Kitob va jurnalni o'qidim», «Tirishqoq talaba muvaffaq bo'ladi». So'ng bitta gapni ثُمَّ bilan uzaytiring.",
+   "target_ar": ["قَرَأْتُ الكِتَابَ وَالمَجَلَّةَ", "الطَّالِبُ المُجْتَهِدُ يَنْجَحُ", "كَتَبَ ثُمَّ رَاجَعَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Bitta uzun gap yozing: ikkita bog'langan ism (وَ bilan) va kamida ikkita sifat bo'lsin — moslashuvga e'tibor bering.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi jumla TO'G'RI?",
+   "q_ar": "",
+   "options": [
+    "رَأَيْتُ المُدِيرَ وَالمُهَنْدِسَ",
+    "رَأَيْتُ المُدِيرَ وَالمُهَنْدِسُ",
+    "رَأَيْتُ المُدِيرُ وَالمُهَنْدِسَ",
+    "رَأَيْتُ المُدِيرِ وَالمُهَنْدِسِ"
+   ],
+   "answer": "رَأَيْتُ المُدِيرَ وَالمُهَنْدِسَ",
+   "explain_uz": "Ma'tuf oldingi so'z i'robini oladi — ikkalasi mansub.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«كُتُب» (aqlsiz ko'plik) qanday sifat oladi?",
+   "q_ar": "كُتُبٌ ...",
+   "options": [
+    "Muannas birlik: مُفِيدَةٌ",
+    "Muzakkar ko'plik: مُفِيدُونَ",
+    "Muannas ko'plik: مُفِيدَاتٌ",
+    "Muzakkar birlik: مُفِيدٌ"
+   ],
+   "answer": "Muannas birlik: مُفِيدَةٌ",
+   "explain_uz": "Aqlsiz narsalar ko'pligi muannas birlik sifat oladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«الطَّالِبُ مُجْتَهِدٌ» nima?",
+   "q_ar": "الطَّالِبُ مُجْتَهِدٌ",
+   "options": [
+    "Ismli gap: «Talaba tirishqoq»",
+    "Sifatli birikma: «tirishqoq talaba»",
+    "Badal",
+    "Ta'kid"
+   ],
+   "answer": "Ismli gap: «Talaba tirishqoq»",
+   "explain_uz": "Aniqlikda moslashmagan — demak sifat emas, xabar.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "فَ va ثُمَّ farqi nimada?",
+   "q_ar": "",
+   "options": [
+    "فَ darhol, ثُمَّ vaqt oralig'i bilan",
+    "فَ vaqt oralig'i bilan, ثُمَّ darhol",
+    "Farqi yo'q",
+    "فَ inkor, ثُمَّ tasdiq"
+   ],
+   "answer": "فَ darhol, ثُمَّ vaqt oralig'i bilan",
+   "explain_uz": "دَخَلَ فَجَلَسَ (darhol) · كَتَبَ ثُمَّ رَاجَعَ (keyinroq).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "مَجَلَّة",
+   "options": [],
+   "answer": "jurnal",
+   "explain_uz": "مَجَلَّة — jurnal (o'zbekcha 'majalla').",
+   "audio": "b2/majalla.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«مُطَابَقَة، مُطَابِق، طَابَقَ» qaysi o'zakdan?",
+   "q_ar": "مُطَابَقَة",
+   "options": ["ط ب ق", "ط ر ق", "ب ق ط", "ط ب خ"],
+   "answer": "ط ب ق",
+   "explain_uz": "ط ب ق — mos kelish (mutobiq, tabaqa).",
+   "audio": "",
+   "root": "ط ب ق",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Sifat tavsiflanmishga necha narsada moslashadi?",
+   "q_ar": "",
+   "options": ["To'rtta: i'rob, son, jins, aniqlik", "Ikkita: son va jins", "Uchta: i'rob, son, jins", "Faqat i'robda"],
+   "answer": "To'rtta: i'rob, son, jins, aniqlik",
+   "explain_uz": "المُطَابَقَة فِي أَرْبَعَةِ أُمُورٍ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Aniq va ravshan hisobotni o'qidim»",
+   "q_ar": "",
+   "options": [],
+   "answer": "قَرَأْتُ التَّقْرِيرَ الدَّقِيقَ الوَاضِحَ",
+   "explain_uz": "Ikkala sifat ham mansub va aniq (ال) — moslashuv.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["قَرَأْتُ", "التَّقْرِيرَ", "الدَّقِيقَ", "الوَاضِحَ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ع ط ف", "back": "bog'lash — atf/ma'tuf/otifa", "deck": "msa"},
+  {"type": "root", "front": "ط ب ق", "back": "mos kelish — mutobaqa/mutobiq", "deck": "msa"},
+  {"type": "word", "front": "عَطْف", "back": "bog'lash (grammatika)", "deck": "msa"},
+  {"type": "word", "front": "مَعْطُوف", "back": "bog'langan so'z", "deck": "msa"},
+  {"type": "word", "front": "نَعْت", "back": "sifat (na't)", "deck": "msa"},
+  {"type": "word", "front": "مُطَابَقَة", "back": "moslashuv (4 narsada)", "deck": "msa"},
+  {"type": "word", "front": "مُجْتَهِد", "back": "tirishqoq", "deck": "msa"},
+  {"type": "word", "front": "مَجَلَّة", "back": "jurnal", "deck": "msa"},
+  {"type": "word", "front": "بَلْ", "back": "balki, aksincha", "deck": "msa"},
+  {"type": "word", "front": "ثُمَّ", "back": "so'ng, keyin", "deck": "msa"},
+  {"type": "word", "front": "دَقِيق", "back": "aniq, nozik", "deck": "msa"}
+ ]
+}

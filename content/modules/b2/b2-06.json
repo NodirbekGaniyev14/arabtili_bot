@@ -1,0 +1,311 @@
+{
+ "id": "b2-06",
+ "level": "B2",
+ "module": "nahw-adv",
+ "order": 6,
+ "title_uz": "الممنوع من الصرف",
+ "title_ar": "المَمْنُوعُ مِنَ الصَّرْفِ",
+ "can_do_uz": "Tanvin va kasra qabul qilmaydigan otlarni tanib, ularni to'g'ri i'roblay olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-05"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«مَكَّةَ» — nega tanvinsiz? «مَدَارِسَ» — nega kasra emas, fatha? Bu xato emas: arab tilida bir guruh ot bor, ular TANVIN OLMAYDI va jarr holatida KASRA o'rniga FATHA oladi. Ular «مَمْنُوع مِنَ الصَّرْف» — «sarfdan man qilingan». Ismlar, shaharlar, ba'zi vaznlar shu guruhda. Bilmasangiz, matnda «xato bor» deb o'ylaysiz; bilsangiz — jumlani darrov to'g'ri o'qiysiz.",
+ "grammar": {
+  "point_ar": "المَمْنُوعُ مِنَ الصَّرْفِ — لَا يُنَوَّنُ وَيُجَرُّ بِالفَتْحَةِ",
+  "explanation_uz": "Odatdagi ot uch narsani oladi: tanvin (كِتَابٌ), kasra jarrda (فِي كِتَابٍ). «Mamnu' min as-sarf» esa TANVIN OLMAYDI va jarrda KASRA o'rniga FATHA oladi: فِي مَكَّةَ, مِنْ مَدَارِسَ. Amaliy 5 guruh. 1) Chet el va ba'zi arab ATOQLI OTLARI: أَحْمَدُ، عُمَرُ، إِبْرَاهِيمُ، لَنْدَنُ، بَاكِستَانُ. 2) MUANNAS atoqli otlar: فَاطِمَةُ، مَكَّةُ، زَيْنَبُ. 3) أَفْعَل vaznidagi sifatlar: أَكْبَرُ، أَحْمَرُ، أَفْضَلُ. 4) فَعْلَان vaznidagi sifatlar: عَطْشَانُ، جَوْعَانُ. 5) SINGAN KO'PLIKNING oxirgi vaznlari — مَفَاعِل va مَفَاعِيل: مَدَارِسُ، مَكَاتِبُ، مَفَاتِيحُ، أَسَالِيبُ. MUHIM ISTISNO: agar bunday so'zga ال qo'shilsa yoki u IDOFAning birinchi qismi bo'lsa — kasra qaytadi: فِي المَدَارِسِ, فِي مَدَارِسِ المَدِينَةِ. Shuning uchun gazetada ikkalasini ham ko'rasiz.",
+  "table": [
+   {"ar": "زُرْتُ مَكَّةَ", "uz": "Makkaga bordim — tanvinsiz", "form": "عَلَم مُؤَنَّث"},
+   {"ar": "فِي مَدَارِسَ كَثِيرَةٍ", "uz": "Ko'p maktablarda — jarr, lekin fatha", "form": "مَفَاعِل"},
+   {"ar": "فِي المَدَارِسِ", "uz": "Maktablarda — ال bilan kasra qaytdi", "form": "اِسْتِثْنَاء"},
+   {"ar": "هَذَا أَفْضَلُ حَلٍّ", "uz": "Bu eng yaxshi yechim — tanvinsiz", "form": "أَفْعَل"},
+   {"ar": "مَرَرْتُ بِأَحْمَدَ", "uz": "Ahmad yonidan o'tdim — jarr + fatha", "form": "عَلَم"},
+   {"ar": "مَفَاتِيحُ السَّيَّارَةِ", "uz": "Mashina kalitlari — idofada kasra qaytadi", "form": "مَفَاعِيل"}
+  ],
+  "common_mistakes_uz": [
+   "Mamnu' so'zga tanvin qo'shish: زُرْتُ مَكَّةً ✗ → مَكَّةَ ✓.",
+   "ال qo'shilganda ham fatha qoldirish: فِي المَدَارِسَ ✗ → فِي المَدَارِسِ ✓.",
+   "Har qanday ko'plikni mamnu' deb o'ylash — faqat مَفَاعِل va مَفَاعِيل vaznlari."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ص ر ف",
+   "meaning_uz": "o'zgartirish, tasrif — tanvin ham «sarf» deyiladi",
+   "uz_cognates": ["sarf", "masraf", "tasrif"],
+   "derived": [
+    {"ar": "صَرْف", "uz": "sarf — tanvinlash/tuslash", "pattern": "فَعْل"},
+    {"ar": "مَصْرِف", "uz": "bank", "pattern": "مَفْعِل"},
+    {"ar": "مُنْصَرِف", "uz": "tanvin oladigan (odatiy) ot", "pattern": "مُنْفَعِل"}
+   ]
+  },
+  {
+   "root": "م ن ع",
+   "meaning_uz": "man qilish, to'sish",
+   "uz_cognates": ["mane", "mamnu"],
+   "derived": [
+    {"ar": "مَنَعَ", "uz": "man qildi", "pattern": "فَعَلَ"},
+    {"ar": "مَمْنُوع", "uz": "man qilingan", "pattern": "مَفْعُول"},
+    {"ar": "اِمْتِنَاع", "uz": "tiyilish, o'zini tortish", "pattern": "اِفْتِعَال"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "مَمْنُوع",
+   "translit": "mamnūʿ",
+   "uz": "man qilingan (o'zbekcha 'mamnu')",
+   "root": "م ن ع",
+   "pattern": "مَفْعُول",
+   "pos": "sifat",
+   "audio": "b2/mamnu.mp3",
+   "example_ar": "التَّدْخِينُ مَمْنُوعٌ هُنَا.",
+   "example_uz": "Bu yerda chekish man qilingan.",
+   "srs": true
+  },
+  {
+   "ar": "صَرْف",
+   "translit": "ṣarf",
+   "uz": "sarf — bu yerda: tanvin qabul qilish",
+   "root": "ص ر ف",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/sarf_tanwin.mp3",
+   "example_ar": "المَمْنُوعُ مِنَ الصَّرْفِ لَا يُنَوَّنُ.",
+   "example_uz": "Mamnu' min as-sarf tanvin olmaydi.",
+   "srs": true
+  },
+  {
+   "ar": "عَلَم",
+   "translit": "ʿalam",
+   "uz": "atoqli ot (ism, shahar nomi)",
+   "root": "ع ل م",
+   "pattern": "فَعَل",
+   "pos": "ot",
+   "audio": "b2/alam_proper.mp3",
+   "example_ar": "أَحْمَدُ عَلَمٌ مَمْنُوعٌ مِنَ الصَّرْفِ.",
+   "example_uz": "«Ahmad» — mamnu' atoqli ot.",
+   "srs": true
+  },
+  {
+   "ar": "مَدَارِس",
+   "translit": "madāris",
+   "uz": "maktablar (مَفَاعِل vazni — mamnu')",
+   "root": "د ر س",
+   "pattern": "مَفَاعِل",
+   "pos": "ot",
+   "audio": "b2/madaris.mp3",
+   "example_ar": "زُرْتُ مَدَارِسَ كَثِيرَةً.",
+   "example_uz": "Ko'p maktablarga bordim.",
+   "srs": true
+  },
+  {
+   "ar": "مَفَاتِيح",
+   "translit": "mafātīḥ",
+   "uz": "kalitlar (مَفَاعِيل vazni — mamnu')",
+   "root": "ف ت ح",
+   "pattern": "مَفَاعِيل",
+   "pos": "ot",
+   "audio": "b2/mafatih.mp3",
+   "example_ar": "ضَاعَتْ مَفَاتِيحُ البَيْتِ.",
+   "example_uz": "Uyning kalitlari yo'qoldi.",
+   "srs": true
+  },
+  {
+   "ar": "أَسَالِيب",
+   "translit": "asālīb",
+   "uz": "uslublar (أُسْلُوب ning ko'pligi)",
+   "root": "س ل ب",
+   "pattern": "مَفَاعِيل",
+   "pos": "ot",
+   "audio": "b2/asalib.mp3",
+   "example_ar": "لِلْكِتَابَةِ أَسَالِيبُ مُخْتَلِفَةٌ.",
+   "example_uz": "Yozuvning turli uslublari bor.",
+   "srs": true
+  },
+  {
+   "ar": "عَطْشَان",
+   "translit": "ʿaṭshān",
+   "uz": "chanqagan (فَعْلَان vazni — mamnu')",
+   "root": "ع ط ش",
+   "pattern": "فَعْلَان",
+   "pos": "sifat",
+   "audio": "b2/atshan.mp3",
+   "example_ar": "رَجَعَ عَطْشَانَ مِنَ الطَّرِيقِ.",
+   "example_uz": "Yo'ldan chanqagan holda qaytdi.",
+   "srs": true
+  },
+  {
+   "ar": "تَنْوِين",
+   "translit": "tanwīn",
+   "uz": "tanvin — so'z oxiridagi qo'sh harakat",
+   "root": "ن و ن",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/tanwin_term.mp3",
+   "example_ar": "لَا تَنْوِينَ فِي هَذَا الاِسْمِ.",
+   "example_uz": "Bu otda tanvin yo'q.",
+   "srs": true
+  },
+  {
+   "ar": "اِسْتِثْنَاء",
+   "translit": "istithnāʾ",
+   "uz": "istisno (o'zbekcha 'istisno')",
+   "root": "ث ن ي",
+   "pattern": "اِسْتِفْعَال",
+   "pos": "ot",
+   "audio": "b2/istithna.mp3",
+   "example_ar": "هُنَاكَ اِسْتِثْنَاءٌ مُهِمٌّ.",
+   "example_uz": "Muhim istisno bor.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "سافر أحمدُ إلى مكةَ ثم إلى المدينةِ، ومرّ في الطريق بمدارسَ جديدةٍ ومكاتبَ حكوميةٍ. كتب في دفتره: رأيت أساليبَ مختلفةً في التعليم، وأخذت صورًا بمفاتيحَ صغيرةٍ معلّقةٍ على الباب. لاحظ القارئ أنّ هذه الكلمات بلا تنوين، ولمّا دخلت عليها «ال» عادت الكسرة: في المدارسِ، وفي المكاتبِ.",
+   "questions": [
+    {"q_uz": "Nega «مكةَ» tanvinsiz?", "a": "Muannas atoqli ot — mamnu' min as-sarf"},
+    {"q_uz": "«بمدارسَ» da nega kasra emas, fatha?", "a": "مَفَاعِل vazni jarrda fatha oladi"},
+    {"q_uz": "«في المدارسِ» da kasra qayerdan?", "a": "ال qo'shilgach mamnu'lik yo'qoladi"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-06-listen.mp3",
+   "transcript_ar": "زُرْتُ مَكَّةَ وَمَرَرْتُ بِمَدَارِسَ كَثِيرَةٍ. وَفِي المَدَارِسِ رَأَيْتُ أَسَالِيبَ جَدِيدَةً.",
+   "questions": [
+    {"q_uz": "Qaysi so'zlar tanvinsiz aytildi?", "a": "مكةَ, مدارسَ, أساليبَ"},
+    {"q_uz": "Nega «المدارسِ» kasra bilan?", "a": "ال tushgani uchun oddiy i'robga qaytgan"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch gap ayting: «Makkaga bordim», «Ko'p maktablar yonidan o'tdim», «Uyning kalitlari yo'qoldi».",
+   "target_ar": ["زُرْتُ مَكَّةَ", "مَرَرْتُ بِمَدَارِسَ كَثِيرَةٍ", "ضَاعَتْ مَفَاتِيحُ البَيْتِ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Ikki gap yozing: birinchisida mamnu' so'z jarr holatida fatha bilan, ikkinchisida o'sha so'z ال bilan kasra bilan kelsin.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Mamnu' min as-sarf jarr holatida qaysi belgini oladi?",
+   "q_ar": "",
+   "options": ["Fatha", "Kasra", "Damma", "Sukun"],
+   "answer": "Fatha",
+   "explain_uz": "Kasra o'rniga fatha: فِي مَدَارِسَ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi so'z mamnu' min as-sarf EMAS?",
+   "q_ar": "",
+   "options": ["كِتَاب", "مَكَّة", "أَحْمَد", "مَدَارِس"],
+   "answer": "كِتَاب",
+   "explain_uz": "كِتَابٌ tanvin oladi — odatiy (munsarif) ot.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi jumla TO'G'RI?",
+   "q_ar": "",
+   "options": [
+    "مَرَرْتُ بِأَحْمَدَ",
+    "مَرَرْتُ بِأَحْمَدٍ",
+    "مَرَرْتُ بِأَحْمَدُ",
+    "مَرَرْتُ بِأَحْمَدًا"
+   ],
+   "answer": "مَرَرْتُ بِأَحْمَدَ",
+   "explain_uz": "Atoqli ot mamnu' — jarrda fatha, tanvinsiz.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«فِي المَدَارِسِ» — nega kasra?",
+   "q_ar": "فِي المَدَارِسِ",
+   "options": [
+    "ال qo'shilgani uchun mamnu'lik yo'qoladi",
+    "Bu xato yozuv",
+    "مَفَاعِل doim kasra oladi",
+    "Predlog kuchli bo'lgani uchun"
+   ],
+   "answer": "ال qo'shilgani uchun mamnu'lik yo'qoladi",
+   "explain_uz": "ال yoki idofa mamnu'ni odatiy i'robga qaytaradi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi VAZN mamnu' guruhiga kiradi?",
+   "q_ar": "",
+   "options": ["مَفَاعِيل", "فَاعِل", "مَفْعُول", "فَعِيل"],
+   "answer": "مَفَاعِيل",
+   "explain_uz": "مَفَاعِل va مَفَاعِيل — singan ko'plikning mamnu' vaznlari.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "مَفَاتِيح",
+   "options": [],
+   "answer": "kalitlar",
+   "explain_uz": "مِفْتَاح → مَفَاتِيح (kalitlar).",
+   "audio": "b2/mafatih.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«مَمْنُوع، مَنَعَ، اِمْتِنَاع» qaysi o'zakdan?",
+   "q_ar": "مَمْنُوع",
+   "options": ["م ن ع", "ن م ع", "م ع ن", "م ن ح"],
+   "answer": "م ن ع",
+   "explain_uz": "م ن ع — man qilish o'zagi.",
+   "audio": "",
+   "root": "م ن ع",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Makkaga bordim va ko'p maktablar yonidan o'tdim»",
+   "q_ar": "",
+   "options": [],
+   "answer": "زُرْتُ مَكَّةَ وَمَرَرْتُ بِمَدَارِسَ",
+   "explain_uz": "Ikkala mamnu' so'z ham tanvinsiz.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["زُرْتُ", "مَكَّةَ", "وَمَرَرْتُ", "بِمَدَارِسَ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "م ن ع", "back": "man qilish — mamnu'/imtino", "deck": "msa"},
+  {"type": "root", "front": "ص ر ف", "back": "sarf — tanvinlash/tuslash", "deck": "msa"},
+  {"type": "word", "front": "مَمْنُوع", "back": "man qilingan", "deck": "msa"},
+  {"type": "word", "front": "عَلَم", "back": "atoqli ot", "deck": "msa"},
+  {"type": "word", "front": "مَدَارِس", "back": "maktablar (مَفَاعِل)", "deck": "msa"},
+  {"type": "word", "front": "مَفَاتِيح", "back": "kalitlar (مَفَاعِيل)", "deck": "msa"},
+  {"type": "word", "front": "أَسَالِيب", "back": "uslublar", "deck": "msa"},
+  {"type": "word", "front": "عَطْشَان", "back": "chanqagan (فَعْلَان)", "deck": "msa"},
+  {"type": "word", "front": "تَنْوِين", "back": "tanvin", "deck": "msa"},
+  {"type": "word", "front": "اِسْتِثْنَاء", "back": "istisno", "deck": "msa"},
+  {"type": "pattern", "front": "مَفَاعِيل", "back": "singan ko'plik: مَفَاتِيح, أَسَالِيب — mamnu'", "deck": "msa"}
+ ]
+}

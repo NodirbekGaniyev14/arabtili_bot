@@ -1,0 +1,316 @@
+{
+ "id": "b2-09",
+ "level": "B2",
+ "module": "nahw-adv",
+ "order": 9,
+ "title_uz": "Taqdim-ta'xir va e'tiroziy jumla",
+ "title_ar": "التَّقْدِيمُ وَالتَّأْخِيرُ وَالجُمْلَةُ الاِعْتِرَاضِيَّةُ",
+ "can_do_uz": "So'z tartibi o'zgarganda ma'no urg'usi qayerga tushishini tushunaman va qistirma jumlalarni ajrata olaman.",
+ "duration_min": 30,
+ "prerequisites": ["b2-08"],
+ "harakat_level": "ambiguous_only",
+ "hook_uz": "«Kitobni men o'qidim» va «Men kitobni o'qidim» — o'zbekchada urg'u farqi bor. Arabchada ham shunday: فِي البَيْتِ ضَيْفٌ («uyda mehmon bor») — bu yerda predlog OLDINGA chiqqan va shu urg'uni oladi. Yana bir narsa: jumla o'rtasiga qistirma izoh tushadi — «الرَّئِيسُ، وَهُوَ خَبِيرٌ اقْتِصَادِيٌّ، قَالَ...». Bu ikkisini bilmasangiz uzun gazeta jumlasi chalkash tuyuladi.",
+ "grammar": {
+  "point_ar": "التَّقْدِيمُ لِلْأَهَمِّيَّةِ · الجُمْلَةُ الاِعْتِرَاضِيَّةُ بَيْنَ شَرْطَيْنِ",
+  "explanation_uz": "1) TAQDIM-TA'XIR (التَّقْدِيم وَالتَّأْخِير) — bo'lakni oldinga chiqarish. Sabablari: (a) urg'u/e'tibor: لِلَّهِ الأَمْرُ, إِيَّاكَ نَعْبُدُ; (b) MAJBURIY holatlar — xabar noaniq, mubtado esa jarr birikmasi bo'lsa: فِي البَيْتِ ضَيْفٌ (uyda mehmon bor) — «ضَيْفٌ noaniq bo'lgani uchun oldinga chiqa olmaydi»; (c) savol so'zi doim oldinda: مَتَى وَصَلْتَ؟ Ma'no o'zgarmaydi, lekin URG'U oldinga chiqqan bo'lakka tushadi. 2) JUMLA I'TIRODIYA (الجُمْلَةُ الاِعْتِرَاضِيَّة) — gap o'rtasiga tushgan qistirma izoh. U i'robga TA'SIR QILMAYDI («لَا مَحَلَّ لَهَا مِنَ الإِعْرَابِ») va odatda vergul, وَ yoki tire bilan ajratiladi: الوَزِيرُ — وَهُوَ خَبِيرٌ اقْتِصَادِيٌّ — أَعْلَنَ الخُطَّةَ. O'qiyotganda qistirmani vaqtincha «o'chirib» qo'ysangiz, asosiy jumla ochiq ko'rinadi: الوَزِيرُ أَعْلَنَ الخُطَّةَ.",
+  "table": [
+   {"ar": "فِي البَيْتِ ضَيْفٌ", "uz": "Uyda mehmon bor (majburiy taqdim)", "form": "تَقْدِيم وَاجِب"},
+   {"ar": "لِلْعِلْمِ قِيمَةٌ كَبِيرَةٌ", "uz": "Ilmning qadri katta (urg'u ilmda)", "form": "تَقْدِيم"},
+   {"ar": "مَتَى وَصَلَ الوَفْدُ؟", "uz": "Delegatsiya qachon keldi? (savol oldinda)", "form": "اِسْتِفْهَام"},
+   {"ar": "الوَزِيرُ، وَهُوَ خَبِيرٌ، أَعْلَنَ الخُطَّةَ", "uz": "Vazir — u ekspert — rejani e'lon qildi", "form": "اِعْتِرَاضِيَّة"},
+   {"ar": "التَّقْرِيرُ — كَمَا ذَكَرْنَا — دَقِيقٌ", "uz": "Hisobot — aytganimizdek — aniq", "form": "اِعْتِرَاضِيَّة"},
+   {"ar": "قَرَأْتُ الكِتَابَ كُلَّهُ", "uz": "Kitobning hammasini o'qidim (odatiy tartib)", "form": "تَرْتِيب عَادِيّ"}
+  ],
+  "common_mistakes_uz": [
+   "Noaniq mubtadoni oldinga chiqarish: ضَيْفٌ فِي البَيْتِ ✗ (kitobiy tilda) → فِي البَيْتِ ضَيْفٌ ✓.",
+   "Qistirma jumlani asosiy gapning bo'lagi deb i'roblash — uning i'robda o'rni yo'q.",
+   "Taqdimni «xato tartib» deb tuzatishga urinish — bu uslubiy vosita, ma'no urg'usini beradi."
+  ]
+ },
+ "roots": [
+  {
+   "root": "ق د م",
+   "meaning_uz": "oldinga o'tish, taqdim etish",
+   "uz_cognates": ["taqdim", "muqaddam", "qadim"],
+   "derived": [
+    {"ar": "تَقْدِيم", "uz": "oldinga chiqarish, taqdim", "pattern": "تَفْعِيل"},
+    {"ar": "مُقَدَّم", "uz": "oldinga chiqarilgan", "pattern": "مُفَعَّل"},
+    {"ar": "تَقَدَّمَ", "uz": "oldinga siljidi", "pattern": "تَفَعَّلَ"}
+   ]
+  },
+  {
+   "root": "ع ر ض",
+   "meaning_uz": "ko'rsatish, ko'ndalang turish",
+   "uz_cognates": ["arz", "e'tiroz", "ma'ruza"],
+   "derived": [
+    {"ar": "اِعْتِرَاض", "uz": "e'tiroz; qistirma", "pattern": "اِفْتِعَال"},
+    {"ar": "عَرْض", "uz": "taqdimot, ko'rsatish", "pattern": "فَعْل"},
+    {"ar": "مُعْتَرِضَة", "uz": "qistirma (jumla)", "pattern": "مُفْتَعِلَة"}
+   ]
+  }
+ ],
+ "vocabulary": [
+  {
+   "ar": "تَقْدِيم",
+   "translit": "taqdīm",
+   "uz": "oldinga chiqarish, taqdim (o'zbekcha 'taqdim')",
+   "root": "ق د م",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/taqdim.mp3",
+   "example_ar": "التَّقْدِيمُ يُفِيدُ الأَهَمِّيَّةَ.",
+   "example_uz": "Taqdim (oldinga chiqarish) muhimlikni bildiradi.",
+   "srs": true
+  },
+  {
+   "ar": "تَأْخِير",
+   "translit": "taʾkhīr",
+   "uz": "keyinga surish (grammatikada: orqaga qo'yish)",
+   "root": "أ خ ر",
+   "pattern": "تَفْعِيل",
+   "pos": "ot",
+   "audio": "b2/takhir.mp3",
+   "example_ar": "التَّأْخِيرُ لَا يُغَيِّرُ المَعْنَى الأَسَاسِيَّ.",
+   "example_uz": "Keyinga surish asosiy ma'noni o'zgartirmaydi.",
+   "srs": true
+  },
+  {
+   "ar": "اِعْتِرَاضِيَّة",
+   "translit": "iʿtirāḍiyya",
+   "uz": "qistirma (jumla)",
+   "root": "ع ر ض",
+   "pattern": "اِفْتِعَالِيَّة",
+   "pos": "sifat",
+   "audio": "b2/itiradiyya.mp3",
+   "example_ar": "الجُمْلَةُ الاِعْتِرَاضِيَّةُ لَا مَحَلَّ لَهَا.",
+   "example_uz": "Qistirma jumlaning i'robda o'rni yo'q.",
+   "srs": true
+  },
+  {
+   "ar": "أَهَمِّيَّة",
+   "translit": "ahammiyya",
+   "uz": "muhimlik (o'zbekcha 'ahamiyat')",
+   "root": "ه م م",
+   "pattern": "فَعِّيَّة",
+   "pos": "ot",
+   "audio": "b2/ahammiyya.mp3",
+   "example_ar": "لِهَذَا الأَمْرِ أَهَمِّيَّةٌ كَبِيرَةٌ.",
+   "example_uz": "Bu masalaning katta ahamiyati bor.",
+   "srs": true
+  },
+  {
+   "ar": "خُطَّة",
+   "translit": "khuṭṭa",
+   "uz": "reja (rasmiy)",
+   "root": "خ ط ط",
+   "pattern": "فُعْلَة",
+   "pos": "ot",
+   "audio": "b2/khutta.mp3",
+   "example_ar": "أَعْلَنَ الوَزِيرُ الخُطَّةَ.",
+   "example_uz": "Vazir rejani e'lon qildi.",
+   "srs": true
+  },
+  {
+   "ar": "خَبِير",
+   "translit": "khabīr",
+   "uz": "ekspert, mutaxassis (o'zbekcha 'xabardor')",
+   "root": "خ ب ر",
+   "pattern": "فَعِيل",
+   "pos": "ot",
+   "audio": "b2/khabir.mp3",
+   "example_ar": "الوَزِيرُ خَبِيرٌ اقْتِصَادِيٌّ.",
+   "example_uz": "Vazir — iqtisod bo'yicha ekspert.",
+   "srs": true
+  },
+  {
+   "ar": "وَفْد",
+   "translit": "wafd",
+   "uz": "delegatsiya",
+   "root": "و ف د",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/wafd.mp3",
+   "example_ar": "وَصَلَ الوَفْدُ صَبَاحًا.",
+   "example_uz": "Delegatsiya ertalab keldi.",
+   "srs": true
+  },
+  {
+   "ar": "ضَيْف",
+   "translit": "ḍayf",
+   "uz": "mehmon",
+   "root": "ض ي ف",
+   "pattern": "فَعْل",
+   "pos": "ot",
+   "audio": "b2/dayf.mp3",
+   "example_ar": "فِي البَيْتِ ضَيْفٌ.",
+   "example_uz": "Uyda mehmon bor.",
+   "srs": true
+  },
+  {
+   "ar": "قِيمَة",
+   "translit": "qīma",
+   "uz": "qiymat, qadr (o'zbekcha 'qiymat')",
+   "root": "ق و م",
+   "pattern": "فِعْلَة",
+   "pos": "ot",
+   "audio": "b2/qima.mp3",
+   "example_ar": "لِلْعِلْمِ قِيمَةٌ كَبِيرَةٌ.",
+   "example_uz": "Ilmning qadri katta.",
+   "srs": true
+  }
+ ],
+ "hejazi": [],
+ "skills": {
+  "reading": {
+   "text_ar": "في القاعة ضيوف كثيرون. الوزير — وهو خبير اقتصادي معروف — أعلن الخطة الجديدة، ثم أجاب عن الأسئلة. للمشروع، كما ذكر التقرير، أهمية كبيرة للمنطقة كلها. متى يبدأ العمل؟ سأل أحد الصحفيين. فأجاب المسؤول: في الشهر القادم يبدأ التنفيذ، وللشركات المحلية أولوية في العقود.",
+   "questions": [
+    {"q_uz": "«في القاعة ضيوف كثيرون» — nega bu tartib?", "a": "Xabar noaniq bo'lgani uchun jarr birikmasi oldinga chiqadi"},
+    {"q_uz": "«وهو خبير اقتصادي معروف» — bu nima?", "a": "Qistirma jumla, i'robda o'rni yo'q"},
+    {"q_uz": "«وللشركات المحلية أولوية» dagi urg'u qayerda?", "a": "Mahalliy kompaniyalarda — jarr birikmasi oldinga chiqqani uchun"}
+   ]
+  },
+  "listening": {
+   "audio": "b2/b2-09-listen.mp3",
+   "transcript_ar": "فِي البَيْتِ ضَيْفٌ. وَالمُدِيرُ، وَهُوَ خَبِيرٌ، سَيَصِلُ بَعْدَ قَلِيلٍ. لِلْمَوْضُوعِ أَهَمِّيَّةٌ كَبِيرَةٌ.",
+   "questions": [
+    {"q_uz": "Qistirma qism qaysi?", "a": "«وهو خبير» — direktor haqidagi izoh"},
+    {"q_uz": "Oxirgi jumlada urg'u nimada?", "a": "Mavzuda — «lil-mawdu'i» oldinga chiqqan"}
+   ]
+  },
+  "speaking": {
+   "task_uz": "Uch gap ayting: «Uyda mehmon bor», «Ilmning qadri katta», «Vazir — u ekspert — rejani e'lon qildi».",
+   "target_ar": ["فِي البَيْتِ ضَيْفٌ", "لِلْعِلْمِ قِيمَةٌ كَبِيرَةٌ", "الوَزِيرُ وَهُوَ خَبِيرٌ أَعْلَنَ الخُطَّةَ"],
+   "eval": "self_check"
+  },
+  "writing": {
+   "task_uz": "Ikki gap yozing: birinchisi jarr birikmasi bilan boshlansin (taqdim), ikkinchisining o'rtasida qistirma izoh bo'lsin.",
+   "eval": "ai_grammar"
+  }
+ },
+ "micro_test": [
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi tartib TO'G'RI (kitobiy uslubda)?",
+   "q_ar": "",
+   "options": [
+    "فِي البَيْتِ ضَيْفٌ",
+    "ضَيْفٌ فِي البَيْتِ",
+    "البَيْتُ ضَيْفٌ فِي",
+    "ضَيْفُ البَيْتِ فِي"
+   ],
+   "answer": "فِي البَيْتِ ضَيْفٌ",
+   "explain_uz": "Xabar noaniq bo'lsa jarr birikmasi oldinga chiqadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qistirma jumlaning i'robdagi o'rni qanday?",
+   "q_ar": "الجُمْلَةُ الاِعْتِرَاضِيَّةُ",
+   "options": [
+    "O'rni yo'q (لَا مَحَلَّ لَهَا)",
+    "Doim marfu'",
+    "Doim mansub",
+    "Doim majrur"
+   ],
+   "answer": "O'rni yo'q (لَا مَحَلَّ لَهَا)",
+   "explain_uz": "Qistirma asosiy jumla tuzilishiga ta'sir qilmaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«لِلْعِلْمِ قِيمَةٌ كَبِيرَةٌ» da urg'u qayerda?",
+   "q_ar": "لِلْعِلْمِ قِيمَةٌ كَبِيرَةٌ",
+   "options": ["Ilmda (oldinga chiqqan bo'lakda)", "Qiymatda", "Sifatda", "Urg'u yo'q"],
+   "answer": "Ilmda (oldinga chiqqan bo'lakda)",
+   "explain_uz": "Taqdim qilingan bo'lak urg'u oladi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qistirmani ajratish uchun matnda nima ishlatiladi?",
+   "q_ar": "",
+   "options": [
+    "Vergul, tire yoki وَ",
+    "Faqat nuqta",
+    "Faqat savol belgisi",
+    "Hech narsa"
+   ],
+   "answer": "Vergul, tire yoki وَ",
+   "explain_uz": "Matn qistirmani belgi bilan ajratadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "O'zbekchaga tarjima qiling",
+   "q_ar": "وَفْد",
+   "options": [],
+   "answer": "delegatsiya",
+   "explain_uz": "وَفْد — rasmiy delegatsiya.",
+   "audio": "b2/wafd.mp3",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«تَقْدِيم، مُقَدَّم، تَقَدَّمَ» qaysi o'zakdan?",
+   "q_ar": "تَقْدِيم",
+   "options": ["ق د م", "ق ي د", "د ق م", "ق د ر"],
+   "answer": "ق د م",
+   "explain_uz": "ق د م — oldinga o'tish (taqdim, qadim).",
+   "audio": "",
+   "root": "ق د م",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Savol so'zi jumlada qayerda turadi?",
+   "q_ar": "مَتَى وَصَلَ الوَفْدُ؟",
+   "options": ["Doim boshida", "Doim oxirida", "O'rtasida", "Farqi yo'q"],
+   "answer": "Doim boshida",
+   "explain_uz": "Istifhom vositalari majburiy taqdim qilinadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "Gapni tuzing: «Uyda mehmon bor»",
+   "q_ar": "",
+   "options": [],
+   "answer": "فِي البَيْتِ ضَيْفٌ",
+   "explain_uz": "Jarr birikmasi + noaniq mubtado.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": ["فِي", "البَيْتِ", "ضَيْفٌ"]
+  }
+ ],
+ "srs_cards": [
+  {"type": "root", "front": "ق د م", "back": "oldinga o'tish — taqdim/qadim", "deck": "msa"},
+  {"type": "root", "front": "ع ر ض", "back": "ko'rsatish — e'tiroz/ma'ruza", "deck": "msa"},
+  {"type": "word", "front": "تَقْدِيم", "back": "oldinga chiqarish", "deck": "msa"},
+  {"type": "word", "front": "تَأْخِير", "back": "keyinga surish", "deck": "msa"},
+  {"type": "word", "front": "اِعْتِرَاضِيَّة", "back": "qistirma jumla", "deck": "msa"},
+  {"type": "word", "front": "أَهَمِّيَّة", "back": "ahamiyat", "deck": "msa"},
+  {"type": "word", "front": "خُطَّة", "back": "reja", "deck": "msa"},
+  {"type": "word", "front": "خَبِير", "back": "ekspert", "deck": "msa"},
+  {"type": "word", "front": "وَفْد", "back": "delegatsiya", "deck": "msa"},
+  {"type": "word", "front": "ضَيْف", "back": "mehmon", "deck": "msa"},
+  {"type": "word", "front": "قِيمَة", "back": "qiymat, qadr", "deck": "msa"}
+ ]
+}
