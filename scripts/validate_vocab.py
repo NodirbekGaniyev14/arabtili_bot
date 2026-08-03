@@ -136,12 +136,22 @@ def check_word(
     if ar and HARAKAT_REQUIRED.get(level, False) and not harakat_ok(ar):
         problems.append(f"{tag}: {level} darajada har undoshga harakat kerak")
 
-    # 4. O'zbekcha matn
+    # 4. O'zbekcha matn — kirill harflari va lotin so'z ichiga tushib qolgan
+    #    arabcha harf («shu» o'rniga «شu») ushlanadi
     for f in ("uz", "example_uz", "note_uz"):
         val = w.get(f) or ""
         found = {c: val.count(c) for c in CYRILLIC_LOOKALIKES if c in val}
         if found:
             problems.append(f"{tag}: «{f}» da KIRILL harflari — {found}")
+
+    if ARABIC_RE.search(w.get("example_uz") or ""):
+        problems.append(f"{tag}: «example_uz» da arabcha harf bor")
+
+    # Izoh va ma'noda arabcha misol bo'lishi mumkin, ammo lotin so'zga yopishmasin
+    # («shu» o'rniga «شu» kabi terish xatosi)
+    for f in ("uz", "note_uz"):
+        for m in re.finditer(r"[A-Za-z][؀-ۿ]|[؀-ۿ][A-Za-z]", w.get(f) or ""):
+            problems.append(f"{tag}: «{f}» da arabcha harf lotin so'zga yopishgan — {m.group()!r}")
 
     # 5. O'zak
     root = (w.get("root") or "").strip()
