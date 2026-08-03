@@ -205,6 +205,51 @@ export interface VocabEntry {
   lessons: string[];
 }
 
+/** Lug'at bo'limi (K16) — 6000 so'z, darajalar kesimida */
+export interface VocabWord {
+  id: string;
+  rank: number;
+  ar: string;
+  translit: string;
+  uz: string;
+  pos: string;
+  root: string;
+  pattern: string;
+  theme: string;
+  level: string;
+  example_ar: string;
+  example_uz: string;
+  audio: string;
+  note_uz: string;
+  plural_ar?: string;
+  past_ar?: string;
+  present_ar?: string;
+  masdar_ar?: string;
+  form?: string;
+  lessons: string[];
+  source: "lesson" | "vocab";
+}
+
+export interface VocabLevelStat {
+  level: string;
+  total: number;
+  target: number;
+  learned: number;
+}
+
+export interface VocabStats {
+  total: number;
+  goal: number;
+  learned: number;
+  levels: VocabLevelStat[];
+}
+
+export interface VocabTheme {
+  slug: string;
+  title_uz: string;
+  total: number;
+}
+
 /** Daraja aniqlash testi (placement) */
 export interface PlacementTier {
   done: false;
@@ -643,6 +688,23 @@ export const api = {
     request<{ total: number; items: VocabEntry[] }>(
       `/api/reference/vocab?q=${encodeURIComponent(q)}&level=${level}&offset=${offset}`
     ),
+  getVocabStats: () => request<VocabStats>("/api/vocab/stats"),
+  getVocabThemes: (level = "") =>
+    request<{ items: VocabTheme[] }>(`/api/vocab/themes?level=${level}`),
+  searchVocabBase: (q: string, level = "", theme = "", offset = 0) =>
+    request<{ total: number; items: VocabWord[] }>(
+      `/api/vocab/search?q=${encodeURIComponent(q)}&level=${level}` +
+        `&theme=${encodeURIComponent(theme)}&offset=${offset}`
+    ),
+  getVocabDaily: (level = "", n = 20, theme = "") =>
+    request<{ items: VocabWord[] }>(
+      `/api/vocab/daily?level=${level}&n=${n}&theme=${encodeURIComponent(theme)}`
+    ),
+  learnVocab: (words: string[]) =>
+    request<{ added: number }>("/api/vocab/learn", {
+      method: "POST",
+      body: JSON.stringify({ words }),
+    }),
   getLeaderboard: (period: LeaderPeriod = "week") =>
     request<LeaderboardData>(`/api/leaderboard?period=${period}`),
   getPlacementStep: (passed: string) =>

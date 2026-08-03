@@ -1,6 +1,11 @@
 # LUG'AT BO'LIMI — 6000 SO'Z (K16) — REJA
 
-Holat: **tasdiqlash kutilmoqda**. Boshlashdan oldin §10 dagi 4 qaror kerak.
+Holat: **reja tasdiqlangan (2026-08-03)** — ish boshlandi.
+
+**Tasdiqlangan qarorlar:** kontent **TO'LIQ QO'LDA** yoziladi (API generatsiya emas) ·
+har so'zda **misol jumla bor** · **hamma 6000 so'zga audio**, repo tartibi
+o'zgarmaydi (public + dist ikki nusxa) · **umra/ziyorat lug'ati hozircha
+qo'shilmaydi**.
 
 Maqsad: darajalar kesimida arab tilining **eng muhim 6000 so'zi** — qidiriladigan,
 tinglanadigan, o'rganiladigan alohida lug'at bo'limi.
@@ -56,7 +61,7 @@ va yangi 4462 tasi bilan birlashtirib ko'rsatadi. Bitta so'z ikki joyda turmaydi
 | Tabiat | hayvon · o'simlik · geografiya · ekologiya |
 | Til yadrosi | harakat fe'llari · sifatlar · bog'lovchi va yuklama · fikr va tafakkur |
 
-Diniy atamalar (ziyorat/umra) — alohida qaror, §10.4.
+Diniy atamalar (ziyorat/umra) — **kiritilmaydi** (qaror §10.4).
 
 ---
 
@@ -112,25 +117,20 @@ buyruq bilan hamma kontent tekshiriladi.
 
 ---
 
-## 4. So'zlarni tayyorlash pipeline'i
+## 4. So'zlarni tayyorlash tartibi (qo'lda)
 
-`scripts/generate_vocab.py` — **build-vaqt** skripti (runtime emas), `lesson_gen.py`
-bilan bir xil uslubda:
+Kontent **qo'lda yoziladi** — B2 darslaridagi kabi. API generatsiya ishlatilmaydi.
 
-1. Kirish: daraja + mavzu + kerakli son + **allaqachon mavjud so'zlar ro'yxati**
-   (dars lug'ati + shu paytgacha yaratilganlar) — takror chiqmasligi uchun.
-2. 40 so'zlik paketlar (jami ~112 chaqiruv). Model: `claude-opus-4-8`
-   (`lesson_gen.py` dagidek), `ANTHROPIC_API_KEY` `.env` dan.
-3. Har paket darrov validatsiyadan o'tadi (§3). Yiqilgan yozuvlar qayta so'raladi,
-   3 urinishdan keyin chetga chiqariladi va qo'lda ko'riladi.
-4. Checkpoint fayli — uzilgan joydan davom etadi, bir xil paket ikki marta
-   generatsiya qilinmaydi.
-5. Men har paketni ko'zdan kechiraman: tarjima aniqligi, o'zbekcha ko'prik,
-   misol jumlaning darajaga mosligi.
+1. Ish birligi — **mavzu bloki**: bitta daraja + bitta mavzu, 40–60 so'z.
+   Bir o'zak oilasi bir blokda turadi (`ك ت ب` → kitob, yozuvchi, kutubxona, ofis).
+2. Har blok yozilgach darrov `scripts/validate_vocab.py` (§3 dagi 11 qoida) —
+   takror, harakat, kirill harfi, misol jumla, audio slug'i tekshiriladi.
+3. Blok fayldagi ro'yxatga `rank` tartibida qo'shiladi; `rank` chastota o'rnini
+   bildiradi (kunlik to'plam shu tartibda beriladi).
+4. Har bosqich oxirida to'liq zanjir: validator → `audit_content.py` → `pytest` →
+   `build_audio.py` → `npm run build` → commit + push.
 
-Taxminiy narx va vaqt: ~112 chaqiruv, ~$20–50 (model narxiga qarab), 2–4 soat run.
-
-Muqobil variantlar §10.1 da.
+Sur'at: bir sessiyada ~300–500 so'z. 4462 so'z ≈ 10–15 sessiya.
 
 ---
 
@@ -140,11 +140,9 @@ Nomlash: `vocab/<slug>.mp3`. `content/build_audio.py` yangi fayllarni **avtomati
 topadi (`ar` maydoni + `audio` maydoni bor har qanday JSON), qo'shimcha kod kerak emas.
 Ovoz va tezlik K14 dagidek: `ar-SA-HamedNeural`, qisqa so'zlar sekinroq va takrorlab.
 
-Hajm: 4462 so'z × ~12 KB ≈ **54 MB**. Hozir repoda audio **ikki nusxada**
-(`webapp/public/audio` 46,5 MB + `webapp/dist/audio` 46,5 MB), ya'ni +108 MB.
-`.git` hozir 107 MB.
-
-Yechim varianti §10.3 da.
+Hajm: 4462 so'z × ~12 KB ≈ **54 MB**. Audio repoda **ikki nusxada** saqlanadi
+(`webapp/public/audio` + `webapp/dist/audio`), ya'ni **+108 MB** — qaror §10.3:
+hozirgi tartib o'zgarmaydi, deploy sxemasiga tegilmaydi.
 
 ---
 
@@ -209,37 +207,14 @@ Har bosqich oxirida: `validate_content.py` + `validate_vocab.py` + `audit_conten
 
 ---
 
-## 10. Qarorlar (siz hal qilasiz)
+## 10. Qarorlar (tasdiqlangan 2026-08-03)
 
-### 10.1 Tayyorlash usuli
-| Variant | Vaqt | Sifat | Narx |
-|---|---|---|---|
-| **A. Claude API + qattiq validatsiya + mening ko'rigim** (tavsiyam) | 2–4 soat run + ko'rik | Yuqori (validator 11 qoida ushlaydi) | ~$20–50 |
-| B. Aralash: A0–A2 (1156 so'z) qo'lda, B1/B2 API | bir necha sessiya | Eng yuqori boshlang'ichda | ~$15–30 |
-| C. To'liq qo'lda | 20+ sessiya | Eng yuqori | 0 |
-
-B2 darslarini qo'lda yozgan edik — 49 dars 4 sessiya oldi. 4462 so'z qo'lda
-realistik emas, shuning uchun A ni tavsiya qilaman.
-
-### 10.2 So'z kartasi hajmi
-Misol jumla bo'lsinmi? (tavsiyam: **ha** — so'z kontekstsiz esda qolmaydi;
-JSON ~3,5 MB, generatsiya ~30% uzoqroq)
-
-### 10.3 Audio va repo hajmi
-| Variant | Repo o'sishi |
-|---|---|
-| Hamma 6000 so'z, hozirgi tartib (ikki nusxa) | +108 MB |
-| **Hamma so'z, `webapp/dist/audio` `.gitignore` ga** (tavsiyam) | +54 MB |
-| Faqat A0–B1 | +38 MB |
-
-Ikkinchi variantda serverda nginx `webapp/public/audio` dan xizmat qiladi —
-`deploy/` sozlamasi bir marta o'zgaradi va sinaladi.
-
-### 10.4 Diniy atamalar
-Umra/ziyorat lug'ati (إحرام · طواف · سعي) kiritilsinmi? Kurikulumda A2 #34 shunday
-dars bor, ammo B2 da diniy kontent qo'shmaslikka kelishgandik. Tavsiyam: **amaliy
-safar lug'ati sifatida kiritilsin** (~60 so'z, alohida «ziyorat» mavzusi) — Saudiyaga
-boradigan foydalanuvchiga kerak.
+| # | Savol | Qaror |
+|---|---|---|
+| 10.1 | Tayyorlash usuli | **To'liq qo'lda** — API generatsiya yo'q. Sifat birinchi o'rinda; ~10–15 sessiya |
+| 10.2 | Misol jumla har so'zda | **Ha** — so'z kontekstsiz esda qolmaydi |
+| 10.3 | Audio | **Hamma 6000 so'zga**, repo tartibi o'zgarmaydi (public + dist ikki nusxa, +108 MB) |
+| 10.4 | Umra/ziyorat lug'ati | **Hozircha yo'q** — keyinroq alohida qaraladi |
 
 ---
 
@@ -247,9 +222,9 @@ boradigan foydalanuvchiga kerak.
 
 | Xavf | Yechim |
 |---|---|
-| Tarjima sifati (API) | 11 qoidali validator + har paketni qo'lda ko'rish + shubhali so'zlar ro'yxati |
+| Qo'lda yozishda charchoq va sifat pasayishi | Kichik bloklar (40–60 so'z), har blokdan keyin validator; blok tugagach commit |
 | Takror so'z | Normallashtirilgan solishtiruv (harakatsiz, hamzasiz) darslar bazasi bilan ham |
 | Kirill harflari o'zbekcha matnda | Mavjud `CYRILLIC_LOOKALIKES` tekshiruvi validatorda |
-| Repo shishishi | §10.3 — dist nusxasini olib tashlash |
+| Repo o'sishi (+108 MB) | Qabul qilingan (§10.3); klon sekinlashsa keyinroq `dist/audio` ajratiladi |
 | 6000 so'z foydalanuvchini qo'rqitishi | Mavzu to'plamlari + «kunlik 20 so'z» — bir vaqtda faqat kichik bo'lak ko'rinadi |
 | Server xotirasi | 6000 so'z JSON ~3,5 MB, `lru_cache` bilan bir marta yuklanadi — muammo emas |

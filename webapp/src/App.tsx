@@ -16,6 +16,7 @@ import Placement from "./pages/Placement";
 import WeakPractice from "./pages/WeakPractice";
 import RolePlay from "./pages/RolePlay";
 import Reference from "./pages/Reference";
+import Vocab from "./pages/Vocab";
 import LessonPlayerV2 from "./pages/v2/LessonPlayerV2";
 
 type Phase = "boot" | "onboarding" | "app" | "offline";
@@ -49,6 +50,7 @@ export default function App() {
   const [showWeak, setShowWeak] = useState(false);
   const [showRolePlay, setShowRolePlay] = useState(false);
   const [showReference, setShowReference] = useState(false);
+  const [showVocab, setShowVocab] = useState(false);
 
   useEffect(() => {
     const tg = window.Telegram?.WebApp;
@@ -180,6 +182,7 @@ export default function App() {
             onOpenWeak={() => setShowWeak(true)}
             onOpenRolePlay={() => setShowRolePlay(true)}
             onOpenReference={() => setShowReference(true)}
+            onOpenVocab={() => setShowVocab(true)}
             onGoLessons={() => setTab("lessons")}
           />
         )}
@@ -207,6 +210,15 @@ export default function App() {
       {showRolePlay && <RolePlay onClose={() => setShowRolePlay(false)} />}
 
       {showReference && <Reference onClose={() => setShowReference(false)} />}
+
+      {showVocab && (
+        <Vocab
+          onClose={() => {
+            setShowVocab(false);
+            refreshMe();
+          }}
+        />
+      )}
 
       {showExam && (
         <Exam

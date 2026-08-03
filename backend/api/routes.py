@@ -729,3 +729,127 @@ async def reference_vocab(
     from services.reference import search_vocab
 
     return search_vocab(q[:100], level[:4].upper(), limit=60, offset=max(0, offset))
+
+
+# ──────────────────────── Lug'at bo'limi (K16) ────────────────────────
+
+
+async def _known_words(session: AsyncSession, user_id: int) -> set[str]:
+    """SRS kartotekasidagi so'zlar — «o'rganilgan» deb hisoblanadi."""
+    rows = await session.execute(
+        select(UserWord.ar).where(UserWord.user_id == user_id)
+    )
+    return set(rows.scalars())
+
+
+def _norm(s: str) -> str:
+    from services.reference import normalize
+
+    return normalize(s)
+
+
+@router.get("/vocab/stats")
+async def vocab_stats(
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Daraja kesimidagi hajm va foydalanuvchining o'zlashtirgani."""
+    from services.vocab import all_words, stats
+
+    known = {_norm(a) for a in await _known_words(session, user.id)}
+    learned = {lv: 0 for lv in ("A0", "A1", "A2", "B1", "B2")}
+    for w in all_words():
+        if _norm(w["ar"]) in known and w["level"] in learned:
+            learned[w["level"]] += 1
+
+    data = stats()
+    for row in data["levels"]:
+        row["learned"] = learned.get(row["level"], 0)
+    data["learned"] = sum(learned.values())
+    return data
+
+
+@router.get("/vocab/search")
+async def vocab_search(
+    q: str = "",
+    level: str = "",
+    theme: str = "",
+    pos: str = "",
+    offset: int = 0,
+    user: User = Depends(get_current_user),
+):
+    from services.vocab import search
+
+    return search(
+        q[:100],
+        level[:4].upper(),
+        theme[:40],
+        pos[:12],
+        limit=60,
+        offset=max(0, offset),
+    )
+
+
+@router.get("/vocab/themes")
+async def vocab_themes(level: str = "", user: User = Depends(get_current_user)):
+    from services.vocab import theme_list
+
+    return {"items": theme_list(level[:4].upper())}
+
+
+@router.get("/vocab/daily")
+async def vocab_daily(
+    level: str = "",
+    n: int = 20,
+    theme: str = "",
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Kunlik to'plam — hali o'rganilmagan so'zlardan, chastota tartibida."""
+    from services.vocab import daily_set
+
+    known = await _known_words(session, user.id)
+    items = daily_set(known, level[:4].upper(), max(1, min(n, 50)))
+    if theme:
+        items = [w for w in items if w.get("theme") == theme[:40]]
+    return {"items": items}
+
+
+class LearnBody(BaseModel):
+    words: list[str] = Field(default_factory=list, max_length=100)
+
+
+@router.post("/vocab/learn")
+async def vocab_learn(
+    body: LearnBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Tanlangan so'zlarni SRS kartotekasiga qo'shadi (takrorlanmaydi)."""
+    from services.vocab import word_by_ar
+
+    known = await _known_words(session, user.id)
+    today = _today().isoformat()
+    added = 0
+    for ar in body.words[:100]:
+        w = word_by_ar(ar)
+        if not w or w["ar"] in known:
+            continue
+        known.add(w["ar"])
+        session.add(
+            UserWord(
+                user_id=user.id,
+                ar=w["ar"],
+                translit=w.get("translit", ""),
+                uz=w.get("uz", ""),
+                audio=w.get("audio", ""),
+                kind="word",
+                card_type="word",
+                deck="msa",
+                due_date=today,
+            )
+        )
+        added += 1
+    if added:
+        await session.commit()
+    return {"added": added}
