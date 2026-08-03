@@ -151,8 +151,9 @@ def check_word(
     if not ex:
         problems.append(f"{tag}: misol jumla yo'q")
     elif ar:
+        # Ayol jinsidagi ة egalik qo'shimchasi bilan ت ga aylanadi (عَمَّة > عَمَّتِي)
         bare = strip_harakat(ar)
-        stem = bare[:-1] if len(bare) > 3 and bare[-1] in "ةه" else bare
+        stem = bare[:-1] if len(bare) >= 3 and bare[-1] in "ةه" else bare
         if stem and stem not in strip_harakat(ex):
             warnings.append(f"{tag}: misol jumlada so'zning o'zi ko'rinmadi")
     if ex and not (w.get("example_uz") or "").strip():
