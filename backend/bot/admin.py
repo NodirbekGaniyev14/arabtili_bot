@@ -118,11 +118,13 @@ async def cmd_javob(message: Message, bot: Bot):
     await message.answer(await _send_reply(bot, int(parts[1]), parts[2].strip()))
 
 
-@router.message(F.reply_to_message.text.regexp(r"#F\d+"))
+# DIQQAT: `.regexp()` matn BOSHIDAN qidiradi, `#F<id>` esa o'rtada turadi —
+# shuning uchun `.contains()`. Aniq raqam handler ichida ajratiladi.
+@router.message(F.reply_to_message.text.contains("#F"))
 async def reply_to_feedback(message: Message, bot: Bot):
     """Admin fikr xabariga reply qilsa — o'sha odamga javob ketadi.
 
-    Filtr faqat `#F<id>` yorlig'i bor xabarlarga tushadi, shuning uchun
+    Filtr faqat `#F` yorlig'i bor xabarlarga tushadi, shuning uchun
     boshqa replylar odatdagidek qayta ishlanadi.
     """
     if not _is_admin(message):
