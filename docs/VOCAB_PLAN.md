@@ -105,7 +105,7 @@ siljigan bo'lsa «soxta do'st» ogohlantirishi.
 | 3 | Harakat: A0/A1 — har undoshda majburiy; A2 — yangi so'zda; B1/B2 — ikkiyoqlama o'qiladiganlarida (`docs/ARABIY_CURRICULUM.md` §2.6) |
 | 4 | `uz` bo'sh bo'lmasin va **kirill harflari bo'lmasin** (`audit_content.py` dagi `CYRILLIC_LOOKALIKES`) |
 | 5 | `root` — «ك ت ب» formatida (3–4 harf, bo'shliq bilan); yasalma bo'lmagan so'zlarda bo'sh |
-| 6 | `pattern` — `content/patterns.json` dagi vaznlardan yoki bo'sh |
+| 6 | `pattern` — ixtiyoriy, erkin matn (`content/patterns.json` dagi 14 vazn hammasini qoplamaydi) |
 | 7 | `theme` — §2 dagi 36 mavzudan biri; `pos` — ism/fe'l/sifat/zarf/harf/ibora |
 | 8 | `example_ar` shu so'zni (yoki uning o'zagini) o'z ichiga olsin |
 | 9 | `audio` — `vocab/<lotin-slug>.mp3`, slug takrorlanmasin, faqat ASCII |

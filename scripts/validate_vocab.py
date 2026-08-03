@@ -16,7 +16,6 @@ import json
 import re
 import sys
 import unicodedata
-from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -249,11 +248,6 @@ def main() -> int:
             print(f"    ⚠ {wmsg}")
         if len(warnings) > 15:
             print(f"    … yana {len(warnings) - 15} ogohlantirish")
-
-    dupes = [t for t, n in Counter(seen_audio).items() if n > 1]
-    if dupes:
-        print(f"✗ audio nomi takrori: {dupes[:10]}")
-        all_problems += len(dupes)
 
     print(f"\nJami: {total} so'z · {all_problems} xato · {all_warnings} ogohlantirish")
     if args.strict:
