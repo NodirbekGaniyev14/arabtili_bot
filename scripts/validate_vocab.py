@@ -66,8 +66,16 @@ def lesson_words() -> dict[str, str]:
     return {normalize(e["ar"]): (e["lessons"] or ["?"])[0] for e in vocab_entries()}
 
 
-def harakat_ok(word: str) -> bool:
-    """Har undoshda harakat bormi (cho'ziq unlilar va so'z oxiri hisobga olinmaydi)."""
+def harakat_ok(text: str) -> bool:
+    """Har undoshda harakat bormi. Ibora bo'lsa har so'z alohida tekshiriladi
+    (har so'zning oxirgi harfi vaqf holatida harakatsiz qolishi mumkin)."""
+    parts = text.split()
+    if len(parts) > 1:
+        return all(_one_word_harakat_ok(p) for p in parts)
+    return _one_word_harakat_ok(text)
+
+
+def _one_word_harakat_ok(word: str) -> bool:
     letters = [c for c in word if ARABIC_RE.match(c) and not HARAKAT_RE.match(c)]
     if not letters:
         return False
@@ -151,11 +159,13 @@ def check_word(
     if not ex:
         problems.append(f"{tag}: misol jumla yo'q")
     elif ar:
-        # Ayol jinsidagi ة egalik qo'shimchasi bilan ت ga aylanadi (عَمَّة > عَمَّتِي)
-        bare = strip_harakat(ar)
-        stem = bare[:-1] if len(bare) >= 3 and bare[-1] in "ةه" else bare
-        if stem and stem not in strip_harakat(ex):
-            warnings.append(f"{tag}: misol jumlada so'zning o'zi ko'rinmadi")
+        # Ayol jinsidagi ة egalik qo'shimchasi bilan ت ga aylanadi (عَمَّة > عَمَّتِي).
+        # Ibora bo'lsa har so'z alohida qidiriladi (orada ال tushishi mumkin).
+        bare_ex = strip_harakat(ex)
+        for part in strip_harakat(ar).split():
+            stem = part[:-1] if len(part) >= 3 and part[-1] in "ةه" else part
+            if stem and stem not in bare_ex:
+                warnings.append(f"{tag}: misol jumlada «{part}» ko'rinmadi")
     if ex and not (w.get("example_uz") or "").strip():
         problems.append(f"{tag}: misol jumlaning tarjimasi yo'q")
 
