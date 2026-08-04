@@ -250,6 +250,36 @@ export interface VocabTheme {
   total: number;
 }
 
+/** Lug'at imtihoni — daraja kesimida */
+export interface VocabQuizItem {
+  type: "ar_uz" | "uz_ar" | "audio_uz";
+  word_id: string;
+  ar: string;
+  prompt: string;
+  translit: string;
+  audio: string;
+  options: string[];
+  answer: string;
+  level: string;
+  theme: string;
+}
+
+export interface VocabQuiz {
+  level: string;
+  theme: string;
+  pass_score: number;
+  total_words?: number;
+  items: VocabQuizItem[];
+}
+
+export interface VocabQuizResult {
+  score: number;
+  passed: boolean;
+  pass_score: number;
+  xp_earned: number;
+  added_to_review: number;
+}
+
 /** Daraja aniqlash testi (placement) */
 export interface PlacementTier {
   done: false;
@@ -704,6 +734,20 @@ export const api = {
     request<{ added: number }>("/api/vocab/learn", {
       method: "POST",
       body: JSON.stringify({ words }),
+    }),
+  getVocabQuiz: (level = "", theme = "", n = 20) =>
+    request<VocabQuiz>(
+      `/api/vocab/quiz?level=${level}&theme=${encodeURIComponent(theme)}&n=${n}`
+    ),
+  submitVocabQuiz: (payload: {
+    level: string;
+    correct: number;
+    total: number;
+    wrong_words: string[];
+  }) =>
+    request<VocabQuizResult>("/api/vocab/quiz/submit", {
+      method: "POST",
+      body: JSON.stringify(payload),
     }),
   getLeaderboard: (period: LeaderPeriod = "week") =>
     request<LeaderboardData>(`/api/leaderboard?period=${period}`),

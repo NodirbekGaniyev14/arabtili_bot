@@ -748,6 +748,39 @@ def _norm(s: str) -> str:
     return normalize(s)
 
 
+async def _learn_words(
+    session: AsyncSession, user_id: int, words: list[str]
+) -> int:
+    """Lug'at so'zlarini SRS kartotekasiga qo'shadi — takrorlanmaydi."""
+    from services.vocab import word_by_ar
+
+    known = await _known_words(session, user_id)
+    today = _today().isoformat()
+    added = 0
+    for ar in words[:100]:
+        w = word_by_ar(ar)
+        if not w or w["ar"] in known:
+            continue
+        known.add(w["ar"])
+        session.add(
+            UserWord(
+                user_id=user_id,
+                ar=w["ar"],
+                translit=w.get("translit", ""),
+                uz=w.get("uz", ""),
+                audio=w.get("audio", ""),
+                kind="word",
+                card_type="word",
+                deck="msa",
+                due_date=today,
+            )
+        )
+        added += 1
+    if added:
+        await session.commit()
+    return added
+
+
 @router.get("/vocab/stats")
 async def vocab_stats(
     user: User = Depends(get_current_user),
@@ -815,6 +848,46 @@ async def vocab_daily(
     return {"items": items}
 
 
+@router.get("/vocab/quiz")
+async def vocab_quiz(
+    level: str = "",
+    theme: str = "",
+    n: int = 20,
+    user: User = Depends(get_current_user),
+):
+    """Lug'at imtihoni — daraja (va ixtiyoriy mavzu) kesimida."""
+    from services.vocab_test import build_quiz
+
+    return build_quiz(level[:4].upper(), theme[:40], n)
+
+
+class QuizResultBody(BaseModel):
+    level: str = ""
+    correct: int = 0
+    total: int = 0
+    wrong_words: list[str] = Field(default_factory=list, max_length=60)
+
+
+@router.post("/vocab/quiz/submit")
+async def vocab_quiz_submit(
+    body: QuizResultBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Natijani baholaydi: XP beradi, bilinmagan so'zlarni kartotekaga qo'shadi."""
+    from services.vocab_test import score
+
+    result = score(body.correct, body.total)
+    xp = max(1, body.correct) + (10 if result["passed"] else 0)
+    session.add(
+        XpLog(user_id=user.id, amount=xp, source=f"vocab_quiz:{body.level or 'all'}")
+    )
+    await session.commit()
+
+    added = await _learn_words(session, user.id, body.wrong_words)
+    return {**result, "xp_earned": xp, "added_to_review": added}
+
+
 class LearnBody(BaseModel):
     words: list[str] = Field(default_factory=list, max_length=100)
 
@@ -826,30 +899,5 @@ async def vocab_learn(
     session: AsyncSession = Depends(get_session),
 ):
     """Tanlangan so'zlarni SRS kartotekasiga qo'shadi (takrorlanmaydi)."""
-    from services.vocab import word_by_ar
-
-    known = await _known_words(session, user.id)
-    today = _today().isoformat()
-    added = 0
-    for ar in body.words[:100]:
-        w = word_by_ar(ar)
-        if not w or w["ar"] in known:
-            continue
-        known.add(w["ar"])
-        session.add(
-            UserWord(
-                user_id=user.id,
-                ar=w["ar"],
-                translit=w.get("translit", ""),
-                uz=w.get("uz", ""),
-                audio=w.get("audio", ""),
-                kind="word",
-                card_type="word",
-                deck="msa",
-                due_date=today,
-            )
-        )
-        added += 1
-    if added:
-        await session.commit()
+    added = await _learn_words(session, user.id, body.words)
     return {"added": added}

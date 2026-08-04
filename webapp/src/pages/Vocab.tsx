@@ -8,6 +8,7 @@
 import { useEffect, useRef, useState } from "react";
 import {
   api,
+  type VocabQuizItem,
   type VocabStats,
   type VocabTheme,
   type VocabWord,
@@ -17,7 +18,7 @@ import { playAudio } from "../lib/audio";
 const tg = () => window.Telegram?.WebApp;
 const LEVELS = ["A0", "A1", "A2", "B1", "B2"] as const;
 
-type Mode = "browse" | "study";
+type Mode = "browse" | "study" | "quiz";
 
 export default function Vocab({ onClose }: { onClose: () => void }) {
   const [mode, setMode] = useState<Mode>("browse");
@@ -77,6 +78,19 @@ export default function Vocab({ onClose }: { onClose: () => void }) {
     );
   }
 
+  if (mode === "quiz") {
+    return (
+      <QuizSession
+        level={level}
+        theme={theme}
+        onDone={() => {
+          setMode("browse");
+          loadStats();
+        }}
+      />
+    );
+  }
+
   const percent = stats?.goal ? Math.round((stats.total / stats.goal) * 100) : 0;
 
   return (
@@ -126,25 +140,39 @@ export default function Vocab({ onClose }: { onClose: () => void }) {
           </div>
         )}
 
-        <button
-          onClick={() => {
-            tg()?.HapticFeedback?.impactOccurred("light");
-            setMode("study");
-          }}
-          className="mt-3 w-full rounded-2xl bg-card border border-cardline p-4 text-left active:scale-[0.99] transition-transform"
-        >
-          <div className="flex items-center justify-between">
-            <div>
-              <div className="font-extrabold">Kunlik 20 so'z</div>
-              <div className="text-xs text-ink-soft font-semibold">
-                {level || "barcha daraja"}
-                {theme ? ` · ${themes.find((t) => t.slug === theme)?.title_uz}` : ""} ·
-                fleshkarta
-              </div>
+        <div className="mt-3 grid grid-cols-2 gap-2">
+          <button
+            onClick={() => {
+              tg()?.HapticFeedback?.impactOccurred("light");
+              setMode("study");
+            }}
+            className="rounded-2xl bg-card border border-cardline p-3.5 text-left active:scale-[0.99] transition-transform"
+          >
+            <div className="text-2xl">🎴</div>
+            <div className="font-extrabold mt-1">Kunlik 20 so'z</div>
+            <div className="text-[11px] text-ink-soft font-semibold">
+              fleshkarta · {level || "barcha daraja"}
             </div>
-            <span className="text-2xl">🎴</span>
-          </div>
-        </button>
+          </button>
+          <button
+            onClick={() => {
+              tg()?.HapticFeedback?.impactOccurred("light");
+              setMode("quiz");
+            }}
+            className="rounded-2xl bg-emerald-deep text-white p-3.5 text-left active:scale-[0.99] transition-transform"
+          >
+            <div className="text-2xl">📝</div>
+            <div className="font-extrabold mt-1">Lug'at imtihoni</div>
+            <div className="text-[11px] text-white/70 font-semibold">
+              20 savol · {level || "barcha daraja"}
+            </div>
+          </button>
+        </div>
+        {theme && (
+          <p className="mt-1.5 text-[11px] text-ink-soft font-semibold text-center">
+            Mavzu: {themes.find((t) => t.slug === theme)?.title_uz}
+          </p>
+        )}
 
         {/* Daraja filtri */}
         <div className="mt-3 flex gap-1.5 overflow-x-auto pb-1">
@@ -305,6 +333,236 @@ function Chip({ children }: { children: React.ReactNode }) {
     <span className="rounded-full bg-sand border border-cardline px-2 py-0.5">
       {children}
     </span>
+  );
+}
+
+/** Lug'at imtihoni — daraja kesimida, 3 xil savol turi */
+function QuizSession({
+  level,
+  theme,
+  onDone,
+}: {
+  level: string;
+  theme: string;
+  onDone: () => void;
+}) {
+  const [items, setItems] = useState<VocabQuizItem[] | null>(null);
+  const [passScore, setPassScore] = useState(70);
+  const [i, setI] = useState(0);
+  const [picked, setPicked] = useState<string | null>(null);
+  const [correct, setCorrect] = useState(0);
+  const [wrong, setWrong] = useState<string[]>([]);
+  const [result, setResult] = useState<{
+    score: number;
+    passed: boolean;
+    xp_earned: number;
+    added_to_review: number;
+  } | null>(null);
+
+  useEffect(() => {
+    api
+      .getVocabQuiz(level, theme, 20)
+      .then((q) => {
+        setItems(q.items);
+        setPassScore(q.pass_score);
+        if (q.items[0]?.type === "audio_uz") playAudio(q.items[0].audio);
+      })
+      .catch(() => setItems([]));
+  }, [level, theme]);
+
+  const finish = (finalCorrect: number, finalWrong: string[]) => {
+    api
+      .submitVocabQuiz({
+        level,
+        correct: finalCorrect,
+        total: items?.length ?? 0,
+        wrong_words: finalWrong,
+      })
+      .then(setResult)
+      .catch(() =>
+        setResult({
+          score: Math.round((finalCorrect / (items?.length || 1)) * 100),
+          passed: false,
+          xp_earned: 0,
+          added_to_review: 0,
+        })
+      );
+  };
+
+  const choose = (option: string) => {
+    if (!items || picked) return;
+    setPicked(option);
+    const card = items[i];
+    const ok = option === card.answer;
+    const nextCorrect = ok ? correct + 1 : correct;
+    const nextWrong = ok ? wrong : [...wrong, card.ar];
+    if (ok) setCorrect(nextCorrect);
+    else setWrong(nextWrong);
+    tg()?.HapticFeedback?.notificationOccurred?.(ok ? "success" : "error");
+
+    window.setTimeout(() => {
+      if (i + 1 >= items.length) {
+        finish(nextCorrect, nextWrong);
+        setI(i + 1);
+        return;
+      }
+      setI(i + 1);
+      setPicked(null);
+      if (items[i + 1].type === "audio_uz") playAudio(items[i + 1].audio);
+    }, 700);
+  };
+
+  if (items === null) {
+    return (
+      <div className="fixed inset-0 z-30 bg-sand flex items-center justify-center">
+        <div className="text-ink-soft font-semibold">Yuklanmoqda...</div>
+      </div>
+    );
+  }
+
+  if (items.length === 0) {
+    return (
+      <div className="fixed inset-0 z-30 bg-sand flex flex-col items-center justify-center gap-4 px-6 text-center">
+        <div className="text-5xl">📭</div>
+        <div className="font-extrabold text-lg">Bu bo'limda so'z yetarli emas</div>
+        <p className="text-sm text-ink-soft font-semibold">
+          Imtihon uchun kamida 4 ta so'z kerak. Boshqa daraja yoki mavzuni tanlang.
+        </p>
+        <button
+          onClick={onDone}
+          className="rounded-2xl bg-emerald-deep text-white font-extrabold px-6 py-3"
+        >
+          Ortga
+        </button>
+      </div>
+    );
+  }
+
+  if (result) {
+    return (
+      <div className="fixed inset-0 z-30 bg-sand flex flex-col items-center justify-center gap-3 px-6 text-center">
+        <div className="text-6xl">{result.passed ? "🏆" : "📚"}</div>
+        <div className="text-4xl font-extrabold">{result.score}%</div>
+        <div className="font-extrabold text-lg">
+          {result.passed ? "Imtihondan o'tdingiz!" : "Yana bir oz mashq kerak"}
+        </div>
+        <p className="text-sm text-ink-soft font-semibold max-w-72">
+          {correct} / {items.length} to'g'ri · o'tish chegarasi {passScore}%
+          {result.added_to_review > 0 &&
+            ` · ${result.added_to_review} ta so'z takror kartotekasiga qo'shildi`}
+        </p>
+        <div className="text-sm font-extrabold text-emerald-deep">
+          +{result.xp_earned} XP
+        </div>
+        <button
+          onClick={onDone}
+          className="mt-2 rounded-2xl bg-emerald-deep text-white font-extrabold px-6 py-3"
+        >
+          Tugatish
+        </button>
+      </div>
+    );
+  }
+
+  // Oxirgi savoldan keyin natija serverdan kelguncha
+  if (i >= items.length) {
+    return (
+      <div className="fixed inset-0 z-30 bg-sand flex items-center justify-center">
+        <div className="text-ink-soft font-semibold">Natija hisoblanmoqda...</div>
+      </div>
+    );
+  }
+
+  const card = items[i];
+  const label =
+    card.type === "uz_ar"
+      ? "ARABCHASINI TANLANG"
+      : card.type === "audio_uz"
+        ? "ESHITING VA MA'NOSINI TANLANG"
+        : "MA'NOSINI TANLANG";
+
+  return (
+    <div className="fixed inset-0 z-30 bg-sand overflow-y-auto">
+      <div className="max-w-md mx-auto px-4 pt-5 pb-10 min-h-full flex flex-col">
+        <div className="flex items-center gap-3">
+          <button
+            onClick={onDone}
+            className="text-2xl text-ink-soft font-bold leading-none active:opacity-60"
+          >
+            ✕
+          </button>
+          <div className="flex-1 h-2 rounded-full bg-cardline overflow-hidden">
+            <div
+              className="h-full bg-emerald-deep rounded-full transition-[width]"
+              style={{ width: `${(i / items.length) * 100}%` }}
+            />
+          </div>
+          <span className="text-xs font-extrabold text-ink-soft">
+            {i + 1}/{items.length}
+          </span>
+        </div>
+
+        <div className="mt-6 text-center">
+          <div className="text-[10px] font-extrabold tracking-[0.16em] text-ink-soft">
+            {label}
+          </div>
+          {card.type === "audio_uz" ? (
+            <button
+              onClick={() => playAudio(card.audio)}
+              className="mt-4 mx-auto w-24 h-24 rounded-full bg-emerald-deep text-white text-4xl flex items-center justify-center active:scale-95 transition-transform"
+            >
+              🔊
+            </button>
+          ) : (
+            <div
+              className={
+                card.type === "uz_ar"
+                  ? "mt-3 text-2xl font-extrabold"
+                  : "mt-3 font-arabic text-5xl"
+              }
+              dir={card.type === "uz_ar" ? "ltr" : "rtl"}
+            >
+              {card.prompt}
+            </div>
+          )}
+        </div>
+
+        <div className="mt-6 space-y-2">
+          {card.options.map((option) => {
+            const isAnswer = option === card.answer;
+            const chosen = picked === option;
+            const style = !picked
+              ? "bg-card border-cardline"
+              : isAnswer
+                ? "bg-emerald-deep/12 border-emerald-deep"
+                : chosen
+                  ? "bg-terracotta/12 border-terracotta"
+                  : "bg-card border-cardline opacity-60";
+            return (
+              <button
+                key={option}
+                onClick={() => choose(option)}
+                disabled={!!picked}
+                className={`w-full rounded-2xl border p-3.5 text-left font-bold transition-colors ${style}`}
+              >
+                <span
+                  className={card.type === "uz_ar" ? "font-arabic text-xl" : ""}
+                  dir={card.type === "uz_ar" ? "rtl" : "ltr"}
+                >
+                  {option}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {picked && card.type !== "uz_ar" && (
+          <p className="mt-3 text-center text-[12px] text-ink-soft font-semibold">
+            {card.ar} · {card.translit}
+          </p>
+        )}
+      </div>
+    </div>
   );
 }
 
