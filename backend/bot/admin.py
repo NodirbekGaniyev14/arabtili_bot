@@ -180,6 +180,31 @@ async def reply_to_feedback(message: Message, bot: Bot):
     await message.answer(await _send_reply(bot, fb_id, text))
 
 
+async def _blast(bot: Bot, ids, text: str, **kwargs) -> tuple[int, int]:
+    """Ro'yxatdagi hammaga yuboradi. Natija: (yuborildi, yetmadi).
+
+    Telegram limitga urilsa (429) RetryAfter beradi — kutib bir marta
+    qayta urinamiz, aks holda o'sha odam xabarsiz qoladi.
+    """
+    sent = failed = 0
+    for tg_id in ids:
+        for attempt in (1, 2):
+            try:
+                await bot.send_message(tg_id, text, **kwargs)
+                sent += 1
+                break
+            except TelegramRetryAfter as e:
+                if attempt == 2:
+                    failed += 1
+                    break
+                await asyncio.sleep(e.retry_after + 1)
+            except Exception:
+                failed += 1  # bloklagan yoki chatni o'chirgan
+                break
+        await asyncio.sleep(0.05)  # Telegram limitidan oshmaslik uchun
+    return sent, failed
+
+
 @router.message(Command("broadcast"))
 async def cmd_broadcast(message: Message, bot: Bot):
     if not _is_admin(message):
@@ -198,16 +223,43 @@ async def cmd_broadcast(message: Message, bot: Bot):
         ids = await admin.all_real_tg_ids(session)
 
     await message.answer(f"📤 {len(ids)} ta foydalanuvchiga yuborilmoqda...")
-
-    sent = failed = 0
-    for tg_id in ids:
-        try:
-            await bot.send_message(tg_id, text)
-            sent += 1
-        except Exception:
-            failed += 1
-        await asyncio.sleep(0.05)  # Telegram limitidan oshmaslik uchun
-
+    sent, failed = await _blast(bot, ids, text)
     await message.answer(
         f"✅ Yuborildi: {sent}\n❌ Yetib bormadi: {failed}"
     )
+
+
+@router.message(Command("taklif"))
+async def cmd_taklif(message: Message, bot: Bot):
+    """Do'stlarga taklif kampaniyasi — ulashish tugmasi bilan.
+
+    `/taklif` — faqat adminga namuna ko'rsatadi (xavfsiz).
+    `/taklif yubor` — hamma foydalanuvchiga yuboradi.
+    """
+    if not _is_admin(message):
+        return
+
+    parts = (message.text or "").split(maxsplit=1)
+    confirmed = len(parts) > 1 and parts[1].strip().lower() == "yubor"
+
+    async with SessionLocal() as session:
+        ids = await admin.all_real_tg_ids(session)
+
+    if not confirmed:
+        await message.answer(
+            INVITE_TEXT, parse_mode="HTML", reply_markup=_invite_kb(),
+            disable_web_page_preview=True,
+        )
+        await message.answer(
+            f"☝️ Namuna. Shu xabar <b>{len(ids)}</b> ta foydalanuvchiga "
+            "ketadi.\n\nYuborish uchun: <code>/taklif yubor</code>",
+            parse_mode="HTML",
+        )
+        return
+
+    await message.answer(f"📤 {len(ids)} ta foydalanuvchiga yuborilmoqda...")
+    sent, failed = await _blast(
+        bot, ids, INVITE_TEXT, parse_mode="HTML",
+        reply_markup=_invite_kb(), disable_web_page_preview=True,
+    )
+    await message.answer(f"✅ Yuborildi: {sent}\n❌ Yetib bormadi: {failed}")

@@ -44,6 +44,7 @@ async def _setup_commands(bot: Bot):
                 BotCommand(command="users", description="👥 Oxirgi foydalanuvchilar"),
                 BotCommand(command="user", description="👤 Foydalanuvchi ma'lumoti"),
                 BotCommand(command="broadcast", description="📤 Hammaga xabar"),
+                BotCommand(command="taklif", description="👥 Taklif kampaniyasi"),
                 BotCommand(command="start", description="Botni ishga tushirish"),
             ],
             scope=BotCommandScopeChat(chat_id=settings.admin_id),
