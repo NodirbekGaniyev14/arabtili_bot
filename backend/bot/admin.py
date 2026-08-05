@@ -1,10 +1,12 @@
 """Admin bot buyruqlari — faqat ADMIN_ID uchun."""
 
 import asyncio
+from urllib.parse import quote
 
 from aiogram import Bot, F, Router
+from aiogram.exceptions import TelegramRetryAfter
 from aiogram.filters import Command
-from aiogram.types import Message
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from config import settings
 from db.session import SessionLocal
@@ -12,6 +14,48 @@ from services import admin
 from services import feedback as feedback_svc
 
 router = Router()
+
+BOT_LINK = "https://t.me/JamalArabiy_bot"
+
+# Do'stlarga taklif kampaniyasi (/taklif)
+INVITE_TEXT = (
+    "🕌 <b>Do'stlaringizni Arabiy'ga taklif qiling!</b>\n\n"
+    "Arab tilini noldan o'rganish endi oson — Jamal 🐪 bilan kuniga "
+    "10 daqiqa.\n\n"
+    "<b>✅ Botda nima bor:</b>\n"
+    "🔹 <b>223 ta dars</b> — A0 dan B2 gacha to'liq kurs\n"
+    "🔹 <b>3000+ so'z</b> lug'at bo'limi, har biri audio bilan\n"
+    "🔹 O'zak–vazn tahlili — bitta o'zakdan o'nlab so'z\n"
+    "🔹 Aqlli takrorlash (SRS) — o'rgangan so'z unutilmaydi\n"
+    "🔹 Har daraja oxirida imtihon va <b>sertifikat</b> 🎓\n"
+    "🔹 Haftalik reyting, chellenj va yutuqlar 🏆\n"
+    "🔹 O'qish matnlari, rol o'yin va yozuv mashqlari\n\n"
+    "📣 Bir bosishda do'stingizga yuboring — birga o'rganish "
+    "qiziqarliroq va natija tezroq keladi!\n\n"
+    "<i>Bot butunlay bepul. Telefon yoki planshet — istalgan qurilmadan "
+    "ishlaydi.</i>\n\n"
+    f"{BOT_LINK}\n\n"
+    "👇 Quyidagi tugmani bosing"
+)
+
+INVITE_SHARE_TEXT = (
+    "Arab tilini noldan o'rganyapman — Jamal 🐪 boti orqali. "
+    "223 ta dars, 3000+ so'z, audio va sertifikat. Bepul, kuniga "
+    "10 daqiqa. Sen ham qo'shil 👇"
+)
+
+
+def _invite_kb() -> InlineKeyboardMarkup:
+    """Telegram'ning ulashish oynasini ochadigan tugma."""
+    share = (
+        f"https://t.me/share/url?url={quote(BOT_LINK)}"
+        f"&text={quote(INVITE_SHARE_TEXT)}"
+    )
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [InlineKeyboardButton(text="👥 Do'stlarga ulashish", url=share)]
+        ]
+    )
 
 
 def _is_admin(message: Message) -> bool:
