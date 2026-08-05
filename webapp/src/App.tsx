@@ -50,7 +50,6 @@ export default function App() {
   const [showWeak, setShowWeak] = useState(false);
   const [showRolePlay, setShowRolePlay] = useState(false);
   const [showReference, setShowReference] = useState(false);
-  const [showVocab, setShowVocab] = useState(false);
 
   useEffect(() => {
     const tg = window.Telegram?.WebApp;
@@ -182,7 +181,7 @@ export default function App() {
             onOpenWeak={() => setShowWeak(true)}
             onOpenRolePlay={() => setShowRolePlay(true)}
             onOpenReference={() => setShowReference(true)}
-            onOpenVocab={() => setShowVocab(true)}
+            onOpenVocab={() => setTab("vocab")}
             onGoLessons={() => setTab("lessons")}
           />
         )}
@@ -193,6 +192,7 @@ export default function App() {
             onOpenCheckpoint={setCheckpointPct}
           />
         )}
+        {tab === "vocab" && <Vocab />}
         {tab === "review" && <Review onDone={refreshMe} />}
         {tab === "rating" && <Rating />}
         {tab === "profile" && (
@@ -210,15 +210,6 @@ export default function App() {
       {showRolePlay && <RolePlay onClose={() => setShowRolePlay(false)} />}
 
       {showReference && <Reference onClose={() => setShowReference(false)} />}
-
-      {showVocab && (
-        <Vocab
-          onClose={() => {
-            setShowVocab(false);
-            refreshMe();
-          }}
-        />
-      )}
 
       {showExam && (
         <Exam

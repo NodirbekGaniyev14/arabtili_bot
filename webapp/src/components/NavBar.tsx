@@ -1,8 +1,15 @@
-export type Tab = "home" | "lessons" | "review" | "rating" | "profile";
+export type Tab =
+  | "home"
+  | "lessons"
+  | "vocab"
+  | "review"
+  | "rating"
+  | "profile";
 
 const TABS: Array<{ id: Tab; ar: string; label: string }> = [
   { id: "home", ar: "بيت", label: "Asosiy" },
   { id: "lessons", ar: "درس", label: "Darslar" },
+  { id: "vocab", ar: "مفرد", label: "Lug'at" },
   { id: "review", ar: "كرر", label: "Takror" },
   { id: "rating", ar: "نجم", label: "Reyting" },
   { id: "profile", ar: "أنا", label: "Profil" },
@@ -30,12 +37,12 @@ export default function NavBar({ tab, onChange, reviewBadge = 0 }: NavBarProps) 
                 window.Telegram?.WebApp.HapticFeedback?.impactOccurred("light");
                 onChange(t.id);
               }}
-              className={`flex-1 flex flex-col items-center gap-0.5 pt-2 pb-1.5 transition-colors ${
+              className={`min-w-0 flex-1 flex flex-col items-center gap-0.5 pt-2 pb-1.5 transition-colors ${
                 active ? "text-emerald-deep" : "text-ink-soft"
               }`}
             >
               <span className="relative">
-                <span className="font-arabic text-[22px] leading-none">
+                <span className="font-arabic text-[20px] leading-none">
                   {t.ar}
                 </span>
                 {t.id === "review" && reviewBadge > 0 && (
@@ -45,7 +52,7 @@ export default function NavBar({ tab, onChange, reviewBadge = 0 }: NavBarProps) 
                 )}
               </span>
               <span
-                className={`text-[10px] ${active ? "font-extrabold" : "font-semibold"}`}
+                className={`max-w-full truncate px-0.5 text-[9.5px] ${active ? "font-extrabold" : "font-semibold"}`}
               >
                 {t.label}
               </span>

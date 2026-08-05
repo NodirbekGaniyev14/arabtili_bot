@@ -20,7 +20,9 @@ const LEVELS = ["A0", "A1", "A2", "B1", "B2"] as const;
 
 type Mode = "browse" | "study" | "quiz";
 
-export default function Vocab({ onClose }: { onClose: () => void }) {
+/** `onClose` berilmasa — Lug'at pastki menyudagi alohida bo'lim sifatida
+ *  ochilgan: to'liq ekran qoplamasi ham, ✕ tugmasi ham kerak emas. */
+export default function Vocab({ onClose }: { onClose?: () => void }) {
   const [mode, setMode] = useState<Mode>("browse");
   const [stats, setStats] = useState<VocabStats | null>(null);
   const [level, setLevel] = useState<string>("");
@@ -94,15 +96,21 @@ export default function Vocab({ onClose }: { onClose: () => void }) {
   const percent = stats?.goal ? Math.round((stats.total / stats.goal) * 100) : 0;
 
   return (
-    <div className="fixed inset-0 z-30 bg-sand overflow-y-auto">
-      <div className="max-w-md mx-auto px-4 pt-5 pb-24">
+    <div
+      className={
+        onClose ? "fixed inset-0 z-30 bg-sand overflow-y-auto" : undefined
+      }
+    >
+      <div className={onClose ? "max-w-md mx-auto px-4 pt-5 pb-24" : "px-4 pt-5"}>
         <div className="flex items-center gap-3">
-          <button
-            onClick={onClose}
-            className="text-2xl text-ink-soft font-bold leading-none active:opacity-60"
-          >
-            ✕
-          </button>
+          {onClose && (
+            <button
+              onClick={onClose}
+              className="text-2xl text-ink-soft font-bold leading-none active:opacity-60"
+            >
+              ✕
+            </button>
+          )}
           <div className="flex items-center gap-2">
             <span className="text-xl">📚</span>
             <h1 className="text-lg font-extrabold">Lug'at</h1>

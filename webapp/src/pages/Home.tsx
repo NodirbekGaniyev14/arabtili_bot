@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import XPRing from "../components/XPRing";
-import { api, type ChallengeInfo, type ExamInfo, type Stats } from "../lib/api";
+import {
+  api,
+  type ChallengeInfo,
+  type ExamInfo,
+  type Stats,
+  type VocabStats,
+} from "../lib/api";
 
 interface HomeProps {
   name: string;
@@ -48,10 +54,12 @@ export default function Home({
   // Imtihon kartasi darajani va qulf holatini ko'rsatadi
   const [exam, setExam] = useState<ExamInfo | null>(null);
   const [chal, setChal] = useState<ChallengeInfo | null>(null);
+  const [vocab, setVocab] = useState<VocabStats | null>(null);
   useEffect(() => {
     api.getExamInfo().then(setExam).catch(() => {});
     api.getChallengeInfo().then(setChal).catch(() => {});
-  }, [stats.lessons]);
+    api.getVocabStats().then(setVocab).catch(() => {});
+  }, [stats.lessons, stats.words]);
 
   const chalDesc = !chal
     ? "har dushanba"
@@ -164,6 +172,9 @@ export default function Home({
         </section>
       )}
 
+      {/* Lug'at — alohida bo'lim, pastki menyuda ham bor */}
+      <VocabBanner vocab={vocab} onOpen={onOpenVocab} />
+
       {/* Rejimlar */}
       <section>
         <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft mb-2">
@@ -231,12 +242,6 @@ export default function Home({
             onClick={onOpenRolePlay}
           />
           <ModeCard
-            ar="مفردات"
-            label="Lug'at"
-            desc="daraja bo'yicha so'zlar"
-            onClick={onOpenVocab}
-          />
-          <ModeCard
             ar="قواعد"
             label="Ma'lumotnoma"
             desc="grammatika + lug'at"
@@ -245,6 +250,76 @@ export default function Home({
         </div>
       </section>
     </div>
+  );
+}
+
+/** Lug'at bo'limining bosh sahifadagi katta kartasi.
+ *
+ *  Stat kelmasa ham karta ko'rinadi — bo'lim bosh sahifada doim
+ *  bilinib tursin, faqat raqamlar keyinroq to'lsin. */
+function VocabBanner({
+  vocab,
+  onOpen,
+}: {
+  vocab: VocabStats | null;
+  onOpen: () => void;
+}) {
+  const learned = vocab?.learned ?? 0;
+  const total = vocab?.total ?? 0;
+  const pct = total ? Math.min(100, Math.round((learned / total) * 100)) : 0;
+
+  return (
+    <button
+      onClick={onOpen}
+      className="w-full text-left rounded-3xl bg-gradient-to-br from-terracotta to-gold p-4 text-white shadow-lg active:scale-[0.98] transition-transform relative overflow-hidden"
+    >
+      <span
+        className="absolute -right-2 -bottom-6 font-arabic text-[86px] leading-none text-white/15 select-none pointer-events-none"
+        aria-hidden
+      >
+        مفردات
+      </span>
+
+      <div className="relative">
+        <div className="text-[11px] font-extrabold tracking-[0.14em] text-white/70">
+          LUG'AT BO'LIMI
+        </div>
+        <div className="mt-0.5 text-[19px] font-extrabold leading-tight">
+          Darajalar kesimida 6000 so'z
+        </div>
+        <div className="text-[12px] font-semibold text-white/80">
+          Qidiruv · mavzular · kunlik 20 so'z · lug'at imtihoni
+        </div>
+
+        <div className="mt-3 h-2 rounded-full bg-white/25 overflow-hidden">
+          <div
+            className="h-full bg-white rounded-full transition-[width]"
+            style={{ width: `${pct}%` }}
+          />
+        </div>
+        <div className="mt-1.5 flex items-center justify-between">
+          <span className="text-[12px] font-bold text-white/90">
+            {total
+              ? `${learned} / ${total} so'z o'rganildi`
+              : "Lug'at yuklanmoqda..."}
+          </span>
+          <span className="text-[13px] font-extrabold">Ochish ›</span>
+        </div>
+
+        {vocab && (
+          <div className="mt-2.5 flex gap-1.5 overflow-x-auto pb-0.5">
+            {vocab.levels.map((lv) => (
+              <span
+                key={lv.level}
+                className="shrink-0 rounded-full bg-white/20 px-2.5 py-1 text-[10px] font-extrabold"
+              >
+                {lv.level} {lv.total}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    </button>
   );
 }
 
