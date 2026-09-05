@@ -24,15 +24,30 @@ const normLat = (s: string) =>
   s.toLowerCase().replace(/[''ʼ’`\-_.]/g, "").replace(/\s+/g, " ").trim();
 
 /** "qalam / ruchka" yoki "ta'til, ruxsat" kabi javoblarda BITTA variant yetarli. */
+const latVariants = (answer: string): string[] => {
+  const out: string[] = [];
+  const push = (s: string) =>
+    s
+      .split(/\s*(?:\/|,|;|\byoki\b)\s*/)
+      .map(normLat)
+      .filter(Boolean)
+      .forEach((v) => out.push(v));
+
+  // Oxirgi qavs — sinonim izohi ("maktab (madrasa)"), u ham TO'G'RI javob.
+  // O'rtadagi qavs esa gapning bo'lagi ("sen (ayol) yozasan") — yakka
+  // o'zi javob emas, shuning uchun faqat oxirgisi variantga aylanadi.
+  const tail = answer.match(/\(([^)]*)\)\s*$/);
+  if (tail) push(tail[1]);
+  push(answer.replace(/\([^)]*\)/g, " ")); // qavssiz asosiy javob
+  push(answer); // qavsi bilan to'liq ko'chirgan bo'lsa ham
+
+  return [...new Set(out)];
+};
+
 const latOk = (answer: string, value: string) => {
   const nv = normLat(value);
   if (!nv) return false;
-  const variants = answer
-    .replace(/\(.*?\)/g, " ")
-    .split(/\s*(?:\/|,|;|\byoki\b)\s*/)
-    .map(normLat)
-    .filter(Boolean);
-  return variants.length ? variants.includes(nv) : nv === normLat(answer);
+  return latVariants(answer).includes(nv);
 };
 
 /** harakat mashqi: harakatlar solishtiriladi, lekin alif varianti va bo'shliq farqi kechiriladi. */
@@ -227,25 +242,27 @@ function InputEx({
           🔊
         </button>
       )}
-      <div
-        dir={arabicInput ? "rtl" : "ltr"}
-        className={`mt-2 w-full min-h-14 rounded-2xl border-2 border-emerald-deep/50 bg-card px-4 py-3 text-xl font-bold flex items-center ${
-          arabicInput ? "font-arabic justify-start" : ""
-        }`}
-      >
-        {value || (
-          <span className="text-ink-soft text-sm font-semibold" dir="ltr">
-            {arabicInput ? "Klaviaturadan tering..." : "Javobingiz..."}
-          </span>
-        )}
-      </div>
-
+      {/* Arab klaviaturasida — terilgan matn uchun alohida oyna kerak.
+          Lotin javobida esa <input> ning o'zi ko'rsatadi, aks holda
+          bir xil matnli IKKITA quti chiqadi. */}
       {arabicInput ? (
-        <ArabicKeyboard
-          onChar={(ch) => checked === null && setValue((v) => v + ch)}
-          onBackspace={() => checked === null && setValue((v) => v.slice(0, -1))}
-          showHarakat={showHarakatKeys}
-        />
+        <>
+          <div
+            dir="rtl"
+            className="mt-2 w-full min-h-14 rounded-2xl border-2 border-emerald-deep/50 bg-card px-4 py-3 text-xl font-bold font-arabic flex items-center justify-start"
+          >
+            {value || (
+              <span className="text-ink-soft text-sm font-semibold" dir="ltr">
+                Klaviaturadan tering...
+              </span>
+            )}
+          </div>
+          <ArabicKeyboard
+            onChar={(ch) => checked === null && setValue((v) => v + ch)}
+            onBackspace={() => checked === null && setValue((v) => v.slice(0, -1))}
+            showHarakat={showHarakatKeys}
+          />
+        </>
       ) : (
         <input
           value={value}
@@ -253,8 +270,8 @@ function InputEx({
           disabled={checked !== null}
           autoCapitalize="none"
           autoCorrect="off"
-          className="mt-2 w-full rounded-2xl border border-cardline bg-card px-4 py-3 font-bold outline-none focus:border-emerald-deep"
-          placeholder="Lotin harflarida yozing"
+          className="mt-2 w-full min-h-14 rounded-2xl border-2 border-emerald-deep/50 bg-card px-4 py-3 text-xl font-bold outline-none focus:border-emerald-deep disabled:opacity-100"
+          placeholder="Javobingiz..."
         />
       )}
 
@@ -434,15 +451,23 @@ export function QuizRunner({
   rootPool = [],
   label,
   onFinish,
+  onProgress,
 }: {
   items: MicroTestItem[];
   rootPool?: string[];
   label: string;
   onFinish: (correct: number, total: number, wrongWords: string[]) => void;
+  /** Test ichidagi ilgarilash (0..1) — yuqoridagi umumiy chiziq uchun. */
+  onProgress?: (frac: number) => void;
 }) {
   const [idx, setIdx] = useState(0);
   const results = useRef<boolean[]>([]);
   const wrong = useRef<string[]>([]);
+
+  useEffect(() => {
+    onProgress?.(items.length ? idx / items.length : 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [idx, items.length]);
 
   const item = items[idx];
   if (!item) return null;

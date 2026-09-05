@@ -58,6 +58,9 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
     passed: boolean;
     xp_earned: number;
   } | null>(null);
+  // Faza ICHIDAGI ilgarilash (0..1) — mikro-test 7 savoldan iborat, chiziq
+  // esa faza almashgandagina qimirlardi: butun test davomida qotib turardi.
+  const [subProgress, setSubProgress] = useState(0);
   const submitted = useRef(false);
   const [rated, setRated] = useState<1 | -1 | 0>(0);
 
@@ -92,10 +95,11 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
   const progress =
     phase.k === "result" || phase.k === "cp" || phase.k === "cpresult"
       ? 1
-      : Math.max(0, phaseIdx) / Math.max(1, phases.length);
+      : (Math.max(0, phaseIdx) + subProgress) / Math.max(1, phases.length);
 
   const next = () => {
     const i = phases.findIndex((p) => JSON.stringify(p) === JSON.stringify(phase));
+    setSubProgress(0);
     if (i >= 0 && i + 1 < phases.length) setPhase(phases[i + 1]);
     else setPhase({ k: "result" });
   };
@@ -360,6 +364,7 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
           key={lesson.passage.lesson_id}
           passage={lesson.passage}
           lookup={lookup}
+          onProgress={setSubProgress}
           onDone={(correct, total, wrong) => {
             setPassageResult({ correct, total, wrong });
             next();
@@ -379,6 +384,7 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
             items={lesson.micro_test}
             rootPool={lesson.roots.map((r) => r.root)}
             label="MIKRO-TEST"
+            onProgress={setSubProgress}
             onFinish={(correct, total, wrong) => {
               // O'qish savollari ham yakuniy natijaga qo'shiladi
               setTestResult({
@@ -588,10 +594,12 @@ function PassagePhase({
   passage,
   lookup,
   onDone,
+  onProgress,
 }: {
   passage: ReadingPassage;
   lookup: Map<string, RevealInfo>;
   onDone: (correct: number, total: number, wrong: string[]) => void;
+  onProgress?: (frac: number) => void;
 }) {
   const [step, setStep] = useState<"read" | "quiz">("read");
   const [showText, setShowText] = useState(true);
@@ -676,6 +684,7 @@ function PassagePhase({
       <QuizRunner
         items={passage.questions}
         label="O'QISH"
+        onProgress={onProgress}
         onFinish={onDone}
       />
     </div>
