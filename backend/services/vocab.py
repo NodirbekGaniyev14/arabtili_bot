@@ -174,7 +174,14 @@ def _index() -> list[tuple[str, int]]:
         (
             " ".join(
                 normalize(x)
-                for x in (w["ar"], w["translit"], w["uz"], w["root"], w["pattern"])
+                # root/pattern majburiy emas: ibora va o'zlashma so'zlarda yo'q
+                for x in (
+                    w["ar"],
+                    w["translit"],
+                    w["uz"],
+                    w.get("root") or "",
+                    w.get("pattern") or "",
+                )
             ),
             i,
         )
