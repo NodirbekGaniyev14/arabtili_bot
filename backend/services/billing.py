@@ -105,10 +105,12 @@ def format_card(number: str) -> str:
     return " ".join(digits[i : i + 4] for i in range(0, len(digits), 4))
 
 
-def discount_percent() -> int:
+def discount_percent(plan: str = "1oy") -> int:
+    """Chegirma foizi shu tarif uchun: 1 oy 100k→90k = 10%, 3 oy 300k→240k = 20%."""
     if not discount_enabled():
         return 0
-    return round(100 * (1 - settings.pay_price_month / settings.pay_old_price_month))
+    old, new = plan_price(plan, False), plan_price(plan, True)
+    return round(100 * (1 - new / old)) if old > new > 0 else 0
 
 
 async def has_pending(session: AsyncSession, user_id: int) -> bool:
@@ -174,7 +176,7 @@ async def info(session: AsyncSession, user: User) -> dict:
         "discount": {
             "enabled": discount_enabled(),
             "active": active,
-            "percent": discount_percent() if active else 0,
+            "percent": discount_percent("1oy") if active else 0,
             "until": _iso(until),
             "hours": settings.pay_discount_hours,
         },
@@ -187,6 +189,7 @@ async def info(session: AsyncSession, user: User) -> dict:
                 "price": current_price(pid, user),
                 # Chegirma faol bo'lsa ustidan chizilgan eski narx, aks holda 0
                 "old_price": plan_price(pid, False) if active else 0,
+                "discount_percent": discount_percent(pid) if active else 0,
                 "per_day": round(current_price(pid, user) / p["days"]),
                 "per_month": round(current_price(pid, user) / p["months"]),
             }

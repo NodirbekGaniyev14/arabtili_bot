@@ -39,7 +39,7 @@ class Settings(BaseSettings):
     pay_price_month: int = 90_000
     pay_price_3month: int = 240_000
     # Chegirma «eski narx» — 0 bo'lsa chegirma/taymer ko'rsatilmaydi
-    pay_old_price_month: int = 180_000
+    pay_old_price_month: int = 100_000
     # Chegirma taymeri: paywall birinchi ochilganidan boshlab (soat)
     pay_discount_hours: int = 24
     # Savollar uchun Telegram username (@ belgisisiz)

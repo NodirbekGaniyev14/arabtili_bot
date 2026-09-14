@@ -963,6 +963,8 @@ export interface PayPlan {
   price: number;
   /** Chegirma faol bo'lsa ustidan chiziladigan eski narx, aks holda 0 */
   old_price: number;
+  /** Shu tarif uchun chegirma foizi (eski → yangi narxdan hisoblangan) */
+  discount_percent: number;
   per_day: number;
   per_month: number;
 }

@@ -170,7 +170,8 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
       {info?.discount.active && countdown.left > 0 && (
         <div className="flex items-center justify-between gap-2 bg-gold-soft border-b border-gold/40 px-4 py-2.5">
           <span className="text-[13px] font-extrabold text-ink">
-            🔥 {info.discount.percent}% chegirma saqlanib qolish vaqti:
+            🔥 {plan?.discount_percent || info.discount.percent}% chegirma saqlanib qolish
+            vaqti:
           </span>
           <span className="shrink-0 rounded-lg bg-gold px-2.5 py-1 text-[13px] font-extrabold text-white tabular-nums">
             {countdown.label}
@@ -311,9 +312,9 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
                       {fmt(plan.old_price)} so'm
                     </div>
                   )}
-                  {info?.discount.active && (
+                  {info?.discount.active && plan.discount_percent > 0 && (
                     <span className="inline-block rounded-lg bg-emerald-deep/10 px-2 py-1 text-[11px] font-extrabold text-emerald-dark">
-                      {info.discount.percent}% CHEGIRMA
+                      {plan.discount_percent}% CHEGIRMA
                     </span>
                   )}
                 </div>

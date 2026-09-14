@@ -33,7 +33,8 @@ def test_discount_timer(monkeypatch):
     monkeypatch.setattr(settings, "pay_old_price_month", 180_000)
     monkeypatch.setattr(settings, "pay_discount_hours", 24)
     u = User(tg_id=1)
-    assert billing.discount_percent() == 50
+    assert billing.discount_percent("1oy") == 50
+    assert billing.discount_percent("3oy") == round(100 * (1 - 240_000 / 540_000))
     # Paywall hali ochilmagan — taymer yo'q, lekin narx chegirmali emas
     assert not billing.discount_active(u)
     u.paywall_seen_at = utcnow()
@@ -44,6 +45,18 @@ def test_discount_timer(monkeypatch):
     assert not billing.discount_active(u)
     assert billing.current_price("1oy", u) == 180_000
     assert billing.current_price("3oy", u) == 540_000
+
+
+def test_default_prices_percent(monkeypatch):
+    """Standart: 1 oy 100 000 → 90 000 = 10%, 3 oy 300 000 → 240 000 = 20%."""
+    from config import settings
+
+    monkeypatch.setattr(settings, "pay_price_month", 90_000)
+    monkeypatch.setattr(settings, "pay_price_3month", 240_000)
+    monkeypatch.setattr(settings, "pay_old_price_month", 100_000)
+    assert billing.discount_percent("1oy") == 10
+    assert billing.discount_percent("3oy") == 20
+    assert billing.plan_price("3oy", False) == 300_000
 
 
 def test_discount_disabled(monkeypatch):
