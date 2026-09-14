@@ -58,6 +58,8 @@ type Tab = "chat" | "mock";
 
 const tg = () => window.Telegram?.WebApp;
 
+const fmtSum = (n: number) => n.toLocaleString("ru-RU").replace(/,/g, " ");
+
 function newSessionKey(): string {
   try {
     return crypto.randomUUID();
@@ -470,9 +472,9 @@ export default function Tutor({ onClose }: TutorProps) {
                   : `Bepulda kuniga ${info.free_turns} javob — VIP'da 40`}
               </div>
               <div className="text-[12px] text-white/80 font-semibold">
-                Suhbat, speaking, mock imtihonlar · oyiga 90 000 so'm
+                Suhbat, speaking, mock imtihonlar · oyiga {fmtSum(info.price.month)} so'm
                 <span className="ml-1 rounded-md bg-white/15 px-1.5 py-0.5 text-[10px] font-extrabold">
-                  3 000 so'm/kun
+                  {fmtSum(info.price.per_day)} so'm/kun
                 </span>
               </div>
             </button>

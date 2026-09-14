@@ -31,6 +31,7 @@ def test_discount_timer(monkeypatch):
     monkeypatch.setattr(settings, "pay_price_month", 90_000)
     monkeypatch.setattr(settings, "pay_price_3month", 240_000)
     monkeypatch.setattr(settings, "pay_old_price_month", 180_000)
+    monkeypatch.setattr(settings, "pay_old_price_3month", 0)  # 0 → oylik × 3
     monkeypatch.setattr(settings, "pay_discount_hours", 24)
     u = User(tg_id=1)
     assert billing.discount_percent("1oy") == 50
@@ -48,15 +49,17 @@ def test_discount_timer(monkeypatch):
 
 
 def test_default_prices_percent(monkeypatch):
-    """Standart: 1 oy 100 000 → 90 000 = 10%, 3 oy 300 000 → 240 000 = 20%."""
+    """Standart: 1 oy 90 000 → 40 000 = 56%, 3 oy 240 000 → 100 000 = 58%."""
     from config import settings
 
-    monkeypatch.setattr(settings, "pay_price_month", 90_000)
-    monkeypatch.setattr(settings, "pay_price_3month", 240_000)
-    monkeypatch.setattr(settings, "pay_old_price_month", 100_000)
-    assert billing.discount_percent("1oy") == 10
-    assert billing.discount_percent("3oy") == 20
-    assert billing.plan_price("3oy", False) == 300_000
+    monkeypatch.setattr(settings, "pay_price_month", 40_000)
+    monkeypatch.setattr(settings, "pay_price_3month", 100_000)
+    monkeypatch.setattr(settings, "pay_old_price_month", 90_000)
+    monkeypatch.setattr(settings, "pay_old_price_3month", 240_000)
+    assert billing.discount_percent("1oy") == 56
+    assert billing.discount_percent("3oy") == 58
+    assert billing.plan_price("3oy", False) == 240_000
+    assert billing.price_summary() == {"month": 40_000, "per_day": 1333}
 
 
 def test_discount_disabled(monkeypatch):

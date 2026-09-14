@@ -94,6 +94,7 @@ export default function App() {
       stats: m?.stats ?? EMPTY_STATS,
       vip: m?.vip ?? false,
       vip_days_left: m?.vip_days_left ?? 0,
+      vip_price: m?.vip_price ?? { month: 0, per_day: 0 },
     }));
     setTab("home");
     setPhase("app");
@@ -209,6 +210,7 @@ export default function App() {
             onOpenPaywall={() => setShowPaywall(true)}
             vip={me?.vip ?? false}
             vipDaysLeft={me?.vip_days_left ?? 0}
+            vipPrice={me?.vip_price}
             onProfileChange={refreshMe}
           />
         )}

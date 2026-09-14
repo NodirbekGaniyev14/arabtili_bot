@@ -380,7 +380,7 @@ async def tutor_topics(
     session: AsyncSession = Depends(get_session),
 ):
     from config import settings
-    from services import stt, tutor
+    from services import billing, stt, tutor
 
     level = await _user_level(session, user.id)
     access = await _tutor_access(session, user)
@@ -402,6 +402,7 @@ async def tutor_topics(
         ],
         **{k: v for k, v in access.items() if k != "used"},
         "free_turns": settings.tutor_free_turns,
+        "price": billing.price_summary(),
         "ai": bool(settings.anthropic_api_key),
         "voice": stt.available(),
     }

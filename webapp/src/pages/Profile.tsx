@@ -61,11 +61,14 @@ function StatCard({
   );
 }
 
+const fmtSum = (n: number) => n.toLocaleString("ru-RU").replace(/,/g, " ");
+
 export default function Profile({
   onOpenPlacement,
   onOpenPaywall,
   vip = false,
   vipDaysLeft = 0,
+  vipPrice,
   onProfileChange,
 }: {
   onOpenPlacement?: () => void;
@@ -73,6 +76,7 @@ export default function Profile({
   onOpenPaywall?: () => void;
   vip?: boolean;
   vipDaysLeft?: number;
+  vipPrice?: { month: number; per_day: number };
   /** Ism o'zgargach bosh sahifadagi salomlashuv ham yangilansin */
   onProfileChange?: () => void;
 } = {}) {
@@ -289,7 +293,9 @@ export default function Profile({
           <div className={`text-[11px] font-semibold ${vip ? "text-ink-soft" : "text-white/80"}`}>
             {vip
               ? "Suhbat, speaking, mock imtihonlar ochiq · uzaytirish"
-              : "Oyiga 90 000 so'm · 3 000 so'm/kun · chek orqali"}
+              : vipPrice
+                ? `Oyiga ${fmtSum(vipPrice.month)} so'm · ${fmtSum(vipPrice.per_day)} so'm/kun · chek orqali`
+                : "Oylik obuna · chek orqali"}
           </div>
         </div>
         <span className="font-extrabold text-xl">›</span>

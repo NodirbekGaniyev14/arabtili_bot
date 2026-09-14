@@ -55,6 +55,8 @@ export interface MeResponse {
   /** VIP tarif (AI ustoz) faolmi */
   vip: boolean;
   vip_days_left: number;
+  /** Yorliqlar uchun narx: oylik va kunlik (so'm) */
+  vip_price: { month: number; per_day: number };
 }
 
 export interface OnboardingPayload {
@@ -1041,6 +1043,7 @@ export interface TutorTopics {
   vip_days_left: number;
   /** VIP'siz kunlik bepul javoblar */
   free_turns: number;
+  price: { month: number; per_day: number };
   turns_left: number;
   daily_limit: number;
   /** Anthropic kaliti sozlangan — AI ishlaydi */

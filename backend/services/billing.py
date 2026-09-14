@@ -72,7 +72,8 @@ def grant(user: User, days: int) -> datetime:
 
 def plan_price(plan: str, discount: bool) -> int:
     if plan == "3oy":
-        return settings.pay_price_3month if discount else settings.pay_old_price_month * 3
+        old = settings.pay_old_price_3month or settings.pay_old_price_month * 3
+        return settings.pay_price_3month if discount else old
     return settings.pay_price_month if discount else settings.pay_old_price_month
 
 
@@ -106,11 +107,17 @@ def format_card(number: str) -> str:
 
 
 def discount_percent(plan: str = "1oy") -> int:
-    """Chegirma foizi shu tarif uchun: 1 oy 100k→90k = 10%, 3 oy 300k→240k = 20%."""
+    """Chegirma foizi shu tarif uchun (eski → yangi narx): 1 oy 90k→40k, 3 oy 240k→100k."""
     if not discount_enabled():
         return 0
     old, new = plan_price(plan, False), plan_price(plan, True)
     return round(100 * (1 - new / old)) if old > new > 0 else 0
+
+
+def price_summary() -> dict:
+    """Bosh sahifa/profil yorliqlari uchun qisqa narx: oylik va kunlik."""
+    month = settings.pay_price_month
+    return {"month": month, "per_day": round(month / 30)}
 
 
 async def has_pending(session: AsyncSession, user_id: int) -> bool:

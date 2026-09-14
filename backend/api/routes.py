@@ -86,6 +86,7 @@ async def me(
         # VIP tarif (AI ustoz) — bosh sahifa kartasi va profil uchun
         "vip": billing.is_vip(user),
         "vip_days_left": billing.vip_days_left(user),
+        "vip_price": billing.price_summary(),
     }
 
 
