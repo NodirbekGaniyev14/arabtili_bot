@@ -265,6 +265,26 @@ class WeeklyAward(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
 
 
+class TutorTurn(Base):
+    """AI ustoz suhbatidagi bitta o'quvchi javobi (services/tutor.py).
+
+    Har javob alohida qator: kunlik limit shu yerdan sanaladi, suhbat
+    yakunida XP `session_key` bo'yicha hisoblanadi. Suhbat matni
+    saqlanmaydi — faqat baho (ok) va kirish turi (voice).
+    """
+
+    __tablename__ = "tutor_turns"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    session_key: Mapped[str] = mapped_column(String(36), index=True)
+    topic: Mapped[str] = mapped_column(String(24), default="")
+    level: Mapped[str] = mapped_column(String(4), default="")
+    ok: Mapped[int] = mapped_column(Integer, default=1)  # xatosiz javob = 1
+    voice: Mapped[int] = mapped_column(Integer, default=0)  # mikrofon orqali = 1
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
 class Plan(Base):
     """AI tuzgan shaxsiy o'quv reja."""
 

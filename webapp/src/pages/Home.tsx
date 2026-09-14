@@ -20,6 +20,7 @@ interface HomeProps {
   onOpenChallenge: () => void;
   onOpenWeak: () => void;
   onOpenRolePlay: () => void;
+  onOpenTutor: () => void;
   onOpenReference: () => void;
   onOpenVocab: () => void;
   onGoLessons: () => void;
@@ -44,6 +45,7 @@ export default function Home({
   onOpenWeak,
   onOpenChallenge,
   onOpenRolePlay,
+  onOpenTutor,
   onOpenReference,
   onOpenVocab,
   onGoLessons,
@@ -198,6 +200,23 @@ export default function Home({
             </div>
           </div>
           <span className="font-arabic text-2xl text-white/40">جذر</span>
+        </button>
+
+        {/* AI ustoz — darajaga mos jonli suhbat (speaking) */}
+        <button
+          onClick={onOpenTutor}
+          className="w-full flex items-center gap-3 rounded-2xl bg-card border-2 border-emerald-deep/30 p-3.5 mb-3 text-left active:scale-[0.98] transition-transform shadow-sm"
+        >
+          <div className="w-12 h-12 shrink-0 rounded-xl bg-emerald-deep flex items-center justify-center text-2xl">
+            🤖
+          </div>
+          <div className="min-w-0 flex-1">
+            <div className="text-[14px] font-extrabold leading-tight">AI ustoz</div>
+            <div className="text-[11px] text-ink-soft font-semibold">
+              Gapiring yoki yozing — darajangizda javob beradi va tuzatadi
+            </div>
+          </div>
+          <span className="font-arabic text-2xl text-emerald-dark/40">تكلّم</span>
         </button>
 
         <div className="grid grid-cols-2 gap-3">

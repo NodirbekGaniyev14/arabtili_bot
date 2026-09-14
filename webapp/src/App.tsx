@@ -15,6 +15,7 @@ import Challenge from "./pages/Challenge";
 import Placement from "./pages/Placement";
 import WeakPractice from "./pages/WeakPractice";
 import RolePlay from "./pages/RolePlay";
+import Tutor from "./pages/Tutor";
 import Reference from "./pages/Reference";
 import Vocab from "./pages/Vocab";
 import LessonPlayerV2 from "./pages/v2/LessonPlayerV2";
@@ -49,6 +50,7 @@ export default function App() {
   const [showPlacement, setShowPlacement] = useState(false);
   const [showWeak, setShowWeak] = useState(false);
   const [showRolePlay, setShowRolePlay] = useState(false);
+  const [showTutor, setShowTutor] = useState(false);
   const [showReference, setShowReference] = useState(false);
 
   useEffect(() => {
@@ -180,6 +182,7 @@ export default function App() {
             onOpenChallenge={() => setShowChallenge(true)}
             onOpenWeak={() => setShowWeak(true)}
             onOpenRolePlay={() => setShowRolePlay(true)}
+            onOpenTutor={() => setShowTutor(true)}
             onOpenReference={() => setShowReference(true)}
             onOpenVocab={() => setTab("vocab")}
             onGoLessons={() => setTab("lessons")}
@@ -208,6 +211,16 @@ export default function App() {
       {showRootLab && <RootLab onClose={() => setShowRootLab(false)} />}
 
       {showRolePlay && <RolePlay onClose={() => setShowRolePlay(false)} />}
+
+      {showTutor && (
+        <Tutor
+          onClose={() => {
+            setShowTutor(false);
+            // Suhbat XP'si va yangi SRS kartalari statistikaga tushsin
+            api.getMe().then(setMe).catch(() => {});
+          }}
+        />
+      )}
 
       {showReference && <Reference onClose={() => setShowReference(false)} />}
 

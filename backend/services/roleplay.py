@@ -111,7 +111,8 @@ async def reply(scenario_id: str, history: list[dict]) -> dict:
                 if m.get("content")
             ]
             resp = await client.messages.create(
-                model="claude-opus-4-8",
+                # Qisqa rol javobi uchun Haiku yetarli — Opus'dan ~15x arzon
+                model=settings.tutor_model,
                 max_tokens=400,
                 system=(
                     sc["system"]

@@ -5,13 +5,16 @@
 
 import json
 import random
+import re
+from datetime import datetime, timezone
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.models import LessonRating, Plan, Progress, User, XpLog
+from db.models import LessonRating, Plan, Progress, TutorTurn, User, XpLog
 from db.session import get_session
 from services.achievements import check_and_award
 from services.curriculum import (
@@ -299,7 +302,8 @@ async def eval_writing(
 
         client = AsyncAnthropic(api_key=settings.anthropic_api_key)
         resp = await client.messages.create(
-            model="claude-opus-4-8",
+            # Qisqa baho uchun Haiku yetarli — Opus'dan ~15x arzon
+            model=settings.tutor_model,
             max_tokens=800,
             system=(
                 "Sen arab tili o'qituvchisisan. O'zbek tilida so'zlashuvchi "
@@ -320,3 +324,249 @@ async def eval_writing(
         return {"ai": True, "feedback_uz": feedback}
     except Exception:
         return {"ai": False, "feedback_uz": FALLBACK_FEEDBACK}
+
+
+# ─────────────────── AI ustoz — jonli suhbat (K17) ───────────────────
+# services/tutor.py (Haiku 4.5, structured output), services/stt.py (Groq
+# Whisper), services/tts.py (edge-tts cache). Kunlik limit — token xarajati
+# nazorati: har chaqiruv (ochilish ham) bitta "turn" sifatida sanaladi.
+
+_SESSION_KEY_RE = r"^[A-Za-z0-9_-]{8,36}$"
+_AUDIO_KEY_RE = re.compile(r"^[0-9a-f]{24}$")
+
+
+async def _user_level(session: AsyncSession, user_id: int) -> str:
+    plan = (
+        await session.execute(
+            select(Plan.level).where(Plan.user_id == user_id).order_by(Plan.id.desc()).limit(1)
+        )
+    ).scalar_one_or_none()
+    return (plan or "A0").upper()
+
+
+async def _tutor_turns_today(session: AsyncSession, user_id: int) -> int:
+    start = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
+    start = start.replace(tzinfo=None)  # DB'da naive UTC (models.utcnow)
+    n = (
+        await session.execute(
+            select(func.count(TutorTurn.id)).where(
+                TutorTurn.user_id == user_id, TutorTurn.created_at >= start
+            )
+        )
+    ).scalar_one()
+    return int(n or 0)
+
+
+@router.get("/tutor/topics")
+async def tutor_topics(
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    from config import settings
+    from services import stt, tutor
+
+    level = await _user_level(session, user.id)
+    used = await _tutor_turns_today(session, user.id)
+    return {
+        "level": level,
+        "topics": tutor.topic_list(level),
+        "turns_left": max(settings.tutor_daily_turns - used, 0),
+        "daily_limit": settings.tutor_daily_turns,
+        "ai": bool(settings.anthropic_api_key),
+        "voice": stt.available(),
+    }
+
+
+class TutorTurnBody(BaseModel):
+    session_key: str = Field(pattern=_SESSION_KEY_RE)
+    topic_id: str = Field(max_length=24)
+    # [{role:'user'|'assistant', content}] — assistant = faqat `ar` matni
+    history: list[dict] = Field(default_factory=list, max_length=60)
+    voice: bool = False  # oxirgi javob mikrofondan keldi
+
+
+@router.post("/tutor/turn")
+async def tutor_turn(
+    body: TutorTurnBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    from config import settings
+    from services import tts, tutor
+
+    if not settings.anthropic_api_key:
+        raise HTTPException(status_code=503, detail="AI ustoz hozircha o'chiq")
+
+    used = await _tutor_turns_today(session, user.id)
+    if used >= settings.tutor_daily_turns:
+        raise HTTPException(
+            status_code=429, detail="Bugungi suhbat limiti tugadi — ertaga davom eting"
+        )
+
+    level = await _user_level(session, user.id)
+    known = await tutor.known_words(session, user.id)
+    for m in body.history:
+        if len(str(m.get("content", ""))) > 600:
+            raise HTTPException(status_code=422, detail="Xabar juda uzun")
+
+    try:
+        reply, usage = await tutor.reply(
+            name=user.name,
+            level=level,
+            topic_id=body.topic_id,
+            history=body.history,
+            known=known,
+        )
+    except tutor.TutorUnavailable as e:
+        # Turn hisobga olinmaydi — o'quvchi limiti kuymaydi
+        raise HTTPException(status_code=503, detail=e.message_uz)
+
+    # O'quvchi javob bergan turn (ochilish emas) — limit va statistika uchun
+    learner_answered = bool(body.history) and body.history[-1].get("role") == "user"
+    session.add(
+        TutorTurn(
+            user_id=user.id,
+            session_key=body.session_key,
+            topic=body.topic_id[:24],
+            level=level,
+            ok=1 if (not learner_answered or reply.correction_ok) else 0,
+            voice=1 if (learner_answered and body.voice) else 0,
+        )
+    )
+    await session.commit()
+
+    # Matn darhol ketadi, mp3 fonda tayyorlanadi (edge-tts 1-3 s) — klient
+    # audio'ni kechroq, tayyor bo'lganda yuklaydi (audio.ts: playUrl retry)
+    audio_key = tts.schedule(reply.ar, level)
+    return {
+        "reply": reply.model_dump(),
+        "audio_url": f"/api/v2/tutor/audio/{audio_key}.mp3" if audio_key else "",
+        "turns_left": max(settings.tutor_daily_turns - used - 1, 0),
+        "usage": usage,
+    }
+
+
+@router.get("/tutor/audio/{key}.mp3")
+async def tutor_audio(key: str):
+    """Ustoz javobining mp3'si. Kalit — matn xeshi, sirli ma'lumot yo'q,
+    shuning uchun <audio src> to'g'ridan-to'g'ri (initData'siz) yuklay oladi."""
+    from services import tts
+
+    if not _AUDIO_KEY_RE.match(key):
+        raise HTTPException(status_code=404)
+    path = tts.path_for(key)
+    if not path.exists():
+        # Fonda hali tayyorlanayotgan bo'lsa — biroz kutamiz (klient retry ham qiladi)
+        await tts.wait_for(key, timeout=6)
+    if not path.exists():
+        raise HTTPException(status_code=404)
+    return FileResponse(
+        path, media_type="audio/mpeg", headers={"Cache-Control": "public, max-age=604800"}
+    )
+
+
+async def _read_audio(file: UploadFile) -> bytes:
+    from services.stt import MAX_AUDIO_BYTES
+
+    data = await file.read()
+    if not data:
+        raise HTTPException(status_code=422, detail="Audio bo'sh")
+    if len(data) > MAX_AUDIO_BYTES:
+        raise HTTPException(status_code=413, detail="Audio juda uzun (maks. 20 soniya)")
+    return data
+
+
+@router.post("/tutor/transcribe")
+async def tutor_transcribe(
+    file: UploadFile = File(...),
+    prompt: str = Form(""),
+    user: User = Depends(get_current_user),
+):
+    """Mikrofon yozuvi → arabcha matn. `prompt` — oxirgi ustoz savoli (kontekst)."""
+    from services import stt
+
+    if not stt.available():
+        raise HTTPException(status_code=503, detail="Ovoz xizmati sozlanmagan")
+    data = await _read_audio(file)
+    text = await stt.transcribe(
+        data, file.filename or "speech.webm", file.content_type or "audio/webm", prompt[:300]
+    )
+    return {"text": text}
+
+
+@router.post("/tutor/pronounce")
+async def tutor_pronounce(
+    file: UploadFile = File(...),
+    target: str = Form(..., max_length=400),
+    user: User = Depends(get_current_user),
+):
+    """Takrorlash mashqi: o'quvchi ustoz jumlasini aytadi → o'xshashlik bali.
+    Whisper'ga maqsad matn BERILMAYDI — aks holda «eshitgandek» yozib qo'yadi."""
+    from services import stt, tutor
+
+    if not stt.available():
+        raise HTTPException(status_code=503, detail="Ovoz xizmati sozlanmagan")
+    data = await _read_audio(file)
+    heard = await stt.transcribe(
+        data, file.filename or "speech.webm", file.content_type or "audio/webm"
+    )
+    return {"transcript": heard, **tutor.pronunciation_score(target, heard)}
+
+
+class TutorFinishBody(BaseModel):
+    session_key: str = Field(pattern=_SESSION_KEY_RE)
+
+
+@router.post("/tutor/finish")
+async def tutor_finish(
+    body: TutorFinishBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Suhbat yakuni: XP (bir marta) va qisqa hisobot."""
+    rows = (
+        await session.execute(
+            select(TutorTurn.ok, TutorTurn.voice).where(
+                TutorTurn.user_id == user.id, TutorTurn.session_key == body.session_key
+            )
+        )
+    ).all()
+    # Ochilish turn'i (o'quvchi javobsiz) ham qatorga yoziladi — uni hisobdan
+    # chiqarish uchun: javoblar = qatorlar - 1
+    turns = max(len(rows) - 1, 0)
+    ok = sum(1 for r in rows if r[0]) - (1 if rows else 0)
+    ok = max(min(ok, turns), 0)
+    voice = sum(1 for r in rows if r[1])
+
+    source = f"tutor:{body.session_key}"
+    already = (
+        await session.execute(
+            select(XpLog.id).where(XpLog.user_id == user.id, XpLog.source == source).limit(1)
+        )
+    ).scalar_one_or_none()
+    xp = 0
+    if turns >= 3 and already is None:
+        xp = min(30, 2 * turns + ok + 2 * voice)
+        session.add(XpLog(user_id=user.id, amount=xp, source=source))
+        await session.commit()
+
+    return {"turns": turns, "ok_turns": ok, "voice_turns": voice, "xp": xp}
+
+
+class TutorSaveWordBody(BaseModel):
+    ar: str = Field(min_length=1, max_length=128)
+    uz: str = Field(default="", max_length=256)
+
+
+@router.post("/tutor/save_word")
+async def tutor_save_word(
+    body: TutorSaveWordBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Suhbatda chiqqan yangi so'zni SRS kartotekasiga qo'shish."""
+    added = await seed_from_srs_cards(
+        session, user.id, [{"front": body.ar.strip(), "back": body.uz.strip(), "type": "word"}]
+    )
+    await session.commit()
+    return {"added": added}

@@ -19,6 +19,28 @@ export function playAudio(file?: string) {
   current.play().catch(() => {});
 }
 
+/** Serverdagi mp3 URL'ni ijro etadi (AI ustoz javobi). Muvaffaqiyat = true;
+ *  false qaytsa chaqiruvchi brauzer TTS'ga (speakText) tushadi. */
+export async function playUrl(url?: string, retries = 4): Promise<boolean> {
+  if (!url || !isSoundOn()) return false;
+  current?.pause();
+  window.speechSynthesis?.cancel();
+  // Server mp3'ni fonda tayyorlaydi — 404 bo'lsa biroz kutib qayta urinamiz
+  for (let i = 0; i <= retries; i++) {
+    const a = new Audio(url);
+    current = a;
+    try {
+      await a.play();
+      return true;
+    } catch (e) {
+      // Avtoijro taqiqlangan (foydalanuvchi bosmagan) — qayta urinish foydasiz
+      if ((e as DOMException)?.name === "NotAllowedError") return false;
+      if (i < retries) await new Promise((r) => setTimeout(r, 1200));
+    }
+  }
+  return false;
+}
+
 /** Matnni brauzer TTS bilan aytadi (audio fayl yo'q dinamik matnlar uchun — rol o'yini). */
 export function speakText(text?: string, lang = "ar-SA") {
   if (!text || !isSoundOn()) return;

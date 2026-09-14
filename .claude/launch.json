@@ -12,6 +12,18 @@
       "runtimeExecutable": ".venv/Scripts/python.exe",
       "runtimeArgs": ["-m", "uvicorn", "main:app", "--port", "8000", "--app-dir", "backend"],
       "port": 8000
+    },
+    {
+      "name": "backend-preview",
+      "runtimeExecutable": ".venv/Scripts/python.exe",
+      "runtimeArgs": ["scripts/preview_backend.py"],
+      "port": 8000
+    },
+    {
+      "name": "mock-ai",
+      "runtimeExecutable": ".venv/Scripts/python.exe",
+      "runtimeArgs": ["scripts/mock_anthropic.py"],
+      "port": 9011
     }
   ]
 }

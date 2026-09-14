@@ -11,3 +11,4 @@ reportlab>=4.0
 arabic-reshaper>=3.0
 python-bidi>=0.4
 qrcode>=7.4
+python-multipart>=0.0.9

@@ -901,7 +901,124 @@ export const api = {
       method: "POST",
       body: JSON.stringify({ scenario_id: scenarioId, history }),
     }),
+
+  // ── AI ustoz (jonli suhbat) ──
+  getTutorTopics: () => request<TutorTopics>("/api/v2/tutor/topics"),
+  tutorTurn: (body: {
+    session_key: string;
+    topic_id: string;
+    history: { role: "user" | "assistant"; content: string }[];
+    voice: boolean;
+  }) =>
+    request<TutorTurnResponse>("/api/v2/tutor/turn", {
+      method: "POST",
+      body: JSON.stringify(body),
+    }),
+  tutorTranscribe: (audio: Blob, filename: string, prompt: string) => {
+    const fd = new FormData();
+    fd.append("file", audio, filename);
+    fd.append("prompt", prompt);
+    return upload<{ text: string }>("/api/v2/tutor/transcribe", fd);
+  },
+  tutorPronounce: (audio: Blob, filename: string, target: string) => {
+    const fd = new FormData();
+    fd.append("file", audio, filename);
+    fd.append("target", target);
+    return upload<TutorPronounceResult>("/api/v2/tutor/pronounce", fd);
+  },
+  tutorFinish: (session_key: string) =>
+    request<TutorFinishResult>("/api/v2/tutor/finish", {
+      method: "POST",
+      body: JSON.stringify({ session_key }),
+    }),
+  tutorSaveWord: (ar: string, uz: string) =>
+    request<{ added: number }>("/api/v2/tutor/save_word", {
+      method: "POST",
+      body: JSON.stringify({ ar, uz }),
+    }),
 };
+
+/** Multipart yuklash — Content-Type'ni brauzer o'zi (boundary bilan) qo'yadi */
+async function upload<T>(path: string, body: FormData): Promise<T> {
+  const res = await fetch(path, {
+    method: "POST",
+    body,
+    headers: { "X-Init-Data": window.Telegram?.WebApp.initData ?? "" },
+  });
+  if (!res.ok) {
+    let detail = "";
+    try {
+      detail = (await res.clone().json())?.detail ?? "";
+    } catch {
+      /* JSON emas */
+    }
+    const err = new Error(`API xatosi: ${res.status}${detail ? ` — ${detail}` : ""}`);
+    (err as Error & { status: number; detail: string }).status = res.status;
+    (err as Error & { status: number; detail: string }).detail = detail;
+    throw err;
+  }
+  return res.json();
+}
+
+export interface TutorTopic {
+  id: string;
+  emoji: string;
+  title_uz: string;
+  desc_uz: string;
+  min_level: string;
+  /** O'quvchi darajasiga mos (aks holda "B1+" yorlig'i bilan ko'rsatiladi) */
+  recommended: boolean;
+}
+
+export interface TutorTopics {
+  level: string;
+  topics: TutorTopic[];
+  turns_left: number;
+  daily_limit: number;
+  /** Anthropic kaliti sozlangan — AI ishlaydi */
+  ai: boolean;
+  /** STT kaliti sozlangan — mikrofon ishlaydi */
+  voice: boolean;
+}
+
+export interface TutorNewWord {
+  ar: string;
+  translit: string;
+  uz: string;
+}
+
+export interface TutorReply {
+  ar: string;
+  translit: string;
+  uz: string;
+  correction_ok: boolean;
+  fixed_ar: string;
+  note_uz: string;
+  hint_uz: string;
+  new_words: TutorNewWord[];
+  done: boolean;
+}
+
+export interface TutorTurnResponse {
+  reply: TutorReply;
+  /** edge-tts mp3 (bo'sh bo'lsa brauzer TTS'ga tushamiz) */
+  audio_url: string;
+  turns_left: number;
+  usage: { in?: number; out?: number; cache_read?: number; cache_write?: number };
+}
+
+export interface TutorPronounceResult {
+  transcript: string;
+  score: number;
+  words: { ar: string; ok: boolean }[];
+}
+
+export interface TutorFinishResult {
+  turns: number;
+  ok_turns: number;
+  voice_turns: number;
+  xp: number;
+}
 
 export interface RoleplayScenario {
   id: string;

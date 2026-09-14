@@ -24,6 +24,19 @@ class Settings(BaseSettings):
     # Admin Telegram ID — faqat shu foydalanuvchi admin buyruqlaridan foydalanadi
     admin_id: int = 0
 
+    # ── AI ustoz (services/tutor.py) ──
+    # Suhbat modeli: Haiku 4.5 — arzon va tez; javob structured output bilan
+    tutor_model: str = "claude-haiku-4-5-20251001"
+    # Har foydalanuvchiga kunlik javoblar limiti (token xarajatini cheklaydi)
+    tutor_daily_turns: int = 40
+
+    # ── Ovoz → matn (services/stt.py). OpenAI-mos endpoint: Groq yoki OpenAI ──
+    # Groq: console.groq.com → whisper-large-v3-turbo (arzon, tez)
+    # OpenAI: base_url=https://api.openai.com/v1, model=gpt-4o-mini-transcribe
+    stt_api_key: str = ""
+    stt_base_url: str = "https://api.groq.com/openai/v1"
+    stt_model: str = "whisper-large-v3-turbo"
+
 
 settings = Settings()
 
