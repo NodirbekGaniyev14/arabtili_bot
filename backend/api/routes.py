@@ -76,11 +76,16 @@ async def me(
     plan_order = json.loads(plan.module_order_json) if plan else None
     await seed_user_words(session, user.id)
     stats = await user_stats(session, user.id, plan_order)
+    from services import billing
+
     return {
         "name": user.name,
         "has_plan": plan is not None,
         "plan": plan_to_dict(plan) if plan else None,
         "stats": stats,
+        # VIP tarif (AI ustoz) — bosh sahifa kartasi va profil uchun
+        "vip": billing.is_vip(user),
+        "vip_days_left": billing.vip_days_left(user),
     }
 
 

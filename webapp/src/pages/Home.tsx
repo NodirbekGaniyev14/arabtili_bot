@@ -21,6 +21,8 @@ interface HomeProps {
   onOpenWeak: () => void;
   onOpenRolePlay: () => void;
   onOpenTutor: () => void;
+  /** VIP tarif faolmi — AI ustoz kartasidagi yorliq */
+  vip: boolean;
   onOpenReference: () => void;
   onOpenVocab: () => void;
   onGoLessons: () => void;
@@ -46,6 +48,7 @@ export default function Home({
   onOpenChallenge,
   onOpenRolePlay,
   onOpenTutor,
+  vip,
   onOpenReference,
   onOpenVocab,
   onGoLessons,
@@ -211,9 +214,18 @@ export default function Home({
             🤖
           </div>
           <div className="min-w-0 flex-1">
-            <div className="text-[14px] font-extrabold leading-tight">AI ustoz</div>
+            <div className="text-[14px] font-extrabold leading-tight flex items-center gap-1.5">
+              AI ustoz
+              <span
+                className={`rounded-full px-1.5 py-0.5 text-[9px] font-extrabold ${
+                  vip ? "bg-gold-soft text-ink" : "bg-emerald-deep text-white"
+                }`}
+              >
+                {vip ? "👑 VIP" : "VIP · 3 bepul"}
+              </span>
+            </div>
             <div className="text-[11px] text-ink-soft font-semibold">
-              Gapiring yoki yozing — darajangizda javob beradi va tuzatadi
+              Suhbat, speaking, mock imtihon — darajangizda tuzatadi
             </div>
           </div>
           <span className="font-arabic text-2xl text-emerald-dark/40">تكلّم</span>

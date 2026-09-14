@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   api,
   type TutorFinishResult,
+  type TutorMock,
   type TutorNewWord,
   type TutorPronounceResult,
   type TutorTopic,
@@ -9,12 +10,16 @@ import {
 } from "../lib/api";
 import { playUrl, speakText } from "../lib/audio";
 import { MAX_SECONDS, Recorder, micSupported } from "../lib/recorder";
+import Paywall from "./Paywall";
 
-/** AI ustoz — darajaga mos jonli suhbat (speaking).
+/** AI ustoz — darajaga mos jonli suhbat (speaking) va mock imtihonlar.
  *
- *  Oqim: mavzu → ustoz ochadi (audio) → o'quvchi yozadi yoki gapiradi
- *  (mikrofon → STT) → ustoz javobi + tuzatish kartasi + maslahat.
- *  Har ustoz jumlasini «Takrorlash» bilan aytib, talaffuz balini olish mumkin.
+ *  Suhbat: mavzu → ustoz ochadi (audio) → o'quvchi yozadi yoki gapiradi
+ *  (mikrofon → STT) → ustoz javobi + tuzatish kartasi + maslahat. O'zbekcha
+ *  savol bersa — o'zbekcha tushuntiradi (answer_uz).
+ *  Mock: kasb bo'yicha 5 savol, har javob 0-100 baholanadi, o'rtacha ball
+ *  profil XP'siga qo'shiladi.
+ *  VIP: bepul rejimda kuniga 3 javob, keyin Paywall.
  */
 
 interface TutorProps {
@@ -33,17 +38,23 @@ interface Msg {
   translit?: string;
   uz?: string;
   hint?: string;
+  answerUz?: string;
   newWords?: TutorNewWord[];
   audioUrl?: string;
   /** O'quvchi javobi mikrofondan keldi */
   voice?: boolean;
   /** Ustozning shu javobga bergan bahosi (user xabariga biriktiriladi) */
   correction?: Correction;
+  /** Mock: shu javob bali, izoh va namunaviy javob */
+  mockScore?: number;
+  feedback?: string;
+  ideal?: string;
   /** Takrorlash mashqi natijasi (assistant xabari uchun) */
-  score?: TutorPronounceResult;
+  pron?: TutorPronounceResult;
 }
 
 type RecTarget = { kind: "answer" } | { kind: "repeat"; idx: number };
+type Tab = "chat" | "mock";
 
 const tg = () => window.Telegram?.WebApp;
 
@@ -63,7 +74,9 @@ function uzDefault(level: string): boolean {
 export default function Tutor({ onClose }: TutorProps) {
   const [info, setInfo] = useState<TutorTopics | null>(null);
   const [loadError, setLoadError] = useState("");
+  const [tab, setTab] = useState<Tab>("chat");
   const [topic, setTopic] = useState<TutorTopic | null>(null);
+  const [mock, setMock] = useState<TutorMock | null>(null);
   const [sessionKey, setSessionKey] = useState("");
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
@@ -74,6 +87,7 @@ export default function Tutor({ onClose }: TutorProps) {
   const [notice, setNotice] = useState("");
   const [finish, setFinish] = useState<TutorFinishResult | null>(null);
   const [saved, setSaved] = useState<Set<string>>(new Set());
+  const [paywall, setPaywall] = useState<string | null>(null);
 
   // Mikrofon
   const recorder = useRef(new Recorder());
@@ -83,8 +97,10 @@ export default function Tutor({ onClose }: TutorProps) {
   const canVoice = !!info?.voice && micSupported();
 
   const scrollRef = useRef<HTMLDivElement>(null);
+  const active = topic || mock;
+  const isMock = !!mock;
 
-  useEffect(() => {
+  const loadInfo = () =>
     api
       .getTutorTopics()
       .then((t) => {
@@ -93,6 +109,9 @@ export default function Tutor({ onClose }: TutorProps) {
         setShowUz(uzDefault(t.level));
       })
       .catch(() => setLoadError("Mavzular yuklanmadi. Qayta urinib ko'ring."));
+
+  useEffect(() => {
+    loadInfo();
   }, []);
 
   useEffect(() => {
@@ -133,7 +152,10 @@ export default function Tutor({ onClose }: TutorProps) {
 
   const showError = (e: unknown, fallback: string) => {
     const err = e as { status?: number; detail?: string };
-    if (err?.status === 429) {
+    if (err?.status === 402) {
+      setTurnsLeft(0);
+      setPaywall(err.detail || "Bepul javoblar tugadi — VIP bilan davom eting.");
+    } else if (err?.status === 429) {
       setTurnsLeft(0);
       setNotice(err.detail || "Bugungi suhbat limiti tugadi — ertaga davom eting.");
     } else {
@@ -141,9 +163,23 @@ export default function Tutor({ onClose }: TutorProps) {
     }
   };
 
-  const start = async (t: TutorTopic) => {
+  const turnBody = (key: string, history: Msg[], voice: boolean) => ({
+    session_key: key,
+    topic_id: topic?.id ?? "erkin",
+    history: historyFor(history),
+    voice,
+    mode: (mock ? "mock" : "chat") as "chat" | "mock",
+    mock_id: mock?.id,
+  });
+
+  const start = async (t: TutorTopic | null, m: TutorMock | null) => {
+    if (info && !info.vip && info.turns_left <= 0) {
+      setPaywall("Bepul javoblar tugadi — VIP bilan davom eting.");
+      return;
+    }
     const key = newSessionKey();
     setTopic(t);
+    setMock(m);
     setSessionKey(key);
     setMessages([]);
     setDone(false);
@@ -153,11 +189,13 @@ export default function Tutor({ onClose }: TutorProps) {
     try {
       const r = await api.tutorTurn({
         session_key: key,
-        topic_id: t.id,
+        topic_id: t?.id ?? "erkin",
         history: [],
         voice: false,
+        mode: m ? "mock" : "chat",
+        mock_id: m?.id,
       });
-      const m: Msg = {
+      const msg: Msg = {
         role: "assistant",
         ar: r.reply.ar,
         translit: r.reply.translit,
@@ -166,12 +204,13 @@ export default function Tutor({ onClose }: TutorProps) {
         newWords: r.reply.new_words,
         audioUrl: r.audio_url,
       };
-      setMessages([m]);
+      setMessages([msg]);
       setTurnsLeft(r.turns_left);
-      speak(m);
+      speak(msg);
     } catch (e) {
       showError(e, "Ustoz javob bermadi. Qayta urinib ko'ring.");
       setTopic(null);
+      setMock(null);
     } finally {
       setLoading(false);
     }
@@ -179,7 +218,7 @@ export default function Tutor({ onClose }: TutorProps) {
 
   const send = async (text: string, voice: boolean) => {
     const clean = text.trim();
-    if (!clean || !topic || loading || done) return;
+    if (!clean || !active || loading || done) return;
     const userMsg: Msg = { role: "user", ar: clean, voice };
     const next = [...messages, userMsg];
     setMessages(next);
@@ -188,34 +227,38 @@ export default function Tutor({ onClose }: TutorProps) {
     setLoading(true);
     tg()?.HapticFeedback?.impactOccurred("light");
     try {
-      const r = await api.tutorTurn({
-        session_key: sessionKey,
-        topic_id: topic.id,
-        history: historyFor(next),
-        voice,
-      });
+      const r = await api.tutorTurn(turnBody(sessionKey, next, voice));
       const reply: Msg = {
         role: "assistant",
         ar: r.reply.ar,
         translit: r.reply.translit,
         uz: r.reply.uz,
         hint: r.reply.hint_uz,
+        answerUz: r.reply.answer_uz,
         newWords: r.reply.new_words,
         audioUrl: r.audio_url,
       };
-      const graded: Msg = {
-        ...userMsg,
-        correction: {
-          ok: r.reply.correction_ok,
-          fixed_ar: r.reply.fixed_ar,
-          note_uz: r.reply.note_uz,
-        },
-      };
+      const graded: Msg = isMock
+        ? {
+            ...userMsg,
+            mockScore: r.reply.score ?? 0,
+            feedback: r.reply.feedback_uz ?? "",
+            ideal: r.reply.ideal_ar ?? "",
+          }
+        : {
+            ...userMsg,
+            correction: {
+              ok: r.reply.correction_ok,
+              fixed_ar: r.reply.fixed_ar,
+              note_uz: r.reply.note_uz,
+            },
+          };
       setMessages([...messages, graded, reply]);
       setTurnsLeft(r.turns_left);
       if (r.reply.done) setDone(true);
       speak(reply);
-      if (!r.reply.correction_ok) tg()?.HapticFeedback?.notificationOccurred("warning");
+      const bad = isMock ? (r.reply.score ?? 0) < 50 : !r.reply.correction_ok;
+      if (bad) tg()?.HapticFeedback?.notificationOccurred("warning");
     } catch (e) {
       // Javob o'tmadi — o'quvchi matnini qaytaramiz, yana yuborsin
       setMessages(messages);
@@ -259,7 +302,7 @@ export default function Tutor({ onClose }: TutorProps) {
       } else {
         const m = messages[target.idx];
         const r = await api.tutorPronounce(rec.blob, rec.filename, m.ar);
-        setMessages((ms) => ms.map((x, i) => (i === target.idx ? { ...x, score: r } : x)));
+        setMessages((ms) => ms.map((x, i) => (i === target.idx ? { ...x, pron: r } : x)));
         tg()?.HapticFeedback?.notificationOccurred(r.score >= 70 ? "success" : "warning");
       }
     } catch (e) {
@@ -285,6 +328,7 @@ export default function Tutor({ onClose }: TutorProps) {
       const r = await api.tutorFinish(sessionKey);
       setFinish(r);
       if (r.xp > 0) tg()?.HapticFeedback?.notificationOccurred("success");
+      loadInfo();
     } catch {
       setFinish({ turns: 0, ok_turns: 0, voice_turns: 0, xp: 0 });
     } finally {
@@ -303,11 +347,30 @@ export default function Tutor({ onClose }: TutorProps) {
     }
   };
 
+  const backToList = () => {
+    setTopic(null);
+    setMock(null);
+    setFinish(null);
+    setMessages([]);
+    setDone(false);
+  };
+
   const userTurns = messages.filter((m) => m.role === "user").length;
   const outOfTurns = turnsLeft <= 0;
+  const questionNo = Math.min(userTurns + 1, mock?.questions ?? 5);
 
   return (
     <div className="fixed inset-0 z-50 bg-sand flex flex-col max-w-md mx-auto">
+      {paywall !== null && (
+        <Paywall
+          reason={paywall || undefined}
+          onClose={() => {
+            setPaywall(null);
+            loadInfo();
+          }}
+        />
+      )}
+
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-cardline bg-card">
         <div className="min-w-0">
@@ -315,11 +378,28 @@ export default function Tutor({ onClose }: TutorProps) {
             🤖 AI USTOZ{info ? ` · ${info.level}` : ""}
           </div>
           <div className="font-extrabold truncate">
-            {topic ? `${topic.emoji} ${topic.title_uz}` : "Jonli suhbat"}
+            {mock
+              ? `${mock.emoji} ${mock.title_uz}`
+              : topic
+                ? `${topic.emoji} ${topic.title_uz}`
+                : "Jonli suhbat"}
           </div>
         </div>
         <div className="flex items-center gap-2 shrink-0">
-          {topic && (
+          {info &&
+            (info.vip ? (
+              <span className="h-9 inline-flex items-center rounded-full bg-gold-soft px-3 text-[11px] font-extrabold text-ink">
+                👑 VIP · {info.vip_days_left} kun
+              </span>
+            ) : (
+              <button
+                onClick={() => setPaywall("")}
+                className="h-9 rounded-full bg-emerald-deep px-3 text-[11px] font-extrabold text-white active:scale-95 transition-transform"
+              >
+                👑 VIP olish
+              </button>
+            ))}
+          {active && (
             <button
               onClick={() => setShowUz((v) => !v)}
               className={`h-9 px-3 rounded-full text-xs font-extrabold border ${
@@ -333,7 +413,7 @@ export default function Tutor({ onClose }: TutorProps) {
             </button>
           )}
           <button
-            onClick={() => (topic && !finish ? setTopic(null) : onClose())}
+            onClick={() => (active && !finish ? backToList() : onClose())}
             className="w-9 h-9 rounded-full bg-cardline text-ink-soft font-extrabold"
           >
             ✕
@@ -341,24 +421,63 @@ export default function Tutor({ onClose }: TutorProps) {
         </div>
       </div>
 
-      {/* Mavzu tanlash */}
-      {!topic && (
+      {/* Mavzu / mock tanlash */}
+      {!active && (
         <div className="flex-1 overflow-y-auto p-4 space-y-3">
+          <div className="grid grid-cols-2 gap-2 rounded-2xl bg-cardline/60 p-1">
+            {(["chat", "mock"] as Tab[]).map((t) => (
+              <button
+                key={t}
+                onClick={() => setTab(t)}
+                className={`rounded-xl py-2 text-[13px] font-extrabold transition-colors ${
+                  tab === t ? "bg-card shadow-sm" : "text-ink-soft"
+                }`}
+              >
+                {t === "chat" ? "💬 Suhbat" : "🎯 Mock imtihon"}
+              </button>
+            ))}
+          </div>
+
           <p className="text-sm text-ink-soft font-semibold">
-            Ustoz sizning darajangizda gaplashadi, xatolaringizni yumshoq tuzatadi.
-            Arabcha yozing yoki 🎤 gapiring — lotin yozuvida ham bo'ladi.
+            {tab === "chat"
+              ? "Ustoz sizning darajangizda gaplashadi, xatolaringizni yumshoq tuzatadi. Arabcha yozing yoki 🎤 gapiring. Tushunmasangiz — o'zbekcha so'rang, tushuntiradi."
+              : "Kasb yoki soha bo'yicha 5 savollik og'zaki imtihon. Har javob 0–100 baholanadi, o'rtacha ball profil ballaringizga qo'shiladi."}
           </p>
+
           {info && (
             <div className="flex items-center justify-between rounded-2xl bg-card border border-cardline px-4 py-2.5 text-xs font-bold">
               <span className="text-ink-soft">
                 Bugun qoldi: <span className="text-ink">{turnsLeft}</span>/{info.daily_limit}{" "}
-                javob
+                javob{!info.vip ? " (bepul)" : ""}
               </span>
               <span className="text-ink-soft">
                 {info.voice ? "🎤 ovoz yoqilgan" : "⌨️ faqat matn"}
               </span>
             </div>
           )}
+
+          {info && !info.vip && (
+            <button
+              onClick={() => setPaywall("")}
+              className="w-full text-left rounded-3xl bg-gradient-to-br from-emerald-deep to-emerald-dark p-4 text-white shadow-lg active:scale-[0.98] transition-transform"
+            >
+              <div className="text-[11px] font-extrabold tracking-[0.14em] text-gold-soft">
+                👑 VIP TARIF
+              </div>
+              <div className="text-[15px] font-extrabold mt-0.5">
+                {outOfTurns
+                  ? "Bugungi bepul javoblar tugadi"
+                  : `Bepulda kuniga ${info.free_turns} javob — VIP'da 40`}
+              </div>
+              <div className="text-[12px] text-white/80 font-semibold">
+                Suhbat, speaking, mock imtihonlar · oyiga 90 000 so'm
+                <span className="ml-1 rounded-md bg-white/15 px-1.5 py-0.5 text-[10px] font-extrabold">
+                  3 000 so'm/kun
+                </span>
+              </div>
+            </button>
+          )}
+
           {info && !info.ai && (
             <div className="rounded-2xl bg-gold-soft border border-gold/30 p-4 text-sm font-semibold">
               AI ustoz hozircha o'chiq (server sozlanmoqda). Birozdan keyin qayta kiring.
@@ -372,45 +491,91 @@ export default function Tutor({ onClose }: TutorProps) {
           {loadError && (
             <div className="text-center text-ink-soft font-semibold pt-8">{loadError}</div>
           )}
-          {info?.topics.map((t) => (
-            <button
-              key={t.id}
-              onClick={() => start(t)}
-              disabled={!info.ai || loading || outOfTurns}
-              className="w-full flex items-center gap-3 rounded-2xl bg-card border border-cardline p-4 text-left active:scale-[0.98] transition-transform disabled:opacity-50"
-            >
-              <div className="w-12 h-12 shrink-0 rounded-xl bg-gold-soft flex items-center justify-center text-2xl">
-                {t.emoji}
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="font-extrabold flex items-center gap-2">
-                  {t.title_uz}
-                  {!t.recommended && (
-                    <span className="text-[10px] font-extrabold rounded-full bg-cardline px-2 py-0.5 text-ink-soft">
-                      {t.min_level}+
-                    </span>
-                  )}
+
+          {tab === "chat" &&
+            info?.topics.map((t) => (
+              <ListCard
+                key={t.id}
+                emoji={t.emoji}
+                title={t.title_uz}
+                desc={t.desc_uz}
+                badge={t.recommended ? "" : `${t.min_level}+`}
+                disabled={!info.ai || loading}
+                onClick={() => start(t, null)}
+              />
+            ))}
+
+          {tab === "mock" && info && (
+            <>
+              {info.mocks.map((m) => {
+                const last = info.mock_results.find((r) => r.mock_id === m.id);
+                return (
+                  <ListCard
+                    key={m.id}
+                    emoji={m.emoji}
+                    title={m.title_uz}
+                    desc={`${m.desc_uz} · ${m.questions} savol`}
+                    badge={m.recommended ? "" : `${m.min_level}+`}
+                    score={last?.score}
+                    disabled={!info.ai || loading}
+                    onClick={() => start(null, m)}
+                  />
+                );
+              })}
+              {info.mock_results.length > 0 && (
+                <div className="rounded-2xl bg-card border border-cardline p-3">
+                  <div className="text-[11px] font-extrabold tracking-[0.12em] text-ink-soft mb-1.5">
+                    SO'NGGI NATIJALAR
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {info.mock_results.slice(0, 8).map((r, i) => {
+                      const m = info.mocks.find((x) => x.id === r.mock_id);
+                      return (
+                        <span
+                          key={i}
+                          className="rounded-full bg-sand border border-cardline px-2.5 py-1 text-[11px] font-bold"
+                        >
+                          {m?.emoji ?? "🎯"} {r.score}% · {r.date}
+                        </span>
+                      );
+                    })}
+                  </div>
                 </div>
-                <div className="text-xs text-ink-soft font-semibold">{t.desc_uz}</div>
-              </div>
-              <span className="text-emerald-dark font-extrabold text-xl">›</span>
-            </button>
-          ))}
+              )}
+            </>
+          )}
+
           {loading && (
             <div className="text-center text-sm text-ink-soft font-semibold py-3">
-              Ustoz suhbatni boshlamoqda…
+              {tab === "mock" ? "Imtihon tayyorlanmoqda…" : "Ustoz suhbatni boshlamoqda…"}
             </div>
           )}
         </div>
       )}
 
-      {/* Suhbat */}
-      {topic && !finish && (
+      {/* Suhbat / imtihon */}
+      {active && !finish && (
         <>
+          {isMock && (
+            <div className="flex items-center gap-2 px-4 py-2 bg-card border-b border-cardline">
+              <div className="flex-1 h-1.5 rounded-full bg-cardline overflow-hidden">
+                <div
+                  className="h-full bg-emerald-deep rounded-full transition-[width]"
+                  style={{
+                    width: `${Math.min(100, (userTurns / (mock?.questions ?? 5)) * 100)}%`,
+                  }}
+                />
+              </div>
+              <span className="text-[11px] font-extrabold text-ink-soft">
+                {done ? "Yakunlandi" : `Savol ${questionNo}/${mock?.questions ?? 5}`}
+              </span>
+            </div>
+          )}
+
           <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-3">
             {messages.map((m, i) =>
               m.role === "user" ? (
-                <UserBubble key={i} m={m} />
+                <UserBubble key={i} m={m} mock={isMock} />
               ) : (
                 <TutorBubble
                   key={i}
@@ -429,7 +594,7 @@ export default function Tutor({ onClose }: TutorProps) {
             {(loading || transcribing) && (
               <div className="flex justify-start">
                 <div className="rounded-2xl bg-card border border-cardline px-4 py-3 text-xs font-bold text-ink-soft">
-                  {transcribing ? "🎧 Eshitilmoqda…" : "Ustoz yozmoqda…"}
+                  {transcribing ? "🎧 Eshitilmoqda…" : isMock ? "Baholanmoqda…" : "Ustoz yozmoqda…"}
                 </div>
               </div>
             )}
@@ -441,7 +606,15 @@ export default function Tutor({ onClose }: TutorProps) {
             {done && (
               <div className="text-center py-3">
                 <div className="text-2xl">🎉</div>
-                <p className="text-sm font-bold text-emerald-dark">Suhbat yakunlandi!</p>
+                <p className="text-sm font-bold text-emerald-dark">
+                  {isMock ? "Imtihon tugadi — natijani ko'ring" : "Suhbat yakunlandi!"}
+                </p>
+                <button
+                  onClick={finishSession}
+                  className="mt-2 rounded-xl bg-emerald-deep px-5 py-2.5 text-sm font-extrabold text-white active:scale-95 transition-transform"
+                >
+                  Natija ›
+                </button>
               </div>
             )}
           </div>
@@ -478,7 +651,13 @@ export default function Tutor({ onClose }: TutorProps) {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && send(input, false)}
                   dir="auto"
-                  placeholder={outOfTurns ? "Bugungi limit tugadi" : "جوابك هنا… yoki lotincha"}
+                  placeholder={
+                    outOfTurns
+                      ? info?.vip
+                        ? "Bugungi limit tugadi"
+                        : "Bepul javoblar tugadi — VIP"
+                      : "جوابك هنا… yoki lotincha / o'zbekcha"
+                  }
                   disabled={done || outOfTurns}
                   className="flex-1 min-w-0 rounded-xl bg-sand border border-cardline px-3 py-2.5 font-arabic text-lg outline-none focus:border-emerald-deep/40 disabled:opacity-60"
                 />
@@ -495,31 +674,37 @@ export default function Tutor({ onClose }: TutorProps) {
               <span>
                 {userTurns} javob · bugun qoldi: {turnsLeft}
               </span>
-              <button
-                onClick={finishSession}
-                disabled={loading || userTurns === 0}
-                className="font-extrabold text-emerald-dark underline underline-offset-4 disabled:opacity-40"
-              >
-                Yakunlash ✓
-              </button>
+              {outOfTurns && !info?.vip ? (
+                <button
+                  onClick={() => setPaywall("Bepul javoblar tugadi — VIP bilan davom eting.")}
+                  className="font-extrabold text-emerald-dark underline underline-offset-4"
+                >
+                  👑 VIP olish
+                </button>
+              ) : (
+                <button
+                  onClick={finishSession}
+                  disabled={loading || userTurns === 0}
+                  className="font-extrabold text-emerald-dark underline underline-offset-4 disabled:opacity-40"
+                >
+                  Yakunlash ✓
+                </button>
+              )}
             </div>
           </div>
         </>
       )}
 
       {/* Yakuniy hisobot */}
-      {topic && finish && (
+      {active && finish && (
         <Summary
           result={finish}
           messages={messages}
+          mock={mock}
           saved={saved}
           onSave={saveWord}
-          onAgain={() => start(topic)}
-          onTopics={() => {
-            setTopic(null);
-            setFinish(null);
-            setMessages([]);
-          }}
+          onAgain={() => start(topic, mock)}
+          onTopics={backToList}
           onClose={onClose}
         />
       )}
@@ -529,7 +714,71 @@ export default function Tutor({ onClose }: TutorProps) {
 
 // ────────────────────────── Bo'laklar ──────────────────────────
 
-function UserBubble({ m }: { m: Msg }) {
+function ListCard({
+  emoji,
+  title,
+  desc,
+  badge,
+  score,
+  disabled,
+  onClick,
+}: {
+  emoji: string;
+  title: string;
+  desc: string;
+  badge: string;
+  score?: number;
+  disabled: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className="w-full flex items-center gap-3 rounded-2xl bg-card border border-cardline p-4 text-left active:scale-[0.98] transition-transform disabled:opacity-50"
+    >
+      <div className="w-12 h-12 shrink-0 rounded-xl bg-gold-soft flex items-center justify-center text-2xl">
+        {emoji}
+      </div>
+      <div className="min-w-0 flex-1">
+        <div className="font-extrabold flex items-center gap-2">
+          {title}
+          {badge && (
+            <span className="text-[10px] font-extrabold rounded-full bg-cardline px-2 py-0.5 text-ink-soft">
+              {badge}
+            </span>
+          )}
+        </div>
+        <div className="text-xs text-ink-soft font-semibold">{desc}</div>
+      </div>
+      {score !== undefined ? (
+        <span
+          className={`shrink-0 rounded-lg px-2 py-1 text-[11px] font-extrabold text-white ${
+            score >= 80 ? "bg-emerald-deep" : score >= 50 ? "bg-gold" : "bg-terracotta"
+          }`}
+        >
+          {score}%
+        </span>
+      ) : (
+        <span className="text-emerald-dark font-extrabold text-xl">›</span>
+      )}
+    </button>
+  );
+}
+
+function ScoreBadge({ score }: { score: number }) {
+  return (
+    <span
+      className={`inline-flex items-center rounded-lg px-2 py-0.5 text-[11px] font-extrabold text-white ${
+        score >= 80 ? "bg-emerald-deep" : score >= 50 ? "bg-gold" : "bg-terracotta"
+      }`}
+    >
+      {score}/100
+    </span>
+  );
+}
+
+function UserBubble({ m, mock }: { m: Msg; mock: boolean }) {
   const c = m.correction;
   return (
     <div className="flex flex-col items-end gap-1">
@@ -539,7 +788,25 @@ function UserBubble({ m }: { m: Msg }) {
           {m.ar}
         </div>
       </div>
-      {c && (
+
+      {mock && m.mockScore !== undefined && (
+        <div className="max-w-[88%] rounded-xl bg-card border border-cardline px-3 py-2 text-xs font-semibold space-y-1">
+          <div className="flex items-center gap-2">
+            <ScoreBadge score={m.mockScore} />
+            {m.feedback && <span className="text-ink-soft">{m.feedback}</span>}
+          </div>
+          {m.ideal && (
+            <div className="rounded-lg bg-sand px-2.5 py-1.5">
+              <div className="text-[10px] font-extrabold text-ink-soft">NAMUNAVIY JAVOB</div>
+              <div className="font-arabic text-lg leading-snug" dir="rtl">
+                {m.ideal}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {!mock && c && (
         <div
           className={`max-w-[82%] rounded-xl px-3 py-2 text-xs font-semibold ${
             c.ok
@@ -586,10 +853,19 @@ function TutorBubble({
 }) {
   return (
     <div className="flex flex-col items-start gap-1.5">
+      {m.answerUz && (
+        <div className="max-w-[92%] rounded-2xl bg-card border border-emerald-deep/30 px-4 py-3 text-sm font-semibold">
+          <div className="text-[10px] font-extrabold tracking-[0.12em] text-emerald-dark mb-1">
+            📘 TUSHUNTIRISH
+          </div>
+          <div className="whitespace-pre-line leading-snug">{m.answerUz}</div>
+        </div>
+      )}
+
       <div className="max-w-[88%] rounded-2xl px-4 py-3 bg-card border border-cardline">
         <div className="font-arabic text-2xl leading-relaxed" dir="rtl">
-          {m.score
-            ? m.score.words.map((w, i) => (
+          {m.pron
+            ? m.pron.words.map((w, i) => (
                 <span key={i} className={w.ok ? "" : "text-terracotta underline decoration-2"}>
                   {w.ar}{" "}
                 </span>
@@ -621,23 +897,23 @@ function TutorBubble({
               {recording ? "■ Tayyor" : "🎤 Takrorlash"}
             </button>
           )}
-          {m.score && (
+          {m.pron && (
             <span
               className={`h-8 inline-flex items-center px-2.5 rounded-lg text-xs font-extrabold ${
-                m.score.score >= 80
+                m.pron.score >= 80
                   ? "bg-emerald-deep text-white"
-                  : m.score.score >= 50
+                  : m.pron.score >= 50
                     ? "bg-gold text-white"
                     : "bg-terracotta text-white"
               }`}
             >
-              🎯 {m.score.score}%
+              🎯 {m.pron.score}%
             </span>
           )}
         </div>
-        {m.score && m.score.transcript && m.score.score < 80 && (
+        {m.pron && m.pron.transcript && m.pron.score < 80 && (
           <div className="mt-1.5 text-[11px] text-ink-soft font-semibold" dir="rtl">
-            Eshitildi: {m.score.transcript}
+            Eshitildi: {m.pron.transcript}
           </div>
         )}
       </div>
@@ -669,6 +945,7 @@ function TutorBubble({
 function Summary({
   result,
   messages,
+  mock,
   saved,
   onSave,
   onAgain,
@@ -677,6 +954,7 @@ function Summary({
 }: {
   result: TutorFinishResult;
   messages: Msg[];
+  mock: TutorMock | null;
   saved: Set<string>;
   onSave: (w: TutorNewWord) => void;
   onAgain: () => void;
@@ -684,23 +962,63 @@ function Summary({
   onClose: () => void;
 }) {
   const fixes = messages.filter((m) => m.role === "user" && m.correction && !m.correction.ok);
+  const answers = messages.filter((m) => m.role === "user" && m.mockScore !== undefined);
   const words = new Map<string, TutorNewWord>();
   messages.forEach((m) => m.newWords?.forEach((w) => words.set(w.ar, w)));
   const pct = result.turns ? Math.round((result.ok_turns / result.turns) * 100) : 0;
+  const score = result.score ?? 0;
+  const headline = mock ? score : pct;
 
   return (
     <div className="flex-1 overflow-y-auto p-4 space-y-4">
       <div className="rounded-3xl bg-gradient-to-br from-emerald-deep to-emerald-dark p-5 text-white text-center shadow-lg">
-        <div className="text-3xl">{pct >= 80 ? "🌟" : pct >= 50 ? "👏" : "💪"}</div>
-        <div className="text-xl font-extrabold mt-1">Suhbat yakunlandi</div>
-        <div className="text-sm text-white/80 font-semibold">
-          {result.turns} javob · {pct}% xatosiz
-          {result.voice_turns > 0 ? ` · 🎤 ${result.voice_turns}` : ""}
+        <div className="text-3xl">{headline >= 80 ? "🌟" : headline >= 50 ? "👏" : "💪"}</div>
+        <div className="text-xl font-extrabold mt-1">
+          {mock ? `${mock.emoji} ${mock.title_uz}` : "Suhbat yakunlandi"}
         </div>
+        {mock ? (
+          <>
+            <div className="mt-2 text-[44px] leading-none font-extrabold">{score}</div>
+            <div className="text-sm text-white/80 font-semibold">ball (100 dan) · {result.turns} javob</div>
+          </>
+        ) : (
+          <div className="text-sm text-white/80 font-semibold">
+            {result.turns} javob · {pct}% xatosiz
+            {result.voice_turns > 0 ? ` · 🎤 ${result.voice_turns}` : ""}
+          </div>
+        )}
         <div className="mt-3 inline-block rounded-full bg-white/15 px-4 py-1.5 font-extrabold">
-          {result.xp > 0 ? `+${result.xp} XP` : "XP uchun kamida 3 javob"}
+          {result.xp > 0
+            ? `+${result.xp} XP profilga qo'shildi`
+            : mock
+              ? "XP: shu mock uchun bugun olingan yoki imtihon tugallanmagan"
+              : "XP uchun kamida 3 javob"}
         </div>
       </div>
+
+      {mock && answers.length > 0 && (
+        <section className="rounded-2xl bg-card border border-cardline p-4">
+          <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft mb-2">
+            SAVOLLAR BO'YICHA
+          </div>
+          <div className="space-y-2.5">
+            {answers.map((m, i) => (
+              <div key={i} className="text-sm">
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] font-extrabold text-ink-soft">#{i + 1}</span>
+                  <ScoreBadge score={m.mockScore ?? 0} />
+                </div>
+                <div className="font-arabic text-base mt-0.5" dir="auto">
+                  {m.ar}
+                </div>
+                {m.feedback && (
+                  <div className="text-xs text-ink-soft font-semibold">{m.feedback}</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {fixes.length > 0 && (
         <section className="rounded-2xl bg-card border border-cardline p-4">
@@ -756,7 +1074,7 @@ function Summary({
           onClick={onTopics}
           className="rounded-2xl bg-card border border-cardline py-3.5 font-extrabold active:scale-95 transition-transform"
         >
-          Boshqa mavzu
+          {mock ? "Boshqa mock" : "Boshqa mavzu"}
         </button>
       </div>
       <button onClick={onClose} className="w-full text-sm font-bold text-ink-soft py-2">

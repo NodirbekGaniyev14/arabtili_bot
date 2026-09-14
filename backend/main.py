@@ -20,6 +20,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from api.exam import router as exam_router
+from api.pay import router as pay_router
 from api.routes import router as api_router
 from api.v2 import router as api_v2_router
 from bot.admin import router as admin_router
@@ -45,6 +46,8 @@ async def _setup_commands(bot: Bot):
                 BotCommand(command="user", description="👤 Foydalanuvchi ma'lumoti"),
                 BotCommand(command="broadcast", description="📤 Hammaga xabar"),
                 BotCommand(command="taklif", description="👥 Taklif kampaniyasi"),
+                BotCommand(command="payments", description="💳 Kutayotgan cheklar"),
+                BotCommand(command="vip", description="👑 VIP berish/olib tashlash"),
                 BotCommand(command="start", description="Botni ishga tushirish"),
             ],
             scope=BotCommandScopeChat(chat_id=settings.admin_id),
@@ -138,6 +141,7 @@ app.add_middleware(
 app.include_router(api_router)
 app.include_router(api_v2_router)
 app.include_router(exam_router)
+app.include_router(pay_router)
 
 if WEBAPP_DIST.exists():
     app.mount("/", StaticFiles(directory=WEBAPP_DIST, html=True), name="webapp")

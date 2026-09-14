@@ -63,9 +63,16 @@ function StatCard({
 
 export default function Profile({
   onOpenPlacement,
+  onOpenPaywall,
+  vip = false,
+  vipDaysLeft = 0,
   onProfileChange,
 }: {
   onOpenPlacement?: () => void;
+  /** VIP tarif sahifasi (AI ustoz) */
+  onOpenPaywall?: () => void;
+  vip?: boolean;
+  vipDaysLeft?: number;
   /** Ism o'zgargach bosh sahifadagi salomlashuv ham yangilansin */
   onProfileChange?: () => void;
 } = {}) {
@@ -264,6 +271,29 @@ export default function Profile({
           </p>
         )}
       </section>
+
+      {/* VIP tarif */}
+      <button
+        onClick={onOpenPaywall}
+        className={`w-full flex items-center gap-3 rounded-2xl p-3.5 text-left active:scale-[0.98] transition-transform ${
+          vip
+            ? "bg-gold-soft border border-gold/40"
+            : "bg-gradient-to-br from-emerald-deep to-emerald-dark text-white shadow-md"
+        }`}
+      >
+        <div className="text-2xl">👑</div>
+        <div className="min-w-0 flex-1">
+          <div className="text-[14px] font-extrabold leading-tight">
+            {vip ? `VIP faol · ${vipDaysLeft} kun qoldi` : "VIP tarif — AI ustoz"}
+          </div>
+          <div className={`text-[11px] font-semibold ${vip ? "text-ink-soft" : "text-white/80"}`}>
+            {vip
+              ? "Suhbat, speaking, mock imtihonlar ochiq · uzaytirish"
+              : "Oyiga 90 000 so'm · 3 000 so'm/kun · chek orqali"}
+          </div>
+        </div>
+        <span className="font-extrabold text-xl">›</span>
+      </button>
 
       {/* Statistika */}
       <section className="grid grid-cols-2 gap-3">

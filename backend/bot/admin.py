@@ -6,11 +6,14 @@ from urllib.parse import quote
 from aiogram import Bot, F, Router
 from aiogram.exceptions import TelegramRetryAfter
 from aiogram.filters import Command
-from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from aiogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
+from sqlalchemy import select
 
 from config import settings
+from db.models import User
 from db.session import SessionLocal
 from services import admin
+from services import billing
 from services import feedback as feedback_svc
 
 router = Router()
@@ -263,3 +266,123 @@ async def cmd_taklif(message: Message, bot: Bot):
         reply_markup=_invite_kb(), disable_web_page_preview=True,
     )
     await message.answer(f"✅ Yuborildi: {sent}\n❌ Yetib bormadi: {failed}")
+
+
+# ─────────────────── VIP to'lovlari (K17.2) ───────────────────
+
+
+def _is_admin_cb(cb: CallbackQuery) -> bool:
+    return bool(settings.admin_id) and cb.from_user is not None and (
+        cb.from_user.id == settings.admin_id
+    )
+
+
+@router.callback_query(F.data.startswith("pay:"))
+async def cb_payment(cb: CallbackQuery, bot: Bot):
+    """Chek ostidagi tugmalar: pay:ok:<id>:<kun> yoki pay:no:<id>."""
+    if not _is_admin_cb(cb):
+        await cb.answer("Faqat admin", show_alert=True)
+        return
+    parts = (cb.data or "").split(":")
+    action, req_id = parts[1], int(parts[2]) if len(parts) > 2 and parts[2].isdigit() else 0
+    days = int(parts[3]) if action == "ok" and len(parts) > 3 and parts[3].isdigit() else 0
+
+    async with SessionLocal() as session:
+        row = await billing.load_request(session, req_id)
+        if row is None:
+            await cb.answer("So'rov topilmadi", show_alert=True)
+            return
+        req, user = row
+        if req.status != "pending":
+            await cb.answer(f"Allaqachon: {req.status}", show_alert=True)
+            return
+        if action == "ok" and days > 0:
+            until = await billing.approve(session, req, user, days)
+            result = f"✅ Tasdiqlandi — {days} kun, {until:%d.%m.%Y} gacha"
+            user_text = billing.user_approved_text(days, until)
+        else:
+            await billing.reject(session, req)
+            result = "❌ Rad etildi"
+            user_text = billing.user_rejected_text()
+        tg_id = user.tg_id
+
+    try:
+        await bot.send_message(tg_id, user_text, parse_mode="HTML")
+    except Exception:
+        result += " (foydalanuvchiga xabar yetmadi)"
+
+    # Tugmalarni olib tashlab, natijani chek ostiga yozamiz
+    try:
+        caption = (cb.message.caption or "") if cb.message else ""
+        await cb.message.edit_caption(
+            caption=f"{caption}\n\n<b>{result}</b>", parse_mode="HTML", reply_markup=None
+        )
+    except Exception:
+        pass
+    await cb.answer(result)
+
+
+@router.message(Command("payments"))
+async def cmd_payments(message: Message):
+    """Tekshirilmagan cheklar ro'yxati."""
+    if not _is_admin(message):
+        return
+    async with SessionLocal() as session:
+        rows = await billing.pending_list(session)
+    if not rows:
+        await message.answer("✅ Kutayotgan chek yo'q.")
+        return
+    lines = ["💳 <b>Kutayotgan cheklar:</b>\n"]
+    for req, user in rows:
+        uname = f"@{user.username}" if user.username else "—"
+        lines.append(
+            f"#{req.id} · {user.name or '—'} ({uname}) · ID <code>{user.tg_id}</code> · "
+            f"{billing.PLANS.get(req.plan, {}).get('title', req.plan)} · "
+            f"{req.created_at:%d.%m %H:%M}"
+        )
+    lines.append("\nQo'lda berish: <code>/vip &lt;telegram_id&gt; &lt;kun&gt;</code>")
+    await message.answer("\n".join(lines), parse_mode="HTML")
+
+
+@router.message(Command("vip"))
+async def cmd_vip(message: Message, bot: Bot):
+    """`/vip <tg_id> <kun>` — VIP beradi/uzaytiradi; `/vip <tg_id> off` — o'chiradi."""
+    if not _is_admin(message):
+        return
+    parts = (message.text or "").split()
+    if len(parts) < 3 or not parts[1].lstrip("-").isdigit():
+        await message.answer(
+            "Foydalanish:\n<code>/vip 5000431126 30</code> — 30 kun VIP\n"
+            "<code>/vip 5000431126 off</code> — o'chirish",
+            parse_mode="HTML",
+        )
+        return
+    tg_id = int(parts[1])
+    arg = parts[2].lower()
+
+    async with SessionLocal() as session:
+        user = (
+            await session.execute(select(User).where(User.tg_id == tg_id))
+        ).scalar_one_or_none()
+        if user is None:
+            await message.answer(f"❌ <code>{tg_id}</code> topilmadi.", parse_mode="HTML")
+            return
+        if arg == "off":
+            user.vip_until = None
+            await session.commit()
+            await message.answer(f"VIP o'chirildi: {user.name or tg_id}")
+            return
+        if not arg.isdigit() or int(arg) <= 0:
+            await message.answer("Kun soni butun son bo'lsin (masalan 30).")
+            return
+        days = int(arg)
+        until = billing.grant(user, days)
+        await session.commit()
+        name = user.name or str(tg_id)
+
+    try:
+        await bot.send_message(tg_id, billing.user_approved_text(days, until), parse_mode="HTML")
+        note = ""
+    except Exception:
+        note = " (foydalanuvchiga xabar yetmadi)"
+    await message.answer(f"👑 {name}: VIP {until:%d.%m.%Y} gacha{note}")

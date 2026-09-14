@@ -27,6 +27,9 @@ _MIGRATIONS = {
         "streak_freezes": "INTEGER DEFAULT 2",
         "frozen_days": "TEXT DEFAULT ''",
         "freeze_granted_week": "VARCHAR(10) DEFAULT ''",
+        # K17: VIP tarif
+        "vip_until": "DATETIME",
+        "paywall_seen_at": "DATETIME",
     },
     "user_words": {
         "card_type": "VARCHAR(16) DEFAULT 'word'",
@@ -54,6 +57,11 @@ _MIGRATIONS = {
     # darslar qayta qulflanmaydi.
     "progress": {
         "passed": "INTEGER DEFAULT 1",
+    },
+    # K17: mock imtihon rejimi va javob bali
+    "tutor_turns": {
+        "mode": "VARCHAR(8) DEFAULT 'chat'",
+        "score": "INTEGER DEFAULT -1",
     },
 }
 

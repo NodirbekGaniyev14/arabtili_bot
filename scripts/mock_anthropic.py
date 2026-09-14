@@ -61,6 +61,35 @@ FINAL = {
 }
 
 
+MOCK_QS = [
+    ("مَا هِيَ مَسْؤُولِيَّاتُكَ فِي العَمَلِ؟", "maa hiya mas'uuliyyaatuka fil-ʻamal?", "Ishdagi mas'uliyatlaringiz nima?"),
+    ("صِفْ يَوْمًا عَادِيًّا فِي عَمَلِكَ.", "sif yawman ʻaadiyyan fii ʻamalik.", "Ishdagi oddiy kuningizni tasvirlang."),
+    ("مَاذَا تَفْعَلُ إِذَا غَضِبَ الزَّبُونُ؟", "maadhaa tafʻal idhaa gʻadiba az-zabuun?", "Mijoz g'azablansa nima qilasiz?"),
+    ("مَا أَصْعَبُ شَيْءٍ فِي مِهْنَتِكَ؟", "maa asʻabu shay'in fii mihnatik?", "Kasbingizdagi eng qiyin narsa nima?"),
+    ("لِمَاذَا اخْتَرْتَ هَذِهِ المِهْنَةَ؟", "limaadhaa ikhtarta haadhihil-mihna?", "Nega bu kasbni tanladingiz?"),
+]
+
+
+def _mock_reply(user_turns: int) -> dict:
+    """SPEAKING MOCK EXAM rejimi: 5 savol, har javob baholanadi."""
+    if user_turns == 0:
+        q = MOCK_QS[0]
+        return {"ar": "أَهْلًا! الاِمْتِحَانُ خَمْسَةُ أَسْئِلَةٍ. " + q[0], "translit": q[1], "uz": "Salom! Imtihon 5 savol. " + q[2],
+                "score": -1, "feedback_uz": "", "ideal_ar": "", "done": False}
+    done = user_turns >= 5
+    q = MOCK_QS[min(user_turns, 4)]
+    score = [72, 45, 88, 60, 95][min(user_turns - 1, 4)]
+    return {
+        "ar": "شُكْرًا! اِنْتَهَى الاِمْتِحَانُ." if done else q[0],
+        "translit": "shukran! intahal-imtihaan." if done else q[1],
+        "uz": "Rahmat! Imtihon tugadi." if done else q[2],
+        "score": score,
+        "feedback_uz": "Mavzuga mos, lekin fe'l shakli xato." if score < 80 else "Juda yaxshi, to'liq javob.",
+        "ideal_ar": "أَنَا أَعْمَلُ فِي المُسْتَشْفَى وَأُسَاعِدُ المَرْضَى.",
+        "done": done,
+    }
+
+
 @app.post("/v1/messages")
 async def messages(req: Request):
     body = await req.json()
@@ -68,6 +97,15 @@ async def messages(req: Request):
     user_turns = sum(
         1 for m in msgs if m.get("role") == "user" and m.get("content") != "[START]"
     )
+    sys_text = "".join(b.get("text", "") for b in body.get("system", []))
+    if "SPEAKING MOCK EXAM" in sys_text:
+        reply = _mock_reply(user_turns)
+        return {
+            "id": "msg_mock", "type": "message", "role": "assistant", "model": body.get("model", "mock"),
+            "content": [{"type": "text", "text": json.dumps(reply, ensure_ascii=False)}],
+            "stop_reason": "end_turn", "stop_sequence": None,
+            "usage": {"input_tokens": 300, "output_tokens": 120, "cache_read_input_tokens": len(sys_text) // 3, "cache_creation_input_tokens": 0},
+        }
     step = SCRIPT[min(user_turns, len(SCRIPT) - 1)] if user_turns < 6 else FINAL
     corr = step.get("correction", {"ok": True, "fixed_ar": "", "note_uz": ""})
     reply = {
@@ -79,6 +117,10 @@ async def messages(req: Request):
         "note_uz": corr["note_uz"] if user_turns else "",
         "hint_uz": step["hint_uz"],
         "new_words": step["new_words"],
+        "answer_uz": (
+            "«اِسْم» (ism) — «ism» degani. «اِسْمِي» = «mening ismim». Masalan: اِسْمِي نُودِير — ismii Nodir."
+            if msgs and "?" in str(msgs[-1].get("content", "")) else ""
+        ),
         "done": user_turns >= 6,
     }
     sys_len = sum(len(b.get("text", "")) for b in body.get("system", []))

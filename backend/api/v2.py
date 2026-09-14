@@ -14,7 +14,7 @@ from pydantic import BaseModel, Field
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.models import LessonRating, Plan, Progress, TutorTurn, User, XpLog
+from db.models import LessonRating, MockResult, Plan, Progress, TutorTurn, User, XpLog
 from db.session import get_session
 from services.achievements import check_and_award
 from services.curriculum import (
@@ -357,6 +357,23 @@ async def _tutor_turns_today(session: AsyncSession, user_id: int) -> int:
     return int(n or 0)
 
 
+async def _tutor_access(session: AsyncSession, user: User) -> dict:
+    """VIP → to'liq limit; bepul → TUTOR_FREE_TURNS (tatib ko'rish)."""
+    from config import settings
+    from services import billing
+
+    vip = billing.is_vip(user)
+    limit = settings.tutor_daily_turns if vip else settings.tutor_free_turns
+    used = await _tutor_turns_today(session, user.id)
+    return {
+        "vip": vip,
+        "vip_days_left": billing.vip_days_left(user),
+        "daily_limit": limit,
+        "turns_left": max(limit - used, 0),
+        "used": used,
+    }
+
+
 @router.get("/tutor/topics")
 async def tutor_topics(
     user: User = Depends(get_current_user),
@@ -366,12 +383,25 @@ async def tutor_topics(
     from services import stt, tutor
 
     level = await _user_level(session, user.id)
-    used = await _tutor_turns_today(session, user.id)
+    access = await _tutor_access(session, user)
+    # So'nggi mock natijalari — o'quvchi o'sishini ko'rsin
+    recent = (
+        await session.execute(
+            select(MockResult.mock_id, MockResult.score, MockResult.created_at)
+            .where(MockResult.user_id == user.id)
+            .order_by(MockResult.id.desc())
+            .limit(10)
+        )
+    ).all()
     return {
         "level": level,
         "topics": tutor.topic_list(level),
-        "turns_left": max(settings.tutor_daily_turns - used, 0),
-        "daily_limit": settings.tutor_daily_turns,
+        "mocks": tutor.mock_list(level),
+        "mock_results": [
+            {"mock_id": r[0], "score": r[1], "date": r[2].strftime("%d.%m")} for r in recent
+        ],
+        **{k: v for k, v in access.items() if k != "used"},
+        "free_turns": settings.tutor_free_turns,
         "ai": bool(settings.anthropic_api_key),
         "voice": stt.available(),
     }
@@ -379,10 +409,12 @@ async def tutor_topics(
 
 class TutorTurnBody(BaseModel):
     session_key: str = Field(pattern=_SESSION_KEY_RE)
-    topic_id: str = Field(max_length=24)
+    topic_id: str = Field(default="erkin", max_length=24)
     # [{role:'user'|'assistant', content}] — assistant = faqat `ar` matni
     history: list[dict] = Field(default_factory=list, max_length=60)
     voice: bool = False  # oxirgi javob mikrofondan keldi
+    mode: str = Field(default="chat", pattern=r"^(chat|mock)$")
+    mock_id: str = Field(default="", max_length=24)
 
 
 @router.post("/tutor/turn")
@@ -397,8 +429,13 @@ async def tutor_turn(
     if not settings.anthropic_api_key:
         raise HTTPException(status_code=503, detail="AI ustoz hozircha o'chiq")
 
-    used = await _tutor_turns_today(session, user.id)
-    if used >= settings.tutor_daily_turns:
+    access = await _tutor_access(session, user)
+    if access["turns_left"] <= 0:
+        if not access["vip"]:
+            # 402 — klient paywall'ni ochadi
+            raise HTTPException(
+                status_code=402, detail="Bepul javoblar tugadi — VIP bilan davom eting"
+            )
         raise HTTPException(
             status_code=429, detail="Bugungi suhbat limiti tugadi — ertaga davom eting"
         )
@@ -409,28 +446,43 @@ async def tutor_turn(
         if len(str(m.get("content", ""))) > 600:
             raise HTTPException(status_code=422, detail="Xabar juda uzun")
 
+    learner_answered = bool(body.history) and body.history[-1].get("role") == "user"
     try:
-        reply, usage = await tutor.reply(
-            name=user.name,
-            level=level,
-            topic_id=body.topic_id,
-            history=body.history,
-            known=known,
-        )
+        if body.mode == "mock":
+            reply, usage = await tutor.reply_mock(
+                name=user.name,
+                level=level,
+                mock_id=body.mock_id,
+                history=body.history,
+                known=known,
+            )
+            ok = reply.score >= 50 if learner_answered else True
+            score = reply.score if learner_answered else -1
+        else:
+            reply, usage = await tutor.reply(
+                name=user.name,
+                level=level,
+                topic_id=body.topic_id,
+                history=body.history,
+                known=known,
+            )
+            ok = reply.correction_ok if learner_answered else True
+            score = -1
     except tutor.TutorUnavailable as e:
         # Turn hisobga olinmaydi — o'quvchi limiti kuymaydi
         raise HTTPException(status_code=503, detail=e.message_uz)
 
     # O'quvchi javob bergan turn (ochilish emas) — limit va statistika uchun
-    learner_answered = bool(body.history) and body.history[-1].get("role") == "user"
     session.add(
         TutorTurn(
             user_id=user.id,
             session_key=body.session_key,
-            topic=body.topic_id[:24],
+            topic=(body.mock_id if body.mode == "mock" else body.topic_id)[:24],
             level=level,
-            ok=1 if (not learner_answered or reply.correction_ok) else 0,
+            ok=1 if ok else 0,
             voice=1 if (learner_answered and body.voice) else 0,
+            mode=body.mode,
+            score=score,
         )
     )
     await session.commit()
@@ -441,7 +493,8 @@ async def tutor_turn(
     return {
         "reply": reply.model_dump(),
         "audio_url": f"/api/v2/tutor/audio/{audio_key}.mp3" if audio_key else "",
-        "turns_left": max(settings.tutor_daily_turns - used - 1, 0),
+        "turns_left": max(access["turns_left"] - 1, 0),
+        "vip": access["vip"],
         "usage": usage,
     }
 
@@ -517,18 +570,26 @@ class TutorFinishBody(BaseModel):
     session_key: str = Field(pattern=_SESSION_KEY_RE)
 
 
+MOCK_XP_FACTOR = 0.5  # 100 ball = 50 XP; bir mock uchun kuniga bir marta
+
+
 @router.post("/tutor/finish")
 async def tutor_finish(
     body: TutorFinishBody,
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
-    """Suhbat yakuni: XP (bir marta) va qisqa hisobot."""
+    """Suhbat/mock yakuni: XP (bir marta) va qisqa hisobot.
+
+    Mock: o'rtacha ball → MockResult, XP = ball × MOCK_XP_FACTOR (bir mock
+    uchun kuniga bir marta — farmga yo'l qo'ymaslik uchun)."""
+    from services import tutor
+
     rows = (
         await session.execute(
-            select(TutorTurn.ok, TutorTurn.voice).where(
-                TutorTurn.user_id == user.id, TutorTurn.session_key == body.session_key
-            )
+            select(TutorTurn.ok, TutorTurn.voice, TutorTurn.mode, TutorTurn.score, TutorTurn.topic)
+            .where(TutorTurn.user_id == user.id, TutorTurn.session_key == body.session_key)
+            .order_by(TutorTurn.id.asc())
         )
     ).all()
     # Ochilish turn'i (o'quvchi javobsiz) ham qatorga yoziladi — uni hisobdan
@@ -537,6 +598,7 @@ async def tutor_finish(
     ok = sum(1 for r in rows if r[0]) - (1 if rows else 0)
     ok = max(min(ok, turns), 0)
     voice = sum(1 for r in rows if r[1])
+    is_mock = bool(rows) and rows[0][2] == "mock"
 
     source = f"tutor:{body.session_key}"
     already = (
@@ -545,12 +607,53 @@ async def tutor_finish(
         )
     ).scalar_one_or_none()
     xp = 0
-    if turns >= 3 and already is None:
+    result: dict = {"turns": turns, "ok_turns": ok, "voice_turns": voice}
+
+    if is_mock:
+        scores = [r[3] for r in rows if r[3] >= 0]
+        avg = round(sum(scores) / len(scores)) if scores else 0
+        mock_id = rows[0][4]
+        level = await _user_level(session, user.id)
+        result.update({"mock": True, "score": avg, "scores": scores, "mock_id": mock_id})
+        if scores and already is None:
+            today = datetime.now(timezone.utc).replace(
+                hour=0, minute=0, second=0, microsecond=0, tzinfo=None
+            )
+            earned_today = (
+                await session.execute(
+                    select(MockResult.id)
+                    .where(
+                        MockResult.user_id == user.id,
+                        MockResult.mock_id == mock_id,
+                        MockResult.xp > 0,
+                        MockResult.created_at >= today,
+                    )
+                    .limit(1)
+                )
+            ).scalar_one_or_none()
+            # Faqat to'liq (barcha savollar) mock XP beradi
+            if earned_today is None and len(scores) >= tutor.MOCK_QUESTIONS:
+                xp = round(avg * MOCK_XP_FACTOR)
+            session.add(
+                MockResult(
+                    user_id=user.id,
+                    mock_id=mock_id,
+                    level=level,
+                    score=avg,
+                    xp=xp,
+                    session_key=body.session_key,
+                )
+            )
+            if xp > 0:
+                session.add(XpLog(user_id=user.id, amount=xp, source=source))
+            await session.commit()
+    elif turns >= 3 and already is None:
         xp = min(30, 2 * turns + ok + 2 * voice)
         session.add(XpLog(user_id=user.id, amount=xp, source=source))
         await session.commit()
 
-    return {"turns": turns, "ok_turns": ok, "voice_turns": voice, "xp": xp}
+    result["xp"] = xp
+    return result
 
 
 class TutorSaveWordBody(BaseModel):

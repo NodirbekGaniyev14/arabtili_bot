@@ -27,8 +27,23 @@ class Settings(BaseSettings):
     # ── AI ustoz (services/tutor.py) ──
     # Suhbat modeli: Haiku 4.5 — arzon va tez; javob structured output bilan
     tutor_model: str = "claude-haiku-4-5-20251001"
-    # Har foydalanuvchiga kunlik javoblar limiti (token xarajatini cheklaydi)
+    # VIP foydalanuvchiga kunlik javoblar limiti (token xarajatini cheklaydi)
     tutor_daily_turns: int = 40
+    # VIP'siz kunlik bepul javoblar (tatib ko'rish uchun; 0 = to'liq qulf)
+    tutor_free_turns: int = 3
+
+    # ── VIP tarif va to'lov (services/billing.py) ──
+    # Qabul qiluvchi karta — FAQAT serverdagi .env'da (git'da yo'q)
+    pay_card_number: str = ""
+    pay_card_holder: str = ""
+    pay_price_month: int = 90_000
+    pay_price_3month: int = 240_000
+    # Chegirma «eski narx» — 0 bo'lsa chegirma/taymer ko'rsatilmaydi
+    pay_old_price_month: int = 180_000
+    # Chegirma taymeri: paywall birinchi ochilganidan boshlab (soat)
+    pay_discount_hours: int = 24
+    # Savollar uchun Telegram username (@ belgisisiz)
+    support_username: str = ""
 
     # ── Ovoz → matn (services/stt.py). OpenAI-mos endpoint: Groq yoki OpenAI ──
     # Groq: console.groq.com → whisper-large-v3-turbo (arzon, tez)

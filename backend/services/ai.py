@@ -130,10 +130,10 @@ async def generate_plan(answers: dict, test: dict) -> tuple[GeneratedPlan, bool]
     }
 
     try:
+        # Reja kichik va sxemali — Haiku yetarli (Opus + thinking'dan ~30x arzon)
         response = await client.messages.parse(
-            model="claude-opus-4-8",
-            max_tokens=16000,
-            thinking={"type": "adaptive"},
+            model=settings.tutor_model,
+            max_tokens=4000,
             system=SYSTEM_PROMPT,
             messages=[
                 {

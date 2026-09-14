@@ -52,6 +52,9 @@ export interface MeResponse {
   has_plan: boolean;
   plan: PlanData | null;
   stats: Stats;
+  /** VIP tarif (AI ustoz) faolmi */
+  vip: boolean;
+  vip_days_left: number;
 }
 
 export interface OnboardingPayload {
@@ -909,6 +912,8 @@ export const api = {
     topic_id: string;
     history: { role: "user" | "assistant"; content: string }[];
     voice: boolean;
+    mode: "chat" | "mock";
+    mock_id?: string;
   }) =>
     request<TutorTurnResponse>("/api/v2/tutor/turn", {
       method: "POST",
@@ -936,7 +941,52 @@ export const api = {
       method: "POST",
       body: JSON.stringify({ ar, uz }),
     }),
+
+  // ── VIP tarif / to'lov ──
+  getPayInfo: () => request<PayInfo>("/api/pay/info"),
+  submitReceipt: (file: File, plan: string) => {
+    const fd = new FormData();
+    fd.append("file", file, file.name);
+    fd.append("plan", plan);
+    return upload<{ ok: boolean; request_id: number; status: string }>(
+      "/api/pay/receipt",
+      fd
+    );
+  },
 };
+
+export interface PayPlan {
+  id: string;
+  title: string;
+  days: number;
+  months: number;
+  price: number;
+  /** Chegirma faol bo'lsa ustidan chiziladigan eski narx, aks holda 0 */
+  old_price: number;
+  per_day: number;
+  per_month: number;
+}
+
+export interface PayInfo {
+  vip: boolean;
+  vip_until: string | null;
+  vip_days_left: number;
+  /** Chek yuborilgan, admin hali tekshirmagan */
+  pending: boolean;
+  card_number: string;
+  card_holder: string;
+  support_username: string;
+  discount: {
+    enabled: boolean;
+    active: boolean;
+    percent: number;
+    until: string | null;
+    hours: number;
+  };
+  plans: PayPlan[];
+  proof: { learners: number; lessons_done: number; like_percent: number; ratings: number };
+  testimonials: { name: string; text: string; level?: string }[];
+}
 
 /** Multipart yuklash — Content-Type'ni brauzer o'zi (boundary bilan) qo'yadi */
 async function upload<T>(path: string, body: FormData): Promise<T> {
@@ -970,9 +1020,25 @@ export interface TutorTopic {
   recommended: boolean;
 }
 
+export interface TutorMock {
+  id: string;
+  emoji: string;
+  title_uz: string;
+  desc_uz: string;
+  min_level: string;
+  questions: number;
+  recommended: boolean;
+}
+
 export interface TutorTopics {
   level: string;
   topics: TutorTopic[];
+  mocks: TutorMock[];
+  mock_results: { mock_id: string; score: number; date: string }[];
+  vip: boolean;
+  vip_days_left: number;
+  /** VIP'siz kunlik bepul javoblar */
+  free_turns: number;
   turns_left: number;
   daily_limit: number;
   /** Anthropic kaliti sozlangan — AI ishlaydi */
@@ -996,7 +1062,13 @@ export interface TutorReply {
   note_uz: string;
   hint_uz: string;
   new_words: TutorNewWord[];
+  /** O'quvchi savol bersa — o'zbekcha tushuntirish */
+  answer_uz: string;
   done: boolean;
+  // Mock imtihon rejimi (mode: "mock")
+  score?: number;
+  feedback_uz?: string;
+  ideal_ar?: string;
 }
 
 export interface TutorTurnResponse {
@@ -1004,6 +1076,7 @@ export interface TutorTurnResponse {
   /** edge-tts mp3 (bo'sh bo'lsa brauzer TTS'ga tushamiz) */
   audio_url: string;
   turns_left: number;
+  vip: boolean;
   usage: { in?: number; out?: number; cache_read?: number; cache_write?: number };
 }
 
@@ -1018,6 +1091,11 @@ export interface TutorFinishResult {
   ok_turns: number;
   voice_turns: number;
   xp: number;
+  /** Mock imtihon: o'rtacha ball va har savol bali */
+  mock?: boolean;
+  score?: number;
+  scores?: number[];
+  mock_id?: string;
 }
 
 export interface RoleplayScenario {

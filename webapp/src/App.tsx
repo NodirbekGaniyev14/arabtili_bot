@@ -16,6 +16,7 @@ import Placement from "./pages/Placement";
 import WeakPractice from "./pages/WeakPractice";
 import RolePlay from "./pages/RolePlay";
 import Tutor from "./pages/Tutor";
+import Paywall from "./pages/Paywall";
 import Reference from "./pages/Reference";
 import Vocab from "./pages/Vocab";
 import LessonPlayerV2 from "./pages/v2/LessonPlayerV2";
@@ -51,6 +52,7 @@ export default function App() {
   const [showWeak, setShowWeak] = useState(false);
   const [showRolePlay, setShowRolePlay] = useState(false);
   const [showTutor, setShowTutor] = useState(false);
+  const [showPaywall, setShowPaywall] = useState(false);
   const [showReference, setShowReference] = useState(false);
 
   useEffect(() => {
@@ -90,6 +92,8 @@ export default function App() {
       has_plan: true,
       plan,
       stats: m?.stats ?? EMPTY_STATS,
+      vip: m?.vip ?? false,
+      vip_days_left: m?.vip_days_left ?? 0,
     }));
     setTab("home");
     setPhase("app");
@@ -183,6 +187,7 @@ export default function App() {
             onOpenWeak={() => setShowWeak(true)}
             onOpenRolePlay={() => setShowRolePlay(true)}
             onOpenTutor={() => setShowTutor(true)}
+            vip={me?.vip ?? false}
             onOpenReference={() => setShowReference(true)}
             onOpenVocab={() => setTab("vocab")}
             onGoLessons={() => setTab("lessons")}
@@ -201,6 +206,9 @@ export default function App() {
         {tab === "profile" && (
           <Profile
             onOpenPlacement={() => setShowPlacement(true)}
+            onOpenPaywall={() => setShowPaywall(true)}
+            vip={me?.vip ?? false}
+            vipDaysLeft={me?.vip_days_left ?? 0}
             onProfileChange={refreshMe}
           />
         )}
@@ -217,6 +225,15 @@ export default function App() {
           onClose={() => {
             setShowTutor(false);
             // Suhbat XP'si va yangi SRS kartalari statistikaga tushsin
+            api.getMe().then(setMe).catch(() => {});
+          }}
+        />
+      )}
+
+      {showPaywall && (
+        <Paywall
+          onClose={() => {
+            setShowPaywall(false);
             api.getMe().then(setMe).catch(() => {});
           }}
         />

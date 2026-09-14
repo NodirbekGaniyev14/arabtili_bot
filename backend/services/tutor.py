@@ -70,7 +70,33 @@ class TutorReply(BaseModel):
     new_words: list[NewWord] = Field(
         default_factory=list, description="0-2 words introduced in this turn"
     )
+    answer_uz: str = Field(
+        default="",
+        description=(
+            "If the learner asked a question or wanted an explanation (about a word, "
+            "grammar, pronunciation, culture, how to say something), answer it here in "
+            "clear Uzbek, 2-4 sentences, with Arabic examples with harakat. Otherwise empty."
+        ),
+    )
     done: bool = Field(description="True only when the conversation naturally ended")
+
+
+class MockReply(BaseModel):
+    """Speaking mock imtihoni: keyingi savol + oldingi javob bahosi."""
+
+    ar: str = Field(description="Next exam question in Arabic with full harakat (closing line when done)")
+    translit: str = Field(description="Latin transliteration of `ar`")
+    uz: str = Field(description="Uzbek translation of `ar`")
+    score: int = Field(
+        description="0-100 score of the learner's previous answer; -1 on the first turn"
+    )
+    feedback_uz: str = Field(
+        description="1-2 Uzbek sentences on the previous answer: what was good, what to fix; empty on the first turn"
+    )
+    ideal_ar: str = Field(
+        description="A model answer to the previous question at the learner's level, with harakat; empty on the first turn"
+    )
+    done: bool = Field(description="True after the last answer has been graded")
 
 
 # ────────────────────────── Mavzular ──────────────────────────
@@ -198,6 +224,125 @@ TOPICS: list[dict] = [
 
 TOPIC_BY_ID = {t["id"]: t for t in TOPICS}
 
+# ────────────────────────── Speaking mock imtihonlari ──────────────────────────
+# Kasb/soha bo'yicha 5 savollik og'zaki imtihon: har javob 0-100 baholanadi,
+# o'rtacha ball natija va XP bo'ladi (api/v2.py tutor_finish).
+
+MOCK_QUESTIONS = 5
+
+MOCKS: list[dict] = [
+    {
+        "id": "shifokor",
+        "emoji": "🩺",
+        "title_uz": "Shifokor / hamshira",
+        "desc_uz": "Bemor bilan muloqot, shikoyat, dori",
+        "min_level": "A2",
+        "themes": ["salomatlik", "vaqt", "son-olchov"],
+        "field": "healthcare: a doctor or nurse talking with patients, symptoms, medicine, advice",
+    },
+    {
+        "id": "haydovchi",
+        "emoji": "🚕",
+        "title_uz": "Haydovchi",
+        "desc_uz": "Yo'l, manzil, narx, yo'lovchi bilan gap",
+        "min_level": "A1",
+        "themes": ["shahar-transport", "safar", "son-olchov", "pul-bank"],
+        "field": "a taxi or bus driver: routes, directions, fares, talking with passengers",
+    },
+    {
+        "id": "sotuvchi",
+        "emoji": "🛍️",
+        "title_uz": "Sotuvchi / savdo",
+        "desc_uz": "Mahsulot, narx, savdolashish, mijoz",
+        "min_level": "A1",
+        "themes": ["xarid", "pul-bank", "son-olchov", "kiyim", "ovqat"],
+        "field": "a shop or market seller: products, prices, bargaining, serving customers",
+    },
+    {
+        "id": "mehmonxona",
+        "emoji": "🏨",
+        "title_uz": "Mehmonxona xodimi",
+        "desc_uz": "Bron, xona, mehmon muammolari",
+        "min_level": "A1",
+        "themes": ["mehmonxona", "safar", "uy", "vaqt"],
+        "field": "hotel reception: bookings, rooms, guest requests and complaints",
+    },
+    {
+        "id": "oshpaz",
+        "emoji": "👨‍🍳",
+        "title_uz": "Oshpaz / ofitsiant",
+        "desc_uz": "Menyu, taomlar, buyurtma",
+        "min_level": "A1",
+        "themes": ["restoran", "ovqat", "son-olchov"],
+        "field": "a cook or waiter: menu, dishes, ingredients, taking orders",
+    },
+    {
+        "id": "oqituvchi",
+        "emoji": "📚",
+        "title_uz": "O'qituvchi",
+        "desc_uz": "Dars, o'quvchilar, tushuntirish",
+        "min_level": "A2",
+        "themes": ["maktab", "tafakkur", "vaqt"],
+        "field": "a teacher: lessons, students, explaining topics, school life",
+    },
+    {
+        "id": "it",
+        "emoji": "💻",
+        "title_uz": "IT mutaxassisi",
+        "desc_uz": "Dastur, kompyuter, muammo yechish",
+        "min_level": "B1",
+        "themes": ["texnologiya", "ish", "tafakkur"],
+        "field": "an IT specialist: software, computers, solving technical problems, teamwork",
+    },
+    {
+        "id": "gid",
+        "emoji": "🕋",
+        "title_uz": "Umra gidi",
+        "desc_uz": "Ziyoratchilar, Makka-Madina, tartib",
+        "min_level": "A2",
+        "themes": ["marosim", "safar", "shahar-transport", "mehmonxona"],
+        "field": "an umrah group guide: helping pilgrims in Makkah and Madinah, schedules, places",
+    },
+    {
+        "id": "intervyu",
+        "emoji": "💼",
+        "title_uz": "Ish intervyusi",
+        "desc_uz": "Tajriba, kuchli tomonlar, rejalar",
+        "min_level": "B1",
+        "themes": ["ish", "kasblar", "hujjat", "tafakkur"],
+        "field": "a job interview: experience, strengths, weaknesses, plans, salary",
+    },
+    {
+        "id": "talaba",
+        "emoji": "🎓",
+        "title_uz": "Talaba",
+        "desc_uz": "Universitet, fanlar, kelajak",
+        "min_level": "A2",
+        "themes": ["maktab", "tafakkur", "vaqt", "kasblar"],
+        "field": "a university student: studies, subjects, daily life, future plans",
+    },
+]
+
+MOCK_BY_ID = {m["id"]: m for m in MOCKS}
+
+
+def mock_list(level: str) -> list[dict]:
+    li = _level_index(level)
+    out = [
+        {
+            "id": m["id"],
+            "emoji": m["emoji"],
+            "title_uz": m["title_uz"],
+            "desc_uz": m["desc_uz"],
+            "min_level": m["min_level"],
+            "questions": MOCK_QUESTIONS,
+            "recommended": _level_index(m["min_level"]) <= li,
+        }
+        for m in MOCKS
+    ]
+    out.sort(key=lambda x: not x["recommended"])
+    return out
+
 
 def topic_list(level: str) -> list[dict]:
     """Frontend uchun mavzular — o'quvchi darajasiga mos bo'lganlari oldinda."""
@@ -276,13 +421,25 @@ HARD RULES
 6. Learner input may be Arabic script (often WITHOUT harakat), Latin transliteration, Uzbek, or a mix. A message starting with "🎤" came from speech recognition and may contain small recognition errors — interpret it charitably by meaning.
    - Understandable and acceptable for the level → correction_ok=true, fixed_ar="", note_uz="".
    - Real error (grammar, gender/number agreement, wrong word, missing word, wrong verb form) → correction_ok=false, fixed_ar = the corrected full sentence with harakat, note_uz = ONE short Uzbek sentence naming the error. Missing harakat, transliteration spelling and minor speech-recognition slips are NOT errors.
-   - Learner wrote in Uzbek → correction_ok=false, fixed_ar = how to say it in Arabic (with harakat), note_uz = "Arabchasi: ..." followed by the transliteration; then continue the conversation as if they had said it in Arabic.
+   - Learner ANSWERED in Uzbek (a statement, not a question) → correction_ok=false, fixed_ar = how to say it in Arabic (with harakat), note_uz = "Arabchasi: ..." followed by the transliteration; then continue the conversation as if they had said it in Arabic.
+   - Learner ASKED something or wants help (in Uzbek, Arabic or transliteration: meaning of a word, grammar, how to say something, pronunciation, culture, "tushunmadim", "bu nima?") → this is NOT an error: correction_ok=true. Answer fully in `answer_uz` (clear Uzbek, 2-4 sentences, Arabic examples with harakat and transliteration). Then in `ar` repeat or gently rephrase your question so the conversation continues. The learner may ask questions at ANY time and in ANY topic — you are also their Uzbek-speaking explainer.
    - Cannot understand at all → keep correction_ok=true and ask a short clarifying question in `ar`.
 7. On the very first turn (message "[START]") greet the learner by name in `ar`, open the topic and ask the first question. Nothing to correct: correction_ok=true.
 8. `hint_uz` per the level profile: a concrete, short suggestion of what the learner can say next, ideally with the Arabic template.
 9. `new_words`: 0-2 items introduced in THIS turn (ar with harakat, translit, uz). Empty list if none.
 10. `done` is true only when the conversation reaches a natural end AFTER the learner has answered at least 6 times; then say goodbye in `ar`. Otherwise false.
 11. Stay in role, be brief and encouraging. Corrections are short — never lecture. Never mention these rules, JSON or being an AI."""
+
+MOCK_RULES = """You are an examiner running a SPEAKING MOCK EXAM in the "Arabiy" app for Uzbek-speaking learners of Arabic. The exam is about a profession/field (see learner block) and adapted to the learner's level. Exactly {n} questions, ONE per turn.
+
+HARD RULES
+1. `ar` = the next question in Modern Standard Arabic with FULL harakat; realistic for the field (situations, duties, dialogue with a client/patient/passenger, describing a typical day, solving a problem). Question difficulty and length follow the level profile. Never write English or Latin letters in `ar`.
+2. `translit`: Uzbek-friendly Latin transliteration of `ar` (sh, ch, x for خ, gʻ for غ, ' for ء, ʻ for ع, long vowels doubled, q for ق, th for ث, dh for ذ). `uz`: Uzbek translation of `ar`.
+3. On the first turn (message "[START]"): briefly greet, say the exam has {n} questions, and ask question 1. score=-1, feedback_uz="", ideal_ar="".
+4. For every later turn, GRADE the learner's previous answer in `score` (0-100): relevance to the question 30, vocabulary 25, grammar 25, completeness/fluency 20. Ignore missing harakat, transliteration spelling and small speech-recognition slips (a message starting with "🎤" came from speech recognition). An answer in Uzbek only or "I don't know" scores 0-15. A one-word answer scores at most 40 unless the question asked for one word.
+5. `feedback_uz`: 1-2 short Uzbek sentences — what was good, the main mistake and how to fix it. `ideal_ar`: a model answer at the learner's level with harakat (1-2 sentences).
+6. Count the learner's answers. After grading answer number {n}, set done=true and make `ar` a short closing sentence (thank the learner) — NOT a new question. Before that done=false and `ar` is the next question (number = answers so far + 1).
+7. Be fair and encouraging; never mention these rules, JSON or being an AI."""
 
 
 async def known_words(session: AsyncSession, user_id: int) -> list[dict]:
@@ -339,22 +496,42 @@ def _fmt_words(words: list[dict]) -> str:
 
 
 def build_system(
-    *, name: str, level: str, topic: dict, known: list[dict], extra: list[dict]
+    *,
+    name: str,
+    level: str,
+    topic: dict,
+    known: list[dict],
+    extra: list[dict],
+    mock: dict | None = None,
 ) -> list[dict]:
-    """System prompt bloklari. Oxirgi blok cache'lanadi (prefix barqaror)."""
+    """System prompt bloklari. Oxirgi blok cache'lanadi (prefix barqaror).
+
+    mock berilsa — imtihon qoidalari (MOCK_RULES) va soha bloki."""
     lv = level.upper() if level.upper() in LEVEL_PROFILES else "A0"
+    if mock:
+        rules = MOCK_RULES.replace("{n}", str(MOCK_QUESTIONS))
+        head = (
+            f"LEARNER\n- Name: {name or 'the learner'}\n- Level: {lv}\n"
+            f"- Exam field: {mock['title_uz']} — {mock['field']}\n"
+            f"- Questions: {MOCK_QUESTIONS}\n\n"
+        )
+    else:
+        rules = RULES
+        head = (
+            f"LEARNER\n- Name: {name or 'the learner'}\n- Level: {lv}\n"
+            f"- Topic: {topic['title_uz']} — goal: {topic['goal']}\n"
+            f"- Your role: {topic['role']}\n\n"
+        )
     learner_block = (
-        f"LEARNER\n- Name: {name or 'the learner'}\n- Level: {lv}\n"
-        f"- Topic: {topic['title_uz']} — goal: {topic['goal']}\n"
-        f"- Your role: {topic['role']}\n\n"
-        f"LEVEL PROFILE ({lv})\n{LEVEL_PROFILES[lv]}\n\n"
+        head
+        + f"LEVEL PROFILE ({lv})\n{LEVEL_PROFILES[lv]}\n\n"
         f"LEARNER VOCABULARY (ar | translit | uz) — already studied, prefer these:\n"
         f"{_fmt_words(known) or '(none yet)'}\n\n"
         f"TOPIC VOCABULARY (allowed; may be new to the learner):\n"
         f"{_fmt_words(extra) or '(none)'}"
     )
     return [
-        {"type": "text", "text": RULES},
+        {"type": "text", "text": rules},
         {
             "type": "text",
             "text": learner_block,
@@ -408,32 +585,22 @@ def _user_message(e: Exception) -> str:
     return "Ustoz javob bera olmadi. Internetni tekshirib, qayta urinib ko'ring."
 
 
-async def reply(
-    *,
-    name: str,
-    level: str,
-    topic_id: str,
-    history: list[dict],
-    known: list[dict],
-) -> tuple[TutorReply, dict]:
-    """Keyingi ustoz javobi. Qaytaradi: (javob, usage). Xatoda TutorUnavailable.
+_JSON_KEYS = {
+    TutorReply: (
+        "ar, translit, uz, correction_ok (bool), fixed_ar, note_uz, hint_uz, "
+        "new_words (list of {ar, translit, uz}), answer_uz, done (bool)"
+    ),
+    MockReply: "ar, translit, uz, score (int), feedback_uz, ideal_ar, done (bool)",
+}
 
-    history: [{role:'user'|'assistant', content}] — assistant xabarlari faqat
-    `ar` matni (JSON emas) — token tejaladi. Bo'sh tarix = suhbat boshi."""
-    topic = TOPIC_BY_ID.get(topic_id) or TOPIC_BY_ID["erkin"]
-    if not settings.anthropic_api_key:
-        raise TutorUnavailable("AI ustoz hozircha o'chiq (kalit sozlanmagan).")
 
+async def _call(system: list[dict], msgs: list[dict], schema):
+    """Anthropic chaqiruvi: structured output, rad etilsa JSON rejimi.
+    Qaytaradi: (parsed, usage). Xatoda TutorUnavailable."""
     from anthropic import AsyncAnthropic
 
-    extra = topic_words(level, topic["themes"], {normalize(w["ar"]) for w in known})
-    system = build_system(name=name, level=level, topic=topic, known=known, extra=extra)
-    msgs = _trim_history(history) or [{"role": "user", "content": "[START]"}]
-    if msgs[-1]["role"] != "user":
-        msgs.append({"role": "user", "content": "(davom eting)"})
-
     client = AsyncAnthropic(api_key=settings.anthropic_api_key)
-    out: TutorReply | None = None
+    out = None
     resp = None
     try:
         resp = await client.messages.parse(
@@ -441,7 +608,7 @@ async def reply(
             max_tokens=MAX_TOKENS,
             system=system,
             messages=msgs,
-            output_format=TutorReply,
+            output_format=schema,
         )
         out = resp.parsed_output
     except Exception as e:
@@ -455,16 +622,15 @@ async def reply(
                 + [
                     {
                         "type": "text",
-                        "text": "Respond ONLY with a JSON object with keys: ar, translit, uz, "
-                        "correction_ok (bool), fixed_ar, note_uz, hint_uz, new_words "
-                        "(list of {ar, translit, uz}), done (bool). No prose, no code fences.",
+                        "text": f"Respond ONLY with a JSON object with keys: {_JSON_KEYS[schema]}. "
+                        "No prose, no code fences.",
                     }
                 ],
                 messages=msgs,
             )
             text = "".join(b.text for b in resp.content if b.type == "text").strip()
             text = text.strip("`").removeprefix("json").strip()
-            out = TutorReply.model_validate_json(text)
+            out = schema.model_validate_json(text)
         except Exception as e2:  # kredit tugadi / tarmoq — o'quvchi ekrani buzilmasin
             log.warning("AI ustoz xatosi: %r", e2)
             raise TutorUnavailable(_user_message(e2)) from e2
@@ -479,11 +645,75 @@ async def reply(
         "cache_read": getattr(u, "cache_read_input_tokens", 0) or 0,
         "cache_write": getattr(u, "cache_creation_input_tokens", 0) or 0,
     }
+    return out, usage
+
+
+def _messages(history: list[dict]) -> list[dict]:
+    msgs = _trim_history(history) or [{"role": "user", "content": "[START]"}]
+    if msgs[-1]["role"] != "user":
+        msgs.append({"role": "user", "content": "(davom eting)"})
+    return msgs
+
+
+def _user_turns(history: list[dict]) -> int:
+    return sum(1 for m in history if m.get("role") == "user")
+
+
+async def reply(
+    *,
+    name: str,
+    level: str,
+    topic_id: str,
+    history: list[dict],
+    known: list[dict],
+) -> tuple[TutorReply, dict]:
+    """Keyingi ustoz javobi (suhbat). Qaytaradi: (javob, usage). Xatoda TutorUnavailable.
+
+    history: [{role:'user'|'assistant', content}] — assistant xabarlari faqat
+    `ar` matni (JSON emas) — token tejaladi. Bo'sh tarix = suhbat boshi."""
+    topic = TOPIC_BY_ID.get(topic_id) or TOPIC_BY_ID["erkin"]
+    if not settings.anthropic_api_key:
+        raise TutorUnavailable("AI ustoz hozircha o'chiq (kalit sozlanmagan).")
+
+    extra = topic_words(level, topic["themes"], {normalize(w["ar"]) for w in known})
+    system = build_system(name=name, level=level, topic=topic, known=known, extra=extra)
+    out, usage = await _call(system, _messages(history), TutorReply)
+
     # AI 6 javobdan oldin yakunlamasin (qoida 10 ni kod ham kafolatlaydi)
-    user_turns = sum(1 for m in history if m.get("role") == "user")
-    if out.done and user_turns < MIN_TURNS_TO_END:
+    if out.done and _user_turns(history) < MIN_TURNS_TO_END:
         out.done = False
     out.new_words = out.new_words[:2]
+    return out, usage
+
+
+async def reply_mock(
+    *,
+    name: str,
+    level: str,
+    mock_id: str,
+    history: list[dict],
+    known: list[dict],
+) -> tuple[MockReply, dict]:
+    """Mock imtihon: keyingi savol + oldingi javob bali. Xatoda TutorUnavailable."""
+    mock = MOCK_BY_ID.get(mock_id)
+    if mock is None:
+        raise TutorUnavailable("Bunday mock imtihon yo'q.")
+    if not settings.anthropic_api_key:
+        raise TutorUnavailable("AI ustoz hozircha o'chiq (kalit sozlanmagan).")
+
+    extra = topic_words(level, mock["themes"], {normalize(w["ar"]) for w in known})
+    system = build_system(
+        name=name, level=level, topic=TOPIC_BY_ID["erkin"], known=known, extra=extra, mock=mock
+    )
+    out, usage = await _call(system, _messages(history), MockReply)
+
+    answered = _user_turns(history)
+    if answered == 0:
+        out.score, out.feedback_uz, out.ideal_ar, out.done = -1, "", "", False
+    else:
+        out.score = max(0, min(100, int(out.score)))
+        # Savollar soni kodda ham kafolatlanadi (model sanashda adashsa)
+        out.done = answered >= MOCK_QUESTIONS
     return out, usage
 
 

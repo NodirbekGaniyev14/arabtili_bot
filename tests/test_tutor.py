@@ -275,3 +275,65 @@ def test_tts_key_depends_on_level_rate(tmp_path, monkeypatch):
     assert k1 != k2 and len(k1) == 24
     assert tts.path_for(k1) == tmp_path / f"{k1}.mp3"
     assert tts.schedule("", "A0") == ""
+
+
+# ── Mock imtihon ──
+
+
+def test_mock_list_recommended_first():
+    lst = tutor.mock_list("A1")
+    assert {m["id"] for m in lst} == set(tutor.MOCK_BY_ID)
+    rec = [m["recommended"] for m in lst]
+    assert rec == sorted(rec, reverse=True)
+    assert all(m["questions"] == tutor.MOCK_QUESTIONS for m in lst)
+
+
+def test_mock_system_prompt():
+    sysb = tutor.build_system(
+        name="N", level="A2", topic=tutor.TOPIC_BY_ID["erkin"], known=[], extra=[],
+        mock=tutor.MOCK_BY_ID["shifokor"],
+    )
+    assert "SPEAKING MOCK EXAM" in sysb[0]["text"]
+    assert f"Exactly {tutor.MOCK_QUESTIONS} questions" in sysb[0]["text"]
+    assert "Exam field: Shifokor" in sysb[1]["text"]
+
+
+def _mock_json(score=70, done=False):
+    return json.dumps(
+        {"ar": "سُؤَال", "translit": "su'aal", "uz": "savol", "score": score,
+         "feedback_uz": "yaxshi", "ideal_ar": "جَوَاب", "done": done},
+        ensure_ascii=False,
+    )
+
+
+@pytest.mark.asyncio
+async def test_reply_mock_first_turn_and_grading(anthropic_mock):
+    calls, handlers = anthropic_mock
+    handlers.append(httpx.Response(200, json=_message(_mock_json(score=99, done=True))))
+    out, _ = await tutor.reply_mock(name="N", level="A2", mock_id="haydovchi", history=[], known=[])
+    assert out.score == -1 and out.done is False and out.feedback_uz == ""
+
+    handlers.append(httpx.Response(200, json=_message(_mock_json(score=140, done=False))))
+    hist = [{"role": "assistant", "content": "q"}, {"role": "user", "content": "a"}]
+    out, _ = await tutor.reply_mock(name="N", level="A2", mock_id="haydovchi", history=hist, known=[])
+    assert out.score == 100, "ball 0-100 oralig'ida qisqartiriladi"
+    assert out.done is False
+
+    handlers.append(httpx.Response(200, json=_message(_mock_json(score=50, done=False))))
+    hist = [{"role": "assistant", "content": "q"}, {"role": "user", "content": "a"}] * tutor.MOCK_QUESTIONS
+    out, _ = await tutor.reply_mock(name="N", level="A2", mock_id="haydovchi", history=hist, known=[])
+    assert out.done is True, "savollar tugagach kod yakunlaydi"
+
+
+@pytest.mark.asyncio
+async def test_reply_mock_unknown_id(monkeypatch):
+    from config import settings
+
+    monkeypatch.setattr(settings, "anthropic_api_key", "k")
+    with pytest.raises(tutor.TutorUnavailable):
+        await tutor.reply_mock(name="N", level="A2", mock_id="yoq", history=[], known=[])
+
+
+def test_chat_reply_schema_has_answer_uz():
+    assert "answer_uz" in tutor.TutorReply.model_fields
+    assert tutor.TutorReply.model_fields["answer_uz"].default == ""

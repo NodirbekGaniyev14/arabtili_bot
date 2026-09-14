@@ -46,6 +46,10 @@ class User(Base):
     frozen_days: Mapped[str] = mapped_column(Text, default="")
     # Oxirgi muzlatkich berilgan hafta (YYYY-MM-DD, dushanba) — haftada 1 marta
     freeze_granted_week: Mapped[str] = mapped_column(String(10), default="")
+    # VIP tarif (AI ustoz) qachongacha faol; None = hech qachon olmagan
+    vip_until: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    # Paywall birinchi ochilgan vaqt — chegirma taymeri shundan hisoblanadi
+    paywall_seen_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
 
 
 class Placement(Base):
@@ -282,7 +286,40 @@ class TutorTurn(Base):
     level: Mapped[str] = mapped_column(String(4), default="")
     ok: Mapped[int] = mapped_column(Integer, default=1)  # xatosiz javob = 1
     voice: Mapped[int] = mapped_column(Integer, default=0)  # mikrofon orqali = 1
+    mode: Mapped[str] = mapped_column(String(8), default="chat")  # chat | mock
+    score: Mapped[int] = mapped_column(Integer, default=-1)  # mock: javob bali 0-100
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
+class MockResult(Base):
+    """Speaking mock imtihoni natijasi (services/tutor.py MOCKS)."""
+
+    __tablename__ = "mock_results"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    mock_id: Mapped[str] = mapped_column(String(24))
+    level: Mapped[str] = mapped_column(String(4), default="")
+    score: Mapped[int] = mapped_column(Integer)  # 0-100 o'rtacha
+    xp: Mapped[int] = mapped_column(Integer, default=0)
+    session_key: Mapped[str] = mapped_column(String(36), default="", index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
+class PaymentRequest(Base):
+    """VIP to'lov cheki — foydalanuvchi yuklaydi, admin Telegram'da tasdiqlaydi."""
+
+    __tablename__ = "payment_requests"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    plan: Mapped[str] = mapped_column(String(8))  # 1oy | 3oy
+    amount: Mapped[int] = mapped_column(Integer, default=0)
+    receipt_path: Mapped[str] = mapped_column(String(256), default="")
+    status: Mapped[str] = mapped_column(String(10), default="pending")  # pending|approved|rejected
+    days: Mapped[int] = mapped_column(Integer, default=0)  # tasdiqlangan muddat
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+    decided_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
 
 
 class Plan(Base):
