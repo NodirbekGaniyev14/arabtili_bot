@@ -9,6 +9,7 @@ from aiogram.types import (
 from sqlalchemy import select
 
 from config import settings
+from services.deploy_notify import webapp_url_versioned
 from db.models import User
 from db.session import SessionLocal
 from services import feedback as feedback_svc
@@ -33,7 +34,7 @@ async def cmd_start(message: Message):
                 [
                     InlineKeyboardButton(
                         text="🕌 O'rganishni boshlash",
-                        web_app=WebAppInfo(url=settings.webapp_url),
+                        web_app=WebAppInfo(url=webapp_url_versioned()),
                     )
                 ]
             ]

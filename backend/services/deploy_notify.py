@@ -42,6 +42,16 @@ def current_version() -> str | None:
     return None
 
 
+def webapp_url_versioned() -> str:
+    """Mini App URL + `?v=<commit>` — telefon WebView'i index.html'ni keshlab
+    qolmasin (kompyuterda yangi build ko'rinib, telefonda eski qolardi)."""
+    url = settings.webapp_url
+    v = current_version()
+    if not url or not v:
+        return url
+    return f"{url}{'&' if '?' in url else '?'}v={v}"
+
+
 async def notify_if_updated(bot: Bot) -> None:
     version = current_version()
     if not version:
@@ -76,7 +86,7 @@ async def notify_if_updated(bot: Bot) -> None:
                 [
                     InlineKeyboardButton(
                         text="📚 Ochish",
-                        web_app=WebAppInfo(url=settings.webapp_url),
+                        web_app=WebAppInfo(url=webapp_url_versioned()),
                     )
                 ]
             ]

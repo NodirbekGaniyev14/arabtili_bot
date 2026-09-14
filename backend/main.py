@@ -14,6 +14,8 @@ from aiogram.types import (
     BotCommand,
     BotCommandScopeChat,
     BotCommandScopeDefault,
+    MenuButtonWebApp,
+    WebAppInfo,
 )
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -106,6 +108,18 @@ async def lifespan(app: FastAPI):
         from bot.branding import setup_branding
 
         await setup_branding(bot)
+        # Menu tugmasi — versiyali URL: har deploy'da telefon WebView'i yangi
+        # index.html oladi (aks holda eski build keshda qolib ketadi)
+        from services.deploy_notify import webapp_url_versioned
+
+        url = webapp_url_versioned()
+        if url.startswith("https://"):
+            try:
+                await bot.set_chat_menu_button(
+                    menu_button=MenuButtonWebApp(text="Arabiy", web_app=WebAppInfo(url=url))
+                )
+            except Exception as e:
+                print(f"Menu tugmasi yangilanmadi: {e!r}")
         # FastAPI bilan bitta processda polling
         polling_task = asyncio.create_task(
             dp.start_polling(bot, handle_signals=False)
@@ -137,6 +151,24 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.middleware("http")
+async def cache_headers(request, call_next):
+    """index.html hech qachon keshlanmasin; xeshlangan /assets/ — bir yil.
+
+    Telegram mobil WebView'i HTML'ni uzoq keshlab, yangi deploy'dan keyin ham
+    eski buildni ko'rsatardi (kompyuterda esa yangisi chiqardi)."""
+    response = await call_next(request)
+    path = request.url.path
+    ctype = response.headers.get("content-type", "")
+    if path.startswith("/assets/"):
+        response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+    elif ctype.startswith("text/html"):
+        response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+        response.headers["Pragma"] = "no-cache"
+    return response
+
 
 app.include_router(api_router)
 app.include_router(api_v2_router)
