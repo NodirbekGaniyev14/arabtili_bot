@@ -50,6 +50,10 @@ class User(Base):
     vip_until: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     # Paywall birinchi ochilgan vaqt — chegirma taymeri shundan hisoblanadi
     paywall_seen_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    # K17.4 eslatmalar (services/vip_reminders.py): oxirgi yuborilgan VIP xabari
+    # kaliti ("soon:<vip_until>" | "expired:<vip_until>") va chegirma xabari flagi
+    vip_notice: Mapped[str] = mapped_column(String(24), default="")
+    discount_notified: Mapped[int] = mapped_column(Integer, default=0)
 
 
 class Placement(Base):

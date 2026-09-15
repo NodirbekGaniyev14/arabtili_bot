@@ -30,6 +30,8 @@ _MIGRATIONS = {
         # K17: VIP tarif
         "vip_until": "DATETIME",
         "paywall_seen_at": "DATETIME",
+        "vip_notice": "VARCHAR(24) DEFAULT ''",
+        "discount_notified": "INTEGER DEFAULT 0",
     },
     "user_words": {
         "card_type": "VARCHAR(16) DEFAULT 'word'",

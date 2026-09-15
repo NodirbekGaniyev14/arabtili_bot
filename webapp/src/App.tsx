@@ -52,7 +52,8 @@ export default function App() {
   const [showWeak, setShowWeak] = useState(false);
   const [showRolePlay, setShowRolePlay] = useState(false);
   const [showTutor, setShowTutor] = useState(false);
-  const [showPaywall, setShowPaywall] = useState(false);
+  // Bot eslatmasidagi tugma (#vip) — ilova to'g'ridan-to'g'ri VIP sahifasida ochiladi
+  const [showPaywall, setShowPaywall] = useState(() => window.location.hash === "#vip");
   const [showReference, setShowReference] = useState(false);
 
   useEffect(() => {

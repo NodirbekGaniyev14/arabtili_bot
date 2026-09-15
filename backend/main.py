@@ -95,6 +95,7 @@ async def lifespan(app: FastAPI):
     polling_task = None
     reminder_task = None
     weekly_task = None
+    vip_task = None
     bot = None
     if settings.bot_token:
         from services.reminders import reminder_loop
@@ -129,6 +130,10 @@ async def lifespan(app: FastAPI):
         reminder_task = asyncio.create_task(reminder_loop(bot))
         # Haftalik reyting: dushanba yakuni + o'rin kuzatuvi
         weekly_task = asyncio.create_task(weekly_loop(bot))
+        # VIP muddati / chegirma taymeri / admin chek ro'yxati eslatmalari
+        from services.vip_reminders import vip_loop
+
+        vip_task = asyncio.create_task(vip_loop(bot))
         # Deploy xabari — versiya o'zgargan bo'lsa foydalanuvchilarga bildiradi
         from services.deploy_notify import notify_if_updated
 
@@ -137,7 +142,7 @@ async def lifespan(app: FastAPI):
     else:
         print("⚠️  BOT_TOKEN yo'q — bot ishga tushmadi (.env faylini to'ldiring)")
     yield
-    for task in (polling_task, reminder_task, weekly_task):
+    for task in (polling_task, reminder_task, weekly_task, vip_task):
         if task:
             task.cancel()
     if bot:
