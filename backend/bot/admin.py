@@ -332,6 +332,24 @@ async def cmd_ustoz(message: Message):
     await message.answer(text, parse_mode="HTML")
 
 
+@router.message(Command("tekshir", "diag"))
+async def cmd_tekshir(message: Message):
+    """Tizim tekshiruvi: kalitlar jonli (Anthropic, Groq, edge-tts), DB, webapp, fon halqalari."""
+    if not _is_admin(message):
+        return
+    wait = await message.answer("🩺 Tekshirilmoqda… (10–20 soniya)")
+    from services import diag
+
+    try:
+        text = await diag.run_all()
+    except Exception as e:
+        text = f"❌ Tekshiruv buzildi: {e!r}"
+    try:
+        await wait.edit_text(text, parse_mode="HTML")
+    except Exception:
+        await message.answer(text, parse_mode="HTML")
+
+
 @router.message(Command("payments"))
 async def cmd_payments(message: Message):
     """Tekshirilmagan cheklar ro'yxati."""

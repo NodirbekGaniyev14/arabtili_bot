@@ -49,6 +49,7 @@ async def _setup_commands(bot: Bot):
                 BotCommand(command="broadcast", description="📤 Hammaga xabar"),
                 BotCommand(command="taklif", description="👥 Taklif kampaniyasi"),
                 BotCommand(command="ustoz", description="🎓 AI ustoz: sarf ($), VIP, holat"),
+                BotCommand(command="tekshir", description="🩺 Tizim tekshiruvi (kalitlar jonli)"),
                 BotCommand(command="payments", description="💳 Kutayotgan cheklar"),
                 BotCommand(command="vip", description="👑 VIP berish/olib tashlash"),
                 BotCommand(command="sharh", description="⭐ Fikrni sharh sifatida so'rash"),
@@ -136,6 +137,14 @@ async def lifespan(app: FastAPI):
         from services.vip_reminders import vip_loop
 
         vip_task = asyncio.create_task(vip_loop(bot))
+        # /tekshir — fon halqalari holati
+        from services import diag
+
+        for _name, _task in (
+            ("polling", polling_task), ("reminder", reminder_task),
+            ("weekly", weekly_task), ("vip", vip_task),
+        ):
+            diag.register_task(_name, _task)
         # Deploy xabari — versiya o'zgargan bo'lsa foydalanuvchilarga bildiradi
         from services.deploy_notify import notify_if_updated
 

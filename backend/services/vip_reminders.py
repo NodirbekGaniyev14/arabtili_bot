@@ -69,7 +69,9 @@ def expired_key(user: User) -> str:
 
 
 def soon_text(user: User, now: datetime) -> str:
-    days = billing.vip_days_left(user)
+    # billing.vip_days_left bilan bir xil formula, lekin berilgan `now` bo'yicha
+    # (halqa vaqti / test vaqti) — haqiqiy soatga bog'lanmaydi
+    days = max((user.vip_until - now).days, 0) + 1
     price = billing.price_summary()
     name = user.name or "do'stim"
     when = "bugun" if days <= 1 else f"{days} kundan keyin"

@@ -58,7 +58,8 @@ export default function App() {
   const [showPaywall, setShowPaywall] = useState(() => window.location.hash === "#vip");
   const [showReference, setShowReference] = useState(false);
   const [showSpeaking, setShowSpeaking] = useState<"mistakes" | "results" | null>(null);
-  const [showDaily, setShowDaily] = useState(false);
+  // Bot eslatmasidagi tugma (#daily) — to'g'ri kunlik savolga
+  const [showDaily, setShowDaily] = useState(() => window.location.hash === "#daily");
 
   useEffect(() => {
     const tg = window.Telegram?.WebApp;

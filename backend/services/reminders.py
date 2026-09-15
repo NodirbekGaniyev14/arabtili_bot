@@ -86,16 +86,19 @@ async def _send_reminders(bot: Bot) -> None:
 
             kb = None
             if settings.webapp_url.startswith("https://"):
-                kb = InlineKeyboardMarkup(
-                    inline_keyboard=[
-                        [
-                            InlineKeyboardButton(
-                                text="📚 Davom etish",
-                                web_app=WebAppInfo(url=settings.webapp_url),
-                            )
-                        ]
-                    ]
-                )
+                from services.deploy_notify import webapp_url_versioned
+
+                base = webapp_url_versioned()
+                rows = [
+                    [InlineKeyboardButton(text="📚 Davom etish", web_app=WebAppInfo(url=base))]
+                ]
+                if daily_line:
+                    # To'g'ri kunlik savolga (App.tsx: #daily)
+                    rows.insert(
+                        0,
+                        [InlineKeyboardButton(text="🎙 Kunlik savol (1 daqiqa)", web_app=WebAppInfo(url=base + "#daily"))],
+                    )
+                kb = InlineKeyboardMarkup(inline_keyboard=rows)
 
             try:
                 await bot.send_message(user.tg_id, text, reply_markup=kb)
