@@ -292,6 +292,12 @@ class TutorTurn(Base):
     voice: Mapped[int] = mapped_column(Integer, default=0)  # mikrofon orqali = 1
     mode: Mapped[str] = mapped_column(String(8), default="chat")  # chat | mock
     score: Mapped[int] = mapped_column(Integer, default=-1)  # mock: javob bali 0-100
+    # Mock mezonlari (K17.6): lug'at / grammatika / mazmun-ravonlik (LLM),
+    # talaffuz-aniqlik (STT ishonchi); -1 = o'lchanmagan
+    vocab: Mapped[int] = mapped_column(Integer, default=-1)
+    grammar: Mapped[int] = mapped_column(Integer, default=-1)
+    content: Mapped[int] = mapped_column(Integer, default=-1)
+    pron: Mapped[int] = mapped_column(Integer, default=-1)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
 
 
@@ -305,6 +311,10 @@ class MockResult(Base):
     mock_id: Mapped[str] = mapped_column(String(24))
     level: Mapped[str] = mapped_column(String(4), default="")
     score: Mapped[int] = mapped_column(Integer)  # 0-100 o'rtacha
+    vocab: Mapped[int] = mapped_column(Integer, default=-1)
+    grammar: Mapped[int] = mapped_column(Integer, default=-1)
+    content: Mapped[int] = mapped_column(Integer, default=-1)
+    pron: Mapped[int] = mapped_column(Integer, default=-1)
     xp: Mapped[int] = mapped_column(Integer, default=0)
     session_key: Mapped[str] = mapped_column(String(36), default="", index=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)

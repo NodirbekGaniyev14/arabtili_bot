@@ -60,10 +60,20 @@ _MIGRATIONS = {
     "progress": {
         "passed": "INTEGER DEFAULT 1",
     },
-    # K17: mock imtihon rejimi va javob bali
+    # K17: mock imtihon rejimi va javob bali; K17.6: mezonlar
     "tutor_turns": {
         "mode": "VARCHAR(8) DEFAULT 'chat'",
         "score": "INTEGER DEFAULT -1",
+        "vocab": "INTEGER DEFAULT -1",
+        "grammar": "INTEGER DEFAULT -1",
+        "content": "INTEGER DEFAULT -1",
+        "pron": "INTEGER DEFAULT -1",
+    },
+    "mock_results": {
+        "vocab": "INTEGER DEFAULT -1",
+        "grammar": "INTEGER DEFAULT -1",
+        "content": "INTEGER DEFAULT -1",
+        "pron": "INTEGER DEFAULT -1",
     },
 }
 

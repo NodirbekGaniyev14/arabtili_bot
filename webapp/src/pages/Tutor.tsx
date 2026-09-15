@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import {
   api,
+  type MockCriteria,
   type TutorFinishResult,
   type TutorMock,
   type TutorNewWord,
@@ -51,6 +52,7 @@ interface Msg {
   mockScore?: number;
   feedback?: string;
   ideal?: string;
+  crit?: MockCriteria;
   /** Takrorlash mashqi natijasi (assistant xabari uchun) */
   pron?: TutorPronounceResult;
 }
@@ -249,6 +251,12 @@ export default function Tutor({ onClose }: TutorProps) {
             mockScore: r.reply.score ?? 0,
             feedback: r.reply.feedback_uz ?? "",
             ideal: r.reply.ideal_ar ?? "",
+            crit: {
+              vocab: r.reply.vocab ?? -1,
+              grammar: r.reply.grammar ?? -1,
+              content: r.reply.content ?? -1,
+              pron: r.reply.pron ?? -1,
+            },
           }
         : {
             ...userMsg,
@@ -298,7 +306,12 @@ export default function Tutor({ onClose }: TutorProps) {
     setTranscribing(true);
     try {
       if (target.kind === "answer") {
-        const r = await api.tutorTranscribe(rec.blob, rec.filename, lastAssistant?.ar ?? "");
+        const r = await api.tutorTranscribe(
+          rec.blob,
+          rec.filename,
+          lastAssistant?.ar ?? "",
+          isMock ? (sessionKey ?? "") : ""
+        );
         if (!r.text) {
           setNotice("Ovoz tushunilmadi. Yaqinroq va aniqroq gapiring.");
         } else {
@@ -824,6 +837,65 @@ function ScoreBadge({ score }: { score: number }) {
   );
 }
 
+const CRITERIA: { k: keyof MockCriteria; label: string; icon: string }[] = [
+  { k: "vocab", label: "Lug'at", icon: "📖" },
+  { k: "grammar", label: "Grammatika", icon: "🧩" },
+  { k: "content", label: "Mazmun", icon: "💬" },
+  { k: "pron", label: "Talaffuz", icon: "🎤" },
+];
+
+function critColor(v: number) {
+  return v >= 80 ? "text-emerald-dark" : v >= 50 ? "text-gold" : "text-terracotta";
+}
+
+/** Mock javobi mezonlari — bitta qatorda kichik yorliqlar (-1 = ko'rsatilmaydi) */
+function CriteriaChips({ c }: { c: MockCriteria }) {
+  const items = CRITERIA.filter(({ k }) => c[k] >= 0);
+  if (!items.length) return null;
+  return (
+    <div className="flex flex-wrap gap-1">
+      {items.map(({ k, label, icon }) => (
+        <span key={k} className="rounded-md bg-sand px-1.5 py-0.5 text-[10px] font-extrabold text-ink-soft">
+          {icon} {label} <span className={critColor(c[k])}>{c[k]}</span>
+        </span>
+      ))}
+    </div>
+  );
+}
+
+/** Yakuniy hisobot: mezonlar bo'yicha chiziqli diagramma */
+function CriteriaBars({ c }: { c: MockCriteria }) {
+  const items = CRITERIA.filter(({ k }) => c[k] >= 0);
+  return (
+    <section className="rounded-2xl bg-card border border-cardline p-4 space-y-2.5">
+      <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft">MEZONLAR BO'YICHA</div>
+      {items.map(({ k, label, icon }) => (
+        <div key={k}>
+          <div className="flex items-center justify-between text-xs font-bold">
+            <span>
+              {icon} {label}
+            </span>
+            <span className={critColor(c[k])}>{c[k]}</span>
+          </div>
+          <div className="mt-1 h-2 rounded-full bg-cardline overflow-hidden">
+            <div
+              className={`h-full rounded-full ${
+                c[k] >= 80 ? "bg-emerald-deep" : c[k] >= 50 ? "bg-gold" : "bg-terracotta"
+              }`}
+              style={{ width: `${Math.max(4, c[k])}%` }}
+            />
+          </div>
+        </div>
+      ))}
+      {c.pron < 0 && (
+        <div className="text-[11px] text-ink-soft font-semibold">
+          🎤 Talaffuz faqat ovozli javoblarda o'lchanadi — keyingi safar mikrofon bilan javob bering.
+        </div>
+      )}
+    </section>
+  );
+}
+
 function UserBubble({ m, mock }: { m: Msg; mock: boolean }) {
   const c = m.correction;
   return (
@@ -841,6 +913,7 @@ function UserBubble({ m, mock }: { m: Msg; mock: boolean }) {
             <ScoreBadge score={m.mockScore} />
             {m.feedback && <span className="text-ink-soft">{m.feedback}</span>}
           </div>
+          {m.crit && <CriteriaChips c={m.crit} />}
           {m.ideal && (
             <div className="rounded-lg bg-sand px-2.5 py-1.5">
               <div className="text-[10px] font-extrabold text-ink-soft">NAMUNAVIY JAVOB</div>
@@ -1041,6 +1114,17 @@ function Summary({
               : "XP uchun kamida 3 javob"}
         </div>
       </div>
+
+      {mock && result.certificate && (
+        <section className="rounded-2xl bg-card border-2 border-gold p-3">
+          <img src={result.certificate.png_url} alt="Sertifikat" className="rounded-xl w-full" />
+          <p className="mt-2 text-xs text-ink-soft font-semibold text-center">
+            🏅 Shaxsiy rekord! Sertifikat botga yuborildi — u yerdan do'stlaringizga ulashing.
+          </p>
+        </section>
+      )}
+
+      {mock && result.criteria && <CriteriaBars c={result.criteria} />}
 
       {mock && answers.length > 0 && (
         <section className="rounded-2xl bg-card border border-cardline p-4">

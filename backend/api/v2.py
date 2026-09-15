@@ -470,6 +470,7 @@ async def tutor_turn(
             raise HTTPException(status_code=422, detail="Xabar juda uzun")
 
     learner_answered = bool(body.history) and body.history[-1].get("role") == "user"
+    crit = {"vocab": -1, "grammar": -1, "content": -1, "pron": -1}
     try:
         if body.mode == "mock":
             reply, usage = await tutor.reply_mock(
@@ -479,6 +480,14 @@ async def tutor_turn(
                 history=body.history,
                 known=known,
             )
+            if learner_answered:
+                # Talaffuz (aniqlik) — oxirgi /tutor/transcribe ishonch bali (server xotirasi)
+                pron = _take_voice_conf(user.id, body.session_key) if body.voice else -1
+                reply.score = tutor.mock_overall(reply.vocab, reply.grammar, reply.content, pron)
+                crit = {
+                    "vocab": reply.vocab, "grammar": reply.grammar,
+                    "content": reply.content, "pron": pron,
+                }
             ok = reply.score >= 50 if learner_answered else True
             score = reply.score if learner_answered else -1
         else:
@@ -512,6 +521,7 @@ async def tutor_turn(
             voice=1 if (learner_answered and body.voice) else 0,
             mode=body.mode,
             score=score,
+            **crit,
         )
     )
     await session.commit()
@@ -520,7 +530,7 @@ async def tutor_turn(
     # audio'ni kechroq, tayyor bo'lganda yuklaydi (audio.ts: playUrl retry)
     audio_key = tts.schedule(reply.ar, level)
     return {
-        "reply": reply.model_dump(),
+        "reply": {**reply.model_dump(), "pron": crit["pron"]},
         "audio_url": f"/api/v2/tutor/audio/{audio_key}.mp3" if audio_key else "",
         "turns_left": max(access["turns_left"] - 1, 0),
         "vip": access["vip"],
@@ -598,6 +608,31 @@ async def _read_audio(file: UploadFile) -> bytes:
     return data
 
 
+# Mock talaffuz mezoni: /tutor/transcribe ishonch balini sessiya bo'yicha saqlaymiz,
+# keyingi /tutor/turn (voice=true) uni oladi — klient soxta ball yubora olmaydi
+_voice_conf: dict[tuple[int, str], tuple[int, float]] = {}
+VOICE_CONF_TTL = 600.0
+
+
+def _put_voice_conf(user_id: int, session_key: str, conf: int) -> None:
+    import time
+
+    now = time.time()
+    if len(_voice_conf) > 5000:
+        for k in [k for k, v in _voice_conf.items() if now - v[1] > VOICE_CONF_TTL]:
+            _voice_conf.pop(k, None)
+    _voice_conf[(user_id, session_key)] = (conf, now)
+
+
+def _take_voice_conf(user_id: int, session_key: str) -> int:
+    import time
+
+    v = _voice_conf.pop((user_id, session_key), None)
+    if v is None or time.time() - v[1] > VOICE_CONF_TTL:
+        return -1
+    return v[0]
+
+
 STT_DAILY_CAP = 200  # har o'quvchi kuniga shuncha ovoz yozuvi — Groq bepul limiti himoyasi
 _stt_used: dict[int, tuple[str, int]] = {}
 
@@ -635,21 +670,25 @@ async def tutor_transcribe(
     request: Request,
     file: UploadFile = File(...),
     prompt: str = Form(""),
+    session_key: str = Form("", max_length=36),
     user: User = Depends(get_current_user),
 ):
-    """Mikrofon yozuvi → arabcha matn. `prompt` — oxirgi ustoz savoli (kontekst)."""
+    """Mikrofon yozuvi → arabcha matn. `prompt` — oxirgi ustoz savoli (kontekst).
+    `session_key` berilsa aniqlik bali keyingi mock javobi uchun saqlanadi."""
     from services import stt
 
     if not stt.available():
         raise HTTPException(status_code=503, detail="Ovoz xizmati sozlanmagan")
     data = await _read_audio(file)
     _stt_quota(user.id)
-    text = await stt.transcribe(
+    text, conf = await stt.transcribe_ex(
         data, file.filename or "speech.webm", file.content_type or "audio/webm", prompt[:300]
     )
     if not text:
         _stt_failed(request)
-    return {"text": text}
+    if session_key and text:
+        _put_voice_conf(user.id, session_key, conf)
+    return {"text": text, "confidence": conf}
 
 
 @router.post("/tutor/pronounce")
@@ -903,9 +942,71 @@ class TutorFinishBody(BaseModel):
 MOCK_XP_FACTOR = 0.5  # 100 ball = 50 XP; bir mock uchun kuniga bir marta
 
 
+MOCK_CERT_MIN = 70  # shu balldan boshlab sertifikat rasmi (shaxsiy rekord bo'lsa)
+
+
+def _avg_criteria(rows) -> dict:
+    """Mock turnlari bo'yicha mezon o'rtachalari (-1 = o'lchanmagan)."""
+    out = {}
+    for i, k in enumerate(("vocab", "grammar", "content", "pron"), start=5):
+        vals = [r[i] for r in rows if r[i] is not None and r[i] >= 0]
+        out[k] = round(sum(vals) / len(vals)) if vals else -1
+    return out
+
+
+async def _mock_certificate(request: Request, session: AsyncSession, user: User, mock_id: str,
+                            level: str, avg: int, crit: dict) -> dict | None:
+    """Shaxsiy rekord (≥ MOCK_CERT_MIN) — sertifikat rasmi + botga ulashish tugmasi."""
+    from services import tutor
+    from services.certificate import issue_mock_certificate
+
+    mock = tutor.MOCK_BY_ID.get(mock_id) or {}
+    try:
+        cert = await issue_mock_certificate(
+            session, user.id, user.name, mock_id, mock.get("title_uz", mock_id), level, avg, crit
+        )
+    except Exception as e:  # shrift/disk muammosi natijani buzmasin
+        print(f"Mock sertifikati yaratilmadi: {e!r}")
+        return None
+    data = {
+        "cert_id": cert.cert_id,
+        "png_url": f"/api/certificates/{cert.cert_id}.png",
+        "verify_code": cert.cert_id.split("-")[-1],
+    }
+    bot = getattr(request.app.state, "bot", None)
+    if bot:
+        try:
+            from urllib.parse import quote
+
+            from aiogram.types import FSInputFile, InlineKeyboardButton, InlineKeyboardMarkup
+
+            share_text = quote(
+                f"Arabiy'da «{mock.get('title_uz', mock_id)}» speaking mock imtihonidan {avg}/100 oldim! 🎤"
+            )
+            share_url = quote("https://t.me/JamalArabiy_bot")
+            kb = InlineKeyboardMarkup(
+                inline_keyboard=[[
+                    InlineKeyboardButton(
+                        text="👥 Do'stlarga ulashish",
+                        url=f"https://t.me/share/url?url={share_url}&text={share_text}",
+                    )
+                ]]
+            )
+            await bot.send_photo(
+                user.tg_id,
+                FSInputFile(cert.png_path),
+                caption=f"🎤 Speaking mock «{mock.get('title_uz', mock_id)}» — {avg}/100. Shaxsiy rekord!",
+                reply_markup=kb,
+            )
+        except Exception:
+            pass
+    return data
+
+
 @router.post("/tutor/finish")
 async def tutor_finish(
     body: TutorFinishBody,
+    request: Request,
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
@@ -917,7 +1018,10 @@ async def tutor_finish(
 
     rows = (
         await session.execute(
-            select(TutorTurn.ok, TutorTurn.voice, TutorTurn.mode, TutorTurn.score, TutorTurn.topic)
+            select(
+                TutorTurn.ok, TutorTurn.voice, TutorTurn.mode, TutorTurn.score, TutorTurn.topic,
+                TutorTurn.vocab, TutorTurn.grammar, TutorTurn.content, TutorTurn.pron,
+            )
             .where(TutorTurn.user_id == user.id, TutorTurn.session_key == body.session_key)
             .order_by(TutorTurn.id.asc())
         )
@@ -944,8 +1048,21 @@ async def tutor_finish(
         avg = round(sum(scores) / len(scores)) if scores else 0
         mock_id = rows[0][4]
         level = await _user_level(session, user.id)
-        result.update({"mock": True, "score": avg, "scores": scores, "mock_id": mock_id})
+        crit = _avg_criteria([r for r in rows if r[3] >= 0])
+        result.update({
+            "mock": True, "score": avg, "scores": scores, "mock_id": mock_id,
+            "criteria": crit, "certificate": None,
+        })
         if scores and already is None:
+            complete = len(scores) >= tutor.MOCK_QUESTIONS
+            # Shaxsiy rekordmi — sertifikat shundagina (spam bo'lmasin)
+            prev_best = (
+                await session.execute(
+                    select(func.coalesce(func.max(MockResult.score), -1)).where(
+                        MockResult.user_id == user.id, MockResult.mock_id == mock_id
+                    )
+                )
+            ).scalar_one()
             today = datetime.now(timezone.utc).replace(
                 hour=0, minute=0, second=0, microsecond=0, tzinfo=None
             )
@@ -972,11 +1089,16 @@ async def tutor_finish(
                     score=avg,
                     xp=xp,
                     session_key=body.session_key,
+                    **crit,
                 )
             )
             if xp > 0:
                 session.add(XpLog(user_id=user.id, amount=xp, source=source))
             await session.commit()
+            if complete and avg >= MOCK_CERT_MIN and avg > prev_best:
+                result["certificate"] = await _mock_certificate(
+                    request, session, user, mock_id, level, avg, crit
+                )
     elif turns >= 3 and already is None:
         xp = min(30, 2 * turns + ok + 2 * voice)
         session.add(XpLog(user_id=user.id, amount=xp, source=source))

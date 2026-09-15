@@ -298,9 +298,12 @@ def test_mock_system_prompt():
     assert "Exam field: Shifokor" in sysb[1]["text"]
 
 
-def _mock_json(score=70, done=False):
+def _mock_json(score=70, done=False, vocab=None, grammar=None, content=None):
     return json.dumps(
         {"ar": "سُؤَال", "translit": "su'aal", "uz": "savol", "score": score,
+         "vocab": score if vocab is None else vocab,
+         "grammar": score if grammar is None else grammar,
+         "content": score if content is None else content,
          "feedback_uz": "yaxshi", "ideal_ar": "جَوَاب", "done": done},
         ensure_ascii=False,
     )
@@ -312,12 +315,18 @@ async def test_reply_mock_first_turn_and_grading(anthropic_mock):
     handlers.append(httpx.Response(200, json=_message(_mock_json(score=99, done=True))))
     out, _ = await tutor.reply_mock(name="N", level="A2", mock_id="haydovchi", history=[], known=[])
     assert out.score == -1 and out.done is False and out.feedback_uz == ""
+    assert out.vocab == out.grammar == out.content == -1
 
     handlers.append(httpx.Response(200, json=_message(_mock_json(score=140, done=False))))
     hist = [{"role": "assistant", "content": "q"}, {"role": "user", "content": "a"}]
     out, _ = await tutor.reply_mock(name="N", level="A2", mock_id="haydovchi", history=hist, known=[])
     assert out.score == 100, "ball 0-100 oralig'ida qisqartiriladi"
     assert out.done is False
+
+    # Umumiy ball — mezonlar o'rtachasi (model bergan score emas)
+    handlers.append(httpx.Response(200, json=_message(_mock_json(score=10, vocab=90, grammar=60, content=75))))
+    out, _ = await tutor.reply_mock(name="N", level="A2", mock_id="haydovchi", history=hist, known=[])
+    assert (out.vocab, out.grammar, out.content, out.score) == (90, 60, 75, 75)
 
     handlers.append(httpx.Response(200, json=_message(_mock_json(score=50, done=False))))
     hist = [{"role": "assistant", "content": "q"}, {"role": "user", "content": "a"}] * tutor.MOCK_QUESTIONS
@@ -332,6 +341,16 @@ async def test_reply_mock_unknown_id(monkeypatch):
     monkeypatch.setattr(settings, "anthropic_api_key", "k")
     with pytest.raises(tutor.TutorUnavailable):
         await tutor.reply_mock(name="N", level="A2", mock_id="yoq", history=[], known=[])
+
+
+def test_mock_overall_and_catalog():
+    assert tutor.mock_overall(90, 60, 75) == 75
+    assert tutor.mock_overall(90, 60, 75, 95) == 80
+    assert tutor.mock_overall(-1, -1, -1) == 0
+    assert len(tutor.MOCKS) == 20
+    assert len({m["id"] for m in tutor.MOCKS}) == 20
+    assert all(m["min_level"] in ("A0", "A1", "A2", "B1", "B2") for m in tutor.MOCKS)
+    assert "vocab" in tutor.MOCK_RULES and "grammar" in tutor.MOCK_RULES and "content" in tutor.MOCK_RULES
 
 
 def test_chat_reply_schema_has_answer_uz():

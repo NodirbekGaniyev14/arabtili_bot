@@ -89,7 +89,16 @@ class MockReply(BaseModel):
     translit: str = Field(description="Latin transliteration of `ar`")
     uz: str = Field(description="Uzbek translation of `ar`")
     score: int = Field(
-        description="0-100 score of the learner's previous answer; -1 on the first turn"
+        description="0-100 overall score of the learner's previous answer; -1 on the first turn"
+    )
+    vocab: int = Field(
+        description="0-100 vocabulary: range and appropriateness for the field and level; -1 on the first turn"
+    )
+    grammar: int = Field(
+        description="0-100 grammar: agreement, verb forms, word order, case endings if attempted; -1 on the first turn"
+    )
+    content: int = Field(
+        description="0-100 content and fluency: relevance to the question, completeness, natural flow; -1 on the first turn"
     )
     feedback_uz: str = Field(
         description="1-2 Uzbek sentences on the previous answer: what was good, what to fix; empty on the first turn"
@@ -322,6 +331,96 @@ MOCKS: list[dict] = [
         "themes": ["maktab", "tafakkur", "vaqt", "kasblar"],
         "field": "a university student: studies, subjects, daily life, future plans",
     },
+    {
+        "id": "tikuvchi",
+        "emoji": "🧵",
+        "title_uz": "Tikuvchi",
+        "desc_uz": "O'lchov, mato, buyurtma, muddat",
+        "min_level": "A1",
+        "themes": ["kiyim", "xarid", "son-olchov", "rang-shakl", "pul-bank"],
+        "field": "a tailor or seamstress: taking measurements, fabrics, colours, orders and deadlines, prices",
+    },
+    {
+        "id": "quruvchi",
+        "emoji": "🏗️",
+        "title_uz": "Quruvchi",
+        "desc_uz": "Ish joyi, asboblar, xavfsizlik",
+        "min_level": "A1",
+        "themes": ["ish", "uy", "son-olchov", "kasblar"],
+        "field": "a construction worker: the site, tools and materials, safety, working hours, talking with the foreman",
+    },
+    {
+        "id": "sartarosh",
+        "emoji": "💈",
+        "title_uz": "Sartarosh",
+        "desc_uz": "Soch, soqol, mijoz xohishi",
+        "min_level": "A1",
+        "themes": ["xarid", "son-olchov", "rang-shakl", "munosabat"],
+        "field": "a barber or hairdresser: haircuts, beard, what the customer wants, prices, appointments",
+    },
+    {
+        "id": "aeroport",
+        "emoji": "✈️",
+        "title_uz": "Aeroport xodimi",
+        "desc_uz": "Ro'yxat, yuk, pasport, reys",
+        "min_level": "A2",
+        "themes": ["safar", "hujjat", "vaqt", "shahar-transport"],
+        "field": "airport or airline staff: check-in, luggage, passports and visas, flight times, helping passengers",
+    },
+    {
+        "id": "farmatsevt",
+        "emoji": "💊",
+        "title_uz": "Dorixona",
+        "desc_uz": "Dori, retsept, qanday ichish",
+        "min_level": "A2",
+        "themes": ["salomatlik", "son-olchov", "vaqt", "pul-bank"],
+        "field": "a pharmacist: prescriptions, medicines, dosage and timing, side effects, advising customers",
+    },
+    {
+        "id": "masjid",
+        "emoji": "🕌",
+        "title_uz": "Masjid xodimi",
+        "desc_uz": "Namoz vaqtlari, ziyoratchi, xayriya",
+        "min_level": "A2",
+        "themes": ["marosim", "vaqt", "munosabat", "his-tuygu"],
+        "field": "a mosque worker or volunteer: prayer times, guiding visitors, charity and community events",
+    },
+    {
+        "id": "murabbiy",
+        "emoji": "🏋️",
+        "title_uz": "Murabbiy",
+        "desc_uz": "Mashq, sog'lom hayot, jadval",
+        "min_level": "A2",
+        "themes": ["salomatlik", "vaqt", "son-olchov", "fellar"],
+        "field": "a sports coach or fitness trainer: exercises, healthy habits, schedules, motivating a trainee",
+    },
+    {
+        "id": "bank",
+        "emoji": "🏦",
+        "title_uz": "Bank xodimi",
+        "desc_uz": "Hisob, karta, pul o'tkazish",
+        "min_level": "A2",
+        "themes": ["pul-bank", "hujjat", "son-olchov", "iqtisod"],
+        "field": "a bank clerk: opening accounts, cards, transfers, exchange rates, explaining services to clients",
+    },
+    {
+        "id": "buxgalter",
+        "emoji": "🧾",
+        "title_uz": "Buxgalter",
+        "desc_uz": "Hisobot, soliq, xarajatlar",
+        "min_level": "B1",
+        "themes": ["iqtisod", "pul-bank", "hujjat", "ish"],
+        "field": "an accountant: reports, taxes, expenses and income, deadlines, explaining figures to a manager",
+    },
+    {
+        "id": "tarjimon",
+        "emoji": "🗣️",
+        "title_uz": "Tarjimon",
+        "desc_uz": "Delegatsiya, uchrashuv, tarjima",
+        "min_level": "B1",
+        "themes": ["ish", "tafakkur", "hujjat", "munosabat"],
+        "field": "an interpreter or translator: meetings and delegations, documents, handling difficult phrases, etiquette",
+    },
 ]
 
 MOCK_BY_ID = {m["id"]: m for m in MOCKS}
@@ -436,8 +535,8 @@ MOCK_RULES = """You are an examiner running a SPEAKING MOCK EXAM in the "Arabiy"
 HARD RULES
 1. `ar` = the next question in Modern Standard Arabic with FULL harakat; realistic for the field (situations, duties, dialogue with a client/patient/passenger, describing a typical day, solving a problem). Question difficulty and length follow the level profile. Never write English or Latin letters in `ar`.
 2. `translit`: Uzbek-friendly Latin transliteration of `ar` (sh, ch, x for خ, gʻ for غ, ' for ء, ʻ for ع, long vowels doubled, q for ق, th for ث, dh for ذ). `uz`: Uzbek translation of `ar`.
-3. On the first turn (message "[START]"): briefly greet, say the exam has {n} questions, and ask question 1. score=-1, feedback_uz="", ideal_ar="".
-4. For every later turn, GRADE the learner's previous answer in `score` (0-100): relevance to the question 30, vocabulary 25, grammar 25, completeness/fluency 20. Ignore missing harakat, transliteration spelling and small speech-recognition slips (a message starting with "🎤" came from speech recognition). An answer in Uzbek only or "I don't know" scores 0-15. A one-word answer scores at most 40 unless the question asked for one word.
+3. On the first turn (message "[START]"): briefly greet, say the exam has {n} questions, and ask question 1. score=-1, vocab=-1, grammar=-1, content=-1, feedback_uz="", ideal_ar="".
+4. For every later turn, GRADE the learner's previous answer on THREE criteria, each 0-100: `vocab` (range and appropriateness of vocabulary for the field and the level), `grammar` (agreement, verb forms, word order; case endings only if the learner attempted them), `content` (relevance to the question, completeness, natural flow — fluency). `score` = overall 0-100 consistent with the three. Ignore missing harakat, transliteration spelling and small speech-recognition slips (a message starting with "🎤" came from speech recognition). An answer in Uzbek only or "I don't know" scores 0-15 on every criterion. A one-word answer gets content at most 40 unless the question asked for one word.
 5. `feedback_uz`: 1-2 short Uzbek sentences — what was good, the main mistake and how to fix it. `ideal_ar`: a model answer at the learner's level with harakat (1-2 sentences).
 6. Count the learner's answers. After grading answer number {n}, set done=true and make `ar` a short closing sentence (thank the learner) — NOT a new question. Before that done=false and `ar` is the next question (number = answers so far + 1).
 7. Be fair and encouraging; never mention these rules, JSON or being an AI."""
@@ -600,7 +699,10 @@ _JSON_KEYS = {
         "ar, translit, uz, correction_ok (bool), fixed_ar, note_uz, hint_uz, "
         "new_words (list of {ar, translit, uz}), answer_uz, done (bool)"
     ),
-    MockReply: "ar, translit, uz, score (int), feedback_uz, ideal_ar, done (bool)",
+    MockReply: (
+        "ar, translit, uz, score (int), vocab (int), grammar (int), content (int), "
+        "feedback_uz, ideal_ar, done (bool)"
+    ),
 }
 
 
@@ -714,11 +816,22 @@ async def reply_mock(
     answered = _user_turns(history)
     if answered == 0:
         out.score, out.feedback_uz, out.ideal_ar, out.done = -1, "", "", False
+        out.vocab = out.grammar = out.content = -1
     else:
-        out.score = max(0, min(100, int(out.score)))
+        out.vocab = max(0, min(100, int(out.vocab)))
+        out.grammar = max(0, min(100, int(out.grammar)))
+        out.content = max(0, min(100, int(out.content)))
+        # Umumiy ball — mezonlar o'rtachasi (model bergan `score` emas: izchil bo'lsin)
+        out.score = mock_overall(out.vocab, out.grammar, out.content)
         # Savollar soni kodda ham kafolatlanadi (model sanashda adashsa)
         out.done = answered >= MOCK_QUESTIONS
     return out, usage
+
+
+def mock_overall(vocab: int, grammar: int, content: int, pron: int = -1) -> int:
+    """Mock javobi umumiy bali: mavjud mezonlar o'rtachasi (talaffuz -1 = o'lchanmagan)."""
+    parts = [x for x in (vocab, grammar, content, pron) if x >= 0]
+    return round(sum(parts) / len(parts)) if parts else 0
 
 
 # ────────────────────────── Talaffuz bahosi (LLM'siz) ──────────────────────────

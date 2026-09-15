@@ -929,11 +929,13 @@ export const api = {
       method: "POST",
       body: JSON.stringify(body),
     }),
-  tutorTranscribe: (audio: Blob, filename: string, prompt: string) => {
+  tutorTranscribe: (audio: Blob, filename: string, prompt: string, sessionKey = "") => {
     const fd = new FormData();
     fd.append("file", audio, filename);
     fd.append("prompt", prompt);
-    return upload<{ text: string }>("/api/v2/tutor/transcribe", fd);
+    // Mock: aniqlik bali serverda sessiya bo'yicha saqlanadi (talaffuz mezoni)
+    if (sessionKey) fd.append("session_key", sessionKey);
+    return upload<{ text: string; confidence: number }>("/api/v2/tutor/transcribe", fd);
   },
   tutorPronounce: (
     audio: Blob,
@@ -1108,6 +1110,11 @@ export interface TutorReply {
   score?: number;
   feedback_uz?: string;
   ideal_ar?: string;
+  /** Mock mezonlari (K17.6) */
+  vocab?: number;
+  grammar?: number;
+  content?: number;
+  pron?: number;
 }
 
 export interface TutorTurnResponse {
@@ -1117,6 +1124,14 @@ export interface TutorTurnResponse {
   turns_left: number;
   vip: boolean;
   usage: { in?: number; out?: number; cache_read?: number; cache_write?: number };
+}
+
+/** Mock javobi mezonlari: -1 = o'lchanmagan (talaffuz faqat ovozli javobda) */
+export interface MockCriteria {
+  vocab: number;
+  grammar: number;
+  content: number;
+  pron: number;
 }
 
 export interface TutorPronounceResult {
@@ -1192,6 +1207,9 @@ export interface TutorFinishResult {
   score?: number;
   scores?: number[];
   mock_id?: string;
+  /** Mock: mezonlar o'rtachasi va (shaxsiy rekordda) sertifikat */
+  criteria?: MockCriteria;
+  certificate?: { cert_id: string; png_url: string; verify_code: string } | null;
 }
 
 export interface RoleplayScenario {

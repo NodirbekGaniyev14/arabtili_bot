@@ -246,6 +246,110 @@ async def issue_weekly_certificate(
     )
 
 
+MOCK_CRITERIA_UZ = (("vocab", "Lug'at"), ("grammar", "Grammatika"), ("content", "Mazmun"), ("pron", "Talaffuz"))
+
+
+def render_mock_png(
+    cert_id: str,
+    name: str,
+    mock_title: str,
+    level: str,
+    score: int,
+    criteria: dict,
+    issued: str,
+    verify_url: str,
+    out_path: Path,
+) -> None:
+    """Speaking mock imtihoni natijasi — ulashish uchun rasm (bepul reklama)."""
+    W, H = 1200, 850
+    img = Image.new("RGB", (W, H), SAND)
+    d = ImageDraw.Draw(img)
+
+    d.rectangle([20, 20, W - 20, H - 20], outline=EMERALD, width=6)
+    d.rectangle([36, 36, W - 36, H - 36], outline=GOLD, width=2)
+
+    _center(d, 60, "ARABIY", _font(64), EMERALD_DARK, W)
+    _center(d, 140, _ar("شَهَادَةُ اِمْتِحَانِ المُحَادَثَة"), _font(44), GOLD, W)
+    _center(d, 205, "SPEAKING MOCK IMTIHONI NATIJASI", _font(22), INK, W)
+
+    # Ball doirasi
+    cx, cy, r = W // 2, 335, 80
+    accent = EMERALD if score >= 80 else GOLD if score >= 60 else (170, 118, 60)
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=accent, outline=EMERALD_DARK, width=3)
+    sf = _font(60)
+    st = f"{score}"
+    sw = d.textlength(st, font=sf)
+    d.text((cx - sw / 2, cy - 42), st, font=sf, fill=SAND)
+    pf = _font(22)
+    pw = d.textlength("/100", font=pf)
+    d.text((cx - pw / 2, cy + 24), "/100", font=pf, fill=SAND)
+
+    _center(d, 450, name or "O'rganuvchi", _font(48), INK, W)
+    _center(d, 518, f"{mock_title}  ·  daraja {level}", _font(28), EMERALD_DARK, W)
+    parts = "  ·  ".join(
+        f"{uz} {criteria.get(k)}" for k, uz in MOCK_CRITERIA_UZ if (criteria.get(k) or -1) >= 0
+    )
+    _center(d, 566, parts, _font(22), INK, W)
+    _center(
+        d, 612,
+        "5 savollik og'zaki imtihon · AI ustoz baholadi · rasmiy guvohnoma emas",
+        _font(17), (138, 128, 113), W,
+    )
+
+    d.text((70, H - 142), f"Sana: {issued}", font=_font(24), fill=INK)
+    d.text((70, H - 104), f"ID: {cert_id}", font=_font(24), fill=INK)
+    d.text((70, H - 70), verify_url, font=_font(18), fill=EMERALD_DARK)
+
+    qr = qrcode.QRCode(box_size=4, border=2)
+    qr.add_data(verify_url)
+    qr.make(fit=True)
+    qimg = qr.make_image(fill_color="black", back_color="white").convert("RGB")
+    qimg = qimg.resize((150, 150))
+    img.paste(qimg, (W - 220, H - 220))
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    img.save(out_path, "PNG")
+
+
+async def issue_mock_certificate(
+    session: AsyncSession,
+    user_id: int,
+    name: str,
+    mock_id: str,
+    mock_title: str,
+    level: str,
+    score: int,
+    criteria: dict,
+) -> Certificate:
+    """Mock imtihoni sertifikati (kind="mock") — shaxsiy rekord bo'lganda beriladi."""
+    cert_id = new_cert_id("MK")
+    issued = datetime.now(timezone.utc).replace(tzinfo=None)
+    base_url = settings.webapp_url or "https://arabiy.digitalcfo.uz"
+    verify_url = f"{base_url}/api/verify/{cert_id.split('-')[-1]}"
+
+    png_path = CERT_DIR / f"{cert_id}.png"
+    render_mock_png(
+        cert_id, name, mock_title, level, score, criteria,
+        issued.strftime("%d.%m.%Y"), verify_url, png_path,
+    )
+    cert = Certificate(
+        cert_id=cert_id,
+        user_id=user_id,
+        kind="mock",
+        level=level,
+        score=score,
+        scores_json=json.dumps({"mock_id": mock_id, "title": mock_title, **criteria}),
+        holder_name=name,
+        issued_at=issued,
+        png_path=str(png_path),
+        pdf_path="",
+    )
+    session.add(cert)
+    await session.commit()
+    await session.refresh(cert)
+    return cert
+
+
 def render_pdf(png_path: Path, pdf_path: Path) -> None:
     from reportlab.lib.pagesizes import landscape, A4
     from reportlab.pdfgen import canvas

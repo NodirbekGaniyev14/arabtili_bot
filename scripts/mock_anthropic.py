@@ -75,7 +75,8 @@ def _mock_reply(user_turns: int) -> dict:
     if user_turns == 0:
         q = MOCK_QS[0]
         return {"ar": "أَهْلًا! الاِمْتِحَانُ خَمْسَةُ أَسْئِلَةٍ. " + q[0], "translit": q[1], "uz": "Salom! Imtihon 5 savol. " + q[2],
-                "score": -1, "feedback_uz": "", "ideal_ar": "", "done": False}
+                "score": -1, "vocab": -1, "grammar": -1, "content": -1,
+                "feedback_uz": "", "ideal_ar": "", "done": False}
     done = user_turns >= 5
     q = MOCK_QS[min(user_turns, 4)]
     score = [72, 45, 88, 60, 95][min(user_turns - 1, 4)]
@@ -84,6 +85,9 @@ def _mock_reply(user_turns: int) -> dict:
         "translit": "shukran! intahal-imtihaan." if done else q[1],
         "uz": "Rahmat! Imtihon tugadi." if done else q[2],
         "score": score,
+        "vocab": min(100, score + 5),
+        "grammar": max(0, score - 10),
+        "content": score + 5 if score < 95 else 100,
         "feedback_uz": "Mavzuga mos, lekin fe'l shakli xato." if score < 80 else "Juda yaxshi, to'liq javob.",
         "ideal_ar": "أَنَا أَعْمَلُ فِي المُسْتَشْفَى وَأُسَاعِدُ المَرْضَى.",
         "done": done,

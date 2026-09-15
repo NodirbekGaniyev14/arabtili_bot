@@ -327,9 +327,9 @@ async def test_stt_daily_cap(client, make_user, monkeypatch):
     v2._stt_used.pop(u.id, None)
 
     async def fake_transcribe(audio, filename="", mime="", prompt=""):
-        return "سلام"
+        return "سلام", 90
 
-    monkeypatch.setattr(stt, "transcribe", fake_transcribe)
+    monkeypatch.setattr(stt, "transcribe_ex", fake_transcribe)
     codes = []
     for _ in range(3):
         r = await c.post(

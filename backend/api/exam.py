@@ -675,6 +675,17 @@ async def verify(code: str, session: AsyncSession = Depends(get_session)):
             f'<p style="margin:4px">{period_uz} XP: <b>{cert.score}</b></p>'
             f'<p style="margin:4px;font-size:13px;color:#8A8071">Davr: {label}</p>'
         )
+    elif kind == "mock":
+        crit = " · ".join(
+            f"{uz} {scores.get(k)}"
+            for k, uz in (("vocab", "Lug'at"), ("grammar", "Grammatika"), ("content", "Mazmun"), ("pron", "Talaffuz"))
+            if (scores.get(k) or -1) >= 0
+        )
+        body = (
+            f'<p style="margin:4px">Speaking mock: <b>{scores.get("title", "—")}</b> · daraja {cert.level}</p>'
+            f'<p style="margin:4px">Natija: <b>{cert.score}/100</b></p>'
+            f'<p style="margin:4px;font-size:13px;color:#8A8071">{crit}</p>'
+        )
     else:
         body = (
             f'<p style="margin:4px">Tugatilgan kurs: <b>{cert.level}</b></p>'
