@@ -165,6 +165,22 @@ def testimonials() -> list[dict]:
         return []
 
 
+async def all_testimonials(session: AsyncSession) -> list[dict]:
+    """Bot orqali rozilik bilan yig'ilgan fikrlar (DB) + qo'lda kiritilganlar (json)."""
+    from db.models import Testimonial
+
+    rows = (
+        await session.execute(
+            select(Testimonial)
+            .where(Testimonial.published == 1)
+            .order_by(Testimonial.id.desc())
+            .limit(10)
+        )
+    ).scalars().all()
+    out = [{"name": t.name, "text": t.text, "level": t.level} for t in rows if t.text]
+    return (out + testimonials())[:10]
+
+
 async def info(session: AsyncSession, user: User) -> dict:
     """Paywall uchun hamma ma'lumot. Birinchi ochilishda taymer boshlanadi."""
     if user.paywall_seen_at is None:
@@ -203,7 +219,7 @@ async def info(session: AsyncSession, user: User) -> dict:
             for pid, p in PLANS.items()
         ],
         "proof": await social_proof(session),
-        "testimonials": testimonials(),
+        "testimonials": await all_testimonials(session),
     }
 
 

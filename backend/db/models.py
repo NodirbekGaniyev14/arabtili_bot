@@ -367,6 +367,43 @@ class DrillResult(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
 
 
+class DailySpeaking(Base):
+    """Kunlik speaking savoli javobi (services/daily.py) — kuniga bitta, streak."""
+
+    __tablename__ = "daily_speaking"
+    __table_args__ = (UniqueConstraint("user_id", "day", name="uq_daily_user_day"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    day: Mapped[str] = mapped_column(String(10), index=True)  # Toshkent sanasi YYYY-MM-DD
+    question_id: Mapped[str] = mapped_column(String(12), default="")
+    level: Mapped[str] = mapped_column(String(4), default="")
+    score: Mapped[int] = mapped_column(Integer, default=0)
+    voice: Mapped[int] = mapped_column(Integer, default=0)
+    xp: Mapped[int] = mapped_column(Integer, default=0)
+    answer: Mapped[str] = mapped_column(String(400), default="")
+    feedback: Mapped[str] = mapped_column(String(400), default="")
+    ideal: Mapped[str] = mapped_column(String(400), default="")
+    fixed: Mapped[str] = mapped_column(String(400), default="")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
+class Testimonial(Base):
+    """Paywall'dagi haqiqiy fikrlar — foydalanuvchi bot orqali ROZILIK bergan
+    fikr (services/feedback.py + bot/admin.py /sharh)."""
+
+    __tablename__ = "testimonials"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    feedback_id: Mapped[int] = mapped_column(Integer, default=0)
+    name: Mapped[str] = mapped_column(String(64), default="")
+    level: Mapped[str] = mapped_column(String(4), default="")
+    text: Mapped[str] = mapped_column(String(400), default="")
+    published: Mapped[int] = mapped_column(Integer, default=1)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
+
+
 class AiUsage(Base):
     """Har bir Claude chaqiruvining token hisobi (services/ai_usage.py).
 

@@ -102,6 +102,19 @@ async def messages(req: Request):
         1 for m in msgs if m.get("role") == "user" and m.get("content") != "[START]"
     )
     sys_text = "".join(b.get("text", "") for b in body.get("system", []))
+    if "Grade ONE answer to today's speaking question" in sys_text:
+        reply = {
+            "score": 78,
+            "feedback_uz": "Yaxshi! «مِنْ» dan keyin shahar nomi to'g'ri. Fe'lni ham qo'shing.",
+            "ideal_ar": "أَنَا مِنْ طَشْقَنْد، وَأَسْكُنُ فِيهَا.",
+            "fixed_ar": "أَنَا مِنْ طَشْقَنْدَ.",
+        }
+        return {
+            "id": "msg_daily", "type": "message", "role": "assistant", "model": body.get("model", "mock"),
+            "content": [{"type": "text", "text": json.dumps(reply, ensure_ascii=False)}],
+            "stop_reason": "end_turn", "stop_sequence": None,
+            "usage": {"input_tokens": 220, "output_tokens": 80, "cache_read_input_tokens": 0, "cache_creation_input_tokens": 0},
+        }
     if "SPEAKING MOCK EXAM" in sys_text:
         reply = _mock_reply(user_turns)
         return {

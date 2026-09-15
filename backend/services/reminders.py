@@ -65,12 +65,23 @@ async def _send_reminders(bot: Bot) -> None:
                 if streak > 0
                 else ""
             )
+            # Kunlik speaking savoli (bepul, 1 daqiqa) — hali javobsiz bo'lsa eslatamiz
+            try:
+                from services import daily
+
+                ds = await daily.status(session, user.id)
+                daily_line = (
+                    "" if ds["done"]
+                    else "\n\n🎙 Bugungi speaking savoli ham kutmoqda — 1 daqiqa, +5 XP."
+                )
+            except Exception:
+                daily_line = ""
             text = (
                 f"Assalomu alaykum, {name}! 🐪\n\n"
                 f"{streak_line}"
                 f"Bugun arab tilidan mashq qilishni unutmang — "
                 f"maqsadingizga atigi {remaining} XP qoldi. "
-                f"Bir necha daqiqa ham yetarli!"
+                f"Bir necha daqiqa ham yetarli!{daily_line}"
             )
 
             kb = None

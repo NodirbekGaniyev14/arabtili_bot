@@ -76,7 +76,7 @@ async def me(
     plan_order = json.loads(plan.module_order_json) if plan else None
     await seed_user_words(session, user.id)
     stats = await user_stats(session, user.id, plan_order)
-    from services import billing
+    from services import billing, daily
 
     return {
         "name": user.name,
@@ -87,6 +87,8 @@ async def me(
         "vip": billing.is_vip(user),
         "vip_days_left": billing.vip_days_left(user),
         "vip_price": billing.price_summary(),
+        # Kunlik speaking savoli (bosh sahifa kartasi): bajarildimi, streak
+        "daily": await daily.status(session, user.id),
     }
 
 

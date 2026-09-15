@@ -24,6 +24,7 @@ FEATURES = {
     "roleplay": "🎭 Rol o'yini",
     "writing": "✍️ Yozma baho",
     "onboarding": "🧭 Reja tuzish",
+    "daily": "🎙 Kunlik savol",
 }
 
 

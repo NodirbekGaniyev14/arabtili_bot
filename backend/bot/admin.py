@@ -396,3 +396,140 @@ async def cmd_vip(message: Message, bot: Bot):
     except Exception:
         note = " (foydalanuvchiga xabar yetmadi)"
     await message.answer(f"👑 {name}: VIP {until:%d.%m.%Y} gacha{note}")
+
+
+# ─────────── Sharhlar (testimonials) — rozilik bilan (K17.7) ───────────
+# Admin fikrni tanlaydi (/sharh <fikr_id>) → bot fikr egasidan ruxsat so'raydi
+# → ✅ bo'lsa paywall'dagi «O'quvchilar» bo'limiga tushadi (services/billing).
+
+
+def _consent_kb(fb_id: int) -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup(
+        inline_keyboard=[[
+            InlineKeyboardButton(text="✅ Ha, ko'rsating", callback_data=f"tst:ok:{fb_id}"),
+            InlineKeyboardButton(text="❌ Yo'q", callback_data=f"tst:no:{fb_id}"),
+        ]]
+    )
+
+
+@router.message(Command("sharh"))
+async def cmd_sharh(message: Message, bot: Bot):
+    """`/sharh <fikr_id>` — fikr egasidan ilovada ko'rsatishga rozilik so'raydi;
+    `/sharh off <id>` — sharhni yashiradi."""
+    if not _is_admin(message):
+        return
+    parts = (message.text or "").split()
+    if len(parts) >= 3 and parts[1].lower() == "off" and parts[2].isdigit():
+        from db.models import Testimonial
+
+        async with SessionLocal() as session:
+            t = await session.get(Testimonial, int(parts[2]))
+            if t is None:
+                await message.answer("❌ Bunday sharh yo'q.")
+                return
+            t.published = 0
+            await session.commit()
+        await message.answer(f"Sharh #{parts[2]} yashirildi.")
+        return
+    if len(parts) < 2 or not parts[1].isdigit():
+        await message.answer(
+            "Foydalanish:\n<code>/sharh 12</code> — #F12 fikr egasidan rozilik so'rash\n"
+            "<code>/sharh off 3</code> — 3-sharhni yashirish\n<code>/sharhlar</code> — ro'yxat",
+            parse_mode="HTML",
+        )
+        return
+    fb_id = int(parts[1])
+    async with SessionLocal() as session:
+        row = await feedback_svc.load_with_user(session, fb_id)
+    if row is None:
+        await message.answer(f"❌ #F{fb_id} topilmadi.")
+        return
+    fb, user = row
+    text = (
+        "🙏 <b>Fikringiz uchun rahmat!</b>\n\n"
+        f"<blockquote>{feedback_svc.esc(fb.text[:300])}</blockquote>\n"
+        "Shu fikringizni ilovaning VIP sahifasida boshqa o'quvchilarga ko'rsatsak "
+        f"maylimi? Ismingiz «{feedback_svc.esc(user.name or 'O\'quvchi')}» va darajangiz "
+        "ko'rinadi, boshqa ma'lumot yo'q."
+    )
+    try:
+        await bot.send_message(user.tg_id, text, parse_mode="HTML", reply_markup=_consent_kb(fb_id))
+    except Exception as e:
+        await message.answer(f"❌ So'rov yetmadi: {e}")
+        return
+    await message.answer(f"✅ Rozilik so'rovi yuborildi — #F{fb_id} ({user.name or user.tg_id})")
+
+
+@router.callback_query(F.data.startswith("tst:"))
+async def cb_testimonial(cb: CallbackQuery, bot: Bot):
+    """Fikr egasining javobi: ✅ — sharh nashr etiladi, ❌ — yo'q."""
+    from db.models import Plan, Testimonial
+
+    _, action, fb_id_s = (cb.data or "").split(":")
+    fb_id = int(fb_id_s)
+    async with SessionLocal() as session:
+        row = await feedback_svc.load_with_user(session, fb_id)
+        if row is None or cb.from_user is None or row[1].tg_id != cb.from_user.id:
+            await cb.answer("Bu so'rov sizga tegishli emas.", show_alert=True)
+            return
+        fb, user = row
+        if action == "ok":
+            exists = (
+                await session.execute(
+                    select(Testimonial.id).where(Testimonial.feedback_id == fb_id).limit(1)
+                )
+            ).scalar_one_or_none()
+            if exists is None:
+                level = (
+                    await session.execute(
+                        select(Plan.level).where(Plan.user_id == user.id).order_by(Plan.id.desc()).limit(1)
+                    )
+                ).scalar_one_or_none() or ""
+                session.add(
+                    Testimonial(
+                        user_id=user.id, feedback_id=fb_id, name=(user.name or "O'quvchi")[:64],
+                        level=level, text=fb.text.strip()[:400],
+                    )
+                )
+                await session.commit()
+            done_text = "✅ Rahmat! Fikringiz ilovada ko'rsatiladi."
+        else:
+            done_text = "Tushunarli — fikringiz ko'rsatilmaydi. Rahmat!"
+    await cb.answer()
+    try:
+        await cb.message.edit_reply_markup(reply_markup=None)
+        await cb.message.answer(done_text)
+    except Exception:
+        pass
+    if settings.admin_id:
+        try:
+            await bot.send_message(
+                settings.admin_id,
+                f"{'✅' if action == 'ok' else '❌'} Sharh #F{fb_id}: {user.name or user.tg_id} "
+                f"{'rozi' if action == 'ok' else 'rad etdi'}.",
+            )
+        except Exception:
+            pass
+
+
+@router.message(Command("sharhlar"))
+async def cmd_sharhlar(message: Message):
+    """Nashr etilgan sharhlar ro'yxati."""
+    if not _is_admin(message):
+        return
+    from db.models import Testimonial
+
+    async with SessionLocal() as session:
+        rows = (
+            await session.execute(
+                select(Testimonial).where(Testimonial.published == 1).order_by(Testimonial.id.desc())
+            )
+        ).scalars().all()
+    if not rows:
+        await message.answer("Hali sharh yo'q. Fikr xabaridagi #F raqami bilan: /sharh <id>")
+        return
+    lines = ["⭐ <b>Sharhlar (paywall):</b>\n"]
+    for t in rows:
+        lines.append(f"#{t.id} · {feedback_svc.esc(t.name)} ({t.level or '—'}): {feedback_svc.esc(t.text[:80])}")
+    lines.append("\nYashirish: <code>/sharh off &lt;id&gt;</code>")
+    await message.answer("\n".join(lines), parse_mode="HTML")

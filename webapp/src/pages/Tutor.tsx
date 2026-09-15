@@ -61,6 +61,7 @@ type RecTarget = { kind: "answer" } | { kind: "repeat"; idx: number };
 type Tab = "chat" | "mock" | "drill";
 
 const tg = () => window.Telegram?.WebApp;
+const VOICE_MODE_KEY = "arabiy_tutor_voice_mode";
 
 const fmtSum = (n: number) => n.toLocaleString("ru-RU").replace(/,/g, " ");
 
@@ -91,6 +92,15 @@ export default function Tutor({ onClose }: TutorProps) {
   const [done, setDone] = useState(false);
   const [turnsLeft, setTurnsLeft] = useState(0);
   const [showUz, setShowUz] = useState(true);
+  // «Faqat ovoz» rejimi: matn yashirin (tinglash mashqi), bosib-gapir tugmasi
+  const [voiceMode, setVoiceMode] = useState(() => {
+    try {
+      return localStorage.getItem(VOICE_MODE_KEY) === "1";
+    } catch {
+      return false;
+    }
+  });
+  const [revealed, setRevealed] = useState<Set<number>>(new Set());
   const [notice, setNotice] = useState("");
   const [finish, setFinish] = useState<TutorFinishResult | null>(null);
   const [saved, setSaved] = useState<Set<string>>(new Set());
@@ -102,6 +112,18 @@ export default function Tutor({ onClose }: TutorProps) {
   const [recSeconds, setRecSeconds] = useState(0);
   const [transcribing, setTranscribing] = useState(false);
   const canVoice = !!info?.voice && micSupported();
+  const voiceOnly = voiceMode && canVoice;
+
+  const toggleVoiceMode = () => {
+    setVoiceMode((v) => {
+      try {
+        localStorage.setItem(VOICE_MODE_KEY, v ? "0" : "1");
+      } catch {
+        /* jim */
+      }
+      return !v;
+    });
+  };
 
   const scrollRef = useRef<HTMLDivElement>(null);
   const active = topic || mock;
@@ -371,6 +393,7 @@ export default function Tutor({ onClose }: TutorProps) {
     setFinish(null);
     setMessages([]);
     setDone(false);
+    setRevealed(new Set());
   };
 
   const userTurns = messages.filter((m) => m.role === "user").length;
@@ -408,8 +431,8 @@ export default function Tutor({ onClose }: TutorProps) {
         <div className="flex items-center gap-2 shrink-0">
           {info &&
             (info.vip ? (
-              <span className="h-9 inline-flex items-center rounded-full bg-gold-soft px-3 text-[11px] font-extrabold text-ink">
-                👑 VIP · {info.vip_days_left} kun
+              <span className="h-9 inline-flex items-center rounded-full bg-gold-soft px-3 text-[11px] font-extrabold text-ink whitespace-nowrap">
+                {active ? `👑 ${info.vip_days_left}` : `👑 VIP · ${info.vip_days_left} kun`}
               </span>
             ) : (
               <button
@@ -419,6 +442,20 @@ export default function Tutor({ onClose }: TutorProps) {
                 👑 VIP olish
               </button>
             ))}
+          {active && canVoice && !finish && (
+            <button
+              onClick={toggleVoiceMode}
+              className={`h-9 px-2.5 rounded-full text-sm font-extrabold border ${
+                voiceMode
+                  ? "bg-terracotta text-white border-terracotta"
+                  : "bg-card text-ink-soft border-cardline"
+              }`}
+              aria-label="Faqat ovoz rejimi"
+              title="Faqat ovoz: matn yashirin, bosib gapiring"
+            >
+              🎧
+            </button>
+          )}
           {active && (
             <button
               onClick={() => setShowUz((v) => !v)}
@@ -639,7 +676,9 @@ export default function Tutor({ onClose }: TutorProps) {
                 <TutorBubble
                   key={i}
                   m={m}
-                  showUz={showUz}
+                  showUz={showUz && !(voiceOnly && !revealed.has(i))}
+                  hidden={voiceOnly && !revealed.has(i)}
+                  onReveal={() => setRevealed((r) => new Set(r).add(i))}
                   canVoice={canVoice}
                   recording={recTarget?.kind === "repeat" && recTarget.idx === i}
                   busy={!!recTarget || transcribing || loading}
@@ -680,7 +719,33 @@ export default function Tutor({ onClose }: TutorProps) {
 
           {/* Kiritish */}
           <div className="p-3 border-t border-cardline bg-card space-y-2">
-            {recTarget?.kind === "answer" ? (
+            {voiceOnly && !done && !outOfTurns ? (
+              <button
+                onPointerDown={(e) => {
+                  e.preventDefault();
+                  if (!recTarget) startRec({ kind: "answer" });
+                }}
+                onPointerUp={() => recTarget?.kind === "answer" && stopRec(recTarget)}
+                onPointerCancel={() => recTarget?.kind === "answer" && stopRec(recTarget)}
+                onPointerLeave={() => recTarget?.kind === "answer" && stopRec(recTarget)}
+                onContextMenu={(e) => e.preventDefault()}
+                disabled={loading || transcribing}
+                style={{ touchAction: "none" }}
+                className={`w-full h-16 rounded-2xl text-base font-extrabold select-none transition-transform disabled:opacity-50 ${
+                  recTarget?.kind === "answer"
+                    ? "bg-terracotta text-white scale-[1.02]"
+                    : "bg-emerald-deep text-white active:scale-[0.98]"
+                }`}
+              >
+                {recTarget?.kind === "answer"
+                  ? `● Gapiring… ${recSeconds}s — qo'yib yuboring`
+                  : transcribing
+                    ? "🎧 Eshitilmoqda…"
+                    : loading
+                      ? "Ustoz o'ylamoqda…"
+                      : "🎤 Bosib turing va gapiring"}
+              </button>
+            ) : recTarget?.kind === "answer" ? (
               <div className="flex items-center gap-3 rounded-xl bg-terracotta/10 border border-terracotta/40 px-3 py-2.5">
                 <span className="w-3 h-3 rounded-full bg-terracotta animate-pulse" />
                 <span className="flex-1 text-sm font-extrabold">
@@ -732,6 +797,11 @@ export default function Tutor({ onClose }: TutorProps) {
             <div className="flex items-center justify-between text-[11px] font-bold text-ink-soft px-0.5">
               <span>
                 {userTurns} javob · bugun qoldi: {turnsLeft}
+                {voiceOnly && (
+                  <button onClick={toggleVoiceMode} className="ml-2 underline underline-offset-4">
+                    ⌨️ yozish
+                  </button>
+                )}
               </span>
               {outOfTurns && !info?.vip ? (
                 <button
@@ -952,6 +1022,8 @@ function UserBubble({ m, mock }: { m: Msg; mock: boolean }) {
 function TutorBubble({
   m,
   showUz,
+  hidden = false,
+  onReveal,
   canVoice,
   recording,
   busy,
@@ -962,6 +1034,9 @@ function TutorBubble({
 }: {
   m: Msg;
   showUz: boolean;
+  /** Faqat ovoz rejimi: matn xiralashtirilgan — avval eshitib, keyin ochiladi */
+  hidden?: boolean;
+  onReveal?: () => void;
   canVoice: boolean;
   recording: boolean;
   busy: boolean;
@@ -982,7 +1057,7 @@ function TutorBubble({
       )}
 
       <div className="max-w-[88%] rounded-2xl px-4 py-3 bg-card border border-cardline">
-        <div className="font-arabic text-2xl leading-relaxed" dir="rtl">
+        <div className={`font-arabic text-2xl leading-relaxed ${hidden ? "blur-sm select-none" : ""}`} dir="rtl">
           {m.pron
             ? m.pron.words.map((w, i) => (
                 <span key={i} className={w.ok ? "" : "text-terracotta underline decoration-2"}>
@@ -991,7 +1066,15 @@ function TutorBubble({
               ))
             : m.ar}
         </div>
-        {m.translit && (
+        {hidden && (
+          <button
+            onClick={onReveal}
+            className="mt-1 h-8 px-2.5 rounded-lg bg-cardline text-xs font-extrabold text-ink-soft active:scale-95 transition-transform"
+          >
+            👁 Matnni ko'rsatish
+          </button>
+        )}
+        {m.translit && !hidden && (
           <div className="text-xs text-ink-soft font-semibold mt-1 italic">{m.translit}</div>
         )}
         {showUz && m.uz && <div className="text-sm font-semibold mt-1">{m.uz}</div>}

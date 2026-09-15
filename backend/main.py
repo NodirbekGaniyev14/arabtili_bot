@@ -51,6 +51,8 @@ async def _setup_commands(bot: Bot):
                 BotCommand(command="ustoz", description="🎓 AI ustoz: sarf ($), VIP, holat"),
                 BotCommand(command="payments", description="💳 Kutayotgan cheklar"),
                 BotCommand(command="vip", description="👑 VIP berish/olib tashlash"),
+                BotCommand(command="sharh", description="⭐ Fikrni sharh sifatida so'rash"),
+                BotCommand(command="sharhlar", description="⭐ Nashr etilgan sharhlar"),
                 BotCommand(command="start", description="Botni ishga tushirish"),
             ],
             scope=BotCommandScopeChat(chat_id=settings.admin_id),

@@ -57,6 +57,31 @@ export interface MeResponse {
   vip_days_left: number;
   /** Yorliqlar uchun narx: oylik va kunlik (so'm) */
   vip_price: { month: number; per_day: number };
+  /** Kunlik speaking savoli: bajarildimi, streak */
+  daily?: { done: boolean; streak: number; best: number; total: number };
+}
+
+// ── Kunlik speaking savoli (bepul) ──
+export interface DailyResult {
+  score: number;
+  xp: number;
+  voice: boolean;
+  answer: string;
+  feedback_uz: string;
+  ideal_ar: string;
+  fixed_ar: string;
+}
+
+export interface DailyInfo {
+  day: string;
+  level: string;
+  question: { id: string; ar: string; translit: string; uz: string; hint_uz: string; audio_url: string };
+  done: DailyResult | null;
+  streak: number;
+  best: number;
+  total: number;
+  ai: boolean;
+  voice: boolean;
 }
 
 export interface OnboardingPayload {
@@ -959,6 +984,12 @@ export const api = {
       method: "POST",
       body: JSON.stringify({ key }),
     }),
+  getDaily: () => request<DailyInfo>("/api/v2/tutor/daily"),
+  answerDaily: (text: string, voice: boolean) =>
+    request<{ result: DailyResult; streak: number; best: number; xp: number }>(
+      "/api/v2/tutor/daily/answer",
+      { method: "POST", body: JSON.stringify({ text, voice }) }
+    ),
   tutorSay: (text: string) =>
     request<{ audio_url: string }>("/api/v2/tutor/say", {
       method: "POST",

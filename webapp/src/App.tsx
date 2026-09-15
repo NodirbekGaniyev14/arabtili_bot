@@ -19,6 +19,7 @@ import Tutor from "./pages/Tutor";
 import Paywall from "./pages/Paywall";
 import Reference from "./pages/Reference";
 import SpeakingLog from "./pages/SpeakingLog";
+import DailyTask from "./pages/DailyTask";
 import Vocab from "./pages/Vocab";
 import LessonPlayerV2 from "./pages/v2/LessonPlayerV2";
 
@@ -57,6 +58,7 @@ export default function App() {
   const [showPaywall, setShowPaywall] = useState(() => window.location.hash === "#vip");
   const [showReference, setShowReference] = useState(false);
   const [showSpeaking, setShowSpeaking] = useState<"mistakes" | "results" | null>(null);
+  const [showDaily, setShowDaily] = useState(false);
 
   useEffect(() => {
     const tg = window.Telegram?.WebApp;
@@ -192,6 +194,8 @@ export default function App() {
             onOpenRolePlay={() => setShowRolePlay(true)}
             onOpenTutor={() => setShowTutor(true)}
             vip={me?.vip ?? false}
+            daily={me?.daily}
+            onOpenDaily={() => setShowDaily(true)}
             onOpenReference={() => setShowReference(true)}
             onOpenVocab={() => setTab("vocab")}
             onGoLessons={() => setTab("lessons")}
@@ -249,6 +253,16 @@ export default function App() {
 
       {showSpeaking && (
         <SpeakingLog initialTab={showSpeaking} onClose={() => setShowSpeaking(null)} />
+      )}
+
+      {showDaily && (
+        <DailyTask
+          onClose={() => {
+            setShowDaily(false);
+            api.getMe().then(setMe).catch(() => {});
+          }}
+          onDone={() => api.getMe().then(setMe).catch(() => {})}
+        />
       )}
 
       {showExam && (

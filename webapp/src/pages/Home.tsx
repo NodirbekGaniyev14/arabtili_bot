@@ -23,6 +23,9 @@ interface HomeProps {
   onOpenTutor: () => void;
   /** VIP tarif faolmi — AI ustoz kartasidagi yorliq */
   vip: boolean;
+  /** Kunlik speaking savoli (bepul): holat va ochish */
+  daily?: { done: boolean; streak: number };
+  onOpenDaily?: () => void;
   onOpenReference: () => void;
   onOpenVocab: () => void;
   onGoLessons: () => void;
@@ -49,6 +52,8 @@ export default function Home({
   onOpenRolePlay,
   onOpenTutor,
   vip,
+  daily,
+  onOpenDaily,
   onOpenReference,
   onOpenVocab,
   onGoLessons,
@@ -110,6 +115,37 @@ export default function Home({
           </div>
         </div>
       </section>
+
+      {/* Kunlik speaking savoli — bepul, 1 daqiqa */}
+      {onOpenDaily && (
+        <button
+          onClick={onOpenDaily}
+          className={`w-full flex items-center gap-3 rounded-2xl px-4 py-3 text-left active:scale-[0.98] transition-transform ${
+            daily?.done
+              ? "bg-card border border-cardline"
+              : "bg-gradient-to-r from-emerald-deep to-emerald-dark text-white shadow-md"
+          }`}
+        >
+          <div className="text-2xl">🎙</div>
+          <div className="min-w-0 flex-1">
+            <div className="text-[14px] font-extrabold leading-tight">
+              {daily?.done ? "Kunlik savol bajarildi ✓" : "Kunlik speaking savoli"}
+            </div>
+            <div className={`text-[11px] font-semibold ${daily?.done ? "text-ink-soft" : "text-white/80"}`}>
+              {daily?.done
+                ? "Ertaga yangi savol — streak'ni saqlang"
+                : "1 savol · ovozli javob · +5–12 XP · bepul"}
+            </div>
+          </div>
+          <span
+            className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-extrabold ${
+              daily?.done ? "bg-gold-soft text-ink" : "bg-white/15 text-white"
+            }`}
+          >
+            🔥 {daily?.streak ?? 0}
+          </span>
+        </button>
+      )}
 
       {/* Statistika */}
       <section className="grid grid-cols-3 gap-3">

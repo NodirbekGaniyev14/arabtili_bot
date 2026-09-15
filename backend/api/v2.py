@@ -15,6 +15,7 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from db.models import (
+    DailySpeaking,
     DrillResult,
     LessonRating,
     MockResult,
@@ -899,6 +900,89 @@ async def tutor_log(
         "mocks": sorted(mocks.values(), key=lambda d: -d["best"]),
         "drills": sorted(drills.values(), key=lambda d: -d["best"]),
     }
+
+
+# ─────────── Kunlik speaking savoli (K17.7) — hamma uchun bepul ───────────
+
+
+def _daily_row_dict(row) -> dict:
+    return {
+        "score": row.score,
+        "xp": row.xp,
+        "voice": bool(row.voice),
+        "answer": row.answer,
+        "feedback_uz": row.feedback,
+        "ideal_ar": row.ideal,
+        "fixed_ar": row.fixed,
+    }
+
+
+@router.get("/tutor/daily")
+async def tutor_daily(
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Bugungi savol (audio fonda), bajarilgan bo'lsa natija, streak."""
+    from config import settings
+    from services import daily, stt, tts
+
+    level = await _user_level(session, user.id)
+    q = daily.question_for(level)
+    row = await daily.today_row(session, user.id)
+    st = await daily.status(session, user.id)
+    audio_key = tts.schedule(q["ar"], level)
+    return {
+        "day": daily._today().isoformat(),
+        "level": level,
+        "question": {**q, "audio_url": f"/api/v2/tutor/audio/{audio_key}.mp3" if audio_key else ""},
+        "done": _daily_row_dict(row) if row else None,
+        "streak": st["streak"],
+        "best": st["best"],
+        "total": st["total"],
+        "ai": bool(settings.anthropic_api_key),
+        "voice": stt.available(),
+    }
+
+
+class DailyAnswerBody(BaseModel):
+    text: str = Field(min_length=1, max_length=400)
+    voice: bool = False
+
+
+@router.post("/tutor/daily/answer")
+async def tutor_daily_answer(
+    body: DailyAnswerBody,
+    request: Request,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Javobni baholaydi (Haiku, qisqa prompt), XP beradi, streak'ni yangilaydi. Kuniga bitta."""
+    from services import ai_usage, alerts, daily, tutor
+
+    if await daily.today_row(session, user.id) is not None:
+        raise HTTPException(status_code=409, detail="Bugungi savolga javob berilgan — ertaga yangi savol")
+    level = await _user_level(session, user.id)
+    q = daily.question_for(level)
+    try:
+        reply, usage = await daily.grade(level, q, body.text)
+    except tutor.TutorUnavailable as e:
+        if e.kind in ("credit", "auth"):
+            alerts.fire(getattr(request.app.state, "bot", None), e.kind)
+        raise HTTPException(status_code=503, detail=e.message_uz)
+
+    day = daily._today().isoformat()
+    xp = daily.xp_for(reply.score, body.voice)
+    row = DailySpeaking(
+        user_id=user.id, day=day, question_id=q["id"], level=level, score=reply.score,
+        voice=1 if body.voice else 0, xp=xp, answer=body.text.removeprefix("🎤").strip()[:400],
+        feedback=reply.feedback_uz[:400], ideal=reply.ideal_ar[:400], fixed=reply.fixed_ar[:400],
+    )
+    session.add(row)
+    session.add(XpLog(user_id=user.id, amount=xp, source=f"daily:{day}"))
+    ai_usage.record(session, "daily", usage, user.id)
+    await session.commit()
+    st = await daily.status(session, user.id)
+    return {"result": _daily_row_dict(row), "streak": st["streak"], "best": st["best"], "xp": xp}
 
 
 class SayBody(BaseModel):
