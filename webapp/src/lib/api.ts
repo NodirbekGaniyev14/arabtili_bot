@@ -519,6 +519,14 @@ export interface CheckpointData {
 export interface ProfileData {
   name: string;
   username: string;
+  /** Speaking daftari hisoblari (K17.5) */
+  speaking?: {
+    mistakes: number;
+    mock_attempts: number;
+    mock_best: number;
+    drill_attempts: number;
+    drill_best: number;
+  };
   level: string;
   target_level: string;
   target_date: string;
@@ -927,12 +935,36 @@ export const api = {
     fd.append("prompt", prompt);
     return upload<{ text: string }>("/api/v2/tutor/transcribe", fd);
   },
-  tutorPronounce: (audio: Blob, filename: string, target: string) => {
+  tutorPronounce: (
+    audio: Blob,
+    filename: string,
+    target: string,
+    drill?: { key: string; idx: number }
+  ) => {
     const fd = new FormData();
     fd.append("file", audio, filename);
     fd.append("target", target);
+    if (drill) {
+      fd.append("drill_key", drill.key);
+      fd.append("idx", String(drill.idx));
+    }
     return upload<TutorPronounceResult>("/api/v2/tutor/pronounce", fd);
   },
+  tutorDrill: (topic_id: string) =>
+    request<DrillStart>(`/api/v2/tutor/drill?topic_id=${encodeURIComponent(topic_id)}`),
+  tutorDrillFinish: (key: string) =>
+    request<DrillFinish>("/api/v2/tutor/drill/finish", {
+      method: "POST",
+      body: JSON.stringify({ key }),
+    }),
+  tutorSay: (text: string) =>
+    request<{ audio_url: string }>("/api/v2/tutor/say", {
+      method: "POST",
+      body: JSON.stringify({ text }),
+    }),
+  getTutorLog: () => request<TutorLog>("/api/v2/tutor/log"),
+  deleteMistake: (id: number) =>
+    request<{ ok: boolean }>(`/api/v2/tutor/mistakes/${id}`, { method: "DELETE" }),
   tutorFinish: (session_key: string) =>
     request<TutorFinishResult>("/api/v2/tutor/finish", {
       method: "POST",
@@ -1043,6 +1075,8 @@ export interface TutorTopics {
   vip_days_left: number;
   /** VIP'siz kunlik bepul javoblar */
   free_turns: number;
+  /** VIP kunlik javoblar limiti (yorliq uchun) */
+  vip_turns: number;
   price: { month: number; per_day: number };
   turns_left: number;
   daily_limit: number;
@@ -1089,6 +1123,63 @@ export interface TutorPronounceResult {
   transcript: string;
   score: number;
   words: { ar: string; ok: boolean }[];
+}
+
+// ── Talaffuz mashqi (LLM'siz, bepul) ──
+export interface DrillItem {
+  idx: number;
+  ar: string;
+  translit: string;
+  uz: string;
+  word: { ar: string; translit: string; uz: string };
+  audio_url: string;
+}
+
+export interface DrillStart {
+  key: string;
+  level: string;
+  topic_id: string;
+  items: DrillItem[];
+  voice: boolean;
+}
+
+export interface DrillFinish {
+  topic_id: string;
+  score: number;
+  count: number;
+  total: number;
+  xp: number;
+  /** har jumla uchun eng yaxshi ball, -1 = aytilmagan */
+  scores: number[];
+  items: { ar: string; uz: string }[];
+}
+
+// ── Speaking daftari ──
+export interface TutorMistakeItem {
+  id: number;
+  kind: "chat" | "mock";
+  topic: string;
+  title: string;
+  said_ar: string;
+  fixed_ar: string;
+  note_uz: string;
+  date: string;
+}
+
+export interface SpeakingHistoryItem {
+  title: string;
+  emoji: string;
+  best: number;
+  last: number;
+  attempts: number;
+  history: number[];
+  date: string;
+}
+
+export interface TutorLog {
+  mistakes: TutorMistakeItem[];
+  mocks: (SpeakingHistoryItem & { mock_id: string })[];
+  drills: (SpeakingHistoryItem & { topic_id: string })[];
 }
 
 export interface TutorFinishResult {

@@ -446,9 +446,38 @@ async def profile_route(
     if pl:
         goal = json.loads(pl.answers_json or "{}").get("goal", "")
 
+    from db.models import DrillResult, MockResult, TutorMistake
+
+    mistakes_n = (
+        await session.execute(
+            select(func.count()).select_from(TutorMistake).where(TutorMistake.user_id == user.id)
+        )
+    ).scalar_one()
+    mock_n, mock_best = (
+        await session.execute(
+            select(func.count(), func.coalesce(func.max(MockResult.score), 0)).where(
+                MockResult.user_id == user.id
+            )
+        )
+    ).one()
+    drill_n, drill_best = (
+        await session.execute(
+            select(func.count(), func.coalesce(func.max(DrillResult.score), 0)).where(
+                DrillResult.user_id == user.id
+            )
+        )
+    ).one()
+
     return {
         "name": user.name,
         "username": user.username,
+        "speaking": {
+            "mistakes": mistakes_n,
+            "mock_attempts": mock_n,
+            "mock_best": mock_best,
+            "drill_attempts": drill_n,
+            "drill_best": drill_best,
+        },
         "level": plan.level if plan else "A0",
         "target_level": plan.target_level if plan else "",
         "target_date": plan.target_date if plan else "",

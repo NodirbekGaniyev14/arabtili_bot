@@ -326,6 +326,37 @@ class PaymentRequest(Base):
     decided_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
 
 
+class TutorMistake(Base):
+    """Xatolar daftari (K17.5): ustoz tuzatgan jumla yoki past baholangan mock
+    javobi — o'quvchi keyin ko'rib, eshitib, qayta aytib mashq qiladi."""
+
+    __tablename__ = "tutor_mistakes"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    kind: Mapped[str] = mapped_column(String(8), default="chat")  # chat | mock
+    topic: Mapped[str] = mapped_column(String(24), default="")
+    said_ar: Mapped[str] = mapped_column(String(400), default="")
+    fixed_ar: Mapped[str] = mapped_column(String(400), default="")
+    note_uz: Mapped[str] = mapped_column(String(400), default="")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
+class DrillResult(Base):
+    """Talaffuz mashqi yakuni (K17.5): mavzu bo'yicha o'rtacha o'xshashlik bali."""
+
+    __tablename__ = "drill_results"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    topic: Mapped[str] = mapped_column(String(24), default="")
+    level: Mapped[str] = mapped_column(String(4), default="")
+    score: Mapped[int] = mapped_column(Integer)  # 0-100
+    count: Mapped[int] = mapped_column(Integer, default=0)  # aytilgan jumlalar
+    xp: Mapped[int] = mapped_column(Integer, default=0)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
 class AiUsage(Base):
     """Har bir Claude chaqiruvining token hisobi (services/ai_usage.py).
 

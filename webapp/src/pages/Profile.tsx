@@ -70,6 +70,7 @@ export default function Profile({
   vipDaysLeft = 0,
   vipPrice,
   onProfileChange,
+  onOpenSpeaking,
 }: {
   onOpenPlacement?: () => void;
   /** VIP tarif sahifasi (AI ustoz) */
@@ -79,6 +80,8 @@ export default function Profile({
   vipPrice?: { month: number; per_day: number };
   /** Ism o'zgargach bosh sahifadagi salomlashuv ham yangilansin */
   onProfileChange?: () => void;
+  /** Speaking daftari: xatolar / natijalar (K17.5) */
+  onOpenSpeaking?: (tab: "mistakes" | "results") => void;
 } = {}) {
   const [data, setData] = useState<ProfileData | null>(null);
   const [error, setError] = useState(false);
@@ -300,6 +303,36 @@ export default function Profile({
         </div>
         <span className="font-extrabold text-xl">›</span>
       </button>
+
+      {/* Speaking daftari */}
+      {onOpenSpeaking && (
+        <section className="grid grid-cols-2 gap-2.5">
+          <button
+            onClick={() => onOpenSpeaking("mistakes")}
+            className="rounded-2xl bg-card border border-cardline p-3.5 text-left active:scale-[0.98] transition-transform"
+          >
+            <div className="text-2xl">📒</div>
+            <div className="text-[13px] font-extrabold leading-tight mt-1">Xatolar daftari</div>
+            <div className="text-[11px] text-ink-soft font-semibold">
+              {data.speaking?.mistakes
+                ? `${data.speaking.mistakes} ta jumla · mashq qiling`
+                : "ustoz tuzatgan jumlalar"}
+            </div>
+          </button>
+          <button
+            onClick={() => onOpenSpeaking("results")}
+            className="rounded-2xl bg-card border border-cardline p-3.5 text-left active:scale-[0.98] transition-transform"
+          >
+            <div className="text-2xl">🎯</div>
+            <div className="text-[13px] font-extrabold leading-tight mt-1">Speaking natijalari</div>
+            <div className="text-[11px] text-ink-soft font-semibold">
+              {data.speaking?.mock_attempts || data.speaking?.drill_attempts
+                ? `mock ${data.speaking.mock_best}% · talaffuz ${data.speaking.drill_best}%`
+                : "mock va talaffuz tarixi"}
+            </div>
+          </button>
+        </section>
+      )}
 
       {/* Statistika */}
       <section className="grid grid-cols-2 gap-3">

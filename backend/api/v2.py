@@ -14,7 +14,17 @@ from pydantic import BaseModel, Field
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.models import LessonRating, MockResult, Plan, Progress, TutorTurn, User, XpLog
+from db.models import (
+    DrillResult,
+    LessonRating,
+    MockResult,
+    Plan,
+    Progress,
+    TutorMistake,
+    TutorTurn,
+    User,
+    XpLog,
+)
 from db.session import get_session
 from services.achievements import check_and_award
 from services.curriculum import (
@@ -412,6 +422,7 @@ async def tutor_topics(
         ],
         **{k: v for k, v in access.items() if k != "used"},
         "free_turns": settings.tutor_free_turns,
+        "vip_turns": settings.tutor_daily_turns,
         "price": billing.price_summary(),
         "ai": bool(settings.anthropic_api_key),
         "voice": stt.available(),
@@ -488,6 +499,8 @@ async def tutor_turn(
         raise HTTPException(status_code=503, detail=e.message_uz)
 
     ai_usage.record(session, "mock" if body.mode == "mock" else "tutor", usage, user.id)
+    if learner_answered:
+        await _note_mistake(session, user.id, body, reply, score)
     # O'quvchi javob bergan turn (ochilish emas) — limit va statistika uchun
     session.add(
         TutorTurn(
@@ -513,6 +526,46 @@ async def tutor_turn(
         "vip": access["vip"],
         "usage": usage,
     }
+
+
+MISTAKE_KEEP = 300  # har o'quvchi uchun daftarda saqlanadigan eng ko'p yozuv
+MOCK_MISTAKE_BELOW = 70  # mock javobi shundan past bo'lsa daftarga tushadi
+
+
+async def _note_mistake(session: AsyncSession, user_id: int, body, reply, score: int) -> None:
+    """Xatolar daftari: ustoz tuzatgan jumla (chat) yoki past mock javobi.
+    O'quvchi keyin ko'rib, eshitib, qayta aytib mashq qiladi (/tutor/log)."""
+    said = str(body.history[-1].get("content", "")).removeprefix("🎤").strip()[:400]
+    if not said:
+        return
+    if body.mode == "mock":
+        if not (0 <= score < MOCK_MISTAKE_BELOW) or not getattr(reply, "ideal_ar", ""):
+            return
+        row = TutorMistake(
+            user_id=user_id, kind="mock", topic=body.mock_id[:24], said_ar=said,
+            fixed_ar=reply.ideal_ar[:400], note_uz=(reply.feedback_uz or "")[:400],
+        )
+    else:
+        if reply.correction_ok or not reply.fixed_ar:
+            return
+        row = TutorMistake(
+            user_id=user_id, kind="chat", topic=body.topic_id[:24], said_ar=said,
+            fixed_ar=reply.fixed_ar[:400], note_uz=(reply.note_uz or "")[:400],
+        )
+    session.add(row)
+    # Daftar cheksiz o'smasin — eng eskilari o'chadi
+    ids = (
+        await session.execute(
+            select(TutorMistake.id)
+            .where(TutorMistake.user_id == user_id)
+            .order_by(TutorMistake.id.desc())
+            .offset(MISTAKE_KEEP)  # yangi qator autoflush bilan hisobda
+        )
+    ).scalars().all()
+    for mid in ids:
+        old = await session.get(TutorMistake, mid)
+        if old is not None:
+            await session.delete(old)
 
 
 @router.get("/tutor/audio/{key}.mp3")
@@ -543,6 +596,20 @@ async def _read_audio(file: UploadFile) -> bytes:
     if len(data) > MAX_AUDIO_BYTES:
         raise HTTPException(status_code=413, detail="Audio juda uzun (maks. 20 soniya)")
     return data
+
+
+STT_DAILY_CAP = 200  # har o'quvchi kuniga shuncha ovoz yozuvi — Groq bepul limiti himoyasi
+_stt_used: dict[int, tuple[str, int]] = {}
+
+
+def _stt_quota(user_id: int) -> None:
+    day = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    d, n = _stt_used.get(user_id, (day, 0))
+    if d != day:
+        n = 0
+    if n >= STT_DAILY_CAP:
+        raise HTTPException(status_code=429, detail="Bugungi ovoz limiti tugadi — ertaga davom eting")
+    _stt_used[user_id] = (day, n + 1)
 
 
 def _stt_failed(request: Request) -> None:
@@ -576,6 +643,7 @@ async def tutor_transcribe(
     if not stt.available():
         raise HTTPException(status_code=503, detail="Ovoz xizmati sozlanmagan")
     data = await _read_audio(file)
+    _stt_quota(user.id)
     text = await stt.transcribe(
         data, file.filename or "speech.webm", file.content_type or "audio/webm", prompt[:300]
     )
@@ -588,22 +656,244 @@ async def tutor_transcribe(
 async def tutor_pronounce(
     request: Request,
     file: UploadFile = File(...),
-    target: str = Form(..., max_length=400),
+    target: str = Form("", max_length=400),
+    drill_key: str = Form("", max_length=32),
+    idx: int = Form(-1),
     user: User = Depends(get_current_user),
 ):
-    """Takrorlash mashqi: o'quvchi ustoz jumlasini aytadi → o'xshashlik bali.
-    Whisper'ga maqsad matn BERILMAYDI — aks holda «eshitgandek» yozib qo'yadi."""
-    from services import stt, tutor
+    """Takrorlash mashqi: o'quvchi jumlani aytadi → o'xshashlik bali.
+    Whisper'ga maqsad matn BERILMAYDI — aks holda «eshitgandek» yozib qo'yadi.
+    Talaffuz mashqida (drill_key+idx) maqsadni server o'zi biladi."""
+    from services import drill, stt, tutor
 
     if not stt.available():
         raise HTTPException(status_code=503, detail="Ovoz xizmati sozlanmagan")
+    if drill_key:
+        target = drill.target(drill_key, user.id, idx)
+        if not target:
+            raise HTTPException(status_code=404, detail="Mashq topilmadi — qaytadan boshlang")
+    if not target.strip():
+        raise HTTPException(status_code=422, detail="Maqsad jumla yo'q")
     data = await _read_audio(file)
+    _stt_quota(user.id)
     heard = await stt.transcribe(
         data, file.filename or "speech.webm", file.content_type or "audio/webm"
     )
     if not heard:
         _stt_failed(request)
-    return {"transcript": heard, **tutor.pronunciation_score(target, heard)}
+    result = tutor.pronunciation_score(target, heard)
+    if drill_key:
+        drill.record(drill_key, user.id, idx, result["score"])
+    return {"transcript": heard, **result}
+
+
+# ─────────── Talaffuz mashqi (K17.5) — LLM'siz, bepul ───────────
+
+
+@router.get("/tutor/drill")
+async def tutor_drill(
+    topic_id: str = "erkin",
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Mavzu bo'yicha 10 ta jumla (audio fonda tayyorlanadi). VIP shart emas."""
+    from services import drill, stt, tts
+
+    level = await _user_level(session, user.id)
+    key, items = drill.create(user.id, level, topic_id[:24])
+    out = []
+    for i, it in enumerate(items):
+        audio_key = tts.schedule(it["ar"], level)
+        out.append(
+            {
+                "idx": i,
+                **it,
+                "audio_url": f"/api/v2/tutor/audio/{audio_key}.mp3" if audio_key else "",
+            }
+        )
+    return {
+        "key": key,
+        "level": level,
+        "topic_id": topic_id if topic_id in drill.TOPIC_BY_ID else "erkin",
+        "items": out,
+        "voice": stt.available(),
+    }
+
+
+class DrillFinishBody(BaseModel):
+    key: str = Field(min_length=8, max_length=32)
+
+
+@router.post("/tutor/drill/finish")
+async def tutor_drill_finish(
+    body: DrillFinishBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Mashq yakuni: o'rtacha ball, XP (kamida 5 jumla; bir mavzu kuniga bir marta)."""
+    from services import drill
+
+    s = drill.summary(body.key, user.id)
+    if s is None:
+        raise HTTPException(status_code=404, detail="Mashq topilmadi")
+    xp = drill.xp_for(s["score"], s["count"])
+    if xp > 0:
+        today = datetime.now(timezone.utc).replace(
+            hour=0, minute=0, second=0, microsecond=0, tzinfo=None
+        )
+        earned = (
+            await session.execute(
+                select(DrillResult.id)
+                .where(
+                    DrillResult.user_id == user.id,
+                    DrillResult.topic == s["topic"],
+                    DrillResult.xp > 0,
+                    DrillResult.created_at >= today,
+                )
+                .limit(1)
+            )
+        ).scalar_one_or_none()
+        if earned is not None:
+            xp = 0
+    if s["count"] > 0:
+        session.add(
+            DrillResult(
+                user_id=user.id, topic=s["topic"], level=s["level"],
+                score=s["score"], count=s["count"], xp=xp,
+            )
+        )
+        if xp > 0:
+            session.add(XpLog(user_id=user.id, amount=xp, source=f"drill:{body.key}"))
+        await session.commit()
+    drill.finish(body.key, user.id)
+    return {
+        "topic_id": s["topic"],
+        "score": s["score"],
+        "count": s["count"],
+        "total": len(s["items"]),
+        "xp": xp,
+        "scores": s["scores"],
+        "items": [{"ar": it["ar"], "uz": it["uz"]} for it in s["items"]],
+    }
+
+
+@router.get("/tutor/log")
+async def tutor_log(
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Speaking daftari: xatolar (tuzatishlar), mock va talaffuz natijalari tarixi."""
+    from services import tutor
+
+    rows = (
+        await session.execute(
+            select(TutorMistake)
+            .where(TutorMistake.user_id == user.id)
+            .order_by(TutorMistake.id.desc())
+            .limit(100)
+        )
+    ).scalars().all()
+    mistakes = [
+        {
+            "id": m.id,
+            "kind": m.kind,
+            "topic": m.topic,
+            "title": (
+                (tutor.MOCK_BY_ID.get(m.topic) or tutor.TOPIC_BY_ID.get(m.topic) or {}).get("title_uz", "")
+            ),
+            "said_ar": m.said_ar,
+            "fixed_ar": m.fixed_ar,
+            "note_uz": m.note_uz,
+            "date": m.created_at.strftime("%d.%m"),
+        }
+        for m in rows
+    ]
+
+    mock_rows = (
+        await session.execute(
+            select(MockResult.mock_id, MockResult.score, MockResult.created_at)
+            .where(MockResult.user_id == user.id)
+            .order_by(MockResult.id.asc())
+        )
+    ).all()
+    mocks: dict[str, dict] = {}
+    for mock_id, score, created in mock_rows:
+        m = tutor.MOCK_BY_ID.get(mock_id) or {}
+        d = mocks.setdefault(
+            mock_id,
+            {
+                "mock_id": mock_id, "title": m.get("title_uz", mock_id), "emoji": m.get("emoji", "🎯"),
+                "best": 0, "last": 0, "attempts": 0, "history": [], "date": "",
+            },
+        )
+        d["attempts"] += 1
+        d["best"] = max(d["best"], score)
+        d["last"] = score
+        d["date"] = created.strftime("%d.%m")
+        d["history"] = (d["history"] + [score])[-6:]
+
+    drill_rows = (
+        await session.execute(
+            select(DrillResult.topic, DrillResult.score, DrillResult.created_at)
+            .where(DrillResult.user_id == user.id)
+            .order_by(DrillResult.id.asc())
+        )
+    ).all()
+    drills: dict[str, dict] = {}
+    for topic_id, score, created in drill_rows:
+        t = tutor.TOPIC_BY_ID.get(topic_id) or {}
+        d = drills.setdefault(
+            topic_id,
+            {
+                "topic_id": topic_id, "title": t.get("title_uz", topic_id), "emoji": t.get("emoji", "🎤"),
+                "best": 0, "last": 0, "attempts": 0, "history": [], "date": "",
+            },
+        )
+        d["attempts"] += 1
+        d["best"] = max(d["best"], score)
+        d["last"] = score
+        d["date"] = created.strftime("%d.%m")
+        d["history"] = (d["history"] + [score])[-6:]
+
+    return {
+        "mistakes": mistakes,
+        "mocks": sorted(mocks.values(), key=lambda d: -d["best"]),
+        "drills": sorted(drills.values(), key=lambda d: -d["best"]),
+    }
+
+
+class SayBody(BaseModel):
+    text: str = Field(min_length=1, max_length=400)
+
+
+@router.post("/tutor/say")
+async def tutor_say(
+    body: SayBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Ixtiyoriy arabcha matn uchun mp3 (xatolar daftari: to'g'ri jumlani eshitish).
+    Matn xeshi bilan keshlanadi — bir xil jumla bir marta sintez qilinadi."""
+    from services import tts
+
+    level = await _user_level(session, user.id)
+    key = tts.schedule(body.text.strip(), level)
+    return {"audio_url": f"/api/v2/tutor/audio/{key}.mp3" if key else ""}
+
+
+@router.delete("/tutor/mistakes/{mistake_id}")
+async def tutor_mistake_delete(
+    mistake_id: int,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """«O'rgandim» — daftardan o'chirish."""
+    row = await session.get(TutorMistake, mistake_id)
+    if row is None or row.user_id != user.id:
+        raise HTTPException(status_code=404, detail="Topilmadi")
+    await session.delete(row)
+    await session.commit()
+    return {"ok": True}
 
 
 class TutorFinishBody(BaseModel):

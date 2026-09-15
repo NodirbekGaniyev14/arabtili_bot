@@ -10,6 +10,7 @@ import {
 } from "../lib/api";
 import { playUrl, speakText } from "../lib/audio";
 import { MAX_SECONDS, Recorder, micSupported } from "../lib/recorder";
+import Drill from "./Drill";
 import Paywall from "./Paywall";
 
 /** AI ustoz — darajaga mos jonli suhbat (speaking) va mock imtihonlar.
@@ -20,6 +21,7 @@ import Paywall from "./Paywall";
  *  Mock: kasb bo'yicha 5 savol, har javob 0-100 baholanadi, o'rtacha ball
  *  profil XP'siga qo'shiladi.
  *  VIP: bepul rejimda kuniga 3 javob, keyin Paywall.
+ *  Talaffuz: AI'siz bepul mashq — lug'at jumlalari, STT + o'xshashlik bali (Drill.tsx).
  */
 
 interface TutorProps {
@@ -54,7 +56,7 @@ interface Msg {
 }
 
 type RecTarget = { kind: "answer" } | { kind: "repeat"; idx: number };
-type Tab = "chat" | "mock";
+type Tab = "chat" | "mock" | "drill";
 
 const tg = () => window.Telegram?.WebApp;
 
@@ -79,6 +81,7 @@ export default function Tutor({ onClose }: TutorProps) {
   const [tab, setTab] = useState<Tab>("chat");
   const [topic, setTopic] = useState<TutorTopic | null>(null);
   const [mock, setMock] = useState<TutorMock | null>(null);
+  const [drillTopic, setDrillTopic] = useState<TutorTopic | null>(null);
   const [sessionKey, setSessionKey] = useState("");
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
@@ -380,11 +383,13 @@ export default function Tutor({ onClose }: TutorProps) {
             🤖 AI USTOZ{info ? ` · ${info.level}` : ""}
           </div>
           <div className="font-extrabold truncate">
-            {mock
-              ? `${mock.emoji} ${mock.title_uz}`
-              : topic
-                ? `${topic.emoji} ${topic.title_uz}`
-                : "Jonli suhbat"}
+            {drillTopic
+              ? `🎤 ${drillTopic.title_uz}`
+              : mock
+                ? `${mock.emoji} ${mock.title_uz}`
+                : topic
+                  ? `${topic.emoji} ${topic.title_uz}`
+                  : "Jonli suhbat"}
           </div>
         </div>
         <div className="flex items-center gap-2 shrink-0">
@@ -415,7 +420,9 @@ export default function Tutor({ onClose }: TutorProps) {
             </button>
           )}
           <button
-            onClick={() => (active && !finish ? backToList() : onClose())}
+            onClick={() =>
+              drillTopic ? setDrillTopic(null) : active && !finish ? backToList() : onClose()
+            }
             className="w-9 h-9 rounded-full bg-cardline text-ink-soft font-extrabold"
           >
             ✕
@@ -423,19 +430,30 @@ export default function Tutor({ onClose }: TutorProps) {
         </div>
       </div>
 
+      {/* Talaffuz mashqi (AI'siz) */}
+      {drillTopic && info && (
+        <Drill
+          topic={drillTopic}
+          level={info.level}
+          canVoice={canVoice}
+          onClose={() => setDrillTopic(null)}
+          onFinished={loadInfo}
+        />
+      )}
+
       {/* Mavzu / mock tanlash */}
-      {!active && (
+      {!active && !drillTopic && (
         <div className="flex-1 overflow-y-auto p-4 space-y-3">
-          <div className="grid grid-cols-2 gap-2 rounded-2xl bg-cardline/60 p-1">
-            {(["chat", "mock"] as Tab[]).map((t) => (
+          <div className="grid grid-cols-3 gap-1 rounded-2xl bg-cardline/60 p-1">
+            {(["chat", "mock", "drill"] as Tab[]).map((t) => (
               <button
                 key={t}
                 onClick={() => setTab(t)}
-                className={`rounded-xl py-2 text-[13px] font-extrabold transition-colors ${
+                className={`rounded-xl py-2 text-[12px] font-extrabold transition-colors ${
                   tab === t ? "bg-card shadow-sm" : "text-ink-soft"
                 }`}
               >
-                {t === "chat" ? "💬 Suhbat" : "🎯 Mock imtihon"}
+                {t === "chat" ? "💬 Suhbat" : t === "mock" ? "🎯 Mock" : "🎤 Talaffuz"}
               </button>
             ))}
           </div>
@@ -443,10 +461,23 @@ export default function Tutor({ onClose }: TutorProps) {
           <p className="text-sm text-ink-soft font-semibold">
             {tab === "chat"
               ? "Ustoz sizning darajangizda gaplashadi, xatolaringizni yumshoq tuzatadi. Arabcha yozing yoki 🎤 gapiring. Tushunmasangiz — o'zbekcha so'rang, tushuntiradi."
-              : "Kasb yoki soha bo'yicha 5 savollik og'zaki imtihon. Har javob 0–100 baholanadi, o'rtacha ball profil ballaringizga qo'shiladi."}
+              : tab === "mock"
+                ? "Kasb yoki soha bo'yicha 5 savollik og'zaki imtihon. Har javob 0–100 baholanadi, o'rtacha ball profil ballaringizga qo'shiladi."
+                : "Mavzu bo'yicha 10 ta jumla: eshiting, ayting — talaffuzingiz baholanadi, aytilmagan so'zlar ko'rsatiladi. Bepul, cheklovsiz."}
           </p>
 
-          {info && (
+          {tab === "drill" && info && (
+            <div className="flex items-center justify-between rounded-2xl bg-card border border-cardline px-4 py-2.5 text-xs font-bold">
+              <span className="text-ink-soft">
+                🆓 Bepul · daraja <span className="text-ink">{info.level}</span> · XP: 5+ jumla
+              </span>
+              <span className="text-ink-soft">
+                {info.voice && canVoice ? "🎤 tayyor" : "⚠️ mikrofon yo'q"}
+              </span>
+            </div>
+          )}
+
+          {tab !== "drill" && info && (
             <div className="flex items-center justify-between rounded-2xl bg-card border border-cardline px-4 py-2.5 text-xs font-bold">
               <span className="text-ink-soft">
                 Bugun qoldi: <span className="text-ink">{turnsLeft}</span>/{info.daily_limit}{" "}
@@ -458,7 +489,7 @@ export default function Tutor({ onClose }: TutorProps) {
             </div>
           )}
 
-          {info && !info.vip && (
+          {info && !info.vip && tab !== "drill" && (
             <button
               onClick={() => setPaywall("")}
               className="w-full text-left rounded-3xl bg-gradient-to-br from-emerald-deep to-emerald-dark p-4 text-white shadow-lg active:scale-[0.98] transition-transform"
@@ -469,7 +500,7 @@ export default function Tutor({ onClose }: TutorProps) {
               <div className="text-[15px] font-extrabold mt-0.5">
                 {outOfTurns
                   ? "Bugungi bepul javoblar tugadi"
-                  : `Bepulda kuniga ${info.free_turns} javob — VIP'da 40`}
+                  : `Bepulda kuniga ${info.free_turns} javob — VIP'da ${info.vip_turns}`}
               </div>
               <div className="text-[12px] text-white/80 font-semibold">
                 Suhbat, speaking, mock imtihonlar · oyiga {fmtSum(info.price.month)} so'm
@@ -480,7 +511,7 @@ export default function Tutor({ onClose }: TutorProps) {
             </button>
           )}
 
-          {info && !info.ai && (
+          {info && !info.ai && tab !== "drill" && (
             <div className="rounded-2xl bg-gold-soft border border-gold/30 p-4 text-sm font-semibold">
               AI ustoz hozircha o'chiq (server sozlanmoqda). Birozdan keyin qayta kiring.
             </div>
@@ -504,6 +535,19 @@ export default function Tutor({ onClose }: TutorProps) {
                 badge={t.recommended ? "" : `${t.min_level}+`}
                 disabled={!info.ai || loading}
                 onClick={() => start(t, null)}
+              />
+            ))}
+
+          {tab === "drill" &&
+            info?.topics.map((t) => (
+              <ListCard
+                key={t.id}
+                emoji={t.emoji}
+                title={t.title_uz}
+                desc={`10 jumla · ${t.desc_uz}`}
+                badge={t.recommended ? "" : `${t.min_level}+`}
+                disabled={loading}
+                onClick={() => setDrillTopic(t)}
               />
             ))}
 

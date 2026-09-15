@@ -18,6 +18,7 @@ import RolePlay from "./pages/RolePlay";
 import Tutor from "./pages/Tutor";
 import Paywall from "./pages/Paywall";
 import Reference from "./pages/Reference";
+import SpeakingLog from "./pages/SpeakingLog";
 import Vocab from "./pages/Vocab";
 import LessonPlayerV2 from "./pages/v2/LessonPlayerV2";
 
@@ -55,6 +56,7 @@ export default function App() {
   // Bot eslatmasidagi tugma (#vip) — ilova to'g'ridan-to'g'ri VIP sahifasida ochiladi
   const [showPaywall, setShowPaywall] = useState(() => window.location.hash === "#vip");
   const [showReference, setShowReference] = useState(false);
+  const [showSpeaking, setShowSpeaking] = useState<"mistakes" | "results" | null>(null);
 
   useEffect(() => {
     const tg = window.Telegram?.WebApp;
@@ -213,6 +215,7 @@ export default function App() {
             vipDaysLeft={me?.vip_days_left ?? 0}
             vipPrice={me?.vip_price}
             onProfileChange={refreshMe}
+            onOpenSpeaking={setShowSpeaking}
           />
         )}
       </main>
@@ -243,6 +246,10 @@ export default function App() {
       )}
 
       {showReference && <Reference onClose={() => setShowReference(false)} />}
+
+      {showSpeaking && (
+        <SpeakingLog initialTab={showSpeaking} onClose={() => setShowSpeaking(null)} />
+      )}
 
       {showExam && (
         <Exam
