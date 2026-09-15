@@ -117,10 +117,10 @@ def _fallback_plan(answers: dict, test: dict) -> GeneratedPlan:
     )
 
 
-async def generate_plan(answers: dict, test: dict) -> tuple[GeneratedPlan, bool]:
-    """Rejani Claude bilan tuzadi. Qaytaradi: (reja, ai_ishladimi)."""
+async def generate_plan(answers: dict, test: dict) -> tuple[GeneratedPlan, bool, dict]:
+    """Rejani Claude bilan tuzadi. Qaytaradi: (reja, ai_ishladimi, token sarfi)."""
     if not settings.anthropic_api_key:
-        return _fallback_plan(answers, test), False
+        return _fallback_plan(answers, test), False, {}
 
     client = AsyncAnthropic(api_key=settings.anthropic_api_key)
     user_payload = {
@@ -143,15 +143,18 @@ async def generate_plan(answers: dict, test: dict) -> tuple[GeneratedPlan, bool]
             ],
             output_format=GeneratedPlan,
         )
+        from services.ai_usage import usage_of
+
+        usage = usage_of(response)
         plan = response.parsed_output
         if plan is None:
-            return _fallback_plan(answers, test), False
+            return _fallback_plan(answers, test), False, usage
 
         # AI faqat mavjud modullarni tanlaganini kafolatlaymiz
         plan.module_order = [m for m in plan.module_order if m in MODULES] or list(
             MODULES.keys()
         )
-        return plan, True
+        return plan, True, usage
     except Exception as e:
         print(f"AI reja xatosi, fallback ishlatildi: {e!r}")
-        return _fallback_plan(answers, test), False
+        return _fallback_plan(answers, test), False, {}

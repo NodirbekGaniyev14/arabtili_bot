@@ -322,6 +322,25 @@ class PaymentRequest(Base):
     decided_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
 
 
+class AiUsage(Base):
+    """Har bir Claude chaqiruvining token hisobi (services/ai_usage.py).
+
+    Admin `/ustoz` buyrug'i shu yerdan kunlik/oylik $ sarfini hisoblaydi —
+    kredit qachon tugashini oldindan ko'rish uchun. Matn saqlanmaydi.
+    """
+
+    __tablename__ = "ai_usage"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int | None] = mapped_column(ForeignKey("users.id"), nullable=True, index=True)
+    feature: Mapped[str] = mapped_column(String(12))  # tutor|mock|roleplay|writing|onboarding
+    tokens_in: Mapped[int] = mapped_column(Integer, default=0)
+    tokens_out: Mapped[int] = mapped_column(Integer, default=0)
+    cache_read: Mapped[int] = mapped_column(Integer, default=0)
+    cache_write: Mapped[int] = mapped_column(Integer, default=0)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
 class Plan(Base):
     """AI tuzgan shaxsiy o'quv reja."""
 

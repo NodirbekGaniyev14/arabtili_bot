@@ -129,7 +129,9 @@ async def reply(scenario_id: str, history: list[dict]) -> dict:
             if "[UZ]" in text:
                 ar, uz = text.split("[UZ]", 1)
                 ar, uz = ar.strip(), uz.strip()
-            return {"ar": ar, "uz": uz, "ai": True, "done": done}
+            from services.ai_usage import usage_of
+
+            return {"ar": ar, "uz": uz, "ai": True, "done": done, "usage": usage_of(resp)}
         except Exception:
             pass  # kredit/xato — skriptga tushamiz
 

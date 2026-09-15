@@ -678,7 +678,11 @@ async def onboarding(
         )
     )
 
-    generated, ai_used = await generate_plan(answers, body.test)
+    generated, ai_used, usage = await generate_plan(answers, body.test)
+    if usage:
+        from services import ai_usage
+
+        ai_usage.record(session, "onboarding", usage, user.id)
 
     plan = Plan(
         user_id=user.id,

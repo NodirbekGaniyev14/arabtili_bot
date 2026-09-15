@@ -8,7 +8,7 @@ import random
 import re
 from datetime import datetime, timezone
 
-from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
+from fastapi import APIRouter, Depends, File, Form, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 from sqlalchemy import func, select
@@ -258,8 +258,9 @@ class RoleplayBody(BaseModel):
 async def roleplay_reply(
     body: RoleplayBody,
     user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
 ):
-    from services import roleplay
+    from services import ai_usage, roleplay
 
     if not body.history:
         op = roleplay.opening(body.scenario_id)
@@ -267,7 +268,12 @@ async def roleplay_reply(
             raise HTTPException(status_code=404, detail="Vaziyat topilmadi")
         return op
     # Faqat oxirgi 12 xabar (kontekstni cheklaymiz)
-    return await roleplay.reply(body.scenario_id, body.history[-12:])
+    out = await roleplay.reply(body.scenario_id, body.history[-12:])
+    usage = out.pop("usage", None)
+    if usage:
+        ai_usage.record(session, "roleplay", usage, user.id)
+        await session.commit()
+    return out
 
 
 # ─────────────────── AI yozish bahosi (zaxirali) ───────────────────
@@ -288,8 +294,10 @@ FALLBACK_FEEDBACK = (
 async def eval_writing(
     body: WritingEvalBody,
     user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
 ):
     from config import settings
+    from services import ai_usage
 
     lesson = load_lesson_v2(body.lesson_id) or {}
     task = (lesson.get("skills") or {}).get("writing", {}).get("task_uz", "")
@@ -321,6 +329,8 @@ async def eval_writing(
         feedback = next(
             (b.text for b in resp.content if b.type == "text"), FALLBACK_FEEDBACK
         )
+        ai_usage.record(session, "writing", ai_usage.usage_of(resp), user.id)
+        await session.commit()
         return {"ai": True, "feedback_uz": feedback}
     except Exception:
         return {"ai": False, "feedback_uz": FALLBACK_FEEDBACK}
@@ -421,11 +431,12 @@ class TutorTurnBody(BaseModel):
 @router.post("/tutor/turn")
 async def tutor_turn(
     body: TutorTurnBody,
+    request: Request,
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
     from config import settings
-    from services import tts, tutor
+    from services import ai_usage, alerts, tts, tutor
 
     if not settings.anthropic_api_key:
         raise HTTPException(status_code=503, detail="AI ustoz hozircha o'chiq")
@@ -470,9 +481,13 @@ async def tutor_turn(
             ok = reply.correction_ok if learner_answered else True
             score = -1
     except tutor.TutorUnavailable as e:
-        # Turn hisobga olinmaydi — o'quvchi limiti kuymaydi
+        # Turn hisobga olinmaydi — o'quvchi limiti kuymaydi. Kredit/kalit
+        # muammosi — admin Telegram'da darhol biladi (kuniga bir marta)
+        if e.kind in ("credit", "auth"):
+            alerts.fire(getattr(request.app.state, "bot", None), e.kind)
         raise HTTPException(status_code=503, detail=e.message_uz)
 
+    ai_usage.record(session, "mock" if body.mode == "mock" else "tutor", usage, user.id)
     # O'quvchi javob bergan turn (ochilish emas) — limit va statistika uchun
     session.add(
         TutorTurn(
@@ -530,8 +545,27 @@ async def _read_audio(file: UploadFile) -> bytes:
     return data
 
 
+def _stt_failed(request: Request) -> None:
+    """STT xizmat xatosi (kalit/tarmoq) — o'quvchiga 503, adminga ogohlantirish.
+    Oddiy «tushunilmadi» (bo'sh matn, 200) va yaroqsiz audio (400) bu yerga kirmaydi."""
+    from services import alerts, stt
+
+    err = stt.last_error
+    if not err or err == "http:400":
+        return
+    bot = getattr(request.app.state, "bot", None)
+    if err == "auth":
+        alerts.fire(bot, "stt_auth")
+    else:
+        alerts.fire(bot, "stt_down", err)
+    raise HTTPException(
+        status_code=503, detail="Ovoz xizmati vaqtincha ishlamayapti — admin xabardor."
+    )
+
+
 @router.post("/tutor/transcribe")
 async def tutor_transcribe(
+    request: Request,
     file: UploadFile = File(...),
     prompt: str = Form(""),
     user: User = Depends(get_current_user),
@@ -545,11 +579,14 @@ async def tutor_transcribe(
     text = await stt.transcribe(
         data, file.filename or "speech.webm", file.content_type or "audio/webm", prompt[:300]
     )
+    if not text:
+        _stt_failed(request)
     return {"text": text}
 
 
 @router.post("/tutor/pronounce")
 async def tutor_pronounce(
+    request: Request,
     file: UploadFile = File(...),
     target: str = Form(..., max_length=400),
     user: User = Depends(get_current_user),
@@ -564,6 +601,8 @@ async def tutor_pronounce(
     heard = await stt.transcribe(
         data, file.filename or "speech.webm", file.content_type or "audio/webm"
     )
+    if not heard:
+        _stt_failed(request)
     return {"transcript": heard, **tutor.pronunciation_score(target, heard)}
 
 

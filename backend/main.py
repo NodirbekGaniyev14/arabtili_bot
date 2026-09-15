@@ -48,6 +48,7 @@ async def _setup_commands(bot: Bot):
                 BotCommand(command="user", description="👤 Foydalanuvchi ma'lumoti"),
                 BotCommand(command="broadcast", description="📤 Hammaga xabar"),
                 BotCommand(command="taklif", description="👥 Taklif kampaniyasi"),
+                BotCommand(command="ustoz", description="🎓 AI ustoz: sarf ($), VIP, holat"),
                 BotCommand(command="payments", description="💳 Kutayotgan cheklar"),
                 BotCommand(command="vip", description="👑 VIP berish/olib tashlash"),
                 BotCommand(command="start", description="Botni ishga tushirish"),

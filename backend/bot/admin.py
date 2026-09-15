@@ -322,6 +322,16 @@ async def cb_payment(cb: CallbackQuery, bot: Bot):
     await cb.answer(result)
 
 
+@router.message(Command("ustoz", "tutor_stats"))
+async def cmd_ustoz(message: Message):
+    """AI ustoz: Anthropic sarfi ($), foydalanish, VIP, xizmatlar holati."""
+    if not _is_admin(message):
+        return
+    async with SessionLocal() as session:
+        text = await admin.tutor_report(session)
+    await message.answer(text, parse_mode="HTML")
+
+
 @router.message(Command("payments"))
 async def cmd_payments(message: Message):
     """Tekshirilmagan cheklar ro'yxati."""

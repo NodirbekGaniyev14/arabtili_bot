@@ -10,11 +10,15 @@ from db.models import (
     ExamAttempt,
     Feedback,
     LessonRating,
+    MockResult,
+    PaymentRequest,
     Plan,
     Progress,
+    TutorTurn,
     User,
     UserWord,
     XpLog,
+    utcnow,
 )
 from services.stats import TASHKENT_OFFSET, _local_date, _today
 
@@ -487,3 +491,155 @@ async def all_real_tg_ids(session: AsyncSession) -> list[int]:
             )
         ).scalars()
     )
+
+
+# ─────────────────── AI ustoz — sarf va holat (K17.3) ───────────────────
+
+
+def _usd(x: float) -> str:
+    return f"${x:.2f}" if x >= 0.01 or x == 0 else f"${x:.4f}"
+
+
+async def tutor_report(session: AsyncSession) -> str:
+    """`/ustoz` — Anthropic sarfi ($), foydalanish, VIP holati, ogohlantirishlar.
+
+    Maqsad: kredit qachon tugashini oldindan ko'rish va VIP daromad/xarajat
+    nisbatini bir qarashda bilish."""
+    from config import settings
+    from services import ai_usage, alerts, stt
+
+    today = _today()
+    now = utcnow()
+    today_start = _day_start_utc(today)
+    week_start = _day_start_utc(today - timedelta(days=6))
+    month_start = _day_start_utc(today - timedelta(days=29))
+    cal_month_start = _day_start_utc(today.replace(day=1))
+
+    async def scalar(q):
+        return (await session.execute(q)).scalar_one()
+
+    # ── Anthropic sarfi ──
+    u_today = await ai_usage.summary(session, today_start)
+    u_week = await ai_usage.summary(session, week_start)
+    u_month = await ai_usage.summary(session, month_start)
+    u_all = await ai_usage.summary(session)
+    per_call = u_month["cost"] / u_month["calls"] if u_month["calls"] else 0.0
+    daily_avg = u_week["cost"] / 7
+    by_feature = " · ".join(
+        f"{ai_usage.FEATURES.get(f, f)} {v['calls']} ({_usd(v['cost'])})"
+        for f, v in sorted(u_month["by"].items(), key=lambda kv: -kv[1]["cost"])
+    ) or "—"
+    tok = u_month["usage"]
+    cache_share = (
+        round(tok["cache_read"] / (tok["in"] + tok["cache_read"] + tok["cache_write"]) * 100)
+        if (tok["in"] + tok["cache_read"] + tok["cache_write"])
+        else 0
+    )
+
+    # ── Foydalanish (tutor_turns) ──
+    async def turns(since):
+        rows = (
+            await session.execute(
+                select(
+                    TutorTurn.mode,
+                    func.count(),
+                    func.coalesce(func.sum(TutorTurn.voice), 0),
+                )
+                .where(TutorTurn.created_at >= since)
+                .group_by(TutorTurn.mode)
+            )
+        ).all()
+        d = {"chat": 0, "mock": 0, "voice": 0}
+        total = 0
+        for mode, n, voice in rows:
+            d[mode if mode in d else "chat"] += n
+            d["voice"] += voice
+            total += n
+        d["total"] = total
+        d["users"] = await scalar(
+            select(func.count(func.distinct(TutorTurn.user_id))).where(
+                TutorTurn.created_at >= since
+            )
+        )
+        return d
+
+    t_today = await turns(today_start)
+    t_week = await turns(week_start)
+    voice_pct = round(t_week["voice"] / t_week["total"] * 100) if t_week["total"] else 0
+    mocks_month, mock_avg = (
+        await session.execute(
+            select(func.count(), func.coalesce(func.avg(MockResult.score), 0)).where(
+                MockResult.created_at >= month_start
+            )
+        )
+    ).one()
+
+    # ── VIP ──
+    vip_active = await scalar(
+        select(func.count()).select_from(User).where(User.vip_until > now)
+    )
+    vip_expiring = await scalar(
+        select(func.count())
+        .select_from(User)
+        .where(User.vip_until > now, User.vip_until <= now + timedelta(days=3))
+    )
+    pending = await scalar(
+        select(func.count()).select_from(PaymentRequest).where(PaymentRequest.status == "pending")
+    )
+    paid_n, paid_sum = (
+        await session.execute(
+            select(func.count(), func.coalesce(func.sum(PaymentRequest.amount), 0)).where(
+                PaymentRequest.status == "approved",
+                PaymentRequest.decided_at >= cal_month_start,
+            )
+        )
+    ).one()
+
+    paid_fmt = f"{paid_sum:,}".replace(",", " ")
+
+    # ── Kalitlar va ogohlantirishlar ──
+    ai_ok = "✅" if settings.anthropic_api_key else "❌ ANTHROPIC_API_KEY bo'sh"
+    if not settings.stt_api_key:
+        stt_state = "❌ STT_API_KEY bo'sh (mikrofon o'chiq)"
+    elif stt.last_error == "auth":
+        stt_state = "❌ kalit rad etildi (401) — Groq gsk_ kaliti kerak"
+    elif stt.last_error:
+        stt_state = f"⚠️ oxirgi xato: {stt.last_error}"
+    else:
+        stt_state = "✅"
+    sent = alerts.last_sent()
+    alert_line = (
+        " · ".join(
+            f"{k} {(v + TASHKENT_OFFSET):%d.%m %H:%M}" for k, v in sorted(sent.items())
+        )
+        or "yo'q"
+    )
+
+    return (
+        "🎓 <b>AI ustoz — sarf va holat</b>\n\n"
+        "💰 <b>Anthropic sarfi</b> (Haiku 4.5)\n"
+        f"• Bugun: <b>{u_today['calls']}</b> chaqiruv · <b>{_usd(u_today['cost'])}</b>\n"
+        f"• 7 kun: {u_week['calls']} · {_usd(u_week['cost'])} "
+        f"(kuniga o'rtacha {_usd(daily_avg)})\n"
+        f"• 30 kun: {u_month['calls']} · {_usd(u_month['cost'])} "
+        f"(chaqiruv o'rtacha {_usd(per_call)}, cache {cache_share}%)\n"
+        f"• Jami: {u_all['calls']} · <b>{_usd(u_all['cost'])}</b>\n"
+        f"• Prognoz: shu sur'atda oyiga ≈ <b>{_usd(daily_avg * 30)}</b>\n"
+        f"• 30 kun bo'yicha: {by_feature}\n\n"
+        "🗣 <b>Foydalanish</b>\n"
+        f"• Bugun: <b>{t_today['total']}</b> javob (💬 {t_today['chat']} · 🎯 {t_today['mock']}) · "
+        f"{t_today['users']} o'quvchi\n"
+        f"• 7 kun: {t_week['total']} javob · {t_week['users']} o'quvchi · 🎤 ovozli {voice_pct}%\n"
+        f"• Mock yakunlangan (30 kun): {mocks_month} · o'rtacha ball {round(mock_avg)}\n"
+        f"• Limitlar: VIP {settings.tutor_daily_turns}/kun · bepul {settings.tutor_free_turns}/kun\n\n"
+        "👑 <b>VIP</b>\n"
+        f"• Faol: <b>{vip_active}</b> · 3 kun ichida tugaydi: {vip_expiring}\n"
+        f"• Kutayotgan cheklar: <b>{pending}</b>\n"
+        f"• Bu oy tasdiqlangan: {paid_n} ta · <b>{paid_fmt}</b> so'm\n\n"
+        "🔑 <b>Xizmatlar</b>\n"
+        f"• Anthropic: {ai_ok}\n"
+        f"• Ovoz (STT): {stt_state}\n"
+        f"• Ogohlantirishlar: {alert_line}\n\n"
+        "ℹ️ /payments /vip"
+    )
+

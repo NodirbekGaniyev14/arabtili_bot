@@ -26,6 +26,11 @@ TIMEOUT = 25.0
 NEUTRAL_PROMPT = "الكلام التالي باللغة العربية."
 
 
+# Oxirgi chaqiruv holati: "" (ok) | "auth" (401/403 — kalit noto'g'ri) |
+# "http:<kod>" | "net". API shu orqali admin'ni ogohlantiradi (services/alerts.py).
+last_error: str = ""
+
+
 def available() -> bool:
     return bool(settings.stt_api_key)
 
@@ -51,14 +56,18 @@ async def transcribe(
     files = {"file": (filename, audio, mime)}
     headers = {"Authorization": f"Bearer {settings.stt_api_key}"}
 
+    global last_error
     try:
         async with httpx.AsyncClient(timeout=TIMEOUT) as client:
             r = await client.post(url, data=data, files=files, headers=headers)
         if r.status_code != 200:
             log.warning("STT %s: %s", r.status_code, r.text[:200])
+            last_error = "auth" if r.status_code in (401, 403) else f"http:{r.status_code}"
             return ""
+        last_error = ""
         text = (r.json().get("text") or "").strip()
         return text
     except Exception as e:
         log.warning("STT xatosi: %r", e)
+        last_error = "net"
         return ""

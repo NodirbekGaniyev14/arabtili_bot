@@ -30,6 +30,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
 from db.models import UserWord
+from services import ai_usage
 from services.reference import normalize
 from services.vocab import LEVELS, load_level
 
@@ -565,24 +566,33 @@ def _trim_history(history: list[dict]) -> list[dict]:
 
 class TutorUnavailable(Exception):
     """AI javob bera olmadi (kalit/kredit/tarmoq) — API 503 qaytaradi,
-    turn hisobga olinmaydi, o'quvchi tushunarli xabar ko'radi."""
+    turn hisobga olinmaydi, o'quvchi tushunarli xabar ko'radi.
 
-    def __init__(self, message_uz: str):
+    `kind`: credit | auth | rate | nokey | parse | other — credit/auth bo'lsa
+    API admin'ni ogohlantiradi (services/alerts.py)."""
+
+    def __init__(self, message_uz: str, kind: str = "other"):
         super().__init__(message_uz)
         self.message_uz = message_uz
+        self.kind = kind
 
 
-def _user_message(e: Exception) -> str:
+_BUSY = "Ustoz hozircha band (server sozlanmoqda). Birozdan keyin qayta kiring."
+
+
+def classify(e: Exception) -> tuple[str, str]:
+    """Anthropic xatosi → (kind, o'quvchiga xabar)."""
     text = repr(e)
-    if "credit balance" in text or "billing" in text.lower():
+    low = text.lower()
+    if "credit balance" in text or "billing" in low:
         log.error("AI ustoz: Anthropic krediti tugagan — to'ldirish kerak!")
-        return "Ustoz hozircha band (server sozlanmoqda). Birozdan keyin qayta kiring."
-    if "authentication" in text.lower() or "api_key" in text.lower():
+        return "credit", _BUSY
+    if "authentication" in low or "api_key" in low or "invalid x-api-key" in low:
         log.error("AI ustoz: Anthropic kaliti noto'g'ri!")
-        return "Ustoz hozircha band (server sozlanmoqda). Birozdan keyin qayta kiring."
+        return "auth", _BUSY
     if "rate_limit" in text or "overloaded" in text:
-        return "Ustoz hozir juda band — bir daqiqadan keyin urinib ko'ring."
-    return "Ustoz javob bera olmadi. Internetni tekshirib, qayta urinib ko'ring."
+        return "rate", "Ustoz hozir juda band — bir daqiqadan keyin urinib ko'ring."
+    return "other", "Ustoz javob bera olmadi. Internetni tekshirib, qayta urinib ko'ring."
 
 
 _JSON_KEYS = {
@@ -633,19 +643,13 @@ async def _call(system: list[dict], msgs: list[dict], schema):
             out = schema.model_validate_json(text)
         except Exception as e2:  # kredit tugadi / tarmoq — o'quvchi ekrani buzilmasin
             log.warning("AI ustoz xatosi: %r", e2)
-            raise TutorUnavailable(_user_message(e2)) from e2
+            kind, msg = classify(e2)
+            raise TutorUnavailable(msg, kind) from e2
 
     if out is None:
-        raise TutorUnavailable("Ustoz javobi o'qilmadi. Qayta urinib ko'ring.")
+        raise TutorUnavailable("Ustoz javobi o'qilmadi. Qayta urinib ko'ring.", "parse")
 
-    u = getattr(resp, "usage", None)
-    usage = {
-        "in": getattr(u, "input_tokens", 0),
-        "out": getattr(u, "output_tokens", 0),
-        "cache_read": getattr(u, "cache_read_input_tokens", 0) or 0,
-        "cache_write": getattr(u, "cache_creation_input_tokens", 0) or 0,
-    }
-    return out, usage
+    return out, ai_usage.usage_of(resp)
 
 
 def _messages(history: list[dict]) -> list[dict]:
@@ -673,7 +677,7 @@ async def reply(
     `ar` matni (JSON emas) — token tejaladi. Bo'sh tarix = suhbat boshi."""
     topic = TOPIC_BY_ID.get(topic_id) or TOPIC_BY_ID["erkin"]
     if not settings.anthropic_api_key:
-        raise TutorUnavailable("AI ustoz hozircha o'chiq (kalit sozlanmagan).")
+        raise TutorUnavailable("AI ustoz hozircha o'chiq (kalit sozlanmagan).", "nokey")
 
     extra = topic_words(level, topic["themes"], {normalize(w["ar"]) for w in known})
     system = build_system(name=name, level=level, topic=topic, known=known, extra=extra)
@@ -699,7 +703,7 @@ async def reply_mock(
     if mock is None:
         raise TutorUnavailable("Bunday mock imtihon yo'q.")
     if not settings.anthropic_api_key:
-        raise TutorUnavailable("AI ustoz hozircha o'chiq (kalit sozlanmagan).")
+        raise TutorUnavailable("AI ustoz hozircha o'chiq (kalit sozlanmagan).", "nokey")
 
     extra = topic_words(level, mock["themes"], {normalize(w["ar"]) for w in known})
     system = build_system(
