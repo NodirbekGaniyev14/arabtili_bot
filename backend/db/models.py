@@ -59,6 +59,9 @@ class User(Base):
     invited_by: Mapped[int | None] = mapped_column(Integer, nullable=True, index=True)
     ref_rewarded: Mapped[int] = mapped_column(Integer, default=0)
     trial_until: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    # K18.4 haftalik speaking hisoboti (services/speaking_report.py): oxirgi
+    # yuborilgan hafta kaliti (dushanba sanasi) — bir hafta uchun bir marta
+    speak_report_key: Mapped[str] = mapped_column(String(10), default="")
 
 
 class Placement(Base):

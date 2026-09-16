@@ -35,6 +35,8 @@ _MIGRATIONS = {
         "invited_by": "INTEGER",
         "ref_rewarded": "INTEGER DEFAULT 0",
         "trial_until": "DATETIME",
+        # K18.4 haftalik speaking hisoboti
+        "speak_report_key": "VARCHAR(10) DEFAULT ''",
     },
     "user_words": {
         "card_type": "VARCHAR(16) DEFAULT 'word'",

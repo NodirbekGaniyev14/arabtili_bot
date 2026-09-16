@@ -114,3 +114,23 @@ async def cmd_fikr(message: Message, bot: Bot):
         await feedback_svc.notify_admin(bot, fb, user)
 
     await message.answer("Rahmat! Fikringiz men uchun juda muhim. 🌟")
+
+
+@router.message(Command("hisobot"))
+async def cmd_hisobot(message: Message):
+    """Joriy hafta speaking hisoboti (dushanbadan hozirgacha) — dushanba xabari bilan bir xil."""
+    if message.from_user is None:
+        return
+    from services import speaking_report
+
+    async with SessionLocal() as session:
+        user = (
+            await session.execute(select(User).where(User.tg_id == message.from_user.id))
+        ).scalar_one_or_none()
+        if user is None:
+            await message.answer("Avval /start bosing — ilovani ochib, darajangizni aniqlang. 🐪")
+            return
+        text = await speaking_report.current_text(session, user)
+    await message.answer(
+        text, parse_mode="HTML", reply_markup=speaking_report.open_kb()
+    )

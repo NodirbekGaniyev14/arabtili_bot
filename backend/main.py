@@ -36,6 +36,7 @@ async def _setup_commands(bot: Bot):
         [
             BotCommand(command="start", description="Botni ishga tushirish"),
             BotCommand(command="taklif", description="👥 Do'st taklif qil — 3 kun VIP"),
+            BotCommand(command="hisobot", description="🗣 Haftalik speaking hisobotim"),
             BotCommand(command="fikr", description="💬 Fikr bildirish"),
         ],
         scope=BotCommandScopeDefault(),
@@ -53,6 +54,7 @@ async def _setup_commands(bot: Bot):
                 BotCommand(command="broadcast", description="📤 Hammaga xabar"),
                 BotCommand(command="taklif_yubor", description="👥 Hammaga shaxsiy taklif kartasi"),
                 BotCommand(command="taklif", description="👥 O'z taklif havolam"),
+                BotCommand(command="hisobot", description="🗣 Haftalik speaking hisobotim"),
                 BotCommand(command="ustoz", description="🎓 AI ustoz: sarf ($), VIP, holat"),
                 BotCommand(command="tekshir", description="🩺 Tizim tekshiruvi (kalitlar jonli)"),
                 BotCommand(command="payments", description="💳 Kutayotgan cheklar"),
@@ -104,6 +106,7 @@ async def lifespan(app: FastAPI):
     reminder_task = None
     weekly_task = None
     vip_task = None
+    report_task = None
     bot = None
     if settings.bot_token:
         from services.reminders import reminder_loop
@@ -142,12 +145,16 @@ async def lifespan(app: FastAPI):
         from services.vip_reminders import vip_loop
 
         vip_task = asyncio.create_task(vip_loop(bot))
+        # Haftalik speaking hisoboti — dushanba kunduzi (K18.4)
+        from services.speaking_report import report_loop
+
+        report_task = asyncio.create_task(report_loop(bot))
         # /tekshir — fon halqalari holati
         from services import diag
 
         for _name, _task in (
             ("polling", polling_task), ("reminder", reminder_task),
-            ("weekly", weekly_task), ("vip", vip_task),
+            ("weekly", weekly_task), ("vip", vip_task), ("report", report_task),
         ):
             diag.register_task(_name, _task)
         # Deploy xabari — versiya o'zgargan bo'lsa foydalanuvchilarga bildiradi
@@ -158,7 +165,7 @@ async def lifespan(app: FastAPI):
     else:
         print("⚠️  BOT_TOKEN yo'q — bot ishga tushmadi (.env faylini to'ldiring)")
     yield
-    for task in (polling_task, reminder_task, weekly_task, vip_task):
+    for task in (polling_task, reminder_task, weekly_task, vip_task, report_task):
         if task:
             task.cancel()
     if bot:
