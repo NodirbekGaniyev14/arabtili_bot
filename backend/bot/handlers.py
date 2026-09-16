@@ -25,8 +25,39 @@ WELCOME_TEXT = (
 )
 
 
+async def _attach_referral(message: Message) -> bool:
+    """`/start ref<tg_id>` — YANGI foydalanuvchini taklifchiga bog'laydi.
+    Mavjud foydalanuvchi havola bilan kirsa hech narsa o'zgarmaydi."""
+    from services import referral
+
+    parts = (message.text or "").split(maxsplit=1)
+    ref_tg = referral.parse_start_arg(parts[1] if len(parts) > 1 else "")
+    if ref_tg is None or message.from_user is None:
+        return False
+    tg = message.from_user
+    async with SessionLocal() as session:
+        user = (
+            await session.execute(select(User).where(User.tg_id == tg.id))
+        ).scalar_one_or_none()
+        if user is not None:
+            return False  # eski foydalanuvchi — taklif hisoblanmaydi
+        user = User(tg_id=tg.id, name=tg.first_name or "", username=tg.username or "")
+        session.add(user)
+        await session.flush()
+        ok = await referral.attach(session, user, ref_tg)
+        await session.commit()
+        return ok
+
+
 @router.message(CommandStart())
 async def cmd_start(message: Message):
+    invited = await _attach_referral(message)
+    bonus = (
+        "\n\n🎁 <b>Do'stingiz taklifi bilan keldingiz!</b> Birinchi darsni tugatsangiz — "
+        "ikkalangizga 3 kun VIP (AI ustoz bilan gaplashish) bepul."
+        if invited
+        else ""
+    )
     # Telegram web_app tugmasi faqat HTTPS URL qabul qiladi
     if settings.webapp_url.startswith("https://"):
         kb = InlineKeyboardMarkup(
@@ -39,7 +70,7 @@ async def cmd_start(message: Message):
                 ]
             ]
         )
-        await message.answer(WELCOME_TEXT, reply_markup=kb, parse_mode="HTML")
+        await message.answer(WELCOME_TEXT + bonus, reply_markup=kb, parse_mode="HTML")
     else:
         await message.answer(
             WELCOME_TEXT

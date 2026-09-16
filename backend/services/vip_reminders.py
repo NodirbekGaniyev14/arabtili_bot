@@ -20,7 +20,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
 from db.models import User, utcnow
-from services import billing
+from services import billing, referral
 from services.stats import TASHKENT_OFFSET
 
 log = logging.getLogger(__name__)
@@ -85,8 +85,17 @@ def soon_text(user: User, now: datetime) -> str:
 
 
 def expired_text(user: User) -> str:
+    from services import referral
+
     price = billing.price_summary()
     name = user.name or "do'stim"
+    if referral.on_trial(user):
+        return (
+            f"⏰ {name}, {referral.TRIAL_DAYS} kunlik VIP sinov tugadi.\n\n"
+            "Yoqdimi? Davom etish — 1 oy "
+            f"<b>{_sum(price['month'])} so'm</b> ({_sum(price['per_day'])} so'm/kun). "
+            f"Yoki do'stingizni taklif qiling — ikkalangizga {referral.REF_DAYS} kun VIP bepul."
+        )
     return (
         f"⏰ {name}, VIP muddatingiz tugadi.\n\n"
         f"AI ustoz endi kuniga {settings.tutor_free_turns} ta bepul javob bilan ishlaydi, "
@@ -143,6 +152,8 @@ async def process(session: AsyncSession, bot, now: datetime | None = None) -> di
             if user.vip_notice == soon_key(user):
                 continue
             user.vip_notice = soon_key(user)  # yetmasa ham qayta urinmaymiz
+            if referral.on_trial(user):
+                continue  # 2 kunlik sinovda «tugayapti» — shart emas, tugaganda yozamiz
             if await _send(bot, user, soon_text(user, now), "👑 Uzaytirish"):
                 sent["soon"] += 1
 

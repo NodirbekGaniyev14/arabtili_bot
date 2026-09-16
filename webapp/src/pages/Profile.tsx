@@ -63,6 +63,66 @@ function StatCard({
 
 const fmtSum = (n: number) => n.toLocaleString("ru-RU").replace(/,/g, " ");
 
+/** Taklif dasturi (K18.1): shaxsiy havola, ulashish, statistika */
+function ReferralCard({ r }: { r: NonNullable<ProfileData["referral"]> }) {
+  const [copied, setCopied] = useState(false);
+  const share = () => {
+    // Telegram ichida — ulashish oynasi; tashqarida — yangi tab
+    const t = tg() as unknown as { openTelegramLink?: (u: string) => void } | undefined;
+    if (t?.openTelegramLink) t.openTelegramLink(r.share_url);
+    else window.open(r.share_url, "_blank");
+  };
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(r.link);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1500);
+    } catch {
+      /* eski brauzer */
+    }
+  };
+  return (
+    <section className="rounded-3xl bg-gradient-to-br from-gold-soft to-card border border-gold/40 p-4">
+      <div className="flex items-start gap-3">
+        <div className="text-2xl">👥</div>
+        <div className="min-w-0 flex-1">
+          <div className="text-[14px] font-extrabold leading-tight">
+            Do'st taklif qiling — ikkalangizga {r.days_per_friend} kun VIP
+          </div>
+          <div className="text-[11px] text-ink-soft font-semibold mt-0.5">
+            Do'stingiz havola bilan kirib birinchi darsni tugatsa, ikkalangizga ham AI ustoz ochiladi.
+          </div>
+        </div>
+      </div>
+      <div className="mt-3 flex items-center gap-2 text-[11px] font-extrabold">
+        <span className="rounded-full bg-card border border-cardline px-2.5 py-1">
+          Taklif: {r.invited}
+        </span>
+        <span className="rounded-full bg-card border border-cardline px-2.5 py-1">
+          Mukofot: {r.rewarded}/{r.max_rewards}
+        </span>
+        <span className="rounded-full bg-emerald-deep text-white px-2.5 py-1">
+          +{r.days_earned} kun VIP
+        </span>
+      </div>
+      <div className="mt-3 flex gap-2">
+        <button
+          onClick={share}
+          className="flex-1 rounded-xl bg-emerald-deep py-2.5 text-sm font-extrabold text-white active:scale-95 transition-transform"
+        >
+          👥 Ulashish
+        </button>
+        <button
+          onClick={copy}
+          className="rounded-xl bg-card border border-cardline px-4 py-2.5 text-sm font-extrabold active:scale-95 transition-transform"
+        >
+          {copied ? "✓ Nusxalandi" : "🔗 Nusxa"}
+        </button>
+      </div>
+    </section>
+  );
+}
+
 export default function Profile({
   onOpenPlacement,
   onOpenPaywall,
@@ -304,6 +364,9 @@ export default function Profile({
         <span className="font-extrabold text-xl">›</span>
       </button>
 
+      {/* Taklif dasturi — ikkalangizga VIP */}
+      {data.referral && <ReferralCard r={data.referral} />}
+
       {/* Speaking daftari */}
       {onOpenSpeaking && (
         <section className="grid grid-cols-2 gap-2.5">
@@ -327,7 +390,12 @@ export default function Profile({
             <div className="text-[13px] font-extrabold leading-tight mt-1">Speaking natijalari</div>
             <div className="text-[11px] text-ink-soft font-semibold">
               {data.speaking?.mock_attempts || data.speaking?.drill_attempts
-                ? `mock ${data.speaking.mock_best}% · talaffuz ${data.speaking.drill_best}%`
+                ? [
+                    data.speaking.mock_attempts ? `mock ${data.speaking.mock_best}%` : "",
+                    data.speaking.drill_attempts ? `talaffuz ${data.speaking.drill_best}%` : "",
+                  ]
+                    .filter(Boolean)
+                    .join(" · ")
                 : "mock va talaffuz tarixi"}
             </div>
           </button>

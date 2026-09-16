@@ -11,6 +11,21 @@ from services.telegram_auth import get_current_user
 router = APIRouter(prefix="/api/pay")
 
 
+@router.post("/trial")
+async def start_trial(
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Bir martalik 2 kunlik VIP sinov (K18.1)."""
+    from services import referral
+
+    if not referral.trial_available(user):
+        raise HTTPException(status_code=409, detail="Sinov allaqachon ishlatilgan yoki VIP faol")
+    until = referral.start_trial(user)
+    await session.commit()
+    return {"ok": True, "days": referral.TRIAL_DAYS, "vip_until": billing._iso(until)}
+
+
 @router.get("/info")
 async def pay_info(
     user: User = Depends(get_current_user),

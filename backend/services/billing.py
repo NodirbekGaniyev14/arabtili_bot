@@ -186,9 +186,14 @@ async def info(session: AsyncSession, user: User) -> dict:
     if user.paywall_seen_at is None:
         user.paywall_seen_at = utcnow()
         await session.commit()
+    from services import referral
+
     active = discount_active(user)
     until = discount_until(user)
     return {
+        "trial_available": referral.trial_available(user),
+        "trial_days": referral.TRIAL_DAYS,
+        "referral_days": referral.REF_DAYS,
         "vip": is_vip(user),
         "vip_until": _iso(user.vip_until),
         "vip_days_left": vip_days_left(user),

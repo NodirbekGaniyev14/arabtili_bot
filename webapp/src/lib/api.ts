@@ -544,6 +544,16 @@ export interface CheckpointData {
 export interface ProfileData {
   name: string;
   username: string;
+  /** Taklif dasturi (K18.1): havola, ulashish, statistika */
+  referral?: {
+    link: string;
+    share_url: string;
+    invited: number;
+    rewarded: number;
+    days_earned: number;
+    days_per_friend: number;
+    max_rewards: number;
+  };
   /** Speaking daftari hisoblari (K17.5) */
   speaking?: {
     mistakes: number;
@@ -1011,6 +1021,10 @@ export const api = {
 
   // ── VIP tarif / to'lov ──
   getPayInfo: () => request<PayInfo>("/api/pay/info"),
+  startTrial: () =>
+    request<{ ok: boolean; days: number; vip_until: string | null }>("/api/pay/trial", {
+      method: "POST",
+    }),
   submitReceipt: (file: File, plan: string) => {
     const fd = new FormData();
     fd.append("file", file, file.name);
@@ -1037,6 +1051,10 @@ export interface PayPlan {
 }
 
 export interface PayInfo {
+  /** Bir martalik VIP sinov (K18.1) */
+  trial_available: boolean;
+  trial_days: number;
+  referral_days: number;
   vip: boolean;
   vip_until: string | null;
   vip_days_left: number;
@@ -1110,6 +1128,9 @@ export interface TutorTopics {
   free_turns: number;
   /** VIP kunlik javoblar limiti (yorliq uchun) */
   vip_turns: number;
+  /** Bir martalik VIP sinov (K18.1) */
+  trial_available?: boolean;
+  trial_days?: number;
   price: { month: number; per_day: number };
   turns_left: number;
   daily_limit: number;

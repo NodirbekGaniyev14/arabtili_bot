@@ -103,6 +103,7 @@ def _checkpoint_lessons(lesson_id: str) -> list[str]:
 async def complete_v2(
     lesson_id: str,
     body: CompleteV2Body,
+    request: Request,
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
@@ -133,6 +134,15 @@ async def complete_v2(
     session.add(XpLog(user_id=user.id, amount=xp, source=f"lesson:{lesson_id}"))
     await session.commit()
 
+    # Taklif mukofoti: taklif qilingan o'quvchi birinchi darsni o'tdi (K18.1)
+    referral_bonus = None
+    if passed and user.invited_by is not None and not user.ref_rewarded:
+        from services import referral
+
+        referral_bonus = await referral.on_lesson_passed(
+            session, user, getattr(request.app.state, "bot", None)
+        )
+
     # SRS: yangi kartalar + xato so'zlar reset (spec §11)
     added = await seed_from_srs_cards(session, user.id, data.get("srs_cards", []))
     await reset_words(session, user.id, body.wrong_words)
@@ -158,6 +168,7 @@ async def complete_v2(
         "srs_reset": len(body.wrong_words),
         "stats": stats,
         "new_badges": new_badges,
+        "referral_bonus": referral_bonus,
         # Yiqilgan darsdan keyin nazorat testi taklif qilinmaydi
         "checkpoint_available": passed and len(cp) >= 2,
     }
@@ -401,7 +412,7 @@ async def tutor_topics(
     session: AsyncSession = Depends(get_session),
 ):
     from config import settings
-    from services import billing, stt, tutor
+    from services import billing, referral, stt, tutor
 
     level = await _user_level(session, user.id)
     access = await _tutor_access(session, user)
@@ -424,6 +435,8 @@ async def tutor_topics(
         **{k: v for k, v in access.items() if k != "used"},
         "free_turns": settings.tutor_free_turns,
         "vip_turns": settings.tutor_daily_turns,
+        "trial_available": referral.trial_available(user),
+        "trial_days": referral.TRIAL_DAYS,
         "price": billing.price_summary(),
         "ai": bool(settings.anthropic_api_key),
         "voice": stt.available(),

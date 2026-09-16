@@ -1,7 +1,6 @@
 """Admin bot buyruqlari — faqat ADMIN_ID uchun."""
 
 import asyncio
-from urllib.parse import quote
 
 from aiogram import Bot, F, Router
 from aiogram.exceptions import TelegramRetryAfter
@@ -27,7 +26,8 @@ INVITE_TEXT = (
     "10 daqiqa.\n\n"
     "<b>✅ Botda nima bor:</b>\n"
     "🔹 <b>223 ta dars</b> — A0 dan B2 gacha to'liq kurs\n"
-    "🔹 <b>3000+ so'z</b> lug'at bo'limi, har biri audio bilan\n"
+    "🔹 <b>6000 so'z</b> lug'at bo'limi, har biri audio bilan\n"
+    "🔹 🤖 <b>AI ustoz</b> — darajangizda jonli suhbat, speaking, mock imtihon\n"
     "🔹 O'zak–vazn tahlili — bitta o'zakdan o'nlab so'z\n"
     "🔹 Aqlli takrorlash (SRS) — o'rgangan so'z unutilmaydi\n"
     "🔹 Har daraja oxirida imtihon va <b>sertifikat</b> 🎓\n"
@@ -40,26 +40,6 @@ INVITE_TEXT = (
     f"{BOT_LINK}\n\n"
     "👇 Quyidagi tugmani bosing"
 )
-
-INVITE_SHARE_TEXT = (
-    "Arab tilini noldan o'rganyapman — Jamal 🐪 boti orqali. "
-    "223 ta dars, 3000+ so'z, audio va sertifikat. Bepul, kuniga "
-    "10 daqiqa. Sen ham qo'shil 👇"
-)
-
-
-def _invite_kb() -> InlineKeyboardMarkup:
-    """Telegram'ning ulashish oynasini ochadigan tugma."""
-    share = (
-        f"https://t.me/share/url?url={quote(BOT_LINK)}"
-        f"&text={quote(INVITE_SHARE_TEXT)}"
-    )
-    return InlineKeyboardMarkup(
-        inline_keyboard=[
-            [InlineKeyboardButton(text="👥 Do'stlarga ulashish", url=share)]
-        ]
-    )
-
 
 def _is_admin(message: Message) -> bool:
     return bool(settings.admin_id) and message.from_user is not None and (
@@ -232,39 +212,84 @@ async def cmd_broadcast(message: Message, bot: Bot):
     )
 
 
-@router.message(Command("taklif"))
-async def cmd_taklif(message: Message, bot: Bot):
-    """Do'stlarga taklif kampaniyasi — ulashish tugmasi bilan.
+def _personal_invite(user: User, st: dict) -> tuple[str, InlineKeyboardMarkup]:
+    """Shaxsiy taklif kartasi: havola, statistika, ulashish tugmasi."""
+    from services import referral
 
-    `/taklif` — faqat adminga namuna ko'rsatadi (xavfsiz).
-    `/taklif yubor` — hamma foydalanuvchiga yuboradi.
-    """
+    text = (
+        "👥 <b>Do'stingizni taklif qiling — ikkalangizga 3 kun VIP!</b>\n\n"
+        "Do'stingiz shu havola bilan kirib birinchi darsni tugatsa, sizga ham, unga ham "
+        f"<b>{referral.REF_DAYS} kun VIP</b> (🤖 AI ustoz, 🎤 speaking, 🎯 mock) qo'shiladi.\n\n"
+        f"🔗 Havolangiz:\n<code>{st['link']}</code>\n\n"
+        f"📊 Taklif qilingan: <b>{st['invited']}</b> · mukofot: <b>{st['rewarded']}</b> · "
+        f"olingan VIP: <b>{st['days_earned']} kun</b>"
+    )
+    kb = InlineKeyboardMarkup(
+        inline_keyboard=[[InlineKeyboardButton(text="👥 Do'stlarga ulashish", url=st["share_url"])]]
+    )
+    return text, kb
+
+
+@router.message(Command("taklif"))
+async def cmd_taklif(message: Message):
+    """Hamma uchun: shaxsiy taklif havolasi + statistika (K18.1)."""
+    if message.from_user is None:
+        return
+    from services import referral
+
+    tg = message.from_user
+    async with SessionLocal() as session:
+        user = (
+            await session.execute(select(User).where(User.tg_id == tg.id))
+        ).scalar_one_or_none()
+        if user is None:
+            user = User(tg_id=tg.id, name=tg.first_name or "", username=tg.username or "")
+            session.add(user)
+            await session.commit()
+            await session.refresh(user)
+        st = await referral.stats(session, user)
+    text, kb = _personal_invite(user, st)
+    await message.answer(text, parse_mode="HTML", reply_markup=kb, disable_web_page_preview=True)
+
+
+@router.message(Command("taklif_yubor"))
+async def cmd_taklif_yubor(message: Message, bot: Bot):
+    """Admin: hammaga SHAXSIY taklif kartasini yuboradi.
+    `/taklif_yubor test` — faqat adminning o'ziga namuna."""
     if not _is_admin(message):
         return
+    from services import referral
 
     parts = (message.text or "").split(maxsplit=1)
-    confirmed = len(parts) > 1 and parts[1].strip().lower() == "yubor"
-
+    test = len(parts) > 1 and parts[1].strip().lower() == "test"
     async with SessionLocal() as session:
-        ids = await admin.all_real_tg_ids(session)
+        users = (
+            await session.execute(select(User).where(User.is_demo == 0))
+        ).scalars().all()
+        if test:
+            users = [u for u in users if u.tg_id == settings.admin_id]
+        cards = [(u.tg_id, await referral.stats(session, u), u) for u in users]
 
-    if not confirmed:
-        await message.answer(
-            INVITE_TEXT, parse_mode="HTML", reply_markup=_invite_kb(),
-            disable_web_page_preview=True,
-        )
-        await message.answer(
-            f"☝️ Namuna. Shu xabar <b>{len(ids)}</b> ta foydalanuvchiga "
-            "ketadi.\n\nYuborish uchun: <code>/taklif yubor</code>",
-            parse_mode="HTML",
-        )
-        return
-
-    await message.answer(f"📤 {len(ids)} ta foydalanuvchiga yuborilmoqda...")
-    sent, failed = await _blast(
-        bot, ids, INVITE_TEXT, parse_mode="HTML",
-        reply_markup=_invite_kb(), disable_web_page_preview=True,
-    )
+    await message.answer(f"📤 {len(cards)} ta foydalanuvchiga yuborilmoqda...")
+    sent = failed = 0
+    for tg_id, st, u in cards:
+        text, kb = _personal_invite(u, st)
+        text = INVITE_TEXT + "\n\n" + text
+        for attempt in (1, 2):
+            try:
+                await bot.send_message(
+                    tg_id, text, parse_mode="HTML", reply_markup=kb, disable_web_page_preview=True
+                )
+                sent += 1
+                break
+            except TelegramRetryAfter as e:
+                await asyncio.sleep(e.retry_after)
+                if attempt == 2:
+                    failed += 1
+            except Exception:
+                failed += 1
+                break
+        await asyncio.sleep(0.05)
     await message.answer(f"✅ Yuborildi: {sent}\n❌ Yetib bormadi: {failed}")
 
 

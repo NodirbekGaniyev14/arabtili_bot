@@ -470,9 +470,12 @@ async def profile_route(
         )
     ).one()
 
+    from services import referral
+
     return {
         "name": user.name,
         "username": user.username,
+        "referral": await referral.stats(session, user),
         "speaking": {
             "mistakes": mistakes_n,
             "mock_attempts": mock_n,

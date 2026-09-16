@@ -54,6 +54,11 @@ class User(Base):
     # kaliti ("soon:<vip_until>" | "expired:<vip_until>") va chegirma xabari flagi
     vip_notice: Mapped[str] = mapped_column(String(24), default="")
     discount_notified: Mapped[int] = mapped_column(Integer, default=0)
+    # K18.1 taklif va sinov (services/referral.py): kim taklif qilgan (users.id),
+    # taklif mukofoti berilganmi, bir martalik VIP sinov oxiri
+    invited_by: Mapped[int | None] = mapped_column(Integer, nullable=True, index=True)
+    ref_rewarded: Mapped[int] = mapped_column(Integer, default=0)
+    trial_until: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
 
 
 class Placement(Base):

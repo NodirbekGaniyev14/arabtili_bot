@@ -23,6 +23,8 @@ class Settings(BaseSettings):
     db_path: str = ""
     # Admin Telegram ID — faqat shu foydalanuvchi admin buyruqlaridan foydalanadi
     admin_id: int = 0
+    # Bot username (@siz) — taklif havolasi t.me/<bot>?start=ref<id> uchun
+    bot_username: str = "JamalArabiy_bot"
 
     # ── AI ustoz (services/tutor.py) ──
     # Suhbat modeli: Haiku 4.5 — arzon va tez; javob structured output bilan

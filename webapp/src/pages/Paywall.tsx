@@ -80,7 +80,23 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [trialBusy, setTrialBusy] = useState(false);
+  const [trialMsg, setTrialMsg] = useState("");
   const fileRef = useRef<HTMLInputElement>(null);
+
+  const startTrial = async () => {
+    if (trialBusy) return;
+    setTrialBusy(true);
+    try {
+      const r = await api.startTrial();
+      setTrialMsg(`🎁 ${r.days} kunlik VIP sinov boshlandi!`);
+      load();
+    } catch (e) {
+      setTrialMsg((e as { detail?: string })?.detail || "Sinovni yoqib bo'lmadi.");
+    } finally {
+      setTrialBusy(false);
+    }
+  };
   const plansRef = useRef<HTMLDivElement>(null);
 
   const load = () =>
@@ -201,6 +217,38 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
         {reason && !info?.vip && (
           <div className="rounded-2xl bg-terracotta/10 border border-terracotta/30 px-4 py-3 text-sm font-semibold">
             {reason}
+          </div>
+        )}
+
+        {trialMsg && (
+          <div className="rounded-2xl bg-emerald-deep/10 border border-emerald-deep/30 px-4 py-3 text-sm font-extrabold text-emerald-dark">
+            {trialMsg}
+          </div>
+        )}
+
+        {info && !info.vip && info.trial_available && (
+          <section className="rounded-3xl bg-gold-soft border border-gold/40 p-4">
+            <div className="text-[11px] font-extrabold tracking-[0.12em] text-ink-soft">🎁 AVVAL SINAB KO'RING</div>
+            <div className="text-[15px] font-extrabold mt-1">
+              {info.trial_days} kun VIP — bepul, karta kerak emas
+            </div>
+            <div className="text-xs text-ink-soft font-semibold mt-0.5">
+              Mock imtihonlar, cheksiz suhbat, talaffuz — bir marta beriladi. Yoqdi — keyin to'lov.
+            </div>
+            <button
+              onClick={startTrial}
+              disabled={trialBusy}
+              className="mt-3 w-full rounded-xl bg-emerald-deep py-2.5 text-sm font-extrabold text-white active:scale-95 transition-transform disabled:opacity-60"
+            >
+              {trialBusy ? "…" : `🎁 ${info.trial_days} kunlik sinovni yoqish`}
+            </button>
+          </section>
+        )}
+
+        {info && !info.vip && (
+          <div className="rounded-2xl bg-card border border-cardline px-4 py-3 text-xs font-semibold text-ink-soft">
+            👥 Do'stingizni taklif qiling — birinchi darsni tugatsa <b className="text-ink">ikkalangizga {info.referral_days} kun VIP</b>.
+            Havola: Profil → «Do'st taklif qilish» yoki botda /taklif.
           </div>
         )}
 

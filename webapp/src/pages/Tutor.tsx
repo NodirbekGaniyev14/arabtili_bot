@@ -105,6 +105,22 @@ export default function Tutor({ onClose }: TutorProps) {
   const [finish, setFinish] = useState<TutorFinishResult | null>(null);
   const [saved, setSaved] = useState<Set<string>>(new Set());
   const [paywall, setPaywall] = useState<string | null>(null);
+  const [trialBusy, setTrialBusy] = useState(false);
+
+  const startTrial = async () => {
+    if (trialBusy) return;
+    setTrialBusy(true);
+    try {
+      const r = await api.startTrial();
+      setNotice(`🎁 ${r.days} kunlik VIP sinov boshlandi — mock va cheksiz suhbat ochiq!`);
+      tg()?.HapticFeedback?.notificationOccurred("success");
+      loadInfo();
+    } catch (e) {
+      setNotice((e as { detail?: string })?.detail || "Sinovni yoqib bo'lmadi.");
+    } finally {
+      setTrialBusy(false);
+    }
+  };
 
   // Mikrofon
   const recorder = useRef(new Recorder());
@@ -537,6 +553,27 @@ export default function Tutor({ onClose }: TutorProps) {
                 {info.voice ? "🎤 ovoz yoqilgan" : "⌨️ faqat matn"}
               </span>
             </div>
+          )}
+
+          {info && !info.vip && info.trial_available && tab !== "drill" && (
+            <button
+              onClick={startTrial}
+              disabled={trialBusy}
+              className="w-full flex items-center gap-3 rounded-2xl bg-gold-soft border border-gold/40 px-4 py-3 text-left active:scale-[0.98] transition-transform disabled:opacity-60"
+            >
+              <span className="text-2xl">🎁</span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-[14px] font-extrabold leading-tight">
+                  {info.trial_days ?? 2} kun VIP — bepul sinab ko'ring
+                </span>
+                <span className="block text-[11px] text-ink-soft font-semibold">
+                  Mock imtihonlar va cheksiz suhbat · karta kerak emas · bir marta
+                </span>
+              </span>
+              <span className="shrink-0 rounded-xl bg-emerald-deep px-3 py-1.5 text-xs font-extrabold text-white">
+                {trialBusy ? "…" : "Yoqish"}
+              </span>
+            </button>
           )}
 
           {info && !info.vip && tab !== "drill" && (

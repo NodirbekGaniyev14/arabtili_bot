@@ -33,7 +33,11 @@ from config import settings
 async def _setup_commands(bot: Bot):
     # Hammaga ko'rinadigan buyruq
     await bot.set_my_commands(
-        [BotCommand(command="start", description="Botni ishga tushirish")],
+        [
+            BotCommand(command="start", description="Botni ishga tushirish"),
+            BotCommand(command="taklif", description="👥 Do'st taklif qil — 3 kun VIP"),
+            BotCommand(command="fikr", description="💬 Fikr bildirish"),
+        ],
         scope=BotCommandScopeDefault(),
     )
     # Admin buyruqlari — faqat admin chatida ko'rinadi
@@ -47,7 +51,8 @@ async def _setup_commands(bot: Bot):
                 BotCommand(command="users", description="👥 Oxirgi foydalanuvchilar"),
                 BotCommand(command="user", description="👤 Foydalanuvchi ma'lumoti"),
                 BotCommand(command="broadcast", description="📤 Hammaga xabar"),
-                BotCommand(command="taklif", description="👥 Taklif kampaniyasi"),
+                BotCommand(command="taklif_yubor", description="👥 Hammaga shaxsiy taklif kartasi"),
+                BotCommand(command="taklif", description="👥 O'z taklif havolam"),
                 BotCommand(command="ustoz", description="🎓 AI ustoz: sarf ($), VIP, holat"),
                 BotCommand(command="tekshir", description="🩺 Tizim tekshiruvi (kalitlar jonli)"),
                 BotCommand(command="payments", description="💳 Kutayotgan cheklar"),
