@@ -3,6 +3,7 @@
 
 import asyncio
 import subprocess
+from pathlib import Path
 
 from aiogram import Bot
 from aiogram.types import (
@@ -25,8 +26,38 @@ UPDATE_TEXT = (
 )
 
 
+def _version_from_git_files(root=None) -> str | None:
+    """`.git/HEAD` → ref → hash, git binarisiz.
+
+    Serverda systemd xizmati boshqa foydalanuvchi nomidan ishlaydi — git
+    «dubious ownership» deb rad etadi (yoki PATH'da yo'q). Fayllarni o'qish
+    esa har doim ishlaydi. Qaytaradi: 7 belgili qisqa hash."""
+    root = Path(root or BASE_DIR)
+    try:
+        head = (root / ".git" / "HEAD").read_text(encoding="utf-8").strip()
+    except OSError:
+        return None
+    if not head.startswith("ref:"):
+        return head[:7] or None  # detached HEAD — hash to'g'ridan-to'g'ri
+    ref = head.split(":", 1)[1].strip()
+    try:
+        return (root / ".git" / ref).read_text(encoding="utf-8").strip()[:7] or None
+    except OSError:
+        pass
+    # ref packed-refs ichida bo'lishi mumkin (git gc dan keyin)
+    try:
+        for line in (root / ".git" / "packed-refs").read_text(encoding="utf-8").splitlines():
+            parts = line.split()
+            if len(parts) == 2 and parts[1] == ref:
+                return parts[0][:7]
+    except OSError:
+        pass
+    return None
+
+
 def current_version() -> str | None:
-    """Joriy git commit hash (qisqa). Git yo'q/repo emas bo'lsa None."""
+    """Joriy git commit hash (qisqa). Avval `git`, bo'lmasa .git fayllaridan;
+    repo emas bo'lsa None."""
     try:
         out = subprocess.run(
             ["git", "rev-parse", "--short", "HEAD"],
@@ -35,11 +66,11 @@ def current_version() -> str | None:
             text=True,
             timeout=5,
         )
-        if out.returncode == 0:
-            return out.stdout.strip() or None
+        if out.returncode == 0 and out.stdout.strip():
+            return out.stdout.strip()
     except Exception:
         pass
-    return None
+    return _version_from_git_files()
 
 
 def webapp_url_versioned() -> str:

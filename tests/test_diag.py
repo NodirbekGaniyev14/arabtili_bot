@@ -305,3 +305,43 @@ async def test_tekshir_command(session_factory, monkeypatch):
         assert bot.session.calls == [], "admin emas — jim"
     finally:
         admin_router._parent_router = None
+
+
+
+# ── Versiya (git binarisiz) ──
+
+
+def test_version_from_git_files(tmp_path):
+    from services.deploy_notify import _version_from_git_files
+
+    git = tmp_path / ".git"
+    (git / "refs" / "heads").mkdir(parents=True)
+    (git / "HEAD").write_text("ref: refs/heads/master\n", encoding="utf-8")
+    (git / "refs" / "heads" / "master").write_text("7c351c5abcdef0123456789\n", encoding="utf-8")
+    assert _version_from_git_files(tmp_path) == "7c351c5"
+
+    # packed-refs (git gc dan keyin ref fayli yo'q)
+    (git / "refs" / "heads" / "master").unlink()
+    (git / "packed-refs").write_text(
+        "# pack-refs with: peeled\nbc3d6a0ffffffffffffffff refs/heads/master\n", encoding="utf-8"
+    )
+    assert _version_from_git_files(tmp_path) == "bc3d6a0"
+
+    # detached HEAD
+    (git / "HEAD").write_text("5d89c68aaaaaaaaaaaaaaaa\n", encoding="utf-8")
+    assert _version_from_git_files(tmp_path) == "5d89c68"
+
+    assert _version_from_git_files(tmp_path / "yoq") is None
+
+
+def test_current_version_falls_back_without_git(monkeypatch):
+    import subprocess
+
+    from services import deploy_notify as dn
+
+    def no_git(*a, **kw):
+        raise FileNotFoundError("git")
+
+    monkeypatch.setattr(subprocess, "run", no_git)
+    v = dn.current_version()
+    assert v and len(v) == 7, "repo ichida .git fayllaridan olinadi"
