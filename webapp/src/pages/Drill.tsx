@@ -9,6 +9,7 @@ import {
 } from "../lib/api";
 import { playUrl, speakText } from "../lib/audio";
 import { MAX_SECONDS, Recorder } from "../lib/recorder";
+import RateBar from "../components/RateBar";
 
 /** Talaffuz mashqi — AI'siz, bepul: mavzu bo'yicha 10 ta jumla.
  *
@@ -180,6 +181,10 @@ export default function Drill({ topic, level, canVoice, onClose, onFinished }: D
             </div>
           )}
         </div>
+
+        {data && finish.count > 0 && (
+          <RateBar sessionKey={data.key} mode="drill" topic={topic.id} question="Talaffuz bahosi to'g'rimi?" />
+        )}
 
         <div className="text-[11px] font-extrabold tracking-[0.12em] text-ink-soft">
           JUMLALAR (avval qiyinlari)

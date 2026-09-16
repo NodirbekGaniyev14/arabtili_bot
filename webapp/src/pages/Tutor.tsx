@@ -11,6 +11,7 @@ import {
 } from "../lib/api";
 import { playUrl, speakText } from "../lib/audio";
 import { MAX_SECONDS, Recorder, micSupported } from "../lib/recorder";
+import RateBar from "../components/RateBar";
 import Drill from "./Drill";
 import Paywall from "./Paywall";
 
@@ -867,6 +868,8 @@ export default function Tutor({ onClose }: TutorProps) {
           result={finish}
           messages={messages}
           mock={mock}
+          sessionKey={sessionKey}
+          topicId={mock?.id ?? topic?.id ?? "erkin"}
           saved={saved}
           onSave={saveWord}
           onAgain={() => start(topic, mock)}
@@ -1185,6 +1188,8 @@ function Summary({
   result,
   messages,
   mock,
+  sessionKey,
+  topicId,
   saved,
   onSave,
   onAgain,
@@ -1194,6 +1199,8 @@ function Summary({
   result: TutorFinishResult;
   messages: Msg[];
   mock: TutorMock | null;
+  sessionKey: string;
+  topicId: string;
   saved: Set<string>;
   onSave: (w: TutorNewWord) => void;
   onAgain: () => void;
@@ -1234,6 +1241,15 @@ function Summary({
               : "XP uchun kamida 3 javob"}
         </div>
       </div>
+
+      {sessionKey && (
+        <RateBar
+          sessionKey={sessionKey}
+          mode={mock ? "mock" : "chat"}
+          topic={topicId}
+          question={mock ? "Imtihon adolatli baholandimi?" : "Ustoz qanday edi?"}
+        />
+      )}
 
       {mock && result.certificate && (
         <section className="rounded-2xl bg-card border-2 border-gold p-3">

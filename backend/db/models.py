@@ -409,6 +409,24 @@ class Testimonial(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
 
 
+class TutorRating(Base):
+    """Sifat halqasi (K18.2): suhbat/mock/kunlik savol/talaffuz yakunida 👍/👎.
+    Suhbat matni saqlanmaydi — bu yagona sifat signali. Har sessiya uchun bitta."""
+
+    __tablename__ = "tutor_ratings"
+    __table_args__ = (UniqueConstraint("user_id", "session_key", name="uq_rating_user_session"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    session_key: Mapped[str] = mapped_column(String(36))
+    mode: Mapped[str] = mapped_column(String(8), default="chat")  # chat|mock|daily|drill
+    topic: Mapped[str] = mapped_column(String(24), default="")
+    level: Mapped[str] = mapped_column(String(4), default="")
+    good: Mapped[int] = mapped_column(Integer, default=1)  # 1 👍 / 0 👎
+    comment: Mapped[str] = mapped_column(String(400), default="")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
 class AiUsage(Base):
     """Har bir Claude chaqiruvining token hisobi (services/ai_usage.py).
 

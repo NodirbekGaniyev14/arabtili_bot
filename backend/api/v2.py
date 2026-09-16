@@ -17,6 +17,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from db.models import (
     DailySpeaking,
     DrillResult,
+    TutorRating,
     LessonRating,
     MockResult,
     Plan,
@@ -996,6 +997,69 @@ async def tutor_daily_answer(
     await session.commit()
     st = await daily.status(session, user.id)
     return {"result": _daily_row_dict(row), "streak": st["streak"], "best": st["best"], "xp": xp}
+
+
+# ─────────── Sifat halqasi (K18.2): 👍/👎 ───────────
+
+
+class RateBody(BaseModel):
+    session_key: str = Field(min_length=4, max_length=36, pattern=r"^[A-Za-z0-9_-]+$")
+    mode: str = Field(default="chat", pattern=r"^(chat|mock|daily|drill)$")
+    topic: str = Field(default="", max_length=24)
+    good: bool
+    comment: str = Field(default="", max_length=400)
+
+
+@router.post("/tutor/rate")
+async def tutor_rate(
+    body: RateBody,
+    request: Request,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Sessiya bahosi (bir sessiya — bitta, qayta yuborilsa yangilanadi).
+    👎 bo'lsa adminga mavzu/daraja/izoh bilan xabar — matn saqlanmaydi, bu yagona signal."""
+    level = await _user_level(session, user.id)
+    row = (
+        await session.execute(
+            select(TutorRating).where(
+                TutorRating.user_id == user.id, TutorRating.session_key == body.session_key
+            )
+        )
+    ).scalar_one_or_none()
+    first = row is None
+    if row is None:
+        row = TutorRating(user_id=user.id, session_key=body.session_key)
+        session.add(row)
+    row.mode, row.topic, row.level = body.mode, body.topic[:24], level
+    row.good, row.comment = (1 if body.good else 0), body.comment.strip()[:400]
+    await session.commit()
+
+    bot = getattr(request.app.state, "bot", None)
+    from config import settings
+
+    if not body.good and bot is not None and settings.admin_id and (first or row.comment):
+        turns = (
+            await session.execute(
+                select(func.count()).select_from(TutorTurn).where(
+                    TutorTurn.user_id == user.id, TutorTurn.session_key == body.session_key
+                )
+            )
+        ).scalar_one()
+        from services import feedback as feedback_svc
+
+        uname = f"@{user.username}" if user.username else "—"
+        text = (
+            f"👎 <b>AI ustoz bahosi</b> · {body.mode} · {feedback_svc.esc(body.topic or '—')} · {level}\n"
+            f"{feedback_svc.esc(user.name or '—')} ({feedback_svc.esc(uname)}), ID <code>{user.tg_id}</code>"
+            f" · {turns} javob\n"
+            + (f"\n<blockquote>{feedback_svc.esc(row.comment)}</blockquote>" if row.comment else "\n<i>izohsiz</i>")
+        )
+        try:
+            await bot.send_message(settings.admin_id, text, parse_mode="HTML")
+        except Exception:
+            pass
+    return {"ok": True}
 
 
 class SayBody(BaseModel):

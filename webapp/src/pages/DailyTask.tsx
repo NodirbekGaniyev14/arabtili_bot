@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { api, type DailyInfo, type DailyResult } from "../lib/api";
 import { playUrl, speakText } from "../lib/audio";
 import { MAX_SECONDS, Recorder, micSupported } from "../lib/recorder";
+import RateBar from "../components/RateBar";
 
 /** Kunlik speaking savoli — hamma uchun bepul, kuniga bitta.
  *
@@ -240,6 +241,15 @@ export default function DailyTask({ onClose, onDone }: Props) {
                   🔊 Eshitish
                 </button>
               </div>
+            )}
+
+            {info && (
+              <RateBar
+                sessionKey={`daily-${info.day}`}
+                mode="daily"
+                topic={info.question.id}
+                question="Baho va izoh foydali bo'ldimi?"
+              />
             )}
 
             <p className="text-center text-xs text-ink-soft font-semibold">

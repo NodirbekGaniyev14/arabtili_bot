@@ -14,6 +14,7 @@ from db.models import (
     PaymentRequest,
     Plan,
     Progress,
+    TutorRating,
     TutorTurn,
     User,
     UserWord,
@@ -597,6 +598,38 @@ async def tutor_report(session: AsyncSession) -> str:
 
     paid_fmt = f"{paid_sum:,}".replace(",", " ")
 
+    # ── Sifat halqasi: 👍/👎 ──
+    async def rating(since):
+        n, good = (
+            await session.execute(
+                select(func.count(), func.coalesce(func.sum(TutorRating.good), 0)).where(
+                    TutorRating.created_at >= since
+                )
+            )
+        ).one()
+        return n, good
+
+    r_n, r_good = await rating(month_start)
+    w_n, w_good = await rating(week_start)
+    bad_rows = (
+        await session.execute(
+            select(TutorRating.mode, TutorRating.topic, TutorRating.comment)
+            .where(TutorRating.good == 0, TutorRating.created_at >= month_start)
+            .order_by(TutorRating.id.desc())
+            .limit(3)
+        )
+    ).all()
+    if r_n:
+        quality_line = (
+            f"• Sifat (30 kun): 👍 <b>{round(r_good / r_n * 100)}%</b> ({r_n} baho)"
+            + (f" · 7 kun: 👍 {round(w_good / w_n * 100)}% ({w_n})" if w_n else "")
+        )
+    else:
+        quality_line = "• Sifat: hali baho yo'q"
+    bad_lines = "".join(
+        f"\n  👎 {m} · {t or '—'}" + (f": {c[:60]}" if c else "") for m, t, c in bad_rows
+    )
+
     # ── Kalitlar va ogohlantirishlar ──
     ai_ok = "✅" if settings.anthropic_api_key else "❌ ANTHROPIC_API_KEY bo'sh"
     if not settings.stt_api_key:
@@ -631,7 +664,8 @@ async def tutor_report(session: AsyncSession) -> str:
         f"{t_today['users']} o'quvchi\n"
         f"• 7 kun: {t_week['total']} javob · {t_week['users']} o'quvchi · 🎤 ovozli {voice_pct}%\n"
         f"• Mock yakunlangan (30 kun): {mocks_month} · o'rtacha ball {round(mock_avg)}\n"
-        f"• Limitlar: VIP {settings.tutor_daily_turns}/kun · bepul {settings.tutor_free_turns}/kun\n\n"
+        f"• Limitlar: VIP {settings.tutor_daily_turns}/kun · bepul {settings.tutor_free_turns}/kun\n"
+        f"{quality_line}{bad_lines}\n\n"
         "👑 <b>VIP</b>\n"
         f"• Faol: <b>{vip_active}</b> · 3 kun ichida tugaydi: {vip_expiring}\n"
         f"• Kutayotgan cheklar: <b>{pending}</b>\n"

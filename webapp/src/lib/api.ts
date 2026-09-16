@@ -1006,6 +1006,14 @@ export const api = {
       body: JSON.stringify({ text }),
     }),
   getTutorLog: () => request<TutorLog>("/api/v2/tutor/log"),
+  tutorRate: (body: {
+    session_key: string;
+    mode: "chat" | "mock" | "daily" | "drill";
+    topic: string;
+    good: boolean;
+    comment: string;
+  }) =>
+    request<{ ok: boolean }>("/api/v2/tutor/rate", { method: "POST", body: JSON.stringify(body) }),
   deleteMistake: (id: number) =>
     request<{ ok: boolean }>(`/api/v2/tutor/mistakes/${id}`, { method: "DELETE" }),
   tutorFinish: (session_key: string) =>
