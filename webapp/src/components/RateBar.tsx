@@ -7,7 +7,7 @@ import { api } from "../lib/api";
 
 interface Props {
   sessionKey: string;
-  mode: "chat" | "mock" | "daily" | "drill";
+  mode: "chat" | "mock" | "daily" | "drill" | "listen";
   topic?: string;
   question?: string;
 }

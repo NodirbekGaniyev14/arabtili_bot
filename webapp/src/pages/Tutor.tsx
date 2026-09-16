@@ -13,6 +13,7 @@ import { playUrl, speakText } from "../lib/audio";
 import { MAX_SECONDS, Recorder, micSupported } from "../lib/recorder";
 import RateBar from "../components/RateBar";
 import Drill from "./Drill";
+import Listening from "./Listening";
 import Paywall from "./Paywall";
 
 /** AI ustoz — darajaga mos jonli suhbat (speaking) va mock imtihonlar.
@@ -59,7 +60,8 @@ interface Msg {
 }
 
 type RecTarget = { kind: "answer" } | { kind: "repeat"; idx: number };
-type Tab = "chat" | "mock" | "drill";
+type Tab = "chat" | "mock" | "drill" | "listen";
+const FREE_TABS: Tab[] = ["drill", "listen"];  // AI'siz, bepul bo'limlar
 
 const tg = () => window.Telegram?.WebApp;
 const VOICE_MODE_KEY = "arabiy_tutor_voice_mode";
@@ -86,6 +88,8 @@ export default function Tutor({ onClose }: TutorProps) {
   const [topic, setTopic] = useState<TutorTopic | null>(null);
   const [mock, setMock] = useState<TutorMock | null>(null);
   const [drillTopic, setDrillTopic] = useState<TutorTopic | null>(null);
+  const [listenTopic, setListenTopic] = useState<TutorTopic | null>(null);
+  const [listenKind, setListenKind] = useState<"choice" | "dictation">("choice");
   const [sessionKey, setSessionKey] = useState("");
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
@@ -436,9 +440,11 @@ export default function Tutor({ onClose }: TutorProps) {
             🤖 AI USTOZ{info ? ` · ${info.level}` : ""}
           </div>
           <div className="font-extrabold truncate">
-            {drillTopic
-              ? `🎤 ${drillTopic.title_uz}`
-              : mock
+            {listenTopic
+              ? `🎧 ${listenTopic.title_uz}`
+              : drillTopic
+                ? `🎤 ${drillTopic.title_uz}`
+                : mock
                 ? `${mock.emoji} ${mock.title_uz}`
                 : topic
                   ? `${topic.emoji} ${topic.title_uz}`
@@ -488,7 +494,13 @@ export default function Tutor({ onClose }: TutorProps) {
           )}
           <button
             onClick={() =>
-              drillTopic ? setDrillTopic(null) : active && !finish ? backToList() : onClose()
+              listenTopic
+                ? setListenTopic(null)
+                : drillTopic
+                  ? setDrillTopic(null)
+                  : active && !finish
+                    ? backToList()
+                    : onClose()
             }
             className="w-9 h-9 rounded-full bg-cardline text-ink-soft font-extrabold"
           >
@@ -508,19 +520,29 @@ export default function Tutor({ onClose }: TutorProps) {
         />
       )}
 
+      {/* Tinglab tushunish (AI'siz) */}
+      {listenTopic && (
+        <Listening
+          topic={listenTopic}
+          kind={listenKind}
+          onClose={() => setListenTopic(null)}
+          onFinished={loadInfo}
+        />
+      )}
+
       {/* Mavzu / mock tanlash */}
-      {!active && !drillTopic && (
+      {!active && !drillTopic && !listenTopic && (
         <div className="flex-1 overflow-y-auto p-4 space-y-3">
-          <div className="grid grid-cols-3 gap-1 rounded-2xl bg-cardline/60 p-1">
-            {(["chat", "mock", "drill"] as Tab[]).map((t) => (
+          <div className="grid grid-cols-4 gap-1 rounded-2xl bg-cardline/60 p-1">
+            {(["chat", "mock", "drill", "listen"] as Tab[]).map((t) => (
               <button
                 key={t}
                 onClick={() => setTab(t)}
-                className={`rounded-xl py-2 text-[12px] font-extrabold transition-colors ${
+                className={`rounded-xl py-2 text-[11px] font-extrabold transition-colors ${
                   tab === t ? "bg-card shadow-sm" : "text-ink-soft"
                 }`}
               >
-                {t === "chat" ? "💬 Suhbat" : t === "mock" ? "🎯 Mock" : "🎤 Talaffuz"}
+                {t === "chat" ? "💬 Suhbat" : t === "mock" ? "🎯 Mock" : t === "drill" ? "🎤 Talaffuz" : "🎧 Tinglash"}
               </button>
             ))}
           </div>
@@ -530,8 +552,34 @@ export default function Tutor({ onClose }: TutorProps) {
               ? "Ustoz sizning darajangizda gaplashadi, xatolaringizni yumshoq tuzatadi. Arabcha yozing yoki 🎤 gapiring. Tushunmasangiz — o'zbekcha so'rang, tushuntiradi."
               : tab === "mock"
                 ? "Kasb yoki soha bo'yicha 5 savollik og'zaki imtihon. Har javob 0–100 baholanadi, o'rtacha ball profil ballaringizga qo'shiladi."
-                : "Mavzu bo'yicha 10 ta jumla: eshiting, ayting — talaffuzingiz baholanadi, aytilmagan so'zlar ko'rsatiladi. Bepul, cheklovsiz."}
+                : tab === "drill"
+                  ? "Mavzu bo'yicha 10 ta jumla: eshiting, ayting — talaffuzingiz baholanadi, aytilmagan so'zlar ko'rsatiladi. Bepul, cheklovsiz."
+                  : "Matnsiz — faqat quloq: jumlani eshitib tarjimasini tanlang yoki diktant yozing. Javobdan keyin matn ochiladi. Bepul."}
           </p>
+
+          {tab === "listen" && info && (
+            <>
+              <div className="grid grid-cols-2 gap-1 rounded-2xl bg-card border border-cardline p-1">
+                {(["choice", "dictation"] as const).map((k) => (
+                  <button
+                    key={k}
+                    onClick={() => setListenKind(k)}
+                    className={`rounded-xl py-2 text-[12px] font-extrabold transition-colors ${
+                      listenKind === k ? "bg-emerald-deep text-white" : "text-ink-soft"
+                    }`}
+                  >
+                    {k === "choice" ? "🔘 Tarjimani tanlash" : "✍️ Diktant"}
+                  </button>
+                ))}
+              </div>
+              <div className="flex items-center justify-between rounded-2xl bg-card border border-cardline px-4 py-2.5 text-xs font-bold">
+                <span className="text-ink-soft">
+                  🆓 Bepul · daraja <span className="text-ink">{info.level}</span> · XP: 5+ jumla
+                </span>
+                <span className="text-ink-soft">{listenKind === "choice" ? "A0+" : "A1+ tavsiya"}</span>
+              </div>
+            </>
+          )}
 
           {tab === "drill" && info && (
             <div className="flex items-center justify-between rounded-2xl bg-card border border-cardline px-4 py-2.5 text-xs font-bold">
@@ -544,7 +592,7 @@ export default function Tutor({ onClose }: TutorProps) {
             </div>
           )}
 
-          {tab !== "drill" && info && (
+          {!FREE_TABS.includes(tab) && info && (
             <div className="flex items-center justify-between rounded-2xl bg-card border border-cardline px-4 py-2.5 text-xs font-bold">
               <span className="text-ink-soft">
                 Bugun qoldi: <span className="text-ink">{turnsLeft}</span>/{info.daily_limit}{" "}
@@ -556,7 +604,7 @@ export default function Tutor({ onClose }: TutorProps) {
             </div>
           )}
 
-          {info && !info.vip && info.trial_available && tab !== "drill" && (
+          {info && !info.vip && info.trial_available && !FREE_TABS.includes(tab) && (
             <button
               onClick={startTrial}
               disabled={trialBusy}
@@ -577,7 +625,7 @@ export default function Tutor({ onClose }: TutorProps) {
             </button>
           )}
 
-          {info && !info.vip && tab !== "drill" && (
+          {info && !info.vip && !FREE_TABS.includes(tab) && (
             <button
               onClick={() => setPaywall("")}
               className="w-full text-left rounded-3xl bg-gradient-to-br from-emerald-deep to-emerald-dark p-4 text-white shadow-lg active:scale-[0.98] transition-transform"
@@ -599,7 +647,7 @@ export default function Tutor({ onClose }: TutorProps) {
             </button>
           )}
 
-          {info && !info.ai && tab !== "drill" && (
+          {info && !info.ai && !FREE_TABS.includes(tab) && (
             <div className="rounded-2xl bg-gold-soft border border-gold/30 p-4 text-sm font-semibold">
               AI ustoz hozircha o'chiq (server sozlanmoqda). Birozdan keyin qayta kiring.
             </div>
@@ -636,6 +684,19 @@ export default function Tutor({ onClose }: TutorProps) {
                 badge={t.recommended ? "" : `${t.min_level}+`}
                 disabled={loading}
                 onClick={() => setDrillTopic(t)}
+              />
+            ))}
+
+          {tab === "listen" &&
+            info?.topics.map((t) => (
+              <ListCard
+                key={t.id}
+                emoji={t.emoji}
+                title={t.title_uz}
+                desc={`10 jumla · ${t.desc_uz}`}
+                badge={t.recommended ? "" : `${t.min_level}+`}
+                disabled={loading}
+                onClick={() => setListenTopic(t)}
               />
             ))}
 

@@ -242,6 +242,11 @@ export default function SpeakingLog({ onClose, initialTab = "mistakes" }: Props)
               empty="Hali mashq yo'q. AI ustoz → Talaffuz bo'limi bepul, hoziroq boshlang."
               items={log.drills}
             />
+            <HistorySection
+              title="🎧 TINGLAB TUSHUNISH"
+              empty="Hali mashq yo'q. AI ustoz → Tinglash bo'limi bepul."
+              items={log.listens ?? []}
+            />
           </>
         )}
       </div>

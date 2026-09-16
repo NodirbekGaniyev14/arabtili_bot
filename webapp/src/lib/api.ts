@@ -1000,6 +1000,20 @@ export const api = {
       "/api/v2/tutor/daily/answer",
       { method: "POST", body: JSON.stringify({ text, voice }) }
     ),
+  tutorListen: (topic_id: string, kind: "choice" | "dictation") =>
+    request<ListenStart>(
+      `/api/v2/tutor/listen?topic_id=${encodeURIComponent(topic_id)}&kind=${kind}`
+    ),
+  tutorListenAnswer: (body: { key: string; idx: number; choice?: number; text?: string }) =>
+    request<ListenAnswer>("/api/v2/tutor/listen/answer", {
+      method: "POST",
+      body: JSON.stringify(body),
+    }),
+  tutorListenFinish: (key: string) =>
+    request<ListenFinish>("/api/v2/tutor/listen/finish", {
+      method: "POST",
+      body: JSON.stringify({ key }),
+    }),
   tutorSay: (text: string) =>
     request<{ audio_url: string }>("/api/v2/tutor/say", {
       method: "POST",
@@ -1008,7 +1022,7 @@ export const api = {
   getTutorLog: () => request<TutorLog>("/api/v2/tutor/log"),
   tutorRate: (body: {
     session_key: string;
-    mode: "chat" | "mock" | "daily" | "drill";
+    mode: "chat" | "mock" | "daily" | "drill" | "listen";
     topic: string;
     good: boolean;
     comment: string;
@@ -1229,6 +1243,40 @@ export interface DrillFinish {
   items: { ar: string; uz: string }[];
 }
 
+// ── Tinglab tushunish (LLM'siz, bepul) ──
+export interface ListenStart {
+  key: string;
+  kind: "choice" | "dictation";
+  level: string;
+  topic_id: string;
+  /** Matn oldindan berilmaydi — faqat audio va (tanlash rejimida) variantlar */
+  items: { idx: number; audio_url: string; options?: string[] }[];
+}
+
+export interface ListenAnswer {
+  correct: boolean;
+  score: number;
+  /** tanlash: to'g'ri variant indeksi */
+  answer?: number;
+  /** diktant: so'zma-so'z belgilar */
+  words?: { ar: string; ok: boolean }[];
+  ar: string;
+  translit: string;
+  uz: string;
+  word: { ar: string; translit: string; uz: string };
+}
+
+export interface ListenFinish {
+  topic_id: string;
+  kind: string;
+  score: number;
+  count: number;
+  total: number;
+  xp: number;
+  scores: number[];
+  items: { ar: string; translit: string; uz: string }[];
+}
+
 // ── Speaking daftari ──
 export interface TutorMistakeItem {
   id: number;
@@ -1255,6 +1303,7 @@ export interface TutorLog {
   mistakes: TutorMistakeItem[];
   mocks: (SpeakingHistoryItem & { mock_id: string })[];
   drills: (SpeakingHistoryItem & { topic_id: string })[];
+  listens?: (SpeakingHistoryItem & { topic_id: string; kind: string })[];
 }
 
 export interface TutorFinishResult {

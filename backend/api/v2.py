@@ -17,6 +17,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from db.models import (
     DailySpeaking,
     DrillResult,
+    ListeningResult,
     TutorRating,
     LessonRating,
     MockResult,
@@ -831,6 +832,101 @@ async def tutor_drill_finish(
     }
 
 
+# ─────────── Tinglab tushunish (K18.3) — LLM'siz, bepul ───────────
+
+
+@router.get("/tutor/listen")
+async def tutor_listen(
+    topic_id: str = "erkin",
+    kind: str = "choice",
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """10 ta jumla: faqat audio (+ tanlash rejimida 4 variant). Matn javobdan keyin."""
+    from services import listening, tts
+
+    level = await _user_level(session, user.id)
+    key, d = listening.create(user.id, level, topic_id[:24], kind)
+    items = listening.public_items(d)
+    for i, it in enumerate(d["items"]):
+        audio_key = tts.schedule(it["ar"], level)
+        items[i]["audio_url"] = f"/api/v2/tutor/audio/{audio_key}.mp3" if audio_key else ""
+    return {"key": key, "kind": d["kind"], "level": level, "topic_id": d["topic"], "items": items}
+
+
+class ListenAnswerBody(BaseModel):
+    key: str = Field(min_length=8, max_length=32)
+    idx: int = Field(ge=0, le=50)
+    choice: int | None = Field(default=None, ge=0, le=10)
+    text: str = Field(default="", max_length=400)
+
+
+@router.post("/tutor/listen/answer")
+async def tutor_listen_answer(
+    body: ListenAnswerBody,
+    user: User = Depends(get_current_user),
+):
+    from services import listening
+
+    r = listening.answer(body.key, user.id, body.idx, body.choice, body.text)
+    if r is None:
+        raise HTTPException(status_code=404, detail="Mashq topilmadi — qaytadan boshlang")
+    return r
+
+
+@router.post("/tutor/listen/finish")
+async def tutor_listen_finish(
+    body: DrillFinishBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Yakun: o'rtacha, XP (kamida 5 jumla; mavzu+rejim uchun kuniga bir marta)."""
+    from services import listening
+
+    s = listening.summary(body.key, user.id)
+    if s is None:
+        raise HTTPException(status_code=404, detail="Mashq topilmadi")
+    xp = listening.xp_for(s["score"], s["count"])
+    if xp > 0:
+        today = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0, tzinfo=None)
+        earned = (
+            await session.execute(
+                select(ListeningResult.id)
+                .where(
+                    ListeningResult.user_id == user.id,
+                    ListeningResult.topic == s["topic"],
+                    ListeningResult.kind == s["kind"],
+                    ListeningResult.xp > 0,
+                    ListeningResult.created_at >= today,
+                )
+                .limit(1)
+            )
+        ).scalar_one_or_none()
+        if earned is not None:
+            xp = 0
+    if s["count"] > 0:
+        session.add(
+            ListeningResult(
+                user_id=user.id, topic=s["topic"], kind=s["kind"], level=s["level"],
+                score=s["score"], count=s["count"], xp=xp,
+            )
+        )
+        if xp > 0:
+            session.add(XpLog(user_id=user.id, amount=xp, source=f"listen:{body.key}"))
+        await session.commit()
+    listening.finish(body.key, user.id)
+    return {
+        "topic_id": s["topic"],
+        "kind": s["kind"],
+        "score": s["score"],
+        "count": s["count"],
+        "total": len(s["items"]),
+        "xp": xp,
+        "scores": s["scores"],
+        "items": s["items"],
+    }
+
+
 @router.get("/tutor/log")
 async def tutor_log(
     user: User = Depends(get_current_user),
@@ -909,10 +1005,36 @@ async def tutor_log(
         d["date"] = created.strftime("%d.%m")
         d["history"] = (d["history"] + [score])[-6:]
 
+    listen_rows = (
+        await session.execute(
+            select(ListeningResult.topic, ListeningResult.kind, ListeningResult.score, ListeningResult.created_at)
+            .where(ListeningResult.user_id == user.id)
+            .order_by(ListeningResult.id.asc())
+        )
+    ).all()
+    listens: dict[str, dict] = {}
+    for topic_id, kind, score, created in listen_rows:
+        t = tutor.TOPIC_BY_ID.get(topic_id) or {}
+        k = f"{topic_id}:{kind}"
+        d = listens.setdefault(
+            k,
+            {
+                "topic_id": topic_id, "kind": kind,
+                "title": f"{t.get('title_uz', topic_id)} · {'diktant' if kind == 'dictation' else 'tanlash'}",
+                "emoji": "🎧", "best": 0, "last": 0, "attempts": 0, "history": [], "date": "",
+            },
+        )
+        d["attempts"] += 1
+        d["best"] = max(d["best"], score)
+        d["last"] = score
+        d["date"] = created.strftime("%d.%m")
+        d["history"] = (d["history"] + [score])[-6:]
+
     return {
         "mistakes": mistakes,
         "mocks": sorted(mocks.values(), key=lambda d: -d["best"]),
         "drills": sorted(drills.values(), key=lambda d: -d["best"]),
+        "listens": sorted(listens.values(), key=lambda d: -d["best"]),
     }
 
 
@@ -1004,7 +1126,7 @@ async def tutor_daily_answer(
 
 class RateBody(BaseModel):
     session_key: str = Field(min_length=4, max_length=36, pattern=r"^[A-Za-z0-9_-]+$")
-    mode: str = Field(default="chat", pattern=r"^(chat|mock|daily|drill)$")
+    mode: str = Field(default="chat", pattern=r"^(chat|mock|daily|drill|listen)$")
     topic: str = Field(default="", max_length=24)
     good: bool
     comment: str = Field(default="", max_length=400)

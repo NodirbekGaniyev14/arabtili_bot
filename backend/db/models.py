@@ -409,6 +409,22 @@ class Testimonial(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
 
 
+class ListeningResult(Base):
+    """Tinglab tushunish yakuni (K18.3): mavzu + rejim (choice|dictation) bo'yicha o'rtacha."""
+
+    __tablename__ = "listening_results"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    topic: Mapped[str] = mapped_column(String(24), default="")
+    kind: Mapped[str] = mapped_column(String(10), default="choice")
+    level: Mapped[str] = mapped_column(String(4), default="")
+    score: Mapped[int] = mapped_column(Integer)
+    count: Mapped[int] = mapped_column(Integer, default=0)
+    xp: Mapped[int] = mapped_column(Integer, default=0)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
 class TutorRating(Base):
     """Sifat halqasi (K18.2): suhbat/mock/kunlik savol/talaffuz yakunida 👍/👎.
     Suhbat matni saqlanmaydi — bu yagona sifat signali. Har sessiya uchun bitta."""
