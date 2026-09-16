@@ -20,6 +20,11 @@ interface TelegramWebApp {
   themeParams: Record<string, string>;
   setHeaderColor?(color: string): void;
   setBackgroundColor?(color: string): void;
+  /** Bot API 6.1+: Telegram to'lov oynasi (Payme/Click) — K18.5 */
+  openInvoice?(url: string, callback?: (status: "paid" | "cancelled" | "failed" | "pending") => void): void;
+  openTelegramLink?(url: string): void;
+  isVersionAtLeast?(version: string): boolean;
+  version?: string;
   HapticFeedback?: {
     impactOccurred(
       style: "light" | "medium" | "heavy" | "rigid" | "soft"

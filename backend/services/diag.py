@@ -29,6 +29,7 @@ REQUIRED_TABLES = (
 )
 REQUIRED_COLUMNS = {
     "users": ("vip_until", "paywall_seen_at", "vip_notice", "discount_notified", "trial_until", "speak_report_key"),
+    "payment_requests": ("provider", "charge_id", "provider_charge_id"),
     "tutor_turns": ("mode", "score", "vocab", "grammar", "content", "pron"),
     "mock_results": ("vocab", "grammar", "content", "pron"),
 }
@@ -207,6 +208,12 @@ def check_settings() -> list[str]:
         _ok(f"Yordam: @{settings.support_username.lstrip('@')}")
         if settings.support_username
         else _warn("SUPPORT_USERNAME bo'sh — paywall'da «admin» deb chiqadi")
+    )
+    token = settings.pay_provider_token.strip()
+    out.append(
+        _ok(f"Avto to'lov: {settings.pay_provider_name} · token …{token[-4:]}")
+        if token
+        else _warn("Avto to'lov yo'q — faqat chek oqimi", ".env PAY_PROVIDER_TOKEN (BotFather → Payments → Payme/Click)")
     )
     out.append(_ok(f"Limitlar: VIP {settings.tutor_daily_turns}/kun · bepul {settings.tutor_free_turns}/kun · chegirma {settings.pay_discount_hours} soat"))
     return out

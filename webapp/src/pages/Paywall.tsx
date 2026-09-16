@@ -1,12 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { api, type PayInfo, type PayPlan } from "../lib/api";
 
-/** VIP tarif sahifasi (K17.2).
+/** VIP tarif sahifasi (K17.2, K18.5).
  *
  *  Tepada chegirma taymeri → VIP imkoniyatlari → tarif (1 oy / 3 oy) va narx
- *  → qabul qiluvchi karta (nusxalash) → to'lovning 3 qadami → chek rasmini
- *  yuklash → «Chekni yuborish» → admin Telegram'da tasdiqlaydi.
+ *  → (K18.5) «Karta bilan to'lash» — Telegram'ning o'z to'lov oynasi (Payme/Click),
+ *  to'lov o'tishi bilan VIP avtomatik → yoki eski usul: qabul qiluvchi karta
+ *  (nusxalash) → 3 qadam → chek rasmini yuklash → admin tasdiqlaydi.
+ *  Avto to'lov yoqilgan bo'lsa chek oqimi «boshqa usul» ostida yig'iq turadi.
  */
+
+type PayStatus = "" | "paid" | "pending" | "failed" | "cancelled";
 
 interface PaywallProps {
   onClose: () => void;
@@ -82,6 +86,9 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
   const [copied, setCopied] = useState(false);
   const [trialBusy, setTrialBusy] = useState(false);
   const [trialMsg, setTrialMsg] = useState("");
+  const [paying, setPaying] = useState(false);
+  const [payStatus, setPayStatus] = useState<PayStatus>("");
+  const [showReceipt, setShowReceipt] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
   const startTrial = async () => {
@@ -108,6 +115,55 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
   useEffect(() => {
     load();
   }, []);
+
+  // K18.5: Telegram to'lov oynasi. Karta raqami bizga kelmaydi — Telegram/provayder ichida.
+  // «paid» bo'lgach bot polling'iga successful_payment keladi (1–3 s) → VIP; shu
+  // orada /api/pay/info ni bir necha marta qayta so'raymiz.
+  const payNow = async () => {
+    if (paying) return;
+    setPaying(true);
+    setError("");
+    setPayStatus("");
+    try {
+      const r = await api.createInvoice(planId);
+      const t = tg();
+      // openInvoice — Bot API 6.1+; eski mijozda shim metod bor, lekin chaqirilsa xato otadi
+      if (t?.openInvoice && t.isVersionAtLeast?.("6.1")) {
+        try {
+          t.openInvoice(r.url, (status) => {
+            setPaying(false);
+            setPayStatus(status);
+            if (status === "paid") {
+              t.HapticFeedback?.notificationOccurred("success");
+              [1000, 3000, 6000, 10000, 15000].forEach((ms) => window.setTimeout(load, ms));
+            } else if (status === "failed") {
+              t.HapticFeedback?.notificationOccurred("error");
+            }
+          });
+          return;
+        } catch {
+          /* qo'llanmadi — pastdagi zaxira yo'l */
+        }
+      }
+      // Eski mijoz / brauzer: havolani Telegram'da ochamiz — to'lov chat ichida bo'ladi
+      let opened = false;
+      try {
+        if (t?.openTelegramLink) {
+          t.openTelegramLink(r.url);
+          opened = true;
+        }
+      } catch {
+        /* shim: not supported */
+      }
+      if (!opened) window.open(r.url, "_blank");
+      setPayStatus("pending");
+      [3000, 8000, 15000, 30000].forEach((ms) => window.setTimeout(load, ms));
+    } catch (e) {
+      setError((e as { detail?: string })?.detail || "To'lov havolasi ochilmadi. Qayta urinib ko'ring.");
+    } finally {
+      setPaying(false);
+    }
+  };
 
   const countdown = useCountdown(info?.discount.active ? info.discount.until : null, load);
 
@@ -271,6 +327,27 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
           </div>
         )}
 
+        {payStatus === "paid" && (
+          <div className="rounded-2xl bg-emerald-deep/10 border border-emerald-deep/30 p-4">
+            <div className="font-extrabold text-emerald-dark">✅ To'lov qabul qilindi!</div>
+            <div className="text-sm font-semibold text-ink-soft mt-1">
+              {info?.vip
+                ? "VIP faol — AI ustoz, speaking va mock imtihonlar ochiq. Omad!"
+                : "VIP bir necha soniyada faollashadi… Telegram'da tasdiq xabari keladi."}
+            </div>
+          </div>
+        )}
+        {payStatus === "pending" && (
+          <div className="rounded-2xl bg-gold-soft border border-gold/40 p-4 text-sm font-semibold">
+            ⏳ To'lov tekshirilmoqda. Tasdiqlangach VIP avtomatik yoqiladi — Telegram'da xabar keladi.
+          </div>
+        )}
+        {payStatus === "failed" && (
+          <div className="rounded-2xl bg-terracotta/10 border border-terracotta/30 px-4 py-3 text-sm font-semibold">
+            ❌ To'lov o'tmadi. Boshqa karta bilan yoki pastdagi chek usuli orqali urinib ko'ring.
+          </div>
+        )}
+
         {(sent || info?.pending) && (
           <div className="rounded-2xl bg-emerald-deep/10 border border-emerald-deep/30 p-4">
             <div className="font-extrabold text-emerald-dark">✅ Chek yuborildi!</div>
@@ -383,7 +460,35 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
             </div>
           )}
 
+          {/* K18.5: Telegram Payments — Payme / Click */}
+          {info?.auto_pay && plan && (
+            <div className="space-y-2">
+              <button
+                onClick={payNow}
+                disabled={paying}
+                className="w-full rounded-2xl bg-emerald-deep py-4 text-white font-extrabold text-[15px] active:scale-[0.98] transition-transform disabled:opacity-60 shadow-lg"
+              >
+                {paying ? "Ochilmoqda…" : `💳 Karta bilan to'lash — ${fmt(plan.price)} so'm`}
+              </button>
+              <div className="text-center text-[11px] text-ink-soft font-semibold">
+                {info.provider_name} · Telegram ichida xavfsiz · Uzcard / Humo · VIP darhol yoqiladi
+              </div>
+              {error && !showReceipt && (
+                <div className="rounded-2xl bg-terracotta/10 border border-terracotta/30 px-4 py-3 text-sm font-semibold">
+                  {error}
+                </div>
+              )}
+              <button
+                onClick={() => setShowReceipt((v) => !v)}
+                className="w-full rounded-2xl bg-card border border-cardline py-2.5 text-[12px] font-extrabold text-ink-soft"
+              >
+                {showReceipt ? "▲ Chek usulini yashirish" : "▼ Boshqa usul: kartaga o'tkazma + chek"}
+              </button>
+            </div>
+          )}
+
           {/* Karta */}
+          {(!info?.auto_pay || showReceipt) && (
           <div className="rounded-3xl bg-ink text-sand p-4 shadow-lg">
             <div className="flex items-center justify-between">
               <div className="text-[11px] font-extrabold tracking-[0.12em] text-sand/70">
@@ -424,8 +529,11 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
               </div>
             )}
           </div>
+          )}
         </section>
 
+        {(!info?.auto_pay || showReceipt) && (
+        <>
         {/* 3 qadam */}
         <section className="space-y-2">
           <div className="text-[11px] font-extrabold tracking-[0.12em]">
@@ -522,9 +630,13 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
           </section>
         )}
 
+        </>
+        )}
+
         <div className="rounded-2xl bg-card border border-cardline p-4 text-[12px] font-semibold text-ink-soft">
-          ⏳ Admin chekni tekshirgach, hisobingizga VIP biriktiriladi. Tasdiqlanishi bilan
-          profilingizda barcha imkoniyatlar ochiladi.
+          {info?.auto_pay
+            ? "🔒 To'lov Telegram va to'lov tizimi ichida o'tadi — karta ma'lumotlari bizga kelmaydi. VIP to'lov bilanoq yoqiladi."
+            : "⏳ Admin chekni tekshirgach, hisobingizga VIP biriktiriladi. Tasdiqlanishi bilan profilingizda barcha imkoniyatlar ochiladi."}
           {support && (
             <div className="mt-2">
               Savollar yoki tezlashtirish uchun:{" "}

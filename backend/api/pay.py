@@ -1,6 +1,7 @@
 """VIP to'lov endpointlari (K17.2) — services/billing.py."""
 
 from fastapi import APIRouter, Depends, File, Form, HTTPException, Request, UploadFile
+from pydantic import BaseModel
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from db.models import User
@@ -9,6 +10,33 @@ from services import billing
 from services.telegram_auth import get_current_user
 
 router = APIRouter(prefix="/api/pay")
+
+
+class InvoiceBody(BaseModel):
+    plan: str = "1oy"
+
+
+@router.post("/invoice")
+async def pay_invoice(
+    body: InvoiceBody,
+    request: Request,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """K18.5 — Telegram to'lov havolasi (Payme/Click): Mini App `openInvoice(url)` ochadi,
+    to'lov bot polling'iga `successful_payment` bo'lib keladi → VIP avtomatik."""
+    from services import payments
+
+    if body.plan not in billing.PLANS:
+        raise HTTPException(status_code=422, detail="Noma'lum tarif")
+    bot = getattr(request.app.state, "bot", None)
+    if not payments.enabled() or bot is None:
+        raise HTTPException(status_code=409, detail="Avto to'lov hozircha yoqilmagan — chek orqali to'lang")
+    try:
+        url, amount = await payments.invoice_link(bot, user, body.plan)
+    except Exception as e:  # Telegram javob bermadi / token noto'g'ri
+        raise HTTPException(status_code=503, detail="To'lov havolasi yaratilmadi. Birozdan keyin urinib ko'ring.") from e
+    return {"url": url, "amount": amount, "plan": body.plan, "provider": payments.provider_name()}
 
 
 @router.post("/trial")

@@ -250,7 +250,7 @@ async def test_tutor_report_smoke(session, make_user, monkeypatch):
     assert "💬 Suhbat 1" in text and "🎯 Mock imtihon 1" in text
     assert "Faol: <b>1</b> · 3 kun ichida tugaydi: 1" in text
     assert "Kutayotgan cheklar: <b>1</b>" in text
-    assert "1 ta · <b>40 000</b> so'm" in text
+    assert "1 ta (0 avto) · <b>40 000</b> so'm" in text
     assert "STT_API_KEY bo'sh" in text
     assert f"VIP {settings.tutor_daily_turns}/kun" in text
     assert "Ogohlantirishlar: yo'q" in text

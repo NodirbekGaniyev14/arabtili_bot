@@ -1056,7 +1056,20 @@ export const api = {
       fd
     );
   },
+  /** K18.5: Telegram to'lov havolasi (Payme/Click) — WebApp.openInvoice(url) bilan ochiladi */
+  createInvoice: (plan: string) =>
+    request<PayInvoice>("/api/pay/invoice", {
+      method: "POST",
+      body: JSON.stringify({ plan }),
+    }),
 };
+
+export interface PayInvoice {
+  url: string;
+  amount: number;
+  plan: string;
+  provider: string;
+}
 
 export interface PayPlan {
   id: string;
@@ -1073,6 +1086,9 @@ export interface PayPlan {
 }
 
 export interface PayInfo {
+  /** K18.5: Telegram Payments (Payme/Click) yoqilgan — «Karta bilan to'lash» tugmasi */
+  auto_pay: boolean;
+  provider_name: string;
   /** Bir martalik VIP sinov (K18.1) */
   trial_available: boolean;
   trial_days: number;

@@ -186,11 +186,14 @@ async def info(session: AsyncSession, user: User) -> dict:
     if user.paywall_seen_at is None:
         user.paywall_seen_at = utcnow()
         await session.commit()
-    from services import referral
+    from services import payments, referral
 
     active = discount_active(user)
     until = discount_until(user)
     return {
+        # K18.5: Telegram Payments (Payme/Click) yoqilganmi — paywall «Karta bilan to'lash»
+        "auto_pay": payments.enabled(),
+        "provider_name": payments.provider_name(),
         "trial_available": referral.trial_available(user),
         "trial_days": referral.TRIAL_DAYS,
         "referral_days": referral.REF_DAYS,

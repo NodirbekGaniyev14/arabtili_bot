@@ -48,6 +48,11 @@ class Settings(BaseSettings):
     pay_discount_hours: int = 24
     # Savollar uchun Telegram username (@ belgisisiz)
     support_username: str = ""
+    # K18.5 avto to'lov — Telegram Payments (services/payments.py). BotFather →
+    # /mybots → bot → Payments → Payme yoki Click → provayder kabinetida shartnoma
+    # → BotFather bergan token. FAQAT serverdagi .env'da. Bo'sh = faqat chek oqimi.
+    pay_provider_token: str = ""
+    pay_provider_name: str = "Payme / Click"
 
     # ── Ovoz → matn (services/stt.py). OpenAI-mos endpoint: Groq yoki OpenAI ──
     # Groq: console.groq.com → whisper-large-v3-turbo (arzon, tez)

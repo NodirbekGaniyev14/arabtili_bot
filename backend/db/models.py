@@ -342,6 +342,11 @@ class PaymentRequest(Base):
     days: Mapped[int] = mapped_column(Integer, default=0)  # tasdiqlangan muddat
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
     decided_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    # K18.5 avto to'lov (services/payments.py): receipt (chek) | telegram (Payme/Click);
+    # Telegram va provayder tranzaksiya ID'lari — takror update va qaytarish uchun
+    provider: Mapped[str] = mapped_column(String(12), default="receipt")
+    charge_id: Mapped[str] = mapped_column(String(64), default="", index=True)
+    provider_charge_id: Mapped[str] = mapped_column(String(64), default="")
 
 
 class TutorMistake(Base):

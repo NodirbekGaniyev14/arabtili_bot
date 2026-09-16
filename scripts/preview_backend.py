@@ -39,4 +39,22 @@ os.chdir(ROOT / "backend")
 
 import uvicorn  # noqa: E402
 
-uvicorn.run("main:app", host="127.0.0.1", port=8000)
+from main import app  # noqa: E402
+
+
+class _FakePayBot:
+    """PREVIEW_FAKE_PAY=1 (.env.preview) — avto to'lov UI'ni Telegram'siz ko'rish:
+    invoice havolasi soxta, xabarlar konsolga. PAY_PROVIDER_TOKEN ham berilishi kerak."""
+
+    async def create_invoice_link(self, **kw):
+        print(f"[preview] invoice: {kw.get('title')} {kw['prices'][0].amount // 100} so'm payload={kw.get('payload')}")
+        return "https://t.me/$preview_fake_invoice"
+
+    async def send_message(self, chat_id, text, **kw):
+        print(f"[preview] send_message → {chat_id}: {text[:80]!r}")
+
+
+if os.environ.get("PREVIEW_FAKE_PAY") == "1":
+    app.state.bot = _FakePayBot()
+
+uvicorn.run(app, host="127.0.0.1", port=8000)

@@ -80,6 +80,12 @@ _MIGRATIONS = {
         "content": "INTEGER DEFAULT -1",
         "pron": "INTEGER DEFAULT -1",
     },
+    # K18.5 avto to'lov (Telegram Payments: Payme/Click)
+    "payment_requests": {
+        "provider": "VARCHAR(12) DEFAULT 'receipt'",
+        "charge_id": "VARCHAR(64) DEFAULT ''",
+        "provider_charge_id": "VARCHAR(64) DEFAULT ''",
+    },
 }
 
 
