@@ -674,6 +674,11 @@ def _stt_failed(request: Request) -> None:
     bot = getattr(request.app.state, "bot", None)
     if err == "auth":
         alerts.fire(bot, "stt_auth")
+    elif err == "rate":
+        alerts.fire(bot, "stt_rate")
+        raise HTTPException(
+            status_code=503, detail="Ovoz xizmati band — 10 soniyadan keyin yana bosing."
+        )
     else:
         alerts.fire(bot, "stt_down", err)
     raise HTTPException(

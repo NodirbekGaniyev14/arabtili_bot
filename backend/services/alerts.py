@@ -36,6 +36,13 @@ KINDS = {
         "🎤 <b>Ovoz xizmati javob bermayapti</b> ({detail}).\n"
         "Vaqtinchalik bo'lishi mumkin — davom etsa, status.groq.com ni tekshiring."
     ),
+    "stt_rate": (
+        "🎤 <b>Ovoz xizmati limitga urildi (Groq 429).</b>\n"
+        "Bepul tarif: 20 so'rov/daqiqa, 2000/kun — ba'zi o'quvchilar «xizmat band» "
+        "xabarini ko'rdi, ovozi «tanilmadi».\n\n"
+        "Yechim: console.groq.com → Settings → Billing → <b>Dev Tier</b> "
+        "(pay-as-you-go, whisper ≈ $0.04/soat audio) — limitlar bir necha barobar oshadi."
+    ),
 }
 
 # kind → yuborilgan sana (Toshkent, ISO) — kuniga bir marta

@@ -1,5 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { api, type ListenAnswer, type ListenFinish, type ListenStart, type TutorTopic } from "../lib/api";
+import {
+  api,
+  wordClass,
+  type ListenAnswer,
+  type ListenFinish,
+  type ListenStart,
+  type TutorTopic,
+} from "../lib/api";
 import { playUrl } from "../lib/audio";
 import RateBar from "../components/RateBar";
 
@@ -245,7 +252,7 @@ export default function Listening({ topic, kind, onClose, onFinished }: Props) {
               <div className="font-arabic text-2xl leading-relaxed" dir="rtl">
                 {kind === "dictation" && result.words
                   ? result.words.map((w, i) => (
-                      <span key={i} className={w.ok ? "" : "text-terracotta underline decoration-2"}>
+                      <span key={i} className={wordClass(w)}>
                         {w.ar}{" "}
                       </span>
                     ))

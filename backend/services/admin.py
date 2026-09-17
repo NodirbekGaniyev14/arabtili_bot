@@ -644,10 +644,17 @@ async def tutor_report(session: AsyncSession) -> str:
         stt_state = "❌ STT_API_KEY bo'sh (mikrofon o'chiq)"
     elif stt.last_error == "auth":
         stt_state = "❌ kalit rad etildi (401) — Groq gsk_ kaliti kerak"
+    elif stt.last_error == "rate":
+        stt_state = "⚠️ Groq limiti (429) — Dev Tier yoqing"
     elif stt.last_error:
         stt_state = f"⚠️ oxirgi xato: {stt.last_error}"
     else:
         stt_state = "✅"
+    st = stt.stats()
+    stt_today = (
+        f"{st['ok']} ok · {st['empty']} tushunilmadi · {st['rate']} limit(429) · {st['fail']} xato"
+        + (f" · {st['retried']} qayta urinish" if st["retried"] else "")
+    )
     sent = alerts.last_sent()
     alert_line = (
         " · ".join(
@@ -682,6 +689,7 @@ async def tutor_report(session: AsyncSession) -> str:
         "🔑 <b>Xizmatlar</b>\n"
         f"• Anthropic: {ai_ok}\n"
         f"• Ovoz (STT): {stt_state}\n"
+        f"• STT bugun: {stt_today}\n"
         f"• Ogohlantirishlar: {alert_line}\n\n"
         "ℹ️ /payments /vip"
     )

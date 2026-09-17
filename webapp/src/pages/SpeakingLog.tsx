@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import {
+  wordClass,
   api,
   type SpeakingHistoryItem,
   type TutorLog,
@@ -176,7 +177,7 @@ export default function SpeakingLog({ onClose, initialTab = "mistakes" }: Props)
                   <div className="font-arabic text-2xl text-emerald-dark leading-relaxed" dir="rtl">
                     {r
                       ? r.words.map((w, i) => (
-                          <span key={i} className={w.ok ? "" : "text-terracotta underline decoration-2"}>
+                          <span key={i} className={wordClass(w)}>
                             {w.ar}{" "}
                           </span>
                         ))

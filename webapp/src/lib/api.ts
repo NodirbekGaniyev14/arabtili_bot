@@ -1227,7 +1227,20 @@ export interface MockCriteria {
 export interface TutorPronounceResult {
   transcript: string;
   score: number;
-  words: { ar: string; ok: boolean }[];
+  words: ScoredWord[];
+}
+
+/** So'zma-so'z baho: ok — aynan eshitildi; close — Whisper imlosi farq qildi
+ *  (عملك→عملوك, الحلوى→الحلوة) — sariq, ball 70% hisoblanadi; ikkalasi ham yo'q — qizil. */
+export interface ScoredWord {
+  ar: string;
+  ok: boolean;
+  close?: boolean;
+}
+
+export function wordClass(w: ScoredWord): string {
+  if (w.ok) return "";
+  return w.close ? "text-gold underline decoration-2" : "text-terracotta underline decoration-2";
 }
 
 // ── Talaffuz mashqi (LLM'siz, bepul) ──
@@ -1275,7 +1288,7 @@ export interface ListenAnswer {
   /** tanlash: to'g'ri variant indeksi */
   answer?: number;
   /** diktant: so'zma-so'z belgilar */
-  words?: { ar: string; ok: boolean }[];
+  words?: ScoredWord[];
   ar: string;
   translit: string;
   uz: string;

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import {
+  wordClass,
   api,
   type DrillFinish,
   type DrillItem,
@@ -307,7 +308,7 @@ export default function Drill({ topic, level, canVoice, onClose, onFinished }: D
           <div className="font-arabic text-3xl leading-[1.9]" dir="rtl">
             {result
               ? result.words.map((w, i) => (
-                  <span key={i} className={w.ok ? "" : "text-terracotta underline decoration-2"}>
+                  <span key={i} className={wordClass(w)}>
                     {w.ar}{" "}
                   </span>
                 ))
@@ -343,7 +344,7 @@ export default function Drill({ topic, level, canVoice, onClose, onFinished }: D
               {result.score >= PASS
                 ? "Zo'r! Keyingi jumlaga o'ting."
                 : result.score >= 50
-                  ? "Yaxshi. Qizil so'zlarga e'tibor berib, yana urinib ko'ring."
+                  ? "Yaxshi. Qizil so'zlarga e'tibor bering (sariq — deyarli to'g'ri), yana urinib ko'ring."
                   : "Sekinroq va aniqroq ayting — avval eshitib oling."}
             </div>
           )}

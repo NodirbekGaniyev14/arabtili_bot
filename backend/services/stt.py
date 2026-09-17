@@ -10,7 +10,10 @@ kelgan webm/mp4/ogg to'g'ridan-to'g'ri yuboriladi (konvertatsiya yo'q).
 
 from __future__ import annotations
 
+import asyncio
 import logging
+import re
+from datetime import datetime, timezone
 
 import httpx
 
@@ -20,15 +23,58 @@ log = logging.getLogger(__name__)
 
 MAX_AUDIO_BYTES = 3 * 1024 * 1024  # 3 MB ≈ 20-25 soniya opus/aac
 TIMEOUT = 25.0
+# Groq bepul tarifi: whisper-large-v3-turbo 20 so'rov/daqiqa, 2000/kun. 429 kelsa
+# «retry-after» qadar (ko'pi bilan RATE_WAIT_MAX s) kutib BIR marta qayta uriniladi —
+# 20 RPM oynasi odatda 1-3 soniyada bo'shaydi. Parallel so'rovlar ham cheklanadi.
+RATE_WAIT_MAX = 6.0
+_SEM = asyncio.Semaphore(8)
+_RETRY_IN = re.compile(r"try again in ([\d.]+)\s*(ms|s)", re.I)
 
 # Whisper'ga til/uslub «langar»i: arab yozuvi, fusha. Prompt kontekst beradi,
 # lekin mazmunni «taklif qilmaydi» — talaffuz bahosida ham xolis qoladi.
 NEUTRAL_PROMPT = "الكلام التالي باللغة العربية."
 
 
-# Oxirgi chaqiruv holati: "" (ok) | "auth" (401/403 — kalit noto'g'ri) |
-# "http:<kod>" | "net". API shu orqali admin'ni ogohlantiradi (services/alerts.py).
+# Oxirgi chaqiruv holati: "" (ok) | "auth" (401/403 — kalit noto'g'ri) | "rate" (429,
+# qayta urinish ham o'tmadi) | "http:<kod>" | "net". API shu orqali admin'ni
+# ogohlantiradi (services/alerts.py).
 last_error: str = ""
+
+# Kunlik hisoblagichlar (xotirada, Toshkent kuni): /ustoz va /tekshir uchun —
+# «ba'zi o'quvchilarni tanimayapti» shikoyatida 429/xato ulushi darhol ko'rinadi.
+_stats: dict = {"day": "", "ok": 0, "empty": 0, "rate": 0, "fail": 0, "retried": 0}
+
+
+def _bump(kind: str) -> None:
+    from services.stats import TASHKENT_OFFSET
+
+    day = (datetime.now(timezone.utc).replace(tzinfo=None) + TASHKENT_OFFSET).date().isoformat()
+    if _stats["day"] != day:
+        _stats.update(day=day, ok=0, empty=0, rate=0, fail=0, retried=0)
+    _stats[kind] += 1
+
+
+def stats() -> dict:
+    """Bugungi hisob: ok / empty (tushunilmadi) / rate (429) / fail / retried."""
+    _bump("ok")
+    _stats["ok"] -= 1  # kunni yangilash uchun; hisobga ta'sir qilmaydi
+    return dict(_stats)
+
+
+def _retry_after(r: httpx.Response) -> float:
+    """429 javobidan kutish vaqti (soniya): «retry-after» sarlavhasi yoki matndagi
+    «try again in 1.2s»; topilmasa 2 s."""
+    hdr = r.headers.get("retry-after", "")
+    try:
+        if hdr:
+            return max(float(hdr), 0.2)
+    except ValueError:
+        pass
+    m = _RETRY_IN.search(r.text or "")
+    if m:
+        val = float(m.group(1))
+        return max(val / 1000 if m.group(2).lower() == "ms" else val, 0.2)
+    return 2.0
 
 
 def available() -> bool:
@@ -84,19 +130,33 @@ async def transcribe_ex(
 
     global last_error
     try:
-        async with httpx.AsyncClient(timeout=TIMEOUT) as client:
+        async with _SEM, httpx.AsyncClient(timeout=TIMEOUT) as client:
             r = await client.post(url, data=data, files=files, headers=headers)
+            if r.status_code == 429:
+                wait = min(_retry_after(r), RATE_WAIT_MAX)
+                log.info("STT 429 — %.1f s kutib qayta urinamiz", wait)
+                _bump("retried")
+                await asyncio.sleep(wait)
+                r = await client.post(url, data=data, files=files, headers=headers)
         if r.status_code != 200:
             log.warning("STT %s: %s", r.status_code, r.text[:200])
-            last_error = "auth" if r.status_code in (401, 403) else f"http:{r.status_code}"
+            if r.status_code in (401, 403):
+                last_error = "auth"
+            elif r.status_code == 429:
+                last_error = "rate"
+            else:
+                last_error = f"http:{r.status_code}"
+            _bump("rate" if r.status_code == 429 else "fail")
             return "", -1
         last_error = ""
         body = r.json()
         text = (body.get("text") or "").strip()
+        _bump("ok" if text else "empty")
         return text, (confidence_of(body) if text else -1)
     except Exception as e:
         log.warning("STT xatosi: %r", e)
         last_error = "net"
+        _bump("fail")
         return "", -1
 
 

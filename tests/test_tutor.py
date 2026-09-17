@@ -112,6 +112,31 @@ def test_pronunciation_empty():
     assert tutor.pronunciation_score("", "x") == {"score": 0, "words": []}
 
 
+def _marks(r):
+    return ["ok" if w["ok"] else "~" if w["close"] else "x" for w in r["words"]]
+
+
+def test_pronunciation_close_words_whisper_spelling():
+    """TTS→Whisper aylanma sinovi (2026-09-17): Whisper qisqa unlini harf qilib yozadi,
+    ta-marbuta/alif-maqsura almashadi — bu talaffuz xatosi emas, «yaqin» (sariq)."""
+    r = tutor.pronunciation_score("مَا عَمَلُكَ؟", "ما عملوك؟")
+    assert _marks(r) == ["ok", "~"] and 85 <= r["score"] < 100
+    assert _marks(tutor.pronunciation_score("اِحْكِ عَنْ شَخْصٍ", "احكي عن شخص")) == ["~", "ok", "ok"]
+    assert _marks(tutor.pronunciation_score("مَا أَكْبَرُ تَحَدٍّ", "ما أكبر تحدي")) == ["ok", "ok", "~"]
+    assert _marks(tutor.pronunciation_score("اللَّوْزُ فِي الحَلْوَى.", "اللوز في الحلوة")) == ["ok", "ok", "~"]
+    assert _marks(tutor.pronunciation_score("العَقَارِيَّ", "العقارية")) == ["~"]
+    # Qo'shma so'zni Whisper bo'lib yozdi — to'liq ok
+    r = tutor.pronunciation_score("المَسَافَةُ عِشْرُونَ كِيلُومِتْرًا.", "المسافة عشرون كيلو متراً.")
+    assert _marks(r) == ["ok", "ok", "ok"] and r["score"] == 100
+    # Hamza tashuvchisi farqi — bir xil so'z
+    assert tutor.pronunciation_score("مَسْؤُول", "مسئول")["score"] == 100
+    # Haqiqiy xatolar qizil qoladi: qisqa so'z aniq mos kelishi shart, undosh almashuvi jarima
+    assert _marks(tutor.pronunciation_score("كَمْ عُمْرُكَ؟", "كان عمرك؟")) == ["x", "ok"]
+    r = tutor.pronunciation_score("قَلْبٌ", "كلب")
+    assert _marks(r) == ["x"] and r["score"] < 50
+    assert _marks(tutor.pronunciation_score("الجُنْدِيُّ شُجَاعٌ.", "الجندي سجاع.")) == ["ok", "x"]
+
+
 # ── reply(): Anthropic mock ──
 
 

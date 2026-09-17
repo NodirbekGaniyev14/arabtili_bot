@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import {
+  wordClass,
   api,
   type MockCriteria,
   type TutorFinishResult,
@@ -1161,7 +1162,7 @@ function TutorBubble({
         <div className={`font-arabic text-2xl leading-relaxed ${hidden ? "blur-sm select-none" : ""}`} dir="rtl">
           {m.pron
             ? m.pron.words.map((w, i) => (
-                <span key={i} className={w.ok ? "" : "text-terracotta underline decoration-2"}>
+                <span key={i} className={wordClass(w)}>
                   {w.ar}{" "}
                 </span>
               ))

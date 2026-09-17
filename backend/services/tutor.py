@@ -837,29 +837,60 @@ def mock_overall(vocab: int, grammar: int, content: int, pron: int = -1) -> int:
 # ────────────────────────── Talaffuz bahosi (LLM'siz) ──────────────────────────
 
 _PUNCT = re.compile(r"[^\w\s]", re.UNICODE)
+# Whisper imlo tebranishlari (TTS→Whisper aylanma sinovi, 2026-09-17): hamza
+# tashuvchisi (ؤ/ئ/ء), tatvil — talaffuzga ta'sir qilmaydi, solishtirishda o'chiriladi
+_HAMZA_VARIANTS = (("ؤ", "ء"), ("ئ", "ء"), ("ـ", ""))
+_VOWEL_LETTERS = "اويه"  # Whisper qisqa unlini harf qilib yozadi: احك→احكي, عملك→عملكا
+CLOSE_RATIO = 0.8  # so'z «yaqin» hisoblanadigan o'xshashlik (≥4 harfli so'zlar)
+CLOSE_WEIGHT = 0.7  # yaqin so'z ballga shuncha ulush qo'shadi
 
 
 def _clean(s: str) -> str:
-    return _PUNCT.sub(" ", normalize(s)).strip()
+    s = normalize(s)
+    for a, b in _HAMZA_VARIANTS:
+        s = s.replace(a, b)
+    return re.sub(r"\s+", " ", _PUNCT.sub(" ", s)).strip()
+
+
+def _close(word: str, heard_words: list[str]) -> bool:
+    """Whisper so'zni boshqacha yozgan, lekin deyarli o'sha: عملك→عملوك, احك→احكي,
+    الحلوى→الحلوة, العقاري→العقارية. Qisqa so'zlar (≤3 harf) aniq mos kelishi shart —
+    كم/كان kabi farqlar haqiqiy xato."""
+    for hw in heard_words:
+        # Oxirida bitta unli harf ortiqcha/kam (case-ending): احك↔احكي, تحد↔تحدي, صفي↔صف
+        if len(word) >= 2 and abs(len(word) - len(hw)) == 1:
+            longer, shorter = (word, hw) if len(word) > len(hw) else (hw, word)
+            if longer.startswith(shorter) and longer[-1] in _VOWEL_LETTERS:
+                return True
+        if len(word) >= 4 and SequenceMatcher(None, word, hw).ratio() >= CLOSE_RATIO:
+            return True
+    return False
 
 
 def pronunciation_score(target: str, heard: str) -> dict:
     """STT matni kutilgan jumlaga qanchalik yaqin — 0..100.
 
     Harakat, hamza/alif, ta-marbuta farqlari hisobga olinmaydi (normalize).
-    So'zma-so'z belgilanadi: qaysi so'z eshitilmadi — o'quvchi ko'radi."""
+    So'zma-so'z belgilanadi: ok (aynan), close (imlo farqi — sariq), yo'q (qizil).
+    Qo'shma so'zni Whisper bo'lib yozsa (كيلومترا → كيلو مترا) — ok."""
     t, h = _clean(target), _clean(heard)
     if not t:
         return {"score": 0, "words": []}
-    h_set = set(h.split())
+    heard_words = h.split()
+    h_set = set(heard_words)
+    h_joined = "".join(heard_words)
     words = []
     for w_orig in target.split():
         w = _clean(w_orig)
-        if w:  # yolg'iz tinish belgisi so'z emas
-            words.append({"ar": w_orig, "ok": w in h_set})
-    word_ratio = sum(1 for w in words if w["ok"]) / max(len(words), 1)
+        if not w:  # yolg'iz tinish belgisi so'z emas
+            continue
+        ok = w in h_set or (len(w) >= 5 and w in h_joined and w not in h)
+        close = not ok and _close(w, heard_words)
+        words.append({"ar": w_orig, "ok": ok, "close": close})
+    n = max(len(words), 1)
+    word_ratio = (sum(1 for w in words if w["ok"]) + CLOSE_WEIGHT * sum(1 for w in words if w["close"])) / n
     char_ratio = SequenceMatcher(None, t, h).ratio() if h else 0.0
     score = round(100 * (0.55 * char_ratio + 0.45 * word_ratio))
-    if word_ratio == 1.0 and char_ratio >= 0.9:
+    if all(w["ok"] for w in words) and char_ratio >= 0.9:
         score = 100  # hamma so'z eshitildi — tinish belgisi farqi jarima emas
     return {"score": max(0, min(100, score)), "words": words}

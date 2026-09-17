@@ -219,6 +219,60 @@ async def test_stt_last_error_auth_and_ok(monkeypatch):
     assert stt.last_error == "http:503"
 
 
+@pytest.mark.asyncio
+async def test_stt_rate_limit_retry_and_stats(monkeypatch):
+    """Groq bepul tarifi: 20 so'rov/daqiqa. 429 → «retry-after» qadar kutib bir marta
+    qayta uriniladi; ikkinchi 429 → last_error='rate'. Kunlik hisob /ustoz uchun."""
+    from config import settings
+    from services import stt
+
+    monkeypatch.setattr(settings, "stt_api_key", "gsk_test")
+    monkeypatch.setattr(stt, "RATE_WAIT_MAX", 0.01)
+    sleeps: list[float] = []
+
+    async def fake_sleep(t):
+        sleeps.append(t)
+
+    monkeypatch.setattr(stt.asyncio, "sleep", fake_sleep)
+    responses = [
+        httpx.Response(429, headers={"retry-after": "1.5"}, json={"error": {"message": "Rate limit reached"}}),
+        httpx.Response(200, json={"text": "مرحبا"}),
+    ]
+
+    def transport(request: httpx.Request):
+        return responses.pop(0)
+
+    class Client(httpx.AsyncClient):
+        def __init__(self, **kw):
+            kw.pop("timeout", None)
+            super().__init__(transport=httpx.MockTransport(transport))
+
+    monkeypatch.setattr(stt.httpx, "AsyncClient", Client)
+    stt._stats.update(day="", ok=0, empty=0, rate=0, fail=0, retried=0)
+    assert await stt.transcribe(b"abc") == "مرحبا" and stt.last_error == ""
+    assert sleeps == [0.01], "retry-after 1.5 s, lekin RATE_WAIT_MAX bilan cheklanadi"
+    st = stt.stats()
+    assert st["ok"] == 1 and st["retried"] == 1 and st["rate"] == 0
+
+    # Ikki marta ketma-ket 429 — «rate», matndagi «try again in 800ms» o'qiladi
+    responses.extend([
+        httpx.Response(429, text='{"error":{"message":"Please try again in 800ms"}}'),
+        httpx.Response(429, text="still"),
+    ])
+    sleeps.clear()
+    assert await stt.transcribe(b"abc") == "" and stt.last_error == "rate"
+    assert sleeps == [0.01]
+    st = stt.stats()
+    assert st["rate"] == 1 and st["retried"] == 2 and st["fail"] == 0
+    assert stt._retry_after(httpx.Response(429, text="Please try again in 800ms")) == 0.8
+    assert stt._retry_after(httpx.Response(429, text="?")) == 2.0
+
+    # Bo'sh matn — «empty», tarmoq xatosi — «fail»
+    responses.append(httpx.Response(200, json={"text": "  "}))
+    assert await stt.transcribe(b"abc") == ""
+    assert stt.stats()["empty"] == 1
+
+
 # ── /ustoz hisoboti ──
 
 

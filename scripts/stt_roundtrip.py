@@ -63,27 +63,39 @@ def nearest(word: str, heard_words: list[str]) -> tuple[str, float]:
     return best, ratio
 
 
-async def run(items: list[dict], with_target: bool) -> list[dict]:
-    results = []
-    sem = asyncio.Semaphore(4)
+STT_PACE = 3.1  # s — Groq bepul tarifi 20 so'rov/daqiqa
 
-    async def one(it: dict):
+
+async def run(items: list[dict], with_target: bool) -> list[dict]:
+    # 1) TTS — parallel (edge-tts), diskda cache'lanadi
+    sem = asyncio.Semaphore(3)
+
+    async def synth(it: dict) -> str:
         async with sem:
             key = await tts.synthesize(it["ar"], it["level"])
-            if not key:
-                results.append({**it, "error": "tts"})
-                return
-            audio = tts.path_for(key).read_bytes()
-            heard, conf = await stt.transcribe_ex(
-                audio, f"{key}.mp3", "audio/mpeg", prompt=it["ar"] if with_target else ""
-            )
-            if not heard:
-                results.append({**it, "error": f"stt:{stt.last_error or 'empty'}"})
-                return
+            if not key:  # vaqtinchalik xato — bir marta qayta
+                key = await tts.synthesize(it["ar"], it["level"])
+            return key
+
+    keys = await asyncio.gather(*(synth(it) for it in items))
+    # 2) STT — ketma-ket, sur'at cheklangan (429 bo'lsa stt o'zi bir marta kutib qaytaradi)
+    results = []
+    for n, (it, key) in enumerate(zip(items, keys), 1):
+        if not key:
+            results.append({**it, "error": "tts"})
+            continue
+        audio = tts.path_for(key).read_bytes()
+        heard, conf = await stt.transcribe_ex(
+            audio, f"{key}.mp3", "audio/mpeg", prompt=it["ar"] if with_target else ""
+        )
+        if not heard:
+            results.append({**it, "error": f"stt:{stt.last_error or 'empty'}"})
+        else:
             sc = tutor.pronunciation_score(it["ar"], heard)
             results.append({**it, "heard": heard, "conf": conf, "score": sc["score"], "words": sc["words"]})
-
-    await asyncio.gather(*(one(it) for it in items))
+        if n % 20 == 0:
+            print(f"  {n}/{len(items)}…", flush=True)
+        await asyncio.sleep(STT_PACE)
     return results
 
 
@@ -115,7 +127,7 @@ def report(results: list[dict]) -> None:
             missing_words += 1
             tw = tutor._clean(w["ar"])
             near, ratio = nearest(tw, heard_words)
-            pairs[(tw, near if ratio >= 0.5 else "∅")] += 1
+            pairs[(tw, (near if ratio >= 0.5 else "∅") + (" (yaqin)" if w.get("close") else ""))] += 1
     print(f"So'zlar: {total_words} · topilmadi: {missing_words} ({missing_words * 100 / max(total_words, 1):.1f}%)")
     print("\nEng ko'p uchraydigan so'z nomuvofiqliklari (maqsad → eshitildi):")
     for (a, b), n in pairs.most_common(40):
