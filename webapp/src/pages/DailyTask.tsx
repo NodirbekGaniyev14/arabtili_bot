@@ -115,7 +115,11 @@ export default function DailyTask({ onClose, onDone }: Props) {
     try {
       const r = await api.tutorTranscribe(rec.blob, rec.filename, q.ar);
       if (!r.text) {
-        setNotice("Ovoz tushunilmadi. Yaqinroq va aniqroq gapiring.");
+        setNotice("Ovoz tushunilmadi. Mikrofonga yaqinroq, sekinroq va aniqroq gapiring.");
+      } else if (r.confidence >= 0 && r.confidence < 45) {
+        // Ishonch past — matnni ko'rsatamiz, o'quvchi tuzatib yuboradi (kunlik savol bitta urinish)
+        setText(r.text);
+        setNotice("Tushunilgan matn pastda — tekshirib yuboring yoki qayta gapiring.");
       } else {
         await submit(r.text, true);
       }

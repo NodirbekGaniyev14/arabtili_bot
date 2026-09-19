@@ -354,10 +354,15 @@ export default function Tutor({ onClose }: TutorProps) {
           rec.blob,
           rec.filename,
           lastAssistant?.ar ?? "",
-          isMock ? (sessionKey ?? "") : ""
+          isMock ? (sessionKey ?? "") : "",
+          mock?.id ?? topic?.id ?? ""
         );
         if (!r.text) {
-          setNotice("Ovoz tushunilmadi. Yaqinroq va aniqroq gapiring.");
+          setNotice("Ovoz tushunilmadi. Mikrofonga yaqinroq, sekinroq va aniqroq gapiring.");
+        } else if (!voiceMode && r.confidence >= 0 && r.confidence < 45) {
+          // Ishonch past — yuborishdan oldin o'quvchi ko'rib tuzatsin (ovoz rejimida darhol ketadi)
+          setInput(r.text);
+          setNotice("Tushunilgan matn pastda — tekshirib, ➤ bosing (yoki qayta gapiring).");
         } else {
           await send(r.text, true);
         }

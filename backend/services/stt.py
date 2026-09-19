@@ -33,6 +33,63 @@ _RETRY_IN = re.compile(r"try again in ([\d.]+)\s*(ms|s)", re.I)
 # Whisper'ga til/uslub «langar»i: arab yozuvi, fusha. Prompt kontekst beradi,
 # lekin mazmunni «taklif qilmaydi» — talaffuz bahosida ham xolis qoladi.
 NEUTRAL_PROMPT = "الكلام التالي باللغة العربية."
+PROMPT_MAX = 600  # Whisper oxirgi ~224 tokenni oladi — muhimi (savol, langar) OXIRIDA turadi
+
+# Whisper jimlik/shovqinda «ko'rgan» mashhur iboralar (YouTube subtitr korpusidan):
+# bunday matn o'quvchi gapi emas — bo'sh («tushunilmadi») qaytariladi.
+HALLUCINATIONS = (
+    "اشتركوا في القناة", "اشترك في القناة", "لا تنسى الاشتراك", "لا تنسوا الاشتراك",
+    "ترجمة نانسي قنقر", "شكرا للمشاهدة", "شكراً للمشاهدة", "شكرا على المشاهدة",
+    "إلى اللقاء في الحلقة", "الى اللقاء في الحلقة", "موسيقى", "تصفيق", "ضحك",
+    "subscribe", "amara.org", "www.",
+)
+NO_SPEECH_MAX = 0.85  # barcha segmentlarda shundan yuqori → nutq yo'q
+
+
+def _norm(s: str) -> str:
+    s = re.sub(r"[\u064b-\u0652\u0670\u0640]", "", s or "")
+    s = re.sub(r"[^\w\s]", " ", s)
+    return re.sub(r"\s+", " ", s).strip().lower()
+
+
+def is_hallucination(text: str, prompt: str = "") -> bool:
+    """Whisper matni o'quvchi nutqi emas: mashhur subtitr iboralari, prompt aks-sadosi,
+    bitta so'zning takrori, faqat belgi/raqam."""
+    t = _norm(text)
+    if not t:
+        return True
+    low = t
+    if any(_norm(h) in low for h in HALLUCINATIONS):
+        return True
+    p = _norm(prompt)
+    if p and len(t) >= 12 and t in p:
+        return True  # savol/langarni o'zi qaytardi
+    words = t.split()
+    if len(words) >= 4 and len(set(words)) <= max(1, len(words) // 3):
+        return True  # «نعم نعم نعم نعم» kabi sirtmoq
+    if not re.search(r"[\u0600-\u06ff]", t):
+        return True  # arab harfi yo'q (raqam, lotin, belgi)
+    return False
+
+
+def _no_speech(data: dict) -> bool:
+    segs = data.get("segments") or []
+    if not segs:
+        return False
+    return all(float(s.get("no_speech_prob", 0) or 0) > NO_SPEECH_MAX for s in segs)
+
+
+def build_prompt(context: str = "", words: list[str] | None = None) -> str:
+    """Whisper prompt: [mavzu so'zlari] [oxirgi savol] [langar]. Muhimi oxirida —
+    model prompt'ning oxirgi ~224 tokenini ko'radi."""
+    parts = []
+    if words:
+        parts.append(" ".join(_norm(w) for w in words if w)[:PROMPT_MAX // 2])
+    if context.strip():
+        parts.append(context.strip()[:300])
+    parts.append(NEUTRAL_PROMPT)
+    out = " ".join(p for p in parts if p)
+    return out[-PROMPT_MAX:]
 
 
 # Oxirgi chaqiruv holati: "" (ok) | "auth" (401/403 — kalit noto'g'ri) | "rate" (429,
@@ -122,8 +179,8 @@ async def transcribe_ex(
         # verbose_json — segmentlar (avg_logprob) ham keladi; matn maydoni bir xil
         "response_format": "verbose_json",
         "temperature": "0",
-        # Prompt: mavzu konteksti (oxirgi ustoz savoli) + arab yozuvi langari
-        "prompt": (prompt.strip() + " " + NEUTRAL_PROMPT).strip()[:400],
+        # Prompt: mavzu so'zlari + oxirgi ustoz savoli + arab yozuvi langari (build_prompt)
+        "prompt": prompt if prompt.endswith(NEUTRAL_PROMPT) else build_prompt(prompt),
     }
     files = {"file": (filename, audio, mime)}
     headers = {"Authorization": f"Bearer {settings.stt_api_key}"}
@@ -151,6 +208,9 @@ async def transcribe_ex(
         last_error = ""
         body = r.json()
         text = (body.get("text") or "").strip()
+        if text and (_no_speech(body) or is_hallucination(text, prompt)):
+            log.info("STT: nutq emas / gallyutsinatsiya tashlandi: %r", text[:60])
+            text = ""
         _bump("ok" if text else "empty")
         return text, (confidence_of(body) if text else -1)
     except Exception as e:

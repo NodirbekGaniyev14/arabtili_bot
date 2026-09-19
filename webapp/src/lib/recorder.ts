@@ -67,12 +67,13 @@ export class Recorder {
       audio: {
         echoCancellation: true,
         noiseSuppression: true,
+        autoGainControl: true, // past ovozli o'quvchi — kuchaytiriladi
         channelCount: 1,
       },
     });
     const mime = pickMime();
     this.rec = mime
-      ? new MediaRecorder(this.stream, { mimeType: mime, audioBitsPerSecond: 32000 })
+      ? new MediaRecorder(this.stream, { mimeType: mime, audioBitsPerSecond: 48000 })
       : new MediaRecorder(this.stream);
     this.chunks = [];
     this.rec.ondataavailable = (e) => {
@@ -90,8 +91,9 @@ export class Recorder {
     }, MAX_SECONDS * 1000);
   }
 
-  /** To'xtatadi va yozuvni qaytaradi (juda qisqa bo'lsa null). */
-  stop(): Promise<Recording | null> {
+  /** To'xtatadi va yozuvni qaytaradi (juda qisqa bo'lsa null).
+   *  `tailMs` — tugma qo'yib yuborilgach oxirgi bo'g'in kesilmasin deb biroz kutiladi. */
+  stop(tailMs = 300): Promise<Recording | null> {
     return new Promise((resolve) => {
       if (!this.rec || this.rec.state === "inactive") {
         this.cleanup();
@@ -99,12 +101,17 @@ export class Recorder {
         return;
       }
       this.resolve = resolve;
-      try {
-        this.rec.stop();
-      } catch {
-        this.cleanup();
-        resolve(null);
-      }
+      const rec = this.rec;
+      const doStop = () => {
+        try {
+          if (rec.state !== "inactive") rec.stop();
+        } catch {
+          this.cleanup();
+          resolve(null);
+        }
+      };
+      if (tailMs > 0) window.setTimeout(doStop, tailMs);
+      else doStop();
     });
   }
 

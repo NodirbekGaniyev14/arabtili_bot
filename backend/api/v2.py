@@ -694,18 +694,28 @@ async def tutor_transcribe(
     file: UploadFile = File(...),
     prompt: str = Form(""),
     session_key: str = Form("", max_length=36),
+    topic_id: str = Form("", max_length=24),
     user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
 ):
-    """Mikrofon yozuvi → arabcha matn. `prompt` — oxirgi ustoz savoli (kontekst).
-    `session_key` berilsa aniqlik bali keyingi mock javobi uchun saqlanadi."""
-    from services import stt
+    """Mikrofon yozuvi → arabcha matn. `prompt` — oxirgi ustoz savoli (kontekst),
+    `topic_id` — mavzu/mock: uning lug'ati Whisper prompt'iga qo'shiladi (o'quvchi
+    aytishi mumkin bo'lgan so'zlar tanish bo'ladi). `session_key` berilsa aniqlik
+    bali keyingi mock javobi uchun saqlanadi."""
+    from services import stt, tutor
 
     if not stt.available():
         raise HTTPException(status_code=503, detail="Ovoz xizmati sozlanmagan")
     data = await _read_audio(file)
     _stt_quota(user.id)
+    words: list[str] = []
+    meta = tutor.TOPIC_BY_ID.get(topic_id) or tutor.MOCK_BY_ID.get(topic_id)
+    if meta and meta.get("themes"):
+        level = await _user_level(session, user.id)
+        words = [w["ar"] for w in tutor.topic_words(level, meta["themes"], set())[:40]]
     text, conf = await stt.transcribe_ex(
-        data, file.filename or "speech.webm", file.content_type or "audio/webm", prompt[:300]
+        data, file.filename or "speech.webm", file.content_type or "audio/webm",
+        stt.build_prompt(prompt[:300], words),
     )
     if not text:
         _stt_failed(request)

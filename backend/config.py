@@ -57,9 +57,12 @@ class Settings(BaseSettings):
     # ── Ovoz → matn (services/stt.py). OpenAI-mos endpoint: Groq yoki OpenAI ──
     # Groq: console.groq.com → whisper-large-v3-turbo (arzon, tez)
     # OpenAI: base_url=https://api.openai.com/v1, model=gpt-4o-mini-transcribe
+    # whisper-large-v3 — turbo'dan aniqroq (o'zbek aksentli o'quvchi nutqi, qisqa
+    # javoblar); narx $0.111/soat audio — baribir arzon. Server .env'da STT_MODEL
+    # eski turbo bo'lsa, o'chiring yoki shu qiymatga o'zgartiring.
     stt_api_key: str = ""
     stt_base_url: str = "https://api.groq.com/openai/v1"
-    stt_model: str = "whisper-large-v3-turbo"
+    stt_model: str = "whisper-large-v3"
 
 
 settings = Settings()

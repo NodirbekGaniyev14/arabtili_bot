@@ -1033,12 +1033,14 @@ export const api = {
       method: "POST",
       body: JSON.stringify(body),
     }),
-  tutorTranscribe: (audio: Blob, filename: string, prompt: string, sessionKey = "") => {
+  tutorTranscribe: (audio: Blob, filename: string, prompt: string, sessionKey = "", topicId = "") => {
     const fd = new FormData();
     fd.append("file", audio, filename);
     fd.append("prompt", prompt);
     // Mock: aniqlik bali serverda sessiya bo'yicha saqlanadi (talaffuz mezoni)
     if (sessionKey) fd.append("session_key", sessionKey);
+    // Mavzu lug'ati Whisper prompt'iga — o'quvchi so'zlari tanish bo'ladi
+    if (topicId) fd.append("topic_id", topicId);
     return upload<{ text: string; confidence: number }>("/api/v2/tutor/transcribe", fd);
   },
   tutorPronounce: (
