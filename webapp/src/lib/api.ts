@@ -34,6 +34,25 @@ export interface Stats {
   accuracy: number;
   due_count: number;
   next_lesson: NextLesson | null;
+  /** K19.1: oxirgi 7 kun (eskidan bugunga) — bosh sahifa diagrammasi */
+  week?: WeekDay[];
+  /** K19.1: «Bugun» ro'yxati bayroqlari — haqiqiy faollikdan */
+  today?: TodayFlags;
+}
+
+export interface WeekDay {
+  day: string;
+  xp: number;
+  lessons: number;
+  speaking: number;
+}
+
+export interface TodayFlags {
+  lesson_done: boolean;
+  review_done: boolean;
+  speaking_done: boolean;
+  new_words: number;
+  new_words_goal: number;
 }
 
 export interface ReviewCard {

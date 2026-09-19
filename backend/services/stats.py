@@ -20,6 +20,36 @@ def _today() -> date:
 
 
 MAX_FREEZES = 2
+WEEK_DAYS = 7  # bosh sahifa diagrammasi: oxirgi 7 kun (bugun bilan)
+NEW_WORDS_GOAL = 5  # «Bugun» ro'yxati: kuniga shuncha yangi so'z
+
+
+def _is_lesson(source: str) -> bool:
+    return source.startswith("lesson:") or source.startswith("checkpoint:")
+
+
+def _is_speaking(source: str) -> bool:
+    return source.split(":")[0] in ("tutor", "drill", "listen", "daily")
+
+
+def week_series(xp_rows: list[tuple[datetime, int, str]], today: date) -> list[dict]:
+    """Oxirgi 7 kun (eskidan bugunga): kunlik XP, tugatilgan darslar, speaking mashqlari.
+
+    Bosh sahifadagi «So'nggi 7 kun» diagrammasi uchun — XpLog'dan, qo'shimcha
+    so'rovsiz (user_stats allaqachon hamma XP qatorlarini o'qiydi)."""
+    days = [today - timedelta(days=i) for i in range(WEEK_DAYS - 1, -1, -1)]
+    acc = {d: {"day": d.isoformat(), "xp": 0, "lessons": 0, "speaking": 0} for d in days}
+    for dt, amount, source in xp_rows:
+        d = _local_date(dt)
+        cell = acc.get(d)
+        if cell is None:
+            continue
+        cell["xp"] += amount
+        if _is_lesson(source):
+            cell["lessons"] += 1
+        elif _is_speaking(source):
+            cell["speaking"] += 1
+    return [acc[d] for d in days]
 
 
 def _week_monday(d: date) -> date:
@@ -213,13 +243,13 @@ async def user_stats(
     # XP va streak
     xp_rows = (
         await session.execute(
-            select(XpLog.created_at, XpLog.amount).where(XpLog.user_id == user_id)
+            select(XpLog.created_at, XpLog.amount, XpLog.source).where(XpLog.user_id == user_id)
         )
     ).all()
     today = _today()
-    xp_today = sum(a for dt, a in xp_rows if _local_date(dt) == today)
+    xp_today = sum(a for dt, a, _ in xp_rows if _local_date(dt) == today)
 
-    active_days = {_local_date(dt) for dt, _ in xp_rows}
+    active_days = {_local_date(dt) for dt, _, _ in xp_rows}
     streak, freezes_left = await resolve_streak(session, user_id, active_days, today)
 
     # Bugun takrorlanishi kerak bo'lgan kartalar
@@ -233,6 +263,25 @@ async def user_stats(
     # Keyingi dars — v2 kurs yo'li bo'yicha (yozilgan darslardan)
     next_lesson = course_next_lesson(done, start_lesson)
 
+    # «Bugun» ro'yxati (bosh sahifa): nima bajarildi — haqiqiy faollikdan
+    week = week_series(xp_rows, today)
+    today_cell = week[-1]
+    today_start = datetime.combine(today, datetime.min.time()) - TASHKENT_OFFSET
+    new_words = (
+        await session.execute(
+            select(UserWord.id).where(UserWord.user_id == user_id, UserWord.created_at >= today_start)
+        )
+    ).scalars().all()
+    today_flags = {
+        "lesson_done": today_cell["lessons"] > 0,
+        "review_done": due_count == 0 or any(
+            _local_date(dt) == today and src == "review" for dt, _, src in xp_rows
+        ),
+        "speaking_done": today_cell["speaking"] > 0,
+        "new_words": len(new_words),
+        "new_words_goal": NEW_WORDS_GOAL,
+    }
+
     return {
         "streak": streak,
         "streak_freezes": freezes_left,
@@ -242,4 +291,6 @@ async def user_stats(
         "accuracy": accuracy,
         "due_count": due_count,
         "next_lesson": next_lesson,
+        "week": week,
+        "today": today_flags,
     }

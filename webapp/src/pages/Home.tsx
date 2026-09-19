@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
-import XPRing from "../components/XPRing";
+import TodayPlan from "../components/TodayPlan";
+import WeekChart from "../components/WeekChart";
 import {
   api,
   type ChallengeInfo,
@@ -59,7 +60,6 @@ export default function Home({
   onGoLessons,
 }: HomeProps) {
   const next = stats.next_lesson;
-  const remaining = Math.max(xpGoal - stats.xp_today, 0);
 
   // Imtihon kartasi darajani va qulf holatini ko'rsatadi
   const [exam, setExam] = useState<ExamInfo | null>(null);
@@ -103,18 +103,21 @@ export default function Home({
         {name ? `, ${name}` : ""}!
       </h1>
 
-      {/* Bugungi maqsad */}
-      <section className="flex items-center gap-4 rounded-3xl bg-card border border-cardline p-4 shadow-sm">
-        <XPRing value={stats.xp_today} goal={xpGoal} />
-        <div>
-          <div className="text-base font-extrabold">Bugungi maqsad</div>
-          <div className="text-sm text-ink-soft font-semibold">
-            {remaining > 0
-              ? `Bugun ${remaining} XP qoldi`
-              : "Maqsad bajarildi! 🌟"}
-          </div>
-        </div>
-      </section>
+      {/* Bugun: XP halqasi + vazifalar ro'yxati (K19.1); kirish eslatmasi shu yerda */}
+      <TodayPlan
+        stats={stats}
+        xpGoal={xpGoal}
+        dailyDone={!!daily?.done}
+        actions={{
+          onStartLesson: () => (next ? onStartLesson(next.id) : onGoLessons()),
+          onGoReview,
+          onOpenDaily,
+          onOpenVocab,
+        }}
+      />
+
+      {/* So'nggi 7 kun */}
+      {stats.week && <WeekChart week={stats.week} xpGoal={xpGoal} />}
 
       {/* Kunlik speaking savoli — bepul, 1 daqiqa */}
       {onOpenDaily && (
