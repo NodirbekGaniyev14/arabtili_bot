@@ -39,6 +39,9 @@ _MIGRATIONS = {
         "speak_report_key": "VARCHAR(10) DEFAULT ''",
         # K19.2 yozuv mashqi eslatmasi
         "writing_notice": "VARCHAR(10) DEFAULT ''",
+        # K20.1 qaytarish ketma-ketligi
+        "winback_stage": "INTEGER DEFAULT 0",
+        "winback_at": "DATETIME",
     },
     "user_words": {
         "card_type": "VARCHAR(16) DEFAULT 'word'",

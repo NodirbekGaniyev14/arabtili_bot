@@ -5,7 +5,7 @@ kuniga bir marta (Toshkent vaqti bilan ~20:00 da) yuboriladi.
 """
 
 import asyncio
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 from aiogram import Bot
 from aiogram.types import (
@@ -16,12 +16,16 @@ from aiogram.types import (
 from sqlalchemy import select
 
 from config import settings
-from db.models import Plan, User
+from db.models import Plan, User, XpLog
 from db.session import SessionLocal
 from services.stats import TASHKENT_OFFSET, _today, user_stats
 
 REMINDER_HOUR = 20  # Toshkent vaqti
 CHECK_INTERVAL = 900  # 15 daqiqa
+# Kunlik eslatma faqat yaqinda faol bo'lganlarga (XP oxirgi N kunda). Uzoq jim
+# yurganlarni har kuni bezovta qilmaymiz — ular uchun qaytarish ketma-ketligi
+# (services/winback.py: 3/7/30 kun) bor; har kuni yozish bloklashga olib keladi.
+ACTIVE_DAYS = 7
 
 
 def _local_hour() -> int:
@@ -35,10 +39,13 @@ async def _send_reminders(bot: Bot) -> None:
         users = (
             await session.execute(select(User).where(User.is_demo == 0))
         ).scalars().all()
+        active_ids = await recently_active(session)
 
         for user in users:
             if user.notified_date == today:
                 continue
+            if user.id not in active_ids:
+                continue  # jim yurganlar — winback.py
 
             plan = (
                 await session.execute(
@@ -109,6 +116,18 @@ async def _send_reminders(bot: Bot) -> None:
             session.add(user)
 
         await session.commit()
+
+
+async def recently_active(session, days: int = ACTIVE_DAYS) -> set[int]:
+    """Oxirgi `days` kunda XP olgan (yoki reja tuzgan) foydalanuvchilar."""
+    since = datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(days=days)
+    ids = set(
+        (await session.execute(select(XpLog.user_id).where(XpLog.created_at >= since).distinct())).scalars().all()
+    )
+    ids |= set(
+        (await session.execute(select(Plan.user_id).where(Plan.created_at >= since).distinct())).scalars().all()
+    )
+    return ids
 
 
 async def reminder_loop(bot: Bot) -> None:

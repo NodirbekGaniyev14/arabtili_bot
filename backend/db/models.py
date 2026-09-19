@@ -64,6 +64,10 @@ class User(Base):
     speak_report_key: Mapped[str] = mapped_column(String(10), default="")
     # K19.2 yozuv mashqi eslatmasi: oxirgi yuborilgan davr kaliti (2 kunlik)
     writing_notice: Mapped[str] = mapped_column(String(10), default="")
+    # K20.1 qaytarish ketma-ketligi (services/winback.py): oxirgi yuborilgan bosqich
+    # (3/7/30 kun) va vaqti; foydalanuvchi qaytsa bosqich nolga qaytadi
+    winback_stage: Mapped[int] = mapped_column(Integer, default=0)
+    winback_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
 
 
 class Placement(Base):
