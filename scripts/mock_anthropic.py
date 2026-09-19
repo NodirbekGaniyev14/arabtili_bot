@@ -102,6 +102,23 @@ async def messages(req: Request):
         1 for m in msgs if m.get("role") == "user" and m.get("content") != "[START]"
     )
     sys_text = "".join(b.get("text", "") for b in body.get("system", []))
+    if "Arabic handwriting tutor" in sys_text:
+        reply = {
+            "is_handwriting": True,
+            "read_ar": "بيت باب نافذة سرير مطبخ",
+            "accuracy": 84,
+            "neatness": 4,
+            "missing_words": [],
+            "wrong_words": [{"written": "نافذه", "correct": "نَافِذَة", "note_uz": "ة oxirida ikki nuqta yo'q"}],
+            "tips_uz": ["ة (ta marbuta) ustiga ikki nuqta qo'ying", "Harflarni bir chiziqda, teng kattalikda yozing"],
+            "praise_uz": "Harflar aniq va o'qiladigan — zo'r boshlanish!",
+        }
+        return {
+            "id": "msg_writing", "type": "message", "role": "assistant", "model": body.get("model", "mock"),
+            "content": [{"type": "text", "text": json.dumps(reply, ensure_ascii=False)}],
+            "stop_reason": "end_turn", "stop_sequence": None,
+            "usage": {"input_tokens": 1500, "output_tokens": 160, "cache_read_input_tokens": 0, "cache_creation_input_tokens": 0},
+        }
     if "Grade ONE answer to today's speaking question" in sys_text:
         reply = {
             "score": 78,

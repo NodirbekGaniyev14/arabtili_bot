@@ -76,13 +76,24 @@ async def me(
     plan_order = json.loads(plan.module_order_json) if plan else None
     await seed_user_words(session, user.id)
     stats = await user_stats(session, user.id, plan_order)
-    from services import billing, daily
+    from services import billing, daily, writing
+
+    w_text = writing.text_for(plan.level if plan else "A0")
+    w_row = await writing.period_row(session, user.id, writing.period_key())
 
     return {
         "name": user.name,
         "has_plan": plan is not None,
         "plan": plan_to_dict(plan) if plan else None,
         "stats": stats,
+        # K19.2 yozuv mashqi (2 kunda bir matn): bosh sahifa vazifasi
+        "writing": {
+            "period": writing.period_key(),
+            "title": w_text["title_uz"],
+            "kind": w_text["kind"],
+            "done": bool(w_row and w_row.attempts > 0),
+            "score": w_row.score if w_row else 0,
+        },
         # VIP tarif (AI ustoz) — bosh sahifa kartasi va profil uchun
         "vip": billing.is_vip(user),
         "vip_days_left": billing.vip_days_left(user),

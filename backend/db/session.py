@@ -37,6 +37,8 @@ _MIGRATIONS = {
         "trial_until": "DATETIME",
         # K18.4 haftalik speaking hisoboti
         "speak_report_key": "VARCHAR(10) DEFAULT ''",
+        # K19.2 yozuv mashqi eslatmasi
+        "writing_notice": "VARCHAR(10) DEFAULT ''",
     },
     "user_words": {
         "card_type": "VARCHAR(16) DEFAULT 'word'",

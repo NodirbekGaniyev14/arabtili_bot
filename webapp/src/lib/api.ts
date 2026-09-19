@@ -78,6 +78,56 @@ export interface MeResponse {
   vip_price: { month: number; per_day: number };
   /** Kunlik speaking savoli: bajarildimi, streak */
   daily?: { done: boolean; streak: number; best: number; total: number };
+  /** K19.2 yozuv mashqi (2 kunda bir matn): bosh sahifa vazifasi */
+  writing?: { period: string; title: string; kind: string; done: boolean; score: number };
+}
+
+// ── Yozuv (xattotlik) mashqi (K19.2) ──
+export interface WritingText {
+  id: string;
+  kind: string;
+  title_uz: string;
+  ar: string;
+  translit: string;
+  uz: string;
+  hint_uz: string;
+  audio_url: string;
+}
+
+export interface WritingFeedback {
+  is_handwriting: boolean;
+  read_ar: string;
+  missing_words: string[];
+  wrong_words: { written: string; correct: string; note_uz: string }[];
+  tips_uz: string[];
+  praise_uz: string;
+}
+
+export interface WritingDone extends WritingFeedback {
+  score: number;
+  neatness: number;
+  attempts: number;
+  attempts_left: number;
+  xp: number;
+  best: number;
+}
+
+export interface WritingInfo {
+  period: string;
+  ends: string;
+  level: string;
+  text: WritingText;
+  done: WritingDone | null;
+  attempts_left: number;
+  max_attempts: number;
+  history: { period: string; text_id: string; title: string; score: number; neatness: number; xp: number }[];
+  ai: boolean;
+}
+
+export interface WritingCheck extends WritingDone {
+  result: WritingFeedback & { accuracy: number; neatness: number };
+  improved: boolean;
+  xp_awarded: number;
 }
 
 // ── Kunlik speaking savoli (bepul) ──
@@ -1074,6 +1124,13 @@ export const api = {
       "/api/pay/receipt",
       fd
     );
+  },
+  // ── Yozuv mashqi (K19.2) ──
+  getWriting: () => request<WritingInfo>("/api/v2/tutor/writing"),
+  checkWriting: (blob: Blob, filename: string) => {
+    const fd = new FormData();
+    fd.append("file", blob, filename);
+    return upload<WritingCheck>("/api/v2/tutor/writing/check", fd);
   },
   /** K18.5: Telegram to'lov havolasi (Payme/Click) — WebApp.openInvoice(url) bilan ochiladi */
   createInvoice: (plan: string) =>

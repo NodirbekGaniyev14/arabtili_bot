@@ -108,6 +108,7 @@ async def lifespan(app: FastAPI):
     weekly_task = None
     vip_task = None
     report_task = None
+    writing_task = None
     bot = None
     if settings.bot_token:
         from services.reminders import reminder_loop
@@ -151,12 +152,17 @@ async def lifespan(app: FastAPI):
         from services.speaking_report import report_loop
 
         report_task = asyncio.create_task(report_loop(bot))
+        # Yozuv mashqi eslatmasi — 2 kunda bir, yangi matn kuni (K19.2)
+        from services import writing_reminder
+
+        writing_task = asyncio.create_task(writing_reminder.loop(bot))
         # /tekshir — fon halqalari holati
         from services import diag
 
         for _name, _task in (
             ("polling", polling_task), ("reminder", reminder_task),
             ("weekly", weekly_task), ("vip", vip_task), ("report", report_task),
+            ("writing", writing_task),
         ):
             diag.register_task(_name, _task)
         # Deploy xabari — versiya o'zgargan bo'lsa foydalanuvchilarga bildiradi
@@ -167,7 +173,7 @@ async def lifespan(app: FastAPI):
     else:
         print("⚠️  BOT_TOKEN yo'q — bot ishga tushmadi (.env faylini to'ldiring)")
     yield
-    for task in (polling_task, reminder_task, weekly_task, vip_task, report_task):
+    for task in (polling_task, reminder_task, weekly_task, vip_task, report_task, writing_task):
         if task:
             task.cancel()
     if bot:

@@ -62,6 +62,8 @@ class User(Base):
     # K18.4 haftalik speaking hisoboti (services/speaking_report.py): oxirgi
     # yuborilgan hafta kaliti (dushanba sanasi) — bir hafta uchun bir marta
     speak_report_key: Mapped[str] = mapped_column(String(10), default="")
+    # K19.2 yozuv mashqi eslatmasi: oxirgi yuborilgan davr kaliti (2 kunlik)
+    writing_notice: Mapped[str] = mapped_column(String(10), default="")
 
 
 class Placement(Base):
@@ -431,6 +433,27 @@ class ListeningResult(Base):
     count: Mapped[int] = mapped_column(Integer, default=0)
     xp: Mapped[int] = mapped_column(Integer, default=0)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
+class WritingResult(Base):
+    """K19.2 yozuv (xattotlik) mashqi — davr (2 kun) + foydalanuvchi uchun bitta yozuv:
+    eng yaxshi ball, ozodalik, urinishlar soni, oxirgi eng yaxshi tekshiruv (JSON), XP."""
+
+    __tablename__ = "writing_results"
+    __table_args__ = (UniqueConstraint("user_id", "period", name="uq_writing_period"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    period: Mapped[str] = mapped_column(String(10), index=True)  # davr boshi YYYY-MM-DD
+    text_id: Mapped[str] = mapped_column(String(12), default="")
+    level: Mapped[str] = mapped_column(String(4), default="")
+    score: Mapped[int] = mapped_column(Integer, default=0)  # eng yaxshi aniqlik 0-100
+    neatness: Mapped[int] = mapped_column(Integer, default=0)  # 1-5
+    attempts: Mapped[int] = mapped_column(Integer, default=0)
+    feedback: Mapped[str] = mapped_column(Text, default="")  # JSON: read_ar, wrong_words, tips_uz…
+    xp: Mapped[int] = mapped_column(Integer, default=0)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
 
 
 class TutorRating(Base):

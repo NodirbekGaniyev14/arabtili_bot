@@ -17,10 +17,18 @@ export interface TodayActions {
   onGoReview: () => void;
   onOpenDaily?: () => void;
   onOpenVocab: () => void;
+  onOpenWriting?: () => void;
+}
+
+export interface WritingTodo {
+  title: string;
+  kind: string;
+  done: boolean;
+  score: number;
 }
 
 interface Task {
-  id: "lesson" | "review" | "daily" | "words";
+  id: "lesson" | "review" | "daily" | "words" | "writing";
   icon: string;
   title: string;
   hint: string;
@@ -28,12 +36,12 @@ interface Task {
   go: () => void;
 }
 
-export function buildTasks(stats: Stats, dailyDone: boolean, a: TodayActions): Task[] {
+export function buildTasks(stats: Stats, dailyDone: boolean, a: TodayActions, writing?: WritingTodo): Task[] {
   const t = stats.today;
   const next = stats.next_lesson;
   const words = t?.new_words ?? 0;
   const goal = t?.new_words_goal ?? 5;
-  return [
+  const tasks: Task[] = [
     {
       id: "lesson",
       icon: "📖",
@@ -67,6 +75,17 @@ export function buildTasks(stats: Stats, dailyDone: boolean, a: TodayActions): T
       go: a.onOpenVocab,
     },
   ];
+  if (writing && a.onOpenWriting) {
+    tasks.push({
+      id: "writing",
+      icon: "✍️",
+      title: `Yozuv: ${writing.title}`,
+      hint: writing.done ? `tekshirildi · ${writing.score}%` : "qog'ozga yozing, suratga oling — 2 kunda bir",
+      done: writing.done,
+      go: a.onOpenWriting,
+    });
+  }
+  return tasks;
 }
 
 const NUDGE_KEY = "arabiy_nudge_day";
@@ -76,13 +95,15 @@ export default function TodayPlan({
   xpGoal,
   dailyDone,
   actions,
+  writing,
 }: {
   stats: Stats;
   xpGoal: number;
   dailyDone: boolean;
   actions: TodayActions;
+  writing?: WritingTodo;
 }) {
-  const tasks = buildTasks(stats, dailyDone, actions);
+  const tasks = buildTasks(stats, dailyDone, actions, writing);
   const done = tasks.filter((t) => t.done).length;
   const first = tasks.find((t) => !t.done);
   const cardRef = useRef<HTMLElement>(null);

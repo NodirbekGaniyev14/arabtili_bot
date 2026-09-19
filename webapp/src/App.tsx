@@ -20,6 +20,7 @@ import Tutor from "./pages/Tutor";
 import Paywall from "./pages/Paywall";
 import Reference from "./pages/Reference";
 import SpeakingLog from "./pages/SpeakingLog";
+import Writing from "./pages/Writing";
 import DailyTask from "./pages/DailyTask";
 import Vocab from "./pages/Vocab";
 import LessonPlayerV2 from "./pages/v2/LessonPlayerV2";
@@ -62,6 +63,8 @@ export default function App() {
   const [showSpeaking, setShowSpeaking] = useState<"mistakes" | "results" | null>(null);
   // Bot eslatmasidagi tugma (#daily) — to'g'ri kunlik savolga
   const [showDaily, setShowDaily] = useState(() => window.location.hash === "#daily");
+  // Bot eslatmasidagi tugma (#writing) — yozuv mashqiga (K19.2)
+  const [showWriting, setShowWriting] = useState(() => window.location.hash === "#writing");
 
   useEffect(() => {
     const tg = window.Telegram?.WebApp;
@@ -198,6 +201,8 @@ export default function App() {
             vip={me?.vip ?? false}
             daily={me?.daily}
             onOpenDaily={() => setShowDaily(true)}
+            writing={me?.writing}
+            onOpenWriting={() => setShowWriting(true)}
             onOpenReference={() => setShowReference(true)}
             onOpenVocab={() => setTab("vocab")}
             onGoLessons={() => setTab("lessons")}
@@ -255,6 +260,16 @@ export default function App() {
 
       {showSpeaking && (
         <SpeakingLog initialTab={showSpeaking} onClose={() => setShowSpeaking(null)} />
+      )}
+
+      {showWriting && (
+        <Writing
+          onClose={() => {
+            setShowWriting(false);
+            api.getMe().then(setMe).catch(() => {});
+          }}
+          onDone={() => api.getMe().then(setMe).catch(() => {})}
+        />
       )}
 
       {showDaily && (

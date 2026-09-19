@@ -27,6 +27,9 @@ interface HomeProps {
   /** Kunlik speaking savoli (bepul): holat va ochish */
   daily?: { done: boolean; streak: number };
   onOpenDaily?: () => void;
+  /** K19.2 yozuv mashqi: 2 kunlik matn holati va ochish */
+  writing?: { title: string; kind: string; done: boolean; score: number };
+  onOpenWriting?: () => void;
   onOpenReference: () => void;
   onOpenVocab: () => void;
   onGoLessons: () => void;
@@ -55,6 +58,8 @@ export default function Home({
   vip,
   daily,
   onOpenDaily,
+  writing,
+  onOpenWriting,
   onOpenReference,
   onOpenVocab,
   onGoLessons,
@@ -108,11 +113,13 @@ export default function Home({
         stats={stats}
         xpGoal={xpGoal}
         dailyDone={!!daily?.done}
+        writing={writing}
         actions={{
           onStartLesson: () => (next ? onStartLesson(next.id) : onGoLessons()),
           onGoReview,
           onOpenDaily,
           onOpenVocab,
+          onOpenWriting,
         }}
       />
 
@@ -317,6 +324,14 @@ export default function Home({
             desc="grammatika + lug'at"
             onClick={onOpenReference}
           />
+          {onOpenWriting && (
+            <ModeCard
+              ar="خطّ"
+              label="✍️ Yozuv mashqi"
+              desc={writing ? (writing.done ? `✅ ${writing.score}% · ${writing.title}` : writing.title) : "2 kunda bir matn"}
+              onClick={onOpenWriting}
+            />
+          )}
         </div>
       </section>
     </div>

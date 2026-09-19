@@ -26,7 +26,9 @@ from db.models import (
     TutorMistake,
     TutorTurn,
     User,
+    WritingResult,
     XpLog,
+    utcnow,
 )
 from db.session import get_session
 from services.achievements import check_and_award
@@ -1040,6 +1042,108 @@ async def tutor_log(
         "mocks": sorted(mocks.values(), key=lambda d: -d["best"]),
         "drills": sorted(drills.values(), key=lambda d: -d["best"]),
         "listens": sorted(listens.values(), key=lambda d: -d["best"]),
+    }
+
+
+# ─────────── Yozuv (xattotlik) mashqi (K19.2) — 2 kunda bir matn, surat → AI ───────────
+
+
+@router.get("/tutor/writing")
+async def tutor_writing(
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Joriy davr matni (audio fonda), bajarilgan bo'lsa natija, urinishlar, tarix."""
+    from config import settings
+    from services import tts, writing
+
+    level = await _user_level(session, user.id)
+    text = writing.text_for(level)
+    period = writing.period_key()
+    row = await writing.period_row(session, user.id, period)
+    audio_key = tts.schedule(text["ar"].replace("\n", ". "), level)
+    return {
+        "period": period,
+        "ends": writing.period_ends(),
+        "level": level,
+        "text": {**text, "audio_url": f"/api/v2/tutor/audio/{audio_key}.mp3" if audio_key else ""},
+        "done": writing.row_dict(row) if row and row.attempts > 0 else None,
+        "attempts_left": max(writing.MAX_ATTEMPTS - (row.attempts if row else 0), 0),
+        "max_attempts": writing.MAX_ATTEMPTS,
+        "history": await writing.history(session, user.id),
+        "ai": bool(settings.anthropic_api_key),
+    }
+
+
+@router.post("/tutor/writing/check")
+async def tutor_writing_check(
+    request: Request,
+    file: UploadFile = File(...),
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Qo'lyozma surati → Haiku vision → aniqlik, xato so'zlar, maslahatlar. Davrda 3 urinish,
+    XP birinchi muvaffaqiyatli tekshiruvda bir marta (eng yaxshi ball saqlanadi)."""
+    from services import ai_usage, alerts, tutor, writing
+
+    mime = (file.content_type or "").split(";")[0].strip().lower()
+    if mime not in writing.IMAGE_TYPES:
+        raise HTTPException(status_code=422, detail="Faqat surat (JPG/PNG) yuklang")
+    data = await file.read()
+    if not data:
+        raise HTTPException(status_code=422, detail="Surat bo'sh")
+    if len(data) > writing.MAX_IMAGE_BYTES:
+        raise HTTPException(status_code=413, detail="Surat juda katta (maks. 8 MB)")
+
+    level = await _user_level(session, user.id)
+    text = writing.text_for(level)
+    period = writing.period_key()
+    row = await writing.period_row(session, user.id, period)
+    if row and row.attempts >= writing.MAX_ATTEMPTS:
+        raise HTTPException(
+            status_code=429,
+            detail=f"Bu matn uchun {writing.MAX_ATTEMPTS} urinish tugadi — keyingi matn {writing.period_ends()} dan keyin",
+        )
+    try:
+        image, img_mime = writing.prepare_image(data)
+    except ValueError:
+        raise HTTPException(status_code=422, detail="Surat o'qilmadi — boshqa rasm yuklang")
+
+    try:
+        reply, usage = await writing.check(level, text, image, img_mime)
+    except tutor.TutorUnavailable as e:
+        if e.kind in ("credit", "auth"):
+            alerts.fire(getattr(request.app.state, "bot", None), e.kind)
+        raise HTTPException(status_code=503, detail=e.message_uz)
+
+    now = utcnow()
+    fb = json.dumps(writing.feedback_dict(reply), ensure_ascii=False)
+    if row is None:
+        row = WritingResult(
+            user_id=user.id, period=period, text_id=text["id"], level=level,
+            score=0, neatness=0, attempts=0, xp=0, feedback="", created_at=now,
+        )
+        session.add(row)
+    row.attempts += 1
+    row.updated_at = now
+    improved = reply.accuracy >= row.score
+    if improved:
+        row.score = reply.accuracy
+        row.neatness = reply.neatness
+        row.feedback = fb
+    xp = 0
+    if row.xp == 0 and reply.is_handwriting and reply.accuracy > 0:
+        xp = writing.xp_for(reply.accuracy)
+        row.xp = xp
+        session.add(XpLog(user_id=user.id, amount=xp, source=f"writing:{period}"))
+    ai_usage.record(session, "writing", usage, user.id)
+    await session.commit()
+    return {
+        **writing.row_dict(row),
+        "result": {"accuracy": reply.accuracy, "neatness": reply.neatness, **writing.feedback_dict(reply)},
+        "improved": improved,
+        "xp_awarded": xp,
+        "usage": usage,
     }
 
 
