@@ -841,7 +841,7 @@ _PUNCT = re.compile(r"[^\w\s]", re.UNICODE)
 # tashuvchisi (ؤ/ئ/ء), tatvil — talaffuzga ta'sir qilmaydi, solishtirishda o'chiriladi
 _HAMZA_VARIANTS = (("ؤ", "ء"), ("ئ", "ء"), ("ـ", ""))
 _VOWEL_LETTERS = "اويه"  # Whisper qisqa unlini harf qilib yozadi: احك→احكي, عملك→عملكا
-CLOSE_RATIO = 0.8  # so'z «yaqin» hisoblanadigan o'xshashlik (≥4 harfli so'zlar)
+CLOSE_RATIO = 0.75  # «yaqin» o'xshashlik: 4 harfli so'zda bitta harf farqi (Whisper toza audioda ham shunday adashadi)
 CLOSE_WEIGHT = 0.7  # yaqin so'z ballga shuncha ulush qo'shadi
 
 

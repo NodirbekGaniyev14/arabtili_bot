@@ -134,7 +134,8 @@ def test_pronunciation_close_words_whisper_spelling():
     assert _marks(tutor.pronunciation_score("كَمْ عُمْرُكَ؟", "كان عمرك؟")) == ["x", "ok"]
     r = tutor.pronunciation_score("قَلْبٌ", "كلب")
     assert _marks(r) == ["x"] and r["score"] < 50
-    assert _marks(tutor.pronunciation_score("الجُنْدِيُّ شُجَاعٌ.", "الجندي سجاع.")) == ["ok", "x"]
+    # Bitta undosh almashuvi (ش→س) — Whisper toza TTS audioda ham shunday yozadi: sariq
+    assert _marks(tutor.pronunciation_score("الجُنْدِيُّ شُجَاعٌ.", "الجندي سجاع.")) == ["ok", "~"]
 
 
 # ── reply(): Anthropic mock ──
