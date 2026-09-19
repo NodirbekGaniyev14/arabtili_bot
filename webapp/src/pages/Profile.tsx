@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { api, type MyCertificate, type ProfileData } from "../lib/api";
 import { isSoundOn, setSoundOn } from "../lib/audio";
+import { getMode, setMode, type ThemeMode } from "../lib/theme";
 import { formatTargetDate, GOALS, DURATIONS } from "./onboarding/data";
 
 const tg = () => window.Telegram?.WebApp;
@@ -539,6 +540,7 @@ export default function Profile({
             {sound ? "Yoniq" : "O'chiq"}
           </span>
         </button>
+        <ThemeRow />
       </section>
 
       {/* Kunlik maqsad */}
@@ -650,6 +652,39 @@ export default function Profile({
       <p className="text-center text-[11px] text-ink-soft/70 font-semibold">
         Arabiy · arab tilini bepul o'rganing 🕌
       </p>
+    </div>
+  );
+}
+
+/** Mavzu tanlovi (K19.3): avto (Telegram mavzusi) / yorug' / qorong'i — darhol qo'llanadi. */
+function ThemeRow() {
+  const [mode, setModeState] = useState<ThemeMode>(() => getMode());
+  const pick = (m: ThemeMode) => {
+    setMode(m);
+    setModeState(m);
+    tg()?.HapticFeedback?.impactOccurred("light");
+  };
+  const opts: Array<{ id: ThemeMode; label: string }> = [
+    { id: "auto", label: "Avto" },
+    { id: "light", label: "☀️ Yorug'" },
+    { id: "dark", label: "🌙 Qorong'i" },
+  ];
+  return (
+    <div className="mt-2.5 flex items-center justify-between gap-3 rounded-2xl bg-card border border-cardline px-4 py-3">
+      <span className="text-sm font-semibold shrink-0">🌗 Mavzu</span>
+      <div className="grid grid-cols-3 gap-1 rounded-xl bg-cardline/60 p-1 min-w-0">
+        {opts.map((o) => (
+          <button
+            key={o.id}
+            onClick={() => pick(o.id)}
+            className={`rounded-lg px-2 py-1.5 text-[11px] font-extrabold whitespace-nowrap transition-colors ${
+              mode === o.id ? "bg-card shadow-sm text-ink" : "text-ink-soft"
+            }`}
+          >
+            {o.label}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

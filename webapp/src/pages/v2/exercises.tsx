@@ -94,7 +94,7 @@ function Feedback({
         )}
         <button
           onClick={onNext}
-          className="mt-3 w-full rounded-2xl bg-white py-3.5 font-extrabold text-ink active:scale-[0.98] transition-transform"
+          className="mt-3 w-full rounded-2xl bg-white py-3.5 font-extrabold text-[#26211a] active:scale-[0.98] transition-transform"
         >
           Davom etish
         </button>

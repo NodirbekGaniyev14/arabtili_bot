@@ -75,7 +75,7 @@ function TopBar({
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-emerald-deep flex items-center justify-center">
-            <span className="font-arabic text-lg text-sand leading-none pt-0.5">
+            <span className="font-arabic text-lg text-white leading-none pt-0.5">
               ع
             </span>
           </div>

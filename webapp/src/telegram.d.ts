@@ -25,6 +25,8 @@ interface TelegramWebApp {
   openTelegramLink?(url: string): void;
   isVersionAtLeast?(version: string): boolean;
   version?: string;
+  onEvent?(event: string, handler: () => void): void;
+  offEvent?(event: string, handler: () => void): void;
   HapticFeedback?: {
     impactOccurred(
       style: "light" | "medium" | "heavy" | "rigid" | "soft"

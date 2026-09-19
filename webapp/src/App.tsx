@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ArabicBg from "./components/ArabicBg";
 import NavBar, { type Tab } from "./components/NavBar";
+import { initTheme } from "./lib/theme";
 import { api, type MeResponse, type PlanData, type Stats } from "./lib/api";
 import Home from "./pages/Home";
 import Lessons from "./pages/Lessons";
@@ -66,8 +67,7 @@ export default function App() {
     const tg = window.Telegram?.WebApp;
     tg?.ready();
     tg?.expand();
-    tg?.setHeaderColor?.("#FAF6EE");
-    tg?.setBackgroundColor?.("#FAF6EE");
+    initTheme(); // yorug'/qorong'i — Telegram mavzusi yoki profil tanlovi (lib/theme.ts)
     if (tg?.initDataUnsafe.user) {
       setTgName(tg.initDataUnsafe.user.first_name);
     }
@@ -118,7 +118,7 @@ export default function App() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-3">
         <div className="w-16 h-16 rounded-2xl bg-emerald-deep flex items-center justify-center animate-pulse">
-          <span className="font-arabic text-4xl text-sand leading-none pt-1">
+          <span className="font-arabic text-4xl text-white leading-none pt-1">
             ع
           </span>
         </div>

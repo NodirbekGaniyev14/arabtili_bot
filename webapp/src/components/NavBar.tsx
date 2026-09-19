@@ -41,7 +41,11 @@ export default function NavBar({ tab, onChange, reviewBadge = 0 }: NavBarProps) 
                 active ? "text-emerald-deep" : "text-ink-soft"
               }`}
             >
-              <span className="relative">
+              <span
+                className={`relative rounded-xl px-3 py-1 transition-colors ${
+                  active ? "bg-emerald-deep/12" : ""
+                }`}
+              >
                 <span className="font-arabic text-[20px] leading-none">
                   {t.ar}
                 </span>

@@ -8,7 +8,7 @@ export default function Header({ streak, freezes = 0 }: HeaderProps) {
     <header className="flex items-center justify-between">
       <div className="flex items-center gap-2.5">
         <div className="w-10 h-10 rounded-xl bg-emerald-deep flex items-center justify-center shadow-sm">
-          <span className="font-arabic text-2xl text-sand leading-none pt-1">
+          <span className="font-arabic text-2xl text-white leading-none pt-1">
             ع
           </span>
         </div>
