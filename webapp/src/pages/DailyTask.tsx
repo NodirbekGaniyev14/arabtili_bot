@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import BadgeToast from "../components/BadgeToast";
+import type { Badge } from "../lib/api";
 import { api, type DailyInfo, type DailyResult } from "../lib/api";
 import { playUrl, speakText } from "../lib/audio";
 import { MAX_SECONDS, Recorder, micSupported } from "../lib/recorder";
@@ -20,6 +22,7 @@ interface Props {
 }
 
 export default function DailyTask({ onClose, onDone }: Props) {
+  const [badges, setBadges] = useState<Badge[]>([]);
   const [info, setInfo] = useState<DailyInfo | null>(null);
   const [error, setError] = useState("");
   const [text, setText] = useState("");
@@ -75,6 +78,7 @@ export default function DailyTask({ onClose, onDone }: Props) {
     try {
       const r = await api.answerDaily(voice ? `🎤 ${clean}` : clean, voice);
       setResult(r.result);
+      setBadges(r.new_badges ?? []);
       setStreak(r.streak);
       setXp(r.xp);
       setText("");
@@ -132,6 +136,7 @@ export default function DailyTask({ onClose, onDone }: Props) {
 
   return (
     <div className="fixed inset-0 z-50 bg-sand flex flex-col max-w-md mx-auto">
+      <BadgeToast badges={badges} />
       <div className="flex items-center justify-between px-4 py-3 border-b border-cardline bg-card">
         <div className="min-w-0">
           <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft">

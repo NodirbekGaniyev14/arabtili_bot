@@ -128,6 +128,7 @@ export interface WritingCheck extends WritingDone {
   result: WritingFeedback & { accuracy: number; neatness: number };
   improved: boolean;
   xp_awarded: number;
+  new_badges?: Badge[];
 }
 
 // ── Kunlik speaking savoli (bepul) ──
@@ -1069,7 +1070,7 @@ export const api = {
     }),
   getDaily: () => request<DailyInfo>("/api/v2/tutor/daily"),
   answerDaily: (text: string, voice: boolean) =>
-    request<{ result: DailyResult; streak: number; best: number; xp: number }>(
+    request<{ result: DailyResult; streak: number; best: number; xp: number; new_badges?: Badge[] }>(
       "/api/v2/tutor/daily/answer",
       { method: "POST", body: JSON.stringify({ text, voice }) }
     ),
@@ -1346,6 +1347,7 @@ export interface DrillFinish {
   score: number;
   count: number;
   total: number;
+  new_badges?: Badge[];
   xp: number;
   /** har jumla uchun eng yaxshi ball, -1 = aytilmagan */
   scores: number[];
@@ -1380,6 +1382,7 @@ export interface ListenFinish {
   kind: string;
   score: number;
   count: number;
+  new_badges?: Badge[];
   total: number;
   xp: number;
   scores: number[];
@@ -1420,6 +1423,7 @@ export interface TutorFinishResult {
   ok_turns: number;
   voice_turns: number;
   xp: number;
+  new_badges?: Badge[];
   /** Mock imtihon: o'rtacha ball va har savol bali */
   mock?: boolean;
   score?: number;

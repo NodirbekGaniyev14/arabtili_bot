@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import BadgeToast from "../components/BadgeToast";
+import type { Badge } from "../lib/api";
 import { api, type WritingCheck, type WritingInfo } from "../lib/api";
 import { playUrl, speakText } from "../lib/audio";
 
@@ -52,6 +54,7 @@ const KIND_LABEL: Record<string, string> = {
 };
 
 export default function Writing({ onClose, onDone }: Props) {
+  const [badges, setBadges] = useState<Badge[]>([]);
   const [info, setInfo] = useState<WritingInfo | null>(null);
   const [error, setError] = useState("");
   const [showTranslit, setShowTranslit] = useState(false);
@@ -108,6 +111,7 @@ export default function Writing({ onClose, onDone }: Props) {
       const blob = await shrink(file);
       const r = await api.checkWriting(blob, blob === file ? file.name : "writing.jpg");
       setResult(r);
+      setBadges(r.new_badges ?? []);
       setAttemptsLeft(r.attempts_left);
       setInfo((i) => (i ? { ...i, done: { ...r }, attempts_left: r.attempts_left } : i));
       tg()?.HapticFeedback?.notificationOccurred(r.result.accuracy >= 60 ? "success" : "warning");
@@ -129,6 +133,7 @@ export default function Writing({ onClose, onDone }: Props) {
 
   return (
     <div className="fixed inset-0 z-50 bg-sand flex flex-col max-w-md mx-auto">
+      <BadgeToast badges={badges} />
       <div className="flex items-center justify-between px-4 py-3 border-b border-cardline bg-card">
         <div className="min-w-0">
           <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft">

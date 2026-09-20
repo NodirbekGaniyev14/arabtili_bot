@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import BadgeToast from "../components/BadgeToast";
+import type { Badge } from "../lib/api";
 import {
   api,
   wordClass,
@@ -32,6 +34,7 @@ function scoreColor(s: number) {
 }
 
 export default function Listening({ topic, kind, onClose, onFinished }: Props) {
+  const [badges, setBadges] = useState<Badge[]>([]);
   const [data, setData] = useState<ListenStart | null>(null);
   const [error, setError] = useState("");
   const [idx, setIdx] = useState(0);
@@ -113,6 +116,7 @@ export default function Listening({ topic, kind, onClose, onFinished }: Props) {
     try {
       const f = await api.tutorListenFinish(data.key);
       setFinish(f);
+      setBadges(f.new_badges ?? []);
       if (f.xp > 0) tg()?.HapticFeedback?.notificationOccurred("success");
       onFinished?.();
     } catch {
@@ -204,6 +208,7 @@ export default function Listening({ topic, kind, onClose, onFinished }: Props) {
 
   return (
     <>
+      <BadgeToast badges={badges} />
       <div className="flex items-center gap-2 px-4 py-2 bg-card border-b border-cardline">
         <div className="flex-1 flex gap-1">
           {data.items.map((it, i) => {

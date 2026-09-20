@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import BadgeToast from "../components/BadgeToast";
+import type { Badge } from "../lib/api";
 import {
   wordClass,
   api,
@@ -83,6 +85,7 @@ function uzDefault(level: string): boolean {
 }
 
 export default function Tutor({ onClose }: TutorProps) {
+  const [badges, setBadges] = useState<Badge[]>([]);
   const [info, setInfo] = useState<TutorTopics | null>(null);
   const [loadError, setLoadError] = useState("");
   const [tab, setTab] = useState<Tab>("chat");
@@ -394,6 +397,7 @@ export default function Tutor({ onClose }: TutorProps) {
     try {
       const r = await api.tutorFinish(sessionKey);
       setFinish(r);
+      setBadges(r.new_badges ?? []);
       if (r.xp > 0) tg()?.HapticFeedback?.notificationOccurred("success");
       loadInfo();
     } catch {
@@ -429,6 +433,7 @@ export default function Tutor({ onClose }: TutorProps) {
 
   return (
     <div className="fixed inset-0 z-50 bg-sand flex flex-col max-w-md mx-auto">
+      <BadgeToast badges={badges} />
       {paywall !== null && (
         <Paywall
           reason={paywall || undefined}

@@ -665,6 +665,18 @@ def _stt_quota(user_id: int) -> None:
     _stt_used[user_id] = (day, n + 1)
 
 
+async def _badges(session: AsyncSession, user_id: int) -> list[dict]:
+    """Speaking/yozuv yakunida yangi nishonlar (xato bo'lsa — bo'sh, oqim buzilmasin)."""
+    try:
+        stats = await user_stats(session, user_id)
+        return await check_and_award(session, user_id, stats["streak"])
+    except Exception as e:  # pragma: no cover — nishon oqimni to'xtatmasin
+        import logging
+
+        logging.getLogger(__name__).warning("badge tekshiruvi xatosi: %r", e)
+        return []
+
+
 def _stt_failed(request: Request) -> None:
     """STT xizmat xatosi (kalit/tarmoq) — o'quvchiga 503, adminga ogohlantirish.
     Oddiy «tushunilmadi» (bo'sh matn, 200) va yaroqsiz audio (400) bu yerga kirmaydi."""
@@ -846,6 +858,7 @@ async def tutor_drill_finish(
         "xp": xp,
         "scores": s["scores"],
         "items": [{"ar": it["ar"], "uz": it["uz"]} for it in s["items"]],
+        "new_badges": await _badges(session, user.id),
     }
 
 
@@ -941,6 +954,7 @@ async def tutor_listen_finish(
         "xp": xp,
         "scores": s["scores"],
         "items": s["items"],
+        "new_badges": await _badges(session, user.id),
     }
 
 
@@ -1154,6 +1168,7 @@ async def tutor_writing_check(
         "improved": improved,
         "xp_awarded": xp,
         "usage": usage,
+        "new_badges": await _badges(session, user.id),
     }
 
 
@@ -1237,7 +1252,10 @@ async def tutor_daily_answer(
     ai_usage.record(session, "daily", usage, user.id)
     await session.commit()
     st = await daily.status(session, user.id)
-    return {"result": _daily_row_dict(row), "streak": st["streak"], "best": st["best"], "xp": xp}
+    return {
+        "result": _daily_row_dict(row), "streak": st["streak"], "best": st["best"], "xp": xp,
+        "new_badges": await _badges(session, user.id),
+    }
 
 
 # ─────────── Sifat halqasi (K18.2): 👍/👎 ───────────
@@ -1507,6 +1525,7 @@ async def tutor_finish(
         await session.commit()
 
     result["xp"] = xp
+    result["new_badges"] = await _badges(session, user.id)
     return result
 
 
