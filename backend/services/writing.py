@@ -1,8 +1,10 @@
 """Yozuv (xattotlik) mashqi (K19.2) — 2 kunda bir matn, qo'lda ko'chirish, surat → AI tekshiruv.
 
-content/writing_texts.json: har daraja uchun 12 matn (so'zlar / jumlalar / hikoya /
-maqol / she'r), 2 kunlik davr tartibi bilan aylanadi (bir darajadagilar bir davrda
-bir xil matn). O'quvchi matnni qog'ozga yozadi, suratga oladi; Haiku (vision) suratni
+content/writing_texts.json: har daraja uchun 30 matn (so'zlar / jumlalar / hikoya /
+maqol / she'r / xat), 2 kunlik davr tartibi bilan aylanadi — 60 kunda bir marta
+takrorlanadi (bir darajadagilar bir davrda bir xil matn). Davrda urinish boshlangan
+bo'lsa, matn shu davr oxirigacha o'zgarmaydi (`current_text`) — bank kengaysa yoki
+daraja o'zgarsa ham. O'quvchi matnni qog'ozga yozadi, suratga oladi; Haiku (vision) suratni
 asl matn bilan solishtiradi: aniqlik (harflar, nuqtalar, hamza, bo'shliq — harakat
 ixtiyoriy), tushib qolgan / xato so'zlar, 2-3 amaliy maslahat, ozodalik 1-5.
 Natija `writing_results` (davr + foydalanuvchi bo'yicha bitta yozuv, eng yaxshi ball
@@ -142,6 +144,15 @@ def text_by_id(tid: str) -> dict | None:
             if t["id"] == tid:
                 return t
     return None
+
+
+def current_text(level: str, row: WritingResult | None) -> dict:
+    """Davr matni: urinish bo'lgan bo'lsa — yozuvdagi matn (bank/daraja o'zgarsa ham), aks holda navbatdagi."""
+    if row is not None and row.attempts:
+        t = text_by_id(row.text_id)
+        if t:
+            return t
+    return text_for(level)
 
 
 def xp_for(accuracy: int) -> int:

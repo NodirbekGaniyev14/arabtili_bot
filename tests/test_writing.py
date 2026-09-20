@@ -32,7 +32,12 @@ def _reply(acc=84, hand=True) -> writing.WritingReply:
 def test_bank_and_period():
     b = writing.bank()
     ids = [t["id"] for lv in writing.LEVELS for t in b[lv]]
-    assert len(ids) == len(set(ids)) and all(len(b[lv]) >= 10 for lv in writing.LEVELS)
+    assert len(ids) == len(set(ids)) and all(len(b[lv]) == 30 for lv in writing.LEVELS), "K20.5: 30 matn/daraja"
+    assert {t["kind"] for lv in b for t in b[lv]} <= {"so'zlar", "matn", "hikoya", "maqol", "she'r", "xat"}
+    assert all(t["ar"] and t["uz"] and t["title_uz"] for lv in b for t in b[lv])
+    # 60 kunlik aylanish: 30 davr ichida takror yo'q
+    seq = [writing.text_for("A2", date(2026, 1, 1) + timedelta(days=2 * i))["id"] for i in range(30)]
+    assert len(set(seq)) == 30
     for lv in writing.LEVELS:
         for t in b[lv]:
             assert t["ar"] and t["uz"] and t["title_uz"] and t["translit"]
@@ -43,6 +48,17 @@ def test_bank_and_period():
     assert writing.text_for("A1", date(2026, 9, 19)) == writing.text_for("A1", date(2026, 9, 20))
     assert writing.text_for("A1", date(2026, 9, 19)) != writing.text_for("A1", date(2026, 9, 21))
     assert writing.text_for("zz")["id"].startswith("a0-"), "noma'lum daraja → A0"
+
+
+def test_current_text_sticks_to_started_row():
+    """Davrda urinish bo'lgan bo'lsa matn o'zgarmaydi — daraja o'zgarsa yoki bank kengaysa ham (K20.5)."""
+    row = WritingResult(user_id=1, period="2026-09-19", text_id="a1-t03", level="A1", attempts=1)
+    assert writing.current_text("B2", row)["id"] == "a1-t03"
+    row.attempts = 0
+    assert writing.current_text("B2", row)["id"].startswith("b2-")
+    row.attempts, row.text_id = 1, "yo'q-id"
+    assert writing.current_text("A0", row)["id"].startswith("a0-"), "noma'lum id → navbatdagi"
+    assert writing.current_text("A0", None)["id"] == writing.text_for("A0")["id"]
     assert writing.xp_for(0) == 6 and writing.xp_for(84) == 14 and writing.xp_for(100) == 16
 
 

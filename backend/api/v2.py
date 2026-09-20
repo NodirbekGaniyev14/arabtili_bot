@@ -1082,9 +1082,9 @@ async def tutor_writing(
     from services import tts, writing
 
     level = await _user_level(session, user.id)
-    text = writing.text_for(level)
     period = writing.period_key()
     row = await writing.period_row(session, user.id, period)
+    text = writing.current_text(level, row)
     audio_key = tts.schedule(text["ar"].replace("\n", ". "), level)
     return {
         "period": period,
@@ -1120,9 +1120,9 @@ async def tutor_writing_check(
         raise HTTPException(status_code=413, detail="Surat juda katta (maks. 8 MB)")
 
     level = await _user_level(session, user.id)
-    text = writing.text_for(level)
     period = writing.period_key()
     row = await writing.period_row(session, user.id, period)
+    text = writing.current_text(level, row)
     if row and row.attempts >= writing.MAX_ATTEMPTS:
         raise HTTPException(
             status_code=429,
