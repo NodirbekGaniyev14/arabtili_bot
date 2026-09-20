@@ -56,6 +56,18 @@ async def cmd_admin(message: Message):
     await message.answer(text, parse_mode="HTML")
 
 
+@router.message(Command("digest"))
+async def cmd_digest(message: Message):
+    """Haftalik digest — o'tgan hafta (dushanba avtomatik keladi, bu qo'lda ko'rish)."""
+    if not _is_admin(message):
+        return
+    from services import admin_digest
+
+    async with SessionLocal() as session:
+        text = await admin_digest.build(session)
+    await message.answer(text, parse_mode="HTML")
+
+
 @router.message(Command("funnel"))
 async def cmd_funnel(message: Message):
     if not _is_admin(message):

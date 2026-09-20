@@ -10,14 +10,15 @@ import services.weekly as wk
 
 
 class FakeBot:
-    def __init__(self):
-        self.photos = []
-
     async def send_photo(self, chat, photo, caption="", **kw):
         self.photos.append((chat, caption))
 
-    async def send_message(self, *a, **kw):
-        pass
+    def __init__(self):
+        self.photos = []
+        self.messages = []
+
+    async def send_message(self, chat, text="", **kw):
+        self.messages.append((chat, text, kw.get("reply_markup")))
 
 
 async def _user_xp(session, name, xp, when):
@@ -210,3 +211,49 @@ async def test_leaderboard_marks_vip(session, make_user):
     data = await leaderboard(session, b.id, "week")
     by = {e["name"]: e for e in data["entries"]}
     assert by["Vip"]["vip"] is True and by["Plain"]["vip"] is False
+
+
+async def test_weekly_rollover_announces_to_everyone(session_factory, monkeypatch):
+    """Yakundan keyin hammaga (rejasi bor, faol) e'lon: g'oliblar, sovrin, o'z o'rni; bir marta."""
+    import db.session as dbs
+    from sqlalchemy import select
+
+    from config import settings
+    from db.models import Plan, User
+    from services.league import _week_start_utc
+
+    monkeypatch.setattr(dbs, "SessionLocal", session_factory)
+    monkeypatch.setattr(wk, "SessionLocal", session_factory)
+    monkeypatch.setattr(wk, "ANNOUNCE_PAUSE", 0)
+    monkeypatch.setattr(settings, "webapp_url", "https://arabiy.example/app")
+    prev = _week_start_utc() - timedelta(days=7)
+    async with session_factory() as s:
+        for i, xp in enumerate([400, 300, 200, 100]):
+            u = await _user_xp(s, f"W{i}", xp, prev + timedelta(days=1))
+            s.add(Plan(user_id=u.id, level="A1", target_level="A2", target_date="2027-01-01"))
+        noplan = await _user_xp(s, "NoPlan", 50, prev + timedelta(days=1))
+        old = await _user_xp(s, "Old", 5, prev - timedelta(days=100))  # 100 kun jim
+        s.add(Plan(user_id=old.id, level="A1", target_level="A2", target_date="2027-01-01"))
+        await s.commit()
+
+    bot = FakeBot()
+    await wk._rollover(bot)
+    async with session_factory() as s:
+        users = {u.name: u for u in (await s.execute(select(User))).scalars().all()}
+    by = {c: (t, kb) for c, t, kb in bot.messages}
+    assert set(by) == {users[n].tg_id for n in ("W0", "W1", "W2", "W3")}
+    t, kb = by[users["W0"].tg_id]
+    assert "Haftalik reyting yakunlandi" in t and "🥇 <b>W0</b> — 400 XP · 🎁 7 kun VIP" in t and "🥉 <b>W2</b>" in t
+    assert "Siz 1-o'rindasiz" in t and kb.inline_keyboard[0][0].web_app.url.endswith("#rating")
+    assert "Siz: <b>4-o'rin</b>, 100 XP (5 ishtirokchi)" in by[users["W3"].tg_id][0]
+    assert noplan.tg_id not in by and users["Old"].tg_id not in by
+
+    # Takror rollover — e'lon ham takrorlanmaydi
+    bot2 = FakeBot()
+    await wk._rollover(bot2)
+    assert bot2.messages == [] and bot2.photos == []
+
+
+def test_announcement_text_no_participation():
+    t = wk.announcement_text("month", "avgust 2026", [(1, "Ali", 900, 1)], None, 12)
+    assert "Oylik reyting yakunlandi" in t and "🎁 14 kun VIP" in t and "siz hali yo'q edingiz" in t and "top-5" in t

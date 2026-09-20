@@ -40,7 +40,8 @@ const EMPTY_STATS: Stats = {
 
 export default function App() {
   const [phase, setPhase] = useState<Phase>("boot");
-  const [tab, setTab] = useState<Tab>("home");
+  // Bot e'lonidagi tugma (#rating) — to'g'ri reytingga
+  const [tab, setTab] = useState<Tab>(() => (window.location.hash === "#rating" ? "rating" : "home"));
   const [tgName, setTgName] = useState("");
   const [me, setMe] = useState<MeResponse | null>(null);
   const [activeLessonV2, setActiveLessonV2] = useState<string | null>(() => {

@@ -16,16 +16,22 @@ from datetime import datetime, timedelta, timezone
 from aiogram import Bot
 from sqlalchemy import select
 
-from db.models import Meta, User, WeeklyAward
+from db.models import Meta, Plan, User, WeeklyAward, XpLog
 from db.session import SessionLocal
 from services.certificate import issue_rank_certificate
 from services.league import (
     _month_start_utc,
+    _ranked_rows,
     _week_start_utc,
     refresh_ranks,
     top_winners,
 )
 from services.stats import TASHKENT_OFFSET
+
+# G'oliblar e'loni: davr yakunida HAMMAGA (rejasi bor, 90 kun ichida faol) bitta xabar —
+# top-3/5, sovrin va o'zining o'rni. Bloklaganlar/o'lik hisoblar chetlab o'tiladi.
+ANNOUNCE_ACTIVE_DAYS = 90
+ANNOUNCE_PAUSE = 0.05
 
 ROLLOVER_HOUR = 9  # Toshkent vaqti (ham haftalik, ham oylik)
 CHECK_INTERVAL = 1200  # 20 daqiqa
@@ -107,14 +113,15 @@ async def _award_period(
     top_n: int,
     min_participants: int,
     caption_word: str,
-) -> None:
-    """Bitta davr (hafta/oy) g'oliblariga sovrin beradi — davr uchun bir marta."""
+) -> list | None:
+    """Bitta davr (hafta/oy) g'oliblariga sovrin beradi — davr uchun bir marta.
+    Qaytaradi: g'oliblar ro'yxati (yangi yakunlangan bo'lsa), aks holda None."""
     async with SessionLocal() as session:
         marker = (
             await session.execute(select(Meta).where(Meta.key == marker_key))
         ).scalar_one_or_none()
         if marker and marker.value == period_key:
-            return  # bu davr allaqachon yakunlangan
+            return None  # bu davr allaqachon yakunlangan
 
         winners = await top_winners(session, since, top_n, min_participants)
 
@@ -191,12 +198,79 @@ async def _award_period(
             marker = Meta(key=marker_key, value=period_key)
         session.add(marker)
         await session.commit()
+        return winners
+
+
+def _rating_kb():
+    from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, WebAppInfo
+
+    from services.deploy_notify import webapp_url_versioned
+
+    url = webapp_url_versioned()
+    if not url.startswith("https://"):
+        return None
+    return InlineKeyboardMarkup(
+        inline_keyboard=[[InlineKeyboardButton(text="🏆 Reytingni ochish", web_app=WebAppInfo(url=url + "#rating"))]]
+    )
+
+
+def announcement_text(period: str, label: str, winners: list, my: tuple | None, participants: int) -> str:
+    """Hamma uchun e'lon: g'oliblar + sovrin + o'quvchining o'z o'rni."""
+    head = "🏆 <b>Haftalik reyting yakunlandi</b>" if period == "week" else "🏆 <b>Oylik reyting yakunlandi</b>"
+    lines = [f"{head} · {label}", ""]
+    for _uid, name, xp, rank in winners:
+        prize = prize_days(period, rank)
+        lines.append(f"{RANK_ICON.get(rank, '🏅')} <b>{name}</b> — {xp} XP" + (f" · 🎁 {prize} kun VIP" if prize else ""))
+    lines.append("")
+    if my:
+        rank, xp = my
+        if rank <= len(winners):
+            lines.append(f"Siz {rank}-o'rindasiz — tabriklaymiz! 🎉")
+        else:
+            lines.append(f"Siz: <b>{rank}-o'rin</b>, {xp} XP ({participants} ishtirokchi).")
+    else:
+        lines.append(f"Bu davrda {participants} kishi qatnashdi — siz hali yo'q edingiz.")
+    nxt = "Yangi hafta boshlandi" if period == "week" else "Yangi oy boshlandi"
+    top = "top-3" if period == "week" else "top-5"
+    lines.append(f"{nxt} — bugun 1 dars, va {top} sizniki bo'lishi mumkin: sovrin VIP kunlar + sertifikat 🚀")
+    return "\n".join(lines)
+
+
+async def announce_winners(bot: Bot, period: str, label: str, winners: list, since: datetime) -> dict:
+    """Davr yakunini hammaga e'lon qiladi (rejasi bor, 90 kun ichida faol). {"sent", "failed"}."""
+    out = {"sent": 0, "failed": 0}
+    if not winners:
+        return out
+    async with SessionLocal() as session:
+        ranked = await _ranked_rows(session, since)
+        real = [r for r in ranked if not r.is_demo and r.xp > 0]
+        my_pos = {r.id: (pos, int(r.xp)) for pos, r in enumerate(real, start=1)}
+        active_since = _now() - timedelta(days=ANNOUNCE_ACTIVE_DAYS)
+        active_ids = set(
+            (await session.execute(select(XpLog.user_id).where(XpLog.created_at >= active_since).distinct())).scalars().all()
+        )
+        plan_ids = set((await session.execute(select(Plan.user_id).distinct())).scalars().all())
+        users = (
+            await session.execute(select(User).where(User.is_demo == 0, User.tg_id > 0))
+        ).scalars().all()
+    kb = _rating_kb()
+    for user in users:
+        if user.id not in plan_ids or user.id not in active_ids:
+            continue
+        text = announcement_text(period, label, winners, my_pos.get(user.id), len(real))
+        try:
+            await bot.send_message(user.tg_id, text, parse_mode="HTML", reply_markup=kb)
+            out["sent"] += 1
+        except Exception:
+            out["failed"] += 1
+        await asyncio.sleep(ANNOUNCE_PAUSE)
+    return out
 
 
 async def _rollover(bot: Bot) -> None:
-    """Haftalik yakun — o'tgan hafta top-3."""
+    """Haftalik yakun — o'tgan hafta top-3, keyin hammaga e'lon."""
     prev = _week_start_utc() - timedelta(days=7)
-    await _award_period(
+    winners = await _award_period(
         bot,
         marker_key=ROLLOVER_KEY,
         period="week",
@@ -207,12 +281,14 @@ async def _rollover(bot: Bot) -> None:
         min_participants=WEEKLY_MIN,
         caption_word="Haftalik",
     )
+    if winners:
+        await announce_winners(bot, "week", _week_label(prev), winners, prev)
 
 
 async def _monthly_rollover(bot: Bot) -> None:
-    """Oylik yakun — o'tgan oy top-5."""
+    """Oylik yakun — o'tgan oy top-5, keyin hammaga e'lon."""
     prev = _prev_month_start(_month_start_utc())
-    await _award_period(
+    winners = await _award_period(
         bot,
         marker_key=MONTHLY_KEY,
         period="month",
@@ -223,6 +299,8 @@ async def _monthly_rollover(bot: Bot) -> None:
         min_participants=MONTHLY_MIN,
         caption_word="Oylik",
     )
+    if winners:
+        await announce_winners(bot, "month", _month_label(prev), winners, prev)
 
 
 async def _notify_rank_drops(bot: Bot) -> None:
@@ -266,6 +344,10 @@ async def weekly_loop(bot: Bot) -> None:
             local = _local_now()
             if local.weekday() == 0 and local.hour >= ROLLOVER_HOUR:
                 await _rollover(bot)
+                # Admin haftalik digest (K20.3) — reyting yakunidan keyin, bir marta
+                from services import admin_digest
+
+                await admin_digest.maybe_send(bot)
             if local.day == 1 and local.hour >= ROLLOVER_HOUR:
                 await _monthly_rollover(bot)
             await _notify_rank_drops(bot)
