@@ -65,14 +65,15 @@ async def test_process_stages_once(session, make_user, monkeypatch):
     out = await wb.process(session, bot, NOON)
     assert out == {3: 1, 7: 2, 30: 1, "failed": 0}
     by = {c: (t, kb) for c, t, kb in bot.sent}
-    assert set(by) == {d4.tg_id, d10.tg_id, d40.tg_id, noxp.tg_id, 999}
+    assert set(by) == {d4.tg_id, d10.tg_id, d40.tg_id, noxp.tg_id}, "admin'ga har aylanishda emas"
     t, kb = by[d4.tg_id]
     assert "4 kundan beri" in t and "Nodir" in t and kb.inline_keyboard[1][0].web_app.url.endswith("#daily")
     t, kb = by[d10.tg_id]
     assert "Yozuv mashqi" in t and kb.inline_keyboard[0][0].web_app.url.endswith("#writing")
     t, kb = by[d40.tg_id]
     assert "bir oy" in t and "VIP sinov" in t and kb.inline_keyboard[-1][0].web_app.url.endswith("#vip")
-    assert "3 kun — 1, 7 kun — 2, 30 kun — 1" in by[999][0]
+    assert await wb.daily_summary(session, bot, datetime(2026, 9, 19, 14, 30)) is True, "19:30 — kunlik jamlanma"
+    assert "3 kun — 1, 7 kun — 2, 30 kun — 1 · jami 4, yetmadi — 0" in bot.sent[-1][1] and bot.sent[-1][0] == 999
     assert d4.winback_stage == 3 and d10.winback_stage == 7 and d40.winback_stage == 30 and noxp.winback_stage == 7
     assert d100.winback_stage == 0 and fresh.winback_stage == 0 and demo.winback_stage == 0
 
@@ -106,6 +107,32 @@ async def test_send_failure_marks(session, make_user):
     bot = Bot()
     assert await wb.process(session, bot, NOON) == {3: 1, 7: 0, 30: 0, "failed": 1}
     assert a.winback_stage == 3 and [c for c, _, _ in bot.sent] == [b.tg_id]
+    assert wb.FAILED.get("2026-09-19") == 1
+
+
+@pytest.mark.asyncio
+async def test_daily_summary_once_after_window(session, make_user, monkeypatch):
+    from config import settings
+
+    monkeypatch.setattr(settings, "admin_id", 999)
+    wb.FAILED.clear()
+    await _user(session, make_user, "A", 4)
+    await _user(session, make_user, "B", 10)
+    await session.commit()
+    bot = FakeBot()
+    assert (await wb.process(session, bot, NOON))[3] == 1
+    wb.FAILED["2026-09-19"] = 2  # yetmaganlar (jarayon xotirasi)
+    # 18:59 — erta; 19:05 — jamlanma; takror — jim
+    assert await wb.daily_summary(session, bot, datetime(2026, 9, 19, 13, 59)) is False
+    assert [c for c, _, _ in bot.sent].count(999) == 0
+    assert await wb.daily_summary(session, bot, datetime(2026, 9, 19, 14, 5)) is True
+    text = [t for c, t, _ in bot.sent if c == 999][-1]
+    assert "3 kun — 1, 7 kun — 1, 30 kun — 0 · jami 2, yetmadi — 2" in text
+    assert await wb.daily_summary(session, bot, datetime(2026, 9, 19, 15, 0)) is False
+    assert [c for c, _, _ in bot.sent].count(999) == 1
+    # Ertasi kuni hech kimga yuborilmagan — jamlanma yo'q
+    assert await wb.daily_summary(session, bot, datetime(2026, 9, 20, 14, 5)) is False
+    assert [c for c, _, _ in bot.sent].count(999) == 1
 
 
 def test_message_without_trial():

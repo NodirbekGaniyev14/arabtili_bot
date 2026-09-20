@@ -7,7 +7,9 @@ Har bosqich bir marta (`users.winback_stage` = yuborilgan oxirgi bosqich,
 `users.winback_at` = qachon); foydalanuvchi qaytsa (faollik winback_at dan keyin)
 bosqich nolga qaytadi. 90 kundan uzoq jim yurganlarga yozilmaydi (spam/bloklash).
 Kunduzi 11–19 Toshkent, 20:00 eslatmasidan alohida; bir aylanishda ≤ MAX_PER_RUN.
-`process(session, bot, now)` — halqa/test uchun.
+`process(session, bot, now)` — halqa/test uchun. Admin'ga har aylanishda emas, kuniga
+bir marta (19:00 dan keyin) jamlanma: `daily_summary` — bosqichlar soni bazadan
+(`winback_at` bugun), yetmaganlar jarayon xotirasidan; marker Meta «winback_digest_done».
 """
 
 import asyncio
@@ -18,7 +20,7 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
-from db.models import Plan, User, XpLog, utcnow
+from db.models import Meta, Plan, User, XpLog, utcnow
 from services import referral
 from services.stats import TASHKENT_OFFSET, _local_date, user_stats
 
@@ -30,6 +32,9 @@ STAGES = (3, 7, 30)  # kun
 MAX_DAYS = 90  # bundan uzoq jim — yozmaymiz
 MAX_PER_RUN = 200
 SEND_PAUSE = 0.05
+SUMMARY_HOUR = HOUR_TO  # kunlik jamlanma — yuborish oynasi yopilgach
+DIGEST_MARKER = "winback_digest_done"
+FAILED: dict[str, int] = {}  # Toshkent sanasi → yetmagan xabarlar (jarayon xotirasi)
 
 
 def _local(now: datetime) -> datetime:
@@ -161,15 +166,60 @@ async def process(session: AsyncSession, bot, now: datetime | None = None) -> di
         sent += 1
         await session.commit()
         await asyncio.sleep(SEND_PAUSE)
-    if settings.admin_id and sent:
-        try:
-            await bot.send_message(
-                settings.admin_id,
-                f"↩️ Qaytarish xabarlari: 3 kun — {out[3]}, 7 kun — {out[7]}, 30 kun — {out[30]}, yetmadi — {out['failed']}.",
-            )
-        except Exception as e:
-            log.warning("admin qaytarish xabari yuborilmadi: %r", e)
+    if out["failed"]:
+        key = _local(now).date().isoformat()
+        FAILED[key] = FAILED.get(key, 0) + out["failed"]
     return out
+
+
+async def day_counts(session: AsyncSession, now: datetime) -> dict[int, int]:
+    """Bugun (Toshkent) bosqich bo'yicha yuborilganlar — `winback_at` dan (yetmaganlar ham kiradi)."""
+    lo = datetime.combine(_local(now).date(), datetime.min.time()) - TASHKENT_OFFSET
+    rows = (
+        await session.execute(
+            select(User.winback_stage, func.count())
+            .where(User.winback_at >= lo, User.winback_at < lo + timedelta(days=1))
+            .group_by(User.winback_stage)
+        )
+    ).all()
+    out = {s: 0 for s in STAGES}
+    for stage, n in rows:
+        if stage in out:
+            out[stage] = int(n)
+    return out
+
+
+async def daily_summary(session: AsyncSession, bot, now: datetime | None = None) -> bool:
+    """Admin'ga kunlik jamlanma — SUMMARY_HOUR dan keyin, kuniga bir marta. Yuborilsa True."""
+    now = now or utcnow()
+    local = _local(now)
+    if not settings.admin_id or local.hour < SUMMARY_HOUR:
+        return False
+    key = local.date().isoformat()
+    marker = (await session.execute(select(Meta).where(Meta.key == DIGEST_MARKER))).scalar_one_or_none()
+    if marker and marker.value == key:
+        return False
+    if marker:
+        marker.value = key
+    else:
+        marker = Meta(key=DIGEST_MARKER, value=key)
+    session.add(marker)
+    await session.commit()
+    counts = await day_counts(session, now)
+    failed = FAILED.pop(key, 0)
+    total = sum(counts.values())
+    if not total:
+        return False
+    text = (
+        f"↩️ Qaytarish xabarlari (bugun): 3 kun — {counts[3]}, 7 kun — {counts[7]}, "
+        f"30 kun — {counts[30]} · jami {total}, yetmadi — {failed}."
+    )
+    try:
+        await bot.send_message(settings.admin_id, text)
+    except Exception as e:
+        log.warning("admin qaytarish jamlanmasi yuborilmadi: %r", e)
+        return False
+    return True
 
 
 async def loop(bot) -> None:
@@ -177,9 +227,10 @@ async def loop(bot) -> None:
 
     while True:
         try:
-            if _due_hour(utcnow()):
-                async with SessionLocal() as session:
+            async with SessionLocal() as session:
+                if _due_hour(utcnow()):
                     await process(session, bot)
+                await daily_summary(session, bot)
         except asyncio.CancelledError:
             raise
         except Exception as e:
