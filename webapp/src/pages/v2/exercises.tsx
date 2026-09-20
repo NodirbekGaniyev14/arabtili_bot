@@ -20,6 +20,33 @@ const normAr = (s: string) =>
     .replace(/[.,؟!·:؛\s]+/g, " ")
     .trim();
 
+/** Tekshiruv natijasi: `exact=false` — yumshoq qabul (namuna ko'rsatiladi), `note` — imlo izohi. */
+type Verdict = { ok: boolean; exact?: boolean; note?: string };
+const asVerdict = (r: boolean | Verdict): Verdict => (typeof r === "boolean" ? { ok: r, exact: r } : r);
+
+/** ى/ي va ة/ه — klaviaturada eng ko'p adashadigan juftliklar: kechiriladi, lekin izoh beriladi. */
+const normArLoose = (s: string) => normAr(s).replace(/ى/g, "ي").replace(/ة/g, "ه");
+const AR_NOTES: Record<string, string> = {
+  "ىي": "so'z oxirida ى (alif maqsura, nuqtasiz) bo'lishi kerak, ي emas",
+  "يى": "bu yerda ي (ikki nuqtali) bo'lishi kerak, ى emas",
+  "ةه": "so'z oxirida ة (ta marbuta, ikki nuqtali) bo'lishi kerak, ه emas",
+  "هة": "bu yerda ه (nuqtasiz) bo'lishi kerak, ة emas",
+};
+
+const arOk = (answer: string, value: string): Verdict => {
+  const a = normAr(answer);
+  const v = normAr(value);
+  if (a === v) return { ok: true, exact: true };
+  if (!v || normArLoose(a) !== normArLoose(v)) return { ok: false };
+  // Uzunlik teng — farq faqat ى/ي, ة/ه o'rinlarida
+  const notes = new Set<string>();
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== v[i]) notes.add(AR_NOTES[a[i] + v[i]] ?? "");
+  }
+  notes.delete("");
+  return { ok: true, exact: false, note: notes.size ? "Imlo: " + [...notes].join("; ") : undefined };
+};
+
 const normLat = (s: string) =>
   s.toLowerCase().replace(/[''ʼ’‘ʻ`\-_.?!:;«»"]/g, "").replace(/\s+/g, " ").trim();
 
@@ -113,13 +140,14 @@ const tokensMatch = (a: string[], b: string[]): boolean => {
   return seqClose(a, b) || seqClose([...a].sort(), [...b].sort());
 };
 
-const latOk = (answer: string, value: string) => {
+const latOk = (answer: string, value: string): Verdict => {
   const nv = normLat(value);
-  if (!nv) return false;
+  if (!nv) return { ok: false };
   const variants = latVariants(answer);
-  if (variants.includes(nv)) return true;
+  if (variants.includes(nv)) return { ok: true, exact: true };
   const vt = canonTokens(nv);
-  return vt.length > 0 && variants.some((v) => tokensMatch(canonTokens(v), vt));
+  const ok = vt.length > 0 && variants.some((v) => tokensMatch(canonTokens(v), vt));
+  return ok ? { ok: true, exact: false } : { ok: false };
 };
 
 /** harakat mashqi: harakatlar solishtiriladi, lekin alif varianti va bo'shliq farqi kechiriladi. */
@@ -132,13 +160,20 @@ function Feedback({
   correct,
   correctAnswer,
   explain,
+  note,
+  showSample,
   onNext,
 }: {
   correct: boolean;
   correctAnswer?: string;
   explain?: string;
+  /** Imlo izohi (yumshoq qabul qilingan arabcha javob) */
+  note?: string;
+  /** To'g'ri, lekin aynan emas — aniq shakl «Namuna» sifatida ko'rsatiladi */
+  showSample?: boolean;
   onNext: () => void;
 }) {
+  const showAnswer = correctAnswer && (!correct || showSample);
   return (
     <div
       className={`fixed bottom-0 left-0 right-0 z-40 px-5 pt-4 pb-8 ${
@@ -149,15 +184,19 @@ function Feedback({
         <div className="text-white font-extrabold text-lg">
           {correct ? "To'g'ri! 🎉" : "Xato 😔"}
         </div>
-        {!correct && correctAnswer && (
+        {showAnswer && (
           <div
             className={`text-white/95 font-bold mt-1 ${
               isArabic(correctAnswer) ? "font-arabic text-2xl" : "text-sm"
             }`}
             dir={isArabic(correctAnswer) ? "rtl" : "ltr"}
           >
-            To'g'ri javob: {correctAnswer}
+            {correct ? "Namuna: " : "To'g'ri javob: "}
+            {correctAnswer}
           </div>
+        )}
+        {note && (
+          <div className="text-white/90 text-xs font-bold mt-1.5 leading-relaxed">✍️ {note}</div>
         )}
         {explain && (
           <div className="text-white/80 text-xs font-semibold mt-1.5 leading-relaxed">
@@ -279,13 +318,14 @@ function InputEx({
   autoplay?: boolean;
   arabicInput: boolean;
   showHarakatKeys?: boolean;
-  check: (value: string) => boolean;
+  check: (value: string) => boolean | Verdict;
   correctAnswer: string;
   explain?: string;
   onDone: (ok: boolean) => void;
 }) {
   const [value, setValue] = useState("");
-  const [checked, setChecked] = useState<boolean | null>(null);
+  const [verdict, setVerdict] = useState<Verdict | null>(null);
+  const checked = verdict === null ? null : verdict.ok;
 
   useEffect(() => {
     if (autoplay) playAudio(audio);
@@ -293,9 +333,9 @@ function InputEx({
   }, []);
 
   const submit = () => {
-    const ok = check(value);
-    setChecked(ok);
-    tg()?.HapticFeedback?.notificationOccurred(ok ? "success" : "error");
+    const v = asVerdict(check(value));
+    setVerdict(v);
+    tg()?.HapticFeedback?.notificationOccurred(v.ok ? "success" : "error");
   };
 
   return (
@@ -356,12 +396,14 @@ function InputEx({
           Tekshirish
         </button>
       )}
-      {checked !== null && (
+      {verdict !== null && (
         <Feedback
-          correct={checked}
+          correct={verdict.ok}
           correctAnswer={correctAnswer}
           explain={explain}
-          onNext={() => onDone(checked)}
+          note={verdict.note}
+          showSample={verdict.ok && verdict.exact === false}
+          onNext={() => onDone(verdict.ok)}
         />
       )}
     </div>
@@ -657,9 +699,7 @@ function renderExercise(
           arabicBig={item.q_ar}
           arabicInput={arabicAnswer}
           showHarakatKeys={false}
-          check={(v) =>
-            arabicAnswer ? normAr(v) === normAr(item.answer) : latOk(item.answer, v)
-          }
+          check={(v) => (arabicAnswer ? arOk(item.answer, v) : latOk(item.answer, v))}
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}
@@ -673,7 +713,7 @@ function renderExercise(
           prompt={`Arabchaga tarjima qiling: «${item.q_uz}»`}
           arabicInput
           showHarakatKeys={false}
-          check={(v) => normAr(v) === normAr(item.answer)}
+          check={(v) => arOk(item.answer, v)}
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}
@@ -702,7 +742,7 @@ function renderExercise(
           autoplay
           arabicInput
           showHarakatKeys={false}
-          check={(v) => normAr(v) === normAr(item.answer)}
+          check={(v) => arOk(item.answer, v)}
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}

@@ -7,6 +7,7 @@
 import { useEffect, useState } from "react";
 import { api, type CheckpointData, type CheckpointResult } from "../lib/api";
 import { QuizRunner } from "./v2/exercises";
+import MashaAllah from "../components/MashaAllah";
 
 export default function Checkpoint({
   percent,
@@ -106,6 +107,7 @@ export default function Checkpoint({
                 {result.score}%
               </span>
             </div>
+            {result.passed && <MashaAllah score={result.score} />}
             <p className="text-ink-soft font-semibold">
               {result.correct}/{result.total} to'g'ri
             </p>

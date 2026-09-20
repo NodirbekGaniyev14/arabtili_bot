@@ -9,6 +9,7 @@ import {
 } from "../lib/api";
 import { playAudio } from "../lib/audio";
 import { QuizRunner } from "./v2/exercises";
+import MashaAllah from "../components/MashaAllah";
 
 const tg = () => window.Telegram?.WebApp;
 
@@ -463,6 +464,11 @@ export default function Exam({ onClose }: { onClose: () => void }) {
             <div className="mt-2 text-4xl font-extrabold text-emerald-deep">
               {result.total}/100
             </div>
+            {result.passed && (
+              <div className="mt-2">
+                <MashaAllah score={result.total} />
+              </div>
+            )}
             {result.promoted_to && (
               <div className="mt-4 rounded-2xl bg-gold-soft border border-gold/40 px-5 py-4">
                 <div className="text-3xl">🎉</div>

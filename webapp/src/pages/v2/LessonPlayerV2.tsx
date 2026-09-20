@@ -12,6 +12,7 @@ import {
   type Stats,
 } from "../../lib/api";
 import { playAudio } from "../../lib/audio";
+import MashaAllah from "../../components/MashaAllah";
 import ArabicText, { buildLookup, stripHarakat, type RevealInfo } from "./ArabicText";
 import { QuizRunner } from "./exercises";
 
@@ -415,6 +416,7 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
               {reward && ` · ${reward.score}%`}
             </p>
           )}
+          {reward?.passed && <MashaAllah score={reward.score} />}
           {reward ? (
             <>
               {!reward.passed && (
@@ -560,6 +562,7 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
             {cpResult.passed ? "Nazorat testi o'tildi!" : "Yana mashq kerak"}
           </h1>
           <p className="text-ink-soft font-semibold">Natija: {cpResult.score}%</p>
+          {cpResult.passed && <MashaAllah score={cpResult.score} />}
           {!cpResult.passed && (
             <p className="text-sm text-ink-soft font-semibold px-8">
               Xato so'zlar takror kartotekasiga qaytarildi — SRS orqali mustahkamlang
