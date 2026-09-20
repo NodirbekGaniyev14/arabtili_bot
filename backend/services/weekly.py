@@ -40,6 +40,22 @@ MONTHLY_TOP = 5
 MONTHLY_MIN = 5  # oylik sovrin uchun kamida 5 ishtirokchi
 
 RANK_ICON = {1: "🥇", 2: "🥈", 3: "🥉", 4: "🎗", 5: "🎗"}
+# Sovrin: VIP kunlari (AI ustoz) — o'rin bo'yicha; + 1 streak muzlatkichi (ko'pi bilan 2).
+# Bizga xarajati deyarli nol, motivatsiya kuchli; VIP faol bo'lsa muddat oxiriga qo'shiladi.
+VIP_PRIZE = {"week": {1: 7, 2: 3, 3: 3}, "month": {1: 14, 2: 7, 3: 7, 4: 3, 5: 3}}
+
+
+def prize_days(period: str, rank: int) -> int:
+    return VIP_PRIZE.get(period, {}).get(rank, 0)
+
+
+def prize_text(period: str, rank: int) -> str:
+    days = prize_days(period, rank)
+    if not days:
+        return ""
+    return f"\n\n🎁 Sovrin: <b>{days} kun VIP</b> (AI ustoz, mock, speaking) + 🧊 streak muzlatkichi."
+
+
 UZ_MONTHS = [
     "yanvar", "fevral", "mart", "aprel", "may", "iyun",
     "iyul", "avgust", "sentabr", "oktabr", "noyabr", "dekabr",
@@ -128,6 +144,15 @@ async def _award_period(
                 print(f"{period} sertifikat xatosi (user={user_id}): {e!r}")
                 continue
 
+            # Sovrin: VIP kunlari + streak muzlatkichi
+            days = prize_days(period, rank)
+            if days:
+                from services import billing
+                from services.stats import MAX_FREEZES
+
+                billing.grant(user, days)
+                user.streak_freezes = min((user.streak_freezes or 0) + 1, MAX_FREEZES)
+                session.add(user)
             session.add(
                 WeeklyAward(
                     user_id=user_id,
@@ -136,6 +161,7 @@ async def _award_period(
                     rank=rank,
                     weekly_xp=xp,
                     cert_id=cert.cert_id,
+                    vip_days=days,
                 )
             )
             await session.commit()
@@ -151,6 +177,7 @@ async def _award_period(
                         f"{rank}-o'rin!</b>\n\n"
                         f"{label} davrida {xp} XP to'pladingiz. "
                         f"Sovrin sertifikatingiz tayyor — tabriklaymiz!"
+                        f"{prize_text(period, rank)}"
                     ),
                     parse_mode="HTML",
                 )

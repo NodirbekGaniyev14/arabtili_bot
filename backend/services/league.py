@@ -62,6 +62,7 @@ async def _ranked_rows(session: AsyncSession, since: datetime | None):
             User.id,
             User.name,
             User.is_demo,
+            User.vip_until,
             func.coalesce(func.sum(XpLog.amount), 0).label("xp"),
         )
         .join(XpLog, XpLog.user_id == User.id)
@@ -228,6 +229,7 @@ async def leaderboard(
     streaks = await _streaks_by_user(session, ids)
 
     # Hamma bitta umumiy ro'yxatda — liga bo'yicha bo'linish yo'q
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
     entries = []
     my_rank = None
     for pos, r in enumerate(ranked, start=1):
@@ -243,6 +245,8 @@ async def leaderboard(
                 "streak": streaks.get(r.id, 0),
                 "is_me": is_me,
                 "is_demo": False,
+                # 👑 — VIP obuna faol (hamma ko'radi: ijtimoiy isbot)
+                "vip": bool(r.vip_until and r.vip_until > now),
             }
         )
 

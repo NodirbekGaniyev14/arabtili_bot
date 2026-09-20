@@ -39,6 +39,20 @@ function LevelTag({ level, streak }: { level: string; streak: number }) {
   );
 }
 
+/** 👑 VIP obuna belgisi — ism yonida, hamma ko'radi */
+function VipBadge({ small = false }: { small?: boolean }) {
+  return (
+    <span
+      className={`inline-flex items-center rounded-full bg-gold-soft border border-gold/40 font-extrabold text-ink align-middle ${
+        small ? "ml-1 px-1 text-[8px] leading-4" : "ml-1.5 px-1.5 py-0.5 text-[9px] leading-none"
+      }`}
+      title="VIP obuna"
+    >
+      👑 VIP
+    </span>
+  );
+}
+
 /** Top-3 poydevor: 1-o'rin o'rtada baland */
 function Podium({ top }: { top: LeaderboardEntry[] }) {
   const byRank = (r: number) => top.find((e) => e.rank === r);
@@ -66,6 +80,7 @@ function Podium({ top }: { top: LeaderboardEntry[] }) {
               </div>
               <div className="mt-1.5 text-xs font-extrabold truncate max-w-full px-1">
                 {s.entry.name.split(" ")[0]}
+                {s.entry.vip && <VipBadge small />}
               </div>
               <div className="text-[10px] font-bold text-ink-soft/70">
                 {s.entry.level}
@@ -194,6 +209,7 @@ export default function Rating() {
                   <div className="flex-1 min-w-0">
                     <div className="font-bold truncate">
                       {e.name}
+                      {e.vip && <VipBadge />}
                       {e.is_me && (
                         <span className="ml-1.5 text-xs text-emerald-deep font-extrabold">
                           (Siz)
@@ -222,8 +238,8 @@ export default function Rating() {
             <div className="rounded-2xl bg-gold-soft/60 border border-gold/30 px-4 py-3 text-center">
               <p className="text-sm font-extrabold">🏆 Haftalik sovrin</p>
               <p className="mt-0.5 text-xs font-semibold text-ink-soft leading-relaxed">
-                Dushanba tongida hafta yakunlanadi — <b>1, 2 va 3-o'rin</b> egalariga
-                sertifikat botga yuboriladi va profilda saqlanadi.
+                Dushanba tongida hafta yakunlanadi — <b>1-o'rin: 7 kun VIP</b>, <b>2–3-o'rin: 3 kun VIP</b>
+                (AI ustoz, mock, speaking) + 🧊 streak muzlatkichi + sertifikat botga keladi.
               </p>
             </div>
           )}
@@ -232,8 +248,8 @@ export default function Rating() {
             <div className="rounded-2xl bg-gold-soft/60 border border-gold/30 px-4 py-3 text-center">
               <p className="text-sm font-extrabold">🏆 Oylik sovrin</p>
               <p className="mt-0.5 text-xs font-semibold text-ink-soft leading-relaxed">
-                Oy boshida o'tgan oy yakunlanadi — <b>top-5</b> ishtirokchiga
-                sertifikat botga yuboriladi va profilda saqlanadi.
+                Oy boshida o'tgan oy yakunlanadi — <b>1-o'rin: 14 kun VIP</b>, <b>2–3: 7 kun</b>,{" "}
+                <b>4–5: 3 kun</b> + 🧊 muzlatkich + sertifikat.
               </p>
             </div>
           )}

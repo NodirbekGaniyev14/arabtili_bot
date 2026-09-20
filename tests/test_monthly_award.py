@@ -150,3 +150,63 @@ async def test_monthly_and_weekly_keys_coexist(session_factory, monkeypatch):
             periods.setdefault(a.user_id, set()).add(a.period)
         # eng yaxshi foydalanuvchi ikkala sovrinni ham olgan
         assert any(p == {"week", "month"} for p in periods.values())
+
+
+# ── Sovrin: VIP kunlari + muzlatkich (K20) ──
+
+
+async def test_weekly_rollover_grants_vip_prize(session_factory, monkeypatch):
+    """Haftalik top-3: 1-o'rin 7 kun VIP, 2–3-o'rin 3 kun; +1 muzlatkich (≤2); 4-o'rin — hech narsa."""
+    import db.session as dbs
+    from sqlalchemy import select
+
+    from db.models import User
+    from services import billing
+    from services.league import _week_start_utc
+
+    monkeypatch.setattr(dbs, "SessionLocal", session_factory)
+    monkeypatch.setattr(wk, "SessionLocal", session_factory)
+    prev = _week_start_utc() - timedelta(days=7)
+    async with session_factory() as s:
+        for i, xp in enumerate([400, 300, 200, 100]):
+            await _user_xp(s, f"W{i}", xp, prev + timedelta(days=1))
+        # 2-o'rin allaqachon VIP (5 kun) — muddat oxiriga qo'shiladi; muzlatkichi to'la (2)
+        u1 = (await s.execute(select(User).where(User.name == "W1"))).scalar_one()
+        billing.grant(u1, 5)
+        u1.streak_freezes = 2
+        u2 = (await s.execute(select(User).where(User.name == "W2"))).scalar_one()
+        u2.streak_freezes = 0  # muzlatkichi tugagan — sovrin +1
+        await s.commit()
+
+    bot = FakeBot()
+    await wk._rollover(bot)
+    assert len(bot.photos) == 3
+    caps = {c: cap for c, cap in bot.photos}
+    async with session_factory() as s:
+        users = {u.name: u for u in (await s.execute(select(User))).scalars().all()}
+        awards = {a.rank: a for a in (await s.execute(select(WeeklyAward))).scalars().all()}
+    assert billing.vip_days_left(users["W0"]) == 7 and awards[1].vip_days == 7
+    assert billing.vip_days_left(users["W1"]) == 8 and awards[2].vip_days == 3, "5 + 3 kun"
+    assert billing.vip_days_left(users["W2"]) == 3 and awards[3].vip_days == 3
+    assert not billing.is_vip(users["W3"])
+    assert users["W0"].streak_freezes == 2 and users["W1"].streak_freezes == 2, "≤ MAX_FREEZES"
+    assert users["W2"].streak_freezes == 1
+    assert "7 kun VIP" in caps[users["W0"].tg_id] and "3 kun VIP" in caps[users["W2"].tg_id]
+    assert wk.prize_days("month", 1) == 14 and wk.prize_days("month", 5) == 3 and wk.prize_days("week", 4) == 0
+
+
+async def test_leaderboard_marks_vip(session, make_user):
+    from services import billing
+    from services.league import leaderboard
+
+    from db.models import XpLog
+
+    a = await make_user("Vip")
+    billing.grant(a, 10)
+    b = await make_user("Plain")
+    for u, xp in ((a, 50), (b, 40)):
+        session.add(XpLog(user_id=u.id, amount=xp, source="lesson:x"))
+    await session.flush()
+    data = await leaderboard(session, b.id, "week")
+    by = {e["name"]: e for e in data["entries"]}
+    assert by["Vip"]["vip"] is True and by["Plain"]["vip"] is False

@@ -280,6 +280,8 @@ class WeeklyAward(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
     week_start: Mapped[str] = mapped_column(String(10), index=True)  # davr kaliti
+    # Sovrin sifatida berilgan VIP kunlari (0 = faqat sertifikat)
+    vip_days: Mapped[int] = mapped_column(Integer, default=0)
     period: Mapped[str] = mapped_column(String(8), default="week")  # week | month
     rank: Mapped[int] = mapped_column(Integer)  # haftada 1-3, oyda 1-5
     weekly_xp: Mapped[int] = mapped_column(Integer, default=0)

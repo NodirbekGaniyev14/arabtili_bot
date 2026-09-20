@@ -56,6 +56,7 @@ _MIGRATIONS = {
     },
     "weekly_awards": {
         "period": "VARCHAR(8) DEFAULT 'week'",
+        "vip_days": "INTEGER DEFAULT 0",
     },
     "exam_attempts": {
         "kind": "VARCHAR(8) DEFAULT 'level'",

@@ -259,6 +259,8 @@ export interface LeaderboardEntry {
   streak: number;
   is_me: boolean;
   is_demo: boolean;
+  /** VIP obuna faol — reytingda 👑 belgisi (hamma ko'radi) */
+  vip?: boolean;
 }
 
 export type LeaderPeriod = "week" | "month" | "all";
