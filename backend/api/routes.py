@@ -24,7 +24,7 @@ from services.league import leaderboard
 from services import feedback as feedback_svc
 from services import placement as placement_svc
 from services import profile as profile_svc
-from services.srs import GRADES, apply_grade, seed_user_words
+from services.srs import GRADES, apply_grade, refresh_card, seed_user_words
 from services.stats import (
     _today,
     completed_lesson_ids,
@@ -149,6 +149,10 @@ async def review_cards(
     rows = all_due
     if deck in ("msa", "hejazi"):
         rows = [w for w in all_due if (w.deck == "hejazi") == (deck == "hejazi")]
+
+    # Eskirgan tarjima/translit (kontent tuzatilgan) — joriy matn bilan yangilash
+    if any([refresh_card(w) for w in rows[:SESSION_LIMIT]]):
+        await session.commit()
 
     cards = [
         {

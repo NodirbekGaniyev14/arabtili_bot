@@ -1,4 +1,4 @@
-/** Mavzu (K19.3): yorug' / qorong'i / avto.
+/** Mavzu (K19.3): yorug' / qorong'i / avto. Standart — yorug' (Telegram qorong'i bo'lsa ham).
  *
  *  Ranglar Tailwind tokenlari (index.css @theme) — qorong'i rejim `:root[data-theme="dark"]`
  *  ostida o'sha tokenlarni almashtiradi, komponentlar o'zgarmaydi. «Avto» —
@@ -20,7 +20,7 @@ export function getMode(): ThemeMode {
   } catch {
     /* jim */
   }
-  return "auto";
+  return "light";
 }
 
 export function systemScheme(): Resolved {

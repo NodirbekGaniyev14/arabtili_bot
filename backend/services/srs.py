@@ -5,6 +5,7 @@ Yangi karta shu kuniyoq takrorga tushadi; keyin intervallar o'sib boradi.
 """
 
 from datetime import timedelta
+from functools import lru_cache
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -61,6 +62,58 @@ async def seed_user_words(session: AsyncSession, user_id: int) -> None:
 
     if added:
         await session.commit()
+
+
+@lru_cache(maxsize=1)
+def content_cards() -> tuple[dict[str, dict], dict[str, dict]]:
+    """Joriy kontent kartalari: (aniq ar → {uz, translit, audio}, normalize(ar) → ...).
+
+    Lug'at (dars so'zlari + baza) va v2 darslarning srs_cards ro'yxati. Kartoteka
+    yozuvi (user_words.uz) qo'shilgan paytdagi nusxa — kontent tuzatilsa eskiradi,
+    `refresh_card` shu jadvaldan yangilaydi."""
+    from services.curriculum import load_curriculum, load_lesson_v2
+    from services.reference import normalize
+    from services.vocab import all_words
+
+    exact: dict[str, dict] = {}
+    loose: dict[str, dict] = {}
+    for w in all_words():
+        ar, uz = (w.get("ar") or "").strip(), (w.get("uz") or "").strip()
+        if not ar or not uz:
+            continue
+        rec = {"uz": uz, "translit": w.get("translit") or "", "audio": w.get("audio") or ""}
+        exact.setdefault(ar, rec)
+        loose.setdefault(normalize(ar), rec)
+    for lid in load_curriculum():
+        for c in (load_lesson_v2(lid) or {}).get("srs_cards", []):
+            front, back = (c.get("front") or "").strip(), (c.get("back") or "").strip()
+            if front and back:
+                rec = {"uz": back, "translit": "", "audio": ""}
+                exact.setdefault(front, rec)
+                loose.setdefault(normalize(front), rec)
+    return exact, loose
+
+
+def refresh_card(w: UserWord) -> bool:
+    """Kartaning uz/translit/audio maydonlarini joriy kontent bilan yangilaydi (o'zak kartalari — yo'q).
+    O'zgargan bo'lsa True — chaqiruvchi commit qiladi."""
+    if w.card_type == "root" or w.kind == "root":
+        return False
+    from services.reference import normalize
+
+    exact, loose = content_cards()
+    fresh = exact.get(w.ar) or loose.get(normalize(w.ar))
+    if not fresh:
+        return False
+    changed = False
+    if fresh["uz"] != w.uz:
+        w.uz = fresh["uz"]
+        changed = True
+    for f in ("translit", "audio"):
+        if fresh[f] and not getattr(w, f):
+            setattr(w, f, fresh[f])
+            changed = True
+    return changed
 
 
 async def seed_from_srs_cards(

@@ -665,9 +665,9 @@ function ThemeRow() {
     tg()?.HapticFeedback?.impactOccurred("light");
   };
   const opts: Array<{ id: ThemeMode; label: string }> = [
-    { id: "auto", label: "Avto" },
     { id: "light", label: "☀️ Yorug'" },
     { id: "dark", label: "🌙 Qorong'i" },
+    { id: "auto", label: "Avto" },
   ];
   return (
     <div className="mt-2.5 flex items-center justify-between gap-3 rounded-2xl bg-card border border-cardline px-4 py-3">

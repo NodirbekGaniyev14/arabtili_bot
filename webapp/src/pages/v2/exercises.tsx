@@ -21,7 +21,7 @@ const normAr = (s: string) =>
     .trim();
 
 const normLat = (s: string) =>
-  s.toLowerCase().replace(/[''ʼ’`\-_.]/g, "").replace(/\s+/g, " ").trim();
+  s.toLowerCase().replace(/[''ʼ’‘ʻ`\-_.?!:;«»"]/g, "").replace(/\s+/g, " ").trim();
 
 /** "qalam / ruchka" yoki "ta'til, ruxsat" kabi javoblarda BITTA variant yetarli. */
 const latVariants = (answer: string): string[] => {
@@ -44,10 +44,82 @@ const latVariants = (answer: string): string[] => {
   return [...new Set(out)];
 };
 
+/* ── Yumshoq solishtirish (o'zbekcha javob) ──
+   Aynan mos kelmasa ham TO'G'RI: qavs izohi farqi («sen (muannas) yozyapsan» = «sen (ayol) yozasan»),
+   fe'l zamoni (-yapti / -moqda / -adi bir xil — arabcha muzore' ikkalasiga tarjima qilinadi),
+   olmosh tushirilgan («yozasan» = «sen yozasan»), «ular keldi» = «ular keldilar», so'z tartibi,
+   x/h imlosi, harf o'rni almashgan yoki qo'sh harf tushgan («diqat» = «diqqat»).
+   Fe'l shaxsi va inkori (-ma-), o/u kabi ma'no o'zgartiruvchi harflar — kechirilmaydi. */
+const PRONOUNS = new Set(["men", "sen", "u", "biz", "siz", "ular"]);
+const SYNONYMS: Record<string, string> = { muannas: "ayol", muzakkar: "erkak", hamda: "va" };
+const PRES: Record<string, string> = { di: "ti", dilar: "tilar" }; // hozirgi zamon shaxslari: man san ti miz siz tilar
+const PAST: Record<string, string> = { man: "m", san: "ng", miz: "k", siz: "ngiz" }; // -gan shaxslari → -di shaxslari
+
+/** Fe'lni «o'zak|zamon|shaxs» ko'rinishiga keltiradi; fe'l bo'lmasa so'z o'zgarmaydi. */
+const verbCanon = (w: string): string => {
+  let m = w.match(/^(.{2,}?)(?:yap|moqda)(man|san|ti|di|miz|siz|tilar|dilar)?$/); // yozyapti, yozmoqda(man)
+  if (m) return `${m[1]}|hoz|${PRES[m[2] ?? "ti"] ?? m[2] ?? "ti"}`;
+  m = w.match(/^(.{2,}?)ma(di|dim|ding|dik|dingiz|dilar)$/); // o'tgan zamon inkori: bormadi
+  if (m) return `${m[1]}|otgma|${m[2].slice(2)}`;
+  m = w.match(/^(.{2,}?)[ay](man|san|di|miz|siz|dilar)$/); // hozirgi-kelasi: yozadi, o'qiyman, bormaydi
+  if (m) return `${m[1]}|hoz|${PRES[m[2]] ?? m[2]}`;
+  m = w.match(/^(.{2,}?)di(m|ng|k|ngiz|lar)?$/); // o'tgan: yozdi, yozdim
+  if (m) return `${m[1]}|otg|${m[2] ?? ""}`;
+  m = w.match(/^(.{2,}?)(?:gan|kan|qan)(man|san|miz|siz|lar)?$/); // yozgan(man) = yozdi(m)
+  if (m) return `${m[1]}|otg|${m[2] ? PAST[m[2]] ?? m[2] : ""}`;
+  return w;
+};
+
+const canonTokens = (s: string): string[] => {
+  const t = s
+    .replace(/\([^)]*\)/g, " ")
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((w) => verbCanon((SYNONYMS[w] ?? w).replace(/x/g, "h")));
+  // «ular» bo'lsa 3-shaxs birlik fe'l ko'plikka tenglashadi (moslashuv ixtiyoriy)
+  return t.includes("ular")
+    ? t.map((w) => (w.endsWith("|otg|") ? w + "lar" : w.endsWith("|hoz|ti") ? w + "lar" : w))
+    : t;
+};
+
+/** Imlo xatosi: qo'shni harflar o'rni almashgan, yoki qo'sh harf bitta yozilgan / ortiqcha takrorlangan. */
+const typoClose = (x: string, y: string): boolean => {
+  if (x.length === y.length) {
+    let i = 0;
+    while (i < x.length && x[i] === y[i]) i++;
+    return i < x.length - 1 && x[i] === y[i + 1] && x[i + 1] === y[i] && x.slice(i + 2) === y.slice(i + 2);
+  }
+  if (Math.abs(x.length - y.length) !== 1) return false;
+  const [long, short] = x.length > y.length ? [x, y] : [y, x];
+  let i = 0;
+  while (i < short.length && long[i] === short[i]) i++;
+  return long.slice(i + 1) === short.slice(i) && (long[i] === long[i + 1] || (i > 0 && long[i] === long[i - 1]));
+};
+
+const wordClose = (x: string, y: string): boolean =>
+  x === y || (!x.includes("|") && !y.includes("|") && x.length >= 4 && typoClose(x, y));
+
+const seqClose = (a: string[], b: string[]) => a.length === b.length && a.every((w, i) => wordClose(w, b[i]));
+
+const tokensMatch = (a: string[], b: string[]): boolean => {
+  // Olmosh faqat bir tomonda bo'lsa — tushirilgan deb hisoblanadi; ikkalasida bo'lsa mos kelishi shart
+  const pa = a.some((w) => PRONOUNS.has(w));
+  const pb = b.some((w) => PRONOUNS.has(w));
+  if (pa !== pb) {
+    const sa = a.filter((w) => !PRONOUNS.has(w));
+    const sb = b.filter((w) => !PRONOUNS.has(w));
+    if (sa.length && sb.length) [a, b] = [sa, sb];
+  }
+  return seqClose(a, b) || seqClose([...a].sort(), [...b].sort());
+};
+
 const latOk = (answer: string, value: string) => {
   const nv = normLat(value);
   if (!nv) return false;
-  return latVariants(answer).includes(nv);
+  const variants = latVariants(answer);
+  if (variants.includes(nv)) return true;
+  const vt = canonTokens(nv);
+  return vt.length > 0 && variants.some((v) => tokensMatch(canonTokens(v), vt));
 };
 
 /** harakat mashqi: harakatlar solishtiriladi, lekin alif varianti va bo'shliq farqi kechiriladi. */
