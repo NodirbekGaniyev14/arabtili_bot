@@ -42,6 +42,8 @@ _MIGRATIONS = {
         # K20.1 qaytarish ketma-ketligi
         "winback_stage": "INTEGER DEFAULT 0",
         "winback_at": "DATETIME",
+        # K20.4 2-kun xabari
+        "day2_notice": "INTEGER DEFAULT 0",
     },
     "user_words": {
         "card_type": "VARCHAR(16) DEFAULT 'word'",

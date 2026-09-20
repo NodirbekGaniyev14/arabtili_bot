@@ -68,6 +68,8 @@ class User(Base):
     # (3/7/30 kun) va vaqti; foydalanuvchi qaytsa bosqich nolga qaytadi
     winback_stage: Mapped[int] = mapped_column(Integer, default=0)
     winback_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    # K20.4 ro'yxatdan o'tgan kunning ertasiga bitta xabar yuborildimi
+    day2_notice: Mapped[int] = mapped_column(Integer, default=0)
 
 
 class Placement(Base):

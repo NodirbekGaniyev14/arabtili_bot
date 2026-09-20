@@ -80,6 +80,9 @@ export interface MeResponse {
   daily?: { done: boolean; streak: number; best: number; total: number };
   /** K19.2 yozuv mashqi (2 kunda bir matn): bosh sahifa vazifasi */
   writing?: { period: string; title: string; kind: string; done: boolean; score: number };
+  /** K20.4 yangi foydalanuvchi: «Jamal bilan tanishing» kartasi */
+  intro_pending?: boolean;
+  intro_topic?: string;
 }
 
 // ── Yozuv (xattotlik) mashqi (K19.2) ──

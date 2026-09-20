@@ -76,7 +76,7 @@ async def me(
     plan_order = json.loads(plan.module_order_json) if plan else None
     await seed_user_words(session, user.id)
     stats = await user_stats(session, user.id, plan_order)
-    from services import billing, daily, writing
+    from services import billing, daily, first_day, writing
 
     w_text = writing.text_for(plan.level if plan else "A0")
     w_row = await writing.period_row(session, user.id, writing.period_key())
@@ -86,6 +86,9 @@ async def me(
         "has_plan": plan is not None,
         "plan": plan_to_dict(plan) if plan else None,
         "stats": stats,
+        # K20.4 yangi foydalanuvchi: «Jamal bilan tanishing» kartasi (3 kun, ustoz bilan gaplashmagan)
+        "intro_pending": await first_day.intro_pending(session, user),
+        "intro_topic": first_day.INTRO_TOPIC,
         # K19.2 yozuv mashqi (2 kunda bir matn): bosh sahifa vazifasi
         "writing": {
             "period": writing.period_key(),

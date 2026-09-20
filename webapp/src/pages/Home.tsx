@@ -21,7 +21,10 @@ interface HomeProps {
   onOpenChallenge: () => void;
   onOpenWeak: () => void;
   onOpenRolePlay: () => void;
-  onOpenTutor: () => void;
+  onOpenTutor: (topicId?: string) => void;
+  /** K20.4 yangi foydalanuvchi: tanishuv suhbati kartasi */
+  introPending?: boolean;
+  introTopic?: string;
   /** VIP tarif faolmi — AI ustoz kartasidagi yorliq */
   vip: boolean;
   /** Kunlik speaking savoli (bepul): holat va ochish */
@@ -55,6 +58,8 @@ export default function Home({
   onOpenChallenge,
   onOpenRolePlay,
   onOpenTutor,
+  introPending,
+  introTopic,
   vip,
   daily,
   onOpenDaily,
@@ -107,6 +112,23 @@ export default function Home({
         {greeting()}
         {name ? `, ${name}` : ""}!
       </h1>
+
+      {/* Yangi foydalanuvchi: Jamal bilan 1 daqiqalik tanishuv (K20.4) */}
+      {introPending && (
+        <button
+          onClick={() => onOpenTutor(introTopic ?? "tanishish")}
+          className="w-full flex items-center gap-3 rounded-3xl bg-gradient-to-r from-gold to-terracotta p-4 text-left text-white shadow-lg active:scale-[0.98] transition-transform"
+        >
+          <div className="w-12 h-12 shrink-0 rounded-2xl bg-white/20 flex items-center justify-center text-2xl">🐪</div>
+          <div className="min-w-0 flex-1">
+            <div className="text-[15px] font-extrabold leading-tight">Jamal bilan tanishing — 1 daqiqa</div>
+            <div className="text-[11px] text-white/85 font-semibold">
+              AI ustoz arabcha salomlashadi, ismingizni so'raydi. Bepul, xato qilsangiz ham yumshoq tuzatadi.
+            </div>
+          </div>
+          <span className="shrink-0 rounded-xl bg-white px-3 py-2 text-[12px] font-extrabold text-terracotta">Boshlash ›</span>
+        </button>
+      )}
 
       {/* Bugun: XP halqasi + vazifalar ro'yxati (K19.1); kirish eslatmasi shu yerda */}
       <TodayPlan
@@ -253,7 +275,7 @@ export default function Home({
 
         {/* AI ustoz — darajaga mos jonli suhbat (speaking) */}
         <button
-          onClick={onOpenTutor}
+          onClick={() => onOpenTutor()}
           className="w-full flex items-center gap-3 rounded-2xl bg-card border-2 border-emerald-deep/30 p-3.5 mb-3 text-left active:scale-[0.98] transition-transform shadow-sm"
         >
           <div className="w-12 h-12 shrink-0 rounded-xl bg-emerald-deep flex items-center justify-center text-2xl">

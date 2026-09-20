@@ -58,6 +58,8 @@ export default function App() {
   const [showRolePlay, setShowRolePlay] = useState(false);
   // Bot xabaridagi tugma (#tutor) — to'g'ri AI ustozga
   const [showTutor, setShowTutor] = useState(() => window.location.hash === "#tutor");
+  // Tanishuv kartasi (K20.4): ustoz shu mavzuda darhol boshlaydi
+  const [tutorTopic, setTutorTopic] = useState("");
   // Bot eslatmasidagi tugma (#vip) — ilova to'g'ridan-to'g'ri VIP sahifasida ochiladi
   const [showPaywall, setShowPaywall] = useState(() => window.location.hash === "#vip");
   const [showReference, setShowReference] = useState(false);
@@ -198,7 +200,12 @@ export default function App() {
             onOpenChallenge={() => setShowChallenge(true)}
             onOpenWeak={() => setShowWeak(true)}
             onOpenRolePlay={() => setShowRolePlay(true)}
-            onOpenTutor={() => setShowTutor(true)}
+            onOpenTutor={(topicId?: string) => {
+              setTutorTopic(topicId ?? "");
+              setShowTutor(true);
+            }}
+            introPending={!!me?.intro_pending}
+            introTopic={me?.intro_topic ?? "tanishish"}
             vip={me?.vip ?? false}
             daily={me?.daily}
             onOpenDaily={() => setShowDaily(true)}
@@ -240,8 +247,10 @@ export default function App() {
 
       {showTutor && (
         <Tutor
+          initialTopicId={tutorTopic || undefined}
           onClose={() => {
             setShowTutor(false);
+            setTutorTopic("");
             // Suhbat XP'si va yangi SRS kartalari statistikaga tushsin
             api.getMe().then(setMe).catch(() => {});
           }}

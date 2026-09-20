@@ -32,6 +32,8 @@ import Paywall from "./Paywall";
 
 interface TutorProps {
   onClose: () => void;
+  /** Ochilishi bilan shu mavzuda suhbatni boshlash (K20.4 tanishuv kartasi) */
+  initialTopicId?: string;
 }
 
 interface Correction {
@@ -84,7 +86,7 @@ function uzDefault(level: string): boolean {
   return !["B1", "B2"].includes(level.toUpperCase());
 }
 
-export default function Tutor({ onClose }: TutorProps) {
+export default function Tutor({ onClose, initialTopicId }: TutorProps) {
   const [badges, setBadges] = useState<Badge[]>([]);
   const [info, setInfo] = useState<TutorTopics | null>(null);
   const [loadError, setLoadError] = useState("");
@@ -167,6 +169,17 @@ export default function Tutor({ onClose }: TutorProps) {
   useEffect(() => {
     loadInfo();
   }, []);
+
+  // Tanishuv kartasi: mavzular kelgach «tanishish» suhbati o'zi boshlanadi (bir marta)
+  const autoStarted = useRef(false);
+  useEffect(() => {
+    if (!initialTopicId || !info || autoStarted.current || topic || mock) return;
+    const t = info.topics.find((x) => x.id === initialTopicId);
+    if (!t) return;
+    autoStarted.current = true;
+    start(t, null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [info, initialTopicId]);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({
