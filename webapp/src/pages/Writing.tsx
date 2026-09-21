@@ -20,23 +20,49 @@ interface Props {
   onDone?: () => void;
 }
 
-/** Suratni yuklashdan oldin telefonda kichraytirish (mobil internet, tezlik). */
+/** Brauzer dekod qila olmagan formatlar (Android'da HEIC) uchun <img> orqali urinish. */
+function decodeViaImg(file: File): Promise<ImageBitmap | HTMLImageElement> {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      resolve(img);
+    };
+    img.onerror = () => {
+      URL.revokeObjectURL(url);
+      reject(new Error("decode"));
+    };
+    img.src = url;
+  });
+}
+
+/** Suratni yuklashdan oldin telefonda kichraytirish (mobil internet, tezlik) va JPEG'ga o'tkazish
+ *  (#F84: telefon HEIC/WebP bersa ham serverga JPEG boradi; dekod bo'lmasa asl fayl — server o'qiydi). */
 async function shrink(file: File): Promise<Blob> {
   try {
-    const bmp = await createImageBitmap(file);
-    const scale = Math.min(1, MAX_SIDE / Math.max(bmp.width, bmp.height));
-    if (scale === 1 && file.size < 1_500_000) return file;
+    let src: ImageBitmap | HTMLImageElement;
+    try {
+      src = await createImageBitmap(file);
+    } catch {
+      src = await decodeViaImg(file);
+    }
+    const w = "naturalWidth" in src ? src.naturalWidth : src.width;
+    const h = "naturalHeight" in src ? src.naturalHeight : src.height;
+    const scale = Math.min(1, MAX_SIDE / Math.max(w, h));
+    const isJpeg = file.type === "image/jpeg" || file.type === "image/png";
+    if (scale === 1 && file.size < 1_500_000 && isJpeg) return file;
     const canvas = document.createElement("canvas");
-    canvas.width = Math.round(bmp.width * scale);
-    canvas.height = Math.round(bmp.height * scale);
+    canvas.width = Math.round(w * scale);
+    canvas.height = Math.round(h * scale);
     const ctx = canvas.getContext("2d");
     if (!ctx) return file;
-    ctx.drawImage(bmp, 0, 0, canvas.width, canvas.height);
+    ctx.drawImage(src, 0, 0, canvas.width, canvas.height);
     return await new Promise<Blob>((resolve) =>
       canvas.toBlob((b) => resolve(b ?? file), "image/jpeg", 0.85)
     );
   } catch {
-    return file; // eski WebView — server o'zi kichraytiradi
+    return file; // eski WebView / HEIC — server o'zi o'qiydi va kichraytiradi
   }
 }
 
@@ -65,6 +91,7 @@ export default function Writing({ onClose, onDone }: Props) {
   const [result, setResult] = useState<WritingCheck | null>(null);
   const [attemptsLeft, setAttemptsLeft] = useState(0);
   const fileRef = useRef<HTMLInputElement>(null);
+  const galleryRef = useRef<HTMLInputElement>(null); // #F84: galereyadan (capture'siz)
 
   useEffect(() => {
     api
@@ -94,8 +121,10 @@ export default function Writing({ onClose, onDone }: Props) {
 
   const pick = (f: File | null) => {
     if (!f) return;
-    if (!f.type.startsWith("image/")) {
-      setError("Faqat surat (JPG/PNG)");
+    // Tur bo'sh bo'lishi mumkin (Android galereya) — server baytlardan aniqlaydi; faqat aniq video/pdf rad
+    const t = (f.type || "").toLowerCase();
+    if (t && !t.startsWith("image/") && t !== "application/octet-stream") {
+      setError(t.startsWith("video/") ? "Bu video — yozuvning suratini yuboring" : "Faqat surat (JPG/PNG yoki kamera)");
       return;
     }
     setError("");
@@ -302,21 +331,46 @@ export default function Writing({ onClose, onDone }: Props) {
               hidden
               onChange={(e) => pick(e.target.files?.[0] ?? null)}
             />
+            {/* #F84: oldin olingan surat — galereyadan (capture'siz) */}
+            <input
+              ref={galleryRef}
+              type="file"
+              accept="image/*,.heic,.heif"
+              hidden
+              onChange={(e) => pick(e.target.files?.[0] ?? null)}
+            />
             {preview && !result && (
-              <img src={preview} alt="Yozuv" className="w-full max-h-64 rounded-2xl object-contain bg-card border border-cardline" />
+              <img
+                src={preview}
+                alt="Yozuv"
+                className="w-full max-h-64 rounded-2xl object-contain bg-card border border-cardline"
+                // HEIC'ni brauzer ko'rsata olmasa — surat baribir tanlangan, server o'qiydi
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                  setError("");
+                }}
+              />
             )}
             {attemptsLeft > 0 ? (
               <>
                 {!file || result ? (
-                  <button
-                    onClick={() => {
-                      tg()?.HapticFeedback?.impactOccurred("medium");
-                      fileRef.current?.click();
-                    }}
-                    className="w-full rounded-2xl bg-emerald-deep py-4 text-white font-extrabold text-[15px] active:scale-[0.98] transition-transform"
-                  >
-                    {result || best ? "📷 Qayta suratga olish" : "✅ Yozdim — suratga olish"}
-                  </button>
+                  <div className="space-y-2">
+                    <button
+                      onClick={() => {
+                        tg()?.HapticFeedback?.impactOccurred("medium");
+                        fileRef.current?.click();
+                      }}
+                      className="w-full rounded-2xl bg-emerald-deep py-4 text-white font-extrabold text-[15px] active:scale-[0.98] transition-transform"
+                    >
+                      {result || best ? "📷 Qayta suratga olish" : "✅ Yozdim — suratga olish"}
+                    </button>
+                    <button
+                      onClick={() => galleryRef.current?.click()}
+                      className="w-full rounded-2xl bg-card border border-cardline py-3 text-[13px] font-extrabold text-ink-soft active:scale-[0.98] transition-transform"
+                    >
+                      🖼 Galereyadan tanlash
+                    </button>
+                  </div>
                 ) : (
                   <div className="flex gap-2">
                     <button

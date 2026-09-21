@@ -92,6 +92,10 @@ _MIGRATIONS = {
         "content": "INTEGER DEFAULT -1",
         "pron": "INTEGER DEFAULT -1",
     },
+    # K23.4 VIP modeli — sarf qatori qaysi modelda
+    "ai_usage": {
+        "model": "VARCHAR(40) DEFAULT ''",
+    },
     # K18.5 avto to'lov (Telegram Payments: Payme/Click)
     "payment_requests": {
         "provider": "VARCHAR(12) DEFAULT 'receipt'",

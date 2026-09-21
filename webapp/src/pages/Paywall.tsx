@@ -369,7 +369,19 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
             </span>
           </div>
           <div className="space-y-2">
-            {FEATURES.map((f) => (
+            {[
+              ...FEATURES,
+              // K23.4: VIP suhbat/mock kuchliroq modelda — server sozlagan bo'lsa
+              ...(info?.vip_model
+                ? [
+                    {
+                      icon: "🧠",
+                      title: `Kuchliroq AI model — ${info.vip_model}`,
+                      desc: "VIP suhbat va mock imtihonlar aniqroq tushunadi va tuzatadi",
+                    },
+                  ]
+                : []),
+            ].map((f) => (
               <div
                 key={f.title}
                 className="flex items-start gap-3 rounded-2xl bg-sand border border-cardline px-3 py-2.5"

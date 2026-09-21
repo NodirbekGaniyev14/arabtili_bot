@@ -225,6 +225,23 @@ async def cmd_sorov(message: Message, bot: Bot):
     await message.answer(f"✅ Yuborildi: {sent}\n❌ Yetib bormadi: {failed}")
 
 
+@router.message(Command("javoblar"))
+async def cmd_javoblar(message: Message):
+    """Rad etilgan yozma javoblar (#F70): /javoblar [kun] [n]."""
+    if not _is_admin(message):
+        return
+    from services import answer_log
+
+    parts = (message.text or "").split()
+    days = int(parts[1]) if len(parts) > 1 and parts[1].isdigit() else 30
+    top = int(parts[2]) if len(parts) > 2 and parts[2].isdigit() else 15
+    async with SessionLocal() as session:
+        rep = await answer_log.report(session, days=min(max(days, 1), 365), top=min(max(top, 1), 40))
+    text = answer_log.report_text(rep)
+    for i in range(0, len(text), 3900):
+        await message.answer(text[i : i + 3900], parse_mode="HTML")
+
+
 @router.message(Command("fikrlar"))
 async def cmd_fikrlar(message: Message):
     """So'rov javoblari ro'yxati: /fikrlar [n]."""

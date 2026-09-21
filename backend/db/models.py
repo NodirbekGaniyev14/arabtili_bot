@@ -461,6 +461,23 @@ class TraceResult(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
 
 
+class AnswerLog(Base):
+    """Yozma mashqda XATO deb topilgan javoblar jurnali (#F70, K23): kontentdagi soxta-salbiy
+    holatlarni topish uchun — admin /javoblar. Faqat klaviatura turlari (fill_blank, translate,
+    dictation, harakat); matnlar qisqartirilgan, 20 000 qatordan ortig'i o'chiriladi."""
+
+    __tablename__ = "answer_log"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    context: Mapped[str] = mapped_column(String(24), default="")  # a0-12 | a0-12:cp | cp25 | exam | challenge
+    ex_type: Mapped[str] = mapped_column(String(16), default="")
+    q: Mapped[str] = mapped_column(String(200), default="")
+    expected: Mapped[str] = mapped_column(String(200), default="")
+    given: Mapped[str] = mapped_column(String(200), default="")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
 class WritingResult(Base):
     """K19.2 yozuv (xattotlik) mashqi — davr (2 kun) + foydalanuvchi uchun bitta yozuv:
     eng yaxshi ball, ozodalik, urinishlar soni, oxirgi eng yaxshi tekshiruv (JSON), XP."""
@@ -516,6 +533,7 @@ class AiUsage(Base):
     tokens_out: Mapped[int] = mapped_column(Integer, default=0)
     cache_read: Mapped[int] = mapped_column(Integer, default=0)
     cache_write: Mapped[int] = mapped_column(Integer, default=0)
+    model: Mapped[str] = mapped_column(String(40), default="")  # K23.4: narx modelga qarab
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
 
 

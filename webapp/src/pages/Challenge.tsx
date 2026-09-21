@@ -78,6 +78,7 @@ export default function Challenge({ onClose }: { onClose: () => void }) {
             <QuizRunner
               items={data.items}
               label="HAFTALIK CHELLENJ"
+              context="challenge"
               onFinish={finish}
             />
           </div>

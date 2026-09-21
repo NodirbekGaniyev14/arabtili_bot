@@ -531,6 +531,13 @@ async def tutor_report(session: AsyncSession) -> str:
         f"{ai_usage.FEATURES.get(f, f)} {v['calls']} ({_usd(v['cost'])})"
         for f, v in sorted(u_month["by"].items(), key=lambda kv: -kv[1]["cost"])
     ) or "—"
+    # K23.4: model bo'yicha (30 kun) — VIP modeli sozlangan bo'lsa ulushi ko'rinsin
+    models_line = " · ".join(
+        f"{ai_usage.short_model(m) if m else 'Haiku 4.5'} {v['calls']} ({_usd(v['cost'])})"
+        for m, v in sorted(u_month["by_model"].items(), key=lambda kv: -kv[1]["cost"])
+    ) or ai_usage.short_model(settings.tutor_model)
+    if settings.tutor_vip_model:
+        models_line += f" · VIP: {ai_usage.short_model(settings.tutor_vip_model)}"
     tok = u_month["usage"]
     cache_share = (
         round(tok["cache_read"] / (tok["in"] + tok["cache_read"] + tok["cache_write"]) * 100)
@@ -671,7 +678,7 @@ async def tutor_report(session: AsyncSession) -> str:
 
     return (
         "🎓 <b>AI ustoz — sarf va holat</b>\n\n"
-        "💰 <b>Anthropic sarfi</b> (Haiku 4.5)\n"
+        f"💰 <b>Anthropic sarfi</b> ({models_line})\n"
         f"• Bugun: <b>{u_today['calls']}</b> chaqiruv · <b>{_usd(u_today['cost'])}</b>\n"
         f"• 7 kun: {u_week['calls']} · {_usd(u_week['cost'])} "
         f"(kuniga o'rtacha {_usd(daily_avg)})\n"

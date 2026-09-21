@@ -42,7 +42,7 @@ BASE_XP = 6  # + aniqlik/10 (0-10) → 6-16
 MAX_IMAGE_SIDE = 1400  # px — modelga yuborishdan oldin kichraytiriladi (token/narx)
 MAX_IMAGE_BYTES = 8 * 1024 * 1024
 MAX_TOKENS = 1200
-IMAGE_TYPES = {"image/jpeg", "image/png", "image/webp"}
+IMAGE_TYPES = {"image/jpeg", "image/png", "image/webp", "image/heic", "image/heif"}  # ma'lumot uchun; tekshiruv — prepare_image
 
 
 class WrongWord(BaseModel):
@@ -159,17 +159,48 @@ def xp_for(accuracy: int) -> int:
     return BASE_XP + max(0, min(100, accuracy)) // 10
 
 
+def _register_heif() -> bool:
+    """iPhone HEIC/HEIF — pillow-heif o'rnatilgan bo'lsa Pillow o'qiy oladi (bir marta ro'yxatga olinadi)."""
+    try:
+        import pillow_heif
+
+        pillow_heif.register_heif_opener()
+        return True
+    except Exception:  # paket yo'q — JPG/PNG/WebP bilan davom
+        return False
+
+
+def image_format_hint(data: bytes) -> str:
+    """Xato xabari uchun: baytlardan format nomi (HEIC, PDF, …) — foydalanuvchi nima yuborganini bilsin."""
+    head = data[:16]
+    if len(data) > 12 and data[4:8] == b"ftyp":
+        brand = data[8:12]
+        if brand in (b"heic", b"heix", b"hevc", b"mif1", b"msf1", b"heif", b"avif"):
+            return "HEIC"
+        return "video"
+    if head.startswith(b"%PDF"):
+        return "PDF"
+    if head.startswith(b"GIF8"):
+        return "GIF"
+    if head.startswith(b"BM"):
+        return "BMP"
+    return ""
+
+
 def prepare_image(data: bytes) -> tuple[bytes, str]:
     """Suratni kichraytirib JPEG qiladi (uzun tomon ≤ MAX_IMAGE_SIDE) — token va narx nazorati.
-    EXIF burilishini to'g'rilaydi. Yaroqsiz bo'lsa ValueError."""
+    EXIF burilishini to'g'rilaydi. Format klient aytgan MIME'ga emas, baytlarga qarab aniqlanadi
+    (Android galereya turi bo'sh/octet-stream berishi mumkin — #F84). Yaroqsiz bo'lsa ValueError."""
     from PIL import Image, ImageOps
 
+    _register_heif()
     try:
         img = Image.open(io.BytesIO(data))
         img = ImageOps.exif_transpose(img)
         img = img.convert("RGB")
     except Exception as e:
-        raise ValueError("Rasm o'qilmadi") from e
+        hint = image_format_hint(data)
+        raise ValueError(f"Rasm o'qilmadi ({hint})" if hint else "Rasm o'qilmadi") from e
     w, h = img.size
     scale = MAX_IMAGE_SIDE / max(w, h)
     if scale < 1:

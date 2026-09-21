@@ -25,13 +25,14 @@ _tasks: dict[str, asyncio.Task] = {}
 REQUIRED_TABLES = (
     "users", "tutor_turns", "mock_results", "payment_requests", "ai_usage",
     "tutor_mistakes", "drill_results", "daily_speaking", "testimonials", "certificates",
-    "listening_results", "tutor_ratings", "writing_results", "trace_results",
+    "listening_results", "tutor_ratings", "writing_results", "trace_results", "answer_log",
 )
 REQUIRED_COLUMNS = {
     "users": ("vip_until", "paywall_seen_at", "vip_notice", "discount_notified", "trial_until", "speak_report_key", "writing_notice", "winback_stage", "winback_at", "day2_notice", "first_nudge", "survey_pending"),
     "payment_requests": ("provider", "charge_id", "provider_charge_id"),
     "tutor_turns": ("mode", "score", "vocab", "grammar", "content", "pron"),
     "mock_results": ("vocab", "grammar", "content", "pron"),
+    "ai_usage": ("model",),
 }
 
 
@@ -73,7 +74,21 @@ async def check_anthropic() -> str:
             ),
             timeout=20,
         )
-        return _ok(f"Anthropic: {settings.tutor_model} javob berdi ({time.monotonic() - t0:.1f}s)")
+        line = f"Anthropic: {settings.tutor_model} javob berdi ({time.monotonic() - t0:.1f}s)"
+        vip_model = settings.tutor_vip_model
+        if vip_model and vip_model != settings.tutor_model:
+            # K23.4: VIP modeli ham jonli tekshiriladi (1 token) — nomi xato bo'lsa
+            # VIP'lar asosiy modelga tushadi (tutor._call zaxirasi), lekin admin bilsin
+            try:
+                t1 = time.monotonic()
+                await asyncio.wait_for(
+                    client.messages.create(model=vip_model, max_tokens=1, messages=[{"role": "user", "content": "hi"}]),
+                    timeout=20,
+                )
+                line += f" · VIP: {vip_model} ({time.monotonic() - t1:.1f}s)"
+            except Exception as e:
+                return _warn(f"{line} · VIP modeli {vip_model} XATO: {type(e).__name__} — VIP'lar {settings.tutor_model} bilan davom etadi")
+        return _ok(line)
     except Exception as e:
         from services.tutor import classify
 
@@ -256,6 +271,19 @@ def check_settings() -> list[str]:
         else _ok("Avto to'lov: o'chiq — chek oqimi (xohlasangiz .env PAY_PROVIDER_TOKEN)")
     )
     out.append(_ok(f"Limitlar: VIP {settings.tutor_daily_turns}/kun · bepul {settings.tutor_free_turns}/kun · chegirma {settings.pay_discount_hours} soat"))
+    # K23.4: VIP modeli (sozlanmagan bo'lsa hamma bir modelda — bu xato emas)
+    out.append(
+        _ok(f"AI modellari: bepul {settings.tutor_model} · VIP {settings.tutor_vip_model}")
+        if settings.tutor_vip_model
+        else _ok(f"AI modeli: {settings.tutor_model} (hamma uchun; VIP uchun kuchlirog'i — .env TUTOR_VIP_MODEL)")
+    )
+    # #F84: iPhone HEIC suratlari — pillow-heif (requirements.txt) o'rnatilganmi
+    try:
+        import pillow_heif  # noqa: F401
+
+        out.append(_ok("Yozuv surati: HEIC (iPhone) o'qiladi — pillow-heif bor"))
+    except Exception:
+        out.append(_warn("Yozuv surati: pillow-heif yo'q — iPhone HEIC o'qilmaydi (pip install -r backend/requirements.txt)"))
     return out
 
 

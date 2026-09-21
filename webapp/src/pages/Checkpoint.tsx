@@ -81,6 +81,7 @@ export default function Checkpoint({
             <QuizRunner
               items={data.items}
               label={`MINI-IMTIHON ${percent}%`}
+              context={`cp${percent}`}
               onFinish={finish}
             />
           </div>

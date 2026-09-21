@@ -417,7 +417,7 @@ async def tutor_topics(
     session: AsyncSession = Depends(get_session),
 ):
     from config import settings
-    from services import billing, referral, stt, tutor
+    from services import ai_usage, billing, referral, stt, tutor
 
     level = await _user_level(session, user.id)
     access = await _tutor_access(session, user)
@@ -440,6 +440,8 @@ async def tutor_topics(
         **{k: v for k, v in access.items() if k != "used"},
         "free_turns": settings.tutor_free_turns,
         "vip_turns": settings.tutor_daily_turns,
+        # K23.4: VIP'da kuchliroq model bormi (UI yorlig'i)
+        "vip_model": ai_usage.short_model(settings.tutor_vip_model) if settings.tutor_vip_model else "",
         "trial_available": referral.trial_available(user),
         "trial_days": referral.TRIAL_DAYS,
         "price": billing.price_summary(),
@@ -498,6 +500,7 @@ async def tutor_turn(
                 mock_id=body.mock_id,
                 history=body.history,
                 known=known,
+                vip=access["vip"],
             )
             if learner_answered:
                 # Talaffuz (aniqlik) — oxirgi /tutor/transcribe ishonch bali (server xotirasi)
@@ -516,6 +519,7 @@ async def tutor_turn(
                 topic_id=body.topic_id,
                 history=body.history,
                 known=known,
+                vip=access["vip"],
             )
             ok = reply.correction_ok if learner_answered else True
             score = -1
@@ -1111,9 +1115,11 @@ async def tutor_writing_check(
     XP birinchi muvaffaqiyatli tekshiruvda bir marta (eng yaxshi ball saqlanadi)."""
     from services import ai_usage, alerts, tutor, writing
 
+    # #F84: MIME bo'yicha rad etilmaydi (Android galereya bo'sh/octet-stream beradi, iPhone HEIC) —
+    # faqat aniq boshqa tur (video/pdf) qaytariladi, qolganini prepare_image baytlardan aniqlaydi
     mime = (file.content_type or "").split(";")[0].strip().lower()
-    if mime not in writing.IMAGE_TYPES:
-        raise HTTPException(status_code=422, detail="Faqat surat (JPG/PNG) yuklang")
+    if mime and not mime.startswith("image/") and mime != "application/octet-stream":
+        raise HTTPException(status_code=422, detail="Faqat surat yuklang (JPG, PNG yoki telefon kamerasi)")
     data = await file.read()
     if not data:
         raise HTTPException(status_code=422, detail="Surat bo'sh")
@@ -1132,7 +1138,16 @@ async def tutor_writing_check(
     try:
         image, img_mime = writing.prepare_image(data)
     except ValueError:
-        raise HTTPException(status_code=422, detail="Surat o'qilmadi — boshqa rasm yuklang")
+        hint = writing.image_format_hint(data)
+        if hint == "HEIC":
+            detail = "iPhone HEIC surati o'qilmadi — Sozlamalar → Kamera → Formatlar → «Eng mos» (JPEG) qiling yoki yozuvning skrinshotini yuboring"
+        elif hint == "video":
+            detail = "Bu video — yozuvning suratini yuboring"
+        elif hint:
+            detail = f"{hint} fayl o'qilmadi — JPG yoki PNG surat yuboring"
+        else:
+            detail = "Surat o'qilmadi — qayta suratga oling yoki galereyadan JPG/PNG tanlang"
+        raise HTTPException(status_code=422, detail=detail)
 
     try:
         reply, usage = await writing.check(level, text, image, img_mime)
@@ -1259,6 +1274,32 @@ async def tutor_daily_answer(
         "result": _daily_row_dict(row), "streak": st["streak"], "best": st["best"], "xp": xp,
         "new_badges": await _badges(session, user.id),
     }
+
+
+# ─────────── Rad etilgan yozma javoblar jurnali (#F70, K23) ───────────
+
+
+class AnswerLogBody(BaseModel):
+    context: str = Field(default="", max_length=24)
+    ex_type: str = Field(min_length=1, max_length=16)
+    q: str = Field(default="", max_length=400)
+    expected: str = Field(min_length=1, max_length=400)
+    given: str = Field(min_length=1, max_length=400)
+
+
+@router.post("/answer-log")
+async def answer_log_post(
+    body: AnswerLogBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Klient: yozma mashqda javob XATO deb topildi — admin /javoblar uchun (soxta-salbiylarni topish)."""
+    from services import answer_log
+
+    ok = await answer_log.record(session, user.id, body.context, body.ex_type, body.q, body.expected, body.given)
+    if ok:
+        await session.commit()
+    return {"ok": ok}
 
 
 # ─────────── Sifat halqasi (K18.2): 👍/👎 ───────────

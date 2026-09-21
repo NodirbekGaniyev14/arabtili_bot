@@ -71,6 +71,26 @@ def test_prepare_image():
     assert Image.open(io.BytesIO(small)).size == (300, 200), "kichik surat kattalashtirilmaydi"
     with pytest.raises(ValueError):
         writing.prepare_image(b"not an image")
+    # #F84: format baytlardan aniqlanadi — xato xabari foydalanuvchiga tushunarli
+    heic = b"\x00\x00\x00\x18ftypheic\x00\x00\x00\x00mif1heic" + b"\x00" * 40
+    assert writing.image_format_hint(heic) == "HEIC"
+    assert writing.image_format_hint(b"\x00\x00\x00\x18ftypmp42" + b"\x00" * 40) == "video"
+    assert writing.image_format_hint(b"%PDF-1.4 ...") == "PDF"
+    assert writing.image_format_hint(_png()) == ""
+    # HEIC (pillow-heif bor bo'lsa) — haqiqiy HEIC yozib o'qiymiz; paket yo'q bo'lsa xato xabarida HEIC
+    try:
+        import pillow_heif  # noqa: F401
+    except ImportError:
+        with pytest.raises(ValueError, match="HEIC"):
+            writing.prepare_image(heic)
+    else:
+        from PIL import Image
+
+        pillow_heif.register_heif_opener()
+        buf = io.BytesIO()
+        Image.new("RGB", (40, 30), "white").save(buf, format="HEIF")
+        out, mime = writing.prepare_image(buf.getvalue())
+        assert mime == "image/jpeg" and Image.open(io.BytesIO(out)).size == (40, 30)
 
 
 @pytest.mark.asyncio
@@ -155,6 +175,9 @@ async def test_writing_api_flow(client, session, make_user, monkeypatch):
 
     files = {"file": ("w.png", _png(), "image/png")}
     assert (await c.post("/api/v2/tutor/writing/check", files={"file": ("x.txt", b"abc", "text/plain")})).status_code == 422
+    # #F84: MIME bo'sh/octet-stream (Android galereya) — baytlar surat bo'lsa qabul; surat bo'lmasa aniq xabar
+    r = await c.post("/api/v2/tutor/writing/check", files={"file": ("x", b"\x00\x00\x00\x18ftypmp42" + b"\x00" * 40, "application/octet-stream")})
+    assert r.status_code == 422 and "video" in r.json()["detail"]
     r = await c.post("/api/v2/tutor/writing/check", files=files)
     assert r.status_code == 200, r.text
     d = r.json()
@@ -162,8 +185,8 @@ async def test_writing_api_flow(client, session, make_user, monkeypatch):
     assert d["result"]["accuracy"] == 84 and d["result"]["wrong_words"][0]["correct"] == "بَيْت" and d["improved"]
     assert (await session.execute(select(XpLog))).scalar_one().source == f"writing:{writing.period_key()}"
 
-    # 2-urinish yomonroq: ball/feedback qolgan, XP qayta berilmaydi
-    d = (await c.post("/api/v2/tutor/writing/check", files=files)).json()
+    # 2-urinish yomonroq: ball/feedback qolgan, XP qayta berilmaydi (MIME octet-stream, baytlar PNG — o'tadi)
+    d = (await c.post("/api/v2/tutor/writing/check", files={"file": ("w", _png(), "application/octet-stream")})).json()
     assert d["score"] == 84 and d["attempts"] == 2 and d["xp_awarded"] == 0 and d["improved"] is False
     assert d["result"]["accuracy"] == 60
     # 3-urinish yaxshiroq: eng yaxshi ball yangilanadi

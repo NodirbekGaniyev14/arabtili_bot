@@ -3,7 +3,7 @@
  */
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { MicroTestItem } from "../../lib/api";
+import { api, type MicroTestItem } from "../../lib/api";
 import { playAudio } from "../../lib/audio";
 import ArabicKeyboard from "./ArabicKeyboard";
 import { stripHarakat } from "./ArabicText";
@@ -151,8 +151,212 @@ const latOk = (answer: string, value: string): Verdict => {
 };
 
 /** harakat mashqi: harakatlar solishtiriladi, lekin alif varianti va bo'shliq farqi kechiriladi. */
-const harakatNorm = (s: string) =>
-  s.replace(/\s+/g, "").replace(/ـ/g, "").replace(/[أإآٱ]/g, "ا");
+/* ── harakat mashqi (#F74): so'z harflari tayyor, o'quvchi faqat harakat qo'yadi ── */
+
+/** Bitta harf + unga qo'yilgan harakatlar (combining belgilar). Bo'shliq ham alohida slot. */
+export type HarakatSlot = { base: string; marks: string };
+const MARK_RE = /[ً-ْٰ]/;
+/** Sukun va xanjar alif — ko'pincha yozilmaydi, yo'qligi xato emas (izoh beriladi). */
+const OPTIONAL_MARKS = /[ْٰ]/g;
+
+export const splitHarakat = (word: string): HarakatSlot[] => {
+  const out: HarakatSlot[] = [];
+  for (const ch of word.replace(/ـ/g, "")) {
+    if (MARK_RE.test(ch) && out.length) out[out.length - 1].marks += ch;
+    else out.push({ base: ch, marks: "" });
+  }
+  return out;
+};
+
+const joinHarakat = (slots: HarakatSlot[]) => slots.map((s) => s.base + s.marks).join("");
+const markKey = (marks: string, strict: boolean) =>
+  [...(strict ? marks : marks.replace(OPTIONAL_MARKS, ""))].sort().join("");
+
+/** Harakat tekshiruvi: aynan → exact; faqat sukun farqi → to'g'ri + izoh; faqat oxirgi harfda
+ *  e'rob qo'yilmagan → to'g'ri + izoh (oxirgi harakat gapdagi o'rniga bog'liq — A0 hali o'rganmagan);
+ *  boshqa farq → xato, `wrong` — noto'g'ri harf indekslari (qizil ko'rsatiladi). */
+export const harakatVerdict = (user: HarakatSlot[], ans: HarakatSlot[]): Verdict & { wrong: number[] } => {
+  if (user.length !== ans.length || user.some((s, i) => s.base !== ans[i].base)) return { ok: false, wrong: [] };
+  const strict: number[] = [];
+  const loose: number[] = [];
+  user.forEach((s, i) => {
+    if (markKey(s.marks, true) !== markKey(ans[i].marks, true)) strict.push(i);
+    if (markKey(s.marks, false) !== markKey(ans[i].marks, false)) loose.push(i);
+  });
+  if (!strict.length) return { ok: true, exact: true, wrong: [] };
+  if (!loose.length) return { ok: true, exact: false, note: "Sukun (ـْ) ham qo'yiladi — namunaga qarang", wrong: strict };
+  let last = ans.length - 1;
+  while (last > 0 && !/[؀-ۿ]/.test(ans[last].base)) last--;
+  const untouchedEnd = !user[last].marks.replace(OPTIONAL_MARKS, "");
+  if (loose.length === 1 && loose[0] === last && untouchedEnd && ans[last].marks) {
+    return {
+      ok: true,
+      exact: false,
+      note: `E'rob: so'z oxirida ${ans[last].base + ans[last].marks} — oxirgi harakat gapdagi o'rniga qarab o'zgaradi`,
+      wrong: loose,
+    };
+  }
+  return { ok: false, wrong: loose };
+};
+
+const HARAKAT_KEYS: { ch: string; label: string; title: string }[] = [
+  { ch: "َ", label: "ـَ", title: "fatha (a)" },
+  { ch: "ِ", label: "ـِ", title: "kasra (i)" },
+  { ch: "ُ", label: "ـُ", title: "damma (u)" },
+  { ch: "ْ", label: "ـْ", title: "sukun" },
+  { ch: "ّ", label: "ـّ", title: "shadda" },
+  { ch: "ً", label: "ـً", title: "tanvin an" },
+  { ch: "ٍ", label: "ـٍ", title: "tanvin in" },
+  { ch: "ٌ", label: "ـٌ", title: "tanvin un" },
+];
+
+/** Harfga harakat qo'yish: shadda alohida (unli bilan birga turadi), qolganlari bir-birini almashtiradi. */
+export const applyMark = (marks: string, ch: string): string => {
+  const hasShadda = marks.includes("ّ");
+  const vowel = marks.replace(/ّ/g, "");
+  if (ch === "ّ") return (hasShadda ? "" : "ّ") + vowel;
+  return (hasShadda ? "ّ" : "") + (vowel === ch ? "" : ch);
+};
+
+export function HarakatEx({
+  prompt,
+  answer,
+  audio,
+  explain,
+  onDone,
+  onWrong,
+}: {
+  prompt: string;
+  answer: string;
+  audio?: string;
+  explain?: string;
+  onDone: (ok: boolean) => void;
+  onWrong?: (given: string) => void;
+}) {
+  const target = useMemo(() => splitHarakat(answer), [answer]);
+  const [slots, setSlots] = useState<HarakatSlot[]>(() => target.map((s) => ({ base: s.base, marks: "" })));
+  const firstLetter = target.findIndex((s) => /[؀-ۿ]/.test(s.base));
+  const [sel, setSel] = useState(firstLetter < 0 ? 0 : firstLetter);
+  const [verdict, setVerdict] = useState<(Verdict & { wrong: number[] }) | null>(null);
+  const done = verdict !== null;
+
+  const isLetter = (i: number) => /[؀-ۿ]/.test(target[i]?.base ?? "");
+  const nextLetter = (from: number) => {
+    for (let i = from + 1; i < target.length; i++) if (isLetter(i)) return i;
+    return from;
+  };
+
+  const put = (ch: string) => {
+    if (done) return;
+    tg()?.HapticFeedback?.impactOccurred("light");
+    setSlots((prev) => prev.map((s, i) => (i === sel ? { ...s, marks: applyMark(s.marks, ch) } : s)));
+    // unli qo'yilgach keyingi harfga o'tamiz (shadda — shu harfda qolamiz, unli ham kerak)
+    if (ch !== "ّ") setSel((i) => nextLetter(i));
+  };
+  const clear = () => {
+    if (done) return;
+    setSlots((prev) => prev.map((s, i) => (i === sel ? { ...s, marks: "" } : s)));
+  };
+  const submit = () => {
+    const v = harakatVerdict(slots, target);
+    setVerdict(v);
+    if (!v.ok) onWrong?.(joinHarakat(slots));
+    tg()?.HapticFeedback?.notificationOccurred(v.ok ? "success" : "error");
+  };
+  const touched = slots.some((s) => s.marks);
+
+  return (
+    <div>
+      <div className="font-bold text-lg">{prompt}</div>
+      <p className="mt-1 text-[12px] text-ink-soft font-semibold">
+        Harfni bosing, keyin harakatni tanlang — harflar tayyor, faqat harakat qo'yiladi.
+      </p>
+      {audio && (
+        <button
+          onClick={() => playAudio(audio)}
+          className="mx-auto my-3 w-12 h-12 rounded-full bg-emerald-deep text-white text-lg flex items-center justify-center active:scale-90 transition-transform"
+        >
+          🔊
+        </button>
+      )}
+      {/* Jonli natija */}
+      <div className="my-3 text-center font-arabic text-5xl leading-snug min-h-16" dir="rtl">
+        {joinHarakat(slots)}
+      </div>
+      {/* Harf plitkalari */}
+      <div className="flex flex-wrap justify-center gap-1.5" dir="rtl">
+        {slots.map((s, i) =>
+          isLetter(i) ? (
+            <button
+              key={i}
+              type="button"
+              onClick={() => !done && setSel(i)}
+              className={`min-w-12 h-14 px-2 rounded-xl border-2 font-arabic text-3xl leading-none transition-colors ${
+                done && verdict.wrong.includes(i)
+                  ? verdict.ok
+                    ? "border-gold bg-gold-soft"
+                    : "border-terracotta bg-terracotta/10"
+                  : i === sel && !done
+                    ? "border-emerald-deep bg-emerald-deep/10"
+                    : s.marks
+                      ? "border-cardline bg-card"
+                      : "border-dashed border-cardline bg-card"
+              }`}
+            >
+              {s.base + s.marks}
+            </button>
+          ) : (
+            <span key={i} className="w-4" />
+          )
+        )}
+      </div>
+      {/* Harakat paneli */}
+      {!done && (
+        <>
+          <div className="mt-3 grid grid-cols-8 gap-1" dir="rtl">
+            {HARAKAT_KEYS.map((h) => (
+              <button
+                key={h.ch}
+                type="button"
+                title={h.title}
+                onClick={() => put(h.ch)}
+                className="h-12 rounded-xl bg-gold-soft border border-gold/30 font-arabic text-2xl leading-none active:scale-95"
+              >
+                {h.label}
+              </button>
+            ))}
+          </div>
+          <button
+            type="button"
+            onClick={clear}
+            className="mt-1.5 w-full h-9 rounded-xl bg-terracotta/10 border border-terracotta/40 text-xs font-extrabold text-ink-soft active:scale-95"
+          >
+            ✕ Tanlangan harfdan harakatni olib tashlash
+          </button>
+        </>
+      )}
+      {!done && (
+        <button
+          onClick={submit}
+          disabled={!touched}
+          className="mt-4 w-full rounded-2xl bg-emerald-deep py-3.5 text-white font-extrabold disabled:opacity-40 active:scale-[0.98] transition-transform"
+        >
+          Tekshirish
+        </button>
+      )}
+      {verdict !== null && (
+        <Feedback
+          correct={verdict.ok}
+          correctAnswer={answer}
+          explain={explain}
+          note={verdict.note}
+          showSample={verdict.ok && verdict.exact === false}
+          onNext={() => onDone(verdict.ok)}
+        />
+      )}
+    </div>
+  );
+}
 
 /* ── Umumiy feedback paneli ── */
 
@@ -311,6 +515,7 @@ function InputEx({
   correctAnswer,
   explain,
   onDone,
+  onWrong,
 }: {
   prompt: string;
   arabicBig?: string;
@@ -322,6 +527,8 @@ function InputEx({
   correctAnswer: string;
   explain?: string;
   onDone: (ok: boolean) => void;
+  /** #F70: rad etilgan javob jurnalga (admin /javoblar) */
+  onWrong?: (given: string) => void;
 }) {
   const [value, setValue] = useState("");
   const [verdict, setVerdict] = useState<Verdict | null>(null);
@@ -335,6 +542,7 @@ function InputEx({
   const submit = () => {
     const v = asVerdict(check(value));
     setVerdict(v);
+    if (!v.ok) onWrong?.(value);
     tg()?.HapticFeedback?.notificationOccurred(v.ok ? "success" : "error");
   };
 
@@ -564,12 +772,15 @@ export function QuizRunner({
   items,
   rootPool = [],
   label,
+  context,
   onFinish,
   onProgress,
 }: {
   items: MicroTestItem[];
   rootPool?: string[];
   label: string;
+  /** #F70: jurnal uchun manba (dars id, «cp25», «exam»…); bo'lmasa label */
+  context?: string;
   onFinish: (correct: number, total: number, wrongWords: string[]) => void;
   /** Test ichidagi ilgarilash (0..1) — yuqoridagi umumiy chiziq uchun. */
   onProgress?: (frac: number) => void;
@@ -602,13 +813,22 @@ export function QuizRunner({
   };
 
   const key = `${idx}-${item.type}`;
+  // #F70: yozma javob rad etilsa — serverga (adminga soxta-salbiylarni ko'rsatadi)
+  const report = (given: string) =>
+    void api.logWrongAnswer({
+      context: (context || label).slice(0, 24),
+      ex_type: item.type,
+      q: item.q_uz || item.q_ar,
+      expected: item.answer,
+      given,
+    });
 
   return (
     <div>
       <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft mb-1">
         {label} · {idx + 1}/{items.length}
       </div>
-      {renderExercise(item, key, done, rootPool)}
+      {renderExercise(item, key, done, rootPool, report)}
     </div>
   );
 }
@@ -617,7 +837,8 @@ function renderExercise(
   item: MicroTestItem,
   key: string,
   onDone: (ok: boolean) => void,
-  rootPool: string[]
+  rootPool: string[],
+  onWrong?: (given: string) => void
 ) {
   // Klaviatura talab qiladigan turlar (fill_blank / harakat / dictation /
   // translate_uz_ar) ba'zan TAYYOR VARIANTLAR bilan yoziladi ("...ni tanlang").
@@ -703,6 +924,7 @@ function renderExercise(
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}
+          onWrong={onWrong}
         />
       );
     }
@@ -717,6 +939,7 @@ function renderExercise(
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}
+          onWrong={onWrong}
         />
       );
     case "translate_ar_uz":
@@ -731,6 +954,7 @@ function renderExercise(
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}
+          onWrong={onWrong}
         />
       );
     case "dictation":
@@ -746,21 +970,20 @@ function renderExercise(
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}
+          onWrong={onWrong}
         />
       );
     case "harakat":
+      // #F74: so'zni qayta terish emas — harflar tayyor, faqat harakat tanlanadi
       return (
-        <InputEx
+        <HarakatEx
           key={key}
-          prompt={item.q_uz || "Harakatlarni qo'yib yozing"}
-          arabicBig={stripHarakat(item.answer)}
+          prompt={item.q_uz || "Harakatlarni qo'ying"}
+          answer={item.answer}
           audio={item.audio || undefined}
-          arabicInput
-          showHarakatKeys
-          check={(v) => harakatNorm(v) === harakatNorm(item.answer)}
-          correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}
+          onWrong={onWrong}
         />
       );
     case "order_words":

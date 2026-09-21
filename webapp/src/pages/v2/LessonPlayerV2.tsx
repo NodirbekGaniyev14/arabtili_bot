@@ -387,6 +387,7 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish, onNext }: 
             items={lesson.micro_test}
             rootPool={lesson.roots.map((r) => r.root)}
             label="MIKRO-TEST"
+            context={lessonId}
             onProgress={setSubProgress}
             onFinish={(correct, total, wrong) => {
               // O'qish savollari ham yakuniy natijaga qo'shiladi
@@ -558,6 +559,7 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish, onNext }: 
             items={cp.questions}
             rootPool={lesson.roots.map((r) => r.root)}
             label="NAZORAT TESTI"
+            context={`${lessonId}:cp`}
             onFinish={(correct, total, wrong) => {
               api
                 .completeCheckpoint(lesson.id, correct, total, wrong)

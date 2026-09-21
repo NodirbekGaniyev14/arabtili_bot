@@ -715,17 +715,24 @@ _JSON_KEYS = {
 }
 
 
-async def _call(system: list[dict], msgs: list[dict], schema):
+def model_for(vip: bool) -> str:
+    """K23.4: VIP suhbat/mock uchun kuchliroq model (TUTOR_VIP_MODEL), qolganlarga asosiy."""
+    return (settings.tutor_vip_model or settings.tutor_model) if vip else settings.tutor_model
+
+
+async def _call(system: list[dict], msgs: list[dict], schema, model: str | None = None):
     """Anthropic chaqiruvi: structured output, rad etilsa JSON rejimi.
-    Qaytaradi: (parsed, usage). Xatoda TutorUnavailable."""
+    Qaytaradi: (parsed, usage) — usage["model"] chaqirilgan model. Xatoda TutorUnavailable.
+    `model` asosiy modeldan boshqa bo'lsa (VIP) va u xato bersa — asosiy model bilan qayta uriniladi."""
     from anthropic import AsyncAnthropic
 
+    model = model or settings.tutor_model
     client = AsyncAnthropic(api_key=settings.anthropic_api_key)
     out = None
     resp = None
     try:
         resp = await client.messages.parse(
-            model=settings.tutor_model,
+            model=model,
             max_tokens=MAX_TOKENS,
             system=system,
             messages=msgs,
@@ -737,7 +744,7 @@ async def _call(system: list[dict], msgs: list[dict], schema):
         log.warning("AI ustoz (structured) xatosi: %r — JSON rejimiga o'tildi", e)
         try:
             resp = await client.messages.create(
-                model=settings.tutor_model,
+                model=model,
                 max_tokens=MAX_TOKENS,
                 system=system
                 + [
@@ -753,6 +760,10 @@ async def _call(system: list[dict], msgs: list[dict], schema):
             text = text.strip("`").removeprefix("json").strip()
             out = schema.model_validate_json(text)
         except Exception as e2:  # kredit tugadi / tarmoq — o'quvchi ekrani buzilmasin
+            if model != settings.tutor_model:
+                # VIP modeli (nomi xato / yo'q / band) — asosiy model bilan davom etamiz
+                log.warning("VIP modeli %s xatosi: %r — %s bilan qayta", model, e2, settings.tutor_model)
+                return await _call(system, msgs, schema, settings.tutor_model)
             log.warning("AI ustoz xatosi: %r", e2)
             kind, msg = classify(e2)
             raise TutorUnavailable(msg, kind) from e2
@@ -760,7 +771,9 @@ async def _call(system: list[dict], msgs: list[dict], schema):
     if out is None:
         raise TutorUnavailable("Ustoz javobi o'qilmadi. Qayta urinib ko'ring.", "parse")
 
-    return out, ai_usage.usage_of(resp)
+    usage = ai_usage.usage_of(resp)
+    usage["model"] = model
+    return out, usage
 
 
 def _messages(history: list[dict]) -> list[dict]:
@@ -781,8 +794,10 @@ async def reply(
     topic_id: str,
     history: list[dict],
     known: list[dict],
+    vip: bool = False,
 ) -> tuple[TutorReply, dict]:
     """Keyingi ustoz javobi (suhbat). Qaytaradi: (javob, usage). Xatoda TutorUnavailable.
+    vip=True — TUTOR_VIP_MODEL (sozlangan bo'lsa).
 
     history: [{role:'user'|'assistant', content}] — assistant xabarlari faqat
     `ar` matni (JSON emas) — token tejaladi. Bo'sh tarix = suhbat boshi."""
@@ -792,7 +807,7 @@ async def reply(
 
     extra = topic_words(level, topic["themes"], {normalize(w["ar"]) for w in known})
     system = build_system(name=name, level=level, topic=topic, known=known, extra=extra)
-    out, usage = await _call(system, _messages(history), TutorReply)
+    out, usage = await _call(system, _messages(history), TutorReply, model_for(vip))
 
     # AI 6 javobdan oldin yakunlamasin (qoida 10 ni kod ham kafolatlaydi)
     if out.done and _user_turns(history) < MIN_TURNS_TO_END:
@@ -808,8 +823,10 @@ async def reply_mock(
     mock_id: str,
     history: list[dict],
     known: list[dict],
+    vip: bool = False,
 ) -> tuple[MockReply, dict]:
-    """Mock imtihon: keyingi savol + oldingi javob bali. Xatoda TutorUnavailable."""
+    """Mock imtihon: keyingi savol + oldingi javob bali. Xatoda TutorUnavailable.
+    vip=True — TUTOR_VIP_MODEL (sozlangan bo'lsa)."""
     mock = MOCK_BY_ID.get(mock_id)
     if mock is None:
         raise TutorUnavailable("Bunday mock imtihon yo'q.")
@@ -820,7 +837,7 @@ async def reply_mock(
     system = build_system(
         name=name, level=level, topic=TOPIC_BY_ID["erkin"], known=known, extra=extra, mock=mock
     )
-    out, usage = await _call(system, _messages(history), MockReply)
+    out, usage = await _call(system, _messages(history), MockReply, model_for(vip))
 
     answered = _user_turns(history)
     if answered == 0:

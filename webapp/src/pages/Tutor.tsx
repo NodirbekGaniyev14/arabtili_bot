@@ -516,8 +516,12 @@ export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProp
         <div className="flex items-center gap-2 shrink-0">
           {info &&
             (info.vip ? (
-              <span className="h-9 inline-flex items-center rounded-full bg-gold-soft px-3 text-[11px] font-extrabold text-ink whitespace-nowrap">
+              <span
+                className="h-9 inline-flex items-center rounded-full bg-gold-soft px-3 text-[11px] font-extrabold text-ink whitespace-nowrap"
+                title={info.vip_model ? `AI model: ${info.vip_model}` : undefined}
+              >
                 {active ? `👑 ${info.vip_days_left}` : `👑 VIP · ${info.vip_days_left} kun`}
+                {info.vip_model && !active && <span className="ml-1 opacity-70">· 🧠 {info.vip_model}</span>}
               </span>
             ) : (
               <button
@@ -701,7 +705,8 @@ export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProp
                   : `Bepulda kuniga ${info.free_turns} javob — VIP'da ${info.vip_turns}`}
               </div>
               <div className="text-[12px] text-white/80 font-semibold">
-                Suhbat, speaking, mock imtihonlar · oyiga {fmtSum(info.price.month)} so'm
+                Suhbat, speaking, mock imtihonlar{info.vip_model ? `, kuchliroq AI (${info.vip_model})` : ""} · oyiga{" "}
+                {fmtSum(info.price.month)} so'm
                 <span className="ml-1 rounded-md bg-white/15 px-1.5 py-0.5 text-[10px] font-extrabold">
                   {fmtSum(info.price.per_day)} so'm/kun
                 </span>

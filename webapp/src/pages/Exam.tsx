@@ -331,6 +331,7 @@ export default function Exam({ onClose }: { onClose: () => void }) {
               key={stage.k}
               items={stage.k === "reading" ? exam.reading : exam.listening}
               label={SECTION_TITLES[stage.k]}
+              context={`exam:${stage.k}`}
               onFinish={(correct) => {
                 if (stage.k === "reading") {
                   scores.current.reading = correct;

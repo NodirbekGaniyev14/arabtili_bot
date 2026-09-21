@@ -29,6 +29,9 @@ class Settings(BaseSettings):
     # ── AI ustoz (services/tutor.py) ──
     # Suhbat modeli: Haiku 4.5 — arzon va tez; javob structured output bilan
     tutor_model: str = "claude-haiku-4-5-20251001"
+    # K23.4: VIP suhbat va mock uchun kuchliroq model (masalan claude-sonnet-5, ~2× narx).
+    # Bo'sh = hamma uchun tutor_model. Kunlik savol/yozuv/onboarding baribir tutor_model.
+    tutor_vip_model: str = ""
     # VIP foydalanuvchiga kunlik javoblar limiti (token xarajatini cheklaydi):
     # 30 × ~$0.003 ≈ $0.09/kun — eng faol VIP ham oyiga ~$2.7 dan oshmaydi
     tutor_daily_turns: int = 30

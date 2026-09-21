@@ -7,6 +7,8 @@ aiosqlite>=0.20
 anthropic>=0.60
 edge-tts>=6.1
 pillow>=10.0
+# iPhone HEIC/HEIF suratlari (yozuv tekshiruvi) — bo'lmasa faqat JPG/PNG/WebP
+pillow-heif>=0.20
 reportlab>=4.0
 arabic-reshaper>=3.0
 python-bidi>=0.4

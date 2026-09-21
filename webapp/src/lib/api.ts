@@ -1184,6 +1184,9 @@ export const api = {
   },
   // ── Yozuv mashqi (K19.2) ──
   getWriting: () => request<WritingInfo>("/api/v2/tutor/writing"),
+  /** #F70: yozma mashqda rad etilgan javob — admin /javoblar uchun (jimgina, xato bo'lsa e'tiborsiz) */
+  logWrongAnswer: (body: { context: string; ex_type: string; q: string; expected: string; given: string }) =>
+    request<{ ok: boolean }>("/api/v2/answer-log", { method: "POST", body: JSON.stringify(body) }).catch(() => ({ ok: false })),
   /** K22.4: so'nggi kunlarda o'rganilgan so'zlar (kunlar bo'yicha) */
   recentWords: (days = 7) => request<{ days: RecentWordsDay[]; total: number }>(`/api/words/recent?days=${days}`),
   /** K21.5: haftalik natija kartasi (send=true — botga ham yuboriladi) */
@@ -1235,6 +1238,8 @@ export interface PayInfo {
   trial_available: boolean;
   trial_days: number;
   referral_days: number;
+  /** K23.4: VIP'da kuchliroq AI model (qisqa nomi), bo'sh = yo'q */
+  vip_model?: string;
   vip: boolean;
   vip_until: string | null;
   vip_days_left: number;
@@ -1308,6 +1313,8 @@ export interface TutorTopics {
   free_turns: number;
   /** VIP kunlik javoblar limiti (yorliq uchun) */
   vip_turns: number;
+  /** K23.4: VIP suhbat/mock kuchliroq modelda — qisqa nomi («Sonnet 5»), bo'sh = farq yo'q */
+  vip_model?: string;
   /** Bir martalik VIP sinov (K18.1) */
   trial_available?: boolean;
   trial_days?: number;
