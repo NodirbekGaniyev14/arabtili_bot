@@ -55,6 +55,8 @@ async def _setup_commands(bot: Bot):
                 BotCommand(command="users", description="👥 Oxirgi foydalanuvchilar"),
                 BotCommand(command="user", description="👤 Foydalanuvchi ma'lumoti"),
                 BotCommand(command="broadcast", description="📤 Hammaga xabar"),
+                BotCommand(command="sorov", description="📋 So'rovnoma: hammadan fikr (test — ko'rish)"),
+                BotCommand(command="fikrlar", description="📋 So'rov javoblari"),
                 BotCommand(command="taklif_yubor", description="👥 Hammaga shaxsiy taklif kartasi"),
                 BotCommand(command="taklif", description="👥 O'z taklif havolam"),
                 BotCommand(command="hisobot", description="🗣 Haftalik speaking hisobotim"),

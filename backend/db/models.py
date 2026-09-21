@@ -72,6 +72,8 @@ class User(Base):
     day2_notice: Mapped[int] = mapped_column(Integer, default=0)
     # K22.1 reja tuzilgan kuni 2 soat o'tib dars boshlanmagan — birinchi dars turtkisi (bir marta)
     first_nudge: Mapped[int] = mapped_column(Integer, default=0)
+    # K22.0 so'rovnoma: keyingi matn/ovoz xabari fikr sifatida saqlanadi (services/survey.py)
+    survey_pending: Mapped[int] = mapped_column(Integer, default=0)
 
 
 class Placement(Base):

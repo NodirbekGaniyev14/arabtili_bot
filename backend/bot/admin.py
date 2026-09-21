@@ -200,6 +200,51 @@ async def _blast(bot: Bot, ids, text: str, **kwargs) -> tuple[int, int]:
     return sent, failed
 
 
+@router.message(Command("sorov"))
+async def cmd_sorov(message: Message, bot: Bot):
+    """So'rovnoma (K22.0): hammaga «fikringiz?» + tugmalar; `/sorov test` — faqat adminga ko'rish;
+    `/sorov <matn>` — o'z matni bilan."""
+    if not _is_admin(message):
+        return
+    from sqlalchemy import update
+
+    from services import survey
+
+    arg = (message.text or "").split(maxsplit=1)[1].strip() if len((message.text or "").split(maxsplit=1)) > 1 else ""
+    if arg.lower() == "test":
+        await message.answer(survey.text(), parse_mode="HTML", reply_markup=survey.kb())
+        await message.answer("☝️ Shunday ko'rinadi. Hammaga yuborish: /sorov (yoki /sorov o'z matningiz)")
+        return
+    text = survey.text(arg)
+    async with SessionLocal() as session:
+        ids = await admin.all_real_tg_ids(session)
+        await session.execute(update(User).where(User.is_demo == 0, User.tg_id != settings.admin_id).values(survey_pending=1))
+        await session.commit()
+    await message.answer(f"📤 So'rov {len(ids)} ta foydalanuvchiga yuborilmoqda… Javoblar shu chatga #F… bilan keladi, ro'yxat: /fikrlar")
+    sent, failed = await _blast(bot, ids, text, parse_mode="HTML", reply_markup=survey.kb())
+    await message.answer(f"✅ Yuborildi: {sent}\n❌ Yetib bormadi: {failed}")
+
+
+@router.message(Command("fikrlar"))
+async def cmd_fikrlar(message: Message):
+    """So'rov javoblari ro'yxati: /fikrlar [n]."""
+    if not _is_admin(message):
+        return
+    from sqlalchemy import func
+
+    from db.models import Feedback
+    from services import survey
+
+    parts = (message.text or "").split()
+    n = int(parts[1]) if len(parts) > 1 and parts[1].isdigit() else 30
+    async with SessionLocal() as session:
+        rows = await survey.responses(session, min(max(n, 1), 100))
+        total = int((await session.execute(select(func.count()).select_from(Feedback).where(Feedback.source == survey.SOURCE))).scalar() or 0)
+    text = survey.responses_text(rows, total)
+    for i in range(0, len(text), 3900):
+        await message.answer(text[i:i + 3900], parse_mode="HTML")
+
+
 @router.message(Command("broadcast"))
 async def cmd_broadcast(message: Message, bot: Bot):
     if not _is_admin(message):

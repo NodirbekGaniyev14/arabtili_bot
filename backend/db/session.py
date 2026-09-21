@@ -46,6 +46,8 @@ _MIGRATIONS = {
         "day2_notice": "INTEGER DEFAULT 0",
         # K22.1 birinchi dars turtkisi
         "first_nudge": "INTEGER DEFAULT 0",
+        # K22.0 so'rovnoma
+        "survey_pending": "INTEGER DEFAULT 0",
     },
     "user_words": {
         "card_type": "VARCHAR(16) DEFAULT 'word'",

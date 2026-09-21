@@ -223,15 +223,14 @@ def confidence_of(data: dict) -> int:
     return int(max(0, min(100, round(conf))))
 
 
-def _form(p: Provider, prompt: str) -> dict:
+def _form(p: Provider, prompt: str, lang: str = "ar") -> dict:
     """So'rov maydonlari provayderga qarab: gpt-4o-* faqat json/text beradi (verbose_json yo'q),
-    ishonch uchun `include[]=logprobs`; Whisper — verbose_json segmentlari."""
-    data = {
-        "model": p.model,
-        "language": "ar",
+    ishonch uchun `include[]=logprobs`; Whisper — verbose_json segmentlari.
+    lang="ar" — ustoz (arab yozuvi langari); boshqa til (masalan "uz", so'rov ovozli fikri) — prompt'siz."""
+    data = {"model": p.model, "language": lang}
+    if lang == "ar":
         # Prompt: mavzu so'zlari + oxirgi ustoz savoli + arab yozuvi langari (build_prompt)
-        "prompt": prompt if prompt.endswith(NEUTRAL_PROMPT) else build_prompt(prompt),
-    }
+        data["prompt"] = prompt if prompt.endswith(NEUTRAL_PROMPT) else build_prompt(prompt)
     if p.model.startswith("gpt-4o"):
         data["response_format"] = "json"
         data["include[]"] = "logprobs"
@@ -265,10 +264,11 @@ async def _post(p: Provider, data: dict, files: dict) -> httpx.Response:
 
 
 async def transcribe_ex(
-    audio: bytes, filename: str = "speech.webm", mime: str = "audio/webm", prompt: str = ""
+    audio: bytes, filename: str = "speech.webm", mime: str = "audio/webm", prompt: str = "", lang: str = "ar"
 ) -> tuple[str, int]:
-    """Audio → (arabcha matn, aniqlik bali 0-100 yoki -1). Xatoda ("", -1).
-    Provayderlar navbati: OpenAI (bo'lsa) → Groq; birinchisi xato bersa keyingisi."""
+    """Audio → (matn, aniqlik bali 0-100 yoki -1). Xatoda ("", -1).
+    Provayderlar navbati: OpenAI (bo'lsa) → Groq; birinchisi xato bersa keyingisi.
+    lang != "ar" bo'lsa arabcha gallyutsinatsiya filtri qo'llanmaydi (faqat bo'sh matn tashlanadi)."""
     global last_error, openai_error
     ps = providers()
     if not ps:
@@ -280,7 +280,7 @@ async def transcribe_ex(
     err = ""
     for i, p in enumerate(ps):
         try:
-            r = await _post(p, _form(p, prompt), files)
+            r = await _post(p, _form(p, prompt, lang), files)
         except Exception as e:
             log.warning("STT %s xatosi: %r", p.name, e)
             r = None
@@ -290,7 +290,7 @@ async def transcribe_ex(
             last_error = ""
             body = r.json()
             text = (body.get("text") or "").strip()
-            if text and (_no_speech(body) or is_hallucination(text, prompt)):
+            if text and (_no_speech(body) or (lang == "ar" and is_hallucination(text, prompt))):
                 log.info("STT: nutq emas / gallyutsinatsiya tashlandi: %r", text[:60])
                 text = ""
             _bump("ok" if text else "empty")
@@ -314,8 +314,8 @@ async def transcribe_ex(
 
 
 async def transcribe(
-    audio: bytes, filename: str = "speech.webm", mime: str = "audio/webm", prompt: str = ""
+    audio: bytes, filename: str = "speech.webm", mime: str = "audio/webm", prompt: str = "", lang: str = "ar"
 ) -> str:
-    """Audio baytlarni arabcha matnga aylantiradi. Xatoda bo'sh satr."""
-    text, _ = await transcribe_ex(audio, filename, mime, prompt)
+    """Audio baytlarni matnga aylantiradi (standart — arabcha). Xatoda bo'sh satr."""
+    text, _ = await transcribe_ex(audio, filename, mime, prompt, lang)
     return text

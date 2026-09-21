@@ -1,6 +1,9 @@
-from aiogram import Bot, Router
+import logging
+
+from aiogram import Bot, F, Router
 from aiogram.filters import CommandStart, Command
 from aiogram.types import (
+    CallbackQuery,
     InlineKeyboardButton,
     InlineKeyboardMarkup,
     Message,
@@ -14,6 +17,7 @@ from db.models import User
 from db.session import SessionLocal
 from services import feedback as feedback_svc
 
+log = logging.getLogger(__name__)
 router = Router()
 
 WELCOME_TEXT = (
@@ -134,3 +138,80 @@ async def cmd_hisobot(message: Message):
     await message.answer(
         text, parse_mode="HTML", reply_markup=speaking_report.open_kb()
     )
+
+
+# ─────────────────── So'rovnoma javoblari (K22.0, services/survey.py) ───────────────────
+
+
+async def _user_by_tg(session, tg_id: int) -> User | None:
+    return (await session.execute(select(User).where(User.tg_id == tg_id))).scalar_one_or_none()
+
+
+@router.callback_query(F.data == "sv:write")
+async def survey_write(cb: CallbackQuery):
+    """«✍️ Fikr yozish» — keyingi xabar fikr sifatida qabul qilinadi."""
+    from services import survey
+
+    async with SessionLocal() as session:
+        user = await _user_by_tg(session, cb.from_user.id)
+        if user is not None:
+            user.survey_pending = 1
+            await session.commit()
+    await cb.answer()
+    if cb.message is not None:
+        await cb.message.answer(survey.PROMPT_TEXT)
+
+
+@router.callback_query(F.data == "sv:ok")
+async def survey_ok(cb: CallbackQuery, bot: Bot):
+    """«👍 Hammasi yaxshi» — tugma javobi ham fikr sifatida saqlanadi."""
+    from services import survey
+
+    async with SessionLocal() as session:
+        user = await _user_by_tg(session, cb.from_user.id)
+        if user is not None:
+            await survey.record(session, bot, user, survey.OK_TEXT, kind="button")
+    await cb.answer("Rahmat! 🙏")
+    if cb.message is not None:
+        await cb.message.answer("Rahmat! 🙏 Yana biror taklif bo'lsa — shu yerga yozib qoldiring.")
+
+
+@router.message(F.text & ~F.text.startswith("/"))
+async def survey_text(message: Message, bot: Bot):
+    """So'rovdan keyingi oddiy matn — fikr (faqat survey_pending bo'lganda; boshqa matn avvalgidek e'tiborsiz)."""
+    from services import survey
+
+    if message.from_user is None:
+        return
+    async with SessionLocal() as session:
+        user = await _user_by_tg(session, message.from_user.id)
+        if user is None or not user.survey_pending:
+            return
+        _, xp = await survey.record(session, bot, user, (message.text or "")[:2000])
+    await message.answer(survey.THANKS + (f" +{xp} XP" if xp else ""))
+
+
+@router.message(F.voice)
+async def survey_voice(message: Message, bot: Bot):
+    """So'rovdan keyingi ovozli xabar — STT (o'zbekcha) orqali matnga, fikr sifatida saqlanadi."""
+    from services import stt, survey
+
+    if message.from_user is None or message.voice is None:
+        return
+    async with SessionLocal() as session:
+        user = await _user_by_tg(session, message.from_user.id)
+        if user is None or not user.survey_pending:
+            return
+        text = ""
+        if stt.available() and message.voice.duration <= 180:
+            try:
+                f = await bot.get_file(message.voice.file_id)
+                buf = await bot.download_file(f.file_path)
+                text = await stt.transcribe(buf.read(), "voice.ogg", "audio/ogg", lang="uz")
+            except Exception as e:
+                log.info("so'rov ovozi o'qilmadi (%s): %r", message.from_user.id, e)
+        if not text:
+            await message.answer("Ovozni o'qiy olmadim — iltimos, matn bilan yozing ✍️")
+            return
+        _, xp = await survey.record(session, bot, user, text[:2000], kind="voice")
+    await message.answer(survey.THANKS + (f" +{xp} XP" if xp else ""))
