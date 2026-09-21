@@ -21,7 +21,6 @@ from db.models import (
     XpLog,
     utcnow,
 )
-from services import payments
 from services.stats import TASHKENT_OFFSET, _local_date, _today
 
 
@@ -698,7 +697,7 @@ async def tutor_report(session: AsyncSession) -> str:
         f"• Faol: <b>{vip_active}</b> · 3 kun ichida tugaydi: {vip_expiring}\n"
         f"• Kutayotgan cheklar: <b>{pending}</b>\n"
         f"• Bu oy tasdiqlangan: {paid_n} ta ({auto_n} avto) · <b>{paid_fmt}</b> so'm\n"
-        f"• Avto to'lov (Payme/Click): {'yoqilgan' if payments.enabled() else 'yo‘q — PAY_PROVIDER_TOKEN'}\n\n"
+        "• To'lov usuli: chek (kartaga o'tkazma + skrinshot)\n\n"
         "🔑 <b>Xizmatlar</b>\n"
         f"• Anthropic: {ai_ok}\n"
         f"• Ovoz (STT): {stt_state}\n"

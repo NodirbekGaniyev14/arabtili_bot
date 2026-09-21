@@ -28,7 +28,6 @@ from api.routes import router as api_router
 from api.v2 import router as api_v2_router
 from bot.admin import router as admin_router
 from bot.handlers import router as bot_router
-from bot.payments import router as payments_router
 from config import settings
 
 
@@ -125,7 +124,6 @@ async def lifespan(app: FastAPI):
         app.state.bot = bot  # sertifikat yuborish uchun
         dp = Dispatcher()
         dp.include_router(admin_router)  # admin buyruqlari birinchi
-        dp.include_router(payments_router)  # pre_checkout / successful_payment (K18.5)
         dp.include_router(bot_router)
         await _setup_commands(bot)
         from bot.branding import setup_branding

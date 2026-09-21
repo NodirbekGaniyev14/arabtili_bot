@@ -627,7 +627,7 @@ async def _read_audio(file: UploadFile) -> bytes:
     if not data:
         raise HTTPException(status_code=422, detail="Audio bo'sh")
     if len(data) > MAX_AUDIO_BYTES:
-        raise HTTPException(status_code=413, detail="Audio juda uzun (maks. 20 soniya)")
+        raise HTTPException(status_code=413, detail="Audio juda uzun (maks. 90 soniya)")
     return data
 
 

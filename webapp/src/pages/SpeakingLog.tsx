@@ -8,7 +8,7 @@ import {
   type TutorPronounceResult,
 } from "../lib/api";
 import { playUrl, speakText } from "../lib/audio";
-import { MAX_SECONDS, Recorder, micSupported } from "../lib/recorder";
+import { Recorder, micSupported } from "../lib/recorder";
 
 /** Speaking daftari (profil): 📒 xatolar (ustoz tuzatgan jumlalar, past mock
  *  javoblari) — eshitish, qayta aytish (STT bali), «o'rgandim»; 📈 natijalar —
@@ -205,7 +205,7 @@ export default function SpeakingLog({ onClose, initialTab = "mistakes" }: Props)
                         }`}
                       >
                         {rec
-                          ? `■ ${seconds}s / ${MAX_SECONDS}s`
+                          ? `■ ${seconds}s`
                           : busyId === m.id
                             ? "🎧 …"
                             : r

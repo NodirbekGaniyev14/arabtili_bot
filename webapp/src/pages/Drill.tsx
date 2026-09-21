@@ -11,7 +11,7 @@ import {
   type TutorTopic,
 } from "../lib/api";
 import { playUrl, speakText } from "../lib/audio";
-import { MAX_SECONDS, Recorder } from "../lib/recorder";
+import { Recorder } from "../lib/recorder";
 import RateBar from "../components/RateBar";
 
 /** Talaffuz mashqi — AI'siz, bepul: mavzu bo'yicha 10 ta jumla.
@@ -369,7 +369,7 @@ export default function Drill({ topic, level, canVoice, onClose, onFinished }: D
           >
             <span className="w-3 h-3 rounded-full bg-white animate-pulse" />
             <span className="flex-1 text-left">
-              Gapiring… {seconds}s / {MAX_SECONDS}s
+              Gapiring… {seconds}s
             </span>
             <span>■ Tayyor</span>
           </button>

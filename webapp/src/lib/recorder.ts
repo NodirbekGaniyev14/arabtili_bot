@@ -13,7 +13,8 @@ const MIME_CANDIDATES = [
   "audio/aac",
 ];
 
-export const MAX_SECONDS = 20;
+/** Xavfsizlik chegarasi (yuklash hajmi / STT narxi) — UI'da ko'rsatilmaydi; o'quvchilar odatda 25–40 s gapiradi. */
+export const MAX_SECONDS = 90;
 
 export interface Recording {
   blob: Blob;

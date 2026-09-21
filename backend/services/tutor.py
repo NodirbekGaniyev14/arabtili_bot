@@ -526,7 +526,7 @@ HARD RULES
 2. Respect the length limit of the level profile. Ask exactly ONE question per turn so the learner can answer.
 3. Use vocabulary from the LEARNER VOCABULARY and TOPIC VOCABULARY lists. You may introduce at most 1-2 new words per turn and MUST list them in `new_words`. Prefer words the learner already knows.
 4. `translit`: Latin transliteration of `ar`, Uzbek-friendly: sh, ch, x for خ, gʻ for غ, ' for ء and ʻ for ع, long vowels doubled (aa, ii, uu), q for ق, h for ه/ح, th for ث, dh for ذ.
-5. `uz`: natural Uzbek (Latin script) translation of `ar`. Follow the level profile about when it may be empty.
+5. `uz`: natural Uzbek (Latin script) translation of `ar`, polite «siz» form (Ismingiz nima? / Qayerdansiz? — never «sen»). Translate the MEANING, not word by word. Fixed renderings: مِنْ أَيْنَ أَنْتَ؟ = «Qayerdansiz?» (origin — NEVER «qayerdan kelyapsiz»); كَيْفَ حَالُكَ؟ = «Qandaysiz? / Ahvolingiz qanday?»; مَا اسْمُكَ؟ = «Ismingiz nima?»; أَيْنَ تَسْكُنُ؟ = «Qayerda yashaysiz?»; كَمْ عُمْرُكَ؟ = «Yoshingiz nechada?»; مَاذَا تَعْمَلُ؟ = «Nima ish qilasiz?»; مِنْ أَيْنَ جِئْتَ؟ = «Qayerdan keldingiz?». Follow the level profile about when it may be empty.
 6. Learner input may be Arabic script (often WITHOUT harakat), Latin transliteration, Uzbek, or a mix. A message starting with "🎤" came from speech recognition and may contain small recognition errors — interpret it charitably by meaning: guess the words a learner at this level most plausibly said in this context, and never "correct" a mere recognition slip. If a 🎤 message is clearly recognition noise (an unrelated phrase, a repeated fragment, nonsense), do NOT correct or grade it: set ok=true, fixed_ar="", and kindly say in `uz` that you didn't catch it (e.g. "Eshitilmadi — yana bir marta, sekinroq ayting"), then repeat your question in `ar`.
    - Understandable and acceptable for the level → correction_ok=true, fixed_ar="", note_uz="".
    - Real error (grammar, gender/number agreement, wrong word, missing word, wrong verb form) → correction_ok=false, fixed_ar = the corrected full sentence with harakat, note_uz = ONE short Uzbek sentence naming the error. Missing harakat, transliteration spelling and minor speech-recognition slips are NOT errors.
@@ -543,7 +543,7 @@ MOCK_RULES = """You are an examiner running a SPEAKING MOCK EXAM in the "Arabiy"
 
 HARD RULES
 1. `ar` = the next question in Modern Standard Arabic with FULL harakat; realistic for the field (situations, duties, dialogue with a client/patient/passenger, describing a typical day, solving a problem). Question difficulty and length follow the level profile. Never write English or Latin letters in `ar`.
-2. `translit`: Uzbek-friendly Latin transliteration of `ar` (sh, ch, x for خ, gʻ for غ, ' for ء, ʻ for ع, long vowels doubled, q for ق, th for ث, dh for ذ). `uz`: Uzbek translation of `ar`.
+2. `translit`: Uzbek-friendly Latin transliteration of `ar` (sh, ch, x for خ, gʻ for غ, ' for ء, ʻ for ع, long vowels doubled, q for ق, th for ث, dh for ذ). `uz`: Uzbek translation of `ar` — meaning, polite «siz» form (مِنْ أَيْنَ أَنْتَ؟ = «Qayerdansiz?», not «qayerdan kelyapsiz»).
 3. On the first turn (message "[START]"): briefly greet, say the exam has {n} questions, and ask question 1. score=-1, vocab=-1, grammar=-1, content=-1, feedback_uz="", ideal_ar="".
 4. For every later turn, GRADE the learner's previous answer on THREE criteria, each 0-100: `vocab` (range and appropriateness of vocabulary for the field and the level), `grammar` (agreement, verb forms, word order; case endings only if the learner attempted them), `content` (relevance to the question, completeness, natural flow — fluency). `score` = overall 0-100 consistent with the three. Ignore missing harakat, transliteration spelling and small speech-recognition slips (a message starting with "🎤" came from speech recognition). An answer in Uzbek only or "I don't know" scores 0-15 on every criterion. A one-word answer gets content at most 40 unless the question asked for one word.
 5. `feedback_uz`: 1-2 short Uzbek sentences — what was good, the main mistake and how to fix it. `ideal_ar`: a model answer at the learner's level with harakat (1-2 sentences).
@@ -647,6 +647,25 @@ def build_system(
             "cache_control": {"type": "ephemeral"},
         },
     ]
+
+
+# Model ba'zan مِنْ أَيْنَ أَنْتَ؟ ni «qayerdan kelyapsan» deb (so'zma-so'z, «sen» bilan) tarjima qiladi —
+# foydalanuvchi skrinshoti (2026-09-21). Qoida promptda ham bor; bu — qat'iy zaxira.
+_UZ_FIXES: tuple[tuple[str, re.Pattern, str], ...] = (
+    ("من اين انت", re.compile(r"\b(?:sen|siz)?\s*qayerdan\s+kel(?:yaps|as)(?:an|iz)\b", re.IGNORECASE), "qayerdansiz"),
+)
+
+
+def fix_uz(ar: str, uz: str) -> str:
+    """Ma'lum noto'g'ri tarjimalarni tuzatadi (faqat `ar` da mos ibora bo'lsa)."""
+    if not uz:
+        return uz
+    key = normalize(ar)
+    for needle, pat, repl in _UZ_FIXES:
+        if needle in key and pat.search(uz):
+            uz = pat.sub(repl, uz)
+            uz = re.sub(r"(^|[.!?]\s+)qayerdansiz", lambda m: m.group(1) + "Qayerdansiz", uz)
+    return uz
 
 
 def _trim_history(history: list[dict]) -> list[dict]:
@@ -813,6 +832,7 @@ async def reply(
     if out.done and _user_turns(history) < MIN_TURNS_TO_END:
         out.done = False
     out.new_words = out.new_words[:2]
+    out.uz = fix_uz(out.ar, out.uz)
     return out, usage
 
 

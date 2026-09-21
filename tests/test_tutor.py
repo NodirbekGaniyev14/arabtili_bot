@@ -382,3 +382,14 @@ def test_mock_overall_and_catalog():
 def test_chat_reply_schema_has_answer_uz():
     assert "answer_uz" in tutor.TutorReply.model_fields
     assert tutor.TutorReply.model_fields["answer_uz"].default == ""
+
+
+def test_fix_uz_where_are_you_from():
+    """مِنْ أَيْنَ أَنْتَ؟ — «qayerdan kelyapsan» emas, «Qayerdansiz?» (foydalanuvchi skrinshoti, 2026-09-21)."""
+    ar = "الحَمْدُ لِلَّهِ، أَنَا بِخَيْرٍ أَيْضًا، شُكْرًا لَكِ. مِنْ أَيْنَ أَنْتِ؟"
+    assert tutor.fix_uz(ar, "Rahmat. Sen qayerdan kelyapsan?") == "Rahmat. Qayerdansiz?"
+    assert tutor.fix_uz(ar, "qayerdan kelasiz?") == "Qayerdansiz?"
+    assert tutor.fix_uz(ar, "Qayerdansiz?") == "Qayerdansiz?"
+    # Boshqa jumla (haqiqatan «qayerdan keldingiz») — tegilmaydi
+    assert tutor.fix_uz("مِنْ أَيْنَ جِئْتَ؟", "Qayerdan kelyapsiz?") == "Qayerdan kelyapsiz?"
+    assert tutor.fix_uz(ar, "") == ""

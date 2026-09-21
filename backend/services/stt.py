@@ -26,7 +26,7 @@ from config import settings
 
 log = logging.getLogger(__name__)
 
-MAX_AUDIO_BYTES = 3 * 1024 * 1024  # 3 MB ≈ 20-25 soniya opus/aac
+MAX_AUDIO_BYTES = 8 * 1024 * 1024  # 8 MB ≈ 90 s (klient chegarasi) opus/aac 48 kbps
 TIMEOUT = 25.0
 # Groq bepul tarifi: whisper-large-v3-turbo 20 so'rov/daqiqa, 2000/kun. 429 kelsa
 # «retry-after» qadar (ko'pi bilan RATE_WAIT_MAX s) kutib BIR marta qayta uriniladi —

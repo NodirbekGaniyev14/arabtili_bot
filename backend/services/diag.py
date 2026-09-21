@@ -263,13 +263,6 @@ def check_settings() -> list[str]:
         if settings.support_username
         else _warn("SUPPORT_USERNAME bo'sh — paywall'da «admin» deb chiqadi")
     )
-    token = settings.pay_provider_token.strip()
-    out.append(
-        _ok(f"Avto to'lov: {settings.pay_provider_name} · token …{token[-4:]}")
-        if token
-        # Ataylab o'chiq bo'lishi mumkin (chek oqimi yetarli) — ogohlantirish emas
-        else _ok("Avto to'lov: o'chiq — chek oqimi (xohlasangiz .env PAY_PROVIDER_TOKEN)")
-    )
     out.append(_ok(f"Limitlar: VIP {settings.tutor_daily_turns}/kun · bepul {settings.tutor_free_turns}/kun · chegirma {settings.pay_discount_hours} soat"))
     # K23.4: VIP modeli (sozlanmagan bo'lsa hamma bir modelda — bu xato emas)
     out.append(

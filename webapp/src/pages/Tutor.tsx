@@ -13,7 +13,7 @@ import {
   type TutorTopics,
 } from "../lib/api";
 import { playUrl, speakText } from "../lib/audio";
-import { MAX_SECONDS, Recorder, micSupported } from "../lib/recorder";
+import { Recorder, micSupported } from "../lib/recorder";
 import RateBar from "../components/RateBar";
 import Drill from "./Drill";
 import Listening from "./Listening";
@@ -162,6 +162,8 @@ export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProp
   const [recTarget, setRecTarget] = useState<RecTarget | null>(null);
   const [recSeconds, setRecSeconds] = useState(0);
   const [transcribing, setTranscribing] = useState(false);
+  // Gapirib bo'lgach tanilgan matn — o'quvchi ko'rib «➤ Yuborish» bosadi (avtomatik ketmaydi)
+  const [voiceDraft, setVoiceDraft] = useState(false);
   const canVoice = !!info?.voice && micSupported();
   const voiceOnly = voiceMode && canVoice;
 
@@ -314,6 +316,7 @@ export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProp
     const next = [...messages, userMsg];
     setMessages(next);
     setInput("");
+    setVoiceDraft(false);
     setNotice("");
     setLoading(true);
     tg()?.HapticFeedback?.impactOccurred("light");
@@ -403,12 +406,16 @@ export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProp
         );
         if (!r.text) {
           setNotice("Ovoz tushunilmadi. Mikrofonga yaqinroq, sekinroq va aniqroq gapiring.");
-        } else if (!voiceMode && r.confidence >= 0 && r.confidence < 45) {
-          // Ishonch past — yuborishdan oldin o'quvchi ko'rib tuzatsin (ovoz rejimida darhol ketadi)
-          setInput(r.text);
-          setNotice("Tushunilgan matn pastda — tekshirib, ➤ bosing (yoki qayta gapiring).");
         } else {
-          await send(r.text, true);
+          // Tanilgan matn — o'quvchi ko'rib, kerak bo'lsa tuzatib, o'zi yuboradi
+          setInput(r.text);
+          setVoiceDraft(true);
+          setNotice(
+            r.confidence >= 0 && r.confidence < 45
+              ? "Ovoz aniq tanilmadi — matnni tekshirib yuboring yoki qayta gapiring."
+              : ""
+          );
+          tg()?.HapticFeedback?.notificationOccurred("success");
         }
       } else {
         const m = messages[target.idx];
@@ -909,7 +916,40 @@ export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProp
 
           {/* Kiritish */}
           <div className="p-3 border-t border-cardline bg-card space-y-2">
-            {voiceOnly && !done && !outOfTurns ? (
+            {voiceDraft && !done && !outOfTurns && !recTarget ? (
+              <div className="rounded-2xl bg-sand border border-emerald-deep/30 p-3">
+                <div className="text-[11px] font-extrabold tracking-[0.12em] text-ink-soft">🎤 AYTGANINGIZ — YUBORILSINMI?</div>
+                <input
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && send(input, true)}
+                  dir="auto"
+                  className="mt-1.5 w-full rounded-xl bg-card border border-cardline px-3 py-2.5 font-arabic text-lg outline-none focus:border-emerald-deep/40"
+                />
+                <div className="mt-2 grid grid-cols-2 gap-2">
+                  <button
+                    onClick={() => {
+                      setVoiceDraft(false);
+                      setInput("");
+                      setNotice("");
+                      // Ovoz rejimida tugma «bosib turish» — qoralama yo'qoladi, o'quvchi qayta bosib turadi
+                      if (!voiceOnly) startRec({ kind: "answer" });
+                    }}
+                    disabled={loading || transcribing}
+                    className="rounded-xl bg-cardline py-3 text-sm font-extrabold text-ink-soft active:scale-95 transition-transform disabled:opacity-50"
+                  >
+                    🎤 Qayta gapirish
+                  </button>
+                  <button
+                    onClick={() => send(input, true)}
+                    disabled={!input.trim() || loading}
+                    className="rounded-xl bg-emerald-deep py-3 text-sm font-extrabold text-white active:scale-95 transition-transform disabled:opacity-40"
+                  >
+                    ➤ Yuborish
+                  </button>
+                </div>
+              </div>
+            ) : voiceOnly && !done && !outOfTurns ? (
               <button
                 onPointerDown={(e) => {
                   e.preventDefault();
@@ -938,9 +978,7 @@ export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProp
             ) : recTarget?.kind === "answer" ? (
               <div className="flex items-center gap-3 rounded-xl bg-terracotta/10 border border-terracotta/40 px-3 py-2.5">
                 <span className="w-3 h-3 rounded-full bg-terracotta animate-pulse" />
-                <span className="flex-1 text-sm font-extrabold">
-                  Gapiring… {recSeconds}s / {MAX_SECONDS}s
-                </span>
+                <span className="flex-1 text-sm font-extrabold">Gapiring… {recSeconds}s</span>
                 <button
                   onClick={() => toggleRec({ kind: "answer" })}
                   className="h-10 px-4 rounded-xl bg-terracotta text-white font-extrabold active:scale-95 transition-transform"

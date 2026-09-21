@@ -3,7 +3,7 @@ import BadgeToast from "../components/BadgeToast";
 import type { Badge } from "../lib/api";
 import { api, type DailyInfo, type DailyResult } from "../lib/api";
 import { playUrl, speakText } from "../lib/audio";
-import { MAX_SECONDS, Recorder, micSupported } from "../lib/recorder";
+import { Recorder, micSupported } from "../lib/recorder";
 import RateBar from "../components/RateBar";
 
 /** Kunlik speaking savoli — hamma uchun bepul, kuniga bitta.
@@ -72,6 +72,8 @@ export default function DailyTask({ onClose, onDone }: Props) {
 
   // Yozma javob avval tasdiqlanadi (foydalanuvchi fikri #F59: «qo'lim bexosdan yuborishga tegib ketdi»)
   const [pending, setPending] = useState<string | null>(null);
+  // Tasdiq panelidagi matn ovozdan kelganmi (+2 XP bonus saqlanadi)
+  const [pendingVoice, setPendingVoice] = useState(false);
 
   const submit = async (answer: string, voice: boolean) => {
     const clean = answer.trim();
@@ -124,12 +126,12 @@ export default function DailyTask({ onClose, onDone }: Props) {
       const r = await api.tutorTranscribe(rec.blob, rec.filename, q.ar);
       if (!r.text) {
         setNotice("Ovoz tushunilmadi. Mikrofonga yaqinroq, sekinroq va aniqroq gapiring.");
-      } else if (r.confidence >= 0 && r.confidence < 45) {
-        // Ishonch past — matnni ko'rsatamiz, o'quvchi tuzatib yuboradi (kunlik savol bitta urinish)
-        setText(r.text);
-        setNotice("Tushunilgan matn pastda — tekshirib yuboring yoki qayta gapiring.");
       } else {
-        await submit(r.text, true);
+        // Tanilgan matn tasdiq panelida — o'quvchi «➤ Yuborish» bosadi (kunlik savol bitta urinish)
+        setText(r.text);
+        setPending(r.text);
+        setPendingVoice(true);
+        setNotice(r.confidence >= 0 && r.confidence < 45 ? "Ovoz aniq tanilmadi — matnni tekshirib yuboring." : "");
       }
     } catch (e) {
       setNotice((e as { detail?: string })?.detail || "Ovoz xizmati javob bermadi.");
@@ -286,9 +288,7 @@ export default function DailyTask({ onClose, onDone }: Props) {
               className="w-full flex items-center gap-3 rounded-2xl bg-terracotta text-white px-4 py-3.5 font-extrabold active:scale-[0.98] transition-transform"
             >
               <span className="w-3 h-3 rounded-full bg-white animate-pulse" />
-              <span className="flex-1 text-left">
-                Gapiring… {seconds}s / {MAX_SECONDS}s
-              </span>
+              <span className="flex-1 text-left">Gapiring… {seconds}s</span>
               <span>■ Tayyor</span>
             </button>
           ) : (
@@ -306,14 +306,24 @@ export default function DailyTask({ onClose, onDone }: Props) {
               <input
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && text.trim() && setPending(text.trim())}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && text.trim()) {
+                    setPending(text.trim());
+                    setPendingVoice(false);
+                  }
+                }}
                 dir="auto"
                 placeholder={transcribing ? "🎧 Eshitilmoqda…" : "جوابك هنا… yoki lotincha"}
                 disabled={sending || transcribing}
                 className="flex-1 min-w-0 rounded-xl bg-sand border border-cardline px-3 py-2.5 font-arabic text-lg outline-none focus:border-emerald-deep/40 disabled:opacity-60"
               />
               <button
-                onClick={() => text.trim() && setPending(text.trim())}
+                onClick={() => {
+                  if (text.trim()) {
+                    setPending(text.trim());
+                    setPendingVoice(false);
+                  }
+                }}
                 disabled={!text.trim() || sending || transcribing}
                 className="w-11 h-11 shrink-0 rounded-xl bg-emerald-deep text-white text-xl font-extrabold active:scale-90 transition-transform disabled:opacity-40"
               >
@@ -323,7 +333,9 @@ export default function DailyTask({ onClose, onDone }: Props) {
           )}
           {pending !== null && !sending && (
             <div className="rounded-2xl bg-card border border-emerald-deep/30 p-3">
-              <div className="text-[11px] font-extrabold tracking-[0.12em] text-ink-soft">JAVOBINGIZ — YUBORILSINMI?</div>
+              <div className="text-[11px] font-extrabold tracking-[0.12em] text-ink-soft">
+                {pendingVoice ? "🎤 AYTGANINGIZ — YUBORILSINMI?" : "JAVOBINGIZ — YUBORILSINMI?"}
+              </div>
               <div className="mt-1 font-arabic text-xl leading-snug" dir="auto">
                 {pending}
               </div>
@@ -335,7 +347,7 @@ export default function DailyTask({ onClose, onDone }: Props) {
                   ✏️ Tahrirlash
                 </button>
                 <button
-                  onClick={() => submit(pending, false)}
+                  onClick={() => submit(pending, pendingVoice)}
                   className="rounded-xl bg-emerald-deep py-2.5 text-sm font-extrabold text-white active:scale-95 transition-transform"
                 >
                   ➤ Yuborish
