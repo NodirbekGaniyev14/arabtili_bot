@@ -115,6 +115,40 @@ export interface WritingDone extends WritingFeedback {
   best: number;
 }
 
+/** K21.5 ulashish kartasi */
+export interface ShareCardInfo {
+  url: string;
+  path: string;
+  sent: boolean;
+  caption: string;
+  ref_link: string;
+  streak: number;
+  week_xp: number;
+}
+
+/** K21.6 harf chizish mashqi */
+export interface TraceLetter {
+  ar: string;
+  name: string;
+  uz: string;
+  audio: string;
+  audio_text: string;
+}
+export interface TraceInfo {
+  letters: TraceLetter[];
+  best: Record<string, number>;
+  pass: number;
+  min_letters: number;
+  xp_today: boolean;
+}
+export interface TraceFinish {
+  avg: number;
+  count: number;
+  xp: number;
+  best: Record<string, number>;
+  new_badges?: Badge[];
+}
+
 export interface WritingInfo {
   period: string;
   ends: string;
@@ -1135,6 +1169,13 @@ export const api = {
   },
   // ── Yozuv mashqi (K19.2) ──
   getWriting: () => request<WritingInfo>("/api/v2/tutor/writing"),
+  /** K21.5: haftalik natija kartasi (send=true — botga ham yuboriladi) */
+  shareWeek: (send: boolean) =>
+    request<ShareCardInfo>("/api/share/week", { method: "POST", body: JSON.stringify({ send }) }),
+  /** K21.6: harf chizish */
+  getTrace: () => request<TraceInfo>("/api/v2/trace"),
+  finishTrace: (scores: Record<string, number>) =>
+    request<TraceFinish>("/api/v2/trace/finish", { method: "POST", body: JSON.stringify({ scores }) }),
   checkWriting: (blob: Blob, filename: string) => {
     const fd = new FormData();
     fd.append("file", blob, filename);

@@ -23,6 +23,7 @@ from db.models import (
     MockResult,
     Plan,
     Progress,
+    TraceResult,
     TutorMistake,
     TutorTurn,
     User,
@@ -1546,3 +1547,51 @@ async def tutor_save_word(
     )
     await session.commit()
     return {"added": added}
+
+
+# ── Harf chizish mashqi (K21.6) ──
+
+
+@router.get("/trace")
+async def trace_info(
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Harflar ro'yxati + eng yaxshi ballar; bugun XP olinganmi."""
+    from services import trace
+
+    return {
+        "letters": trace.letters(),
+        "best": await trace.best(session, user.id),
+        "pass": trace.PASS,
+        "min_letters": trace.MIN_LETTERS,
+        "xp_today": await trace.xp_taken_today(session, user.id, utcnow()),
+    }
+
+
+class TraceFinishBody(BaseModel):
+    scores: dict[str, int] = Field(default_factory=dict)
+
+
+@router.post("/trace/finish")
+async def trace_finish(
+    body: TraceFinishBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Sessiya yakuni: natija saqlanadi, XP (≥ MIN_LETTERS harf, kuniga bir marta)."""
+    from services import trace
+
+    scores = trace.clean_scores(body.scores)
+    if not scores:
+        raise HTTPException(status_code=422, detail="Hech qanday harf chizilmadi")
+    avg = round(sum(scores.values()) / len(scores))
+    xp = trace.xp_for(avg, len(scores))
+    if xp and await trace.xp_taken_today(session, user.id, utcnow()):
+        xp = 0
+    session.add(TraceResult(user_id=user.id, scores=json.dumps(scores, ensure_ascii=False), avg=avg, count=len(scores), xp=xp))
+    if xp:
+        session.add(XpLog(user_id=user.id, amount=xp, source="trace"))
+    await session.commit()
+    return {"avg": avg, "count": len(scores), "xp": xp, "best": await trace.best(session, user.id),
+            "new_badges": await _badges(session, user.id)}

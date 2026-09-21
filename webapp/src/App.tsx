@@ -21,6 +21,7 @@ import Paywall from "./pages/Paywall";
 import Reference from "./pages/Reference";
 import SpeakingLog from "./pages/SpeakingLog";
 import Writing from "./pages/Writing";
+import Trace from "./pages/Trace";
 import DailyTask from "./pages/DailyTask";
 import Vocab from "./pages/Vocab";
 import LessonPlayerV2 from "./pages/v2/LessonPlayerV2";
@@ -68,6 +69,8 @@ export default function App() {
   const [showDaily, setShowDaily] = useState(() => window.location.hash === "#daily");
   // Bot eslatmasidagi tugma (#writing) — yozuv mashqiga (K19.2)
   const [showWriting, setShowWriting] = useState(() => window.location.hash === "#writing");
+  // Harf chizish mashqi (K21.6) — #trace
+  const [showTrace, setShowTrace] = useState(() => window.location.hash === "#trace");
 
   useEffect(() => {
     const tg = window.Telegram?.WebApp;
@@ -211,6 +214,7 @@ export default function App() {
             onOpenDaily={() => setShowDaily(true)}
             writing={me?.writing}
             onOpenWriting={() => setShowWriting(true)}
+            onOpenTrace={() => setShowTrace(true)}
             onOpenReference={() => setShowReference(true)}
             onOpenVocab={() => setTab("vocab")}
             onGoLessons={() => setTab("lessons")}
@@ -270,6 +274,16 @@ export default function App() {
 
       {showSpeaking && (
         <SpeakingLog initialTab={showSpeaking} onClose={() => setShowSpeaking(null)} />
+      )}
+
+      {showTrace && (
+        <Trace
+          onClose={() => {
+            setShowTrace(false);
+            api.getMe().then(setMe).catch(() => {});
+          }}
+          onDone={() => api.getMe().then(setMe).catch(() => {})}
+        />
       )}
 
       {showWriting && (

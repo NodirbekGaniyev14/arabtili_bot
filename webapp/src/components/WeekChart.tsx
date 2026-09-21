@@ -11,7 +11,7 @@ function weekday(iso: string): string {
   return WD[(d.getDay() + 6) % 7];
 }
 
-export default function WeekChart({ week, xpGoal }: { week: WeekDay[]; xpGoal: number }) {
+export default function WeekChart({ week, xpGoal, onShare }: { week: WeekDay[]; xpGoal: number; onShare?: () => void }) {
   if (!week?.length) return null;
   const max = Math.max(xpGoal, ...week.map((d) => d.xp), 1);
   const lessons = week.reduce((s, d) => s + d.lessons, 0);
@@ -24,8 +24,19 @@ export default function WeekChart({ week, xpGoal }: { week: WeekDay[]; xpGoal: n
     <section className="rounded-3xl bg-card border border-cardline p-4">
       <div className="flex items-center justify-between">
         <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft">SO'NGGI 7 KUN</div>
-        <div className="text-[11px] font-extrabold text-ink-soft">
-          {lessons} dars · {xp} XP · {active}/7 kun
+        <div className="flex items-center gap-2">
+          <div className="text-[11px] font-extrabold text-ink-soft">
+            {lessons} dars · {xp} XP · {active}/7 kun
+          </div>
+          {onShare && (
+            <button
+              onClick={onShare}
+              className="rounded-lg bg-gold-soft px-2 py-1 text-[11px] font-extrabold text-emerald-dark active:scale-95 transition-transform"
+              title="Natijani ulashish"
+            >
+              📤
+            </button>
+          )}
         </div>
       </div>
 

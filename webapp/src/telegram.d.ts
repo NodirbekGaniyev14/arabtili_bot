@@ -23,6 +23,8 @@ interface TelegramWebApp {
   /** Bot API 6.1+: Telegram to'lov oynasi (Payme/Click) — K18.5 */
   openInvoice?(url: string, callback?: (status: "paid" | "cancelled" | "failed" | "pending") => void): void;
   openTelegramLink?(url: string): void;
+  /** Bot API 7.8+: rasmni Telegram story'ga joylash (K21.5) */
+  shareToStory?(media_url: string, params?: { text?: string; widget_link?: { url: string; name?: string } }): void;
   isVersionAtLeast?(version: string): boolean;
   version?: string;
   onEvent?(event: string, handler: () => void): void;

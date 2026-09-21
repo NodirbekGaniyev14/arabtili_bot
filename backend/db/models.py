@@ -443,6 +443,20 @@ class ListeningResult(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
 
 
+class TraceResult(Base):
+    """Harf chizish mashqi yakuni (K21.6): sessiyadagi harflar ballari (JSON {harf: 0-100})."""
+
+    __tablename__ = "trace_results"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    scores: Mapped[str] = mapped_column(Text, default="{}")
+    avg: Mapped[int] = mapped_column(Integer, default=0)
+    count: Mapped[int] = mapped_column(Integer, default=0)
+    xp: Mapped[int] = mapped_column(Integer, default=0)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
 class WritingResult(Base):
     """K19.2 yozuv (xattotlik) mashqi — davr (2 kun) + foydalanuvchi uchun bitta yozuv:
     eng yaxshi ball, ozodalik, urinishlar soni, oxirgi eng yaxshi tekshiruv (JSON), XP."""

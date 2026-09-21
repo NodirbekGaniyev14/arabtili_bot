@@ -23,6 +23,7 @@ from fastapi.staticfiles import StaticFiles
 
 from api.exam import router as exam_router
 from api.pay import router as pay_router
+from api.share import router as share_router
 from api.routes import router as api_router
 from api.v2 import router as api_v2_router
 from bot.admin import router as admin_router
@@ -222,6 +223,7 @@ app.include_router(api_router)
 app.include_router(api_v2_router)
 app.include_router(exam_router)
 app.include_router(pay_router)
+app.include_router(share_router)
 
 if WEBAPP_DIST.exists():
     app.mount("/", StaticFiles(directory=WEBAPP_DIST, html=True), name="webapp")

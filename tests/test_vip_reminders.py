@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 import pytest
 
 from db.models import PaymentRequest, User
-from services import billing, vip_reminders as vr
+from services import vip_reminders as vr
 
 
 class FakeBot:
@@ -50,7 +50,9 @@ async def test_soon_once_per_period(session, make_user):
     # Takror chaqiruv — jim
     assert (await vr.process(session, bot, NOON + timedelta(hours=1)))["soon"] == 0
     # Uzaytirdi → yangi davr, 3 kun qolganda yana bir marta
-    billing.grant(u, 30)
+    # (billing.grant haqiqiy utcnow'ga tayanadi — test sanasi o'tib ketgach tasodifiy bo'lardi;
+    #  shuning uchun muddat NOON'ga nisbatan qo'lda uzaytiriladi)
+    u.vip_until = u.vip_until + timedelta(days=30)
     await session.commit()
     assert (await vr.process(session, bot, NOON + timedelta(days=1)))["soon"] == 0
     later = u.vip_until - timedelta(days=1)

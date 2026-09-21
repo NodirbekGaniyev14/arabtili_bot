@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import TodayPlan from "../components/TodayPlan";
 import WeekChart from "../components/WeekChart";
+import ShareCard from "../components/ShareCard";
 import {
   api,
   type ChallengeInfo,
@@ -33,6 +34,8 @@ interface HomeProps {
   /** K19.2 yozuv mashqi: 2 kunlik matn holati va ochish */
   writing?: { title: string; kind: string; done: boolean; score: number };
   onOpenWriting?: () => void;
+  /** K21.6 harf chizish mashqi (A0) */
+  onOpenTrace?: () => void;
   onOpenReference: () => void;
   onOpenVocab: () => void;
   onGoLessons: () => void;
@@ -65,6 +68,7 @@ export default function Home({
   onOpenDaily,
   writing,
   onOpenWriting,
+  onOpenTrace,
   onOpenReference,
   onOpenVocab,
   onGoLessons,
@@ -73,6 +77,7 @@ export default function Home({
 
   // Imtihon kartasi darajani va qulf holatini ko'rsatadi
   const [exam, setExam] = useState<ExamInfo | null>(null);
+  const [showShare, setShowShare] = useState(false);
   const [chal, setChal] = useState<ChallengeInfo | null>(null);
   const [vocab, setVocab] = useState<VocabStats | null>(null);
   useEffect(() => {
@@ -146,7 +151,8 @@ export default function Home({
       />
 
       {/* So'nggi 7 kun */}
-      {stats.week && <WeekChart week={stats.week} xpGoal={xpGoal} />}
+      {stats.week && <WeekChart week={stats.week} xpGoal={xpGoal} onShare={() => setShowShare(true)} />}
+      {showShare && <ShareCard onClose={() => setShowShare(false)} />}
 
       {/* Kunlik speaking savoli — bepul, 1 daqiqa */}
       {onOpenDaily && (
@@ -352,6 +358,14 @@ export default function Home({
               label="✍️ Yozuv mashqi"
               desc={writing ? (writing.done ? `✅ ${writing.score}% · ${writing.title}` : writing.title) : "2 kunda bir matn"}
               onClick={onOpenWriting}
+            />
+          )}
+          {onOpenTrace && (
+            <ModeCard
+              ar="حروف"
+              label="✍️ Harf chizish"
+              desc="A0 · barmoq bilan 28 harf"
+              onClick={onOpenTrace}
             />
           )}
         </div>

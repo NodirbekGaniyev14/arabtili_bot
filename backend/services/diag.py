@@ -25,7 +25,7 @@ _tasks: dict[str, asyncio.Task] = {}
 REQUIRED_TABLES = (
     "users", "tutor_turns", "mock_results", "payment_requests", "ai_usage",
     "tutor_mistakes", "drill_results", "daily_speaking", "testimonials", "certificates",
-    "listening_results", "tutor_ratings", "writing_results",
+    "listening_results", "tutor_ratings", "writing_results", "trace_results",
 )
 REQUIRED_COLUMNS = {
     "users": ("vip_until", "paywall_seen_at", "vip_notice", "discount_notified", "trial_until", "speak_report_key", "writing_notice", "winback_stage", "winback_at", "day2_notice"),
