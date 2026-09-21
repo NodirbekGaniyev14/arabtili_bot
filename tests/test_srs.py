@@ -1,6 +1,6 @@
 """SRS (SM-2 soddalashtirilgan) — interval, ease va qayta ko'rish sanasi."""
 
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 
 import pytest
 from sqlalchemy import select
@@ -184,3 +184,45 @@ async def test_review_returns_fresh_translation(session, make_user):
     assert [x["uz"] for x in d["cards"] if x["ar"] == "جَارٌ"] == ["qo'shni"]
     row = (await session.execute(select(UserWord).where(UserWord.user_id == user.id))).scalar_one()
     assert row.uz == "qo'shni", "DB ham yangilangan"
+
+
+# ── K22.4 «Yangi so'zlarim»: so'nggi kunlar bo'yicha ro'yxat ──
+
+
+@pytest.mark.asyncio
+async def test_words_recent_grouped_by_day(session, make_user):
+    import httpx
+
+    from db.session import get_session
+    from main import app
+    from services.stats import TASHKENT_OFFSET, _today
+    from services.telegram_auth import get_current_user
+
+    user = await make_user("Sozchi")
+    today = _today()
+    t0 = datetime.combine(today, datetime.min.time()) - TASHKENT_OFFSET + timedelta(hours=3)
+    session.add_all([
+        UserWord(user_id=user.id, ar="كِتَاب", uz="kitob", translit="kitaab", audio="a0/kitab.mp3", kind="word", card_type="word", due_date="2000-01-01", created_at=t0),
+        UserWord(user_id=user.id, ar="قَلَم", uz="qalam", kind="word", card_type="word", due_date="2000-01-01", created_at=t0 + timedelta(hours=1)),
+        UserWord(user_id=user.id, ar="ب", uz="bo", kind="letter", card_type="word", due_date="2000-01-01", created_at=t0),
+        UserWord(user_id=user.id, ar="بَيْت", uz="uy", kind="word", card_type="word", due_date="2000-01-01", created_at=t0 - timedelta(days=1)),
+        UserWord(user_id=user.id, ar="مَاء", uz="suv", kind="word", card_type="word", due_date="2000-01-01", created_at=t0 - timedelta(days=10)),
+    ])
+    await session.commit()
+
+    async def _session():
+        yield session
+
+    app.dependency_overrides[get_session] = _session
+    app.dependency_overrides[get_current_user] = lambda: user
+    try:
+        async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://t") as c:
+            d = (await c.get("/api/words/recent?days=7")).json()
+            d1 = (await c.get("/api/words/recent?days=1")).json()
+    finally:
+        app.dependency_overrides.clear()
+    assert d["total"] == 3, "harf va 10 kunlik so'z kirmaydi"
+    assert [x["day"] for x in d["days"]] == [today.isoformat(), (today - timedelta(days=1)).isoformat()]
+    assert [w["ar"] for w in d["days"][0]["words"]] == ["قَلَم", "كِتَاب"], "yangisi oldinda"
+    assert d["days"][0]["words"][1]["audio"] == "a0/kitab.mp3" and d["days"][1]["words"][0]["uz"] == "uy"
+    assert d1["total"] == 2 and len(d1["days"]) == 1

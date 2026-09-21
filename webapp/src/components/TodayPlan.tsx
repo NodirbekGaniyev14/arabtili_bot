@@ -18,6 +18,8 @@ export interface TodayActions {
   onOpenDaily?: () => void;
   onOpenVocab: () => void;
   onOpenWriting?: () => void;
+  /** K22.4: bugungi/so'nggi so'zlar ro'yxati (bo'lmasa lug'at bo'limi) */
+  onOpenWords?: () => void;
 }
 
 export interface WritingTodo {
@@ -70,9 +72,9 @@ export function buildTasks(stats: Stats, dailyDone: boolean, a: TodayActions, wr
       id: "words",
       icon: "🆕",
       title: `Yangi so'zlar: ${Math.min(words, goal)}/${goal}`,
-      hint: words >= goal ? "bugungi me'yor bajarildi" : "lug'at bo'limi yoki darsdan",
+      hint: words >= goal ? "bugungi me'yor bajarildi · ro'yxat" : words > 0 ? "ro'yxatni ko'rish · lug'atdan qo'shish" : "lug'at bo'limi yoki darsdan",
       done: words >= goal,
-      go: a.onOpenVocab,
+      go: a.onOpenWords ?? a.onOpenVocab,
     },
   ];
   if (writing && a.onOpenWriting) {

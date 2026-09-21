@@ -38,6 +38,8 @@ interface HomeProps {
   onOpenTrace?: () => void;
   onOpenReference: () => void;
   onOpenVocab: () => void;
+  /** K22.4 «Yangi so'zlarim» sahifasi */
+  onOpenWords?: () => void;
   onGoLessons: () => void;
 }
 
@@ -71,6 +73,7 @@ export default function Home({
   onOpenTrace,
   onOpenReference,
   onOpenVocab,
+  onOpenWords,
   onGoLessons,
 }: HomeProps) {
   const next = stats.next_lesson;
@@ -147,6 +150,7 @@ export default function Home({
           onOpenDaily,
           onOpenVocab,
           onOpenWriting,
+          onOpenWords,
         }}
       />
 

@@ -22,6 +22,7 @@ import Reference from "./pages/Reference";
 import SpeakingLog from "./pages/SpeakingLog";
 import Writing from "./pages/Writing";
 import Trace from "./pages/Trace";
+import TodayWords from "./pages/TodayWords";
 import DailyTask from "./pages/DailyTask";
 import Vocab from "./pages/Vocab";
 import LessonPlayerV2 from "./pages/v2/LessonPlayerV2";
@@ -71,6 +72,8 @@ export default function App() {
   const [showWriting, setShowWriting] = useState(() => window.location.hash === "#writing");
   // Harf chizish mashqi (K21.6) — #trace
   const [showTrace, setShowTrace] = useState(() => window.location.hash === "#trace");
+  // «Yangi so'zlarim» (K22.4) — #words
+  const [showWords, setShowWords] = useState(() => window.location.hash === "#words");
 
   useEffect(() => {
     const tg = window.Telegram?.WebApp;
@@ -219,6 +222,7 @@ export default function App() {
             onOpenTrace={() => setShowTrace(true)}
             onOpenReference={() => setShowReference(true)}
             onOpenVocab={() => setTab("vocab")}
+            onOpenWords={() => setShowWords(true)}
             onGoLessons={() => setTab("lessons")}
           />
         )}
@@ -285,6 +289,21 @@ export default function App() {
             api.getMe().then(setMe).catch(() => {});
           }}
           onDone={() => api.getMe().then(setMe).catch(() => {})}
+        />
+      )}
+
+      {showWords && (
+        <TodayWords
+          goal={me?.stats?.today?.new_words_goal ?? 5}
+          onClose={() => setShowWords(false)}
+          onOpenVocab={() => {
+            setShowWords(false);
+            setTab("vocab");
+          }}
+          onGoReview={() => {
+            setShowWords(false);
+            setTab("review");
+          }}
         />
       )}
 

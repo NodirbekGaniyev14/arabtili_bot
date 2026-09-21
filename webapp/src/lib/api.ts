@@ -117,6 +117,19 @@ export interface WritingDone extends WritingFeedback {
   best: number;
 }
 
+/** K22.4 «Yangi so'zlarim» — kunlar bo'yicha */
+export interface RecentWord {
+  ar: string;
+  translit: string;
+  uz: string;
+  audio: string;
+  kind: string;
+}
+export interface RecentWordsDay {
+  day: string;
+  words: RecentWord[];
+}
+
 /** K21.5 ulashish kartasi */
 export interface ShareCardInfo {
   url: string;
@@ -1171,6 +1184,8 @@ export const api = {
   },
   // ── Yozuv mashqi (K19.2) ──
   getWriting: () => request<WritingInfo>("/api/v2/tutor/writing"),
+  /** K22.4: so'nggi kunlarda o'rganilgan so'zlar (kunlar bo'yicha) */
+  recentWords: (days = 7) => request<{ days: RecentWordsDay[]; total: number }>(`/api/words/recent?days=${days}`),
   /** K21.5: haftalik natija kartasi (send=true — botga ham yuboriladi) */
   shareWeek: (send: boolean) =>
     request<ShareCardInfo>("/api/share/week", { method: "POST", body: JSON.stringify({ send }) }),

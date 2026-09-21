@@ -122,6 +122,42 @@ async def modules_list(
 SESSION_LIMIT = 20  # bitta takror sessiyasidagi maksimal kartalar
 
 
+@router.get("/words/recent")
+async def words_recent(
+    days: int = 7,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """K22.4 «Yangi so'zlarim»: so'nggi N kunda kartotekaga qo'shilgan so'zlar, Toshkent kuni bo'yicha
+    (yangi kun oldinda). Manba farqi yo'q — dars, AI ustoz, lug'at, o'zak: hammasi user_words."""
+    from datetime import datetime, timedelta
+
+    from services.stats import TASHKENT_OFFSET, _local_date, _today
+
+    days = max(1, min(days, 30))
+    since = datetime.combine(_today() - timedelta(days=days - 1), datetime.min.time()) - TASHKENT_OFFSET
+    rows = (
+        await session.execute(
+            select(UserWord)
+            .where(UserWord.user_id == user.id, UserWord.created_at >= since, UserWord.kind != "letter")
+            .order_by(UserWord.created_at.desc(), UserWord.id.desc())
+        )
+    ).scalars().all()
+    by_day: dict[str, list[dict]] = {}
+    for w in rows:
+        refresh_card(w)  # eskirgan tarjima bo'lsa yangilanadi (commit quyida)
+        key = _local_date(w.created_at).isoformat() if w.created_at else _today().isoformat()
+        by_day.setdefault(key, []).append(
+            {"ar": w.ar, "translit": w.translit or "", "uz": w.uz or "", "audio": w.audio or "", "kind": w.card_type or w.kind or "word"}
+        )
+    if session.dirty:
+        await session.commit()
+    return {
+        "days": [{"day": d, "words": ws} for d, ws in sorted(by_day.items(), reverse=True)],
+        "total": len(rows),
+    }
+
+
 @router.get("/review")
 async def review_cards(
     deck: str | None = None,
