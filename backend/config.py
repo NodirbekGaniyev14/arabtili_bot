@@ -63,6 +63,10 @@ class Settings(BaseSettings):
     stt_api_key: str = ""
     stt_base_url: str = "https://api.groq.com/openai/v1"
     stt_model: str = "whisper-large-v3"
+    # K21.7 OpenAI STT (gpt-4o-transcribe): kalit bo'lsa ovoz AVVAL shu orqali; xato/limitda Groq (yuqoridagi) zaxira
+    stt_openai_api_key: str = ""
+    stt_openai_model: str = "gpt-4o-transcribe"
+    stt_openai_base_url: str = "https://api.openai.com/v1"
 
 
 settings = Settings()

@@ -655,6 +655,12 @@ async def tutor_report(session: AsyncSession) -> str:
         f"{st['ok']} ok · {st['empty']} tushunilmadi · {st['rate']} limit(429) · {st['fail']} xato"
         + (f" · {st['retried']} qayta urinish" if st["retried"] else "")
     )
+    if settings.stt_openai_api_key:
+        oa = f"✅ {settings.stt_openai_model}" if not stt.openai_error else f"⚠️ xato «{stt.openai_error}» — Groq zaxira ishladi"
+        stt_today += (
+            f"\n• OpenAI STT: {oa} · bugun {st['openai']} ta · ~${st['openai_cost']:.2f}"
+            + (f" · {st['fallback']} marta Groq'ga o'tildi" if st["fallback"] else "")
+        )
     sent = alerts.last_sent()
     alert_line = (
         " · ".join(

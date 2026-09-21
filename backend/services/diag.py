@@ -87,9 +87,47 @@ async def check_anthropic() -> str:
         return _bad(f"Anthropic: {type(e).__name__}: {str(e)[:120]}")
 
 
+async def check_stt_openai() -> str:
+    """K21.7: OpenAI STT kaliti (bo'lsa) — /models bilan jonli tekshiruv. Kalit yo'q → ""."""
+    from services import stt
+
+    key = settings.stt_openai_api_key
+    if not key:
+        return ""
+    if not key.startswith("sk-") or key.startswith("sk-ant-"):
+        return _bad("Ovoz (OpenAI STT): STT_OPENAI_API_KEY OpenAI kaliti emas («sk-…» kerak, «sk-ant-» — Anthropic)",
+                    "platform.openai.com → API keys → .env STT_OPENAI_API_KEY=sk-… → restart")
+    url = settings.stt_openai_base_url.rstrip("/") + "/models"
+    try:
+        async with httpx.AsyncClient(timeout=15) as client:
+            r = await client.get(url, headers={"Authorization": f"Bearer {key}"})
+    except Exception as e:
+        return _warn(f"Ovoz (OpenAI STT): tarmoq xatosi — {type(e).__name__}; Groq zaxira ishlaydi")
+    if r.status_code in (401, 403):
+        return _bad("Ovoz (OpenAI STT): kalit rad etildi (401) — hozir Groq ishlayapti",
+                    "platform.openai.com → yangi kalit → .env STT_OPENAI_API_KEY → restart")
+    if r.status_code != 200:
+        return _warn(f"Ovoz (OpenAI STT): /models {r.status_code} — tekshirib bo'lmadi; xato bo'lsa Groq zaxira")
+    try:
+        ids = {m.get("id") for m in r.json().get("data", [])}
+    except Exception:
+        ids = set()
+    if ids and settings.stt_openai_model not in ids:
+        return _warn(f"Ovoz (OpenAI STT): kalit ishlaydi, lekin «{settings.stt_openai_model}» modeli ro'yxatda yo'q",
+                     "STT_OPENAI_MODEL=gpt-4o-transcribe")
+    st = stt.stats()
+    tail = f" · bugun {st['openai']} ta, ~${st['openai_cost']:.2f}" if st["openai"] else ""
+    if stt.openai_error:
+        return _warn(f"Ovoz (OpenAI STT): kalit ishlaydi, oxirgi so'rov xatosi «{stt.openai_error}» — Groq zaxira ishladi{tail}")
+    return _ok(f"Ovoz (OpenAI STT): asosiy · {settings.stt_openai_model}{tail}")
+
+
 async def check_stt() -> str:
     key = settings.stt_api_key
     if not key:
+        if settings.stt_openai_api_key:
+            return _warn("Ovoz (STT): Groq kaliti bo'sh — OpenAI xato bersa zaxira yo'q",
+                         "console.groq.com → API Keys → .env STT_API_KEY=gsk_…")
         return _bad(
             "Ovoz (STT): STT_API_KEY bo'sh — mikrofon o'chiq",
             "console.groq.com → API Keys → «gsk_…» → .env STT_API_KEY → restart",
@@ -121,7 +159,8 @@ async def check_stt() -> str:
             f"Ovoz (STT): kalit ishlaydi, lekin «{settings.stt_model}» modeli ro'yxatda yo'q",
             "STT_MODEL=whisper-large-v3-turbo",
         )
-    return _ok(f"Ovoz (STT): Groq kaliti ishlaydi · {settings.stt_model}")
+    role = "zaxira" if settings.stt_openai_api_key else "asosiy"
+    return _ok(f"Ovoz (STT): Groq kaliti ishlaydi · {settings.stt_model} · {role}")
 
 
 async def check_tts() -> str:
@@ -262,14 +301,15 @@ def check_alerts() -> str:
 async def run_all() -> str:
     """Hamma tekshiruv — HTML hisobot (Telegram)."""
     t0 = time.monotonic()
-    anth, stt_line, tts_line, db_lines = await asyncio.gather(
-        check_anthropic(), check_stt(), check_tts(), check_db()
+    anth, stt_openai_line, stt_line, tts_line, db_lines = await asyncio.gather(
+        check_anthropic(), check_stt_openai(), check_stt(), check_tts(), check_db()
     )
     lines = [
         "🩺 <b>Tizim tekshiruvi</b>",
         "",
         "<b>AI va ovoz</b>",
         anth,
+        *([stt_openai_line] if stt_openai_line else []),
         stt_line,
         tts_line,
         "",
