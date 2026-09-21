@@ -114,6 +114,8 @@ export default function App() {
     }));
     setTab("home");
     setPhase("app");
+    // K22.1: «Birinchi darsni boshlash» — Home emas, darhol dars (voronka: 69% birinchi darsni ochmasdi)
+    setActiveLessonV2(plan.start_lesson || "a0-01");
     // Statistika va keyingi darsni serverdan olamiz
     api.getMe().then(setMe).catch(() => {});
   };
@@ -345,7 +347,12 @@ export default function App() {
 
       {activeLessonV2 && (
         <LessonPlayerV2
+          key={activeLessonV2}
           lessonId={activeLessonV2}
+          onNext={(id, stats) => {
+            setMe((m) => (m ? { ...m, stats } : m));
+            setActiveLessonV2(id);
+          }}
           onClose={() => {
             setActiveLessonV2(null);
             // Keyingi dars, modul qulflari va statistikani yangilaymiz

@@ -28,7 +28,7 @@ REQUIRED_TABLES = (
     "listening_results", "tutor_ratings", "writing_results", "trace_results",
 )
 REQUIRED_COLUMNS = {
-    "users": ("vip_until", "paywall_seen_at", "vip_notice", "discount_notified", "trial_until", "speak_report_key", "writing_notice", "winback_stage", "winback_at", "day2_notice"),
+    "users": ("vip_until", "paywall_seen_at", "vip_notice", "discount_notified", "trial_until", "speak_report_key", "writing_notice", "winback_stage", "winback_at", "day2_notice", "first_nudge"),
     "payment_requests": ("provider", "charge_id", "provider_charge_id"),
     "tutor_turns": ("mode", "score", "vocab", "grammar", "content", "pron"),
     "mock_results": ("vocab", "grammar", "content", "pron"),

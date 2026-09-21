@@ -105,3 +105,38 @@ async def test_me_intro_flag(client, make_user):
     state["user"] = await make_user("Fresh", created_at=datetime.utcnow())
     d = (await c.get("/api/me")).json()
     assert d["intro_pending"] is True and d["intro_topic"] == "tanishish"
+
+
+@pytest.mark.asyncio
+async def test_first_lesson_nudge_same_day_once(session, make_user):
+    """K22.1: reja tuzilgan kuni 2 soat o'tib dars tugatmaganlarga bitta turtki, tugma to'g'ri darsga."""
+    now = datetime(2026, 9, 20, 9, 0)  # 14:00 Toshkent
+    three_h = now - timedelta(hours=3)
+    idle = await make_user("Idle", created_at=three_h)
+    session.add(Plan(user_id=idle.id, level="A0", target_level="A1", target_date="2027-01-01", created_at=three_h))
+    a1 = await make_user("A1", created_at=three_h)
+    session.add(Plan(user_id=a1.id, level="A1", target_level="A2", target_date="2027-01-01", start_lesson="a1-03", created_at=three_h))
+    fresh = await make_user("Fresh", created_at=now - timedelta(hours=1))
+    session.add(Plan(user_id=fresh.id, level="A0", target_level="A1", target_date="2027-01-01", created_at=now - timedelta(hours=1)))
+    done = await make_user("Done", created_at=three_h)
+    session.add(Plan(user_id=done.id, level="A0", target_level="A1", target_date="2027-01-01", created_at=three_h))
+    session.add(Progress(user_id=done.id, lesson_id="a0-01", passed=1, total=5, correct=5))
+    yday = await make_user("Yday", created_at=now - timedelta(days=1))
+    session.add(Plan(user_id=yday.id, level="A0", target_level="A1", target_date="2027-01-01", created_at=now - timedelta(days=1)))
+    await session.commit()
+
+    bot = FakeBot()
+    assert await fd.nudge_process(session, bot, datetime(2026, 9, 20, 18, 30)) == {"sent": 0, "failed": 0}, "23:30 — soat tashqarida"
+    out = await fd.nudge_process(session, bot, now)
+    assert out == {"sent": 2, "failed": 0}
+    by = {c: (t, kb) for c, t, kb in bot.sent}
+    assert set(by) == {idle.tg_id, a1.tg_id}
+    t, kb = by[idle.tg_id]
+    assert "birinchi qadam" in t and "Arab alifbosi" in t and "daqiqa" in t
+    assert kb.inline_keyboard[0][0].web_app.url.endswith("#lesson=a0-01")
+    assert by[a1.tg_id][1].inline_keyboard[0][0].web_app.url.endswith("#lesson=a1-03")
+    assert idle.first_nudge == 1 and a1.first_nudge == 1
+    assert fresh.first_nudge == 0 and done.first_nudge == 0 and yday.first_nudge == 0
+    # Takror — jim; «Fresh» 2 soat o'tgach oladi
+    assert await fd.nudge_process(session, bot, now + timedelta(minutes=20)) == {"sent": 0, "failed": 0}
+    assert (await fd.nudge_process(session, bot, now + timedelta(hours=2)))["sent"] == 1 and fresh.first_nudge == 1

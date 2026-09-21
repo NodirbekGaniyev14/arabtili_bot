@@ -52,6 +52,8 @@ def plan_to_dict(plan: Plan) -> dict:
         # Joriy versiyadan past bo'lsa — ilova bir martalik qayta test so'raydi.
         "placement_version": plan.placement_version or 0,
         "placement_current": placement_svc.PLACEMENT_VERSION,
+        # K22.1: onboarding tugagach ilova shu darsni darhol ochadi
+        "start_lesson": plan.start_lesson or "a0-01",
     }
 
 

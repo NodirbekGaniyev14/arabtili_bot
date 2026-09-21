@@ -44,6 +44,8 @@ _MIGRATIONS = {
         "winback_at": "DATETIME",
         # K20.4 2-kun xabari
         "day2_notice": "INTEGER DEFAULT 0",
+        # K22.1 birinchi dars turtkisi
+        "first_nudge": "INTEGER DEFAULT 0",
     },
     "user_words": {
         "card_type": "VARCHAR(16) DEFAULT 'word'",

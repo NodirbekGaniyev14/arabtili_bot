@@ -35,9 +35,11 @@ interface Props {
   lessonId: string;
   onClose: () => void;
   onFinish: (stats: Stats) => void;
+  /** K22.1: natija ekranidan to'g'ri keyingi darsga (Home'ga qaytmasdan) */
+  onNext?: (lessonId: string, stats: Stats) => void;
 }
 
-export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
+export default function LessonPlayerV2({ lessonId, onClose, onFinish, onNext }: Props) {
   const [lesson, setLesson] = useState<LessonV2Data | null>(null);
   const [phase, setPhase] = useState<Phase>({ k: "hook" });
   const [error, setError] = useState(false);
@@ -500,12 +502,26 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish }: Props) {
                 </button>
               )}
               {reward.passed ? (
-                <button
-                  onClick={() => onFinish(reward.stats)}
-                  className="w-full rounded-2xl bg-emerald-deep py-4 text-white font-extrabold text-lg active:scale-[0.98] transition-transform"
-                >
-                  Davom etish
-                </button>
+                <>
+                  {onNext && reward.stats.next_lesson && reward.stats.next_lesson.id !== lessonId && (
+                    <button
+                      onClick={() => onNext(reward.stats.next_lesson!.id, reward.stats)}
+                      className="w-full rounded-2xl bg-emerald-deep py-4 text-white font-extrabold text-lg active:scale-[0.98] transition-transform"
+                    >
+                      ▶ Keyingi dars: {reward.stats.next_lesson.title}
+                    </button>
+                  )}
+                  <button
+                    onClick={() => onFinish(reward.stats)}
+                    className={`w-full rounded-2xl py-3.5 font-extrabold active:scale-[0.98] transition-transform ${
+                      onNext && reward.stats.next_lesson && reward.stats.next_lesson.id !== lessonId
+                        ? "bg-card border border-cardline"
+                        : "bg-emerald-deep text-white text-lg py-4"
+                    }`}
+                  >
+                    {onNext && reward.stats.next_lesson && reward.stats.next_lesson.id !== lessonId ? "Bosh sahifa" : "Davom etish"}
+                  </button>
+                </>
               ) : (
                 <>
                   <button

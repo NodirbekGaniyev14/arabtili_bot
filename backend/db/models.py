@@ -70,6 +70,8 @@ class User(Base):
     winback_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     # K20.4 ro'yxatdan o'tgan kunning ertasiga bitta xabar yuborildimi
     day2_notice: Mapped[int] = mapped_column(Integer, default=0)
+    # K22.1 reja tuzilgan kuni 2 soat o'tib dars boshlanmagan — birinchi dars turtkisi (bir marta)
+    first_nudge: Mapped[int] = mapped_column(Integer, default=0)
 
 
 class Placement(Base):

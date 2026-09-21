@@ -13,6 +13,8 @@ export interface PlanData {
   placement_version: number;
   /** Joriy placement versiyasi — undan past bo'lsa qayta test so'raladi */
   placement_current: number;
+  /** K22.1: onboarding tugagach darhol ochiladigan dars */
+  start_lesson?: string;
 }
 
 export interface NextLesson {
