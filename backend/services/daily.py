@@ -1,6 +1,6 @@
 """Kunlik speaking savoli (K17.7) — hamma uchun bepul, kuniga bitta.
 
-content/daily_speaking.json: har daraja uchun 20 savol, kun tartibi bilan
+content/daily_speaking.json: har daraja uchun 40 savol (K21.4: 20→40), kun tartibi bilan
 aylanadi (bir darajadagilar bir kunda bir xil savol oladi). Javob Haiku bilan
 qisqa prompt orqali baholanadi (lug'at bloki yo'q — ≈ $0.001/javob), natija
 `daily_speaking` jadvalida; ketma-ket kunlar — speaking streak.

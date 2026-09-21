@@ -1198,8 +1198,10 @@ async def tutor_daily(
     from services import daily, stt, tts
 
     level = await _user_level(session, user.id)
-    q = daily.question_for(level)
     row = await daily.today_row(session, user.id)
+    # bajarilgan bo'lsa — aynan javob berilgan savol (bank kengayganda yoki daraja o'zgarganda
+    # bugungi indeks siljishi mumkin; natija kartasi savolga mos qolsin)
+    q = (daily.question_by_id(row.question_id) if row else None) or daily.question_for(level)
     st = await daily.status(session, user.id)
     audio_key = tts.schedule(q["ar"], level)
     return {

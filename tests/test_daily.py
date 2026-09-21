@@ -23,7 +23,7 @@ def test_bank_shape():
     assert set(b) == set(daily.LEVELS)
     ids = []
     for lv, items in b.items():
-        assert len(items) == 20, lv
+        assert len(items) == 40, lv  # K21.4: 20 → 40
         for q in items:
             ids.append(q["id"])
             assert HARAKAT.search(q["ar"]), f"harakatsiz: {q['ar']}"
@@ -38,7 +38,9 @@ def test_question_rotates_by_day():
     q1 = daily.question_for("A1", d)
     q2 = daily.question_for("A1", d + timedelta(days=1))
     assert q1["id"] != q2["id"]
-    assert daily.question_for("A1", d + timedelta(days=20)) == q1, "20 kundan keyin aylanadi"
+    assert daily.question_for("A1", d + timedelta(days=20)) != q1, "40 ta savol — 20 kunda takrorlanmaydi"
+    assert daily.question_for("A1", d + timedelta(days=40)) == q1, "40 kundan keyin aylanadi"
+    assert len({daily.question_for("B2", d + timedelta(days=i))["id"] for i in range(40)}) == 40
     assert daily.question_for("zz", d)["id"].startswith("a0-"), "noma'lum daraja → A0"
     assert daily.question_by_id("b2-05")["ar"].startswith("مَا رَأْيُكَ")
     assert daily.question_by_id("yoq") is None
