@@ -62,6 +62,8 @@ export default function App() {
   const [showTutor, setShowTutor] = useState(() => window.location.hash === "#tutor");
   // Tanishuv kartasi (K20.4): ustoz shu mavzuda darhol boshlaydi
   const [tutorTopic, setTutorTopic] = useState("");
+  // Home «Talaffuz mashqi» (K22.5) → ustozning drill bo'limi
+  const [tutorTab, setTutorTab] = useState<"chat" | "drill" | undefined>(undefined);
   // Bot eslatmasidagi tugma (#vip) — ilova to'g'ridan-to'g'ri VIP sahifasida ochiladi
   const [showPaywall, setShowPaywall] = useState(() => window.location.hash === "#vip");
   const [showReference, setShowReference] = useState(false);
@@ -223,6 +225,10 @@ export default function App() {
             onOpenReference={() => setShowReference(true)}
             onOpenVocab={() => setTab("vocab")}
             onOpenWords={() => setShowWords(true)}
+            onOpenDrill={() => {
+              setTutorTab("drill");
+              setShowTutor(true);
+            }}
             onGoLessons={() => setTab("lessons")}
           />
         )}
@@ -258,9 +264,11 @@ export default function App() {
       {showTutor && (
         <Tutor
           initialTopicId={tutorTopic || undefined}
+          initialTab={tutorTab}
           onClose={() => {
             setShowTutor(false);
             setTutorTopic("");
+            setTutorTab(undefined);
             // Suhbat XP'si va yangi SRS kartalari statistikaga tushsin
             api.getMe().then(setMe).catch(() => {});
           }}

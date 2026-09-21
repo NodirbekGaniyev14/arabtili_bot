@@ -34,7 +34,19 @@ interface TutorProps {
   onClose: () => void;
   /** Ochilishi bilan shu mavzuda suhbatni boshlash (K20.4 tanishuv kartasi) */
   initialTopicId?: string;
+  /** Ochilganda faol bo'lim (Home «Talaffuz mashqi» → drill) */
+  initialTab?: Tab;
 }
+
+/** Qiyin tovushlar mashqi (#F57) — mavzular ro'yxatidan alohida, server drill.SOUNDS_ID */
+const SOUNDS_TOPIC: TutorTopic = {
+  id: "tovushlar",
+  emoji: "🔤",
+  title_uz: "Qiyin tovushlar",
+  desc_uz: "ح ع ق ص ط ض ظ ث ذ غ — yupqa/qalin, bo'g'iz tovushlari",
+  min_level: "A0",
+  recommended: true,
+};
 
 interface Correction {
   ok: boolean;
@@ -97,11 +109,11 @@ function uzDefault(level: string): boolean {
   return !["B1", "B2"].includes(level.toUpperCase());
 }
 
-export default function Tutor({ onClose, initialTopicId }: TutorProps) {
+export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProps) {
   const [badges, setBadges] = useState<Badge[]>([]);
   const [info, setInfo] = useState<TutorTopics | null>(null);
   const [loadError, setLoadError] = useState("");
-  const [tab, setTab] = useState<Tab>("chat");
+  const [tab, setTab] = useState<Tab>(initialTab ?? "chat");
   const [topic, setTopic] = useState<TutorTopic | null>(null);
   const [mock, setMock] = useState<TutorMock | null>(null);
   const [drillTopic, setDrillTopic] = useState<TutorTopic | null>(null);
@@ -724,6 +736,17 @@ export default function Tutor({ onClose, initialTopicId }: TutorProps) {
               />
             ))}
 
+          {tab === "drill" && info && (
+            <ListCard
+              key={SOUNDS_TOPIC.id}
+              emoji={SOUNDS_TOPIC.emoji}
+              title={SOUNDS_TOPIC.title_uz}
+              desc={`10 jumla · ${SOUNDS_TOPIC.desc_uz}`}
+              badge=""
+              disabled={loading}
+              onClick={() => setDrillTopic(SOUNDS_TOPIC)}
+            />
+          )}
           {tab === "drill" &&
             info?.topics.map((t) => (
               <ListCard

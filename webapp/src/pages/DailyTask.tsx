@@ -70,9 +70,13 @@ export default function DailyTask({ onClose, onDone }: Props) {
     });
   };
 
+  // Yozma javob avval tasdiqlanadi (foydalanuvchi fikri #F59: «qo'lim bexosdan yuborishga tegib ketdi»)
+  const [pending, setPending] = useState<string | null>(null);
+
   const submit = async (answer: string, voice: boolean) => {
     const clean = answer.trim();
     if (!clean || sending) return;
+    setPending(null);
     setSending(true);
     setNotice("");
     try {
@@ -302,19 +306,42 @@ export default function DailyTask({ onClose, onDone }: Props) {
               <input
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && submit(text, false)}
+                onKeyDown={(e) => e.key === "Enter" && text.trim() && setPending(text.trim())}
                 dir="auto"
                 placeholder={transcribing ? "🎧 Eshitilmoqda…" : "جوابك هنا… yoki lotincha"}
                 disabled={sending || transcribing}
                 className="flex-1 min-w-0 rounded-xl bg-sand border border-cardline px-3 py-2.5 font-arabic text-lg outline-none focus:border-emerald-deep/40 disabled:opacity-60"
               />
               <button
-                onClick={() => submit(text, false)}
+                onClick={() => text.trim() && setPending(text.trim())}
                 disabled={!text.trim() || sending || transcribing}
                 className="w-11 h-11 shrink-0 rounded-xl bg-emerald-deep text-white text-xl font-extrabold active:scale-90 transition-transform disabled:opacity-40"
               >
                 {sending ? "…" : "↑"}
               </button>
+            </div>
+          )}
+          {pending !== null && !sending && (
+            <div className="rounded-2xl bg-card border border-emerald-deep/30 p-3">
+              <div className="text-[11px] font-extrabold tracking-[0.12em] text-ink-soft">JAVOBINGIZ — YUBORILSINMI?</div>
+              <div className="mt-1 font-arabic text-xl leading-snug" dir="auto">
+                {pending}
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-2">
+                <button
+                  onClick={() => setPending(null)}
+                  className="rounded-xl bg-cardline py-2.5 text-sm font-extrabold text-ink-soft active:scale-95 transition-transform"
+                >
+                  ✏️ Tahrirlash
+                </button>
+                <button
+                  onClick={() => submit(pending, false)}
+                  className="rounded-xl bg-emerald-deep py-2.5 text-sm font-extrabold text-white active:scale-95 transition-transform"
+                >
+                  ➤ Yuborish
+                </button>
+              </div>
+              <div className="mt-1.5 text-[11px] font-semibold text-ink-soft">Kuniga bitta javob — yuborilgach o'zgartirib bo'lmaydi.</div>
             </div>
           )}
           <div className="text-[11px] font-bold text-ink-soft px-0.5">

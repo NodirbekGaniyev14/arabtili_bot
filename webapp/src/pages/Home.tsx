@@ -40,6 +40,8 @@ interface HomeProps {
   onOpenVocab: () => void;
   /** K22.4 «Yangi so'zlarim» sahifasi */
   onOpenWords?: () => void;
+  /** K22.5 talaffuz mashqi (AI ustoz → drill bo'limi) */
+  onOpenDrill?: () => void;
   onGoLessons: () => void;
 }
 
@@ -74,6 +76,7 @@ export default function Home({
   onOpenReference,
   onOpenVocab,
   onOpenWords,
+  onOpenDrill,
   onGoLessons,
 }: HomeProps) {
   const next = stats.next_lesson;
@@ -370,6 +373,14 @@ export default function Home({
               label="✍️ Harf chizish"
               desc="A0 · barmoq bilan 28 harf"
               onClick={onOpenTrace}
+            />
+          )}
+          {onOpenDrill && (
+            <ModeCard
+              ar="نطق"
+              label="🎤 Talaffuz mashqi"
+              desc="qiyin tovushlar · mavzu jumlalari · bepul"
+              onClick={onOpenDrill}
             />
           )}
         </div>

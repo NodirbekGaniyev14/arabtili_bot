@@ -103,32 +103,34 @@
  "micro_test": [
   {
    "type": "mcq",
-   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_uz": "Qaysi harfda PASTDA 2 nuqta bor?",
    "q_ar": "",
    "options": [
-    "ن",
     "ي",
-    "ا"
+    "ن",
+    "ت",
+    "ب"
    ],
-   "answer": "ن",
-   "explain_uz": "«Nun» — chuqurroq kosacha, TEPADA 1 nuqta — «n».",
-   "audio": "a0/harf_nun.mp3",
+   "answer": "ي",
+   "explain_uz": "ي (yo) — kosacha pastga cho'zilgan, PASTDA 2 nuqta.",
+   "audio": "",
    "root": "",
    "pattern": "",
    "words": []
   },
   {
    "type": "mcq",
-   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_uz": "Qaysi harfda TEPADA 1 nuqta bor?",
    "q_ar": "",
    "options": [
-    "ي",
     "ن",
-    "ا"
+    "ب",
+    "ي",
+    "ث"
    ],
-   "answer": "ي",
-   "explain_uz": "«Yo» — pastga cho'zilgan kosacha, PASTDA 2 nuqta — «y».",
-   "audio": "a0/harf_ya.mp3",
+   "answer": "ن",
+   "explain_uz": "ن (nun) — chuqur kosacha, TEPADA 1 nuqta.",
+   "audio": "",
    "root": "",
    "pattern": "",
    "words": []
@@ -145,6 +147,22 @@
    "answer": "نـ",
    "explain_uz": "So'z boshidagi shakl: نـ.",
    "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Eshiting: bu qaysi harfning nomi?",
+   "q_ar": "",
+   "options": [
+    "ن",
+    "ي",
+    "ا"
+   ],
+   "answer": "ن",
+   "explain_uz": "«Nun» — chuqurroq kosacha, TEPADA 1 nuqta — «n».",
+   "audio": "a0/harf_nun.mp3",
    "root": "",
    "pattern": "",
    "words": []

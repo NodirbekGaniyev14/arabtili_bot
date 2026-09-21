@@ -6,10 +6,12 @@
  "title_uz": "Talaffuz 2: ص ض ط ظ",
  "title_ar": "الحُروف المُفَخَّمة",
  "can_do_uz": "Qalin (emfatik) harflar ص ض ط ظ ni yupqa juftlaridan (س ت ذ) ajrata olaman va minimal juftlarni to'g'ri talaffuz qila olaman.",
- "duration_min": 30,
- "prerequisites": ["a0-34"],
+ "duration_min": 20,
+ "prerequisites": [
+  "a0-34"
+ ],
  "harakat_level": "full",
- "hook_uz": "O'zbekcha \"soat\" so'zini eslang — undagi \"s\" yumshoq. Endi og'zingizni to'ldirib, \"qalin\" s aytib ko'ring: bu arabcha ص. Xuddi shu ص \"soat\" (السَّاعة emas, balki يُصَلّي — namoz o'qish) so'zlarida ishlatiladi. Bugun 4 ta \"qalin\" tovushni yupqa juftidan ajratamiz.",
+ "hook_uz": "O'zbekchada «s» bitta, arabchada ikkita: yupqa س (سَيْف — qilich) va qalin ص (صَيْف — yoz). Faqat shu tovush farqi bilan ma'no o'zgaradi! Bugun 4 ta «qalin» tovushni — ص ط ض ظ — yupqa juftidan ajratishni o'rganamiz. Sir: qalin tovushda til orqasi tanglayga ko'tariladi, og'iz «to'la» bo'ladi.",
  "grammar": {
   "point_ar": "ص ض ط ظ",
   "explanation_uz": "Arab tilida bir xil ko'rinadigan, lekin biri \"yupqa\" (yumshoq), ikkinchisi \"qalin\" (emfatik) bo'lgan tovushlar bor. Qalin tovushni aytganda tilingizning orqa qismi tanglaykka ko'tariladi va ovoz \"to'la\" chiqadi. So'zning ma'nosi shu farq bilan o'zgaradi! Juftliklar: س (yumshoq s) ↔ ص (qalin s); ت (yumshoq t) ↔ ط (qalin t); د (yumshoq d) ↔ ض (qalin d); ذ/ز (yumshoq z) ↔ ظ (qalin z).",
@@ -95,21 +97,25 @@
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "الصَّيْف حارّ. هذا طَعام طَيِّب. أنا في السَّاعة الطَّويلة.",
+   "text_ar": "الصَّيْفُ حَارٌّ. هَذَا طَعَامٌ طَيِّبٌ. الطَّرِيقُ طَوِيلٌ.",
    "questions": [
     {
-     "q_uz": "\"Yoz issiq\" jumlasini toping va ص harfini o'qing.",
-     "a": "الصَّيْف حارّ"
+     "q_uz": "«Yoz issiq» jumlasini toping va ص harfini qalin o'qing.",
+     "a": "الصَّيْفُ حَارٌّ"
     },
     {
-     "q_uz": "\"Bu mazali taom\" jumlasidagi qalin ط harfli so'zni ayting.",
-     "a": "طَعام / طَيِّب"
+     "q_uz": "«Bu mazali taom» — qaysi so'zlarda qalin ط bor?",
+     "a": "طَعَام va طَيِّب"
+    },
+    {
+     "q_uz": "«Yo'l uzun» — qalin harf qaysi?",
+     "a": "ط — الطَّرِيق، طَوِيل"
     }
    ]
   },
   "listening": {
    "audio": "a0/pron_sad_ta.mp3",
-   "transcript_ar": "سَيْف — صَيْف — تين — طين",
+   "transcript_ar": "سَيْف — صَيْف — تِين — طِين",
    "questions": [
     {
      "q_uz": "Birinchi juftda qaysi so'zda qalin ص bor?",
@@ -122,12 +128,12 @@
    ]
   },
   "speaking": {
-   "task_uz": "Quyidagi minimal juftliklarni ovoz chiqarib, yupqa va qalinni ajratib ayting: سَيْف / صَيْف, تين / طين, دَلّ / ضَلّ.",
+   "task_uz": "Juftliklarni ovoz chiqarib, yupqa va qalinni ajratib ayting: sayf / ṣayf (qilich / yoz), tiin / ṭiin (anjir / loy).",
    "target_ar": [
     "سَيْف",
     "صَيْف",
-    "تين",
-    "طين"
+    "تِين",
+    "طِين"
    ],
    "eval": "self_check"
   },
@@ -173,12 +179,12 @@
   },
   {
    "type": "dictation",
-   "q_uz": "Eshitilgan so'zni yozing (qalin harfga e'tibor bering).",
+   "q_uz": "Eshiting va yozing (yoz — fasl):",
    "q_ar": "",
    "options": [],
-   "answer": "طَيِّب",
-   "explain_uz": "طَيِّب — qalin ط bilan boshlanadi.",
-   "audio": "a0/tayyib.mp3",
+   "answer": "صَيْف",
+   "explain_uz": "صَيْف — yoz; boshida qalin ص (س emas).",
+   "audio": "a0/sayf.mp3",
    "root": "",
    "pattern": "",
    "words": []
@@ -235,12 +241,17 @@
    "words": []
   },
   {
-   "type": "harakat",
-   "q_uz": "\"tayyib\" so'zini to'g'ri harakatlang.",
-   "q_ar": "طيب",
-   "options": [],
-   "answer": "طَيِّب",
-   "explain_uz": "ط + fatha, ي shadda + kasra, ب. Talaffuzi: tayyib.",
+   "type": "mcq",
+   "q_uz": "«Mazali» so'zida qaysi qalin harf bor: طَيِّب?",
+   "q_ar": "",
+   "options": [
+    "ط",
+    "ت",
+    "ص",
+    "ظ"
+   ],
+   "answer": "ط",
+   "explain_uz": "طَيِّب — qalin ط bilan boshlanadi (تَيِّب emas).",
    "audio": "",
    "root": "",
    "pattern": "",

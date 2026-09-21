@@ -6,7 +6,7 @@
  "title_uz": "Alif maqsura (ى)",
  "title_ar": "الألِف المَقْصورة",
  "can_do_uz": "So'z oxiridagi ى (alif maqsura) ni tanib, uni cho'ziq 'a' tovushi sifatida to'g'ri o'qiy olaman va uni nuqtali ي dan farqlay olaman.",
- "duration_min": 30,
+ "duration_min": 20,
  "prerequisites": [
   "a0-32"
  ],
@@ -64,7 +64,7 @@
      "pattern": ""
     },
     {
-     "ar": "هادي",
+     "ar": "هَادِي",
      "uz": "yo'l ko'rsatuvchi",
      "pattern": ""
     }
@@ -231,30 +231,30 @@
   },
   {
    "type": "dictation",
-   "q_uz": "Eshiting va yozing (hidoyat):",
+   "q_uz": "Eshiting va yozing (qachon):",
    "q_ar": "",
    "options": [],
-   "answer": "هُدى",
-   "explain_uz": "هُدى — 'hidoyat', o'zbekcha 'hidoyat' so'zi shundan.",
-   "audio": "a0/huda.mp3",
+   "answer": "مَتى",
+   "explain_uz": "مَتى — qachon; oxirida ى (alif maqsura), 'mataa' deb o'qiladi.",
+   "audio": "a0/mata.mp3",
    "root": "",
    "pattern": "",
    "words": []
   },
   {
-   "type": "match_root",
-   "q_uz": "«هُدى» so'zining o'zagini toping:",
+   "type": "mcq",
+   "q_uz": "Alif maqsura (ى) so'zning qayerida keladi?",
    "q_ar": "",
    "options": [
-    "ه د ي",
-    "ه د و",
-    "ح د ث",
-    "ه ن د"
+    "Faqat oxirida",
+    "Faqat boshida",
+    "O'rtasida",
+    "Hamma joyda"
    ],
-   "answer": "ه د ي",
-   "explain_uz": "هُدى — ه د ي o'zagidan (hidoyat, to'g'ri yo'l).",
+   "answer": "Faqat oxirida",
+   "explain_uz": "ى — faqat so'z oxirida, nuqtasiz, harakatsiz; cho'ziq 'aa' beradi.",
    "audio": "",
-   "root": "ه د ي",
+   "root": "",
    "pattern": "",
    "words": []
   },

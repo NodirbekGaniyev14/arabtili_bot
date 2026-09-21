@@ -17,6 +17,43 @@ from services.tutor import TOPIC_BY_ID
 from services.vocab import LEVELS, load_level
 
 DRILL_SIZE = 10
+SOUNDS_ID = "tovushlar"  # K22: qiyin tovushlar mashqi (foydalanuvchi so'rovi #F57) — mavzular ro'yxatidan tashqari
+# Har jumla bitta «qiyin» tovushga urg'u beradi; qisqa, A1 lug'ati; word = tovush va uni aytish sirri
+SOUND_SENTENCES: list[dict] = [
+    {"ar": "حَامِدٌ يَحْمِلُ حَقِيبَةً", "uz": "Homid sumka ko'tarib yuribdi.", "sound": "ح", "tip": "bo'g'izdan, shivirlagan «h» — «xo» emas"},
+    {"ar": "هَذَا هُوَ الهَاتِفُ", "uz": "Bu — telefon.", "sound": "ه", "tip": "yengil «h», o'zbekcha «hava» dagidek"},
+    {"ar": "عَلِيٌّ يَعْمَلُ فِي المَصْنَعِ", "uz": "Ali zavodda ishlaydi.", "sound": "ع", "tip": "bo'g'iz siqilib chiqadigan tovush — «a» emas"},
+    {"ar": "أَنَا أَعْرِفُ العَرَبِيَّةَ", "uz": "Men arabchani bilaman.", "sound": "أ / ع", "tip": "أ — oddiy «a», ع — bo'g'izdan; farqini ayting"},
+    {"ar": "خَالِدٌ يَخْرُجُ مِنَ المَطْبَخِ", "uz": "Xolid oshxonadan chiqyapti.", "sound": "خ", "tip": "o'zbekcha «x» — xirillab"},
+    {"ar": "الغُرْفَةُ غَالِيَةٌ", "uz": "Xona qimmat.", "sound": "غ", "tip": "o'zbekcha «g'» — g'ildirak"},
+    {"ar": "القَلَمُ فِي الحَقِيبَةِ", "uz": "Qalam sumkada.", "sound": "ق", "tip": "o'zbekcha «q» — chuqur, orqadan"},
+    {"ar": "كَتَبَ قَاسِمٌ الكِتَابَ", "uz": "Qosim kitobni yozdi.", "sound": "ك / ق", "tip": "ك — «k» (oldindan), ق — «q» (orqadan)"},
+    {"ar": "الصَّيْفُ صَعْبٌ فِي الصَّحْرَاءِ", "uz": "Sahroda yoz og'ir.", "sound": "ص", "tip": "qalin «s» — og'iz to'la, til orqasi ko'tariladi"},
+    {"ar": "السُّوقُ صَغِيرٌ", "uz": "Bozor kichik.", "sound": "س / ص", "tip": "س yupqa, ص qalin — ikkalasini ajrating"},
+    {"ar": "الطَّالِبُ يَطْبُخُ الطَّعَامَ", "uz": "Talaba ovqat pishiryapti.", "sound": "ط", "tip": "qalin «t» — kuchli, orqadan"},
+    {"ar": "تِلْكَ الطَّائِرَةُ طَوِيلَةٌ", "uz": "Anavi samolyot uzun.", "sound": "ت / ط", "tip": "ت yupqa, ط qalin"},
+    {"ar": "الضَّيْفُ فِي الغُرْفَةِ الضَّيِّقَةِ", "uz": "Mehmon tor xonada.", "sound": "ض", "tip": "qalin «d» — o'zbekchada yo'q, til yon tishlarga tegadi"},
+    {"ar": "نَظَرَ إِلَى الظِّلِّ فِي الظُّهْرِ", "uz": "Peshinda soyaga qaradi.", "sound": "ظ", "tip": "qalin «z» — til tishlar orasida"},
+    {"ar": "ثَلَاثَةُ كُتُبٍ ثَقِيلَةٍ", "uz": "Uchta og'ir kitob.", "sound": "ث", "tip": "inglizcha «th» (three) — til tishlar orasida, shivirlab"},
+    {"ar": "ذَهَبَ ذَلِكَ الرَّجُلُ", "uz": "Anavi kishi ketdi.", "sound": "ذ", "tip": "inglizcha «th» (this) — til tishlar orasida, jarangli"},
+    {"ar": "أَخِي يَحْتَاجُ إِلَى خُبْزٍ", "uz": "Akam nonga muhtoj.", "sound": "ح / خ", "tip": "ح shivirlagan «h», خ xirillagan «x»"},
+    {"ar": "عُمَرُ غَنِيٌّ وَعَادِلٌ", "uz": "Umar boy va adolatli.", "sound": "ع / غ", "tip": "ع bo'g'izdan, غ — g'ildirakdagi «g'»"},
+]
+
+
+def sound_sentences(n: int = DRILL_SIZE, rng: random.Random | None = None) -> list[dict]:
+    """Qiyin tovushlar mashqi: n ta jumla (aralash), har birida tovush va aytish sirri."""
+    rng = rng or random.Random()
+    picked = rng.sample(SOUND_SENTENCES, min(n, len(SOUND_SENTENCES)))
+    return [
+        {
+            "ar": s["ar"],
+            "translit": translit(s["ar"]),
+            "uz": s["uz"],
+            "word": {"ar": s["sound"], "translit": "tovush", "uz": s["tip"]},
+        }
+        for s in picked
+    ]
 MIN_SCORED = 5  # XP uchun kamida shuncha jumla aytilgan bo'lsin
 MAX_XP = 10  # o'rtacha 100% → 10 XP; bir mavzu uchun kuniga bir marta
 TTL = 2 * 3600
@@ -42,6 +79,8 @@ def sentences(level: str, topic_id: str, n: int = DRILL_SIZE, rng: random.Random
     """Mavzuga oid n ta jumla: avval o'quvchi darajasi, keyin pastroq darajalar;
     yetmasa — darajaning umumiy chastotali so'zlaridan."""
     rng = rng or random.Random()
+    if topic_id == SOUNDS_ID:
+        return sound_sentences(n, rng)
     levels = _levels_upto(level)
     themes = set((TOPIC_BY_ID.get(topic_id) or {}).get("themes") or [])
     seen: set[str] = set()
@@ -92,7 +131,7 @@ def create(user_id: int, level: str, topic_id: str) -> tuple[str, list[dict]]:
     _DRILLS[key] = {
         "user_id": user_id,
         "level": level,
-        "topic": topic_id if topic_id in TOPIC_BY_ID else "erkin",
+        "topic": topic_id if topic_id in TOPIC_BY_ID or topic_id == SOUNDS_ID else "erkin",
         "items": items,
         "scores": {},
         "created": time.time(),

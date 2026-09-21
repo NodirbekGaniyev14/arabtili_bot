@@ -367,3 +367,20 @@ def test_topics_expose_vip_turns_label():
     from api import v2
 
     assert '"vip_turns"' in inspect.getsource(v2.tutor_topics)
+
+
+def test_sound_drill_topic():
+    """K22.5 (#F57): qiyin tovushlar mashqi — mavzudan tashqari, har jumla tovush + sirri bilan; sessiya topic saqlanadi."""
+    import random
+
+    from services import drill
+
+    items = drill.sentences("A0", drill.SOUNDS_ID, rng=random.Random(1))
+    assert len(items) == drill.DRILL_SIZE
+    assert all(it["ar"] and it["uz"] and it["translit"] and it["word"]["ar"] and it["word"]["uz"] for it in items)
+    assert len({it["ar"] for it in items}) == len(items), "takror yo'q"
+    assert all(any(c in it["ar"] for c in "حهعأخغقكصسطتضظثذ") for it in items)
+    key, its = drill.create(7, "A1", drill.SOUNDS_ID)
+    assert drill.get(key, 7)["topic"] == drill.SOUNDS_ID and len(its) == drill.DRILL_SIZE
+    drill.record(key, 7, 0, 80)
+    assert drill.summary(key, 7)["topic"] == drill.SOUNDS_ID

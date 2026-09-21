@@ -58,7 +58,7 @@ export default function Writing({ onClose, onDone }: Props) {
   const [info, setInfo] = useState<WritingInfo | null>(null);
   const [error, setError] = useState("");
   const [showTranslit, setShowTranslit] = useState(false);
-  const [showUz, setShowUz] = useState(false);
+  const [showUz, setShowUz] = useState(true); // tarjima standart ochiq (foydalanuvchi fikri #F59)
   const [preview, setPreview] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [checking, setChecking] = useState(false);
@@ -174,13 +174,13 @@ export default function Writing({ onClose, onDone }: Props) {
                   onClick={() => setShowTranslit((v) => !v)}
                   className={`rounded-lg px-2.5 py-1 text-[11px] font-extrabold ${showTranslit ? "bg-emerald-deep text-white" : "bg-cardline text-ink-soft"}`}
                 >
-                  Aa
+                  Translit
                 </button>
                 <button
                   onClick={() => setShowUz((v) => !v)}
                   className={`rounded-lg px-2.5 py-1 text-[11px] font-extrabold ${showUz ? "bg-emerald-deep text-white" : "bg-cardline text-ink-soft"}`}
                 >
-                  UZ
+                  Tarjima
                 </button>
               </div>
             </div>
