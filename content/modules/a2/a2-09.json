@@ -6,28 +6,86 @@
  "title_uz": "Ko'rsatish olmoshlari to'liq",
  "title_ar": "أَسْمَاءُ الإِشَارَةِ",
  "can_do_uz": "Yaqin va uzoq uchun ko'rsatish olmoshini son, jins va jonli-jonsizlikka qarab to'g'ri tanlayman.",
- "duration_min": 30,
- "prerequisites": ["a2-08"],
+ "duration_min": 20,
+ "prerequisites": [
+  "a2-08"
+ ],
  "harakat_level": "new_words_only",
  "hook_uz": "هَذَا va ذَلِكَ ni bilasiz. Lekin do'kondagi ikki kitobni ko'rsatib «bular» demoqchi bo'lsangiz-chi? هَذَانِ. Ikki qizni ko'rsatsangiz — هَاتَانِ. Va eng qiziq savol: «bu kitoblar» deganda nega هَؤُلَاءِ emas, هَذِهِ ishlatiladi? Bugun shu sirni ochamiz — bu qoidani bilmagan odam matnda darrov bilinib qoladi.",
  "grammar": {
   "point_ar": "أَسْمَاءُ الإِشَارَةِ: لِلْقُرْبِ وَلِلْبُعْدِ",
   "explanation_uz": "Ishora olmoshlari ikki guruhga bo'linadi. YAQIN uchun هـ bilan boshlanadi: هَذَا، هَذِهِ، هَؤُلَاءِ. UZOQ uchun oxirida ـكَ bo'ladi: ذَلِكَ، تِلْكَ، أُولَئِكَ. Ular ham son va jinsga qarab o'zgaradi, lekin KO'PLIKDA jins farqi yo'q — هَؤُلَاءِ erkaklarga ham, ayollarga ham; أُولَئِكَ ham shunday. ENG MUHIM QOIDA: هَؤُلَاءِ va أُولَئِكَ faqat ODAMLAR uchun ishlatiladi. Jonsiz narsalarning ko'pligiga arabchada BIRLIK AYOL shakli qo'yiladi: هَذِهِ الكُتُبُ (bu kitoblar), تِلْكَ البُيُوتُ (anavi uylar). Ikkilikda ikki holat bor: هَذَانِ ega bo'lganda, هَذَيْنِ esa to'ldiruvchi yoki predlogdan keyin: رَأَيْتُ هَذَيْنِ. Nihoyat, GAP va IBORA farqini eslang: هَذَا كِتَابٌ — «Bu kitob(dir)», to'liq gap; هَذَا الكِتَابُ — «bu kitob», hali gap emas, davomi kerak.",
   "table": [
-   {"ar": "هَذَا", "uz": "bu (bir erkak yoki narsa)", "form": "لِلْقُرْبِ مُفْرَد"},
-   {"ar": "هَذَانِ / هَذَيْنِ", "uz": "bular ikki erkak (ega / to'ldiruvchi holati)", "form": "لِلْقُرْبِ مُثَنَّى"},
-   {"ar": "هَؤُلَاءِ", "uz": "bular (erkaklar — odamlar)", "form": "لِلْقُرْبِ جَمْع"},
-   {"ar": "هَذِهِ", "uz": "bu (bir ayol yoki narsa)", "form": "لِلْقُرْبِ مُؤَنَّث"},
-   {"ar": "هَاتَانِ / هَاتَيْنِ", "uz": "bular ikki ayol", "form": "لِلْقُرْبِ مُثَنَّى مُؤَنَّث"},
-   {"ar": "هَؤُلَاءِ", "uz": "bular (ayollar) — erkak bilan bir xil", "form": "لِلْقُرْبِ جَمْع مُؤَنَّث"},
-   {"ar": "ذَلِكَ", "uz": "anavi (bir erkak yoki narsa)", "form": "لِلْبُعْدِ مُفْرَد"},
-   {"ar": "ذَانِكَ / ذَيْنِكَ", "uz": "anavilar ikki erkak", "form": "لِلْبُعْدِ مُثَنَّى"},
-   {"ar": "أُولَئِكَ", "uz": "anavilar (erkaklar)", "form": "لِلْبُعْدِ جَمْع"},
-   {"ar": "تِلْكَ", "uz": "anavi (bir ayol yoki narsa)", "form": "لِلْبُعْدِ مُؤَنَّث"},
-   {"ar": "تَانِكَ / تَيْنِكَ", "uz": "anavilar ikki ayol", "form": "لِلْبُعْدِ مُثَنَّى مُؤَنَّث"},
-   {"ar": "أُولَئِكَ", "uz": "anavilar (ayollar) — erkak bilan bir xil", "form": "لِلْبُعْدِ جَمْع مُؤَنَّث"},
-   {"ar": "هَذِهِ الكُتُبُ", "uz": "bu kitoblar — jonsiz ko'plikka HAR DOIM هَذِهِ", "form": "غَيْر عَاقِل"},
-   {"ar": "هَذَا كِتَابٌ / هَذَا الكِتَابُ", "uz": "bu kitobdir (gap) / bu kitob (ibora)", "form": "الفَرْق"}
+   {
+    "ar": "هَذَا",
+    "uz": "bu (bir erkak yoki narsa)",
+    "form": "لِلْقُرْبِ مُفْرَد"
+   },
+   {
+    "ar": "هَذَانِ / هَذَيْنِ",
+    "uz": "bular ikki erkak (ega / to'ldiruvchi holati)",
+    "form": "لِلْقُرْبِ مُثَنَّى"
+   },
+   {
+    "ar": "هَؤُلَاءِ",
+    "uz": "bular (erkaklar — odamlar)",
+    "form": "لِلْقُرْبِ جَمْع"
+   },
+   {
+    "ar": "هَذِهِ",
+    "uz": "bu (bir ayol yoki narsa)",
+    "form": "لِلْقُرْبِ مُؤَنَّث"
+   },
+   {
+    "ar": "هَاتَانِ / هَاتَيْنِ",
+    "uz": "bular ikki ayol",
+    "form": "لِلْقُرْبِ مُثَنَّى مُؤَنَّث"
+   },
+   {
+    "ar": "هَؤُلَاءِ",
+    "uz": "bular (ayollar) — erkak bilan bir xil",
+    "form": "لِلْقُرْبِ جَمْع مُؤَنَّث"
+   },
+   {
+    "ar": "ذَلِكَ",
+    "uz": "anavi (bir erkak yoki narsa)",
+    "form": "لِلْبُعْدِ مُفْرَد"
+   },
+   {
+    "ar": "ذَانِكَ / ذَيْنِكَ",
+    "uz": "anavilar ikki erkak",
+    "form": "لِلْبُعْدِ مُثَنَّى"
+   },
+   {
+    "ar": "أُولَئِكَ",
+    "uz": "anavilar (erkaklar)",
+    "form": "لِلْبُعْدِ جَمْع"
+   },
+   {
+    "ar": "تِلْكَ",
+    "uz": "anavi (bir ayol yoki narsa)",
+    "form": "لِلْبُعْدِ مُؤَنَّث"
+   },
+   {
+    "ar": "تَانِكَ / تَيْنِكَ",
+    "uz": "anavilar ikki ayol",
+    "form": "لِلْبُعْدِ مُثَنَّى مُؤَنَّث"
+   },
+   {
+    "ar": "أُولَئِكَ",
+    "uz": "anavilar (ayollar) — erkak bilan bir xil",
+    "form": "لِلْبُعْدِ جَمْع مُؤَنَّث"
+   },
+   {
+    "ar": "هَذِهِ الكُتُبُ",
+    "uz": "bu kitoblar — jonsiz ko'plikka HAR DOIM هَذِهِ",
+    "form": "غَيْر عَاقِل"
+   },
+   {
+    "ar": "هَذَا كِتَابٌ / هَذَا الكِتَابُ",
+    "uz": "bu kitobdir (gap) / bu kitob (ibora)",
+    "form": "الفَرْق"
+   }
   ],
   "common_mistakes_uz": [
    "Jonsiz ko'plikka هَؤُلَاءِ ishlatish: «هَؤُلَاءِ الكُتُبُ» xato — to'g'risi هَذِهِ الكُتُبُ.",
@@ -39,56 +97,216 @@
   {
    "root": "ق ر ب",
    "meaning_uz": "yaqinlik",
-   "uz_cognates": ["qarib", "aqrabo", "taqriban", "qurbon"],
+   "uz_cognates": [
+    "qarib",
+    "aqrabo",
+    "taqriban",
+    "qurbon"
+   ],
    "derived": [
-    {"ar": "قَرِيب", "uz": "yaqin", "pattern": "فَعِيل"},
-    {"ar": "اِقْتَرَبَ", "uz": "yaqinlashdi", "pattern": "اِفْتَعَلَ"},
-    {"ar": "تَقْرِيبًا", "uz": "taxminan, taqriban", "pattern": "تَفْعِيلًا"}
+    {
+     "ar": "قَرِيب",
+     "uz": "yaqin",
+     "pattern": "فَعِيل"
+    },
+    {
+     "ar": "اِقْتَرَبَ",
+     "uz": "yaqinlashdi",
+     "pattern": "اِفْتَعَلَ"
+    },
+    {
+     "ar": "تَقْرِيبًا",
+     "uz": "taxminan, taqriban",
+     "pattern": "تَفْعِيلًا"
+    }
    ]
   },
   {
    "root": "ب ع د",
    "meaning_uz": "uzoqlik, keyinlik",
-   "uz_cognates": ["ba'd", "ba'zan", "bu'd"],
+   "uz_cognates": [
+    "ba'd",
+    "ba'zan",
+    "bu'd"
+   ],
    "derived": [
-    {"ar": "بَعِيد", "uz": "uzoq", "pattern": "فَعِيل"},
-    {"ar": "بَعْدَ", "uz": "keyin, so'ng", "pattern": "فَعْلَ"},
-    {"ar": "اِبْتَعَدَ", "uz": "uzoqlashdi", "pattern": "اِفْتَعَلَ"}
+    {
+     "ar": "بَعِيد",
+     "uz": "uzoq",
+     "pattern": "فَعِيل"
+    },
+    {
+     "ar": "بَعْدَ",
+     "uz": "keyin, so'ng",
+     "pattern": "فَعْلَ"
+    },
+    {
+     "ar": "اِبْتَعَدَ",
+     "uz": "uzoqlashdi",
+     "pattern": "اِفْتَعَلَ"
+    }
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "هَذَانِ", "translit": "hādhāni", "uz": "bular ikki erkak (yaqin)", "root": "", "pattern": "", "pos": "olmosh", "audio": "a2/hadhani.mp3", "example_ar": "هَذَانِ طَالِبَانِ مُجْتَهِدَانِ.", "example_uz": "Bular ikki tirishqoq talaba.", "srs": true},
-  {"ar": "هَاتَانِ", "translit": "hātāni", "uz": "bular ikki ayol (yaqin)", "root": "", "pattern": "", "pos": "olmosh", "audio": "a2/hatani.mp3", "example_ar": "هَاتَانِ طَالِبَتَانِ.", "example_uz": "Bular ikki talaba qiz.", "srs": true},
-  {"ar": "هَؤُلَاءِ", "translit": "hāʾulāʾi", "uz": "bular (odamlar, erkak ham ayol ham)", "root": "", "pattern": "", "pos": "olmosh", "audio": "a2/haulai.mp3", "example_ar": "هَؤُلَاءِ زُمَلَائِي.", "example_uz": "Bular mening hamkasblarim.", "srs": true},
-  {"ar": "ذَانِكَ", "translit": "dhānika", "uz": "anavilar ikki erkak (uzoq)", "root": "", "pattern": "", "pos": "olmosh", "audio": "a2/dhanika.mp3", "example_ar": "ذَانِكَ رَجُلَانِ مِنَ المَدِينَةِ.", "example_uz": "Anavilar shahardan kelgan ikki kishi.", "srs": true},
-  {"ar": "تَانِكَ", "translit": "tānika", "uz": "anavilar ikki ayol (uzoq)", "root": "", "pattern": "", "pos": "olmosh", "audio": "a2/tanika.mp3", "example_ar": "تَانِكَ جَارَتَانِ.", "example_uz": "Anavilar ikki qo'shni ayol.", "srs": true},
-  {"ar": "أُولَئِكَ", "translit": "ulāʾika", "uz": "anavilar (odamlar)", "root": "", "pattern": "", "pos": "olmosh", "audio": "a2/ulaika.mp3", "example_ar": "أُولَئِكَ جِيرَانُنَا.", "example_uz": "Anavilar bizning qo'shnilarimiz.", "srs": true},
-  {"ar": "هُنَا", "translit": "hunā", "uz": "bu yerda", "root": "", "pattern": "", "pos": "ravish", "audio": "a2/huna_pl.mp3", "example_ar": "الكِتَابُ هُنَا.", "example_uz": "Kitob bu yerda.", "srs": true},
-  {"ar": "هُنَاكَ", "translit": "hunāka", "uz": "u yerda, anavi yerda", "root": "", "pattern": "", "pos": "ravish", "audio": "a2/hunaka_pl.mp3", "example_ar": "المَجَلَّةُ هُنَاكَ.", "example_uz": "Jurnal u yerda.", "srs": true},
-  {"ar": "قَرِيب", "translit": "qarīb", "uz": "yaqin (o'zbekcha 'qarib, taqriban')", "root": "ق ر ب", "pattern": "فَعِيل", "pos": "sifat", "audio": "a2/qarib.mp3", "example_ar": "البَيْتُ قَرِيبٌ مِنَ المَعْهَدِ.", "example_uz": "Uy institutga yaqin.", "srs": true},
-  {"ar": "بَعِيد", "translit": "baʿīd", "uz": "uzoq (o'zbekcha 'ba'd — keyin')", "root": "ب ع د", "pattern": "فَعِيل", "pos": "sifat", "audio": "a2/baid.mp3", "example_ar": "المَطَارُ بَعِيدٌ.", "example_uz": "Aeroport uzoq.", "srs": true}
+  {
+   "ar": "هَذَانِ",
+   "translit": "hādhāni",
+   "uz": "bular ikki erkak (yaqin)",
+   "root": "",
+   "pattern": "",
+   "pos": "olmosh",
+   "audio": "a2/hadhani.mp3",
+   "example_ar": "هَذَانِ طَالِبَانِ مُجْتَهِدَانِ.",
+   "example_uz": "Bular ikki tirishqoq talaba.",
+   "srs": true
+  },
+  {
+   "ar": "هَاتَانِ",
+   "translit": "hātāni",
+   "uz": "bular ikki ayol (yaqin)",
+   "root": "",
+   "pattern": "",
+   "pos": "olmosh",
+   "audio": "a2/hatani.mp3",
+   "example_ar": "هَاتَانِ طَالِبَتَانِ.",
+   "example_uz": "Bular ikki talaba qiz.",
+   "srs": true
+  },
+  {
+   "ar": "هَؤُلَاءِ",
+   "translit": "hāʾulāʾi",
+   "uz": "bular (odamlar, erkak ham ayol ham)",
+   "root": "",
+   "pattern": "",
+   "pos": "olmosh",
+   "audio": "a2/haulai.mp3",
+   "example_ar": "هَؤُلَاءِ زُمَلَائِي.",
+   "example_uz": "Bular mening hamkasblarim.",
+   "srs": true
+  },
+  {
+   "ar": "ذَانِكَ",
+   "translit": "dhānika",
+   "uz": "anavilar ikki erkak (uzoq)",
+   "root": "",
+   "pattern": "",
+   "pos": "olmosh",
+   "audio": "a2/dhanika.mp3",
+   "example_ar": "ذَانِكَ رَجُلَانِ مِنَ المَدِينَةِ.",
+   "example_uz": "Anavilar shahardan kelgan ikki kishi.",
+   "srs": true
+  },
+  {
+   "ar": "تَانِكَ",
+   "translit": "tānika",
+   "uz": "anavilar ikki ayol (uzoq)",
+   "root": "",
+   "pattern": "",
+   "pos": "olmosh",
+   "audio": "a2/tanika.mp3",
+   "example_ar": "تَانِكَ جَارَتَانِ.",
+   "example_uz": "Anavilar ikki qo'shni ayol.",
+   "srs": true
+  },
+  {
+   "ar": "أُولَئِكَ",
+   "translit": "ulāʾika",
+   "uz": "anavilar (odamlar)",
+   "root": "",
+   "pattern": "",
+   "pos": "olmosh",
+   "audio": "a2/ulaika.mp3",
+   "example_ar": "أُولَئِكَ جِيرَانُنَا.",
+   "example_uz": "Anavilar bizning qo'shnilarimiz.",
+   "srs": true
+  },
+  {
+   "ar": "هُنَا",
+   "translit": "hunā",
+   "uz": "bu yerda",
+   "root": "",
+   "pattern": "",
+   "pos": "ravish",
+   "audio": "a2/huna_pl.mp3",
+   "example_ar": "الكِتَابُ هُنَا.",
+   "example_uz": "Kitob bu yerda.",
+   "srs": true
+  },
+  {
+   "ar": "هُنَاكَ",
+   "translit": "hunāka",
+   "uz": "u yerda, anavi yerda",
+   "root": "",
+   "pattern": "",
+   "pos": "ravish",
+   "audio": "a2/hunaka_pl.mp3",
+   "example_ar": "المَجَلَّةُ هُنَاكَ.",
+   "example_uz": "Jurnal u yerda.",
+   "srs": true
+  },
+  {
+   "ar": "قَرِيب",
+   "translit": "qarīb",
+   "uz": "yaqin (o'zbekcha 'qarib, taqriban')",
+   "root": "ق ر ب",
+   "pattern": "فَعِيل",
+   "pos": "sifat",
+   "audio": "a2/qarib.mp3",
+   "example_ar": "البَيْتُ قَرِيبٌ مِنَ المَعْهَدِ.",
+   "example_uz": "Uy institutga yaqin.",
+   "srs": true
+  },
+  {
+   "ar": "بَعِيد",
+   "translit": "baʿīd",
+   "uz": "uzoq (o'zbekcha 'ba'd — keyin')",
+   "root": "ب ع د",
+   "pattern": "فَعِيل",
+   "pos": "sifat",
+   "audio": "a2/baid.mp3",
+   "example_ar": "المَطَارُ بَعِيدٌ.",
+   "example_uz": "Aeroport uzoq.",
+   "srs": true
+  }
  ],
  "hejazi": [],
  "skills": {
   "reading": {
    "text_ar": "هَذَا كِتَابٌ وَهَذِهِ مَجَلَّةٌ. هَذَانِ طَالِبَانِ وَهَاتَانِ طَالِبَتَانِ. هَؤُلَاءِ زُمَلَائِي فِي المَعْهَدِ، وَأُولَئِكَ جِيرَانُنَا. هَذِهِ الكُتُبُ جَدِيدَةٌ، وَتِلْكَ المَجَلَّاتُ قَدِيمَةٌ. الكِتَابُ هُنَا وَالمَجَلَّةُ هُنَاكَ.",
    "questions": [
-    {"q_uz": "«Bular ikki talaba qiz» matnda qaysi?", "a": "هَاتَانِ طَالِبَتَانِ"},
-    {"q_uz": "Nega «هَذِهِ الكُتُبُ» deyilgan, «هَؤُلَاءِ» emas?", "a": "Kitoblar jonsiz — jonsiz ko'plikka هَذِهِ ishlatiladi"},
-    {"q_uz": "Kim uzoqda ekan?", "a": "أُولَئِكَ — qo'shnilarimiz"}
+    {
+     "q_uz": "«Bular ikki talaba qiz» matnda qaysi?",
+     "a": "هَاتَانِ طَالِبَتَانِ"
+    },
+    {
+     "q_uz": "Nega «هَذِهِ الكُتُبُ» deyilgan, «هَؤُلَاءِ» emas?",
+     "a": "Kitoblar jonsiz — jonsiz ko'plikka هَذِهِ ishlatiladi"
+    },
+    {
+     "q_uz": "Kim uzoqda ekan?",
+     "a": "أُولَئِكَ — qo'shnilarimiz"
+    }
    ]
   },
   "listening": {
    "audio": "a2/haulai.mp3",
    "transcript_ar": "هَؤُلَاءِ",
    "questions": [
-    {"q_uz": "Bu olmosh kimlar uchun ishlatiladi?", "a": "Yaqindagi odamlar ko'pligi uchun — bular"}
+    {
+     "q_uz": "Bu olmosh kimlar uchun ishlatiladi?",
+     "a": "Yaqindagi odamlar ko'pligi uchun — bular"
+    }
    ]
   },
   "speaking": {
    "task_uz": "Atrofingizdagi narsalarni ko'rsatib ayting: hādhā, hādhihi, hādhāni, hātāni, hāʾulāʾi — keyin uzoqlari: dhālika, tilka, ulāʾika.",
-   "target_ar": ["هَذَانِ", "هَاتَانِ", "هَؤُلَاءِ", "أُولَئِكَ"],
+   "target_ar": [
+    "هَذَانِ",
+    "هَاتَانِ",
+    "هَؤُلَاءِ",
+    "أُولَئِكَ"
+   ],
    "eval": "self_check"
   },
   "writing": {
@@ -97,26 +315,193 @@
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "«Bular ikki ayol» qaysi?", "q_ar": "", "options": ["هَاتَانِ", "هَذَانِ", "هَؤُلَاءِ", "تَانِكَ"], "answer": "هَاتَانِ", "explain_uz": "Yaqin + ikkilik + ayol = هَاتَانِ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«Bu kitoblar» to'g'ri shakli qaysi?", "q_ar": "", "options": ["هَذِهِ الكُتُبُ", "هَؤُلَاءِ الكُتُبُ", "هَذَانِ الكُتُبُ", "هَذَا الكُتُبُ"], "answer": "هَذِهِ الكُتُبُ", "explain_uz": "Kitoblar — jonsiz. Jonsiz ko'plikka birlik ayol shakli: هَذِهِ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أُولَئِكَ", "options": [], "answer": "anavilar", "explain_uz": "Uzoqdagi odamlar ko'pligi — erkak va ayol uchun bir xil.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "bular (odamlar)", "q_ar": "", "options": [], "answer": "هَؤُلَاءِ", "explain_uz": "Yaqindagi odamlar ko'pligi: هَؤُلَاءِ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«هَذَا كِتَابٌ» va «هَذَا الكِتَابُ» farqi nima?", "q_ar": "", "options": ["Birinchisi to'liq gap, ikkinchisi ibora", "Ikkalasi ham to'liq gap", "Ikkalasi ham ibora", "Hech qanday farqi yo'q"], "answer": "Birinchisi to'liq gap, ikkinchisi ibora", "explain_uz": "Xabar noaniq bo'lsa gap tugaydi; aniq bo'lsa (ال bilan) davomi kerak.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "fill_blank", "q_uz": "Bo'sh joyni to'ldiring: «___ الطَّالِبَاتُ مُجْتَهِدَاتٌ» (bu talaba qizlar tirishqoq)", "q_ar": "", "options": [], "answer": "هَؤُلَاءِ", "explain_uz": "Talaba qizlar — odamlar, shuning uchun هَؤُلَاءِ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Uzoq uchun ishora olmoshlarining umumiy belgisi nima?", "q_ar": "", "options": ["Oxirida ـكَ bor", "Boshida هـ bor", "Oxirida ـنَ bor", "Boshida أ bor"], "answer": "Oxirida ـكَ bor", "explain_uz": "ذَلِكَ، تِلْكَ، أُولَئِكَ، ذَانِكَ — hammasida ـكَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«قَرِيب، أَقْرِبَاء، تَقْرِيبًا» qaysi o'zakdan?", "q_ar": "", "options": ["ق ر ب", "ب ع د", "ف ص ل"], "answer": "ق ر ب", "explain_uz": "Hammasi ق ر ب (yaqinlik) o'zagidan — o'zbekcha 'qarib, aqrabo, taqriban'.", "audio": "", "root": "ق ر ب", "pattern": "", "words": []}
+  {
+   "type": "mcq",
+   "q_uz": "«Bular ikki ayol» qaysi?",
+   "q_ar": "",
+   "options": [
+    "هَاتَانِ",
+    "هَذَانِ",
+    "هَؤُلَاءِ",
+    "تَانِكَ"
+   ],
+   "answer": "هَاتَانِ",
+   "explain_uz": "Yaqin + ikkilik + ayol = هَاتَانِ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«Bu kitoblar» to'g'ri shakli qaysi?",
+   "q_ar": "",
+   "options": [
+    "هَذِهِ الكُتُبُ",
+    "هَؤُلَاءِ الكُتُبُ",
+    "هَذَانِ الكُتُبُ",
+    "هَذَا الكُتُبُ"
+   ],
+   "answer": "هَذِهِ الكُتُبُ",
+   "explain_uz": "Kitoblar — jonsiz. Jonsiz ko'plikka birlik ayol shakli: هَذِهِ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "",
+   "q_ar": "أُولَئِكَ",
+   "options": [],
+   "answer": "anavilar",
+   "explain_uz": "Uzoqdagi odamlar ko'pligi — erkak va ayol uchun bir xil.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "bular (odamlar)",
+   "q_ar": "",
+   "options": [],
+   "answer": "هَؤُلَاءِ",
+   "explain_uz": "Yaqindagi odamlar ko'pligi: هَؤُلَاءِ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«هَذَا كِتَابٌ» va «هَذَا الكِتَابُ» farqi nima?",
+   "q_ar": "",
+   "options": [
+    "Birinchisi to'liq gap, ikkinchisi ibora",
+    "Ikkalasi ham to'liq gap",
+    "Ikkalasi ham ibora",
+    "Hech qanday farqi yo'q"
+   ],
+   "answer": "Birinchisi to'liq gap, ikkinchisi ibora",
+   "explain_uz": "Xabar noaniq bo'lsa gap tugaydi; aniq bo'lsa (ال bilan) davomi kerak.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "fill_blank",
+   "q_uz": "Bo'sh joyni to'ldiring: «___ الطَّالِبَاتُ مُجْتَهِدَاتٌ» (bu talaba qizlar tirishqoq)",
+   "q_ar": "",
+   "options": [],
+   "answer": "هَؤُلَاءِ",
+   "explain_uz": "Talaba qizlar — odamlar, shuning uchun هَؤُلَاءِ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Uzoq uchun ishora olmoshlarining umumiy belgisi nima?",
+   "q_ar": "",
+   "options": [
+    "Oxirida ـكَ bor",
+    "Boshida هـ bor",
+    "Oxirida ـنَ bor",
+    "Boshida أ bor"
+   ],
+   "answer": "Oxirida ـكَ bor",
+   "explain_uz": "ذَلِكَ، تِلْكَ، أُولَئِكَ، ذَانِكَ — hammasida ـكَ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«قَرِيب، أَقْرِبَاء، تَقْرِيبًا» qaysi o'zakdan?",
+   "q_ar": "",
+   "options": [
+    "ق ر ب",
+    "ب ع د",
+    "ف ص ل"
+   ],
+   "answer": "ق ر ب",
+   "explain_uz": "Hammasi ق ر ب (yaqinlik) o'zagidan — o'zbekcha 'qarib, aqrabo, taqriban'.",
+   "audio": "",
+   "root": "ق ر ب",
+   "pattern": "",
+   "words": []
+  }
  ],
  "srs_cards": [
-  {"type": "root", "front": "ق ر ب", "back": "yaqinlik — qarib/aqrabo/taqriban", "deck": "msa"},
-  {"type": "root", "front": "ب ع د", "back": "uzoqlik — baid/ba'da/ibtaada", "deck": "msa"},
-  {"type": "word", "front": "هَذَانِ", "back": "bular ikki erkak (yaqin)", "deck": "msa"},
-  {"type": "word", "front": "هَاتَانِ", "back": "bular ikki ayol (yaqin)", "deck": "msa"},
-  {"type": "word", "front": "هَؤُلَاءِ", "back": "bular (odamlar)", "deck": "msa"},
-  {"type": "word", "front": "أُولَئِكَ", "back": "anavilar (odamlar)", "deck": "msa"},
-  {"type": "word", "front": "ذَانِكَ", "back": "anavilar ikki erkak", "deck": "msa"},
-  {"type": "word", "front": "تَانِكَ", "back": "anavilar ikki ayol", "deck": "msa"},
-  {"type": "word", "front": "قَرِيب", "back": "yaqin", "deck": "msa"},
-  {"type": "word", "front": "بَعِيد", "back": "uzoq", "deck": "msa"},
-  {"type": "phrase", "front": "هَذِهِ الكُتُبُ", "back": "bu kitoblar — jonsiz ko'plikka هَذِهِ", "deck": "msa"}
+  {
+   "type": "root",
+   "front": "ق ر ب",
+   "back": "yaqinlik — qarib/aqrabo/taqriban",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "ب ع د",
+   "back": "uzoqlik — baid/ba'da/ibtaada",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "هَذَانِ",
+   "back": "bular ikki erkak (yaqin)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "هَاتَانِ",
+   "back": "bular ikki ayol (yaqin)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "هَؤُلَاءِ",
+   "back": "bular (odamlar)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "أُولَئِكَ",
+   "back": "anavilar (odamlar)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "ذَانِكَ",
+   "back": "anavilar ikki erkak",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "تَانِكَ",
+   "back": "anavilar ikki ayol",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "قَرِيب",
+   "back": "yaqin",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "بَعِيد",
+   "back": "uzoq",
+   "deck": "msa"
+  },
+  {
+   "type": "phrase",
+   "front": "هَذِهِ الكُتُبُ",
+   "back": "bu kitoblar — jonsiz ko'plikka هَذِهِ",
+   "deck": "msa"
+  }
  ]
 }

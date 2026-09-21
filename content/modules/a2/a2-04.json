@@ -6,28 +6,86 @@
  "title_uz": "Muzori' fe'li: 14 shakl to'liq",
  "title_ar": "تَصْرِيفُ فِعْلِ المُضَارِعِ",
  "can_do_uz": "يَكْتُبُ fe'lini 14 shaklda tuslab, prefiks va qo'shimchani to'g'ri joylashtiraman.",
- "duration_min": 30,
- "prerequisites": ["a2-03"],
+ "duration_min": 20,
+ "prerequisites": [
+  "a2-03"
+ ],
  "harakat_level": "new_words_only",
  "hook_uz": "Moziyda qo'shimcha faqat OXIRDA edi. Muzori'da esa fe'l IKKI TOMONDAN o'zgaradi: boshida prefiks (أ ت ي ن — «ATIN»), oxirida qo'shimcha. Shuning uchun bitta تَكْتُبُ ikki xil ma'no beradi: «u ayol yozadi» va «sen erkak yozasan». Qanday farqlanadi? Bugun bilib olasiz.",
  "grammar": {
   "point_ar": "المُضَارِع: سَابِقَة + لَاحِقَة",
-  "explanation_uz": "Muzori' fe'lida IKKI belgi bor. (1) BOSHIDAGI prefiks shaxsni ko'rsatadi: أ (men), نـ (biz), تـ (sen — barcha muxotab, va u-ayol), يـ (u erkak, ular erkaklar, hamda ular AYOLLAR). (2) OXIRIDAGI qo'shimcha son va jinsni ko'rsatadi: ـُ (birlik), ـَانِ (ikkilik), ـُونَ (ko'plik erkak), ـْنَ (ko'plik ayol), ـِينَ (sen — ayol). Eng nozik nuqta: «ular ayollar yozadilar» — يَكْتُبْنَ, ya'ni prefiks تـ EMAS, يـ. Ikkinchi nozik nuqta: تَكْتُبُ ikki ma'noni beradi (u ayol yozadi / sen erkak yozasan), تَكْتُبَانِ esa uchta ma'noni. Ularni gapdagi olmosh yoki ega ajratib beradi: هِيَ تَكْتُبُ — u yozadi, أَنْتَ تَكْتُبُ — sen yozasan.",
+  "explanation_uz": "Avval 8 asosiy shaklni mustahkam oling (u, u ayol, ular, sen, sen ayol, sizlar, men, biz); ikkilik va ayollar ko'pligi (6 ta) jadval oxirida — tanib qo'yish yetarli. Muzori' fe'lida IKKI belgi bor. (1) BOSHIDAGI prefiks shaxsni ko'rsatadi: أ (men), نـ (biz), تـ (sen — barcha muxotab, va u-ayol), يـ (u erkak, ular erkaklar, hamda ular AYOLLAR). (2) OXIRIDAGI qo'shimcha son va jinsni ko'rsatadi: ـُ (birlik), ـَانِ (ikkilik), ـُونَ (ko'plik erkak), ـْنَ (ko'plik ayol), ـِينَ (sen — ayol). Eng nozik nuqta: «ular ayollar yozadilar» — يَكْتُبْنَ, ya'ni prefiks تـ EMAS, يـ. Ikkinchi nozik nuqta: تَكْتُبُ ikki ma'noni beradi (u ayol yozadi / sen erkak yozasan), تَكْتُبَانِ esa uchta ma'noni. Ularni gapdagi olmosh yoki ega ajratib beradi: هِيَ تَكْتُبُ — u yozadi, أَنْتَ تَكْتُبُ — sen yozasan.",
   "table": [
-   {"ar": "يَكْتُبُ", "uz": "u (bir erkak) yozadi", "form": "غَائِب مُفْرَد"},
-   {"ar": "يَكْتُبَانِ", "uz": "u ikki erkak yozadi", "form": "غَائِب مُثَنَّى"},
-   {"ar": "يَكْتُبُونَ", "uz": "ular (erkaklar) yozadilar", "form": "غَائِب جَمْع"},
-   {"ar": "تَكْتُبُ", "uz": "u (bir ayol) yozadi", "form": "غَائِبَة مُفْرَد"},
-   {"ar": "تَكْتُبَانِ", "uz": "u ikki ayol yozadi", "form": "غَائِبَة مُثَنَّى"},
-   {"ar": "يَكْتُبْنَ", "uz": "ular (ayollar) yozadilar — prefiks يـ, esda tuting!", "form": "غَائِبَة جَمْع"},
-   {"ar": "تَكْتُبُ", "uz": "sen (erkak) yozasan", "form": "مُخَاطَب مُفْرَد"},
-   {"ar": "تَكْتُبَانِ", "uz": "sizlar (ikki erkak) yozasiz", "form": "مُخَاطَب مُثَنَّى"},
-   {"ar": "تَكْتُبُونَ", "uz": "sizlar (erkaklar) yozasizlar", "form": "مُخَاطَب جَمْع"},
-   {"ar": "تَكْتُبِينَ", "uz": "sen (ayol) yozasan", "form": "مُخَاطَبَة مُفْرَد"},
-   {"ar": "تَكْتُبَانِ", "uz": "sizlar (ikki ayol) yozasiz — erkak bilan bir xil", "form": "مُخَاطَبَة مُثَنَّى"},
-   {"ar": "تَكْتُبْنَ", "uz": "sizlar (ayollar) yozasizlar", "form": "مُخَاطَبَة جَمْع"},
-   {"ar": "أَكْتُبُ", "uz": "men yozaman", "form": "مُتَكَلِّم مُفْرَد"},
-   {"ar": "نَكْتُبُ", "uz": "biz yozamiz", "form": "مُتَكَلِّم جَمْع"}
+   {
+    "ar": "يَكْتُبُ",
+    "uz": "u (bir erkak) yozadi",
+    "form": "غَائِب مُفْرَد"
+   },
+   {
+    "ar": "يَكْتُبُونَ",
+    "uz": "ular (erkaklar) yozadilar",
+    "form": "غَائِب جَمْع"
+   },
+   {
+    "ar": "تَكْتُبُ",
+    "uz": "u (bir ayol) yozadi",
+    "form": "غَائِبَة مُفْرَد"
+   },
+   {
+    "ar": "تَكْتُبُ",
+    "uz": "sen (erkak) yozasan",
+    "form": "مُخَاطَب مُفْرَد"
+   },
+   {
+    "ar": "تَكْتُبُونَ",
+    "uz": "sizlar (erkaklar) yozasizlar",
+    "form": "مُخَاطَب جَمْع"
+   },
+   {
+    "ar": "تَكْتُبِينَ",
+    "uz": "sen (ayol) yozasan",
+    "form": "مُخَاطَبَة مُفْرَد"
+   },
+   {
+    "ar": "أَكْتُبُ",
+    "uz": "men yozaman",
+    "form": "مُتَكَلِّم مُفْرَد"
+   },
+   {
+    "ar": "نَكْتُبُ",
+    "uz": "biz yozamiz",
+    "form": "مُتَكَلِّم جَمْع"
+   },
+   {
+    "ar": "يَكْتُبَانِ",
+    "uz": "u ikki erkak yozadi (kam ishlatiladi)",
+    "form": "غَائِب مُثَنَّى"
+   },
+   {
+    "ar": "تَكْتُبَانِ",
+    "uz": "u ikki ayol yozadi (kam ishlatiladi)",
+    "form": "غَائِبَة مُثَنَّى"
+   },
+   {
+    "ar": "يَكْتُبْنَ",
+    "uz": "ular (ayollar) yozadilar — prefiks يـ, esda tuting! (kam ishlatiladi)",
+    "form": "غَائِبَة جَمْع"
+   },
+   {
+    "ar": "تَكْتُبَانِ",
+    "uz": "sizlar (ikki erkak) yozasiz (kam ishlatiladi)",
+    "form": "مُخَاطَب مُثَنَّى"
+   },
+   {
+    "ar": "تَكْتُبَانِ",
+    "uz": "sizlar (ikki ayol) yozasiz — erkak bilan bir xil (kam ishlatiladi)",
+    "form": "مُخَاطَبَة مُثَنَّى"
+   },
+   {
+    "ar": "تَكْتُبْنَ",
+    "uz": "sizlar (ayollar) yozasizlar (kam ishlatiladi)",
+    "form": "مُخَاطَبَة جَمْع"
+   }
   ],
   "common_mistakes_uz": [
    "«Ular ayollar yozadilar» ni تَكْتُبْنَ deb yozish — to'g'risi يَكْتُبْنَ, chunki g'oyibda prefiks يـ.",
@@ -39,55 +97,210 @@
   {
    "root": "د ر س",
    "meaning_uz": "o'qish, dars qilish",
-   "uz_cognates": ["dars", "madrasa", "mudarris", "darslik"],
+   "uz_cognates": [
+    "dars",
+    "madrasa",
+    "mudarris",
+    "darslik"
+   ],
    "derived": [
-    {"ar": "يَدْرُسُ", "uz": "o'qiydi", "pattern": "يَفْعُلُ"},
-    {"ar": "مَدْرَسَة", "uz": "maktab, madrasa", "pattern": "مَفْعَلَة"},
-    {"ar": "مُدَرِّس", "uz": "o'qituvchi, mudarris", "pattern": "مُفَعِّل"}
+    {
+     "ar": "يَدْرُسُ",
+     "uz": "o'qiydi",
+     "pattern": "يَفْعُلُ"
+    },
+    {
+     "ar": "مَدْرَسَة",
+     "uz": "maktab, madrasa",
+     "pattern": "مَفْعَلَة"
+    },
+    {
+     "ar": "مُدَرِّس",
+     "uz": "o'qituvchi, mudarris",
+     "pattern": "مُفَعِّل"
+    }
    ]
   },
   {
    "root": "ض ر ع",
    "meaning_uz": "o'xshash bo'lish — «muzori'» nomi shundan (u ismga o'xshaydi)",
-   "uz_cognates": ["muzori'", "tazarru"],
+   "uz_cognates": [
+    "muzori'",
+    "tazarru"
+   ],
    "derived": [
-    {"ar": "مُضَارِع", "uz": "hozirgi-kelasi zamon fe'li", "pattern": "مُفَاعِل"},
-    {"ar": "ضَارَعَ", "uz": "o'xshadi", "pattern": "فَاعَلَ"}
+    {
+     "ar": "مُضَارِع",
+     "uz": "hozirgi-kelasi zamon fe'li",
+     "pattern": "مُفَاعِل"
+    },
+    {
+     "ar": "ضَارَعَ",
+     "uz": "o'xshadi",
+     "pattern": "فَاعَلَ"
+    }
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "يَكْتُبَانِ", "translit": "yaktubāni", "uz": "u ikki erkak yozadi", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/yaktubani.mp3", "example_ar": "الطَّالِبَانِ يَكْتُبَانِ فِي الدَّفْتَرِ.", "example_uz": "Ikki talaba daftarga yozadi.", "srs": true},
-  {"ar": "يَكْتُبُونَ", "translit": "yaktubūna", "uz": "ular (erkaklar) yozadilar", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/yaktubuna.mp3", "example_ar": "الطُّلَّابُ يَكْتُبُونَ الدَّرْسَ.", "example_uz": "Talabalar darsni yozadilar.", "srs": true},
-  {"ar": "يَكْتُبْنَ", "translit": "yaktubna", "uz": "ular (ayollar) yozadilar", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/yaktubna.mp3", "example_ar": "الطَّالِبَاتُ يَكْتُبْنَ الوَاجِبَ.", "example_uz": "Talaba qizlar vazifani yozadilar.", "srs": true},
-  {"ar": "تَكْتُبَانِ", "translit": "taktubāni", "uz": "u ikki ayol yozadi / sizlar ikkovingiz yozasiz", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/taktubani.mp3", "example_ar": "أَنْتُمَا تَكْتُبَانِ بِسُرْعَةٍ.", "example_uz": "Sizlar ikkovingiz tez yozasiz.", "srs": true},
-  {"ar": "تَكْتُبُونَ", "translit": "taktubūna", "uz": "sizlar (erkaklar) yozasizlar", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/taktubuna.mp3", "example_ar": "هَلْ تَكْتُبُونَ كُلَّ يَوْمٍ؟", "example_uz": "Har kuni yozasizlarmi?", "srs": true},
-  {"ar": "تَكْتُبِينَ", "translit": "taktubīna", "uz": "sen (ayol) yozasan", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/taktubina.mp3", "example_ar": "مَاذَا تَكْتُبِينَ يَا مَرْيَمُ؟", "example_uz": "Nima yozyapsan, Maryam?", "srs": true},
-  {"ar": "تَكْتُبْنَ", "translit": "taktubna", "uz": "sizlar (ayollar) yozasizlar", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/taktubna.mp3", "example_ar": "أَنْتُنَّ تَكْتُبْنَ الرِّسَالَةَ.", "example_uz": "Sizlar (ayollar) xatni yozasizlar.", "srs": true},
-  {"ar": "مُضَارِع", "translit": "muḍāriʿ", "uz": "muzori' — hozirgi-kelasi zamon fe'li", "root": "ض ر ع", "pattern": "مُفَاعِل", "pos": "ot", "audio": "a2/mudari.mp3", "example_ar": "الفِعْلُ المُضَارِعُ يَبْدَأُ بِحَرْفٍ زَائِدٍ.", "example_uz": "Muzori' fe'li qo'shimcha harf bilan boshlanadi.", "srs": true},
-  {"ar": "يَدْرُسُونَ", "translit": "yadrusūna", "uz": "ular o'qiydilar", "root": "د ر س", "pattern": "", "pos": "fe'l", "audio": "a2/yadrusuna.mp3", "example_ar": "الطُّلَّابُ يَدْرُسُونَ العَرَبِيَّةَ.", "example_uz": "Talabalar arab tilini o'qiydilar.", "srs": true},
-  {"ar": "تَسْمَعِينَ", "translit": "tasmaʿīna", "uz": "sen (ayol) eshitasan", "root": "س م ع", "pattern": "", "pos": "fe'l", "audio": "a2/tasmaina.mp3", "example_ar": "هَلْ تَسْمَعِينَ الأَذَانَ؟", "example_uz": "Azonni eshityapsanmi?", "srs": true}
+  {
+   "ar": "يَكْتُبَانِ",
+   "translit": "yaktubāni",
+   "uz": "u ikki erkak yozadi",
+   "root": "ك ت ب",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a2/yaktubani.mp3",
+   "example_ar": "الطَّالِبَانِ يَكْتُبَانِ فِي الدَّفْتَرِ.",
+   "example_uz": "Ikki talaba daftarga yozadi.",
+   "srs": true
+  },
+  {
+   "ar": "يَكْتُبُونَ",
+   "translit": "yaktubūna",
+   "uz": "ular (erkaklar) yozadilar",
+   "root": "ك ت ب",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a2/yaktubuna.mp3",
+   "example_ar": "الطُّلَّابُ يَكْتُبُونَ الدَّرْسَ.",
+   "example_uz": "Talabalar darsni yozadilar.",
+   "srs": true
+  },
+  {
+   "ar": "يَكْتُبْنَ",
+   "translit": "yaktubna",
+   "uz": "ular (ayollar) yozadilar",
+   "root": "ك ت ب",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a2/yaktubna.mp3",
+   "example_ar": "الطَّالِبَاتُ يَكْتُبْنَ الوَاجِبَ.",
+   "example_uz": "Talaba qizlar vazifani yozadilar.",
+   "srs": true
+  },
+  {
+   "ar": "تَكْتُبَانِ",
+   "translit": "taktubāni",
+   "uz": "u ikki ayol yozadi / sizlar ikkovingiz yozasiz",
+   "root": "ك ت ب",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a2/taktubani.mp3",
+   "example_ar": "أَنْتُمَا تَكْتُبَانِ بِسُرْعَةٍ.",
+   "example_uz": "Sizlar ikkovingiz tez yozasiz.",
+   "srs": true
+  },
+  {
+   "ar": "تَكْتُبُونَ",
+   "translit": "taktubūna",
+   "uz": "sizlar (erkaklar) yozasizlar",
+   "root": "ك ت ب",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a2/taktubuna.mp3",
+   "example_ar": "هَلْ تَكْتُبُونَ كُلَّ يَوْمٍ؟",
+   "example_uz": "Har kuni yozasizlarmi?",
+   "srs": true
+  },
+  {
+   "ar": "تَكْتُبِينَ",
+   "translit": "taktubīna",
+   "uz": "sen (ayol) yozasan",
+   "root": "ك ت ب",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a2/taktubina.mp3",
+   "example_ar": "مَاذَا تَكْتُبِينَ يَا مَرْيَمُ؟",
+   "example_uz": "Nima yozyapsan, Maryam?",
+   "srs": true
+  },
+  {
+   "ar": "تَكْتُبْنَ",
+   "translit": "taktubna",
+   "uz": "sizlar (ayollar) yozasizlar",
+   "root": "ك ت ب",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a2/taktubna.mp3",
+   "example_ar": "أَنْتُنَّ تَكْتُبْنَ الرِّسَالَةَ.",
+   "example_uz": "Sizlar (ayollar) xatni yozasizlar.",
+   "srs": true
+  },
+  {
+   "ar": "مُضَارِع",
+   "translit": "muḍāriʿ",
+   "uz": "muzori' — hozirgi-kelasi zamon fe'li",
+   "root": "ض ر ع",
+   "pattern": "مُفَاعِل",
+   "pos": "ot",
+   "audio": "a2/mudari.mp3",
+   "example_ar": "الفِعْلُ المُضَارِعُ يَبْدَأُ بِحَرْفٍ زَائِدٍ.",
+   "example_uz": "Muzori' fe'li qo'shimcha harf bilan boshlanadi.",
+   "srs": true
+  },
+  {
+   "ar": "يَدْرُسُونَ",
+   "translit": "yadrusūna",
+   "uz": "ular o'qiydilar",
+   "root": "د ر س",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a2/yadrusuna.mp3",
+   "example_ar": "الطُّلَّابُ يَدْرُسُونَ العَرَبِيَّةَ.",
+   "example_uz": "Talabalar arab tilini o'qiydilar.",
+   "srs": true
+  },
+  {
+   "ar": "تَسْمَعِينَ",
+   "translit": "tasmaʿīna",
+   "uz": "sen (ayol) eshitasan",
+   "root": "س م ع",
+   "pattern": "",
+   "pos": "fe'l",
+   "audio": "a2/tasmaina.mp3",
+   "example_ar": "هَلْ تَسْمَعِينَ الأَذَانَ؟",
+   "example_uz": "Azonni eshityapsanmi?",
+   "srs": true
+  }
  ],
  "hejazi": [],
  "skills": {
   "reading": {
    "text_ar": "فِي الصَّبَاحِ أَكْتُبُ دَرْسِي، وَأَخِي يَكْتُبُ وَاجِبَهُ. الطَّالِبَانِ يَكْتُبَانِ فِي الدَّفْتَرِ، وَالطُّلَّابُ يَكْتُبُونَ فِي القَاعَةِ، وَالطَّالِبَاتُ يَكْتُبْنَ أَيْضًا. يَا مَرْيَمُ، مَاذَا تَكْتُبِينَ؟ نَحْنُ نَكْتُبُ كُلَّ يَوْمٍ.",
    "questions": [
-    {"q_uz": "«Ular (ayollar) yozadilar» matnda qaysi so'z?", "a": "يَكْتُبْنَ"},
-    {"q_uz": "Maryamga qanday shaklda murojaat qilingan?", "a": "تَكْتُبِينَ — sen (ayol) yozasan"},
-    {"q_uz": "«Biz yozamiz» qaysi so'z?", "a": "نَكْتُبُ"}
+    {
+     "q_uz": "«Ular (ayollar) yozadilar» matnda qaysi so'z?",
+     "a": "يَكْتُبْنَ"
+    },
+    {
+     "q_uz": "Maryamga qanday shaklda murojaat qilingan?",
+     "a": "تَكْتُبِينَ — sen (ayol) yozasan"
+    },
+    {
+     "q_uz": "«Biz yozamiz» qaysi so'z?",
+     "a": "نَكْتُبُ"
+    }
    ]
   },
   "listening": {
    "audio": "a2/yaktubuna.mp3",
    "transcript_ar": "يَكْتُبُونَ",
    "questions": [
-    {"q_uz": "Kim yozadi?", "a": "Ular — erkaklar (g'oyib jam')"}
+    {
+     "q_uz": "Kim yozadi?",
+     "a": "Ular — erkaklar (g'oyib jam')"
+    }
    ]
   },
   "speaking": {
    "task_uz": "Prefikslarni ovoz chiqarib ayting: aktubu (men), naktubu (biz), taktubu (sen), yaktubu (u). Keyin ko'plikka o'ting: yaktubūna, taktubūna, yaktubna.",
-   "target_ar": ["أَكْتُبُ", "نَكْتُبُ", "يَكْتُبُونَ", "يَكْتُبْنَ"],
+   "target_ar": [
+    "أَكْتُبُ",
+    "نَكْتُبُ",
+    "يَكْتُبُونَ",
+    "يَكْتُبْنَ"
+   ],
    "eval": "self_check"
   },
   "writing": {
@@ -96,24 +309,154 @@
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "«Ular (ayollar) yozadilar» qaysi?", "q_ar": "", "options": ["يَكْتُبْنَ", "تَكْتُبْنَ", "يَكْتُبُونَ", "تَكْتُبَانِ"], "answer": "يَكْتُبْنَ", "explain_uz": "G'oyibda prefiks يـ, ayollar ko'pligi qo'shimchasi ـْنَ: يَكْتُبْنَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "تَكْتُبُ qaysi ikki ma'noni beradi?", "q_ar": "", "options": ["u (ayol) yozadi / sen (erkak) yozasan", "men yozaman / biz yozamiz", "ular yozadilar / sizlar yozasizlar", "u ikki ayol / u ikki erkak"], "answer": "u (ayol) yozadi / sen (erkak) yozasan", "explain_uz": "تـ prefiksi ikkalasiga xizmat qiladi; ma'noni gapdagi olmosh ajratadi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "تَكْتُبِينَ", "options": [], "answer": "sen (ayol) yozasan", "explain_uz": "ـِينَ qo'shimchasi — muxotaba mufrad (sen, ayol).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "sizlar (erkaklar) yozasizlar", "q_ar": "", "options": [], "answer": "تَكْتُبُونَ", "explain_uz": "تـ prefiksi + ـُونَ qo'shimchasi = muxotab jam' muzakkar.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "fill_blank", "q_uz": "Bo'sh joyni to'ldiring: «الطَّالِبَانِ ___ فِي الدَّفْتَرِ» (ikki talaba daftarga yozadi)", "q_ar": "", "options": [], "answer": "يَكْتُبَانِ", "explain_uz": "G'oyib ikkilik: يـ prefiksi + ـَانِ qo'shimchasi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "build_word", "q_uz": "د ر س o'zagini يَفْعُلُ qolipiga soling (u o'qiydi):", "q_ar": "", "options": [], "answer": "يَدْرُسُ", "explain_uz": "يَفْعُلُ + د ر س = يَدْرُسُ.", "audio": "", "root": "د ر س", "pattern": "يَفْعُلُ", "words": []},
-  {"type": "mcq", "q_uz": "Muzori'da SHAXSNI nima ko'rsatadi?", "q_ar": "", "options": ["Boshidagi prefiks (أ ت ي ن)", "Oxiridagi qo'shimcha", "O'zak harflari", "So'z uzunligi"], "answer": "Boshidagi prefiks (أ ت ي ن)", "explain_uz": "Prefiks — shaxs, oxirgi qo'shimcha — son va jins.", "audio": "", "root": "", "pattern": "", "words": []}
+  {
+   "type": "mcq",
+   "q_uz": "«Ular (ayollar) yozadilar» qaysi?",
+   "q_ar": "",
+   "options": [
+    "يَكْتُبْنَ",
+    "تَكْتُبْنَ",
+    "يَكْتُبُونَ",
+    "تَكْتُبَانِ"
+   ],
+   "answer": "يَكْتُبْنَ",
+   "explain_uz": "G'oyibda prefiks يـ, ayollar ko'pligi qo'shimchasi ـْنَ: يَكْتُبْنَ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "تَكْتُبُ qaysi ikki ma'noni beradi?",
+   "q_ar": "",
+   "options": [
+    "u (ayol) yozadi / sen (erkak) yozasan",
+    "men yozaman / biz yozamiz",
+    "ular yozadilar / sizlar yozasizlar",
+    "u ikki ayol / u ikki erkak"
+   ],
+   "answer": "u (ayol) yozadi / sen (erkak) yozasan",
+   "explain_uz": "تـ prefiksi ikkalasiga xizmat qiladi; ma'noni gapdagi olmosh ajratadi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "",
+   "q_ar": "تَكْتُبِينَ",
+   "options": [],
+   "answer": "sen (ayol) yozasan",
+   "explain_uz": "ـِينَ qo'shimchasi — muxotaba mufrad (sen, ayol).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "sizlar (erkaklar) yozasizlar",
+   "q_ar": "",
+   "options": [],
+   "answer": "تَكْتُبُونَ",
+   "explain_uz": "تـ prefiksi + ـُونَ qo'shimchasi = muxotab jam' muzakkar.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "fill_blank",
+   "q_uz": "Bo'sh joyni to'ldiring: «الطَّالِبَانِ ___ فِي الدَّفْتَرِ» (ikki talaba daftarga yozadi)",
+   "q_ar": "",
+   "options": [],
+   "answer": "يَكْتُبَانِ",
+   "explain_uz": "G'oyib ikkilik: يـ prefiksi + ـَانِ qo'shimchasi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "build_word",
+   "q_uz": "د ر س o'zagini يَفْعُلُ qolipiga soling (u o'qiydi):",
+   "q_ar": "",
+   "options": [],
+   "answer": "يَدْرُسُ",
+   "explain_uz": "يَفْعُلُ + د ر س = يَدْرُسُ.",
+   "audio": "",
+   "root": "د ر س",
+   "pattern": "يَفْعُلُ",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Muzori'da SHAXSNI nima ko'rsatadi?",
+   "q_ar": "",
+   "options": [
+    "Boshidagi prefiks (أ ت ي ن)",
+    "Oxiridagi qo'shimcha",
+    "O'zak harflari",
+    "So'z uzunligi"
+   ],
+   "answer": "Boshidagi prefiks (أ ت ي ن)",
+   "explain_uz": "Prefiks — shaxs, oxirgi qo'shimcha — son va jins.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
  ],
  "srs_cards": [
-  {"type": "root", "front": "د ر س", "back": "o'qish — dars/madrasa/mudarris", "deck": "msa"},
-  {"type": "pattern", "front": "يَفْعُلُ", "back": "muzori' asosiy qolipi (yaktubu, yadrusu)", "deck": "msa"},
-  {"type": "word", "front": "يَكْتُبَانِ", "back": "u ikki erkak yozadi", "deck": "msa"},
-  {"type": "word", "front": "يَكْتُبُونَ", "back": "ular (erkaklar) yozadilar", "deck": "msa"},
-  {"type": "word", "front": "يَكْتُبْنَ", "back": "ular (ayollar) yozadilar — prefiks يـ", "deck": "msa"},
-  {"type": "word", "front": "تَكْتُبُونَ", "back": "sizlar (erkaklar) yozasizlar", "deck": "msa"},
-  {"type": "word", "front": "تَكْتُبِينَ", "back": "sen (ayol) yozasan", "deck": "msa"},
-  {"type": "word", "front": "تَكْتُبْنَ", "back": "sizlar (ayollar) yozasizlar", "deck": "msa"},
-  {"type": "word", "front": "مُضَارِع", "back": "muzori' — hozirgi-kelasi zamon fe'li", "deck": "msa"},
-  {"type": "word", "front": "يَدْرُسُونَ", "back": "ular o'qiydilar", "deck": "msa"}
+  {
+   "type": "root",
+   "front": "د ر س",
+   "back": "o'qish — dars/madrasa/mudarris",
+   "deck": "msa"
+  },
+  {
+   "type": "pattern",
+   "front": "يَفْعُلُ",
+   "back": "muzori' asosiy qolipi (yaktubu, yadrusu)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "يَكْتُبُونَ",
+   "back": "ular (erkaklar) yozadilar",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "يَكْتُبْنَ",
+   "back": "ular (ayollar) yozadilar — prefiks يـ",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "تَكْتُبُونَ",
+   "back": "sizlar (erkaklar) yozasizlar",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "تَكْتُبِينَ",
+   "back": "sen (ayol) yozasan",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "مُضَارِع",
+   "back": "muzori' — hozirgi-kelasi zamon fe'li",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "يَدْرُسُونَ",
+   "back": "ular o'qiydilar",
+   "deck": "msa"
+  }
  ]
 }

@@ -3,113 +3,453 @@
  "level": "A2",
  "module": "sarf",
  "order": 1,
- "title_uz": "Sarf nima? 14 shakl tizimi",
- "title_ar": "الصَّرْفُ وَالصِّيَغُ الأَرْبَعَ عَشْرَةَ",
- "can_do_uz": "Fe'l va olmoshning 14 shaklini nomlab, gap kim haqida ketayotganini aniqlayman.",
- "duration_min": 30,
+ "title_uz": "Bitta fe'l — 14 kishi: sarf nima?",
+ "title_ar": "فِعْلٌ وَاحِدٌ وَأَرْبَعَ عَشْرَةَ صِيغَةً",
+ "can_do_uz": "«Yozdi» fe'lini kim qilganiga qarab (u, u ayol, sen, men, biz, ular) to'g'ri shaklda ayta olaman va 14 shakl qayerdan kelishini bilaman.",
+ "duration_min": 20,
  "prerequisites": [],
  "harakat_level": "new_words_only",
- "hook_uz": "O'zbekchada «yozdi» — bitta so'z. Arabchada esa 14 xil shakl: كَتَبَ، كَتَبَا، كَتَبُوا، كَتَبَتْ… Ko'p ko'rinadimi? Aslida bu — TIZIM: 3 shaxs × 2 jins × 3 son. Shu tizimni bir marta tushunsangiz, har qanday fe'lni, har qanday olmoshni o'zingiz yasaysiz. Bu — arab tilining skeleti. Keyingi 9 dars shu skeletni quradi.",
+ "hook_uz": "O'zbekchada «yozdi» — bitta so'z, kim yozganini alohida aytamiz. Arabchada fe'lning O'ZI aytib beradi: كَتَبَ — u yozdi, كَتَبَتْ — u (ayol) yozdi, كَتَبْتُ — men yozdim. A1'da shulardan 8 tasini ko'rgansiz. Bugun butun rasm: nega aynan 14 ta va qaysi 8 tasi har kuni kerak. Yodlash emas — tizimni tushunish.",
  "grammar": {
-  "point_ar": "الصِّيَغُ الأَرْبَعَ عَشْرَةَ",
-  "explanation_uz": "Sarf (الصَّرْف) — so'zning ICHKI tuzilishi haqidagi ilm: bir o'zak qanday shakllarga kiradi. Arab tilida fe'l ham, olmosh ham 14 shaklda keladi. Bu 14 raqami tasodifiy emas — u uchta o'lchovdan chiqadi: (1) SHAXS: غَائِب (g'oyib — u/ular, gapda yo'q kishi), مُخَاطَب (muxotab — sen/sizlar, yuzma-yuz turgani), مُتَكَلِّم (mutakallim — men/biz, gapiruvchining o'zi). (2) JINS: مُذَكَّر (erkak) va مُؤَنَّث (ayol). (3) SON: مُفْرَد (birlik — 1 kishi), مُثَنَّى (ikkilik — ROSA 2 kishi, o'zbekchada yo'q!), جَمْع (ko'plik — 3 va undan ko'p). G'oyibda 2 jins × 3 son = 6 shakl. Muxotabda ham 6 shakl. Mutakallimda jins farqi YO'Q, faqat men/biz = 2 shakl. 6 + 6 + 2 = 14.",
+  "point_ar": "فِعْلٌ وَاحِدٌ — أَرْبَعَ عَشْرَةَ صِيغَةً",
+  "explanation_uz": "Fe'l shakli uchta savolga javob beradi: KIM? (u / sen / men), ERKAKMI-AYOLMI?, NECHTA? (1 / 2 / ko'p). Shu uch savolning kombinatsiyasi 14 shakl beradi. Lekin kundalik gapda 8 tasi ishlaydi: كَتَبَ (u), كَتَبَتْ (u ayol), كَتَبُوا (ular), كَتَبْتَ (sen), كَتَبْتِ (sen ayol), كَتَبْتُمْ (sizlar), كَتَبْتُ (men), كَتَبْنَا (biz). Qolgan 6 tasi — ikkilik (rosa 2 kishi) va ayollar ko'pligi — kam uchraydi; ularni keyingi darsda tanib qo'yasiz. Sarf (الصَّرْف) — ana shu shakllarni yasash ilmi.",
   "table": [
-   {"ar": "غَائِب", "uz": "g'oyib — u / ular (gapda yo'q kishi)", "form": "6 shakl"},
-   {"ar": "مُخَاطَب", "uz": "muxotab — sen / sizlar (murojaat qilinayotgan)", "form": "6 shakl"},
-   {"ar": "مُتَكَلِّم", "uz": "mutakallim — men / biz (gapiruvchi)", "form": "2 shakl"},
-   {"ar": "مُفْرَد", "uz": "birlik — 1 kishi", "form": "عَدَد"},
-   {"ar": "مُثَنَّى", "uz": "ikkilik — rosa 2 kishi", "form": "عَدَد"},
-   {"ar": "جَمْع", "uz": "ko'plik — 3 va undan ko'p", "form": "عَدَد"},
-   {"ar": "مُذَكَّر / مُؤَنَّث", "uz": "erkak / ayol jinsi", "form": "جِنْس"},
-   {"ar": "٦ + ٦ + ٢ = ١٤", "uz": "g'oyib 6 + muxotab 6 + mutakallim 2 = 14 shakl", "form": "الْمَجْمُوع"}
+   {
+    "ar": "كَتَبَ",
+    "uz": "u (erkak) yozdi",
+    "form": "هُوَ"
+   },
+   {
+    "ar": "كَتَبَتْ",
+    "uz": "u (ayol) yozdi",
+    "form": "هِيَ"
+   },
+   {
+    "ar": "كَتَبُوا",
+    "uz": "ular yozdilar",
+    "form": "هُمْ"
+   },
+   {
+    "ar": "كَتَبْتَ",
+    "uz": "sen (erkak) yozding",
+    "form": "أَنْتَ"
+   },
+   {
+    "ar": "كَتَبْتِ",
+    "uz": "sen (ayol) yozding",
+    "form": "أَنْتِ"
+   },
+   {
+    "ar": "كَتَبْتُمْ",
+    "uz": "sizlar yozdingiz",
+    "form": "أَنْتُمْ"
+   },
+   {
+    "ar": "كَتَبْتُ",
+    "uz": "men yozdim",
+    "form": "أَنَا"
+   },
+   {
+    "ar": "كَتَبْنَا",
+    "uz": "biz yozdik",
+    "form": "نَحْنُ"
+   },
+   {
+    "ar": "كَتَبَا / كَتَبَتَا",
+    "uz": "ikkovi yozdi — ikkilik (kam ishlatiladi)",
+    "form": "مُثَنَّى"
+   },
+   {
+    "ar": "٨ + ٦ = ١٤",
+    "uz": "8 asosiy + 6 kam uchraydigan = 14 shakl",
+    "form": "الْمَجْمُوع"
+   }
   ],
   "common_mistakes_uz": [
-   "Mutakallimda (men/biz) ham erkak-ayol shakli bor deb o'ylash — yo'q, 1-shaxsda jins farqi umuman yo'q.",
-   "Musanna (ikkilik) ni ko'plikka qo'shib yuborish — arabchada ROSA 2 ta uchun alohida shakl bor, buni o'zbekcha tarjima ko'rsatmaydi.",
-   "G'oyib va muxotabni chalkashtirish: غَائِب = u (yonimizda yo'q), مُخَاطَب = sen (yuzma-yuz turibdi)."
+   "Hamma 14 shaklni birdan yodlashga urinish — avval 8 asosiysini gapda ishlating, qolgani keyin.",
+   "كَتَبَتْ (u ayol yozdi) va كَتَبْتَ (sen yozding) — ت ning o'rni: birinchisida oxirida sukunli, ikkinchisida ب sukunli.",
+   "Ikkilikni (rosa 2 kishi) ko'plik deb o'ylash — arabchada alohida shakl bor, lekin kundalik gapda kam."
   ]
  },
  "roots": [
   {
-   "root": "ص ر ف",
-   "meaning_uz": "o'zgartirish, shaklga solish — sarf ilmining nomi shundan",
-   "uz_cognates": ["sarf", "sarflamoq", "tasrif"],
+   "root": "ك ت ب",
+   "meaning_uz": "yozish — bu darsning tayanch fe'li",
+   "uz_cognates": [
+    "kitob",
+    "maktab",
+    "kotib"
+   ],
    "derived": [
-    {"ar": "صَرَفَ", "uz": "sarfladi, o'zgartirdi", "pattern": "فَعَلَ"},
-    {"ar": "تَصْرِيف", "uz": "tuslash, shakldan shaklga solish", "pattern": "تَفْعِيل"},
-    {"ar": "مَصْرِف", "uz": "bank (pul almashtiriladigan joy)", "pattern": "مَفْعِل"}
+    {
+     "ar": "كَتَبَ",
+     "uz": "yozdi",
+     "pattern": "فَعَلَ"
+    },
+    {
+     "ar": "كِتَاب",
+     "uz": "kitob",
+     "pattern": "فِعَال"
+    },
+    {
+     "ar": "مَكْتَب",
+     "uz": "stol, idora",
+     "pattern": "مَفْعَل"
+    },
+    {
+     "ar": "كَاتِب",
+     "uz": "yozuvchi, kotib",
+     "pattern": "فَاعِل"
+    }
    ]
   },
   {
-   "root": "ك ل م",
-   "meaning_uz": "gapirish, so'z",
-   "uz_cognates": ["kalom", "kalima", "mutakallim"],
+   "root": "ص ر ف",
+   "meaning_uz": "o'zgartirish, shaklga solish — sarf ilmining nomi shundan",
+   "uz_cognates": [
+    "sarf",
+    "sarflamoq",
+    "tasrif"
+   ],
    "derived": [
-    {"ar": "كَلِمَة", "uz": "so'z", "pattern": "فَعِلَة"},
-    {"ar": "كَلَام", "uz": "gap, nutq", "pattern": "فَعَال"},
-    {"ar": "مُتَكَلِّم", "uz": "gapiruvchi (1-shaxs)", "pattern": "مُتَفَعِّل"}
+    {
+     "ar": "صَرَفَ",
+     "uz": "sarfladi, o'zgartirdi",
+     "pattern": "فَعَلَ"
+    },
+    {
+     "ar": "تَصْرِيف",
+     "uz": "tuslash, shakldan shaklga solish",
+     "pattern": "تَفْعِيل"
+    },
+    {
+     "ar": "مَصْرِف",
+     "uz": "bank (pul almashtiriladigan joy)",
+     "pattern": "مَفْعِل"
+    }
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "صَرْف", "translit": "ṣarf", "uz": "sarf — so'z tuzilishi ilmi (o'zbekcha 'sarf')", "root": "ص ر ف", "pattern": "فَعْل", "pos": "ot", "audio": "a2/sarf.mp3", "example_ar": "دَرَسْتُ الصَّرْفَ وَالنَّحْوَ.", "example_uz": "Sarf va nahvni o'rgandim.", "srs": true},
-  {"ar": "تَصْرِيف", "translit": "taṣrīf", "uz": "tuslash — fe'lni 14 shaklga solish (o'zbekcha 'tasrif')", "root": "ص ر ف", "pattern": "تَفْعِيل", "pos": "ot", "audio": "a2/tasrif.mp3", "example_ar": "تَصْرِيفُ الفِعْلِ سَهْلٌ.", "example_uz": "Fe'lni tuslash oson.", "srs": true},
-  {"ar": "صِيغَة", "translit": "ṣīgha", "uz": "shakl, sig'a (fe'lning bir ko'rinishi)", "root": "ص و غ", "pattern": "فِعْلَة", "pos": "ot", "audio": "a2/sigha.mp3", "example_ar": "لِلْفِعْلِ أَرْبَعَ عَشْرَةَ صِيغَةً.", "example_uz": "Fe'lning 14 ta shakli bor.", "srs": true},
-  {"ar": "غَائِب", "translit": "ghāʾib", "uz": "g'oyib — 3-shaxs, u/ular (o'zbekcha 'g'oyib')", "root": "غ ي ب", "pattern": "فَاعِل", "pos": "ot", "audio": "a2/ghaib.mp3", "example_ar": "هُوَ وَهِيَ ضَمِيرَا الغَائِبِ.", "example_uz": "هو va هي — g'oyib olmoshlari.", "srs": true},
-  {"ar": "مُخَاطَب", "translit": "mukhāṭab", "uz": "muxotab — 2-shaxs, sen/sizlar (o'zbekcha 'xitob')", "root": "خ ط ب", "pattern": "مُفَاعَل", "pos": "ot", "audio": "a2/mukhatab.mp3", "example_ar": "أَنْتَ ضَمِيرُ المُخَاطَبِ.", "example_uz": "أنت — muxotab olmoshi.", "srs": true},
-  {"ar": "مُتَكَلِّم", "translit": "mutakallim", "uz": "mutakallim — 1-shaxs, men/biz (o'zbekcha 'kalom')", "root": "ك ل م", "pattern": "مُتَفَعِّل", "pos": "ot", "audio": "a2/mutakallim.mp3", "example_ar": "أَنَا وَنَحْنُ لِلْمُتَكَلِّمِ.", "example_uz": "أنا va نحن — mutakallim uchun.", "srs": true},
-  {"ar": "مُفْرَد", "translit": "mufrad", "uz": "birlik — bir kishi (o'zbekcha 'fard' — yakka)", "root": "ف ر د", "pattern": "مُفْعَل", "pos": "ot", "audio": "a2/mufrad.mp3", "example_ar": "كِتَابٌ مُفْرَدٌ وَكُتُبٌ جَمْعٌ.", "example_uz": "كتاب — birlik, كتب — ko'plik.", "srs": true},
-  {"ar": "مُثَنَّى", "translit": "muthannā", "uz": "ikkilik — rosa 2 ta (o'zbekcha 'soniy' — ikkinchi)", "root": "ث ن ي", "pattern": "مُفَعَّل", "pos": "ot", "audio": "a2/muthanna.mp3", "example_ar": "كِتَابَانِ مُثَنًّى.", "example_uz": "كتابان — ikkilik shakli.", "srs": true},
-  {"ar": "جَمْع", "translit": "jamʿ", "uz": "ko'plik — 3 va undan ortiq (o'zbekcha 'jamoa, jami')", "root": "ج م ع", "pattern": "فَعْل", "pos": "ot", "audio": "a2/jam_pl.mp3", "example_ar": "الطُّلَّابُ جَمْعٌ.", "example_uz": "الطلاب — ko'plik.", "srs": true},
-  {"ar": "ضَمِير", "translit": "ḍamīr", "uz": "olmosh (o'zbekcha 'zamir')", "root": "ض م ر", "pattern": "فَعِيل", "pos": "ot", "audio": "a2/damir.mp3", "example_ar": "هُوَ ضَمِيرٌ مُنْفَصِلٌ.", "example_uz": "هو — alohida olmosh.", "srs": true}
+  {
+   "ar": "كَتَبَ",
+   "translit": "kataba",
+   "uz": "u (erkak) yozdi",
+   "root": "ك ت ب",
+   "pattern": "فَعَلَ",
+   "pos": "fe'l",
+   "audio": "a1/kataba.mp3",
+   "example_ar": "كَتَبَ أَحْمَدُ رِسَالَةً.",
+   "example_uz": "Ahmad xat yozdi.",
+   "srs": true
+  },
+  {
+   "ar": "كَتَبَتْ",
+   "translit": "katabat",
+   "uz": "u (ayol) yozdi",
+   "root": "ك ت ب",
+   "pattern": "فَعَلَتْ",
+   "pos": "fe'l",
+   "audio": "a2/katabat.mp3",
+   "example_ar": "كَتَبَتْ فَاطِمَةُ الدَّرْسَ.",
+   "example_uz": "Fotima darsni yozdi.",
+   "srs": true
+  },
+  {
+   "ar": "كَتَبُوا",
+   "translit": "katabū",
+   "uz": "ular yozdilar (oxirgi ا o'qilmaydi)",
+   "root": "ك ت ب",
+   "pattern": "فَعَلُوا",
+   "pos": "fe'l",
+   "audio": "a2/katabu.mp3",
+   "example_ar": "الطُّلَّابُ كَتَبُوا الأَسْمَاءَ.",
+   "example_uz": "Talabalar ismlarni yozdilar.",
+   "srs": true
+  },
+  {
+   "ar": "كَتَبْتَ",
+   "translit": "katabta",
+   "uz": "sen (erkak) yozding",
+   "root": "ك ت ب",
+   "pattern": "فَعَلْتَ",
+   "pos": "fe'l",
+   "audio": "a2/katabta.mp3",
+   "example_ar": "أَنْتَ كَتَبْتَ الوَاجِبَ؟",
+   "example_uz": "Sen uy vazifasini yozdingmi?",
+   "srs": true
+  },
+  {
+   "ar": "كَتَبْتِ",
+   "translit": "katabti",
+   "uz": "sen (ayol) yozding",
+   "root": "ك ت ب",
+   "pattern": "فَعَلْتِ",
+   "pos": "fe'l",
+   "audio": "a2/katabti.mp3",
+   "example_ar": "أَنْتِ كَتَبْتِ اسْمَكِ؟",
+   "example_uz": "Sen (ayol) ismingni yozdingmi?",
+   "srs": true
+  },
+  {
+   "ar": "كَتَبْتُ",
+   "translit": "katabtu",
+   "uz": "men yozdim",
+   "root": "ك ت ب",
+   "pattern": "فَعَلْتُ",
+   "pos": "fe'l",
+   "audio": "a1/katabtu.mp3",
+   "example_ar": "كَتَبْتُ اسْمِي عَلَى الكِتَابِ.",
+   "example_uz": "Ismimni kitobga yozdim.",
+   "srs": true
+  },
+  {
+   "ar": "كَتَبْنَا",
+   "translit": "katabnā",
+   "uz": "biz yozdik",
+   "root": "ك ت ب",
+   "pattern": "فَعَلْنَا",
+   "pos": "fe'l",
+   "audio": "a2/katabna.mp3",
+   "example_ar": "كَتَبْنَا الوَاجِبَ مَعًا.",
+   "example_uz": "Uy vazifasini birga yozdik.",
+   "srs": true
+  },
+  {
+   "ar": "رِسَالَة",
+   "translit": "risāla",
+   "uz": "xat, maktub (o'zbekcha 'risola')",
+   "root": "ر س ل",
+   "pattern": "فِعَالَة",
+   "pos": "ot",
+   "audio": "a2/risala.mp3",
+   "example_ar": "هَذِهِ رِسَالَةٌ مِنْ أُمِّي.",
+   "example_uz": "Bu onamdan xat.",
+   "srs": true
+  },
+  {
+   "ar": "صِيغَة",
+   "translit": "ṣīgha",
+   "uz": "shakl, sig'a (fe'lning bir ko'rinishi)",
+   "root": "ص و غ",
+   "pattern": "فِعْلَة",
+   "pos": "ot",
+   "audio": "a2/sigha.mp3",
+   "example_ar": "لِلْفِعْلِ أَرْبَعَ عَشْرَةَ صِيغَةً.",
+   "example_uz": "Fe'lning 14 shakli bor.",
+   "srs": true
+  },
+  {
+   "ar": "مُثَنَّى",
+   "translit": "muthannā",
+   "uz": "ikkilik — rosa 2 ta (o'zbekcha 'soniy' — ikkinchi)",
+   "root": "ث ن ي",
+   "pattern": "مُفَعَّل",
+   "pos": "ot",
+   "audio": "a2/muthanna.mp3",
+   "example_ar": "كِتَابَانِ — مُثَنًّى.",
+   "example_uz": "Ikki kitob — ikkilik.",
+   "srs": true
+  }
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "الصَّرْفُ عِلْمٌ يَدْرُسُ بِنَاءَ الكَلِمَةِ. لِلْفِعْلِ أَرْبَعَ عَشْرَةَ صِيغَةً: سِتٌّ لِلْغَائِبِ، وَسِتٌّ لِلْمُخَاطَبِ، وَاثْنَتَانِ لِلْمُتَكَلِّمِ. وَفِي كُلِّ قِسْمٍ مُفْرَدٌ وَمُثَنًّى وَجَمْعٌ. مَنْ عَرَفَ هَذَا النِّظَامَ سَهُلَتْ عَلَيْهِ العَرَبِيَّةُ.",
+   "text_ar": "كَتَبَ أَحْمَدُ رِسَالَةً إِلَى أُمِّهِ. وَكَتَبَتْ فَاطِمَةُ الدَّرْسَ فِي الدَّفْتَرِ. أَنَا كَتَبْتُ اسْمِي عَلَى الكِتَابِ، وَنَحْنُ كَتَبْنَا الوَاجِبَ مَعًا. وَالطُّلَّابُ كَتَبُوا الأَسْمَاءَ عَلَى السَّبُّورَةِ.",
    "questions": [
-    {"q_uz": "Fe'lning nechta shakli bor?", "a": "14 ta"},
-    {"q_uz": "Mutakallim uchun nechta shakl ajratilgan?", "a": "2 ta (men va biz)"},
-    {"q_uz": "Har bo'limda qanday sonlar bor?", "a": "Birlik, ikkilik va ko'plik"}
+    {
+     "q_uz": "Ahmad nima yozdi?",
+     "a": "Onasiga xat (رِسَالَة)"
+    },
+    {
+     "q_uz": "«كَتَبَتْ فَاطِمَةُ» — fe'l nega ت bilan tugadi?",
+     "a": "Fotima ayol — u (ayol) yozdi shakli"
+    },
+    {
+     "q_uz": "«كَتَبْنَا» — kim yozdi?",
+     "a": "Biz"
+    }
    ]
   },
   "listening": {
-   "audio": "a2/muthanna.mp3",
-   "transcript_ar": "مُثَنَّى",
+   "audio": "a2/katabat.mp3",
+   "transcript_ar": "كَتَبَتْ",
    "questions": [
-    {"q_uz": "Bu atama nimani bildiradi?", "a": "Ikkilik — rosa 2 ta"}
+    {
+     "q_uz": "Kim yozdi?",
+     "a": "U — ayol (كَتَبَتْ)"
+    }
    ]
   },
   "speaking": {
-   "task_uz": "Uch shaxsni ovoz chiqarib ayting va har birining shakl sonini qo'shing: ghoib — olti, muxotab — olti, mutakallim — ikki.",
-   "target_ar": ["غَائِب", "مُخَاطَب", "مُتَكَلِّم"],
+   "task_uz": "Sakkiz asosiy shaklni ovoz chiqarib, kim ekanini o'zbekcha qo'shib ayting: kataba — u, katabat — u ayol, katabū — ular, katabta — sen, katabti — sen ayol, katabtum — sizlar, katabtu — men, katabnā — biz.",
+   "target_ar": [
+    "كَتَبَ",
+    "كَتَبَتْ",
+    "كَتَبُوا",
+    "كَتَبْتُ",
+    "كَتَبْنَا"
+   ],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "14 shakl qayerdan chiqishini bir jumlada yozing (6 + 6 + 2 formulasi bilan).",
+   "task_uz": "Kecha kim nima yozganini 3 gapda yozing: «Men … yozdim», «U (ayol) … yozdi», «Biz … yozdik».",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "«Men / biz» — qaysi shaxs?", "q_ar": "", "options": ["مُتَكَلِّم", "غَائِب", "مُخَاطَب", "مُفْرَد"], "answer": "مُتَكَلِّم", "explain_uz": "مُتَكَلِّم — gapiruvchining o'zi: men, biz.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Rosa 2 ta uchun ishlatiladigan son qaysi?", "q_ar": "", "options": ["مُثَنَّى", "مُفْرَد", "جَمْع", "صِيغَة"], "answer": "مُثَنَّى", "explain_uz": "مُثَنَّى — ikkilik. O'zbekchada bunday shakl yo'q, shuning uchun diqqat.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "غَائِب", "options": [], "answer": "g'oyib", "explain_uz": "غَائِب — 3-shaxs: u, ular (gapda yo'q kishi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "olmosh", "q_ar": "", "options": [], "answer": "ضَمِير", "explain_uz": "ضَمِير — olmosh (o'zbekcha 'zamir').", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Fe'l jami nechta shaklda tuslanadi?", "q_ar": "", "options": ["14", "10", "12", "8"], "answer": "14", "explain_uz": "6 (g'oyib) + 6 (muxotab) + 2 (mutakallim) = 14.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«صَرْف، تَصْرِيف، مَصْرِف» qaysi o'zakdan?", "q_ar": "", "options": ["ص ر ف", "ك ل م", "ج م ع"], "answer": "ص ر ف", "explain_uz": "Hammasi ص ر ف (o'zgartirish) o'zagidan.", "audio": "", "root": "ص ر ف", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Mutakallimda (men/biz) erkak-ayol farqi bormi?", "q_ar": "", "options": ["Yo'q — bitta shakl", "Ha, 2 xil", "Faqat ko'plikda", "Faqat birlikda"], "answer": "Yo'q — bitta shakl", "explain_uz": "1-shaxsda jins ko'rsatilmaydi: أَنَا erkak ham, ayol ham.", "audio": "", "root": "", "pattern": "", "words": []}
+  {
+   "type": "mcq",
+   "q_uz": "«U (ayol) yozdi» qaysi?",
+   "q_ar": "",
+   "options": [
+    "كَتَبَتْ",
+    "كَتَبْتَ",
+    "كَتَبْتُ",
+    "كَتَبُوا"
+   ],
+   "answer": "كَتَبَتْ",
+   "explain_uz": "Ayol uchun oxirida sukunli ت: كَتَبَتْ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«Biz yozdik» qaysi?",
+   "q_ar": "",
+   "options": [
+    "كَتَبْنَا",
+    "كَتَبْتُمْ",
+    "كَتَبُوا",
+    "كَتَبْتُ"
+   ],
+   "answer": "كَتَبْنَا",
+   "explain_uz": "ـنَا qo'shimchasi — biz.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "",
+   "q_ar": "كَتَبْتُ",
+   "options": [],
+   "answer": "men yozdim",
+   "explain_uz": "ـتُ (damma bilan) — men.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "ular yozdilar",
+   "q_ar": "",
+   "options": [],
+   "answer": "كَتَبُوا",
+   "explain_uz": "ـُوا — ular (erkaklar); oxiridagi ا yoziladi, o'qilmaydi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "fill_blank",
+   "q_uz": "Bo'sh joyni to'ldiring: «___ فَاطِمَةُ الدَّرْسَ» (Fotima darsni yozdi)",
+   "q_ar": "",
+   "options": [],
+   "answer": "كَتَبَتْ",
+   "explain_uz": "Fotima — ayol: كَتَبَتْ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«كَتَبَ، كِتَاب، مَكْتَب» qaysi o'zakdan?",
+   "q_ar": "",
+   "options": [
+    "ك ت ب",
+    "ص ر ف",
+    "د ر س"
+   ],
+   "answer": "ك ت ب",
+   "explain_uz": "Hammasi ك ت ب (yozish) o'zagidan.",
+   "audio": "",
+   "root": "ك ت ب",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Kundalik gapda 14 shaklning nechtasi asosan ishlatiladi?",
+   "q_ar": "",
+   "options": [
+    "8 tasi",
+    "14 tasi ham teng",
+    "2 tasi",
+    "4 tasi"
+   ],
+   "answer": "8 tasi",
+   "explain_uz": "Ikkilik va ayollar ko'pligi (6 ta) kam uchraydi — tanib qo'yish kifoya.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  }
  ],
  "srs_cards": [
-  {"type": "root", "front": "ص ر ف", "back": "o'zgartirish, shaklga solish — sarf/tasrif/masrif", "deck": "msa"},
-  {"type": "root", "front": "ك ل م", "back": "gapirish — kalom/kalima/mutakallim", "deck": "msa"},
-  {"type": "word", "front": "صَرْف", "back": "sarf — so'z tuzilishi ilmi", "deck": "msa"},
-  {"type": "word", "front": "صِيغَة", "back": "shakl, sig'a", "deck": "msa"},
-  {"type": "word", "front": "غَائِب", "back": "g'oyib — 3-shaxs (u/ular)", "deck": "msa"},
-  {"type": "word", "front": "مُخَاطَب", "back": "muxotab — 2-shaxs (sen/sizlar)", "deck": "msa"},
-  {"type": "word", "front": "مُتَكَلِّم", "back": "mutakallim — 1-shaxs (men/biz)", "deck": "msa"},
-  {"type": "word", "front": "مُفْرَد", "back": "birlik — 1 kishi", "deck": "msa"},
-  {"type": "word", "front": "مُثَنَّى", "back": "ikkilik — rosa 2 kishi", "deck": "msa"},
-  {"type": "word", "front": "جَمْع", "back": "ko'plik — 3 va undan ortiq", "deck": "msa"},
-  {"type": "word", "front": "ضَمِير", "back": "olmosh", "deck": "msa"}
+  {
+   "type": "root",
+   "front": "ك ت ب",
+   "back": "yozish — kataba/kitob/maktab/kotib",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "كَتَبَتْ",
+   "back": "u (ayol) yozdi",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "كَتَبُوا",
+   "back": "ular yozdilar",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "كَتَبْتُمْ",
+   "back": "sizlar yozdingiz",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "كَتَبْنَا",
+   "back": "biz yozdik",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "رِسَالَة",
+   "back": "xat, maktub",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "صِيغَة",
+   "back": "shakl, sig'a",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "مُثَنَّى",
+   "back": "ikkilik — rosa 2 ta",
+   "deck": "msa"
+  }
  ]
 }

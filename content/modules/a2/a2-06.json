@@ -3,107 +3,459 @@
  "level": "A2",
  "module": "sarf",
  "order": 6,
- "title_uz": "Sarf ustaxonasi: moziy ⇄ muzori'",
- "title_ar": "وَرْشَةُ الصَّرْفِ: المَاضِي وَالمُضَارِع",
- "can_do_uz": "Bir fe'lni moziydan muzori'ga va aksincha tez almashtira olaman, kelasi zamonni yasayman.",
- "duration_min": 30,
- "prerequisites": ["a2-05"],
+ "title_uz": "Ustaxona: kecha — bugun — ertaga",
+ "title_ar": "أَمْسِ — اليَوْمَ — غَدًا",
+ "can_do_uz": "Bitta fe'lni o'tgan, hozirgi va kelasi zamonda ayta olaman: ذَهَبْتُ — أَذْهَبُ — سَأَذْهَبُ.",
+ "duration_min": 20,
+ "prerequisites": [
+  "a2-05"
+ ],
  "harakat_level": "new_words_only",
- "hook_uz": "Beshta darsda ikkita to'liq jadvalni oldingiz. Endi ularni BOG'LAYMIZ. Bitta fe'lni eshitib, uni istalgan zamonga va istalgan shaxsga o'tkazish — arab tilida ravon gapirishning asosi. Bugun ustaxona: كَتَبْنَ ← يَكْتُبْنَ، سَافَرْنَا ← نُسَافِرُ ← سَنُسَافِرُ.",
+ "hook_uz": "Ikkita jadvalni bilasiz: moziy (kecha) va muzori' (bugun). Endi ularni BOG'LAYMIZ va uchinchisini bepul olasiz — kelasi zamon: muzori' oldiga سَـ qo'ying, tamom. ذَهَبْتُ (bordim) → أَذْهَبُ (boraman) → سَأَذْهَبُ (boraman, ertaga). Bugun faqat tanish, sodda fe'llar: bormoq, o'qimoq, yozmoq, safar qilmoq.",
  "grammar": {
-  "point_ar": "مِنَ المَاضِي إِلَى المُضَارِعِ",
-  "explanation_uz": "Almashtirish 3 qadamda bo'ladi. (1) Moziy fe'lning OXIRGI qo'shimchasini olib tashlang va kim haqida gap ketayotganini aniqlang: كَتَبْنَا → «biz». (2) Shu shaxsga mos MUZORI' prefiksini qo'ying: biz → نـ. (3) Muzori' qo'shimchasini qo'shing: نَكْتُبُ. Kelasi zamon uchun esa alohida fe'l yasamaysiz — muzori'ning OLDIGA سَـ (yaqin kelajak) yoki سَوْفَ (uzoq kelajak) qo'shasiz: سَيَكْتُبُ، سَوْفَ نُسَافِرُ. Zamon ishoralari yordam beradi: أَمْسِ (kecha) → moziy, الآنَ / اليَوْمَ (hozir) → muzori', غَدًا (ertaga) → سَـ + muzori'.",
+  "point_ar": "أَمْسِ ذَهَبْتُ — اليَوْمَ أَذْهَبُ — غَدًا سَأَذْهَبُ",
+  "explanation_uz": "Almashtirish 3 qadam: (1) Moziy fe'lning OXIRIDAGI qo'shimchadan kim ekanini bilib oling: ذَهَبْتُ → «men». (2) Shu kishining muzori' PREFIKSINI qo'ying: men → أَ, sen → تَ, u → يَ, biz → نَ. (3) Oxirini muzori'ga moslang: أَذْهَبُ. Kelasi zamon uchun yangi fe'l yo'q: muzori' oldiga سَـ (yaqin) yoki سَوْفَ (uzoq) — سَأَذْهَبُ، سَوْفَ نُسَافِرُ. Zamon so'zlari yordam beradi: أَمْسِ (kecha) → moziy, اليَوْمَ (bugun) → muzori', غَدًا (ertaga) → سَـ + muzori'.",
   "table": [
-   {"ar": "كَتَبَ ← يَكْتُبُ", "uz": "u yozdi → u yozadi", "form": "هُوَ"},
-   {"ar": "كَتَبَتْ ← تَكْتُبُ", "uz": "u (ayol) yozdi → yozadi", "form": "هِيَ"},
-   {"ar": "كَتَبَا ← يَكْتُبَانِ", "uz": "ikkovi yozdi → yozadi", "form": "هُمَا"},
-   {"ar": "كَتَبُوا ← يَكْتُبُونَ", "uz": "ular yozdilar → yozadilar", "form": "هُمْ"},
-   {"ar": "كَتَبْنَ ← يَكْتُبْنَ", "uz": "ular (ayollar) yozdilar → yozadilar", "form": "هُنَّ"},
-   {"ar": "كَتَبْتَ ← تَكْتُبُ", "uz": "sen yozding → yozasan", "form": "أَنْتَ"},
-   {"ar": "كَتَبْتِ ← تَكْتُبِينَ", "uz": "sen (ayol) yozding → yozasan", "form": "أَنْتِ"},
-   {"ar": "كَتَبْتُ ← أَكْتُبُ", "uz": "men yozdim → yozaman", "form": "أَنَا"},
-   {"ar": "كَتَبْنَا ← نَكْتُبُ", "uz": "biz yozdik → yozamiz", "form": "نَحْنُ"},
-   {"ar": "سَيَكْتُبُ / سَوْفَ نُسَافِرُ", "uz": "yozadi (kelasi) / safar qilamiz (kelasi)", "form": "المُسْتَقْبَل"},
-   {"ar": "أَمْسِ / اليَوْمَ / غَدًا", "uz": "kecha (moziy) / bugun (muzori') / ertaga (سَـ)", "form": "الزَّمَن"}
+   {
+    "ar": "ذَهَبْتُ ← أَذْهَبُ ← سَأَذْهَبُ",
+    "uz": "bordim → boraman → (ertaga) boraman",
+    "form": "أَنَا"
+   },
+   {
+    "ar": "ذَهَبْتَ ← تَذْهَبُ ← سَتَذْهَبُ",
+    "uz": "bording → borasan → borasan (ertaga)",
+    "form": "أَنْتَ"
+   },
+   {
+    "ar": "ذَهَبَ ← يَذْهَبُ ← سَيَذْهَبُ",
+    "uz": "bordi → boradi → boradi (ertaga)",
+    "form": "هُوَ"
+   },
+   {
+    "ar": "ذَهَبَتْ ← تَذْهَبُ ← سَتَذْهَبُ",
+    "uz": "u (ayol) bordi → boradi → boradi (ertaga)",
+    "form": "هِيَ"
+   },
+   {
+    "ar": "ذَهَبْنَا ← نَذْهَبُ ← سَنَذْهَبُ",
+    "uz": "bordik → boramiz → boramiz (ertaga)",
+    "form": "نَحْنُ"
+   },
+   {
+    "ar": "ذَهَبُوا ← يَذْهَبُونَ ← سَيَذْهَبُونَ",
+    "uz": "bordilar → boradilar → boradilar (ertaga)",
+    "form": "هُمْ"
+   },
+   {
+    "ar": "كَتَبْنَا ← نَكْتُبُ ← سَنَكْتُبُ",
+    "uz": "yozdik → yozamiz → yozamiz (ertaga)",
+    "form": "نَحْنُ"
+   },
+   {
+    "ar": "سَافَرْنَا ← نُسَافِرُ ← سَنُسَافِرُ",
+    "uz": "safar qildik → qilamiz → qilamiz (ertaga) — III bob, prefiks damma",
+    "form": "نَحْنُ"
+   },
+   {
+    "ar": "سَـ / سَوْفَ",
+    "uz": "yaqin kelajak / uzoq kelajak — muzori' oldiga",
+    "form": "المُسْتَقْبَل"
+   },
+   {
+    "ar": "أَمْسِ / اليَوْمَ / غَدًا",
+    "uz": "kecha (moziy) / bugun (muzori') / ertaga (سَـ + muzori')",
+    "form": "الزَّمَن"
+   }
   ],
   "common_mistakes_uz": [
-   "Kelasi zamon uchun alohida fe'l izlash — u yo'q, muzori' oldiga سَـ yoki سَوْفَ qo'yiladi: سَيَكْتُبُ.",
-   "Moziydagi harakatni muzori'ga ko'chirish: كَتَبَ → يَكْتُبُ (o'rtasi damma), يَكْتَبُ emas.",
-   "هُنَّ uchun muzori'da تـ qo'yish — g'oyibda prefiks يـ: يَكْتُبْنَ."
+   "Kelasi zamon uchun alohida fe'l izlash — u yo'q, muzori' oldiga سَـ yoki سَوْفَ qo'yiladi: سَأَذْهَبُ.",
+   "Moziydagi harakatni muzori'ga ko'chirish: كَتَبَ → يَكْتُبُ (o'rtasi damma), يَكْتَبُ emas; ذَهَبَ → يَذْهَبُ (fatha).",
+   "Prefiksni unutish: muzori'da kim ekanini BOSHIDAGI harf aytadi — أَ (men), تَ (sen / u ayol), يَ (u), نَ (biz)."
   ]
  },
  "roots": [
   {
-   "root": "ك ت ب",
-   "meaning_uz": "yozish — ikki zamon ustaxonasining tayanchi",
-   "uz_cognates": ["kitob", "maktab", "kotib"],
+   "root": "ذ ه ب",
+   "meaning_uz": "borish, ketish",
+   "uz_cognates": [
+    "mazhab (yo'l)"
+   ],
    "derived": [
-    {"ar": "كَتَبَ", "uz": "yozdi (moziy)", "pattern": "فَعَلَ"},
-    {"ar": "يَكْتُبُ", "uz": "yozadi (muzori')", "pattern": "يَفْعُلُ"},
-    {"ar": "سَيَكْتُبُ", "uz": "yozadi (kelasi zamon)", "pattern": "سَيَفْعُلُ"},
-    {"ar": "كِتَابَة", "uz": "yozish (masdar)", "pattern": "فِعَالَة"}
+    {
+     "ar": "ذَهَبَ",
+     "uz": "bordi (moziy)",
+     "pattern": "فَعَلَ"
+    },
+    {
+     "ar": "يَذْهَبُ",
+     "uz": "boradi (muzori')",
+     "pattern": "يَفْعَلُ"
+    },
+    {
+     "ar": "سَيَذْهَبُ",
+     "uz": "boradi (kelasi zamon)",
+     "pattern": "سَيَفْعَلُ"
+    },
+    {
+     "ar": "ذَاهِب",
+     "uz": "borayotgan",
+     "pattern": "فَاعِل"
+    },
+    {
+     "ar": "مَذْهَب",
+     "uz": "yo'l, mazhab",
+     "pattern": "مَفْعَل"
+    }
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "اِسْتَيْقَظُوا", "translit": "istayqaẓū", "uz": "ular uyg'ondilar", "root": "ي ق ظ", "pattern": "", "pos": "fe'l", "audio": "a2/istayqazu.mp3", "example_ar": "الطُّلَّابُ اِسْتَيْقَظُوا مُبَكِّرًا.", "example_uz": "Talabalar erta uyg'ondilar.", "srs": true},
-  {"ar": "يَسْتَيْقِظْنَ", "translit": "yastayqiẓna", "uz": "ular (ayollar) uyg'onadilar", "root": "ي ق ظ", "pattern": "", "pos": "fe'l", "audio": "a2/yastayqizna.mp3", "example_ar": "الطَّالِبَاتُ يَسْتَيْقِظْنَ فِي الخَامِسَةِ.", "example_uz": "Talaba qizlar soat beshda uyg'onadilar.", "srs": true},
-  {"ar": "سَافَرْنَا", "translit": "sāfarnā", "uz": "biz safar qildik", "root": "س ف ر", "pattern": "", "pos": "fe'l", "audio": "a2/safarna.mp3", "example_ar": "أَمْسِ سَافَرْنَا إِلَى المَدِينَةِ.", "example_uz": "Kecha shaharga safar qildik.", "srs": true},
-  {"ar": "نُسَافِرُ", "translit": "nusāfiru", "uz": "biz safar qilamiz", "root": "س ف ر", "pattern": "", "pos": "fe'l", "audio": "a2/nusafiru.mp3", "example_ar": "نُسَافِرُ كُلَّ صَيْفٍ.", "example_uz": "Har yozda safar qilamiz.", "srs": true},
-  {"ar": "تَنَاوَلْتُ", "translit": "tanāwaltu", "uz": "men tanovul qildim", "root": "ن و ل", "pattern": "", "pos": "fe'l", "audio": "a2/tanawaltu.mp3", "example_ar": "تَنَاوَلْتُ الغَدَاءَ فِي البَيْتِ.", "example_uz": "Tushlikni uyda yedim.", "srs": true},
-  {"ar": "أَتَنَاوَلُ", "translit": "atanāwalu", "uz": "men tanovul qilaman", "root": "ن و ل", "pattern": "", "pos": "fe'l", "audio": "a2/atanawalu.mp3", "example_ar": "أَتَنَاوَلُ الفَطُورَ فِي السَّابِعَةِ.", "example_uz": "Nonushtani soat yettida qilaman.", "srs": true},
-  {"ar": "اِسْتَخْدَمُوا", "translit": "istakhdamū", "uz": "ular foydalandilar", "root": "خ د م", "pattern": "", "pos": "fe'l", "audio": "a2/istakhdamu.mp3", "example_ar": "اِسْتَخْدَمُوا الحَاسُوبَ فِي الدَّرْسِ.", "example_uz": "Ular darsda kompyuterdan foydalandilar.", "srs": true},
-  {"ar": "سَيَكْتُبُ", "translit": "sayaktubu", "uz": "yozadi (kelasi zamon) · u/erkak", "root": "ك ت ب", "pattern": "", "pos": "fe'l", "audio": "a2/sayaktubu.mp3", "example_ar": "غَدًا سَيَكْتُبُ الرِّسَالَةَ.", "example_uz": "Ertaga xatni yozadi.", "srs": true},
-  {"ar": "غَدًا", "translit": "ghadan", "uz": "ertaga", "root": "غ د و", "pattern": "", "pos": "ravish", "audio": "a2/ghadan.mp3", "example_ar": "غَدًا نُسَافِرُ.", "example_uz": "Ertaga safar qilamiz.", "srs": true},
-  {"ar": "أَمْسِ", "translit": "amsi", "uz": "kecha", "root": "أ م س", "pattern": "", "pos": "ravish", "audio": "a2/amsi.mp3", "example_ar": "أَمْسِ تَعَلَّمْنَا دَرْسًا جَدِيدًا.", "example_uz": "Kecha yangi dars o'rgandik.", "srs": true}
+  {
+   "ar": "ذَهَبْتُ",
+   "translit": "dhahabtu",
+   "uz": "men bordim",
+   "root": "ذ ه ب",
+   "pattern": "فَعَلْتُ",
+   "pos": "fe'l",
+   "audio": "a1/dhahabtu.mp3",
+   "example_ar": "أَمْسِ ذَهَبْتُ إِلَى السُّوقِ.",
+   "example_uz": "Kecha bozorga bordim.",
+   "srs": true
+  },
+  {
+   "ar": "أَذْهَبُ",
+   "translit": "adhhabu",
+   "uz": "men boraman",
+   "root": "ذ ه ب",
+   "pattern": "أَفْعَلُ",
+   "pos": "fe'l",
+   "audio": "a2/adhhabu.mp3",
+   "example_ar": "اليَوْمَ أَذْهَبُ إِلَى المَدْرَسَةِ.",
+   "example_uz": "Bugun maktabga boraman.",
+   "srs": true
+  },
+  {
+   "ar": "سَأَذْهَبُ",
+   "translit": "sa-adhhabu",
+   "uz": "boraman (kelasi zamon)",
+   "root": "ذ ه ب",
+   "pattern": "سَأَفْعَلُ",
+   "pos": "fe'l",
+   "audio": "a2/saadhhabu.mp3",
+   "example_ar": "غَدًا سَأَذْهَبُ إِلَى الجَامِعَةِ.",
+   "example_uz": "Ertaga universitetga boraman.",
+   "srs": true
+  },
+  {
+   "ar": "دَرَسْنَا",
+   "translit": "darasnā",
+   "uz": "biz o'qidik, dars qildik",
+   "root": "د ر س",
+   "pattern": "فَعَلْنَا",
+   "pos": "fe'l",
+   "audio": "a2/darasna.mp3",
+   "example_ar": "أَمْسِ دَرَسْنَا الدَّرْسَ الأَوَّلَ.",
+   "example_uz": "Kecha birinchi darsni o'qidik.",
+   "srs": true
+  },
+  {
+   "ar": "نَدْرُسُ",
+   "translit": "nadrusu",
+   "uz": "biz o'qiymiz",
+   "root": "د ر س",
+   "pattern": "نَفْعُلُ",
+   "pos": "fe'l",
+   "audio": "a1/nadrusu.mp3",
+   "example_ar": "اليَوْمَ نَدْرُسُ العَرَبِيَّةَ.",
+   "example_uz": "Bugun arab tilini o'qiymiz.",
+   "srs": true
+  },
+  {
+   "ar": "سَنَدْرُسُ",
+   "translit": "sa-nadrusu",
+   "uz": "o'qiymiz (kelasi zamon)",
+   "root": "د ر س",
+   "pattern": "سَنَفْعُلُ",
+   "pos": "fe'l",
+   "audio": "a2/sanadrusu.mp3",
+   "example_ar": "غَدًا سَنَدْرُسُ الدَّرْسَ الجَدِيدَ.",
+   "example_uz": "Ertaga yangi darsni o'qiymiz.",
+   "srs": true
+  },
+  {
+   "ar": "سَافَرْنَا",
+   "translit": "sāfarnā",
+   "uz": "biz safar qildik",
+   "root": "س ف ر",
+   "pattern": "فَاعَلْنَا",
+   "pos": "fe'l",
+   "audio": "a2/safarna.mp3",
+   "example_ar": "سَافَرْنَا إِلَى بُخَارَى.",
+   "example_uz": "Buxoroga safar qildik.",
+   "srs": true
+  },
+  {
+   "ar": "سَنُسَافِرُ",
+   "translit": "sa-nusāfiru",
+   "uz": "safar qilamiz (kelasi zamon)",
+   "root": "س ف ر",
+   "pattern": "سَنُفَاعِلُ",
+   "pos": "fe'l",
+   "audio": "a2/sanusafiru.mp3",
+   "example_ar": "غَدًا سَنُسَافِرُ إِلَى سَمَرْقَنْدَ.",
+   "example_uz": "Ertaga Samarqandga safar qilamiz.",
+   "srs": true
+  },
+  {
+   "ar": "غَدًا",
+   "translit": "ghadan",
+   "uz": "ertaga",
+   "root": "غ د و",
+   "pattern": "",
+   "pos": "ravish",
+   "audio": "a2/ghadan.mp3",
+   "example_ar": "غَدًا عُطْلَةٌ.",
+   "example_uz": "Ertaga dam olish kuni.",
+   "srs": true
+  },
+  {
+   "ar": "أَمْسِ",
+   "translit": "amsi",
+   "uz": "kecha",
+   "root": "",
+   "pattern": "",
+   "pos": "ravish",
+   "audio": "a2/amsi.mp3",
+   "example_ar": "أَمْسِ كَانَ الجَوُّ جَمِيلًا.",
+   "example_uz": "Kecha havo yaxshi edi.",
+   "srs": true
+  }
  ],
  "hejazi": [],
  "skills": {
   "reading": {
-   "text_ar": "أَمْسِ اِسْتَيْقَظْنَا مُبَكِّرًا وَسَافَرْنَا إِلَى المَدِينَةِ. وَاليَوْمَ نَتَنَاوَلُ الفَطُورَ فِي البَيْتِ وَنَسْتَخْدِمُ الحَاسُوبَ لِلدِّرَاسَةِ. وَغَدًا سَنُسَافِرُ مَرَّةً أُخْرَى، وَالطَّالِبَاتُ سَيَسْتَيْقِظْنَ فِي الخَامِسَةِ.",
+   "text_ar": "أَمْسِ ذَهَبْتُ إِلَى السُّوقِ وَاشْتَرَيْتُ خُبْزًا. اليَوْمَ أَدْرُسُ العَرَبِيَّةَ فِي البَيْتِ. وَغَدًا سَأَذْهَبُ إِلَى المَدْرَسَةِ، وَسَنَدْرُسُ الدَّرْسَ الجَدِيدَ مَعًا.",
    "questions": [
-    {"q_uz": "Kecha nima bo'ldi?", "a": "Erta uyg'ondik va shaharga safar qildik"},
-    {"q_uz": "Ertaga nima bo'ladi?", "a": "Yana safar qilamiz — سَنُسَافِرُ"},
-    {"q_uz": "«سَيَسْتَيْقِظْنَ» nimani bildiradi?", "a": "Ular (ayollar) uyg'onadilar — kelasi zamon"}
+    {
+     "q_uz": "Kecha nima bo'ldi?",
+     "a": "Bozorga bordim va non sotib oldim"
+    },
+    {
+     "q_uz": "«سَأَذْهَبُ» — qaysi zamon va kim?",
+     "a": "Kelasi zamon (سَـ), men"
+    },
+    {
+     "q_uz": "Ertaga nima qilamiz?",
+     "a": "Yangi darsni birga o'qiymiz — سَنَدْرُسُ"
+    }
    ]
   },
   "listening": {
    "audio": "a2/sayaktubu.mp3",
    "transcript_ar": "سَيَكْتُبُ",
    "questions": [
-    {"q_uz": "Qaysi zamon?", "a": "Kelasi zamon — سَـ + muzori'"}
+    {
+     "q_uz": "Qaysi zamon?",
+     "a": "Kelasi zamon — سَـ + muzori'"
+    }
    ]
   },
   "speaking": {
-   "task_uz": "Uchta zamonni ketma-ket ayting: amsi katabtu, al-yawma aktubu, ghadan sa-aktubu.",
-   "target_ar": ["كَتَبْتُ", "أَكْتُبُ", "سَأَكْتُبُ"],
+   "task_uz": "Uch zamonni ketma-ket ayting: amsi dhahabtu, al-yawma adhhabu, ghadan sa-adhhabu.",
+   "target_ar": [
+    "ذَهَبْتُ",
+    "أَذْهَبُ",
+    "سَأَذْهَبُ"
+   ],
    "eval": "self_check"
   },
   "writing": {
-   "task_uz": "Bir kunni uch zamonda yozing: kecha nima qildingiz, bugun nima qilyapsiz, ertaga nima qilasiz.",
+   "task_uz": "Bir kunni uch zamonda yozing: kecha nima qildingiz, bugun nima qilyapsiz, ertaga nima qilasiz (3 gap, sodda fe'llar).",
    "eval": "ai_grammar"
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "كَتَبْنَ ning muzori' shakli qaysi?", "q_ar": "", "options": ["يَكْتُبْنَ", "تَكْتُبْنَ", "يَكْتُبُونَ", "كَتَبْنَا"], "answer": "يَكْتُبْنَ", "explain_uz": "هُنَّ — g'oyiba jam': prefiks يـ, qo'shimcha ـْنَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«Ertaga safar qilamiz» qaysi?", "q_ar": "", "options": ["سَنُسَافِرُ", "سَافَرْنَا", "نُسَافِرُ", "يُسَافِرُونَ"], "answer": "سَنُسَافِرُ", "explain_uz": "Kelasi zamon = سَـ + muzori' (نُسَافِرُ).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "اِسْتَيْقَظُوا", "options": [], "answer": "ular uyg'ondilar", "explain_uz": "X bob moziy, g'oyib jam' qo'shimchasi ـُوا.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "men tanovul qilaman", "q_ar": "", "options": [], "answer": "أَتَنَاوَلُ", "explain_uz": "Mutakallim prefiksi أ + VI bob: أَتَنَاوَلُ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "fill_blank", "q_uz": "Bo'sh joyni to'ldiring: «أَمْسِ ___ إِلَى المَدِينَةِ» (kecha biz shaharga safar qildik)", "q_ar": "", "options": [], "answer": "سَافَرْنَا", "explain_uz": "أَمْسِ — moziy ishorasi; biz = ـْنَا.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "harakat", "q_uz": "«ular foydalanadilar» bo'lishi uchun to'g'ri shaklni tanlang:", "q_ar": "يستخدمون", "options": ["يَسْتَخْدِمُونَ", "يَسْتَخْدَمُونَ", "يُسْتَخْدِمُونَ", "يَسْتَخْدِمْنَ"], "answer": "يَسْتَخْدِمُونَ", "explain_uz": "X bob muzori'i: prefiks fatha, o'rta harf kasra, ko'plik ـُونَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "order_words", "q_uz": "So'zlarni tartibga soling: «Ertaga talaba darsni o'rganadi»", "q_ar": "", "options": [], "answer": "غَدًا سَيَتَعَلَّمُ الطَّالِبُ الدَّرْسَ", "explain_uz": "Zamon ishorasi + kelasi zamon fe'li + ega + to'ldiruvchi.", "audio": "", "root": "", "pattern": "", "words": ["غَدًا", "سَيَتَعَلَّمُ", "الطَّالِبُ", "الدَّرْسَ"]},
-  {"type": "match_root", "q_uz": "«سَافَرَ، مُسَافِر، سَفَر» qaysi o'zakdan?", "q_ar": "", "options": ["س ف ر", "خ د م", "ي ق ظ"], "answer": "س ف ر", "explain_uz": "Hammasi س ف ر (safar) o'zagidan.", "audio": "", "root": "س ف ر", "pattern": "", "words": []}
+  {
+   "type": "mcq",
+   "q_uz": "كَتَبْنَا ning muzori' shakli qaysi?",
+   "q_ar": "",
+   "options": [
+    "نَكْتُبُ",
+    "يَكْتُبُ",
+    "أَكْتُبُ",
+    "كَتَبُوا"
+   ],
+   "answer": "نَكْتُبُ",
+   "explain_uz": "Biz → prefiks نَـ: نَكْتُبُ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«Ertaga boraman» qaysi?",
+   "q_ar": "",
+   "options": [
+    "سَأَذْهَبُ",
+    "ذَهَبْتُ",
+    "أَذْهَبُ",
+    "يَذْهَبُ"
+   ],
+   "answer": "سَأَذْهَبُ",
+   "explain_uz": "Kelasi zamon = سَـ + muzori' (أَذْهَبُ).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "",
+   "q_ar": "دَرَسْنَا",
+   "options": [],
+   "answer": "biz o'qidik / biz dars qildik",
+   "explain_uz": "دَرَسَ + ـنَا (biz) — o'tgan zamon.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "men boraman",
+   "q_ar": "",
+   "options": [],
+   "answer": "أَذْهَبُ",
+   "explain_uz": "Men → prefiks أَ: أَذْهَبُ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "fill_blank",
+   "q_uz": "Bo'sh joyni to'ldiring: «أَمْسِ ___ إِلَى السُّوقِ» (kecha bozorga bordim)",
+   "q_ar": "",
+   "options": [],
+   "answer": "ذَهَبْتُ",
+   "explain_uz": "أَمْسِ — moziy ishorasi; men = ـتُ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "harakat",
+   "q_uz": "«ular yozadilar» bo'lishi uchun to'g'ri shaklni tanlang:",
+   "q_ar": "يكتبون",
+   "options": [
+    "يَكْتُبُونَ",
+    "يَكْتَبُونَ",
+    "يُكْتِبُونَ",
+    "يَكْتُبْنَ"
+   ],
+   "answer": "يَكْتُبُونَ",
+   "explain_uz": "I bob muzori'i: prefiks fatha, o'rta harf damma, ko'plik ـُونَ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "order_words",
+   "q_uz": "So'zlarni tartibga soling: «Ertaga talaba darsni o'qiydi»",
+   "q_ar": "",
+   "options": [],
+   "answer": "غَدًا سَيَدْرُسُ الطَّالِبُ الدَّرْسَ",
+   "explain_uz": "Zamon ishorasi + kelasi zamon fe'li + ega + to'ldiruvchi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": [
+    "غَدًا",
+    "سَيَدْرُسُ",
+    "الطَّالِبُ",
+    "الدَّرْسَ"
+   ]
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«ذَهَبَ، يَذْهَبُ، ذَاهِب» qaysi o'zakdan?",
+   "q_ar": "",
+   "options": [
+    "ذ ه ب",
+    "د ر س",
+    "س ف ر"
+   ],
+   "answer": "ذ ه ب",
+   "explain_uz": "Hammasi ذ ه ب (borish) o'zagidan.",
+   "audio": "",
+   "root": "ذ ه ب",
+   "pattern": "",
+   "words": []
+  }
  ],
  "srs_cards": [
-  {"type": "pattern", "front": "سَـ + مُضَارِع", "back": "kelasi zamon: sayaktubu — yozadi", "deck": "msa"},
-  {"type": "word", "front": "اِسْتَيْقَظُوا", "back": "ular uyg'ondilar", "deck": "msa"},
-  {"type": "word", "front": "يَسْتَيْقِظْنَ", "back": "ular (ayollar) uyg'onadilar", "deck": "msa"},
-  {"type": "word", "front": "سَافَرْنَا", "back": "biz safar qildik", "deck": "msa"},
-  {"type": "word", "front": "نُسَافِرُ", "back": "biz safar qilamiz", "deck": "msa"},
-  {"type": "word", "front": "تَنَاوَلْتُ", "back": "men tanovul qildim", "deck": "msa"},
-  {"type": "word", "front": "أَتَنَاوَلُ", "back": "men tanovul qilaman", "deck": "msa"},
-  {"type": "word", "front": "سَيَكْتُبُ", "back": "yozadi (kelasi zamon) · u/erkak", "deck": "msa"},
-  {"type": "word", "front": "غَدًا", "back": "ertaga", "deck": "msa"},
-  {"type": "word", "front": "أَمْسِ", "back": "kecha", "deck": "msa"}
+  {
+   "type": "pattern",
+   "front": "سَـ + مُضَارِع",
+   "back": "kelasi zamon: sa-adhhabu — boraman (ertaga)",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "ذ ه ب",
+   "back": "borish — dhahaba/yadhhabu/dhaahib",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "ذَهَبْتُ",
+   "back": "men bordim",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "أَذْهَبُ",
+   "back": "men boraman",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "سَأَذْهَبُ",
+   "back": "boraman (kelasi zamon)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "دَرَسْنَا",
+   "back": "biz o'qidik",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "سَنَدْرُسُ",
+   "back": "o'qiymiz (kelasi zamon)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "سَنُسَافِرُ",
+   "back": "safar qilamiz (kelasi zamon)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "غَدًا",
+   "back": "ertaga",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "أَمْسِ",
+   "back": "kecha",
+   "deck": "msa"
+  }
  ]
 }

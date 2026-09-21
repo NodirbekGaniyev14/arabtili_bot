@@ -6,28 +6,86 @@
  "title_uz": "Alohida olmoshlar (14 ta)",
  "title_ar": "الضَّمَائِرُ المُنْفَصِلَةُ",
  "can_do_uz": "14 ta alohida olmoshni to'g'ri tanlab, ularni fe'l shakliga moslay olaman.",
- "duration_min": 30,
- "prerequisites": ["a2-06"],
+ "duration_min": 20,
+ "prerequisites": [
+  "a2-06"
+ ],
  "harakat_level": "new_words_only",
  "hook_uz": "A1 da 8 ta olmoshni bilib olgansiz: أَنَا، أَنْتَ، هُوَ، هِيَ… Lekin jadval to'liq emas edi. «Ular ikkovi» va «sizlar — ayollar» uchun alohida olmoshlar bor: هُمَا، هُنَّ، أَنْتُمَا، أَنْتُنَّ. Va e'tibor bering — olmoshlar ham xuddi fe'l kabi 14 ta. Chunki ular BIR TIZIMNING ikki yuzi.",
  "grammar": {
   "point_ar": "الضَّمَائِرُ المُنْفَصِلَةُ الأَرْبَعَ عَشْرَةَ",
-  "explanation_uz": "Munfasil («alohida») olmosh — mustaqil so'z: u hech narsaga ulanmaydi, alohida yoziladi va gapda ko'pincha EGA (مُبْتَدَأ) bo'ladi. Ularning soni ham 14 ta va tartibi fe'l tuslanishi bilan ayni bir xil: g'oyib 6, muxotab 6, mutakallim 2. Ikki muhim nuqta. (1) IKKILIKDA jins farqi yo'q: هُمَا ikki erkakka ham, ikki ayolga ham; أَنْتُمَا ham shunday. (2) Olmosh fe'lga MOS kelishi shart: هُنَّ كَتَبْنَ (to'g'ri), هُنَّ كَتَبُوا (xato). Ismli gapda olmosh aniq, xabar noaniq bo'ladi: أَنْتُمَا زَمِيلَانِ — sizlar ikkovingiz hamkasbsiz.",
+  "explanation_uz": "Avval 8 asosiy shaklni mustahkam oling (u, u ayol, ular, sen, sen ayol, sizlar, men, biz); ikkilik va ayollar ko'pligi (6 ta) jadval oxirida — tanib qo'yish yetarli. Munfasil («alohida») olmosh — mustaqil so'z: u hech narsaga ulanmaydi, alohida yoziladi va gapda ko'pincha EGA (مُبْتَدَأ) bo'ladi. Ularning soni ham 14 ta va tartibi fe'l tuslanishi bilan ayni bir xil: g'oyib 6, muxotab 6, mutakallim 2. Ikki muhim nuqta. (1) IKKILIKDA jins farqi yo'q: هُمَا ikki erkakka ham, ikki ayolga ham; أَنْتُمَا ham shunday. (2) Olmosh fe'lga MOS kelishi shart: هُنَّ كَتَبْنَ (to'g'ri), هُنَّ كَتَبُوا (xato). Ismli gapda olmosh aniq, xabar noaniq bo'ladi: أَنْتُمَا زَمِيلَانِ — sizlar ikkovingiz hamkasbsiz.",
   "table": [
-   {"ar": "هُوَ", "uz": "u (bir erkak)", "form": "غَائِب مُفْرَد"},
-   {"ar": "هُمَا", "uz": "ular ikki erkak", "form": "غَائِب مُثَنَّى"},
-   {"ar": "هُمْ", "uz": "ular (erkaklar)", "form": "غَائِب جَمْع"},
-   {"ar": "هِيَ", "uz": "u (bir ayol)", "form": "غَائِبَة مُفْرَد"},
-   {"ar": "هُمَا", "uz": "ular ikki ayol — erkak bilan bir xil", "form": "غَائِبَة مُثَنَّى"},
-   {"ar": "هُنَّ", "uz": "ular (ayollar)", "form": "غَائِبَة جَمْع"},
-   {"ar": "أَنْتَ", "uz": "sen (erkak)", "form": "مُخَاطَب مُفْرَد"},
-   {"ar": "أَنْتُمَا", "uz": "sizlar ikkovingiz", "form": "مُخَاطَب مُثَنَّى"},
-   {"ar": "أَنْتُمْ", "uz": "sizlar (erkaklar)", "form": "مُخَاطَب جَمْع"},
-   {"ar": "أَنْتِ", "uz": "sen (ayol)", "form": "مُخَاطَبَة مُفْرَد"},
-   {"ar": "أَنْتُمَا", "uz": "sizlar ikki ayol — erkak bilan bir xil", "form": "مُخَاطَبَة مُثَنَّى"},
-   {"ar": "أَنْتُنَّ", "uz": "sizlar (ayollar)", "form": "مُخَاطَبَة جَمْع"},
-   {"ar": "أَنَا", "uz": "men", "form": "مُتَكَلِّم مُفْرَد"},
-   {"ar": "نَحْنُ", "uz": "biz", "form": "مُتَكَلِّم جَمْع"}
+   {
+    "ar": "هُوَ",
+    "uz": "u (bir erkak)",
+    "form": "غَائِب مُفْرَد"
+   },
+   {
+    "ar": "هُمْ",
+    "uz": "ular (erkaklar)",
+    "form": "غَائِب جَمْع"
+   },
+   {
+    "ar": "هِيَ",
+    "uz": "u (bir ayol)",
+    "form": "غَائِبَة مُفْرَد"
+   },
+   {
+    "ar": "أَنْتَ",
+    "uz": "sen (erkak)",
+    "form": "مُخَاطَب مُفْرَد"
+   },
+   {
+    "ar": "أَنْتُمْ",
+    "uz": "sizlar (erkaklar)",
+    "form": "مُخَاطَب جَمْع"
+   },
+   {
+    "ar": "أَنْتِ",
+    "uz": "sen (ayol)",
+    "form": "مُخَاطَبَة مُفْرَد"
+   },
+   {
+    "ar": "أَنَا",
+    "uz": "men",
+    "form": "مُتَكَلِّم مُفْرَد"
+   },
+   {
+    "ar": "نَحْنُ",
+    "uz": "biz",
+    "form": "مُتَكَلِّم جَمْع"
+   },
+   {
+    "ar": "هُمَا",
+    "uz": "ular ikki erkak (kam ishlatiladi)",
+    "form": "غَائِب مُثَنَّى"
+   },
+   {
+    "ar": "هُمَا",
+    "uz": "ular ikki ayol — erkak bilan bir xil (kam ishlatiladi)",
+    "form": "غَائِبَة مُثَنَّى"
+   },
+   {
+    "ar": "هُنَّ",
+    "uz": "ular (ayollar) (kam ishlatiladi)",
+    "form": "غَائِبَة جَمْع"
+   },
+   {
+    "ar": "أَنْتُمَا",
+    "uz": "sizlar ikkovingiz (kam ishlatiladi)",
+    "form": "مُخَاطَب مُثَنَّى"
+   },
+   {
+    "ar": "أَنْتُمَا",
+    "uz": "sizlar ikki ayol — erkak bilan bir xil (kam ishlatiladi)",
+    "form": "مُخَاطَبَة مُثَنَّى"
+   },
+   {
+    "ar": "أَنْتُنَّ",
+    "uz": "sizlar (ayollar) (kam ishlatiladi)",
+    "form": "مُخَاطَبَة جَمْع"
+   }
   ],
   "common_mistakes_uz": [
    "هُمْ (erkaklar) ni ayollar guruhiga ishlatish — ayollar uchun هُنَّ.",
@@ -39,65 +97,229 @@
   {
    "root": "ف ص ل",
    "meaning_uz": "ajratish, bo'lish",
-   "uz_cognates": ["fasl", "tafsilot", "fosila"],
+   "uz_cognates": [
+    "fasl",
+    "tafsilot",
+    "fosila"
+   ],
    "derived": [
-    {"ar": "فَصَلَ", "uz": "ajratdi", "pattern": "فَعَلَ"},
-    {"ar": "مُنْفَصِل", "uz": "ajralgan, alohida", "pattern": "مُنْفَعِل"},
-    {"ar": "تَفْصِيل", "uz": "tafsilot", "pattern": "تَفْعِيل"}
+    {
+     "ar": "فَصَلَ",
+     "uz": "ajratdi",
+     "pattern": "فَعَلَ"
+    },
+    {
+     "ar": "مُنْفَصِل",
+     "uz": "ajralgan, alohida",
+     "pattern": "مُنْفَعِل"
+    },
+    {
+     "ar": "تَفْصِيل",
+     "uz": "tafsilot",
+     "pattern": "تَفْعِيل"
+    }
    ]
   },
   {
    "root": "و ص ل",
    "meaning_uz": "ulanish, yetib borish",
-   "uz_cognates": ["vasl", "ittisol", "aloqa (ittisol)"],
+   "uz_cognates": [
+    "vasl",
+    "ittisol",
+    "aloqa (ittisol)"
+   ],
    "derived": [
-    {"ar": "وَصَلَ", "uz": "yetib keldi", "pattern": "فَعَلَ"},
-    {"ar": "مُتَّصِل", "uz": "ulangan, birikkan", "pattern": "مُفْتَعِل"},
-    {"ar": "اِتِّصَال", "uz": "aloqa", "pattern": "اِفْتِعَال"}
+    {
+     "ar": "وَصَلَ",
+     "uz": "yetib keldi",
+     "pattern": "فَعَلَ"
+    },
+    {
+     "ar": "مُتَّصِل",
+     "uz": "ulangan, birikkan",
+     "pattern": "مُفْتَعِل"
+    },
+    {
+     "ar": "اِتِّصَال",
+     "uz": "aloqa",
+     "pattern": "اِفْتِعَال"
+    }
    ]
   },
   {
    "root": "ج ه د",
    "meaning_uz": "harakat qilish, tirishish",
-   "uz_cognates": ["jahd", "ijtihod", "mujtahid"],
+   "uz_cognates": [
+    "jahd",
+    "ijtihod",
+    "mujtahid"
+   ],
    "derived": [
-    {"ar": "اِجْتَهَدَ", "uz": "tirishdi", "pattern": "اِفْتَعَلَ"},
-    {"ar": "مُجْتَهِد", "uz": "tirishqoq", "pattern": "مُفْتَعِل"},
-    {"ar": "جُهْد", "uz": "kuch, harakat", "pattern": "فُعْل"}
+    {
+     "ar": "اِجْتَهَدَ",
+     "uz": "tirishdi",
+     "pattern": "اِفْتَعَلَ"
+    },
+    {
+     "ar": "مُجْتَهِد",
+     "uz": "tirishqoq",
+     "pattern": "مُفْتَعِل"
+    },
+    {
+     "ar": "جُهْد",
+     "uz": "kuch, harakat",
+     "pattern": "فُعْل"
+    }
    ]
   }
  ],
  "vocabulary": [
-  {"ar": "هُمَا", "translit": "humā", "uz": "ular ikkovi (erkak ham, ayol ham)", "root": "", "pattern": "", "pos": "olmosh", "audio": "a2/huma_pr.mp3", "example_ar": "هُمَا زَمِيلَانِ مُجْتَهِدَانِ.", "example_uz": "Ular ikkovi tirishqoq hamkasb.", "srs": true},
-  {"ar": "هُنَّ", "translit": "hunna", "uz": "ular (ayollar)", "root": "", "pattern": "", "pos": "olmosh", "audio": "a2/hunna.mp3", "example_ar": "هُنَّ جَارَاتُنَا.", "example_uz": "Ular bizning qo'shnilarimiz (ayollar).", "srs": true},
-  {"ar": "أَنْتُمَا", "translit": "antumā", "uz": "sizlar ikkovingiz", "root": "", "pattern": "", "pos": "olmosh", "audio": "a2/antuma.mp3", "example_ar": "أَنْتُمَا طَالِبَانِ.", "example_uz": "Sizlar ikkovingiz talabasiz.", "srs": true},
-  {"ar": "أَنْتُنَّ", "translit": "antunna", "uz": "sizlar (ayollar)", "root": "", "pattern": "", "pos": "olmosh", "audio": "a2/antunna.mp3", "example_ar": "أَنْتُنَّ طَالِبَاتٌ مُجْتَهِدَاتٌ.", "example_uz": "Sizlar tirishqoq talaba qizlarsiz.", "srs": true},
-  {"ar": "مُنْفَصِل", "translit": "munfaṣil", "uz": "ajralgan, alohida (o'zbekcha 'fasl, tafsilot')", "root": "ف ص ل", "pattern": "مُنْفَعِل", "pos": "sifat", "audio": "a2/munfasil.mp3", "example_ar": "الضَّمِيرُ المُنْفَصِلُ كَلِمَةٌ مُسْتَقِلَّةٌ.", "example_uz": "Alohida olmosh — mustaqil so'z.", "srs": true},
-  {"ar": "مُتَّصِل", "translit": "muttaṣil", "uz": "ulangan, birikkan (o'zbekcha 'ittisol, aloqa')", "root": "و ص ل", "pattern": "مُفْتَعِل", "pos": "sifat", "audio": "a2/muttasil.mp3", "example_ar": "الضَّمِيرُ المُتَّصِلُ يَلْتَصِقُ بِالكَلِمَةِ.", "example_uz": "Birikuvchi olmosh so'zga yopishadi.", "srs": true},
-  {"ar": "مُجْتَهِد", "translit": "mujtahid", "uz": "tirishqoq (o'zbekcha 'ijtihod, mujtahid')", "root": "ج ه د", "pattern": "مُفْتَعِل", "pos": "sifat", "audio": "a2/mujtahid.mp3", "example_ar": "هُوَ طَالِبٌ مُجْتَهِدٌ.", "example_uz": "U tirishqoq talaba.", "srs": true},
-  {"ar": "زَمِيل", "translit": "zamīl", "uz": "hamkasb, sinfdosh", "root": "ز م ل", "pattern": "فَعِيل", "pos": "ot", "audio": "a2/zamil.mp3", "example_ar": "زَمِيلِي فِي الصَّفِّ.", "example_uz": "Sinfdoshim.", "srs": true},
-  {"ar": "جَارَة", "translit": "jāra", "uz": "qo'shni ayol", "root": "ج و ر", "pattern": "فَاعِلَة", "pos": "ot", "audio": "a2/jara.mp3", "example_ar": "جَارَتُنَا طَبِيبَةٌ.", "example_uz": "Qo'shnimiz — shifokor ayol.", "srs": true}
+  {
+   "ar": "هُمَا",
+   "translit": "humā",
+   "uz": "ular ikkovi (erkak ham, ayol ham)",
+   "root": "",
+   "pattern": "",
+   "pos": "olmosh",
+   "audio": "a2/huma_pr.mp3",
+   "example_ar": "هُمَا زَمِيلَانِ مُجْتَهِدَانِ.",
+   "example_uz": "Ular ikkovi tirishqoq hamkasb.",
+   "srs": true
+  },
+  {
+   "ar": "هُنَّ",
+   "translit": "hunna",
+   "uz": "ular (ayollar)",
+   "root": "",
+   "pattern": "",
+   "pos": "olmosh",
+   "audio": "a2/hunna.mp3",
+   "example_ar": "هُنَّ جَارَاتُنَا.",
+   "example_uz": "Ular bizning qo'shnilarimiz (ayollar).",
+   "srs": true
+  },
+  {
+   "ar": "أَنْتُمَا",
+   "translit": "antumā",
+   "uz": "sizlar ikkovingiz",
+   "root": "",
+   "pattern": "",
+   "pos": "olmosh",
+   "audio": "a2/antuma.mp3",
+   "example_ar": "أَنْتُمَا طَالِبَانِ.",
+   "example_uz": "Sizlar ikkovingiz talabasiz.",
+   "srs": true
+  },
+  {
+   "ar": "أَنْتُنَّ",
+   "translit": "antunna",
+   "uz": "sizlar (ayollar)",
+   "root": "",
+   "pattern": "",
+   "pos": "olmosh",
+   "audio": "a2/antunna.mp3",
+   "example_ar": "أَنْتُنَّ طَالِبَاتٌ مُجْتَهِدَاتٌ.",
+   "example_uz": "Sizlar tirishqoq talaba qizlarsiz.",
+   "srs": true
+  },
+  {
+   "ar": "مُنْفَصِل",
+   "translit": "munfaṣil",
+   "uz": "ajralgan, alohida (o'zbekcha 'fasl, tafsilot')",
+   "root": "ف ص ل",
+   "pattern": "مُنْفَعِل",
+   "pos": "sifat",
+   "audio": "a2/munfasil.mp3",
+   "example_ar": "الضَّمِيرُ المُنْفَصِلُ كَلِمَةٌ مُسْتَقِلَّةٌ.",
+   "example_uz": "Alohida olmosh — mustaqil so'z.",
+   "srs": true
+  },
+  {
+   "ar": "مُتَّصِل",
+   "translit": "muttaṣil",
+   "uz": "ulangan, birikkan (o'zbekcha 'ittisol, aloqa')",
+   "root": "و ص ل",
+   "pattern": "مُفْتَعِل",
+   "pos": "sifat",
+   "audio": "a2/muttasil.mp3",
+   "example_ar": "الضَّمِيرُ المُتَّصِلُ يَلْتَصِقُ بِالكَلِمَةِ.",
+   "example_uz": "Birikuvchi olmosh so'zga yopishadi.",
+   "srs": true
+  },
+  {
+   "ar": "مُجْتَهِد",
+   "translit": "mujtahid",
+   "uz": "tirishqoq (o'zbekcha 'ijtihod, mujtahid')",
+   "root": "ج ه د",
+   "pattern": "مُفْتَعِل",
+   "pos": "sifat",
+   "audio": "a2/mujtahid.mp3",
+   "example_ar": "هُوَ طَالِبٌ مُجْتَهِدٌ.",
+   "example_uz": "U tirishqoq talaba.",
+   "srs": true
+  },
+  {
+   "ar": "زَمِيل",
+   "translit": "zamīl",
+   "uz": "hamkasb, sinfdosh",
+   "root": "ز م ل",
+   "pattern": "فَعِيل",
+   "pos": "ot",
+   "audio": "a2/zamil.mp3",
+   "example_ar": "زَمِيلِي فِي الصَّفِّ.",
+   "example_uz": "Sinfdoshim.",
+   "srs": true
+  },
+  {
+   "ar": "جَارَة",
+   "translit": "jāra",
+   "uz": "qo'shni ayol",
+   "root": "ج و ر",
+   "pattern": "فَاعِلَة",
+   "pos": "ot",
+   "audio": "a2/jara.mp3",
+   "example_ar": "جَارَتُنَا طَبِيبَةٌ.",
+   "example_uz": "Qo'shnimiz — shifokor ayol.",
+   "srs": true
+  }
  ],
  "hejazi": [],
  "skills": {
   "reading": {
    "text_ar": "أَنَا طَالِبٌ وَأَنْتَ مُدَرِّسٌ. هُوَ مُهَنْدِسٌ وَهِيَ طَبِيبَةٌ. هُمَا زَمِيلَانِ مُجْتَهِدَانِ، وَهُمْ طُلَّابٌ فِي المَعْهَدِ. وَهُنَّ جَارَاتُنَا. أَنْتُمَا زَمِيلَانِ، وَأَنْتُنَّ طَالِبَاتٌ. وَنَحْنُ نَتَعَلَّمُ العَرَبِيَّةَ مَعًا.",
    "questions": [
-    {"q_uz": "«هُمَا» kimlar haqida aytilgan?", "a": "Ikki tirishqoq hamkasb haqida"},
-    {"q_uz": "Ayollar ko'pligi uchun qaysi olmoshlar ishlatilgan?", "a": "هُنَّ va أَنْتُنَّ"},
-    {"q_uz": "«نَحْنُ» nima qiladi?", "a": "Birgalikda arab tilini o'rganadi"}
+    {
+     "q_uz": "«هُمَا» kimlar haqida aytilgan?",
+     "a": "Ikki tirishqoq hamkasb haqida"
+    },
+    {
+     "q_uz": "Ayollar ko'pligi uchun qaysi olmoshlar ishlatilgan?",
+     "a": "هُنَّ va أَنْتُنَّ"
+    },
+    {
+     "q_uz": "«نَحْنُ» nima qiladi?",
+     "a": "Birgalikda arab tilini o'rganadi"
+    }
    ]
   },
   "listening": {
    "audio": "a2/hunna.mp3",
    "transcript_ar": "هُنَّ",
    "questions": [
-    {"q_uz": "Bu olmosh kimni bildiradi?", "a": "Ular — ayollar (g'oyiba jam')"}
+    {
+     "q_uz": "Bu olmosh kimni bildiradi?",
+     "a": "Ular — ayollar (g'oyiba jam')"
+    }
    ]
   },
   "speaking": {
    "task_uz": "14 olmoshni tartib bilan ayting: huwa, humā, hum, hiya, humā, hunna, anta, antumā, antum, anti, antumā, antunna, anā, naḥnu.",
-   "target_ar": ["هُمَا", "هُنَّ", "أَنْتُمَا", "أَنْتُنَّ"],
+   "target_ar": [
+    "هُمَا",
+    "هُنَّ",
+    "أَنْتُمَا",
+    "أَنْتُنَّ"
+   ],
    "eval": "self_check"
   },
   "writing": {
@@ -106,25 +328,158 @@
   }
  },
  "micro_test": [
-  {"type": "mcq", "q_uz": "«Ular (ayollar)» qaysi olmosh?", "q_ar": "", "options": ["هُنَّ", "هُمْ", "هُمَا", "أَنْتُنَّ"], "answer": "هُنَّ", "explain_uz": "هُنَّ — g'oyiba jam' (ular, ayollar).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "«Sizlar ikkovingiz» qaysi?", "q_ar": "", "options": ["أَنْتُمَا", "أَنْتُمْ", "أَنْتُنَّ", "هُمَا"], "answer": "أَنْتُمَا", "explain_uz": "Muxotab musanna — erkak va ayol uchun bir xil.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "هُمَا", "options": [], "answer": "ular ikkovi", "explain_uz": "Ikkilik olmoshi — jins farqi yo'q.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "sizlar (ayollar)", "q_ar": "", "options": [], "answer": "أَنْتُنَّ", "explain_uz": "Muxotaba jam': أَنْتُنَّ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "mcq", "q_uz": "Qaysi gap TO'G'RI?", "q_ar": "", "options": ["هُنَّ كَتَبْنَ", "هُنَّ كَتَبُوا", "هُنَّ كَتَبْتُنَّ", "هُنَّ كَتَبَ"], "answer": "هُنَّ كَتَبْنَ", "explain_uz": "Olmosh fe'lga mos bo'lishi shart: هُنَّ → كَتَبْنَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "fill_blank", "q_uz": "Bo'sh joyni to'ldiring: «___ طَالِبَانِ مُجْتَهِدَانِ» (ular ikkovi tirishqoq talaba)", "q_ar": "", "options": [], "answer": "هُمَا", "explain_uz": "Ikkilik ega uchun هُمَا olmoshi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "match_root", "q_uz": "«مُنْفَصِل، فَصْل، تَفْصِيل» qaysi o'zakdan?", "q_ar": "", "options": ["ف ص ل", "و ص ل", "ج ه د"], "answer": "ف ص ل", "explain_uz": "Hammasi ف ص ل (ajratish) o'zagidan — o'zbekcha 'fasl, tafsilot'.", "audio": "", "root": "ف ص ل", "pattern": "", "words": []}
+  {
+   "type": "mcq",
+   "q_uz": "«Ular (ayollar)» qaysi olmosh?",
+   "q_ar": "",
+   "options": [
+    "هُنَّ",
+    "هُمْ",
+    "هُمَا",
+    "أَنْتُنَّ"
+   ],
+   "answer": "هُنَّ",
+   "explain_uz": "هُنَّ — g'oyiba jam' (ular, ayollar).",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "«Sizlar ikkovingiz» qaysi?",
+   "q_ar": "",
+   "options": [
+    "أَنْتُمَا",
+    "أَنْتُمْ",
+    "أَنْتُنَّ",
+    "هُمَا"
+   ],
+   "answer": "أَنْتُمَا",
+   "explain_uz": "Muxotab musanna — erkak va ayol uchun bir xil.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_ar_uz",
+   "q_uz": "",
+   "q_ar": "هُمَا",
+   "options": [],
+   "answer": "ular ikkovi",
+   "explain_uz": "Ikkilik olmoshi — jins farqi yo'q.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "translate_uz_ar",
+   "q_uz": "sizlar (ayollar)",
+   "q_ar": "",
+   "options": [],
+   "answer": "أَنْتُنَّ",
+   "explain_uz": "Muxotaba jam': أَنْتُنَّ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "mcq",
+   "q_uz": "Qaysi gap TO'G'RI?",
+   "q_ar": "",
+   "options": [
+    "هُنَّ كَتَبْنَ",
+    "هُنَّ كَتَبُوا",
+    "هُنَّ كَتَبْتُنَّ",
+    "هُنَّ كَتَبَ"
+   ],
+   "answer": "هُنَّ كَتَبْنَ",
+   "explain_uz": "Olmosh fe'lga mos bo'lishi shart: هُنَّ → كَتَبْنَ.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "fill_blank",
+   "q_uz": "Bo'sh joyni to'ldiring: «___ طَالِبَانِ مُجْتَهِدَانِ» (ular ikkovi tirishqoq talaba)",
+   "q_ar": "",
+   "options": [],
+   "answer": "هُمَا",
+   "explain_uz": "Ikkilik ega uchun هُمَا olmoshi.",
+   "audio": "",
+   "root": "",
+   "pattern": "",
+   "words": []
+  },
+  {
+   "type": "match_root",
+   "q_uz": "«مُنْفَصِل، فَصْل، تَفْصِيل» qaysi o'zakdan?",
+   "q_ar": "",
+   "options": [
+    "ف ص ل",
+    "و ص ل",
+    "ج ه د"
+   ],
+   "answer": "ف ص ل",
+   "explain_uz": "Hammasi ف ص ل (ajratish) o'zagidan — o'zbekcha 'fasl, tafsilot'.",
+   "audio": "",
+   "root": "ف ص ل",
+   "pattern": "",
+   "words": []
+  }
  ],
  "srs_cards": [
-  {"type": "root", "front": "ف ص ل", "back": "ajratish — fasl/tafsilot/munfasil", "deck": "msa"},
-  {"type": "root", "front": "و ص ل", "back": "ulanish — vasl/ittisol/muttasil", "deck": "msa"},
-  {"type": "root", "front": "ج ه د", "back": "tirishish — jahd/ijtihod/mujtahid", "deck": "msa"},
-  {"type": "word", "front": "هُمَا", "back": "ular ikkovi (jins farqi yo'q)", "deck": "msa"},
-  {"type": "word", "front": "هُنَّ", "back": "ular (ayollar)", "deck": "msa"},
-  {"type": "word", "front": "أَنْتُمَا", "back": "sizlar ikkovingiz", "deck": "msa"},
-  {"type": "word", "front": "أَنْتُنَّ", "back": "sizlar (ayollar)", "deck": "msa"},
-  {"type": "word", "front": "مُنْفَصِل", "back": "ajralgan, alohida", "deck": "msa"},
-  {"type": "word", "front": "مُتَّصِل", "back": "ulangan, birikkan", "deck": "msa"},
-  {"type": "word", "front": "مُجْتَهِد", "back": "tirishqoq", "deck": "msa"},
-  {"type": "word", "front": "زَمِيل", "back": "hamkasb, sinfdosh", "deck": "msa"}
+  {
+   "type": "root",
+   "front": "ف ص ل",
+   "back": "ajratish — fasl/tafsilot/munfasil",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "و ص ل",
+   "back": "ulanish — vasl/ittisol/muttasil",
+   "deck": "msa"
+  },
+  {
+   "type": "root",
+   "front": "ج ه د",
+   "back": "tirishish — jahd/ijtihod/mujtahid",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "هُنَّ",
+   "back": "ular (ayollar)",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "مُنْفَصِل",
+   "back": "ajralgan, alohida",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "مُتَّصِل",
+   "back": "ulangan, birikkan",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "مُجْتَهِد",
+   "back": "tirishqoq",
+   "deck": "msa"
+  },
+  {
+   "type": "word",
+   "front": "زَمِيل",
+   "back": "hamkasb, sinfdosh",
+   "deck": "msa"
+  }
  ]
 }
