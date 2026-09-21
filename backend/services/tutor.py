@@ -79,6 +79,15 @@ class TutorReply(BaseModel):
             "clear Uzbek, 2-4 sentences, with Arabic examples with harakat. Otherwise empty."
         ),
     )
+    say_ar: str = Field(
+        default="",
+        description=(
+            "If the learner asked HOW TO SAY something (in Uzbek or otherwise) or answered in Uzbek and needs "
+            "the Arabic: the exact Arabic sentence they should now say, with full harakat, at their level. "
+            "Otherwise empty."
+        ),
+    )
+    say_translit: str = Field(default="", description="Latin transliteration of `say_ar` (same style as `translit`); empty if say_ar is empty")
     done: bool = Field(description="True only when the conversation naturally ended")
 
 
@@ -521,8 +530,8 @@ HARD RULES
 6. Learner input may be Arabic script (often WITHOUT harakat), Latin transliteration, Uzbek, or a mix. A message starting with "🎤" came from speech recognition and may contain small recognition errors — interpret it charitably by meaning: guess the words a learner at this level most plausibly said in this context, and never "correct" a mere recognition slip. If a 🎤 message is clearly recognition noise (an unrelated phrase, a repeated fragment, nonsense), do NOT correct or grade it: set ok=true, fixed_ar="", and kindly say in `uz` that you didn't catch it (e.g. "Eshitilmadi — yana bir marta, sekinroq ayting"), then repeat your question in `ar`.
    - Understandable and acceptable for the level → correction_ok=true, fixed_ar="", note_uz="".
    - Real error (grammar, gender/number agreement, wrong word, missing word, wrong verb form) → correction_ok=false, fixed_ar = the corrected full sentence with harakat, note_uz = ONE short Uzbek sentence naming the error. Missing harakat, transliteration spelling and minor speech-recognition slips are NOT errors.
-   - Learner ANSWERED in Uzbek (a statement, not a question) → correction_ok=false, fixed_ar = how to say it in Arabic (with harakat), note_uz = "Arabchasi: ..." followed by the transliteration; then continue the conversation as if they had said it in Arabic.
-   - Learner ASKED something or wants help (in Uzbek, Arabic or transliteration: meaning of a word, grammar, how to say something, pronunciation, culture, "tushunmadim", "bu nima?") → this is NOT an error: correction_ok=true. Answer fully in `answer_uz` (clear Uzbek, 2-4 sentences, Arabic examples with harakat and transliteration). Then in `ar` repeat or gently rephrase your question so the conversation continues. The learner may ask questions at ANY time and in ANY topic — you are also their Uzbek-speaking explainer.
+   - Learner ANSWERED in Uzbek (a statement, not a question) → correction_ok=false, fixed_ar = how to say it in Arabic (with harakat), note_uz = "Arabchasi: ..." followed by the transliteration; ALSO put that Arabic sentence in `say_ar` (+ `say_translit`) so the app can ask them to repeat it aloud; then continue the conversation as if they had said it in Arabic.
+   - Learner ASKED something or wants help (in Uzbek, Arabic or transliteration: meaning of a word, grammar, how to say something, pronunciation, culture, "tushunmadim", "bu nima?") → this is NOT an error: correction_ok=true. Answer fully in `answer_uz` (clear Uzbek, 2-4 sentences, Arabic examples with harakat and transliteration). If they asked HOW TO SAY something ("qanday aytaman", "arabchasi nima", "... deb aytmoqchiman"), put the ready sentence in `say_ar` + `say_translit` (level-appropriate, full harakat) — the app shows it as "say this" with a microphone. Then in `ar` repeat or gently rephrase your question so the conversation continues. The learner may ask questions at ANY time and in ANY topic — you are also their Uzbek-speaking explainer.
    - Cannot understand at all → keep correction_ok=true and ask a short clarifying question in `ar`.
 7. On the very first turn (message "[START]") greet the learner by name in `ar`, open the topic and ask the first question. Nothing to correct: correction_ok=true.
 8. `hint_uz` per the level profile: a concrete, short suggestion of what the learner can say next, ideally with the Arabic template.

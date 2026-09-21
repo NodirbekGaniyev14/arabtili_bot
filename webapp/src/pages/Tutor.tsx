@@ -40,6 +40,8 @@ interface Correction {
   ok: boolean;
   fixed_ar: string;
   note_uz: string;
+  /** Tuzatilgan jumlani takrorlash natijasi (K22.3) */
+  pron?: TutorPronounceResult;
 }
 
 interface Msg {
@@ -62,9 +64,18 @@ interface Msg {
   crit?: MockCriteria;
   /** Takrorlash mashqi natijasi (assistant xabari uchun) */
   pron?: TutorPronounceResult;
+  /** K22.3: «shunday deng» — qanday aytaman savoliga tayyor jumla (+ takrorlash natijasi) */
+  sayAr?: string;
+  sayTranslit?: string;
+  sayPron?: TutorPronounceResult;
 }
 
-type RecTarget = { kind: "answer" } | { kind: "repeat"; idx: number };
+type RecTarget =
+  | { kind: "answer" }
+  | { kind: "repeat"; idx: number }
+  | { kind: "fix"; idx: number } // tuzatilgan jumlani takrorlash (K22.3)
+  | { kind: "say"; idx: number }; // «shunday deng» jumlasini takrorlash (K22.3)
+const HOW_TO_SAY = "Arabcha qanday aytaman: ";
 type Tab = "chat" | "mock" | "drill" | "listen";
 const FREE_TABS: Tab[] = ["drill", "listen"];  // AI'siz, bepul bo'limlar
 
@@ -135,6 +146,7 @@ export default function Tutor({ onClose, initialTopicId }: TutorProps) {
 
   // Mikrofon
   const recorder = useRef(new Recorder());
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const [recTarget, setRecTarget] = useState<RecTarget | null>(null);
   const [recSeconds, setRecSeconds] = useState(0);
   const [transcribing, setTranscribing] = useState(false);
@@ -304,6 +316,10 @@ export default function Tutor({ onClose, initialTopicId }: TutorProps) {
         answerUz: r.reply.answer_uz,
         newWords: r.reply.new_words,
         audioUrl: r.audio_url,
+        // O'zbekcha javob yoki «qanday aytaman?» — aytish kerak bo'lgan jumla (fixed_ar takrori bo'lsa ko'rsatilmaydi)
+        sayAr:
+          r.reply.say_ar && r.reply.say_ar.trim() !== (r.reply.fixed_ar || "").trim() ? r.reply.say_ar.trim() : undefined,
+        sayTranslit: r.reply.say_translit || undefined,
       };
       const graded: Msg = isMock
         ? {
@@ -384,8 +400,18 @@ export default function Tutor({ onClose, initialTopicId }: TutorProps) {
         }
       } else {
         const m = messages[target.idx];
-        const r = await api.tutorPronounce(rec.blob, rec.filename, m.ar);
-        setMessages((ms) => ms.map((x, i) => (i === target.idx ? { ...x, pron: r } : x)));
+        const goal =
+          target.kind === "fix" ? m.correction?.fixed_ar ?? "" : target.kind === "say" ? m.sayAr ?? "" : m.ar;
+        if (!goal) return;
+        const r = await api.tutorPronounce(rec.blob, rec.filename, goal);
+        setMessages((ms) =>
+          ms.map((x, i) => {
+            if (i !== target.idx) return x;
+            if (target.kind === "fix") return { ...x, correction: { ...x.correction!, pron: r } };
+            if (target.kind === "say") return { ...x, sayPron: r };
+            return { ...x, pron: r };
+          })
+        );
         tg()?.HapticFeedback?.notificationOccurred(r.score >= 70 ? "success" : "warning");
       }
     } catch (e) {
@@ -794,7 +820,16 @@ export default function Tutor({ onClose, initialTopicId }: TutorProps) {
           <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-3">
             {messages.map((m, i) =>
               m.role === "user" ? (
-                <UserBubble key={i} m={m} mock={isMock} />
+                <UserBubble
+                  key={i}
+                  m={m}
+                  mock={isMock}
+                  canVoice={canVoice}
+                  recording={recTarget?.kind === "fix" && recTarget.idx === i}
+                  busy={!!recTarget || transcribing || loading}
+                  onSpeakFix={() => m.correction?.fixed_ar && speakText(m.correction.fixed_ar)}
+                  onRepeatFix={() => toggleRec({ kind: "fix", idx: i })}
+                />
               ) : (
                 <TutorBubble
                   key={i}
@@ -809,6 +844,10 @@ export default function Tutor({ onClose, initialTopicId }: TutorProps) {
                   onSpeak={() => speak(m)}
                   onRepeat={() => toggleRec({ kind: "repeat", idx: i })}
                   onSave={saveWord}
+                  sayRecording={recTarget?.kind === "say" && recTarget.idx === i}
+                  onSpeakSay={() => m.sayAr && speakText(m.sayAr)}
+                  onRepeatSay={() => toggleRec({ kind: "say", idx: i })}
+                  onSendSay={() => m.sayAr && send(m.sayAr, false)}
                 />
               )
             )}
@@ -894,6 +933,7 @@ export default function Tutor({ onClose, initialTopicId }: TutorProps) {
                   </button>
                 )}
                 <input
+                  ref={inputRef}
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && send(input, false)}
@@ -915,6 +955,22 @@ export default function Tutor({ onClose, initialTopicId }: TutorProps) {
                 >
                   ↑
                 </button>
+              </div>
+            )}
+            {!done && !outOfTurns && !recTarget && (
+              <div className="flex items-center gap-2 px-0.5">
+                <button
+                  onClick={() => {
+                    if (voiceOnly) toggleVoiceMode();
+                    setInput((v) => (v.startsWith(HOW_TO_SAY) ? v : HOW_TO_SAY + v));
+                    setTimeout(() => inputRef.current?.focus(), 50);
+                  }}
+                  className="h-7 rounded-full bg-gold-soft px-2.5 text-[11px] font-extrabold text-emerald-dark active:scale-95 transition-transform"
+                  title="O'zbekcha yozing — Jamal arabchasini aytib, takrorlatadi"
+                >
+                  💡 Qanday aytaman?
+                </button>
+                <span className="text-[10px] font-semibold text-ink-soft">o'zbekcha yozing — arabchasini beradi</span>
               </div>
             )}
             <div className="flex items-center justify-between text-[11px] font-bold text-ink-soft px-0.5">
@@ -1091,7 +1147,23 @@ function CriteriaBars({ c }: { c: MockCriteria }) {
   );
 }
 
-function UserBubble({ m, mock }: { m: Msg; mock: boolean }) {
+function UserBubble({
+  m,
+  mock,
+  canVoice,
+  recording,
+  busy,
+  onSpeakFix,
+  onRepeatFix,
+}: {
+  m: Msg;
+  mock: boolean;
+  canVoice: boolean;
+  recording: boolean;
+  busy: boolean;
+  onSpeakFix: () => void;
+  onRepeatFix: () => void;
+}) {
   const c = m.correction;
   return (
     <div className="flex flex-col items-end gap-1">
@@ -1133,9 +1205,48 @@ function UserBubble({ m, mock }: { m: Msg; mock: boolean }) {
           ) : (
             <>
               <div className="font-arabic text-lg leading-snug" dir="rtl">
-                ✏️ {c.fixed_ar}
+                ✏️{" "}
+                {c.pron
+                  ? c.pron.words.map((w, i) => (
+                      <span key={i} className={wordClass(w)}>
+                        {w.ar}{" "}
+                      </span>
+                    ))
+                  : c.fixed_ar}
               </div>
               {c.note_uz && <div className="mt-0.5 text-ink-soft">{c.note_uz}</div>}
+              {/* K22.3: tuzatishni eshitish va takrorlash — «o'zbekcha yozsam qotib qolaman» */}
+              {c.fixed_ar && (
+                <div className="mt-1.5 flex items-center gap-1.5 flex-wrap">
+                  <button
+                    onClick={onSpeakFix}
+                    className="h-7 px-2 rounded-lg bg-card text-sm font-extrabold active:scale-90 transition-transform"
+                    aria-label="Tinglash"
+                  >
+                    🔊
+                  </button>
+                  {canVoice && (
+                    <button
+                      onClick={onRepeatFix}
+                      disabled={busy && !recording}
+                      className={`h-7 px-2 rounded-lg text-[11px] font-extrabold active:scale-95 transition-transform disabled:opacity-40 ${
+                        recording ? "bg-terracotta text-white animate-pulse" : "bg-emerald-deep/10 text-emerald-dark"
+                      }`}
+                    >
+                      {recording ? "■ Tayyor" : "🎤 Takrorlang"}
+                    </button>
+                  )}
+                  {c.pron && (
+                    <span
+                      className={`h-7 inline-flex items-center px-2 rounded-lg text-[11px] font-extrabold text-white ${
+                        c.pron.score >= 80 ? "bg-emerald-deep" : c.pron.score >= 50 ? "bg-gold" : "bg-terracotta"
+                      }`}
+                    >
+                      🎯 {c.pron.score}%
+                    </span>
+                  )}
+                </div>
+              )}
             </>
           )}
         </div>
@@ -1156,6 +1267,10 @@ function TutorBubble({
   onSpeak,
   onRepeat,
   onSave,
+  sayRecording = false,
+  onSpeakSay,
+  onRepeatSay,
+  onSendSay,
 }: {
   m: Msg;
   showUz: boolean;
@@ -1169,6 +1284,11 @@ function TutorBubble({
   onSpeak: () => void;
   onRepeat: () => void;
   onSave: (w: TutorNewWord) => void;
+  /** K22.3 «shunday deng» kartasi */
+  sayRecording?: boolean;
+  onSpeakSay?: () => void;
+  onRepeatSay?: () => void;
+  onSendSay?: () => void;
 }) {
   return (
     <div className="flex flex-col items-start gap-1.5">
@@ -1178,6 +1298,58 @@ function TutorBubble({
             📘 TUSHUNTIRISH
           </div>
           <div className="whitespace-pre-line leading-snug">{m.answerUz}</div>
+        </div>
+      )}
+
+      {m.sayAr && (
+        <div className="max-w-[92%] rounded-2xl bg-gold-soft border border-gold/40 px-4 py-3">
+          <div className="text-[10px] font-extrabold tracking-[0.12em] text-emerald-dark mb-1">🗣 SHUNDAY DENG</div>
+          <div className="font-arabic text-2xl leading-relaxed" dir="rtl">
+            {m.sayPron
+              ? m.sayPron.words.map((w, i) => (
+                  <span key={i} className={wordClass(w)}>
+                    {w.ar}{" "}
+                  </span>
+                ))
+              : m.sayAr}
+          </div>
+          {m.sayTranslit && <div className="text-xs text-ink-soft font-semibold italic mt-0.5">{m.sayTranslit}</div>}
+          <div className="mt-2 flex items-center gap-1.5 flex-wrap">
+            <button
+              onClick={onSpeakSay}
+              className="h-8 px-2.5 rounded-lg bg-card text-sm font-extrabold active:scale-90 transition-transform"
+              aria-label="Tinglash"
+            >
+              🔊
+            </button>
+            {canVoice && (
+              <button
+                onClick={onRepeatSay}
+                disabled={busy && !sayRecording}
+                className={`h-8 px-2.5 rounded-lg text-xs font-extrabold active:scale-95 transition-transform disabled:opacity-40 ${
+                  sayRecording ? "bg-terracotta text-white animate-pulse" : "bg-emerald-deep/10 text-emerald-dark"
+                }`}
+              >
+                {sayRecording ? "■ Tayyor" : "🎤 Takrorlang"}
+              </button>
+            )}
+            {m.sayPron && (
+              <span
+                className={`h-8 inline-flex items-center px-2.5 rounded-lg text-xs font-extrabold text-white ${
+                  m.sayPron.score >= 80 ? "bg-emerald-deep" : m.sayPron.score >= 50 ? "bg-gold" : "bg-terracotta"
+                }`}
+              >
+                🎯 {m.sayPron.score}%
+              </span>
+            )}
+            <button
+              onClick={onSendSay}
+              disabled={busy}
+              className="h-8 px-2.5 rounded-lg bg-emerald-deep text-white text-xs font-extrabold active:scale-95 transition-transform disabled:opacity-40"
+            >
+              ➤ Shu javobni yuborish
+            </button>
+          </div>
         </div>
       )}
 

@@ -155,6 +155,9 @@ async def messages(req: Request):
             "«اِسْم» (ism) — «ism» degani. «اِسْمِي» = «mening ismim». Masalan: اِسْمِي نُودِير — ismii Nodir."
             if msgs and "?" in str(msgs[-1].get("content", "")) else ""
         ),
+        # K22.3: «qanday aytaman» so'rovi → tayyor jumla
+        "say_ar": "أَنَا مِنْ طَشْقَنْدَ" if msgs and "qanday aytaman" in str(msgs[-1].get("content", "")).lower() else "",
+        "say_translit": "ana min Toshqand" if msgs and "qanday aytaman" in str(msgs[-1].get("content", "")).lower() else "",
         "done": user_turns >= 6,
     }
     sys_len = sum(len(b.get("text", "")) for b in body.get("system", []))

@@ -1322,6 +1322,9 @@ export interface TutorReply {
   new_words: TutorNewWord[];
   /** O'quvchi savol bersa — o'zbekcha tushuntirish */
   answer_uz: string;
+  /** K22.3: «qanday aytaman?» / o'zbekcha javob — aytish kerak bo'lgan arabcha jumla */
+  say_ar?: string;
+  say_translit?: string;
   done: boolean;
   // Mock imtihon rejimi (mode: "mock")
   score?: number;
