@@ -92,11 +92,16 @@ systemctl restart arabiy      # qayta ishga tushirish
 journalctl -u arabiy -f       # jonli log
 ```
 
-## Yangilanish (keyin kod o'zgarsa)
+## Yangilanish (keyin kod o'zgarsa) — faqat git
+
+`webapp/dist` git'da commit qilinadi — serverda build ham, tar arxiv ham kerak emas:
 
 ```bash
-# Kompyuterdan yangi arxiv yuboring, keyin serverda:
-tar -xzf /root/arabiy-deploy.tar.gz -C /opt/arabiy
-cd /opt/arabiy/webapp && npm run build && cd ..
-systemctl restart arabiy
+cd /opt/arabiy && git pull origin master && .venv/bin/pip install -q -r backend/requirements.txt && systemctl restart arabiy
 ```
+
+yoki shu ishlarni bajaradigan skript: `sudo bash /opt/arabiy/deploy/update.sh`.
+
+> ⚠️ Eski `/root/arabiy-deploy.tar.gz` arxivini ISHLATMANG va o'chirib yuboring (`rm -f /root/arabiy-deploy.tar.gz`) —
+> u 2026-07 holatidagi kod; ustidan chiqarilsa butun sayt eski versiyaga qaytadi (2026-09-22 da shunday bo'lgan).
+> Tiklash: `cd /opt/arabiy && git checkout -- . && git clean -fd backend webapp/dist content scripts deploy && git pull origin master && systemctl restart arabiy`.
