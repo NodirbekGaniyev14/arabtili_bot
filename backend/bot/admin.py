@@ -225,6 +225,27 @@ async def cmd_sorov(message: Message, bot: Bot):
     await message.answer(f"✅ Yuborildi: {sent}\n❌ Yetib bormadi: {failed}")
 
 
+@router.message(Command("zaxira"))
+async def cmd_zaxira(message: Message, bot: Bot):
+    """DB zaxira nusxasi hozir (K23.1): gzip hujjat shu chatga keladi."""
+    if not _is_admin(message):
+        return
+    from services import backup
+
+    wait = await message.answer("🗄 Zaxira olinmoqda… (bir necha soniya)")
+    try:
+        async with SessionLocal() as session:
+            r = await backup.run(session, bot, manual=True)
+    except Exception as e:
+        await wait.edit_text(f"🔴 Zaxira olinmadi: {type(e).__name__}: {str(e)[:200]}")
+        return
+    info = r["info"]
+    note = "hujjat yuborildi" if r["sent"] else "hujjat yuborilmadi (hajm/tarmoq) — serverda"
+    await wait.edit_text(
+        f"✅ Zaxira: {info.path.name} · {info.gz_size / 1024 / 1024:.1f} MB · quick_check {info.check} · {note}"
+    )
+
+
 @router.message(Command("javoblar"))
 async def cmd_javoblar(message: Message):
     """Rad etilgan yozma javoblar (#F70): /javoblar [kun] [n]."""

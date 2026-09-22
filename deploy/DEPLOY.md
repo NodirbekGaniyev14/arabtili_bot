@@ -92,6 +92,24 @@ systemctl restart arabiy      # qayta ishga tushirish
 journalctl -u arabiy -f       # jonli log
 ```
 
+## Zaxira nusxa va tiklash (K23.1)
+
+Har kuni 03:00 (Toshkent) bot bazaning izchil nusxasini oladi: `/opt/arabiy/data/backups/arabiy-YYYY-MM-DD.db.gz`
+(14 kun saqlanadi) va adminga Telegram hujjat sifatida yuboradi — serverdan tashqaridagi nusxa.
+Qo'lda: `/zaxira`. Holat: `/tekshir` → «Zaxira: …».
+
+Tiklash (masalan 2026-09-22 nusxasidan):
+
+```bash
+systemctl stop arabiy
+cp /opt/arabiy/data/arabiy.db /opt/arabiy/data/arabiy.db.broken   # joriy holat ham qolsin
+gunzip -c /opt/arabiy/data/backups/arabiy-2026-09-22.db.gz > /opt/arabiy/data/arabiy.db
+rm -f /opt/arabiy/data/arabiy.db-wal /opt/arabiy/data/arabiy.db-shm
+systemctl start arabiy
+```
+
+Telegram'dan olingan `.db.gz` faylni serverga `scp` qilib, xuddi shu buyruqlar bilan tiklash mumkin.
+
 ## Yangilanish (keyin kod o'zgarsa) — faqat git
 
 `webapp/dist` git'da commit qilinadi — serverda build ham, tar arxiv ham kerak emas:

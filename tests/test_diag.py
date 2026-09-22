@@ -239,6 +239,7 @@ async def test_run_all_summary_and_escaping(monkeypatch):
     monkeypatch.setattr(diag, "check_tts", t)
     monkeypatch.setattr(diag, "check_db", d)
     monkeypatch.setattr(diag, "check_disk", lambda: diag._ok("Disk"))
+    monkeypatch.setattr(diag, "check_backup", lambda: diag._ok("Zaxira"))
     monkeypatch.setattr(diag, "check_webapp", lambda: [diag._ok("Webapp")])
     monkeypatch.setattr(diag, "check_settings", lambda: [diag._ok("Sozlama")])
     monkeypatch.setattr(diag, "check_tasks", lambda: [diag._ok("Halqa")])

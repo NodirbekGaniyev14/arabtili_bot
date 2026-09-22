@@ -297,6 +297,17 @@ def check_tasks() -> list[str]:
     return out
 
 
+def check_backup() -> str:
+    """K23.1: oxirgi zaxira nusxa — yo'q yoki 36 soatdan eski bo'lsa ogohlantirish."""
+    from services import backup
+
+    st = backup.status()
+    if not st["count"]:
+        return _warn(f"Zaxira: hali yo'q — birinchi nusxa {backup.BACKUP_HOUR:02d}:00 da (hozir: /zaxira)")
+    line = f"Zaxira: oxirgi {st['last']:%d.%m %H:%M} · {st['size'] / 1024 / 1024:.1f} MB · {st['count']} ta ({backup.KEEP} kun) · {backup.backup_dir()}"
+    return _warn(line + " — ESKI, /zaxira bilan tekshiring") if st["stale"] else _ok(line)
+
+
 def check_disk() -> str:
     from db.session import DB_PATH
 
@@ -336,6 +347,7 @@ async def run_all() -> str:
         "",
         "<b>Ma'lumotlar</b>",
         *db_lines,
+        check_backup(),
         check_disk(),
         "",
         "<b>Ilova va bot</b>",
