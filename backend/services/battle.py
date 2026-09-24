@@ -6,7 +6,8 @@ raundlar sinxron (ikkalasi javob bersa yoki vaqt tugasa — keyingisi). Ball: to
 BOT_WAIT soniyada odam topilmasa — sun'iy raqib (o'zbekcha ism, aniqligi o'yinchi baliga moslanadi).
 K25.4 (foydalanuvchi qarori): klientga «bot» belgisi UMUMAN yuborilmaydi — ism, liga, ball odamnikidek;
 u bilan ham «Qayta jang» ishlaydi (1.5–4 s «qabul qiladi»). Server ichida `Player.bot` va
-`battles.p2_id IS NULL` bilan farqlanadi (ball jadvali BOT_POINTS, admin statistikasi).
+`battles.p2_id IS NULL` bilan farqlanadi (admin statistikasi). K25.5: ball va XP odam bilan jangdagidek.
+Savollar — services/battle_questions.py (o'xshash, qiyinroq chalg'ituvchilar).
 
 Transport — WebSocket (api/battle.py). Bu modul faqat mantiq: Hub (ulanishlar, navbat, janglar),
 Match (raundlar), bot. Holat xotirada — bitta uvicorn jarayoni; jang oxirida `battles` jadvaliga
@@ -22,7 +23,6 @@ odam raqibga taklif (45 s), u ilovada qabul qiladi yoki rad etadi.
 
 import asyncio
 import logging
-import math
 import random
 import secrets
 import time
@@ -34,8 +34,7 @@ from sqlalchemy import func, or_, select
 
 from config import settings
 from db.models import Battle, User, XpLog
-from services import vocab
-from services import vocab_session as vs
+from services import battle_questions as bq
 from services.stats import TASHKENT_OFFSET, _today
 
 log = logging.getLogger(__name__)
@@ -51,7 +50,6 @@ XP = {"win": 8, "draw": 5, "loss": 3}
 XP_DAILY_CAP = 60  # janglardan kuniga ko'pi bilan (haftalik reytingda VIP sovrinlari bor)
 XP_SOURCE = "battle"
 POINTS = {"win": 20, "draw": 5, "loss": -10}
-BOT_POINTS = {"win": 10, "draw": 2, "loss": -5}  # bot bilan jang — yarmi
 LEAGUES = [
     {"id": "bronze", "title": "Bronza", "icon": "🥉", "min": 0},
     {"id": "silver", "title": "Kumush", "icon": "🥈", "min": 150},
@@ -66,7 +64,6 @@ BOT_NAMES = [
     "Temur", "Laylo", "Shoxrux", "Nigora", "Asadbek", "Sabina", "Xurshid", "Durdona", "Muhammadali", "Robiya",
 ]
 BOT_ACCEPT = (1.5, 4.0)  # sun'iy raqib «qayta jang»ni necha soniyada «qabul qiladi»
-KINDS = ("ar_uz", "uz_ar")  # tezkor jangda faqat matn (audio shovqinli joyda noqulay)
 ROOM_TTL = 10 * 60  # do'st havolasi amal qiladi (soniya)
 REMATCH_TTL = 45.0  # «qayta jang» taklifi
 CODE_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"  # 0/O, 1/I chalkashmasin
@@ -124,19 +121,14 @@ def outcome_of(p1_score: int, p2_score: int, p1_ms: int, p2_ms: int) -> int:
 
 
 def build_questions(level: str, rnd: random.Random, n: int = QUESTIONS) -> list[dict]:
-    """Darajaning lug'atidan n savol (chalg'ituvchilar — o'sha mavzudan, yetmasa darajadan)."""
-    pool = list(vocab.card_pool(level))
-    words = rnd.sample(pool, min(n, len(pool)))
-    out = []
-    for i, w in enumerate(words):
-        topic_pool = vocab.topic_pool(level, w["topic"]) if w.get("topic") else pool
-        out.append(vs.question(w, KINDS[i % len(KINDS)], topic_pool, level, rnd))
-    return out
+    """Darajaning lug'atidan n savol — o'xshash, qiyinroq variantlar bilan (K25.5, battle_questions)."""
+    return bq.build(level, rnd, n)
 
 
 def bot_accuracy(points: int) -> float:
-    """Yangi o'yinchiga ~60% to'g'ri, kuchliga (800+ ball) ~85% — yutish imkoni ~50–60%."""
-    return max(0.6, min(0.85, 0.6 + points / 3200))
+    """Yangi o'yinchiga ~55% to'g'ri, kuchliga (800+ ball) ~80%. K25.5: savollar qiyinlashgani uchun
+    0.05 ga pasaytirildi — odam uchun yutish imkoni ~50–60% bo'lib qolsin."""
+    return max(0.55, min(0.8, 0.55 + points / 3200))
 
 
 def bot_move(q: dict, accuracy: float, rnd: random.Random) -> tuple[float, str | None]:
@@ -398,7 +390,6 @@ async def _battle_xp_today(session, user_id: int) -> int:
 async def persist(session, m: Match, winner: int, status: str) -> dict[int, dict]:
     """Jang yozuvi + har odam o'yinchiga ball/XP. Qaytaradi: {user_id: {delta, points, league, xp, new_badges}}."""
     p1, p2 = m.players
-    bot_game = p1.bot or p2.bot
     row = Battle(
         level=m.level,
         p1_id=p1.user_id,
@@ -415,7 +406,7 @@ async def persist(session, m: Match, winner: int, status: str) -> dict[int, dict
         mode=m.mode,
     )
     out: dict[int, dict] = {}
-    table = BOT_POINTS if bot_game else POINTS
+    table = POINTS  # K25.5: sun'iy raqib bilan ham odamdagidek
     for idx, p in enumerate(m.players, start=1):
         if p.bot or p.user_id is None:
             continue
@@ -434,7 +425,7 @@ async def persist(session, m: Match, winner: int, status: str) -> dict[int, dict
             row.p1_delta = delta
         else:
             row.p2_delta = delta
-        xp = XP[res] if not bot_game else math.ceil(XP[res] / 2)
+        xp = XP[res]
         xp = min(xp, max(0, XP_DAILY_CAP - await _battle_xp_today(session, p.user_id)))
         if xp:
             session.add(XpLog(user_id=p.user_id, amount=xp, source=f"{XP_SOURCE}:{m.level}"))

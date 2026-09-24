@@ -8,8 +8,7 @@ Ikki davr:
 - **Haftalik Oktagon** — dushanba ~09:00 (Toshkent) o'tgan hafta yakunlanadi, top-3 e'lon
   qilinadi. Jadvalga BARCHA janglar kiradi (K25.4: sun'iy raqib o'quvchiga ko'rinmaydi —
   jadval undan farq qilsa, sezilib qoladi). Ball — o'sha haftada to'plangan SOF ball
-  (`battles.p1_delta`/`p2_delta` yig'indisi, mag'lubiyatlar minus bilan; sun'iy raqib
-  bilan jang — BOT_POINTS, yarmi).
+  (`battles.p1_delta`/`p2_delta` yig'indisi, mag'lubiyatlar minus bilan).
 
 - **Mavsum** — har oyning 1-sanasi ~09:00 o'tgan oy yakunlanadi: top-3 e'lon, keyin
   hamma o'yinchining Oktagon bali YUMSHOQ tiklanadi (yarmi qoladi) — ligalar qayta

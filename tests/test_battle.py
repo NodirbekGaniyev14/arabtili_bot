@@ -72,10 +72,10 @@ def test_questions_and_bot():
     rnd = random.Random(7)
     qs = bt.build_questions("A1", rnd)
     assert len(qs) == bt.QUESTIONS and len({q["key"] for q in qs}) == bt.QUESTIONS
-    assert [q["type"] for q in qs[:4]] == ["ar_uz", "uz_ar", "ar_uz", "uz_ar"]
+    assert {q["type"] for q in qs} <= {"ar_uz", "uz_ar"} and any(q["type"] == "uz_ar" for q in qs)
     for q in qs:
         assert q["answer"] in q["options"] and len(set(q["options"])) == len(q["options"]) == 4
-    assert bt.bot_accuracy(0) == 0.6 and bt.bot_accuracy(10_000) == 0.85
+    assert bt.bot_accuracy(0) == 0.55 and bt.bot_accuracy(10_000) == 0.8
     rights = sum(bt.bot_move(qs[0], 0.7, rnd)[1] == qs[0]["answer"] for _ in range(2000))
     assert 1250 < rights < 1550, "aniqlik ~70%"
     delay, _ = bt.bot_move(qs[0], 1.0, rnd)
@@ -145,11 +145,11 @@ async def test_bot_fallback_and_rewards(session, make_user):
         hub.answer(ua.id, i, m.questions[i]["answer"])  # darhol va to'g'ri — bot tezroq bo'lolmaydi
         await a.wait("round")
     e = await a.wait("end")
-    assert e["result"] == "win" and e["delta"] == bt.BOT_POINTS["win"] and e["xp"] == 4, "bot bilan — yarmi"
+    assert e["result"] == "win" and e["delta"] == bt.POINTS["win"] and e["xp"] == bt.XP["win"], "odam bilan jangdagidek (K25.5)"
     row = (await session.execute(select(Battle))).scalar_one()
     assert row.p2_id is None and row.bot_name == mt["opp"]["name"] and row.level == "A0"
     xp = (await session.execute(select(XpLog))).scalar_one()
-    assert xp.source == "battle:A0" and xp.amount == 4
+    assert xp.source == "battle:A0" and xp.amount == bt.XP["win"]
 
 
 @pytest.mark.asyncio
