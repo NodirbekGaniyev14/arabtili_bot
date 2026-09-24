@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 import pytest
 
-from db.models import PaymentRequest, User
+from db.models import PaymentRequest, User, utcnow
 from services import vip_reminders as vr
 
 
@@ -77,7 +77,8 @@ async def test_discount_two_hours_before_end(session, make_user):
     seen = NOON - timedelta(hours=22, minutes=30)  # 1.5 soat qoldi
     u = await make_user("Zara", paywall_seen_at=seen)
     early = await make_user("Early", paywall_seen_at=NOON - timedelta(hours=10))
-    vip = await make_user("Vip", paywall_seen_at=seen, vip_until=NOON + timedelta(days=9))
+    # is_vip real soatga qaraydi — NOON o'tib ketgan sanalarda ham VIP qolsin
+    vip = await make_user("Vip", paywall_seen_at=seen, vip_until=max(NOON, utcnow()) + timedelta(days=9))
     paid = await make_user("Paid", paywall_seen_at=seen)
     session.add(PaymentRequest(user_id=paid.id, plan="1oy", amount=40_000))
     await session.commit()

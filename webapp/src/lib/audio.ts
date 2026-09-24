@@ -19,6 +19,26 @@ export function playAudio(file?: string) {
   current.play().catch(() => {});
 }
 
+/** playAudio kabi, lekin ijro tugaganda (yoki boshqa audio boshlanganda) `onEnd` chaqiriladi —
+ *  «🎵 Chalinmoqda» holati uchun (K24 lug'at). Ovoz o'chiq yoki fayl yo'q bo'lsa false. */
+export function playAudioWatch(file: string | undefined, onEnd: () => void): boolean {
+  if (!file || !isSoundOn()) return false;
+  current?.pause();
+  const a = new Audio(`/audio/${file}`);
+  current = a;
+  let done = false;
+  const finish = () => {
+    if (done) return;
+    done = true;
+    onEnd();
+  };
+  a.addEventListener("ended", finish);
+  a.addEventListener("error", finish);
+  a.addEventListener("pause", finish);
+  a.play().catch(finish);
+  return true;
+}
+
 /** Serverdagi mp3 URL'ni ijro etadi (AI ustoz javobi). Muvaffaqiyat = true;
  *  false qaytsa chaqiruvchi brauzer TTS'ga (speakText) tushadi. */
 export async function playUrl(url?: string, retries = 4): Promise<boolean> {

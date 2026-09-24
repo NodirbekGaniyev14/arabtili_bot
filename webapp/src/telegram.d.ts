@@ -26,6 +26,8 @@ interface TelegramWebApp {
   /** Bot API 7.8+: rasmni Telegram story'ga joylash (K21.5) */
   shareToStory?(media_url: string, params?: { text?: string; widget_link?: { url: string; name?: string } }): void;
   isVersionAtLeast?(version: string): boolean;
+  /** Bot API 6.2+: tasdiqlash oynasi */
+  showConfirm?(message: string, callback?: (ok: boolean) => void): void;
   version?: string;
   onEvent?(event: string, handler: () => void): void;
   offEvent?(event: string, handler: () => void): void;

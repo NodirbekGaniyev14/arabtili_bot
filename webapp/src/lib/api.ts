@@ -404,6 +404,86 @@ export interface VocabTheme {
   total: number;
 }
 
+/** K24 Lug'at 2.0 — daraja → mavzu → fleshkarta sessiyasi */
+export interface VocabLevelCard {
+  level: string;
+  title_uz: string;
+  title_ar: string;
+  total: number;
+  learned: number;
+  topics: number;
+}
+export interface VocabLevels {
+  levels: VocabLevelCard[];
+  total: number;
+  learned: number;
+}
+export interface VocabTopicCard {
+  slug: string;
+  title_uz: string;
+  title_ar: string;
+  icon: string;
+  total: number;
+  learned: number;
+}
+export interface VocabTopicList {
+  level: string;
+  title_uz: string;
+  title_ar: string;
+  total: number;
+  learned: number;
+  topics: VocabTopicCard[];
+}
+/** Fleshkarta so'zi (uz — asosiy ma'no; note_uz — eslatma/etimologiya) */
+export interface VocabCard {
+  key: string;
+  ar: string;
+  translit: string;
+  uz: string;
+  audio: string;
+  example_ar: string;
+  example_uz: string;
+  note_uz: string;
+  plural_ar: string;
+  root: string;
+  pos: string;
+  topic: string;
+}
+export type VocabExamType = "ar_uz" | "audio_uz" | "uz_ar";
+export interface VocabExamQ {
+  key: string;
+  type: VocabExamType;
+  prompt: string;
+  audio: string;
+  options: string[];
+  answer: string;
+}
+export interface VocabSessionData {
+  level: string;
+  topic: { slug: string; title_uz: string; title_ar: string; icon: string };
+  mode: "new" | "review";
+  batch: number;
+  words: VocabCard[];
+  exam: VocabExamQ[];
+  remaining: number;
+  total: number;
+  learned: number;
+}
+export interface VocabSessionResult {
+  correct: number;
+  total: number;
+  percent: number;
+  passed: boolean;
+  xp: number;
+  xp_capped: boolean;
+  added: number;
+  wrong: (VocabCard & { type: VocabExamType; chosen: string })[];
+  topic_total: number;
+  topic_learned: number;
+  remaining: number;
+  new_badges: Badge[];
+}
+
 /** Lug'at imtihoni — daraja kesimida */
 export interface VocabQuizItem {
   type: "ar_uz" | "uz_ar" | "audio_uz";
@@ -891,6 +971,22 @@ export const api = {
       `/api/reference/vocab?q=${encodeURIComponent(q)}&level=${level}&offset=${offset}`
     ),
   getVocabStats: () => request<VocabStats>("/api/vocab/stats"),
+  /** K24 Lug'at 2.0 */
+  vocabLevels: () => request<VocabLevels>("/api/vocab/levels"),
+  vocabTopics: (level: string) => request<VocabTopicList>(`/api/vocab/topics?level=${level}`),
+  vocabSession: (level: string, topic: string) =>
+    request<VocabSessionData>(`/api/vocab/session?level=${level}&topic=${encodeURIComponent(topic)}`),
+  vocabFinish: (body: {
+    level: string;
+    topic: string;
+    mode: "new" | "review" | "retry";
+    answers: { key: string; type: VocabExamType; chosen: string }[];
+    unknown: string[];
+  }) =>
+    request<VocabSessionResult>("/api/vocab/session/finish", {
+      method: "POST",
+      body: JSON.stringify(body),
+    }),
   getVocabThemes: (level = "") =>
     request<{ items: VocabTheme[] }>(`/api/vocab/themes?level=${level}`),
   searchVocabBase: (q: string, level = "", theme = "", offset = 0) =>

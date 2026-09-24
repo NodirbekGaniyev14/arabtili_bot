@@ -421,10 +421,10 @@ function VocabBanner({
           LUG'AT BO'LIMI
         </div>
         <div className="mt-0.5 text-[19px] font-extrabold leading-tight">
-          Darajalar kesimida 6000 so'z
+          Mavzular bo'yicha 6000 so'z
         </div>
         <div className="text-[12px] font-semibold text-white/80">
-          Qidiruv · mavzular · kunlik 20 so'z · lug'at imtihoni
+          5 talik fleshkarta · eshitib yodlash · 10 savollik test · XP
         </div>
 
         <div className="mt-3 h-2 rounded-full bg-white/25 overflow-hidden">
