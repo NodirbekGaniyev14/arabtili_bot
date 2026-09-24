@@ -15,6 +15,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from config import settings
 from db.models import (
     AiUsage,
+    Battle,
+    BattleAward,
     DailySpeaking,
     DrillResult,
     ListeningResult,
@@ -94,6 +96,17 @@ async def week_numbers(session: AsyncSession, since: datetime, until: datetime) 
             TutorRating.created_at >= since, TutorRating.created_at < until)
     )).one()
     d["rating_n"], d["rating_good"] = int(r_n), int(r_good)
+    d["battles"] = await _count(session, select(func.count()).select_from(Battle).where(
+        Battle.created_at >= since, Battle.created_at < until))
+    d["battles_human"] = await _count(session, select(func.count()).select_from(Battle).where(
+        Battle.p2_id.isnot(None), Battle.created_at >= since, Battle.created_at < until))
+    d["battles_friend"] = await _count(session, select(func.count()).select_from(Battle).where(
+        Battle.mode.in_(("friend", "rematch")), Battle.created_at >= since, Battle.created_at < until))
+    fighters = set((await session.execute(select(Battle.p1_id).where(
+        Battle.created_at >= since, Battle.created_at < until).distinct())).scalars().all())
+    fighters |= set((await session.execute(select(Battle.p2_id).where(
+        Battle.p2_id.isnot(None), Battle.created_at >= since, Battle.created_at < until).distinct())).scalars().all())
+    d["fighters"] = len(fighters)
     calls, t_in, t_out, c_read, c_write = (await session.execute(
         select(
             func.count(),
@@ -129,6 +142,13 @@ async def build(session: AsyncSession, now: datetime | None = None) -> str:
         .order_by(WeeklyAward.rank)
     )).all()
 
+    okt = (await session.execute(
+        select(BattleAward.rank, User.name, BattleAward.points)
+        .join(User, User.id == BattleAward.user_id)
+        .where(BattleAward.period == "week", BattleAward.period_key == week_key(prev_monday))
+        .order_by(BattleAward.rank)
+    )).all()
+
     voice_pct = round(cur["voice"] * 100 / cur["chat"]) if cur["chat"] else 0
     q_line = (
         f"👍 {round(cur['rating_good'] * 100 / cur['rating_n'])}% ({cur['rating_n']} baho)" if cur["rating_n"] else "baho yo'q"
@@ -136,6 +156,8 @@ async def build(session: AsyncSession, now: datetime | None = None) -> str:
     bad = "".join(f"\n   👎 {m} · {t or '—'}" + (f": {c[:60]}" if c else "") for m, t, c in bad_rows)
     win = " · ".join(f"{'🥇🥈🥉'[r - 1] if r <= 3 else '🏅'} {n} ({xp})" for r, n, xp in winners) or "sovrin berilmadi (kam ishtirokchi)"
     pay = f"{cur['pay_n']} ta · {cur['pay_sum']:,} so'm".replace(",", " ")
+    human_pct = round(cur["battles_human"] * 100 / cur["battles"]) if cur["battles"] else 0
+    okt_win = " · ".join(f"{'🥇🥈🥉'[r - 1]} {n} ({p})" for r, n, p in okt) or "sovrin berilmadi (kam ishtirokchi)"
 
     return (
         f"📊 <b>Haftalik digest</b> · {week_label(prev_monday)}\n\n"
@@ -152,8 +174,13 @@ async def build(session: AsyncSession, now: datetime | None = None) -> str:
         f"👑 <b>VIP</b>\n"
         f"• Faol: {vip_active} · Bu hafta to'lov: {pay}{_delta(cur['pay_n'], prev['pay_n'])} · Kutayotgan chek: {pending}\n"
         f"• AI sarfi: ${cur['ai_cost']:.2f} ({cur['ai_calls']} chaqiruv)\n\n"
+        f"⚔️ <b>Oktagon</b>\n"
+        f"• Janglar: {cur['battles']}{_delta(cur['battles'], prev['battles'])} · odam bilan: {human_pct}%"
+        f" · do'st havolasi: {cur['battles_friend']} · jangchilar: {cur['fighters']}"
+        f"{_delta(cur['fighters'], prev['fighters'])}\n"
+        f"• Haftalik g'olib: {okt_win}\n\n"
         f"🏆 <b>Reyting</b>: {win}\n\n"
-        f"Batafsil: /admin · /ustoz · /retention"
+        f"Batafsil: /admin · /ustoz · /retention · /oktagon"
     )
 
 

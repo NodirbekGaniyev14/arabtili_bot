@@ -5,7 +5,15 @@
  *  ball, oxirgisi ×2) → natija (ball, XP). Jang serverda boshqariladi (lib/battle.ts). */
 
 import { useEffect, useRef, useState } from "react";
-import { api, type Badge, type BattleHistoryItem, type BattleMe, type BattleTopItem } from "../lib/api";
+import {
+  api,
+  type Badge,
+  type BattleHistoryItem,
+  type BattleMe,
+  type BattlePrize,
+  type BattleSeasonData,
+  type BattleTopItem,
+} from "../lib/api";
 import {
   BattleSocket,
   type BattleEnd,
@@ -26,6 +34,17 @@ const haptic = {
 };
 
 type Stage = "lobby" | "search" | "room" | "vs" | "play" | "end";
+
+/** «3 kun VIP + 100 XP» (K25.3) */
+function prizeLabel(p?: BattlePrize): string {
+  if (!p) return "";
+  return [p.vip ? `${p.vip} kun VIP` : "", p.xp ? `${p.xp} XP` : ""].filter(Boolean).join(" + ");
+}
+
+function leftLabel(hours: number): string {
+  if (hours >= 48) return `${Math.round(hours / 24)} kun qoldi`;
+  return `${hours} soat qoldi`;
+}
 
 /** `#duel=KOD` — bot xabaridagi «Jangga kirish» tugmasi (K25.2). */
 function readDuelCode(): string {
@@ -59,7 +78,7 @@ export default function Battle({ onClose }: { onClose: () => void }) {
   const [badges, setBadges] = useState<Badge[]>([]);
   const [error, setError] = useState("");
   const [conn, setConn] = useState<"open" | "closed" | "reconnecting">("closed");
-  const [sheet, setSheet] = useState<"top" | "history" | null>(null);
+  const [sheet, setSheet] = useState<"top" | "history" | "week" | null>(null);
   const [room, setRoom] = useState<BattleRoom | null>(null);
   const [roomAt, setRoomAt] = useState(0);
   const [offer, setOffer] = useState<{ code: string; from: string; level: string; until: number } | null>(null);
@@ -282,6 +301,7 @@ export default function Battle({ onClose }: { onClose: () => void }) {
           onInvite={invite}
           onTop={() => setSheet("top")}
           onHistory={() => setSheet("history")}
+          onWeek={() => setSheet("week")}
         />
       )}
       {stage === "search" && <Searching level={level} since={searchSince} onCancel={cancel} />}
@@ -335,6 +355,7 @@ function Lobby({
   onInvite,
   onTop,
   onHistory,
+  onWeek,
 }: {
   me: BattleMe | null;
   online: number;
@@ -346,8 +367,13 @@ function Lobby({
   onInvite: () => void;
   onTop: () => void;
   onHistory: () => void;
+  onWeek: () => void;
 }) {
   const limitReached = !!me && me.daily_limit > 0 && me.today >= me.daily_limit;
+  const [season, setSeason] = useState<BattleSeasonData | null>(null);
+  useEffect(() => {
+    api.battleSeason().then(setSeason).catch(() => setSeason(null));
+  }, []);
   return (
     <>
       <div className="flex-1 overflow-y-auto px-4 pb-4">
@@ -382,6 +408,39 @@ function Lobby({
             {me.league.next_title} ligasigacha {Math.max(0, me.league.next_at - me.points)} ball
             {me.rank > 0 ? ` · reytingda ${me.rank}-o'rin` : ""}
           </div>
+        )}
+
+        {/* Mavsum va haftalik sovrin (K25.3) */}
+        {season && (
+          <button
+            onClick={onWeek}
+            className="mt-3 w-full rounded-3xl bg-card border border-cardline p-3.5 text-left shadow-sm active:scale-[0.99] transition-transform"
+          >
+            <div className="flex items-center gap-3">
+              <span
+                className="w-11 h-11 shrink-0 rounded-2xl flex items-center justify-center text-2xl text-white"
+                style={{ backgroundImage: "linear-gradient(135deg, #e0bf55, #c9a227)" }}
+              >
+                🏅
+              </span>
+              <div className="min-w-0 flex-1">
+                <div className="text-[13px] font-extrabold leading-tight">HAFTALIK OKTAGON</div>
+                <div className="truncate text-[11px] font-semibold text-ink-soft">
+                  {season.week.me.rank > 0
+                    ? `${season.week.label} · siz ${season.week.me.rank}-o'rin, ${season.week.me.points} ball`
+                    : `${season.week.label} · odam bilan jang qiling — jadvalga tushasiz`}
+                </div>
+              </div>
+              <span className="shrink-0 font-extrabold text-ink-soft">›</span>
+            </div>
+            <div className="mt-2 flex items-center justify-between gap-2 rounded-2xl bg-gold-soft px-3 py-1.5 text-[11px] font-bold">
+              <span className="truncate">🎁 1-o'rin: {prizeLabel(season.week.prizes[0])}</span>
+              <span className="shrink-0 text-ink-soft">{leftLabel(season.week.hours_left)}</span>
+            </div>
+            <div className="mt-1.5 text-[11px] font-semibold text-ink-soft">
+              🗓 Mavsum: <b>{season.season.label}</b> · {season.season.days_left} kun qoldi
+            </div>
+          </button>
         )}
 
         {/* Tugmalar */}
@@ -989,11 +1048,13 @@ function RematchOffer({
 
 // ───────────────────────── Reyting / tarix ─────────────────────────
 
-function Sheet({ kind, onClose }: { kind: "top" | "history"; onClose: () => void }) {
+function Sheet({ kind, onClose }: { kind: "top" | "history" | "week"; onClose: () => void }) {
   const [top, setTop] = useState<{ items: BattleTopItem[]; me: { rank: number; points: number } } | null>(null);
   const [hist, setHist] = useState<BattleHistoryItem[] | null>(null);
+  const [season, setSeason] = useState<BattleSeasonData | null>(null);
   useEffect(() => {
     if (kind === "top") api.battleTop().then(setTop).catch(() => setTop({ items: [], me: { rank: 0, points: 0 } }));
+    else if (kind === "week") api.battleSeason().then(setSeason).catch(() => setSeason(null));
     else api.battleHistory().then((r) => setHist(r.items)).catch(() => setHist([]));
   }, [kind]);
   return (
@@ -1004,7 +1065,9 @@ function Sheet({ kind, onClose }: { kind: "top" | "history"; onClose: () => void
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       >
         <div className="flex items-center justify-between px-4 pt-4 pb-2">
-          <div className="text-lg font-extrabold">{kind === "top" ? "🏆 Eng zo'rlari" : "📜 Mening janglarim"}</div>
+          <div className="text-lg font-extrabold">
+            {kind === "top" ? "🏆 Eng zo'rlari" : kind === "week" ? "🏅 Haftalik Oktagon" : "📜 Mening janglarim"}
+          </div>
           <button onClick={onClose} className="w-8 h-8 rounded-full bg-cardline text-ink-soft font-extrabold">
             ✕
           </button>
@@ -1038,6 +1101,7 @@ function Sheet({ kind, onClose }: { kind: "top" | "history"; onClose: () => void
                 ))}
               </>
             ))}
+          {kind === "week" && <WeekBoard s={season} />}
           {kind === "history" &&
             (hist === null ? (
               <div className="py-8 text-center text-ink-soft font-semibold">Yuklanmoqda…</div>
@@ -1077,5 +1141,102 @@ function Sheet({ kind, onClose }: { kind: "top" | "history"; onClose: () => void
         </div>
       </div>
     </div>
+  );
+}
+
+/** K25.3 — haftalik Oktagon jadvali, sovrinlar va mavsum holati. */
+function WeekBoard({ s }: { s: BattleSeasonData | null }) {
+  if (s === null) return <div className="py-8 text-center font-semibold text-ink-soft">Yuklanmoqda…</div>;
+  const enough = s.week.top.length >= s.week.min_players;
+  return (
+    <>
+      <div className="rounded-2xl bg-card border border-cardline px-4 py-3">
+        <div className="flex items-baseline justify-between gap-2">
+          <span className="font-extrabold">{s.week.label}</span>
+          <span className="text-[11px] font-bold text-ink-soft">{leftLabel(s.week.hours_left)}</span>
+        </div>
+        <div className="mt-1 text-[12px] font-semibold text-ink-soft">
+          Faqat <b>odam bilan</b> janglar hisobga olinadi. Ball — shu haftada to'plangan sof ball
+          (mag'lubiyat minus).
+        </div>
+        <div className="mt-2 space-y-1">
+          {s.week.prizes.map((p) => (
+            <div key={p.rank} className="flex items-center gap-2 text-[12px] font-bold">
+              <span>{["🥇", "🥈", "🥉"][p.rank - 1] ?? "🏅"}</span>
+              <span className="text-ink-soft">{prizeLabel(p)}</span>
+            </div>
+          ))}
+        </div>
+        {!enough && (
+          <div className="mt-2 rounded-xl bg-gold-soft px-3 py-1.5 text-[11px] font-bold">
+            Sovrin uchun haftada kamida {s.week.min_players} jangchi kerak
+          </div>
+        )}
+      </div>
+
+      {s.week.top.length === 0 ? (
+        <div className="py-6 text-center font-semibold text-ink-soft">
+          Bu hafta hali odam bilan jang bo'lmadi — birinchi bo'ling!
+        </div>
+      ) : (
+        s.week.top.map((x) => (
+          <div key={x.user_id} className="flex items-center gap-3 rounded-2xl bg-card border border-cardline px-3.5 py-2.5">
+            <span className="w-7 text-center font-extrabold text-ink-soft">
+              {x.rank <= 3 ? ["🥇", "🥈", "🥉"][x.rank - 1] : x.rank}
+            </span>
+            <div className="min-w-0 flex-1">
+              <div className="truncate font-extrabold">{x.name}</div>
+              <div className="text-[11px] font-semibold text-ink-soft">
+                {x.wins}/{x.games} g'alaba
+                {enough && x.rank <= 3 ? ` · 🎁 ${prizeLabel(s.week.prizes[x.rank - 1])}` : ""}
+              </div>
+            </div>
+            <span
+              className={`font-extrabold tabular-nums ${
+                x.points > 0 ? "text-emerald-deep" : x.points < 0 ? "text-terracotta" : "text-ink-soft"
+              }`}
+            >
+              {x.points > 0 ? `+${x.points}` : x.points}
+            </span>
+          </div>
+        ))
+      )}
+
+      {s.last_week.length > 0 && (
+        <div className="rounded-2xl bg-card border border-cardline px-4 py-3">
+          <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft">O'TGAN HAFTA G'OLIBLARI</div>
+          {s.last_week.map((w) => (
+            <div key={w.rank} className="mt-1 flex items-center gap-2 text-[13px] font-bold">
+              <span>{["🥇", "🥈", "🥉"][w.rank - 1] ?? "🏅"}</span>
+              <span className="min-w-0 flex-1 truncate">{w.name}</span>
+              <span className="tabular-nums text-ink-soft">{w.points}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="rounded-2xl bg-emerald-deep px-4 py-3 text-white">
+        <div className="flex items-baseline justify-between gap-2">
+          <span className="font-extrabold">🗓 Mavsum · {s.season.label}</span>
+          <span className="text-[11px] font-bold text-white/75">{s.season.days_left} kun qoldi</span>
+        </div>
+        <div className="mt-1 text-[12px] font-semibold text-white/85">
+          {s.season.ends_at} kuni mavsum yakunlanadi: top-3 sovrin oladi, so'ng hamma ballning{" "}
+          {s.season.keep_pct}% i qoladi — ligalar qaytadan bellashuvga ochiladi.
+        </div>
+        <div className="mt-2 space-y-0.5">
+          {s.season_prizes.map((p) => (
+            <div key={p.rank} className="text-[12px] font-bold text-white/90">
+              {["🥇", "🥈", "🥉"][p.rank - 1] ?? "🏅"} {prizeLabel(p)}
+            </div>
+          ))}
+        </div>
+        {s.last_season.length > 0 && (
+          <div className="mt-2 border-t border-white/20 pt-2 text-[12px] font-semibold text-white/85">
+            O'tgan mavsum: {s.last_season.map((w) => `${["🥇", "🥈", "🥉"][w.rank - 1] ?? "🏅"} ${w.name}`).join(" · ")}
+          </div>
+        )}
+      </div>
+    </>
   );
 }

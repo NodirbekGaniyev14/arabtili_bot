@@ -450,6 +450,43 @@ export interface BattleHistoryItem {
   at: string;
 }
 
+/** K25.3 — Oktagon mavsumi (oylik) va haftalik sovrin */
+export interface BattlePrize {
+  rank: number;
+  vip: number;
+  xp: number;
+}
+export interface BattleWeekRow {
+  rank: number;
+  user_id: number;
+  name: string;
+  points: number;
+  games: number;
+  wins: number;
+}
+export interface BattleAwardRow {
+  rank: number;
+  name: string;
+  points: number;
+  vip: number;
+  xp: number;
+  period_key: string;
+}
+export interface BattleSeasonData {
+  season: { key: string; label: string; days_left: number; ends_at: string; keep_pct: number };
+  week: {
+    label: string;
+    hours_left: number;
+    top: BattleWeekRow[];
+    me: { rank: number; points: number; games?: number; wins?: number };
+    prizes: BattlePrize[];
+    min_players: number;
+  };
+  last_week: BattleAwardRow[];
+  last_season: BattleAwardRow[];
+  season_prizes: BattlePrize[];
+}
+
 /** K24 Lug'at 2.0 — daraja → mavzu → fleshkarta sessiyasi */
 export interface VocabLevelCard {
   level: string;
@@ -1022,6 +1059,8 @@ export const api = {
   battleTop: () =>
     request<{ items: BattleTopItem[]; me: { rank: number; points: number } }>("/api/battle/top"),
   battleHistory: () => request<{ items: BattleHistoryItem[] }>("/api/battle/history"),
+  /** K25.3 — mavsum va haftalik Oktagon sovrini */
+  battleSeason: () => request<BattleSeasonData>("/api/battle/season"),
   /** K24 Lug'at 2.0 */
   vocabLevels: () => request<VocabLevels>("/api/vocab/levels"),
   vocabTopics: (level: string) => request<VocabTopicList>(`/api/vocab/topics?level=${level}`),

@@ -119,6 +119,7 @@ async def lifespan(app: FastAPI):
     winback_task = None
     day2_task = None
     backup_task = None
+    season_task = None
     bot = None
     if settings.bot_token:
         from services.reminders import reminder_loop
@@ -177,6 +178,10 @@ async def lifespan(app: FastAPI):
         from services import backup
 
         backup_task = asyncio.create_task(backup.loop(bot))
+        # Oktagon: haftalik sovrin + oylik mavsum yakuni (K25.3)
+        from services import battle_season
+
+        season_task = asyncio.create_task(battle_season.loop(bot))
         # /tekshir — fon halqalari holati
         from services import diag
 
@@ -184,7 +189,7 @@ async def lifespan(app: FastAPI):
             ("polling", polling_task), ("reminder", reminder_task),
             ("weekly", weekly_task), ("vip", vip_task), ("report", report_task),
             ("writing", writing_task), ("winback", winback_task), ("day2", day2_task),
-            ("backup", backup_task),
+            ("backup", backup_task), ("oktagon", season_task),
         ):
             diag.register_task(_name, _task)
         # Deploy xabari — versiya o'zgargan bo'lsa foydalanuvchilarga bildiradi
@@ -195,7 +200,7 @@ async def lifespan(app: FastAPI):
     else:
         print("⚠️  BOT_TOKEN yo'q — bot ishga tushmadi (.env faylini to'ldiring)")
     yield
-    for task in (polling_task, reminder_task, weekly_task, vip_task, report_task, writing_task, winback_task, day2_task, backup_task):
+    for task in (polling_task, reminder_task, weekly_task, vip_task, report_task, writing_task, winback_task, day2_task, backup_task, season_task):
         if task:
             task.cancel()
     if bot:

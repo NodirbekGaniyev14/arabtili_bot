@@ -139,7 +139,7 @@ async def overview(session: AsyncSession) -> str:
         f"• Berilgan yutuqlar: <b>{badges}</b>\n\n"
         "🎯 <b>Darajalar</b>\n"
         f"• {level_dist}\n\n"
-        "ℹ️ Buyruqlar: /stats /users /user /broadcast"
+        "ℹ️ Buyruqlar: /stats /users /user /broadcast /oktagon"
     )
 
 

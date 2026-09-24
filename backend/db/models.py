@@ -508,6 +508,29 @@ class Battle(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
 
 
+class BattleAward(Base):
+    """Oktagon sovrini (K25.3): haftalik top-3 va mavsum (oylik) top-3.
+
+    `period_key`: hafta uchun dushanba sanasi "YYYY-MM-DD", mavsum uchun "YYYY-MM".
+    `points` — haftalik uchun o'sha haftada to'plangan sof ball, mavsum uchun yakundagi ball.
+    """
+
+    __tablename__ = "battle_awards"
+    __table_args__ = (UniqueConstraint("user_id", "period", "period_key", name="uq_battle_award"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    period: Mapped[str] = mapped_column(String(8), default="week")  # week | season
+    period_key: Mapped[str] = mapped_column(String(10), index=True)
+    rank: Mapped[int] = mapped_column(Integer)
+    points: Mapped[int] = mapped_column(Integer, default=0)
+    games: Mapped[int] = mapped_column(Integer, default=0)
+    wins: Mapped[int] = mapped_column(Integer, default=0)
+    vip_days: Mapped[int] = mapped_column(Integer, default=0)
+    xp: Mapped[int] = mapped_column(Integer, default=0)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
+
+
 class WritingResult(Base):
     """K19.2 yozuv (xattotlik) mashqi — davr (2 kun) + foydalanuvchi uchun bitta yozuv:
     eng yaxshi ball, ozodalik, urinishlar soni, oxirgi eng yaxshi tekshiruv (JSON), XP."""

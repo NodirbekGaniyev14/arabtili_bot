@@ -246,6 +246,41 @@ async def cmd_zaxira(message: Message, bot: Bot):
     )
 
 
+@router.message(Command("oktagon"))
+async def cmd_oktagon(message: Message):
+    """Oktagon holati (K25.3): mavsum, joriy hafta jadvali, o'tgan davr g'oliblari."""
+    if not _is_admin(message):
+        return
+    from services import battle as bt
+    from services import battle_season as bs
+
+    async with SessionLocal() as session:
+        season = bs.season_info()
+        week = await bs.week_summary(session, 0)
+        last_w = await bs.past_awards(session, "week")
+        last_s = await bs.past_awards(session, "season")
+        top = await bt.top(session, 5)
+
+    def _rows(items, key="points"):
+        return "\n".join(
+            f"{'🥇🥈🥉'[i] if i < 3 else f'{i + 1}.'} {x['name']} — {x[key]}"
+            + (f" ({x['wins']}/{x['games']})" if "games" in x else "")
+            for i, x in enumerate(items)
+        ) or "— bo'sh"
+
+    await message.answer(
+        f"⚔️ <b>Oktagon</b>\n\n"
+        f"🗓 Mavsum: <b>{season['label']}</b> · {season['days_left']} kun qoldi "
+        f"(yakunda ball {season['keep_pct']}% gacha tushadi)\n\n"
+        f"📅 <b>Haftalik jadval</b> ({week['label']}, odam bilan janglar)\n{_rows(week['top'][:10])}\n"
+        f"<i>Sovrin uchun kamida {week['min_players']} jangchi kerak</i>\n\n"
+        f"🏅 <b>Mavsum reytingi</b>\n{_rows(top)}\n\n"
+        f"🎁 O'tgan hafta: " + (" · ".join(f"{x['name']} ({x['points']})" for x in last_w) or "—") + "\n"
+        f"🏆 O'tgan mavsum: " + (" · ".join(f"{x['name']} ({x['points']})" for x in last_s) or "—"),
+        parse_mode="HTML",
+    )
+
+
 @router.message(Command("javoblar"))
 async def cmd_javoblar(message: Message):
     """Rad etilgan yozma javoblar (#F70): /javoblar [kun] [n]."""

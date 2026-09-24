@@ -73,6 +73,20 @@ async def battle_top(user: User = Depends(get_current_user), session: AsyncSessi
     }
 
 
+@router.get("/api/battle/season")
+async def battle_season(user: User = Depends(get_current_user), session: AsyncSession = Depends(get_session)):
+    """K25.3 — joriy mavsum, haftalik Oktagon jadvali va o'tgan davr g'oliblari."""
+    from services import battle_season as bs
+
+    return {
+        "season": bs.season_info(),
+        "week": await bs.week_summary(session, user.id),
+        "last_week": await bs.past_awards(session, "week"),
+        "last_season": await bs.past_awards(session, "season"),
+        "season_prizes": [{"rank": r, **bs.SEASON_PRIZE[r]} for r in sorted(bs.SEASON_PRIZE)],
+    }
+
+
 @router.get("/api/battle/history")
 async def battle_history(user: User = Depends(get_current_user), session: AsyncSession = Depends(get_session)):
     return {"items": await bt.history(session, user.id, 30)}
