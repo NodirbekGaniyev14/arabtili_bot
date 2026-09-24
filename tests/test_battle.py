@@ -105,7 +105,7 @@ async def test_human_vs_human(session, make_user):
     assert await hub.join(ua.id, "Ali", 0, "A1", a) == "queued"
     assert await hub.join(ub.id, "Vali", 0, "A1", b) == "matched"
     ma, mb = await a.wait("matched"), await b.wait("matched")
-    assert ma["opp"]["name"] == "Vali" and ma["opp"]["bot"] is False and mb["opp"]["name"] == "Ali"
+    assert ma["opp"]["name"] == "Vali" and "bot" not in ma["opp"] and mb["opp"]["name"] == "Ali"
     m = hub.matches[ua.id]
     for i in range(bt.QUESTIONS):
         qa, qb = await a.wait("q"), await b.wait("q")
@@ -137,8 +137,9 @@ async def test_bot_fallback_and_rewards(session, make_user):
     await hub.connect(ua.id, a)
     assert await hub.join(ua.id, "Ali", 0, "A0", a) == "queued"
     mt = await a.wait("matched")
-    assert mt["opp"]["bot"] is True and mt["opp"]["name"] in bt.BOT_NAMES
+    assert "bot" not in mt["opp"] and mt["opp"]["name"] in bt.BOT_NAMES, "klient sun'iy raqibni bilmaydi"
     m = hub.matches[ua.id]
+    assert m.players[1].bot is True
     for i in range(bt.QUESTIONS):
         await a.wait("q")
         hub.answer(ua.id, i, m.questions[i]["answer"])  # darhol va to'g'ri — bot tezroq bo'lolmaydi
@@ -186,7 +187,7 @@ async def test_reconnect_resumes_match(session, make_user):
     a2 = FakeConn()
     assert await hub.connect(ua.id, a2) is True
     resume = await a2.wait("matched")
-    assert resume["resume"] is True and resume["opp"]["bot"] is True
+    assert resume["resume"] is True and "bot" not in resume["opp"] and resume["opp"]["name"] in bt.BOT_NAMES
     hub.leave(ua.id)
     await a2.wait("end")
 
@@ -249,7 +250,7 @@ async def test_ws_auth_join_play_and_limit(session, monkeypatch):
     assert (await ws.conn.wait("pong"))["online"] == 1
     await ws.inbox.put({"t": "join", "level": "A2"})
     assert (await ws.conn.wait("queued"))["level"] == "A2"
-    assert (await ws.conn.wait("matched"))["opp"]["bot"] is True
+    assert (await ws.conn.wait("matched"))["opp"]["name"] in bt.BOT_NAMES
     for i in range(bt.QUESTIONS):
         q = await ws.conn.wait("q")
         await ws.inbox.put({"t": "answer", "i": q["i"], "choice": q["options"][0]})
@@ -297,7 +298,7 @@ async def test_rest_me_top_history(session, make_user, monkeypatch):
             top = (await c.get("/api/battle/top")).json()
             assert [x["name"] for x in top["items"]] == ["Ali", "Vali"] and top["me"]["rank"] == 1
             hist = (await c.get("/api/battle/history")).json()["items"]
-            assert hist[0]["opp"] == "Zayd" and hist[0]["bot"] and hist[0]["result"] == "lose" and hist[0]["delta"] == -5
+            assert hist[0]["opp"] == "Zayd" and "bot" not in hist[0] and hist[0]["result"] == "lose" and hist[0]["delta"] == -5
             assert hist[1]["opp"] == "Vali" and hist[1]["result"] == "win" and hist[1]["you"] == 180
     finally:
         app.dependency_overrides.clear()
@@ -479,3 +480,85 @@ async def test_start_duel_link(session, make_user, session_factory, monkeypatch)
     await h.cmd_start(old)
     text, kb = old.answers[-1]
     assert "muddati tugagan" in text and kb.inline_keyboard[0][0].web_app.url.endswith("#battle")
+
+
+# ── K25.4: sun'iy raqib yashirin — o'zbekcha ism, «bot» belgisi yo'q, qayta jang ──
+
+
+def test_bot_names_are_uzbek():
+    assert len(bt.BOT_NAMES) >= 30 and len(set(bt.BOT_NAMES)) == len(bt.BOT_NAMES)
+    for old in ("Zayd", "Layla", "Umar", "Maryam", "Yusuf", "Fotima", "Bilol", "Oysha", "Solih", "Hind"):
+        assert old not in bt.BOT_NAMES
+    assert {"Jasur", "Dilnoza", "Sardor", "Madina"} <= set(bt.BOT_NAMES)
+
+
+@pytest.mark.asyncio
+async def test_bot_never_named_like_user(session, make_user, monkeypatch):
+    monkeypatch.setattr(bt, "BOT_NAMES", ["Jasur", "Dilnoza"])
+    (ua,) = await _users(session, make_user, "Jasur")
+    a = FakeConn()
+    hub = bt.HUB
+    await hub.connect(ua.id, a)
+    await hub.join(ua.id, "Jasur", 0, "A0", a)
+    assert (await a.wait("matched"))["opp"]["name"] == "Dilnoza"
+    hub.leave(ua.id)
+    await a.wait("end")
+
+
+def _walk(x):
+    if isinstance(x, dict):
+        for k, v in x.items():
+            yield str(k)
+            yield from _walk(v)
+    elif isinstance(x, (list, tuple)):
+        for v in x:
+            yield from _walk(v)
+    else:
+        yield str(x)
+
+
+@pytest.mark.asyncio
+async def test_bot_rematch_and_no_bot_word_to_client(session, make_user):
+    (ua,) = await _users(session, make_user, "Ali")
+    a = FakeConn()
+    hub = bt.HUB
+    await hub.connect(ua.id, a)
+    await hub.join(ua.id, "Ali", 0, "A1", a)
+    first = await a.wait("matched")
+    name = first["opp"]["name"]
+    m = hub.matches[ua.id]
+    for i in range(bt.QUESTIONS):
+        await a.wait("q")
+        hub.answer(ua.id, i, _wrong(m.questions[i]))
+        await a.wait("round")
+    end = await a.wait("end")
+    assert end["rematch"] is True, "sun'iy raqib bilan ham «Qayta jang» tugmasi"
+    assert hub.last_opp[ua.id][0] is None and hub.last_opp[ua.id][2] == name
+
+    # «Qayta jang»: odamdagidek taklif ekrani, keyin o'sha ism bilan jang
+    status, room = await hub.rematch(ua.id, "Ali", 0, ua.tg_id, a)
+    assert status == "offered" and room.mode == "rematch" and room.code not in hub.rooms
+    msg = hub._room_msg(room, "host")
+    assert msg["guest"]["name"] == name and msg["mode"] == "rematch"
+    again = await a.wait("matched", timeout=3)
+    assert again["opp"]["name"] == name and again["resume"] is False
+    hub.leave(ua.id)
+    await a.wait("end")
+
+    # Taklifni bekor qilsa — jang boshlanmaydi
+    await asyncio.sleep(0.05)
+    status, _ = await hub.rematch(ua.id, "Ali", 0, ua.tg_id, a)
+    assert status == "offered" and ua.id in hub.bot_rematch
+    assert hub.leave_room(ua.id) is True and ua.id not in hub.bot_rematch
+    await asyncio.sleep(bt.BOT_ACCEPT[1] * bt.QUESTION_SECONDS / 10 + 0.1)
+    assert ua.id not in hub.matches
+
+    # Klientga ketgan HECH bir xabarda «bot» kaliti yoki 🤖 yo'q
+    for msg in a.msgs:
+        for token in _walk(msg):
+            assert token != "bot" and "🤖" not in token, msg
+
+    # Bazada esa farq saqlanadi (admin statistikasi, ball jadvali)
+    rows = (await session.execute(select(Battle).order_by(Battle.id))).scalars().all()
+    assert [r.p2_id for r in rows] == [None, None] and {r.bot_name for r in rows} == {name}
+    assert {r.mode for r in rows} == {"queue"}, "sun'iy raqib bilan qayta jang «do'st jangi» hisoblanmaydi"

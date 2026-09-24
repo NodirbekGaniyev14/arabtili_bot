@@ -278,7 +278,7 @@ export default function Home({
             <div className="text-[11px] font-extrabold tracking-[0.14em] text-[#f3e8c8]">YANGI · OKTAGON</div>
             <div className="mt-0.5 text-[19px] font-extrabold leading-tight">1v1 lug'at jangi</div>
             <div className="text-[12px] font-semibold text-white/80">
-              10 savol × 10 soniya · raqib yoki 🤖 bot · liga va ball
+              10 savol × 10 soniya · liga va ball
             </div>
           </div>
         </button>

@@ -10,7 +10,6 @@ export interface BattlePlayer {
   name: string;
   points: number;
   league: BattleLeague;
-  bot: boolean;
 }
 
 export interface BattleMatched {

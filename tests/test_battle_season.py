@@ -82,7 +82,7 @@ def test_no_prize_api():
 
 
 @pytest.mark.asyncio
-async def test_week_board_counts_only_human_battles(session, make_user):
+async def test_week_board_counts_all_battles(session, make_user):
     a, b, c = await _users(session, make_user, 3)
     at = PREV_WEEK + timedelta(days=1)
     session.add_all(
@@ -90,9 +90,9 @@ async def test_week_board_counts_only_human_battles(session, make_user):
             _battle(a.id, b.id, 1, 20, -10, at),
             _battle(a.id, b.id, 1, 20, -10, at, mode="friend"),
             _battle(b.id, c.id, 2, -10, 20, at),
-            # Bot janglari — haftalik jadvalga KIRMAYDI
-            _battle(a.id, None, 1, 10, 0, at, bot_name="Zayd"),
-            _battle(a.id, None, 1, 10, 0, at, bot_name="Layla"),
+            # Sun'iy raqib bilan janglar ham KIRADI (K25.4 — o'quvchi farqni ko'rmasin)
+            _battle(a.id, None, 1, 10, 0, at, bot_name="Jasur"),
+            _battle(a.id, None, 1, 10, 0, at, bot_name="Dilnoza"),
             # O'tgan haftadan oldingi jang — davrdan tashqarida
             _battle(c.id, a.id, 1, 20, -10, PREV_WEEK - timedelta(days=2)),
         ]
@@ -101,7 +101,7 @@ async def test_week_board_counts_only_human_battles(session, make_user):
 
     board = await bs.week_board(session, PREV_WEEK, PREV_WEEK + timedelta(days=7))
     by_id = {r["user_id"]: r for r in board}
-    assert by_id[a.id]["points"] == 40 and by_id[a.id]["games"] == 2 and by_id[a.id]["wins"] == 2
+    assert by_id[a.id]["points"] == 60 and by_id[a.id]["games"] == 4 and by_id[a.id]["wins"] == 4
     assert by_id[b.id]["points"] == -30 and by_id[b.id]["games"] == 3 and by_id[b.id]["wins"] == 0
     assert by_id[c.id]["points"] == 20 and by_id[c.id]["games"] == 1
     assert [r["rank"] for r in board] == [1, 2, 3]

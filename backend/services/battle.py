@@ -3,7 +3,10 @@
 Qoidalar: daraja bo'yicha navbat (A0…B2); ikkala o'yinchiga bir xil 10 savol, har biriga 10 soniya,
 raundlar sinxron (ikkalasi javob bersa yoki vaqt tugasa — keyingisi). Ball: to'g'ri javob
 10 + tezlik bonusi (0–10), oxirgi savol ×2; teng bo'lsa umumiy vaqti kam bo'lgan yutadi.
-BOT_WAIT soniyada odam topilmasa — bot (ochiq belgilangan 🤖): aniqligi o'yinchi baliga moslanadi.
+BOT_WAIT soniyada odam topilmasa — sun'iy raqib (o'zbekcha ism, aniqligi o'yinchi baliga moslanadi).
+K25.4 (foydalanuvchi qarori): klientga «bot» belgisi UMUMAN yuborilmaydi — ism, liga, ball odamnikidek;
+u bilan ham «Qayta jang» ishlaydi (1.5–4 s «qabul qiladi»). Server ichida `Player.bot` va
+`battles.p2_id IS NULL` bilan farqlanadi (ball jadvali BOT_POINTS, admin statistikasi).
 
 Transport — WebSocket (api/battle.py). Bu modul faqat mantiq: Hub (ulanishlar, navbat, janglar),
 Match (raundlar), bot. Holat xotirada — bitta uvicorn jarayoni; jang oxirida `battles` jadvaliga
@@ -55,7 +58,14 @@ LEAGUES = [
     {"id": "gold", "title": "Oltin", "icon": "🥇", "min": 400},
     {"id": "diamond", "title": "Olmos", "icon": "💎", "min": 800},
 ]
-BOT_NAMES = ["Zayd", "Layla", "Umar", "Maryam", "Yusuf", "Fotima", "Bilol", "Oysha", "Solih", "Hind"]
+# Sun'iy raqib ismlari — o'zbekcha (K25.4). Ko'p bo'lsin: takrorlanishi sezilmasin.
+BOT_NAMES = [
+    "Jasur", "Dilnoza", "Sardor", "Madina", "Bekzod", "Nilufar", "Otabek", "Shahnoza", "Javohir", "Gulnoza",
+    "Aziz", "Sevara", "Doston", "Malika", "Ulug'bek", "Kamola", "Sherzod", "Zarina", "Farrux", "Nodira",
+    "Jahongir", "Dildora", "Sanjar", "Mohinur", "Islom", "Feruza", "Behruz", "Munisa", "Abdulloh", "Gulnora",
+    "Temur", "Laylo", "Shoxrux", "Nigora", "Asadbek", "Sabina", "Xurshid", "Durdona", "Muhammadali", "Robiya",
+]
+BOT_ACCEPT = (1.5, 4.0)  # sun'iy raqib «qayta jang»ni necha soniyada «qabul qiladi»
 KINDS = ("ar_uz", "uz_ar")  # tezkor jangda faqat matn (audio shovqinli joyda noqulay)
 ROOM_TTL = 10 * 60  # do'st havolasi amal qiladi (soniya)
 REMATCH_TTL = 45.0  # «qayta jang» taklifi
@@ -161,7 +171,8 @@ class Player:
     answers: dict[int, dict] = field(default_factory=dict)
 
     def public(self) -> dict:
-        return {"name": self.name, "points": self.points, "league": league(self.points), "bot": self.bot}
+        # «bot» bayrog'i klientga YUBORILMAYDI (K25.4) — sun'iy raqib odamdan farqlanmaydi
+        return {"name": self.name, "points": self.points, "league": league(self.points)}
 
 
 class Match:
@@ -339,8 +350,13 @@ class Match:
             winner = outcome_of(p1.score, p2.score, p1.time_ms, p2.time_ms)
             status = "done"
         if not (p1.bot or p2.bot):
-            self.hub.last_opp[p1.user_id] = (p2.user_id, self.level, p2.name)
-            self.hub.last_opp[p2.user_id] = (p1.user_id, self.level, p1.name)
+            self.hub.last_opp[p1.user_id] = (p2.user_id, self.level, p2.name, p2.points)
+            self.hub.last_opp[p2.user_id] = (p1.user_id, self.level, p1.name, p1.points)
+        else:  # sun'iy raqib — «qayta jang» uchun ismi va (odamnikidek o'zgargan) bali saqlanadi
+            human, ai = (p1, p2) if p2.bot else (p2, p1)
+            ai_idx = 1 if ai is p1 else 2
+            ai_res = "draw" if winner == 0 else ("win" if winner == ai_idx else "loss")
+            self.hub.last_opp[human.user_id] = (None, self.level, ai.name, max(0, ai.points + POINTS[ai_res]))
         rewards: dict[int, dict] = {}
         try:
             async with sessions() as session:
@@ -361,7 +377,7 @@ class Match:
                     "score": {"you": p.score, "opp": o.score},
                     "correct": {"you": p.correct, "opp": o.correct},
                     "n": len(self.questions),
-                    "rematch": not o.bot,
+                    "rematch": True,  # sun'iy raqib bilan ham (K25.4)
                     **rewards.get(p.user_id or 0, {}),
                 },
             )
@@ -489,7 +505,9 @@ class Hub:
         self.matches: dict[int, Match] = {}  # user_id → faol jang
         self.rooms: dict[str, Room] = {}  # kod → xona (K25.2)
         self.room_of: dict[int, str] = {}  # user_id → xona kodi
-        self.last_opp: dict[int, tuple[int, str, str]] = {}  # user_id → (raqib id, daraja, ismi)
+        # user_id → (raqib id | None — sun'iy raqib, daraja, ismi, bali)
+        self.last_opp: dict[int, tuple[int | None, str, str, int]] = {}
+        self.bot_rematch: dict[int, asyncio.Task] = {}  # user_id → sun'iy raqib «qabul qilmoqda» (K25.4)
         self.bot: Any = None  # aiogram Bot — api/battle.py qo'yadi (mezbonga xabar uchun)
 
     def online(self) -> int:
@@ -538,7 +556,15 @@ class Hub:
             if p and p.conn is conn:
                 p.conn = None  # jang davom etadi; qaytsa — reattach
 
+    def _cancel_bot_rematch(self, user_id: int) -> bool:
+        t = self.bot_rematch.pop(user_id, None)
+        if t and not t.done():
+            t.cancel()
+            return True
+        return False
+
     def cancel(self, user_id: int) -> bool:
+        self._cancel_bot_rematch(user_id)
         w = self.waiting.pop(user_id, None)
         if not w:
             return False
@@ -575,9 +601,10 @@ class Hub:
         if w in q:
             q.remove(w)
         rnd = random.Random()
+        names = [n for n in BOT_NAMES if n.lower() != (w.name or "").strip().lower()] or BOT_NAMES
         bot = Player(
             None,
-            rnd.choice(BOT_NAMES),
+            rnd.choice(names),
             max(0, w.points + rnd.randint(-30, 30)),
             bot=True,
             accuracy=bot_accuracy(w.points),
@@ -626,7 +653,7 @@ class Hub:
             msg.update(
                 link=invite_link(room.code),
                 share_text=SHARE_TEXT.format(level=room.level),
-                guest={"name": room.guest_name, "online": room.guest_conn is not None} if room.guest_id else None,
+                guest={"name": room.guest_name, "online": room.guest_conn is not None} if room.guest_id or room.guest_name else None,
             )
         else:
             msg.update(host={"name": room.host_name, "points": room.host_points, "league": league(room.host_points), "online": room.host_conn is not None})
@@ -651,6 +678,8 @@ class Hub:
                     )
 
     def leave_room(self, user_id: int) -> bool:
+        if self._cancel_bot_rematch(user_id):
+            return True
         room = self.rooms.get(self.room_of.pop(user_id, ""))
         if not room:
             return False
@@ -729,14 +758,17 @@ class Hub:
         return self._start(room.level, host, guest, mode=room.mode)
 
     async def rematch(self, user_id: int, name: str, points: int, tg_id: int, conn: Conn) -> tuple[str, Room | None]:
-        """Oxirgi odam raqibga «qayta jang». Raqib ham so'ragan bo'lsa — darhol jang.
+        """Oxirgi raqibga «qayta jang». Raqib ham so'ragan bo'lsa — darhol jang. Sun'iy raqib —
+        odamdek «taklifni qabul qiladi» (BOT_ACCEPT s), keyin o'sha ism bilan jang.
         Qaytaradi: started | offered | no_opponent | busy | opp_busy."""
         last = self.last_opp.get(user_id)
         if not last:
             return "no_opponent", None
-        opp_id, level, opp_name = last
+        opp_id, level, opp_name, opp_points = last
         if user_id in self.matches:
             return "busy", None
+        if opp_id is None:
+            return self._bot_rematch(user_id, name, points, tg_id, conn, level, opp_name, opp_points)
         if opp_id in self.matches:
             return "opp_busy", None
         # Raqib allaqachon bizga taklif yuborgan — qabul qilamiz
@@ -749,6 +781,31 @@ class Hub:
         opp_conn = self.conns.get(opp_id)
         if opp_conn is not None:
             await _safe_send(opp_conn, {"t": "rematch_offer", "code": room.code, "from": name, "level": level, "expires_in": int(REMATCH_TTL)})
+        return "offered", room
+
+    def _bot_rematch(
+        self, user_id: int, name: str, points: int, tg_id: int, conn: Conn, level: str, opp_name: str, opp_points: int
+    ) -> tuple[str, Room]:
+        """Sun'iy raqib bilan qayta jang: mijozga oddiy «taklif yuborildi» ekrani, bir necha soniyadan
+        keyin jang. Xona `rooms` ga yozilmaydi — kodi yo'q, hech kim qo'shila olmaydi."""
+        self.cancel(user_id)
+        self.leave_room(user_id)
+        room = Room("", level, "rematch", user_id, name, points, tg_id, conn, ttl=REMATCH_TTL)
+        room.guest_name, room.guest_points = opp_name, opp_points
+        ai = Player(None, opp_name, opp_points, bot=True, accuracy=bot_accuracy(points))
+
+        async def accept() -> None:
+            await asyncio.sleep(random.uniform(*BOT_ACCEPT) * QUESTION_SECONDS / 10)
+            if self.bot_rematch.get(user_id) is not task:
+                return
+            self.bot_rematch.pop(user_id, None)
+            live = self.conns.get(user_id)
+            if live is None or user_id in self.matches:
+                return
+            self._start(level, Player(user_id, name, points, live), ai)
+
+        task = asyncio.get_running_loop().create_task(accept())
+        self.bot_rematch[user_id] = task
         return "offered", room
 
     def decline(self, user_id: int, code: str) -> bool:
@@ -861,7 +918,6 @@ async def history(session, user_id: int, limit: int = 20) -> list[dict]:
                 "id": r.id,
                 "level": r.level,
                 "opp": r.bot_name if opp_id is None else (names.get(opp_id) or "O'quvchi"),
-                "bot": opp_id is None,
                 "you": r.p1_score if me1 else r.p2_score,
                 "them": r.p2_score if me1 else r.p1_score,
                 "result": res,

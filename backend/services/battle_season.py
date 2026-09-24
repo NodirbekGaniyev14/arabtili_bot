@@ -6,9 +6,10 @@ XP yoki streak muzlatkichi berilmaydi (foydalanuvchi qarori).
 Ikki davr:
 
 - **Haftalik Oktagon** — dushanba ~09:00 (Toshkent) o'tgan hafta yakunlanadi, top-3 e'lon
-  qilinadi. Jadvalga FAQAT odam bilan janglar kiradi (bot janglari ball va XP beradi, lekin
-  haftalik o'rinni «dehqonchilik» qilib bo'lmasin). Ball — o'sha haftada to'plangan SOF ball
-  (`battles.p1_delta`/`p2_delta` yig'indisi, mag'lubiyatlar minus bilan).
+  qilinadi. Jadvalga BARCHA janglar kiradi (K25.4: sun'iy raqib o'quvchiga ko'rinmaydi —
+  jadval undan farq qilsa, sezilib qoladi). Ball — o'sha haftada to'plangan SOF ball
+  (`battles.p1_delta`/`p2_delta` yig'indisi, mag'lubiyatlar minus bilan; sun'iy raqib
+  bilan jang — BOT_POINTS, yarmi).
 
 - **Mavsum** — har oyning 1-sanasi ~09:00 o'tgan oy yakunlanadi: top-3 e'lon, keyin
   hamma o'yinchining Oktagon bali YUMSHOQ tiklanadi (yarmi qoladi) — ligalar qayta
@@ -99,11 +100,7 @@ def season_info(now: datetime | None = None) -> dict:
 
 
 async def week_board(session, since: datetime, until: datetime, limit: int = 50) -> list[dict]:
-    """[since, until) oralig'ida ODAM bilan janglar bo'yicha jadval.
-
-    Ball — sof delta (mag'lubiyat minus). Bot janglari hisobga olinmaydi.
-    """
-    human = Battle.p2_id.isnot(None)
+    """[since, until) oralig'idagi barcha janglar bo'yicha jadval. Ball — sof delta (mag'lubiyat minus)."""
     rows: dict[int, dict] = {}
     for id_col, delta_col, win_val in (
         (Battle.p1_id, Battle.p1_delta, 1),
@@ -117,7 +114,7 @@ async def week_board(session, since: datetime, until: datetime, limit: int = 50)
                     func.count(Battle.id),
                     func.coalesce(func.sum(case((Battle.winner == win_val, 1), else_=0)), 0),
                 )
-                .where(human, Battle.created_at >= since, Battle.created_at < until)
+                .where(Battle.created_at >= since, Battle.created_at < until)
                 .group_by(id_col)
             )
         ).all()

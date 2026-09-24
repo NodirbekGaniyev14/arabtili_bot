@@ -61,7 +61,7 @@ async def battle_me(user: User = Depends(get_current_user), session: AsyncSessio
         **(await _me(session, user)),
         "online": bt.HUB.online(),
         "levels": list(vocab.LEVELS),
-        "rules": {"questions": bt.QUESTIONS, "seconds": bt.QUESTION_SECONDS, "bot_wait": bt.BOT_WAIT},
+        "rules": {"questions": bt.QUESTIONS, "seconds": bt.QUESTION_SECONDS},
     }
 
 
@@ -149,7 +149,7 @@ ROOM_ERRORS = {
     "full": "Bu jangga boshqa o'yinchi kirib bo'lgan",
     "busy": "Sizda davom etayotgan jang bor",
     "opp_busy": "Raqibingiz hozir boshqa jangda",
-    "no_opponent": "Qayta jang uchun avval odam bilan jang qiling",
+    "no_opponent": "Oldingi raqib topilmadi — yangi jang boshlang",
 }
 
 

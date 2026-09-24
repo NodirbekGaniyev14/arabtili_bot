@@ -1,8 +1,11 @@
 /** Oktagon (K25) — 1v1 lug'at jangi.
  *
- *  Lobbi (liga, ball, janglar; onlayn soni, eng zo'rlari, janglarim) → qidiruv (daraja navbati,
- *  10 s da odam topilmasa 🤖 bot) → VS → 10 savol × 10 s (ikkalasiga bir xil, tez + to'g'ri = ko'p
- *  ball, oxirgisi ×2) → natija (ball, XP). Jang serverda boshqariladi (lib/battle.ts). */
+ *  Lobbi (liga, ball, janglar; onlayn soni, eng zo'rlari, janglarim) → qidiruv (daraja navbati)
+ *  → VS → 10 savol × 10 s (ikkalasiga bir xil, tez + to'g'ri = ko'p ball, oxirgisi ×2) → natija
+ *  (ball, XP). Jang serverda boshqariladi (lib/battle.ts).
+ *
+ *  Odam topilmasa server o'zbekcha ismli sun'iy raqib qo'yadi — UI buni HECH QAYERDA ko'rsatmaydi
+ *  («bot» so'zi, 🤖 belgisi yo'q; foydalanuvchi qarori, K25.4). Klient farqni bilmaydi ham. */
 
 import { useEffect, useRef, useState } from "react";
 import {
@@ -421,7 +424,7 @@ function Lobby({
                 <div className="truncate text-[11px] font-semibold text-ink-soft">
                   {season.week.me.rank > 0
                     ? `${season.week.label} · siz ${season.week.me.rank}-o'rin, ${season.week.me.points} ball`
-                    : `${season.week.label} · odam bilan jang qiling — jadvalga tushasiz`}
+                    : `${season.week.label} · jang qiling — jadvalga tushasiz`}
                 </div>
               </div>
               <span className="shrink-0 font-extrabold text-ink-soft">›</span>
@@ -498,7 +501,7 @@ function Lobby({
         <div className="mt-3 rounded-2xl bg-card border border-cardline px-4 py-3 text-[12px] font-semibold text-ink-soft space-y-1">
           <div>⚡ 10 savol · har biriga 10 soniya · ikkalangizga bir xil</div>
           <div>🎯 To'g'ri va tez = ko'p ball (10–20), oxirgi savol ×2</div>
-          <div>🤖 10 soniyada raqib topilmasa — bot bilan jang (belgilangan)</div>
+          <div>👥 Raqib tanlangan daraja bo'yicha topiladi</div>
         </div>
 
         {error && (
@@ -549,7 +552,7 @@ function Searching({ level, since, onCancel }: { level: string; since: number; o
         0:{String(sec).padStart(2, "0")}
       </div>
       <div className="mt-2 text-[13px] font-semibold text-ink-soft">
-        Daraja {level} · 10 soniyada odam topilmasa — 🤖 bot bilan jang
+        Daraja {level} · mos raqib izlanmoqda
       </div>
       <button
         onClick={onCancel}
@@ -561,14 +564,14 @@ function Searching({ level, since, onCancel }: { level: string; since: number; o
   );
 }
 
-function Avatar({ name, bot, you }: { name: string; bot: boolean; you?: boolean }) {
+function Avatar({ name, you }: { name: string; you?: boolean }) {
   return (
     <span
       className={`w-20 h-20 rounded-full flex items-center justify-center text-3xl font-extrabold shadow-md border-4 ${
         you ? "bg-emerald-deep text-white border-emerald-deep/30" : "bg-gold text-white border-gold/30"
       }`}
     >
-      {bot ? "🤖" : (name.trim()[0] || "?").toUpperCase()}
+      {(name.trim()[0] || "?").toUpperCase()}
     </span>
   );
 }
@@ -584,7 +587,7 @@ function Versus({ m }: { m: BattleMatched }) {
       <div className="text-[11px] font-extrabold tracking-[0.2em] text-ink-soft">DARAJA {m.level} · {m.n} SAVOL</div>
       <div className="mt-6 flex items-center justify-center gap-5 w-full">
         <div className="flex-1 flex flex-col items-center text-center min-w-0">
-          <Avatar name={m.you.name} bot={false} you />
+          <Avatar name={m.you.name} you />
           <div className="mt-2 font-extrabold truncate max-w-full">{m.you.name}</div>
           <div className="text-[11px] font-bold text-ink-soft">
             {m.you.league.icon} {m.you.points} ball
@@ -592,10 +595,10 @@ function Versus({ m }: { m: BattleMatched }) {
         </div>
         <div className="text-3xl font-extrabold text-terracotta">VS</div>
         <div className="flex-1 flex flex-col items-center text-center min-w-0">
-          <Avatar name={m.opp.name} bot={m.opp.bot} />
+          <Avatar name={m.opp.name} />
           <div className="mt-2 font-extrabold truncate max-w-full">{m.opp.name}</div>
           <div className="text-[11px] font-bold text-ink-soft">
-            {m.opp.bot ? "🤖 bot" : `${m.opp.league.icon} ${m.opp.points} ball`}
+            {m.opp.league.icon} {m.opp.points} ball
           </div>
         </div>
       </div>
@@ -685,7 +688,6 @@ function Play({
         {q && <Timer q={q} qAt={qAt} stopped={!!round} total={m.seconds} />}
         <div className="flex-1 min-w-0 rounded-2xl bg-gold text-white px-3 py-2 text-right">
           <div className="text-[11px] font-bold text-white/85 truncate">
-            {m.opp.bot ? "🤖 " : ""}
             {m.opp.name}
             {!round && oppAnswered && " · ✓"}
           </div>
@@ -830,7 +832,6 @@ function EndView({
             <div className="text-xl font-extrabold text-white/70">:</div>
             <div className="flex-1 min-w-0">
               <div className="text-[11px] font-bold text-white/75 truncate">
-                {m.opp.bot ? "🤖 " : ""}
                 {m.opp.name}
               </div>
               <div className="text-4xl font-extrabold tabular-nums">{e.score.opp}</div>
@@ -852,7 +853,7 @@ function EndView({
           </div>
           <div className="rounded-2xl bg-card border border-cardline p-3.5 text-center">
             <div className="text-2xl font-extrabold text-gold">+{e.xp ?? 0}</div>
-            <div className="text-[11px] font-bold text-ink-soft">XP{m.opp.bot ? " (bot bilan — yarmi)" : ""}</div>
+            <div className="text-[11px] font-bold text-ink-soft">XP</div>
           </div>
         </div>
         {e.league && (
@@ -977,7 +978,7 @@ function RoomView({ room, since, onCancel }: { room: BattleRoom; since: number; 
             <h2 className="mt-5 text-xl font-extrabold">{room.host?.name ?? "Do'stingiz"} bilan jang</h2>
             <p className="mt-1 text-[13px] font-semibold text-ink-soft">
               {room.level} daraja · 10 savol × 10 soniya.
-              {room.host?.online ? " Jang boshlanmoqda…" : " Do'stingiz hozir ilovada emas — unga bot orqali xabar yubordik. U kirishi bilan jang boshlanadi."}
+              {room.host?.online ? " Jang boshlanmoqda…" : " Do'stingiz hozir ilovada emas — unga Telegram orqali xabar yubordik. U kirishi bilan jang boshlanadi."}
             </p>
           </>
         )}
@@ -1116,7 +1117,6 @@ function Sheet({ kind, onClose }: { kind: "top" | "history" | "week"; onClose: (
                   </span>
                   <div className="min-w-0 flex-1">
                     <div className="font-extrabold truncate">
-                      {h.bot ? "🤖 " : ""}
                       {h.opp}
                       {h.forfeit ? " · tark etildi" : ""}
                     </div>
@@ -1153,8 +1153,7 @@ function WeekBoard({ s }: { s: BattleSeasonData | null }) {
           <span className="text-[11px] font-bold text-ink-soft">{leftLabel(s.week.hours_left)}</span>
         </div>
         <div className="mt-1 text-[12px] font-semibold text-ink-soft">
-          Faqat <b>odam bilan</b> janglar hisobga olinadi. Ball — shu haftada to'plangan sof ball
-          (mag'lubiyat minus).
+          Ball — shu haftada janglarda to'plangan sof ball (mag'lubiyat minus).
         </div>
         <div className="mt-2 text-[12px] font-semibold text-ink-soft">
           Yakunda top-3 e'lon qilinadi va tarixda qoladi. Sovrin yo'q — faqat sharaf va o'rin 🥇
@@ -1168,7 +1167,7 @@ function WeekBoard({ s }: { s: BattleSeasonData | null }) {
 
       {s.week.top.length === 0 ? (
         <div className="py-6 text-center font-semibold text-ink-soft">
-          Bu hafta hali odam bilan jang bo'lmadi — birinchi bo'ling!
+          Bu hafta hali jang bo'lmadi — birinchi bo'ling!
         </div>
       ) : (
         s.week.top.map((x) => (

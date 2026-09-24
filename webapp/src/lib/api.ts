@@ -426,7 +426,7 @@ export interface BattleMe {
   vip: boolean;
   online: number;
   levels: string[];
-  rules: { questions: number; seconds: number; bot_wait: number };
+  rules: { questions: number; seconds: number };
 }
 export interface BattleTopItem {
   rank: number;
@@ -441,7 +441,6 @@ export interface BattleHistoryItem {
   id: number;
   level: string;
   opp: string;
-  bot: boolean;
   you: number;
   them: number;
   result: "win" | "lose" | "draw";
