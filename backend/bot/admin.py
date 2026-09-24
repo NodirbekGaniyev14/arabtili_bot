@@ -273,9 +273,9 @@ async def cmd_oktagon(message: Message):
         f"🗓 Mavsum: <b>{season['label']}</b> · {season['days_left']} kun qoldi "
         f"(yakunda ball {season['keep_pct']}% gacha tushadi)\n\n"
         f"📅 <b>Haftalik jadval</b> ({week['label']}, odam bilan janglar)\n{_rows(week['top'][:10])}\n"
-        f"<i>Sovrin uchun kamida {week['min_players']} jangchi kerak</i>\n\n"
+        f"<i>G'olib e'lon qilinishi uchun kamida {week['min_players']} jangchi kerak · sovrin yo'q</i>\n\n"
         f"🏅 <b>Mavsum reytingi</b>\n{_rows(top)}\n\n"
-        f"🎁 O'tgan hafta: " + (" · ".join(f"{x['name']} ({x['points']})" for x in last_w) or "—") + "\n"
+        f"🏅 O'tgan hafta: " + (" · ".join(f"{x['name']} ({x['points']})" for x in last_w) or "—") + "\n"
         f"🏆 O'tgan mavsum: " + (" · ".join(f"{x['name']} ({x['points']})" for x in last_s) or "—"),
         parse_mode="HTML",
     )

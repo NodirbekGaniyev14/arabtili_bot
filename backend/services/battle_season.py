@@ -1,13 +1,16 @@
-"""Oktagon mavsumi va haftalik sovrini (K25.3).
+"""Oktagon mavsumi va haftalik reytingi (K25.3).
+
+SOVRIN YO'Q — bu sof reyting: g'oliblar e'lon qilinadi va tarixda qoladi, VIP kunlari,
+XP yoki streak muzlatkichi berilmaydi (foydalanuvchi qarori).
 
 Ikki davr:
 
-- **Haftalik Oktagon** — dushanba ~09:30 (Toshkent) o'tgan hafta yakunlanadi, top-3 ga sovrin.
-  Hisobga FAQAT odam bilan janglar oladi (bot janglari ball va XP beradi, lekin haftalik
-  sovrinni «dehqonchilik» qilib bo'lmasin). Ball — o'sha haftada to'plangan SOF ball
+- **Haftalik Oktagon** — dushanba ~09:00 (Toshkent) o'tgan hafta yakunlanadi, top-3 e'lon
+  qilinadi. Jadvalga FAQAT odam bilan janglar kiradi (bot janglari ball va XP beradi, lekin
+  haftalik o'rinni «dehqonchilik» qilib bo'lmasin). Ball — o'sha haftada to'plangan SOF ball
   (`battles.p1_delta`/`p2_delta` yig'indisi, mag'lubiyatlar minus bilan).
 
-- **Mavsum** — har oyning 1-sanasi ~09:30 o'tgan oy yakunlanadi: top-3 ga sovrin, keyin
+- **Mavsum** — har oyning 1-sanasi ~09:00 o'tgan oy yakunlanadi: top-3 e'lon, keyin
   hamma o'yinchining Oktagon bali YUMSHOQ tiklanadi (yarmi qoladi) — ligalar qayta
   qiziqarli bo'ladi, lekin nolga tushib ketmaydi. `battle_games`/`battle_wins` (umrbod
   ko'rsatkichlar, nishonlar shularga bog'liq) TEGILMAYDI.
@@ -22,7 +25,7 @@ from datetime import datetime, timedelta
 
 from sqlalchemy import case, func, select
 
-from db.models import Battle, BattleAward, Meta, User, XpLog, utcnow
+from db.models import Battle, BattleAward, Meta, User, utcnow
 from services import battle as bt
 from services.speaking_report import week_key, week_label, week_start_utc
 from services.stats import TASHKENT_OFFSET
@@ -35,15 +38,11 @@ WEEK_MARKER = "battle_week_done"
 SEASON_MARKER = "battle_season_done"
 
 WEEK_TOP = 3
-WEEK_MIN_PLAYERS = 3  # kamida shuncha odam jang qilgan bo'lsa sovrin beriladi
+WEEK_MIN_PLAYERS = 3  # kamida shuncha jangchi bo'lsa g'oliblar e'lon qilinadi
 SEASON_TOP = 3
 SEASON_MIN_PLAYERS = 5
 SEASON_KEEP = 0.5  # mavsum oxirida ball shu ulushi qoladi
 
-# Sovrin: VIP kunlari + XP. Bizga xarajati kichik, motivatsiya kuchli.
-WEEK_PRIZE = {1: {"vip": 3, "xp": 100}, 2: {"vip": 0, "xp": 60}, 3: {"vip": 0, "xp": 40}}
-SEASON_PRIZE = {1: {"vip": 7, "xp": 300}, 2: {"vip": 3, "xp": 180}, 3: {"vip": 3, "xp": 120}}
-XP_SOURCE = "oktagon"  # `battle:%` bilan to'qnashmaydi — kunlik jang XP chegarasiga kirmaydi
 ANNOUNCE_PAUSE = 0.05
 RANK_ICON = {1: "🥇", 2: "🥈", 3: "🥉"}
 
@@ -55,20 +54,6 @@ UZ_MONTHS = [
 
 def _local(now: datetime) -> datetime:
     return now + TASHKENT_OFFSET
-
-
-def prize(period: str, rank: int) -> dict:
-    return (WEEK_PRIZE if period == "week" else SEASON_PRIZE).get(rank, {"vip": 0, "xp": 0})
-
-
-def prize_text(period: str, rank: int) -> str:
-    p = prize(period, rank)
-    bits = []
-    if p["vip"]:
-        bits.append(f"<b>{p['vip']} kun VIP</b>")
-    if p["xp"]:
-        bits.append(f"<b>{p['xp']} XP</b>")
-    return " + ".join(bits)
 
 
 # ───────────────────────── mavsum (oy) ─────────────────────────
@@ -156,7 +141,7 @@ async def week_board(session, since: datetime, until: datetime, limit: int = 50)
 
 
 async def week_summary(session, user_id: int, now: datetime | None = None) -> dict:
-    """Ilova uchun: joriy hafta jadvali + foydalanuvchining o'rni va sovrinlar."""
+    """Ilova uchun: joriy hafta jadvali + foydalanuvchining o'rni."""
     now = now or utcnow()
     start = week_start_utc(now)
     board = await week_board(session, start, start + timedelta(days=7), 20)
@@ -167,7 +152,6 @@ async def week_summary(session, user_id: int, now: datetime | None = None) -> di
         "hours_left": max(0, int((ends - now).total_seconds() // 3600)),
         "top": board,
         "me": mine or {"rank": 0, "points": 0, "games": 0, "wins": 0},
-        "prizes": [{"rank": r, **WEEK_PRIZE[r]} for r in sorted(WEEK_PRIZE)],
         "min_players": WEEK_MIN_PLAYERS,
     }
 
@@ -186,7 +170,7 @@ async def past_awards(session, period: str, limit: int = 3) -> list[dict]:
         return []
     rows = (
         await session.execute(
-            select(BattleAward.rank, User.name, BattleAward.points, BattleAward.vip_days, BattleAward.xp)
+            select(BattleAward.rank, User.name, BattleAward.points, BattleAward.games, BattleAward.wins)
             .join(User, User.id == BattleAward.user_id)
             .where(BattleAward.period == period, BattleAward.period_key == key)
             .order_by(BattleAward.rank)
@@ -194,12 +178,12 @@ async def past_awards(session, period: str, limit: int = 3) -> list[dict]:
         )
     ).all()
     return [
-        {"rank": r, "name": n or "O'quvchi", "points": p, "vip": v, "xp": x, "period_key": key}
-        for r, n, p, v, x in rows
+        {"rank": r, "name": n or "O'quvchi", "points": p, "games": g, "wins": w, "period_key": key}
+        for r, n, p, g, w in rows
     ]
 
 
-# ───────────────────────── sovrin berish ─────────────────────────
+# ───────────────────────── davr yakuni ─────────────────────────
 
 
 async def _marker_done(session, key: str, value: str) -> bool:
@@ -217,11 +201,8 @@ async def _mark(session, key: str, value: str) -> None:
     await session.commit()
 
 
-async def _grant(session, period: str, period_key: str, board: list[dict], top_n: int) -> list[dict]:
-    """Top-n ga sovrin (VIP kunlari + XP) va `battle_awards` yozuvi. Qaytaradi: g'oliblar."""
-    from services import billing
-    from services.stats import MAX_FREEZES
-
+async def _record(session, period: str, period_key: str, board: list[dict], top_n: int) -> list[dict]:
+    """Top-n ni `battle_awards` ga yozadi (faqat tarix — sovrin yo'q). Qaytaradi: g'oliblar."""
     winners: list[dict] = []
     for row in board[:top_n]:
         rank = row["rank"]
@@ -239,14 +220,6 @@ async def _grant(session, period: str, period_key: str, board: list[dict], top_n
         user = await session.get(User, row["user_id"])
         if user is None:
             continue
-        p = prize(period, rank)
-        if p["vip"]:
-            billing.grant(user, p["vip"])
-        if rank == 1:
-            user.streak_freezes = min((user.streak_freezes or 0) + 1, MAX_FREEZES)
-        if p["xp"]:
-            session.add(XpLog(user_id=user.id, amount=p["xp"], source=f"{XP_SOURCE}:{period}"))
-        session.add(user)
         session.add(
             BattleAward(
                 user_id=user.id,
@@ -256,11 +229,9 @@ async def _grant(session, period: str, period_key: str, board: list[dict], top_n
                 points=row["points"],
                 games=row["games"],
                 wins=row["wins"],
-                vip_days=p["vip"],
-                xp=p["xp"],
             )
         )
-        winners.append(row | {"tg_id": user.tg_id, "vip": p["vip"], "xp": p["xp"]})
+        winners.append(row | {"tg_id": user.tg_id})
     await session.commit()
     return winners
 
@@ -269,10 +240,9 @@ def winners_text(period: str, label: str, winners: list[dict], me: dict | None, 
     head = "⚔️ <b>Haftalik Oktagon yakunlandi</b>" if period == "week" else "🏆 <b>Oktagon mavsumi yakunlandi</b>"
     lines = [f"{head} · {label}", ""]
     for w in winners:
-        pr = prize_text(period, w["rank"])
         lines.append(
             f"{RANK_ICON.get(w['rank'], '🏅')} <b>{w['name']}</b> — {w['points']} ball "
-            f"({w['wins']}/{w['games']} g'alaba)" + (f" · 🎁 {pr}" if pr else "")
+            f"({w['wins']}/{w['games']} g'alaba)"
         )
     lines.append("")
     if me and me.get("rank"):
@@ -338,7 +308,7 @@ async def run_week(bot, now: datetime | None = None) -> dict | None:
         if await _marker_done(session, WEEK_MARKER, key):
             return None
         board = await week_board(session, start, start + timedelta(days=7), 50)
-        winners = await _grant(session, "week", key, board, WEEK_TOP) if len(board) >= WEEK_MIN_PLAYERS else []
+        winners = await _record(session, "week", key, board, WEEK_TOP) if len(board) >= WEEK_MIN_PLAYERS else []
         await _mark(session, WEEK_MARKER, key)
     if bot and winners:
         await announce(bot, "week", label, winners, board)
@@ -357,7 +327,7 @@ async def run_season(bot, now: datetime | None = None) -> dict | None:
             {"user_id": r["user_id"], "name": r["name"], "points": r["points"], "games": r["games"], "wins": r["wins"], "rank": r["rank"]}
             for r in await bt.top(session, 50)
         ]
-        winners = await _grant(session, "season", key, board, SEASON_TOP) if len(board) >= SEASON_MIN_PLAYERS else []
+        winners = await _record(session, "season", key, board, SEASON_TOP) if len(board) >= SEASON_MIN_PLAYERS else []
         # Yumshoq tiklash — hamma o'yinchiga (janglar/g'alabalar tegilmaydi)
         reset = 0
         if winners or len(board) >= SEASON_MIN_PLAYERS:
@@ -391,14 +361,11 @@ async def loop(bot) -> None:
 
 __all__ = [
     "SEASON_KEEP",
-    "WEEK_PRIZE",
-    "SEASON_PRIZE",
     "announce",
     "loop",
     "month_start_utc",
     "past_awards",
     "prev_month_start",
-    "prize",
     "run_season",
     "run_week",
     "season_info",

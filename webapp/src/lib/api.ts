@@ -450,12 +450,7 @@ export interface BattleHistoryItem {
   at: string;
 }
 
-/** K25.3 — Oktagon mavsumi (oylik) va haftalik sovrin */
-export interface BattlePrize {
-  rank: number;
-  vip: number;
-  xp: number;
-}
+/** K25.3 — Oktagon mavsumi (oylik) va haftalik reyting (sovrin yo'q) */
 export interface BattleWeekRow {
   rank: number;
   user_id: number;
@@ -468,8 +463,8 @@ export interface BattleAwardRow {
   rank: number;
   name: string;
   points: number;
-  vip: number;
-  xp: number;
+  games: number;
+  wins: number;
   period_key: string;
 }
 export interface BattleSeasonData {
@@ -479,12 +474,10 @@ export interface BattleSeasonData {
     hours_left: number;
     top: BattleWeekRow[];
     me: { rank: number; points: number; games?: number; wins?: number };
-    prizes: BattlePrize[];
     min_players: number;
   };
   last_week: BattleAwardRow[];
   last_season: BattleAwardRow[];
-  season_prizes: BattlePrize[];
 }
 
 /** K24 Lug'at 2.0 — daraja → mavzu → fleshkarta sessiyasi */
@@ -1059,7 +1052,7 @@ export const api = {
   battleTop: () =>
     request<{ items: BattleTopItem[]; me: { rank: number; points: number } }>("/api/battle/top"),
   battleHistory: () => request<{ items: BattleHistoryItem[] }>("/api/battle/history"),
-  /** K25.3 — mavsum va haftalik Oktagon sovrini */
+  /** K25.3 — mavsum va haftalik Oktagon reytingi */
   battleSeason: () => request<BattleSeasonData>("/api/battle/season"),
   /** K24 Lug'at 2.0 */
   vocabLevels: () => request<VocabLevels>("/api/vocab/levels"),

@@ -1,5 +1,8 @@
-"""K25.3 Oktagon mavsumi — haftalik sovrin (faqat odam janglari), oylik mavsum yakuni va
-yumshoq tiklash, admin digestdagi Oktagon bloki, /api/battle/season."""
+"""K25.3 Oktagon mavsumi — haftalik reyting (faqat odam janglari), oylik mavsum yakuni va
+yumshoq tiklash, admin digestdagi Oktagon bloki, /api/battle/season.
+
+Oktagon — sof reyting: sovrin (VIP kuni, XP, muzlatkich) BERILMAYDI, top-3 faqat e'lon
+qilinadi va `battle_awards` da tarix bo'lib qoladi."""
 
 from datetime import datetime, timedelta
 
@@ -69,12 +72,10 @@ def test_season_keys_and_info():
     assert info["keep_pct"] == 50
 
 
-def test_prizes():
-    assert bs.prize("week", 1)["vip"] == 3 and bs.prize("week", 1)["xp"] == 100
-    assert bs.prize("week", 9) == {"vip": 0, "xp": 0}
-    assert bs.prize("season", 1)["vip"] > bs.prize("week", 1)["vip"]
-    assert "VIP" in bs.prize_text("week", 1) and "XP" in bs.prize_text("week", 3)
-    assert bs.prize_text("week", 9) == ""
+def test_no_prize_api():
+    """Sovrin mexanikasi butunlay olib tashlangan — kod qoldiqlari qolmasin."""
+    assert not hasattr(bs, "prize") and not hasattr(bs, "prize_text")
+    assert not hasattr(bs, "WEEK_PRIZE") and not hasattr(bs, "SEASON_PRIZE")
 
 
 # ── haftalik jadval ──
@@ -127,7 +128,7 @@ async def test_week_summary_shape(session, make_user):
     s = await bs.week_summary(session, a.id, now)
     assert s["me"]["rank"] == 1 and s["me"]["points"] == 20
     assert s["hours_left"] > 0 and len(s["top"]) == 2
-    assert [p["rank"] for p in s["prizes"]] == [1, 2, 3] and s["min_players"] == bs.WEEK_MIN_PLAYERS
+    assert "prizes" not in s and s["min_players"] == bs.WEEK_MIN_PLAYERS
     other = await bs.week_summary(session, 999_999, now)
     assert other["me"]["rank"] == 0 and other["me"]["points"] == 0
 
@@ -136,7 +137,7 @@ async def test_week_summary_shape(session, make_user):
 
 
 @pytest.mark.asyncio
-async def test_run_week_awards_top3_and_announces(session, make_user, session_factory):
+async def test_run_week_records_top3_and_announces(session, make_user, session_factory):
     users = await _users(session, make_user, 4)
     a, b, c, d = users
     at = PREV_WEEK + timedelta(days=2)
@@ -158,19 +159,17 @@ async def test_run_week_awards_top3_and_announces(session, make_user, session_fa
     async with session_factory() as s2:
         awards = (await s2.execute(select(BattleAward).order_by(BattleAward.rank))).scalars().all()
         assert len(awards) == 3 and {aw.period for aw in awards} == {"week"}
-        assert awards[0].period_key == res["key"] and awards[0].vip_days == 3 and awards[0].xp == 100
+        assert awards[0].period_key == res["key"] and awards[0].points == 40
+        # SOVRIN YO'Q: VIP, XP va muzlatkich tegilmaydi
         winner = await s2.get(User, a.id)
-        assert winner.vip_until and winner.vip_until > datetime.utcnow()
-        assert winner.streak_freezes == 2  # 1-o'ringa +1 muzlatkich (boshlang'ich 1 dan)
-        xp = (await s2.execute(select(XpLog).where(XpLog.user_id == a.id))).scalars().all()
-        assert [x.amount for x in xp] == [100] and xp[0].source == "oktagon:week"
-        # Jang XP kunlik chegarasiga ta'sir qilmaydi (source «battle:%» emas)
-        assert await bt._battle_xp_today(s2, a.id) == 0
+        assert winner.vip_until is None and winner.streak_freezes == 2  # standart qiymat o'zgarmadi
+        assert (await s2.execute(select(XpLog))).scalars().all() == []
+        assert [aw.vip_days for aw in awards] == [0, 0, 0] and [aw.xp for aw in awards] == [0, 0, 0]
 
     # Hamma ishtirokchiga e'lon ketdi, g'oliblar ro'yxati bilan
     assert len(fake.sent) == 4
     assert "Haftalik Oktagon yakunlandi" in fake.sent[0][1] and "O'quvchi1" in fake.sent[0][1]
-    assert "3 kun VIP" in fake.sent[0][1]
+    assert "VIP" not in fake.sent[0][1] and "🎁" not in fake.sent[0][1]
 
     # Ikkinchi chaqiruv — marker bor, takror sovrin yo'q
     fake2 = FakeBot()
@@ -197,7 +196,7 @@ async def test_run_week_needs_min_players(session, make_user, session_factory):
 
 
 @pytest.mark.asyncio
-async def test_run_season_awards_and_soft_reset(session, make_user, session_factory):
+async def test_run_season_records_and_soft_reset(session, make_user, session_factory):
     users = await _users(session, make_user, 5)
     for i, u in enumerate(users):
         u.battle_points = 500 - i * 100  # 500, 400, 300, 200, 100
@@ -216,8 +215,9 @@ async def test_run_season_awards_and_soft_reset(session, make_user, session_fact
         assert [u.battle_points for u in rows] == [250, 200, 150, 100, 50]  # yumshoq tiklash
         assert {u.battle_games for u in rows} == {20} and {u.battle_wins for u in rows} == {12}
         aw = (await s2.execute(select(BattleAward).order_by(BattleAward.rank))).scalars().all()
-        assert [x.rank for x in aw] == [1, 2, 3] and [x.vip_days for x in aw] == [7, 3, 3]
+        assert [x.rank for x in aw] == [1, 2, 3] and [x.vip_days for x in aw] == [0, 0, 0]
         assert aw[0].points == 500 and aw[0].period == "season"
+        assert all(u.vip_until is None for u in rows)  # sovrin yo'q
     assert len(fake.sent) == 5 and "mavsumi yakunlandi" in fake.sent[0][1]
     assert await bs.run_season(FakeBot(), now) is None
 
@@ -242,14 +242,14 @@ async def test_past_awards(session, make_user, session_factory):
     session.add_all(
         [
             BattleAward(user_id=a.id, period="week", period_key="2026-09-07", rank=1, points=10),
-            BattleAward(user_id=b.id, period="week", period_key="2026-09-14", rank=1, points=80, vip_days=3, xp=100),
-            BattleAward(user_id=a.id, period="week", period_key="2026-09-14", rank=2, points=40, xp=60),
+            BattleAward(user_id=b.id, period="week", period_key="2026-09-14", rank=1, points=80, games=6, wins=5),
+            BattleAward(user_id=a.id, period="week", period_key="2026-09-14", rank=2, points=40, games=5, wins=3),
         ]
     )
     await session.commit()
     last = await bs.past_awards(session, "week")
     assert [x["rank"] for x in last] == [1, 2] and last[0]["name"] == "O'quvchi2"
-    assert last[0]["period_key"] == "2026-09-14" and last[0]["vip"] == 3
+    assert last[0]["period_key"] == "2026-09-14" and last[0]["wins"] == 5
     assert await bs.past_awards(session, "season") == []
 
 
@@ -264,7 +264,7 @@ async def test_api_season_endpoint(session, make_user):
 
     a, b = await _users(session, make_user, 2)
     session.add(_battle(a.id, b.id, 1, 20, -10, week_start_utc(datetime.utcnow()) + timedelta(minutes=5)))
-    session.add(BattleAward(user_id=b.id, period="season", period_key="2026-08", rank=1, points=900, vip_days=7))
+    session.add(BattleAward(user_id=b.id, period="season", period_key="2026-08", rank=1, points=900, games=30, wins=22))
     await session.commit()
 
     async def _session():
@@ -280,7 +280,7 @@ async def test_api_season_endpoint(session, make_user):
     assert r["season"]["label"] and r["season"]["days_left"] >= 0
     assert r["week"]["me"]["rank"] == 1 and r["week"]["me"]["points"] == 20
     assert r["last_season"][0]["name"] == "O'quvchi2" and r["last_week"] == []
-    assert [p["rank"] for p in r["season_prizes"]] == [1, 2, 3]
+    assert "season_prizes" not in r and "prizes" not in r["week"]
 
 
 @pytest.mark.asyncio

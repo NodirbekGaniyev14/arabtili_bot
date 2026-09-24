@@ -10,7 +10,6 @@ import {
   type Badge,
   type BattleHistoryItem,
   type BattleMe,
-  type BattlePrize,
   type BattleSeasonData,
   type BattleTopItem,
 } from "../lib/api";
@@ -34,12 +33,6 @@ const haptic = {
 };
 
 type Stage = "lobby" | "search" | "room" | "vs" | "play" | "end";
-
-/** «3 kun VIP + 100 XP» (K25.3) */
-function prizeLabel(p?: BattlePrize): string {
-  if (!p) return "";
-  return [p.vip ? `${p.vip} kun VIP` : "", p.xp ? `${p.xp} XP` : ""].filter(Boolean).join(" + ");
-}
 
 function leftLabel(hours: number): string {
   if (hours >= 48) return `${Math.round(hours / 24)} kun qoldi`;
@@ -434,7 +427,11 @@ function Lobby({
               <span className="shrink-0 font-extrabold text-ink-soft">›</span>
             </div>
             <div className="mt-2 flex items-center justify-between gap-2 rounded-2xl bg-gold-soft px-3 py-1.5 text-[11px] font-bold">
-              <span className="truncate">🎁 1-o'rin: {prizeLabel(season.week.prizes[0])}</span>
+              <span className="truncate">
+                {season.week.top.length > 0
+                  ? `🥇 Yetakchi: ${season.week.top[0].name} — ${season.week.top[0].points} ball`
+                  : "🥇 Yetakchi hali yo'q"}
+              </span>
               <span className="shrink-0 text-ink-soft">{leftLabel(season.week.hours_left)}</span>
             </div>
             <div className="mt-1.5 text-[11px] font-semibold text-ink-soft">
@@ -1159,17 +1156,12 @@ function WeekBoard({ s }: { s: BattleSeasonData | null }) {
           Faqat <b>odam bilan</b> janglar hisobga olinadi. Ball — shu haftada to'plangan sof ball
           (mag'lubiyat minus).
         </div>
-        <div className="mt-2 space-y-1">
-          {s.week.prizes.map((p) => (
-            <div key={p.rank} className="flex items-center gap-2 text-[12px] font-bold">
-              <span>{["🥇", "🥈", "🥉"][p.rank - 1] ?? "🏅"}</span>
-              <span className="text-ink-soft">{prizeLabel(p)}</span>
-            </div>
-          ))}
+        <div className="mt-2 text-[12px] font-semibold text-ink-soft">
+          Yakunda top-3 e'lon qilinadi va tarixda qoladi. Sovrin yo'q — faqat sharaf va o'rin 🥇
         </div>
         {!enough && (
           <div className="mt-2 rounded-xl bg-gold-soft px-3 py-1.5 text-[11px] font-bold">
-            Sovrin uchun haftada kamida {s.week.min_players} jangchi kerak
+            G'olib e'lon qilinishi uchun haftada kamida {s.week.min_players} jangchi kerak
           </div>
         )}
       </div>
@@ -1188,7 +1180,7 @@ function WeekBoard({ s }: { s: BattleSeasonData | null }) {
               <div className="truncate font-extrabold">{x.name}</div>
               <div className="text-[11px] font-semibold text-ink-soft">
                 {x.wins}/{x.games} g'alaba
-                {enough && x.rank <= 3 ? ` · 🎁 ${prizeLabel(s.week.prizes[x.rank - 1])}` : ""}
+                {enough && x.rank <= 3 ? " · 🏅 g'olib o'rin" : ""}
               </div>
             </div>
             <span
@@ -1221,15 +1213,9 @@ function WeekBoard({ s }: { s: BattleSeasonData | null }) {
           <span className="text-[11px] font-bold text-white/75">{s.season.days_left} kun qoldi</span>
         </div>
         <div className="mt-1 text-[12px] font-semibold text-white/85">
-          {s.season.ends_at} kuni mavsum yakunlanadi: top-3 sovrin oladi, so'ng hamma ballning{" "}
-          {s.season.keep_pct}% i qoladi — ligalar qaytadan bellashuvga ochiladi.
-        </div>
-        <div className="mt-2 space-y-0.5">
-          {s.season_prizes.map((p) => (
-            <div key={p.rank} className="text-[12px] font-bold text-white/90">
-              {["🥇", "🥈", "🥉"][p.rank - 1] ?? "🏅"} {prizeLabel(p)}
-            </div>
-          ))}
+          {s.season.ends_at} kuni mavsum yakunlanadi: top-3 e'lon qilinadi, so'ng hamma ballning{" "}
+          {s.season.keep_pct}% i qoladi — ligalar qaytadan bellashuvga ochiladi. Janglar va
+          g'alabalar soni saqlanadi.
         </div>
         {s.last_season.length > 0 && (
           <div className="mt-2 border-t border-white/20 pt-2 text-[12px] font-semibold text-white/85">

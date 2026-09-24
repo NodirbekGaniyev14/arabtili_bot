@@ -509,10 +509,12 @@ class Battle(Base):
 
 
 class BattleAward(Base):
-    """Oktagon sovrini (K25.3): haftalik top-3 va mavsum (oylik) top-3.
+    """Oktagon g'oliblari (K25.3): haftalik top-3 va mavsum (oylik) top-3 — tarix uchun.
 
     `period_key`: hafta uchun dushanba sanasi "YYYY-MM-DD", mavsum uchun "YYYY-MM".
     `points` — haftalik uchun o'sha haftada to'plangan sof ball, mavsum uchun yakundagi ball.
+    Oktagon — sof reyting, sovrin yo'q: `vip_days`/`xp` ishlatilmaydi (doim 0), ustunlar
+    serverdagi jadval bilan mos qolishi uchun turibdi.
     """
 
     __tablename__ = "battle_awards"
