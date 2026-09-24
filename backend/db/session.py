@@ -96,6 +96,10 @@ _MIGRATIONS = {
         "content": "INTEGER DEFAULT -1",
         "pron": "INTEGER DEFAULT -1",
     },
+    # K25.2 Oktagon: jang turi (navbat / do'st / qayta jang)
+    "battles": {
+        "mode": "VARCHAR(10) DEFAULT 'queue'",
+    },
     # K23.4 VIP modeli — sarf qatori qaysi modelda
     "ai_usage": {
         "model": "VARCHAR(40) DEFAULT ''",

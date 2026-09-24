@@ -87,6 +87,17 @@ BADGES: list[dict] = [
     {"id": "writing_90", "icon": "🏵", "title": "Go'zal xat", "desc": "Yozuv mashqida 90+ aniqlik", "check": lambda m: m["writing_best"] >= 90},
     {"id": "writing_neat", "icon": "✨", "title": "Ozoda qo'l", "desc": "Ozodalik 5/5 baholandi", "check": lambda m: m["writing_neat"] >= 5},
 
+    # ── Oktagon — 1v1 lug'at jangi (K25) ──
+    {"id": "battle_first", "icon": "⚔️", "title": "Birinchi jang", "desc": "Oktagonda birinchi jangni o'tkazdingiz", "check": lambda m: m["battles"] >= 1},
+    {"id": "battle_win_1", "icon": "🗡", "title": "Birinchi g'alaba", "desc": "Oktagonda birinchi marta yutdingiz", "check": lambda m: m["battle_wins"] >= 1},
+    {"id": "battle_win_10", "icon": "🛡", "title": "Jangchi", "desc": "Oktagonda 10 ta g'alaba", "check": lambda m: m["battle_wins"] >= 10},
+    {"id": "battle_win_50", "icon": "🏟", "title": "Oktagon qahramoni", "desc": "Oktagonda 50 ta g'alaba", "check": lambda m: m["battle_wins"] >= 50},
+    {"id": "battle_perfect", "icon": "🎯", "title": "Mukammal jang", "desc": "Jangda 10 savolning hammasini topdingiz", "check": lambda m: m["battle_best_correct"] >= 10},
+    {"id": "battle_friend", "icon": "🤝", "title": "Do'stona bellashuv", "desc": "Do'stingiz bilan havola orqali jang qildingiz", "check": lambda m: m["friend_battles"] >= 1},
+    {"id": "battle_silver", "icon": "🥈", "title": "Kumush jangchi", "desc": "Oktagon ballida Kumush ligaga chiqdingiz (150+)", "check": lambda m: m["battle_points"] >= 150},
+    {"id": "battle_gold", "icon": "🥇", "title": "Oltin jangchi", "desc": "Oktagon ballida Oltin ligaga chiqdingiz (400+)", "check": lambda m: m["battle_points"] >= 400},
+    {"id": "battle_diamond", "icon": "💎", "title": "Olmos jangchi", "desc": "Oktagon ballida Olmos ligaga chiqdingiz (800+)", "check": lambda m: m["battle_points"] >= 800},
+
     # ── Do'stlar ──
     {"id": "referral_1", "icon": "👥", "title": "Do'st chaqirdi", "desc": "Taklifingiz bilan do'stingiz birinchi darsni tugatdi", "check": lambda m: m["referrals"] >= 1},
     {"id": "referral_5", "icon": "🤝", "title": "Jamoa", "desc": "5 ta do'stingiz taklif bilan keldi", "check": lambda m: m["referrals"] >= 5},
@@ -247,6 +258,23 @@ async def _metrics(session: AsyncSession, user_id: int, streak: int) -> dict:
     referrals = await _one(
         select(func.count()).select_from(User).where(User.invited_by == user_id, User.ref_rewarded == 1)
     )
+    # K25 Oktagon
+    from db.models import Battle
+
+    urow = (
+        await session.execute(select(User.battle_games, User.battle_wins, User.battle_points).where(User.id == user_id))
+    ).first()
+    battles, battle_wins, battle_points = (int(x or 0) for x in (urow or (0, 0, 0)))
+    best_p1 = await _one(select(func.max(Battle.p1_correct)).where(Battle.p1_id == user_id))
+    best_p2 = await _one(select(func.max(Battle.p2_correct)).where(Battle.p2_id == user_id))
+    friend_battles = await _one(
+        select(func.count())
+        .select_from(Battle)
+        .where(
+            (Battle.p1_id == user_id) | (Battle.p2_id == user_id),
+            Battle.mode.in_(("friend", "rematch")),
+        )
+    )
     best_monthly_rank = (
         await session.execute(
             select(func.min(WeeklyAward.rank)).where(WeeklyAward.user_id == user_id, WeeklyAward.period == "month")
@@ -269,6 +297,11 @@ async def _metrics(session: AsyncSession, user_id: int, streak: int) -> dict:
         "writing_best": writing_best,
         "writing_neat": writing_neat,
         "referrals": referrals,
+        "battles": battles,
+        "battle_wins": battle_wins,
+        "battle_points": battle_points,
+        "battle_best_correct": max(int(best_p1 or 0), int(best_p2 or 0)),
+        "friend_battles": int(friend_battles or 0),
         "best_monthly_rank": best_monthly_rank,
         "lessons": len(done),
         "words": words,

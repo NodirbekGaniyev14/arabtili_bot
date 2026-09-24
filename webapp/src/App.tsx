@@ -76,7 +76,9 @@ export default function App() {
   // Harf chizish mashqi (K21.6) — #trace
   const [showTrace, setShowTrace] = useState(() => window.location.hash === "#trace");
   // Oktagon — 1v1 lug'at jangi (K25) — #battle
-  const [showBattle, setShowBattle] = useState(() => window.location.hash === "#battle");
+  const [showBattle, setShowBattle] = useState(
+    () => window.location.hash === "#battle" || window.location.hash.startsWith("#duel=")
+  );
   // «Yangi so'zlarim» (K22.4) — #words
   const [showWords, setShowWords] = useState(() => window.location.hash === "#words");
 
@@ -170,6 +172,8 @@ export default function App() {
       <div className="min-h-screen">
         <ArabicBg />
         <Onboarding initialName={tgName} onDone={handleOnboardingDone} />
+        {/* K25.2: do'st havolasi bilan kelgan yangi foydalanuvchi — avval jang, keyin tanishuv */}
+        {showBattle && <Battle onClose={() => setShowBattle(false)} />}
       </div>
     );
   }

@@ -301,3 +301,181 @@ async def test_rest_me_top_history(session, make_user, monkeypatch):
             assert hist[1]["opp"] == "Vali" and hist[1]["result"] == "win" and hist[1]["you"] == 180
     finally:
         app.dependency_overrides.clear()
+
+
+# ── K25.2: do'st xonasi, qayta jang, havola, nishonlar ──
+
+
+class FakeBot:
+    def __init__(self):
+        self.sent: list[tuple[int, str, object]] = []
+
+    async def send_message(self, chat_id, text, reply_markup=None, **kw):
+        self.sent.append((chat_id, text, reply_markup))
+
+
+async def _play_to_end(hub, pairs, answer_right=True):
+    """pairs: [(user_id, FakeConn)] — hamma savolga javob, «end» gacha."""
+    uid0 = pairs[0][0]
+    m = hub.matches[uid0]
+    for i in range(bt.QUESTIONS):
+        for uid, c in pairs:
+            await c.wait("q")
+            q = m.questions[i]
+            hub.answer(uid, i, q["answer"] if answer_right else _wrong(q))
+        for _uid, c in pairs:
+            await c.wait("round")
+    ends = [await c.wait("end") for _uid, c in pairs]
+    await asyncio.sleep(0.05)  # «end» yuborilgach jang ro'yxatdan o'chiriladi (match_done)
+    return ends
+
+
+@pytest.mark.asyncio
+async def test_friend_room_flow_and_badges(session, make_user, monkeypatch):
+    from config import settings
+
+    monkeypatch.setattr(settings, "bot_username", "TestBot")
+    ua, ub, uc = await _users(session, make_user, "Ali", "Vali", "Sami")
+    a, b, c = FakeConn(), FakeConn(), FakeConn()
+    hub = bt.HUB
+    for u, conn in ((ua, a), (ub, b), (uc, c)):
+        await hub.connect(u.id, conn)
+    room = hub.create_room(ua.id, "Ali", 0, ua.tg_id, "A1", a)
+    assert room and len(room.code) == 6 and hub.room_of[ua.id] == room.code
+    msg = hub._room_msg(room, "host")
+    assert msg["link"] == f"https://t.me/TestBot?start=duel_{room.code}" and msg["guest"] is None
+    assert (await hub.join_room(ua.id, "Ali", 0, ua.tg_id, room.code, a))[0] == "host", "mezbon o'z havolasini ochdi"
+    assert (await hub.join_room(ub.id, "Vali", 0, ub.tg_id, "YOQ123", b))[0] == "not_found"
+    status, _ = await hub.join_room(ub.id, "Vali", 0, ub.tg_id, room.code.lower(), b)
+    assert status == "started" and room.code not in hub.rooms and ua.id not in hub.room_of
+    ma = await a.wait("matched")
+    assert ma["mode"] == "friend" and ma["opp"]["name"] == "Vali"
+    assert (await hub.join_room(uc.id, "Sami", 0, uc.tg_id, room.code, c))[0] == "not_found", "xona yopilgan"
+    ea, eb = await _play_to_end(hub, [(ua.id, a), (ub.id, b)])
+    assert ea["rematch"] is True and eb["rematch"] is True
+    row = (await session.execute(select(Battle))).scalar_one()
+    assert row.mode == "friend"
+    ids = {x["id"] for x in ea.get("new_badges", [])}
+    assert {"battle_first", "battle_friend", "battle_perfect"} <= ids
+    assert hub.last_opp[ua.id][0] == ub.id and hub.last_opp[ub.id][0] == ua.id
+
+
+@pytest.mark.asyncio
+async def test_host_absent_gets_bot_message(session, make_user):
+    ua, ub = await _users(session, make_user, "Ali", "Vali")
+    a, b = FakeConn(), FakeConn()
+    hub = bt.HUB
+    fake_bot = FakeBot()
+    hub.bot = fake_bot
+    await hub.connect(ua.id, a)
+    room = hub.create_room(ua.id, "Ali", 0, ua.tg_id, "A0", a)
+    hub.disconnect(ua.id, a)  # mezbon ilovani yopdi
+    assert room.host_conn is None and room.code in hub.rooms
+    await hub.connect(ub.id, b)
+    status, _ = await hub.join_room(ub.id, "Vali", 0, ub.tg_id, room.code, b)
+    assert status == "waiting"
+    assert len(fake_bot.sent) == 1 and fake_bot.sent[0][0] == ua.tg_id and "Vali" in fake_bot.sent[0][1]
+    # Ikkinchi marta xabar yo'q (bir marta)
+    await hub.join_room(ub.id, "Vali", 0, ub.tg_id, room.code, b)
+    assert len(fake_bot.sent) == 1
+    # Mezbon qaytdi (ilova ochildi) — connect xonani tiklaydi va jang boshlanadi
+    a2 = FakeConn()
+    assert await hub.connect(ua.id, a2) is True
+    assert (await a2.wait("matched"))["mode"] == "friend"
+    await b.wait("matched")
+    hub.leave(ua.id)
+    await a2.wait("end")
+
+
+@pytest.mark.asyncio
+async def test_rematch_accept_decline_and_expiry(session, make_user, monkeypatch):
+    ua, ub = await _users(session, make_user, "Ali", "Vali")
+    a, b = FakeConn(), FakeConn()
+    hub = bt.HUB
+    await hub.connect(ua.id, a)
+    await hub.connect(ub.id, b)
+    assert (await hub.rematch(ua.id, "Ali", 0, ua.tg_id, a))[0] == "no_opponent"
+    await hub.join(ua.id, "Ali", 0, "B1", a)
+    await hub.join(ub.id, "Vali", 0, "B1", b)
+    await _play_to_end(hub, [(ua.id, a), (ub.id, b)], answer_right=False)
+
+    # Rad etish
+    status, room = await hub.rematch(ua.id, "Ali", 0, ua.tg_id, a)
+    assert status == "offered" and room.mode == "rematch" and room.guest_id == ub.id and room.level == "B1"
+    offer = await b.wait("rematch_offer")
+    assert offer["from"] == "Ali" and offer["code"] == room.code
+    assert hub.decline(ub.id, room.code)
+    closed = await a.wait("room_closed")
+    assert closed["reason"] == "declined" and room.code not in hub.rooms
+
+    # Qabul qilish
+    status, room = await hub.rematch(ua.id, "Ali", 0, ua.tg_id, a)
+    offer = await b.wait("rematch_offer")
+    status, _ = await hub.join_room(ub.id, "Vali", 0, ub.tg_id, offer["code"], b)
+    assert status == "started"
+    assert (await a.wait("matched"))["mode"] == "rematch"
+    await b.wait("matched")
+    hub.leave(ub.id)
+    await a.wait("end")
+    await b.wait("end")
+    await asyncio.sleep(0.05)
+    rows = (await session.execute(select(Battle).order_by(Battle.id))).scalars().all()
+    assert [r.mode for r in rows] == ["queue", "rematch"]
+
+    # Ikkalasi bir vaqtda «qayta jang» bossa — darhol jang
+    await hub.rematch(ua.id, "Ali", 0, ua.tg_id, a)
+    status, _ = await hub.rematch(ub.id, "Vali", 0, ub.tg_id, b)
+    assert status == "started"
+    hub.leave(ua.id)
+    await a.wait("end")
+    await b.wait("end")
+    await asyncio.sleep(0.05)
+
+    # Muddati o'tgan xona
+    monkeypatch.setattr(bt, "REMATCH_TTL", 0.01)
+    st, room = await hub.rematch(ua.id, "Ali", 0, ua.tg_id, a)
+    assert room is not None, (st, list(hub.matches), hub.last_opp.get(ua.id))
+    await asyncio.sleep(0.05)
+    assert (await hub.join_room(ub.id, "Vali", 0, ub.tg_id, room.code, b))[0] == "not_found"
+    assert (await a.wait("room_closed"))["reason"] == "expired"
+
+
+class FakeMessage:
+    def __init__(self, tg_id: int, name: str, text: str):
+        from types import SimpleNamespace
+
+        self.from_user = SimpleNamespace(id=tg_id, first_name=name, username="")
+        self.text = text
+        self.answers: list[tuple[str, object]] = []
+
+    async def answer(self, text, reply_markup=None, **kw):
+        self.answers.append((text, reply_markup))
+
+
+@pytest.mark.asyncio
+async def test_start_duel_link(session, make_user, session_factory, monkeypatch):
+    import bot.handlers as h
+    from config import settings
+
+    monkeypatch.setattr(h, "SessionLocal", session_factory)
+    monkeypatch.setattr(settings, "webapp_url", "https://arabiy.example/app")
+    (ua,) = await _users(session, make_user, "Ali")
+    room = bt.HUB.create_room(ua.id, "Ali", 40, ua.tg_id, "A2", FakeConn())
+
+    msg = FakeMessage(777001, "Yangi", f"/start duel_{room.code}")
+    await h.cmd_start(msg)
+    text, kb = msg.answers[-1]
+    assert "Ali" in text and "Oktagon" in text and "A2" in text
+    url = kb.inline_keyboard[0][0].web_app.url
+    assert url.endswith(f"#duel={room.code}")
+    new = (await session.execute(select(User).where(User.tg_id == 777001))).scalar_one()
+    assert new.invited_by == ua.id, "do'st havolasi — referal ham"
+
+    own = FakeMessage(ua.tg_id, "Ali", f"/start duel_{room.code}")
+    await h.cmd_start(own)
+    assert "sizning taklif" in own.answers[-1][0]
+
+    old = FakeMessage(777002, "Boshqa", "/start duel_YOQ999")
+    await h.cmd_start(old)
+    text, kb = old.answers[-1]
+    assert "muddati tugagan" in text and kb.inline_keyboard[0][0].web_app.url.endswith("#battle")

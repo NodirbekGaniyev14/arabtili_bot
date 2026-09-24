@@ -53,8 +53,56 @@ async def _attach_referral(message: Message) -> bool:
         return ok
 
 
+async def _duel_invite(message: Message, code: str) -> None:
+    """`/start duel_<kod>` (K25.2) — do'st Oktagon jangiga chaqirgan. Yangi foydalanuvchi mezbonga
+    referal sifatida bog'lanadi (birinchi darsdan keyin ikkalasiga 3 kun VIP — mavjud qoida)."""
+    from services import battle as bt
+    from services import referral
+    from services.referral import _open_kb
+
+    tg = message.from_user
+    if tg is None:
+        return
+    room = bt.HUB.rooms.get(code.strip().upper())
+    if room is not None and room.expired():
+        room = None
+    new_user = False
+    async with SessionLocal() as session:
+        user = (await session.execute(select(User).where(User.tg_id == tg.id))).scalar_one_or_none()
+        if user is None:
+            new_user = True
+            user = User(tg_id=tg.id, name=tg.first_name or "", username=tg.username or "")
+            session.add(user)
+            await session.flush()
+            if room is not None and room.host_tg:
+                await referral.attach(session, user, room.host_tg)
+            await session.commit()
+    if room is None:
+        await message.answer(
+            "⌛ Bu jang taklifining muddati tugagan.\n\n"
+            "Oktagonda o'zingiz jang boshlang yoki do'stingizdan yangi havola so'rang.",
+            reply_markup=_open_kb("⚔️ Oktagonni ochish", "#battle"),
+        )
+        return
+    if room.host_tg == tg.id:
+        await message.answer("Bu sizning taklif havolangiz — uni do'stingizga yuboring 🙂")
+        return
+    note = "\n\n<i>Birinchi marta kiryapsizmi? Avval qisqa tanishuv, keyin jang.</i>" if new_user else ""
+    await message.answer(
+        f"⚔️ <b>{bt._esc(room.host_name)}</b> sizni <b>Oktagon</b> jangiga chaqirdi!\n"
+        f"Arab tili lug'ati · {room.level} daraja · 10 savol × 10 soniya.\n\n"
+        f"Tugmani bosing — jang boshlanadi.{note}",
+        reply_markup=_open_kb("⚔️ Jangga kirish", f"#duel={room.code}"),
+        parse_mode="HTML",
+    )
+
+
 @router.message(CommandStart())
 async def cmd_start(message: Message):
+    arg = (message.text or "").split(maxsplit=1)
+    if len(arg) > 1 and arg[1].strip().startswith("duel_"):
+        await _duel_invite(message, arg[1].strip()[5:])
+        return
     invited = await _attach_referral(message)
     bonus = (
         "\n\n🎁 <b>Do'stingiz taklifi bilan keldingiz!</b> Birinchi darsni tugatsangiz — "

@@ -501,6 +501,8 @@ class Battle(Base):
     p2_time_ms: Mapped[int] = mapped_column(Integer, default=0)
     winner: Mapped[int] = mapped_column(Integer, default=0)
     status: Mapped[str] = mapped_column(String(10), default="done")
+    # queue — navbat (odam yoki bot) | friend — do'st havolasi | rematch — qayta jang (K25.2)
+    mode: Mapped[str] = mapped_column(String(10), default="queue")
     p1_delta: Mapped[int] = mapped_column(Integer, default=0)
     p2_delta: Mapped[int] = mapped_column(Integer, default=0)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)

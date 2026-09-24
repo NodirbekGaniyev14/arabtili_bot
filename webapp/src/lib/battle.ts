@@ -23,7 +23,23 @@ export interface BattleMatched {
   seconds: number;
   start_in: number;
   resume: boolean;
+  /** queue | friend | rematch (K25.2) */
+  mode?: string;
   score: { you: number; opp: number };
+}
+
+/** K25.2 do'st xonasi / qayta jang taklifi */
+export interface BattleRoom {
+  t: "room";
+  code: string;
+  level: string;
+  mode: "friend" | "rematch";
+  role: "host" | "guest";
+  expires_in: number;
+  link?: string;
+  share_text?: string;
+  guest?: { name: string; online: boolean } | null;
+  host?: { name: string; points: number; league: BattleLeague; online: boolean };
 }
 
 export interface BattleQuestion {
@@ -58,6 +74,8 @@ export interface BattleEnd {
   league?: BattleLeague;
   xp?: number;
   new_badges?: Badge[];
+  /** raqib odam — «qayta jang» mumkin (K25.2) */
+  rematch?: boolean;
 }
 
 export type BattleMsg =
@@ -70,6 +88,9 @@ export type BattleMsg =
   | { t: "opp_answered"; i: number }
   | BattleRound
   | BattleEnd
+  | BattleRoom
+  | { t: "room_closed"; reason: string; msg: string; self?: boolean }
+  | { t: "rematch_offer"; code: string; from: string; level: string; expires_in: number }
   | { t: "error"; code?: string; msg: string };
 
 export type BattleOut =
@@ -77,7 +98,12 @@ export type BattleOut =
   | { t: "cancel" }
   | { t: "answer"; i: number; choice: string }
   | { t: "leave" }
-  | { t: "ping" };
+  | { t: "ping" }
+  | { t: "room_create"; level: string }
+  | { t: "room_join"; code: string }
+  | { t: "room_cancel" }
+  | { t: "rematch" }
+  | { t: "room_decline"; code: string };
 
 export class BattleSocket {
   private ws: WebSocket | null = null;

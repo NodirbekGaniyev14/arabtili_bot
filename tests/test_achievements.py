@@ -32,6 +32,8 @@ EMPTY_METRICS = {
     "chat_sessions": 0, "chat_turns": 0, "voice_turns": 0, "daily_best_streak": 0, "daily_total": 0,
     "mocks": 0, "mock_best": 0, "drills": 0, "drill_best": 0, "listens": 0, "listen_best": 0,
     "writings": 0, "writing_best": 0, "writing_neat": 0, "referrals": 0, "best_monthly_rank": 0,
+    # K25 Oktagon
+    "battles": 0, "battle_wins": 0, "battle_points": 0, "battle_best_correct": 0, "friend_battles": 0,
 }
 
 

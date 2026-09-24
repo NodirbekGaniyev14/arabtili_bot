@@ -1,8 +1,10 @@
 """Oktagon (K25) — WebSocket /ws/battle (jang) va REST /api/battle/* (lobbi, reyting, tarix).
 
 WebSocket protokoli (JSON, «t» — turi):
-  klient → server: auth {init} (birinchi xabar), join {level}, cancel, answer {i, choice}, leave, ping
-  server → klient: hello, queued, matched, q, opp_answered, round, end, error, pong
+  klient → server: auth {init} (birinchi xabar), join {level}, cancel, answer {i, choice}, leave, ping,
+                   room_create {level}, room_join {code}, room_cancel, rematch, room_decline {code}  (K25.2)
+  server → klient: hello, queued, matched, q, opp_answered, round, end, error, pong,
+                   room, room_closed, rematch_offer  (K25.2)
 Brauzer WebSocket'ga sarlavha qo'sha olmaydi — initData birinchi xabarda keladi (URL'da emas —
 nginx loglariga tushmasin).
 """
@@ -106,12 +108,13 @@ async def _auth_user(init_data: str) -> User | None:
         return user
 
 
-async def _handle_join(conn: WSConn, user_id: int, level: str) -> None:
+async def _player(conn: WSConn, user_id: int, level: str = "") -> dict | None:
+    """O'yinchi ma'lumoti + kunlik limit (VIP'siz FREE_DAILY). Limit tugagan bo'lsa — xato yuborib None."""
     level = (level or "").upper()
     async with bt.sessions() as session:
         user = await session.get(User, user_id)
         if user is None:
-            return
+            return None
         if level not in vocab.LEVELS:
             level = await _user_level(session, user_id)
         vip = billing.is_vip(user)
@@ -124,8 +127,55 @@ async def _handle_join(conn: WSConn, user_id: int, level: str) -> None:
                     "msg": f"Bugungi {bt.FREE_DAILY} ta bepul jang tugadi — ertaga yana! VIP'da cheksiz.",
                 }
             )
-            return
-        name, points = user.name or "O'quvchi", user.battle_points or 0
+            return None
+        return {"name": user.name or "O'quvchi", "points": user.battle_points or 0, "tg": user.tg_id, "level": level}
+
+
+ROOM_ERRORS = {
+    "not_found": "Taklif topilmadi yoki muddati tugagan — do'stingizdan yangi havola so'rang",
+    "full": "Bu jangga boshqa o'yinchi kirib bo'lgan",
+    "busy": "Sizda davom etayotgan jang bor",
+    "opp_busy": "Raqibingiz hozir boshqa jangda",
+    "no_opponent": "Qayta jang uchun avval odam bilan jang qiling",
+}
+
+
+async def _handle_room(conn: WSConn, user_id: int, msg: dict) -> None:
+    t = msg.get("t")
+    if t == "room_cancel":
+        bt.HUB.leave_room(user_id)
+        await conn.send({"t": "room_closed", "reason": "cancelled", "msg": "Taklif bekor qilindi", "self": True})
+        return
+    if t == "room_decline":
+        bt.HUB.decline(user_id, str(msg.get("code", ""))[:12])
+        return
+    p = await _player(conn, user_id, str(msg.get("level", "")))
+    if p is None:
+        return
+    if t == "room_create":
+        room = bt.HUB.create_room(user_id, p["name"], p["points"], p["tg"], p["level"], conn)
+        if room is None:
+            await conn.send({"t": "error", "code": "busy", "msg": ROOM_ERRORS["busy"]})
+        else:
+            await conn.send(bt.HUB._room_msg(room, "host"))
+        return
+    if t == "room_join":
+        status, room = await bt.HUB.join_room(user_id, p["name"], p["points"], p["tg"], str(msg.get("code", ""))[:12], conn)
+    else:  # rematch
+        status, room = await bt.HUB.rematch(user_id, p["name"], p["points"], p["tg"], conn)
+    if status in ("started",):
+        return  # «matched» jang o'zidan keladi
+    if status in ("waiting", "host", "offered") and room is not None:
+        await conn.send(bt.HUB._room_msg(room, "host" if room.host_id == user_id else "guest"))
+        return
+    await conn.send({"t": "error", "code": status, "msg": ROOM_ERRORS.get(status, "Jangga kirib bo'lmadi")})
+
+
+async def _handle_join(conn: WSConn, user_id: int, level: str) -> None:
+    p = await _player(conn, user_id, level)
+    if p is None:
+        return
+    level, name, points = p["level"], p["name"], p["points"]
     status = await bt.HUB.join(user_id, name, points, level, conn)
     if status == "busy":
         await conn.send({"t": "error", "code": "busy", "msg": "Sizda davom etayotgan jang bor"})
@@ -149,6 +199,8 @@ async def battle_ws(ws: WebSocket):
 
     uid = user.id
     conn = WSConn(ws)
+    if bt.HUB.bot is None:  # mezbonga «do'stingiz kirdi» xabari uchun
+        bt.HUB.bot = getattr(getattr(getattr(ws, "app", None), "state", None), "bot", None)
     resumed = await bt.HUB.connect(uid, conn)
     try:
         if not resumed:
@@ -171,6 +223,8 @@ async def battle_ws(ws: WebSocket):
                 bt.HUB.answer(uid, i, str(msg.get("choice", ""))[:300])
             elif t == "leave":
                 bt.HUB.leave(uid)
+            elif t in ("room_create", "room_join", "room_cancel", "rematch", "room_decline"):
+                await _handle_room(conn, uid, msg)
             elif t == "ping":
                 await conn.send({"t": "pong", "online": bt.HUB.online()})
     except WebSocketDisconnect:

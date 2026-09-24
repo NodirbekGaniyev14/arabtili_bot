@@ -33,6 +33,7 @@ REQUIRED_COLUMNS = {
     "tutor_turns": ("mode", "score", "vocab", "grammar", "content", "pron"),
     "mock_results": ("vocab", "grammar", "content", "pron"),
     "ai_usage": ("model",),
+    "battles": ("mode",),
 }
 
 

@@ -12,6 +12,7 @@ import {
   type BattleMatched,
   type BattleMsg,
   type BattleQuestion,
+  type BattleRoom,
   type BattleRound,
 } from "../lib/battle";
 import BadgeToast from "../components/BadgeToast";
@@ -24,7 +25,21 @@ const haptic = {
   bad: () => tg()?.HapticFeedback?.notificationOccurred("error"),
 };
 
-type Stage = "lobby" | "search" | "vs" | "play" | "end";
+type Stage = "lobby" | "search" | "room" | "vs" | "play" | "end";
+
+/** `#duel=KOD` — bot xabaridagi «Jangga kirish» tugmasi (K25.2). */
+function readDuelCode(): string {
+  const m = window.location.hash.match(/^#duel=([A-Za-z0-9]{4,12})$/);
+  return m ? m[1].toUpperCase() : "";
+}
+
+function clearHash() {
+  try {
+    window.history.replaceState(null, "", window.location.pathname + window.location.search);
+  } catch {
+    /* eski WebView */
+  }
+}
 
 export default function Battle({ onClose }: { onClose: () => void }) {
   const [me, setMe] = useState<BattleMe | null>(null);
@@ -45,8 +60,14 @@ export default function Battle({ onClose }: { onClose: () => void }) {
   const [error, setError] = useState("");
   const [conn, setConn] = useState<"open" | "closed" | "reconnecting">("closed");
   const [sheet, setSheet] = useState<"top" | "history" | null>(null);
+  const [room, setRoom] = useState<BattleRoom | null>(null);
+  const [roomAt, setRoomAt] = useState(0);
+  const [offer, setOffer] = useState<{ code: string; from: string; level: string; until: number } | null>(null);
+  const [info, setInfo] = useState("");
   const sock = useRef<BattleSocket | null>(null);
   const qRef = useRef<BattleQuestion | null>(null);
+  // Ref — dev StrictMode effektni ikki marta ishlatganda ham kod yo'qolmasin
+  const duelCode = useRef(readDuelCode());
 
   const loadMe = () =>
     api
@@ -63,6 +84,10 @@ export default function Battle({ onClose }: { onClose: () => void }) {
     const s = new BattleSocket(onMsg, setConn);
     sock.current = s;
     s.connect();
+    if (duelCode.current) {
+      s.send({ t: "room_join", code: duelCode.current });
+      clearHash();
+    }
     return () => s.close();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -80,8 +105,26 @@ export default function Battle({ onClose }: { onClose: () => void }) {
       case "cancelled":
         setStage("lobby");
         break;
+      case "room":
+        setRoom(m);
+        setRoomAt(Date.now());
+        setOffer(null);
+        setStage("room");
+        break;
+      case "room_closed":
+        setRoom(null);
+        if (!m.self) setInfo(m.msg);
+        setStage((s) => (s === "room" ? "lobby" : s));
+        break;
+      case "rematch_offer":
+        setOffer({ code: m.code, from: m.from, level: m.level, until: Date.now() + m.expires_in * 1000 });
+        haptic.hit();
+        break;
       case "matched":
         if (sock.current) sock.current.inMatch = true;
+        setRoom(null);
+        setOffer(null);
+        setInfo("");
         setMatched(m);
         setScore(m.score);
         setEnd(null);
@@ -130,6 +173,7 @@ export default function Battle({ onClose }: { onClose: () => void }) {
       case "error":
         setError(m.msg);
         if (sock.current) sock.current.inMatch = false;
+        setRoom(null);
         setStage("lobby");
         break;
     }
@@ -146,6 +190,40 @@ export default function Battle({ onClose }: { onClose: () => void }) {
     haptic.tap();
     sock.current?.send({ t: "cancel" });
     setStage("lobby");
+  };
+
+  const invite = () => {
+    if (!level) return;
+    haptic.hit();
+    setError("");
+    setInfo("");
+    sock.current?.send({ t: "room_create", level });
+  };
+
+  const cancelRoom = () => {
+    haptic.tap();
+    sock.current?.send({ t: "room_cancel" });
+    setRoom(null);
+    setStage("lobby");
+  };
+
+  const rematch = () => {
+    haptic.hit();
+    setError("");
+    sock.current?.send({ t: "rematch" });
+  };
+
+  const acceptOffer = () => {
+    if (!offer) return;
+    haptic.hit();
+    sock.current?.send({ t: "room_join", code: offer.code });
+    setOffer(null);
+  };
+
+  const declineOffer = () => {
+    if (!offer) return;
+    sock.current?.send({ t: "room_decline", code: offer.code });
+    setOffer(null);
   };
 
   const answer = (opt: string) => {
@@ -169,6 +247,7 @@ export default function Battle({ onClose }: { onClose: () => void }) {
       return;
     }
     if (stage === "search") sock.current?.send({ t: "cancel" });
+    if (stage === "room") sock.current?.send({ t: "room_cancel" });
     onClose();
   };
 
@@ -198,12 +277,15 @@ export default function Battle({ onClose }: { onClose: () => void }) {
           level={level}
           setLevel={setLevel}
           error={error}
+          info={info}
           onStart={start}
+          onInvite={invite}
           onTop={() => setSheet("top")}
           onHistory={() => setSheet("history")}
         />
       )}
       {stage === "search" && <Searching level={level} since={searchSince} onCancel={cancel} />}
+      {stage === "room" && room && <RoomView room={room} since={roomAt} onCancel={cancelRoom} />}
       {stage === "vs" && matched && <Versus m={matched} />}
       {stage === "play" && matched && (
         <Play
@@ -226,8 +308,13 @@ export default function Battle({ onClose }: { onClose: () => void }) {
             setEnd(null);
             start();
           }}
+          onRematch={rematch}
           onLobby={() => setStage("lobby")}
         />
+      )}
+
+      {offer && stage !== "play" && stage !== "vs" && (
+        <RematchOffer offer={offer} onAccept={acceptOffer} onDecline={declineOffer} />
       )}
 
       {sheet && <Sheet kind={sheet} onClose={() => setSheet(null)} />}
@@ -243,7 +330,9 @@ function Lobby({
   level,
   setLevel,
   error,
+  info,
   onStart,
+  onInvite,
   onTop,
   onHistory,
 }: {
@@ -252,7 +341,9 @@ function Lobby({
   level: string;
   setLevel: (l: string) => void;
   error: string;
+  info: string;
   onStart: () => void;
+  onInvite: () => void;
   onTop: () => void;
   onHistory: () => void;
 }) {
@@ -310,13 +401,14 @@ function Lobby({
             <div className="text-[13px] font-extrabold leading-tight">🏆 ENG ZO'RLARI</div>
             <div className="text-[11px] font-semibold text-white/85">reytingni ko'ring</div>
           </button>
-          <div className="relative rounded-2xl bg-card border border-cardline p-3.5 opacity-70">
-            <span className="absolute -top-2 right-2 rounded-full bg-cardline px-2 py-0.5 text-[10px] font-extrabold text-ink-soft">
-              tez orada
-            </span>
+          <button
+            onClick={onInvite}
+            disabled={!me || !level || limitReached}
+            className="rounded-2xl bg-card border-2 border-emerald-deep/40 p-3.5 text-left active:scale-[0.98] transition-transform disabled:opacity-50"
+          >
             <div className="text-[13px] font-extrabold leading-tight">👥 DO'STNI CHAQIRISH</div>
-            <div className="text-[11px] font-semibold text-ink-soft">havola orqali jang</div>
-          </div>
+            <div className="text-[11px] font-semibold text-ink-soft">havola · {level || "—"} daraja</div>
+          </button>
           <button
             onClick={onHistory}
             className="rounded-2xl bg-card border border-cardline p-3.5 text-left active:scale-[0.98] transition-transform"
@@ -355,6 +447,9 @@ function Lobby({
 
         {error && (
           <div className="mt-3 rounded-2xl bg-terracotta/10 border border-terracotta/30 px-4 py-3 text-sm font-semibold">{error}</div>
+        )}
+        {info && !error && (
+          <div className="mt-3 rounded-2xl bg-gold-soft border border-gold/30 px-4 py-3 text-sm font-semibold">{info}</div>
         )}
       </div>
 
@@ -633,7 +728,19 @@ function Play({
 
 // ───────────────────────── Natija ─────────────────────────
 
-function EndView({ e, m, onAgain, onLobby }: { e: BattleEnd; m: BattleMatched; onAgain: () => void; onLobby: () => void }) {
+function EndView({
+  e,
+  m,
+  onAgain,
+  onRematch,
+  onLobby,
+}: {
+  e: BattleEnd;
+  m: BattleMatched;
+  onAgain: () => void;
+  onRematch: () => void;
+  onLobby: () => void;
+}) {
   const title = e.result === "win" ? "G'ALABA! 🏆" : e.result === "draw" ? "DURANG 🤝" : "MAG'LUBIYAT";
   const sub =
     e.reason === "forfeit"
@@ -700,17 +807,183 @@ function EndView({ e, m, onAgain, onLobby }: { e: BattleEnd; m: BattleMatched; o
         )}
       </div>
       <div className="px-4 pt-2 pb-4 space-y-2" style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom))" }}>
+        {e.rematch && (
+          <button
+            onClick={onRematch}
+            className="w-full rounded-2xl bg-gold py-4 text-[16px] font-extrabold text-white shadow-lg active:scale-[0.98]"
+          >
+            🔁 Qayta jang — {m.opp.name} bilan
+          </button>
+        )}
         <button
           onClick={onAgain}
-          className="w-full rounded-2xl bg-emerald-deep py-4 text-[16px] font-extrabold text-white shadow-lg active:scale-[0.98]"
+          className={
+            e.rematch
+              ? "w-full rounded-2xl bg-card border-2 border-emerald-deep py-3.5 font-extrabold text-emerald-deep active:scale-[0.98]"
+              : "w-full rounded-2xl bg-emerald-deep py-4 text-[16px] font-extrabold text-white shadow-lg active:scale-[0.98]"
+          }
         >
-          ⚔️ Yana jang
+          ⚔️ {e.rematch ? "Yangi raqib qidirish" : "Yana jang"}
         </button>
         <button onClick={onLobby} className="w-full rounded-2xl bg-card border border-cardline py-3 font-extrabold text-ink-soft">
           Lobbi
         </button>
       </div>
     </>
+  );
+}
+
+// ───────────────────────── Do'st xonasi / qayta jang (K25.2) ─────────────────────────
+
+function useCountdown(seconds: number, since: number): number {
+  const [left, setLeft] = useState(seconds);
+  useEffect(() => {
+    const tick = () => setLeft(Math.max(0, Math.round(seconds - (Date.now() - since) / 1000)));
+    tick();
+    const t = window.setInterval(tick, 500);
+    return () => window.clearInterval(t);
+  }, [seconds, since]);
+  return left;
+}
+
+const mmss = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+
+function RoomView({ room, since, onCancel }: { room: BattleRoom; since: number; onCancel: () => void }) {
+  const left = useCountdown(room.expires_in, since);
+  const [copied, setCopied] = useState(false);
+  const isHost = room.role === "host";
+  const share = () => {
+    if (!room.link) return;
+    haptic.tap();
+    const url = `https://t.me/share/url?url=${encodeURIComponent(room.link)}&text=${encodeURIComponent(room.share_text ?? "")}`;
+    const t = tg();
+    try {
+      if (t?.openTelegramLink) {
+        t.openTelegramLink(url);
+        return;
+      }
+    } catch {
+      /* eski mijoz */
+    }
+    window.open(url, "_blank");
+  };
+  const copy = async () => {
+    if (!room.link) return;
+    try {
+      await navigator.clipboard.writeText(room.link);
+      setCopied(true);
+      haptic.ok();
+    } catch {
+      setCopied(false);
+    }
+  };
+
+  return (
+    <>
+      <div className="flex-1 overflow-y-auto px-5 pb-4 flex flex-col items-center text-center">
+        <div className="relative mt-4 w-32 h-32 flex items-center justify-center">
+          <span className="absolute inset-0 rounded-full bg-gold/20 animate-ping" />
+          <span className="relative w-24 h-24 rounded-full bg-gold text-white flex items-center justify-center text-5xl shadow-lg">
+            {room.mode === "rematch" ? "🔁" : "👥"}
+          </span>
+        </div>
+        {isHost && room.mode === "friend" && (
+          <>
+            <h2 className="mt-5 text-xl font-extrabold">Do'stingizni jangga chaqiring</h2>
+            <p className="mt-1 text-[13px] font-semibold text-ink-soft">
+              {room.level} daraja · 10 savol × 10 soniya. Havolani yuboring — do'stingiz ochishi bilan jang boshlanadi.
+            </p>
+            <div className="mt-4 w-full rounded-2xl bg-card border border-cardline px-3 py-2.5 flex items-center gap-2">
+              <span className="min-w-0 flex-1 truncate text-left font-mono text-[12px] text-ink-soft">{room.link}</span>
+              <button onClick={copy} className="shrink-0 rounded-xl bg-cardline px-3 py-1.5 text-[12px] font-extrabold">
+                {copied ? "✓ Nusxalandi" : "📋 Nusxalash"}
+              </button>
+            </div>
+            <div className="mt-3 w-full rounded-2xl bg-gold-soft border border-gold/30 px-4 py-3 text-[13px] font-bold">
+              {room.guest
+                ? room.guest.online
+                  ? `⚔️ ${room.guest.name} kirdi — jang boshlanmoqda…`
+                  : `${room.guest.name} havolani ochdi, lekin hozir ilovada emas`
+                : "⏳ Do'stingiz havolani ochishini kutyapmiz…"}
+            </div>
+          </>
+        )}
+        {isHost && room.mode === "rematch" && (
+          <>
+            <h2 className="mt-5 text-xl font-extrabold">Qayta jang taklifi yuborildi</h2>
+            <p className="mt-1 text-[13px] font-semibold text-ink-soft">
+              {room.guest?.name ?? "Raqib"} javobini kutyapmiz — qabul qilsa, jang darhol boshlanadi.
+            </p>
+          </>
+        )}
+        {!isHost && (
+          <>
+            <h2 className="mt-5 text-xl font-extrabold">{room.host?.name ?? "Do'stingiz"} bilan jang</h2>
+            <p className="mt-1 text-[13px] font-semibold text-ink-soft">
+              {room.level} daraja · 10 savol × 10 soniya.
+              {room.host?.online ? " Jang boshlanmoqda…" : " Do'stingiz hozir ilovada emas — unga bot orqali xabar yubordik. U kirishi bilan jang boshlanadi."}
+            </p>
+          </>
+        )}
+        <div className="mt-4 text-3xl font-extrabold text-emerald-deep tabular-nums">{mmss(left)}</div>
+        <div className="text-[11px] font-bold text-ink-soft">taklif amal qiladi</div>
+      </div>
+      <div className="px-4 pt-2 pb-4 space-y-2" style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom))" }}>
+        {isHost && room.mode === "friend" && (
+          <button
+            onClick={share}
+            className="w-full rounded-2xl bg-emerald-deep py-4 text-[16px] font-extrabold text-white shadow-lg active:scale-[0.98]"
+          >
+            📤 Telegram orqali yuborish
+          </button>
+        )}
+        <button onClick={onCancel} className="w-full rounded-2xl bg-card border border-cardline py-3 font-extrabold text-ink-soft">
+          Bekor qilish
+        </button>
+      </div>
+    </>
+  );
+}
+
+function RematchOffer({
+  offer,
+  onAccept,
+  onDecline,
+}: {
+  offer: { code: string; from: string; level: string; until: number };
+  onAccept: () => void;
+  onDecline: () => void;
+}) {
+  const [left, setLeft] = useState(Math.max(0, Math.round((offer.until - Date.now()) / 1000)));
+  useEffect(() => {
+    const t = window.setInterval(() => {
+      const l = Math.max(0, Math.round((offer.until - Date.now()) / 1000));
+      setLeft(l);
+      if (l === 0) onDecline();
+    }, 500);
+    return () => window.clearInterval(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [offer.until]);
+  return (
+    <div className="absolute inset-x-3 top-14 z-20 rounded-3xl bg-card border-2 border-gold shadow-xl p-4">
+      <div className="flex items-center gap-3">
+        <span className="w-12 h-12 shrink-0 rounded-2xl bg-gold text-white flex items-center justify-center text-2xl">🔁</span>
+        <div className="min-w-0 flex-1">
+          <div className="font-extrabold truncate">{offer.from} qayta jangga chaqiryapti!</div>
+          <div className="text-[12px] font-semibold text-ink-soft">
+            {offer.level} daraja · {left} soniya ichida javob bering
+          </div>
+        </div>
+      </div>
+      <div className="mt-3 grid grid-cols-2 gap-2">
+        <button onClick={onDecline} className="rounded-2xl bg-cardline py-3 font-extrabold text-ink-soft active:scale-95">
+          Rad etish
+        </button>
+        <button onClick={onAccept} className="rounded-2xl bg-emerald-deep py-3 font-extrabold text-white active:scale-95">
+          ⚔️ Qabul qilish
+        </button>
+      </div>
+    </div>
   );
 }
 
