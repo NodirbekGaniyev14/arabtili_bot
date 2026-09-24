@@ -25,10 +25,10 @@ _tasks: dict[str, asyncio.Task] = {}
 REQUIRED_TABLES = (
     "users", "tutor_turns", "mock_results", "payment_requests", "ai_usage",
     "tutor_mistakes", "drill_results", "daily_speaking", "testimonials", "certificates",
-    "listening_results", "tutor_ratings", "writing_results", "trace_results", "answer_log",
+    "listening_results", "tutor_ratings", "writing_results", "trace_results", "answer_log", "battles",
 )
 REQUIRED_COLUMNS = {
-    "users": ("vip_until", "paywall_seen_at", "vip_notice", "discount_notified", "trial_until", "speak_report_key", "writing_notice", "winback_stage", "winback_at", "day2_notice", "first_nudge", "survey_pending"),
+    "users": ("vip_until", "paywall_seen_at", "vip_notice", "discount_notified", "trial_until", "speak_report_key", "writing_notice", "winback_stage", "winback_at", "day2_notice", "first_nudge", "survey_pending", "battle_points", "battle_games", "battle_wins"),
     "payment_requests": ("provider", "charge_id", "provider_charge_id"),
     "tutor_turns": ("mode", "score", "vocab", "grammar", "content", "pron"),
     "mock_results": ("vocab", "grammar", "content", "pron"),

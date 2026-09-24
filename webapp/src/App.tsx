@@ -22,6 +22,7 @@ import Reference from "./pages/Reference";
 import SpeakingLog from "./pages/SpeakingLog";
 import Writing from "./pages/Writing";
 import Trace from "./pages/Trace";
+import Battle from "./pages/Battle";
 import TodayWords from "./pages/TodayWords";
 import DailyTask from "./pages/DailyTask";
 import Vocab from "./pages/Vocab";
@@ -74,6 +75,8 @@ export default function App() {
   const [showWriting, setShowWriting] = useState(() => window.location.hash === "#writing");
   // Harf chizish mashqi (K21.6) — #trace
   const [showTrace, setShowTrace] = useState(() => window.location.hash === "#trace");
+  // Oktagon — 1v1 lug'at jangi (K25) — #battle
+  const [showBattle, setShowBattle] = useState(() => window.location.hash === "#battle");
   // «Yangi so'zlarim» (K22.4) — #words
   const [showWords, setShowWords] = useState(() => window.location.hash === "#words");
 
@@ -222,6 +225,7 @@ export default function App() {
             writing={me?.writing}
             onOpenWriting={() => setShowWriting(true)}
             onOpenTrace={() => setShowTrace(true)}
+            onOpenBattle={() => setShowBattle(true)}
             onOpenReference={() => setShowReference(true)}
             onOpenVocab={() => setTab("vocab")}
             onOpenWords={() => setShowWords(true)}
@@ -288,6 +292,15 @@ export default function App() {
 
       {showSpeaking && (
         <SpeakingLog initialTab={showSpeaking} onClose={() => setShowSpeaking(null)} />
+      )}
+
+      {showBattle && (
+        <Battle
+          onClose={() => {
+            setShowBattle(false);
+            api.getMe().then(setMe).catch(() => {});
+          }}
+        />
       )}
 
       {showTrace && (

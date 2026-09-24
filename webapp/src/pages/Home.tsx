@@ -36,6 +36,8 @@ interface HomeProps {
   onOpenWriting?: () => void;
   /** K21.6 harf chizish mashqi (A0) */
   onOpenTrace?: () => void;
+  /** K25 Oktagon — 1v1 lug'at jangi */
+  onOpenBattle?: () => void;
   onOpenReference: () => void;
   onOpenVocab: () => void;
   /** K22.4 «Yangi so'zlarim» sahifasi */
@@ -73,6 +75,7 @@ export default function Home({
   writing,
   onOpenWriting,
   onOpenTrace,
+  onOpenBattle,
   onOpenReference,
   onOpenVocab,
   onOpenWords,
@@ -260,6 +263,26 @@ export default function Home({
 
       {/* Lug'at — alohida bo'lim, pastki menyuda ham bor */}
       <VocabBanner vocab={vocab} onOpen={onOpenVocab} />
+
+      {/* K25 Oktagon — 1v1 lug'at jangi */}
+      {onOpenBattle && (
+        <button
+          onClick={onOpenBattle}
+          className="w-full text-left rounded-3xl p-4 text-white shadow-lg active:scale-[0.98] transition-transform relative overflow-hidden"
+          style={{ backgroundImage: "linear-gradient(135deg, #0e6b4e, #083f2f)" }}
+        >
+          <span className="absolute -right-1 -bottom-5 text-[80px] leading-none opacity-20 select-none pointer-events-none" aria-hidden>
+            ⚔️
+          </span>
+          <div className="relative">
+            <div className="text-[11px] font-extrabold tracking-[0.14em] text-[#f3e8c8]">YANGI · OKTAGON</div>
+            <div className="mt-0.5 text-[19px] font-extrabold leading-tight">1v1 lug'at jangi</div>
+            <div className="text-[12px] font-semibold text-white/80">
+              10 savol × 10 soniya · raqib yoki 🤖 bot · liga va ball
+            </div>
+          </div>
+        </button>
+      )}
 
       {/* Rejimlar */}
       <section>

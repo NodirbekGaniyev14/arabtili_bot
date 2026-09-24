@@ -74,6 +74,10 @@ class User(Base):
     first_nudge: Mapped[int] = mapped_column(Integer, default=0)
     # K22.0 so'rovnoma: keyingi matn/ovoz xabari fikr sifatida saqlanadi (services/survey.py)
     survey_pending: Mapped[int] = mapped_column(Integer, default=0)
+    # K25 Oktagon (1v1 lug'at jangi): ball (liga), janglar, g'alabalar
+    battle_points: Mapped[int] = mapped_column(Integer, default=0)
+    battle_games: Mapped[int] = mapped_column(Integer, default=0)
+    battle_wins: Mapped[int] = mapped_column(Integer, default=0)
 
 
 class Placement(Base):
@@ -475,6 +479,30 @@ class AnswerLog(Base):
     q: Mapped[str] = mapped_column(String(200), default="")
     expected: Mapped[str] = mapped_column(String(200), default="")
     given: Mapped[str] = mapped_column(String(200), default="")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
+class Battle(Base):
+    """Oktagon jangi (K25, services/battle.py): 1v1, 10 savol × 10 s. p2_id bo'sh — bot bilan
+    (bot_name). winner: 1 | 2 | 0 durang. status: done | forfeit (kimdir chiqib ketdi)."""
+
+    __tablename__ = "battles"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    level: Mapped[str] = mapped_column(String(4), default="")
+    p1_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    p2_id: Mapped[int | None] = mapped_column(ForeignKey("users.id"), nullable=True, index=True)
+    bot_name: Mapped[str] = mapped_column(String(32), default="")
+    p1_score: Mapped[int] = mapped_column(Integer, default=0)
+    p2_score: Mapped[int] = mapped_column(Integer, default=0)
+    p1_correct: Mapped[int] = mapped_column(Integer, default=0)
+    p2_correct: Mapped[int] = mapped_column(Integer, default=0)
+    p1_time_ms: Mapped[int] = mapped_column(Integer, default=0)
+    p2_time_ms: Mapped[int] = mapped_column(Integer, default=0)
+    winner: Mapped[int] = mapped_column(Integer, default=0)
+    status: Mapped[str] = mapped_column(String(10), default="done")
+    p1_delta: Mapped[int] = mapped_column(Integer, default=0)
+    p2_delta: Mapped[int] = mapped_column(Integer, default=0)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
 
 

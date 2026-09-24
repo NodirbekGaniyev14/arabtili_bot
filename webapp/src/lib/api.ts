@@ -404,6 +404,52 @@ export interface VocabTheme {
   total: number;
 }
 
+/** K25 Oktagon — 1v1 lug'at jangi (REST qismi; jang o'zi — lib/battle.ts WebSocket) */
+export interface BattleLeague {
+  id: string;
+  title: string;
+  icon: string;
+  next_title: string;
+  next_at: number;
+}
+export interface BattleMe {
+  name: string;
+  points: number;
+  league: BattleLeague;
+  games: number;
+  wins: number;
+  rank: number;
+  level: string;
+  today: number;
+  /** 0 — cheksiz (VIP) */
+  daily_limit: number;
+  vip: boolean;
+  online: number;
+  levels: string[];
+  rules: { questions: number; seconds: number; bot_wait: number };
+}
+export interface BattleTopItem {
+  rank: number;
+  user_id: number;
+  name: string;
+  points: number;
+  wins: number;
+  games: number;
+  league: BattleLeague;
+}
+export interface BattleHistoryItem {
+  id: number;
+  level: string;
+  opp: string;
+  bot: boolean;
+  you: number;
+  them: number;
+  result: "win" | "lose" | "draw";
+  forfeit: boolean;
+  delta: number;
+  at: string;
+}
+
 /** K24 Lug'at 2.0 — daraja → mavzu → fleshkarta sessiyasi */
 export interface VocabLevelCard {
   level: string;
@@ -971,6 +1017,11 @@ export const api = {
       `/api/reference/vocab?q=${encodeURIComponent(q)}&level=${level}&offset=${offset}`
     ),
   getVocabStats: () => request<VocabStats>("/api/vocab/stats"),
+  /** K25 Oktagon */
+  battleMe: () => request<BattleMe>("/api/battle/me"),
+  battleTop: () =>
+    request<{ items: BattleTopItem[]; me: { rank: number; points: number } }>("/api/battle/top"),
+  battleHistory: () => request<{ items: BattleHistoryItem[] }>("/api/battle/history"),
   /** K24 Lug'at 2.0 */
   vocabLevels: () => request<VocabLevels>("/api/vocab/levels"),
   vocabTopics: (level: string) => request<VocabTopicList>(`/api/vocab/topics?level=${level}`),

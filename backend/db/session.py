@@ -48,6 +48,10 @@ _MIGRATIONS = {
         "first_nudge": "INTEGER DEFAULT 0",
         # K22.0 so'rovnoma
         "survey_pending": "INTEGER DEFAULT 0",
+        # K25 Oktagon
+        "battle_points": "INTEGER DEFAULT 0",
+        "battle_games": "INTEGER DEFAULT 0",
+        "battle_wins": "INTEGER DEFAULT 0",
     },
     "user_words": {
         "card_type": "VARCHAR(16) DEFAULT 'word'",

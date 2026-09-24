@@ -10,6 +10,8 @@ export default defineConfig({
     allowedHosts: true,
     proxy: {
       "/api": "http://localhost:8000",
+      // K25 Oktagon — jonli jang WebSocket orqali
+      "/ws": { target: "ws://localhost:8000", ws: true },
     },
   },
 });
