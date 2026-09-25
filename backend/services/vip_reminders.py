@@ -19,6 +19,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
+from services import notify_prefs
 from db.models import User, utcnow
 from services import billing, referral
 from services.stats import TASHKENT_OFFSET
@@ -120,6 +121,8 @@ def discount_text(user: User, now: datetime) -> str:
 
 
 async def _send(bot, user: User, text: str, button: str) -> bool:
+    if not notify_prefs.enabled(user, "vip"):
+        return False
     try:
         await bot.send_message(
             user.tg_id, text, parse_mode="HTML", reply_markup=paywall_keyboard(button)

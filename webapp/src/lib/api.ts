@@ -449,6 +449,33 @@ export interface BattleHistoryItem {
   at: string;
 }
 
+/** K26 — savoldagi xato xabari va bildirishnomalar */
+export type IssueKind = "wrong_answer" | "audio" | "text" | "unclear" | "other";
+export interface IssueReport {
+  kind: IssueKind;
+  context?: string;
+  label?: string;
+  q?: string;
+  q_ar?: string;
+  options?: string[];
+  answer?: string;
+  given?: string;
+  audio?: string;
+  comment?: string;
+}
+export interface NotifyItem {
+  key: string;
+  group: "types" | "other";
+  icon: string;
+  title: string;
+  desc: string;
+  on: boolean;
+}
+export interface NotifySettings {
+  items: NotifyItem[];
+  always: string;
+}
+
 /** K25.3 — Oktagon mavsumi (oylik) va haftalik reyting (sovrin yo'q) */
 export interface BattleWeekRow {
   rank: number;
@@ -1230,6 +1257,19 @@ export const api = {
     request<{ ok: boolean }>(`/api/v2/lessons/${lessonId}/rate`, {
       method: "POST",
       body: JSON.stringify({ rating }),
+    }),
+  /** K26 «Xatolik bormi?» — test savoli ostidan adminga */
+  reportIssue: (body: IssueReport) =>
+    request<{ ok: boolean; duplicate?: boolean; limited?: boolean }>("/api/report-issue", {
+      method: "POST",
+      body: JSON.stringify(body),
+    }),
+  /** K26 bildirishnoma sozlamalari */
+  getNotifications: () => request<NotifySettings>("/api/settings/notifications"),
+  setNotification: (key: string, on: boolean) =>
+    request<NotifySettings>("/api/settings/notifications", {
+      method: "POST",
+      body: JSON.stringify({ key, on }),
     }),
   submitFeedback: (text: string, context = "") =>
     request<{ ok: boolean }>("/api/feedback", {

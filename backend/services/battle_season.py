@@ -27,6 +27,7 @@ from sqlalchemy import case, func, select
 
 from db.models import Battle, BattleAward, Meta, User, utcnow
 from services import battle as bt
+from services import notify_prefs
 from services.speaking_report import week_key, week_label, week_start_utc
 from services.stats import TASHKENT_OFFSET
 
@@ -273,13 +274,17 @@ async def announce(bot, period: str, label: str, winners: list[dict], board: lis
         return out
     kb = _battle_kb()
     async with bt.sessions() as session:
-        tg = dict(
-            (
+        tg = {
+            uid: tg_id
+            for uid, tg_id, off in (
                 await session.execute(
-                    select(User.id, User.tg_id).where(User.id.in_([r["user_id"] for r in board]), User.tg_id > 0)
+                    select(User.id, User.tg_id, User.notify_off).where(
+                        User.id.in_([r["user_id"] for r in board]), User.tg_id > 0
+                    )
                 )
             ).all()
-        )
+            if notify_prefs.enabled_raw(off, "oktagon")
+        }
     for row in board:
         chat = tg.get(row["user_id"])
         if not chat:

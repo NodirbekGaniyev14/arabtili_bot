@@ -7,6 +7,7 @@ import { api, type MicroTestItem } from "../../lib/api";
 import { playAudio } from "../../lib/audio";
 import ArabicKeyboard from "./ArabicKeyboard";
 import { stripHarakat } from "./ArabicText";
+import ReportIssue from "../../components/ReportIssue";
 
 const tg = () => window.Telegram?.WebApp;
 const isArabic = (s: string) => /[؀-ۿ]/.test(s);
@@ -829,6 +830,20 @@ export function QuizRunner({
         {label} · {idx + 1}/{items.length}
       </div>
       {renderExercise(item, key, done, rootPool, report)}
+      {/* K26: har savol ostida — adminga savol surati bilan xabar */}
+      <ReportIssue
+        key={`issue-${key}`}
+        className="mt-3"
+        ctx={{
+          context: (context || label).slice(0, 64),
+          label: `${label} · ${idx + 1}/${items.length}`,
+          q: item.q_uz || item.q_ar,
+          q_ar: item.q_ar,
+          options: item.options,
+          answer: item.answer,
+          audio: item.audio,
+        }}
+      />
     </div>
   );
 }

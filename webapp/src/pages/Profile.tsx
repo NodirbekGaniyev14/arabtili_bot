@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { api, type MyCertificate, type ProfileData } from "../lib/api";
-import { isSoundOn, setSoundOn } from "../lib/audio";
-import { getMode, setMode, type ThemeMode } from "../lib/theme";
+import AppMenu from "./profile/AppMenu";
 import { formatTargetDate, GOALS, DURATIONS } from "./onboarding/data";
 
 const tg = () => window.Telegram?.WebApp;
@@ -36,13 +35,6 @@ function StatRow({
     </div>
   );
 }
-
-const GOAL_OPTIONS = [
-  { minutes: 10, label: "10 daqiqa", xp: 20 },
-  { minutes: 20, label: "20 daqiqa", xp: 30 },
-  { minutes: 30, label: "30 daqiqa", xp: 50 },
-  { minutes: 60, label: "1 soat", xp: 80 },
-];
 
 function StatCard({
   value,
@@ -147,10 +139,7 @@ export default function Profile({
   const [data, setData] = useState<ProfileData | null>(null);
   const [error, setError] = useState(false);
   const [savingGoal, setSavingGoal] = useState(false);
-  const [sound, setSound] = useState(isSoundOn());
   const [resetting, setResetting] = useState(false);
-  const [fb, setFb] = useState("");
-  const [fbState, setFbState] = useState<"idle" | "sending" | "sent">("idle");
 
   // Ism tahriri
   const [editName, setEditName] = useState<string | null>(null);
@@ -173,27 +162,6 @@ export default function Profile({
     } finally {
       setSavingName(false);
     }
-  };
-
-  const sendFeedback = async () => {
-    const text = fb.trim();
-    if (!text || fbState === "sending") return;
-    setFbState("sending");
-    try {
-      await api.submitFeedback(text, "profil");
-      setFbState("sent");
-      setFb("");
-      tg()?.HapticFeedback?.notificationOccurred?.("success");
-    } catch {
-      setFbState("idle");
-    }
-  };
-
-  const toggleSound = () => {
-    const next = !sound;
-    setSound(next);
-    setSoundOn(next);
-    tg()?.HapticFeedback?.impactOccurred("light");
   };
 
   const resetPlan = async () => {
@@ -520,171 +488,16 @@ export default function Profile({
         </div>
       </section>
 
-      {/* Sozlamalar — ovoz */}
-      <section>
-        <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft mb-2.5">
-          SOZLAMALAR
-        </div>
-        <button
-          onClick={toggleSound}
-          className="w-full flex items-center justify-between rounded-2xl bg-card border border-cardline px-4 py-3.5 active:scale-[0.99] transition-transform"
-        >
-          <span className="text-sm font-semibold">🔊 Ovoz (talaffuz)</span>
-          <span
-            className={`rounded-full px-3.5 py-1 text-xs font-extrabold ${
-              sound
-                ? "bg-emerald-deep/10 text-emerald-deep border border-emerald-deep/40"
-                : "bg-cardline text-ink-soft"
-            }`}
-          >
-            {sound ? "Yoniq" : "O'chiq"}
-          </span>
-        </button>
-        <ThemeRow />
-      </section>
-
-      {/* Kunlik maqsad */}
-      <section>
-        <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft mb-2.5">
-          KUNLIK MAQSAD
-        </div>
-        <div className="grid grid-cols-2 gap-2.5">
-          {GOAL_OPTIONS.map((g) => {
-            const active = g.minutes === data.daily_minutes;
-            return (
-              <button
-                key={g.minutes}
-                disabled={savingGoal}
-                onClick={() => changeGoal(g.minutes)}
-                className={`rounded-2xl border p-3 text-left transition-all active:scale-[0.98] ${
-                  active
-                    ? "bg-emerald-deep/8 border-emerald-deep"
-                    : "bg-card border-cardline"
-                }`}
-              >
-                <div className="font-extrabold text-[15px]">{g.label}</div>
-                <div className="text-xs text-ink-soft font-semibold">
-                  Kuniga {g.xp} XP
-                </div>
-              </button>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Fikr bildirish */}
-      <section className="rounded-3xl bg-card border border-cardline p-4 space-y-3">
-        <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft">
-          FIKR BILDIRISH
-        </div>
-        {fbState === "sent" ? (
-          <div className="text-center py-3">
-            <div className="text-3xl mb-1">🌟</div>
-            <p className="font-extrabold text-emerald-dark">Rahmat!</p>
-            <p className="text-xs text-ink-soft font-semibold">
-              Fikringiz qabul qilindi
-            </p>
-            <button
-              onClick={() => setFbState("idle")}
-              className="mt-2 text-xs font-bold text-emerald-dark underline"
-            >
-              Yana yozish
-            </button>
-          </div>
-        ) : (
-          <>
-            <p className="text-xs text-ink-soft font-semibold">
-              Taklif, xato yoki nima yoqqani — hammasi botni yaxshilashga yordam
-              beradi.
-            </p>
-            <textarea
-              value={fb}
-              onChange={(e) => setFb(e.target.value.slice(0, 2000))}
-              placeholder="Fikringizni shu yerga yozing..."
-              rows={3}
-              className="w-full rounded-xl bg-sand/60 border border-cardline px-3 py-2.5 text-sm font-semibold resize-none outline-none focus:border-emerald-deep/40"
-            />
-            <button
-              onClick={sendFeedback}
-              disabled={!fb.trim() || fbState === "sending"}
-              className="w-full rounded-xl bg-emerald-deep py-3 text-white font-extrabold active:scale-[0.98] transition-transform disabled:opacity-40"
-            >
-              {fbState === "sending" ? "Yuborilmoqda..." : "✉️ Yuborish"}
-            </button>
-          </>
-        )}
-      </section>
-
-      {/* Darajani qayta aniqlash — IXTIYORIY */}
-      {onOpenPlacement && (
-        <>
-          <button
-            onClick={onOpenPlacement}
-            className="w-full rounded-2xl border-2 border-emerald-deep/40 bg-emerald-deep/8 py-3.5 font-extrabold text-emerald-deep active:scale-[0.98] transition-transform"
-          >
-            🎯 Darajani qayta aniqlash
-          </button>
-          <p className="text-center text-[11px] text-ink-soft font-semibold -mt-2">
-            Qisqa test · darslaringiz va XP saqlanadi
-          </p>
-        </>
-      )}
-
-      {/* Rejani tozalash */}
-      <button
-        onClick={resetPlan}
-        disabled={resetting}
-        className="w-full rounded-2xl border-2 border-terracotta/50 bg-terracotta/8 py-3.5 font-extrabold text-terracotta active:scale-[0.98] transition-transform disabled:opacity-50"
-      >
-        {resetting ? "Tozalanmoqda..." : "🗑 Rejani tozalash"}
-      </button>
-      <p className="text-center text-[11px] text-ink-soft font-semibold -mt-2">
-        Onboardingdan qayta o'tasiz · XP va so'zlaringiz saqlanadi
-      </p>
-
-      {/* Meta */}
-      {data.member_since && (
-        <p className="text-center text-xs text-ink-soft font-semibold pt-1">
-          A'zo bo'lgan sana: {data.member_since}
-        </p>
-      )}
-
-      <p className="text-center text-[11px] text-ink-soft/70 font-semibold">
-        Arabiy · arab tilini bepul o'rganing 🕌
-      </p>
-    </div>
-  );
-}
-
-/** Mavzu tanlovi (K19.3): avto (Telegram mavzusi) / yorug' / qorong'i — darhol qo'llanadi. */
-function ThemeRow() {
-  const [mode, setModeState] = useState<ThemeMode>(() => getMode());
-  const pick = (m: ThemeMode) => {
-    setMode(m);
-    setModeState(m);
-    tg()?.HapticFeedback?.impactOccurred("light");
-  };
-  const opts: Array<{ id: ThemeMode; label: string }> = [
-    { id: "light", label: "☀️ Yorug'" },
-    { id: "dark", label: "🌙 Qorong'i" },
-    { id: "auto", label: "Avto" },
-  ];
-  return (
-    <div className="mt-2.5 flex items-center justify-between gap-3 rounded-2xl bg-card border border-cardline px-4 py-3">
-      <span className="text-sm font-semibold shrink-0">🌗 Mavzu</span>
-      <div className="grid grid-cols-3 gap-1 rounded-xl bg-cardline/60 p-1 min-w-0">
-        {opts.map((o) => (
-          <button
-            key={o.id}
-            onClick={() => pick(o.id)}
-            className={`rounded-lg px-2 py-1.5 text-[11px] font-extrabold whitespace-nowrap transition-colors ${
-              mode === o.id ? "bg-card shadow-sm text-ink" : "text-ink-soft"
-            }`}
-          >
-            {o.label}
-          </button>
-        ))}
-      </div>
+      {/* K26: Ilovam — fikr, yordam, sozlamalar (mavzu, bildirishnomalar, ovoz, maqsad, reja) */}
+      <AppMenu
+        dailyMinutes={data.daily_minutes}
+        savingGoal={savingGoal}
+        onGoal={changeGoal}
+        onOpenPlacement={onOpenPlacement}
+        onResetPlan={resetPlan}
+        resetting={resetting}
+        memberSince={data.member_since}
+      />
     </div>
   );
 }

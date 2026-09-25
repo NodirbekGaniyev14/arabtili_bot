@@ -16,6 +16,7 @@ from aiogram.types import (
 from sqlalchemy import select
 
 from config import settings
+from services import notify_prefs
 from db.models import Plan, User, XpLog
 from db.session import SessionLocal
 from services.stats import TASHKENT_OFFSET, _today, user_stats
@@ -43,6 +44,8 @@ async def _send_reminders(bot: Bot) -> None:
 
         for user in users:
             if user.notified_date == today:
+                continue
+            if not notify_prefs.enabled(user, "daily"):
                 continue
             if user.id not in active_ids:
                 continue  # jim yurganlar — winback.py

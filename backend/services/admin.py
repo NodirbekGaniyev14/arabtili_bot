@@ -484,14 +484,12 @@ async def retention(session: AsyncSession, weeks: int = 6) -> str:
     return "\n".join(lines)
 
 
-async def all_real_tg_ids(session: AsyncSession) -> list[int]:
-    return list(
-        (
-            await session.execute(
-                select(User.tg_id).where(User.is_demo == 0)
-            )
-        ).scalars()
-    )
+async def all_real_tg_ids(session: AsyncSession, pref: str = "") -> list[int]:
+    """Haqiqiy foydalanuvchilar; `pref` berilsa — shu bildirishnomani o'chirmaganlar (K26)."""
+    from services import notify_prefs
+
+    rows = (await session.execute(select(User.tg_id, User.notify_off).where(User.is_demo == 0))).all()
+    return [tg for tg, off in rows if not pref or notify_prefs.enabled_raw(off, pref)]
 
 
 # ─────────────────── AI ustoz — sarf va holat (K17.3) ───────────────────

@@ -22,6 +22,7 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
+from services import notify_prefs
 from db.models import Plan, Progress, TutorTurn, User, utcnow
 from services.stats import TASHKENT_OFFSET, user_stats
 
@@ -120,6 +121,8 @@ async def process(session: AsyncSession, bot, now: datetime | None = None) -> di
     ).scalars().all()
     for user in rows:
         user.day2_notice = 1
+        if not notify_prefs.enabled(user, "comeback"):
+            continue
         st = await user_stats(session, user.id)
         turns = await tutor_turns(session, user.id)
         text, btn = day2_text(user, st, turns)
@@ -191,6 +194,8 @@ async def nudge_process(session: AsyncSession, bot, now: datetime | None = None)
     ).all()
     for user, plan_id in rows:
         user.first_nudge = 1
+        if not notify_prefs.enabled(user, "comeback"):
+            continue
         start = (await session.execute(select(Plan.start_lesson).where(Plan.id == plan_id))).scalar_one_or_none() or "a0-01"
         text, btn = nudge_text(user, start)
         try:

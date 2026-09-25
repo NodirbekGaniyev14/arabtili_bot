@@ -78,6 +78,8 @@ class User(Base):
     battle_points: Mapped[int] = mapped_column(Integer, default=0)
     battle_games: Mapped[int] = mapped_column(Integer, default=0)
     battle_wins: Mapped[int] = mapped_column(Integer, default=0)
+    # K26 bildirishnoma sozlamalari (services/notify_prefs.py): o'chirilgan turlar vergul bilan
+    notify_off: Mapped[str] = mapped_column(String(200), default="")
 
 
 class Placement(Base):

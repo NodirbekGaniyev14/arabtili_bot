@@ -27,6 +27,7 @@ import {
   playWord,
   saveLast,
 } from "./vocabUi";
+import ReportIssue from "../../components/ReportIssue";
 
 type RunMode = "new" | "review" | "retry";
 
@@ -674,6 +675,19 @@ function TestCard({
           </span>
         </div>
       )}
+      <ReportIssue
+        key={`issue-${q.key}-${q.type}`}
+        className="mt-2"
+        ctx={{
+          context: "lugat",
+          label: `Lug'at testi · ${TEST_LABEL[q.type]}`,
+          q: q.prompt,
+          q_ar: w?.ar ?? "",
+          options: q.options,
+          answer: q.answer,
+          audio: w?.audio ?? "",
+        }}
+      />
     </div>
   );
 }

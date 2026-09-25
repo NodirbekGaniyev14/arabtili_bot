@@ -200,6 +200,49 @@ async def _blast(bot: Bot, ids, text: str, **kwargs) -> tuple[int, int]:
     return sent, failed
 
 
+@router.callback_query(F.data.startswith("fixed:"))
+async def cb_issue_fixed(cb: CallbackQuery, bot: Bot):
+    """K26: admin «✅ Tuzatildi» bosdi — o'quvchiga xabar (bildirishnomasi yoniq bo'lsa), fikr javobli."""
+    if cb.from_user is None or cb.from_user.id != settings.admin_id:
+        await cb.answer()
+        return
+    from services import notify_prefs
+
+    try:
+        fb_id = int((cb.data or "").split(":", 1)[1])
+    except (IndexError, ValueError):
+        await cb.answer()
+        return
+    async with SessionLocal() as session:
+        row = await feedback_svc.load_with_user(session, fb_id)
+        if row is None:
+            await cb.answer("Topilmadi")
+            return
+        fb, user = row
+        if fb.replied_at:
+            await cb.answer("Allaqachon belgilangan")
+            return
+        sent = False
+        if notify_prefs.enabled(user, "fixed") and user.tg_id > 0:
+            try:
+                await bot.send_message(user.tg_id, feedback_svc.fixed_notice(fb), parse_mode="HTML")
+                sent = True
+            except Exception:
+                pass
+        await feedback_svc.mark_replied(session, fb, "✅ Tuzatildi")
+    await cb.answer("Belgilandi — o'quvchiga xabar ketdi" if sent else "Belgilandi (o'quvchi bu xabarni o'chirgan)")
+    try:
+        await cb.message.edit_reply_markup(
+            reply_markup=InlineKeyboardMarkup(
+                inline_keyboard=[[InlineKeyboardButton(
+                    text="✅ Tuzatildi · " + ("xabar yuborildi" if sent else "xabarsiz"), callback_data=f"fixed:{fb_id}"
+                )]]
+            )
+        )
+    except Exception:
+        pass
+
+
 @router.message(Command("sorov"))
 async def cmd_sorov(message: Message, bot: Bot):
     """So'rovnoma (K22.0): hammaga «fikringiz?» + tugmalar; `/sorov test` — faqat adminga ko'rish;
@@ -217,7 +260,7 @@ async def cmd_sorov(message: Message, bot: Bot):
         return
     text = survey.text(arg)
     async with SessionLocal() as session:
-        ids = await admin.all_real_tg_ids(session)
+        ids = await admin.all_real_tg_ids(session, "survey")
         await session.execute(update(User).where(User.is_demo == 0, User.tg_id != settings.admin_id).values(survey_pending=1))
         await session.commit()
     await message.answer(f"📤 So'rov {len(ids)} ta foydalanuvchiga yuborilmoqda… Javoblar shu chatga #F… bilan keladi, ro'yxat: /fikrlar")
@@ -333,7 +376,7 @@ async def cmd_broadcast(message: Message, bot: Bot):
 
     text = parts[1].strip()
     async with SessionLocal() as session:
-        ids = await admin.all_real_tg_ids(session)
+        ids = await admin.all_real_tg_ids(session, "news")
 
     await message.answer(f"📤 {len(ids)} ta foydalanuvchiga yuborilmoqda...")
     sent, failed = await _blast(bot, ids, text)
@@ -398,6 +441,10 @@ async def cmd_taklif_yubor(message: Message, bot: Bot):
         ).scalars().all()
         if test:
             users = [u for u in users if u.tg_id == settings.admin_id]
+        else:
+            from services import notify_prefs
+
+            users = [u for u in users if notify_prefs.enabled(u, "news")]  # K26: «Ilova yangiliklari» o'chirilgan
         cards = [(u.tg_id, await referral.stats(session, u), u) for u in users]
 
     await message.answer(f"📤 {len(cards)} ta foydalanuvchiga yuborilmoqda...")

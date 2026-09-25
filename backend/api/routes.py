@@ -658,6 +658,91 @@ async def submit_feedback(
     return {"ok": True}
 
 
+class IssueBody(BaseModel):
+    kind: str = Field(max_length=16)
+    context: str = Field(default="", max_length=64)
+    label: str = Field(default="", max_length=64)
+    q: str = Field(default="", max_length=600)
+    q_ar: str = Field(default="", max_length=300)
+    options: list[str] = Field(default_factory=list, max_length=8)
+    answer: str = Field(default="", max_length=300)
+    given: str = Field(default="", max_length=300)
+    audio: str = Field(default="", max_length=120)
+    comment: str = Field(default="", max_length=600)
+
+
+@router.post("/report-issue")
+async def report_issue(
+    body: IssueBody,
+    request: Request,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """K26 «Xatolik bormi?» — test savoli ostidagi xabar: savol surati adminga (#F, «✅ Tuzatildi» tugmasi)."""
+    from datetime import timedelta
+
+    from db.models import Feedback, utcnow
+
+    if body.kind not in feedback_svc.ISSUE_KINDS:
+        raise HTTPException(status_code=400, detail="Noma'lum tur")
+    since = utcnow() - timedelta(days=1)
+    recent = (
+        await session.execute(
+            select(Feedback.text).where(
+                Feedback.user_id == user.id, Feedback.source == "issue", Feedback.created_at >= since
+            )
+        )
+    ).scalars().all()
+    text = feedback_svc.issue_text(
+        body.kind,
+        label=body.label.strip(),
+        q=body.q.strip(),
+        q_ar=body.q_ar.strip(),
+        options=[o.strip()[:300] for o in body.options],
+        answer=body.answer.strip(),
+        given=body.given.strip(),
+        audio=body.audio.strip(),
+        comment=body.comment.strip(),
+    )
+    if text in recent:
+        return {"ok": True, "duplicate": True}  # shu savol bo'yicha allaqachon yuborilgan
+    if len(recent) >= feedback_svc.ISSUE_DAILY_LIMIT:
+        return {"ok": True, "limited": True}
+    fb = await feedback_svc.save(session, user.id, text, source="issue", context=body.context or body.label)
+    await feedback_svc.notify_admin(getattr(request.app.state, "bot", None), fb, user)
+    return {"ok": True}
+
+
+class NotifyBody(BaseModel):
+    key: str = Field(max_length=16)
+    on: bool
+
+
+@router.get("/settings/notifications")
+async def get_notifications(user: User = Depends(get_current_user)):
+    """K26 bildirishnoma sozlamalari — qaysi bot xabarlari kelsin."""
+    from services import notify_prefs
+
+    return notify_prefs.public(user)
+
+
+@router.post("/settings/notifications")
+async def set_notification(
+    body: NotifyBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    from services import notify_prefs
+
+    try:
+        notify_prefs.set_pref(user, body.key, body.on)
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Noma'lum bildirishnoma turi")
+    session.add(user)
+    await session.commit()
+    return notify_prefs.public(user)
+
+
 class ClientErrorBody(BaseModel):
     message: str = Field(max_length=2000)
     context: str = Field(default="", max_length=128)

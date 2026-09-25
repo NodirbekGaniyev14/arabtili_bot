@@ -31,6 +31,13 @@ interface TelegramWebApp {
   version?: string;
   onEvent?(event: string, handler: () => void): void;
   offEvent?(event: string, handler: () => void): void;
+  /** Bot API 6.1+: sarlavhadagi «orqaga» tugmasi (K26 ichki sahifalar) */
+  BackButton?: {
+    show?(): void;
+    hide?(): void;
+    onClick?(cb: () => void): void;
+    offClick?(cb: () => void): void;
+  };
   HapticFeedback?: {
     impactOccurred(
       style: "light" | "medium" | "heavy" | "rigid" | "soft"
@@ -44,3 +51,6 @@ interface Window {
     WebApp: TelegramWebApp;
   };
 }
+
+/** vite.config.ts define — package.json versiyasi (K26) */
+declare const __APP_VERSION__: string;

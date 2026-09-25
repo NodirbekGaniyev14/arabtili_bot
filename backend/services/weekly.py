@@ -16,6 +16,7 @@ from datetime import datetime, timedelta, timezone
 from aiogram import Bot
 from sqlalchemy import select
 
+from services import notify_prefs
 from db.models import Meta, Plan, User, WeeklyAward, XpLog
 from db.session import SessionLocal
 from services.certificate import issue_rank_certificate
@@ -257,6 +258,8 @@ async def announce_winners(bot: Bot, period: str, label: str, winners: list, sin
     for user in users:
         if user.id not in plan_ids or user.id not in active_ids:
             continue
+        if not notify_prefs.enabled(user, "rating"):
+            continue
         text = announcement_text(period, label, winners, my_pos.get(user.id), len(real))
         try:
             await bot.send_message(user.tg_id, text, parse_mode="HTML", reply_markup=kb)
@@ -319,6 +322,8 @@ async def _notify_rank_drops(bot: Bot) -> None:
             ):
                 continue
             if user.tg_id <= 0:
+                continue
+            if not notify_prefs.enabled(user, "rating"):
                 continue
 
             try:

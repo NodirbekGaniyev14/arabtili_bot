@@ -44,6 +44,35 @@ def core_letters(text: str) -> int:
     return len(_MARKS.sub("", text))
 
 
+TATWEEL = chr(0x0640)
+DAGGER_ALIF = chr(0x0670)
+FATHA = chr(0x064E)
+_HARAKA = re.compile("[" + chr(0x064B) + "-" + chr(0x0652) + "]")
+_LETTER = re.compile("[" + chr(0x0621) + "-" + chr(0x064A) + "]")
+
+
+def spoken(text: str) -> str:
+    """TTS'ga beriladigan matn (ekrandagi matn o'zgarmaydi) — talaffuzni buzadigan belgilar tozalanadi.
+
+    TALAFFUZ (2026-09-25, «ba'zi so'zlar xato o'qilyapti»):
+    - « ـ » ajratkich (عَ ـ حَ) → pauza «، »; so'z oxiridagi tatvil (بِـ, لِـ) olib tashlanadi —
+      osilib qolgan qo'shimcha harf nomi bo'lib o'qilmasin;
+    - « / » (تَمَام / زَيْن) → pauza «، » — «slash» o'qilmasin;
+    - xanjar alif «ٰ» (ذٰلِكَ, هٰذِهِ) → oddiy cho'ziq «َا» — ovoz uni tashlab ketmasin, «zālika» bo'lsin;
+    - ة dan oldingi harakatsiz harfga fatha (سِفارة → سِفارَة) — ta marbuta oldi doim «a».
+    """
+    t = re.sub(r"\s+" + TATWEEL + r"\s+", "، ", text)
+    t = t.replace(TATWEEL, "")
+    t = re.sub(r"\s*/\s*", "، ", t)
+    t = re.sub(FATHA + "?" + DAGGER_ALIF, FATHA + "ا", t)
+
+    def fatha_before_ta(m: re.Match) -> str:
+        return m.group(1) + FATHA + m.group(2)
+
+    t = re.sub("(" + _LETTER.pattern + ")(ة)", lambda m: m.group(0) if m.group(1) in "اى" else fatha_before_ta(m), t)
+    return t.strip()
+
+
 def voice_plan(text: str) -> tuple[str, str]:
     """(aytiladigan matn, tezlik) — qisqa matn sekinroq va takrorlanadi.
 
@@ -51,6 +80,7 @@ def voice_plan(text: str) -> tuple[str, str]:
     o'quvchi ulgurmaydi — shuning uchun ikki marta, orasida arabcha vergul
     (pauza) bilan aytiladi.
     """
+    text = spoken(text)
     n = core_letters(text)
     if n <= 2:
         return f"{text}، {text}", TINY_RATE

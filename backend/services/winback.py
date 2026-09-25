@@ -20,6 +20,7 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
+from services import notify_prefs
 from db.models import Meta, Plan, User, XpLog, utcnow
 from services import referral
 from services.stats import TASHKENT_OFFSET, _local_date, user_stats
@@ -155,6 +156,8 @@ async def process(session: AsyncSession, bot, now: datetime | None = None) -> di
             continue
         user.winback_stage = stage
         user.winback_at = now  # yetmasa ham qayta urinmaymiz
+        if not notify_prefs.enabled(user, "comeback"):
+            continue
         st = await user_stats(session, user.id)
         text, rows = message(stage, user, st, days)
         try:

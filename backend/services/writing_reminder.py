@@ -13,6 +13,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
+from services import notify_prefs
 from db.models import Plan, User, XpLog, utcnow
 from services import writing
 from services.stats import TASHKENT_OFFSET
@@ -93,6 +94,8 @@ async def process(session: AsyncSession, bot, now: datetime | None = None) -> di
             continue
         seen.add(user.id)
         user.writing_notice = period  # yetmasa ham qayta urinmaymiz
+        if not notify_prefs.enabled(user, "writing"):
+            continue
         text = writing.text_for(level)
         try:
             await bot.send_message(user.tg_id, text_message(user.name or "do'stim", level, text),

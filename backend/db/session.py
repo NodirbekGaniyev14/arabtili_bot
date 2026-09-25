@@ -52,6 +52,8 @@ _MIGRATIONS = {
         "battle_points": "INTEGER DEFAULT 0",
         "battle_games": "INTEGER DEFAULT 0",
         "battle_wins": "INTEGER DEFAULT 0",
+        # K26 bildirishnoma sozlamalari
+        "notify_off": "VARCHAR(200) DEFAULT ''",
     },
     "user_words": {
         "card_type": "VARCHAR(16) DEFAULT 'word'",

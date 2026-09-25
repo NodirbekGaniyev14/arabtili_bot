@@ -14,6 +14,7 @@ from aiogram.types import (
 from sqlalchemy import select
 
 from config import BASE_DIR, settings
+from services import notify_prefs
 from db.models import Meta, User
 from db.session import SessionLocal
 
@@ -97,11 +98,13 @@ async def notify_if_updated(bot: Bot) -> None:
             return  # o'zgarish yo'q — xabar yubormaymiz
 
         # Birinchi ishga tushish yoki versiya o'zgardi → xabar yuboramiz
-        ids = (
-            await session.execute(
-                select(User.tg_id).where(User.is_demo == 0)
-            )
-        ).scalars().all()
+        ids = [
+            tg_id
+            for tg_id, off in (
+                await session.execute(select(User.tg_id, User.notify_off).where(User.is_demo == 0))
+            ).all()
+            if notify_prefs.enabled_raw(off, "news")
+        ]
 
         if row is None:
             session.add(Meta(key=VERSION_KEY, value=version))

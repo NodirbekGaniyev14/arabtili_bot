@@ -21,6 +21,7 @@ from sqlalchemy import func, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
+from services import notify_prefs
 from db.models import (
     DailySpeaking,
     DrillResult,
@@ -364,6 +365,8 @@ async def process(session: AsyncSession, bot, now: datetime | None = None) -> di
     kb = open_kb()
     for user in users:
         user.speak_report_key = key  # yetmasa ham qayta urinmaymiz
+        if not notify_prefs.enabled(user, "speaking"):
+            continue
         cur = await stats(session, user.id, prev_monday, this_monday)
         prev = await stats(session, user.id, prev_monday - timedelta(days=7), prev_monday)
         if cur["total"] == 0 and prev["total"] == 0:
