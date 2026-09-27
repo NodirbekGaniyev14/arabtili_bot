@@ -110,6 +110,11 @@ const PERSON_PREFIX = "اتين";
 const arHint = (a: string, v: string): string | undefined => {
   if (a.length === v.length && a.slice(1) === v.slice(1) && PERSON_PREFIX.includes(a[0]) && PERSON_PREFIX.includes(v[0]))
     return "Boshidagi harf shaxsni bildiradi: أ — men, ن — biz, ت — sen/siz (va u — ayol), ي — u/ular";
+  if (a.length === v.length && a.length > 1) {
+    const diff = [...a].map((ch, i) => (ch !== v[i] ? i : -1)).filter((i) => i >= 0);
+    // oxirgi 2 harf — qo'shimcha (كتبنا ↔ كتبوا): uni pastdagi qoida tushuntiradi
+    if (diff.length === 1 && diff[0] < a.length - 2) return `Bitta harf xato: «${v[diff[0]]}» emas, «${a[diff[0]]}»`;
+  }
   if (v.length >= 2 && a.length > v.length && a.length - v.length <= 3 && a.startsWith(v))
     return `Oxiridagi qo'shimcha tushib qolgan: «ـ${a.slice(v.length)}»`;
   if (v.length >= 2 && a.length > v.length && a.length - v.length <= 2 && a.endsWith(v))
@@ -119,6 +124,18 @@ const arHint = (a: string, v: string): string | undefined => {
   if (i >= 3 && i < a.length && i < v.length && a.length - i <= 3 && v.length - i <= 3)
     return `Qo'shimcha boshqa: «ـ${a.slice(i)}» kerak (siz «ـ${v.slice(i)}» yozdingiz)`;
   return undefined;
+};
+
+/** To'ldirishda bo'sh joy so'zga yopishgan bo'lsa («عَلَّمَ___», «يَـ___»), o'quvchi so'zni to'liq
+ *  yozishi mumkin («علمهم», «يبني») — to'ldirilgan so'z va butun gap ham to'g'ri javob. */
+export const blankFills = (text: string, answer: string): string[] => {
+  const BLANK = /_{2,}/;
+  if (!text || !BLANK.test(text)) return [];
+  const out: string[] = [];
+  const word = text.split(/\s+/).find((w) => BLANK.test(w)) ?? "";
+  if (normAr(word.replace(BLANK, ""))) out.push(word.replace(BLANK, answer));
+  out.push(text.replace(BLANK, answer));
+  return out;
 };
 
 export const arOk = (answer: string, value: string, opts: CheckOpts = {}): Verdict => {

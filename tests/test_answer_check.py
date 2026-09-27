@@ -175,6 +175,58 @@ def test_report_answers():
             assert hint in (r.get("note") or ""), (case, r)
 
 
+def _content_item(lid: str, answer: str) -> dict:
+    data = json.loads((ROOT / "content" / "modules" / lid.split("-")[0] / f"{lid}.json").read_text(encoding="utf-8"))
+    (item,) = [t for t in data["micro_test"] if t.get("answer") == answer]
+    return item
+
+
+def _check_like_app(lid: str, answer: str, typed: list[str]) -> list[dict]:
+    """exercises.tsx dagi kabi: tur bo'yicha mode, accept, to'ldirishda blankFills."""
+    t = _content_item(lid, answer)
+    accept = list(t.get("accept", []))
+    if t["type"] == "fill_blank":
+        import re
+
+        m = re.search(r"«([^»]*_{2,}[^»]*)»", t.get("q_uz", ""))
+        src = t.get("q_ar") or (m.group(1) if m else "")
+        accept += run([["blankFills", src, t["answer"]]])[0]
+    is_ar = any(0x0600 <= ord(ch) <= 0x06FF for ch in t["answer"])
+    mode = {"translate_uz_ar": "translate", "fill_blank": "fill"}.get(t["type"], "strict")
+    opts = {"accept": accept, "prompt": t.get("q_uz", ""), "mode": mode}
+    return run([["arOk" if is_ar else "latOk", t["answer"], v, opts] for v in typed])
+
+
+def test_report_week_answers():
+    """/javoblar 7 kun (16–24): to'g'rilari endi o'tadi, xatolarga izoh."""
+    ok_cases = {
+        ("a2-32", "sog'liq puldan afzal"): ["salomlatlik puldan afzal", "Sog‘liq puldan muhimroq", "Sog‘liq mol-dunyodan afzalroq"],
+        ("a2-05", "ular o'rganadilar"): ["o’rganadilar erkak"],
+        ("a2-34", "uchinchi qavat"): ["Uchinshi qavat"],
+        ("a2-15", "تَوَاصَلَ"): ["اتصل"],
+        ("a0-01", "م"): ["ميم"],
+        ("a2-08", "هُمْ"): ["علمهم"],
+        ("a2-25", "بْنِي"): ["يبني", "بني"],
+    }
+    for (lid, ans), typed in ok_cases.items():
+        res = _check_like_app(lid, ans, typed)
+        assert all(r["ok"] for r in res), (lid, typed, res)
+
+    wrong_cases = {
+        ("a2-28", "مُجْتَهِدًا"): [("مجتحدا", "«ح» emas, «ه»"), ("مجتهد", "tushib qolgan: «ـا»")],
+        ("b1-01", "نُشِرَ"): [("نشأ", None)],
+        ("a2-13", "إِرْسَال"): [("أرسل", None)],
+        ("a0-01", "م"): [("من", None)],
+        ("a2-08", "هُمْ"): [("ارجال", None)],
+    }
+    for (lid, ans), cases in wrong_cases.items():
+        res = _check_like_app(lid, ans, [v for v, _ in cases])
+        for (v, hint), r in zip(cases, res):
+            assert not r["ok"], (lid, v)
+            if hint:
+                assert hint in (r.get("note") or ""), (lid, v, r)
+
+
 def _typed_items():
     for f in sorted((ROOT / "content" / "modules").glob("*/*.json")):
         data = json.loads(f.read_text(encoding="utf-8"))

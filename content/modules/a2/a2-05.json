@@ -330,7 +330,7 @@
    "q_ar": "يَتَعَلَّمُونَ",
    "options": [],
    "answer": "ular o'rganadilar",
-   "accept": ["ular o'rganishadi"],
+   "accept": ["ular o'rganishadi", "ular (erkaklar) o'rganadilar", "ular (erkak) o'rganadilar"],
    "explain_uz": "V bob + g'oyib jam' qo'shimchasi ـُونَ.",
    "audio": "",
    "root": "",

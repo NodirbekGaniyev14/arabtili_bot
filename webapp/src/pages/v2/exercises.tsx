@@ -6,7 +6,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { api, type MicroTestItem } from "../../lib/api";
 import { playAudio } from "../../lib/audio";
 import ArabicKeyboard from "./ArabicKeyboard";
-import { arOk, asVerdict, isArabic, latOk, normAr, type Verdict } from "./answerCheck";
+import { arOk, asVerdict, blankFills, isArabic, latOk, normAr, type Verdict } from "./answerCheck";
 import ReportIssue from "../../components/ReportIssue";
 
 const tg = () => window.Telegram?.WebApp;
@@ -812,6 +812,9 @@ function renderExercise(
       // Javob arabcha bo'lmasa (masalan «bir qalam (noaniq)») — arab
       // klaviaturasi bilan uni yozib bo'lmaydi, lotin kiritish beriladi.
       const arabicAnswer = isArabic(item.answer);
+      // K27.2: «عَلَّمَ___» ga «علمهم» (so'zni to'liq) yozsa ham to'g'ri
+      const blankSrc = item.q_ar || item.q_uz.match(/«([^»]*_{2,}[^»]*)»/)?.[1] || "";
+      const fillOpts = { ...opts, mode: "fill" as const, accept: [...opts.accept, ...blankFills(blankSrc, item.answer)] };
       return (
         <InputEx
           key={key}
@@ -819,7 +822,7 @@ function renderExercise(
           arabicBig={item.q_ar}
           arabicInput={arabicAnswer}
           showHarakatKeys={false}
-          check={(v) => (arabicAnswer ? arOk(item.answer, v, { ...opts, mode: "fill" }) : latOk(item.answer, v, opts))}
+          check={(v) => (arabicAnswer ? arOk(item.answer, v, fillOpts) : latOk(item.answer, v, opts))}
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}
