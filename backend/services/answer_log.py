@@ -7,7 +7,7 @@ xato deyildi» holatlari ko'rinadi (yumshoq tekshiruvga qoida yoki kontentga var
 """
 
 from collections import defaultdict
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -17,6 +17,18 @@ from db.models import AnswerLog, utcnow
 MAX_ROWS = 20_000
 PRUNE_EVERY = 500  # har 500-qatorda eski qatorlar tozalanadi
 TYPES = {"fill_blank", "translate_uz_ar", "translate_ar_uz", "dictation", "harakat"}
+TASHKENT = timedelta(hours=5)
+
+
+def since_local_date(ddmm: str, today: date | None = None) -> datetime | None:
+    """«27.09» → o'sha kun 00:00 Toshkent vaqti (UTC, naive). Kelajakdagi sana — o'tgan yilniki."""
+    try:
+        d, m = (int(x) for x in ddmm.split("."))
+        today = today or (utcnow() + TASHKENT).date()
+        year = today.year if (m, d) <= (today.month, today.day) else today.year - 1
+        return datetime(year, m, d) - TASHKENT
+    except ValueError:
+        return None
 
 
 def _cut(s: str, n: int = 200) -> str:
@@ -53,8 +65,11 @@ async def prune(session: AsyncSession) -> int:
     return extra
 
 
-async def report(session: AsyncSession, days: int = 30, top: int = 15, since: datetime | None = None) -> dict:
-    """Eng ko'p rad etilgan savollar: [{context, ex_type, q, expected, n, users, given: [(matn, soni)]}]."""
+async def report(
+    session: AsyncSession, days: int = 30, top: int = 15, since: datetime | None = None, label: str | None = None
+) -> dict:
+    """Eng ko'p rad etilgan savollar: [{context, ex_type, q, expected, n, users, given: [(matn, soni)]}].
+    `since` berilsa — o'sha paytdan (masalan oxirgi deploy); `label` — sarlavhadagi davr matni."""
     since = since or (utcnow() - timedelta(days=days))
     rows = (
         await session.execute(
@@ -78,7 +93,7 @@ async def report(session: AsyncSession, days: int = 30, top: int = 15, since: da
             }
         )
     items.sort(key=lambda it: (-it["users"], -it["n"]))
-    return {"total": len(rows), "days": days, "items": items[:top]}
+    return {"total": len(rows), "days": days, "items": items[:top], "label": label or f"{days} kun"}
 
 
 def _esc(s: str) -> str:
@@ -86,9 +101,10 @@ def _esc(s: str) -> str:
 
 
 def report_text(rep: dict) -> str:
+    period = rep.get("label") or f"{rep['days']} kun"
     if not rep["total"]:
-        return f"📝 <b>Rad etilgan javoblar</b> — {rep['days']} kunda yozuv yo'q (deploy'dan keyin yig'iladi)."
-    lines = [f"📝 <b>Rad etilgan yozma javoblar</b> — {rep['days']} kun, jami {rep['total']} ta\n"]
+        return f"📝 <b>Rad etilgan javoblar</b> — {period}: yozuv yo'q."
+    lines = [f"📝 <b>Rad etilgan yozma javoblar</b> — {period}, jami {rep['total']} ta\n"]
     for i, it in enumerate(rep["items"], 1):
         given = " · ".join(f"«{_esc(t)}»×{n}" if n > 1 else f"«{_esc(t)}»" for t, n in it["given"])
         lines.append(

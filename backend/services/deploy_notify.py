@@ -3,6 +3,7 @@
 
 import asyncio
 import subprocess
+from datetime import datetime
 from pathlib import Path
 
 from aiogram import Bot
@@ -15,10 +16,11 @@ from sqlalchemy import select
 
 from config import BASE_DIR, settings
 from services import notify_prefs
-from db.models import Meta, User
+from db.models import Meta, User, utcnow
 from db.session import SessionLocal
 
 VERSION_KEY = "deploy_version"
+DEPLOY_AT_KEY = "deploy_at"  # oxirgi deploy vaqti (UTC, ISO) — admin /javoblar «deploydan beri»
 
 UPDATE_TEXT = (
     "🔄 <b>Bot yangilandi!</b>\n\n"
@@ -84,6 +86,15 @@ def webapp_url_versioned() -> str:
     return f"{url}{'&' if '?' in url else '?'}v={v}"
 
 
+async def last_deploy_at(session) -> datetime | None:
+    """Oxirgi deploy vaqti (UTC, naive) — versiya o'zgargan payt; hali yozilmagan bo'lsa None."""
+    row = await session.get(Meta, DEPLOY_AT_KEY)
+    try:
+        return datetime.fromisoformat(row.value) if row and row.value else None
+    except ValueError:
+        return None
+
+
 async def notify_if_updated(bot: Bot) -> None:
     version = current_version()
     if not version:
@@ -111,6 +122,12 @@ async def notify_if_updated(bot: Bot) -> None:
         else:
             row.value = version
             session.add(row)
+        stamp = await session.get(Meta, DEPLOY_AT_KEY)
+        now = utcnow().isoformat(timespec="seconds")
+        if stamp is None:
+            session.add(Meta(key=DEPLOY_AT_KEY, value=now))
+        else:
+            stamp.value = now
         await session.commit()
 
     kb = None

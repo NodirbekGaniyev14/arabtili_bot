@@ -326,19 +326,50 @@ async def cmd_oktagon(message: Message):
 
 @router.message(Command("javoblar"))
 async def cmd_javoblar(message: Message):
-    """Rad etilgan yozma javoblar (#F70): /javoblar [kun] [n]."""
+    """Rad etilgan yozma javoblar (#F70).
+
+    /javoblar · /javoblar yangi 40 — oxirgi deploydan beri (tekshiruv yangilangach nima qolganini ko'rish uchun)
+    /javoblar 27.09 [n] — shu kundan beri (Toshkent vaqti)
+    /javoblar 7 [n] — oxirgi 7 kun
+    """
     if not _is_admin(message):
         return
-    from services import answer_log
+    import re
 
-    parts = (message.text or "").split()
-    days = int(parts[1]) if len(parts) > 1 and parts[1].isdigit() else 30
-    top = int(parts[2]) if len(parts) > 2 and parts[2].isdigit() else 15
+    from services import answer_log, deploy_notify
+
+    parts = (message.text or "").split()[1:]
+    arg = parts[0] if parts else ""
+    top_arg = parts[1] if len(parts) > 1 else ""
+    days, since, label = 30, None, None
     async with SessionLocal() as session:
-        rep = await answer_log.report(session, days=min(max(days, 1), 365), top=min(max(top, 1), 40))
-    text = answer_log.report_text(rep)
-    for i in range(0, len(text), 3900):
-        await message.answer(text[i : i + 3900], parse_mode="HTML")
+        if re.fullmatch(r"\d{1,2}\.\d{1,2}", arg):
+            since = answer_log.since_local_date(arg)
+            if since is None:
+                await message.answer("Sana noto'g'ri. Masalan: /javoblar 27.09")
+                return
+            label = f"{arg} dan beri"
+        elif arg.isdigit():
+            days = min(max(int(arg), 1), 365)
+        else:  # argumentsiz yoki «/javoblar yangi 40» — oxirgi deploydan beri
+            since = await deploy_notify.last_deploy_at(session)
+            if since:
+                label = f"oxirgi deploydan beri ({since + answer_log.TASHKENT:%d.%m %H:%M})"
+            else:
+                label = "30 kun (deploy vaqti hali yozilmagan)"
+        top = int(top_arg) if top_arg.isdigit() else 25
+        rep = await answer_log.report(
+            session, days=days, top=min(max(top, 1), 40), since=since, label=label or f"{days} kun"
+        )
+    # Qator chegarasida bo'lamiz — <b>…</b> teg o'rtasidan kesilmasin
+    chunk = ""
+    for line in answer_log.report_text(rep).split("\n"):
+        if chunk and len(chunk) + len(line) + 1 > 3900:
+            await message.answer(chunk, parse_mode="HTML")
+            chunk = ""
+        chunk = f"{chunk}\n{line}" if chunk else line
+    if chunk:
+        await message.answer(chunk, parse_mode="HTML")
 
 
 @router.message(Command("fikrlar"))
