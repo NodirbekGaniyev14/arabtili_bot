@@ -154,10 +154,10 @@ REPORT_OK = [
 REPORT_WRONG = [  # (qat'iy qolishi kerak, izoh: qaysi joy xato)
     (ar("يَكْتُبَانِ", "تكتبان", mode="fill"), "Boshidagi harf"),
     (ar("تَكْتُبُونَ", "يكتبون", mode="translate"), "Boshidagi harf"),
-    (ar("اِسْتَيْقَظْتُ", "استيقظ", mode="fill"), "tushib qolgan: «ـت»"),
+    (ar("اِسْتَيْقَظْتُ", "استيقظ", mode="fill"), "«ـت» yetishmayapti"),
     (ar("كَتَبُوا", "كتبا", mode="fill"), "«ـوا» kerak"),
     (ar("كَتَبُوا", "كتبنا", mode="translate"), "«ـوا» kerak"),
-    (ar("يُعَلِّمُ", "علم", mode="fill"), "Boshidagi harf tushib qolgan: «يـ»"),
+    (ar("يُعَلِّمُ", "علم", mode="fill"), "Boshida «يـ» yetishmayapti"),
     (ar("كَتَبُوا", "كتبو"), None),  # diktant — qat'iy
     (lat("sen (ayol) yozasan", "u ayollar yozyadi"), None),
     (lat("go'yo bola sherdek", "Bola sher edi"), None),
@@ -177,8 +177,10 @@ def test_report_answers():
 
 def _content_item(lid: str, answer: str) -> dict:
     data = json.loads((ROOT / "content" / "modules" / lid.split("-")[0] / f"{lid}.json").read_text(encoding="utf-8"))
-    (item,) = [t for t in data["micro_test"] if t.get("answer") == answer]
-    return item
+    # bir xil javobli bir nechta savol bo'lsa — tarjima birinchi (/javoblar'dagi tur)
+    typed = ("translate_uz_ar", "translate_ar_uz", "fill_blank", "dictation")
+    items = [t for t in data["micro_test"] if t.get("answer") == answer and t["type"] in typed and not t.get("options")]
+    return sorted(items, key=lambda t: typed.index(t["type"]))[0]
 
 
 def _check_like_app(lid: str, answer: str, typed: list[str]) -> list[dict]:
@@ -213,11 +215,49 @@ def test_report_week_answers():
         assert all(r["ok"] for r in res), (lid, typed, res)
 
     wrong_cases = {
-        ("a2-28", "مُجْتَهِدًا"): [("مجتحدا", "«ح» emas, «ه»"), ("مجتهد", "tushib qolgan: «ـا»")],
+        ("a2-28", "مُجْتَهِدًا"): [("مجتحدا", "«ح» emas, «ه»"), ("مجتهد", "«ـا» yetishmayapti")],
         ("b1-01", "نُشِرَ"): [("نشأ", None)],
         ("a2-13", "إِرْسَال"): [("أرسل", None)],
         ("a0-01", "م"): [("من", None)],
         ("a2-08", "هُمْ"): [("ارجال", None)],
+    }
+    for (lid, ans), cases in wrong_cases.items():
+        res = _check_like_app(lid, ans, [v for v, _ in cases])
+        for (v, hint), r in zip(cases, res):
+            assert not r["ok"], (lid, v)
+            if hint:
+                assert hint in (r.get("note") or ""), (lid, v, r)
+
+
+def test_report_second_part():
+    """/javoblar 7 kun (24–40)."""
+    ok_cases = {
+        ("a2-34", "uchinchi qavat"): ["uchunchi qavat", "3-qavat", "3 - qavat"],
+        ("a2-30", "Robbing nomi bilan o'qi"): ["Robbing nomi ila o‘qi"],
+        ("a2-08", "sizlar ikkovingizning kitobingiz"): ["siz ikkingizning kitobingiz", "иккингизни китобингиз"],
+        ("a2-28", "boy bo'ldi"): ["U boy bo‘lib qoldi"],
+        ("a2-31", "أَخْلَاق"): ["خلق"],
+        ("a2-11", "men akamga/ukamga o'rgatdim"): ["Men akamni/ukamni o'rgatdim"],
+        ("a2-03", "men ichdim"): ["nen ichdim"],
+        ("a2-14", "تَعَلُّم"): ["تعللم"],  # shadda o'rniga qo'sh harf
+    }
+    for (lid, ans), typed in ok_cases.items():
+        res = _check_like_app(lid, ans, typed)
+        assert all(r["ok"] for r in res), (lid, typed, res)
+    assert "shadda" in _check_like_app("a2-14", "تَعَلُّم", ["تعللم"])[0]["note"]
+
+    wrong_cases = {
+        ("a2-06", "biz o'qidik / biz dars qildik"): [("Biz dars qilyapmiz", None), ("o'qiyapmiz", None)],
+        ("a2-02", "كَتَبْتُمْ"): [("كتبت", "«ـم» yetishmayapti"), ("كتبوا", "«ـتم» kerak")],
+        ("a2-01", "كَتَبَتْ"): [("كتب", "«ـت» yetishmayapti"), ("قرات", None)],
+        ("a2-27", "نَجَاح"): [("بجاح", "«ب» emas, «ن»"), ("موفقيت", None)],
+        ("a2-15", "تَعَاوُن"): [("تعوان", "o'rni almashgan"), ("تعاو", "«ـن» yetishmayapti")],
+        ("a2-09", "هَؤُلَاءِ"): [("هؤلء", "Oxiri boshqa")],
+        ("a0-26", "بِنْت"): [("بنة", "ta marbuta"), ("بإنت", "Qisqa unli"), ("بإنة", None)],
+        ("a2-29", "لَيْتَ"): [("كان", None)],
+        ("a2-03", "men ichdim"): [("sen ichdim", None), ("u ayol ichdi", None)],
+        ("a2-30", "Robbing nomi bilan o'qi"): [("Sening robbing nomi bilan o‘qiladi", None)],
+        ("a2-28", "boy bo'ldi"): [("Тонг булди", None)],
     }
     for (lid, ans), cases in wrong_cases.items():
         res = _check_like_app(lid, ans, [v for v, _ in cases])

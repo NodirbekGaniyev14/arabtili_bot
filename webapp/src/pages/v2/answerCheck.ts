@@ -105,26 +105,53 @@ const arLoose = (a: string, v: string, rules: ArRule[]): Verdict | null => {
   return { ok: true, exact: false, note: notes.size ? "Imlo: " + [...notes].join("; ") : undefined };
 };
 
-/** Xato javobga yo'naltiruvchi izoh (/javoblar: «تكتبان» ↔ يكتبان, «استيقظ» ↔ استيقظت, «كتبا» ↔ كتبوا). */
+/** Xato javobga yo'naltiruvchi izoh (/javoblar: «تكتبان» ↔ يكتبان, «استيقظ» ↔ استيقظت, «كتبا» ↔ كتبوا,
+ *  «بنة» ↔ بنت, «تعوان» ↔ تعاون, «بانت» ↔ بنت). */
 const PERSON_PREFIX = "اتين";
+/** Talaffuzi yaqin yoki shakli o'xshash — o'quvchi eng ko'p adashtiradigan juftliklar. */
+const CONFUSED = new Set(["تة", "حه", "قك", "صس", "طت", "ضد", "ذز", "ثس", "ظز", "عا", "بن", "بت", "تث", "جح", "حخ", "دذ", "رز", "سش", "صض", "طظ", "عغ", "فق"]);
+const confused = (x: string, y: string) => CONFUSED.has(x + y) || CONFUSED.has(y + x);
 const arHint = (a: string, v: string): string | undefined => {
   if (a.length === v.length && a.slice(1) === v.slice(1) && PERSON_PREFIX.includes(a[0]) && PERSON_PREFIX.includes(v[0]))
     return "Boshidagi harf shaxsni bildiradi: أ — men, ن — biz, ت — sen/siz (va u — ayol), ي — u/ular";
   if (a.length === v.length && a.length > 1) {
     const diff = [...a].map((ch, i) => (ch !== v[i] ? i : -1)).filter((i) => i >= 0);
-    // oxirgi 2 harf — qo'shimcha (كتبنا ↔ كتبوا): uni pastdagi qoida tushuntiradi
-    if (diff.length === 1 && diff[0] < a.length - 2) return `Bitta harf xato: «${v[diff[0]]}» emas, «${a[diff[0]]}»`;
+    // oxirgi 2 harf odatda qo'shimcha (كتبنا ↔ كتبوا) — uni pastdagi qoida tushuntiradi
+    if (diff.length === 1 && (diff[0] < a.length - 2 || confused(a[diff[0]], v[diff[0]]))) {
+      const [x, y] = [a[diff[0]], v[diff[0]]];
+      const extra = confused(x, y) && "تة".includes(x) && "تة".includes(y) ? " (ة — ta marbuta, ت — oddiy «t»)" : "";
+      return `Bitta harf xato: «${y}» emas, «${x}»${extra}`;
+    }
+    if (diff.length === 2 && diff[1] === diff[0] + 1 && a[diff[0]] === v[diff[1]] && a[diff[1]] === v[diff[0]])
+      return `Ikki harf o'rni almashgan: «${v[diff[0]]}${v[diff[1]]}» emas, «${a[diff[0]]}${a[diff[1]]}»`;
+  }
+  // Qisqa unli harf bilan yozilgan: «بانت» ↔ بنت (i — kasra, harf emas)
+  if (v.length === a.length + 1) {
+    for (let k = 0; k < v.length; k++) {
+      if ("اوي".includes(v[k]) && v.slice(0, k) + v.slice(k + 1) === a)
+        return "Qisqa unli harf bilan yozilmaydi — u harakat (ـَ ـِ ـُ) bilan belgilanadi";
+    }
   }
   if (v.length >= 2 && a.length > v.length && a.length - v.length <= 3 && a.startsWith(v))
-    return `Oxiridagi qo'shimcha tushib qolgan: «ـ${a.slice(v.length)}»`;
+    return `Oxirida «ـ${a.slice(v.length)}» yetishmayapti`;
   if (v.length >= 2 && a.length > v.length && a.length - v.length <= 2 && a.endsWith(v))
-    return `Boshidagi harf tushib qolgan: «${a.slice(0, a.length - v.length)}ـ»`;
+    return `Boshida «${a.slice(0, a.length - v.length)}ـ» yetishmayapti`;
   let i = 0;
   while (i < a.length && i < v.length && a[i] === v[i]) i++;
   if (i >= 3 && i < a.length && i < v.length && a.length - i <= 3 && v.length - i <= 3)
-    return `Qo'shimcha boshqa: «ـ${a.slice(i)}» kerak (siz «ـ${v.slice(i)}» yozdingiz)`;
+    return `Oxiri boshqa: «ـ${a.slice(i)}» kerak (siz «ـ${v.slice(i)}» yozdingiz)`;
   return undefined;
 };
+
+/** Ekran klaviaturasida shadda yo'q — o'quvchi qo'sh undoshni ikki marta yozadi: «تعللم» = تَعَلُّم. */
+const SHADDA = String.fromCharCode(0x0651);
+const LETTER_MARKS = new RegExp(
+  `([${String.fromCharCode(0x0621)}-${String.fromCharCode(0x064a)}])((?:${HARAKAT.source})*)`,
+  "g"
+);
+const doubleShadda = (s: string) =>
+  s.replace(LETTER_MARKS, (_m, ch: string, marks: string) => (marks.includes(SHADDA) ? ch + ch : ch) + marks);
+const SHADDA_NOTE = "Imlo: qo'sh undosh bitta harf bilan yoziladi, ustiga shadda (ـّ) qo'yiladi";
 
 /** To'ldirishda bo'sh joy so'zga yopishgan bo'lsa («عَلَّمَ___», «يَـ___»), o'quvchi so'zni to'liq
  *  yozishi mumkin («علمهم», «يبني») — to'ldirilgan so'z va butun gap ham to'g'ri javob. */
@@ -158,6 +185,11 @@ export const arOk = (answer: string, value: string, opts: CheckOpts = {}): Verdi
     const r = arLoose(target, v, rules);
     if (r) return r;
   }
+  // Qo'sh undosh ikki harf bilan yozilgan («تعللم», «ردد») — to'g'ri, izoh bilan
+  for (const raw of [answer, ...(opts.accept ?? [])]) {
+    const dbl = normAr(doubleShadda(raw));
+    if (dbl !== normAr(raw) && arLoose(dbl, v, rules)) return { ok: true, exact: false, note: SHADDA_NOTE };
+  }
   return { ok: false, note: arHint(main, v) };
 };
 
@@ -165,9 +197,15 @@ export const arOk = (answer: string, value: string, opts: CheckOpts = {}): Verdi
 
 const APOS = "'ʼ’‘ʻ`´";
 
+/** Raqam so'z bilan: «3-qavat» = «uchinchi qavat», «7 kun» = «yetti kun». */
+const NUMS = ["", "bir", "ikki", "uch", "to'rt", "besh", "olti", "yetti", "sakkiz", "to'qqiz", "o'n"];
+const ORD = ["", "birinchi", "ikkinchi", "uchinchi", "to'rtinchi", "beshinchi", "oltinchi", "yettinchi", "sakkizinchi", "to'qqizinchi", "o'ninchi"];
+
 export const normLat = (s: string) =>
   s
     .toLowerCase()
+    .replace(/\b(\d{1,2})\s*-\s*(?=[a-z])/g, (m, n) => (ORD[+n] ? ORD[+n] + " " : m))
+    .replace(/\b(\d{1,2})\b/g, (m, n) => NUMS[+n] || m)
     .replace(new RegExp(`[${APOS}\\-_.?!:;«»"“”—–…]`, "g"), "")
     .replace(/\s+/g, " ")
     .trim();
@@ -263,13 +301,20 @@ const SYNONYMS: Record<string, string> = {
   qayoqda: "qayerda",
   qayda: "qayerda",
   man: "men",
-  ikkisi: "ikkovi",
-  ikkalasi: "ikkovi",
+  ila: "bilan",
+};
+
+/** ikkisi / ikkalasi / ikkovi, ikkingiz / ikkalangiz / ikkovingiz… — bir xil ma'no, bitta shaklga. */
+const normIkki = (w: string): string => {
+  const m = w.match(/^ikk(ov|ala|i)(.*)$/);
+  if (!m) return w;
+  const rest = m[1] === "ov" ? m[2] : m[2].replace(/^s?i/, "i").replace(/^ng/, "ing").replace(/^m/, "im");
+  return "ikkov" + rest;
 };
 /** Fe'l o'zagi muqobillari: kutilgan → qabul qilinadigan (ذَهَبَ = bordi/ketdi, قَالَ = dedi/aytdi). */
 const STEM_ALT: Record<string, string[]> = { bor: ["ket"], de: ["ayt"], ayt: ["de"] };
 /** «sen» shakli o'rniga «siz» (hurmat) — qabul; teskarisi (ko'plik o'rniga birlik) — yo'q. */
-const POLITE: Record<string, string> = { sen: "siz", ng: "ngiz", san: "siz" };
+const POLITE: Record<string, string> = { sen: "siz", ng: "ngiz", san: "siz", sizlar: "siz" };
 const PRES: Record<string, string> = { di: "ti", dilar: "tilar" }; // hozirgi zamon shaxslari: man san ti miz siz tilar
 const PAST: Record<string, string> = { man: "m", san: "ng", miz: "k", siz: "ngiz" }; // -gan shaxslari → -di shaxslari
 
@@ -293,7 +338,7 @@ const canonTokens = (s: string): string[] => {
     .replace(/\([^)]*\)/g, " ")
     .split(/\s+/)
     .filter(Boolean)
-    .map((w) => verbCanon((SYNONYMS[w] ?? w).replace(/x/g, "h")));
+    .map((w) => verbCanon(normIkki(SYNONYMS[w] ?? w).replace(/x/g, "h")));
   // «ular» bo'lsa 3-shaxs birlik fe'l ko'plikka tenglashadi (moslashuv ixtiyoriy)
   return t.includes("ular")
     ? t.map((w) => (w.endsWith("|otg|") ? w + "lar" : w.endsWith("|hoz|ti") ? w + "lar" : w))
@@ -360,6 +405,8 @@ const wordClose = (e: string, g: string): boolean => {
   if (e.endsWith("san") && g === e.slice(0, -3) + "siz") return true; // kimsan → kimsiz
   if (g === e + "ni" || e === g + "ni") return true; // Qur'on(ni) o'qidim
   if (g === e + "dir" || e === g + "dir") return true; // kitob yangi(dir)
+  if (e.endsWith("ning") && g === e.slice(0, -4) + "ni") return true; // so'zlashuvda: «ikkingizni kitobingiz»
+  if (e.length >= 3 && PRONOUNS.has(e) && !PRONOUNS.has(g) && g.length === e.length && lev1(e, g)) return true; // «nen ichdim»
   if (caseSwap(e, g)) return false;
   if (Math.max(e.length, g.length) >= 7 && Math.min(e.length, g.length) >= 5 && lev1(e, g)) return true;
   return e.length >= 4 && typoClose(e, g);
@@ -368,15 +415,15 @@ const wordClose = (e: string, g: string): boolean => {
 const seqClose = (a: string[], b: string[]) => a.length === b.length && a.every((w, i) => wordClose(w, b[i]));
 
 const tokensMatch = (a: string[], b: string[]): boolean => {
+  const close = (x: string[], y: string[]) => seqClose(x, y) || seqClose([...x].sort(), [...y].sort());
+  if (close(a, b)) return true;
   // Olmosh faqat bir tomonda bo'lsa — tushirilgan deb hisoblanadi; ikkalasida bo'lsa mos kelishi shart
   const pa = a.some((w) => PRONOUNS.has(w));
   const pb = b.some((w) => PRONOUNS.has(w));
-  if (pa !== pb) {
-    const sa = a.filter((w) => !PRONOUNS.has(w));
-    const sb = b.filter((w) => !PRONOUNS.has(w));
-    if (sa.length && sb.length) [a, b] = [sa, sb];
-  }
-  return seqClose(a, b) || seqClose([...a].sort(), [...b].sort());
+  if (pa === pb) return false;
+  const sa = a.filter((w) => !PRONOUNS.has(w));
+  const sb = b.filter((w) => !PRONOUNS.has(w));
+  return sa.length > 0 && sb.length > 0 && close(sa, sb);
 };
 
 const TANVIN_NOTE = "«bir» — noaniqlik ma'nosi (tanvin ـٌ ـً ـٍ)";
