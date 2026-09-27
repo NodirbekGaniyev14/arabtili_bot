@@ -819,7 +819,7 @@ function renderExercise(
           arabicBig={item.q_ar}
           arabicInput={arabicAnswer}
           showHarakatKeys={false}
-          check={(v) => (arabicAnswer ? arOk(item.answer, v, opts) : latOk(item.answer, v, opts))}
+          check={(v) => (arabicAnswer ? arOk(item.answer, v, { ...opts, mode: "fill" }) : latOk(item.answer, v, opts))}
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}
@@ -835,7 +835,7 @@ function renderExercise(
           prompt={`Arabchaga tarjima qiling: «${item.q_uz}»`}
           arabicInput
           showHarakatKeys={false}
-          check={(v) => arOk(item.answer, v, { ...opts, lenient: true })}
+          check={(v) => arOk(item.answer, v, { ...opts, mode: "translate" })}
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}

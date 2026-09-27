@@ -17,8 +17,9 @@ export const asVerdict = (r: boolean | Verdict): Verdict => (typeof r === "boole
 export type CheckOpts = {
   /** Qo'shimcha to'g'ri javoblar (kontentdagi `accept`) */
   accept?: string[];
-  /** Arabchaga tarjima: hamza / «ال» / «ـوا» kechiriladi (diktant va to'ldirishda — yo'q) */
-  lenient?: boolean;
+  /** Arabcha javob qat'iyligi: "strict" — diktant (faqat ى/ي, ة/ه — izoh bilan);
+   *  "fill" — to'ldirish (+ «ـوا» alifi); "translate" — tarjima (+ hamza, «ال», olmosh, bo'shliq) */
+  mode?: "strict" | "fill" | "translate";
   /** Savol matni: «artikl», «aniq», «tanvin» bo'lsa — «ال» va «bir» qat'iy tekshiriladi */
   prompt?: string;
 };
@@ -66,6 +67,17 @@ const ARTICLE: ArRule = {
       .map((w) => (w.length > 3 && w.startsWith("ال") ? w.slice(2) : w))
       .join(" "),
 };
+/** «هم كتبوا» = «كتبوا»: savolda «ular» bo'lsa, o'quvchi olmoshni ham yozishi mumkin. */
+const AR_PRONOUNS = new Set(["انا", "نحن", "انت", "انتم", "انتن", "انتما", "هو", "هي", "هم", "هن", "هما"]);
+const PRONOUN: ArRule = {
+  note: "",
+  apply: (s) => {
+    const w = s.split(" ");
+    return w.length > 1 && AR_PRONOUNS.has(w[0]) ? w.slice(1).join(" ") : s;
+  },
+};
+/** «مازال» = «ما زال» */
+const SPACES: ArRule = { note: "", apply: (s) => s.replace(/ /g, "") };
 
 const AR_NOTES: Record<string, string> = {
   "ىي": "so'z oxirida ى (alif maqsura, nuqtasiz) bo'lishi kerak, ي emas",
@@ -84,12 +96,29 @@ const arLoose = (a: string, v: string, rules: ArRule[]): Verdict | null => {
     const rest = rules.filter((x) => x !== r);
     const [x, y] = [applyAll(a, rest), applyAll(v, rest)];
     if (x === y) continue; // bu qoidasiz ham teng — izoh kerak emas
-    if (r !== YA_TA) notes.add(r.note);
-    else if (x.length === y.length) {
+    if (r !== YA_TA) {
+      if (r.note) notes.add(r.note);
+    } else if (x.length === y.length) {
       for (let i = 0; i < x.length; i++) if (x[i] !== y[i] && AR_NOTES[x[i] + y[i]]) notes.add(AR_NOTES[x[i] + y[i]]);
     } else notes.add("ى/ي yoki ة/ه farqi — namunaga qarang");
   }
   return { ok: true, exact: false, note: notes.size ? "Imlo: " + [...notes].join("; ") : undefined };
+};
+
+/** Xato javobga yo'naltiruvchi izoh (/javoblar: «تكتبان» ↔ يكتبان, «استيقظ» ↔ استيقظت, «كتبا» ↔ كتبوا). */
+const PERSON_PREFIX = "اتين";
+const arHint = (a: string, v: string): string | undefined => {
+  if (a.length === v.length && a.slice(1) === v.slice(1) && PERSON_PREFIX.includes(a[0]) && PERSON_PREFIX.includes(v[0]))
+    return "Boshidagi harf shaxsni bildiradi: أ — men, ن — biz, ت — sen/siz (va u — ayol), ي — u/ular";
+  if (v.length >= 2 && a.length > v.length && a.length - v.length <= 3 && a.startsWith(v))
+    return `Oxiridagi qo'shimcha tushib qolgan: «ـ${a.slice(v.length)}»`;
+  if (v.length >= 2 && a.length > v.length && a.length - v.length <= 2 && a.endsWith(v))
+    return `Boshidagi harf tushib qolgan: «${a.slice(0, a.length - v.length)}ـ»`;
+  let i = 0;
+  while (i < a.length && i < v.length && a[i] === v[i]) i++;
+  if (i >= 3 && i < a.length && i < v.length && a.length - i <= 3 && v.length - i <= 3)
+    return `Qo'shimcha boshqa: «ـ${a.slice(i)}» kerak (siz «ـ${v.slice(i)}» yozdingiz)`;
+  return undefined;
 };
 
 export const arOk = (answer: string, value: string, opts: CheckOpts = {}): Verdict => {
@@ -100,16 +129,19 @@ export const arOk = (answer: string, value: string, opts: CheckOpts = {}): Verdi
   const alts = (opts.accept ?? []).map(normAr).filter(Boolean);
   if (alts.includes(v)) return { ok: true, exact: false };
 
+  const mode = opts.mode ?? "strict";
   const rules = [YA_TA];
-  if (opts.lenient) {
-    rules.push(HAMZA, WAW_ALIF);
+  if (mode !== "strict") rules.push(WAW_ALIF);
+  if (mode === "translate") {
+    rules.push(HAMZA);
     if (!STRICT_PROMPT.test(opts.prompt ?? "")) rules.push(ARTICLE);
+    rules.push(PRONOUN, SPACES);
   }
   for (const target of [main, ...alts]) {
     const r = arLoose(target, v, rules);
     if (r) return r;
   }
-  return { ok: false };
+  return { ok: false, note: arHint(main, v) };
 };
 
 /* ── O'zbekcha (lotin) ── */
@@ -186,6 +218,7 @@ const latVariants = (answer: string): string[] => {
   const tail = answer.match(/\(([^)]*)\)\s*$/);
   if (tail) push(tail[1]);
   push(answer.replace(/\([^)]*\)/g, " ")); // qavssiz asosiy javob
+  push(answer.replace(/[()]/g, " ")); // qavs ichidagisi bilan: «sen ayol yozasan»
   push(answer); // qavsi bilan to'liq ko'chirgan bo'lsa ham
 
   return [...new Set(out)];
@@ -213,6 +246,8 @@ const SYNONYMS: Record<string, string> = {
   qayoqda: "qayerda",
   qayda: "qayerda",
   man: "men",
+  ikkisi: "ikkovi",
+  ikkalasi: "ikkovi",
 };
 /** Fe'l o'zagi muqobillari: kutilgan → qabul qilinadigan (ذَهَبَ = bordi/ketdi, قَالَ = dedi/aytdi). */
 const STEM_ALT: Record<string, string[]> = { bor: ["ket"], de: ["ayt"], ayt: ["de"] };

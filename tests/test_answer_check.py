@@ -76,15 +76,15 @@ ACCEPTED = [
     lat("ob-havo", "ob havo"),
     lat("bu opam/singlim", "bu mening singlim"),
     # #F112 a1-12, #F115 a2-22, #F117 a1-10 (arabchaga)
-    ar("النَّاس", "ناس", lenient=True),
-    ar("النَّاس", "شعب", lenient=True, accept=["شَعْب"]),
-    ar("قَالَ", "قالت", lenient=True, accept=["قَالَتْ"]),
-    ar("أَمْس", "الامس", lenient=True),
-    ar("أَمْس", "البارحة", lenient=True, accept=["البَارِحَة"]),
-    ar("سُؤَال", "سوال", lenient=True),
-    ar("كَتَبُوا", "كتبو", lenient=True),
-    ar("وُضُوء", "وضو", lenient=True),
-    ar("مَعْنَى", "معني", lenient=True),
+    ar("النَّاس", "ناس", mode="translate"),
+    ar("النَّاس", "شعب", mode="translate", accept=["شَعْب"]),
+    ar("قَالَ", "قالت", mode="translate", accept=["قَالَتْ"]),
+    ar("أَمْس", "الامس", mode="translate"),
+    ar("أَمْس", "البارحة", mode="translate", accept=["البَارِحَة"]),
+    ar("سُؤَال", "سوال", mode="translate"),
+    ar("كَتَبُوا", "كتبو", mode="translate"),
+    ar("وُضُوء", "وضو", mode="translate"),
+    ar("مَعْنَى", "معني", mode="translate"),
     ar("مَدْرَسَة", "مدرسه"),
 ]
 
@@ -100,9 +100,9 @@ REJECTED = [
     lat("bir kitob", "qalam"),
     lat("sizlar yozdingiz", "sen yozding"),  # ko'plik o'rniga birlik — yo'q
     lat("men akamga/ukamga o'rgatdim", "men akamda o'rgatdim"),
-    ar("كِتَاب", "قلم", lenient=True),
+    ar("كِتَاب", "قلم", mode="translate"),
     ar("النَّاس", "ناس"),  # diktant / to'ldirish — «ال» qat'iy
-    ar("الْقَمَر", "قمر", lenient=True, prompt="'oy' so'zini aniqlik artikli bilan yozing."),
+    ar("الْقَمَر", "قمر", mode="translate", prompt="'oy' so'zini aniqlik artikli bilan yozing."),
     ar("سُؤَال", "سوال"),  # diktantda hamza qat'iy
 ]
 
@@ -123,8 +123,8 @@ def test_notes_explain_leniency():
     r = run(
         [
             lat("bir kitob", "kitob"),
-            ar("النَّاس", "ناس", lenient=True),
-            ar("مَعْنَى", "معني", lenient=True),
+            ar("النَّاس", "ناس", mode="translate"),
+            ar("مَعْنَى", "معني", mode="translate"),
             lat("men bandman", "men bandman"),
             lat("men bandman", "мен бандман"),
         ]
@@ -134,6 +134,45 @@ def test_notes_explain_leniency():
     assert "maqsura" in r[2]["note"]
     assert r[3] == {"ok": True, "exact": True}
     assert r[4]["ok"] and r[4]["exact"] is False  # kirillcha — lotin namunasi ko'rsatiladi
+
+
+# /javoblar (30 kun, 1387 ta rad etilgan) — eng ko'p takrorlanganlari
+REPORT_OK = [
+    lat("sen (ayol) yozasan", "sen ayol yozasan"),  # qavs ichidagisi qavssiz
+    lat("sen (ayol) yozding", "sen yozding ayol"),
+    lat("ular ikkovi", "u ikkisi", accept=["ular ikkalasi", "ular ikkisi", "u ikkovi"]),
+    lat("ular ikkovi", "Ular ikkisi"),
+    lat("biz sovg'alarni yubordik", "biz hadya yubordik", accept=["biz hadya yubordik"]),
+    lat("go'yo bola sherdek", "Bola xuddi sherdek", accept=["bola xuddi sherdek"]),
+    ar("كَتَبُوا", "كتبو", mode="translate"),
+    ar("كَتَبُوا", "هم كتبوا", mode="translate"),  # olmosh bilan
+    ar("كَتَبُوا", "كتبو", mode="fill"),  # to'ldirishda ham jimjit alif kechiriladi
+    ar("مَا زَالَ", "مازال", mode="translate"),
+    ar("طَقْس", "الجو", mode="translate", accept=["جَوّ"]),
+    ar("طَقْس", "الطقس", mode="translate"),
+]
+REPORT_WRONG = [  # (qat'iy qolishi kerak, izoh: qaysi joy xato)
+    (ar("يَكْتُبَانِ", "تكتبان", mode="fill"), "Boshidagi harf"),
+    (ar("تَكْتُبُونَ", "يكتبون", mode="translate"), "Boshidagi harf"),
+    (ar("اِسْتَيْقَظْتُ", "استيقظ", mode="fill"), "tushib qolgan: «ـت»"),
+    (ar("كَتَبُوا", "كتبا", mode="fill"), "«ـوا» kerak"),
+    (ar("كَتَبُوا", "كتبنا", mode="translate"), "«ـوا» kerak"),
+    (ar("يُعَلِّمُ", "علم", mode="fill"), "Boshidagi harf tushib qolgan: «يـ»"),
+    (ar("كَتَبُوا", "كتبو"), None),  # diktant — qat'iy
+    (lat("sen (ayol) yozasan", "u ayollar yozyadi"), None),
+    (lat("go'yo bola sherdek", "Bola sher edi"), None),
+    (lat("ular ishda hamkorlik qildilar", "ishchilar hamkorlik qildilar"), None),
+]
+
+
+def test_report_answers():
+    res = run(REPORT_OK + [c for c, _ in REPORT_WRONG])
+    ok, wrong = res[: len(REPORT_OK)], res[len(REPORT_OK) :]
+    assert [(c[1], c[2]) for c, r in zip(REPORT_OK, ok) if not r["ok"]] == []
+    for (case, hint), r in zip(REPORT_WRONG, wrong):
+        assert not r["ok"], case
+        if hint:
+            assert hint in (r.get("note") or ""), (case, r)
 
 
 def _typed_items():
@@ -150,7 +189,8 @@ def test_content_answers_and_accepts_pass_own_check():
     for lid, i, t in _typed_items():
         is_ar = any(0x0600 <= ord(ch) <= 0x06FF for ch in t["answer"])
         fn = "arOk" if is_ar else "latOk"
-        opts = {"accept": t.get("accept", []), "prompt": t.get("q_uz", ""), "lenient": t["type"] == "translate_uz_ar"}
+        mode = {"translate_uz_ar": "translate", "fill_blank": "fill"}.get(t["type"], "strict")
+        opts = {"accept": t.get("accept", []), "prompt": t.get("q_uz", ""), "mode": mode}
         cases.append([fn, t["answer"], t["answer"], opts])
         where.append((lid, i, t["answer"], "namuna"))
         for a in t.get("accept", []):
