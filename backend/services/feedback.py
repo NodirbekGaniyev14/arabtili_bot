@@ -38,10 +38,25 @@ ISSUE_KINDS = {
 }
 ISSUE_DAILY_LIMIT = 30  # bir o'quvchidan sutkada (spam bo'lmasin)
 
+# K27: mashq turi — admin yozma javobni (tekshiruv yumshoqligi) variantlidan (kontent) ajratadi
+EX_LABELS = {
+    "mcq": "variantli",
+    "translate_ar_uz": "✍️ yozma tarjima (arabcha → o'zbekcha)",
+    "translate_uz_ar": "✍️ yozma tarjima (o'zbekcha → arabcha)",
+    "fill_blank": "✍️ bo'sh joyni to'ldirish",
+    "dictation": "✍️ diktant",
+    "harakat": "harakat qo'yish",
+    "order_words": "so'z tartibi",
+    "match_root": "o'zakni topish",
+    "build_word": "so'z yasash",
+    "shadowing": "takrorlash",
+}
+
 
 def issue_text(
     kind: str,
     label: str = "",
+    ex_type: str = "",
     q: str = "",
     q_ar: str = "",
     options: list[str] | None = None,
@@ -54,6 +69,8 @@ def issue_text(
     lines = [f"Tur: {ISSUE_KINDS.get(kind, kind)}"]
     if label:
         lines.append(f"Joy: {label}")
+    if ex_type:
+        lines.append(f"Mashq: {EX_LABELS.get(ex_type, ex_type)}")
     if q_ar and q_ar != q:
         lines.append(f"Arabcha: {q_ar}")
     if q:

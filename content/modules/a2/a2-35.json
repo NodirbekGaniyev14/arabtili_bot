@@ -76,12 +76,12 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«orasida» qaysi?", "q_ar": "", "options": ["بَيْنَ", "خَلْفَ", "حَوْلَ", "وَسَط"], "answer": "بَيْنَ", "explain_uz": "بَيْنَ — ikki narsa orasida.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "حَوْلَ الكَعْبَةِ", "options": [], "answer": "Ka'ba atrofida", "explain_uz": "حَوْلَ = atrofida, الكَعْبَة = Ka'ba.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "حَوْلَ الكَعْبَةِ", "options": [], "answer": "Ka'ba atrofida", "accept": ["Ka'baning atrofida", "Ka'ba atrofi"], "explain_uz": "حَوْلَ = atrofida, الكَعْبَة = Ka'ba.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Zarf qaysi holatda bo'ladi?", "q_ar": "", "options": ["nasb (fatha)", "raf' (damma)", "jarr (kasra)", "sukun"], "answer": "nasb (fatha)", "explain_uz": "Zarf mansub — fatha (خَلْفَ, بَيْنَ).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«وَسَط، مُتَوَسِّط» qaysi o'zakdan?", "q_ar": "", "options": ["و س ط", "و ص ل", "و س ع"], "answer": "و س ط", "explain_uz": "«و س ط» — o'rta o'zagi: vosita, avsat, mutavassit.", "audio": "", "root": "و س ط", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "orqasida, ortida", "q_ar": "", "options": [], "answer": "خَلْفَ", "explain_uz": "خَلْفَ — orqasida (joy zarfi).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "orqasida, ortida", "q_ar": "", "options": [], "answer": "خَلْفَ", "accept": ["وَرَاءَ"], "explain_uz": "خَلْفَ — orqasida (joy zarfi).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«dars davomida» qaysi?", "q_ar": "", "options": ["أَثْنَاءَ الدَّرْسِ", "خَلْفَ الدَّرْسِ", "حَوْلَ الدَّرْسِ", "دَاخِلَ الدَّرْسِ"], "answer": "أَثْنَاءَ الدَّرْسِ", "explain_uz": "أَثْنَاءَ — vaqt zarfi (davomida).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "yonida", "q_ar": "", "options": [], "answer": "بِجَانِب", "explain_uz": "بِجَانِب — yonida (ج ن ب o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "translate_uz_ar", "q_uz": "yonida", "q_ar": "", "options": [], "answer": "بِجَانِب", "accept": ["جَانِب", "بِجَنْبِ"], "explain_uz": "بِجَانِب — yonida (ج ن ب o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "root", "front": "و س ط", "back": "o'rta o'zagi (vosita, avsat, mutavassit)", "deck": "msa"},

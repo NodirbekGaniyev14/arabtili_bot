@@ -78,7 +78,7 @@
   {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المَسْجِدُ كَبِيرٌ", "options": [], "answer": "masjid katta", "explain_uz": "المَسْجِد = (o'sha) masjid, كَبِير = katta.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «م د ن» o'zagidan?", "q_ar": "", "options": ["مَدِينَة", "مَطَار", "سُوق"], "answer": "مَدِينَة", "explain_uz": "«م د ن» — shahar o'zagi: مَدِينَة (shahar), Madina, madaniyat.", "audio": "", "root": "م د ن", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "Noaniq shaklga aylantiring: «السُّوق» → ?", "q_ar": "____", "options": [], "answer": "سُوقٌ", "explain_uz": "الـ ni olib, tanvin qo'shamiz: سُوقٌ («bir bozor»).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "masjid", "q_ar": "", "options": [], "answer": "مَسْجِد", "explain_uz": "مَسْجِد — masjid (سجد=sajda qilish o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "masjid", "q_ar": "", "options": [], "answer": "مَسْجِد", "accept": ["جَامِع"], "explain_uz": "مَسْجِد — masjid (سجد=sajda qilish o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Qaysi so'zda «l» aniq eshitiladi (oy harfi)?", "q_ar": "", "options": ["القَمَر", "الشَّمْس", "السُّوق", "الرَّجُل"], "answer": "القَمَر", "explain_uz": "ق oy harfi — «al-qamar», l aniq. Qolganlari quyosh harflari.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [

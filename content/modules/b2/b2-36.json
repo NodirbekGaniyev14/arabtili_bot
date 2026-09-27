@@ -420,6 +420,7 @@
    "q_ar": "دَحِين",
    "options": [],
    "answer": "hozir",
+   "accept": ["endi", "shu payt", "hozirgina"],
    "explain_uz": "Hijoziyda الآنَ o'rniga.",
    "audio": "b2/dahin.mp3",
    "root": "",

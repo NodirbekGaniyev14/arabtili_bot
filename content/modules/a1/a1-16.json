@@ -80,8 +80,8 @@
   {"type": "mcq", "q_uz": "«kutubxona» (joy vazni) qaysi?", "q_ar": "", "options": ["مَكْتَبَة", "كَاتِب", "كِتَابَة", "مَكْتُوب"], "answer": "مَكْتَبَة", "explain_uz": "مَفْعَلَة vazni — joy: مَكْتَبَة (kutubxona).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "build_word", "q_uz": "«ع م ل» o'zagini «فَاعِل» vazniga soling (ishchi)", "q_ar": "", "options": [], "answer": "عَامِل", "explain_uz": "ع م ل + فَاعِل = عَامِل (ishchi).", "audio": "", "root": "ع م ل", "pattern": "فَاعِل", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ع م ل» o'zagidan EMAS?", "q_ar": "", "options": ["مَكْتَب", "عَامِل", "عَمَل"], "answer": "مَكْتَب", "explain_uz": "مَكْتَب — ك ت ب dan. عَامِل، عَمَل — ع م ل dan.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المَعْمَلُ جَدِيدٌ", "options": [], "answer": "zavod yangi", "explain_uz": "مَعْمَل = zavod (ع م ل ish joyi), جَدِيد = yangi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "ish, amal", "q_ar": "", "options": [], "answer": "عَمَل", "explain_uz": "عَمَل — ish/amal (o'zbekcha 'amal').", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المَعْمَلُ جَدِيدٌ", "options": [], "answer": "zavod yangi", "accept": ["fabrika yangi", "laboratoriya yangi", "ustaxona yangi"], "explain_uz": "مَعْمَل = zavod (ع م ل ish joyi), جَدِيد = yangi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ish, amal", "q_ar": "", "options": [], "answer": "عَمَل", "accept": ["شُغْل"], "explain_uz": "عَمَل — ish/amal (o'zbekcha 'amal').", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«مَكْتُوب» qaysi vazn — qanday ma'no?", "q_ar": "", "options": ["مَفْعُول — ob'ekt (yozilgan)", "فَاعِل — bajaruvchi", "مَفْعَل — joy", "فِعَال — masdar"], "answer": "مَفْعُول — ob'ekt (yozilgan)", "explain_uz": "مَفْعُول vazni — ish tushgan narsa: مَكْتُوب (yozilgan).", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [

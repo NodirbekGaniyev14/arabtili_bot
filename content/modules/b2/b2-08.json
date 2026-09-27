@@ -247,6 +247,7 @@
    "q_ar": "بَيَان",
    "options": [],
    "answer": "bayonot",
+   "accept": ["bayon", "e'lon", "deklaratsiya"],
    "explain_uz": "بَيَان — rasmiy bayonot, e'lon.",
    "audio": "b2/bayan_stmt.mp3",
    "root": "",

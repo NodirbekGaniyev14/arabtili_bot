@@ -302,6 +302,7 @@
    "q_ar": "تَحَدٍّ",
    "options": [],
    "answer": "muammo",
+   "accept": ["qiyinchilik", "sinov", "chaqiriq"],
    "explain_uz": "تَحَدٍّ — sinov, muammo (challenge).",
    "audio": "b2/tahaddi.mp3",
    "root": "",

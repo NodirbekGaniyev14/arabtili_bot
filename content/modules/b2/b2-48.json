@@ -252,6 +252,7 @@
    "q_ar": "سِيَاق",
    "options": [],
    "answer": "kontekst",
+   "accept": ["mazmun", "siyoq", "vaziyat"],
    "explain_uz": "سِيَاق — matn muhiti.",
    "audio": "b2/siyaq.mp3",
    "root": "",

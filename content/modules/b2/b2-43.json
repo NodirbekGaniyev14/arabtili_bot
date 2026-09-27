@@ -234,6 +234,7 @@
    "q_ar": "مُلَخَّص",
    "options": [],
    "answer": "konspekt",
+   "accept": ["xulosa", "qisqacha mazmun", "annotatsiya", "qisqacha"],
    "explain_uz": "مُلَخَّص — qisqacha bayon.",
    "audio": "b2/mulakhkhas.mp3",
    "root": "",

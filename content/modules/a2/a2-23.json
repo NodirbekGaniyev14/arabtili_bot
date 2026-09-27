@@ -77,10 +77,10 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«وَصَلَ» ning hozirgi zamoni qaysi?", "q_ar": "", "options": ["يَصِلُ", "يَوْصِلُ", "يَصُولُ", "وَاصَلَ"], "answer": "يَصِلُ", "explain_uz": "Mithal — hozirgi zamonda و tushadi: يَصِلُ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Mithal fe'lda و qachon tushadi?", "q_ar": "", "options": ["hozirgi zamonda", "o'tgan zamonda", "hech qachon", "har doim"], "answer": "hozirgi zamonda", "explain_uz": "O'tganda saqlanadi (وَصَلَ), hozirda tushadi (يَصِلُ).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "وَعَدَ بِالحُضُورِ", "options": [], "answer": "kelishga va'da berdi", "explain_uz": "وَعَدَ = va'da berdi, الحُضُور = kelish.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "وَعَدَ بِالحُضُورِ", "options": [], "answer": "kelishga va'da berdi", "accept": ["kelishga va'da qildi", "qatnashishga va'da berdi", "hozir bo'lishga va'da berdi"], "explain_uz": "وَعَدَ = va'da berdi, الحُضُور = kelish.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«وَعَدَ، مَوْعِد» qaysi o'zakdan?", "q_ar": "", "options": ["و ع د", "و ص ل", "و ج د"], "answer": "و ع د", "explain_uz": "«و ع د» — va'da o'zagi: vada, mavud, miod.", "audio": "", "root": "و ع د", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "Hozirgi zamon qiling: «وَجَدَ» → «يَـ___» (topadi)", "q_ar": "يَـ___", "options": [], "answer": "جِدُ", "explain_uz": "و tushadi: يَجِدُ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "uchrashuv, miod", "q_ar": "", "options": [], "answer": "مَوْعِد", "explain_uz": "مَوْعِد — uchrashuv vaqti (miod).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "uchrashuv, miod", "q_ar": "", "options": [], "answer": "مَوْعِد", "accept": ["لِقَاء"], "explain_uz": "مَوْعِد — uchrashuv vaqti (miod).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "qo'ydi", "q_ar": "", "options": [], "answer": "وَضَعَ", "explain_uz": "وَضَعَ (mithal) — qo'ydi.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [

@@ -211,6 +211,7 @@
    "q_ar": "عَلى",
    "options": [],
    "answer": "ustida",
+   "accept": ["ustiga", "ustda", "uzra"],
    "explain_uz": "عَلى — 'ustida, -da' ma'nosini beradi, o'qilishi 'alaa.",
    "audio": "",
    "root": "",

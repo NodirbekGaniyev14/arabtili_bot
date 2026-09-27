@@ -86,7 +86,7 @@
   {"type": "mcq", "q_uz": "رِبْح ning zidi (antonimi)?", "q_ar": "", "options": ["خَسَارَة", "بِضَاعَة", "سِعْر", "زَبُون"], "answer": "خَسَارَة", "explain_uz": "Foyda ↔ zarar (xasorat).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«زَبَائِن» nimaning ko'pligi?", "q_ar": "", "options": ["زَبُون (mijoz)", "زَيْتُون (zaytun)", "زَمَان (zamon)", "بِضَاعَة (mol)"], "answer": "زَبُون (mijoz)", "explain_uz": "زبون → زبائن (mijozlar).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "savdo (tijorat)", "q_ar": "", "options": [], "answer": "تِجَارَة", "explain_uz": "تِجَارَة — tijorat.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "narx", "q_ar": "", "options": [], "answer": "سِعْر", "explain_uz": "سِعْر — narx (as'or — narxlar).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "narx", "q_ar": "", "options": [], "answer": "سِعْر", "accept": ["ثَمَن"], "explain_uz": "سِعْر — narx (as'or — narxlar).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«تَاجِر، تِجَارَة، مَتْجَر» qaysi o'zakdan?", "q_ar": "", "options": ["ت ج ر", "ت ج ب", "ج ت ر"], "answer": "ت ج ر", "explain_uz": "«ت ج ر» — tijorat o'zagi.", "audio": "", "root": "ت ج ر", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Eshiting (Hijoziy): ma'nosi?", "q_ar": "", "options": ["Juda qimmat", "Juda arzon", "Juda yaxshi", "Juda katta"], "answer": "Juda qimmat", "explain_uz": "غالي مرّة — hijoziyda «juda qimmat».", "audio": "hj/ghali_marra.mp3", "root": "", "pattern": "", "words": []}
  ],

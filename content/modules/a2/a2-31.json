@@ -81,7 +81,7 @@
   {"type": "match_root", "q_uz": "«خُلِقَ، مَخْلُوق، أَخْلَاق» qaysi o'zakdan?", "q_ar": "", "options": ["خ ل ق", "خ ل ص", "ح ل ق"], "answer": "خ ل ق", "explain_uz": "«خ ل ق» — yaratish o'zagi: xalq, maxluq, Xoliq, axloq.", "audio": "", "root": "خ ل ق", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Hozirgi zamon majhulida o'rta harf qaysi harakat?", "q_ar": "", "options": ["fatha (يُكْتَبُ)", "kasra", "damma", "sukun"], "answer": "fatha (يُكْتَبُ)", "explain_uz": "Hozirgi majhul: يُـ damma + o'rta fatha.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "yaratildi", "q_ar": "", "options": [], "answer": "خُلِقَ", "explain_uz": "خُلِقَ (majhul) — yaratildi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "axloq, xulq", "q_ar": "", "options": [], "answer": "أَخْلَاق", "explain_uz": "أَخْلَاق — axloq (خ ل ق o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "translate_uz_ar", "q_uz": "axloq, xulq", "q_ar": "", "options": [], "answer": "أَخْلَاق", "accept": ["خُلُق"], "explain_uz": "أَخْلَاق — axloq (خ ل ق o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "root", "front": "خ ل ق", "back": "yaratish o'zagi (xalq, maxluq, Xoliq, axloq)", "deck": "msa"},

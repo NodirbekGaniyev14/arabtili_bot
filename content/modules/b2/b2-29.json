@@ -302,6 +302,7 @@
    "q_ar": "تَشْخِيص",
    "options": [],
    "answer": "tashxis",
+   "accept": ["diagnoz"],
    "explain_uz": "تَشْخِيص — kasallikni aniqlash.",
    "audio": "b2/tashkhis.mp3",
    "root": "",

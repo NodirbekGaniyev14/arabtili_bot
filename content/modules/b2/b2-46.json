@@ -240,6 +240,7 @@
    "q_ar": "مُنَاظَرَة",
    "options": [],
    "answer": "munozara",
+   "accept": ["bahs", "debat", "mubohasa"],
    "explain_uz": "مُنَاظَرَة — debat, munozara.",
    "audio": "b2/munazara.mp3",
    "root": "",

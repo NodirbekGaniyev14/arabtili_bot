@@ -252,6 +252,7 @@
    "q_ar": "حَلْقَة",
    "options": [],
    "answer": "epizod",
+   "accept": ["qism", "halqa", "seriya"],
    "explain_uz": "حَلْقَة — ko'rsatuv/podkast qismi.",
    "audio": "b2/halqa2.mp3",
    "root": "",

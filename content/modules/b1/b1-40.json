@@ -78,7 +78,7 @@
   {"type": "mcq", "q_uz": "مَفْعَل / مَفْعِل vaznlari odatda nimani bildiradi?", "q_ar": "", "options": ["joy (maktab, masjid)", "kasb", "fe'l", "rang"], "answer": "joy (maktab, masjid)", "explain_uz": "مكتب، مسجد، مصنع — joy vaznlari.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Yangi so'z ko'rganda birinchi qadam?", "q_ar": "", "options": ["o'zagini ajratish", "lug'atdan qarash", "tashlab ketish", "yodlab olish"], "answer": "o'zagini ajratish", "explain_uz": "O'zak tanish bo'lsa — ma'no taxmin qilinadi.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "build_word", "q_uz": "د ر س o'zagi + مَفْعَلَة vazni = ? (maktab/madrasa)", "q_ar": "", "options": [], "answer": "مَدْرَسَة", "explain_uz": "مدرسة — dars joyi.", "audio": "", "root": "د ر س", "pattern": "مَفْعَلَة", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "o'zak, ildiz", "q_ar": "", "options": [], "answer": "جِذْر", "explain_uz": "جذر — ildiz (matematikada jazr).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "o'zak, ildiz", "q_ar": "", "options": [], "answer": "جِذْر", "accept": ["أَصْل"], "explain_uz": "جذر — ildiz (matematikada jazr).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«مَعْرِفَة، تَعَارُف، مَعْرُوف» qaysi o'zakdan?", "q_ar": "", "options": ["ع ر ف", "ع ر ض", "غ ر ف"], "answer": "ع ر ف", "explain_uz": "«ع ر ف» — bilish o'zagi (ma'rifat!).", "audio": "", "root": "ع ر ف", "pattern": "", "words": []}
  ],
  "srs_cards": [

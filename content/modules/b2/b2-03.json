@@ -256,6 +256,7 @@
    "q_ar": "مُفَاوَضَات",
    "options": [],
    "answer": "muzokaralar",
+   "accept": ["muzokara"],
    "explain_uz": "مُفَاوَضَات — muzokaralar (III bob masdaridan).",
    "audio": "b2/mufawadat.mp3",
    "root": "",

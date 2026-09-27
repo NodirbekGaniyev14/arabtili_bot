@@ -355,6 +355,7 @@
    "q_ar": "أُولَئِكَ",
    "options": [],
    "answer": "anavilar",
+   "accept": ["ana ular", "anular", "ana o'shalar", "o'shalar"],
    "explain_uz": "Uzoqdagi odamlar ko'pligi — erkak va ayol uchun bir xil.",
    "audio": "",
    "root": "",

@@ -234,6 +234,7 @@
    "q_ar": "تَصْرِيح",
    "options": [],
    "answer": "bayonot",
+   "accept": ["ruxsat", "ruxsatnoma", "bayon", "e'lon"],
    "explain_uz": "تَصْرِيح — rasmiy bayonot.",
    "audio": "b2/tasrih.mp3",
    "root": "",

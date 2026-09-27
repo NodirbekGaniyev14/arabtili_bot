@@ -80,8 +80,8 @@
   {"type": "mcq", "q_uz": "Javob gap qachon فَـ bilan boshlanadi?", "q_ar": "", "options": ["ot gap yoki buyruq bo'lganda", "har doim", "hech qachon", "faqat inkorda"], "answer": "ot gap yoki buyruq bo'lganda", "explain_uz": "إذا نجحتَ فأنتَ بطلٌ / فاتصلْ بي.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "To'ldiring: «إذا وصلتَ ____ بي» (qo'ng'iroq qil)", "q_ar": "إِذَا وَصَلْتَ ____ بِي", "options": [], "answer": "فَاتَّصِلْ", "explain_uz": "Buyruq javob — فَـ + اتصلْ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«شَرْط، شُرُوط» qaysi o'zakdan?", "q_ar": "", "options": ["ش ر ط", "ش ر ب", "ص ر ط"], "answer": "ش ر ط", "explain_uz": "«ش ر ط» — shart o'zagi (shartnoma).", "audio": "", "root": "ش ر ط", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "maqsad", "q_ar": "", "options": [], "answer": "هَدَف", "explain_uz": "هَدَف — maqsad, nishon.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "imkoniyat, fursat", "q_ar": "", "options": [], "answer": "فُرْصَة", "explain_uz": "فُرْصَة — fursat (o'zbekchaga o'tgan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "maqsad", "q_ar": "", "options": [], "answer": "هَدَف", "accept": ["مَقْصَد", "غَايَة"], "explain_uz": "هَدَف — maqsad, nishon.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "imkoniyat, fursat", "q_ar": "", "options": [], "answer": "فُرْصَة", "accept": ["إِمْكَانِيَّة"], "explain_uz": "فُرْصَة — fursat (o'zbekchaga o'tgan).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "order_words", "q_uz": "Tartiblang: «Yoz kelsa, tog'larga boramiz»", "q_ar": "", "options": [], "answer": "إذا جاء الصيفُ ذهبنا إلى الجبالِ", "explain_uz": "إذا + shart + javob.", "audio": "", "root": "", "pattern": "", "words": ["إذا", "جاء", "الصيفُ", "ذهبنا", "إلى", "الجبالِ"]}
  ],
  "srs_cards": [

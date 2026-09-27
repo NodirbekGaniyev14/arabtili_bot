@@ -86,7 +86,7 @@
   {"type": "mcq", "q_uz": "دَوَاء va دَاء farqi?", "q_ar": "", "options": ["dori / kasallik", "kasallik / dori", "bir xil", "ikkalasi shifokor"], "answer": "dori / kasallik", "explain_uz": "دواء — davo(dori); داء — dard(kasallik).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Bemorga qanday tilak aytiladi?", "q_ar": "", "options": ["شفاكَ اللهُ", "مبروك", "مع السلامة", "صباح الخير"], "answer": "شفاكَ اللهُ", "explain_uz": "شفاك الله — Alloh shifo bersin.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "davolash (iloj)", "q_ar": "", "options": [], "answer": "عِلَاج", "explain_uz": "عِلَاج — davolash; o'zbekcha 'iloj'.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "og'riq (alam)", "q_ar": "", "options": [], "answer": "أَلَم", "explain_uz": "أَلَم — og'riq.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "og'riq (alam)", "q_ar": "", "options": [], "answer": "أَلَم", "accept": ["وَجَع"], "explain_uz": "أَلَم — og'riq.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«شِفَاء، مُسْتَشْفَى» qaysi o'zakdan?", "q_ar": "", "options": ["ش ف ي", "ش ف ع", "س ق ي"], "answer": "ش ف ي", "explain_uz": "«ش ف ي» — shifo o'zagi.", "audio": "", "root": "ش ف ي", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Eshiting (Hijoziy): ma'nosi nima?", "q_ar": "", "options": ["Hozir qalaysan?", "Qayerdasan?", "Nima yeysan?", "Qachon kelasan?"], "answer": "Hozir qalaysan?", "explain_uz": "كيفك دحين — hijoziyda «hozir qalaysan».", "audio": "hj/kifak_dahin.mp3", "root": "", "pattern": "", "words": []}
  ],

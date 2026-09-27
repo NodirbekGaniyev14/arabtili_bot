@@ -257,6 +257,7 @@
    "q_ar": "وَفْد",
    "options": [],
    "answer": "delegatsiya",
+   "accept": ["vakillar", "hay'at", "vakillar guruhi"],
    "explain_uz": "وَفْد — rasmiy delegatsiya.",
    "audio": "b2/wafd.mp3",
    "root": "",

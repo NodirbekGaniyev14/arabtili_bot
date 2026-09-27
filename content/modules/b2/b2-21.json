@@ -256,6 +256,7 @@
    "q_ar": "مُوجَز",
    "options": [],
    "answer": "xulosa",
+   "accept": ["qisqacha", "qisqa bayon", "qisqacha mazmun", "annotatsiya"],
    "explain_uz": "مُوجَز — qisqacha bayon (yangiliklar xulosasi).",
    "audio": "b2/mujaz.mp3",
    "root": "",

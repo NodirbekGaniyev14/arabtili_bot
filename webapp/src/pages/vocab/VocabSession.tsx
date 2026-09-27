@@ -681,10 +681,12 @@ function TestCard({
         ctx={{
           context: "lugat",
           label: `Lug'at testi · ${TEST_LABEL[q.type]}`,
+          ex_type: "mcq",
           q: q.prompt,
           q_ar: w?.ar ?? "",
           options: q.options,
           answer: q.answer,
+          given: answered ? picked ?? "" : "",
           audio: w?.audio ?? "",
         }}
       />

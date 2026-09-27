@@ -315,6 +315,7 @@
    "q_ar": "دَرَسْنَا",
    "options": [],
    "answer": "biz o'qidik / biz dars qildik",
+   "accept": ["biz o'rgandik"],
    "explain_uz": "دَرَسَ + ـنَا (biz) — o'tgan zamon.",
    "audio": "",
    "root": "",

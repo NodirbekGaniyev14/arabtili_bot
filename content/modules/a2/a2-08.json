@@ -353,6 +353,7 @@
    "q_ar": "كِتَابُكُمَا",
    "options": [],
    "answer": "sizlar ikkovingizning kitobingiz",
+   "accept": ["ikkalangizning kitobingiz", "ikkovingizning kitobi", "ikkalangizning kitobi"],
    "explain_uz": "ـكُمَا — muxotab musanna qo'shimchasi.",
    "audio": "",
    "root": "",

@@ -78,11 +78,11 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«bomdod (tong namozi)» qaysi?", "q_ar": "", "options": ["الفَجْر", "المَغْرِب", "العِشَاء", "الظُّهْر"], "answer": "الفَجْر", "explain_uz": "الفَجْر — tong namozi (fajr = tong).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "كَمِ السَّاعَةُ؟", "options": [], "answer": "soat nechada", "explain_uz": "كَمْ = nechta, السَّاعَة = soat.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "كَمِ السَّاعَةُ؟", "options": [], "answer": "soat nechada", "accept": ["soat necha", "soat nechchi", "soat necha bo'ldi"], "explain_uz": "كَمْ = nechta, السَّاعَة = soat.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«shom namozi» qaysi?", "q_ar": "", "options": ["المَغْرِب", "الفَجْر", "العَصْر", "الجُمُعَة"], "answer": "المَغْرِب", "explain_uz": "المَغْرِب — shom namozi (mag'rib = g'arb, quyosh botishi).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ص ل و» o'zagidan?", "q_ar": "", "options": ["صَلاة", "أَذَان", "شَهْر"], "answer": "صَلاة", "explain_uz": "«ص ل و» — namoz o'zagi: صَلاة (namoz), مُصَلَّى (namozgoh), salot.", "audio": "", "root": "ص ل و", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "azon", "q_ar": "", "options": [], "answer": "أَذَان", "explain_uz": "أَذَان — azon (namozga chaqiruv).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "juma kuni", "q_ar": "", "options": [], "answer": "يَوْمُ الجُمُعَةِ", "explain_uz": "يَوْمُ الجُمُعَةِ — juma kuni (jam'/gathering o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "juma kuni", "q_ar": "", "options": [], "answer": "يَوْمُ الجُمُعَةِ", "accept": ["الجُمُعَة"], "explain_uz": "يَوْمُ الجُمُعَةِ — juma kuni (jam'/gathering o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Kunda necha vaqt namoz o'qiladi?", "q_ar": "", "options": ["besh", "uch", "yetti", "bir"], "answer": "besh", "explain_uz": "Besh vaqt: fajr, zuhr, asr, mag'rib, isho.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [

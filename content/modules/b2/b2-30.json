@@ -307,6 +307,7 @@
    "q_ar": "فَرْضِيَّة",
    "options": [],
    "answer": "gipoteza",
+   "accept": ["faraz", "taxmin"],
    "explain_uz": "فَرْضِيَّة — tekshiriladigan faraz.",
    "audio": "b2/fardiyya.mp3",
    "root": "",

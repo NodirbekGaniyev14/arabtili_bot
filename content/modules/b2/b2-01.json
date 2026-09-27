@@ -259,6 +259,7 @@
    "q_ar": "إِعْرَاب",
    "options": [],
    "answer": "i'rob",
+   "accept": ["e'rob"],
    "explain_uz": "إِعْرَاب — so'z oxirining vazifaga qarab o'zgarishi.",
    "audio": "b2/irab.mp3",
    "root": "",

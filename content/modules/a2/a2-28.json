@@ -77,11 +77,11 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«Havo chiroyli edi» to'g'ri qaysi?", "q_ar": "", "options": ["كَانَ الجَوُّ جَمِيلًا", "كَانَ الجَوُّ جَمِيلٌ", "كَانَ الجَوَّ جَمِيلٌ", "الجَوُّ كَانَ جَمِيلٌ"], "answer": "كَانَ الجَوُّ جَمِيلًا", "explain_uz": "Ega raf' (الجَوُّ), xabar nasb (جَمِيلًا).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "كانَ dan keyin xabar qaysi holatda?", "q_ar": "", "options": ["nasb (fatha)", "raf' (damma)", "jarr (kasra)", "sukun"], "answer": "nasb (fatha)", "explain_uz": "كانَ xabarni nasb (fatha) qiladi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَصْبَحَ غَنِيًّا", "options": [], "answer": "boy bo'ldi", "explain_uz": "أَصْبَحَ = bo'ldi, غَنِيًّا = boy (xabar, nasb).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَصْبَحَ غَنِيًّا", "options": [], "answer": "boy bo'ldi", "accept": ["boyidi", "boy bo'lib qoldi"], "explain_uz": "أَصْبَحَ = bo'ldi, غَنِيًّا = boy (xabar, nasb).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«أَصْبَحَ، صَبَاح» qaysi o'zakdan?", "q_ar": "", "options": ["ص ب ح", "ص ي ر", "ص م ت"], "answer": "ص ب ح", "explain_uz": "«ص ب ح» — tong o'zagi: asbaha, subh, sahar.", "audio": "", "root": "ص ب ح", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "ob-havo", "q_ar": "", "options": [], "answer": "طَقْس", "explain_uz": "طَقْس — ob-havo.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ob-havo", "q_ar": "", "options": [], "answer": "طَقْس", "accept": ["جَوّ"], "explain_uz": "طَقْس — ob-havo.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "Xabarni to'g'rilang: «كَانَ الطَّالِبُ ____» (tirishqoq edi)", "q_ar": "كَانَ الطَّالِبُ ____", "options": [], "answer": "مُجْتَهِدًا", "explain_uz": "كانَ xabari nasb: مُجْتَهِدًا.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "hali ham, hanuz", "q_ar": "", "options": [], "answer": "مَا زَالَ", "explain_uz": "مَا زَالَ — hali ham (kana opa-singli).", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "translate_uz_ar", "q_uz": "hali ham, hanuz", "q_ar": "", "options": [], "answer": "مَا زَالَ", "accept": ["لَا يَزَالُ", "مَازَالَ"], "explain_uz": "مَا زَالَ — hali ham (kana opa-singli).", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "root", "front": "ص ب ح", "back": "tong o'zagi (asbaha=bo'ldi, subh, misboh)", "deck": "msa"},

@@ -252,6 +252,7 @@
    "q_ar": "حُرِّيَّة",
    "options": [],
    "answer": "erkinlik",
+   "accept": ["ozodlik", "hurriyat"],
    "explain_uz": "حُرِّيَّة — hurriyat, erkinlik.",
    "audio": "b2/hurriyya.mp3",
    "root": "",

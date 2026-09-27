@@ -134,6 +134,8 @@ class MicroTestItem(BaseModel):
     root: str = ""
     pattern: str = ""
     words: list[str] = Field(default_factory=list)  # order_words banki
+    # K27: yozma tarjimada qo'shimcha to'g'ri javoblar (sinonim, hurmat shakli…) — namuna `answer`
+    accept: list[str] = Field(default_factory=list)
 
 
 class SrsCard(BaseModel):
@@ -273,6 +275,13 @@ def validate_lesson(
                 errors.append(f"{tag}: words/answer to'liq emas")
         if t.type == "dictation" and not t.audio:
             warnings.append(f"{tag}: audio ko'rsatilmagan")
+        if t.accept:
+            if t.type not in ("translate_uz_ar", "translate_ar_uz", "fill_blank", "dictation"):
+                errors.append(f"{tag}: accept faqat yozma turlarda")
+            want_ar = bool(ARABIC_ANY.search(t.answer))
+            for a in t.accept:
+                if not a.strip() or bool(ARABIC_ANY.search(a)) != want_ar:
+                    errors.append(f"{tag}: accept yozuvi javob tiliga mos emas: {a!r}")
 
     # 7. SRS kartalar
     if not lesson.srs_cards and lesson.vocabulary:

@@ -75,7 +75,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«U (ayol) yozadi» qaysi?", "q_ar": "", "options": ["تَكْتُبُ", "يَكْتُبُ", "أَكْتُبُ", "نَكْتُبُ"], "answer": "تَكْتُبُ", "explain_uz": "هِيَ (u-ayol) → تـ: تَكْتُبُ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "يَشْرَبُ القَهْوَةَ", "options": [], "answer": "u qahva ichadi", "explain_uz": "يَشْرَبُ = u ichadi, القَهْوَة = qahva (ob'ekt).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "يَشْرَبُ القَهْوَةَ", "options": [], "answer": "u qahva ichadi", "accept": ["u kofe ichadi"], "explain_uz": "يَشْرَبُ = u ichadi, القَهْوَة = qahva (ob'ekt).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«يَجْلِسُ» ning o'rta unlisi qaysi?", "q_ar": "", "options": ["kasra (i)", "damma (u)", "fatha (a)", "sukun"], "answer": "kasra (i)", "explain_uz": "يَجْلِسُ — o'rta kasra (yaFʿILu). Har fe'l o'z unlisiga ega.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ش ر ب» o'zagidan?", "q_ar": "", "options": ["يَشْرَبُ", "يَجْلِسُ", "يَعْمَلُ"], "answer": "يَشْرَبُ", "explain_uz": "«ش ر ب» — ichish o'zagi: يَشْرَبُ (ichadi), مَشْرُوب (ichimlik), sharob.", "audio": "", "root": "ش ر ب", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "To'ldiring: «هِيَ ____عْمَلُ» (u-ayol ishlaydi)", "q_ar": "هِيَ ____عْمَلُ", "options": [], "answer": "تَ", "explain_uz": "هِيَ → تـ prefiksi: تَعْمَلُ.", "audio": "", "root": "", "pattern": "", "words": []},

@@ -86,7 +86,7 @@
   {"type": "mcq", "q_uz": "«Bron» arabchada?", "q_ar": "", "options": ["حَجْز", "حَجَر", "حَجّ", "جَحْز"], "answer": "حَجْز", "explain_uz": "حجز — band qilish; حجر — tosh!", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«Pulni qaytarib olish» qaysi?", "q_ar": "", "options": ["اِسْتِرْجَاع النُّقُود", "إِرْسَال النُّقُود", "دَفْع النُّقُود", "جَمْع النُّقُود"], "answer": "اِسْتِرْجَاع النُّقُود", "explain_uz": "X bob masdari: qaytarib olishni so'rash.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "chipta", "q_ar": "", "options": [], "answer": "تَذْكِرَة", "explain_uz": "تذكرة — chipta.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "viza", "q_ar": "", "options": [], "answer": "تَأْشِيرَة", "explain_uz": "تأشيرة — viza.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "viza", "q_ar": "", "options": [], "answer": "تَأْشِيرَة", "accept": ["فِيزَا"], "explain_uz": "تأشيرة — viza.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«رِحْلَة، مَرْحَلَة، رَحَّالَة» qaysi o'zakdan?", "q_ar": "", "options": ["ر ح ل", "ر ج ل", "ح ر ل"], "answer": "ر ح ل", "explain_uz": "«ر ح ل» — safar o'zagi: rihla, marhala.", "audio": "", "root": "ر ح ل", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Eshiting (Hijoziy): nima deyilyapti?", "q_ar": "", "options": ["Yuklarni qayerdan olaman?", "Reys qachon?", "Chipta qancha?", "Taksi qayerda?"], "answer": "Yuklarni qayerdan olaman?", "explain_uz": "وين أستلم الشنط — yuk olish joyini so'rash.", "audio": "hj/win_shunat.mp3", "root": "", "pattern": "", "words": []}
  ],

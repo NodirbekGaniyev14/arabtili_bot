@@ -78,12 +78,12 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«amaki (ota tomon)» qaysi?", "q_ar": "", "options": ["عَمّ", "خَال", "جَدّ", "اِبْن"], "answer": "عَمّ", "explain_uz": "عَمّ — ota tomon amaki; خَال — ona tomon tog'a.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "جَدِّي وَجَدَّتِي", "options": [], "answer": "bobom va buvim", "explain_uz": "جَدّ (bobo) + ـِي = bobom; جَدَّة (buvi) + ـِي = buvim.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "جَدِّي وَجَدَّتِي", "options": [], "answer": "bobom va buvim", "accept": ["buvam va buvim", "bobom va momom"], "explain_uz": "جَدّ (bobo) + ـِي = bobom; جَدَّة (buvi) + ـِي = buvim.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«tog'a (ona tomon)» qaysi?", "q_ar": "", "options": ["خَال", "عَمّ", "حَفِيد", "جَدّ"], "answer": "خَال", "explain_uz": "خَال — ona tomon tog'a.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ع و ل» o'zagidan?", "q_ar": "", "options": ["عَائِلَة", "أُسْرَة", "حَفِيد"], "answer": "عَائِلَة", "explain_uz": "«ع و ل» — oila/boquv o'zagi: عَائِلَة (oila), oila.", "audio": "", "root": "ع و ل", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "o'g'il", "q_ar": "", "options": [], "answer": "اِبْن", "explain_uz": "اِبْن — o'g'il (o'zbekcha 'ibn/bin' shundan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "o'g'il", "q_ar": "", "options": [], "answer": "اِبْن", "accept": ["وَلَد"], "explain_uz": "اِبْن — o'g'il (o'zbekcha 'ibn/bin' shundan).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "«mening qizim»: «____» (اِبْنَة + ـِي)", "q_ar": "____", "options": [], "answer": "اِبْنَتِي", "explain_uz": "اِبْنَة + ـِي = اِبْنَتِي (qizim).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "qarindoshlar", "q_ar": "", "options": [], "answer": "أَقَارِب", "explain_uz": "أَقَارِب — qarindoshlar (o'zbekcha 'aqrabo', ق ر ب o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "translate_uz_ar", "q_uz": "qarindoshlar", "q_ar": "", "options": [], "answer": "أَقَارِب", "accept": ["أَقْرِبَاء"], "explain_uz": "أَقَارِب — qarindoshlar (o'zbekcha 'aqrabo', ق ر ب o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "root", "front": "ع و ل", "back": "oila/boquv o'zagi (oila, iyol)", "deck": "msa"},

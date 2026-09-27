@@ -256,6 +256,7 @@
    "q_ar": "حُجَّة",
    "options": [],
    "answer": "dalil",
+   "accept": ["isbot", "asos", "argument", "hujjat"],
    "explain_uz": "حُجَّة — asos, dalil.",
    "audio": "b2/hujja.mp3",
    "root": "",

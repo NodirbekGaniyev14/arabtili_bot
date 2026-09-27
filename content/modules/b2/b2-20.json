@@ -256,6 +256,7 @@
    "q_ar": "عُنْوَان",
    "options": [],
    "answer": "sarlavha",
+   "accept": ["manzil", "nom", "unvon"],
    "explain_uz": "عُنْوَان — sarlavha; manzil.",
    "audio": "b2/unwan.mp3",
    "root": "",

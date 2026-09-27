@@ -262,6 +262,7 @@
    "q_ar": "مَجَلَّة",
    "options": [],
    "answer": "jurnal",
+   "accept": ["majalla"],
    "explain_uz": "مَجَلَّة — jurnal (o'zbekcha 'majalla').",
    "audio": "b2/majalla.mp3",
    "root": "",

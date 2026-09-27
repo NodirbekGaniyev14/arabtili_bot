@@ -81,7 +81,7 @@
   {"type": "fill_blank", "q_uz": "Bo'sh joyni to'ldiring: «البَابُ ____» (eshik eski)", "q_ar": "البَابُ ____", "options": [], "answer": "قَدِيمٌ", "explain_uz": "قَدِيم — eski. Xabar noaniq, tanvin bilan: قَدِيمٌ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ك ب ر» o'zagidan?", "q_ar": "", "options": ["كَبِير", "جَدِيد", "صَغِير"], "answer": "كَبِير", "explain_uz": "«ك ب ر» — kattalik o'zagi: كَبِير (katta), أَكْبَر (eng katta).", "audio": "", "root": "ك ب ر", "pattern": "", "words": []},
   {"type": "order_words", "q_uz": "So'zlardan «Bola baland» gapini tuzing", "q_ar": "", "options": [], "answer": "الوَلَدُ طَوِيلٌ", "explain_uz": "Ismli gap: ega (الوَلَدُ) + xabar (طَوِيلٌ).", "audio": "", "root": "", "pattern": "", "words": ["طَوِيلٌ", "الوَلَدُ"]},
-  {"type": "translate_uz_ar", "q_uz": "chiroyli", "q_ar": "", "options": [], "answer": "جَمِيل", "explain_uz": "جَمِيل — chiroyli (o'zbekcha 'Jamila' ismi shundan).", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "translate_uz_ar", "q_uz": "chiroyli", "q_ar": "", "options": [], "answer": "جَمِيل", "accept": ["حَسَن"], "explain_uz": "جَمِيل — chiroyli (o'zbekcha 'Jamila' ismi shundan).", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "root", "front": "ك ب ر", "back": "kattalik o'zagi (kabir=katta, akbar=eng katta)", "deck": "msa"},

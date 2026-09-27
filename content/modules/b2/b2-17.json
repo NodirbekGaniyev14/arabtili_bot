@@ -247,6 +247,7 @@
    "q_ar": "شَجَاعَة",
    "options": [],
    "answer": "jasorat",
+   "accept": ["mardlik", "shijoat", "botirlik", "dovyuraklik"],
    "explain_uz": "شَجَاعَة — jasorat, shijoat.",
    "audio": "b2/shajaa.mp3",
    "root": "",

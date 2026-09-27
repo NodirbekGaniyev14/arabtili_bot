@@ -302,6 +302,7 @@
    "q_ar": "قِسْط",
    "options": [],
    "answer": "bo'lib to'lash",
+   "accept": ["to'lov", "badal", "bo'lib to'lov", "nasiya", "qism"],
    "explain_uz": "قِسْط — muddatli to'lovning bir qismi.",
    "audio": "b2/qist.mp3",
    "root": "",

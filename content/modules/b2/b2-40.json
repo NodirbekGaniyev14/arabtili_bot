@@ -241,6 +241,7 @@
    "q_ar": "حَنِين",
    "options": [],
    "answer": "sog'inch",
+   "accept": ["sog'inish", "intizorlik", "nostalgiya"],
    "explain_uz": "حَنِين — o'tmishga sog'inch.",
    "audio": "b2/hanin2.mp3",
    "root": "",

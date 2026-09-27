@@ -77,7 +77,7 @@
   {"type": "translate_ar_uz", "q_uz": "", "q_ar": "يَرْجِعُ إِلَى البَيْتِ", "options": [], "answer": "u uyga qaytadi", "explain_uz": "يَرْجِعُ = u qaytadi, إِلَى البَيْت = uyga.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "O'tgandan hozirgiga: «دَخَلَ» → «يَـ____» (u kiradi)", "q_ar": "يَـ____", "options": [], "answer": "دْخُلُ", "explain_uz": "دَخَلَ → يَدْخُلُ (u kiradi).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ع ر ف» o'zagidan?", "q_ar": "", "options": ["يَعْرِفُ", "يَسْمَعُ", "يَنْظُرُ"], "answer": "يَعْرِفُ", "explain_uz": "«ع ر ف» — bilish o'zagi: يَعْرِفُ, مَعْرِفَة (bilim), ma'rifat.", "audio": "", "root": "ع ر ف", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "yo'l", "q_ar": "", "options": [], "answer": "طَرِيق", "explain_uz": "طَرِيق — yo'l (o'zbekcha 'tariqat' shundan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "yo'l", "q_ar": "", "options": [], "answer": "طَرِيق", "accept": ["سَبِيل", "دَرْب"], "explain_uz": "طَرِيق — yo'l (o'zbekcha 'tariqat' shundan).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«كَتَبَ» ning hozirgi zamon shakli?", "q_ar": "", "options": ["يَكْتُبُ", "كَتَبْتُ", "كَاتِب", "مَكْتُوب"], "answer": "يَكْتُبُ", "explain_uz": "O'tgan كَتَبَ → hozirgi يَكْتُبُ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "dictation", "q_uz": "Eshitilgan fe'lni yozing", "q_ar": "", "options": [], "answer": "يَعْرِفُ", "explain_uz": "يَعْرِفُ — u biladi.", "audio": "a1/yarifu.mp3", "root": "", "pattern": "", "words": []}
  ],

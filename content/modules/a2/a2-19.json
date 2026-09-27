@@ -78,11 +78,11 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "II bobning masdar vazni qaysi?", "q_ar": "", "options": ["تَفْعِيل", "إِفْعَال", "تَفَعُّل", "اِسْتِفْعَال"], "answer": "تَفْعِيل", "explain_uz": "II bob masdari: تَفْعِيل (تَعْلِيم).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«عَلَّمَ» (II) ning masdari qaysi?", "q_ar": "", "options": ["تَعْلِيم", "تَعَلُّم", "إِعْلَام", "عِلْم"], "answer": "تَعْلِيم", "explain_uz": "II bob masdari: تَعْلِيم (ta'lim).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "وَسَائِلُ الإِعْلَامِ", "options": [], "answer": "ommaviy axborot vositalari", "explain_uz": "وَسَائِل = vositalar, الإِعْلَام = axborot (IV masdar).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "وَسَائِلُ الإِعْلَامِ", "options": [], "answer": "ommaviy axborot vositalari", "accept": ["axborot vositalari", "OAV", "media", "ommaviy axborot vositasi"], "explain_uz": "وَسَائِل = vositalar, الإِعْلَام = axborot (IV masdar).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "X bobning masdar vazni qaysi?", "q_ar": "", "options": ["اِسْتِفْعَال", "اِفْتِعَال", "إِفْعَال", "تَفْعِيل"], "answer": "اِسْتِفْعَال", "explain_uz": "X bob masdari: اِسْتِفْعَال (اِسْتِعْمَال).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«عِلْم، تَعْلِيم، إِعْلَام» qaysi o'zakdan?", "q_ar": "", "options": ["ع ل م", "ع م ل", "ع و ن"], "answer": "ع ل م", "explain_uz": "Hammasi ع ل م (bilish), turli bob masdarlari.", "audio": "", "root": "ع ل م", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "ilm, bilim", "q_ar": "", "options": [], "answer": "عِلْم", "explain_uz": "عِلْم — I bob masdari (ilm).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "zarur, kerakli", "q_ar": "", "options": [], "answer": "ضَرُورِيّ", "explain_uz": "ضَرُورِيّ — zaruriy.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "translate_uz_ar", "q_uz": "ilm, bilim", "q_ar": "", "options": [], "answer": "عِلْم", "accept": ["مَعْرِفَة"], "explain_uz": "عِلْم — I bob masdari (ilm).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "zarur, kerakli", "q_ar": "", "options": [], "answer": "ضَرُورِيّ", "accept": ["لَازِم"], "explain_uz": "ضَرُورِيّ — zaruriy.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "root", "front": "ع ل م", "back": "bilish — masdar namunalari (ilm/ta'lim/e'lom)", "deck": "msa"},

@@ -77,10 +77,10 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«ikki kitob» qaysi?", "q_ar": "", "options": ["كِتَابَانِ", "كُتُبٌ", "كِتَابٌ", "كِتَابَاتٌ"], "answer": "كِتَابَانِ", "explain_uz": "Ikkilik: ot + ـَانِ = كِتَابَانِ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Ikkilik son uchun raf' holatida qanday qo'shimcha?", "q_ar": "", "options": ["ـَانِ", "ـُونَ", "ـَاتٌ", "ـِينَ"], "answer": "ـَانِ", "explain_uz": "raf' → ـَانِ, nasb/jarr → ـَيْنِ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "وَلَدَانِ", "options": [], "answer": "ikki bola", "explain_uz": "وَلَد + ـَانِ = ikki bola.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "وَلَدَانِ", "options": [], "answer": "ikki bola", "accept": ["ikkita bola", "ikki o'g'il", "ikkita o'g'il", "ikki o'g'il bola", "ikkita o'g'il bola"], "explain_uz": "وَلَد + ـَانِ = ikki bola.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ز و ج» o'zagidan?", "q_ar": "", "options": ["زَوْجَة", "عَيْن", "رِجْل"], "answer": "زَوْجَة", "explain_uz": "«ز و ج» — juft o'zagi: زَوْج (er), زَوْجَة (xotin).", "audio": "", "root": "ز و ج", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "Ikkilik yasang: «بِنْت» → ? (ikki qiz)", "q_ar": "____", "options": [], "answer": "بِنْتَانِ", "explain_uz": "بِنْت + ـَانِ = بِنْتَانِ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "ikki qo'l", "q_ar": "", "options": [], "answer": "يَدَانِ", "explain_uz": "يَد + ـَانِ = يَدَانِ.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "ikki qo'l", "q_ar": "", "options": [], "answer": "يَدَانِ", "accept": ["يَدَيْنِ"], "explain_uz": "يَد + ـَانِ = يَدَانِ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«اثْنَانِ» nima?", "q_ar": "", "options": ["ikki (2 soni)", "birinchi", "ko'p", "yarim"], "answer": "ikki (2 soni)", "explain_uz": "اثْنَانِ — «ikki» soni. Lekin ikkilikda qo'shimchaning o'zi yetarli.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [

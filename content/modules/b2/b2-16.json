@@ -245,6 +245,7 @@
    "q_ar": "مُعَامَلَة",
    "options": [],
    "answer": "muomala",
+   "accept": ["munosabat", "tranzaksiya", "operatsiya"],
    "explain_uz": "مُعَامَلَة — muomala, munosabat.",
    "audio": "b2/muamala.mp3",
    "root": "",

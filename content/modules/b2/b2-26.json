@@ -302,6 +302,7 @@
    "q_ar": "تَكْلِفَة",
    "options": [],
    "answer": "xarajat",
+   "accept": ["narx", "qiymat", "sarf", "sarf-xarajat", "tannarx"],
    "explain_uz": "تَكْلِفَة — tannarx, xarajat.",
    "audio": "b2/taklifa.mp3",
    "root": "",

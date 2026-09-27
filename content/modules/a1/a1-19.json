@@ -75,11 +75,11 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«Sen (ayol) yozasan» qaysi?", "q_ar": "", "options": ["تَكْتُبِينَ", "تَكْتُبُ", "يَكْتُبُ", "أَكْتُبُ"], "answer": "تَكْتُبِينَ", "explain_uz": "أَنْتِ (ayol) → تـ + ـِينَ: تَكْتُبِينَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَيْنَ تَسْكُنُ؟", "options": [], "answer": "qayerda yashaysan", "explain_uz": "أَيْنَ = qayerda, تَسْكُنُ = sen yashaysan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَيْنَ تَسْكُنُ؟", "options": [], "answer": "qayerda yashaysan", "accept": ["qayerda turasan"], "explain_uz": "أَيْنَ = qayerda, تَسْكُنُ = sen yashaysan.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Ayol suhbatdoshga muzori' oxiriga nima qo'shiladi?", "q_ar": "", "options": ["ـِينَ", "ـُونَ", "ـْتِ", "ـَتْ"], "answer": "ـِينَ", "explain_uz": "أَنْتِ → ـِينَ: تَكْتُبِينَ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «س ك ن» o'zagidan?", "q_ar": "", "options": ["يَسْكُنُ", "تَذْهَبُ", "تَعْمَلُ"], "answer": "يَسْكُنُ", "explain_uz": "«س ك ن» — yashash o'zagi: يَسْكُنُ (yashaydi), مَسْكَن (turar joy), sukunat.", "audio": "", "root": "س ك ن", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "Ayolga aylantiring: «أَنْتَ تَذْهَبُ» → «أَنْتِ ____»", "q_ar": "أَنْتِ ____", "options": [], "answer": "تَذْهَبِينَ", "explain_uz": "ـِينَ qo'shiladi: تَذْهَبِينَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "yurt, mamlakat", "q_ar": "", "options": [], "answer": "بَلَد", "explain_uz": "بَلَد — yurt/mamlakat/shahar.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "yurt, mamlakat", "q_ar": "", "options": [], "answer": "بَلَد", "accept": ["وَطَن", "دَوْلَة", "بِلَاد"], "explain_uz": "بَلَد — yurt/mamlakat/shahar.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "order_words", "q_uz": "«Qayerda ishlaysan?» savolini tuzing", "q_ar": "", "options": [], "answer": "أَيْنَ تَعْمَلُ", "explain_uz": "Savol so'zi (أَيْنَ) + fe'l (تَعْمَلُ).", "audio": "", "root": "", "pattern": "", "words": ["تَعْمَلُ", "أَيْنَ"]}
  ],
  "srs_cards": [

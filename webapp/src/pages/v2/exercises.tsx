@@ -6,151 +6,10 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { api, type MicroTestItem } from "../../lib/api";
 import { playAudio } from "../../lib/audio";
 import ArabicKeyboard from "./ArabicKeyboard";
-import { stripHarakat } from "./ArabicText";
+import { arOk, asVerdict, isArabic, latOk, normAr, type Verdict } from "./answerCheck";
 import ReportIssue from "../../components/ReportIssue";
 
 const tg = () => window.Telegram?.WebApp;
-const isArabic = (s: string) => /[؀-ۿ]/.test(s);
-
-/** Alif variantlari (أ إ آ ٱ) → ا: klaviaturada yakka hamzali alif teriladi,
- * hamza imlosi esa yuqori darajalarda o'rgatiladi — shuning uchun tenglashtiramiz. */
-const normAr = (s: string) =>
-  stripHarakat(s)
-    .replace(/ـ/g, "")
-    .replace(/[أإآٱ]/g, "ا")
-    .replace(/[.,؟!·:؛\s]+/g, " ")
-    .trim();
-
-/** Tekshiruv natijasi: `exact=false` — yumshoq qabul (namuna ko'rsatiladi), `note` — imlo izohi. */
-type Verdict = { ok: boolean; exact?: boolean; note?: string };
-const asVerdict = (r: boolean | Verdict): Verdict => (typeof r === "boolean" ? { ok: r, exact: r } : r);
-
-/** ى/ي va ة/ه — klaviaturada eng ko'p adashadigan juftliklar: kechiriladi, lekin izoh beriladi. */
-const normArLoose = (s: string) => normAr(s).replace(/ى/g, "ي").replace(/ة/g, "ه");
-const AR_NOTES: Record<string, string> = {
-  "ىي": "so'z oxirida ى (alif maqsura, nuqtasiz) bo'lishi kerak, ي emas",
-  "يى": "bu yerda ي (ikki nuqtali) bo'lishi kerak, ى emas",
-  "ةه": "so'z oxirida ة (ta marbuta, ikki nuqtali) bo'lishi kerak, ه emas",
-  "هة": "bu yerda ه (nuqtasiz) bo'lishi kerak, ة emas",
-};
-
-const arOk = (answer: string, value: string): Verdict => {
-  const a = normAr(answer);
-  const v = normAr(value);
-  if (a === v) return { ok: true, exact: true };
-  if (!v || normArLoose(a) !== normArLoose(v)) return { ok: false };
-  // Uzunlik teng — farq faqat ى/ي, ة/ه o'rinlarida
-  const notes = new Set<string>();
-  for (let i = 0; i < a.length; i++) {
-    if (a[i] !== v[i]) notes.add(AR_NOTES[a[i] + v[i]] ?? "");
-  }
-  notes.delete("");
-  return { ok: true, exact: false, note: notes.size ? "Imlo: " + [...notes].join("; ") : undefined };
-};
-
-const normLat = (s: string) =>
-  s.toLowerCase().replace(/[''ʼ’‘ʻ`\-_.?!:;«»"]/g, "").replace(/\s+/g, " ").trim();
-
-/** "qalam / ruchka" yoki "ta'til, ruxsat" kabi javoblarda BITTA variant yetarli. */
-const latVariants = (answer: string): string[] => {
-  const out: string[] = [];
-  const push = (s: string) =>
-    s
-      .split(/\s*(?:\/|,|;|\byoki\b)\s*/)
-      .map(normLat)
-      .filter(Boolean)
-      .forEach((v) => out.push(v));
-
-  // Oxirgi qavs — sinonim izohi ("maktab (madrasa)"), u ham TO'G'RI javob.
-  // O'rtadagi qavs esa gapning bo'lagi ("sen (ayol) yozasan") — yakka
-  // o'zi javob emas, shuning uchun faqat oxirgisi variantga aylanadi.
-  const tail = answer.match(/\(([^)]*)\)\s*$/);
-  if (tail) push(tail[1]);
-  push(answer.replace(/\([^)]*\)/g, " ")); // qavssiz asosiy javob
-  push(answer); // qavsi bilan to'liq ko'chirgan bo'lsa ham
-
-  return [...new Set(out)];
-};
-
-/* ── Yumshoq solishtirish (o'zbekcha javob) ──
-   Aynan mos kelmasa ham TO'G'RI: qavs izohi farqi («sen (muannas) yozyapsan» = «sen (ayol) yozasan»),
-   fe'l zamoni (-yapti / -moqda / -adi bir xil — arabcha muzore' ikkalasiga tarjima qilinadi),
-   olmosh tushirilgan («yozasan» = «sen yozasan»), «ular keldi» = «ular keldilar», so'z tartibi,
-   x/h imlosi, harf o'rni almashgan yoki qo'sh harf tushgan («diqat» = «diqqat»).
-   Fe'l shaxsi va inkori (-ma-), o/u kabi ma'no o'zgartiruvchi harflar — kechirilmaydi. */
-const PRONOUNS = new Set(["men", "sen", "u", "biz", "siz", "ular"]);
-const SYNONYMS: Record<string, string> = { muannas: "ayol", muzakkar: "erkak", hamda: "va" };
-const PRES: Record<string, string> = { di: "ti", dilar: "tilar" }; // hozirgi zamon shaxslari: man san ti miz siz tilar
-const PAST: Record<string, string> = { man: "m", san: "ng", miz: "k", siz: "ngiz" }; // -gan shaxslari → -di shaxslari
-
-/** Fe'lni «o'zak|zamon|shaxs» ko'rinishiga keltiradi; fe'l bo'lmasa so'z o'zgarmaydi. */
-const verbCanon = (w: string): string => {
-  let m = w.match(/^(.{2,}?)(?:yap|moqda)(man|san|ti|di|miz|siz|tilar|dilar)?$/); // yozyapti, yozmoqda(man)
-  if (m) return `${m[1]}|hoz|${PRES[m[2] ?? "ti"] ?? m[2] ?? "ti"}`;
-  m = w.match(/^(.{2,}?)ma(di|dim|ding|dik|dingiz|dilar)$/); // o'tgan zamon inkori: bormadi
-  if (m) return `${m[1]}|otgma|${m[2].slice(2)}`;
-  m = w.match(/^(.{2,}?)[ay](man|san|di|miz|siz|dilar)$/); // hozirgi-kelasi: yozadi, o'qiyman, bormaydi
-  if (m) return `${m[1]}|hoz|${PRES[m[2]] ?? m[2]}`;
-  m = w.match(/^(.{2,}?)di(m|ng|k|ngiz|lar)?$/); // o'tgan: yozdi, yozdim
-  if (m) return `${m[1]}|otg|${m[2] ?? ""}`;
-  m = w.match(/^(.{2,}?)(?:gan|kan|qan)(man|san|miz|siz|lar)?$/); // yozgan(man) = yozdi(m)
-  if (m) return `${m[1]}|otg|${m[2] ? PAST[m[2]] ?? m[2] : ""}`;
-  return w;
-};
-
-const canonTokens = (s: string): string[] => {
-  const t = s
-    .replace(/\([^)]*\)/g, " ")
-    .split(/\s+/)
-    .filter(Boolean)
-    .map((w) => verbCanon((SYNONYMS[w] ?? w).replace(/x/g, "h")));
-  // «ular» bo'lsa 3-shaxs birlik fe'l ko'plikka tenglashadi (moslashuv ixtiyoriy)
-  return t.includes("ular")
-    ? t.map((w) => (w.endsWith("|otg|") ? w + "lar" : w.endsWith("|hoz|ti") ? w + "lar" : w))
-    : t;
-};
-
-/** Imlo xatosi: qo'shni harflar o'rni almashgan, yoki qo'sh harf bitta yozilgan / ortiqcha takrorlangan. */
-const typoClose = (x: string, y: string): boolean => {
-  if (x.length === y.length) {
-    let i = 0;
-    while (i < x.length && x[i] === y[i]) i++;
-    return i < x.length - 1 && x[i] === y[i + 1] && x[i + 1] === y[i] && x.slice(i + 2) === y.slice(i + 2);
-  }
-  if (Math.abs(x.length - y.length) !== 1) return false;
-  const [long, short] = x.length > y.length ? [x, y] : [y, x];
-  let i = 0;
-  while (i < short.length && long[i] === short[i]) i++;
-  return long.slice(i + 1) === short.slice(i) && (long[i] === long[i + 1] || (i > 0 && long[i] === long[i - 1]));
-};
-
-const wordClose = (x: string, y: string): boolean =>
-  x === y || (!x.includes("|") && !y.includes("|") && x.length >= 4 && typoClose(x, y));
-
-const seqClose = (a: string[], b: string[]) => a.length === b.length && a.every((w, i) => wordClose(w, b[i]));
-
-const tokensMatch = (a: string[], b: string[]): boolean => {
-  // Olmosh faqat bir tomonda bo'lsa — tushirilgan deb hisoblanadi; ikkalasida bo'lsa mos kelishi shart
-  const pa = a.some((w) => PRONOUNS.has(w));
-  const pb = b.some((w) => PRONOUNS.has(w));
-  if (pa !== pb) {
-    const sa = a.filter((w) => !PRONOUNS.has(w));
-    const sb = b.filter((w) => !PRONOUNS.has(w));
-    if (sa.length && sb.length) [a, b] = [sa, sb];
-  }
-  return seqClose(a, b) || seqClose([...a].sort(), [...b].sort());
-};
-
-const latOk = (answer: string, value: string): Verdict => {
-  const nv = normLat(value);
-  if (!nv) return { ok: false };
-  const variants = latVariants(answer);
-  if (variants.includes(nv)) return { ok: true, exact: true };
-  const vt = canonTokens(nv);
-  const ok = vt.length > 0 && variants.some((v) => tokensMatch(canonTokens(v), vt));
-  return ok ? { ok: true, exact: false } : { ok: false };
-};
-
 /** harakat mashqi: harakatlar solishtiriladi, lekin alif varianti va bo'shliq farqi kechiriladi. */
 /* ── harakat mashqi (#F74): so'z harflari tayyor, o'quvchi faqat harakat qo'yadi ── */
 
@@ -226,6 +85,7 @@ export function HarakatEx({
   explain,
   onDone,
   onWrong,
+  onAnswer,
 }: {
   prompt: string;
   answer: string;
@@ -233,6 +93,8 @@ export function HarakatEx({
   explain?: string;
   onDone: (ok: boolean) => void;
   onWrong?: (given: string) => void;
+  /** K27: o'quvchi javobi — «Xatolik bormi?» xabariga biriktiriladi */
+  onAnswer?: (given: string) => void;
 }) {
   const target = useMemo(() => splitHarakat(answer), [answer]);
   const [slots, setSlots] = useState<HarakatSlot[]>(() => target.map((s) => ({ base: s.base, marks: "" })));
@@ -261,6 +123,7 @@ export function HarakatEx({
   const submit = () => {
     const v = harakatVerdict(slots, target);
     setVerdict(v);
+    onAnswer?.(joinHarakat(slots));
     if (!v.ok) onWrong?.(joinHarakat(slots));
     tg()?.HapticFeedback?.notificationOccurred(v.ok ? "success" : "error");
   };
@@ -430,6 +293,7 @@ function OptionsEx({
   explain,
   arabicOptions,
   onDone,
+  onAnswer,
 }: {
   prompt: string;
   arabicBig?: string;
@@ -439,6 +303,7 @@ function OptionsEx({
   explain?: string;
   arabicOptions?: boolean;
   onDone: (ok: boolean) => void;
+  onAnswer?: (given: string) => void;
 }) {
   const shuffled = useMemo(
     () => [...options].sort(() => Math.random() - 0.5),
@@ -450,6 +315,7 @@ function OptionsEx({
   const pick = (opt: string) => {
     if (picked !== null) return;
     setPicked(opt);
+    onAnswer?.(opt);
     tg()?.HapticFeedback?.notificationOccurred(opt === answer ? "success" : "error");
   };
 
@@ -517,6 +383,7 @@ function InputEx({
   explain,
   onDone,
   onWrong,
+  onAnswer,
 }: {
   prompt: string;
   arabicBig?: string;
@@ -530,6 +397,7 @@ function InputEx({
   onDone: (ok: boolean) => void;
   /** #F70: rad etilgan javob jurnalga (admin /javoblar) */
   onWrong?: (given: string) => void;
+  onAnswer?: (given: string) => void;
 }) {
   const [value, setValue] = useState("");
   const [verdict, setVerdict] = useState<Verdict | null>(null);
@@ -543,6 +411,7 @@ function InputEx({
   const submit = () => {
     const v = asVerdict(check(value));
     setVerdict(v);
+    onAnswer?.(value);
     if (!v.ok) onWrong?.(value);
     tg()?.HapticFeedback?.notificationOccurred(v.ok ? "success" : "error");
   };
@@ -624,9 +493,11 @@ function InputEx({
 function OrderWordsEx({
   item,
   onDone,
+  onAnswer,
 }: {
   item: MicroTestItem;
   onDone: (ok: boolean) => void;
+  onAnswer?: (given: string) => void;
 }) {
   const bank = useMemo(
     () => item.words.map((w, i) => ({ w, i })).sort(() => Math.random() - 0.5),
@@ -642,6 +513,7 @@ function OrderWordsEx({
   const submit = () => {
     const ok = normAr(built) === normAr(answerText);
     setChecked(ok);
+    onAnswer?.(built);
     tg()?.HapticFeedback?.notificationOccurred(ok ? "success" : "error");
   };
 
@@ -787,6 +659,8 @@ export function QuizRunner({
   onProgress?: (frac: number) => void;
 }) {
   const [idx, setIdx] = useState(0);
+  /** K27: o'quvchining shu savoldagi javobi — «Xatolik bormi?» xabariga biriktiriladi */
+  const [given, setGiven] = useState("");
   const results = useRef<boolean[]>([]);
   const wrong = useRef<string[]>([]);
 
@@ -799,6 +673,7 @@ export function QuizRunner({
   if (!item) return null;
 
   const done = (ok: boolean) => {
+    setGiven("");
     results.current.push(ok);
     if (!ok) {
       const w = isArabic(item.answer) ? item.answer : isArabic(item.q_ar) ? item.q_ar : "";
@@ -829,18 +704,20 @@ export function QuizRunner({
       <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft mb-1">
         {label} · {idx + 1}/{items.length}
       </div>
-      {renderExercise(item, key, done, rootPool, report)}
-      {/* K26: har savol ostida — adminga savol surati bilan xabar */}
+      {renderExercise(item, key, done, rootPool, report, setGiven)}
+      {/* K26: har savol ostida — adminga savol surati (+ K27: o'quvchi javobi) bilan xabar */}
       <ReportIssue
         key={`issue-${key}`}
         className="mt-3"
         ctx={{
           context: (context || label).slice(0, 64),
           label: `${label} · ${idx + 1}/${items.length}`,
+          ex_type: item.type,
           q: item.q_uz || item.q_ar,
           q_ar: item.q_ar,
           options: item.options,
           answer: item.answer,
+          given,
           audio: item.audio,
         }}
       />
@@ -853,8 +730,11 @@ function renderExercise(
   key: string,
   onDone: (ok: boolean) => void,
   rootPool: string[],
-  onWrong?: (given: string) => void
+  onWrong?: (given: string) => void,
+  onAnswer?: (given: string) => void
 ) {
+  // K27: kontentdagi qo'shimcha to'g'ri javoblar + savol matni («artikl», «tanvin» — qat'iy)
+  const opts = { accept: item.accept ?? [], prompt: item.q_uz };
   // Klaviatura talab qiladigan turlar (fill_blank / harakat / dictation /
   // translate_uz_ar) ba'zan TAYYOR VARIANTLAR bilan yoziladi ("...ni tanlang").
   // Bunday savolni yozdirish o'rniga variantli test qilib ko'rsatamiz —
@@ -872,6 +752,7 @@ function renderExercise(
         explain={item.explain_uz}
         arabicOptions={item.options.some(isArabic)}
         onDone={onDone}
+        onAnswer={onAnswer}
       />
     );
   }
@@ -888,6 +769,7 @@ function renderExercise(
           answer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}
+          onAnswer={onAnswer}
         />
       );
     case "match_root": {
@@ -904,6 +786,7 @@ function renderExercise(
           explain={item.explain_uz}
           arabicOptions
           onDone={onDone}
+          onAnswer={onAnswer}
         />
       );
     }
@@ -921,6 +804,7 @@ function renderExercise(
           explain={item.explain_uz}
           arabicOptions
           onDone={onDone}
+          onAnswer={onAnswer}
         />
       );
     }
@@ -935,10 +819,11 @@ function renderExercise(
           arabicBig={item.q_ar}
           arabicInput={arabicAnswer}
           showHarakatKeys={false}
-          check={(v) => (arabicAnswer ? arOk(item.answer, v) : latOk(item.answer, v))}
+          check={(v) => (arabicAnswer ? arOk(item.answer, v, opts) : latOk(item.answer, v, opts))}
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}
+          onAnswer={onAnswer}
           onWrong={onWrong}
         />
       );
@@ -950,10 +835,11 @@ function renderExercise(
           prompt={`Arabchaga tarjima qiling: «${item.q_uz}»`}
           arabicInput
           showHarakatKeys={false}
-          check={(v) => arOk(item.answer, v)}
+          check={(v) => arOk(item.answer, v, { ...opts, lenient: true })}
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}
+          onAnswer={onAnswer}
           onWrong={onWrong}
         />
       );
@@ -965,10 +851,11 @@ function renderExercise(
           arabicBig={item.q_ar}
           audio={item.audio || undefined}
           arabicInput={false}
-          check={(v) => latOk(item.answer, v)}
+          check={(v) => latOk(item.answer, v, opts)}
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}
+          onAnswer={onAnswer}
           onWrong={onWrong}
         />
       );
@@ -981,10 +868,11 @@ function renderExercise(
           autoplay
           arabicInput
           showHarakatKeys={false}
-          check={(v) => arOk(item.answer, v)}
+          check={(v) => arOk(item.answer, v, { accept: item.accept ?? [] })}
           correctAnswer={item.answer}
           explain={item.explain_uz}
           onDone={onDone}
+          onAnswer={onAnswer}
           onWrong={onWrong}
         />
       );
@@ -998,11 +886,12 @@ function renderExercise(
           audio={item.audio || undefined}
           explain={item.explain_uz}
           onDone={onDone}
+          onAnswer={onAnswer}
           onWrong={onWrong}
         />
       );
     case "order_words":
-      return <OrderWordsEx key={key} item={item} onDone={onDone} />;
+      return <OrderWordsEx key={key} item={item} onDone={onDone} onAnswer={onAnswer} />;
     case "shadowing":
       return <ShadowingEx key={key} item={item} onDone={onDone} />;
     default:

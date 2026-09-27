@@ -76,11 +76,11 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«Ular (erkak) bordilar» qaysi?", "q_ar": "", "options": ["ذَهَبُوا", "ذَهَبْنَا", "ذَهَبْتُمْ", "ذَهَبَ"], "answer": "ذَهَبُوا", "explain_uz": "هُمْ → ـُوا: ذَهَبُوا (alif yozuvda bor, talaffuzsiz).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الطُّلَّابُ دَرَسُوا", "options": [], "answer": "talabalar o'qidilar", "explain_uz": "الطُّلَّاب = talabalar, دَرَسُوا = ular o'qidilar.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الطُّلَّابُ دَرَسُوا", "options": [], "answer": "talabalar o'qidilar", "accept": ["talabalar o'qishdi", "talabalar o'qidi", "talabalar dars qildilar", "talabalar dars qilishdi", "o'quvchilar o'qidilar", "o'quvchilar o'qishdi"], "explain_uz": "الطُّلَّاب = talabalar, دَرَسُوا = ular o'qidilar.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«Sizlar yozdingiz» qaysi?", "q_ar": "", "options": ["كَتَبْتُمْ", "كَتَبُوا", "كَتَبْتُ", "كَتَبْتَ"], "answer": "كَتَبْتُمْ", "explain_uz": "أَنْتُمْ (sizlar) → ـْتُمْ: كَتَبْتُمْ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «و ص ل» o'zagidan?", "q_ar": "", "options": ["وَصَلَ", "وَاجِب", "لَعِبَ"], "answer": "وَصَلَ", "explain_uz": "«و ص ل» — yetib borish o'zagi: وَصَلَ (keldi), وُصُول (kelish).", "audio": "", "root": "و ص ل", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "To'ldiring: «الأَوْلادُ ____» (bolalar o'ynadilar)", "q_ar": "الأَوْلادُ ____", "options": [], "answer": "لَعِبُوا", "explain_uz": "هُمْ → ـُوا: لَعِبُوا.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "odamlar, xalq", "q_ar": "", "options": [], "answer": "النَّاس", "explain_uz": "النَّاس — odamlar/xalq (ko'plik ma'noda).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "odamlar, xalq", "q_ar": "", "options": [], "answer": "النَّاس", "accept": ["أُنَاس", "شَعْب"], "explain_uz": "النَّاس — odamlar/xalq (ko'plik ma'noda).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "order_words", "q_uz": "«Talabalar yozdilar» gapini tuzing", "q_ar": "", "options": [], "answer": "الطُّلَّابُ كَتَبُوا", "explain_uz": "Ega (الطُّلَّابُ) + ko'plik fe'l (كَتَبُوا).", "audio": "", "root": "", "pattern": "", "words": ["كَتَبُوا", "الطُّلَّابُ"]}
  ],
  "srs_cards": [

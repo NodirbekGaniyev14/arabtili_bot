@@ -199,6 +199,7 @@
    "q_ar": "قَلَم",
    "options": [],
    "answer": "qalam",
+   "accept": ["ruchka"],
    "explain_uz": "O'zbekcha \"qalam\" so'zi aynan shundan.",
    "audio": "",
    "root": "",

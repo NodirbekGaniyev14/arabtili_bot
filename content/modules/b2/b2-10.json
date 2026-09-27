@@ -251,6 +251,7 @@
    "q_ar": "مُؤْتَمَر",
    "options": [],
    "answer": "konferensiya",
+   "accept": ["anjuman", "kongress", "qurultoy"],
    "explain_uz": "مُؤْتَمَر — anjuman, konferensiya.",
    "audio": "b2/mutamar.mp3",
    "root": "",

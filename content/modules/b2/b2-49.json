@@ -245,6 +245,7 @@
    "q_ar": "تَخْطِيط",
    "options": [],
    "answer": "rejalashtirish",
+   "accept": ["reja tuzish", "loyihalash", "planlashtirish"],
    "explain_uz": "تَخْطِيط — reja tuzish.",
    "audio": "b2/takhtit.mp3",
    "root": "",

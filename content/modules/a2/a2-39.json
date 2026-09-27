@@ -83,7 +83,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«halol» qaysi?", "q_ar": "", "options": ["حَلَال", "حَارّ", "طَازَج", "مَشْوِيّ"], "answer": "حَلَال", "explain_uz": "حَلَال — halol; savol: هَل هَذَا حَلَالٌ؟", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الفَاتُورَة لَو سَمَحْت", "options": [], "answer": "hisob iltimos", "explain_uz": "فَاتُورَة = hisob/chek, لَو سَمَحْت = iltimos.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الفَاتُورَة لَو سَمَحْت", "options": [], "answer": "hisob iltimos", "accept": ["iltimos hisobni bering", "hisobni bering", "chek iltimos", "hisobni olib keling"], "explain_uz": "فَاتُورَة = hisob/chek, لَو سَمَحْت = iltimos.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Saudiya milliy taomi (guruch+go'sht) qaysi?", "q_ar": "", "options": ["كَبْسَة", "مَشْوِيّ", "وَجْبَة", "صَحْن"], "answer": "كَبْسَة", "explain_uz": "كَبْسَة — Saudiya milliy guruch-go'shtli taomi.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ط ب خ» o'zagidan?", "q_ar": "", "options": ["مَطْبَخ", "طَبَق", "نَادِل"], "answer": "مَطْبَخ", "explain_uz": "«ط ب خ» — pishirish o'zagi: مَطْبَخ (oshxona), طَبَّاخ (oshpaz).", "audio": "", "root": "ط ب خ", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "ofitsiant", "q_ar": "", "options": [], "answer": "نَادِل", "explain_uz": "نَادِل — ofitsiant.", "audio": "", "root": "", "pattern": "", "words": []},

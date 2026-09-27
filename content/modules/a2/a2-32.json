@@ -76,7 +76,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«كَبِير» ning solishtirma darajasi?", "q_ar": "", "options": ["أَكْبَر", "كَبِيرَة", "كِبَار", "مَكْبُور"], "answer": "أَكْبَر", "explain_uz": "Solishtirma: أَفْعَل vazni — أَكْبَر.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الصِّحَّةُ أَفْضَلُ مِنَ المَالِ", "options": [], "answer": "sog'liq puldan afzal", "explain_uz": "أَفْضَل مِن = ...dan afzal.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الصِّحَّةُ أَفْضَلُ مِنَ المَالِ", "options": [], "answer": "sog'liq puldan afzal", "accept": ["salomatlik boylikdan afzal", "sog'liq boylikdan afzal", "salomatlik puldan afzal", "sog'liq puldan yaxshiroq", "sog'liq moldan afzal", "salomatlik moldan afzal"], "explain_uz": "أَفْضَل مِن = ...dan afzal.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«...dan kattaroq» uchun qaysi so'z kerak?", "q_ar": "", "options": ["مِن", "إِلَى", "عَلَى", "فِي"], "answer": "مِن", "explain_uz": "أَفْعَل + مِن: أَكْبَر مِن (...dan kattaroq).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«أَحْسَن، حُسْن» qaysi o'zakdan?", "q_ar": "", "options": ["ح س ن", "ح س ب", "ح ص ن"], "answer": "ح س ن", "explain_uz": "«ح س ن» — go'zallik o'zagi: ahsan, husn, tahsin, Hasan.", "audio": "", "root": "ح س ن", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«eng chiroyli kun» qaysi?", "q_ar": "", "options": ["أَجْمَلُ يَوْمٍ", "يَوْمٌ جَمِيلٌ", "أَجْمَلَ يَوْمًا", "الجَمِيلُ يَوْمٌ"], "answer": "أَجْمَلُ يَوْمٍ", "explain_uz": "Orttirma: أَفْعَل + idafa (أَجْمَلُ يَوْمٍ).", "audio": "", "root": "", "pattern": "", "words": []},

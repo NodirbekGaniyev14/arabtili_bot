@@ -247,6 +247,7 @@
    "q_ar": "كُتَيِّب",
    "options": [],
    "answer": "buklet",
+   "accept": ["kitobcha", "risola", "broshyura"],
    "explain_uz": "كُتَيِّب — kitobcha, buklet.",
    "audio": "b2/kutayyib.mp3",
    "root": "",

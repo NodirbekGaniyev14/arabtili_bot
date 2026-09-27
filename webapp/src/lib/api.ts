@@ -455,6 +455,8 @@ export interface IssueReport {
   kind: IssueKind;
   context?: string;
   label?: string;
+  /** K27: mashq turi (mcq, translate_ar_uz…) — admin yozma javobni variantlidan ajratadi */
+  ex_type?: string;
   q?: string;
   q_ar?: string;
   options?: string[];
@@ -785,6 +787,8 @@ export interface MicroTestItem {
   root: string;
   pattern: string;
   words: string[];
+  /** K27: qo'shimcha to'g'ri javoblar (yozma tarjima) — namuna baribir `answer` */
+  accept?: string[];
 }
 
 /** A2+ darslardagi bosqichma-bosqich o'qish matni (content/reading/*.json). */

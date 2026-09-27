@@ -257,6 +257,7 @@
    "q_ar": "أَكَّدَ",
    "options": [],
    "answer": "tasdiqladi",
+   "accept": ["ta'kidladi", "uqtirdi"],
    "explain_uz": "أَكَّدَ — ta'kidladi, tasdiqladi (II bob).",
    "audio": "b2/akkada.mp3",
    "root": "",

@@ -306,6 +306,7 @@
    "q_ar": "بَيَانَات",
    "options": [],
    "answer": "ma'lumotlar",
+   "accept": ["ma'lumot", "raqamlar"],
    "explain_uz": "بَيَانَات — data, ma'lumotlar.",
    "audio": "b2/bayanat.mp3",
    "root": "",

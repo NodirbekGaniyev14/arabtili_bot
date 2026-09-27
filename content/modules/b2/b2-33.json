@@ -300,6 +300,7 @@
    "q_ar": "وَثِيقَة",
    "options": [],
    "answer": "hujjat",
+   "accept": ["vasiqa", "dokument"],
    "explain_uz": "وَثِيقَة — rasmiy hujjat.",
    "audio": "b2/wathiqa.mp3",
    "root": "",

@@ -269,6 +269,7 @@
    "q_ar": "عَجِيب",
    "options": [],
    "answer": "ajoyib",
+   "accept": ["ajib", "g'aroyib", "qiziq", "hayratlanarli", "ajablanarli"],
    "explain_uz": "عَجِيب — ajoyib, hayratlanarli.",
    "audio": "b2/ajib.mp3",
    "root": "",

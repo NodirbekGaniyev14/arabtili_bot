@@ -76,9 +76,9 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«مَمْنُوع» ma'nosi?", "q_ar": "", "options": ["taqiqlangan", "ochiq", "bepul", "yopiq"], "answer": "taqiqlangan", "explain_uz": "مَمْنُوع — taqiqlangan (o'zbekcha 'mamnu'').", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«خُرُوج» ma'nosi?", "q_ar": "", "options": ["chiqish", "kirish", "ochiq", "ogohlantirish"], "answer": "chiqish", "explain_uz": "خُرُوج — chiqish; دُخُول — kirish.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الدُّخُولُ مَجَّانِيٌّ", "options": [], "answer": "kirish bepul", "explain_uz": "دُخُول = kirish, مَجَّانِيّ = bepul.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الدُّخُولُ مَجَّانِيٌّ", "options": [], "answer": "kirish bepul", "accept": ["kirish tekin", "kirish pulsiz"], "explain_uz": "دُخُول = kirish, مَجَّانِيّ = bepul.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«مَمْنُوع» qaysi o'zakdan?", "q_ar": "", "options": ["م ن ع", "م ن ح", "ن م ع"], "answer": "م ن ع", "explain_uz": "«م ن ع» — taqiqlash o'zagi: mamnu', man', imtino.", "audio": "", "root": "م ن ع", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "yopiq", "q_ar": "", "options": [], "answer": "مُغْلَق", "explain_uz": "مُغْلَق — yopiq; مَفْتُوح — ochiq.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "yopiq", "q_ar": "", "options": [], "answer": "مُغْلَق", "accept": ["مُقْفَل"], "explain_uz": "مُغْلَق — yopiq; مَفْتُوح — ochiq.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "ichimliklar", "q_ar": "", "options": [], "answer": "مَشْرُوبَات", "explain_uz": "مَشْرُوبَات — ichimliklar (ش ر ب o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Real belgilar odatda qanday yoziladi?", "q_ar": "", "options": ["harakatsiz", "to'liq harakat bilan", "faqat lotinda", "faqat rasm bilan"], "answer": "harakatsiz", "explain_uz": "Real matnlar harakatsiz — shakl va kontekstdan o'qiladi.", "audio": "", "root": "", "pattern": "", "words": []}
  ],

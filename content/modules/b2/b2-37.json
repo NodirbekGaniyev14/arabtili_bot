@@ -240,6 +240,7 @@
    "q_ar": "اِقْتِبَاس",
    "options": [],
    "answer": "iqtibos",
+   "accept": ["ko'chirma", "sitata", "keltirma"],
    "explain_uz": "اِقْتِبَاس — keltirilgan gap.",
    "audio": "b2/iqtibas.mp3",
    "root": "",

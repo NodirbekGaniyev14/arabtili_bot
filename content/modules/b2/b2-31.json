@@ -301,6 +301,7 @@
    "q_ar": "مُنَاخ",
    "options": [],
    "answer": "iqlim",
+   "accept": ["muhit", "sharoit"],
    "explain_uz": "مُنَاخ — iqlim (ob-havo emas).",
    "audio": "b2/munakh.mp3",
    "root": "",

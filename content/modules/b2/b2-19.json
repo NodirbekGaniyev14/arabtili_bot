@@ -246,6 +246,7 @@
    "q_ar": "كَرَم",
    "options": [],
    "answer": "saxovat",
+   "accept": ["karam", "saxiylik", "himmat"],
    "explain_uz": "كَرَم — saxovat, karam.",
    "audio": "b2/karam.mp3",
    "root": "",

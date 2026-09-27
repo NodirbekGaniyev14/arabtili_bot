@@ -86,7 +86,7 @@
   {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَيْنَ الجُمْرُكُ؟", "options": [], "answer": "bojxona qayerda", "explain_uz": "أَيْنَ = qayerda, جُمْرُك = bojxona.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Hijoziyda «sumka» qaysi?", "q_ar": "", "options": ["شَنْطَة", "حَقِيبَة", "بَوَّابَة", "صَالَة"], "answer": "شَنْطَة", "explain_uz": "Hijoziy: شَنْطَة (rasmiy: حَقِيبَة).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «س ف ر» o'zagidan?", "q_ar": "", "options": ["جَوَازُ السَّفَر", "جُمْرُك", "صَالَة"], "answer": "جَوَازُ السَّفَر", "explain_uz": "«س ف ر» — safar o'zagi: جواز السفر, musofir, safar.", "audio": "", "root": "س ف ر", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "viza", "q_ar": "", "options": [], "answer": "تَأْشِيرَة", "explain_uz": "تَأْشِيرَة — viza.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "viza", "q_ar": "", "options": [], "answer": "تَأْشِيرَة", "accept": ["فِيزَا"], "explain_uz": "تَأْشِيرَة — viza.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«kelish zali» qaysi?", "q_ar": "", "options": ["صَالَةُ الوُصُول", "صَالَةُ المُغَادَرَة", "بَوَّابَة", "جُمْرُك"], "answer": "صَالَةُ الوُصُول", "explain_uz": "وُصُول — kelish; مُغَادَرَة — jo'nash.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "order_words", "q_uz": "«Pasport, iltimos» iborasini tuzing", "q_ar": "", "options": [], "answer": "الجَوَاز لَو سَمَحْت", "explain_uz": "الجَوَاز (pasport) + لَو سَمَحْت (iltimos).", "audio": "", "root": "", "pattern": "", "words": ["لَو سَمَحْت", "الجَوَاز"]}
  ],

@@ -74,10 +74,10 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«خَرَجَ» ning «men» shakli?", "q_ar": "", "options": ["خَرَجْتُ", "خَرَجْتَ", "خَرَجْنَا", "خَرَجُوا"], "answer": "خَرَجْتُ", "explain_uz": "أَنَا → ـْتُ: خَرَجْتُ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "رَجَعُوا إِلَى البَيْتِ", "options": [], "answer": "ular uyga qaytdilar", "explain_uz": "رَجَعُوا = ular qaytdilar, إِلَى البَيْت = uyga.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "رَجَعُوا إِلَى البَيْتِ", "options": [], "answer": "ular uyga qaytdilar", "accept": ["ular uyga qaytishdi", "ular uyga qaytib kelishdi", "ular uyga qaytib keldilar"], "explain_uz": "رَجَعُوا = ular qaytdilar, إِلَى البَيْت = uyga.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "To'ldiring: «نَحْنُ ____ المِفْتَاحَ» (biz kalitni topdik)", "q_ar": "نَحْنُ ____ المِفْتَاحَ", "options": [], "answer": "وَجَدْنَا", "explain_uz": "نَحْنُ → ـْنَا: وَجَدْنَا.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «د خ ل» o'zagidan?", "q_ar": "", "options": ["دَخَلَ", "خَرَجَ", "رَجَعَ"], "answer": "دَخَلَ", "explain_uz": "«د خ ل» — kirish o'zagi: دَخَلَ (kirdi), مَدْخَل (kirish joyi).", "audio": "", "root": "د خ ل", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "u qaradi", "q_ar": "", "options": [], "answer": "نَظَرَ", "explain_uz": "نَظَرَ — u qaradi (ن ظ ر o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "u qaradi", "q_ar": "", "options": [], "answer": "نَظَرَ", "accept": ["شَاهَدَ"], "explain_uz": "نَظَرَ — u qaradi (ن ظ ر o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«عَرَفُوا» qaysi shaxs?", "q_ar": "", "options": ["هُمْ (ular)", "أَنَا (men)", "نَحْنُ (biz)", "هِيَ (u-ayol)"], "answer": "هُمْ (ular)", "explain_uz": "ـُوا qo'shimchasi — هُمْ (ular): عَرَفُوا (ular bildilar).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "dictation", "q_uz": "Eshitilgan fe'lni yozing", "q_ar": "", "options": [], "answer": "دَخَلَ", "explain_uz": "دَخَلَ — u kirdi.", "audio": "a1/dakhala.mp3", "root": "", "pattern": "", "words": []}
  ],

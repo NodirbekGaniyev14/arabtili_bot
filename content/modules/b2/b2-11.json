@@ -268,6 +268,7 @@
    "q_ar": "مُعْتَلّ",
    "options": [],
    "answer": "illatli",
+   "accept": ["mu'tal", "mu'tall", "zaif", "illatli fe'l"],
    "explain_uz": "مُعْتَلّ — o'zagida و/ي bo'lgan fe'l.",
    "audio": "b2/mutall.mp3",
    "root": "",

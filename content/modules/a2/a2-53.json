@@ -79,7 +79,7 @@
   {"type": "match_root", "q_uz": "«شَهَادَة، شَاهِد» qaysi o'zakdan?", "q_ar": "", "options": ["ش ه د", "ش ه ر", "ش د د"], "answer": "ش ه د", "explain_uz": "«ش ه د» — guvohlik o'zagi: shohid, shahodat, mashhad.", "audio": "", "root": "ش ه د", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«كُتِبَ» qaysi nisbat?", "q_ar": "", "options": ["majhul (passiv)", "ma'lum (aktiv)", "amr", "masdar"], "answer": "majhul (passiv)", "explain_uz": "كُتِبَ — majhul (1-harf damma, o'rta kasra).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "sertifikat, guvohnoma", "q_ar": "", "options": [], "answer": "شَهَادَة", "explain_uz": "شَهَادَة — sertifikat (imtihondan keyin olinadi).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "daraja, saviya", "q_ar": "", "options": [], "answer": "مُسْتَوَى", "explain_uz": "مُسْتَوَى — daraja (A2 mustawā).", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "translate_uz_ar", "q_uz": "daraja, saviya", "q_ar": "", "options": [], "answer": "مُسْتَوَى", "accept": ["دَرَجَة"], "explain_uz": "مُسْتَوَى — daraja (A2 mustawā).", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "root", "front": "ش ه د", "back": "guvohlik o'zagi (shohid, shahodat, mashhad)", "deck": "msa"},

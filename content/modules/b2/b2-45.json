@@ -251,6 +251,7 @@
    "q_ar": "جَدَل",
    "options": [],
    "answer": "bahs",
+   "accept": ["munozara", "tortishuv", "jadal", "mubohasa"],
    "explain_uz": "جَدَل — munozara, bahs.",
    "audio": "b2/jadal.mp3",
    "root": "",

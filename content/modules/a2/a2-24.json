@@ -77,11 +77,11 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«قَالَ» ning hozirgi zamoni qaysi?", "q_ar": "", "options": ["يَقُولُ", "يَقَالُ", "يَقْوُلُ", "قَوَلَ"], "answer": "يَقُولُ", "explain_uz": "Ajvaf — hozirgida asl و qaytadi: يَقُولُ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Ajvaf fe'lda o'tgan zamonda o'rta harf nimaga aylanadi?", "q_ar": "", "options": ["alif (ا)", "و", "ي", "hamza"], "answer": "alif (ا)", "explain_uz": "O'tganda o'rta و/ي → ا: قَالَ, بَاعَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "زَارَ المَدِينَةَ", "options": [], "answer": "shaharni ziyorat qildi", "explain_uz": "زَارَ (ajvaf) = ziyorat qildi, المَدِينَة = shahar.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "زَارَ المَدِينَةَ", "options": [], "answer": "shaharni ziyorat qildi", "accept": ["shaharga tashrif buyurdi", "Madinani ziyorat qildi", "Madinaga tashrif buyurdi"], "explain_uz": "زَارَ (ajvaf) = ziyorat qildi, المَدِينَة = shahar.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«كَانَ، مَكَان» qaysi o'zakdan?", "q_ar": "", "options": ["ك و ن", "ك ت ب", "ك ب ر"], "answer": "ك و ن", "explain_uz": "«ك و ن» — bo'lish o'zagi: kana, makon, kavn.", "audio": "", "root": "ك و ن", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "Hozirgi zamon: «بَاعَ» → «يَـ___» (sotadi)", "q_ar": "يَـ___", "options": [], "answer": "بِيعُ", "explain_uz": "ي qaytadi: يَبِيعُ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "uxladi", "q_ar": "", "options": [], "answer": "نَامَ", "explain_uz": "نَامَ (ajvaf, ن و م) — uxladi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "qaytdi", "q_ar": "", "options": [], "answer": "عَادَ", "explain_uz": "عَادَ (ajvaf, ع و د) — qaytdi.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "translate_uz_ar", "q_uz": "qaytdi", "q_ar": "", "options": [], "answer": "عَادَ", "accept": ["رَجَعَ"], "explain_uz": "عَادَ (ajvaf, ع و د) — qaytdi.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "root", "front": "ك و ن", "back": "bo'lish o'zagi (kana=edi, makon, kavn) — ajvaf", "deck": "msa"},

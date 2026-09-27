@@ -257,6 +257,7 @@
    "q_ar": "اِعْتَبَرَ",
    "options": [],
    "answer": "hisobladi",
+   "accept": ["deb hisobladi", "sanadi", "deb bildi"],
    "explain_uz": "اِعْتَبَرَ — deb hisobladi, e'tiborga oldi.",
    "audio": "b2/itabara.mp3",
    "root": "",

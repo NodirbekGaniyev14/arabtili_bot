@@ -243,6 +243,7 @@
    "q_ar": "بَاب",
    "options": [],
    "answer": "eshik",
+   "accept": ["darvoza", "bob"],
    "explain_uz": "بَاب = baab, ا cho'ziladi.",
    "audio": "",
    "root": "",

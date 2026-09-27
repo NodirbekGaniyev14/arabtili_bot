@@ -79,8 +79,8 @@
   {"type": "translate_ar_uz", "q_uz": "", "q_ar": "جَاءَ الضَّيْفُ", "options": [], "answer": "mehmon keldi", "explain_uz": "جَاءَ = keldi, الضَّيْف = mehmon.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«وَقَعَ» qaysi tur (boshi illat)?", "q_ar": "", "options": ["مِثَال", "أَجْوَف", "نَاقِص", "مَهْمُوز"], "answer": "مِثَال", "explain_uz": "وَقَعَ — boshi و (و ق ع), mithal.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«حَيَاة» qaysi o'zakdan?", "q_ar": "", "options": ["ح ي ي", "ح ي ت", "ح و ي"], "answer": "ح ي ي", "explain_uz": "«ح ي ي» — hayot o'zagi: hayot, tahiyot.", "audio": "", "root": "ح ي ي", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "ko'rdi", "q_ar": "", "options": [], "answer": "رَأَى", "explain_uz": "رَأَى — ko'rdi (qo'sh illatli, ر أ ي).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "muvaffaqiyat", "q_ar": "", "options": [], "answer": "نَجَاح", "explain_uz": "نَجَاح — muvaffaqiyat/yutuq.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "translate_uz_ar", "q_uz": "ko'rdi", "q_ar": "", "options": [], "answer": "رَأَى", "accept": ["شَاهَدَ"], "explain_uz": "رَأَى — ko'rdi (qo'sh illatli, ر أ ي).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "muvaffaqiyat", "q_ar": "", "options": [], "answer": "نَجَاح", "accept": ["تَوْفِيق"], "explain_uz": "نَجَاح — muvaffaqiyat/yutuq.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "root", "front": "ح ي ي", "back": "hayot o'zagi (hayot, tahiyot, Yahyo)", "deck": "msa"},

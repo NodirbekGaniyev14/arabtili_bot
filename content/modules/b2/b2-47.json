@@ -256,6 +256,7 @@
    "q_ar": "قَوَاعِد",
    "options": [],
    "answer": "qoidalar",
+   "accept": ["grammatika", "qonun-qoidalar"],
    "explain_uz": "قَوَاعِد — grammatika qoidalari.",
    "audio": "b2/qawaid2.mp3",
    "root": "",

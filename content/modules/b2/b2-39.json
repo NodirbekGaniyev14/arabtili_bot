@@ -241,6 +241,7 @@
    "q_ar": "مُعَدَّل",
    "options": [],
    "answer": "o'rtacha",
+   "accept": ["o'rtacha ko'rsatkich", "stavka", "sur'at", "daraja"],
    "explain_uz": "مُعَدَّل — o'rtacha ko'rsatkich/stavka.",
    "audio": "b2/muaddal.mp3",
    "root": "",

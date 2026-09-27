@@ -305,6 +305,7 @@
    "q_ar": "مُلَاحَظَة",
    "options": [],
    "answer": "izoh",
+   "accept": ["eslatma", "mulohaza", "kuzatuv", "qayd"],
    "explain_uz": "مُلَاحَظَة — mulohaza, izoh.",
    "audio": "b2/mulahaza.mp3",
    "root": "",

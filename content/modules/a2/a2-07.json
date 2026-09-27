@@ -368,6 +368,7 @@
    "q_ar": "هُمَا",
    "options": [],
    "answer": "ular ikkovi",
+   "accept": ["ular ikkalasi", "ular ikkisi"],
    "explain_uz": "Ikkilik olmoshi — jins farqi yo'q.",
    "audio": "",
    "root": "",

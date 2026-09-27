@@ -306,6 +306,7 @@
    "q_ar": "دَافِع",
    "options": [],
    "answer": "turtki",
+   "accept": ["sabab", "motiv", "undovchi", "rag'bat"],
    "explain_uz": "دَافِع — motiv, turtki.",
    "audio": "b2/dafi.mp3",
    "root": "",

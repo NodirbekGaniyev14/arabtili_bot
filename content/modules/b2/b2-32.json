@@ -305,6 +305,7 @@
    "q_ar": "رَاتِب",
    "options": [],
    "answer": "maosh",
+   "accept": ["oylik", "ish haqi", "oylik maosh"],
    "explain_uz": "رَاتِب — oylik ish haqi.",
    "audio": "b2/ratib.mp3",
    "root": "",

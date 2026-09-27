@@ -77,10 +77,10 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«men o'qiyman» qaysi?", "q_ar": "", "options": ["أَقْرَأُ", "يَقْرَأُ", "نَقْرَأُ", "تَقْرَأُ"], "answer": "أَقْرَأُ", "explain_uz": "أَنَا (men) → أ prefiksi: أَقْرَأُ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«biz yodlaymiz» qaysi?", "q_ar": "", "options": ["نَحْفَظُ", "أَحْفَظُ", "يَحْفَظُ", "تَحْفَظُ"], "answer": "نَحْفَظُ", "explain_uz": "نَحْنُ (biz) → نـ prefiksi: نَحْفَظُ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَدْرُسُ العَرَبِيَّةَ", "options": [], "answer": "men arab tilini o'qiyman", "explain_uz": "أَدْرُسُ = men o'qiyman, العَرَبِيَّة = arab tili.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَدْرُسُ العَرَبِيَّةَ", "options": [], "answer": "men arab tilini o'qiyman", "accept": ["men arabchani o'qiyman", "men arab tilini o'rganaman", "men arabcha o'qiyman"], "explain_uz": "أَدْرُسُ = men o'qiyman, العَرَبِيَّة = arab tili.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ح ف ظ» o'zagidan?", "q_ar": "", "options": ["يَحْفَظُ", "يَقْرَأُ", "يَعْمَلُ"], "answer": "يَحْفَظُ", "explain_uz": "«ح ف ظ» — saqlash/yodlash o'zagi: hofiz, mahfuz, hifz.", "audio": "", "root": "ح ف ظ", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "To'ldiring: «نَحْنُ ____فْهَمُ» (biz tushunamiz)", "q_ar": "نَحْنُ ____فْهَمُ", "options": [], "answer": "نَ", "explain_uz": "نَحْنُ → نـ: نَفْهَمُ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "til (lug'at)", "q_ar": "", "options": [], "answer": "لُغَة", "explain_uz": "لُغَة — til (o'zbekcha 'lug'at' shundan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "til (lug'at)", "q_ar": "", "options": [], "answer": "لُغَة", "accept": ["لِسَان"], "explain_uz": "لُغَة — til (o'zbekcha 'lug'at' shundan).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "dictation", "q_uz": "Eshitilgan fe'lni yozing", "q_ar": "", "options": [], "answer": "أَحْفَظُ", "explain_uz": "أَحْفَظُ — men yodlayman.", "audio": "a1/ahfazu.mp3", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [

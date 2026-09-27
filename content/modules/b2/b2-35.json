@@ -310,6 +310,7 @@
    "q_ar": "شَكْوَى",
    "options": [],
    "answer": "shikoyat",
+   "accept": ["arz", "norozilik"],
    "explain_uz": "شَكْوَى — mijoz shikoyati.",
    "audio": "b2/shakwa.mp3",
    "root": "",

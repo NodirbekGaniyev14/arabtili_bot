@@ -252,6 +252,7 @@
    "q_ar": "زِيَارَة",
    "options": [],
    "answer": "tashrif",
+   "accept": ["ziyorat", "tashrif buyurish"],
    "explain_uz": "زِيَارَة — tashrif, ziyorat.",
    "audio": "b2/ziyara.mp3",
    "root": "",

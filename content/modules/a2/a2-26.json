@@ -80,7 +80,7 @@
   {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَرَّ الوَقْتُ بِسُرْعَةٍ", "options": [], "answer": "vaqt tez o'tdi", "explain_uz": "مَرَّ = o'tdi, الوَقْت = vaqt, بِسُرْعَة = tez.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«مَرَّ، مَمَرّ» qaysi o'zakdan?", "q_ar": "", "options": ["م ر ر", "م ر أ", "م ر ض"], "answer": "م ر ر", "explain_uz": "«م ر ر» — o'tish o'zagi: murur, marra, mamarr.", "audio": "", "root": "م ر ر", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "boshladi", "q_ar": "", "options": [], "answer": "بَدَأَ", "explain_uz": "بَدَأَ (mahmuz) — boshladi.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "qaytardi, javob berdi", "q_ar": "", "options": [], "answer": "رَدَّ", "explain_uz": "رَدَّ (muzoaf) — qaytardi/javob berdi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "qaytardi, javob berdi", "q_ar": "", "options": [], "answer": "رَدَّ", "accept": ["أَجَابَ"], "explain_uz": "رَدَّ (muzoaf) — qaytardi/javob berdi.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Muzoafda 2- va 3-harf qanday bo'ladi?", "q_ar": "", "options": ["bir xil (shadda)", "har xil", "biri hamza", "biri و"], "answer": "bir xil (shadda)", "explain_uz": "Muzoaf — ikki bir xil harf shaddaga birlashadi.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [

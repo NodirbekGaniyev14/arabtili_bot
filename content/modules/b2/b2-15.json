@@ -247,6 +247,7 @@
    "q_ar": "مَجْمُوعَة",
    "options": [],
    "answer": "guruh",
+   "accept": ["to'plam", "majmua", "jamlanma"],
    "explain_uz": "مَجْمُوعَة — guruh, to'plam (majmua).",
    "audio": "b2/majmua.mp3",
    "root": "",

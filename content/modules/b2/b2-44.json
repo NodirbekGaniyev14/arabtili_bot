@@ -250,6 +250,7 @@
    "q_ar": "تَوْصِيَات",
    "options": [],
    "answer": "tavsiyalar",
+   "accept": ["tavsiya", "maslahatlar"],
    "explain_uz": "تَوْصِيَات — hisobot tavsiyalari.",
    "audio": "b2/tawsiyat.mp3",
    "root": "",

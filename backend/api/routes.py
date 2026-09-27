@@ -662,6 +662,7 @@ class IssueBody(BaseModel):
     kind: str = Field(max_length=16)
     context: str = Field(default="", max_length=64)
     label: str = Field(default="", max_length=64)
+    ex_type: str = Field(default="", max_length=16)
     q: str = Field(default="", max_length=600)
     q_ar: str = Field(default="", max_length=300)
     options: list[str] = Field(default_factory=list, max_length=8)
@@ -693,14 +694,32 @@ async def report_issue(
             )
         )
     ).scalars().all()
+    given = body.given.strip()
+    if not given and body.answer.strip():
+        # K27: eski klient javobni yubormasa — yozma mashqda rad etilgan javob jurnalidan (#F70) olamiz
+        from db.models import AnswerLog
+
+        given = (
+            await session.execute(
+                select(AnswerLog.given)
+                .where(
+                    AnswerLog.user_id == user.id,
+                    AnswerLog.expected == body.answer.strip()[:200],
+                    AnswerLog.created_at >= utcnow() - timedelta(hours=3),
+                )
+                .order_by(AnswerLog.id.desc())
+                .limit(1)
+            )
+        ).scalar_one_or_none() or ""
     text = feedback_svc.issue_text(
         body.kind,
         label=body.label.strip(),
+        ex_type=body.ex_type.strip(),
         q=body.q.strip(),
         q_ar=body.q_ar.strip(),
         options=[o.strip()[:300] for o in body.options],
         answer=body.answer.strip(),
-        given=body.given.strip(),
+        given=given,
         audio=body.audio.strip(),
         comment=body.comment.strip(),
     )

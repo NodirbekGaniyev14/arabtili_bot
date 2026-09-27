@@ -80,8 +80,8 @@
   {"type": "translate_ar_uz", "q_uz": "", "q_ar": "بَيْتُنَا كَبِيرٌ", "options": [], "answer": "uyimiz katta", "explain_uz": "بَيْت + ـنَا (bizning) = uyimiz; كَبِير = katta.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ص د ق» o'zagidan?", "q_ar": "", "options": ["صَدِيق", "كِتَابِي", "أَبِي"], "answer": "صَدِيق", "explain_uz": "«ص د ق» — rostlik/do'stlik o'zagi: صَدِيق (do'st), sodiq, sadoqat.", "audio": "", "root": "ص د ق", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "«sening isming»: «اسْمُ____»", "q_ar": "اسْمُ____", "options": [], "answer": "كَ", "explain_uz": "«sening-erkak» → ـكَ: اسْمُكَ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "do'st", "q_ar": "", "options": [], "answer": "صَدِيق", "explain_uz": "صَدِيق — do'st (o'zbekcha 'sodiq').", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "mening otam", "q_ar": "", "options": [], "answer": "أَبِي", "explain_uz": "أَب + ـِي = أَبِي (otam).", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "translate_uz_ar", "q_uz": "do'st", "q_ar": "", "options": [], "answer": "صَدِيق", "accept": ["رَفِيق", "صَاحِب"], "explain_uz": "صَدِيق — do'st (o'zbekcha 'sodiq').", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "mening otam", "q_ar": "", "options": [], "answer": "أَبِي", "accept": ["وَالِدِي"], "explain_uz": "أَب + ـِي = أَبِي (otam).", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "root", "front": "ص د ق", "back": "rostlik/do'stlik o'zagi (sodiq, sadoqat, sadaqa)", "deck": "msa"},

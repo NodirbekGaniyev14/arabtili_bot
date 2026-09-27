@@ -307,6 +307,7 @@
    "q_ar": "إِحْصَاءَات",
    "options": [],
    "answer": "statistika",
+   "accept": ["statistik ma'lumotlar", "raqamlar"],
    "explain_uz": "إِحْصَاءَات — raqamlar, statistika.",
    "audio": "b2/ihsaat.mp3",
    "root": "",

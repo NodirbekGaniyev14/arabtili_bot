@@ -257,6 +257,7 @@
    "q_ar": "اِسْتِثْمَار",
    "options": [],
    "answer": "investitsiya",
+   "accept": ["sarmoya", "sarmoya kiritish"],
    "explain_uz": "اِسْتِثْمَار — sarmoya kiritish.",
    "audio": "b2/istithmar.mp3",
    "root": "",

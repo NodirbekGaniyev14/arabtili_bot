@@ -81,8 +81,8 @@
   {"type": "mcq", "q_uz": "Qachon الذي ishlatiladi?", "q_ar": "", "options": ["ot ANIQ (ال li) bo'lganda", "ot noaniq bo'lganda", "har doim", "faqat ko'plikda"], "answer": "ot ANIQ (ال li) bo'lganda", "explain_uz": "Aniqdan keyin — olmosh, noaniqdan keyin — sifat gap.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "To'ldiring (eshiklari): «وجدتُ بيتًا ____ خضراءُ»", "q_ar": "وَجَدْتُ بَيْتًا ____ خَضْرَاءُ", "options": [], "answer": "أَبْوَابُهُ", "explain_uz": "Oid olmosh shart: أبوابُهُ — «uning eshiklari».", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«صِفَة، وَصَفَ، مَوْصُوف» qaysi o'zakdan?", "q_ar": "", "options": ["و ص ف", "و ص ل", "ص و ف"], "answer": "و ص ف", "explain_uz": "«و ص ف» — tavsif o'zagi: vasf, sifat.", "audio": "", "root": "و ص ف", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "maqola", "q_ar": "", "options": [], "answer": "مَقَال", "explain_uz": "مَقَال — maqola (ق و ل o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_uz_ar", "q_uz": "tajriba", "q_ar": "", "options": [], "answer": "تَجْرِبَة", "explain_uz": "تَجْرِبَة — tajriba (o'zbekchaga aynan o'tgan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "maqola", "q_ar": "", "options": [], "answer": "مَقَال", "accept": ["مَقَالَة"], "explain_uz": "مَقَال — maqola (ق و ل o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_uz_ar", "q_uz": "tajriba", "q_ar": "", "options": [], "answer": "تَجْرِبَة", "accept": ["خِبْرَة"], "explain_uz": "تَجْرِبَة — tajriba (o'zbekchaga aynan o'tgan).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "order_words", "q_uz": "Tartiblang: «O'qishga arziydigan maqola o'qidim»", "q_ar": "", "options": [], "answer": "قرأتُ مقالًا يستحقُّ القراءةَ", "explain_uz": "Fe'l + noaniq ot + sifat gap.", "audio": "", "root": "", "pattern": "", "words": ["قرأتُ", "مقالًا", "يستحقُّ", "القراءةَ"]}
  ],
  "srs_cards": [
