@@ -32,6 +32,7 @@ from db.models import (
     utcnow,
 )
 from services import ai_usage
+from services.names import admin_show, esc
 from services.speaking_report import week_key, week_label, week_start_utc
 from services.stats import TASHKENT_OFFSET
 
@@ -136,14 +137,14 @@ async def build(session: AsyncSession, now: datetime | None = None) -> str:
         ).order_by(TutorRating.id.desc()).limit(5)
     )).all()
     winners = (await session.execute(
-        select(WeeklyAward.rank, User.name, WeeklyAward.weekly_xp)
+        select(WeeklyAward.rank, User.name, User.username, User.tg_id, WeeklyAward.weekly_xp)
         .join(User, User.id == WeeklyAward.user_id)
         .where(WeeklyAward.period == "week", WeeklyAward.week_start == week_key(prev_monday))
         .order_by(WeeklyAward.rank)
     )).all()
 
     okt = (await session.execute(
-        select(BattleAward.rank, User.name, BattleAward.points)
+        select(BattleAward.rank, User.name, User.username, User.tg_id, BattleAward.points)
         .join(User, User.id == BattleAward.user_id)
         .where(BattleAward.period == "week", BattleAward.period_key == week_key(prev_monday))
         .order_by(BattleAward.rank)
@@ -153,11 +154,17 @@ async def build(session: AsyncSession, now: datetime | None = None) -> str:
     q_line = (
         f"👍 {round(cur['rating_good'] * 100 / cur['rating_n'])}% ({cur['rating_n']} baho)" if cur["rating_n"] else "baho yo'q"
     )
-    bad = "".join(f"\n   👎 {m} · {t or '—'}" + (f": {c[:60]}" if c else "") for m, t, c in bad_rows)
-    win = " · ".join(f"{'🥇🥈🥉'[r - 1] if r <= 3 else '🏅'} {n} ({xp})" for r, n, xp in winners) or "sovrin berilmadi (kam ishtirokchi)"
+    bad = "".join(
+        f"\n   👎 {esc(m or '')} · {esc(t or '—')}" + (f": {esc(c[:60])}" if c else "") for m, t, c in bad_rows
+    )
+    win = " · ".join(
+        f"{'🥇🥈🥉'[r - 1] if r <= 3 else '🏅'} {admin_show(n, un, tg)} ({xp})" for r, n, un, tg, xp in winners
+    ) or "sovrin berilmadi (kam ishtirokchi)"
     pay = f"{cur['pay_n']} ta · {cur['pay_sum']:,} so'm".replace(",", " ")
     human_pct = round(cur["battles_human"] * 100 / cur["battles"]) if cur["battles"] else 0
-    okt_win = " · ".join(f"{'🥇🥈🥉'[r - 1]} {n} ({p})" for r, n, p in okt) or "sovrin berilmadi (kam ishtirokchi)"
+    okt_win = " · ".join(
+        f"{'🥇🥈🥉'[r - 1]} {admin_show(n, un, tg)} ({p})" for r, n, un, tg, p in okt
+    ) or "sovrin berilmadi (kam ishtirokchi)"
 
     return (
         f"📊 <b>Haftalik digest</b> · {week_label(prev_monday)}\n\n"

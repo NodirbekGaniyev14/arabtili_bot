@@ -28,6 +28,7 @@ from sqlalchemy import case, func, select
 from db.models import Battle, BattleAward, Meta, User, utcnow
 from services import battle as bt
 from services import notify_prefs
+from services.names import show
 from services.speaking_report import week_key, week_label, week_start_utc
 from services.stats import TASHKENT_OFFSET
 
@@ -238,7 +239,7 @@ def winners_text(period: str, label: str, winners: list[dict], me: dict | None, 
     lines = [f"{head} · {label}", ""]
     for w in winners:
         lines.append(
-            f"{RANK_ICON.get(w['rank'], '🏅')} <b>{w['name']}</b> — {w['points']} ball "
+            f"{RANK_ICON.get(w['rank'], '🏅')} <b>{show(w['name'])}</b> — {w['points']} ball "
             f"({w['wins']}/{w['games']} g'alaba)"
         )
     lines.append("")

@@ -124,6 +124,27 @@ def client(session, monkeypatch):
 
 
 @pytest.mark.asyncio
+async def test_grade_keeps_only_real_corrections(monkeypatch):
+    """#K27.5 (digest 👎 «Har gapimda xato topyapti»): harakatsiz bir xil «tuzatish» bo'shatiladi,
+    haqiqiy xato (boshqa harf/so'z) qoladi; prompt «xato o'ylab topma» deydi."""
+    from config import settings
+
+    monkeypatch.setattr(settings, "anthropic_api_key", "test")
+    q = daily.question_for("A1")
+
+    async def fake_call(system, msgs, model):
+        fixed = {"انا من طشقند.": "أَنَا مِنْ طَشْقَنْدَ.", "🎤 أنا طالبة": "أَنَا طَالِبٌ"}[msgs[0]["content"]]
+        assert "never invent a mistake" in system[0]["text"] and "NOT mistakes: missing harakat" in system[0]["text"]
+        return daily.DailyReply(score=90, feedback_uz="Yaxshi", ideal_ar="أَنَا طَالِبٌ", fixed_ar=fixed), {}
+
+    monkeypatch.setattr(daily, "_call", fake_call)
+    out, _ = await daily.grade("A1", q, "انا من طشقند.")
+    assert out.fixed_ar == "", "faqat harakat va nuqta farqi"
+    out, _ = await daily.grade("A1", q, "🎤 أنا طالبة")
+    assert out.fixed_ar == "أَنَا طَالِبٌ", "haqiqiy tuzatish (ayol → erkak shakli) qoladi"
+
+
+@pytest.mark.asyncio
 async def test_daily_flow(client, session, make_user):
     from sqlalchemy import select
 
@@ -143,7 +164,8 @@ async def test_daily_flow(client, session, make_user):
     assert r.status_code == 200, r.text
     a = r.json()
     assert a["result"]["score"] == 85 and a["xp"] == 5 + 4 + 2 and a["streak"] == 1
-    assert a["result"]["fixed_ar"] == "أَنَا مِنْ طَشْقَنْدَ" and a["result"]["voice"] is True
+    # K27.5: «tuzatish» faqat harakat qo'shgan — xato emas, ko'rsatilmaydi
+    assert a["result"]["fixed_ar"] == "" and a["result"]["voice"] is True
 
     row = (await session.execute(select(DailySpeaking))).scalar_one()
     assert row.question_id == d["question"]["id"] and row.xp == 11 and row.day == d["day"]

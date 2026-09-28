@@ -27,6 +27,7 @@ from services.league import (
     refresh_ranks,
     top_winners,
 )
+from services.names import show
 from services.stats import TASHKENT_OFFSET
 
 # G'oliblar e'loni: davr yakunida HAMMAGA (rejasi bor, 90 kun ichida faol) bitta xabar —
@@ -221,7 +222,7 @@ def announcement_text(period: str, label: str, winners: list, my: tuple | None, 
     lines = [f"{head} · {label}", ""]
     for _uid, name, xp, rank in winners:
         prize = prize_days(period, rank)
-        lines.append(f"{RANK_ICON.get(rank, '🏅')} <b>{name}</b> — {xp} XP" + (f" · 🎁 {prize} kun VIP" if prize else ""))
+        lines.append(f"{RANK_ICON.get(rank, '🏅')} <b>{show(name)}</b> — {xp} XP" + (f" · 🎁 {prize} kun VIP" if prize else ""))
     lines.append("")
     if my:
         rank, xp = my

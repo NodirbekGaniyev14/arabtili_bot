@@ -304,9 +304,11 @@ async def cmd_oktagon(message: Message):
         last_s = await bs.past_awards(session, "season")
         top = await bt.top(session, 5)
 
+    from services.names import show
+
     def _rows(items, key="points"):
         return "\n".join(
-            f"{'🥇🥈🥉'[i] if i < 3 else f'{i + 1}.'} {x['name']} — {x[key]}"
+            f"{'🥇🥈🥉'[i] if i < 3 else f'{i + 1}.'} {show(x['name'])} — {x[key]}"
             + (f" ({x['wins']}/{x['games']})" if "games" in x else "")
             for i, x in enumerate(items)
         ) or "— bo'sh"
@@ -318,8 +320,8 @@ async def cmd_oktagon(message: Message):
         f"📅 <b>Haftalik jadval</b> ({week['label']})\n{_rows(week['top'][:10])}\n"
         f"<i>G'olib e'lon qilinishi uchun kamida {week['min_players']} jangchi kerak · sovrin yo'q</i>\n\n"
         f"🏅 <b>Mavsum reytingi</b>\n{_rows(top)}\n\n"
-        f"🏅 O'tgan hafta: " + (" · ".join(f"{x['name']} ({x['points']})" for x in last_w) or "—") + "\n"
-        f"🏆 O'tgan mavsum: " + (" · ".join(f"{x['name']} ({x['points']})" for x in last_s) or "—"),
+        f"🏅 O'tgan hafta: " + (" · ".join(f"{show(x['name'])} ({x['points']})" for x in last_w) or "—") + "\n"
+        f"🏆 O'tgan mavsum: " + (" · ".join(f"{show(x['name'])} ({x['points']})" for x in last_s) or "—"),
         parse_mode="HTML",
     )
 

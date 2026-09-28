@@ -34,6 +34,9 @@ SHORT_RATE = "-35%"  # 3-4 harfli so'z
 TINY_RATE = "-45%"  # 1-2 harf: yakka harf yoki bo'g'in
 VOLUME = "+25%"  # telefon karnayida ham aniq eshitilishi uchun
 CONCURRENCY = 8
+# Eng qisqa to'g'ri audio ~10 KB. Undan ancha kichigi — tarmoq uzilib, yarim saqlangan fayl
+# (#F122: vocab/jazar.mp3 2 KB, 0.3 s — «talaffuz xato» deb xabar qilindi).
+MIN_BYTES = 5000
 
 # Harakatlar, sukun, tanvin, tatweel — "harf sanog'i"ga kirmaydi
 _MARKS = re.compile(r"[ً-ْٰـۖ-ۭ\s]")
@@ -156,6 +159,12 @@ def _key(text: str) -> str:
     ).hexdigest()[:16]
 
 
+def is_stale(name: str, text: str, manifest: dict[str, str]) -> bool:
+    """Qayta yaratish kerakmi: matn/ovoz o'zgargan, fayl yo'q yoki kesilib qolgan (MIN_BYTES dan kichik)."""
+    path = OUT_DIR / name
+    return manifest.get(name) != _key(text) or not path.exists() or path.stat().st_size < MIN_BYTES
+
+
 def load_manifest() -> dict[str, str]:
     if not MANIFEST.exists():
         return {}
@@ -187,11 +196,7 @@ async def main() -> int:
     tasks = collect()
     manifest = {} if args.force else load_manifest()
 
-    stale = [
-        (n, t)
-        for n, t in tasks.items()
-        if manifest.get(n) != _key(t) or not (OUT_DIR / n).exists()
-    ]
+    stale = [(n, t) for n, t in tasks.items() if is_stale(n, t, manifest)]
 
     if args.check:
         if stale:
@@ -218,6 +223,8 @@ async def main() -> int:
                     await edge_tts.Communicate(
                         spoken, VOICE, rate=rate, volume=VOLUME
                     ).save(str(out))
+                    if out.stat().st_size < MIN_BYTES:  # oqim uzilib, yarim fayl saqlangan
+                        raise RuntimeError(f"juda kichik fayl: {out.stat().st_size} B")
                     manifest[name] = _key(text)
                     made += 1
                     break

@@ -49,7 +49,7 @@ async def test_build_numbers(session, make_user):
     text = await ad.build(session, MONDAY)
     assert "Haftalik digest" in text and "Yangi: <b>1</b>" in text and "Faol: <b>2</b> ▲1" in text
     assert "Qaytgan (winback): 1" in text and "🎤 50%" in text and "👍 50% (2 baho)" in text and "👎 chat · oila: sekin" in text
-    assert "1 ta · 40 000 so'm ▲1" in text and "🥇 Ali (20)" in text
+    assert "1 ta · 40 000 so'm ▲1" in text and "🥇 Ali" + chr(0x200E) + " (20)" in text  # LRM — K27.5
 
 
 @pytest.mark.asyncio

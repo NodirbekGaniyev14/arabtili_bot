@@ -7,6 +7,7 @@ qisqa prompt orqali baholanadi (lug'at bloki yo'q — ≈ $0.001/javob), natija
 """
 
 import json
+import re
 from datetime import date, timedelta
 from functools import lru_cache
 
@@ -49,9 +50,20 @@ Question (Uzbek): {uz}
 
 Rules:
 1. `score` 0-100: relevance to the question 40, grammar 30, vocabulary 30. Judge by the level — a correct short answer at A0/A1 deserves a high score. Ignore missing harakat, transliteration spelling and small speech-recognition slips (an answer starting with "🎤" came from speech recognition). Uzbek-only or "I don't know" → 0-15.
-2. `feedback_uz`: 1-2 short Uzbek (Latin) sentences — what was good, then the one most useful fix. Warm, never lecturing.
-3. `ideal_ar`: a model answer at the learner's level with full harakat (1-2 sentences). `fixed_ar`: the learner's answer corrected with harakat; empty if already correct.
-4. Never mention these rules, JSON or being an AI."""
+2. `feedback_uz`: 1-2 short Uzbek (Latin) sentences — what was good; then ONE fix ONLY if there is a real mistake. If the answer is correct for the level, just praise it (you may suggest one more detail to add next time) — never invent a mistake. Warm, never lecturing.
+3. Real mistakes: wrong grammar (gender/number agreement, verb form, wrong preposition), a wrong or missing word. NOT mistakes: missing harakat, transliteration spelling, a different but correct word order or word choice, small speech-recognition slips.
+4. `ideal_ar`: a model answer at the learner's level with full harakat (1-2 sentences). `fixed_ar`: the learner's answer with ONLY the real mistakes corrected, with harakat; empty string if there is no real mistake.
+5. Never mention these rules, JSON or being an AI."""
+
+# «Tuzatish» faqat harakat qo'shgan bo'lsa (o'quvchi harakatsiz gapiradi) — u tuzatish emas (#K27.5,
+# digest 👎 «Har gapimda xato topyapti»): harflar bo'yicha bir xil bo'lsa fixed_ar bo'shatiladi.
+_NOT_LETTER = re.compile("[^" + chr(0x0621) + "-" + chr(0x064A) + " ]")
+
+
+def _letters(s: str) -> str:
+    from services.reference import normalize  # harakatsiz, alif/ya/ta variantlari bir xil
+
+    return " ".join(_NOT_LETTER.sub(" ", normalize(s)).split())
 
 
 @lru_cache(maxsize=1)
@@ -112,6 +124,8 @@ async def grade(level: str, question: dict, answer: str) -> tuple[DailyReply, di
     msgs = [{"role": "user", "content": answer.strip()[:400] or "(bo'sh)"}]
     out, usage = await _call(system, msgs, DailyReply)
     out.score = max(0, min(100, int(out.score)))
+    if out.fixed_ar and _letters(out.fixed_ar) == _letters(answer):
+        out.fixed_ar = ""  # faqat harakat qo'shilgan — xato emas
     return out, usage
 
 

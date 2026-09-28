@@ -35,6 +35,30 @@ def test_every_referenced_file_exists():
     assert not missing, f"{len(missing)} ta audio yo'q: {missing[:10]}"
 
 
+def test_no_truncated_audio():
+    """#F122: yarim saqlangan fayl (vocab/jazar.mp3 2 KB, 0.3 s) — «talaffuz xato» deb ko'rinadi."""
+    dist = ROOT / "webapp" / "dist" / "audio"
+    small = [
+        f"{d.name}/{n}"
+        for n in build_audio.collect()
+        for d in (AUDIO_DIR, dist)
+        if (d / n).exists() and (d / n).stat().st_size < build_audio.MIN_BYTES
+    ]
+    assert not small, f"kesilgan audio: {small[:10]} — `python content/build_audio.py` qayta yaratadi"
+
+
+def test_is_stale_detects_truncated_file(tmp_path, monkeypatch):
+    monkeypatch.setattr(build_audio, "OUT_DIR", tmp_path)
+    text = "جَزَر"
+    manifest = {"v.mp3": build_audio._key(text)}
+    assert build_audio.is_stale("v.mp3", text, manifest), "fayl yo'q"
+    (tmp_path / "v.mp3").write_bytes(b"x" * 2160)
+    assert build_audio.is_stale("v.mp3", text, manifest), "kesilgan (MIN_BYTES dan kichik)"
+    (tmp_path / "v.mp3").write_bytes(b"x" * 14400)
+    assert not build_audio.is_stale("v.mp3", text, manifest)
+    assert build_audio.is_stale("v.mp3", text + "ٌ", manifest), "matn o'zgargan"
+
+
 def test_manifest_matches_content():
     """Dars matni o'zgargan bo'lsa audio ham qayta yaratilgan bo'lishi kerak."""
     manifest = build_audio.load_manifest()

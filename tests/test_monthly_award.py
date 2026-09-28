@@ -243,7 +243,8 @@ async def test_weekly_rollover_announces_to_everyone(session_factory, monkeypatc
     by = {c: (t, kb) for c, t, kb in bot.messages}
     assert set(by) == {users[n].tg_id for n in ("W0", "W1", "W2", "W3")}
     t, kb = by[users["W0"].tg_id]
-    assert "Haftalik reyting yakunlandi" in t and "🥇 <b>W0</b> — 400 XP · 🎁 7 kun VIP" in t and "🥉 <b>W2</b>" in t
+    lrm = chr(0x200E)  # K27.5: ism oxirida LRM (arabcha ism yonidagi raqam joyida qolsin)
+    assert "Haftalik reyting yakunlandi" in t and f"🥇 <b>W0{lrm}</b> — 400 XP · 🎁 7 kun VIP" in t and f"🥉 <b>W2{lrm}</b>" in t
     assert "Siz 1-o'rindasiz" in t and kb.inline_keyboard[0][0].web_app.url.endswith("#rating")
     assert "Siz: <b>4-o'rin</b>, 100 XP (5 ishtirokchi)" in by[users["W3"].tg_id][0]
     assert noplan.tg_id not in by and users["Old"].tg_id not in by
