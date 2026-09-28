@@ -20,7 +20,16 @@ const KINDS: Array<{ id: IssueKind; label: string }> = [
 
 export type IssueContext = Omit<IssueReport, "kind" | "comment">;
 
-export default function ReportIssue({ ctx, className = "" }: { ctx: IssueContext; className?: string }) {
+export default function ReportIssue({
+  ctx,
+  className = "",
+  tone = "light",
+}: {
+  ctx: IssueContext;
+  className?: string;
+  /** «dark» — rangli javob paneli ichida (oq matn) */
+  tone?: "light" | "dark";
+}) {
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -30,7 +39,9 @@ export default function ReportIssue({ ctx, className = "" }: { ctx: IssueContext
             tg()?.HapticFeedback?.impactOccurred("light");
             setOpen(true);
           }}
-          className="px-3 py-1.5 text-[11px] font-bold text-ink-soft/80 underline decoration-dotted underline-offset-4 active:opacity-60"
+          className={`px-3 py-1.5 text-[11px] font-bold underline decoration-dotted underline-offset-4 active:opacity-60 ${
+            tone === "dark" ? "text-white/85" : "text-ink-soft/80"
+          }`}
         >
           ⚠️ Xatolik bormi?
         </button>

@@ -2,7 +2,7 @@
  * Har mashq onDone(ok) chaqiradi; QuizRunner xato so'zlarni yig'adi (SRS reset uchun).
  */
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { api, type MicroTestItem } from "../../lib/api";
 import { playAudio } from "../../lib/audio";
 import ArabicKeyboard from "./ArabicKeyboard";
@@ -10,6 +10,9 @@ import { arOk, asVerdict, blankFills, isArabic, latOk, normAr, type Verdict } fr
 import ReportIssue from "../../components/ReportIssue";
 
 const tg = () => window.Telegram?.WebApp;
+/** K27.6 (#F125): javob paneli ekran pastini yopadi va savol ostidagi «Xatolik bormi?» ko'rinmay qoladi —
+ *  o'quvchi «Davom etish»ni bosib, xabarni KEYINGI savoldan yuborardi. QuizRunner havolani panel ichiga beradi. */
+const FeedbackReport = createContext<ReactNode>(null);
 /** harakat mashqi: harakatlar solishtiriladi, lekin alif varianti va bo'shliq farqi kechiriladi. */
 /* ── harakat mashqi (#F74): so'z harflari tayyor, o'quvchi faqat harakat qo'yadi ── */
 
@@ -242,6 +245,7 @@ function Feedback({
   onNext: () => void;
 }) {
   const showAnswer = correctAnswer && (!correct || showSample);
+  const report = useContext(FeedbackReport);
   return (
     <div
       className={`fixed bottom-0 left-0 right-0 z-40 px-5 pt-4 pb-8 ${
@@ -277,6 +281,7 @@ function Feedback({
         >
           Davom etish
         </button>
+        {report}
       </div>
     </div>
   );
@@ -698,29 +703,28 @@ export function QuizRunner({
       expected: item.answer,
       given,
     });
+  const issueCtx = {
+    context: (context || label).slice(0, 64),
+    label: `${label} · ${idx + 1}/${items.length}`,
+    ex_type: item.type,
+    q: item.q_uz || item.q_ar,
+    q_ar: item.q_ar,
+    options: item.options,
+    answer: item.answer,
+    given,
+    audio: item.audio,
+  };
 
   return (
     <div>
       <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft mb-1">
         {label} · {idx + 1}/{items.length}
       </div>
-      {renderExercise(item, key, done, rootPool, report, setGiven)}
+      <FeedbackReport.Provider value={<ReportIssue key={`fb-${key}`} className="mt-1" tone="dark" ctx={issueCtx} />}>
+        {renderExercise(item, key, done, rootPool, report, setGiven)}
+      </FeedbackReport.Provider>
       {/* K26: har savol ostida — adminga savol surati (+ K27: o'quvchi javobi) bilan xabar */}
-      <ReportIssue
-        key={`issue-${key}`}
-        className="mt-3"
-        ctx={{
-          context: (context || label).slice(0, 64),
-          label: `${label} · ${idx + 1}/${items.length}`,
-          ex_type: item.type,
-          q: item.q_uz || item.q_ar,
-          q_ar: item.q_ar,
-          options: item.options,
-          answer: item.answer,
-          given,
-          audio: item.audio,
-        }}
-      />
+      <ReportIssue key={`issue-${key}`} className="mt-3" ctx={issueCtx} />
     </div>
   );
 }
