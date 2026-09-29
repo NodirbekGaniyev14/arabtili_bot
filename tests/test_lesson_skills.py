@@ -274,19 +274,19 @@ async def test_handwriting_uses_vision_model_with_fallback(monkeypatch):
     from services import tutor, writing
 
     monkeypatch.setattr(settings, "anthropic_api_key", "k")
-    monkeypatch.setattr(settings, "writing_model", "claude-sonnet-5")
+    monkeypatch.setattr(settings, "writing_model", "claude-sonnet-5-5")
     calls = []
 
     class FakeMessages:
         async def parse(self, model, **kw):
             calls.append(model)
-            if model == "claude-sonnet-5":
+            if model == "claude-sonnet-5-5":
                 raise RuntimeError("not_found_error: model")
             raise RuntimeError("structured off")
 
         async def create(self, model, **kw):
             calls.append(model + ":json")
-            if model == "claude-sonnet-5":
+            if model == "claude-sonnet-5-5":
                 raise RuntimeError("not_found_error: model")
 
             class R:
@@ -306,7 +306,7 @@ async def test_handwriting_uses_vision_model_with_fallback(monkeypatch):
     monkeypatch.setattr(anthropic, "AsyncAnthropic", FakeClient)
     out, usage = await writing.check("A1", writing.text_for("A1"), writing.prepare_image(_png())[0], "image/jpeg")
     assert out.read_ar == "بيت" and out.accuracy == 90
-    assert calls[:2] == ["claude-sonnet-5", "claude-sonnet-5:json"] and calls[-1] == settings.tutor_model + ":json"
+    assert calls[:2] == ["claude-sonnet-5-5", "claude-sonnet-5-5:json"] and calls[-1] == settings.tutor_model + ":json"
     assert usage["model"] == settings.tutor_model
 
 

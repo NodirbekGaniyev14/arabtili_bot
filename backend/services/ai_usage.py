@@ -22,7 +22,8 @@ PRICE_PER_M = {"in": 1.00, "out": 5.00, "cache_read": 0.10, "cache_write": 1.25}
 # Model prefiksi → narx (cache o'qish 0.1×, yozish 1.25× kirish narxidan)
 PRICES = {
     "claude-haiku-4-5": PRICE_PER_M,
-    "claude-sonnet-5": {"in": 2.00, "out": 10.00, "cache_read": 0.20, "cache_write": 2.50},
+    "claude-sonnet-5-5": {"in": 2.00, "out": 10.00, "cache_read": 0.20, "cache_write": 2.50},  # joriy avlod
+    "claude-sonnet-5": {"in": 2.00, "out": 10.00, "cache_read": 0.20, "cache_write": 2.50},  # eski avlod, narx bir xil
     "claude-sonnet-4": {"in": 3.00, "out": 15.00, "cache_read": 0.30, "cache_write": 3.75},
     "claude-opus-5": {"in": 5.00, "out": 25.00, "cache_read": 0.50, "cache_write": 6.25},
 }
@@ -36,7 +37,7 @@ def prices_for(model: str) -> dict:
 
 
 def short_model(model: str) -> str:
-    """claude-sonnet-5 → Sonnet 5, claude-haiku-4-5-20251001 → Haiku 4.5 (hisobot uchun)."""
+    """claude-sonnet-5-5 → Sonnet 5.5, claude-haiku-4-5-20251001 → Haiku 4.5 (hisobot uchun)."""
     parts = [p for p in (model or "").split("-") if p and not (len(p) == 8 and p.isdigit())]
     if len(parts) >= 2 and parts[0] == "claude":
         return parts[1].capitalize() + " " + ".".join(parts[2:])

@@ -271,6 +271,13 @@ def check_settings() -> list[str]:
         if settings.tutor_vip_model
         else _ok(f"AI modeli: {settings.tutor_model} (hamma uchun; VIP uchun kuchlirog'i — .env TUTOR_VIP_MODEL)")
     )
+    # K28.3: .env da eski avlod nomi qolgan bo'lsa (claude-sonnet-5) kod uni yangisiga o'tkazgan — admin .env ni tuzatsin
+    from config import UPGRADED
+
+    for env_name, (old, new) in UPGRADED.items():
+        out.append(_warn(f"{env_name}={old} → {new} ga avtomatik almashtirildi (narx bir xil) — serverdagi .env ni yangilang"))
+    if settings.writing_model:
+        out.append(_ok(f"Qo'lyozma o'qish modeli: {settings.writing_model} (xato bersa {settings.tutor_model})"))
     # #F84: iPhone HEIC suratlari — pillow-heif (requirements.txt) o'rnatilganmi
     try:
         import pillow_heif  # noqa: F401

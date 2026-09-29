@@ -217,7 +217,7 @@ def prepare_image(data: bytes) -> tuple[bytes, str]:
 async def _call_vision(system: list[dict], image: bytes, mime: str) -> tuple[WritingReply, dict]:
     """Vision: surat + ko'rsatma → WritingReply (tutor._call: structured → JSON zaxira → xato turi).
 
-    K28: qo'lyozma o'qish — `WRITING_MODEL` (standart Sonnet 5; Haiku arab qo'lyozmasini ko'pincha o'qiy
+    K28: qo'lyozma o'qish — `WRITING_MODEL` (standart Sonnet 5.5; Haiku arab qo'lyozmasini ko'pincha o'qiy
     olmadi: «yozganimni o'qimaydi»). U xato bersa (nomi/ruxsat yo'q) — _call asosiy model bilan qayta uradi."""
     from services.lesson_skills import writing_model
 

@@ -9,7 +9,7 @@ import pytest
 from db.models import AiUsage, utcnow
 from services import ai_usage, tutor
 
-SONNET = "claude-sonnet-5"
+SONNET = "claude-sonnet-5-5"
 
 
 def test_model_for(monkeypatch):
@@ -30,7 +30,7 @@ def test_prices_by_model():
     assert ai_usage.cost_usd({"in": 1_000_000}, "claude-haiku-4-5-20251001") == pytest.approx(1.00)
     assert ai_usage.cost_usd({"in": 1_000_000}, "nomalum-model") == pytest.approx(1.00), "noma'lum → Haiku narxi"
     assert ai_usage.short_model("claude-haiku-4-5-20251001") == "Haiku 4.5"
-    assert ai_usage.short_model(SONNET) == "Sonnet 5"
+    assert ai_usage.short_model(SONNET) == "Sonnet 5.5"
     assert ai_usage.short_model("") == "?"
 
 
@@ -169,7 +169,7 @@ async def test_turn_api_routes_vip_to_vip_model(session, make_user, monkeypatch)
             r = await c.post("/api/v2/tutor/turn", json=payload)
             assert r.status_code == 200, r.text
             info = (await c.get("/api/v2/tutor/topics")).json()
-            assert info["vip_model"] == "Sonnet 5"
+            assert info["vip_model"] == "Sonnet 5.5"
             state["user"] = await make_user()  # bepul
             r = await c.post("/api/v2/tutor/turn", json=payload)
             assert r.status_code == 200, r.text

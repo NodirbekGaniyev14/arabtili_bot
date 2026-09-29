@@ -1565,7 +1565,7 @@ export interface TutorTopics {
   free_turns: number;
   /** VIP kunlik javoblar limiti (yorliq uchun) */
   vip_turns: number;
-  /** K23.4: VIP suhbat/mock kuchliroq modelda — qisqa nomi («Sonnet 5»), bo'sh = farq yo'q */
+  /** K23.4: VIP suhbat/mock kuchliroq modelda — qisqa nomi («Sonnet 5.5»), bo'sh = farq yo'q */
   vip_model?: string;
   /** Bir martalik VIP sinov (K18.1) */
   trial_available?: boolean;

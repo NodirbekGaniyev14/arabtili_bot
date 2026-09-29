@@ -13,6 +13,8 @@ sys.path.insert(0, str(ROOT / "backend"))
 # Baza yo'lini import'dan OLDIN o'rnatamiz (config settings shu paytda o'qiladi)
 os.environ.setdefault("BOT_TOKEN", "")
 os.environ.setdefault("DEV_AUTH", "0")
+# K28.3: kod standarti VIP = Sonnet 5.5; testlar prod standartiga emas, aniq qiymatga tayanadi
+os.environ.setdefault("TUTOR_VIP_MODEL", "")
 
 
 @pytest_asyncio.fixture

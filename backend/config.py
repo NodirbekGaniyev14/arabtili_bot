@@ -1,8 +1,17 @@
+import logging
 from pathlib import Path
 
+from pydantic import ValidationInfo, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+log = logging.getLogger(__name__)
+
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# K28.3: eski avlod → joriy avlod (narxi bir xil: $2/$10). `.env` da eski nom qolib ketsa ham yangisiga
+# o'tiladi (server faylini men o'zgartira olmayman) va /tekshir «.env ni yangilang» deb ogohlantiradi.
+LEGACY_MODELS = {"claude-sonnet-5": "claude-sonnet-5-5"}
+UPGRADED: dict[str, tuple[str, str]] = {}  # ENV nomi → (eski, yangi)
 
 
 class Settings(BaseSettings):
@@ -29,15 +38,17 @@ class Settings(BaseSettings):
     # ── AI ustoz (services/tutor.py) ──
     # Suhbat modeli: Haiku 4.5 — arzon va tez; javob structured output bilan
     tutor_model: str = "claude-haiku-4-5-20251001"
-    # K23.4: VIP suhbat va mock uchun kuchliroq model (masalan claude-sonnet-5-5: $2/$10 — Haiku 4.5 ($1/$5) dan 2× narx).
+    # K23.4: VIP suhbat va mock uchun kuchliroq model. K28.3: standart Sonnet 5.5 ($2/$10 — Haiku 4.5 ($1/$5) dan 2× narx).
+    # O'chirish: serverdagi .env da `TUTOR_VIP_MODEL=` (bo'sh) → VIP ham tutor_model. Bepul o'quvchilar hamda kunlik
+    # savol / yozuv / onboarding / rol o'yini har doim tutor_model (Haiku). `.env` dagi qiymat shu standartdan ustun.
     # Sonnet 5/5.5 `thinking` berilmasa o'zi o'ylaydi — tutor._call max_tokens'ga zaxira qo'shadi (THINKING_HEADROOM).
-    # Bo'sh = hamma uchun tutor_model. Kunlik savol/yozuv/onboarding baribir tutor_model.
-    tutor_vip_model: str = ""
+    tutor_vip_model: str = "claude-sonnet-5-5"
     # K28: qo'lyozma (daftar surati) o'qish — kuchliroq vision modeli; xato bersa tutor_model bilan qayta.
     # Arab qo'lyozmasini Haiku ko'pincha o'qiy olmadi («yozganimni o'qimaydi»). Bo'sh = tutor_model.
     writing_model: str = "claude-sonnet-5-5"
     # VIP foydalanuvchiga kunlik javoblar limiti (token xarajatini cheklaydi):
-    # 30 × ~$0.003 ≈ $0.09/kun — eng faol VIP ham oyiga ~$2.7 dan oshmaydi
+    # Haiku: 30 × ~$0.003 ≈ $0.09/kun (~$2.7/oy). Sonnet 5.5 da taxminan 1.5–2.5× (eng faol VIP ≈ $4–7/oy) —
+    # `/ustoz` da «model bo'yicha» sarfni kuzating; kerak bo'lsa shu limitni tushiring.
     tutor_daily_turns: int = 30
     # VIP'siz kunlik bepul javoblar (tatib ko'rish uchun; 0 = to'liq qulf)
     tutor_free_turns: int = 3
@@ -71,6 +82,16 @@ class Settings(BaseSettings):
     stt_openai_api_key: str = ""
     stt_openai_model: str = "gpt-4o-transcribe"
     stt_openai_base_url: str = "https://api.openai.com/v1"
+
+    @field_validator("tutor_vip_model", "writing_model")
+    @classmethod
+    def _upgrade_legacy_model(cls, v: str, info: ValidationInfo) -> str:
+        new = LEGACY_MODELS.get((v or "").strip())
+        if not new:
+            return v
+        UPGRADED[(info.field_name or "").upper()] = (v, new)
+        log.warning("%s=%s eski avlod — %s ishlatiladi (narx bir xil); .env ni yangilang", (info.field_name or "").upper(), v, new)
+        return new
 
 
 settings = Settings()
