@@ -739,6 +739,21 @@ def model_for(vip: bool) -> str:
     return (settings.tutor_vip_model or settings.tutor_model) if vip else settings.tutor_model
 
 
+# K28: `thinking` berilmasa bu modellar MOSLASHUVCHAN fikrlashni o'zi yoqadi (Sonnet 5 / 5.5, Opus 5.x, Fable …),
+# fikrlash tokenlari esa `max_tokens` ga kiradi va chiqish narxida hisoblanadi. Haiku 4.5 da fikrlash yo'q.
+# 400 tokenlik cheklov (Haiku uchun mo'ljallangan) bilan bunday model javob JSON'ini kesib yuborardi →
+# ikki marta bekor chaqiruv (pul ketadi) → jimgina Haiku'ga qaytish. Shuning uchun kattaroq zaxira.
+THINKING_DEFAULT_ON = ("claude-sonnet-5", "claude-opus-5", "claude-fable", "claude-mythos")
+THINKING_HEADROOM = 3000
+
+
+def output_budget(model: str, max_tokens: int) -> int:
+    """`max_tokens`: fikrlash o'ylaydigan modellarda kamida THINKING_HEADROOM; Haiku va boshqalarda o'zgarmaydi."""
+    if (model or "").startswith(THINKING_DEFAULT_ON):
+        return max(max_tokens, THINKING_HEADROOM)
+    return max_tokens
+
+
 async def _call(system: list[dict], msgs: list[dict], schema, model: str | None = None, max_tokens: int = MAX_TOKENS):
     """Anthropic chaqiruvi: structured output, rad etilsa JSON rejimi.
     Qaytaradi: (parsed, usage) — usage["model"] chaqirilgan model. Xatoda TutorUnavailable.
@@ -747,12 +762,13 @@ async def _call(system: list[dict], msgs: list[dict], schema, model: str | None 
 
     model = model or settings.tutor_model
     client = AsyncAnthropic(api_key=settings.anthropic_api_key)
+    budget = output_budget(model, max_tokens)
     out = None
     resp = None
     try:
         resp = await client.messages.parse(
             model=model,
-            max_tokens=max_tokens,
+            max_tokens=budget,
             system=system,
             messages=msgs,
             output_format=schema,
@@ -764,7 +780,7 @@ async def _call(system: list[dict], msgs: list[dict], schema, model: str | None 
         try:
             resp = await client.messages.create(
                 model=model,
-                max_tokens=max_tokens,
+                max_tokens=budget,
                 system=system
                 + [
                     {

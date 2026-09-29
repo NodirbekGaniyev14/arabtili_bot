@@ -13,6 +13,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
 from db.models import Feedback, User
+from services.names import admin_show
 
 MAX_REPLY = 3000
 _ID_TAG = re.compile(r"#F(\d+)")
@@ -110,9 +111,10 @@ def admin_notice(fb: Feedback, user: User) -> str:
     uname = f"@{user.username}" if user.username else "—"
     ctx = f" · {esc(fb.context)}" if fb.context else ""
     head = "🐞 <b>Savolda xato xabari</b>" if fb.source == "issue" else "💬 <b>Yangi fikr</b>"
+    # K28: admin_show — arabcha ism (LRM bilan) qatorni teskari aylantirmasin; «...» ism → @username/ID
     return (
         f"{head} #F{fb.id}\n"
-        f"{esc(user.name or '—')}, {esc(uname)}, ID <code>{user.tg_id}</code>{ctx}\n\n"
+        f"{admin_show(user.name, user.username, user.tg_id)}, {esc(uname)}, ID <code>{user.tg_id}</code>{ctx}\n\n"
         f"{esc(fb.text)}\n\n"
         f"<i>Javob berish: shu xabarga reply qiling yoki "
         f"/javob {fb.id} matn</i>"

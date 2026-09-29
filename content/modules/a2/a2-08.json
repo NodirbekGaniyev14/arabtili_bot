@@ -332,7 +332,7 @@
   },
   {
    "type": "mcq",
-   "q_uz": "«Mendan so'radi» to'g'ri shakli qaysi?",
+   "q_uz": "«U (erkak) mendan so'radi» — arabchasi qaysi?",
    "q_ar": "",
    "options": [
     "سَأَلَنِي",
@@ -341,11 +341,16 @@
     "سَأَلَهُ"
    ],
    "answer": "سَأَلَنِي",
-   "explain_uz": "Fe'lga «meni» qo'shilganda himoya nuni kiradi: ـنِي.",
+   "explain_uz": "«Meni / mendan» = ـنِي. Fe'lga birikkanda oldidan himoya nuni (ن) qo'shiladi: سَأَلَ + نِي = سَأَلَنِي. Nunsiz ـِي faqat otga (كِتَابِي) qo'shiladi.",
    "audio": "",
    "root": "",
    "pattern": "",
-   "words": []
+   "words": [],
+   "option_notes": {
+    "سَأَلِي": "Xato: fe'lda himoya nuni (ن) tushib qolgan. To'g'risi سَأَلَنِي (ـِي faqat otga: كِتَابِي).",
+    "سَأَلَنَا": "«U bizdan so'radi» — ـنَا «biz» degani, «men» emas.",
+    "سَأَلَهُ": "«U undan so'radi» — ـهُ «u/uni» degani, «men» emas."
+   }
   },
   {
    "type": "translate_ar_uz",
@@ -353,7 +358,11 @@
    "q_ar": "كِتَابُكُمَا",
    "options": [],
    "answer": "sizlar ikkovingizning kitobingiz",
-   "accept": ["ikkalangizning kitobingiz", "ikkovingizning kitobi", "ikkalangizning kitobi"],
+   "accept": [
+    "ikkalangizning kitobingiz",
+    "ikkovingizning kitobi",
+    "ikkalangizning kitobi"
+   ],
    "explain_uz": "ـكُمَا — muxotab musanna qo'shimchasi.",
    "audio": "",
    "root": "",

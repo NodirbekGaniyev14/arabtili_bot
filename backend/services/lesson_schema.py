@@ -136,6 +136,8 @@ class MicroTestItem(BaseModel):
     words: list[str] = Field(default_factory=list)  # order_words banki
     # K27: yozma tarjimada qo'shimcha to'g'ri javoblar (sinonim, hurmat shakli…) — namuna `answer`
     accept: list[str] = Field(default_factory=list)
+    # K28: variantli savolda XATO variant → nega xato / u aslida nima (o'quvchi shuni tanlaganda ko'rsatiladi)
+    option_notes: dict[str, str] = Field(default_factory=dict)
 
 
 class SrsCard(BaseModel):
@@ -275,6 +277,14 @@ def validate_lesson(
                 errors.append(f"{tag}: words/answer to'liq emas")
         if t.type == "dictation" and not t.audio:
             warnings.append(f"{tag}: audio ko'rsatilmagan")
+        if t.option_notes:
+            if t.type != "mcq":
+                errors.append(f"{tag}: option_notes faqat mcq da")
+            for opt, note in t.option_notes.items():
+                if opt not in t.options or opt == t.answer:
+                    errors.append(f"{tag}: option_notes kaliti xato variant bo'lishi shart: {opt!r}")
+                if not note.strip():
+                    errors.append(f"{tag}: option_notes izohi bo'sh: {opt!r}")
         if t.accept:
             if t.type not in ("translate_uz_ar", "translate_ar_uz", "fill_blank", "dictation"):
                 errors.append(f"{tag}: accept faqat yozma turlarda")

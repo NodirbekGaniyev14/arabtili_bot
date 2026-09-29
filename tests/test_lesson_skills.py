@@ -308,3 +308,52 @@ async def test_handwriting_uses_vision_model_with_fallback(monkeypatch):
     assert out.read_ar == "بيت" and out.accuracy == 90
     assert calls[:2] == ["claude-sonnet-5", "claude-sonnet-5:json"] and calls[-1] == settings.tutor_model + ":json"
     assert usage["model"] == settings.tutor_model
+
+
+# ── K28: Sonnet 5/5.5 — fikrlash tokenlari max_tokens ga kiradi ──
+
+
+def test_output_budget_only_for_thinking_models():
+    from services import tutor
+
+    assert tutor.output_budget("claude-haiku-4-5-20251001", 400) == 400, "Haiku o'zgarmaydi"
+    assert tutor.output_budget("claude-sonnet-4-6", 400) == 400, "Sonnet 4.6 — fikrlash o'zi yoqilmaydi"
+    for m in ("claude-sonnet-5", "claude-sonnet-5-5", "claude-opus-5-5", "claude-fable-5-1"):
+        assert tutor.output_budget(m, 400) == tutor.THINKING_HEADROOM, m
+        assert tutor.output_budget(m, 9000) == 9000, "kattasini kamaytirmaydi"
+
+
+@pytest.mark.asyncio
+async def test_call_passes_headroom_to_thinking_models(monkeypatch):
+    """400 tokenlik cheklov bilan Sonnet JSON'ni kesardi → ikki bekor chaqiruv + jim Haiku. Endi zaxira bor."""
+    import anthropic
+
+    from config import settings
+    from services import tutor
+
+    monkeypatch.setattr(settings, "anthropic_api_key", "k")
+    seen = []
+
+    class FakeMessages:
+        async def parse(self, model, max_tokens, **kw):
+            seen.append((model, max_tokens))
+            return type("R", (), {"parsed_output": _reply(ok=True), "usage": None})()
+
+    class FakeClient:
+        def __init__(self, **kw):
+            self.messages = FakeMessages()
+
+    monkeypatch.setattr(anthropic, "AsyncAnthropic", FakeClient)
+    for model in ("claude-haiku-4-5-20251001", "claude-sonnet-5-5"):
+        out, usage = await tutor._call([{"type": "text", "text": "s"}], [{"role": "user", "content": "x"}],
+                                       ls.LessonWritingReply, model, max_tokens=400)
+        assert usage["model"] == model and out.ok
+    assert seen == [("claude-haiku-4-5-20251001", 400), ("claude-sonnet-5-5", tutor.THINKING_HEADROOM)]
+
+
+def test_new_ai_feature_is_named_in_usage_report():
+    from services import ai_usage
+
+    assert "lesson_writing" in ai_usage.FEATURES
+    assert ai_usage.short_model("claude-sonnet-5-5") == "Sonnet 5.5"
+    assert ai_usage.prices_for("claude-sonnet-5-5") == {"in": 2.0, "out": 10.0, "cache_read": 0.2, "cache_write": 2.5}

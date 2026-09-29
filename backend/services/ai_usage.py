@@ -47,6 +47,7 @@ FEATURES = {
     "mock": "🎯 Mock imtihon",
     "roleplay": "🎭 Rol o'yini",
     "writing": "✍️ Yozma baho",
+    "lesson_writing": "📝 Dars yozuvi (AI)",
     "onboarding": "🧭 Reja tuzish",
     "daily": "🎙 Kunlik savol",
 }

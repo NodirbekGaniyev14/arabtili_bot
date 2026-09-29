@@ -98,3 +98,50 @@ async def test_tutor_rate_alert_rtl_name_and_daily(session, make_user, monkeypat
         app.dependency_overrides.clear()
         del app.state.bot
     assert bot.sent and "‎" in bot.sent[0] and "javob" not in bot.sent[0]
+
+
+# ── #F138: «Savol tushunarsiz» — a2-08 «mendan so'radi» ──
+
+
+def test_authored_option_notes_reach_the_learner():
+    """Muallif yozgan izohlar mikro-testga o'tadi: xato variant (سَأَلِي) tanlansa — nega xato ekani ko'rinadi."""
+    items = [it for a in range(8) for it in build_test("a2-08", a)["items"]]
+    it = next(i for i in items if i["answer"] == "سَأَلَنِي")
+    assert "arabchasi qaysi" in it["q_uz"] and "himoya nuni" in it["explain_uz"]
+    notes = it["option_notes"]
+    assert set(notes) == {"سَأَلِي", "سَأَلَنَا", "سَأَلَهُ"} and it["answer"] not in notes
+    assert "nun" in notes["سَأَلِي"] and "biz" in notes["سَأَلَنَا"]
+
+
+def test_option_notes_schema_rules():
+    from services.lesson_schema import LessonV2, validate_lesson
+
+    raw = json.loads((ROOT / "content" / "modules" / "a2" / "a2-08.json").read_text(encoding="utf-8"))
+    errs, _ = validate_lesson(LessonV2.model_validate(raw))
+    assert not [e for e in errs if "option_notes" in e], errs
+
+    bad = json.loads(json.dumps(raw))
+    mcq = next(t for t in bad["micro_test"] if t["type"] == "mcq" and t["answer"] == "سَأَلَنِي")
+    mcq["option_notes"]["سَأَلَنِي"] = "javobning o'ziga izoh yozib bo'lmaydi"
+    mcq["option_notes"]["yo'q variant"] = "variantlar ichida emas"
+    mcq["option_notes"]["سَأَلَهُ"] = "  "
+    tr = next(t for t in bad["micro_test"] if t["type"] == "translate_uz_ar")
+    tr["option_notes"] = {"x": "faqat mcq"}
+    errs, _ = validate_lesson(LessonV2.model_validate(bad))
+    joined = "\n".join(errs)
+    assert joined.count("option_notes") >= 4, joined
+
+
+@pytest.mark.asyncio
+async def test_admin_notice_rtl_name(session, make_user):
+    """Admin xabari: arabcha ism (أمر الدين) qatorni teskari aylantirmasin — LRM; «...» ism → @username."""
+    from services import feedback as fs
+
+    u = await make_user("أمر الدين", username="")
+    fb = await fs.save(session, u.id, "Tur: x", source="issue", context="a2-08")
+    head = fs.admin_notice(fb, u).splitlines()[1]
+    assert head.startswith("أمر الدين‎, —, ID ") and head.endswith("a2-08"), head
+
+    u2 = await make_user("...", username="ali")
+    fb2 = await fs.save(session, u2.id, "Tur: y", source="issue", context="")
+    assert fs.admin_notice(fb2, u2).splitlines()[1].startswith("@ali‎, @ali, ID ")
