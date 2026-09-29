@@ -829,6 +829,34 @@ export interface LessonV2Data {
   passage: ReadingPassage | null;
   srs_cards: { type: string; front: string; back: string; deck: string }[];
   meta: { title_uz: string; level: string; order: number; module: string };
+  /** K28: 🗣 GAPIRISH ovozni eshitadi (server STT sozlangan) */
+  voice?: boolean;
+  /** K28: ✍️ YOZISH AI bilan tekshiriladi */
+  ai?: boolean;
+}
+
+/** K28: dars GAPIRISH fazasi — bitta namuna bo'yicha natija */
+export interface LessonSpeakResult {
+  transcript: string;
+  score: number;
+  words: ScoredWord[];
+  mode: "letter" | "letters" | "syllable" | "text";
+  tip_uz: string;
+}
+
+/** K28: dars YOZISH fazasi — AI bahosi (matn yoki daftar surati) */
+export interface LessonWritingResult {
+  ai: boolean;
+  /** AI ishlamadi: "auth" | "credit" | "rate" | "other" | "nokey" */
+  error?: string;
+  ok?: boolean;
+  score?: number;
+  /** Bot nima o'qidi (surat — qo'lyozma) */
+  read_ar?: string;
+  corrected_ar?: string;
+  feedback_uz: string;
+  tips_uz?: string[];
+  is_handwriting?: boolean | null;
 }
 
 export interface CompleteV2Response {
@@ -1204,10 +1232,26 @@ export const api = {
       body: JSON.stringify({ correct, total, wrong_words: wrongWords }),
     }),
   evalWriting: (lessonId: string, text: string) =>
-    request<{ ai: boolean; feedback_uz: string }>("/api/v2/eval/writing", {
+    request<LessonWritingResult>("/api/v2/eval/writing", {
       method: "POST",
       body: JSON.stringify({ lesson_id: lessonId, text }),
     }),
+  /** K28: daftar surati → AI qo'lyozmani o'qib tekshiradi */
+  evalWritingPhoto: (lessonId: string, photo: Blob, filename: string) => {
+    const fd = new FormData();
+    fd.append("lesson_id", lessonId);
+    fd.append("file", photo, filename);
+    return upload<LessonWritingResult>("/api/v2/eval/writing-photo", fd);
+  },
+  /** K28: dars GAPIRISH — o'quvchi ovozi (idx-namuna) → baho */
+  lessonSpeak: (lessonId: string, idx: number, audio: Blob, filename: string) => {
+    const fd = new FormData();
+    fd.append("idx", String(idx));
+    fd.append("file", audio, filename);
+    return upload<LessonSpeakResult>(`/api/v2/lessons/${encodeURIComponent(lessonId)}/speak`, fd);
+  },
+  lessonSpeakAudioUrl: (lessonId: string, idx: number) =>
+    `/api/v2/lessons/${encodeURIComponent(lessonId)}/speak/${idx}.mp3`,
   getExamInfo: () => request<ExamInfo>("/api/exam/info"),
   getMyCertificates: () =>
     request<{ certificates: MyCertificate[] }>("/api/my-certificates"),

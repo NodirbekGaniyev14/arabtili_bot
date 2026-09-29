@@ -15,6 +15,8 @@ import { playAudio } from "../../lib/audio";
 import MashaAllah from "../../components/MashaAllah";
 import ArabicText, { buildLookup, stripHarakat, type RevealInfo } from "./ArabicText";
 import { QuizRunner } from "./exercises";
+import LessonSpeak from "./LessonSpeak";
+import LessonWrite from "./LessonWrite";
 
 const tg = () => window.Telegram?.WebApp;
 
@@ -727,9 +729,6 @@ function SkillPhase({
 }) {
   const s = lesson.skills;
   const [revealed, setRevealed] = useState<Set<number>>(new Set());
-  const [writing, setWriting] = useState("");
-  const [feedback, setFeedback] = useState<string | null>(null);
-  const [evaluating, setEvaluating] = useState(false);
 
   useEffect(() => {
     if (which === 1) playAudio(s.listening.audio);
@@ -810,62 +809,12 @@ function SkillPhase({
     );
   }
 
+  // K28: 🗣 GAPIRISH endi eshitadi (mikrofon + STT), ✍️ YOZISH o'qiydi (matn yoki daftar surati)
   if (which === 2) {
-    return (
-      <div className="pt-4">
-        <SectionLabel text="🗣 GAPIRISH" />
-        <p className="text-sm font-semibold">{s.speaking.task_uz}</p>
-        <div className="mt-3 space-y-2">
-          {s.speaking.target_ar.map((t, i) => (
-            <div key={i} className="rounded-2xl bg-card border border-cardline p-4 text-center">
-              <ArabicText text={t} lookup={lookup} className="text-3xl" />
-            </div>
-          ))}
-        </div>
-        <p className="mt-3 text-xs text-ink-soft font-semibold text-center">
-          Ovoz chiqarib o'qing — talaffuzga e'tibor bering
-        </p>
-        <NextBtn onClick={onNext} label="✓ O'qib chiqdim" />
-      </div>
-    );
+    return <LessonSpeak lesson={lesson} lookup={lookup} onNext={onNext} />;
   }
 
-  // writing
-  return (
-    <div className="pt-4">
-      <SectionLabel text="✍️ YOZISH" />
-      <p className="text-sm font-semibold">{s.writing.task_uz}</p>
-      <textarea
-        value={writing}
-        onChange={(e) => setWriting(e.target.value)}
-        dir="auto"
-        rows={3}
-        className="mt-3 w-full rounded-2xl border-2 border-emerald-deep/50 bg-card px-4 py-3 text-xl font-bold outline-none focus:border-emerald-deep font-arabic"
-        placeholder="Shu yerga yozing..."
-      />
-      {feedback ? (
-        <div className="mt-3 rounded-2xl bg-gold-soft/60 border border-gold/30 p-4 text-sm font-semibold leading-relaxed">
-          🐪 {feedback}
-        </div>
-      ) : (
-        <button
-          onClick={() => {
-            setEvaluating(true);
-            api
-              .evalWriting(lesson.id, writing)
-              .then((r) => setFeedback(r.feedback_uz))
-              .catch(() => setFeedback("Baholashda xatolik — davom etavering."))
-              .finally(() => setEvaluating(false));
-          }}
-          disabled={!writing.trim() || evaluating}
-          className="mt-3 w-full rounded-2xl bg-card border border-cardline py-3 font-extrabold disabled:opacity-40"
-        >
-          {evaluating ? "Baholanmoqda..." : "🤖 AI bahosi"}
-        </button>
-      )}
-      <NextBtn onClick={onNext} />
-    </div>
-  );
+  return <LessonWrite lesson={lesson} onNext={onNext} />;
 }
 
 /* ── Yordamchilar ── */

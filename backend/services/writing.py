@@ -27,10 +27,9 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import BASE_DIR, settings
 from db.models import WritingResult
-from services import ai_usage
 from services.stats import _today
 from services.translit import translit
-from services.tutor import LEVEL_PROFILES, TutorUnavailable, classify
+from services.tutor import LEVEL_PROFILES, TutorUnavailable
 
 log = logging.getLogger(__name__)
 
@@ -78,8 +77,8 @@ ORIGINAL TEXT:
 {ar}
 
 Rules:
-1. First decide `is_handwriting`: true only if the photo shows Arabic handwriting on paper (pen/pencil). A screen, printed text, an empty page or an unrelated photo → false, accuracy 0, and explain in `praise_uz` kindly what to photograph.
-2. `read_ar`: transcribe exactly what is written (letters only; harakat may be omitted). Keep line breaks. Do NOT silently correct mistakes — write what you see.
+1. First decide `is_handwriting`: true if the photo shows Arabic handwriting (pen/pencil on paper, a notebook, a whiteboard). Beginner handwriting is often uneven, faint or messy — that is still handwriting: read it as best you can. The photo may be rotated, tilted or taken at an angle — read it in any orientation. Only a screen, printed text, an empty page or an unrelated photo → false, accuracy 0, and explain in `praise_uz` kindly what to photograph.
+2. `read_ar`: transcribe exactly what is written (letters only; harakat may be omitted). Keep line breaks. Do NOT silently correct mistakes — write what you see. If a letter is ambiguous, pick the reading closest to the original.
 3. `accuracy` 0-100 compares LETTERS and WORDS with the original: missing/extra/wrong letters, wrong dots (ب/ت/ث, ج/ح/خ, س/ش…), hamza form, ة/ه, ى/ي, joined/separated letters, missing words. Harakat (vowel marks) are optional and never reduce the score, but a beginner (A0/A1) who wrote them gets +5 within the cap. A faithful copy with tidy letters is 90-100.
 4. `missing_words` and `wrong_words` must be words from the original. `note_uz` — 3-8 Uzbek (Latin) words naming the exact difference.
 5. `tips_uz`: 2-3 concrete tips in Uzbek (Latin), about the learner's actual mistakes or letter shapes (e.g. «ة oxirida ikki nuqta», «ع o'rtada ochiq bo'lishi kerak», «harflarni ulash»). For a perfect copy give one advanced tip (proportions, baseline).
@@ -205,16 +204,23 @@ def prepare_image(data: bytes) -> tuple[bytes, str]:
     scale = MAX_IMAGE_SIDE / max(w, h)
     if scale < 1:
         img = img.resize((max(1, round(w * scale)), max(1, round(h * scale))), Image.LANCZOS)
+    # K28: xira qalam / soyali sahifa — kontrast cho'ziladi (eng och va eng to'q 1% kesiladi), AI harfni ajratadi
+    try:
+        img = ImageOps.autocontrast(img, cutoff=1)
+    except Exception:  # juda kichik / bir xil rangli surat — o'zgarishsiz
+        pass
     buf = io.BytesIO()
     img.save(buf, format="JPEG", quality=82, optimize=True)
     return buf.getvalue(), "image/jpeg"
 
 
 async def _call_vision(system: list[dict], image: bytes, mime: str) -> tuple[WritingReply, dict]:
-    """Haiku vision: surat + ko'rsatma → WritingReply. tutor._call bilan bir xil zaxira/xato mantiqi."""
-    from anthropic import AsyncAnthropic
+    """Vision: surat + ko'rsatma → WritingReply (tutor._call: structured → JSON zaxira → xato turi).
 
-    client = AsyncAnthropic(api_key=settings.anthropic_api_key)
+    K28: qo'lyozma o'qish — `WRITING_MODEL` (standart Sonnet 5; Haiku arab qo'lyozmasini ko'pincha o'qiy
+    olmadi: «yozganimni o'qimaydi»). U xato bersa (nomi/ruxsat yo'q) — _call asosiy model bilan qayta uradi."""
+    from services.lesson_skills import writing_model
+
     content = [
         {
             "type": "image",
@@ -222,34 +228,9 @@ async def _call_vision(system: list[dict], image: bytes, mime: str) -> tuple[Wri
         },
         {"type": "text", "text": "Here is the photo of my handwriting. Compare it with the original text."},
     ]
-    msgs = [{"role": "user", "content": content}]
-    out = None
-    resp = None
-    try:
-        resp = await client.messages.parse(
-            model=settings.tutor_model, max_tokens=MAX_TOKENS, system=system, messages=msgs, output_format=WritingReply
-        )
-        out = resp.parsed_output
-    except Exception as e:
-        log.warning("Yozuv tekshiruvi (structured) xatosi: %r — JSON rejimi", e)
-        try:
-            resp = await client.messages.create(
-                model=settings.tutor_model,
-                max_tokens=MAX_TOKENS,
-                system=system
-                + [{"type": "text", "text": f"Respond ONLY with a JSON object with keys: {_tutor._JSON_KEYS[WritingReply]}. No prose, no code fences."}],
-                messages=msgs,
-            )
-            text = "".join(b.text for b in resp.content if b.type == "text").strip()
-            text = text.strip("`").removeprefix("json").strip()
-            out = WritingReply.model_validate_json(text)
-        except Exception as e2:
-            log.warning("Yozuv tekshiruvi xatosi: %r", e2)
-            kind, msg = classify(e2)
-            raise TutorUnavailable(msg, kind) from e2
-    if out is None:
-        raise TutorUnavailable("Tekshiruv javobi o'qilmadi. Qayta urinib ko'ring.", "parse")
-    return out, ai_usage.usage_of(resp)
+    return await _tutor._call(
+        system, [{"role": "user", "content": content}], WritingReply, writing_model(photo=True), max_tokens=MAX_TOKENS
+    )
 
 
 async def check(level: str, text: dict, image: bytes, mime: str) -> tuple[WritingReply, dict]:

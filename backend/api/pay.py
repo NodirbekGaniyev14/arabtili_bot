@@ -57,6 +57,15 @@ async def pay_receipt(
         raise HTTPException(status_code=422, detail="Fayl bo'sh")
     if len(data) > billing.MAX_RECEIPT_BYTES:
         raise HTTPException(status_code=413, detail="Rasm juda katta (maks. 6 MB)")
+    # K28 pentest: MIME'ni klient aytadi — baytlar haqiqatan rasmmi (aks holda admin chekni ko'rmaydi)
+    try:
+        import io
+
+        from PIL import Image
+
+        Image.open(io.BytesIO(data)).verify()
+    except Exception:
+        raise HTTPException(status_code=422, detail="Rasm o'qilmadi — chekning skrinshotini JPG/PNG qilib yuboring")
 
     req = await billing.create_request(session, user, plan, data, mime)
     await billing.notify_admin(getattr(request.app.state, "bot", None), req, user)

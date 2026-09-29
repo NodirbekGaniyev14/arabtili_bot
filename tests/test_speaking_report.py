@@ -133,7 +133,8 @@ def test_tips():
 
     u = User(tg_id=1, name="")
     empty = sr.render(u, base, {**base, "total": 5}, "x", ctx)
-    assert "do'stim, bu hafta speaking mashqi bo'lmadi" in empty and "O'tgan hafta 5 ta mashq" in empty
+    # K28: ism HTML-escape + LRM (services/names.show) — arabcha ism yonidagi vergul joyida qolsin
+    assert "do'stim‎, bu hafta speaking mashqi bo'lmadi" in empty and "O'tgan hafta 5 ta mashq" in empty
     assert "hali speaking mashqi yo'q" in sr.render(u, base, base, "x", ctx, current_week=True)
 
 

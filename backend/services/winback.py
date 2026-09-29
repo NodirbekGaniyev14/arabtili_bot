@@ -20,6 +20,7 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
+from services.names import show
 from services import notify_prefs
 from db.models import Meta, Plan, User, XpLog, utcnow
 from services import referral
@@ -72,7 +73,7 @@ def _kb(rows: list[tuple[str, str]]):
 
 def message(stage: int, user: User, st: dict, days: int) -> tuple[str, list[tuple[str, str]]]:
     """(matn HTML, tugmalar). st — user_stats natijasi."""
-    name = user.name or "do'stim"
+    name = show(user.name, "do'stim")
     nxt = st.get("next_lesson") or {}
     lesson = f"«{nxt['title']}»" if nxt.get("title") else "keyingi dars"
     due = st.get("due_count", 0)

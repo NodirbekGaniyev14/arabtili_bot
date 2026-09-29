@@ -91,8 +91,27 @@ def opening(scenario_id: str) -> dict | None:
     return {"ar": first["ar"], "uz": first["uz"], "ai": False, "done": False}
 
 
-async def reply(scenario_id: str, history: list[dict]) -> dict:
-    """history: [{role:'user'|'assistant', content}]. Keyingi rol javobini qaytaradi."""
+def api_messages(history: list[dict]) -> list[dict]:
+    """Klient tarixi → Anthropic xabarlari (K28): faqat user/assistant, har biri qisqa, rollar navbatma-navbat,
+    birinchisi — user. Ilgari tarix ochilish (assistant) bilan boshlanardi va API rad etib, AI hech qachon
+    ishlamasdi (jimgina skriptga tushardi)."""
+    out: list[dict] = []
+    for m in history:
+        role, content = m.get("role"), str(m.get("content") or "").strip()[:600]
+        if role not in ("user", "assistant") or not content:
+            continue
+        if out and out[-1]["role"] == role:
+            out[-1]["content"] += "\n" + content
+        else:
+            out.append({"role": role, "content": content})
+    if not out or out[0]["role"] != "user":
+        out.insert(0, {"role": "user", "content": "(suhbatni boshla)"})
+    return out
+
+
+async def reply(scenario_id: str, history: list[dict], use_ai: bool = True) -> dict:
+    """history: [{role:'user'|'assistant', content}]. Keyingi rol javobini qaytaradi.
+    `use_ai=False` (kunlik limit tugagan) — faqat skript."""
     sc = SCENARIOS.get(scenario_id)
     if not sc:
         return {"ar": "", "uz": "Vaziyat topilmadi.", "ai": False, "done": True}
@@ -100,16 +119,12 @@ async def reply(scenario_id: str, history: list[dict]) -> dict:
     user_turns = sum(1 for m in history if m.get("role") == "user")
 
     # Kredit bo'lsa — Claude jonli o'ynaydi
-    if settings.anthropic_api_key:
+    if settings.anthropic_api_key and use_ai:
         try:
             from anthropic import AsyncAnthropic
 
             client = AsyncAnthropic(api_key=settings.anthropic_api_key)
-            msgs = [
-                {"role": m["role"], "content": m["content"]}
-                for m in history
-                if m.get("content")
-            ]
+            msgs = api_messages(history)
             resp = await client.messages.create(
                 # Qisqa rol javobi uchun Haiku yetarli — Opus'dan ~15x arzon
                 model=settings.tutor_model,
@@ -132,8 +147,10 @@ async def reply(scenario_id: str, history: list[dict]) -> dict:
             from services.ai_usage import usage_of
 
             return {"ar": ar, "uz": uz, "ai": True, "done": done, "usage": usage_of(resp)}
-        except Exception:
-            pass  # kredit/xato — skriptga tushamiz
+        except Exception as e:  # kredit/xato — skriptga tushamiz (lekin jim emas: log)
+            import logging
+
+            logging.getLogger(__name__).warning("rol o'yini AI xatosi: %r", e)
 
     # Zaxira: skript bo'yicha keyingi turn
     idx = min(user_turns, len(sc["script"]) - 1)

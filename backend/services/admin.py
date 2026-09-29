@@ -22,6 +22,7 @@ from db.models import (
     utcnow,
 )
 from services.stats import TASHKENT_OFFSET, _local_date, _today
+from services.names import admin_show, esc
 
 
 def _day_start_utc(d) -> datetime:
@@ -176,10 +177,10 @@ async def recent_users(session: AsyncSession, limit: int = 15) -> str:
         ).scalar_one()
         joined = _local_date(u.created_at).isoformat()
         uname = f"@{u.username}" if u.username else "—"
-        name = u.name or "Ismsiz"
+        name = admin_show(u.name, u.username, u.tg_id)
         level = plan or "reja yo‘q"
         lines.append(
-            f"• <b>{name}</b> ({uname}) · ID <code>{u.tg_id}</code>\n"
+            f"• <b>{name}</b> ({esc(uname)}) · ID <code>{u.tg_id}</code>\n"
             f"  {level} · {lessons} dars · {joined}"
         )
     return "\n".join(lines)
@@ -245,7 +246,7 @@ async def user_detail(session: AsyncSession, tg_id: int) -> str:
     last = _local_date(last_xp).isoformat() if last_xp else "—"
 
     return (
-        f"👤 <b>{user.name or 'Ismsiz'}</b> ({uname})\n"
+        f"👤 <b>{admin_show(user.name, user.username, user.tg_id)}</b> ({esc(uname)})\n"
         f"ID: <code>{user.tg_id}</code>\n"
         f"Ro'yxatdan o'tgan: {_local_date(user.created_at).isoformat()}\n"
         f"Oxirgi faollik: {last}\n\n"
@@ -386,8 +387,8 @@ async def ratings_report(session: AsyncSession) -> str:
         lines.append("\n💬 <b>So'nggi fikrlar</b>")
         for f, name, tg_id in fb:
             when = _local_date(f.created_at).isoformat()
-            snippet = f.text[:120].replace("<", "&lt;").replace(">", "&gt;")
-            lines.append(f"• <b>{name or tg_id}</b> ({when}): {snippet}")
+            snippet = esc(f.text[:120])
+            lines.append(f"• <b>{admin_show(name, '', tg_id)}</b> ({when}): {snippet}")
 
     if up == down == 0 and not fb:
         return "Hozircha baho yoki fikr yo'q."

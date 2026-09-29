@@ -50,6 +50,7 @@ CHECKPOINT_EVERY = 5
 CHECKPOINT_QUESTIONS = 15
 CHECKPOINT_PASS = 70  # foiz
 FAIL_XP = 5  # yiqilgan urinish uchun ham ozgina XP (streak uzilmasin)
+LESSON_XP_DAILY_CAP = 600  # K28: darslardan kunlik XP chegarasi (xp_guard) — faqat skriptni to'xtatadi
 
 
 @router.get("/lessons/{lesson_id}")
@@ -63,6 +64,9 @@ async def lesson_v2(
     if not meta or not data:
         raise HTTPException(status_code=404, detail="Dars topilmadi")
 
+    from config import settings
+    from services import stt
+
     # Mikro-test urinishga qarab yig'iladi — qayta topshirganda boshqa savollar
     attempts = await lesson_attempt_count(session, user.id, lesson_id)
     test = build_test(lesson_id, attempts)
@@ -73,6 +77,9 @@ async def lesson_v2(
         "test_attempt": test["attempt"],
         "pass_score": PASS_SCORE,
         "attempts_made": attempts,
+        # K28: 🗣 GAPIRISH ovozni eshitadimi (STT sozlangan), ✍️ YOZISH AI bilan tekshiriladimi
+        "voice": stt.available(),
+        "ai": bool(settings.anthropic_api_key),
         # A2+ darslarda bosqichma-bosqich o'qish matni (services/reading.py)
         "passage": passage_for(lesson_id),
         "meta": {
@@ -85,9 +92,9 @@ async def lesson_v2(
 
 
 class CompleteV2Body(BaseModel):
-    correct: int = Field(ge=0)
-    total: int = Field(ge=1)
-    wrong_words: list[str] = Field(default_factory=list)
+    correct: int = Field(ge=0, le=10_000)
+    total: int = Field(ge=1, le=10_000)
+    wrong_words: list[str] = Field(default_factory=list, max_length=60)
 
 
 def _checkpoint_lessons(lesson_id: str) -> list[str]:
@@ -112,13 +119,19 @@ async def complete_v2(
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
+    from services import xp_guard
+    from services.lesson_test import MAX_QUESTIONS
+
     data = load_lesson_v2(lesson_id)
-    if not data:
+    if not data or lesson_id not in load_curriculum():
         raise HTTPException(status_code=404, detail="Dars topilmadi")
 
-    correct = min(body.correct, body.total)
-    perfect = correct == body.total
-    score = round(100 * correct / body.total)
+    # K28 pentest: natija savollar soniga qisiladi (mikro-test ≤ 10 + o'qish matni savollari) — ilgari
+    # {"correct": 10**6, "total": 10**6} million XP berardi va haftalik VIP sovrinini «sotib olardi»
+    passage = passage_for(lesson_id) or {}
+    correct, total = xp_guard.clamp(body.correct, body.total, MAX_QUESTIONS + len(passage.get("questions") or []))
+    perfect = correct == total
+    score = round(100 * correct / total)
     passed = score >= PASS_SCORE  # spec §11 — 60% dan past bo'lsa dars o'tilmaydi
 
     done_before = await completed_lesson_ids(session, user.id)
@@ -128,11 +141,13 @@ async def complete_v2(
         xp = FAIL_XP
     else:
         xp = (10 + 2 * correct + (5 if perfect else 0)) if first_time else (5 + correct)
+    # Kunlik chegara: halol o'quvchi (20 ta yangi dars ≈ 600 XP) sezmaydi, skript bilan takrorlash to'xtaydi
+    xp = await xp_guard.capped(session, user.id, "lesson:", xp, LESSON_XP_DAILY_CAP)
 
     session.add(
         Progress(
             user_id=user.id, lesson_id=lesson_id,
-            correct=correct, total=body.total, xp_earned=xp,
+            correct=correct, total=total, xp_earned=xp,
             passed=1 if passed else 0,
         )
     )
@@ -193,6 +208,8 @@ async def rate_lesson(
     """Dars oxiridagi 1-bosishli baho (👍/👎). Takror bosilsa yangilanadi."""
     if body.rating == 0:
         return {"ok": False}
+    if lesson_id not in load_curriculum():  # K28: ixtiyoriy id bilan cheksiz qator yaratilmasin
+        raise HTTPException(status_code=404, detail="Dars topilmadi")
     existing = (
         await session.execute(
             select(LessonRating).where(
@@ -244,14 +261,19 @@ async def checkpoint_complete(
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
+    from services import xp_guard
+
     if not _checkpoint_lessons(lesson_id):
         raise HTTPException(status_code=404, detail="Nazorat testi mavjud emas")
 
-    correct = min(body.correct, body.total)
-    score = round(100 * correct / body.total)
+    # K28 pentest: savollar soniga qisiladi; XP shu nazorat uchun kuniga bir marta (takror — faqat mashq)
+    correct, total = xp_guard.clamp(body.correct, body.total, CHECKPOINT_QUESTIONS)
+    score = round(100 * correct / total)
     passed = score >= CHECKPOINT_PASS
 
     xp = 15 + correct if passed else 5
+    if await xp_guard.xp_today(session, user.id, f"checkpoint:{lesson_id}") > 0:
+        xp = 0
     session.add(
         XpLog(user_id=user.id, amount=xp, source=f"checkpoint:{lesson_id}")
     )
@@ -276,9 +298,30 @@ async def roleplay_scenarios(user: User = Depends(get_current_user)):
     return {"scenarios": roleplay.scenario_list()}
 
 
+class RoleplayMsg(BaseModel):
+    role: str = Field(max_length=16)
+    content: str = Field(default="", max_length=2000)
+
+
 class RoleplayBody(BaseModel):
-    scenario_id: str
-    history: list[dict] = Field(default_factory=list)
+    scenario_id: str = Field(max_length=32)
+    # K28 pentest: ilgari istalgan hajmdagi tarix — Anthropic hisobidan cheksiz «bepul LLM» edi
+    history: list[RoleplayMsg] = Field(default_factory=list, max_length=60)
+
+
+ROLEPLAY_AI_DAILY_CAP = 60  # o'quvchiga kuniga AI javoblari; keyin skript davom etadi
+_roleplay_used: dict[int, tuple[str, int]] = {}
+
+
+def _roleplay_ai_allowed(user_id: int) -> bool:
+    day = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    d, n = _roleplay_used.get(user_id, (day, 0))
+    if d != day:
+        n = 0
+    if n >= ROLEPLAY_AI_DAILY_CAP:
+        return False
+    _roleplay_used[user_id] = (day, n + 1)
+    return True
 
 
 @router.post("/roleplay/reply")
@@ -295,7 +338,8 @@ async def roleplay_reply(
             raise HTTPException(status_code=404, detail="Vaziyat topilmadi")
         return op
     # Faqat oxirgi 12 xabar (kontekstni cheklaymiz)
-    out = await roleplay.reply(body.scenario_id, body.history[-12:])
+    history = [m.model_dump() for m in body.history[-12:]]
+    out = await roleplay.reply(body.scenario_id, history, use_ai=_roleplay_ai_allowed(user.id))
     usage = out.pop("usage", None)
     if usage:
         ai_usage.record(session, "roleplay", usage, user.id)
@@ -307,60 +351,150 @@ async def roleplay_reply(
 
 
 class WritingEvalBody(BaseModel):
-    lesson_id: str
+    lesson_id: str = Field(max_length=16)
     text: str = Field(max_length=1000)
 
 
 FALLBACK_FEEDBACK = (
-    "AI baholash hozircha o'chiq. Yozganingiz saqlandi — asosiysi mashq "
-    "qildingiz! Darsdagi namunalar bilan o'zingiz solishtirib ko'ring."
+    "AI tekshiruv hozircha o'chiq — admin sozlamoqda. Yozganingizni darsdagi "
+    "namunalar bilan o'zingiz solishtirib ko'ring."
 )
+LESSON_AI_DAILY_CAP = 40  # K28: dars yozuv tekshiruvi (matn + surat) — o'quvchiga kuniga; token xarajati himoyasi
+_lesson_ai_used: dict[int, tuple[str, int]] = {}
+
+
+def _lesson_ai_quota(user_id: int) -> None:
+    day = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    d, n = _lesson_ai_used.get(user_id, (day, 0))
+    if d != day:
+        n = 0
+    if n >= LESSON_AI_DAILY_CAP:
+        raise HTTPException(status_code=429, detail="Bugungi tekshiruvlar limiti tugadi — ertaga davom eting")
+    _lesson_ai_used[user_id] = (day, n + 1)
+
+
+def _lesson_or_404(lesson_id: str) -> tuple[dict, dict]:
+    meta = load_curriculum().get(lesson_id)
+    data = load_lesson_v2(lesson_id) if meta else None
+    if not meta or not data:
+        raise HTTPException(status_code=404, detail="Dars topilmadi")
+    return meta, data
+
+
+async def _lesson_writing_ai(request: Request, session: AsyncSession, user: User, lesson_id: str, **kw) -> dict:
+    """K28: dars yozuvi → AI (lesson_skills.check_writing). Xato jim yutilmaydi: log, kalit/kredit — adminga
+    ogohlantirish; o'quvchiga haqiqiy sabab («band», «o'chiq»)."""
+    import logging
+
+    from services import ai_usage, alerts, lesson_skills, tutor
+
+    meta, data = _lesson_or_404(lesson_id)
+    level = await _user_level(session, user.id)
+    try:
+        reply, usage = await lesson_skills.check_writing(data, meta["title_uz"], level, **kw)
+    except tutor.TutorUnavailable as e:
+        logging.getLogger(__name__).warning("dars yozuvi AI xatosi (%s): %s", e.kind, lesson_id)
+        if e.kind in ("credit", "auth"):
+            alerts.fire(getattr(request.app.state, "bot", None), e.kind)
+        return {"ai": False, "error": e.kind, "feedback_uz": FALLBACK_FEEDBACK if e.kind == "nokey" else e.message_uz}
+    ai_usage.record(session, "lesson_writing", usage, user.id)
+    await session.commit()
+    return lesson_skills.reply_dict(reply, photo=bool(kw.get("image")))
 
 
 @router.post("/eval/writing")
 async def eval_writing(
     body: WritingEvalBody,
+    request: Request,
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
-    from config import settings
-    from services import ai_usage
+    """✍️ YOZISH (matn): o'quvchi yozgani topshiriq va dars mazmuni bilan solishtiriladi."""
+    text = body.text.strip()
+    if not text:
+        raise HTTPException(status_code=422, detail="Avval javobingizni yozing")
+    _lesson_or_404(body.lesson_id)
+    _lesson_ai_quota(user.id)
+    return await _lesson_writing_ai(request, session, user, body.lesson_id, text=text)
 
-    lesson = load_lesson_v2(body.lesson_id) or {}
-    task = (lesson.get("skills") or {}).get("writing", {}).get("task_uz", "")
 
-    if not settings.anthropic_api_key or not body.text.strip():
-        return {"ai": False, "feedback_uz": FALLBACK_FEEDBACK}
+@router.post("/eval/writing-photo")
+async def eval_writing_photo(
+    request: Request,
+    lesson_id: str = Form(..., max_length=16),
+    file: UploadFile = File(...),
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """✍️ YOZISH (daftar surati): «daftaringizga yozing» topshiriqlari — AI qo'lyozmani o'qib tekshiradi."""
+    from services import writing
 
+    _lesson_or_404(lesson_id)
+    mime = (file.content_type or "").split(";")[0].strip().lower()
+    if mime and not mime.startswith("image/") and mime != "application/octet-stream":
+        raise HTTPException(status_code=422, detail="Faqat surat yuklang (JPG, PNG yoki telefon kamerasi)")
+    data = await file.read(writing.MAX_IMAGE_BYTES + 1)
+    if not data:
+        raise HTTPException(status_code=422, detail="Surat bo'sh")
+    if len(data) > writing.MAX_IMAGE_BYTES:
+        raise HTTPException(status_code=413, detail="Surat juda katta (maks. 8 MB)")
     try:
-        from anthropic import AsyncAnthropic
+        image, img_mime = writing.prepare_image(data)
+    except ValueError:
+        hint = writing.image_format_hint(data)
+        raise HTTPException(status_code=422, detail=f"{hint or 'Surat'} o'qilmadi — JPG/PNG surat yuboring")
+    _lesson_ai_quota(user.id)
+    return await _lesson_writing_ai(request, session, user, lesson_id, image=image, mime=img_mime)
 
-        client = AsyncAnthropic(api_key=settings.anthropic_api_key)
-        resp = await client.messages.create(
-            # Qisqa baho uchun Haiku yetarli — Opus'dan ~15x arzon
-            model=settings.tutor_model,
-            max_tokens=800,
-            system=(
-                "Sen arab tili o'qituvchisisan. O'zbek tilida so'zlashuvchi "
-                "boshlang'ich o'quvchining yozma ishini bahola. Javobing qisqa "
-                "(3-5 jumla), o'zbek tilida (lotin), samimiy va rag'batlantiruvchi. "
-                "Xatolarni ko'rsat, to'g'ri variantini yoz. Baho qo'yma."
-            ),
-            messages=[
-                {
-                    "role": "user",
-                    "content": f"Topshiriq: {task}\n\nO'quvchi yozgani:\n{body.text}",
-                }
-            ],
-        )
-        feedback = next(
-            (b.text for b in resp.content if b.type == "text"), FALLBACK_FEEDBACK
-        )
-        ai_usage.record(session, "writing", ai_usage.usage_of(resp), user.id)
-        await session.commit()
-        return {"ai": True, "feedback_uz": feedback}
-    except Exception:
-        return {"ai": False, "feedback_uz": FALLBACK_FEEDBACK}
+
+# ─────────────────── 🗣 Dars GAPIRISH fazasi (K28) — ovozni eshitib baholash ───────────────────
+
+
+def _speak_target(lesson_id: str, idx: int) -> tuple[dict, str]:
+    from services import lesson_skills
+
+    meta, data = _lesson_or_404(lesson_id)
+    targets = lesson_skills.speak_targets(data)
+    if not 0 <= idx < len(targets):
+        raise HTTPException(status_code=404, detail="Gapirish namunasi topilmadi")
+    return meta, targets[idx]
+
+
+@router.get("/lessons/{lesson_id}/speak/{idx}.mp3")
+async def lesson_speak_audio(lesson_id: str, idx: int):
+    """🔊 Namuna ovozi. initData'siz (<audio src>) — dars mazmuni ochiq; har matn bir marta sintez, keyin keshdan."""
+    from services import lesson_skills, tts
+
+    meta, target = _speak_target(lesson_id, idx)
+    key = await tts.synthesize(lesson_skills.tts_text(target), meta["level"])
+    if not key:
+        raise HTTPException(status_code=503, detail="Ovoz tayyorlanmadi")
+    return FileResponse(
+        tts.path_for(key), media_type="audio/mpeg", headers={"Cache-Control": "public, max-age=604800"}
+    )
+
+
+@router.post("/lessons/{lesson_id}/speak")
+async def lesson_speak_check(
+    lesson_id: str,
+    request: Request,
+    idx: int = Form(...),
+    file: UploadFile = File(...),
+    user: User = Depends(get_current_user),
+):
+    """🗣 O'quvchi namunani aytadi → STT → maqsad bilan solishtirish (harf nomi, bo'g'in, so'z, gap).
+    Whisper'ga maqsad matn berilmaydi — «eshitgandek» yozib qo'ymasin (xolis baho)."""
+    from services import lesson_skills, stt
+
+    _, target = _speak_target(lesson_id, idx)
+    if not stt.available():
+        raise HTTPException(status_code=503, detail="Ovoz xizmati sozlanmagan")
+    data = await _read_audio(file)
+    _stt_quota(user.id)
+    heard = await stt.transcribe(data, file.filename or "speech.webm", file.content_type or "audio/webm")
+    if not heard:
+        _stt_failed(request)
+    return {"transcript": heard, **lesson_skills.speak_score(target, heard)}
 
 
 # ─────────────────── AI ustoz — jonli suhbat (K17) ───────────────────
@@ -1313,6 +1447,10 @@ class RateBody(BaseModel):
     comment: str = Field(default="", max_length=400)
 
 
+RATE_ALERTS_PER_DAY = 5
+_rate_alerts: dict[int, tuple[str, int]] = {}
+
+
 @router.post("/tutor/rate")
 async def tutor_rate(
     body: RateBody,
@@ -1341,7 +1479,14 @@ async def tutor_rate(
     bot = getattr(request.app.state, "bot", None)
     from config import settings
 
-    if not body.good and bot is not None and settings.admin_id and (first or row.comment):
+    # K28 pentest: har yangi session_key — adminga xabar edi; skript adminni to'ldira olardi → kuniga 5 ta
+    day = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    d, n = _rate_alerts.get(user.id, (day, 0))
+    n = n if d == day else 0
+    notify = not body.good and bot is not None and settings.admin_id and (first or row.comment) and n < RATE_ALERTS_PER_DAY
+    if notify:
+        _rate_alerts[user.id] = (day, n + 1)
+    if notify:
         turns = (
             await session.execute(
                 select(func.count()).select_from(TutorTurn).where(

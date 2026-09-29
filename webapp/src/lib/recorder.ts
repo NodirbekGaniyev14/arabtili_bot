@@ -20,7 +20,23 @@ export interface Recording {
   blob: Blob;
   filename: string;
   seconds: number;
+  /** K28: yozuvdagi eng baland ovoz (RMS, 0..1); -1 — o'lchanmadi (eski WebView) */
+  peak: number;
 }
+
+/** K28: shundan past — raqamli jimlik (mikrofon o'chiq / boshqa ilova band qilgan), STT'ga yuborilmaydi.
+ *  Xona shovqini (AGC bilan) doim ancha baland, shuning uchun gapirgan o'quvchi hech qachon bu yerga tushmaydi. */
+export const SILENT_PEAK = 0.002;
+
+/** Yozuv jim edimi — «bot eshitmadi» o'rniga aniq sabab ko'rsatiladi (STT limiti ham tejaladi):
+ *  balandlik o'lchangan va deyarli nol, YOKI 1 soniyadan uzun yozuv 1 KB dan kichik (kodek jimlikni
+ *  siqib yuborgan — mikrofon ovoz bermagan). */
+export function isSilent(rec: Recording): boolean {
+  return (rec.peak >= 0 && rec.peak < SILENT_PEAK) || (rec.seconds >= 1 && rec.blob.size < 1000);
+}
+
+export const SILENT_MSG =
+  "🔇 Mikrofon ovoz olmadi. Telegram'ga mikrofon ruxsatini bering (telefon sozlamalari → Telegram → Mikrofon) va boshqa ilova mikrofonni band qilmaganini tekshiring.";
 
 export function micSupported(): boolean {
   return (
@@ -56,13 +72,68 @@ export class Recorder {
   private startedAt = 0;
   private timer: number | null = null;
   private resolve: ((r: Recording | null) => void) | null = null;
+  // K28: ovoz balandligi — UI ko'rsatkichi va jim yozuvni aniqlash
+  private ctx: AudioContext | null = null;
+  private meter: number | null = null;
+  private peak = -1;
+  /** Joriy balandlik 0..1 (yozish paytida UI shkalasi uchun) */
+  level = 0;
 
   get active(): boolean {
     return !!this.rec && this.rec.state === "recording";
   }
 
-  /** Yozishni boshlaydi. Ruxsat berilmasa xato tashlaydi. */
-  async start(onAutoStop?: () => void): Promise<void> {
+  /** Balandlik o'lchanyaptimi (UI «ovoz sezilmayapti» ogohlantirishini faqat shunda ko'rsatadi) */
+  get metering(): boolean {
+    return !!this.ctx && this.ctx.state === "running";
+  }
+
+  /** Mikrofon balandligini o'lchash (AnalyserNode). Ishlamasa — jim o'tadi (peak = -1, yozuv baribir ketadi). */
+  private startMeter() {
+    try {
+      const AC =
+        window.AudioContext ||
+        (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+      if (!AC || !this.stream) return;
+      const ctx = new AC();
+      const an = ctx.createAnalyser();
+      an.fftSize = 1024;
+      ctx.createMediaStreamSource(this.stream).connect(an);
+      void ctx.resume?.();
+      const buf = new Uint8Array(an.fftSize);
+      this.ctx = ctx;
+      this.meter = window.setInterval(() => {
+        // To'xtatilgan (suspended) kontekst nol beradi — bunday o'lchov hisobga olinmaydi
+        if (ctx.state !== "running") return;
+        an.getByteTimeDomainData(buf);
+        let sum = 0;
+        for (let i = 0; i < buf.length; i++) {
+          const v = (buf[i] - 128) / 128;
+          sum += v * v;
+        }
+        const rms = Math.sqrt(sum / buf.length);
+        this.level = Math.min(1, rms * 6);
+        this.peak = Math.max(this.peak, rms);
+      }, 100);
+    } catch {
+      this.peak = -1;
+    }
+  }
+
+  private stopMeter() {
+    if (this.meter) window.clearInterval(this.meter);
+    this.meter = null;
+    this.level = 0;
+    try {
+      void this.ctx?.close();
+    } catch {
+      /* allaqachon yopilgan */
+    }
+    this.ctx = null;
+  }
+
+  /** Yozishni boshlaydi. Ruxsat berilmasa xato tashlaydi. `maxSeconds` — avto-to'xtash (standart 90 s). */
+  async start(onAutoStop?: () => void, maxSeconds = MAX_SECONDS): Promise<void> {
     if (this.active) return;
     this.stream = await navigator.mediaDevices.getUserMedia({
       audio: {
@@ -82,14 +153,16 @@ export class Recorder {
     };
     this.rec.onstop = () => this.finish();
     this.startedAt = Date.now();
+    this.peak = -1;
     this.rec.start(250);
+    this.startMeter();
     // Uzun yozuv — limit; Whisper narxi va yuklash hajmi nazorati
     this.timer = window.setTimeout(() => {
       if (this.active) {
         this.stop();
         onAutoStop?.();
       }
-    }, MAX_SECONDS * 1000);
+    }, Math.min(maxSeconds, MAX_SECONDS) * 1000);
   }
 
   /** To'xtatadi va yozuvni qaytaradi (juda qisqa bo'lsa null).
@@ -121,16 +194,19 @@ export class Recorder {
     const mime = this.rec?.mimeType || "audio/webm";
     const blob = new Blob(this.chunks, { type: mime });
     const res = this.resolve;
+    const peak = this.peak;
     this.cleanup();
-    // 0.4 s dan qisqa — tasodifiy bosish
-    res?.(seconds < 0.4 || blob.size < 1000 ? null : {
+    // 0.4 s dan qisqa — tasodifiy bosish. 1 s dan uzun, lekin bo'm-bo'sh yozuv — null emas (isSilent aniqlaydi)
+    res?.(seconds < 0.4 || (blob.size < 1000 && seconds < 1) ? null : {
       blob,
       filename: `speech.${extFor(mime)}`,
       seconds,
+      peak,
     });
   }
 
   private cleanup() {
+    this.stopMeter();
     if (this.timer) window.clearTimeout(this.timer);
     this.timer = null;
     this.stream?.getTracks().forEach((t) => t.stop());

@@ -739,7 +739,7 @@ def model_for(vip: bool) -> str:
     return (settings.tutor_vip_model or settings.tutor_model) if vip else settings.tutor_model
 
 
-async def _call(system: list[dict], msgs: list[dict], schema, model: str | None = None):
+async def _call(system: list[dict], msgs: list[dict], schema, model: str | None = None, max_tokens: int = MAX_TOKENS):
     """Anthropic chaqiruvi: structured output, rad etilsa JSON rejimi.
     Qaytaradi: (parsed, usage) — usage["model"] chaqirilgan model. Xatoda TutorUnavailable.
     `model` asosiy modeldan boshqa bo'lsa (VIP) va u xato bersa — asosiy model bilan qayta uriniladi."""
@@ -752,7 +752,7 @@ async def _call(system: list[dict], msgs: list[dict], schema, model: str | None 
     try:
         resp = await client.messages.parse(
             model=model,
-            max_tokens=MAX_TOKENS,
+            max_tokens=max_tokens,
             system=system,
             messages=msgs,
             output_format=schema,
@@ -764,7 +764,7 @@ async def _call(system: list[dict], msgs: list[dict], schema, model: str | None 
         try:
             resp = await client.messages.create(
                 model=model,
-                max_tokens=MAX_TOKENS,
+                max_tokens=max_tokens,
                 system=system
                 + [
                     {
@@ -782,7 +782,7 @@ async def _call(system: list[dict], msgs: list[dict], schema, model: str | None 
             if model != settings.tutor_model:
                 # VIP modeli (nomi xato / yo'q / band) — asosiy model bilan davom etamiz
                 log.warning("VIP modeli %s xatosi: %r — %s bilan qayta", model, e2, settings.tutor_model)
-                return await _call(system, msgs, schema, settings.tutor_model)
+                return await _call(system, msgs, schema, settings.tutor_model, max_tokens)
             log.warning("AI ustoz xatosi: %r", e2)
             kind, msg = classify(e2)
             raise TutorUnavailable(msg, kind) from e2

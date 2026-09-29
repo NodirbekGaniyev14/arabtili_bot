@@ -11,7 +11,7 @@ import {
   type TutorTopic,
 } from "../lib/api";
 import { playUrl, speakText } from "../lib/audio";
-import { Recorder } from "../lib/recorder";
+import { Recorder, SILENT_MSG, isSilent } from "../lib/recorder";
 import RateBar from "../components/RateBar";
 
 /** Talaffuz mashqi — AI'siz, bepul: mavzu bo'yicha 10 ta jumla.
@@ -117,6 +117,11 @@ export default function Drill({ topic, level, canVoice, onClose, onFinished }: D
     setRecording(false);
     if (!rec) {
       setNotice("Yozuv juda qisqa. Qayta urinib ko'ring.");
+      return;
+    }
+    // K28: raqamli jimlik (mikrofon o'chiq/band) — STT'ga yubormay, aniq sababni aytamiz
+    if (isSilent(rec)) {
+      setNotice(SILENT_MSG);
       return;
     }
     setBusy(true);

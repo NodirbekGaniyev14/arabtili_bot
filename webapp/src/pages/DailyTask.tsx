@@ -3,7 +3,7 @@ import BadgeToast from "../components/BadgeToast";
 import type { Badge } from "../lib/api";
 import { api, type DailyInfo, type DailyResult } from "../lib/api";
 import { playUrl, speakText } from "../lib/audio";
-import { Recorder, micSupported } from "../lib/recorder";
+import { Recorder, SILENT_MSG, isSilent, micSupported } from "../lib/recorder";
 import RateBar from "../components/RateBar";
 
 /** Kunlik speaking savoli — hamma uchun bepul, kuniga bitta.
@@ -119,6 +119,11 @@ export default function DailyTask({ onClose, onDone }: Props) {
     setRecording(false);
     if (!rec || !q) {
       setNotice("Yozuv juda qisqa. Qayta urinib ko'ring.");
+      return;
+    }
+    // K28: raqamli jimlik (mikrofon o'chiq/band) — STT'ga yubormay, aniq sababni aytamiz
+    if (isSilent(rec)) {
+      setNotice(SILENT_MSG);
       return;
     }
     setTranscribing(true);

@@ -22,6 +22,7 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import BASE_DIR, settings
+from services.names import admin_show, esc
 from db.models import LessonRating, PaymentRequest, Progress, User, utcnow
 
 log = logging.getLogger(__name__)
@@ -253,7 +254,7 @@ def admin_caption(req: PaymentRequest, user: User) -> str:
     uname = f"@{user.username}" if user.username else "username yo'q"
     return (
         f"💳 <b>Yangi to'lov cheki #{req.id}</b>\n\n"
-        f"👤 {user.name or '—'} ({uname})\n"
+        f"👤 {admin_show(user.name, user.username, user.tg_id)} ({esc(uname)})\n"
         f"🆔 <code>{user.tg_id}</code>\n"
         f"📦 {plan['title']} — <b>{req.amount:,}</b> so'm\n"
         f"📅 {req.created_at:%d.%m.%Y %H:%M} UTC\n\n"
@@ -293,6 +294,16 @@ async def notify_admin(bot, req: PaymentRequest, user: User) -> None:
         )
     except Exception as e:
         log.warning("To'lov xabari adminga yetmadi: %r", e)
+        # K28: rasm ochilmasa ham (buzuq fayl) chek yo'qolmasin — tugmalar bilan matnli xabar
+        try:
+            await bot.send_message(
+                settings.admin_id,
+                admin_caption(req, user) + "\n\n⚠️ Chek rasmi ochilmadi — o'quvchidan qayta so'rang.",
+                parse_mode="HTML",
+                reply_markup=admin_keyboard(req.id),
+            )
+        except Exception as e2:
+            log.error("To'lov xabari (matn) ham yetmadi: %r", e2)
 
 
 async def load_request(

@@ -2,7 +2,7 @@ import json
 
 from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel, Field
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from db.models import (
@@ -236,10 +236,12 @@ async def review_answer(
     if word is None:
         raise HTTPException(status_code=404, detail="Karta topilmadi")
 
+    # K28 pentest: XP faqat muddati kelgan karta uchun — ilgari bitta kartani cheksiz baholab XP yig'ilardi
+    was_due = (word.due_date or "") <= _today().isoformat()
     apply_grade(word, body.grade)
 
     xp = 0
-    if body.grade != "again":
+    if body.grade != "again" and was_due:
         xp = 1
         session.add(XpLog(user_id=user.id, amount=xp, source="review"))
 
@@ -616,9 +618,13 @@ async def practice_weak(
 
 
 class WeakCompleteBody(BaseModel):
-    correct: int = Field(ge=0)
-    total: int = Field(ge=1)
-    wrong_words: list[str] = Field(default_factory=list)
+    correct: int = Field(ge=0, le=10_000)
+    total: int = Field(ge=1, le=10_000)
+    wrong_words: list[str] = Field(default_factory=list, max_length=60)
+
+
+WEAK_MAX_ITEMS = 10  # /practice/weak shuncha savol beradi
+WEAK_XP_DAILY_CAP = 50  # K28 pentest: kuniga ~5 sessiya; ilgari `correct` cheksiz — million XP
 
 
 @router.post("/practice/weak/complete")
@@ -627,9 +633,11 @@ async def practice_weak_complete(
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
+    from services import xp_guard
     from services.srs import reset_words
 
-    xp = max(1, body.correct)
+    correct, _total = xp_guard.clamp(body.correct, body.total, WEAK_MAX_ITEMS)
+    xp = await xp_guard.capped(session, user.id, "practice:weak", max(1, correct), WEAK_XP_DAILY_CAP)
     session.add(XpLog(user_id=user.id, amount=xp, source="practice:weak"))
     await session.commit()
     await reset_words(session, user.id, body.wrong_words)
@@ -641,6 +649,9 @@ class FeedbackBody(BaseModel):
     context: str = Field(default="", max_length=64)
 
 
+FEEDBACK_DAILY_LIMIT = 15  # bir o'quvchidan sutkada (admin spam himoyasi)
+
+
 @router.post("/feedback")
 async def submit_feedback(
     body: FeedbackBody,
@@ -649,6 +660,22 @@ async def submit_feedback(
     session: AsyncSession = Depends(get_session),
 ):
     """Ilova ichidan yuborilgan fikr — saqlanadi va adminga yetkaziladi."""
+    from datetime import timedelta
+
+    from db.models import Feedback, utcnow
+
+    # K28 pentest: limit yo'q edi — skript adminni minglab xabar bilan to'ldira olardi
+    sent_today = (
+        await session.execute(
+            select(func.count(Feedback.id)).where(
+                Feedback.user_id == user.id,
+                Feedback.source == "app",
+                Feedback.created_at >= utcnow() - timedelta(days=1),
+            )
+        )
+    ).scalar_one()
+    if sent_today >= FEEDBACK_DAILY_LIMIT:
+        return {"ok": True, "limited": True}
     fb = await feedback_svc.save(
         session, user.id, body.text.strip(), source="app", context=body.context
     )
@@ -1066,10 +1093,13 @@ async def vocab_quiz(
 
 
 class QuizResultBody(BaseModel):
-    level: str = ""
-    correct: int = 0
-    total: int = 0
+    level: str = Field(default="", max_length=4)
+    correct: int = Field(default=0, ge=0, le=10_000)
+    total: int = Field(default=0, ge=0, le=10_000)
     wrong_words: list[str] = Field(default_factory=list, max_length=60)
+
+
+VOCAB_QUIZ_XP_DAILY_CAP = 100  # K28 pentest: ilgari `correct` cheksiz — bir so'rovda million XP
 
 
 @router.post("/vocab/quiz/submit")
@@ -1079,12 +1109,16 @@ async def vocab_quiz_submit(
     session: AsyncSession = Depends(get_session),
 ):
     """Natijani baholaydi: XP beradi, bilinmagan so'zlarni kartotekaga qo'shadi."""
-    from services.vocab_test import score
+    from services import xp_guard
+    from services.vocab_test import MAX_COUNT, score
 
-    result = score(body.correct, body.total)
-    xp = max(1, body.correct) + (10 if result["passed"] else 0)
+    correct, total = xp_guard.clamp(body.correct, body.total, MAX_COUNT) if body.total else (0, 0)
+    result = score(correct, total)
+    xp = max(1, correct) + (10 if result["passed"] else 0)
+    xp = await xp_guard.capped(session, user.id, "vocab_quiz:", xp, VOCAB_QUIZ_XP_DAILY_CAP)
+    level = "".join(ch for ch in body.level.upper() if ch.isalnum()) or "all"
     session.add(
-        XpLog(user_id=user.id, amount=xp, source=f"vocab_quiz:{body.level or 'all'}")
+        XpLog(user_id=user.id, amount=xp, source=f"vocab_quiz:{level}")
     )
     await session.commit()
 

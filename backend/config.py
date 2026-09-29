@@ -32,6 +32,9 @@ class Settings(BaseSettings):
     # K23.4: VIP suhbat va mock uchun kuchliroq model (masalan claude-sonnet-5, ~2× narx).
     # Bo'sh = hamma uchun tutor_model. Kunlik savol/yozuv/onboarding baribir tutor_model.
     tutor_vip_model: str = ""
+    # K28: qo'lyozma (daftar surati) o'qish — kuchliroq vision modeli; xato bersa tutor_model bilan qayta.
+    # Arab qo'lyozmasini Haiku ko'pincha o'qiy olmadi («yozganimni o'qimaydi»). Bo'sh = tutor_model.
+    writing_model: str = "claude-sonnet-5"
     # VIP foydalanuvchiga kunlik javoblar limiti (token xarajatini cheklaydi):
     # 30 × ~$0.003 ≈ $0.09/kun — eng faol VIP ham oyiga ~$2.7 dan oshmaydi
     tutor_daily_turns: int = 30

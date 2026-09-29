@@ -3,6 +3,7 @@ import BadgeToast from "../components/BadgeToast";
 import type { Badge } from "../lib/api";
 import { api, type WritingCheck, type WritingInfo } from "../lib/api";
 import { playUrl, speakText } from "../lib/audio";
+import { shrinkImage } from "../lib/image";
 
 /** ✍️ Yozuv (xattotlik) mashqi (K19.2) — 2 kunda bir matn, hamma uchun bepul.
  *
@@ -13,57 +14,10 @@ import { playUrl, speakText } from "../lib/audio";
  *  Davrda 3 urinish, XP birinchi tekshiruvda. Surat serverda saqlanmaydi. */
 
 const tg = () => window.Telegram?.WebApp;
-const MAX_SIDE = 1600;
 
 interface Props {
   onClose: () => void;
   onDone?: () => void;
-}
-
-/** Brauzer dekod qila olmagan formatlar (Android'da HEIC) uchun <img> orqali urinish. */
-function decodeViaImg(file: File): Promise<ImageBitmap | HTMLImageElement> {
-  return new Promise((resolve, reject) => {
-    const url = URL.createObjectURL(file);
-    const img = new Image();
-    img.onload = () => {
-      URL.revokeObjectURL(url);
-      resolve(img);
-    };
-    img.onerror = () => {
-      URL.revokeObjectURL(url);
-      reject(new Error("decode"));
-    };
-    img.src = url;
-  });
-}
-
-/** Suratni yuklashdan oldin telefonda kichraytirish (mobil internet, tezlik) va JPEG'ga o'tkazish
- *  (#F84: telefon HEIC/WebP bersa ham serverga JPEG boradi; dekod bo'lmasa asl fayl — server o'qiydi). */
-async function shrink(file: File): Promise<Blob> {
-  try {
-    let src: ImageBitmap | HTMLImageElement;
-    try {
-      src = await createImageBitmap(file);
-    } catch {
-      src = await decodeViaImg(file);
-    }
-    const w = "naturalWidth" in src ? src.naturalWidth : src.width;
-    const h = "naturalHeight" in src ? src.naturalHeight : src.height;
-    const scale = Math.min(1, MAX_SIDE / Math.max(w, h));
-    const isJpeg = file.type === "image/jpeg" || file.type === "image/png";
-    if (scale === 1 && file.size < 1_500_000 && isJpeg) return file;
-    const canvas = document.createElement("canvas");
-    canvas.width = Math.round(w * scale);
-    canvas.height = Math.round(h * scale);
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return file;
-    ctx.drawImage(src, 0, 0, canvas.width, canvas.height);
-    return await new Promise<Blob>((resolve) =>
-      canvas.toBlob((b) => resolve(b ?? file), "image/jpeg", 0.85)
-    );
-  } catch {
-    return file; // eski WebView / HEIC — server o'zi o'qiydi va kichraytiradi
-  }
 }
 
 /** Solishtirish uchun: harakat, tatvil va tinish belgilarisiz (model harakatsiz qaytarishi mumkin). */
@@ -137,7 +91,7 @@ export default function Writing({ onClose, onDone }: Props) {
     setChecking(true);
     setError("");
     try {
-      const blob = await shrink(file);
+      const blob = await shrinkImage(file);
       const r = await api.checkWriting(blob, blob === file ? file.name : "writing.jpg");
       setResult(r);
       setBadges(r.new_badges ?? []);

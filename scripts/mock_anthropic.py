@@ -119,6 +119,25 @@ async def messages(req: Request):
             "stop_reason": "end_turn", "stop_sequence": None,
             "usage": {"input_tokens": 1500, "output_tokens": 160, "cache_read_input_tokens": 0, "cache_creation_input_tokens": 0},
         }
+    if "did the WRITING task of the lesson" in sys_text:  # K28: dars YOZISH fazasi (matn yoki surat)
+        photo = any(
+            isinstance(m.get("content"), list) and any(b.get("type") == "image" for b in m["content"]) for m in msgs
+        )
+        reply = {
+            "is_handwriting": True,
+            "read_ar": "ن ن ن ن\nي ي ي" if photo else str(msgs[-1].get("content", "")).split("\n", 1)[-1][:200],
+            "ok": False,
+            "score": 70,
+            "corrected_ar": "ن ن ن ن\nي ي ي ي",
+            "feedback_uz": "Harflar aniq yozilgan. «ي» qatorida bitta harf yetishmayapti va nuqtalar pastda bo'lishi kerak.",
+            "tips_uz": ["ي — ikki nuqta PASTDA", "Har qatorni o'ngdan chapga yozing"],
+        }
+        return {
+            "id": "msg_lesson_writing", "type": "message", "role": "assistant", "model": body.get("model", "mock"),
+            "content": [{"type": "text", "text": json.dumps(reply, ensure_ascii=False)}],
+            "stop_reason": "end_turn", "stop_sequence": None,
+            "usage": {"input_tokens": 900, "output_tokens": 140, "cache_read_input_tokens": 0, "cache_creation_input_tokens": 0},
+        }
     if "Grade ONE answer to today's speaking question" in sys_text:
         reply = {
             "score": 78,

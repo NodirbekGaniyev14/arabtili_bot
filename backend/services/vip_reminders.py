@@ -19,6 +19,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
+from services.names import admin_show, esc, show
 from services import notify_prefs
 from db.models import User, utcnow
 from services import billing, referral
@@ -74,7 +75,7 @@ def soon_text(user: User, now: datetime) -> str:
     # (halqa vaqti / test vaqti) — haqiqiy soatga bog'lanmaydi
     days = max((user.vip_until - now).days, 0) + 1
     price = billing.price_summary()
-    name = user.name or "do'stim"
+    name = show(user.name, "do'stim")
     when = "bugun" if days <= 1 else f"{days} kundan keyin"
     return (
         f"👑 {name}, VIP muddatingiz <b>{when}</b> "
@@ -89,7 +90,7 @@ def expired_text(user: User) -> str:
     from services import referral
 
     price = billing.price_summary()
-    name = user.name or "do'stim"
+    name = show(user.name, "do'stim")
     if referral.on_trial(user):
         return (
             f"⏰ {name}, {referral.TRIAL_DAYS} kunlik VIP sinov tugadi.\n\n"
@@ -112,7 +113,7 @@ def discount_text(user: User, now: datetime) -> str:
     left_s = f"{left // 60} soat {left % 60} daqiqa" if left >= 60 else f"{left} daqiqa"
     new, old = billing.plan_price("1oy", True), billing.plan_price("1oy", False)
     pct = billing.discount_percent("1oy")
-    name = user.name or "do'stim"
+    name = show(user.name, "do'stim")
     return (
         f"⏳ {name}, <b>{pct}% chegirmangiz {left_s}dan keyin tugaydi!</b>\n\n"
         f"Hozir VIP 1 oy — <b>{_sum(new)} so'm</b> (keyin {_sum(old)} so'm).\n"
@@ -212,7 +213,7 @@ async def process(session: AsyncSession, bot, now: datetime | None = None) -> di
                 wait_h = int((now - req.created_at).total_seconds() // 3600)
                 uname = f"@{user.username}" if user.username else "—"
                 lines.append(
-                    f"#{req.id} · {user.name or '—'} ({uname}) · "
+                    f"#{req.id} · {admin_show(user.name, user.username, user.tg_id)} ({esc(uname)}) · "
                     f"{billing.PLANS.get(req.plan, {}).get('title', req.plan)} · "
                     f"{wait_h} soat kutmoqda"
                 )

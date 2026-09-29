@@ -22,6 +22,7 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
+from services.names import show
 from services import notify_prefs
 from db.models import Plan, Progress, TutorTurn, User, utcnow
 from services.stats import TASHKENT_OFFSET, user_stats
@@ -56,7 +57,7 @@ async def intro_pending(session: AsyncSession, user: User, now: datetime | None 
 
 
 def day2_text(user: User, st: dict, turns: int) -> tuple[str, list[tuple[str, str]]]:
-    name = user.name or "do'stim"
+    name = show(user.name, "do'stim")
     nxt = st.get("next_lesson") or {}
     lesson = f"«{nxt['title']}»" if nxt.get("title") else "keyingi dars"
     lessons, words = st.get("lessons", 0), st.get("words", 0)
@@ -156,7 +157,7 @@ def _lesson_meta(lesson_id: str) -> dict:
 
 
 def nudge_text(user: User, lesson_id: str) -> tuple[str, list[tuple[str, str]]]:
-    name = user.name or "do'stim"
+    name = show(user.name, "do'stim")
     m = _lesson_meta(lesson_id)
     minutes = min(m["minutes"], 10)
     text = (

@@ -21,6 +21,7 @@ from sqlalchemy import func, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
+from services.names import show
 from services import notify_prefs
 from db.models import (
     DailySpeaking,
@@ -222,7 +223,7 @@ def render(
     user: User, cur: dict, prev: dict, label: str, ctx: dict, *, current_week: bool = False, days_left: int = 0
 ) -> str:
     """Hisobot matni (HTML). `days_left` — joriy haftada qolgan kunlar (faqat /hisobot)."""
-    name = user.name or "do'stim"
+    name = show(user.name, "do'stim")
     head = "🗣 <b>Speaking — joriy hafta</b>" if current_week else "🗣 <b>Haftalik speaking hisoboti</b>"
     lines = [head, f"📅 {label}", ""]
 

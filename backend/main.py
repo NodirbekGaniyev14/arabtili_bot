@@ -226,6 +226,10 @@ async def cache_headers(request, call_next):
     response = await call_next(request)
     path = request.url.path
     ctype = response.headers.get("content-type", "")
+    # K28: brauzer turni taxmin qilmasin (yuklangan fayl HTML sifatida ochilmasin); havola manzili sirqimasin.
+    # X-Frame-Options QO'YILMAYDI — Telegram Web mini ilovani iframe ichida ochadi.
+    response.headers.setdefault("X-Content-Type-Options", "nosniff")
+    response.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
     if path.startswith("/assets/"):
         response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
     elif ctype.startswith("text/html"):

@@ -13,6 +13,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
+from services.names import show
 from services import notify_prefs
 from db.models import Plan, User, XpLog, utcnow
 from services import writing
@@ -98,7 +99,7 @@ async def process(session: AsyncSession, bot, now: datetime | None = None) -> di
             continue
         text = writing.text_for(level)
         try:
-            await bot.send_message(user.tg_id, text_message(user.name or "do'stim", level, text),
+            await bot.send_message(user.tg_id, text_message(show(user.name, "do'stim"), level, text),
                                    parse_mode="HTML", reply_markup=kb)
             out["sent"] += 1
         except Exception as e:

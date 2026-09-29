@@ -8,7 +8,7 @@ import {
   type TutorPronounceResult,
 } from "../lib/api";
 import { playUrl, speakText } from "../lib/audio";
-import { Recorder, micSupported } from "../lib/recorder";
+import { Recorder, SILENT_MSG, isSilent, micSupported } from "../lib/recorder";
 
 /** Speaking daftari (profil): 📒 xatolar (ustoz tuzatgan jumlalar, past mock
  *  javoblari) — eshitish, qayta aytish (STT bali), «o'rgandim»; 📈 natijalar —
@@ -84,6 +84,11 @@ export default function SpeakingLog({ onClose, initialTab = "mistakes" }: Props)
     setRecId(null);
     if (!rec) {
       setNotice("Yozuv juda qisqa. Qayta urinib ko'ring.");
+      return;
+    }
+    // K28: raqamli jimlik (mikrofon o'chiq/band) — STT'ga yubormay, aniq sababni aytamiz
+    if (isSilent(rec)) {
+      setNotice(SILENT_MSG);
       return;
     }
     setBusyId(m.id);

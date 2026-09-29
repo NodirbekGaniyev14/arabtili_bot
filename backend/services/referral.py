@@ -18,6 +18,7 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
+from services.names import show
 from db.models import User
 from services import billing
 
@@ -103,7 +104,7 @@ async def on_lesson_passed(session: AsyncSession, user: User, bot=None) -> dict 
             try:
                 await bot.send_message(
                     referrer.tg_id,
-                    f"🎉 Do'stingiz <b>{user.name or 'yangi o’quvchi'}</b> birinchi darsni tugatdi — "
+                    f"🎉 Do'stingiz <b>{show(user.name, 'yangi o’quvchi')}</b> birinchi darsni tugatdi — "
                     f"sizga <b>{REF_DAYS} kun VIP</b> qo'shildi ({until_ref:%d.%m} gacha).\n\n"
                     "Yana taklif qiling: /taklif",
                     parse_mode="HTML",

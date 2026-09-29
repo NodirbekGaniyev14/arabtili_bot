@@ -14,6 +14,7 @@ from db.session import SessionLocal
 from services import admin
 from services import billing
 from services import feedback as feedback_svc
+from services.names import admin_show, esc
 
 router = Router()
 
@@ -599,7 +600,7 @@ async def cmd_payments(message: Message):
     for req, user in rows:
         uname = f"@{user.username}" if user.username else "—"
         lines.append(
-            f"#{req.id} · {user.name or '—'} ({uname}) · ID <code>{user.tg_id}</code> · "
+            f"#{req.id} · {admin_show(user.name, user.username, user.tg_id)} ({esc(uname)}) · ID <code>{user.tg_id}</code> · "
             f"{billing.PLANS.get(req.plan, {}).get('title', req.plan)} · "
             f"{req.created_at:%d.%m %H:%M}"
         )

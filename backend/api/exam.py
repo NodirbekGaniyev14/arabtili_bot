@@ -1,6 +1,8 @@
 """Imtihon + sertifikat API (K3)."""
 
+import html
 import json
+import re
 
 from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import FileResponse, HTMLResponse
@@ -645,17 +647,28 @@ async def my_certs(
     }
 
 
+_VERIFY_CODE = re.compile(r"[A-Z0-9]{4,12}")
+
+
 @router.get("/api/verify/{code}")
 async def verify(code: str, session: AsyncSession = Depends(get_session)):
-    """Ochiq tekshirish sahifasi (authsiz) — QR shu yerga olib keladi."""
-    cert = (
-        await session.execute(
-            select(Certificate).where(
-                Certificate.cert_id.like(f"%-{code}"),
-                Certificate.revoked == 0,
+    """Ochiq tekshirish sahifasi (authsiz) — QR shu yerga olib keladi.
+
+    K28 pentest: (1) kod faqat harf/raqam — ilgari LIKE'ga to'g'ridan-to'g'ri tushardi: «%» bilan barcha
+    sertifikat egalarini sanab chiqish mumkin edi (yoki bir nechta mos kelib 500); (2) sahifadagi har bir
+    qiymat HTML-escape — `holder_name` ni o'quvchi o'zi yozadi (<script> — saqlanadigan XSS edi)."""
+    code = (code or "").strip().upper()
+    cert = None
+    if _VERIFY_CODE.fullmatch(code):
+        rows = (
+            await session.execute(
+                select(Certificate).where(
+                    Certificate.cert_id.like(f"%-{code}"),
+                    Certificate.revoked == 0,
+                )
             )
-        )
-    ).scalar_one_or_none()
+        ).scalars().all()
+        cert = next((c for c in rows if c.cert_id.split("-")[-1] == code), None)
 
     if cert is None:
         return HTMLResponse(
@@ -664,6 +677,9 @@ async def verify(code: str, session: AsyncSession = Depends(get_session)):
             status_code=404,
         )
 
+    def h(v) -> str:
+        return html.escape(str(v))
+
     scores = json.loads(cert.scores_json or "{}")
     kind = cert.kind or "level"
     if kind in ("weekly", "week", "month"):
@@ -671,30 +687,30 @@ async def verify(code: str, session: AsyncSession = Depends(get_session)):
         period_uz = "Oylik" if kind == "month" else "Haftalik"
         label = scores.get("label") or scores.get("week", "—")
         body = (
-            f'<p style="margin:4px">{period_uz} reyting: <b>{rank}-o\'rin</b></p>'
-            f'<p style="margin:4px">{period_uz} XP: <b>{cert.score}</b></p>'
-            f'<p style="margin:4px;font-size:13px;color:#8A8071">Davr: {label}</p>'
+            f'<p style="margin:4px">{period_uz} reyting: <b>{h(rank)}-o\'rin</b></p>'
+            f'<p style="margin:4px">{period_uz} XP: <b>{h(cert.score)}</b></p>'
+            f'<p style="margin:4px;font-size:13px;color:#8A8071">Davr: {h(label)}</p>'
         )
     elif kind == "mock":
         crit = " · ".join(
-            f"{uz} {scores.get(k)}"
+            f"{uz} {h(scores.get(k))}"
             for k, uz in (("vocab", "Lug'at"), ("grammar", "Grammatika"), ("content", "Mazmun"), ("pron", "Talaffuz"))
             if (scores.get(k) or -1) >= 0
         )
         body = (
-            f'<p style="margin:4px">Speaking mock: <b>{scores.get("title", "—")}</b> · daraja {cert.level}</p>'
-            f'<p style="margin:4px">Natija: <b>{cert.score}/100</b></p>'
+            f'<p style="margin:4px">Speaking mock: <b>{h(scores.get("title", "—"))}</b> · daraja {h(cert.level)}</p>'
+            f'<p style="margin:4px">Natija: <b>{h(cert.score)}/100</b></p>'
             f'<p style="margin:4px;font-size:13px;color:#8A8071">{crit}</p>'
         )
     else:
         body = (
-            f'<p style="margin:4px">Tugatilgan kurs: <b>{cert.level}</b></p>'
-            f'<p style="margin:4px">Yakuniy imtihon: <b>{cert.score}/100</b></p>'
+            f'<p style="margin:4px">Tugatilgan kurs: <b>{h(cert.level)}</b></p>'
+            f'<p style="margin:4px">Yakuniy imtihon: <b>{h(cert.score)}/100</b></p>'
             f'<p style="margin:4px;font-size:13px;color:#8A8071">'
-            f'O\'qish {scores.get("reading","—")} · Tinglash {scores.get("listening","—")} · '
-            f'Yozish {scores.get("writing","—")} · '
+            f'O\'qish {h(scores.get("reading","—"))} · Tinglash {h(scores.get("listening","—"))} · '
+            f'Yozish {h(scores.get("writing","—"))} · '
             f'{"Matn" if scores.get("fourth") == "passage" else "Gapirish"} '
-            f'{scores.get("speaking","—")}</p>'
+            f'{h(scores.get("speaking","—"))}</p>'
         )
 
     return HTMLResponse(f"""<html><head><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -702,10 +718,10 @@ async def verify(code: str, session: AsyncSession = Depends(get_session)):
 <body style="font-family:sans-serif;background:#FAF6EE;color:#26211A;text-align:center;padding:40px 16px">
 <h1 style="color:#0E6B4E">✅ Haqiqiy sertifikat</h1>
 <div style="max-width:420px;margin:0 auto;background:#FFFDF7;border:2px solid #C9A227;border-radius:16px;padding:24px">
-<p style="font-size:22px;font-weight:bold;margin:4px">{cert.holder_name}</p>
+<p style="font-size:22px;font-weight:bold;margin:4px">{h(cert.holder_name)}</p>
 {body}
 <p style="margin:4px">Sana: {cert.issued_at.strftime('%d.%m.%Y')}</p>
-<p style="margin:4px;font-size:12px;color:#8A8071">ID: {cert.cert_id}</p>
+<p style="margin:4px;font-size:12px;color:#8A8071">ID: {h(cert.cert_id)}</p>
 </div>
 <p style="margin-top:24px"><a href="https://t.me/JamalArabiy_bot" style="color:#0E6B4E;font-weight:bold">🕌 Arabiy — arab tilini bepul o'rganing</a></p>
 </body></html>""")
