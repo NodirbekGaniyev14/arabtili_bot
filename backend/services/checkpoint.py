@@ -72,9 +72,12 @@ def _vocab_mcq(lessons: list[str], rnd: random.Random) -> list[dict]:
     if len(pool) < 4:
         return []
 
+    from services.lesson_test import same_word
+
     items = []
     for ar, uz in pool:
-        others = [a for a, _ in pool if a != ar]
+        # K28: bir so'z (harakatsiz yozilgani) yoki bir xil tarjimali sinonim — ikkinchi to'g'ri variant bo'lmasin
+        others = list(dict.fromkeys(a for a, u in pool if not same_word(a, ar) and u != uz))
         if len(others) < 3:
             continue
         options = rnd.sample(others, 3) + [ar]

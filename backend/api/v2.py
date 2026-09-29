@@ -1496,11 +1496,15 @@ async def tutor_rate(
         ).scalar_one()
         from services import feedback as feedback_svc
 
+        from services.names import admin_show
+
         uname = f"@{user.username}" if user.username else "—"
+        # K28: arabcha ism (LRM bilan) qatorni teskari aylantirmasin; kunlik savolda «javob» soni ma'nosiz
+        turns_s = "" if body.mode == "daily" else f" · {turns} javob"
         text = (
             f"👎 <b>AI ustoz bahosi</b> · {body.mode} · {feedback_svc.esc(body.topic or '—')} · {level}\n"
-            f"{feedback_svc.esc(user.name or '—')} ({feedback_svc.esc(uname)}), ID <code>{user.tg_id}</code>"
-            f" · {turns} javob\n"
+            f"{admin_show(user.name, user.username, user.tg_id)} ({feedback_svc.esc(uname)}), ID <code>{user.tg_id}</code>"
+            f"{turns_s}\n"
             + (f"\n<blockquote>{feedback_svc.esc(row.comment)}</blockquote>" if row.comment else "\n<i>izohsiz</i>")
         )
         try:

@@ -789,6 +789,8 @@ export interface MicroTestItem {
   words: string[];
   /** K27: qo'shimcha to'g'ri javoblar (yozma tarjima) — namuna baribir `answer` */
   accept?: string[];
+  /** K28: xato variant → u aslida nima («u (ayol) yozdi» → كَتَبَتْ) — xato tanlanganda ko'rsatiladi */
+  option_notes?: Record<string, string>;
 }
 
 /** A2+ darslardagi bosqichma-bosqich o'qish matni (content/reading/*.json). */

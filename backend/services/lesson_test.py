@@ -17,6 +17,7 @@ aralashtiriladi, shuning uchun ketma-ket urinishlar KESISHMAYDI (bank
 """
 
 import random
+import re
 from functools import lru_cache
 
 from services.curriculum import load_curriculum, load_lesson_v2, written_lesson_ids
@@ -51,8 +52,10 @@ def _mcq(
     q_ar: str = "",
     audio: str = "",
     explain: str = "",
+    notes: dict[str, str] | None = None,
 ) -> dict | None:
-    """4 variantli savol (variantlar noyob bo'lishi shart)."""
+    """4 variantli savol (variantlar noyob bo'lishi shart).
+    `notes` — K28: xato variant tanlansa ko'rsatiladigan izoh (u aslida qaysi so'z: «u (ayol) yozdi» = كَتَبَتْ)."""
     options = [answer]
     for d in distractors:
         if d and d not in options:
@@ -61,7 +64,7 @@ def _mcq(
             break
     if len(options) < 3:
         return None
-    return {
+    item = {
         "type": "mcq",
         "q_uz": q_uz,
         "q_ar": q_ar,
@@ -73,6 +76,26 @@ def _mcq(
         "pattern": "",
         "words": [],
     }
+    opt_notes = {o: notes[o] for o in options[1:] if notes and notes.get(o)}
+    if opt_notes:
+        item["option_notes"] = opt_notes
+    return item
+
+
+_HARAKAT = re.compile("[" + chr(0x064B) + "-" + chr(0x065F) + chr(0x0670) + chr(0x0640) + "]")
+
+
+def _bare(s: str) -> str:
+    return " ".join(_HARAKAT.sub("", s or "").split())
+
+
+def same_word(a: str, b: str) -> bool:
+    """Bir so'z: aynan bir xil yoki biri harakatsiz yozilgan (ب / بَ, مدرسة / مَدْرَسَة).
+    Ikkalasida harakat bo'lsa farq muhim (كَتَبْتُ ≠ كَتَبَتْ) — bu atayin qo'yilgan distraktor."""
+    a, b = a.strip(), b.strip()
+    if a == b:
+        return True
+    return _bare(a) == _bare(b) and (not _HARAKAT.search(a) or not _HARAKAT.search(b))
 
 
 @lru_cache(maxsize=8)
@@ -108,25 +131,50 @@ def generated_bank(lesson_id: str) -> list[dict]:
     ars = [a for a, _ in pool]
     uzs = [u for _, u in pool]
 
+    # K28: barcha juftlar (lug'at + jadval + yasalmalar) — IKKINCHI TO'G'RI JAVOBni distraktordan chiqarish uchun.
+    # Audit: 31 savolda ikkinchi to'g'ri variant bor edi (تَكْتُبُ: «u (ayol) yozadi» ham «sen yozasan» ham;
+    # A0 harf tavsiflari ikki xil matnda; بُنِيَ, إِعْرَاب …) — «to'g'ri javobim xato hisoblandi».
+    table = (data.get("grammar") or {}).get("table") or []
+    derived = [d for r in data.get("roots", []) for d in r.get("derived", [])]
+    pairs = list(pool) + [(v["ar"].strip(), v["uz"].strip()) for v in vocab]
+    pairs += [(str(x.get("ar", "")).strip(), str(x.get("uz", "")).strip()) for x in table + derived]
+    pairs = [(a, u) for a, u in pairs if a and u]
+    uz_note = {}  # o'zbekcha variant → u qaysi arabcha so'z
+    ar_note = {}  # arabcha variant → ma'nosi
+    for a, u in pairs:
+        uz_note.setdefault(u, a)
+        ar_note.setdefault(a, u)
+
+    def meanings(ar: str) -> set[str]:
+        return {u for a, u in pairs if same_word(a, ar)}
+
+    def uz_distractors(ar: str, extra: list[str] = ()) -> list[str]:
+        bad = meanings(ar)
+        return [u for u in [*extra, *uzs] if u not in bad]
+
+    def ar_distractors(ar: str, uz: str) -> list[str]:
+        syn = {a for a, u in pairs if u == uz}
+        return [a for a in ars if not same_word(a, ar) and a not in syn]
+
     out: list[dict] = []
 
     for v in vocab:
         ar, uz = v["ar"].strip(), v["uz"].strip()
-        other_ar = [a for a in ars if a != ar]
-        other_uz = [u for u in uzs if u != uz]
+        other_ar = ar_distractors(ar, uz)
 
         # o'zbekcha → arabcha
-        q = _mcq(f"«{uz}» — qaysi so'z?", ar, other_ar, explain=f"{ar} — {uz}")
+        q = _mcq(f"«{uz}» — qaysi so'z?", ar, other_ar, explain=f"{ar} — {uz}", notes=ar_note)
         if q:
             out.append(q)
         # arabcha → o'zbekcha (arabcha katta ko'rinadi)
         q = _mcq(
             "Bu so'z nima degani?",
             uz,
-            other_uz,
+            uz_distractors(ar),
             q_ar=ar,
             audio=v.get("audio", ""),
             explain=f"{ar} — {uz}",
+            notes=uz_note,
         )
         if q:
             out.append(q)
@@ -138,6 +186,7 @@ def generated_bank(lesson_id: str) -> list[dict]:
                 other_ar,
                 audio=v["audio"],
                 explain=f"{ar} — {uz}",
+                notes=ar_note,
             )
             if q:
                 out.append(q)
@@ -157,17 +206,12 @@ def generated_bank(lesson_id: str) -> list[dict]:
                 out.append(q)
 
     # Grammatika jadvali: arabcha shakl → o'zbekcha ma'no
-    table = (data.get("grammar") or {}).get("table") or []
     for row in table:
         ar, uz = str(row.get("ar", "")).strip(), str(row.get("uz", "")).strip()
         if not ar or not uz:
             continue
-        others = [
-            str(r.get("uz", "")).strip()
-            for r in table
-            if str(r.get("uz", "")).strip() != uz
-        ] + uzs
-        q = _mcq("Tarjimasi qaysi?", uz, others, q_ar=ar)
+        others = [str(r.get("uz", "")).strip() for r in table if str(r.get("uz", "")).strip() != uz]
+        q = _mcq("Tarjimasi qaysi?", uz, uz_distractors(ar, others), q_ar=ar, notes=uz_note)
         if q:
             out.append(q)
 
@@ -180,9 +224,10 @@ def generated_bank(lesson_id: str) -> list[dict]:
             q = _mcq(
                 "Bu yasalma nima degani?",
                 uz,
-                [str(x.get("uz", "")).strip() for x in r.get("derived", [])] + uzs,
+                uz_distractors(ar, [str(x.get("uz", "")).strip() for x in r.get("derived", [])]),
                 q_ar=ar,
                 explain=f"{r.get('root', '')} o'zagidan",
+                notes=uz_note,
             )
             if q:
                 out.append(q)

@@ -20,6 +20,22 @@ const KINDS: Array<{ id: IssueKind; label: string }> = [
 
 export type IssueContext = Omit<IssueReport, "kind" | "comment">;
 
+/** K28 (#F126, #F132): o'quvchi xato deb topilgan savoldan keyin «Davom etish»ni bosib, KEYINGI (hali javob
+ *  berilmagan) savoldan «to'g'ri javobim xato hisoblandi» yuboradi — xabar noto'g'ri savolga, javobsiz boradi.
+ *  Oxirgi xato savol shu yerda eslab qolinadi (qayta topshirishda ham) va shunday xabarga u biriktiriladi. */
+const RECENT_MS = 15 * 60 * 1000;
+let lastWrong: { ctx: IssueContext; at: number } | null = null;
+
+export function rememberWrong(ctx: IssueContext) {
+  if (ctx.given) lastWrong = { ctx: { ...ctx }, at: Date.now() };
+}
+
+function recentWrong(ctx: IssueContext): IssueContext | null {
+  if (!lastWrong || Date.now() - lastWrong.at > RECENT_MS) return null;
+  if (lastWrong.ctx.label === ctx.label && lastWrong.ctx.answer === ctx.answer) return null;
+  return lastWrong.ctx;
+}
+
 export default function ReportIssue({
   ctx,
   className = "",
@@ -62,11 +78,17 @@ function IssueSheet({ ctx, onClose }: { ctx: IssueContext; onClose: () => void }
     return () => window.clearTimeout(t);
   }, [state, onClose]);
 
+  // Javob berilmagan savoldan «to'g'ri javobim xato» — aslida oxirgi xato savol haqida
+  const prev = kind === "wrong_answer" && !ctx.given ? recentWrong(ctx) : null;
+
   const send = async () => {
     if (!kind || state === "sending") return;
     setState("sending");
+    const base = prev
+      ? { ...prev, label: `${prev.label ?? ""} · ↩ keyingi savoldan`.slice(0, 64) }
+      : ctx;
     try {
-      await api.reportIssue({ ...ctx, kind, comment: comment.trim() });
+      await api.reportIssue({ ...base, kind, comment: comment.trim() });
       setState("sent");
       tg()?.HapticFeedback?.notificationOccurred?.("success");
     } catch {
@@ -119,6 +141,13 @@ function IssueSheet({ ctx, onClose }: { ctx: IssueContext; onClose: () => void }
                 </button>
               ))}
             </div>
+            {prev && (
+              <div className="mt-2 rounded-xl bg-gold-soft border border-gold/30 px-3 py-2 text-[12px] font-semibold">
+                ↩️ Bu savolga hali javob bermadingiz — oxirgi xato deb topilgan savol yuboriladi
+                {prev.label ? ` (${prev.label})` : ""}
+                {prev.given ? `: javobingiz «${prev.given.slice(0, 60)}»` : ""}.
+              </div>
+            )}
             <textarea
               value={comment}
               onChange={(e) => setComment(e.target.value.slice(0, 600))}

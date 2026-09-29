@@ -565,15 +565,15 @@
  "listening": [
   {
    "type": "mcq",
-   "q_uz": "Eshitgan so'z ma'nosi?",
+   "q_uz": "Eshitgan atama nimani bildiradi?",
    "audio": "b2/irab.mp3",
    "options": [
-    "i'rob",
-    "sarf",
-    "vazn",
-    "o'zak"
+    "i'rob — so'z oxirining gapdagi o'rniga qarab o'zgarishi",
+    "sarf — so'zning yasalishi va tuslanishi",
+    "vazn — so'z qolipi (فَاعِل, مَفْعُول…)",
+    "o'zak — so'zning asosiy uch harfi"
    ],
-   "answer": "i'rob"
+   "answer": "i'rob — so'z oxirining gapdagi o'rniga qarab o'zgarishi"
   },
   {
    "type": "mcq",

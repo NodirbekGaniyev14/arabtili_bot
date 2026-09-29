@@ -7,7 +7,7 @@ import { api, type MicroTestItem } from "../../lib/api";
 import { playAudio } from "../../lib/audio";
 import ArabicKeyboard from "./ArabicKeyboard";
 import { arOk, asVerdict, blankFills, isArabic, latOk, normAr, type Verdict } from "./answerCheck";
-import ReportIssue from "../../components/ReportIssue";
+import ReportIssue, { rememberWrong } from "../../components/ReportIssue";
 
 const tg = () => window.Telegram?.WebApp;
 /** K27.6 (#F125): javob paneli ekran pastini yopadi va savol ostidagi «Xatolik bormi?» ko'rinmay qoladi —
@@ -297,6 +297,7 @@ function OptionsEx({
   answer,
   explain,
   arabicOptions,
+  notes,
   onDone,
   onAnswer,
 }: {
@@ -307,6 +308,8 @@ function OptionsEx({
   answer: string;
   explain?: string;
   arabicOptions?: boolean;
+  /** K28: xato variant izohi (u aslida qaysi so'z / nima degani) */
+  notes?: Record<string, string>;
   onDone: (ok: boolean) => void;
   onAnswer?: (given: string) => void;
 }) {
@@ -367,6 +370,7 @@ function OptionsEx({
           correct={picked === answer}
           correctAnswer={answer}
           explain={explain}
+          note={picked !== answer && notes?.[picked] ? `Siz tanlagan «${picked}» = ${notes[picked]}` : undefined}
           onNext={() => onDone(picked === answer)}
         />
       )}
@@ -678,6 +682,8 @@ export function QuizRunner({
   if (!item) return null;
 
   const done = (ok: boolean) => {
+    // K28: xato deb topilgan savol eslab qolinadi — keyingi savoldan «to'g'ri javobim xato» yuborilsa shu biriktiriladi
+    if (!ok) rememberWrong(issueCtx);
     setGiven("");
     results.current.push(ok);
     if (!ok) {
@@ -772,6 +778,7 @@ function renderExercise(
           options={item.options}
           answer={item.answer}
           explain={item.explain_uz}
+          notes={item.option_notes}
           onDone={onDone}
           onAnswer={onAnswer}
         />
