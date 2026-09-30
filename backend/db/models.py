@@ -364,6 +364,9 @@ class PaymentRequest(Base):
     days: Mapped[int] = mapped_column(Integer, default=0)  # tasdiqlangan muddat
     # K29: rad sababi (low = summa kam | blur = chek noaniq | none = pul tushmadi | "" = eski/sababsiz)
     reject_reason: Mapped[str] = mapped_column(String(8), default="")
+    # K29.3: chek rasmi SHA-256 (bir rasm ikki marta qabul qilinmaydi) va «kutmoqda» eslatmasi adminga yuborilganmi
+    receipt_hash: Mapped[str] = mapped_column(String(64), default="")
+    admin_nudged: Mapped[int] = mapped_column(Integer, default=0)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
     decided_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     # provider: receipt (chek) | telegram (eski avto to'lov yozuvlari; xususiyat 2026-09-21 olib tashlandi);

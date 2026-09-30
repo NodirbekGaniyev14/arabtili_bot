@@ -113,6 +113,8 @@ _MIGRATIONS = {
         "charge_id": "VARCHAR(64) DEFAULT ''",
         "provider_charge_id": "VARCHAR(64) DEFAULT ''",
         "reject_reason": "VARCHAR(8) DEFAULT ''",  # K29
+        "receipt_hash": "VARCHAR(64) DEFAULT ''",  # K29.3
+        "admin_nudged": "INTEGER DEFAULT 0",  # K29.3
     },
 }
 

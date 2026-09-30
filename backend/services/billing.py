@@ -13,6 +13,8 @@ yoziladi, PAY_DISCOUNT_HOURS o'tgach «eski narx» ko'rsatiladi
 
 from __future__ import annotations
 
+import hashlib
+import io
 import logging
 import re
 from datetime import datetime, timedelta
@@ -37,6 +39,17 @@ REJECT_REASONS = {"low": "❌ Summa kam", "blur": "❌ Chek noaniq", "none": "�
 
 MAX_RECEIPT_BYTES = 6 * 1024 * 1024
 RECEIPT_TYPES = {"image/jpeg": "jpg", "image/png": "png", "image/webp": "webp"}
+
+# K29.3: chek tasdiqlash va'dasi (kunduzi, 08–22 Toshkent) va admin eslatmasi (va'daga 30 daqiqa qolganda)
+SLA_HOURS = 2
+SLA_NUDGE_AFTER = timedelta(minutes=90)
+# K29.3: qalbaki cheklarga qarshi (haqiqiy voronkada 6 chekdan 3 tasi «pul tushmadi» edi)
+FRAUD_LIMIT = 2  # «pul tushmadi» deb rad etilgan cheklar shu songa yetsa, ilovadan chek qabul qilinmaydi
+FRAUD_DAYS = 30
+RECEIPTS_PER_DAY = 4  # bir odam bir sutkada ko'pi bilan shuncha chek yuboradi
+_EDITORS = re.compile(
+    r"photoshop|gimp|canva|picsart|snapseed|lightroom|pixelmator|photopea|pixlr|fotor|paint\.net|affinity|inkscape", re.I
+)
 
 
 def _iso(dt: datetime | None) -> str | None:
@@ -207,6 +220,7 @@ async def info(session: AsyncSession, user: User) -> dict:
         "trial_available": referral.trial_available(user),
         "trial_days": referral.TRIAL_DAYS,
         "referral_days": referral.REF_DAYS,
+        "sla_hours": SLA_HOURS,  # K29.3: chek tasdiqlash va'dasi (kunduzi)
         # K29: paywallda qattiq yozilgan «40 javob»/«cheksiz» o'rniga serverdagi HAQIQIY limitlar va kontent soni
         "vip_turns": settings.tutor_daily_turns,
         "free_turns": settings.tutor_free_turns,
@@ -251,11 +265,96 @@ async def info(session: AsyncSession, user: User) -> dict:
 # ── Chek va tasdiqlash ──
 
 
+def receipt_sha(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def _support() -> str:
+    return f"@{settings.support_username.lstrip('@')}" if settings.support_username else "admin"
+
+
+async def screen_receipt(session: AsyncSession, user: User, data: bytes) -> tuple[int, str] | None:
+    """K29.3: chek qabul qilinishidan oldin tekshiruv. Rad bo'lsa (HTTP kod, o'zbekcha xabar), o'tsa None.
+    Maqsad — qalbaki chekni admin ko'rmasdan to'xtatish; haqiqiy mijoz har doim {support} orqali hal qila oladi."""
+    now = utcnow()
+    sup = _support()
+    n_day = (
+        await session.execute(
+            select(func.count(PaymentRequest.id)).where(
+                PaymentRequest.user_id == user.id, PaymentRequest.created_at >= now - timedelta(days=1)
+            )
+        )
+    ).scalar_one()
+    if int(n_day or 0) >= RECEIPTS_PER_DAY:
+        return 429, f"Bugun juda ko'p chek yuborildi. Ertaga qayta urinib ko'ring yoki {sup} ga yozing."
+    n_fake = (
+        await session.execute(
+            select(func.count(PaymentRequest.id)).where(
+                PaymentRequest.user_id == user.id,
+                PaymentRequest.status == "rejected",
+                PaymentRequest.reject_reason == "none",
+                PaymentRequest.created_at >= now - timedelta(days=FRAUD_DAYS),
+            )
+        )
+    ).scalar_one()
+    if int(n_fake or 0) >= FRAUD_LIMIT:
+        return 403, f"Chekingiz bir necha marta tasdiqlanmadi. To'lovni {sup} orqali hal qilamiz — shu yerga yozing."
+    seen = (
+        await session.execute(
+            select(PaymentRequest.id)
+            .where(PaymentRequest.receipt_hash == receipt_sha(data), PaymentRequest.status != "pending")
+            .limit(1)
+        )
+    ).scalar_one_or_none()
+    if seen is not None:
+        return 409, f"Bu chek rasmi avval ko'rib chiqilgan. Yangi to'lov chekini yuboring yoki {sup} ga yozing."
+    return None
+
+
+def edit_software(data: bytes) -> str:
+    """Rasm tahrirlash dasturida saqlanganmi (EXIF/PNG «Software»). Oddiy skrinshotda bunday belgi bo'lmaydi."""
+    try:
+        from PIL import Image
+
+        im = Image.open(io.BytesIO(data))
+        sw = str(im.info.get("Software") or "") or str(im.getexif().get(305) or "")
+    except Exception:
+        return ""
+    return sw[:40] if _EDITORS.search(sw) else ""
+
+
+async def risk_notes(session: AsyncSession, req: PaymentRequest, user: User, data: bytes | None = None) -> list[str]:
+    """Admin uchun xavf/ishonch belgilari — qaror har doim bank ilovasida pul tushganini ko'rishga tayanadi."""
+    rows = (
+        await session.execute(
+            select(PaymentRequest.status, PaymentRequest.reject_reason).where(
+                PaymentRequest.user_id == user.id, PaymentRequest.id != req.id
+            )
+        )
+    ).all()
+    approved = sum(1 for s, _ in rows if s == "approved")
+    fake = sum(1 for s, r in rows if s == "rejected" and r == "none")
+    rejected = sum(1 for s, _ in rows if s == "rejected")
+    notes: list[str] = []
+    if fake:
+        notes.append(f"🚩 Oldin «pul tushmadi» deb rad etilgan: {fake} marta")
+    elif rejected:
+        notes.append(f"⚠️ Oldin rad etilgan: {rejected} marta")
+    if approved:
+        notes.append(f"✅ Oldin {approved} marta to'lagan mijoz")
+    if user.created_at and (req.created_at - user.created_at) < timedelta(days=1):
+        notes.append("🆕 Hisob bugun ochilgan")
+    sw = edit_software(data) if data else ""
+    if sw:
+        notes.append(f"🚩 Rasm tahrirlash dasturida saqlangan: {esc(sw)}")
+    return notes
+
+
 async def create_request(
     session: AsyncSession, user: User, plan: str, data: bytes, mime: str
 ) -> PaymentRequest:
     ext = RECEIPT_TYPES[mime]
-    req = PaymentRequest(user_id=user.id, plan=plan, amount=current_price(plan, user))
+    req = PaymentRequest(user_id=user.id, plan=plan, amount=current_price(plan, user), receipt_hash=receipt_sha(data))
     session.add(req)
     await session.flush()
     path = receipts_dir() / f"{req.id}_{user.tg_id}.{ext}"
@@ -266,17 +365,29 @@ async def create_request(
     return req
 
 
-def admin_caption(req: PaymentRequest, user: User) -> str:
+def admin_caption(
+    req: PaymentRequest, user: User, notes: list[str] | None = None, waiting_min: int | None = None
+) -> str:
+    from services.stats import TASHKENT_OFFSET
+
     plan = PLANS.get(req.plan, PLANS["1oy"])
     uname = f"@{user.username}" if user.username else "username yo'q"
+    head = "💳 <b>Yangi to'lov cheki #{}</b>".format(req.id)
+    if waiting_min is not None:
+        head = f"⏰ <b>Chek #{req.id} {waiting_min} daqiqadan beri kutmoqda</b> (va'da: {SLA_HOURS} soat)"
+    at = req.created_at + TASHKENT_OFFSET
+    amount = f"{req.amount:,}".replace(",", " ")
+    extra = ("\n" + "\n".join(notes) + "\n") if notes else ""
     return (
-        f"💳 <b>Yangi to'lov cheki #{req.id}</b>\n\n"
+        f"{head}\n\n"
         f"👤 {admin_show(user.name, user.username, user.tg_id)} ({esc(uname)})\n"
         f"🆔 <code>{user.tg_id}</code>\n"
-        f"📦 {plan['title']} — <b>{req.amount:,}</b> so'm\n"
-        f"📅 {req.created_at:%d.%m.%Y %H:%M} UTC\n\n"
-        "Chekni tekshiring va muddatni tanlang:"
-    ).replace(",", " ")
+        f"📦 {plan['title']} — <b>{amount}</b> so'm\n"
+        f"📅 {at:%d.%m.%Y %H:%M} (Toshkent)\n"
+        f"{extra}\n"
+        f"💰 Tugmani bosishdan <b>OLDIN</b> bank ilovangizda {at:%H:%M} atrofida <b>{amount}</b> so'm "
+        "kartaga TUSHGANINI ko'ring — chek rasmi pul tushganini isbotlamaydi."
+    )
 
 
 def admin_keyboard(req_id: int):
@@ -297,10 +408,14 @@ def admin_keyboard(req_id: int):
     )
 
 
-async def notify_admin(bot, req: PaymentRequest, user: User) -> None:
-    """Chek rasmini adminga tugmalar bilan yuboradi. Bot yo'q bo'lsa jim."""
+async def notify_admin(
+    bot, req: PaymentRequest, user: User, notes: list[str] | None = None, waiting_min: int | None = None
+) -> None:
+    """Chek rasmini adminga tugmalar bilan yuboradi. Bot yo'q bo'lsa jim.
+    `waiting_min` berilsa — «va'da muddati yaqin» eslatmasi (K29.3)."""
     if not (bot and settings.admin_id):
         return
+    caption = admin_caption(req, user, notes, waiting_min)
     try:
         from aiogram.types import BufferedInputFile
 
@@ -309,7 +424,7 @@ async def notify_admin(bot, req: PaymentRequest, user: User) -> None:
         await bot.send_photo(
             settings.admin_id,
             photo,
-            caption=admin_caption(req, user),
+            caption=caption,
             parse_mode="HTML",
             reply_markup=admin_keyboard(req.id),
         )
@@ -319,7 +434,7 @@ async def notify_admin(bot, req: PaymentRequest, user: User) -> None:
         try:
             await bot.send_message(
                 settings.admin_id,
-                admin_caption(req, user) + "\n\n⚠️ Chek rasmi ochilmadi — o'quvchidan qayta so'rang.",
+                caption + "\n\n⚠️ Chek rasmi ochilmadi — o'quvchidan qayta so'rang.",
                 parse_mode="HTML",
                 reply_markup=admin_keyboard(req.id),
             )

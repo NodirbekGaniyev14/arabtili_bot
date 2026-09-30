@@ -21,7 +21,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from config import settings
 from services.names import admin_show, esc, show
 from services import notify_prefs
-from db.models import TutorTurn, User, utcnow
+from db.models import PaymentRequest, TutorTurn, User, utcnow
 from services import billing, referral
 from services.stats import TASHKENT_OFFSET
 
@@ -196,10 +196,10 @@ async def _trial_turns(session: AsyncSession, user: User) -> int:
 
 
 async def process(session: AsyncSession, bot, now: datetime | None = None) -> dict:
-    """Bir tekshiruv aylanishi. Qaytaradi: {"soon", "expired", "discount", "trial", "digest"} soni."""
+    """Bir tekshiruv aylanishi. Qaytaradi: {"soon", "expired", "discount", "trial", "sla", "digest"} soni."""
     global _digest_sent_on
     now = now or utcnow()
-    sent = {"soon": 0, "expired": 0, "discount": 0, "trial": 0, "digest": 0}
+    sent = {"soon": 0, "expired": 0, "discount": 0, "trial": 0, "sla": 0, "digest": 0}
     real = User.is_demo == 0
 
     if not _quiet(now):
@@ -294,6 +294,30 @@ async def process(session: AsyncSession, bot, now: datetime | None = None) -> di
                 turns = await _trial_turns(session, user)
                 if await _send(bot, user, trial_last_text(user, turns, now), "🎯 Mock imtihonni ochish", "tutor"):
                     sent["trial"] += 1
+
+        # 4. K29.3: chek tasdiqlash va'dasi (billing.SLA_HOURS soat) — muddatga 30 daqiqa qolganda adminga bir marta
+        #    eslatma (rasm va tugmalar bilan). Tun (22–08) da bunday eslatma yo'q: va'da faqat kunduzi.
+        if settings.admin_id:
+            stale = (
+                await session.execute(
+                    select(PaymentRequest, User)
+                    .join(User, User.id == PaymentRequest.user_id)
+                    .where(
+                        PaymentRequest.status == "pending",
+                        PaymentRequest.admin_nudged == 0,
+                        PaymentRequest.created_at <= now - billing.SLA_NUDGE_AFTER,
+                    )
+                    .order_by(PaymentRequest.id.asc())
+                    .limit(10)
+                )
+            ).all()
+            for req, user in stale:
+                req.admin_nudged = 1  # yetmasa ham qayta-qayta yubormaymiz
+                await billing.notify_admin(
+                    bot, req, user, await billing.risk_notes(session, req, user),
+                    waiting_min=int((now - req.created_at).total_seconds() // 60),
+                )
+                sent["sla"] += 1
 
         await session.commit()
 

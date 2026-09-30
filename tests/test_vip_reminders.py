@@ -110,7 +110,7 @@ async def test_quiet_hours_hold_user_messages(session, make_user):
     u = await make_user("N", vip_until=NIGHT + timedelta(days=1))
     bot = FakeBot()
     r = await vr.process(session, bot, NIGHT)
-    assert r == {"soon": 0, "expired": 0, "discount": 0, "trial": 0, "digest": 0}
+    assert r == {"soon": 0, "expired": 0, "discount": 0, "trial": 0, "sla": 0, "digest": 0}
     assert u.vip_notice == ""
     # Ertalab yuboriladi
     assert (await vr.process(session, bot, NIGHT + timedelta(hours=10)))["soon"] == 1

@@ -29,7 +29,7 @@ REQUIRED_TABLES = (
 )
 REQUIRED_COLUMNS = {
     "users": ("vip_until", "paywall_seen_at", "vip_notice", "discount_notified", "trial_until", "speak_report_key", "writing_notice", "winback_stage", "winback_at", "day2_notice", "first_nudge", "survey_pending", "battle_points", "battle_games", "battle_wins", "notify_off"),
-    "payment_requests": ("provider", "charge_id", "provider_charge_id"),
+    "payment_requests": ("provider", "charge_id", "provider_charge_id", "reject_reason", "receipt_hash", "admin_nudged"),
     "tutor_turns": ("mode", "score", "vocab", "grammar", "content", "pron"),
     "mock_results": ("vocab", "grammar", "content", "pron"),
     "ai_usage": ("model",),

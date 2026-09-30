@@ -1490,6 +1490,8 @@ export interface PayInfo {
   trial_available: boolean;
   trial_days: number;
   referral_days: number;
+  /** K29.3: chek tasdiqlash va'dasi (soat, kunduzi) */
+  sla_hours: number;
   /** K23.4: VIP'da kuchliroq AI model (qisqa nomi), bo'sh = yo'q */
   vip_model?: string;
   /** K29: serverdagi haqiqiy kunlik suhbat limitlari va kontent soni (paywallda qattiq yozilmaydi) */

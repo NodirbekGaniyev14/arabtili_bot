@@ -386,8 +386,8 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
           <div className="rounded-2xl bg-emerald-deep/10 border border-emerald-deep/30 p-4">
             <div className="font-extrabold text-emerald-dark">✅ Chek yuborildi!</div>
             <div className="text-sm font-semibold text-ink-soft mt-1">
-              Admin chekni tekshirgach, hisobingizga VIP biriktiriladi. Tasdiqlanishi
-              bilan Telegram'da xabar keladi.
+              Kunduzi (08:00–22:00) {info?.sla_hours ?? 2} soat ichida tekshiriladi va VIP yoqiladi.
+              Tasdiqlanishi bilan Telegram'da xabar keladi.
             </div>
           </div>
         )}
@@ -658,7 +658,10 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
         )}
 
         <div className="rounded-2xl bg-card border border-cardline p-4 text-[12px] font-semibold text-ink-soft">
-          ⏳ Admin chekni tekshirgach, hisobingizga VIP biriktiriladi. Tasdiqlanishi bilan profilingizda barcha imkoniyatlar ochiladi.
+          ⏳ Chek kunduzi (08:00–22:00) {info?.sla_hours ?? 2} soat ichida tekshiriladi, keyin VIP yoqiladi va Telegram'da xabar keladi.
+          <div className="mt-1 text-[11px]">
+            Har bir to'lov bank orqali kartaga tushganligi bo'yicha tekshiriladi — haqiqiy to'lov qiling.
+          </div>
           {support && (
             <div className="mt-2">
               Savollar yoki tezlashtirish uchun:{" "}

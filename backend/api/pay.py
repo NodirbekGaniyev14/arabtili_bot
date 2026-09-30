@@ -67,6 +67,23 @@ async def pay_receipt(
     except Exception:
         raise HTTPException(status_code=422, detail="Rasm o'qilmadi — chekning skrinshotini JPG/PNG qilib yuboring")
 
+    # K29.3: qalbaki chekka qarshi — takror rasm, ko'p rad etilgan hisob, sutkalik limit admin ko'rmasdan to'xtatiladi
+    blocked = await billing.screen_receipt(session, user, data)
+    if blocked:
+        raise HTTPException(status_code=blocked[0], detail=blocked[1])
+
     req = await billing.create_request(session, user, plan, data, mime)
-    await billing.notify_admin(getattr(request.app.state, "bot", None), req, user)
+    bot = getattr(request.app.state, "bot", None)
+    await billing.notify_admin(bot, req, user, await billing.risk_notes(session, req, user, data))
+    if bot:
+        # Kutish jim o'tmasin: o'quvchi Telegram'ning o'zida ham tasdiq oladi (K29.3 — va'da: SLA_HOURS soat, kunduzi)
+        try:
+            await bot.send_message(
+                user.tg_id,
+                f"📥 <b>Chekingiz qabul qilindi (#{req.id}).</b>\n\nKunduzi (08:00–22:00) {billing.SLA_HOURS} soat ichida "
+                "tekshirib, VIP'ni yoqamiz — xabar shu yerga keladi.",
+                parse_mode="HTML",
+            )
+        except Exception:
+            pass
     return {"ok": True, "request_id": req.id, "status": req.status}
