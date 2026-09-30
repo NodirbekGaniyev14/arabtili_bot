@@ -84,6 +84,79 @@ function featuresFor(info: PayInfo | null) {
 /** Hero chiplari — faqat mahsulotda HAQIQATAN bor mavzular (Ustoz: umra, safar, ish, shifokor). */
 const HERO_CHIPS = ["🕋 Umra va Makka", "✈️ Safar va aeroport", "💼 Ish intervyusi", "🩺 Shifokor qabuli"];
 
+/** K29.2: «ko'rsating, aytmang» — Ustoz javobining haqiqiy shakli (arabcha + translit + o'zbekcha; xato bo'lsa
+ *  tuzatish + bir jumlali izoh + suhbat davomi). Namuna ekani yorliqda yozilgan. */
+function SampleChat() {
+  const bubble = "max-w-[92%] rounded-2xl rounded-tl-md bg-sand border border-cardline px-3 py-2.5";
+  return (
+    <section className="rounded-3xl bg-card border border-cardline p-4">
+      <div className="flex items-center justify-between gap-2 mb-1">
+        <div className="text-[11px] font-extrabold tracking-[0.12em]">🤖 USTOZ SHUNDAY TUZATADI</div>
+        <span className="shrink-0 rounded-full bg-gold-soft px-2 py-0.5 text-[10px] font-extrabold">
+          NAMUNA · 🕋 Umra
+        </span>
+      </div>
+      <p className="mb-3 text-[12px] font-semibold text-ink-soft">
+        Yozing yoki mikrofonda ayting — ustoz xatoni ko'rsatadi va suhbatni davom ettiradi.
+      </p>
+      <div className="space-y-2.5">
+        <div className={bubble}>
+          <div dir="rtl" className="font-arabic text-xl leading-snug">مَرْحَبًا! أَيْنَ تُرِيدُ أَنْ تَذْهَبَ؟</div>
+          <div className="mt-0.5 text-[11px] font-semibold italic text-ink-soft">Marhaban! Ayna turiidu an tadhhaba?</div>
+          <div className="text-[12px] font-semibold">Salom! Qayerga bormoqchisiz?</div>
+        </div>
+        <div className="ml-auto max-w-[80%] rounded-2xl rounded-tr-md bg-emerald-deep px-3 py-2.5 text-white">
+          <div dir="rtl" className="font-arabic text-xl leading-snug">أنا أريد أذهب إلى الحرم</div>
+          <div className="text-[10px] font-extrabold tracking-wide text-white/60">SIZ</div>
+        </div>
+        <div className={`${bubble} space-y-2`}>
+          <div className="rounded-xl border border-gold/40 bg-gold-soft px-2.5 py-2">
+            <div className="text-[10px] font-extrabold tracking-wide text-ink-soft">✏️ KICHIK TUZATISH</div>
+            <div dir="rtl" className="font-arabic text-xl leading-snug">
+              أَنَا أُرِيدُ <span className="font-extrabold text-emerald-dark">أَنْ أَذْهَبَ</span> إِلَى الحَرَمِ
+            </div>
+            <div className="text-[12px] font-semibold">«أُرِيدُ» dan keyin «أَنْ» keladi, fe'l esa «أَذْهَبَ» shaklida bo'ladi.</div>
+          </div>
+          <div>
+            <div dir="rtl" className="font-arabic text-xl leading-snug">
+              كَيْفَ تُرِيدُ أَنْ تَذْهَبَ؟ بِالحَافِلَةِ أَمْ سَيْرًا عَلَى الأَقْدَامِ؟
+            </div>
+            <div className="text-[12px] font-semibold">Qanday bormoqchisiz? Avtobusdami yoki piyoda?</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** K29.2: bepul va VIP farqi — faqat haqiqiy farqlar. Darslar, lug'at, Oktagon bepul qoladi (ishonch: VIP — qo'shimcha). */
+function Compare({ info }: { info: PayInfo }) {
+  const rows: { label: string; free: string; vip: string }[] = [
+    { label: "AI ustoz javobi (kuniga)", free: String(info.free_turns), vip: String(info.vip_turns) },
+    // Mock imtihon 5 savol + ochilish = ~6 javob: bepul limit shunga yetmasa, buni to'g'ri aytamiz
+    ...(info.free_turns < 6 ? [{ label: "Mock imtihon (5 savol)", free: "oxirigacha yetmaydi", vip: "to'liq ✓" }] : []),
+    ...(info.vip_model ? [{ label: "Kuchliroq AI model", free: "—", vip: `${info.vip_model} ✓` }] : []),
+    { label: "Darslar, lug'at, Oktagon", free: "bepul ✓", vip: "bepul ✓" },
+  ];
+  return (
+    <section className="rounded-3xl bg-card border border-cardline p-4">
+      <div className="text-[11px] font-extrabold tracking-[0.12em] mb-2">⚖️ BEPUL VA VIP</div>
+      <div className="grid grid-cols-[1fr_auto_auto] gap-x-3 gap-y-1.5 text-[12px] font-semibold items-center">
+        <span />
+        <span className="text-[10px] font-extrabold tracking-wide text-ink-soft text-center">BEPUL</span>
+        <span className="text-[10px] font-extrabold tracking-wide text-emerald-dark text-center">👑 VIP</span>
+        {rows.map((r) => (
+          <div key={r.label} className="contents">
+            <span className="border-t border-cardline pt-1.5">{r.label}</span>
+            <span className="border-t border-cardline pt-1.5 text-center text-ink-soft max-w-[92px]">{r.free}</span>
+            <span className="border-t border-cardline pt-1.5 text-center font-extrabold text-emerald-dark">{r.vip}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export default function Paywall({ onClose, reason }: PaywallProps) {
   const [info, setInfo] = useState<PayInfo | null>(null);
   const [error, setError] = useState("");
@@ -262,6 +335,8 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
           </section>
         )}
 
+        {info && !info.vip && <SampleChat />}
+
         {info && !info.vip && info.trial_available && (
           <section className="rounded-3xl bg-gold-soft border border-gold/40 p-4">
             <div className="text-[11px] font-extrabold tracking-[0.12em] text-ink-soft">🎁 AVVAL SINAB KO'RING</div>
@@ -365,28 +440,40 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
           )}
         </section>
 
+        {info && !info.vip && <Compare info={info} />}
+
         {/* Tarif va narx */}
         <section ref={plansRef} className="space-y-3">
           {info && (
             <div className="grid grid-cols-2 gap-2 rounded-2xl bg-cardline/60 p-1.5">
-              {info.plans.map((p) => (
-                <button
-                  key={p.id}
-                  onClick={() => setPlanId(p.id)}
-                  className={`rounded-xl px-2 py-2.5 text-center transition-colors ${
-                    p.id === planId
-                      ? "bg-card shadow-sm border border-cardline"
-                      : "text-ink-soft"
-                  }`}
-                >
-                  <div className="text-[12px] font-extrabold">
-                    {p.months === 1 ? "👑" : "💎"} {p.title.toUpperCase()}
-                  </div>
-                  <div className="text-[13px] font-extrabold text-emerald-dark">
-                    {fmt(p.price)} so'm
-                  </div>
-                </button>
-              ))}
+              {info.plans.map((p) => {
+                // K29.2: uzoq tarifning haqiqiy tejami (1 oylik narx × oy − tarif narxi)
+                const base = info.plans.find((x) => x.months === 1);
+                const save = base && p.months > 1 ? base.price * p.months - p.price : 0;
+                return (
+                  <button
+                    key={p.id}
+                    onClick={() => setPlanId(p.id)}
+                    className={`rounded-xl px-2 py-2.5 text-center transition-colors ${
+                      p.id === planId
+                        ? "bg-card shadow-sm border border-cardline"
+                        : "text-ink-soft"
+                    }`}
+                  >
+                    <div className="text-[12px] font-extrabold">
+                      {p.months === 1 ? "👑" : "💎"} {p.title.toUpperCase()}
+                    </div>
+                    <div className="text-[13px] font-extrabold text-emerald-dark">
+                      {fmt(p.price)} so'm
+                    </div>
+                    {save > 0 && (
+                      <div className="text-[10px] font-extrabold text-terracotta">
+                        {fmt(save)} so'm tejaysiz
+                      </div>
+                    )}
+                  </button>
+                );
+              })}
             </div>
           )}
 

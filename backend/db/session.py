@@ -32,6 +32,7 @@ _MIGRATIONS = {
         "paywall_seen_at": "DATETIME",
         "vip_notice": "VARCHAR(24) DEFAULT ''",
         "discount_notified": "INTEGER DEFAULT 0",
+        "trial_nudge": "INTEGER DEFAULT 0",
         "invited_by": "INTEGER",
         "ref_rewarded": "INTEGER DEFAULT 0",
         "trial_until": "DATETIME",

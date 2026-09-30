@@ -281,7 +281,8 @@ async def test_reminders_skip_trial_soon_and_use_trial_expired_text(session, mak
     await session.commit()
     bot = FakeBot()
     r = await vr.process(session, bot, noon)
-    assert r["soon"] == 1 and [c for c, _ in bot.sent] == [paid.tg_id], "sinovda «tugayapti» yo'q"
+    assert r["soon"] == 1 and [c for c, _ in bot.sent if c == paid.tg_id] == [paid.tg_id]
+    assert all("muddatingiz" not in txt for c, txt in bot.sent if c == t.tg_id), "sinovda «tugayapti» yo'q"
 
     t.vip_until = noon - timedelta(hours=1)
     t.trial_until = t.vip_until

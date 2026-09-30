@@ -54,6 +54,8 @@ class User(Base):
     # kaliti ("soon:<vip_until>" | "expired:<vip_until>") va chegirma xabari flagi
     vip_notice: Mapped[str] = mapped_column(String(24), default="")
     discount_notified: Mapped[int] = mapped_column(Integer, default=0)
+    # K29.2 sinov davri eslatmalari (bit maskasi): 1 = «ustozni ochib ko'ring», 2 = «sinov tugayapti»
+    trial_nudge: Mapped[int] = mapped_column(Integer, default=0)
     # K18.1 taklif va sinov (services/referral.py): kim taklif qilgan (users.id),
     # taklif mukofoti berilganmi, bir martalik VIP sinov oxiri
     invited_by: Mapped[int | None] = mapped_column(Integer, nullable=True, index=True)

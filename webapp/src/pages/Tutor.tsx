@@ -903,6 +903,37 @@ export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProp
                 {notice}
               </div>
             )}
+            {/* K29.2: eng yuqori niyat lahzasi — suhbat qizigan paytda limit tugadi. Sinov bir bosishda ochiladi va suhbat shu yerdan davom etadi */}
+            {info && outOfTurns && !info.vip && !done && (
+              <div className="rounded-2xl bg-gradient-to-br from-emerald-deep to-emerald-dark p-4 text-white shadow-lg">
+                <div className="text-[11px] font-extrabold tracking-[0.14em] text-gold-soft">👑 SUHBAT SHU YERDA TO'XTADI</div>
+                <div className="mt-1 text-[15px] font-extrabold leading-snug">
+                  {userTurns > 0
+                    ? `${userTurns} ta javob berdingiz — ustoz sizni kutyapti`
+                    : "Bugungi bepul javoblar tugadi"}
+                </div>
+                <div className="mt-0.5 text-[12px] font-semibold text-white/80">
+                  {info.trial_available
+                    ? `${info.trial_days ?? 2} kun VIP bepul · karta kerak emas · suhbat shu yerdan davom etadi`
+                    : `VIP — oyiga ${fmtSum(info.price.month)} so'm (kuniga ${fmtSum(info.price.per_day)} so'm)`}
+                </div>
+                <button
+                  onClick={info.trial_available ? startTrial : () => setPaywall("")}
+                  disabled={trialBusy}
+                  className="mt-3 w-full rounded-xl bg-gold py-2.5 text-sm font-extrabold text-ink active:scale-95 transition-transform disabled:opacity-60"
+                >
+                  {trialBusy ? "…" : info.trial_available ? "🎁 Bepul sinab, davom etish" : "👑 VIP bilan davom etish"}
+                </button>
+                {info.trial_available && (
+                  <button
+                    onClick={() => setPaywall("")}
+                    className="mt-2 w-full text-center text-[12px] font-bold text-white/80 underline underline-offset-4"
+                  >
+                    Tariflarni ko'rish
+                  </button>
+                )}
+              </div>
+            )}
             {done && (
               <div className="text-center py-3">
                 <div className="text-2xl">🎉</div>

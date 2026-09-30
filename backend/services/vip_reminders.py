@@ -30,6 +30,10 @@ log = logging.getLogger(__name__)
 CHECK_INTERVAL = 900  # 15 daqiqa
 SOON_DAYS = 3  # muddat tugashidan necha kun oldin
 DISCOUNT_LEAD = timedelta(hours=2)
+# K29.2 sinov eslatmalari: yoqilganidan 3 soat o'tib ustozga yozmagan bo'lsa (30 soatgacha), tugashiga 6 soat qolganda
+TRIAL_START_AFTER = timedelta(hours=3)
+TRIAL_START_UNTIL = timedelta(hours=30)
+TRIAL_LAST_LEAD = timedelta(hours=6)
 EXPIRED_WINDOW = timedelta(days=3)  # bundan eski tugashlar haqida yozmaymiz
 QUIET_FROM, QUIET_TO = 22, 8  # foydalanuvchiga xabar yo'q (Toshkent soati)
 ADMIN_DIGEST_HOUR = 9
@@ -46,15 +50,15 @@ def _quiet(now: datetime) -> bool:
     return h >= QUIET_FROM or h < QUIET_TO
 
 
-def paywall_keyboard(text: str) -> InlineKeyboardMarkup | None:
-    """Mini App'ni to'g'ridan-to'g'ri VIP sahifasida ochadi (App.tsx: #vip)."""
+def paywall_keyboard(text: str, page: str = "vip") -> InlineKeyboardMarkup | None:
+    """Mini App'ni to'g'ridan-to'g'ri kerakli sahifada ochadi (App.tsx: #vip, #tutor)."""
     from services.deploy_notify import webapp_url_versioned
 
     url = webapp_url_versioned()
     if not url.startswith("https://"):
         return None
     return InlineKeyboardMarkup(
-        inline_keyboard=[[InlineKeyboardButton(text=text, web_app=WebAppInfo(url=url + "#vip"))]]
+        inline_keyboard=[[InlineKeyboardButton(text=text, web_app=WebAppInfo(url=f"{url}#{page}"))]]
     )
 
 
@@ -130,12 +134,43 @@ def discount_text(user: User, now: datetime) -> str:
     )
 
 
-async def _send(bot, user: User, text: str, button: str) -> bool:
+def _hours_left(user: User, now: datetime) -> int:
+    return max(int((user.trial_until - now).total_seconds() // 3600), 1)
+
+
+def trial_start_text(user: User, now: datetime) -> str:
+    """K29.2: sinov yoqilgan, lekin ustozga hali yozilmagan — bir daqiqalik birinchi qadam."""
+    name = show(user.name, "do'stim")
+    return (
+        f"🎁 {name}, VIP sinovingiz faol — lekin ustoz sizni hali kutyapti.\n\n"
+        "Bir daqiqa: ustozga «Umra» yoki «Safar» mavzusida bitta gap yozing yoki ayting. "
+        "Xato qilsangiz — u o'sha zahoti yumshoq tuzatadi, hech kim baho qo'ymaydi.\n\n"
+        f"Sinov ~{_hours_left(user, now)} soatdan keyin tugaydi."
+    )
+
+
+def trial_last_text(user: User, turns: int, now: datetime) -> str:
+    """K29.2: sinov tugashiga oz qoldi — narx aytilmaydi (tugagach 24 soatlik oyna o'zi ochiladi), qiymat ko'rsatiladi."""
+    name = show(user.name, "do'stim")
+    used = (
+        f"Hozircha {turns} ta suhbat javobi berdingiz. "
+        if turns
+        else "Hali ustoz bilan gaplashib ko'rmadingiz. "
+    )
+    offer = "\n\nSinov tugagach 24 soat davomida maxsus narx taklif qilamiz." if billing.discount_enabled() else ""
+    return (
+        f"⏳ {name}, VIP sinovingiz ~{_hours_left(user, now)} soatdan keyin tugaydi.\n\n"
+        f"{used}Qolgan vaqtda VIP'ning eng kuchli qismini sinang: kasb bo'yicha 🎯 mock imtihon — "
+        f"5 savol, ball va xatolar tahlili bilan.{offer}"
+    )
+
+
+async def _send(bot, user: User, text: str, button: str, page: str = "vip") -> bool:
     if not notify_prefs.enabled(user, "vip"):
         return False
     try:
         await bot.send_message(
-            user.tg_id, text, parse_mode="HTML", reply_markup=paywall_keyboard(button)
+            user.tg_id, text, parse_mode="HTML", reply_markup=paywall_keyboard(button, page)
         )
         return True
     except Exception as e:  # botni bloklagan bo'lishi mumkin
@@ -161,10 +196,10 @@ async def _trial_turns(session: AsyncSession, user: User) -> int:
 
 
 async def process(session: AsyncSession, bot, now: datetime | None = None) -> dict:
-    """Bir tekshiruv aylanishi. Qaytaradi: {"soon", "expired", "discount", "digest"} soni."""
+    """Bir tekshiruv aylanishi. Qaytaradi: {"soon", "expired", "discount", "trial", "digest"} soni."""
     global _digest_sent_on
     now = now or utcnow()
-    sent = {"soon": 0, "expired": 0, "discount": 0, "digest": 0}
+    sent = {"soon": 0, "expired": 0, "discount": 0, "trial": 0, "digest": 0}
     real = User.is_demo == 0
 
     if not _quiet(now):
@@ -233,6 +268,32 @@ async def process(session: AsyncSession, bot, now: datetime | None = None) -> di
                 user.discount_notified = 1
                 if await _send(bot, user, discount_text(user, now), "🔥 Chegirma bilan olish"):
                     sent["discount"] += 1
+
+        # 3. K29.2: sinovdagilar — 0/39 to'lov sababi «faollashmaslik» bo'lishi mumkin (sinovchi ustozga yozmagan)
+        rows = (
+            await session.execute(
+                select(User).where(
+                    real,
+                    User.trial_until.is_not(None),
+                    User.vip_until == User.trial_until,  # hozirgi VIP aynan sinov
+                    User.vip_until > now,
+                )
+            )
+        ).scalars().all()
+        for user in rows:
+            elapsed = now - (user.trial_until - timedelta(days=referral.TRIAL_DAYS))
+            left = user.trial_until - now
+            started = False
+            if not user.trial_nudge & 1 and elapsed >= TRIAL_START_AFTER:
+                user.trial_nudge |= 1  # bir marta; yozgan bo'lsa yoki kech qolgan bo'lsa xabar yo'q
+                if elapsed <= TRIAL_START_UNTIL and await _trial_turns(session, user) == 0:
+                    started = await _send(bot, user, trial_start_text(user, now), "🤖 Ustozni ochish", "tutor")
+                    sent["trial"] += started
+            if not started and not user.trial_nudge & 2 and left <= TRIAL_LAST_LEAD:
+                user.trial_nudge |= 2
+                turns = await _trial_turns(session, user)
+                if await _send(bot, user, trial_last_text(user, turns, now), "🎯 Mock imtihonni ochish", "tutor"):
+                    sent["trial"] += 1
 
         await session.commit()
 
