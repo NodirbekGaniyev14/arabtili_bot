@@ -344,6 +344,134 @@ async def funnel(session: AsyncSession, level: str = "A0") -> str:
     return "\n".join(lines)
 
 
+def _pct(a: int, b: int) -> int:
+    return round(100 * a / b) if b else 0
+
+
+async def vip_funnel(session: AsyncSession, days: int = 30) -> str:
+    """K29: VIP sotuv voronkasi — foydalanuvchi nimagacha yetib keldi va qayerda uzilyapti.
+
+    `/funnel` faqat DARS voronkasi; to'lov tomoni ko'rinmasdi (VIP hali hech kim olmadi — sabab kimda?).
+    Foizlar «faol foydalanuvchilar» (oynada XP olganlar) ga nisbatan. Faqat haqiqiy foydalanuvchilar."""
+    import statistics
+
+    from config import settings
+    from services import referral
+
+    days = max(1, min(int(days), 365))
+    now = utcnow()
+    since = now - timedelta(days=days)
+    real = User.is_demo == 0
+
+    async def scalar(q):
+        return (await session.execute(q)).scalar_one()
+
+    total = await scalar(select(func.count()).select_from(User).where(real))
+    new = await scalar(select(func.count()).select_from(User).where(real, User.created_at >= since))
+    active = await scalar(
+        select(func.count(func.distinct(XpLog.user_id)))
+        .select_from(XpLog).join(User, User.id == XpLog.user_id)
+        .where(real, XpLog.created_at >= since)
+    )
+    tutor_rows = (
+        await session.execute(
+            select(TutorTurn.user_id, TutorTurn.created_at)
+            .join(User, User.id == TutorTurn.user_id)
+            .where(real, TutorTurn.created_at >= since)
+        )
+    ).all()
+    tutor_users = {uid for uid, _ in tutor_rows}
+    per_day: dict[tuple[int, object], int] = {}
+    for uid, dt in tutor_rows:
+        key = (uid, _local_date(dt))
+        per_day[key] = per_day.get(key, 0) + 1
+    hit_limit = {uid for (uid, _), n in per_day.items() if n >= settings.tutor_free_turns}
+
+    paywall = await scalar(
+        select(func.count()).select_from(User).where(real, User.paywall_seen_at >= since)
+    )
+    trial_days = timedelta(days=referral.TRIAL_DAYS)
+    trial = await scalar(
+        select(func.count()).select_from(User).where(real, User.trial_until >= since + trial_days)
+    )
+    trial_ever = await scalar(select(func.count()).select_from(User).where(real, User.trial_until.isnot(None)))
+
+    def in_window(col):
+        return [PaymentRequest.provider == "receipt", col >= since]
+
+    receipts = (
+        await session.execute(
+            select(PaymentRequest.user_id, PaymentRequest.status, PaymentRequest.created_at, PaymentRequest.decided_at)
+            .join(User, User.id == PaymentRequest.user_id)
+            .where(real, *in_window(PaymentRequest.created_at))
+        )
+    ).all()
+    r_users = {r[0] for r in receipts}
+    approved = sum(1 for r in receipts if r[1] == "approved")
+    rejected = sum(1 for r in receipts if r[1] == "rejected")
+    pending = [r for r in receipts if r[1] == "pending"]
+    waits = [(r[3] - r[2]).total_seconds() / 60 for r in receipts if r[3] is not None]
+    revenue = await scalar(
+        select(func.coalesce(func.sum(PaymentRequest.amount), 0))
+        .select_from(PaymentRequest).join(User, User.id == PaymentRequest.user_id)
+        .where(real, PaymentRequest.status == "approved", PaymentRequest.decided_at >= since)
+    )
+    paid_ever = await scalar(
+        select(func.count(func.distinct(PaymentRequest.user_id)))
+        .select_from(PaymentRequest).join(User, User.id == PaymentRequest.user_id)
+        .where(real, PaymentRequest.status == "approved")
+    )
+    trial_then_receipt = await scalar(
+        select(func.count(func.distinct(PaymentRequest.user_id)))
+        .select_from(PaymentRequest).join(User, User.id == PaymentRequest.user_id)
+        .where(real, User.trial_until.isnot(None))
+    )
+    vip_now = await scalar(select(func.count()).select_from(User).where(real, User.vip_until > now))
+    invited = await scalar(select(func.count()).select_from(User).where(real, User.invited_by.isnot(None), User.created_at >= since))
+
+    def row(icon: str, label: str, n: int, base: int = 0, extra: str = "") -> str:
+        tail = f"  {_bar(n / base)} {_pct(n, base)}%" if base else ""
+        return f"{icon} {label}: <b>{n}</b>{tail}{extra}"
+
+    lines = [
+        f"👑 <b>VIP voronkasi — oxirgi {days} kun</b>\n",
+        f"1️⃣ Foydalanuvchi: <b>{total}</b> jami · yangi <b>{new}</b>",
+        row("2️⃣", "Faol (XP olgan)", active),
+        row("3️⃣", "AI ustozga kirgan", len(tutor_users), active),
+        row("4️⃣", f"Bepul limitga yetgan (kuniga {settings.tutor_free_turns}+ javob)", len(hit_limit), active),
+        row("5️⃣", "Paywall ochgan", paywall, active),
+        row("6️⃣", f"{referral.TRIAL_DAYS} kunlik sinovni yoqqan", trial, active),
+        row("7️⃣", "Chek yuborgan", len(r_users), active),
+        f"8️⃣ Tasdiqlangan: <b>{approved}</b> · rad: {rejected} · kutmoqda: {len(pending)}",
+        "",
+        f"💰 Daromad: <b>{revenue:,}</b> so'm".replace(",", " "),
+        f"⏱ Chek tasdiqlash: "
+        + (f"median <b>{round(statistics.median(waits))}</b> daq · eng sekin {round(max(waits))} daq" if waits else "—"),
+    ]
+    if pending:
+        oldest = max((now - r[2]).total_seconds() / 3600 for r in pending)
+        lines.append(f"⏳ Eng eski kutayotgan chek: <b>{oldest:.1f}</b> soat")
+    lines += [
+        f"🎁 Sinov (jami): {trial_ever} · sinovdan keyin chek yuborgan: {trial_then_receipt}",
+        f"💎 Umr bo'yi to'lagan: {paid_ever} · hozir VIP (sinov/sovrin ham): {vip_now}",
+        f"👥 Taklif orqali kelgan (yangi): {invited}",
+    ]
+
+    hints: list[str] = []
+    if active >= 20 and _pct(paywall, active) < 10:
+        hints.append("Paywallni ko'rganlar kam — foydalanuvchi Ustoz bo'limiga kirmayapti: botga sinov taklifini qo'shing")
+    if paywall >= 10 and _pct(trial, paywall) < 25:
+        hints.append("Paywall ochganlarning oz qismi sinovni yoqyapti — va'da/sarlavhani kuchaytiring")
+    if trial >= 10 and _pct(trial_then_receipt, max(trial_ever, 1)) < 5:
+        hints.append("Sinovdan keyin deyarli hech kim to'lamayapti — sinov paytidagi xabarlar va taklif kerak")
+    if len(r_users) >= 5 and waits and statistics.median(waits) > 60:
+        hints.append("Chek tasdiqlash sekin (median > 1 soat) — kutish odamni yo'qotadi")
+    if pending and max((now - r[2]).total_seconds() for r in pending) > 3 * 3600:
+        hints.append("3 soatdan oshgan tasdiqlanmagan chek bor — /payments")
+    lines.append("\n🔎 <b>Xulosa</b>\n" + ("\n".join(f"• {h}" for h in hints) if hints else "• Aniq uzilish belgisi yo'q (yoki namuna kichik)"))
+    return "\n".join(lines)
+
+
 async def ratings_report(session: AsyncSession) -> str:
     """Dars baholari (👍/👎) va so'nggi fikrlar."""
     up = (

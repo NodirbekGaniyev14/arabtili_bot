@@ -46,33 +46,43 @@ function useCountdown(until: string | null, onExpire: () => void) {
   return { left, label: h > 0 ? `${pad(h)}:${pad(m)}:${pad(sec)}` : `${pad(m)}:${pad(sec)}` };
 }
 
-const FEATURES = [
-  {
-    icon: "🤖",
-    title: "AI ustoz bilan jonli suhbat",
-    desc: "11 mavzu, darajangizga mos — har xatoni yumshoq tuzatadi",
-  },
-  {
-    icon: "🎤",
-    title: "Speaking — mikrofon orqali",
-    desc: "Gapiring, ustoz eshitadi; talaffuz bali va takrorlash mashqi",
-  },
-  {
-    icon: "🎯",
-    title: "Mock imtihonlar kasb bo'yicha",
-    desc: "Shifokor, haydovchi, sotuvchi… 5 savol, baho va XP",
-  },
-  {
-    icon: "💬",
-    title: "O'zbekcha savol-javob",
-    desc: "Tushunmagan so'z yoki qoidani istalgan payt so'rang",
-  },
-  {
-    icon: "🔋",
-    title: "Kuniga 40 javob",
-    desc: "Bepul rejimda kuniga faqat 3 ta",
-  },
-];
+/** K29: son va limitlar serverdan olinadi — matnga qattiq yozilmaydi; kunlik limit bor, shuning uchun «cheksiz» deyilmaydi. */
+function featuresFor(info: PayInfo | null) {
+  const topics = info?.topic_count ?? 11;
+  const mocks = info?.mock_count ?? 20;
+  const vip = info?.vip_turns ?? 30;
+  const free = info?.free_turns ?? 3;
+  return [
+    {
+      icon: "🤖",
+      title: "AI ustoz bilan jonli suhbat",
+      desc: `${topics} mavzu: Umra va Makka, safar, ish, shifokor… — har xatoni yumshoq tuzatadi`,
+    },
+    {
+      icon: "🎤",
+      title: "Speaking — mikrofon orqali",
+      desc: "Gapiring, ustoz eshitadi; talaffuz bali va takrorlash mashqi",
+    },
+    {
+      icon: "🎯",
+      title: `${mocks} ta kasb bo'yicha mock imtihon`,
+      desc: "Shifokor, haydovchi, umra gidi, bank… 5 savol, baho va XP",
+    },
+    {
+      icon: "💬",
+      title: "O'zbekcha savol-javob",
+      desc: "Tushunmagan so'z yoki qoidani istalgan payt so'rang",
+    },
+    {
+      icon: "🔋",
+      title: `Kuniga ${vip} ta suhbat javobi`,
+      desc: `Bepul rejimda kuniga faqat ${free} ta`,
+    },
+  ];
+}
+
+/** Hero chiplari — faqat mahsulotda HAQIQATAN bor mavzular (Ustoz: umra, safar, ish, shifokor). */
+const HERO_CHIPS = ["🕋 Umra va Makka", "✈️ Safar va aeroport", "💼 Ish intervyusi", "🩺 Shifokor qabuli"];
 
 export default function Paywall({ onClose, reason }: PaywallProps) {
   const [info, setInfo] = useState<PayInfo | null>(null);
@@ -205,7 +215,7 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
             👑 ARABIY VIP
           </div>
           <div className="font-extrabold truncate">
-            {info?.vip ? `VIP faol · ${info.vip_days_left} kun qoldi` : "AI ustoz — pullik tarif"}
+            {info?.vip ? `VIP faol · ${info.vip_days_left} kun qoldi` : "Arabcha gapirishni boshlang"}
           </div>
         </div>
         <button
@@ -229,6 +239,29 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
           </div>
         )}
 
+        {/* K29: va'da — funksiya ro'yxati emas, natija (faqat mahsulotda haqiqatan bor narsalar) */}
+        {info && !info.vip && (
+          <section className="rounded-3xl bg-gradient-to-br from-emerald-deep to-emerald-dark p-5 text-white shadow-lg">
+            <div className="text-[11px] font-extrabold tracking-[0.14em] text-gold-soft">👑 SHAXSIY AI USTOZ</div>
+            <div className="mt-1 text-[22px] leading-tight font-extrabold">Umra, safar va ishda arabcha gaplashing</div>
+            <p className="mt-2 text-[13px] font-semibold text-white/85">
+              Siz gapirasiz — ustoz eshitadi va xatoni o'sha zahoti yumshoq tushuntiradi.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {HERO_CHIPS.map((c) => (
+                <span key={c} className="rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-extrabold">
+                  {c}
+                </span>
+              ))}
+            </div>
+            {plan && (
+              <div className="mt-3 text-[13px] font-extrabold text-gold-soft">
+                Kuniga atigi {fmt(plan.per_day)} so'm
+              </div>
+            )}
+          </section>
+        )}
+
         {info && !info.vip && info.trial_available && (
           <section className="rounded-3xl bg-gold-soft border border-gold/40 p-4">
             <div className="text-[11px] font-extrabold tracking-[0.12em] text-ink-soft">🎁 AVVAL SINAB KO'RING</div>
@@ -236,7 +269,7 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
               {info.trial_days} kun VIP — bepul, karta kerak emas
             </div>
             <div className="text-xs text-ink-soft font-semibold mt-0.5">
-              Mock imtihonlar, cheksiz suhbat, talaffuz — bir marta beriladi. Yoqdi — keyin to'lov.
+              Mock imtihonlar, kuniga {info.vip_turns} ta suhbat javobi, talaffuz — bir marta beriladi. Yoqdi — keyin to'lov.
             </div>
             <button
               onClick={startTrial}
@@ -296,7 +329,7 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
           </div>
           <div className="space-y-2">
             {[
-              ...FEATURES,
+              ...featuresFor(info),
               // K23.4: VIP suhbat/mock kuchliroq modelda — server sozlagan bo'lsa
               ...(info?.vip_model
                 ? [
@@ -360,7 +393,7 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
           {plan && (
             <div className="rounded-3xl bg-card border border-cardline p-4">
               <div className="text-[11px] font-extrabold tracking-[0.12em] text-ink-soft">
-                {plan.title.toUpperCase()} · AI USTOZ CHEKSIZ
+                {plan.title.toUpperCase()} · AI USTOZ + MOCK IMTIHONLAR
               </div>
               <div className="mt-1 flex items-end justify-between gap-2">
                 <div>

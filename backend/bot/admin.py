@@ -80,6 +80,18 @@ async def cmd_funnel(message: Message):
     await message.answer(text, parse_mode="HTML")
 
 
+@router.message(Command("vip_voronka", "vipvoronka", "vipfunnel"))
+async def cmd_vip_funnel(message: Message):
+    """K29: VIP sotuv voronkasi (paywall → sinov → chek → tasdiq). `/vip_voronka [kun]`."""
+    if not _is_admin(message):
+        return
+    parts = (message.text or "").split(maxsplit=1)
+    days = int(parts[1]) if len(parts) > 1 and parts[1].strip().isdigit() else 30
+    async with SessionLocal() as session:
+        text = await admin.vip_funnel(session, days)
+    await message.answer(text, parse_mode="HTML")
+
+
 @router.message(Command("retention"))
 async def cmd_retention(message: Message):
     if not _is_admin(message):

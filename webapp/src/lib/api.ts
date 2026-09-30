@@ -1492,6 +1492,11 @@ export interface PayInfo {
   referral_days: number;
   /** K23.4: VIP'da kuchliroq AI model (qisqa nomi), bo'sh = yo'q */
   vip_model?: string;
+  /** K29: serverdagi haqiqiy kunlik suhbat limitlari va kontent soni (paywallda qattiq yozilmaydi) */
+  vip_turns: number;
+  free_turns: number;
+  topic_count: number;
+  mock_count: number;
   vip: boolean;
   vip_until: string | null;
   vip_days_left: number;

@@ -187,7 +187,7 @@ async def info(session: AsyncSession, user: User) -> dict:
     if user.paywall_seen_at is None:
         user.paywall_seen_at = utcnow()
         await session.commit()
-    from services import ai_usage, referral
+    from services import ai_usage, referral, tutor
 
     active = discount_active(user)
     until = discount_until(user)
@@ -195,6 +195,11 @@ async def info(session: AsyncSession, user: User) -> dict:
         "trial_available": referral.trial_available(user),
         "trial_days": referral.TRIAL_DAYS,
         "referral_days": referral.REF_DAYS,
+        # K29: paywallda qattiq yozilgan «40 javob»/«cheksiz» o'rniga serverdagi HAQIQIY limitlar va kontent soni
+        "vip_turns": settings.tutor_daily_turns,
+        "free_turns": settings.tutor_free_turns,
+        "topic_count": len(tutor.TOPIC_BY_ID),
+        "mock_count": len(tutor.MOCK_BY_ID),
         # K23.4: VIP suhbat/mock kuchliroq modelda (paywall ustunligi); bo'sh = farq yo'q
         "vip_model": ai_usage.short_model(settings.tutor_vip_model) if settings.tutor_vip_model else "",
         "vip": is_vip(user),

@@ -146,7 +146,7 @@ export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProp
     setTrialBusy(true);
     try {
       const r = await api.startTrial();
-      setNotice(`🎁 ${r.days} kunlik VIP sinov boshlandi — mock va cheksiz suhbat ochiq!`);
+      setNotice(`🎁 ${r.days} kunlik VIP sinov boshlandi — mock imtihonlar va kuniga ${info?.vip_turns ?? 30} ta suhbat javobi ochiq!`);
       tg()?.HapticFeedback?.notificationOccurred("success");
       loadInfo();
     } catch (e) {
@@ -694,7 +694,7 @@ export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProp
                   {info.trial_days ?? 2} kun VIP — bepul sinab ko'ring
                 </span>
                 <span className="block text-[11px] text-ink-soft font-semibold">
-                  Mock imtihonlar va cheksiz suhbat · karta kerak emas · bir marta
+                  Mock imtihonlar va kuniga {info.vip_turns} ta suhbat javobi · karta kerak emas · bir marta
                 </span>
               </span>
               <span className="shrink-0 rounded-xl bg-emerald-deep px-3 py-1.5 text-xs font-extrabold text-white">

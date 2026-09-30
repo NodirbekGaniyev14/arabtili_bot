@@ -117,7 +117,7 @@ def discount_text(user: User, now: datetime) -> str:
     return (
         f"⏳ {name}, <b>{pct}% chegirmangiz {left_s}dan keyin tugaydi!</b>\n\n"
         f"Hozir VIP 1 oy — <b>{_sum(new)} so'm</b> (keyin {_sum(old)} so'm).\n"
-        "AI ustoz, 🎤 speaking va 🎯 mock imtihonlar — cheksiz."
+        f"AI ustoz (kuniga {settings.tutor_daily_turns} javob), 🎤 speaking va 🎯 kasb bo'yicha mock imtihonlar."
     )
 
 
