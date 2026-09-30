@@ -102,7 +102,7 @@ async def me(
         # VIP tarif (AI ustoz) — bosh sahifa kartasi va profil uchun
         "vip": billing.is_vip(user),
         "vip_days_left": billing.vip_days_left(user),
-        "vip_price": billing.price_summary(),
+        "vip_price": billing.price_summary(user),  # K29: odamning haqiqiy narxi
         # Kunlik speaking savoli (bosh sahifa kartasi): bajarildimi, streak
         "daily": await daily.status(session, user.id),
     }

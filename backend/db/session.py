@@ -111,6 +111,7 @@ _MIGRATIONS = {
         "provider": "VARCHAR(12) DEFAULT 'receipt'",
         "charge_id": "VARCHAR(64) DEFAULT ''",
         "provider_charge_id": "VARCHAR(64) DEFAULT ''",
+        "reject_reason": "VARCHAR(8) DEFAULT ''",  # K29
     },
 }
 

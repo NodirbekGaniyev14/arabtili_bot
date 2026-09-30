@@ -527,13 +527,14 @@ def _is_admin_cb(cb: CallbackQuery) -> bool:
 
 @router.callback_query(F.data.startswith("pay:"))
 async def cb_payment(cb: CallbackQuery, bot: Bot):
-    """Chek ostidagi tugmalar: pay:ok:<id>:<kun> yoki pay:no:<id>."""
+    """Chek ostidagi tugmalar: pay:ok:<id>:<kun> yoki pay:no:<id>[:<sabab>] (sabab: low | blur | none)."""
     if not _is_admin_cb(cb):
         await cb.answer("Faqat admin", show_alert=True)
         return
     parts = (cb.data or "").split(":")
     action, req_id = parts[1], int(parts[2]) if len(parts) > 2 and parts[2].isdigit() else 0
     days = int(parts[3]) if action == "ok" and len(parts) > 3 and parts[3].isdigit() else 0
+    reason = parts[3] if action == "no" and len(parts) > 3 and parts[3] in billing.REJECT_REASONS else ""
 
     async with SessionLocal() as session:
         row = await billing.load_request(session, req_id)
@@ -549,13 +550,19 @@ async def cb_payment(cb: CallbackQuery, bot: Bot):
             result = f"✅ Tasdiqlandi — {days} kun, {until:%d.%m.%Y} gacha"
             user_text = billing.user_approved_text(days, until)
         else:
-            await billing.reject(session, req)
-            result = "❌ Rad etildi"
-            user_text = billing.user_rejected_text()
+            await billing.reject(session, req, reason)
+            result = "❌ Rad etildi" + (f" — {billing.REJECT_REASONS[reason][2:]}" if reason else "")
+            user_text = billing.user_rejected_text(reason, req.amount)
         tg_id = user.tg_id
 
+    # K29: rad etilgan xaridor yo'qolmasin — xabar ostida to'g'ridan-to'g'ri «qayta yuborish» tugmasi
+    markup = None
+    if action != "ok" and reason in ("low", "blur"):
+        from services.vip_reminders import paywall_keyboard
+
+        markup = paywall_keyboard("🔁 Chekni qayta yuborish")
     try:
-        await bot.send_message(tg_id, user_text, parse_mode="HTML")
+        await bot.send_message(tg_id, user_text, parse_mode="HTML", reply_markup=markup)
     except Exception:
         result += " (foydalanuvchiga xabar yetmadi)"
 
@@ -600,8 +607,25 @@ async def cmd_tekshir(message: Message):
 
 @router.message(Command("payments"))
 async def cmd_payments(message: Message):
-    """Tekshirilmagan cheklar ro'yxati."""
+    """Tekshirilmagan cheklar ro'yxati. `/payments rad` — so'nggi 30 kunda RAD etilganlar (ular bilan bog'lanish)."""
     if not _is_admin(message):
+        return
+    if "rad" in (message.text or "").lower().split()[1:]:
+        async with SessionLocal() as session:
+            rej = await billing.rejected_recent(session)
+        if not rej:
+            await message.answer("✅ So'nggi 30 kunda rad etilgan chek yo'q.")
+            return
+        out = ["🚫 <b>Rad etilgan cheklar (30 kun)</b> — to'lamoqchi bo'lgan odamlar, shaxsan yozing:\n"]
+        for req, user in rej:
+            uname = f"@{user.username}" if user.username else "—"
+            why = billing.REJECT_REASONS.get(req.reject_reason, "❌ sababi yozilmagan")[2:]
+            amount = f"{req.amount:,}".replace(",", " ")
+            out.append(
+                f"#{req.id} · {admin_show(user.name, user.username, user.tg_id)} ({esc(uname)}) · ID <code>{user.tg_id}</code> · "
+                f"{amount} so'm · {why} · {req.created_at:%d.%m %H:%M}"
+            )
+        await message.answer("\n".join(out), parse_mode="HTML")
         return
     async with SessionLocal() as session:
         rows = await billing.pending_list(session)

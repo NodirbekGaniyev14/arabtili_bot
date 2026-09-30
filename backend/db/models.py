@@ -360,6 +360,8 @@ class PaymentRequest(Base):
     receipt_path: Mapped[str] = mapped_column(String(256), default="")
     status: Mapped[str] = mapped_column(String(10), default="pending")  # pending|approved|rejected
     days: Mapped[int] = mapped_column(Integer, default=0)  # tasdiqlangan muddat
+    # K29: rad sababi (low = summa kam | blur = chek noaniq | none = pul tushmadi | "" = eski/sababsiz)
+    reject_reason: Mapped[str] = mapped_column(String(8), default="")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
     decided_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     # provider: receipt (chek) | telegram (eski avto to'lov yozuvlari; xususiyat 2026-09-21 olib tashlandi);

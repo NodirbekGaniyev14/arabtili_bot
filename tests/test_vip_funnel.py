@@ -71,3 +71,27 @@ async def test_vip_funnel_empty_and_hints(session, make_user):
 async def test_vip_funnel_days_are_clamped(session):
     assert "oxirgi 365 kun" in await admin.vip_funnel(session, 100000)
     assert "oxirgi 1 kun" in await admin.vip_funnel(session, 0)
+
+
+@pytest.mark.asyncio
+async def test_vip_funnel_reject_reasons_and_trial_usage(session, make_user):
+    now = utcnow()
+    users = [await make_user(f"T{i}") for i in range(4)]
+    for i, u in enumerate(users):
+        u.trial_until = now - timedelta(hours=1)  # 2 kunlik sinov ~2 kun oldin boshlangan
+        session.add(XpLog(user_id=u.id, amount=5, source="review", created_at=now))
+    # T0: 6 ta javob (sinov ichida), T1: 1 ta, T2/T3: umuman yo'q; T3 — sinovdan OLDIN javob (hisobga olinmaydi)
+    for i in range(6):
+        session.add(TutorTurn(user_id=users[0].id, session_key="a", created_at=now - timedelta(hours=10, minutes=i)))
+    session.add(TutorTurn(user_id=users[1].id, session_key="b", created_at=now - timedelta(hours=20)))
+    session.add(TutorTurn(user_id=users[3].id, session_key="c", created_at=now - timedelta(days=5)))
+    for u, reason in ((users[0], "low"), (users[1], "low"), (users[2], "")):
+        session.add(PaymentRequest(user_id=u.id, plan="1oy", amount=90000, status="rejected", reject_reason=reason,
+                                   created_at=now - timedelta(hours=3), decided_at=now - timedelta(hours=2)))
+    await session.commit()
+
+    text = await admin.vip_funnel(session, 30)
+    assert "Sinovchilar ustozdan foydalangan: <b>2</b>/4 · 5+ javob: 1 · median 4 javob" in text
+    assert "Rad sabablari: summa kam 2 · chek noaniq 0 · pul tushmadi 0 · sababsiz 1 — ro'yxat: /payments rad" in text
+    assert "Sinovchilarning yarmidan ko'pi" not in text, "trial < 10 — xulosa berilmaydi"
+    assert "Cheklarning kamida yarmi rad etilgan" in text

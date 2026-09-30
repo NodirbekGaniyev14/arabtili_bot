@@ -578,7 +578,7 @@ async def tutor_topics(
         "vip_model": ai_usage.short_model(settings.tutor_vip_model) if settings.tutor_vip_model else "",
         "trial_available": referral.trial_available(user),
         "trial_days": referral.TRIAL_DAYS,
-        "price": billing.price_summary(),
+        "price": billing.price_summary(user),  # K29: odamning HAQIQIY narxi (paywall bilan bir xil)
         "ai": bool(settings.anthropic_api_key),
         "voice": stt.available(),
     }

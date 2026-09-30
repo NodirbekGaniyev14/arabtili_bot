@@ -32,6 +32,9 @@ PLANS: dict[str, dict] = {
     "3oy": {"days": 90, "title": "3 oylik VIP", "months": 3},
 }
 
+# K29: chek rad etish sabablari (kod → admin tugmasi)
+REJECT_REASONS = {"low": "❌ Summa kam", "blur": "❌ Chek noaniq", "none": "❌ Pul tushmadi"}
+
 MAX_RECEIPT_BYTES = 6 * 1024 * 1024
 RECEIPT_TYPES = {"image/jpeg": "jpg", "image/png": "png", "image/webp": "webp"}
 
@@ -88,11 +91,12 @@ def discount_until(user: User) -> datetime | None:
     return user.paywall_seen_at + timedelta(hours=settings.pay_discount_hours)
 
 
-def discount_active(user: User) -> bool:
+def discount_active(user: User, now: datetime | None = None) -> bool:
+    """`now` — eslatma halqasi/test vaqti (berilmasa haqiqiy soat)."""
     if not discount_enabled():
         return False  # chegirma o'chiq — «oddiy» narx = pay_price_month
     until = discount_until(user)
-    return bool(until and until > utcnow())
+    return bool(until and until > (now or utcnow()))
 
 
 def current_price(plan: str, user: User) -> int:
@@ -115,9 +119,17 @@ def discount_percent(plan: str = "1oy") -> int:
     return round(100 * (1 - new / old)) if old > new > 0 else 0
 
 
-def price_summary() -> dict:
-    """Bosh sahifa/profil yorliqlari uchun qisqa narx: oylik va kunlik."""
-    month = settings.pay_price_month
+def price_summary(user: User | None = None, now: datetime | None = None) -> dict:
+    """Bosh sahifa/profil/eslatma yorliqlari uchun qisqa narx: oylik va kunlik.
+
+    K29: `user` berilsa — shu odamga HOZIR amal qiladigan narx (paywall bilan bir xil). Ilgari doim 40 000 yozilardi,
+    chegirma taymeri tugagach paywall esa 90 000 ko'rsatardi — odam bir narxni ko'rib, boshqasini to'lardi."""
+    if user is None or not discount_enabled():
+        month = settings.pay_price_month
+    elif user.paywall_seen_at is None or discount_active(user, now):
+        month = plan_price("1oy", True)  # paywall hali ochilmagan: ochganda taymer boshlanadi va chegirmali narx beriladi
+    else:
+        month = plan_price("1oy", False)  # taymer tugagan — paywall ham shuni ko'rsatadi
     return {"month": month, "per_day": round(month / 30)}
 
 
@@ -276,7 +288,11 @@ def admin_keyboard(req_id: int):
                 InlineKeyboardButton(text="✅ 1 oy", callback_data=f"pay:ok:{req_id}:30"),
                 InlineKeyboardButton(text="✅ 3 oy", callback_data=f"pay:ok:{req_id}:90"),
             ],
-            [InlineKeyboardButton(text="❌ Rad etish", callback_data=f"pay:no:{req_id}")],
+            # K29: rad sababi tanlanadi — o'quvchiga aniq yo'l-yo'riq boradi, sabab statistikaga yoziladi
+            [
+                InlineKeyboardButton(text=label, callback_data=f"pay:no:{req_id}:{code}")
+                for code, label in REJECT_REASONS.items()
+            ],
         ]
     )
 
@@ -336,12 +352,27 @@ async def approve(session: AsyncSession, req: PaymentRequest, user: User, days: 
     return until
 
 
-async def reject(session: AsyncSession, req: PaymentRequest) -> None:
+async def reject(session: AsyncSession, req: PaymentRequest, reason: str = "") -> None:
     if req.status != "pending":
         return
     req.status = "rejected"
+    req.reject_reason = reason if reason in REJECT_REASONS else ""
     req.decided_at = utcnow()
     await session.commit()
+
+
+async def rejected_recent(session: AsyncSession, days: int = 30) -> list[tuple[PaymentRequest, User]]:
+    """So'nggi rad etilgan cheklar — admin to'lamoqchi bo'lgan odamlar bilan shaxsan bog'lansin."""
+    rows = (
+        await session.execute(
+            select(PaymentRequest, User)
+            .join(User, User.id == PaymentRequest.user_id)
+            .where(PaymentRequest.status == "rejected", PaymentRequest.created_at >= utcnow() - timedelta(days=days))
+            .order_by(PaymentRequest.id.desc())
+            .limit(30)
+        )
+    ).all()
+    return [(r[0], r[1]) for r in rows]
 
 
 def user_approved_text(days: int, until: datetime) -> str:
@@ -353,8 +384,28 @@ def user_approved_text(days: int, until: datetime) -> str:
     )
 
 
-def user_rejected_text() -> str:
+def user_rejected_text(reason: str = "", amount: int = 0) -> str:
+    """Rad xabari: sababga mos, keyingi qadam aniq (ilgari hammaga bir xil sovuq matn ketardi)."""
     sup = f"@{settings.support_username.lstrip('@')}" if settings.support_username else "admin"
+    if reason == "low":
+        need = f"<b>{amount:,} so'm</b>".replace(",", " ") if amount else "tarif narxi"
+        return (
+            "❌ <b>Chekdagi summa tarif narxiga to'liq mos kelmadi.</b>\n\n"
+            f"Sizning tarifingiz: {need}. Farqini o'tkazing va yangi chekni yuboring — "
+            f"VIP shundan keyin darhol yoqiladi. Savol bo'lsa: {sup}."
+        )
+    if reason == "blur":
+        return (
+            "❌ <b>Chek rasmi aniq o'qilmadi.</b>\n\n"
+            "Kvitansiyaning to'liq skrinshotini qayta yuboring: summa, sana va karta raqamining oxiri ko'rinsin. "
+            f"Yordam kerak bo'lsa: {sup}."
+        )
+    if reason == "none":
+        return (
+            "❌ <b>Kartamizga to'lov tushmadi.</b>\n\n"
+            "O'tkazma bajarilganini bank ilovasida tekshiring. Pul yechilgan bo'lsa — "
+            f"chekni {sup} ga yuboring, darhol hal qilamiz."
+        )
     return (
         "❌ <b>To'lov cheki tasdiqlanmadi.</b>\n\n"
         f"Chek o'qilmagan yoki summa mos kelmagan bo'lishi mumkin. Iltimos, {sup} "

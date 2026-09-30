@@ -401,7 +401,10 @@ async def vip_funnel(session: AsyncSession, days: int = 30) -> str:
 
     receipts = (
         await session.execute(
-            select(PaymentRequest.user_id, PaymentRequest.status, PaymentRequest.created_at, PaymentRequest.decided_at)
+            select(
+                PaymentRequest.user_id, PaymentRequest.status, PaymentRequest.created_at, PaymentRequest.decided_at,
+                PaymentRequest.reject_reason,
+            )
             .join(User, User.id == PaymentRequest.user_id)
             .where(real, *in_window(PaymentRequest.created_at))
         )
@@ -426,6 +429,18 @@ async def vip_funnel(session: AsyncSession, days: int = 30) -> str:
         .select_from(PaymentRequest).join(User, User.id == PaymentRequest.user_id)
         .where(real, User.trial_until.isnot(None))
     )
+    # Sinovchilar sinov DAVOMIDA ustozdan foydalanganmi (0 ta javob = faollashtirish muammosi, narx emas)
+    trial_turn_rows = (
+        await session.execute(
+            select(TutorTurn.user_id, TutorTurn.created_at, User.trial_until)
+            .join(User, User.id == TutorTurn.user_id)
+            .where(real, User.trial_until >= since + trial_days, TutorTurn.created_at >= since)
+        )
+    ).all()
+    trial_turns: dict[int, int] = {}
+    for uid, dt, end in trial_turn_rows:
+        if end - trial_days <= dt <= end:
+            trial_turns[uid] = trial_turns.get(uid, 0) + 1
     vip_now = await scalar(select(func.count()).select_from(User).where(real, User.vip_until > now))
     invited = await scalar(select(func.count()).select_from(User).where(real, User.invited_by.isnot(None), User.created_at >= since))
 
@@ -448,11 +463,20 @@ async def vip_funnel(session: AsyncSession, days: int = 30) -> str:
         f"⏱ Chek tasdiqlash: "
         + (f"median <b>{round(statistics.median(waits))}</b> daq · eng sekin {round(max(waits))} daq" if waits else "—"),
     ]
+    if rejected:
+        why = {code: sum(1 for r in receipts if r[1] == "rejected" and r[4] == code) for code in ("low", "blur", "none")}
+        blank = sum(1 for r in receipts if r[1] == "rejected" and r[4] not in why)
+        lines.append(
+            f"🚫 Rad sabablari: summa kam {why['low']} · chek noaniq {why['blur']} · pul tushmadi {why['none']}"
+            f" · sababsiz {blank} — ro'yxat: /payments rad"
+        )
     if pending:
         oldest = max((now - r[2]).total_seconds() / 3600 for r in pending)
         lines.append(f"⏳ Eng eski kutayotgan chek: <b>{oldest:.1f}</b> soat")
     lines += [
         f"🎁 Sinov (jami): {trial_ever} · sinovdan keyin chek yuborgan: {trial_then_receipt}",
+        f"🎁 Sinovchilar ustozdan foydalangan: <b>{len(trial_turns)}</b>/{trial}"
+        + (f" · 5+ javob: {sum(1 for n in trial_turns.values() if n >= 5)} · median {round(statistics.median(trial_turns.values()))} javob" if trial_turns else ""),
         f"💎 Umr bo'yi to'lagan: {paid_ever} · hozir VIP (sinov/sovrin ham): {vip_now}",
         f"👥 Taklif orqali kelgan (yangi): {invited}",
     ]
@@ -464,6 +488,10 @@ async def vip_funnel(session: AsyncSession, days: int = 30) -> str:
         hints.append("Paywall ochganlarning oz qismi sinovni yoqyapti — va'da/sarlavhani kuchaytiring")
     if trial >= 10 and _pct(trial_then_receipt, max(trial_ever, 1)) < 5:
         hints.append("Sinovdan keyin deyarli hech kim to'lamayapti — sinov paytidagi xabarlar va taklif kerak")
+    if trial >= 10 and _pct(len(trial_turns), trial) < 50:
+        hints.append("Sinovchilarning yarmidan ko'pi ustozdan foydalanmagan — sinov boshida faollashtirish xabari kerak")
+    if receipts and rejected * 2 >= len(receipts):
+        hints.append("Cheklarning kamida yarmi rad etilgan — sabablarni ko'ring (/payments rad), narx/ko'rsatma nomuvofiq bo'lishi mumkin")
     if len(r_users) >= 5 and waits and statistics.median(waits) > 60:
         hints.append("Chek tasdiqlash sekin (median > 1 soat) — kutish odamni yo'qotadi")
     if pending and max((now - r[2]).total_seconds() for r in pending) > 3 * 3600:

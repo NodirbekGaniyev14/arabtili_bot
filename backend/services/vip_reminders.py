@@ -15,13 +15,13 @@ import logging
 from datetime import datetime, timedelta
 
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, WebAppInfo
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
 from services.names import admin_show, esc, show
 from services import notify_prefs
-from db.models import User, utcnow
+from db.models import TutorTurn, User, utcnow
 from services import billing, referral
 from services.stats import TASHKENT_OFFSET
 
@@ -74,7 +74,7 @@ def soon_text(user: User, now: datetime) -> str:
     # billing.vip_days_left bilan bir xil formula, lekin berilgan `now` bo'yicha
     # (halqa vaqti / test vaqti) — haqiqiy soatga bog'lanmaydi
     days = max((user.vip_until - now).days, 0) + 1
-    price = billing.price_summary()
+    price = billing.price_summary(user, now)
     name = show(user.name, "do'stim")
     when = "bugun" if days <= 1 else f"{days} kundan keyin"
     return (
@@ -86,16 +86,25 @@ def soon_text(user: User, now: datetime) -> str:
     )
 
 
-def expired_text(user: User) -> str:
+def expired_text(user: User, turns: int | None = None, now: datetime | None = None) -> str:
+    """VIP/sinov tugadi xabari. K29: narx — odamning HAQIQIY narxi (paywall bilan bir xil); sinov tugaganda
+    chegirma oynasi yangidan 24 soat boshlanadi (process()), matn shuni aytadi; `turns` — sinovdagi javoblar."""
     from services import referral
 
-    price = billing.price_summary()
+    price = billing.price_summary(user, now)
     name = show(user.name, "do'stim")
     if referral.on_trial(user):
+        used = f"Sinov davomida {turns} ta suhbat javobi berdingiz. " if turns else ""
+        if billing.discount_active(user, now):
+            offer = (
+                f"⏳ <b>Faqat {settings.pay_discount_hours} soat:</b> 1 oy <b>{_sum(price['month'])} so'm</b> "
+                f"(keyin {_sum(billing.plan_price('1oy', False))} so'm) — kuniga {_sum(price['per_day'])} so'm."
+            )
+        else:
+            offer = f"Davom etish — 1 oy <b>{_sum(price['month'])} so'm</b> ({_sum(price['per_day'])} so'm/kun)."
         return (
             f"⏰ {name}, {referral.TRIAL_DAYS} kunlik VIP sinov tugadi.\n\n"
-            "Yoqdimi? Davom etish — 1 oy "
-            f"<b>{_sum(price['month'])} so'm</b> ({_sum(price['per_day'])} so'm/kun). "
+            f"{used}Yoqdimi?\n{offer}\n"
             f"Yoki do'stingizni taklif qiling — ikkalangizga {referral.REF_DAYS} kun VIP bepul."
         )
     return (
@@ -132,6 +141,23 @@ async def _send(bot, user: User, text: str, button: str) -> bool:
     except Exception as e:  # botni bloklagan bo'lishi mumkin
         log.info("VIP eslatma yetmadi (%s): %r", user.tg_id, e)
         return False
+
+
+async def _trial_turns(session: AsyncSession, user: User) -> int:
+    """Sinov davomida berilgan suhbat javoblari (shaxsiy hisobot uchun)."""
+    if not user.trial_until:
+        return 0
+    start = user.trial_until - timedelta(days=referral.TRIAL_DAYS)
+    return int(
+        (
+            await session.execute(
+                select(func.count(TutorTurn.id)).where(
+                    TutorTurn.user_id == user.id, TutorTurn.created_at >= start, TutorTurn.created_at <= user.trial_until
+                )
+            )
+        ).scalar_one()
+        or 0
+    )
 
 
 async def process(session: AsyncSession, bot, now: datetime | None = None) -> dict:
@@ -175,7 +201,15 @@ async def process(session: AsyncSession, bot, now: datetime | None = None) -> di
             if user.vip_notice == expired_key(user):
                 continue
             user.vip_notice = expired_key(user)
-            if await _send(bot, user, expired_text(user), "👑 VIP olish"):
+            turns = None
+            if referral.on_trial(user):
+                # K29: sinov tugadi — narx oynasi shu paytdan 24 soatga YANGIDAN ochiladi (ilgari paywall birinchi
+                # ochilganda boshlangan 24 soat sinov (48 soat) davomida tugab, sinovdan keyin hamma 90 000 ni ko'rardi)
+                if billing.discount_enabled():
+                    user.paywall_seen_at = now
+                    user.discount_notified = 0
+                turns = await _trial_turns(session, user)
+            if await _send(bot, user, expired_text(user, turns, now), "👑 VIP olish"):
                 sent["expired"] += 1
 
         # 2. Chegirma taymeri tugayapti — paywall'ni ochgan, to'lamagan
