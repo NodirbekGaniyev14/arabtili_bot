@@ -337,7 +337,7 @@
     "ص",
     "ث"
    ],
-   "answer": "س"
+   "answer": "س", "option_notes": {"ش": "shīn — «sh». Eshitilgan harf — «س»: sīn — yupqa «s»", "ص": "ṣād — qalin «s» (og'iz to'la). Eshitilgan harf — «س»: sīn — yupqa «s»", "ث": "thā' — tilni tish orasiga qo'yib «s» kabi. Eshitilgan harf — «س»: sīn — yupqa «s»"}
   },
   {
    "type": "mcq",
@@ -349,7 +349,7 @@
     "غ",
     "ف"
    ],
-   "answer": "ق"
+   "answer": "ق", "option_notes": {"ك": "kāf — oddiy «k». Eshitilgan harf — «ق»: qāf — bo'g'izga yaqin qalin «q»", "غ": "ghayn — «g'» (g'arg'ara). Eshitilgan harf — «ق»: qāf — bo'g'izga yaqin qalin «q»", "ف": "fā' — «f». Eshitilgan harf — «ق»: qāf — bo'g'izga yaqin qalin «q»"}
   },
   {
    "type": "mcq",
@@ -361,7 +361,7 @@
     "ح",
     "ء"
    ],
-   "answer": "ع"
+   "answer": "ع", "option_notes": {"غ": "ghayn — «g'» (g'arg'ara). Eshitilgan harf — «ع»: ʿayn — bo'g'iz torayishidan chiqadigan tovush", "ح": "ḥā' — bo'g'izdan chiqadigan «h»: havo sekin, hirillashsiz. Eshitilgan harf — «ع»: ʿayn — bo'g'iz torayishidan chiqadigan tovush", "ء": "hamza — bo'g'izdagi qisqa «to'xtash». Eshitilgan harf — «ع»: ʿayn — bo'g'iz torayishidan chiqadigan tovush"}
   },
   {
    "type": "mcq",
@@ -469,7 +469,7 @@
     "ص",
     "ظ"
    ],
-   "answer": "ض"
+   "answer": "ض", "option_notes": {"د": "dāl — yupqa «d». Eshitilgan harf — «ض»: ḍād — qalin «d»", "ص": "ṣād — qalin «s» (og'iz to'la). Eshitilgan harf — «ض»: ḍād — qalin «d»", "ظ": "ẓā' — qalin «z». Eshitilgan harf — «ض»: ḍād — qalin «d»"}
   },
   {
    "type": "mcq",
@@ -481,7 +481,7 @@
     "ج",
     "غ"
    ],
-   "answer": "خ"
+   "answer": "خ", "option_notes": {"ح": "ḥā' — bo'g'izdan chiqadigan «h»: havo sekin, hirillashsiz. Eshitilgan harf — «خ»: xā' — «x» kabi: tilning orqasidan, hirillab", "ج": "jīm — «j». Eshitilgan harf — «خ»: xā' — «x» kabi: tilning orqasidan, hirillab", "غ": "ghayn — «g'» (g'arg'ara). Eshitilgan harf — «خ»: xā' — «x» kabi: tilning orqasidan, hirillab"}
   },
   {
    "type": "mcq",

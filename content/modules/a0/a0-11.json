@@ -115,7 +115,7 @@
    "audio": "a0/harf_ayn.mp3",
    "root": "",
    "pattern": "",
-   "words": []
+   "words": [], "option_notes": {"غ": "ghayn — «g'» (g'arg'ara). Eshitilgan harf — «ع»: ʿayn — bo'g'iz torayishidan chiqadigan tovush", "ا": "alif — cho'ziq «ā». Eshitilgan harf — «ع»: ʿayn — bo'g'iz torayishidan chiqadigan tovush"}
   },
   {
    "type": "mcq",
@@ -131,7 +131,7 @@
    "audio": "a0/harf_ghayn.mp3",
    "root": "",
    "pattern": "",
-   "words": []
+   "words": [], "option_notes": {"ع": "ʿayn — bo'g'iz torayishidan chiqadigan tovush. Eshitilgan harf — «غ»: ghayn — «g'» (g'arg'ara)", "ا": "alif — cho'ziq «ā». Eshitilgan harf — «غ»: ghayn — «g'» (g'arg'ara)"}
   },
   {
    "type": "mcq",

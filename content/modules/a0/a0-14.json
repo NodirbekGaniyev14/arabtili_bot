@@ -169,7 +169,7 @@
    "audio": "a0/harf_hamza.mp3",
    "root": "",
    "pattern": "",
-   "words": []
+   "words": [], "option_notes": {"ه": "hā' — oddiy yengil «h». Eshitilgan harf — «ء»: hamza — bo'g'izdagi qisqa «to'xtash»", "و": "wāw — «w» yoki «u». Eshitilgan harf — «ء»: hamza — bo'g'izdagi qisqa «to'xtash»", "ا": "alif — cho'ziq «ā». Eshitilgan harf — «ء»: hamza — bo'g'izdagi qisqa «to'xtash»"}
   },
   {
    "type": "mcq",

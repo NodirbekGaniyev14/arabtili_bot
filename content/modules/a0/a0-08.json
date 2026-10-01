@@ -115,7 +115,7 @@
    "audio": "a0/harf_sin.mp3",
    "root": "",
    "pattern": "",
-   "words": []
+   "words": [], "option_notes": {"ش": "shīn — «sh». Eshitilgan harf — «س»: sīn — yupqa «s»", "ا": "alif — cho'ziq «ā». Eshitilgan harf — «س»: sīn — yupqa «s»"}
   },
   {
    "type": "mcq",
@@ -131,7 +131,7 @@
    "audio": "a0/harf_shin.mp3",
    "root": "",
    "pattern": "",
-   "words": []
+   "words": [], "option_notes": {"س": "sīn — yupqa «s». Eshitilgan harf — «ش»: shīn — «sh»", "ا": "alif — cho'ziq «ā». Eshitilgan harf — «ش»: shīn — «sh»"}
   },
   {
    "type": "mcq",
