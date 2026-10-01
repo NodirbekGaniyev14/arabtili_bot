@@ -74,7 +74,8 @@ class User(Base):
     day2_notice: Mapped[int] = mapped_column(Integer, default=0)
     # K22.1 reja tuzilgan kuni 2 soat o'tib dars boshlanmagan — birinchi dars turtkisi (bir marta)
     first_nudge: Mapped[int] = mapped_column(Integer, default=0)
-    # K22.0 so'rovnoma: keyingi matn/ovoz xabari fikr sifatida saqlanadi (services/survey.py)
+    # K22.0 so'rovnoma: keyingi matn/ovoz xabari fikr sifatida saqlanadi. 0 — kutilmayapti,
+    # 1 — umumiy so'rov (services/survey.py), 2 — VIP so'rovining erkin javobi (services/vip_survey.py)
     survey_pending: Mapped[int] = mapped_column(Integer, default=0)
     # K25 Oktagon (1v1 lug'at jangi): ball (liga), janglar, g'alabalar
     battle_points: Mapped[int] = mapped_column(Integer, default=0)
@@ -248,6 +249,30 @@ class Feedback(Base):
     # Admin javobi — faqat fikr egasiga DM qilinadi, anonim ("Arabiy jamoasi")
     reply_text: Mapped[str] = mapped_column(Text, default="")
     replied_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+
+
+class VipSurvey(Base):
+    """VIP so'rovnomasi (services/vip_survey.py): har o'quvchi uchun bitta qator — qaysi qadamda ekani va javoblari.
+
+    `step`: invited → rate → liked → issues → text → done; yoki declined («Hozir emas»). Baho va belgilar
+    (`liked`, `issues` — kalitlar vergul bilan) hisobot uchun tuzilmali; erkin matn `Feedback`ga ham yoziladi
+    (admin reply bilan javob beradi, yoqqan fikrni /sharh qiladi). `segment` — kim: paid | trial | gift."""
+
+    __tablename__ = "vip_surveys"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), unique=True, index=True)
+    step: Mapped[str] = mapped_column(String(10), default="invited")
+    segment: Mapped[str] = mapped_column(String(8), default="")
+    rating: Mapped[int] = mapped_column(Integer, default=0)  # 1-5; 0 = berilmagan
+    liked: Mapped[str] = mapped_column(String(200), default="")
+    issues: Mapped[str] = mapped_column(String(200), default="")
+    text: Mapped[str] = mapped_column(Text, default="")
+    feedback_id: Mapped[int] = mapped_column(Integer, default=0)
+    invited_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
+    # Tuzilmali qism (baho + belgilar) yakunlangan payt — hisobotga shundan kiradi
+    answered_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
 
 
 class LessonRating(Base):

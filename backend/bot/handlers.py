@@ -1,6 +1,7 @@
 import logging
 
 from aiogram import Bot, F, Router
+from aiogram.exceptions import TelegramBadRequest
 from aiogram.filters import CommandStart, Command
 from aiogram.types import (
     CallbackQuery,
@@ -226,14 +227,20 @@ async def survey_ok(cb: CallbackQuery, bot: Bot):
 
 @router.message(F.text & ~F.text.startswith("/"))
 async def survey_text(message: Message, bot: Bot):
-    """So'rovdan keyingi oddiy matn — fikr (faqat survey_pending bo'lganda; boshqa matn avvalgidek e'tiborsiz)."""
-    from services import survey
+    """So'rovdan keyingi oddiy matn — fikr (faqat survey_pending bo'lganda; boshqa matn avvalgidek e'tiborsiz).
+    survey_pending == vip_survey.PENDING bo'lsa — bu VIP so'rovnomasining erkin javobi."""
+    from services import survey, vip_survey
 
     if message.from_user is None:
         return
     async with SessionLocal() as session:
         user = await _user_by_tg(session, message.from_user.id)
         if user is None or not user.survey_pending:
+            return
+        if user.survey_pending == vip_survey.PENDING:
+            screen = await vip_survey.record_text(session, bot, user, (message.text or "")[:2000])
+            if screen is not None:
+                await message.answer(screen.text, parse_mode="HTML")
             return
         _, xp = await survey.record(session, bot, user, (message.text or "")[:2000])
     await message.answer(survey.THANKS + (f" +{xp} XP" if xp else ""))
@@ -242,7 +249,7 @@ async def survey_text(message: Message, bot: Bot):
 @router.message(F.voice)
 async def survey_voice(message: Message, bot: Bot):
     """So'rovdan keyingi ovozli xabar — STT (o'zbekcha) orqali matnga, fikr sifatida saqlanadi."""
-    from services import stt, survey
+    from services import stt, survey, vip_survey
 
     if message.from_user is None or message.voice is None:
         return
@@ -261,5 +268,32 @@ async def survey_voice(message: Message, bot: Bot):
         if not text:
             await message.answer("Ovozni o'qiy olmadim — iltimos, matn bilan yozing ✍️")
             return
+        if user.survey_pending == vip_survey.PENDING:
+            screen = await vip_survey.record_text(session, bot, user, text[:2000], kind="voice")
+            if screen is not None:
+                await message.answer(screen.text, parse_mode="HTML")
+            return
         _, xp = await survey.record(session, bot, user, text[:2000], kind="voice")
     await message.answer(survey.THANKS + (f" +{xp} XP" if xp else ""))
+
+
+# ─────────────────── VIP so'rovnomasi tugmalari (K30, services/vip_survey.py) ───────────────────
+
+
+@router.callback_query(F.data.startswith("vs:"))
+async def vip_survey_cb(cb: CallbackQuery, bot: Bot):
+    """Baho → nima yoqdi → kamchiliklar → taklif. Ekran shu xabarning o'zida almashadi."""
+    from services import vip_survey
+
+    async with SessionLocal() as session:
+        user = await _user_by_tg(session, cb.from_user.id)
+        screen = await vip_survey.handle(session, bot, user, cb.data or "") if user is not None else None
+    await cb.answer(screen.toast if screen and screen.toast else None)
+    if screen and screen.text and isinstance(cb.message, Message):
+        try:
+            await cb.message.edit_text(screen.text, parse_mode="HTML", reply_markup=screen.markup)
+        except TelegramBadRequest as e:
+            # «message is not modified» — ikki marta bosilgan, o'zgarish yo'q. Boshqa sabab (xabar topilmadi va h.k.)
+            # bo'lsa qadam bazada siljib bo'ldi — ekranni yangi xabar qilib ko'rsatamiz, foydalanuvchi qotib qolmasin
+            if "not modified" not in str(e):
+                await cb.message.answer(screen.text, parse_mode="HTML", reply_markup=screen.markup)

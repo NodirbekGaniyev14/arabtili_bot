@@ -264,7 +264,7 @@ async def cmd_sorov(message: Message, bot: Bot):
         return
     from sqlalchemy import update
 
-    from services import survey
+    from services import survey, vip_survey
 
     arg = (message.text or "").split(maxsplit=1)[1].strip() if len((message.text or "").split(maxsplit=1)) > 1 else ""
     if arg.lower() == "test":
@@ -274,7 +274,12 @@ async def cmd_sorov(message: Message, bot: Bot):
     text = survey.text(arg)
     async with SessionLocal() as session:
         ids = await admin.all_real_tg_ids(session, "survey")
-        await session.execute(update(User).where(User.is_demo == 0, User.tg_id != settings.admin_id).values(survey_pending=1))
+        # VIP so'rovida erkin javob yozayotgan o'quvchining kutilishini (PENDING) bosib ketmaymiz
+        await session.execute(
+            update(User)
+            .where(User.is_demo == 0, User.tg_id != settings.admin_id, User.survey_pending != vip_survey.PENDING)
+            .values(survey_pending=1)
+        )
         await session.commit()
     await message.answer(f"📤 So'rov {len(ids)} ta foydalanuvchiga yuborilmoqda… Javoblar shu chatga #F… bilan keladi, ro'yxat: /fikrlar")
     sent, failed = await _blast(bot, ids, text, parse_mode="HTML", reply_markup=survey.kb())
@@ -405,6 +410,92 @@ async def cmd_fikrlar(message: Message):
     text = survey.responses_text(rows, total)
     for i in range(0, len(text), 3900):
         await message.answer(text[i:i + 3900], parse_mode="HTML")
+
+
+# ─────────────────── VIP so'rovnomasi (K30, services/vip_survey.py) ───────────────────
+
+
+@router.message(Command("vip_sorov", "vipsorov"))
+async def cmd_vip_sorov(message: Message, bot: Bot):
+    """VIP'ni sinagan o'quvchilardan fikr: nima yoqdi, kamchilik, nimani qo'shish kerak.
+    `/vip_sorov` — kimga ketishi + xabar namunasi + «Yuborish» tugmasi (o'zi yubormaydi);
+    `/vip_sorov test` — faqat adminga: tugmalar bilan to'liq oqimni sinash (javobi hisobotga kirmaydi)."""
+    if not _is_admin(message):
+        return
+    from services import vip_survey
+
+    parts = (message.text or "").split(maxsplit=1)
+    arg = parts[1].strip().lower() if len(parts) > 1 else ""
+    if arg == "test":
+        tg = message.from_user
+        async with SessionLocal() as session:
+            user = (await session.execute(select(User).where(User.tg_id == tg.id))).scalar_one_or_none()
+            if user is None:
+                user = User(tg_id=tg.id, name=tg.first_name or "", username=tg.username or "")
+                session.add(user)
+                await session.commit()
+                await session.refresh(user)
+            ok = await vip_survey.send_test(session, bot, user)
+        await message.answer(
+            "☝️ Shunday ko'rinadi — tugmalarni bosib oxirigacha yurib ko'ring. Sizning javobingiz hisobotga kirmaydi."
+            if ok
+            else "❌ Namuna yuborilmadi."
+        )
+        return
+    async with SessionLocal() as session:
+        aud = await vip_survey.audience(session)
+    kb = None
+    if aud.targets:
+        kb = InlineKeyboardMarkup(
+            inline_keyboard=[[
+                InlineKeyboardButton(text=f"✅ {len(aud.targets)} ta o'quvchiga yuborish", callback_data="vsa:send"),
+                InlineKeyboardButton(text="❌ Bekor", callback_data="vsa:no"),
+            ]]
+        )
+    await message.answer(
+        vip_survey.preview_text(aud, message.from_user.first_name), parse_mode="HTML", reply_markup=kb
+    )
+
+
+@router.callback_query(F.data.in_({"vsa:send", "vsa:no"}))
+async def cb_vip_survey_send(cb: CallbackQuery, bot: Bot):
+    """«Yuborish» tasdig'i. Tugma darhol olinadi, qator esa xabardan OLDIN yoziladi (vip_survey.send_invites) —
+    ikki marta bosilsa ham bir o'quvchiga ikki xabar ketmaydi."""
+    if not _is_admin_cb(cb):
+        await cb.answer("Faqat admin", show_alert=True)
+        return
+    from services import vip_survey
+
+    send = cb.data == "vsa:send"
+    await cb.answer("Yuborilmoqda…" if send else "Bekor qilindi")
+    try:
+        await cb.message.edit_reply_markup(reply_markup=None)
+    except Exception:
+        pass
+    if not send:
+        return
+    async with SessionLocal() as session:
+        aud = await vip_survey.audience(session)
+        sent, failed = await vip_survey.send_invites(session, bot, aud.targets)
+    await bot.send_message(
+        settings.admin_id, f"✅ Yuborildi: {sent}\n❌ Yetib bormadi: {failed}\n\nJavoblar: /vip_natija"
+    )
+
+
+@router.message(Command("vip_natija", "vipnatija"))
+async def cmd_vip_natija(message: Message):
+    """VIP so'rovnomasi natijalari: javoblar soni, o'rtacha baho, nima yoqdi, kamchiliklar, guruhlar, takliflar.
+    `/vip_natija [n]` — oxirgi n ta taklif (standart 10, 0 — takliflarsiz)."""
+    if not _is_admin(message):
+        return
+    from services import vip_survey
+
+    parts = (message.text or "").split()
+    n = int(parts[1]) if len(parts) > 1 and parts[1].isdigit() else 10
+    async with SessionLocal() as session:
+        rep = await vip_survey.report(session, min(n, 50))
+    for chunk in vip_survey.chunks(vip_survey.report_text(rep)):
+        await message.answer(chunk, parse_mode="HTML")
 
 
 @router.message(Command("broadcast"))
