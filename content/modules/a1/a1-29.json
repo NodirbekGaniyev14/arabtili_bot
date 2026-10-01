@@ -77,7 +77,7 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«mening kitobim» qaysi?", "q_ar": "", "options": ["كِتَابِي", "كِتَابُكَ", "كِتَابُهُ", "كِتَابُنَا"], "answer": "كِتَابِي", "explain_uz": "«mening» → ـِي: كِتَابِي.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«uning kitobi (ayol)» qaysi?", "q_ar": "", "options": ["كِتَابُهَا", "كِتَابُهُ", "كِتَابُكِ", "كِتَابِي"], "answer": "كِتَابُهَا", "explain_uz": "«uning-ayol» → ـهَا: كِتَابُهَا.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "بَيْتُنَا كَبِيرٌ", "options": [], "answer": "uyimiz katta", "explain_uz": "بَيْت + ـنَا (bizning) = uyimiz; كَبِير = katta.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "بَيْتُنَا كَبِيرٌ", "options": [], "answer": "uyimiz katta", "explain_uz": "بَيْت + ـنَا (bizning) = uyimiz; كَبِير = katta.", "audio": "q/a7ea57485589.mp3", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ص د ق» o'zagidan?", "q_ar": "", "options": ["صَدِيق", "كِتَابِي", "أَبِي"], "answer": "صَدِيق", "explain_uz": "«ص د ق» — rostlik/do'stlik o'zagi: صَدِيق (do'st), sodiq, sadoqat.", "audio": "", "root": "ص د ق", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "«sening isming»: «اسْمُ____»", "q_ar": "اسْمُ____", "options": [], "answer": "كَ", "explain_uz": "«sening-erkak» → ـكَ: اسْمُكَ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "do'st", "q_ar": "", "options": [], "answer": "صَدِيق", "accept": ["رَفِيق", "صَاحِب"], "explain_uz": "صَدِيق — do'st (o'zbekcha 'sodiq').", "audio": "", "root": "", "pattern": "", "words": []},

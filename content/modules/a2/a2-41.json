@@ -82,7 +82,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«dorixona» qaysi?", "q_ar": "", "options": ["صَيْدَلِيَّة", "مُسْتَشْفَى", "وَصْفَة", "دَوَاء"], "answer": "صَيْدَلِيَّة", "explain_uz": "صَيْدَلِيَّة — dorixona; مُسْتَشْفَى — kasalxona.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "عِنْدِي صُدَاع", "options": [], "answer": "boshim og'riyapti", "accept": ["bosh og'rig'im bor", "boshim og'riyabdi"], "explain_uz": "عِنْدِي = menda bor, صُدَاع = bosh og'rig'i.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "عِنْدِي صُدَاع", "options": [], "answer": "boshim og'riyapti", "accept": ["bosh og'rig'im bor", "boshim og'riyabdi"], "explain_uz": "عِنْدِي = menda bor, صُدَاع = bosh og'rig'i.", "audio": "q/04774f2955a6.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Hijoziyda «O'zimni yomon his qilyapman» qaysi?", "q_ar": "", "options": ["أَنَا تَعْبَان", "أَنَا بِخَيْر", "أَنَا جُوعَان", "أَنَا هُنَا"], "answer": "أَنَا تَعْبَان", "explain_uz": "تَعْبَان — hijoziyda «charchagan/kasal».", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ش ف ي» o'zagidan?", "q_ar": "", "options": ["مُسْتَشْفَى", "دَوَاء", "أَلَم"], "answer": "مُسْتَشْفَى", "explain_uz": "«ش ف ي» — shifo o'zagi: مُسْتَشْفَى (kasalxona), شِفَاء (shifo).", "audio": "", "root": "ش ف ي", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "isitma", "q_ar": "", "options": [], "answer": "حُمَّى", "accept": ["حَرَارَة"], "explain_uz": "حُمَّى — isitma.", "audio": "", "root": "", "pattern": "", "words": []},

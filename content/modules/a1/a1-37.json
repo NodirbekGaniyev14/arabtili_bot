@@ -81,7 +81,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«go'sht» qaysi?", "q_ar": "", "options": ["لَحْم", "دَجَاج", "أَرُزّ", "خُضَار"], "answer": "لَحْم", "explain_uz": "لَحْم — go'sht.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الطَّعَامُ لَذِيذٌ", "options": [], "answer": "ovqat mazali", "accept": ["taom mazali", "ovqat shirin", "ovqat lazzatli", "taom lazzatli"], "explain_uz": "الطَّعَام = ovqat, لَذِيذ = mazali.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الطَّعَامُ لَذِيذٌ", "options": [], "answer": "ovqat mazali", "accept": ["taom mazali", "ovqat shirin", "ovqat lazzatli", "taom lazzatli"], "explain_uz": "الطَّعَام = ovqat, لَذِيذ = mazali.", "audio": "q/12ca5c82ce29.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Hijoziyda «Iltimos» qaysi?", "q_ar": "", "options": ["لَو سَمَحْت", "مِنْ فَضْلِكَ", "زَيْن", "المَيّ"], "answer": "لَو سَمَحْت", "explain_uz": "Hijoziy: لَو سَمَحْت (rasmiy: مِنْ فَضْلِكَ).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ح س ب» o'zagidan?", "q_ar": "", "options": ["حِسَاب", "لَحْم", "عَصِير"], "answer": "حِسَاب", "explain_uz": "«ح س ب» — hisoblash o'zagi: حِسَاب (hisob), مُحَاسِب (hisobchi).", "audio": "", "root": "ح س ب", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "sharbat, sok", "q_ar": "", "options": [], "answer": "عَصِير", "explain_uz": "عَصِير — sharbat (ع ص ر = siqish o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},

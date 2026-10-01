@@ -81,7 +81,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«politsiya» qaysi?", "q_ar": "", "options": ["شُرْطَة", "إِسْعَاف", "حَرِيق", "سِفَارَة"], "answer": "شُرْطَة", "explain_uz": "شُرْطَة — politsiya (Saudiyada 999).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "سَاعِدْنِي!", "options": [], "answer": "menga yordam bering", "accept": ["yordam bering", "menga yordam ber", "yordam ber", "menga yordam qiling", "yordam qiling"], "explain_uz": "سَاعِدْنِي — menga yordam bering!", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "سَاعِدْنِي!", "options": [], "answer": "menga yordam bering", "accept": ["yordam bering", "menga yordam ber", "yordam ber", "menga yordam qiling", "yordam qiling"], "explain_uz": "سَاعِدْنِي — menga yordam bering!", "audio": "q/8af5bd991022.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«pasportim yo'qolgan» qaysi?", "q_ar": "", "options": ["جَوَازِي مَفْقُودٌ", "جَوَازِي جَدِيدٌ", "جَوَازِي هُنَا", "جَوَازِي كَبِيرٌ"], "answer": "جَوَازِي مَفْقُودٌ", "explain_uz": "مَفْقُود — yo'qolgan.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «س ع د» o'zagidan?", "q_ar": "", "options": ["مُسَاعَدَة", "شُرْطَة", "حَرِيق"], "answer": "مُسَاعَدَة", "explain_uz": "«س ع د» — yordam/baxt o'zagi: مُسَاعَدَة (yordam), Sa'id, sa'odat.", "audio": "", "root": "س ع د", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "elchixona", "q_ar": "", "options": [], "answer": "سِفَارَة", "explain_uz": "سِفَارَة — elchixona (س ف ر o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},

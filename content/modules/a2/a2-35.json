@@ -76,7 +76,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«orasida» qaysi?", "q_ar": "", "options": ["بَيْنَ", "خَلْفَ", "حَوْلَ", "وَسَط"], "answer": "بَيْنَ", "explain_uz": "بَيْنَ — ikki narsa orasida.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "حَوْلَ الكَعْبَةِ", "options": [], "answer": "Ka'ba atrofida", "accept": ["Ka'baning atrofida", "Ka'ba atrofi"], "explain_uz": "حَوْلَ = atrofida, الكَعْبَة = Ka'ba.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "حَوْلَ الكَعْبَةِ", "options": [], "answer": "Ka'ba atrofida", "accept": ["Ka'baning atrofida", "Ka'ba atrofi"], "explain_uz": "حَوْلَ = atrofida, الكَعْبَة = Ka'ba.", "audio": "q/e82a78a46c7e.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Zarf qaysi holatda bo'ladi?", "q_ar": "", "options": ["nasb (fatha)", "raf' (damma)", "jarr (kasra)", "sukun"], "answer": "nasb (fatha)", "explain_uz": "Zarf mansub — fatha (خَلْفَ, بَيْنَ).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«وَسَط، مُتَوَسِّط» qaysi o'zakdan?", "q_ar": "", "options": ["و س ط", "و ص ل", "و س ع"], "answer": "و س ط", "explain_uz": "«و س ط» — o'rta o'zagi: vosita, avsat, mutavassit.", "audio": "", "root": "و س ط", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "orqasida, ortida", "q_ar": "", "options": [], "answer": "خَلْفَ", "accept": ["وَرَاءَ"], "explain_uz": "خَلْفَ — orqasida (joy zarfi).", "audio": "", "root": "", "pattern": "", "words": []},

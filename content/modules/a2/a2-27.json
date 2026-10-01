@@ -76,7 +76,7 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«طَارَ» qaysi tur (o'rtasi illat)?", "q_ar": "", "options": ["أَجْوَف", "مِثَال", "نَاقِص", "صَحِيح"], "answer": "أَجْوَف", "explain_uz": "طَارَ — o'rtasi ي (ط ي ر), ajvaf.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«سَعَى» qaysi tur (oxiri illat)?", "q_ar": "", "options": ["نَاقِص", "أَجْوَف", "مِثَال", "مُضَاعَف"], "answer": "نَاقِص", "explain_uz": "سَعَى — oxiri ي (س ع ي), naqis.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "جَاءَ الضَّيْفُ", "options": [], "answer": "mehmon keldi", "explain_uz": "جَاءَ = keldi, الضَّيْف = mehmon.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "جَاءَ الضَّيْفُ", "options": [], "answer": "mehmon keldi", "explain_uz": "جَاءَ = keldi, الضَّيْف = mehmon.", "audio": "q/b4857bd21ce0.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«وَقَعَ» qaysi tur (boshi illat)?", "q_ar": "", "options": ["مِثَال", "أَجْوَف", "نَاقِص", "مَهْمُوز"], "answer": "مِثَال", "explain_uz": "وَقَعَ — boshi و (و ق ع), mithal.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«حَيَاة» qaysi o'zakdan?", "q_ar": "", "options": ["ح ي ي", "ح ي ت", "ح و ي"], "answer": "ح ي ي", "explain_uz": "«ح ي ي» — hayot o'zagi: hayot, tahiyot.", "audio": "", "root": "ح ي ي", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "ko'rdi", "q_ar": "", "options": [], "answer": "رَأَى", "accept": ["شَاهَدَ"], "explain_uz": "رَأَى — ko'rdi (qo'sh illatli, ر أ ي).", "audio": "", "root": "", "pattern": "", "words": []},

@@ -81,7 +81,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«yigirma (20)» qaysi?", "q_ar": "", "options": ["عِشْرُونَ", "عَشَرَة", "مِئَة", "ثَلاثُونَ"], "answer": "عِشْرُونَ", "explain_uz": "عِشْرُونَ — yigirma (20). عَشَرَة — o'n (10).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "كَمْ عُمْرُكَ؟", "options": [], "answer": "yoshing nechada", "accept": ["necha yoshdasan", "yoshing necha", "yoshing nechchida"], "explain_uz": "كَمْ = nechta, عُمْر = yosh/umr, ـكَ = sening.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "كَمْ عُمْرُكَ؟", "options": [], "answer": "yoshing nechada", "accept": ["necha yoshdasan", "yoshing necha", "yoshing nechchida"], "explain_uz": "كَمْ = nechta, عُمْر = yosh/umr, ـكَ = sening.", "audio": "q/c99a9d282fa1.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Hijoziyda «Qancha?» (narx) qaysi?", "q_ar": "", "options": ["بِكَمْ؟", "كَمِ الثَّمَنُ؟", "أَبْغَى", "وَاجِد"], "answer": "بِكَمْ؟", "explain_uz": "Hijoziy: بِكَمْ؟ (rasmiy: كَمِ الثَّمَنُ؟).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ع م ر» o'zagidan?", "q_ar": "", "options": ["عُمْر", "ثَمَن", "رِيَال"], "answer": "عُمْر", "explain_uz": "«ع م ر» — umr o'zagi: عُمْر (yosh), عُمْرَة (umra), imorat.", "audio": "", "root": "ع م ر", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "yuz (100)", "q_ar": "", "options": [], "answer": "مِئَة", "accept": ["مِائَة"], "explain_uz": "مِئَة — yuz (100).", "audio": "", "root": "", "pattern": "", "words": []},

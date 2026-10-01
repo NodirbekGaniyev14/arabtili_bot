@@ -81,7 +81,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«qibla» qaysi?", "q_ar": "", "options": ["قِبْلَة", "صَفّ", "رَكْعَة", "إِمَام"], "answer": "قِبْلَة", "explain_uz": "قِبْلَة — namoz o'qiladigan tomon (Ka'ba).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "صَلَاةُ الجَمَاعَةِ", "options": [], "answer": "jamoat namozi", "accept": ["jamoa namozi", "jamoat bilan namoz", "jamoat bo'lib namoz"], "explain_uz": "صَلَاة = namoz, جَمَاعَة = jamoat.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "صَلَاةُ الجَمَاعَةِ", "options": [], "answer": "jamoat namozi", "accept": ["jamoa namozi", "jamoat bilan namoz", "jamoat bo'lib namoz"], "explain_uz": "صَلَاة = namoz, جَمَاعَة = jamoat.", "audio": "q/b98084ce5efe.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Namoz boshlanish e'loni qaysi?", "q_ar": "", "options": ["إِقَامَة", "أَذَان", "وُضُوء", "قَصْر"], "answer": "إِقَامَة", "explain_uz": "أَذَان — chaqiruv, إِقَامَة — namoz boshlanishi.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «س ج د» o'zagidan?", "q_ar": "", "options": ["مَسْجِد", "قِبْلَة", "إِمَام"], "answer": "مَسْجِد", "explain_uz": "«س ج د» — sajda o'zagi: مَسْجِد (sajda joyi), سُجُود, sajda.", "audio": "", "root": "س ج د", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "tahorat", "q_ar": "", "options": [], "answer": "وُضُوء", "explain_uz": "وُضُوء — tahorat/obdast.", "audio": "", "root": "", "pattern": "", "words": []},

@@ -78,7 +78,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«amaki (ota tomon)» qaysi?", "q_ar": "", "options": ["عَمّ", "خَال", "جَدّ", "اِبْن"], "answer": "عَمّ", "explain_uz": "عَمّ — ota tomon amaki; خَال — ona tomon tog'a.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "جَدِّي وَجَدَّتِي", "options": [], "answer": "bobom va buvim", "accept": ["buvam va buvim", "bobom va momom"], "explain_uz": "جَدّ (bobo) + ـِي = bobom; جَدَّة (buvi) + ـِي = buvim.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "جَدِّي وَجَدَّتِي", "options": [], "answer": "bobom va buvim", "accept": ["buvam va buvim", "bobom va momom"], "explain_uz": "جَدّ (bobo) + ـِي = bobom; جَدَّة (buvi) + ـِي = buvim.", "audio": "q/f9bdf30f6f64.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«tog'a (ona tomon)» qaysi?", "q_ar": "", "options": ["خَال", "عَمّ", "حَفِيد", "جَدّ"], "answer": "خَال", "explain_uz": "خَال — ona tomon tog'a.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ع و ل» o'zagidan?", "q_ar": "", "options": ["عَائِلَة", "أُسْرَة", "حَفِيد"], "answer": "عَائِلَة", "explain_uz": "«ع و ل» — oila/boquv o'zagi: عَائِلَة (oila), oila.", "audio": "", "root": "ع و ل", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "o'g'il", "q_ar": "", "options": [], "answer": "اِبْن", "accept": ["وَلَد"], "explain_uz": "اِبْن — o'g'il (o'zbekcha 'ibn/bin' shundan).", "audio": "", "root": "", "pattern": "", "words": []},

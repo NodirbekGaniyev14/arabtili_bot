@@ -77,7 +77,7 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«Men yozdim» qaysi?", "q_ar": "", "options": ["كَتَبْتُ", "كَتَبْتَ", "كَتَبْنَا", "كَتَبَ"], "answer": "كَتَبْتُ", "explain_uz": "أَنَا (men) → ـْتُ (damma): كَتَبْتُ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«Biz bordik» qaysi?", "q_ar": "", "options": ["ذَهَبْنَا", "ذَهَبْتُ", "ذَهَبْتُم", "ذَهَبَ"], "answer": "ذَهَبْنَا", "explain_uz": "نَحْنُ (biz) → ـْنَا: ذَهَبْنَا.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "قَرَأْتُ القُرْآنَ", "options": [], "answer": "men Qur'on o'qidim", "explain_uz": "قَرَأْتُ = men o'qidim, القُرْآن = Qur'on.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "قَرَأْتُ القُرْآنَ", "options": [], "answer": "men Qur'on o'qidim", "explain_uz": "قَرَأْتُ = men o'qidim, القُرْآن = Qur'on.", "audio": "q/71ce1358f9e7.mp3", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ق ر أ» o'zagidan?", "q_ar": "", "options": ["قُرْآن", "كِتَاب", "خَبَر"], "answer": "قُرْآن", "explain_uz": "«ق ر أ» — o'qish o'zagi: قَرَأَ (o'qidi), قُرْآن (o'qiladigan), qori.", "audio": "", "root": "ق ر أ", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "To'ldiring: «نَحْنُ ____ الخُبْزَ» (biz non yedik)", "q_ar": "نَحْنُ ____ الخُبْزَ", "options": [], "answer": "أَكَلْنَا", "explain_uz": "نَحْنُ → ـْنَا: أَكَلْنَا.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "hafta", "q_ar": "", "options": [], "answer": "أُسْبُوع", "explain_uz": "أُسْبُوع — hafta (7 kun, س ب ع = yetti o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},

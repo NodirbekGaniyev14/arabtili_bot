@@ -337,7 +337,7 @@ const canonTokens = (s: string): string[] => {
   const t = s
     .replace(/\([^)]*\)/g, " ")
     .split(/\s+/)
-    .filter(Boolean)
+    .filter((w) => w && w !== "jins") // «sen yozding, muannas jins» (#a2-02) — «jins» (gender) izoh so'zi, javob emas
     .map((w) => verbCanon(normIkki(SYNONYMS[w] ?? w).replace(/x/g, "h")));
   // «ular» bo'lsa 3-shaxs birlik fe'l ko'plikka tenglashadi (moslashuv ixtiyoriy)
   return t.includes("ular")

@@ -58,8 +58,8 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "يَدْ qanday o'qiladi?", "q_ar": "يَدْ", "options": ["yad", "yud", "day", "yid"], "answer": "yad", "explain_uz": "يَ («ya») + دْ («d») = «yad».", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "يَدْ", "options": [], "answer": "qo'l", "explain_uz": "يَدْ — qo'l.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "دَمْ", "options": [], "answer": "qon", "explain_uz": "دَمْ — qon.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "يَدْ", "options": [], "answer": "qo'l", "explain_uz": "يَدْ — qo'l.", "audio": "q/0961e74530ee.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "دَمْ", "options": [], "answer": "qon", "explain_uz": "دَمْ — qon.", "audio": "q/cf6981db7650.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«ota» ma'nosidagi so'z qaysi?", "q_ar": "", "options": ["أَبْ", "يَدْ", "دَمْ", "بَحْر"], "answer": "أَبْ", "explain_uz": "أَبْ («ab») — ota.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "دَمْ so'zining oxirgi harfida nima bor?", "q_ar": "", "options": ["sukun (unli yo'q)", "fatha", "kasra", "damma"], "answer": "sukun (unli yo'q)", "explain_uz": "مْ — sukunli, «dam» deb o'qiladi.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "dictation", "q_uz": "Eshiting va yozing (uch harfli so'z).", "q_ar": "", "options": [], "answer": "يَدْ", "explain_uz": "«yad» — qo'l: يَدْ.", "audio": "a0/yad.mp3", "root": "", "pattern": "", "words": []}

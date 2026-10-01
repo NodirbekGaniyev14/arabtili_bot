@@ -77,7 +77,7 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«ming (1000)» qaysi?", "q_ar": "", "options": ["أَلْف", "مِئَة", "مِلْيُون", "مِئَتَان"], "answer": "أَلْف", "explain_uz": "أَلْف — ming (1000).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "100 dan keyin sanaladigan ot qaysi shaklda?", "q_ar": "", "options": ["birlik-jarr", "ko'plik-jarr", "ikkilik", "raf'"], "answer": "birlik-jarr", "explain_uz": "100+ dan keyin ot BIRLIK-jarr: مِئَةُ رَجُلٍ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "نِصْفُ سَاعَةٍ", "options": [], "answer": "yarim soat", "explain_uz": "نِصْف = yarim, سَاعَة = soat.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "نِصْفُ سَاعَةٍ", "options": [], "answer": "yarim soat", "explain_uz": "نِصْف = yarim, سَاعَة = soat.", "audio": "q/d0dfcf234cb3.mp3", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«رُبْع، أَرْبَعَة» qaysi o'zakdan?", "q_ar": "", "options": ["ر ب ع", "ر ب و", "ر ف ع"], "answer": "ر ب ع", "explain_uz": "«ر ب ع» — to'rt o'zagi: rub' (chorak), arba'a, murabba.", "audio": "", "root": "ر ب ع", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "chorak (1/4)", "q_ar": "", "options": [], "answer": "رُبْع", "explain_uz": "رُبْع — chorak (o'zbekcha 'rub'').", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«ikki yuz» qaysi?", "q_ar": "", "options": ["مِئَتَان", "مِئَة", "أَلْفَان", "ثُلُث"], "answer": "مِئَتَان", "explain_uz": "مِئَتَان — 200 (مِئَة ning ikkiligi).", "audio": "", "root": "", "pattern": "", "words": []},

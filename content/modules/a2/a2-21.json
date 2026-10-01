@@ -82,7 +82,7 @@
   {"type": "build_word", "q_uz": "«ع ل م» ni «مَفْعُول» vazniga soling (ma'lum)", "q_ar": "", "options": [], "answer": "مَعْلُوم", "explain_uz": "ع ل م + مَفْعُول = مَعْلُوم (ma'lum).", "audio": "", "root": "ع ل م", "pattern": "مَفْعُول", "words": []},
   {"type": "mcq", "q_uz": "«o'rgandi» (V bob) qaysi?", "q_ar": "", "options": ["تَعَلَّمَ", "عَلَّمَ", "أَعْلَمَ", "اِسْتَعْلَمَ"], "answer": "تَعَلَّمَ", "explain_uz": "V bob: تَعَلَّمَ (o'rgandi).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«dunyo, olam» qaysi?", "q_ar": "", "options": ["عَالَم", "عَالِم", "عِلْم", "عَلَامَة"], "answer": "عَالَم", "explain_uz": "عَالَم — dunyo (o'zbekcha 'olam'). عَالِم — olim.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "العِلْمُ نُورٌ", "options": [], "answer": "ilm — nur", "explain_uz": "العِلْم = ilm, نُور = nur.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "العِلْمُ نُورٌ", "options": [], "answer": "ilm — nur", "explain_uz": "العِلْم = ilm, نُور = nur.", "audio": "q/5fca1fd26b71.mp3", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "o'qituvchi (ism fo'il)", "q_ar": "", "options": [], "answer": "مُعَلِّم", "accept": ["مُدَرِّس"], "explain_uz": "مُعَلِّم — II bob ism fo'il (o'qituvchi).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«اِسْتَعْلَمَ» qaysi bob va ma'no?", "q_ar": "", "options": ["X — so'rab bildi", "II — o'rgatdi", "IV — xabar berdi", "V — o'rgandi"], "answer": "X — so'rab bildi", "explain_uz": "X bob (اِسْتَفْعَلَ): اِسْتَعْلَمَ — ma'lumot so'radi.", "audio": "", "root": "", "pattern": "", "words": []}
  ],

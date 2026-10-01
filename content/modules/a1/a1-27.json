@@ -78,7 +78,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«kitoblar» qaysi?", "q_ar": "", "options": ["كُتُب", "كِتَابَانِ", "كَاتِبُونَ", "كِتَابَات"], "answer": "كُتُب", "explain_uz": "كِتَاب ning singan ko'pligi: كُتُب (فُعُل vazni).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الرِّجَالُ فِي السُّوقِ", "options": [], "answer": "erkaklar bozorda", "explain_uz": "رِجَال = erkaklar (رَجُل ko'pligi), فِي السُّوق = bozorda.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الرِّجَالُ فِي السُّوقِ", "options": [], "answer": "erkaklar bozorda", "explain_uz": "رِجَال = erkaklar (رَجُل ko'pligi), فِي السُّوق = bozorda.", "audio": "q/0b9e7aa6381a.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«بَيْت» ning ko'pligi qaysi?", "q_ar": "", "options": ["بُيُوت", "بُيُوتَانِ", "بَيْتُونَ", "بَيْتَات"], "answer": "بُيُوت", "explain_uz": "بَيْت → بُيُوت (فُعُول vazni).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ج م ع» o'zagidan?", "q_ar": "", "options": ["جَمْع", "كُتُب", "رِجَال"], "answer": "جَمْع", "explain_uz": "«ج م ع» — yig'ish o'zagi: جَمْع (ko'plik), جامعة, jum'a.", "audio": "", "root": "ج م ع", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "Ko'plik yozing: «قَلَم» → ? (qalamlar)", "q_ar": "____", "options": [], "answer": "أَقْلَام", "explain_uz": "قَلَم → أَقْلَام (أَفْعَال vazni).", "audio": "", "root": "", "pattern": "", "words": []},

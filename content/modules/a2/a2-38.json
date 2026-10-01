@@ -83,7 +83,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«bron» qaysi?", "q_ar": "", "options": ["حَجْز", "خِدْمَة", "نَزِيل", "طَابِق"], "answer": "حَجْز", "explain_uz": "حَجْز — bron/band qilish.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المُكَيِّفُ لَا يَعْمَل", "options": [], "answer": "konditsioner ishlamaydi", "accept": ["konditsioner buzilgan", "konditsioner buzuq"], "explain_uz": "مُكَيِّف = konditsioner, لَا يَعْمَل = ishlamaydi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المُكَيِّفُ لَا يَعْمَل", "options": [], "answer": "konditsioner ishlamaydi", "accept": ["konditsioner buzilgan", "konditsioner buzuq"], "explain_uz": "مُكَيِّف = konditsioner, لَا يَعْمَل = ishlamaydi.", "audio": "q/afaa0577facf.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Hijoziyda «buzuq» qaysi?", "q_ar": "", "options": ["خَرْبَان", "نَظِيف", "بَارِد", "قَرِيب"], "answer": "خَرْبَان", "explain_uz": "خَرْبَان — hijoziyda «buzuq, ishlamaydigan».", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «خ د م» o'zagidan?", "q_ar": "", "options": ["خِدْمَة", "حَجْز", "لَيْلَة"], "answer": "خِدْمَة", "explain_uz": "«خ د م» — xizmat o'zagi: خِدْمَة (xizmat), خَادِم (xizmatchi), xodim.", "audio": "", "root": "خ د م", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "sochiq", "q_ar": "", "options": [], "answer": "مِنْشَفَة", "accept": ["فُوطَة"], "explain_uz": "مِنْشَفَة — sochiq.", "audio": "", "root": "", "pattern": "", "words": []},

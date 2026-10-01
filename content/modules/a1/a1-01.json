@@ -76,12 +76,12 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«Uy katta» gapi qaysi?", "q_ar": "", "options": ["البَيْتُ كَبِيرٌ", "بَيْتٌ كَبِيرٌ", "البَيْتُ الكَبِيرُ", "كَبِيرٌ البَيْتُ"], "answer": "البَيْتُ كَبِيرٌ", "explain_uz": "Ega aniq (البَيْت), xabar noaniq (كَبِيرٌ). البَيْتُ الكَبِيرُ — bu «katta uy» (sifat), gap emas.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الكِتَابُ جَدِيدٌ", "options": [], "answer": "kitob yangi", "explain_uz": "الكِتَاب = kitob (ega), جَدِيد = yangi (xabar). «bo'ladi» kerak emas.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الكِتَابُ جَدِيدٌ", "options": [], "answer": "kitob yangi", "explain_uz": "الكِتَاب = kitob (ega), جَدِيد = yangi (xabar). «bo'ladi» kerak emas.", "audio": "q/c00458f5429b.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«صَغِير» so'zining ma'nosi?", "q_ar": "", "options": ["kichik", "katta", "yangi", "eski"], "answer": "kichik", "explain_uz": "صَغِير — kichik; كَبِير ning teskarisi.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "Bo'sh joyni to'ldiring: «البَابُ ____» (eshik eski)", "q_ar": "البَابُ ____", "options": [], "answer": "قَدِيمٌ", "explain_uz": "قَدِيم — eski. Xabar noaniq, tanvin bilan: قَدِيمٌ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ك ب ر» o'zagidan?", "q_ar": "", "options": ["كَبِير", "جَدِيد", "صَغِير"], "answer": "كَبِير", "explain_uz": "«ك ب ر» — kattalik o'zagi: كَبِير (katta), أَكْبَر (eng katta).", "audio": "", "root": "ك ب ر", "pattern": "", "words": []},
   {"type": "order_words", "q_uz": "So'zlardan «Bola baland» gapini tuzing", "q_ar": "", "options": [], "answer": "الوَلَدُ طَوِيلٌ", "explain_uz": "Ismli gap: ega (الوَلَدُ) + xabar (طَوِيلٌ).", "audio": "", "root": "", "pattern": "", "words": ["طَوِيلٌ", "الوَلَدُ"]},
-  {"type": "translate_uz_ar", "q_uz": "chiroyli", "q_ar": "", "options": [], "answer": "جَمِيل", "accept": ["حَسَن"], "explain_uz": "جَمِيل — chiroyli (o'zbekcha 'Jamila' ismi shundan).", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "translate_uz_ar", "q_uz": "chiroyli", "q_ar": "", "options": [], "answer": "جَمِيل", "accept": ["حَسَن", "جَمِيلَة"], "explain_uz": "جَمِيل — chiroyli (o'zbekcha 'Jamila' ismi shundan).", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "root", "front": "ك ب ر", "back": "kattalik o'zagi (kabir=katta, akbar=eng katta)", "deck": "msa"},

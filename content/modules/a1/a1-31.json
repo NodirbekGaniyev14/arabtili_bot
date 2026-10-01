@@ -78,7 +78,7 @@
   {"type": "mcq", "q_uz": "«رَأَيْتُ الوَلَدَ» da «الوَلَدَ» qaysi holatda?", "q_ar": "", "options": ["نَصْب (ob'ekt)", "رَفْع (ega)", "جَرّ", "sukun"], "answer": "نَصْب (ob'ekt)", "explain_uz": "Ob'ekt (ko'rildi) → nasb, fatha (ـَ).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ق ع د» o'zagidan?", "q_ar": "", "options": ["قَاعِدَة", "حَرَكَة", "عَلَامَة"], "answer": "قَاعِدَة", "explain_uz": "«ق ع د» — o'tirish/asos o'zagi: قَاعِدَة (qoida), مَقْعَد (o'rindiq).", "audio": "", "root": "ق ع د", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "qoida", "q_ar": "", "options": [], "answer": "قَاعِدَة", "explain_uz": "قَاعِدَة — qoida (o'zbekcha 'qoida').", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "عَلَامَةُ الرَّفْعِ الضَّمَّةُ", "options": [], "answer": "raf' belgisi damma", "accept": ["raf' belgisi zamma", "raf' alomati damma", "raf'ning belgisi damma"], "explain_uz": "Raf' (ega holati) belgisi — damma (ـُ).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "عَلَامَةُ الرَّفْعِ الضَّمَّةُ", "options": [], "answer": "raf' belgisi damma", "accept": ["raf' belgisi zamma", "raf' alomati damma", "raf'ning belgisi damma"], "explain_uz": "Raf' (ega holati) belgisi — damma (ـُ).", "audio": "q/d3868970a56a.mp3", "root": "", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "Egani to'g'ri harakatlang: «جَاءَ الوَلَد__» (bola keldi)", "q_ar": "جَاءَ الوَلَد__", "options": ["ـُ", "ـَ", "ـِ", "ـْ"], "answer": "ـُ", "explain_uz": "Ega raf' — damma (ـُ): الوَلَدُ.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [

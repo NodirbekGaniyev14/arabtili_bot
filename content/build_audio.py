@@ -108,6 +108,8 @@ def _text_of(obj: dict) -> str | None:
         or obj.get("transcript_ar")
         or obj.get("text_ar")  # o'qish matnlari (content/reading/*.json)
         or obj.get("root")
+        # K29.4: «arabcha → o'zbekcha» tarjima savoli — savol matnining o'zi (audio: "q/<xesh>.mp3")
+        or (obj.get("q_ar") if str(obj.get("audio", "")).startswith("q/") else None)
     )
 
 

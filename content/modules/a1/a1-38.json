@@ -82,7 +82,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«o'ng (tomon)» qaysi?", "q_ar": "", "options": ["يَمِين", "يَسَار", "وَرَاء", "أَمَام"], "answer": "يَمِين", "explain_uz": "يَمِين — o'ng; يَسَار — chap.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المَسْجِدُ عَلَى اليَمِينِ", "options": [], "answer": "masjid o'ng tomonda", "accept": ["masjid o'ngda", "masjid o'ng tarafda"], "explain_uz": "عَلَى اليَمِين = o'ng tomonda.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "المَسْجِدُ عَلَى اليَمِينِ", "options": [], "answer": "masjid o'ng tomonda", "accept": ["masjid o'ngda", "masjid o'ng tarafda"], "explain_uz": "عَلَى اليَمِين = o'ng tomonda.", "audio": "q/5fc67b52d581.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Hijoziyda «Qayerda?» qaysi?", "q_ar": "", "options": ["وِين؟", "أَيْنَ؟", "عَلَى طُول", "كِيف؟"], "answer": "وِين؟", "explain_uz": "Hijoziy: وِين؟ (rasmiy: أَيْنَ؟).", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «و ج ه» o'zagidan?", "q_ar": "", "options": ["اِتِّجَاه", "قِطَار", "حَافِلَة"], "answer": "اِتِّجَاه", "explain_uz": "«و ج ه» — yo'nalish o'zagi: اِتِّجَاه (yo'nalish), وَجْه (yuz), jihat.", "audio": "", "root": "و ج ه", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "avtobus", "q_ar": "", "options": [], "answer": "حَافِلَة", "accept": ["بَاص"], "explain_uz": "حَافِلَة — avtobus.", "audio": "", "root": "", "pattern": "", "words": []},

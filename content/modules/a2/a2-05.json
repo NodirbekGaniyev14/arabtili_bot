@@ -331,8 +331,8 @@
    "options": [],
    "answer": "ular o'rganadilar",
    "accept": ["ular o'rganishadi", "ular (erkaklar) o'rganadilar", "ular (erkak) o'rganadilar"],
-   "explain_uz": "V bob + g'oyib jam' qo'shimchasi ـُونَ.",
-   "audio": "",
+   "explain_uz": "V bob (تَعَلَّمَ) — o'rganmoq (o'zi o'rganadi); II bob (عَلَّمَ) — o'rgatmoq (boshqaga). ـُونَ — g'oyib jam' (ular).",
+   "audio": "q/5b0035b5446b.mp3",
    "root": "",
    "pattern": "",
    "words": []
@@ -343,6 +343,7 @@
    "q_ar": "",
    "options": [],
    "answer": "نَتَعَلَّمُ",
+   "accept": ["نَدْرُسُ"],
    "explain_uz": "Mutakallim jam' prefiksi نـ: نَتَعَلَّمُ.",
    "audio": "",
    "root": "",

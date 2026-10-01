@@ -7,79 +7,23 @@ import { api, type MicroTestItem } from "../../lib/api";
 import { playAudio } from "../../lib/audio";
 import ArabicKeyboard from "./ArabicKeyboard";
 import { arOk, asVerdict, blankFills, isArabic, latOk, normAr, type Verdict } from "./answerCheck";
+import {
+  HARAKAT_KEYS,
+  applyMark,
+  buildWordDistractors,
+  harakatVerdict,
+  hasLookalikes,
+  joinHarakat,
+  splitHarakat,
+  type HarakatSlot,
+} from "./exerciseLogic";
 import ReportIssue, { rememberWrong } from "../../components/ReportIssue";
 
 const tg = () => window.Telegram?.WebApp;
 /** K27.6 (#F125): javob paneli ekran pastini yopadi va savol ostidagi «Xatolik bormi?» ko'rinmay qoladi —
  *  o'quvchi «Davom etish»ni bosib, xabarni KEYINGI savoldan yuborardi. QuizRunner havolani panel ichiga beradi. */
 const FeedbackReport = createContext<ReactNode>(null);
-/** harakat mashqi: harakatlar solishtiriladi, lekin alif varianti va bo'shliq farqi kechiriladi. */
-/* ── harakat mashqi (#F74): so'z harflari tayyor, o'quvchi faqat harakat qo'yadi ── */
-
-/** Bitta harf + unga qo'yilgan harakatlar (combining belgilar). Bo'shliq ham alohida slot. */
-export type HarakatSlot = { base: string; marks: string };
-const MARK_RE = /[ً-ْٰ]/;
-/** Sukun va xanjar alif — ko'pincha yozilmaydi, yo'qligi xato emas (izoh beriladi). */
-const OPTIONAL_MARKS = /[ْٰ]/g;
-
-export const splitHarakat = (word: string): HarakatSlot[] => {
-  const out: HarakatSlot[] = [];
-  for (const ch of word.replace(/ـ/g, "")) {
-    if (MARK_RE.test(ch) && out.length) out[out.length - 1].marks += ch;
-    else out.push({ base: ch, marks: "" });
-  }
-  return out;
-};
-
-const joinHarakat = (slots: HarakatSlot[]) => slots.map((s) => s.base + s.marks).join("");
-const markKey = (marks: string, strict: boolean) =>
-  [...(strict ? marks : marks.replace(OPTIONAL_MARKS, ""))].sort().join("");
-
-/** Harakat tekshiruvi: aynan → exact; faqat sukun farqi → to'g'ri + izoh; faqat oxirgi harfda
- *  e'rob qo'yilmagan → to'g'ri + izoh (oxirgi harakat gapdagi o'rniga bog'liq — A0 hali o'rganmagan);
- *  boshqa farq → xato, `wrong` — noto'g'ri harf indekslari (qizil ko'rsatiladi). */
-export const harakatVerdict = (user: HarakatSlot[], ans: HarakatSlot[]): Verdict & { wrong: number[] } => {
-  if (user.length !== ans.length || user.some((s, i) => s.base !== ans[i].base)) return { ok: false, wrong: [] };
-  const strict: number[] = [];
-  const loose: number[] = [];
-  user.forEach((s, i) => {
-    if (markKey(s.marks, true) !== markKey(ans[i].marks, true)) strict.push(i);
-    if (markKey(s.marks, false) !== markKey(ans[i].marks, false)) loose.push(i);
-  });
-  if (!strict.length) return { ok: true, exact: true, wrong: [] };
-  if (!loose.length) return { ok: true, exact: false, note: "Sukun (ـْ) ham qo'yiladi — namunaga qarang", wrong: strict };
-  let last = ans.length - 1;
-  while (last > 0 && !/[؀-ۿ]/.test(ans[last].base)) last--;
-  const untouchedEnd = !user[last].marks.replace(OPTIONAL_MARKS, "");
-  if (loose.length === 1 && loose[0] === last && untouchedEnd && ans[last].marks) {
-    return {
-      ok: true,
-      exact: false,
-      note: `E'rob: so'z oxirida ${ans[last].base + ans[last].marks} — oxirgi harakat gapdagi o'rniga qarab o'zgaradi`,
-      wrong: loose,
-    };
-  }
-  return { ok: false, wrong: loose };
-};
-
-const HARAKAT_KEYS: { ch: string; label: string; title: string }[] = [
-  { ch: "َ", label: "ـَ", title: "fatha (a)" },
-  { ch: "ِ", label: "ـِ", title: "kasra (i)" },
-  { ch: "ُ", label: "ـُ", title: "damma (u)" },
-  { ch: "ْ", label: "ـْ", title: "sukun" },
-  { ch: "ّ", label: "ـّ", title: "shadda" },
-  { ch: "ً", label: "ـً", title: "tanvin an" },
-  { ch: "ٍ", label: "ـٍ", title: "tanvin in" },
-  { ch: "ٌ", label: "ـٌ", title: "tanvin un" },
-];
-
-/** Harfga harakat qo'yish: shadda alohida (unli bilan birga turadi), qolganlari bir-birini almashtiradi. */
-export const applyMark = (marks: string, ch: string): string => {
-  const hasShadda = marks.includes("ّ");
-  const vowel = marks.replace(/ّ/g, "");
-  if (ch === "ّ") return (hasShadda ? "" : "ّ") + vowel;
-  return (hasShadda ? "ّ" : "") + (vowel === ch ? "" : ch);
-};
+/* ── harakat mashqi (#F74): so'z harflari tayyor, o'quvchi faqat harakat qo'yadi (mantiq — exerciseLogic.ts) ── */
 
 export function HarakatEx({
   prompt,
@@ -342,6 +286,12 @@ function OptionsEx({
         >
           🔊
         </button>
+      )}
+      {/* K29.4 (#F151): fo'il/maf'ul (مُعَلِّم ↔ مُعَلَّم) — variantlar faqat bitta harakat bilan farq qiladi, kichik ekranda ajratib bo'lmaydi */}
+      {options.some(isArabic) && hasLookalikes(options) && (
+        <div className="mt-3 rounded-xl border border-gold/40 bg-gold-soft px-3 py-2 text-[12px] font-bold text-ink">
+          ⚠️ Ba'zi variantlar faqat harakat bilan farq qiladi — harakatlarga diqqat qiling.
+        </div>
       )}
       <div className={arabicBig || audio ? "" : "mt-5"}>
         {shuffled.map((opt) => {
@@ -630,23 +580,9 @@ function ShadowingEx({
   );
 }
 
-/* ── Vazn qo'llash (build_word distraktorlari uchun) ── */
+/* ── Vazn qo'llash: build_word distraktorlari — exerciseLogic.buildWordDistractors ── */
 
-const FALLBACK_PATTERNS = ["فاعِل", "مَفْعول", "مَفْعَل", "فِعال", "تَفْعيل", "مُفَعِّل"];
 const FALLBACK_ROOTS = ["ك ت ب", "د ر س", "ع ل م", "س ف ر", "ن ظ ر", "ق ب ل", "ح ك م"];
-
-export function applyPattern(pattern: string, root: string): string {
-  const letters = root.split(/[\s\-]+/).filter(Boolean);
-  if (letters.length < 3) return pattern;
-  let out = "";
-  for (const ch of pattern) {
-    if (ch === "ف") out += letters[0];
-    else if (ch === "ع") out += letters[1];
-    else if (ch === "ل") out += letters[2];
-    else out += ch;
-  }
-  return out;
-}
 
 /* ── QuizRunner — mikro-test / nazorat testi yurgizuvchisi ── */
 
@@ -802,9 +738,8 @@ function renderExercise(
       );
     }
     case "build_word": {
-      const distract = FALLBACK_PATTERNS.filter((p) => p !== item.pattern)
-        .slice(0, 3)
-        .map((p) => applyPattern(p, item.root));
+      // K29.4 (#F150): javobning harakatsiz nusxasi (مَكْتوب) variant bo'lib qolmasin
+      const distract = buildWordDistractors({ root: item.root, answer: item.answer });
       return (
         <OptionsEx
           key={key}

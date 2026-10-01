@@ -76,7 +76,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«uchinchi» qaysi?", "q_ar": "", "options": ["ثَالِث", "ثَلَاثَة", "ثُلُث", "ثَانِي"], "answer": "ثَالِث", "explain_uz": "Tartib son: ثَالِث (uchinchi). ثَلَاثَة — sanoq (3).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الطَّابِقُ الثَّالِثُ", "options": [], "answer": "uchinchi qavat", "accept": ["uchinchi etaj"], "explain_uz": "الطَّابِق = qavat, الثَّالِث = uchinchi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "الطَّابِقُ الثَّالِثُ", "options": [], "answer": "uchinchi qavat", "accept": ["uchinchi etaj"], "explain_uz": "الطَّابِق = qavat, الثَّالِث = uchinchi.", "audio": "q/99b60ca42c16.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Tartib son otga qanday joylashadi?", "q_ar": "", "options": ["otdan keyin (sifat kabi)", "otdan oldin", "gap oxirida", "gap boshida"], "answer": "otdan keyin (sifat kabi)", "explain_uz": "Tartib son sifat kabi otdan keyin, moslashadi.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«أَوَّل، أَوَّلًا» qaysi o'zakdan?", "q_ar": "", "options": ["أ و ل", "و أ ل", "أ ل ف"], "answer": "أ و ل", "explain_uz": "«أ و ل» — birinchi/boshlanish o'zagi: avval, ibtido.", "audio": "", "root": "أ و ل", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«ikkinchi sahifa» (ayol) qaysi?", "q_ar": "", "options": ["الصَّفْحَةُ الثَّانِيَةُ", "الصَّفْحَةُ الثَّانِي", "الثَّانِي الصَّفْحَةُ", "صَفْحَةٌ ثَانِيَةٌ"], "answer": "الصَّفْحَةُ الثَّانِيَةُ", "explain_uz": "Ayol otga tartib son ة bilan moslashadi: الثَّانِيَة.", "audio": "", "root": "", "pattern": "", "words": []},

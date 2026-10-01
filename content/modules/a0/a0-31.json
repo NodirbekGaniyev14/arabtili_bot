@@ -199,7 +199,7 @@
    "options": [],
    "answer": "maktab (madrasa)",
    "explain_uz": "O'zbekcha \"maktab\" ham arabchadan olingan.",
-   "audio": "",
+   "audio": "q/e66a77ddd4bb.mp3",
    "root": "",
    "pattern": "",
    "words": []
@@ -234,10 +234,11 @@
   },
   {
    "type": "fill_blank",
-   "q_uz": "Bo'sh joyni to'ldiring: مَدِين_ (shahar)",
+   "q_uz": "Bo'sh joyni to'ldiring: مَدِين_ (shahar) — oxiriga bitta harf kerak",
    "q_ar": "",
    "options": [],
    "answer": "ة",
+   "accept": ["مَدِينَة"],
    "explain_uz": "Muannas ot oxirida ta marbuta keladi: مَدِينة.",
    "audio": "",
    "root": "",

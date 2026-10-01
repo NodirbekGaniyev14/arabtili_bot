@@ -82,7 +82,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "Ka'ba atrofida aylanish qaysi?", "q_ar": "", "options": ["طَوَاف", "سَعْي", "حَلْق", "مِيقَات"], "answer": "طَوَاف", "explain_uz": "طَوَاف — Ka'ba atrofida 7 marta aylanish. سَعْي — Safo-Marva orasida.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "لَبِسْتُ الإِحْرَامَ", "options": [], "answer": "ihrom kiydim", "accept": ["ehrom kiydim", "ihromga kirdim"], "explain_uz": "لَبِسْتُ = kiydim, الإِحْرَام = ihrom.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "لَبِسْتُ الإِحْرَامَ", "options": [], "answer": "ihrom kiydim", "accept": ["ehrom kiydim", "ihromga kirdim"], "explain_uz": "لَبِسْتُ = kiydim, الإِحْرَام = ihrom.", "audio": "q/e7beaed2e138.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Safo va Marva orasida yurish qaysi?", "q_ar": "", "options": ["سَعْي", "طَوَاف", "تَلْبِيَة", "حَلْق"], "answer": "سَعْي", "explain_uz": "سَعْي — Safo va Marva orasida 7 marta yurish.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ح ر م» o'zagidan?", "q_ar": "", "options": ["إِحْرَام", "طَوَاف", "سَعْي"], "answer": "إِحْرَام", "explain_uz": "«ح ر م» — muqaddaslik o'zagi: إِحْرَام (ihrom), الحَرَم, harom, mahram.", "audio": "", "root": "ح ر م", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "ihrom bog'lash joyi (miqot)", "q_ar": "", "options": [], "answer": "مِيقَات", "explain_uz": "مِيقَات — ihrom bog'lanadigan belgilangan joy (و ق ت o'zagidan).", "audio": "", "root": "", "pattern": "", "words": []},

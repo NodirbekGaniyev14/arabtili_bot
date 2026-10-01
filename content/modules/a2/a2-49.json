@@ -75,7 +75,7 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«فَجْأَةً» ma'nosi?", "q_ar": "", "options": ["to'satdan", "nihoyat", "boshida", "keyin"], "answer": "to'satdan", "explain_uz": "فَجْأَةً — to'satdan, birdan.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«أَخِيرًا» ma'nosi?", "q_ar": "", "options": ["nihoyat", "to'satdan", "shu paytda", "boshida"], "answer": "nihoyat", "explain_uz": "أَخِيرًا — nihoyat, oxir-oqibat.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَاذَا حَدَثَ؟", "options": [], "answer": "nima bo'ldi", "accept": ["nima sodir bo'ldi", "nima yuz berdi", "nima gap"], "explain_uz": "مَاذَا = nima, حَدَثَ = yuz berdi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَاذَا حَدَثَ؟", "options": [], "answer": "nima bo'ldi", "accept": ["nima sodir bo'ldi", "nima yuz berdi", "nima gap"], "explain_uz": "مَاذَا = nima, حَدَثَ = yuz berdi.", "audio": "q/500cca915f21.mp3", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«حَدَثَ، حَادِثَة» qaysi o'zakdan?", "q_ar": "", "options": ["ح د ث", "ح د د", "ح ذ ر"], "answer": "ح د ث", "explain_uz": "«ح د ث» — yuz berish o'zagi: hadis, hodisa, muhaddis.", "audio": "", "root": "ح د ث", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "ovoz, tovush", "q_ar": "", "options": [], "answer": "صَوْت", "explain_uz": "صَوْت — ovoz (o'zbekcha 'savt').", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "qahramon", "q_ar": "", "options": [], "answer": "بَطَل", "explain_uz": "بَطَل — qahramon.", "audio": "", "root": "", "pattern": "", "words": []},

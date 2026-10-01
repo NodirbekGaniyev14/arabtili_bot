@@ -82,7 +82,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«bankomat» qaysi?", "q_ar": "", "options": ["صَرَّاف", "صَرْف", "عُمْلَة", "رَصِيد"], "answer": "صَرَّاف", "explain_uz": "صَرَّاف (الآلي) — bankomat/kassir.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَدْفَعُ بِالبِطَاقَةِ", "options": [], "answer": "karta bilan to'layman", "accept": ["kartadan to'layman", "karta orqali to'layman", "karta bilan to'lov qilaman"], "explain_uz": "أَدْفَعُ = to'layman, بِالبِطَاقَة = karta bilan.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أَدْفَعُ بِالبِطَاقَةِ", "options": [], "answer": "karta bilan to'layman", "accept": ["kartadan to'layman", "karta orqali to'layman", "karta bilan to'lov qilaman"], "explain_uz": "أَدْفَعُ = to'layman, بِالبِطَاقَة = karta bilan.", "audio": "q/250e27912100.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Saudiya mahalliy to'lov tizimi qaysi?", "q_ar": "", "options": ["مَدَى", "دُولَار", "تَحْوِيل", "رَصِيد"], "answer": "مَدَى", "explain_uz": "مَدَى — Saudiya milliy karta/to'lov tizimi.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ص ر ف» o'zagidan?", "q_ar": "", "options": ["صَرَّاف", "بِطَاقَة", "رَصِيد"], "answer": "صَرَّاف", "explain_uz": "«ص ر ف» — sarflash/almashtirish o'zagi: صَرَّاف, صَرْف, masraf.", "audio": "", "root": "ص ر ف", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "valyuta", "q_ar": "", "options": [], "answer": "عُمْلَة", "explain_uz": "عُمْلَة — valyuta/pul birligi.", "audio": "", "root": "", "pattern": "", "words": []},

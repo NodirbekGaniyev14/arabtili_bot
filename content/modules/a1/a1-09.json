@@ -76,7 +76,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«U (ayol) yozdi» qaysi?", "q_ar": "", "options": ["كَتَبَتْ", "كَتَبَ", "كَتَبْتُ", "يَكْتُبُ"], "answer": "كَتَبَتْ", "explain_uz": "Ayol uchun ـَتْ qo'shiladi: كَتَبَتْ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "ذَهَبَ", "options": [], "answer": "u bordi", "explain_uz": "ذَهَبَ — u (erkak) bordi/ketdi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "ذَهَبَ", "options": [], "answer": "u bordi", "explain_uz": "ذَهَبَ — u (erkak) bordi/ketdi.", "audio": "q/440735301132.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "O'tgan zamon fe'lining ASOS shakli qaysi shaxs?", "q_ar": "", "options": ["هُوَ (u-erkak)", "أَنَا (men)", "نَحْنُ (biz)", "هُمْ (ular)"], "answer": "هُوَ (u-erkak)", "explain_uz": "Asos shakl = «u (erkak) qildi»: فَعَلَ, masalan كَتَبَ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ذ ه ب» o'zagidan?", "q_ar": "", "options": ["ذَهَبَ", "كَتَبَ", "شَرِبَ"], "answer": "ذَهَبَ", "explain_uz": "«ذ ه ب» — borish o'zagi: ذَهَبَ (bordi), مَذْهَب (mazhab).", "audio": "", "root": "ذ ه ب", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "Ayol shaklga aylantiring: «دَرَسَ» → ? (qiz o'qidi)", "q_ar": "____", "options": [], "answer": "دَرَسَتْ", "explain_uz": "ـَتْ qo'shiladi: دَرَسَتْ.", "audio": "", "root": "", "pattern": "", "words": []},

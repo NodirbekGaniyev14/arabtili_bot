@@ -77,7 +77,7 @@
  "micro_test": [
   {"type": "mcq", "q_uz": "«مَرَّ» qaysi tur?", "q_ar": "", "options": ["مُضَاعَف (ikkilangan)", "مَهْمُوز", "أَجْوَف", "نَاقِص"], "answer": "مُضَاعَف (ikkilangan)", "explain_uz": "Muzoaf — 2=3 harf (م ر ر), shadda bilan.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«سَأَلَ» qaysi tur (hamzali)?", "q_ar": "", "options": ["مَهْمُوز", "مُضَاعَف", "أَجْوَف", "صَحِيح"], "answer": "مَهْمُوز", "explain_uz": "Mahmuz — o'zagida hamza (س أ ل).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَرَّ الوَقْتُ بِسُرْعَةٍ", "options": [], "answer": "vaqt tez o'tdi", "explain_uz": "مَرَّ = o'tdi, الوَقْت = vaqt, بِسُرْعَة = tez.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَرَّ الوَقْتُ بِسُرْعَةٍ", "options": [], "answer": "vaqt tez o'tdi", "explain_uz": "مَرَّ = o'tdi, الوَقْت = vaqt, بِسُرْعَة = tez.", "audio": "q/1c7d4e858fd1.mp3", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "«مَرَّ، مَمَرّ» qaysi o'zakdan?", "q_ar": "", "options": ["م ر ر", "م ر أ", "م ر ض"], "answer": "م ر ر", "explain_uz": "«م ر ر» — o'tish o'zagi: murur, marra, mamarr.", "audio": "", "root": "م ر ر", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "boshladi", "q_ar": "", "options": [], "answer": "بَدَأَ", "explain_uz": "بَدَأَ (mahmuz) — boshladi.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "qaytardi, javob berdi", "q_ar": "", "options": [], "answer": "رَدَّ", "accept": ["أَجَابَ"], "explain_uz": "رَدَّ (muzoaf) — qaytardi/javob berdi.", "audio": "", "root": "", "pattern": "", "words": []},

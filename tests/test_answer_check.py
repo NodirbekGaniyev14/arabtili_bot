@@ -305,3 +305,24 @@ def test_reported_items_fixed_in_content():
     assert "men mashg'ulman" in items[("a2-20", "أَنَا مَشْغُولٌ")]["accept"]
     assert "شَعْب" in items[("a1-12", "odamlar, xalq")]["accept"]
     assert "البَارِحَة" in items[("a1-10", "kecha (kun)")]["accept"]
+
+
+def test_report_k29_4_answers():
+    """/javoblar (3 kun, 585 ta): haqiqiy muqobil javoblar qabul, xato javoblar baribir rad."""
+    ok = [
+        lat("sen (ayol) yozding", "sen yozding , muannas jins"),  # «jins» — izoh so'zi
+        lat("sen (ayol) yozding", "sen yozding, muannas jins"),
+        lat("sen (ayol) yozasan", "sen yozyapsan (musanna)"),
+        ar("جَمِيل", "جميلة", mode="translate", accept=["حَسَن", "جَمِيلَة"]),  # «Jamila» ismini biladigan o'quvchi
+        ar("نَتَعَلَّمُ", "ندرس", mode="translate", accept=["نَدْرُسُ"]),  # «biz o'rganamiz» = نَدْرُسُ ham
+        ar("ة", "مدينة", mode="fill", accept=["مَدِينَة"]),  # butun so'zni yozgan
+    ]
+    wrong = [
+        lat("sen (ayol) yozding", "u yozdi jins"),
+        lat("ular o'rganadilar", "o'rgatadilar", accept=["ular o'rganishadi"]),  # o'rganmoq ≠ o'rgatmoq
+        ar("نَتَعَلَّمُ", "يتعلم", mode="translate", accept=["نَدْرُسُ"]),
+        ar("جَمِيل", "جمال", mode="translate", accept=["حَسَن", "جَمِيلَة"]),
+    ]
+    res = run(ok + wrong)
+    assert all(r["ok"] for r in res[: len(ok)]), res[: len(ok)]
+    assert not any(r["ok"] for r in res[len(ok) :]), res[len(ok) :]

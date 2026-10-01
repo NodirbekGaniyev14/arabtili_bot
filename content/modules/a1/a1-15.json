@@ -74,7 +74,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«Bormadim» qaysi?", "q_ar": "", "options": ["مَا ذَهَبْتُ", "ذَهَبْتُ مَا", "لا ذَهَبْتُ", "مَا أَذْهَبُ"], "answer": "مَا ذَهَبْتُ", "explain_uz": "Inkor مَا fe'l OLDIDA, fe'l o'zgarmaydi: مَا ذَهَبْتُ.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَا فَهِمْتُ", "options": [], "answer": "tushunmadim", "explain_uz": "مَا + فَهِمْتُ (tushundim) = tushunmadim.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَا فَهِمْتُ", "options": [], "answer": "tushunmadim", "explain_uz": "مَا + فَهِمْتُ (tushundim) = tushunmadim.", "audio": "q/76dd0a2095eb.mp3", "root": "", "pattern": "", "words": []},
   {"type": "fill_blank", "q_uz": "Inkor qiling: «كَتَبَ» → «____ كَتَبَ» (yozmadi)", "q_ar": "____ كَتَبَ", "options": [], "answer": "مَا", "explain_uz": "Fe'l oldiga مَا qo'yiladi: مَا كَتَبَ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «ق ب ل» o'zagidan?", "q_ar": "", "options": ["قَبْلَ", "بَعْدَ", "لَكِنْ"], "answer": "قَبْلَ", "explain_uz": "«ق ب ل» — oldin/qabul o'zagi: قَبْلَ (oldin), مُسْتَقْبَل (kelajak), qibla.", "audio": "", "root": "ق ب ل", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "lekin, ammo", "q_ar": "", "options": [], "answer": "لَكِنْ", "accept": ["لَكِنَّ", "وَلَكِنْ"], "explain_uz": "لَكِنْ — lekin (qarama-qarshilik bog'lovchisi).", "audio": "", "root": "", "pattern": "", "words": []},

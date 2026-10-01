@@ -76,7 +76,7 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "«besh» qaysi?", "q_ar": "", "options": ["خَمْسَة", "سِتَّة", "أَرْبَعَة", "سَبْعَة"], "answer": "خَمْسَة", "explain_uz": "خَمْسَة — besh (5).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "سَبْعَةُ أَيَّامٍ", "options": [], "answer": "yetti kun", "accept": ["yettita kun", "7 kun", "bir hafta"], "explain_uz": "سَبْعَة (7) + أَيَّام (kunlar).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "سَبْعَةُ أَيَّامٍ", "options": [], "answer": "yetti kun", "accept": ["yettita kun", "7 kun", "bir hafta"], "explain_uz": "سَبْعَة (7) + أَيَّام (kunlar).", "audio": "q/6dc8cf149337.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "3–10 sonlaridan keyin ot qaysi shaklda?", "q_ar": "", "options": ["ko'plik-jarr", "birlik-raf'", "ikkilik", "birlik-nasb"], "answer": "ko'plik-jarr", "explain_uz": "3–10 dan keyin ot ko'plik va jarr: ثَلاثَةُ كُتُبٍ.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "match_root", "q_uz": "Qaysi so'z «و ح د» o'zagidan?", "q_ar": "", "options": ["وَاحِد", "عَشَرَة", "عَدَد"], "answer": "وَاحِد", "explain_uz": "«و ح د» — birlik o'zagi: وَاحِد (bir), tavhid, vohid.", "audio": "", "root": "و ح د", "pattern": "", "words": []},
   {"type": "translate_uz_ar", "q_uz": "o'n (10)", "q_ar": "", "options": [], "answer": "عَشَرَة", "accept": ["عَشْر"], "explain_uz": "عَشَرَة — o'n (10).", "audio": "", "root": "", "pattern": "", "words": []},

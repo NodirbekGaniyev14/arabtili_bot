@@ -60,13 +60,13 @@
   }
  },
  "micro_test": [
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "بَابْ", "options": [], "answer": "eshik", "accept": ["darvoza", "bob"], "explain_uz": "بَابْ — eshik.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "نُور", "options": [], "answer": "nur", "accept": ["yorug'lik", "ziyo"], "explain_uz": "نُور — nur, yorug'lik.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "بَابْ", "options": [], "answer": "eshik", "accept": ["darvoza", "bob"], "explain_uz": "بَابْ — eshik.", "audio": "q/3bc07e4b9cb9.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "نُور", "options": [], "answer": "nur", "accept": ["yorug'lik", "ziyo"], "explain_uz": "نُور — nur, yorug'lik.", "audio": "q/9a1a4a349f04.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "بَابْ da cho'ziq unli qaysi?", "q_ar": "", "options": ["alif (ا)", "vov (و)", "yo (ي)", "yo'q"], "answer": "alif (ا)", "explain_uz": "Alif «a» ni cho'zadi: «baab».", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أُمّ", "options": [], "answer": "ona", "accept": ["oyi", "volida", "ayam"], "explain_uz": "أُمّ — ona (shadda bilan «umm»).", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "أُمّ", "options": [], "answer": "ona", "accept": ["oyi", "volida", "ayam"], "explain_uz": "أُمّ — ona (shadda bilan «umm»).", "audio": "q/d81f38670175.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«qo'l» ma'nosidagi so'z qaysi?", "q_ar": "", "options": ["يَدْ", "أَخْ", "دِين", "نُور"], "answer": "يَدْ", "explain_uz": "يَدْ («yad») — qo'l.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "dictation", "q_uz": "Eshiting va yozing.", "q_ar": "", "options": [], "answer": "بَابْ", "explain_uz": "«bāb» — eshik: بَابْ.", "audio": "a0/bab.mp3", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "دِين", "options": [], "answer": "din", "explain_uz": "دِين — din, e'tiqod.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "دِين", "options": [], "answer": "din", "explain_uz": "دِين — din, e'tiqod.", "audio": "q/4aff62a622b6.mp3", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "word", "front": "بَابْ", "back": "eshik (bāb)", "deck": "msa"},

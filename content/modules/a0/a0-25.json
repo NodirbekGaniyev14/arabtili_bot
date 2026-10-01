@@ -58,11 +58,11 @@
  },
  "micro_test": [
   {"type": "mcq", "q_uz": "مَنْ qanday o'qiladi?", "q_ar": "مَنْ", "options": ["man", "min", "mun", "nam"], "answer": "man", "explain_uz": "مَ («ma») + نْ («n») = «man».", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَنْ", "options": [], "answer": "kim", "explain_uz": "مَنْ — «kim» so'roq so'zi.", "audio": "", "root": "", "pattern": "", "words": []},
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَنْ", "options": [], "answer": "kim", "explain_uz": "مَنْ — «kim» so'roq so'zi.", "audio": "q/2348694c3c16.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "«nechta» ma'nosidagi so'z qaysi?", "q_ar": "", "options": ["كَمْ", "مَنْ", "مَا", "لَكَ"], "answer": "كَمْ", "explain_uz": "كَمْ («kam») — nechta.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "مَا so'zida alif nima vazifa bajaradi?", "q_ar": "", "options": ["«a» ni cho'zadi", "«i» qo'shadi", "sukun qo'yadi", "hech narsa"], "answer": "«a» ni cho'zadi", "explain_uz": "Alif oldingi fathani cho'zadi: «maa».", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Arab so'zi qaysi tomondan o'qiladi?", "q_ar": "", "options": ["o'ngdan chapga", "chapdan o'ngga", "yuqoridan", "farqi yo'q"], "answer": "o'ngdan chapga", "explain_uz": "Birinchi harf eng o'ngda.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَا", "options": [], "answer": "nima", "explain_uz": "مَا — «nima» so'roq so'zi.", "audio": "", "root": "", "pattern": "", "words": []}
+  {"type": "translate_ar_uz", "q_uz": "", "q_ar": "مَا", "options": [], "answer": "nima", "explain_uz": "مَا — «nima» so'roq so'zi.", "audio": "q/cf093c097b3b.mp3", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "word", "front": "مَنْ", "back": "kim (man)", "deck": "msa"},
