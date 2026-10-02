@@ -344,8 +344,26 @@ async def check_live() -> str:
 
     if settings.live_fake:
         return _warn("Jonli suhbat: LIVE_FAKE=1 — soxta suhbatdosh (prod'da o'chiring)", ".env dan LIVE_FAKE ni olib tashlang → restart")
-    if not settings.gemini_api_key.strip():
+    key = lv.api_key()
+    if not key:
         return "⚪ Jonli suhbat: o'chiq (GEMINI_API_KEY yo'q — «📞 Jonli» tugmasi ko'rinmaydi)"
+    new_key_fix = "aistudio.google.com → Get API key → «Create API key» → .env: GEMINI_API_KEY=AIza… (qo'shtirnoqsiz) → restart"
+    shape = "" if key.startswith("AIza") else f" · kalit «{key[:4]}…» bilan boshlanadi (AI Studio kaliti «AIza…», ~39 belgi; sizniki {len(key)})"
+
+    # 1) Kalit — REST bilan (WebSocket xatosi «OAuth token kutilgan» deb chalg'itadi)
+    probe = await lv.probe_key()
+    if not probe["ok"]:
+        if probe["status"] in (400, 401, 403):
+            return _bad(f"Jonli suhbat: Google GEMINI_API_KEY ni rad etdi ({probe['status']}: {probe['error']}){shape}", new_key_fix)
+        return _warn(f"Jonli suhbat: Google API javob bermadi ({probe['status'] or '—'}: {probe['error']})")
+    live = probe["live_models"]
+    # 2) Model — shu kalitga ochiq jonli modellar ichida bormi
+    if live and settings.live_model not in live:
+        return _bad(
+            f"Jonli suhbat: kalit ishlaydi, lekin LIVE_MODEL={settings.live_model} bu kalitda yo'q. Jonli modellar: {', '.join(live[:6])}",
+            f".env → LIVE_MODEL={live[0]} → restart",
+        )
+    # 3) Haqiqiy jonli ulanish
     t0 = time.monotonic()
     try:
         async with lv.GeminiLive("You are a test. Do not speak."):
@@ -353,9 +371,10 @@ async def check_live() -> str:
     except lv.LiveUnavailable as e:
         cause = str(e.__cause__ or e)[:160]
         if e.kind == "auth":
-            return _bad(f"Jonli suhbat: GEMINI_API_KEY rad etildi — {cause}", "aistudio.google.com → API keys → .env → restart")
+            return _bad(f"Jonli suhbat: kalit REST'da ishlaydi, lekin jonli ulanish rad etildi — {cause}{shape}",
+                        "AI Studio'da shu kalit loyihasida billing yoqilganini tekshiring yoki yangi kalit yarating")
         return _bad(f"Jonli suhbat: {settings.live_model} ga ulanib bo'lmadi — {cause}",
-                    "LIVE_MODEL nomini tekshiring: ai.google.dev/gemini-api/docs/live-guide")
+                    f"Jonli modellar: {', '.join(live[:6]) or 'ro‘yxatda yo‘q'} → .env LIVE_MODEL")
     except Exception as e:  # noqa: BLE001
         return _bad(f"Jonli suhbat: {type(e).__name__}: {str(e)[:120]}")
     caps = "cheklovsiz" if not (settings.live_free_seconds_day or settings.live_vip_seconds_month) else "limit yoqilgan"

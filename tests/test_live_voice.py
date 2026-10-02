@@ -380,14 +380,55 @@ async def test_diag_live_states(monkeypatch):
     monkeypatch.setattr(settings, "live_fake", True)
     assert (await diag.check_live()).startswith("⚠️")
     monkeypatch.setattr(settings, "live_fake", False)
-    monkeypatch.setattr(settings, "gemini_api_key", "AIza-test")
+
+    probe = {"ok": False, "status": 400, "error": "API key not valid. Please pass a valid API key.", "live_models": []}
+
+    async def fake_probe():
+        return probe
+
+    monkeypatch.setattr(lv, "probe_key", fake_probe)
+    # 1) kalit noto'g'ri (shakli ham boshqa) — aniq sabab va yo'l
+    monkeypatch.setattr(settings, "gemini_api_key", "GOCSPX-oauth-secret")
+    line = await diag.check_live()
+    assert line.startswith("❌") and "rad etdi" in line and "API key not valid" in line and "«GOCS…»" in line
+    assert "Create API key" in line
+
+    # 2) kalit ishlaydi, model nomi yo'q — mavjudlari taklif qilinadi
+    monkeypatch.setattr(settings, "gemini_api_key", '"AIzaGood"')  # qo'shtirnoq bilan ko'chirilgan
+    assert lv.api_key() == "AIzaGood"
+    probe.update(ok=True, status=200, error="", live_models=["gemini-live-x", "gemini-live-y"])
+    monkeypatch.setattr(settings, "live_model", "gemini-3.8-live")
+    line = await diag.check_live()
+    assert line.startswith("❌") and "LIVE_MODEL=gemini-3.8-live bu kalitda yo'q" in line and "LIVE_MODEL=gemini-live-x" in line
+
+    # 3) REST ishlaydi, WebSocket rad etadi
+    monkeypatch.setattr(settings, "live_model", "gemini-live-x")
 
     async def denied(self):
-        raise lv.LiveUnavailable("x", "auth") from RuntimeError("API key not valid")
+        raise lv.LiveUnavailable("x", "auth") from RuntimeError("1008 Request had invalid authentication credentials")
 
     monkeypatch.setattr(lv.GeminiLive, "__aenter__", denied)
     line = await diag.check_live()
-    assert line.startswith("❌") and "rad etildi" in line and "API key not valid" in line
+    assert line.startswith("❌") and "REST'da ishlaydi" in line
+
+    # 4) hammasi joyida
+    async def ok(self):
+        return self
+
+    async def close(self, *a):
+        return None
+
+    monkeypatch.setattr(lv.GeminiLive, "__aenter__", ok)
+    monkeypatch.setattr(lv.GeminiLive, "__aexit__", close)
+    assert (await diag.check_live()).startswith("✅")
+
+
+def test_auth_error_detection_matches_google_websocket_message():
+    """Serverdagi haqiqiy xato (2026-10-02): «1008 None. Request had invalid authentication credentials…» — bu kalit
+    muammosi, «model nomi» emas."""
+    assert lv.is_auth_error("ConnectionClosedError(1008 None. Request had invalid authentication credentials. Expected OAuth 2")
+    assert lv.is_auth_error("API key not valid")
+    assert not lv.is_auth_error("1008 models/gemini-x is not found for API version v1beta")
 
 
 # ── suiiste'molga qarshi ──

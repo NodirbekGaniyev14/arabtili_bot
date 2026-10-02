@@ -57,9 +57,48 @@ RATE_BURST_SECONDS = 2.0
 START_TEXT = "[START] Greet me and begin the conversation."
 
 
+def api_key() -> str:
+    """`.env` dagi kalit — qo'shtirnoq/probel/\\r bilan nusxalangan bo'lsa ham toza (Google bunday kalitni rad etadi)."""
+    return (settings.gemini_api_key or "").strip().strip("\"'").strip()
+
+
 def available() -> bool:
     """«📞 Jonli» tugmasi ko'rinadimi: kalit bor (yoki preview'da soxta suhbatdosh)."""
-    return bool(settings.gemini_api_key.strip()) or settings.live_fake
+    return bool(api_key()) or settings.live_fake
+
+
+AUTH_MARKERS = ("api key", "api_key", "401", "403", "permission", "authentication", "credential", "unauthenticated")
+
+
+def is_auth_error(text: str) -> bool:
+    low = text.lower()
+    return any(m in low for m in AUTH_MARKERS)
+
+
+async def probe_key() -> dict:
+    """Kalitni REST bilan tekshiradi (WebSocket'dan aniqroq xato beradi) va jonli (bidiGenerateContent) modellarni topadi.
+    Qaytaradi: {"ok": bool, "status": int, "error": str, "live_models": [..]}."""
+    import httpx
+
+    url = "https://generativelanguage.googleapis.com/v1beta/models"
+    try:
+        async with httpx.AsyncClient(timeout=15) as client:
+            r = await client.get(url, params={"pageSize": 1000}, headers={"x-goog-api-key": api_key()})
+    except Exception as e:  # noqa: BLE001
+        return {"ok": False, "status": 0, "error": f"tarmoq: {type(e).__name__}", "live_models": []}
+    if r.status_code != 200:
+        try:
+            msg = r.json().get("error", {}).get("message", "")
+        except Exception:  # noqa: BLE001
+            msg = r.text[:200]
+        return {"ok": False, "status": r.status_code, "error": msg[:200], "live_models": []}
+    models = r.json().get("models", [])
+    live = sorted(
+        m.get("name", "").removeprefix("models/")
+        for m in models
+        if "bidiGenerateContent" in (m.get("supportedGenerationMethods") or [])
+    )
+    return {"ok": True, "status": 200, "error": "", "live_models": live}
 
 
 # ────────────────────────── Prompt ──────────────────────────
@@ -219,13 +258,13 @@ class GeminiLive:
     async def __aenter__(self) -> "GeminiLive":
         from google import genai
 
-        client = genai.Client(api_key=settings.gemini_api_key)
+        client = genai.Client(api_key=api_key())
         self._cm = client.aio.live.connect(model=settings.live_model, config=self.config())
         try:
             self._session = await asyncio.wait_for(self._cm.__aenter__(), timeout=15)
         except Exception as e:  # noqa: BLE001
             text = repr(e)
-            kind = "auth" if any(s in text for s in ("API key", "401", "403", "PERMISSION", "API_KEY")) else "down"
+            kind = "auth" if is_auth_error(text) else "down"
             log.warning("Gemini Live ulanmadi (%s): %s", kind, text[:300])
             raise LiveUnavailable("Jonli suhbat hozircha ishlamayapti. Birozdan keyin qayta urinib ko'ring.", kind) from e
         return self
@@ -308,7 +347,7 @@ class FakeLive:
 
 def open_live(system: str):
     """Sessiya yaratuvchi — testlar almashtiradi."""
-    return FakeLive(system) if settings.live_fake or not settings.gemini_api_key.strip() else GeminiLive(system)
+    return FakeLive(system) if settings.live_fake or not api_key() else GeminiLive(system)
 
 
 # ────────────────────────── Relay ──────────────────────────
@@ -480,7 +519,7 @@ async def save(session: AsyncSession, user: User, topic: str, level: str, res: R
         user_id=user.id,
         topic=topic[:24],
         level=level[:4],
-        model=("fake" if settings.live_fake or not settings.gemini_api_key.strip() else settings.live_model)[:40],
+        model=("fake" if settings.live_fake or not api_key() else settings.live_model)[:40],
         seconds=int(round(res.seconds)),
         user_turns=res.user_turns,
         audio_in_tokens=usage["audio_in"],
