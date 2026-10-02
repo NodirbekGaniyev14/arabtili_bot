@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { api, type LiveReview, type TutorTopic } from "../lib/api";
 import { LiveCall, liveSupported, type LiveState } from "../lib/liveVoice";
 
-/** K30 «📞 Jonli suhbat» — Jamal ustoz bilan real vaqtda ovozli gaplashish (Gemini Live, server relay orqali).
- *  Qo'ng'iroq faqat tugma bosilganda boshlanadi (iOS: ovoz faqat bosish ichida yoqiladi).
+/** K30 «🎙 Jonli AI bilan suhbat» — Jamal ustoz bilan real vaqtda ovozli gaplashish (Gemini Live, server relay orqali).
+ *  Suhbat faqat tugma bosilganda boshlanadi (iOS: ovoz faqat bosish ichida yoqiladi).
  *  Oxirida — tahlil (Claude): xatolar daftarga, yangi so'zlar, XP. */
 
 type Line = { role: "user" | "model"; text: string };
@@ -17,7 +17,7 @@ function mmss(s: number): string {
 
 const END_TEXT: Record<string, string> = {
   idle: "Uzoq jimlik bo'ldi — suhbat yakunlandi.",
-  time: "Bitta suhbat vaqti tugadi. Yana davom etish uchun yangi qo'ng'iroq boshlang.",
+  time: "Bitta suhbat vaqti tugadi. Yana davom etish uchun yangi suhbat boshlang.",
   closed: "Suhbat yakunlandi.",
   error: "Aloqa uzildi — suhbat saqlandi.",
 };
@@ -134,7 +134,7 @@ export default function LiveTalk({
       {/* Sarlavha */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-cardline bg-card">
         <div className="min-w-0">
-          <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft">📞 JONLI SUHBAT</div>
+          <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft">🎙 JONLI AI BILAN SUHBAT</div>
           <div className="font-extrabold truncate">
             {topic.emoji} {topic.title_uz}
           </div>
@@ -165,9 +165,9 @@ export default function LiveTalk({
           <div className="mt-6 w-28 h-28 rounded-full bg-gradient-to-br from-emerald-deep to-emerald-dark text-white flex items-center justify-center text-5xl font-arabic shadow-lg">
             ج
           </div>
-          <div className="mt-4 text-xl font-extrabold">Jamal bilan jonli gaplashing</div>
+          <div className="mt-4 text-xl font-extrabold">AI ustoz Jamal bilan jonli suhbat</div>
           <p className="mt-2 text-sm font-semibold text-ink-soft leading-relaxed">
-            Telefon qo'ng'irog'idek: siz arabcha gapirasiz, ustoz eshitadi, javob beradi va xatoni o'zbekcha tushuntiradi.
+            Xuddi odam bilan gaplashgandek: siz arabcha gapirasiz, AI ustoz eshitadi, javob beradi va xatoni o'zbekcha tushuntiradi.
             Tushunmasangiz — o'zbekcha so'rang.
           </p>
           <div className="mt-4 w-full space-y-2 text-left">
@@ -191,7 +191,7 @@ export default function LiveTalk({
             disabled={!liveSupported()}
             className="mt-6 w-full rounded-2xl bg-emerald-deep py-4 text-white font-extrabold text-[16px] active:scale-[0.98] transition-transform disabled:opacity-40"
           >
-            📞 Qo'ng'iroqni boshlash
+            🎙 Suhbatni boshlash
           </button>
         </div>
       )}
@@ -276,7 +276,7 @@ export default function LiveTalk({
       {ended && (
         <div className="flex-1 overflow-y-auto p-4 space-y-3">
           <div className="rounded-3xl bg-gradient-to-br from-emerald-deep to-emerald-dark p-5 text-white shadow-lg">
-            <div className="text-[11px] font-extrabold tracking-[0.14em] text-gold-soft">📞 SUHBAT YAKUNLANDI</div>
+            <div className="text-[11px] font-extrabold tracking-[0.14em] text-gold-soft">🎙 SUHBAT YAKUNLANDI</div>
             <div className="mt-1 text-2xl font-extrabold">{mmss(ended.seconds || elapsed)}</div>
             <div className="text-[13px] font-semibold text-white/85">
               {END_TEXT[ended.reason] ?? "Barakalla! Har kungi jonli suhbat — eng tez yo'l."}
@@ -362,7 +362,7 @@ export default function LiveTalk({
             onClick={begin}
             className="w-full rounded-2xl bg-emerald-deep py-3.5 text-white font-extrabold active:scale-[0.98] transition-transform"
           >
-            📞 Yana gaplashish
+            🎙 Yana gaplashish
           </button>
           <button onClick={onClose} className="w-full py-2 text-sm font-bold text-ink-soft underline underline-offset-4">
             Yopish

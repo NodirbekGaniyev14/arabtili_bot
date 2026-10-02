@@ -63,7 +63,7 @@ def api_key() -> str:
 
 
 def available() -> bool:
-    """«📞 Jonli» tugmasi ko'rinadimi: kalit bor (yoki preview'da soxta suhbatdosh)."""
+    """«🎙 Jonli AI bilan suhbat» tugmasi ko'rinadimi: kalit bor (yoki preview'da soxta suhbatdosh)."""
     return bool(api_key()) or settings.live_fake
 
 

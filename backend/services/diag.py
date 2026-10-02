@@ -346,7 +346,7 @@ async def check_live() -> str:
         return _warn("Jonli suhbat: LIVE_FAKE=1 — soxta suhbatdosh (prod'da o'chiring)", ".env dan LIVE_FAKE ni olib tashlang → restart")
     key = lv.api_key()
     if not key:
-        return "⚪ Jonli suhbat: o'chiq (GEMINI_API_KEY yo'q — «📞 Jonli» tugmasi ko'rinmaydi)"
+        return "⚪ Jonli suhbat: o'chiq (GEMINI_API_KEY yo'q — «🎙 Jonli AI bilan suhbat» tugmasi ko'rinmaydi)"
     # 2026-05-28 dan AI Studio faqat «AQ.» (auth key) beradi; eski «AIza» (standard) kalitlar bosqichma-bosqich o'chiriladi
     new_key_fix = (
         "AI Studio → API keys: eski ishlamaydigan kalitlarni o'chiring → «Create API key» (AQ.…) → "

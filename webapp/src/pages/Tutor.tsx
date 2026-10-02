@@ -94,7 +94,7 @@ const FREE_TABS: Tab[] = ["drill", "listen"];  // AI'siz, bepul bo'limlar
 
 const tg = () => window.Telegram?.WebApp;
 const VOICE_MODE_KEY = "arabiy_tutor_voice_mode";
-const LIVE_MODE_KEY = "arabiy_tutor_live_mode"; // K30: «📞 Jonli qo'ng'iroq» tanlovi
+const LIVE_MODE_KEY = "arabiy_tutor_live_mode"; // K30: «🎙 Jonli AI bilan suhbat» tanlovi
 
 const fmtSum = (n: number) => n.toLocaleString("ru-RU").replace(/,/g, " ");
 
@@ -142,7 +142,7 @@ export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProp
   const [saved, setSaved] = useState<Set<string>>(new Set());
   const [paywall, setPaywall] = useState<string | null>(null);
   const [trialBusy, setTrialBusy] = useState(false);
-  // K30: «📞 Jonli qo'ng'iroq» rejimi (tanlov eslab qolinadi) va ochilgan jonli suhbat mavzusi
+  // K30: «🎙 Jonli AI bilan suhbat» rejimi (tanlov eslab qolinadi) va ochilgan jonli suhbat mavzusi
   const [liveTopic, setLiveTopic] = useState<TutorTopic | null>(null);
   const [chatMode, setChatMode] = useState<"turn" | "live">(() => {
     try {
@@ -772,14 +772,14 @@ export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProp
                     chatMode === m ? "bg-emerald-deep text-white" : "text-ink-soft"
                   }`}
                 >
-                  {m === "turn" ? "💬 Navbatma-navbat" : "📞 Jonli qo'ng'iroq"}
+                  {m === "turn" ? "💬 Navbatma-navbat" : "🎙 Jonli AI bilan suhbat"}
                 </button>
               ))}
             </div>
           )}
           {tab === "chat" && info?.live && chatMode === "live" && (
             <div className="rounded-2xl bg-gold-soft border border-gold/40 px-4 py-2.5 text-[12px] font-semibold">
-              📞 Mavzuni tanlang — Jamal bilan telefon qo'ng'irog'idek jonli gaplashasiz: gapirasiz, eshitadi, darhol javob beradi.
+              🎙 Mavzuni tanlang — AI ustoz Jamal bilan jonli ovozli suhbat: siz gapirasiz, u eshitadi va darhol javob beradi.
             </div>
           )}
 

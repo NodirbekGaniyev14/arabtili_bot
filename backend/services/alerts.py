@@ -45,16 +45,16 @@ KINDS = {
     ),
     # K30 jonli ovozli suhbat (Gemini Live)
     "live_auth": (
-        "📞 <b>Jonli suhbat ishlamayapti — GEMINI_API_KEY rad etildi.</b>\n"
+        "🎙 <b>Jonli AI suhbat ishlamayapti — GEMINI_API_KEY rad etildi.</b>\n"
         "Kalit noto'g'ri, bekor qilingan yoki Live API ruxsati yo'q ({detail}).\n\n"
         "Yechim: aistudio.google.com → API keys → serverda .env <code>GEMINI_API_KEY=</code> → restart."
     ),
     "live_down": (
-        "📞 <b>Jonli suhbat: Gemini'ga ulanib bo'lmadi</b> ({detail}).\n"
+        "🎙 <b>Jonli AI suhbat: Gemini'ga ulanib bo'lmadi</b> ({detail}).\n"
         "Vaqtinchalik bo'lishi mumkin — davom etsa /tekshir. Model nomi: .env <code>LIVE_MODEL</code>."
     ),
     "live_budget": (
-        "📞 <b>Jonli suhbat sarfi bugun {detail} ga yetdi</b> (ogohlantirish chegarasi LIVE_DAILY_BUDGET_USD).\n"
+        "🎙 <b>Jonli AI suhbat sarfi bugun {detail} ga yetdi</b> (ogohlantirish chegarasi LIVE_DAILY_BUDGET_USD).\n"
         "Limit hozircha o'chiq. Kerak bo'lsa: .env <code>LIVE_FREE_SECONDS_DAY</code> / "
         "<code>LIVE_VIP_SECONDS_MONTH</code> → restart. Batafsil: /ustoz."
     ),

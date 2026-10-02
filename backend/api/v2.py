@@ -581,7 +581,7 @@ async def tutor_topics(
         "price": billing.price_summary(user),  # K29: odamning HAQIQIY narxi (paywall bilan bir xil)
         "ai": bool(settings.anthropic_api_key),
         "voice": stt.available(),
-        "live": live_voice.available(),  # K30 «📞 Jonli» — Gemini Live kaliti bor
+        "live": live_voice.available(),  # K30 «🎙 Jonli AI bilan suhbat» — Gemini Live kaliti bor
     }
 
 

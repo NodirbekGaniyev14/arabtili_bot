@@ -846,7 +846,7 @@ async def tutor_report(session: AsyncSession) -> str:
         else "cheklovsiz"
     )
     live_block = (
-        "📞 <b>Jonli suhbat</b> (" + live_state + ")\n"
+        "🎙 <b>Jonli AI suhbat</b> (" + live_state + ")\n"
         f"• Bugun: <b>{lv['today']['sessions']}</b> suhbat · {lv['today']['minutes']} daq · "
         f"{lv['today']['users']} o'quvchi · <b>{_usd(lv['today']['cost'])}</b>\n"
         f"• 7 kun: {lv['week']['sessions']} · {lv['week']['minutes']} daq · {_usd(lv['week']['cost'])}\n"

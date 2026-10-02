@@ -84,7 +84,7 @@ class Settings(BaseSettings):
     stt_openai_base_url: str = "https://api.openai.com/v1"
 
     # ── K30 Jonli ovozli suhbat (services/live_voice.py) — Google Gemini Live API ──
-    # Kalit: aistudio.google.com → Get API key. Bo'sh = «📞 Jonli» tugmasi ko'rinmaydi.
+    # Kalit: aistudio.google.com → Get API key. Bo'sh = «🎙 Jonli AI bilan suhbat» tugmasi ko'rinmaydi.
     gemini_api_key: str = ""
     live_model: str = "gemini-3.8-live"
     # Ovoz: Gemini TTS ovozlaridan biri (Charon — erkak, tushuntiruvchi; Jamal ustozga mos)

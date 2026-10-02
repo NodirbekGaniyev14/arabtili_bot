@@ -25,7 +25,7 @@ router = APIRouter()
 
 AUTH_TIMEOUT = 10
 MIN_LEFT_SECONDS = 10  # limit yoqilgan bo'lsa: bundan kam qolsa suhbat boshlanmaydi
-# Bir vaqtda: bitta o'quvchi — bitta qo'ng'iroq; server bo'yicha jami (1 vCPU / 1 GB — relay yengil, lekin cheksiz emas)
+# Bir vaqtda: bitta o'quvchi — bitta jonli suhbat; server bo'yicha jami (1 vCPU / 1 GB — relay yengil, lekin cheksiz emas)
 MAX_CONCURRENT = 30
 ACTIVE: set[int] = set()
 
