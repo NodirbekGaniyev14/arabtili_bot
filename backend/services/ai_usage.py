@@ -51,6 +51,7 @@ FEATURES = {
     "lesson_writing": "📝 Dars yozuvi (AI)",
     "onboarding": "🧭 Reja tuzish",
     "daily": "🎙 Kunlik savol",
+    "live_review": "📞 Jonli suhbat tahlili",
 }
 
 

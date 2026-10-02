@@ -1434,6 +1434,11 @@ export const api = {
       method: "POST",
       body: JSON.stringify({ ar, uz }),
     }),
+  liveReview: (session_id: number) =>
+    request<LiveReview>("/api/v2/live/review", {
+      method: "POST",
+      body: JSON.stringify({ session_id }),
+    }),
 
   // ── VIP tarif / to'lov ──
   getPayInfo: () => request<PayInfo>("/api/pay/info"),
@@ -1584,6 +1589,20 @@ export interface TutorTopics {
   ai: boolean;
   /** STT kaliti sozlangan — mikrofon ishlaydi */
   voice: boolean;
+  /** K30 jonli ovozli suhbat (Gemini Live) yoqilgan */
+  live?: boolean;
+}
+
+/** K30 jonli suhbatdan keyingi tahlil (Claude) */
+export interface LiveReview {
+  summary_uz: string;
+  mistakes: { said: string; fixed_ar: string; note_uz: string }[];
+  words: { ar: string; translit: string; uz: string }[];
+  xp: number;
+  seconds: number;
+  user_turns: number;
+  topic: string;
+  transcript: { role: "user" | "model"; text: string }[];
 }
 
 export interface TutorNewWord {

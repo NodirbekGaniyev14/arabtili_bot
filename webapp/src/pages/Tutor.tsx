@@ -17,6 +17,7 @@ import { Recorder, SILENT_MSG, isSilent, micSupported } from "../lib/recorder";
 import RateBar from "../components/RateBar";
 import Drill from "./Drill";
 import Listening from "./Listening";
+import LiveTalk from "./LiveTalk";
 import Paywall from "./Paywall";
 
 /** AI ustoz — darajaga mos jonli suhbat (speaking) va mock imtihonlar.
@@ -93,6 +94,7 @@ const FREE_TABS: Tab[] = ["drill", "listen"];  // AI'siz, bepul bo'limlar
 
 const tg = () => window.Telegram?.WebApp;
 const VOICE_MODE_KEY = "arabiy_tutor_voice_mode";
+const LIVE_MODE_KEY = "arabiy_tutor_live_mode"; // K30: «📞 Jonli qo'ng'iroq» tanlovi
 
 const fmtSum = (n: number) => n.toLocaleString("ru-RU").replace(/,/g, " ");
 
@@ -140,6 +142,24 @@ export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProp
   const [saved, setSaved] = useState<Set<string>>(new Set());
   const [paywall, setPaywall] = useState<string | null>(null);
   const [trialBusy, setTrialBusy] = useState(false);
+  // K30: «📞 Jonli qo'ng'iroq» rejimi (tanlov eslab qolinadi) va ochilgan jonli suhbat mavzusi
+  const [liveTopic, setLiveTopic] = useState<TutorTopic | null>(null);
+  const [chatMode, setChatMode] = useState<"turn" | "live">(() => {
+    try {
+      return localStorage.getItem(LIVE_MODE_KEY) === "1" ? "live" : "turn";
+    } catch {
+      return "turn";
+    }
+  });
+  const pickChatMode = (m: "turn" | "live") => {
+    setChatMode(m);
+    try {
+      localStorage.setItem(LIVE_MODE_KEY, m === "live" ? "1" : "0");
+    } catch {
+      /* jim */
+    }
+  };
+  const liveMode = !!info?.live && chatMode === "live";
 
   const startTrial = async () => {
     if (trialBusy) return;
@@ -506,6 +526,7 @@ export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProp
           }}
         />
       )}
+      {liveTopic && <LiveTalk topic={liveTopic} onClose={() => setLiveTopic(null)} onFinished={loadInfo} />}
 
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-cardline bg-card">
@@ -740,6 +761,28 @@ export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProp
             <div className="text-center text-ink-soft font-semibold pt-8">{loadError}</div>
           )}
 
+          {/* K30: jonli ovozli suhbat (Gemini Live) — server kaliti bo'lsa */}
+          {tab === "chat" && info?.live && (
+            <div className="grid grid-cols-2 gap-1 rounded-2xl bg-card border border-cardline p-1">
+              {(["turn", "live"] as const).map((m) => (
+                <button
+                  key={m}
+                  onClick={() => pickChatMode(m)}
+                  className={`rounded-xl py-2 text-[12px] font-extrabold transition-colors ${
+                    chatMode === m ? "bg-emerald-deep text-white" : "text-ink-soft"
+                  }`}
+                >
+                  {m === "turn" ? "💬 Navbatma-navbat" : "📞 Jonli qo'ng'iroq"}
+                </button>
+              ))}
+            </div>
+          )}
+          {tab === "chat" && info?.live && chatMode === "live" && (
+            <div className="rounded-2xl bg-gold-soft border border-gold/40 px-4 py-2.5 text-[12px] font-semibold">
+              📞 Mavzuni tanlang — Jamal bilan telefon qo'ng'irog'idek jonli gaplashasiz: gapirasiz, eshitadi, darhol javob beradi.
+            </div>
+          )}
+
           {tab === "chat" &&
             info?.topics.map((t) => (
               <ListCard
@@ -748,8 +791,8 @@ export default function Tutor({ onClose, initialTopicId, initialTab }: TutorProp
                 title={t.title_uz}
                 desc={t.desc_uz}
                 badge={t.recommended ? "" : `${t.min_level}+`}
-                disabled={!info.ai || loading}
-                onClick={() => start(t, null)}
+                disabled={liveMode ? false : !info.ai || loading}
+                onClick={() => (liveMode ? setLiveTopic(t) : start(t, null))}
               />
             ))}
 

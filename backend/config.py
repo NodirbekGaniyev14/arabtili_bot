@@ -83,6 +83,23 @@ class Settings(BaseSettings):
     stt_openai_model: str = "gpt-4o-transcribe"
     stt_openai_base_url: str = "https://api.openai.com/v1"
 
+    # ── K30 Jonli ovozli suhbat (services/live_voice.py) — Google Gemini Live API ──
+    # Kalit: aistudio.google.com → Get API key. Bo'sh = «📞 Jonli» tugmasi ko'rinmaydi.
+    gemini_api_key: str = ""
+    live_model: str = "gemini-3.8-live"
+    # Ovoz: Gemini TTS ovozlaridan biri (Charon — erkak, tushuntiruvchi; Jamal ustozga mos)
+    live_voice: str = "Charon"
+    # Bitta suhbat davomiyligi (Gemini ulanishi ~10 daqiqa yashaydi) va jimlikda yopish
+    live_max_seconds: int = 540
+    live_idle_seconds: int = 60
+    # Limitlar (0 = cheklovsiz — egasi qarori 2026-10-01: hozircha cheklamaymiz, sarfni kuzatamiz)
+    live_free_seconds_day: int = 0
+    live_vip_seconds_month: int = 0
+    # Kunlik sarf shundan oshsa adminga bir marta ogohlantirish (limit emas), USD
+    live_daily_budget_usd: float = 5.0
+    # Sinov/preview: haqiqiy Gemini o'rniga soxta suhbatdosh (kalitsiz UI sinovi)
+    live_fake: bool = False
+
     @field_validator("tutor_vip_model", "writing_model")
     @classmethod
     def _upgrade_legacy_model(cls, v: str, info: ValidationInfo) -> str:

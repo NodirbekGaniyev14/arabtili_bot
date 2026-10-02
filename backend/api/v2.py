@@ -551,7 +551,7 @@ async def tutor_topics(
     session: AsyncSession = Depends(get_session),
 ):
     from config import settings
-    from services import ai_usage, billing, referral, stt, tutor
+    from services import ai_usage, billing, live_voice, referral, stt, tutor
 
     level = await _user_level(session, user.id)
     access = await _tutor_access(session, user)
@@ -581,6 +581,7 @@ async def tutor_topics(
         "price": billing.price_summary(user),  # K29: odamning HAQIQIY narxi (paywall bilan bir xil)
         "ai": bool(settings.anthropic_api_key),
         "voice": stt.available(),
+        "live": live_voice.available(),  # K30 «📞 Jonli» — Gemini Live kaliti bor
     }
 
 

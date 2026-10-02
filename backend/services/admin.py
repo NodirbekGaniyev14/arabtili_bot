@@ -830,6 +830,29 @@ async def tutor_report(session: AsyncSession) -> str:
         or "yo'q"
     )
 
+    # ── K30 Jonli ovozli suhbat (Gemini Live) ──
+    from services import live_voice
+
+    lv = await live_voice.report(session)
+    if not live_voice.available():
+        live_state = "⚪ o'chiq (GEMINI_API_KEY yo'q)"
+    elif settings.live_fake:
+        live_state = "🧪 soxta rejim (LIVE_FAKE=1)"
+    else:
+        live_state = f"✅ {settings.live_model}"
+    caps = (
+        f"bepul {settings.live_free_seconds_day // 60} daq/kun · VIP {settings.live_vip_seconds_month // 60} daq/oy"
+        if settings.live_free_seconds_day or settings.live_vip_seconds_month
+        else "cheklovsiz"
+    )
+    live_block = (
+        "📞 <b>Jonli suhbat</b> (" + live_state + ")\n"
+        f"• Bugun: <b>{lv['today']['sessions']}</b> suhbat · {lv['today']['minutes']} daq · "
+        f"{lv['today']['users']} o'quvchi · <b>{_usd(lv['today']['cost'])}</b>\n"
+        f"• 7 kun: {lv['week']['sessions']} · {lv['week']['minutes']} daq · {_usd(lv['week']['cost'])}\n"
+        f"• Limit: {caps} · ogohlantirish: ${settings.live_daily_budget_usd:g}/kun\n\n"
+    )
+
     return (
         "🎓 <b>AI ustoz — sarf va holat</b>\n\n"
         f"💰 <b>Anthropic sarfi</b> ({models_line})\n"
@@ -848,6 +871,7 @@ async def tutor_report(session: AsyncSession) -> str:
         f"• Mock yakunlangan (30 kun): {mocks_month} · o'rtacha ball {round(mock_avg)}\n"
         f"• Limitlar: VIP {settings.tutor_daily_turns}/kun · bepul {settings.tutor_free_turns}/kun\n"
         f"{quality_line}{bad_lines}\n\n"
+        f"{live_block}"
         "👑 <b>VIP</b>\n"
         f"• Faol: <b>{vip_active}</b> · 3 kun ichida tugaydi: {vip_expiring}\n"
         f"• Kutayotgan cheklar: <b>{pending}</b>\n"

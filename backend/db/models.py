@@ -601,6 +601,33 @@ class AiUsage(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
 
 
+class LiveSession(Base):
+    """K30 jonli ovozli suhbat (services/live_voice.py, Gemini Live): davomiylik, tokenlar, $ va matn.
+
+    Matn (`transcript`) suhbatdan keyingi tahlil (xatolar daftari, yangi so'zlar) uchun saqlanadi."""
+
+    __tablename__ = "live_sessions"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    topic: Mapped[str] = mapped_column(String(24), default="")
+    level: Mapped[str] = mapped_column(String(4), default="")
+    model: Mapped[str] = mapped_column(String(40), default="")
+    seconds: Mapped[int] = mapped_column(Integer, default=0)
+    user_turns: Mapped[int] = mapped_column(Integer, default=0)
+    audio_in_tokens: Mapped[int] = mapped_column(Integer, default=0)
+    audio_out_tokens: Mapped[int] = mapped_column(Integer, default=0)
+    text_in_tokens: Mapped[int] = mapped_column(Integer, default=0)
+    text_out_tokens: Mapped[int] = mapped_column(Integer, default=0)
+    cost_usd: Mapped[float] = mapped_column(Float, default=0.0)
+    # Nega tugadi: user | idle | time | limit | error | disconnect
+    reason: Mapped[str] = mapped_column(String(12), default="")
+    transcript: Mapped[str] = mapped_column(Text, default="")  # JSON: [{"role": "user"|"model", "text": ...}]
+    reviewed: Mapped[int] = mapped_column(Integer, default=0)
+    review: Mapped[str] = mapped_column(Text, default="")  # JSON: Claude tahlili (bir marta hisoblanadi)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+
+
 class Plan(Base):
     """AI tuzgan shaxsiy o'quv reja."""
 

@@ -23,6 +23,7 @@ from fastapi.staticfiles import StaticFiles
 
 from api.exam import router as exam_router
 from api.lugat import router as lugat_router
+from api.live import router as live_router
 from api.battle import router as battle_router
 from api.pay import router as pay_router
 from api.share import router as share_router
@@ -242,6 +243,7 @@ app.include_router(api_router)
 app.include_router(lugat_router)  # K24 Lug'at 2.0: /api/vocab/levels|topics|session
 app.include_router(battle_router)  # K25 Oktagon: /ws/battle + /api/battle/*
 app.include_router(api_v2_router)
+app.include_router(live_router)  # K30 jonli ovozli suhbat: /api/v2/live/ws + /api/v2/live/review
 app.include_router(exam_router)
 app.include_router(pay_router)
 app.include_router(share_router)

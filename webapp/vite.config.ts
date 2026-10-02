@@ -12,7 +12,8 @@ export default defineConfig({
     // cloudflared/ngrok tunnel domenlari uchun
     allowedHosts: true,
     proxy: {
-      "/api": "http://localhost:8000",
+      // K30: /api/v2/live/ws — jonli ovozli suhbat ham WebSocket
+      "/api": { target: "http://localhost:8000", ws: true },
       // K25 Oktagon — jonli jang WebSocket orqali
       "/ws": { target: "ws://localhost:8000", ws: true },
     },

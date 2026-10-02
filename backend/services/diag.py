@@ -25,7 +25,7 @@ _tasks: dict[str, asyncio.Task] = {}
 REQUIRED_TABLES = (
     "users", "tutor_turns", "mock_results", "payment_requests", "ai_usage",
     "tutor_mistakes", "drill_results", "daily_speaking", "testimonials", "certificates",
-    "listening_results", "tutor_ratings", "writing_results", "trace_results", "answer_log", "battles", "battle_awards",
+    "listening_results", "tutor_ratings", "writing_results", "trace_results", "answer_log", "battles", "battle_awards", "live_sessions",
 )
 REQUIRED_COLUMNS = {
     "users": ("vip_until", "paywall_seen_at", "vip_notice", "discount_notified", "trial_until", "speak_report_key", "writing_notice", "winback_stage", "winback_at", "day2_notice", "first_nudge", "survey_pending", "battle_points", "battle_games", "battle_wins", "notify_off"),
@@ -338,11 +338,35 @@ def check_alerts() -> str:
     return _warn("Ogohlantirishlar bugun: " + ", ".join(f"{k} {v:%H:%M}" for k, v in sent.items()))
 
 
+async def check_live() -> str:
+    """K30 jonli suhbat: Gemini Live'ga haqiqiy ulanish (faqat sozlash — audio yuborilmaydi, sarf ~0)."""
+    from services import live_voice as lv
+
+    if settings.live_fake:
+        return _warn("Jonli suhbat: LIVE_FAKE=1 — soxta suhbatdosh (prod'da o'chiring)", ".env dan LIVE_FAKE ni olib tashlang → restart")
+    if not settings.gemini_api_key.strip():
+        return "⚪ Jonli suhbat: o'chiq (GEMINI_API_KEY yo'q — «📞 Jonli» tugmasi ko'rinmaydi)"
+    t0 = time.monotonic()
+    try:
+        async with lv.GeminiLive("You are a test. Do not speak."):
+            pass
+    except lv.LiveUnavailable as e:
+        cause = str(e.__cause__ or e)[:160]
+        if e.kind == "auth":
+            return _bad(f"Jonli suhbat: GEMINI_API_KEY rad etildi — {cause}", "aistudio.google.com → API keys → .env → restart")
+        return _bad(f"Jonli suhbat: {settings.live_model} ga ulanib bo'lmadi — {cause}",
+                    "LIVE_MODEL nomini tekshiring: ai.google.dev/gemini-api/docs/live-guide")
+    except Exception as e:  # noqa: BLE001
+        return _bad(f"Jonli suhbat: {type(e).__name__}: {str(e)[:120]}")
+    caps = "cheklovsiz" if not (settings.live_free_seconds_day or settings.live_vip_seconds_month) else "limit yoqilgan"
+    return _ok(f"Jonli suhbat: {settings.live_model} ({settings.live_voice}) ulandi ({time.monotonic() - t0:.1f}s) · {caps}")
+
+
 async def run_all() -> str:
     """Hamma tekshiruv — HTML hisobot (Telegram)."""
     t0 = time.monotonic()
-    anth, stt_openai_line, stt_line, tts_line, db_lines = await asyncio.gather(
-        check_anthropic(), check_stt_openai(), check_stt(), check_tts(), check_db()
+    anth, stt_openai_line, stt_line, tts_line, db_lines, live_line = await asyncio.gather(
+        check_anthropic(), check_stt_openai(), check_stt(), check_tts(), check_db(), check_live()
     )
     lines = [
         "🩺 <b>Tizim tekshiruvi</b>",
@@ -352,6 +376,7 @@ async def run_all() -> str:
         *([stt_openai_line] if stt_openai_line else []),
         stt_line,
         tts_line,
+        live_line,
         "",
         "<b>Ma'lumotlar</b>",
         *db_lines,
