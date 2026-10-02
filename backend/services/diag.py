@@ -347,8 +347,16 @@ async def check_live() -> str:
     key = lv.api_key()
     if not key:
         return "⚪ Jonli suhbat: o'chiq (GEMINI_API_KEY yo'q — «📞 Jonli» tugmasi ko'rinmaydi)"
-    new_key_fix = "aistudio.google.com → Get API key → «Create API key» → .env: GEMINI_API_KEY=AIza… (qo'shtirnoqsiz) → restart"
-    shape = "" if key.startswith("AIza") else f" · kalit «{key[:4]}…» bilan boshlanadi (AI Studio kaliti «AIza…», ~39 belgi; sizniki {len(key)})"
+    # 2026-05-28 dan AI Studio faqat «AQ.» (auth key) beradi; eski «AIza» (standard) kalitlar bosqichma-bosqich o'chiriladi
+    new_key_fix = (
+        "AI Studio → API keys: eski ishlamaydigan kalitlarni o'chiring → «Create API key» (AQ.…) → "
+        ".env: GEMINI_API_KEY=… (qo'shtirnoqsiz) → restart"
+    )
+    shape = (
+        ""
+        if key.startswith(("AQ.", "AIza"))
+        else f" · kalit «{key[:3]}…» bilan boshlanadi — Gemini kaliti «AQ.…» (yoki eski «AIza…») bo'ladi"
+    )
 
     # 1) Kalit — REST bilan (WebSocket xatosi «OAuth token kutilgan» deb chalg'itadi)
     probe = await lv.probe_key()

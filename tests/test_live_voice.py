@@ -390,12 +390,12 @@ async def test_diag_live_states(monkeypatch):
     # 1) kalit noto'g'ri (shakli ham boshqa) — aniq sabab va yo'l
     monkeypatch.setattr(settings, "gemini_api_key", "GOCSPX-oauth-secret")
     line = await diag.check_live()
-    assert line.startswith("❌") and "rad etdi" in line and "API key not valid" in line and "«GOCS…»" in line
+    assert line.startswith("❌") and "rad etdi" in line and "API key not valid" in line and "«GOC…»" in line
     assert "Create API key" in line
 
     # 2) kalit ishlaydi, model nomi yo'q — mavjudlari taklif qilinadi
-    monkeypatch.setattr(settings, "gemini_api_key", '"AIzaGood"')  # qo'shtirnoq bilan ko'chirilgan
-    assert lv.api_key() == "AIzaGood"
+    monkeypatch.setattr(settings, "gemini_api_key", '"AQ.Ab8Good"')  # qo'shtirnoq bilan ko'chirilgan
+    assert lv.api_key() == "AQ.Ab8Good"
     probe.update(ok=True, status=200, error="", live_models=["gemini-live-x", "gemini-live-y"])
     monkeypatch.setattr(settings, "live_model", "gemini-3.8-live")
     line = await diag.check_live()
@@ -409,7 +409,7 @@ async def test_diag_live_states(monkeypatch):
 
     monkeypatch.setattr(lv.GeminiLive, "__aenter__", denied)
     line = await diag.check_live()
-    assert line.startswith("❌") and "REST'da ishlaydi" in line
+    assert line.startswith("❌") and "REST'da ishlaydi" in line and "bilan boshlanadi" not in line, "AQ. — to'g'ri shakl"
 
     # 4) hammasi joyida
     async def ok(self):
