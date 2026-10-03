@@ -111,7 +111,29 @@ const PERSON_PREFIX = "اتين";
 /** Talaffuzi yaqin yoki shakli o'xshash — o'quvchi eng ko'p adashtiradigan juftliklar. */
 const CONFUSED = new Set(["تة", "حه", "قك", "صس", "طت", "ضد", "ذز", "ثس", "ظز", "عا", "بن", "بت", "تث", "جح", "حخ", "دذ", "رز", "سش", "صض", "طظ", "عغ", "فق"]);
 const confused = (x: string, y: string) => CONFUSED.has(x + y) || CONFUSED.has(y + x);
+/** Fe'l qo'shimchasi (harakatsiz) → shaxs: «ـتم kerak (sizlar), siz ـوا (ular) yozdingiz». */
+const VERB_END: Record<string, string> = {
+  تم: "sizlar",
+  تما: "sizlar ikkovingiz",
+  تن: "sizlar, ayollar",
+  نا: "biz",
+  وا: "ular",
+  ون: "ular yoki sizlar",
+  ين: "sen, ayol",
+  ان: "ikkovi",
+  ت: "men, sen yoki u-ayol",
+};
+/** « · ـتم — sizlar; ـوا — ular» — faqat ma'lum qo'shimchalar uchun */
+const endLabels = (...ends: string[]) => {
+  const known = [...new Set(ends)].filter((e) => VERB_END[e]).map((e) => `ـ${e} — ${VERB_END[e]}`);
+  return known.length ? ` · ${known.join("; ")}` : "";
+};
+
 const arHint = (a: string, v: string): string | undefined => {
+  // «البابُ ____» → «القديم»: kesim (xabar) noaniq bo'ladi — «ال» ortiqcha (/javoblar a1-01)
+  const yy = (s: string) => s.replace(/ى/g, "ي");
+  if (!a.startsWith("ال") && v.startsWith("ال") && yy(v.slice(2)) === yy(a))
+    return "«ال» ortiqcha — bu yerda so'z noaniq (tanvin bilan) bo'ladi";
   if (a.length === v.length && a.slice(1) === v.slice(1) && PERSON_PREFIX.includes(a[0]) && PERSON_PREFIX.includes(v[0]))
     return "Boshidagi harf shaxsni bildiradi: أ — men, ن — biz, ت — sen/siz (va u — ayol), ي — u/ular";
   if (a.length === v.length && a.length > 1) {
@@ -133,13 +155,15 @@ const arHint = (a: string, v: string): string | undefined => {
     }
   }
   if (v.length >= 2 && a.length > v.length && a.length - v.length <= 3 && a.startsWith(v))
-    return `Oxirida «ـ${a.slice(v.length)}» yetishmayapti`;
+    return `Oxirida «ـ${a.slice(v.length)}» yetishmayapti${endLabels(a.slice(v.length))}`;
+  if (a.length >= 3 && v.length > a.length && v.length - a.length <= 2 && v.startsWith(a))
+    return `Oxirida «ـ${v.slice(a.length)}» ortiqcha${endLabels(v.slice(a.length))}`;
   if (v.length >= 2 && a.length > v.length && a.length - v.length <= 2 && a.endsWith(v))
     return `Boshida «${a.slice(0, a.length - v.length)}ـ» yetishmayapti`;
   let i = 0;
   while (i < a.length && i < v.length && a[i] === v[i]) i++;
   if (i >= 3 && i < a.length && i < v.length && a.length - i <= 3 && v.length - i <= 3)
-    return `Oxiri boshqa: «ـ${a.slice(i)}» kerak (siz «ـ${v.slice(i)}» yozdingiz)`;
+    return `Oxiri boshqa: «ـ${a.slice(i)}» kerak (siz «ـ${v.slice(i)}» yozdingiz)${endLabels(a.slice(i), v.slice(i))}`;
   return undefined;
 };
 
@@ -190,7 +214,8 @@ export const arOk = (answer: string, value: string, opts: CheckOpts = {}): Verdi
     const dbl = normAr(doubleShadda(raw));
     if (dbl !== normAr(raw) && arLoose(dbl, v, rules)) return { ok: true, exact: false, note: SHADDA_NOTE };
   }
-  return { ok: false, note: arHint(main, v) };
+  // Izoh: avval namunaga, bo'lmasa qo'shimcha javobga nisbatan («اتصلت» ↔ اِتَّصَلَ)
+  return { ok: false, note: [main, ...alts].map((x) => arHint(x, v)).find(Boolean) };
 };
 
 /* ── O'zbekcha (lotin) ── */
@@ -302,6 +327,13 @@ const SYNONYMS: Record<string, string> = {
   qayda: "qayerda",
   man: "men",
   ila: "bilan",
+  // o'zlashma so'z imlosi (ц → ts / s / c): /javoblar a2-38 «kondicioner», «кондисанер»
+  kondisioner: "konditsioner",
+  kondicioner: "konditsioner",
+  kondisaner: "konditsioner",
+  konditsaner: "konditsioner",
+  kandisioner: "konditsioner",
+  kandisaner: "konditsioner",
 };
 
 /** ikkisi / ikkalasi / ikkovi, ikkingiz / ikkalangiz / ikkovingiz… — bir xil ma'no, bitta shaklga. */
@@ -320,7 +352,8 @@ const PAST: Record<string, string> = { man: "m", san: "ng", miz: "k", siz: "ngiz
 
 /** Fe'lni «o'zak|zamon|shaxs» ko'rinishiga keltiradi; fe'l bo'lmasa so'z o'zgarmaydi. */
 const verbCanon = (w: string): string => {
-  let m = w.match(/^(.{2,}?)(?:yap|mo[qk]da)(man|san|ti|di|miz|siz|tilar|dilar)?$/); // yozyapti, yozmoqda(man)
+  // «-yab-» — so'zlashuv imlosi («yozyabsan» = yozyapsan, /javoblar a2-04)
+  let m = w.match(/^(.{2,}?)(?:yap|yab|mo[qk]da)(man|san|ti|di|miz|siz|tilar|dilar)?$/); // yozyapti, yozmoqda(man)
   if (m) return `${m[1]}|hoz|${PRES[m[2] ?? "ti"] ?? m[2] ?? "ti"}`;
   m = w.match(/^(.{2,}?)ma(di|dim|ding|dik|dingiz|dilar)$/); // o'tgan zamon inkori: bormadi
   if (m) return `${m[1]}|otgma|${m[2].slice(2)}`;
@@ -412,6 +445,15 @@ const wordClose = (e: string, g: string): boolean => {
   return e.length >= 4 && typoClose(e, g);
 };
 
+/** Imlo xatosi deb kechiriladigan bitta harf almashuvi: e↔i («o'qidek»), b↔p («yozyabsan»), g↔h va k↔q
+ *  (klaviaturada yonma-yon / talaffuz). Faqat ≥5 harfli so'zda, aynan bitta o'rinda. */
+const SOFT_SUBS = new Set(["ei", "ie", "bp", "pb", "gh", "hg", "kq", "qk"]);
+const softTypo = (e: string, g: string): boolean => {
+  if (e === g || e.length !== g.length || e.length < 5) return false;
+  const diff = [...e].map((ch, i) => (ch !== g[i] ? i : -1)).filter((i) => i >= 0);
+  return diff.length === 1 && SOFT_SUBS.has(e[diff[0]] + g[diff[0]]);
+};
+
 const seqClose = (a: string[], b: string[]) => a.length === b.length && a.every((w, i) => wordClose(w, b[i]));
 
 const tokensMatch = (a: string[], b: string[]): boolean => {
@@ -450,6 +492,17 @@ const latMatch = (answer: string, typed: string, opts: CheckOpts): Verdict => {
   if (vt.length && all.some((v) => tokensMatch(canonTokens(v), vt))) return { ok: true, exact: false };
   const squash = (s: string) => s.replace(/ /g, "");
   if (all.some((v) => squash(v) === squash(nv))) return { ok: true, exact: false }; // «ob havo» = «ob-havo»
+
+  // Bitta harf imlo xatosi (yonma-yon tugma yoki talaffuz: «yozdinh», «o'qidek») — so'z namunadagi
+  // so'zga to'g'rilanadi, keyin ma'no (fe'l shaxsi, zamon, inkor) odatdagidek tekshiriladi
+  for (const v of all) {
+    const words = v.split(" ");
+    const fixed = nv
+      .split(" ")
+      .map((g) => words.find((w) => softTypo(w, g)) ?? g)
+      .join(" ");
+    if (fixed !== nv && tokensMatch(canonTokens(v), canonTokens(fixed))) return { ok: true, exact: false };
+  }
 
   // «bir» (noaniqlik) faqat bir tomonda — kechiriladi, izoh bilan
   if (!STRICT_PROMPT.test(opts.prompt ?? "")) {

@@ -326,3 +326,36 @@ def test_report_k29_4_answers():
     res = run(ok + wrong)
     assert all(r["ok"] for r in res[: len(ok)]), res[: len(ok)]
     assert not any(r["ok"] for r in res[len(ok) :]), res[len(ok) :]
+
+
+def test_report_k31_answers():
+    """/javoblar (5 kun, 891 ta): bitta harf imlo xatosi («yozdinh», «o'qidek», «yozyabsan») va o'zlashma
+    so'z imlosi («kondicioner», «кондисанер») qabul; ma'no xatosi baribir rad; fe'l qo'shimchasi izohi."""
+    ok = [
+        lat("sen (ayol) yozasan", "sen yozyabsan ayol"),  # «-yab-» so'zlashuv imlosi
+        lat("sen (ayol) yozding", "sen ayol yozdinh"),  # g↔h yonma-yon tugma
+        lat("biz o'qidik / biz dars qildik", "biz oʻqidek", accept=["biz o'rgandik"]),  # e↔i
+        lat("konditsioner ishlamaydi", "kondicioner ishlamaydi", accept=["konditsioner buzilgan"]),
+        lat("konditsioner ishlamaydi", "Кондисанер ишламайди", accept=["konditsioner buzilgan"]),
+        lat("konditsioner ishlamaydi", "kondisioner ishlamayapti"),
+    ]
+    wrong = [
+        lat("sen (ayol) yozasan", "Сиз аёллар ёзасиз"),  # ko'plik ayollar — تَكْتُبْنَ
+        lat("biz o'qidik / biz dars qildik", "dars qilamiz"),  # zamon boshqa
+        lat("biz o'qidik / biz dars qildik", "biz o'qidim"),  # shaxs boshqa (k↔m — imlo emas)
+        lat("sen (ayol) yozding", "sen yozmading"),  # inkor
+        lat("ular o'rganadilar", "ular o'rgatadilar"),  # o'rganmoq ≠ o'rgatmoq
+        ar("كَتَبْتُمْ", "كتبوا", mode="translate"),
+        ar("تَوَاصَلَ", "اتصلت", mode="translate", accept=["اِتَّصَلَ"]),
+        ar("اِسْتَيْقَظْتُ", "استيقظ", mode="fill"),
+        ar("قَدِيمٌ", "القدىم", mode="fill"),  # «البابُ قديمٌ» — kesim noaniq
+    ]
+    res = run(ok + wrong)
+    assert all(r["ok"] for r in res[: len(ok)]), res[: len(ok)]
+    bad = res[len(ok) :]
+    assert not any(r["ok"] for r in bad), bad
+    # Fe'l qo'shimchasi qaysi shaxs ekani aytiladi
+    assert "ـتم — sizlar" in bad[5]["note"] and "ـوا — ular" in bad[5]["note"]
+    assert "«ـت» ortiqcha" in bad[6]["note"], "izoh qo'shimcha javobga (اِتَّصَلَ) nisbatan ham beriladi"
+    assert "«ـت» yetishmayapti" in bad[7]["note"] and "men" in bad[7]["note"]
+    assert "«ال» ortiqcha" in bad[8]["note"]
