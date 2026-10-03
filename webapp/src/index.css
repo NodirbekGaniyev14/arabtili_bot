@@ -13,6 +13,18 @@
   --color-card: #fffdf7;
   --color-cardline: #ebe3d2;
 
+  /* K31 statistika: 4 ko'nikma (kategorik, validate_palette.js: CVD/normal ✓; yorug'da 2 tasi <3:1 — doim yozuv bilan)
+     va lug'at darajalari A0→B2 (bir rangli tartibli shkala, yorug'dan to'qqa) */
+  --color-sk-reading: #2a78d6;
+  --color-sk-listening: #eb6834;
+  --color-sk-writing: #1baf7a;
+  --color-sk-speaking: #eda100;
+  --color-lv-0: #6fbf9b;
+  --color-lv-1: #3fa57c;
+  --color-lv-2: #178a5f;
+  --color-lv-3: #0e6b4e;
+  --color-lv-4: #084532;
+
   --font-arabic: "Amiri", serif;
   --font-sans: "Manrope", system-ui, sans-serif;
 }
@@ -31,6 +43,15 @@
   --color-gold: #d4b04a;
   --color-gold-soft: #3a3320;
   --color-terracotta: #d97a58;
+  --color-sk-reading: #3987e5;
+  --color-sk-listening: #d95926;
+  --color-sk-writing: #199e70;
+  --color-sk-speaking: #c98500;
+  --color-lv-0: #146448;
+  --color-lv-1: #1b8058;
+  --color-lv-2: #2aa171;
+  --color-lv-3: #52bf91;
+  --color-lv-4: #8fdcb8;
   color-scheme: dark;
 }
 
@@ -110,4 +131,12 @@ body {
 .loading-bar {
   transform-origin: bottom;
   animation: bar-bounce 1.1s ease-in-out infinite;
+}
+
+/* Gorizontal chiplar qatori (K31 Statistika bo'limlari) — aylantirish chizig'isiz */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

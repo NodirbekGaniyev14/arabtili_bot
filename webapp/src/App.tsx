@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ArabicBg from "./components/ArabicBg";
 import NavBar, { type Tab } from "./components/NavBar";
 import { initTheme } from "./lib/theme";
-import { api, type MeResponse, type PlanData, type Stats } from "./lib/api";
+import { api, type InsightAction, type MeResponse, type PlanData, type Stats } from "./lib/api";
 import Home from "./pages/Home";
 import Lessons from "./pages/Lessons";
 import Onboarding from "./pages/onboarding/Onboarding";
@@ -27,6 +27,7 @@ import TodayWords from "./pages/TodayWords";
 import DailyTask from "./pages/DailyTask";
 import Vocab from "./pages/Vocab";
 import LessonPlayerV2 from "./pages/v2/LessonPlayerV2";
+import StatsPage from "./pages/Stats";
 
 type Phase = "boot" | "onboarding" | "app" | "offline";
 
@@ -64,7 +65,7 @@ export default function App() {
   // Tanishuv kartasi (K20.4): ustoz shu mavzuda darhol boshlaydi
   const [tutorTopic, setTutorTopic] = useState("");
   // Home «Talaffuz mashqi» (K22.5) → ustozning drill bo'limi
-  const [tutorTab, setTutorTab] = useState<"chat" | "drill" | undefined>(undefined);
+  const [tutorTab, setTutorTab] = useState<"chat" | "drill" | "listen" | undefined>(undefined);
   // Bot eslatmasidagi tugma (#vip) — ilova to'g'ridan-to'g'ri VIP sahifasida ochiladi
   const [showPaywall, setShowPaywall] = useState(() => window.location.hash === "#vip");
   const [showReference, setShowReference] = useState(false);
@@ -79,6 +80,8 @@ export default function App() {
   const [showBattle, setShowBattle] = useState(
     () => window.location.hash === "#battle" || window.location.hash.startsWith("#duel=")
   );
+  // K31 Statistika + VIP shaxsiy tahlil — #stats
+  const [showStats, setShowStats] = useState(() => window.location.hash === "#stats");
   // «Yangi so'zlarim» (K22.4) — #words
   const [showWords, setShowWords] = useState(() => window.location.hash === "#words");
 
@@ -181,6 +184,20 @@ export default function App() {
   const displayName = me?.name || tgName;
   const stats = me?.stats ?? EMPTY_STATS;
 
+  /** Statistika / shaxsiy reja tugmalari → tegishli mashq (statistika yopiladi, mashqdan keyin Bosh sahifa) */
+  const statsAction = (a: InsightAction) => {
+    setShowStats(false);
+    if (a === "lesson") {
+      if (stats.next_lesson) setActiveLessonV2(stats.next_lesson.id);
+      else setTab("lessons");
+    } else if (a === "listen" || a === "live") {
+      setTutorTab(a === "listen" ? "listen" : "chat");
+      setShowTutor(true);
+    } else if (a === "writing") setShowWriting(true);
+    else if (a === "mistakes") setShowSpeaking("mistakes");
+    else if (a === "review") setTab("review");
+  };
+
   // Daraja testi MAJBURIY EMAS. Ilgari eski foydalanuvchilarga ilova
   // ochilganda majburiy qayta test chiqardi — bu «progressim o'chibdi»
   // taassurotini berardi. Endi u faqat Profil sahifasidan ixtiyoriy
@@ -238,6 +255,7 @@ export default function App() {
               setShowTutor(true);
             }}
             onGoLessons={() => setTab("lessons")}
+            onOpenStats={() => setShowStats(true)}
           />
         )}
         {tab === "lessons" && (
@@ -259,6 +277,7 @@ export default function App() {
             vipPrice={me?.vip_price}
             onProfileChange={refreshMe}
             onOpenSpeaking={setShowSpeaking}
+            onOpenStats={() => setShowStats(true)}
           />
         )}
       </main>
@@ -280,6 +299,14 @@ export default function App() {
             // Suhbat XP'si va yangi SRS kartalari statistikaga tushsin
             api.getMe().then(setMe).catch(() => {});
           }}
+        />
+      )}
+
+      {showStats && (
+        <StatsPage
+          onClose={() => setShowStats(false)}
+          onOpenPaywall={() => setShowPaywall(true)}
+          onAction={statsAction}
         />
       )}
 

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { api, type PayInfo, type PayPlan } from "../lib/api";
+import { api, type PayInfo, type PayPlan, type StatsData } from "../lib/api";
+import { InsightsCard } from "./Stats";
 
 /** VIP tarif sahifasi (K17.2, K18.5).
  *
@@ -168,6 +169,8 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
   const [copied, setCopied] = useState(false);
   const [trialBusy, setTrialBusy] = useState(false);
   const [trialMsg, setTrialMsg] = useState("");
+  // K31: shaxsiy tahlil — bepul foydalanuvchi yopiq tahlillarni ko'radi (qiymatsiz), VIP — ochiq
+  const [stats, setStats] = useState<StatsData | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
   const startTrial = async () => {
@@ -193,6 +196,7 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
 
   useEffect(() => {
     load();
+    api.getStats("month").then(setStats).catch(() => undefined);
   }, []);
 
   const countdown = useCountdown(info?.discount.active ? info.discount.until : null, load);
@@ -335,6 +339,15 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
           </section>
         )}
 
+        {/* K31: «5 tadan 1 tasi ochiq» — o'quvchining O'Z tahlili qulflangan holda: eng kuchli sabab */}
+        {info && !info.vip && stats && (
+          <InsightsCard
+            data={stats}
+            onUnlock={() => plansRef.current?.scrollIntoView({ behavior: "smooth" })}
+            unlockLabel="👑 Tarifni tanlash va ochish ↓"
+          />
+        )}
+
         {info && !info.vip && <SampleChat />}
 
         {info && !info.vip && info.trial_available && (
@@ -381,6 +394,8 @@ export default function Paywall({ onClose, reason }: PaywallProps) {
             </button>
           </div>
         )}
+
+        {info?.vip && stats && <InsightsCard data={stats} />}
 
         {(sent || info?.pending) && (
           <div className="rounded-2xl bg-emerald-deep/10 border border-emerald-deep/30 p-4">

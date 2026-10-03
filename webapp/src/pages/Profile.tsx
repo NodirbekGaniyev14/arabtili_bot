@@ -124,6 +124,7 @@ export default function Profile({
   vipPrice,
   onProfileChange,
   onOpenSpeaking,
+  onOpenStats,
 }: {
   onOpenPlacement?: () => void;
   /** VIP tarif sahifasi (AI ustoz) */
@@ -135,6 +136,8 @@ export default function Profile({
   onProfileChange?: () => void;
   /** Speaking daftari: xatolar / natijalar (K17.5) */
   onOpenSpeaking?: (tab: "mistakes" | "results") => void;
+  /** K31 Statistika + VIP shaxsiy tahlil */
+  onOpenStats?: () => void;
 } = {}) {
   const [data, setData] = useState<ProfileData | null>(null);
   const [error, setError] = useState(false);
@@ -332,6 +335,22 @@ export default function Profile({
         </div>
         <span className="font-extrabold text-xl">›</span>
       </button>
+
+      {/* K31 Statistika */}
+      {onOpenStats && (
+        <button
+        onClick={onOpenStats}
+        className="w-full flex items-center gap-3 rounded-2xl bg-card border border-cardline p-3.5 text-left active:scale-[0.98] transition-transform"
+      >
+        <span className="w-10 h-10 shrink-0 rounded-xl bg-emerald-deep/10 flex items-center justify-center text-lg">📊</span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-[14px] font-extrabold leading-tight">Statistika va shaxsiy tahlil</span>
+          <span className="block text-[11px] font-semibold text-ink-soft">O'qish, tinglash, yozish, gapirish — qayerda o'sish bor</span>
+        </span>
+        <span dir="rtl" className="shrink-0 font-arabic text-[15px] leading-none text-gold">إِحْصَائِيَّات</span>
+        <span className="shrink-0 font-extrabold text-xl text-ink-soft">›</span>
+      </button>
+      )}
 
       {/* Taklif dasturi — ikkalangizga VIP */}
       {data.referral && <ReferralCard r={data.referral} />}

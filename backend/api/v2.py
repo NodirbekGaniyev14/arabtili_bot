@@ -1788,3 +1788,19 @@ async def trace_finish(
     await session.commit()
     return {"avg": avg, "count": len(scores), "xp": xp, "best": await trace.best(session, user.id),
             "new_badges": await _badges(session, user.id)}
+
+
+# ─────────────────── K31 Statistika + VIP shaxsiy tahlil ───────────────────
+
+
+@router.get("/stats")
+async def stats_overview(
+    period: str = "month",
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Statistika sahifasi: streak, daraja, maqsad, 4 ko'nikma, lug'at, tarix + 5 ta shaxsiy tahlil
+    (VIP bo'lmaganga 4 tasi yopiq — qiymati yuborilmaydi)."""
+    from services import insights
+
+    return await insights.overview(session, user, period)

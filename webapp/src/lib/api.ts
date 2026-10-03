@@ -1440,6 +1440,9 @@ export const api = {
       body: JSON.stringify({ session_id }),
     }),
 
+  // ── K31 Statistika + VIP shaxsiy tahlil ──
+  getStats: (period: StatsPeriod = "month") => request<StatsData>(`/api/v2/stats?period=${period}`),
+
   // ── VIP tarif / to'lov ──
   getPayInfo: () => request<PayInfo>("/api/pay/info"),
   startTrial: () =>
@@ -1795,4 +1798,78 @@ export interface RoleplayReply {
   uz: string;
   ai: boolean;
   done: boolean;
+}
+
+// ── K31 Statistika (services/insights.py) ──
+export type StatsPeriod = "week" | "month" | "3m" | "all";
+export type SkillId = "reading" | "listening" | "writing" | "speaking";
+export type InsightAction = "lesson" | "listen" | "writing" | "live" | "mistakes" | "review" | "";
+
+export interface SkillStat {
+  score: number | null;
+  count: number;
+  last: number | null;
+  delta: number | null;
+}
+
+export interface MistakeType {
+  id: string;
+  title: string;
+  mark: string;
+  tip: string;
+  count: number;
+  pair: string;
+  example: { said?: string; fixed?: string };
+}
+
+export interface Insight {
+  id: "level" | "weak" | "mistakes" | "forecast" | "plan";
+  title: string;
+  icon: string;
+  /** open — qiymat bor · vip — VIP bilan ochiladi · data — VIP, lekin ma'lumot yetmaydi */
+  state: "open" | "vip" | "data";
+  teaser: string;
+  value?: string;
+  detail?: string;
+  need?: string;
+  have?: number;
+  want?: number;
+  skill?: SkillId | "";
+  action?: InsightAction;
+  top?: MistakeType[];
+  plan?: { icon: string; text: string; action: InsightAction }[];
+}
+
+export interface StatsData {
+  period: StatsPeriod;
+  vip: boolean;
+  streak: {
+    days: number;
+    freezes: number;
+    today_done: boolean;
+    week: { day: string; active: boolean; today: boolean; future: boolean }[];
+  };
+  level: { level: string; level_index: number; done: number; total: number; percent: number };
+  skills: Record<SkillId, SkillStat>;
+  skills_90: Record<SkillId, number | null>;
+  goal: {
+    target: string;
+    current: string;
+    total: number;
+    covered: number;
+    remaining: number;
+    percent: number;
+    target_date: string;
+    days_left: number | null;
+  };
+  vocab: {
+    total: number;
+    due: number;
+    retention: number | null;
+    stages: { new: number; learning: number; mature: number };
+    levels: { level: string; count: number }[];
+    hardest: { ar: string; uz: string; lapses: number }[];
+  };
+  insights: { unlocked: number; total: number; items: Insight[] };
+  history: { at: string; skill: SkillId | "vocab" | "exam"; title: string; score: number | null; xp: number }[];
 }

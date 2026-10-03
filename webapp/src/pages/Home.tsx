@@ -45,6 +45,8 @@ interface HomeProps {
   /** K22.5 talaffuz mashqi (AI ustoz → drill bo'limi) */
   onOpenDrill?: () => void;
   onGoLessons: () => void;
+  /** K31 Statistika + VIP shaxsiy tahlil */
+  onOpenStats?: () => void;
 }
 
 function greeting(): string {
@@ -81,6 +83,7 @@ export default function Home({
   onOpenWords,
   onOpenDrill,
   onGoLessons,
+  onOpenStats,
 }: HomeProps) {
   const next = stats.next_lesson;
 
@@ -163,6 +166,20 @@ export default function Home({
       {/* So'nggi 7 kun */}
       {stats.week && <WeekChart week={stats.week} xpGoal={xpGoal} onShare={() => setShowShare(true)} />}
       {showShare && <ShareCard onClose={() => setShowShare(false)} />}
+      {onOpenStats && (
+        <button
+        onClick={onOpenStats}
+        className="w-full flex items-center gap-3 rounded-2xl bg-card border border-cardline p-3.5 text-left active:scale-[0.98] transition-transform"
+      >
+        <span className="w-10 h-10 shrink-0 rounded-xl bg-emerald-deep/10 flex items-center justify-center text-lg">📊</span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-[14px] font-extrabold leading-tight">Statistika va shaxsiy tahlil</span>
+          <span className="block text-[11px] font-semibold text-ink-soft">Daraja, 4 ko'nikma, xatolaringiz va prognoz</span>
+        </span>
+        <span dir="rtl" className="shrink-0 font-arabic text-[15px] leading-none text-gold">إِحْصَائِيَّات</span>
+        <span className="shrink-0 font-extrabold text-xl text-ink-soft">›</span>
+      </button>
+      )}
 
       {/* Kunlik speaking savoli — bepul, 1 daqiqa */}
       {onOpenDaily && (
