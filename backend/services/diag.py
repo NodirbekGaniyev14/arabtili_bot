@@ -338,8 +338,39 @@ def check_alerts() -> str:
     return _warn("Ogohlantirishlar bugun: " + ", ".join(f"{k} {v:%H:%M}" for k, v in sent.items()))
 
 
+# Google tomonidagi holatlar (forum, 2026-06…09): «AQ.» kalit 401 ACCESS_TOKEN_TYPE_UNSUPPORTED — ko'pincha kalit boshqa
+# (billing'siz) loyihada yoki eskirgan model chaqirilgan; «Your project has been denied access» — bepul loyihaga Live yopiq.
+# Eski «AIza» kalitlar 2026-09 dan butunlay o'chirilgan — muqobil yo'q, faqat «AQ.».
+# Google bu 401 ni noto'g'ri / to'liq ko'chirilmagan / o'chirilgan «AQ.» kalitga ham beradi — soxta «AQ.…» satr bilan
+# ham aynan shu xato chiqadi (2026-10-03 sinov). Shuning uchun birinchi qadam — kalitni qayta, to'liq nusxalash.
+AQ_KEY_LEN = 53  # 2026: AI Studio «AQ.» kalitlari 53 belgi
+LIVE_KEY_FIX = (
+    "1) AI Studio → API keys → «Create API key» → to'lov qilingan loyihani tanlang → oynadagi nusxalash tugmasi bilan "
+    f"TO'LIQ nusxalang ({AQ_KEY_LEN} belgi; ro'yxatdagi qisqartirilgan ko'rinish emas) → .env: GEMINI_API_KEY=… → restart. "
+    "2) Yangi kalit ham rad etilsa — Google'ning «AQ.» kalit muammosi: boshqa loyihada kalit yarating"
+)
+LIVE_BILLING_FIX = (
+    "AI Studio → kalit loyihasida billing ulanganini va to'lov o'tganini tekshiring (bepul loyihada Live yopiq); "
+    "to'lovdan keyin 5–10 daqiqa kuting yoki shu loyihada yangi kalit yarating"
+)
+REASON_FIX = {
+    "SERVICE_DISABLED": "Google Cloud Console → shu loyiha → APIs & Services → «Generative Language API» → Enable",
+    "API_KEY_INVALID": "kalit to'liq ko'chirilmagan — AI Studio'dan qayta nusxalab .env ga qo'ying → restart",
+    "CONSUMER_SUSPENDED": "loyiha Google tomonidan to'xtatilgan — boshqa loyihada kalit yarating yoki Google'ga yozing",
+    "BILLING_DISABLED": LIVE_BILLING_FIX,
+}
+
+
+def _reason_line(res: dict) -> str:
+    """«401 ACCESS_TOKEN_TYPE_UNSUPPORTED: Request had invalid…» — sabab kodi bilan (Google forumida qidirish oson)."""
+    head = " ".join(str(x) for x in (res.get("status") or "", res.get("reason") or "") if x)
+    return f"{head}: {res.get('error') or ''}".strip(": ")
+
+
 async def check_live() -> str:
-    """K30 jonli suhbat: Gemini Live'ga haqiqiy ulanish (faqat sozlash — audio yuborilmaydi, sarf ~0)."""
+    """K30 jonli suhbat — bosqichma-bosqich (audio yuborilmaydi, sarf ~0):
+    1) kalit REST'da (modellar ro'yxati), 2) LIVE_MODEL bormi, 3) matn modelidan 1 token javob (billing/loyiha),
+    4) jonli ulanish: kalit bilan, rad etilsa — vaqtinchalik token bilan."""
     from services import live_voice as lv
 
     if settings.live_fake:
@@ -347,23 +378,26 @@ async def check_live() -> str:
     key = lv.api_key()
     if not key:
         return "⚪ Jonli suhbat: o'chiq (GEMINI_API_KEY yo'q — «🎙 Jonli AI bilan suhbat» tugmasi ko'rinmaydi)"
-    # 2026-05-28 dan AI Studio faqat «AQ.» (auth key) beradi; eski «AIza» (standard) kalitlar bosqichma-bosqich o'chiriladi
-    new_key_fix = (
-        "AI Studio → API keys: eski ishlamaydigan kalitlarni o'chiring → «Create API key» (AQ.…) → "
-        ".env: GEMINI_API_KEY=… (qo'shtirnoqsiz) → restart"
-    )
-    shape = (
-        ""
-        if key.startswith(("AQ.", "AIza"))
-        else f" · kalit «{key[:3]}…» bilan boshlanadi — Gemini kaliti «AQ.…» (yoki eski «AIza…») bo'ladi"
-    )
+    # Kalitning o'zi chiqarilmaydi — faqat shakli (to'liq ko'chirilganini tekshirish uchun)
+    shape = f"kalit «{key[:3]}…», {len(key)} belgi"
+    if not key.startswith("AQ."):
+        shape += " — Gemini kaliti «AQ.…» bilan boshlanadi (eski «AIza» 2026-09 dan ishlamaydi)"
+    elif len(key) != AQ_KEY_LEN:
+        shape += f" — odatda {AQ_KEY_LEN} belgi: to'liq ko'chirilmagan bo'lishi mumkin"
 
     # 1) Kalit — REST bilan (WebSocket xatosi «OAuth token kutilgan» deb chalg'itadi)
     probe = await lv.probe_key()
     if not probe["ok"]:
         if probe["status"] in (400, 401, 403):
-            return _bad(f"Jonli suhbat: Google GEMINI_API_KEY ni rad etdi ({probe['status']}: {probe['error']}){shape}", new_key_fix)
-        return _warn(f"Jonli suhbat: Google API javob bermadi ({probe['status'] or '—'}: {probe['error']})")
+            fix = REASON_FIX.get(probe.get("reason") or "", "")
+            if not fix:
+                fix = LIVE_BILLING_FIX if lv.classify_error(probe.get("error", "")) == "project" else LIVE_KEY_FIX
+            return _bad(
+                f"Jonli suhbat: Google kalitni rad etdi — {_reason_line(probe)} ({shape}). Bu xato noto'g'ri, "
+                "to'liq ko'chirilmagan yoki o'chirilgan kalitda ham chiqadi",
+                fix,
+            )
+        return _warn(f"Jonli suhbat: Google API javob bermadi ({_reason_line(probe) or '—'})")
     live = probe["live_models"]
     # 2) Model — shu kalitga ochiq jonli modellar ichida bormi
     if live and settings.live_model not in live:
@@ -371,22 +405,38 @@ async def check_live() -> str:
             f"Jonli suhbat: kalit ishlaydi, lekin LIVE_MODEL={settings.live_model} bu kalitda yo'q. Jonli modellar: {', '.join(live[:6])}",
             f".env → LIVE_MODEL={live[0]} → restart",
         )
-    # 3) Haqiqiy jonli ulanish
+    # 3) Haqiqiy javob — ro'yxatni ko'radigan, lekin ishlatolmaydigan (billing'siz / bloklangan) loyihani ajratadi
+    text_model = lv.pick_text_model(probe.get("gen_models") or [])
+    if text_model:
+        gen = await lv.probe_generate(text_model)
+        if not gen["ok"] and gen["status"] in (400, 401, 403, 429):
+            return _bad(
+                f"Jonli suhbat: kalit modellar ro'yxatini ko'radi, lekin {text_model} javob bermadi — {_reason_line(gen)} ({shape})",
+                REASON_FIX.get(gen.get("reason") or "", LIVE_BILLING_FIX),
+            )
+    # 4) Jonli ulanish: kalit bilan; rad etilsa — vaqtinchalik token bilan
     t0 = time.monotonic()
-    try:
-        async with lv.GeminiLive("You are a test. Do not speak."):
-            pass
-    except lv.LiveUnavailable as e:
-        cause = str(e.__cause__ or e)[:160]
-        if e.kind == "auth":
-            return _bad(f"Jonli suhbat: kalit REST'da ishlaydi, lekin jonli ulanish rad etildi — {cause}{shape}",
-                        "AI Studio'da shu kalit loyihasida billing yoqilganini tekshiring yoki yangi kalit yarating")
-        return _bad(f"Jonli suhbat: {settings.live_model} ga ulanib bo'lmadi — {cause}",
+    errors: dict[str, str] = {}
+    for mode in lv.AUTH_MODES:
+        err = await lv.try_connect(mode)
+        if not err:
+            lv.AUTH_MODE["mode"] = mode
+            caps = "cheklovsiz" if not (settings.live_free_seconds_day or settings.live_vip_seconds_month) else "limit yoqilgan"
+            via = "" if mode == "key" else " · vaqtinchalik token orqali (kalit to'g'ridan-to'g'ri rad etildi)"
+            return _ok(f"Jonli suhbat: {settings.live_model} ({settings.live_voice}) ulandi ({time.monotonic() - t0:.1f}s){via} · {caps}")
+        errors[mode] = err
+        if lv.classify_error(err) != "auth":
+            break  # kalit muammosi emas — token yo'li yordam bermaydi
+    kinds = {lv.classify_error(e) for e in errors.values()}
+    detail = " | ".join(f"{m}: {e[:110]}" for m, e in errors.items())
+    if "project" in kinds:
+        return _bad(f"Jonli suhbat: loyihaga jonli ulanish yopiq — {detail}", LIVE_BILLING_FIX)
+    if kinds == {"model"}:
+        return _bad(f"Jonli suhbat: {settings.live_model} ga ulanib bo'lmadi — {detail}",
                     f"Jonli modellar: {', '.join(live[:6]) or 'ro‘yxatda yo‘q'} → .env LIVE_MODEL")
-    except Exception as e:  # noqa: BLE001
-        return _bad(f"Jonli suhbat: {type(e).__name__}: {str(e)[:120]}")
-    caps = "cheklovsiz" if not (settings.live_free_seconds_day or settings.live_vip_seconds_month) else "limit yoqilgan"
-    return _ok(f"Jonli suhbat: {settings.live_model} ({settings.live_voice}) ulandi ({time.monotonic() - t0:.1f}s) · {caps}")
+    if "auth" in kinds:
+        return _bad(f"Jonli suhbat: kalit REST'da ishlaydi, lekin jonli ulanish rad etildi — {detail} ({shape})", LIVE_KEY_FIX)
+    return _bad(f"Jonli suhbat: ulanib bo'lmadi — {detail}")
 
 
 async def run_all() -> str:

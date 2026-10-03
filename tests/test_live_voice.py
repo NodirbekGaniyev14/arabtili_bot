@@ -401,26 +401,157 @@ async def test_diag_live_states(monkeypatch):
     line = await diag.check_live()
     assert line.startswith("❌") and "LIVE_MODEL=gemini-3.8-live bu kalitda yo'q" in line and "LIVE_MODEL=gemini-live-x" in line
 
-    # 3) REST ishlaydi, WebSocket rad etadi
+    # 3) REST ishlaydi, WebSocket ikkala usulda ham rad etadi (kalit ham, vaqtinchalik token ham)
     monkeypatch.setattr(settings, "live_model", "gemini-live-x")
+    tried = []
 
-    async def denied(self):
-        raise lv.LiveUnavailable("x", "auth") from RuntimeError("1008 Request had invalid authentication credentials")
+    async def denied(mode):
+        tried.append(mode)
+        return "ConnectionClosedError(1008 Request had invalid authentication credentials)"
 
-    monkeypatch.setattr(lv.GeminiLive, "__aenter__", denied)
+    monkeypatch.setattr(lv, "try_connect", denied)
     line = await diag.check_live()
     assert line.startswith("❌") and "REST'da ishlaydi" in line and "bilan boshlanadi" not in line, "AQ. — to'g'ri shakl"
+    assert tried == ["key", "token"], "kalit rad etilsa token yo'li ham sinaladi"
 
     # 4) hammasi joyida
-    async def ok(self):
-        return self
+    async def ok(mode):
+        return ""
 
-    async def close(self, *a):
+    monkeypatch.setattr(lv, "try_connect", ok)
+    line = await diag.check_live()
+    assert line.startswith("✅") and "token" not in line
+
+
+@pytest.mark.asyncio
+async def test_diag_live_reason_codes_billing_and_token_fallback(monkeypatch):
+    """2026-10-03: «AQ.» kalit hali ham 401 — /tekshir Google sabab kodini, to'lov qaysi loyihada bo'lishi kerakligini
+    va jonli ulanishning qaysi usuli ishlaganini ko'rsatadi."""
+    from services import diag
+
+    monkeypatch.setattr(settings, "live_fake", False)
+    monkeypatch.setattr(settings, "gemini_api_key", "AQ.Ab8" + "x" * 40)
+    monkeypatch.setattr(settings, "live_model", "gemini-3.8-live")
+    probe = {"ok": False, "status": 401, "error": "Request had invalid authentication credentials.",
+             "reason": "ACCESS_TOKEN_TYPE_UNSUPPORTED", "live_models": [], "gen_models": []}
+
+    async def fake_probe():
+        return probe
+
+    monkeypatch.setattr(lv, "probe_key", fake_probe)
+    # 1) REST 401 + sabab kodi → kalit/loyiha yo'riqnomasi; kalitning o'zi chiqmaydi, faqat shakli
+    line = await diag.check_live()
+    assert line.startswith("❌") and "401 ACCESS_TOKEN_TYPE_UNSUPPORTED" in line and "to'lov qilingan loyiha" in line
+    assert "to'liq ko'chirilmagan yoki o'chirilgan kalitda ham" in line, "Google bu xatoni noto'g'ri kalitga ham beradi"
+    assert "«AQ.…», 46 belgi" in line and "x" * 10 not in line
+    assert "to'liq ko'chirilmagan bo'lishi mumkin" in line, "haqiqiy AQ. kalit 53 belgi"
+    monkeypatch.setattr(settings, "gemini_api_key", "AQ.Ab8" + "x" * 47)
+    assert "to'liq ko'chirilmagan bo'lishi mumkin" not in await diag.check_live()
+    monkeypatch.setattr(settings, "gemini_api_key", "AQ.Ab8" + "x" * 40)
+
+    # 2) API o'chiq — aniq yo'l
+    probe.update(status=403, reason="SERVICE_DISABLED", error="Generative Language API has not been used")
+    assert "Generative Language API» → Enable" in await diag.check_live()
+
+    # 3) ro'yxat ochiq, lekin javob olish rad etiladi → billing
+    probe.update(ok=True, status=200, error="", reason="", live_models=["gemini-3.8-live"],
+                 gen_models=["gemini-3.6-flash", "gemini-3.8-flash-tts"])
+    gen_calls = []
+
+    async def gen_denied(model):
+        gen_calls.append(model)
+        return {"ok": False, "status": 403, "error": "Your project has been denied access.", "reason": "PERMISSION_DENIED"}
+
+    monkeypatch.setattr(lv, "probe_generate", gen_denied)
+    line = await diag.check_live()
+    assert gen_calls == ["gemini-3.6-flash"] and "javob bermadi" in line and "billing" in line
+
+    # 4) kalit bilan WebSocket rad etadi, token bilan ishlaydi → ✅ (usul eslab qolinadi)
+    async def gen_ok(model):
+        return {"ok": True, "status": 200, "error": "", "reason": ""}
+
+    async def token_only(mode):
+        return "" if mode == "token" else "1008 Request had invalid authentication credentials"
+
+    monkeypatch.setattr(lv, "probe_generate", gen_ok)
+    monkeypatch.setattr(lv, "try_connect", token_only)
+    monkeypatch.setitem(lv.AUTH_MODE, "mode", "key")
+    line = await diag.check_live()
+    assert line.startswith("✅") and "vaqtinchalik token" in line and lv.AUTH_MODE["mode"] == "token"
+
+    # 5) loyihaga Live yopiq (billing'siz) — token sinalmaydi, billing yo'riqnomasi
+    tried = []
+
+    async def project_denied(mode):
+        tried.append(mode)
+        return "1008 Your project has been denied access. Please contact support."
+
+    monkeypatch.setattr(lv, "try_connect", project_denied)
+    line = await diag.check_live()
+    assert tried == ["key"] and "loyihaga jonli ulanish yopiq" in line and "billing" in line
+
+
+def test_google_error_reason_and_classification():
+    class R:
+        def __init__(self, body):
+            self.body = body
+            self.text = str(body)
+
+        def json(self):
+            return self.body
+
+    body = {"error": {"code": 401, "message": "Request had invalid authentication credentials.", "status": "UNAUTHENTICATED",
+                      "details": [{"@type": "type.googleapis.com/google.rpc.ErrorInfo", "reason": "ACCESS_TOKEN_TYPE_UNSUPPORTED"}]}}
+    assert lv._google_error(R(body)) == ("Request had invalid authentication credentials.", "ACCESS_TOKEN_TYPE_UNSUPPORTED")
+    assert lv._google_error(R({"error": {"message": "x", "status": "PERMISSION_DENIED"}}))[1] == "PERMISSION_DENIED"
+    assert lv.classify_error("1008 Request had invalid authentication credentials") == "auth"
+    assert lv.classify_error("1008 Your project has been denied access") == "project"
+    assert lv.classify_error("1008 models/gemini-x is not found for API version v1beta") == "model"
+    assert lv.classify_error("TimeoutError()") == "down"
+    assert lv.pick_text_model(["gemini-3.8-flash-tts", "gemini-3.5-flash", "gemini-3.6-flash"]) == "gemini-3.6-flash"
+    assert lv.pick_text_model(["gemini-9-flash-live", "gemini-9-flash"]) == "gemini-9-flash"
+
+
+class _Cm:
+    async def __aexit__(self, *a):
         return None
 
-    monkeypatch.setattr(lv.GeminiLive, "__aenter__", ok)
-    monkeypatch.setattr(lv.GeminiLive, "__aexit__", close)
-    assert (await diag.check_live()).startswith("✅")
+
+@pytest.mark.asyncio
+async def test_gemini_live_falls_back_to_ephemeral_token(monkeypatch):
+    monkeypatch.setitem(lv.AUTH_MODE, "mode", "key")
+    calls = []
+
+    async def fake_open(mode, config):
+        calls.append(mode)
+        if mode == "key":
+            raise RuntimeError("1008 Request had invalid authentication credentials. Expected OAuth 2 access token")
+        return _Cm(), object()
+
+    monkeypatch.setattr(lv, "open_session", fake_open)
+    async with lv.GeminiLive("sys") as g:
+        assert g.mode == "token"
+    assert calls == ["key", "token"] and lv.AUTH_MODE["mode"] == "token"
+    calls.clear()
+    async with lv.GeminiLive("sys"):
+        pass
+    assert calls == ["token"], "ishlagan usul eslab qolinadi — keyingi suhbat darhol token bilan"
+
+
+@pytest.mark.asyncio
+async def test_gemini_live_no_token_retry_for_model_errors(monkeypatch):
+    monkeypatch.setitem(lv.AUTH_MODE, "mode", "key")
+    calls = []
+
+    async def fake_open(mode, config):
+        calls.append(mode)
+        raise RuntimeError("1008 models/gemini-x is not found for API version v1beta")
+
+    monkeypatch.setattr(lv, "open_session", fake_open)
+    with pytest.raises(lv.LiveUnavailable) as e:
+        async with lv.GeminiLive("sys"):
+            pass
+    assert calls == ["key"] and e.value.kind == "down"
 
 
 def test_auth_error_detection_matches_google_websocket_message():

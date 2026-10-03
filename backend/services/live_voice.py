@@ -68,6 +68,8 @@ def available() -> bool:
 
 
 AUTH_MARKERS = ("api key", "api_key", "401", "403", "permission", "authentication", "credential", "unauthenticated")
+# «Your project has been denied access» — bepul (billing'siz) loyihaga Live yopiq (Google forum, 2026-09)
+PROJECT_MARKERS = ("denied access", "billing", "free tier", "resource_exhausted", "quota", "429")
 
 
 def is_auth_error(text: str) -> bool:
@@ -75,30 +77,84 @@ def is_auth_error(text: str) -> bool:
     return any(m in low for m in AUTH_MARKERS)
 
 
+def classify_error(text: str) -> str:
+    """Gemini xatosi → auth (kalit) | project (billing/ruxsat) | model | down (tarmoq/boshqa)."""
+    low = text.lower()
+    if any(m in low for m in PROJECT_MARKERS):
+        return "project"
+    if "not found" in low or "is not supported" in low:
+        return "model"
+    return "auth" if is_auth_error(low) else "down"
+
+
+API_ROOT = "https://generativelanguage.googleapis.com/v1beta"
+
+
+def _google_error(r) -> tuple[str, str]:
+    """Google REST xatosi → (matn, sabab kodi: ErrorInfo.reason yoki status, masalan ACCESS_TOKEN_TYPE_UNSUPPORTED)."""
+    try:
+        err = r.json().get("error", {}) or {}
+    except Exception:  # noqa: BLE001
+        return r.text[:200], ""
+    reason = next((d["reason"] for d in err.get("details") or [] if isinstance(d, dict) and d.get("reason")), "")
+    msg = (err.get("message") or "").split(" See https://")[0]  # Google havolasi /tekshir qatorini cho'zadi
+    return msg[:200], reason or (err.get("status") or "")
+
+
 async def probe_key() -> dict:
-    """Kalitni REST bilan tekshiradi (WebSocket'dan aniqroq xato beradi) va jonli (bidiGenerateContent) modellarni topadi.
-    Qaytaradi: {"ok": bool, "status": int, "error": str, "live_models": [..]}."""
+    """Kalitni REST bilan tekshiradi (WebSocket'dan aniqroq xato beradi) va modellarni topadi.
+    Qaytaradi: {"ok", "status", "error", "reason", "live_models": [bidiGenerateContent], "gen_models": [generateContent]}."""
     import httpx
 
-    url = "https://generativelanguage.googleapis.com/v1beta/models"
     try:
         async with httpx.AsyncClient(timeout=15) as client:
-            r = await client.get(url, params={"pageSize": 1000}, headers={"x-goog-api-key": api_key()})
+            r = await client.get(f"{API_ROOT}/models", params={"pageSize": 1000}, headers={"x-goog-api-key": api_key()})
     except Exception as e:  # noqa: BLE001
-        return {"ok": False, "status": 0, "error": f"tarmoq: {type(e).__name__}", "live_models": []}
+        return {"ok": False, "status": 0, "error": f"tarmoq: {type(e).__name__}", "reason": "",
+                "live_models": [], "gen_models": []}
     if r.status_code != 200:
-        try:
-            msg = r.json().get("error", {}).get("message", "")
-        except Exception:  # noqa: BLE001
-            msg = r.text[:200]
-        return {"ok": False, "status": r.status_code, "error": msg[:200], "live_models": []}
+        msg, reason = _google_error(r)
+        return {"ok": False, "status": r.status_code, "error": msg, "reason": reason, "live_models": [], "gen_models": []}
     models = r.json().get("models", [])
-    live = sorted(
-        m.get("name", "").removeprefix("models/")
-        for m in models
-        if "bidiGenerateContent" in (m.get("supportedGenerationMethods") or [])
-    )
-    return {"ok": True, "status": 200, "error": "", "live_models": live}
+
+    def having(method: str) -> list[str]:
+        return sorted(
+            m.get("name", "").removeprefix("models/")
+            for m in models
+            if method in (m.get("supportedGenerationMethods") or [])
+        )
+
+    return {"ok": True, "status": 200, "error": "", "reason": "", "live_models": having("bidiGenerateContent"),
+            "gen_models": having("generateContent")}
+
+
+# Kalit bilan HAQIQIY javob olishni tekshirish uchun arzon matn modeli (ro'yxatda bo'lganining birinchisi)
+TEXT_MODEL_PREFS = ("gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.1-flash-lite")
+
+
+def pick_text_model(gen_models: list[str]) -> str:
+    for m in TEXT_MODEL_PREFS:
+        if m in gen_models:
+            return m
+    plain = [m for m in gen_models if "flash" in m and not any(x in m for x in ("tts", "live", "image", "audio", "embed"))]
+    return plain[0] if plain else ""
+
+
+async def probe_generate(model: str) -> dict:
+    """Bir necha tokenlik so'rov (sarf ~0): kalit ro'yxatni ko'rsa-yu, javob olishda rad etilsa — billing/loyiha muammosi."""
+    import httpx
+
+    body = {"contents": [{"parts": [{"text": "ping"}]}], "generationConfig": {"maxOutputTokens": 8}}
+    try:
+        async with httpx.AsyncClient(timeout=20) as client:
+            r = await client.post(f"{API_ROOT}/models/{model}:generateContent", json=body,
+                                  headers={"x-goog-api-key": api_key()})
+    except Exception as e:  # noqa: BLE001
+        return {"ok": False, "status": 0, "error": f"tarmoq: {type(e).__name__}", "reason": ""}
+    if r.status_code != 200:
+        msg, reason = _google_error(r)
+        return {"ok": False, "status": r.status_code, "error": msg, "reason": reason}
+    return {"ok": True, "status": 200, "error": "", "reason": ""}
 
 
 # ────────────────────────── Prompt ──────────────────────────
@@ -229,6 +285,64 @@ class LiveUnavailable(Exception):
         self.kind = kind
 
 
+# Ulanish usullari: "key" — kalit sarlavhada (x-goog-api-key); "token" — kalit bilan REST'da vaqtinchalik (ephemeral)
+# token olinadi, WebSocket'ga token bilan ulaniladi. Yangi «AQ.» kalitlarni ba'zi akkauntlarda WebSocket rad etadi
+# («Expected OAuth 2 access token», Google forum 2026-07…09) — token yo'li shuni chetlab o'tadi.
+AUTH_MODES = ("key", "token")
+AUTH_MODE = {"mode": "key"}  # oxirgi ishlagan usul (jarayon davomida eslab qolinadi)
+CONNECT_TIMEOUT = 15
+
+
+async def _client(mode: str):
+    import warnings
+    from datetime import datetime, timezone
+
+    from google import genai
+
+    if mode == "key":
+        return genai.Client(api_key=api_key())
+    with warnings.catch_warnings():  # SDK: «ephemeral token — experimental»
+        warnings.simplefilter("ignore")
+        base = genai.Client(api_key=api_key(), http_options={"api_version": "v1alpha"})
+        now = datetime.now(timezone.utc)
+        token = await asyncio.wait_for(
+            base.aio.auth_tokens.create(
+                config={
+                    "uses": 1,
+                    "expire_time": now + timedelta(minutes=30),
+                    "new_session_expire_time": now + timedelta(minutes=2),
+                }
+            ),
+            timeout=CONNECT_TIMEOUT,
+        )
+    return genai.Client(api_key=token.name, http_options={"api_version": "v1alpha"})
+
+
+async def open_session(mode: str, config: dict):
+    """(connect konteksti, sessiya) — xato bo'lsa istisno (chaqiruvchi tasniflaydi)."""
+    import warnings
+
+    client = await _client(mode)
+    cm = client.aio.live.connect(model=settings.live_model, config=config)
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        session = await asyncio.wait_for(cm.__aenter__(), timeout=CONNECT_TIMEOUT)
+    return cm, session
+
+
+async def try_connect(mode: str) -> str:
+    """/tekshir: shu usul bilan ulanib, darhol yopadi. Bo'sh satr — ishladi, aks holda xato matni."""
+    try:
+        cm, _session = await open_session(mode, GeminiLive("You are a test. Do not speak.").config())
+    except Exception as e:  # noqa: BLE001
+        return (repr(e) or type(e).__name__)[:300]
+    try:
+        await cm.__aexit__(None, None, None)
+    except Exception:  # noqa: BLE001
+        pass
+    return ""
+
+
 class GeminiLive:
     """google-genai SDK ustidan yupqa qatlam (SDK JSON maydonlarini o'zi to'g'ri joylaydi)."""
 
@@ -236,6 +350,7 @@ class GeminiLive:
         self.system = system
         self._cm = None
         self._session = None
+        self.mode = ""
 
     def config(self) -> dict:
         return {
@@ -256,18 +371,24 @@ class GeminiLive:
         }
 
     async def __aenter__(self) -> "GeminiLive":
-        from google import genai
-
-        client = genai.Client(api_key=api_key())
-        self._cm = client.aio.live.connect(model=settings.live_model, config=self.config())
-        try:
-            self._session = await asyncio.wait_for(self._cm.__aenter__(), timeout=15)
-        except Exception as e:  # noqa: BLE001
-            text = repr(e)
-            kind = "auth" if is_auth_error(text) else "down"
-            log.warning("Gemini Live ulanmadi (%s): %s", kind, text[:300])
-            raise LiveUnavailable("Jonli suhbat hozircha ishlamayapti. Birozdan keyin qayta urinib ko'ring.", kind) from e
-        return self
+        # Avval oxirgi ishlagan usul; kalit rad etilsa — ikkinchisi (to'g'ridan-to'g'ri kalit ↔ vaqtinchalik token)
+        first = AUTH_MODE["mode"]
+        last: Exception | None = None
+        for mode in (first, *(m for m in AUTH_MODES if m != first)):
+            try:
+                self._cm, self._session = await open_session(mode, self.config())
+            except Exception as e:  # noqa: BLE001
+                last = e
+                kind = classify_error(repr(e))
+                log.warning("Gemini Live ulanmadi (%s, %s): %s", mode, kind, repr(e)[:300])
+                if kind != "auth":
+                    break  # kalit muammosi emas — boshqa usul yordam bermaydi
+                continue
+            AUTH_MODE["mode"] = mode
+            self.mode = mode
+            return self
+        kind = "auth" if classify_error(repr(last)) in ("auth", "project") else "down"
+        raise LiveUnavailable("Jonli suhbat hozircha ishlamayapti. Birozdan keyin qayta urinib ko'ring.", kind) from last
 
     async def __aexit__(self, *exc) -> None:
         if self._cm is not None:
