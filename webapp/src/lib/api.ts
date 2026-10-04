@@ -760,7 +760,8 @@ export interface V2SkillQuestion {
 export interface V2Skills {
   reading: { text_ar: string; questions: V2SkillQuestion[] };
   listening: { audio: string; transcript_ar: string; questions: V2SkillQuestion[] };
-  speaking: { task_uz: string; target_ar: string[]; eval: string };
+  /** review_from — shu indeksdan boshlab oldingi darslar harflari takrori (#F180, server qo'shadi) */
+  speaking: { task_uz: string; target_ar: string[]; eval: string; review_from?: number };
   writing: { task_uz: string; eval: string };
 }
 

@@ -262,13 +262,22 @@ function OptionsEx({
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [options.join("|")]
   );
+  // #F180: variant bosilganda darhol baholanmaydi — avval tanlanadi (o'zgartirish mumkin), keyin «Tekshirish».
+  // Adashib bosilgan variant xato hisoblanmasin.
+  const [selected, setSelected] = useState<string | null>(null);
   const [picked, setPicked] = useState<string | null>(null);
 
-  const pick = (opt: string) => {
+  const choose = (opt: string) => {
     if (picked !== null) return;
-    setPicked(opt);
-    onAnswer?.(opt);
-    tg()?.HapticFeedback?.notificationOccurred(opt === answer ? "success" : "error");
+    setSelected(opt);
+    tg()?.HapticFeedback?.impactOccurred("light");
+  };
+
+  const check = () => {
+    if (picked !== null || selected === null) return;
+    setPicked(selected);
+    onAnswer?.(selected);
+    tg()?.HapticFeedback?.notificationOccurred(selected === answer ? "success" : "error");
   };
 
   return (
@@ -299,12 +308,15 @@ function OptionsEx({
           if (picked !== null) {
             if (opt === answer) cls = "bg-emerald-deep/10 border-emerald-deep";
             else if (opt === picked) cls = "bg-terracotta/10 border-terracotta";
+          } else if (opt === selected) {
+            cls = "bg-gold-soft border-gold ring-2 ring-gold/40";
           }
           const ar = arabicOptions ?? isArabic(opt);
           return (
             <button
               key={opt}
-              onClick={() => pick(opt)}
+              onClick={() => choose(opt)}
+              aria-pressed={opt === selected}
               className={`w-full rounded-2xl border p-4 mb-3 font-bold text-center transition-colors ${cls} ${
                 ar ? "font-arabic text-2xl" : "text-[15px]"
               }`}
@@ -315,6 +327,15 @@ function OptionsEx({
           );
         })}
       </div>
+      {picked === null && (
+        <button
+          onClick={check}
+          disabled={selected === null}
+          className="mt-1 w-full rounded-2xl bg-emerald-deep py-3.5 text-white font-extrabold disabled:opacity-40 active:scale-[0.98] transition-transform"
+        >
+          Tekshirish
+        </button>
+      )}
       {picked !== null && (
         <Feedback
           correct={picked === answer}

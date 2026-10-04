@@ -130,7 +130,9 @@ export function buildWordDistractors(item: { root: string; answer: string }): st
   return out;
 }
 
-/** Arabcha variantlar orasida faqat harakat bilan farq qiladiganlari bormi (مُعَلِّم ↔ مُعَلَّم) —
- *  bunda o'quvchiga «harakatlarga qarang» deb eslatiladi. */
+/** Arabcha variantlar orasida FAQAT harakat bilan farq qiladiganlari bormi (مُعَلِّم ↔ مُعَلَّم) —
+ *  bunda o'quvchiga «harakatlarga qarang» deb eslatiladi. Faqat harakat olib tashlanadi: harf shakli (تـ / ـتـ / ـت —
+ *  tatvil) va hamza o'rni (أ / إ) harakat emas (#F180 yonida: «ت so'z boshida» savolida noto'g'ri ogohlantirish). */
+const HARAKAT_ONLY = /[ً-ْٰ]/g;
 export const hasLookalikes = (options: string[]): boolean =>
-  new Set(options.map(normAr)).size < options.length;
+  new Set(options.map((o) => o.replace(HARAKAT_ONLY, "").trim())).size < options.length;

@@ -71,8 +71,18 @@ async def lesson_v2(
     attempts = await lesson_attempt_count(session, user.id, lesson_id)
     test = build_test(lesson_id, attempts)
 
+    # 🗣 GAPIRISH: server baholaydigan ro'yxat (harf darsida + takror harflar) — indekslar mos bo'lsin
+    from services import lesson_skills
+
+    skills = dict(data.get("skills") or {})
+    if skills.get("speaking"):
+        own = len(lesson_skills._own_targets(data))
+        targets = lesson_skills.speak_targets(data)
+        skills["speaking"] = {**skills["speaking"], "target_ar": targets, "review_from": min(own, len(targets))}
+
     return {
         **data,
+        "skills": skills,
         "micro_test": test["items"],
         "test_attempt": test["attempt"],
         "pass_score": PASS_SCORE,

@@ -357,3 +357,20 @@ def test_new_ai_feature_is_named_in_usage_report():
     assert "lesson_writing" in ai_usage.FEATURES
     assert ai_usage.short_model("claude-sonnet-5-5") == "Sonnet 5.5"
     assert ai_usage.prices_for("claude-sonnet-5-5") == {"in": 2.0, "out": 10.0, "cache_read": 0.2, "cache_write": 2.5}
+
+
+def test_f180_letter_lessons_review_previous_letters():
+    """#F180 (o'quvchi taklifi: «ko'proq gapirish, harflarni talaffuz qilish»): harf darsida GAPIRISH 2–3 harf bilan
+    tugamaydi — oldingi darslar harflari ham takrorlanadi; harakat/so'z darslariga qo'shilmaydi."""
+    from services.curriculum import load_lesson_v2
+    from services.lesson_skills import MAX_SPEAK_TARGETS, letter_review, speak_targets
+
+    a01 = load_lesson_v2("a0-01")
+    assert letter_review(a01) == [] and speak_targets(a01) == ["ا", "ب", "م", "ل", "و"], "birinchi dars — takror yo'q"
+    a09 = load_lesson_v2("a0-09")
+    assert speak_targets(a09)[:2] == ["ص", "ض"] and {"س", "ش"} <= set(letter_review(a09)), "yaqin juftlik (س ش) takrorda"
+    for lid in ("a0-02", "a0-03", "a0-10", "a0-16"):
+        t = speak_targets(load_lesson_v2(lid))
+        assert 5 <= len(t) <= MAX_SPEAK_TARGETS and len(set(t)) == len(t), (lid, t)
+    assert letter_review(load_lesson_v2("a0-21")) == [], "bo'g'in (بَ) darsiga qo'shilmaydi"
+    assert letter_review(load_lesson_v2("a1-01")) == []

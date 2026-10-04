@@ -140,5 +140,9 @@ def test_f150_case():
 
 def test_lookalike_detection():
     fail, maful, other = "مُعَلِّم", "مُعَلَّم", "كَتَبَ"
-    a, b = run([["hasLookalikes", [fail, maful, other]], ["hasLookalikes", ["كَاتِب", "كِتَاب", "مَكْتَب"]]])
-    assert a is True and b is False
+    a, b, c = run([
+        ["hasLookalikes", [fail, maful, other]],
+        ["hasLookalikes", ["كَاتِب", "كِتَاب", "مَكْتَب"]],
+        ["hasLookalikes", ["ـتـ", "تـ", "ـت"]],  # harf shakllari — harakat emas
+    ])
+    assert a is True and b is False and c is False

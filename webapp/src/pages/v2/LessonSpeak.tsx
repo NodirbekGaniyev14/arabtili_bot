@@ -30,6 +30,8 @@ export default function LessonSpeak({
 }) {
   const sp = lesson.skills.speaking;
   const targets = sp.target_ar ?? [];
+  // #F180: harf darsida oldingi darslar harflari ham aytiladi — ular «🔁 takror» belgisi bilan
+  const reviewFrom = sp.review_from ?? targets.length;
   const canVoice = !!lesson.voice && micSupported();
   const recorder = useRef(new Recorder());
   const [active, setActive] = useState<number | null>(null);
@@ -117,6 +119,11 @@ export default function LessonSpeak({
     <div className="pt-4">
       <div className="text-[11px] font-extrabold tracking-[0.14em] text-ink-soft mb-2">🗣 GAPIRISH</div>
       <p className="text-sm font-semibold">{sp.task_uz}</p>
+      {reviewFrom < targets.length && (
+        <p className="mt-1 text-[12px] font-semibold text-ink-soft">
+          🔁 Oxirida oldingi darslardagi harflar ham bor — ularni ham ayting.
+        </p>
+      )}
       {canVoice ? (
         <p className="mt-1 text-[12px] font-semibold text-emerald-dark">
           🔊 namunani eshiting → 🎤 bosib ayting → bot eshitib baholaydi
@@ -135,7 +142,12 @@ export default function LessonSpeak({
           const recHere = active === i;
           const single = r && r.mode !== "text" && r.words.length === 1 ? r.words[0] : null;
           return (
-            <div key={i} className="rounded-2xl bg-card border border-cardline p-4">
+            <div key={i} className="relative rounded-2xl bg-card border border-cardline p-4">
+              {i >= reviewFrom && (
+                <span className="absolute left-3 top-3 rounded-full bg-gold-soft px-2 py-0.5 text-[10px] font-extrabold text-ink-soft">
+                  🔁 takror
+                </span>
+              )}
               <div className="text-center">
                 {r && r.mode === "text" ? (
                   <div className="font-arabic text-3xl leading-[1.9]" dir="rtl">

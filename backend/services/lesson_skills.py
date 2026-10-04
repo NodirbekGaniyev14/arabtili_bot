@@ -114,9 +114,45 @@ def mode(target: str) -> str:
     return "text"
 
 
-def speak_targets(lesson: dict) -> list[str]:
+MAX_SPEAK_TARGETS = 8
+# #F180 (o'quvchi taklifi): harf darslarida GAPIRISH 2–3 harf bilan tugardi — «ko'proq gapirish, harflarni talaffuz
+# qilish». Yangi harflardan keyin oldingi darslardagi harflar ham aytiladi (eng yaqin darsdan boshlab).
+LETTER_REVIEW = 4
+
+
+def _own_targets(lesson: dict) -> list[str]:
     sp = ((lesson.get("skills") or {}).get("speaking") or {})
-    return [str(t).strip() for t in sp.get("target_ar", []) if str(t).strip()][:8]
+    return [str(t).strip() for t in sp.get("target_ar", []) if str(t).strip()]
+
+
+def letter_review(lesson: dict) -> list[str]:
+    """Harf darsi (hamma namuna — yakka harf) bo'lsa: oldingi darslarning harflaridan takror, aks holda []."""
+    own = _own_targets(lesson)
+    lesson_id = str(lesson.get("id") or "")
+    if not own or not lesson_id or any(mode(t) != "letter" for t in own):
+        return []
+    from services.curriculum import lesson_order, load_lesson_v2
+
+    order = lesson_order()
+    if lesson_id not in order:
+        return []
+    seen = {HARAKAT.sub("", t) for t in own}
+    out: list[str] = []
+    for lid in reversed(order[: order.index(lesson_id)]):
+        for t in _own_targets(load_lesson_v2(lid) or {}):
+            core = HARAKAT.sub("", t)
+            if mode(t) == "letter" and core not in seen:
+                seen.add(core)
+                out.append(t)
+                if len(out) >= LETTER_REVIEW:
+                    return out
+    return out
+
+
+def speak_targets(lesson: dict) -> list[str]:
+    """Dars namunalari + (harf darsida) takror harflar. Indeks shu ro'yxat bo'yicha — frontend ham shuni oladi."""
+    own = _own_targets(lesson)
+    return (own + letter_review(lesson))[:MAX_SPEAK_TARGETS]
 
 
 def tts_text(target: str) -> str:
