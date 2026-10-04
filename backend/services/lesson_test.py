@@ -42,6 +42,34 @@ ALLOWED_TYPES = {
 }
 
 FALLBACK_ROOTS = ["ك ت ب", "د ر س", "ع ل م", "س ف ر", "ن ظ ر", "ق ب ل", "ح ك م"]
+# Xato o'zak tanlanganda izoh: «Siz tanlagan «ع ل م» = bilim (عَلِمَ، تَعَلَّمَ)» (#F173: تَعَاوُن ↔ ع ل م)
+FALLBACK_ROOT_NOTES = {
+    "ك ت ب": "yozish (كَتَبَ)",
+    "د ر س": "o'qish, dars (دَرَسَ)",
+    "ع ل م": "bilim (عَلِمَ، تَعَلَّمَ)",
+    "س ف ر": "safar (سَافَرَ)",
+    "ن ظ ر": "qarash (نَظَرَ)",
+    "ق ب ل": "qabul qilish (قَبِلَ)",
+    "ح ك م": "hukm (حَكَمَ)",
+}
+
+# K31.2: variant matni. «(o'zbekcha 'taovun')» — lug'at kartasidagi o'xshash so'z izohi testda javobni oshkor
+# qiladi (تَعَاوُن ≈ «taovun»); yasalma savolida «(masdar)», «(ism fo'il)», «(VI)» — o'quvchi uchun tushunarsiz
+# atama (#F174–#F175). Grammatik belgi javobdan keyin izohda ko'rinadi.
+_APOS = "['’ʻ]"
+_COGNATE = re.compile(rf"\s*\(\s*o{_APOS}zbekcha[^()]*\)", re.I)
+_GRAMMAR = re.compile(
+    rf"\s*\((?:[IVX]{{1,4}}|[^()]*(?:masdar|ism fo{_APOS}il|ism maf{_APOS}ul|\bbob\b|lug{_APOS}at shakli|\bamr\b|muzori{_APOS})[^()]*)\)",
+    re.I,
+)
+
+
+def opt_uz(s: str, grammar: bool = False) -> str:
+    """Variant/savol matni: o'xshash so'z izohisiz; `grammar` — grammatik belgilarsiz ham."""
+    s = _COGNATE.sub("", s or "")
+    if grammar:
+        s = _GRAMMAR.sub("", s)
+    return " ".join(s.split()).strip(" ·—–,;")
 
 
 def _mcq(
@@ -139,37 +167,62 @@ def generated_bank(lesson_id: str) -> list[dict]:
     pairs = list(pool) + [(v["ar"].strip(), v["uz"].strip()) for v in vocab]
     pairs += [(str(x.get("ar", "")).strip(), str(x.get("uz", "")).strip()) for x in table + derived]
     pairs = [(a, u) for a, u in pairs if a and u]
-    uz_note = {}  # o'zbekcha variant → u qaysi arabcha so'z
+    uz_note = {}  # o'zbekcha variant (tozalangan) → u qaysi arabcha so'z
     ar_note = {}  # arabcha variant → ma'nosi
     for a, u in pairs:
-        uz_note.setdefault(u, a)
-        ar_note.setdefault(a, u)
+        uz_note.setdefault(opt_uz(u), a)
+        uz_note.setdefault(opt_uz(u, grammar=True), a)
+        ar_note.setdefault(a, opt_uz(u))
 
     def meanings(ar: str) -> set[str]:
         return {u for a, u in pairs if same_word(a, ar)}
 
-    def uz_distractors(ar: str, extra: list[str] = ()) -> list[str]:
-        bad = meanings(ar)
-        return [u for u in [*extra, *uzs] if u not in bad]
+    lesson_pairs = [(v["ar"].strip(), v["uz"].strip()) for v in vocab]
+
+    def candidates(key: str, own: list[str], level: list[str]) -> list[str]:
+        """Avval SHU DARS so'zlari, keyin daraja lug'ati — savolga xos barqaror aralashtirilgan. Ilgari hamma savolda
+        darajaning birinchi 3 so'zi turardi (A2: «u (erkak) yozdi…», كَتَبَ/كَتَبَتْ/كَتَبُوا) — javob darhol ko'rinardi."""
+        rnd = random.Random(f"{lesson_id}:{key}")
+        own, level = list(own), list(level)
+        rnd.shuffle(own)
+        rnd.shuffle(level)
+        return own + level
+
+    def uz_distractors(ar: str, extra: list[str] = (), grammar: bool = False) -> list[str]:
+        bad = {opt_uz(u, grammar) for u in meanings(ar)}
+        out: list[str] = []
+        for u in [*extra, *candidates(ar, [u for _, u in lesson_pairs], uzs)]:
+            o = opt_uz(u, grammar)
+            if o and o not in bad and o not in out:
+                out.append(o)
+        return out
 
     def ar_distractors(ar: str, uz: str) -> list[str]:
         syn = {a for a, u in pairs if u == uz}
-        return [a for a in ars if not same_word(a, ar) and a not in syn]
+        own = [a for a, _ in lesson_pairs]
+        return [a for a in candidates(ar, own, ars) if not same_word(a, ar) and a not in syn]
+
+    # O'zak savoli: shu darsdagi boshqa so'zlarning o'zaklari, xato tanlansa — qaysi so'zniki ekani
+    root_note = dict(FALLBACK_ROOT_NOTES)
+    for v in vocab:
+        if v.get("root"):
+            root_note[v["root"]] = f"{v['ar'].strip()} — {opt_uz(v['uz'])}"
 
     out: list[dict] = []
 
     for v in vocab:
         ar, uz = v["ar"].strip(), v["uz"].strip()
+        shown = opt_uz(uz)
         other_ar = ar_distractors(ar, uz)
 
         # o'zbekcha → arabcha
-        q = _mcq(f"«{uz}» — qaysi so'z?", ar, other_ar, explain=f"{ar} — {uz}", notes=ar_note)
+        q = _mcq(f"«{shown}» — qaysi so'z?", ar, other_ar, explain=f"{ar} — {uz}", notes=ar_note)
         if q:
             out.append(q)
         # arabcha → o'zbekcha (arabcha katta ko'rinadi)
         q = _mcq(
             "Bu so'z nima degani?",
-            uz,
+            shown,
             uz_distractors(ar),
             q_ar=ar,
             audio=v.get("audio", ""),
@@ -190,17 +243,20 @@ def generated_bank(lesson_id: str) -> list[dict]:
             )
             if q:
                 out.append(q)
-        # o'zak (dars o'zaklaridan)
+        # o'zak: avval shu darsdagi boshqa so'zlarning o'zaklari
         if v.get("root"):
-            roots = [
-                r["root"] for r in data.get("roots", []) if r.get("root") != v["root"]
-            ] + [r for r in FALLBACK_ROOTS if r != v["root"]]
+            own_roots = [x["root"] for x in vocab if x.get("root") and x["root"] != v["root"]]
+            sect_roots = [r["root"] for r in data.get("roots", []) if r.get("root") and r["root"] != v["root"]]
+            roots = list(dict.fromkeys(
+                candidates(f"root:{ar}", own_roots, []) + sect_roots + [r for r in FALLBACK_ROOTS if r != v["root"]]
+            ))
             q = _mcq(
                 "Bu so'z qaysi o'zakdan?",
                 v["root"],
                 roots,
                 q_ar=ar,
                 explain=f"{ar} — o'zak: {v['root']}",
+                notes=root_note,
             )
             if q:
                 out.append(q)
@@ -211,22 +267,25 @@ def generated_bank(lesson_id: str) -> list[dict]:
         if not ar or not uz:
             continue
         others = [str(r.get("uz", "")).strip() for r in table if str(r.get("uz", "")).strip() != uz]
-        q = _mcq("Tarjimasi qaysi?", uz, uz_distractors(ar, others), q_ar=ar, notes=uz_note)
+        q = _mcq("Tarjimasi qaysi?", opt_uz(uz), uz_distractors(ar, others), q_ar=ar, notes=uz_note)
         if q:
             out.append(q)
 
-    # O'zak yasalmalari
+    # O'zak yasalmalari (#F174–#F175: «Bu yasalma nima degani?» tushunarsiz edi — o'zak aytiladi, variantlar
+    # grammatik belgisiz, 4-variant boshqa darsdan emas)
     for r in data.get("roots", []):
+        root = str(r.get("root", "")).strip()
+        siblings = [str(x.get("uz", "")).strip() for x in r.get("derived", [])]
         for d in r.get("derived", []):
             ar, uz = str(d.get("ar", "")).strip(), str(d.get("uz", "")).strip()
             if not ar or not uz:
                 continue
             q = _mcq(
-                "Bu yasalma nima degani?",
-                uz,
-                uz_distractors(ar, [str(x.get("uz", "")).strip() for x in r.get("derived", [])]),
+                f"«{root}» o'zagidan yasalgan bu so'z nima degani?" if root else "Bu so'z nima degani?",
+                opt_uz(uz, grammar=True),
+                uz_distractors(ar, siblings, grammar=True),
                 q_ar=ar,
-                explain=f"{r.get('root', '')} o'zagidan",
+                explain=f"{ar} — {opt_uz(uz)}" + (f" · «{root}» o'zagidan" if root else ""),
                 notes=uz_note,
             )
             if q:

@@ -54,6 +54,10 @@ EX_LABELS = {
 }
 
 
+_ARABIC = re.compile("[\u0600-\u06ff]")
+LRM = "\u200e"
+
+
 def issue_text(
     kind: str,
     label: str = "",
@@ -77,7 +81,12 @@ def issue_text(
     if q:
         lines.append(f"Savol: {q}")
     opts = [o for o in (options or []) if o][:8]
-    if opts:
+    if opts and any(_ARABIC.search(o) for o in opts):
+        # #F173: «✓ ع و ن | ك ت ب | …» bir qatorda Telegram'da teskari tartibda chiqadi — ✓ boshqa variant yonida
+        # ko'rinardi. Har variant alohida qatorda, boshida LRM — ✓ doim o'z varianti yonida.
+        lines.append("Variantlar:")
+        lines += [f"{LRM}   {'✓' if o == answer else '·'} {o}" for o in opts]
+    elif opts:
         lines.append("Variantlar: " + " | ".join(("✓ " if o == answer else "") + o for o in opts))
     elif answer:
         lines.append(f"To'g'ri javob: {answer}")
