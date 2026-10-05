@@ -617,3 +617,14 @@ async def test_review_ai_unavailable_message(session, make_user, monkeypatch):
     r = await lv.review(session, row, u)
     assert "Tahlil hozircha tayyorlanmadi" in r["summary_uz"] and "Ustoz hozircha band" not in r["summary_uz"]
     assert r["xp"] > 0, "AI tahlili bo'lmasa ham suhbat uchun XP beriladi"
+
+
+def test_live_fix_advice_mentions_declined_card_and_credits():
+    """2026-10-05: 401 kalit almashtirilib, billing'dagi rad etilgan karta «Fix» qilingach yo'qoldi — maslahat ikkalasini aytadi."""
+    from services import alerts, diag
+
+    assert "How you pay" in diag.LIVE_KEY_FIX and "«Fix»" in diag.LIVE_KEY_FIX and "Create API key" in diag.LIVE_KEY_FIX
+    assert diag.LIVE_KEY_FIX.index("How you pay") < diag.LIVE_KEY_FIX.index("Create API key"), "avval karta — tez tekshiriladi"
+    assert "«Fix»" in diag.LIVE_BILLING_FIX and "Buy credits" in diag.LIVE_BILLING_FIX
+    assert diag.REASON_FIX["BILLING_DISABLED"] == diag.LIVE_BILLING_FIX
+    assert "How you pay" in alerts.KINDS["live_auth"] and "{detail}" in alerts.KINDS["live_auth"]

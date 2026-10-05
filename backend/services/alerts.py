@@ -46,8 +46,10 @@ KINDS = {
     # K30 jonli ovozli suhbat (Gemini Live)
     "live_auth": (
         "🎙 <b>Jonli AI suhbat ishlamayapti — GEMINI_API_KEY rad etildi.</b>\n"
-        "Kalit noto'g'ri, bekor qilingan yoki Live API ruxsati yo'q ({detail}).\n\n"
-        "Yechim: aistudio.google.com → API keys → serverda .env <code>GEMINI_API_KEY=</code> → restart."
+        "Kalit noto'g'ri, bekor qilingan, Live API ruxsati yo'q yoki to'lov hisobida muammo ({detail}).\n\n"
+        "Yechim: 1) console.cloud.google.com → Billing → How you pay: karta «declined» bo'lsa — «Fix», "
+        "AI Studio krediti 0 bo'lsa — «Buy credits»; 2) aistudio.google.com → API keys → yangi kalit → "
+        "serverda .env <code>GEMINI_API_KEY=</code> → restart. Batafsil: /tekshir."
     ),
     "live_down": (
         "🎙 <b>Jonli AI suhbat: Gemini'ga ulanib bo'lmadi</b> ({detail}).\n"

@@ -343,15 +343,19 @@ def check_alerts() -> str:
 # Eski «AIza» kalitlar 2026-09 dan butunlay o'chirilgan — muqobil yo'q, faqat «AQ.».
 # Google bu 401 ni noto'g'ri / to'liq ko'chirilmagan / o'chirilgan «AQ.» kalitga ham beradi — soxta «AQ.…» satr bilan
 # ham aynan shu xato chiqadi (2026-10-03 sinov). Shuning uchun birinchi qadam — kalitni qayta, to'liq nusxalash.
+# 2026-10-05: egasida 401 ikki narsa tuzatilgach yo'qoldi — billing'da «Postpay» kartasi rad etilgan edi (Google
+# «project at risk of suspension» xati; AI Studio'dagi $30 prepay kredit joyida bo'lsa ham) + yangi kalit. Ikkalasi ham ko'rsatiladi.
 AQ_KEY_LEN = 53  # 2026: AI Studio «AQ.» kalitlari 53 belgi
+CARD_FIX = "console.cloud.google.com → Billing → How you pay: karta «declined» / «past due» bo'lsa — «Fix»"
 LIVE_KEY_FIX = (
-    "1) AI Studio → API keys → «Create API key» → to'lov qilingan loyihani tanlang → oynadagi nusxalash tugmasi bilan "
+    f"1) {CARD_FIX}. "
+    "2) AI Studio → API keys → «Create API key» → to'lov qilingan loyihani tanlang → oynadagi nusxalash tugmasi bilan "
     f"TO'LIQ nusxalang ({AQ_KEY_LEN} belgi; ro'yxatdagi qisqartirilgan ko'rinish emas) → .env: GEMINI_API_KEY=… → restart. "
-    "2) Yangi kalit ham rad etilsa — Google'ning «AQ.» kalit muammosi: boshqa loyihada kalit yarating"
+    "3) Yangi kalit ham rad etilsa — Google'ning «AQ.» kalit muammosi: boshqa loyihada kalit yarating"
 )
 LIVE_BILLING_FIX = (
-    "AI Studio → kalit loyihasida billing ulanganini va to'lov o'tganini tekshiring (bepul loyihada Live yopiq); "
-    "to'lovdan keyin 5–10 daqiqa kuting yoki shu loyihada yangi kalit yarating"
+    f"{CARD_FIX}; «Prepay – AI Studio» krediti 0 bo'lsa — «Buy credits». Kalit loyihasi shu billing'ga ulangan bo'lsin "
+    "(bepul loyihada Live yopiq); to'lovdan keyin 5–10 daqiqa kuting yoki shu loyihada yangi kalit yarating"
 )
 REASON_FIX = {
     "SERVICE_DISABLED": "Google Cloud Console → shu loyiha → APIs & Services → «Generative Language API» → Enable",
