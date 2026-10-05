@@ -67,6 +67,15 @@ async def lesson_v2(
     from config import settings
     from services import stt
 
+    # K32 voronka: dars ochildi (admin /funnel) — yozib bo'lmasa ham dars ochilaveradi
+    from services import funnel
+
+    try:
+        await funnel.record_open(session, user.id, lesson_id)
+    except Exception as e:  # noqa: BLE001 — statistika darsni to'xtatmasin
+        await session.rollback()
+        print(f"lesson_visits xatosi ({lesson_id}): {e!r}")
+
     # Mikro-test urinishga qarab yig'iladi — qayta topshirganda boshqa savollar
     attempts = await lesson_attempt_count(session, user.id, lesson_id)
     test = build_test(lesson_id, attempts)
@@ -99,6 +108,29 @@ async def lesson_v2(
             "module": meta["module"],
         },
     }
+
+
+class PhaseBody(BaseModel):
+    idx: int = Field(ge=0, le=200)
+    phase: str = Field(max_length=16)
+
+
+@router.post("/lessons/{lesson_id}/phase")
+async def lesson_phase(
+    lesson_id: str,
+    body: PhaseBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """K32 voronka: dars ichida qaysi fazagacha yetildi (LessonPlayerV2, javob kutilmaydi)."""
+    from services import funnel
+
+    if lesson_id not in load_curriculum():
+        raise HTTPException(status_code=404, detail="Dars topilmadi")
+    if body.phase not in funnel.PHASE_NAMES:
+        raise HTTPException(status_code=400, detail="Noma'lum faza")
+    await funnel.record_phase(session, user.id, lesson_id, body.idx, body.phase)
+    return {"ok": True}
 
 
 class CompleteV2Body(BaseModel):

@@ -650,3 +650,23 @@ class Plan(Base):
     # Daraja qaysi versiyadagi placement testi bilan aniqlangan (services/placement.py)
     placement_version: Mapped[int] = mapped_column(Integer, default=0)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
+
+
+class LessonVisit(Base):
+    """K32 voronka: o'quvchi darsni ochgani va dars ICHIDA qaysi fazagacha yetgani (eng uzoq).
+
+    Bitta (user, dars) — bitta qator. `max_idx` — LessonPlayerV2 fazalar ro'yxatidagi indeks
+    (`services/funnel.lesson_phases` bilan bir xil; natija ekrani = fazalar soni). Admin: /funnel a0-01.
+    """
+
+    __tablename__ = "lesson_visits"
+    __table_args__ = (UniqueConstraint("user_id", "lesson_id", name="uq_lesson_visit"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    lesson_id: Mapped[str] = mapped_column(String(16), index=True)
+    opens: Mapped[int] = mapped_column(Integer, default=1)
+    max_idx: Mapped[int] = mapped_column(Integer, default=0)
+    max_phase: Mapped[str] = mapped_column(String(16), default="hook")
+    opened_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)

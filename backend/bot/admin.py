@@ -73,10 +73,12 @@ async def cmd_digest(message: Message):
 async def cmd_funnel(message: Message):
     if not _is_admin(message):
         return
-    parts = (message.text or "").split(maxsplit=1)
-    level = parts[1].strip().upper() if len(parts) > 1 else "A0"
+    # K32: `/funnel A0` · `/funnel A0 14` (oxirgi 14 kunda kelganlar) · `/funnel a0-01` (dars ichida)
+    from services import funnel
+
+    target, days = funnel.parse_args((message.text or "").split()[1:])
     async with SessionLocal() as session:
-        text = await admin.funnel(session, level)
+        text = await funnel.report(session, target, days)
     await message.answer(text, parse_mode="HTML")
 
 

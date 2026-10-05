@@ -19,6 +19,7 @@ import LessonSpeak from "./LessonSpeak";
 import LessonWrite from "./LessonWrite";
 
 const tg = () => window.Telegram?.WebApp;
+const SKILL_PHASES = ["reading", "listening", "speaking", "writing"] as const;
 
 type Phase =
   | { k: "hook" }
@@ -108,6 +109,19 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish, onNext }: 
     if (i >= 0 && i + 1 < phases.length) setPhase(phases[i + 1]);
     else setPhase({ k: "result" });
   };
+
+  // K32 voronka: dars ichida eng uzoq faza serverga (admin /funnel a0-01 — o'quvchilar qayerda to'xtashini ko'rish).
+  // Indeks — `phases` dagi o'rni (natija = phases.length); server faqat kattasini saqlaydi.
+  const sentIdx = useRef(-1);
+  useEffect(() => {
+    if (!lesson || phase.k === "cp" || phase.k === "cpresult") return;
+    const idx = phase.k === "result" ? phases.length : phaseIdx;
+    if (idx < 0 || idx <= sentIdx.current) return;
+    sentIdx.current = idx;
+    const name = phase.k === "skill" ? SKILL_PHASES[phase.i] : phase.k;
+    api.lessonPhase(lesson.id, idx, name).catch(() => {});
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, lesson]);
 
   // Vocab kartada audio avtomatik
   useEffect(() => {

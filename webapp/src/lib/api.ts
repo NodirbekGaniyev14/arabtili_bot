@@ -1304,6 +1304,12 @@ export const api = {
       method: "POST",
       body: "{}",
     }),
+  /** K32 voronka: dars ichida qaysi fazagacha yetildi (admin /funnel a0-01) — javob kutilmaydi */
+  lessonPhase: (lessonId: string, idx: number, phase: string) =>
+    request<{ ok: boolean }>(`/api/v2/lessons/${lessonId}/phase`, {
+      method: "POST",
+      body: JSON.stringify({ idx, phase }),
+    }),
   rateLesson: (lessonId: string, rating: 1 | -1) =>
     request<{ ok: boolean }>(`/api/v2/lessons/${lessonId}/rate`, {
       method: "POST",
