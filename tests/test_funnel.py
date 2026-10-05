@@ -47,12 +47,16 @@ async def test_level_report_counts_only_passed_lessons_level_exams_and_all_lesso
     # Mini-imtihon imtihon emas (ilgari «topshirgan 184 > tugatgan 97»)
     session.add(ExamAttempt(user_id=a.id, level="A0", kind="mini", checkpoint=25, finished_at=utcnow(), passed=1))
     session.add(ExamAttempt(user_id=b.id, level="A0", kind="level", finished_at=utcnow(), passed=0))
+    # A1 dan boshlagan, A0 darslarisiz A0 imtihoni (pastki daraja doim ochiq) — alohida sanaladi
+    d = await _learner(session, "Yuqori", start="a1-01")
+    session.add(ExamAttempt(user_id=d.id, level="A0", kind="level", finished_at=utcnow(), passed=1))
     await session.commit()
 
     text = await funnel.level_report(session, "A0")
     assert "A0 dan boshlagan: <b>4</b>" in text
     assert "Kamida 1 dars o'tgan: <b>2</b>" in text, "yiqilgan urinish o'tgan emas"
     assert "topshirgan <b>1</b> · o'tgan <b>0</b>" in text, "faqat kind=level"
+    assert "yuqori darajadan boshlaganlar (darssiz, sertifikat uchun): 1" in text
     assert [_count(_lesson_line(text, lid)) for lid in ("a0-01", "a0-02", "a0-03", "a0-04")] == [2, 2, 2, 0]
     # hamma 41 dars ko'rinadi (ilgari 26-darsda kesilardi)
     assert "<code>a0-41</code>" in text and len(text) < 4096
@@ -80,10 +84,11 @@ async def test_level_report_days_window_and_drop_marks(session):
 
 @pytest.mark.asyncio
 async def test_unknown_target_and_args():
-    assert funnel.parse_args([]) == ("A0", None)
+    assert funnel.parse_args([]) == ("", None)
+    assert funnel.parse_args(["14"]) == ("", 14)
     assert funnel.parse_args(["A1", "14"]) == ("A1", 14)
     assert funnel.parse_args(["a0-01", "99999"]) == ("a0-01", funnel.MAX_DAYS)
-    assert funnel.parse_args(["0"]) == ("A0", 1)
+    assert funnel.parse_args(["0"]) == ("", 1)
 
 
 @pytest.mark.asyncio
@@ -170,3 +175,27 @@ async def test_lesson_api_records_open_and_phase(client, session):
     assert (await c.post("/api/v2/lessons/a0-01/phase", json={"idx": 999, "phase": "hook"})).status_code == 422
     v = (await session.execute(LessonVisit.__table__.select())).one()
     assert (v.opens, v.max_idx, v.max_phase) == (1, 4, "vocab")
+
+
+@pytest.mark.asyncio
+async def test_overview_by_start_level(session):
+    """K32.1: 101 dan 26 tasi A0 dan — qolganlari A1+ dan boshlaydi; ularning birinchi darslari alohida ko'rinadi."""
+    for i in range(4):  # A0: 2 tasi 1+ dars, 1 tasi 5+
+        u = await _learner(session, f"A0_{i}")
+        session.add_all(_passed(u, *[f"a0-{k:02d}" for k in range(1, (6 if i == 0 else 2 if i == 1 else 0) + 1)]))
+    for i in range(5):  # A1: 1 o'tgan, 2 yiqilgan, 2 testgacha yetmagan
+        u = await _learner(session, f"A1_{i}", start="a1-01")
+        if i == 0:
+            session.add_all(_passed(u, "a1-01"))
+        elif i < 3:
+            session.add_all(_passed(u, "a1-01", ok=0))
+    await session.commit()
+
+    text = await funnel.report(session, "")
+    assert "qaysi darajadan boshlashadi" in text and "Ro'yxatdan o'tgan (reja bor): <b>9</b>" in text
+    assert "<b>A0</b> dan · <b>4</b> kishi (44%)" in text
+    assert "✅ 1+ dars 50% · 5+ dars 25% · ❌ faqat yiqilgan 0% · 💤 testgacha yetmagan 50%" in text
+    assert "<b>A1</b> dan · <b>5</b> kishi (56%)" in text
+    assert "✅ 1+ dars 20% · 5+ dars 0% · ❌ faqat yiqilgan 40% · 💤 testgacha yetmagan 40%" in text
+    assert "<b>B1</b>" not in text, "bo'sh daraja ko'rsatilmaydi"
+    assert "/funnel A1 14" in await funnel.report(session, "", 14)

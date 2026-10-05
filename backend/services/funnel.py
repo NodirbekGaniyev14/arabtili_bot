@@ -9,6 +9,11 @@ Egasi yuborgan A0 voronkasida eski hisobot (`admin.funnel`) xatolari:
   `/funnel A0 14` (oxirgi N kunda ro'yxatdan o'tganlar).
 
 Dars ichi: `lesson_visits` — dars ochilishi (server, GET dars) va eng uzoq faza (LessonPlayerV2 yuboradi).
+
+K32.1 (egasining birinchi natijasi): 1229 ro'yxatdan o'tgandan atigi 371 tasi A0 dan boshlagan, oxirgi 14 kunda
+101 dan 26 tasi — ko'pchilik daraja testidan keyin A1+ dan boshlaydi, A0 voronkasi ularni ko'rsatmaydi. Endi `/funnel`
+(argumentsiz) — boshlash darajasi bo'yicha umumiy ko'rinish. A0 imtihonini yuqori darajadagilar ham topshiradi (pastki
+darajalar imtihoni doim ochiq — sertifikat uchun): ular «shu darajani o'qiganlar» dan alohida sanaladi.
 """
 
 import html
@@ -44,9 +49,10 @@ MIN_DROP_BASE = 10  # kichik sonlarda foiz shovqin — tushish belgisi qo'yilmay
 TOP_DROPS = 3
 TG_LIMIT = 3900  # Telegram xabari 4096 belgi — sarlavhalarsiz qisqa variantga o'tiladi
 USAGE = (
-    "Foydalanish: <code>/funnel A0</code> · <code>/funnel A0 14</code> (oxirgi 14 kunda kelganlar) · "
-    "<code>/funnel a0-01</code> (dars ichida qayerda to'xtashadi)"
+    "Foydalanish: <code>/funnel</code> (boshlash darajalari) · <code>/funnel 14</code> (oxirgi 14 kunda kelganlar) · "
+    "<code>/funnel A0 14</code> (daraja darslari) · <code>/funnel a0-01</code> (dars ichida qayerda to'xtashadi)"
 )
+LEVELS = ("A0", "A1", "A2", "B1", "B2")
 LESSON_ID = re.compile(r"[a-z]\d-\d{2}")
 
 
@@ -147,8 +153,8 @@ def _period(days: int | None) -> str:
 
 
 def parse_args(tokens: list[str]) -> tuple[str, int | None]:
-    """`/funnel [A0|a0-01] [kun]` → (nishon, kun)."""
-    target, days = "A0", None
+    """`/funnel [A0|a0-01] [kun]` → (nishon, kun); nishonsiz — umumiy ko'rinish."""
+    target, days = "", None
     for t in tokens:
         if t.isdigit():
             days = max(1, min(int(t), MAX_DAYS))
@@ -157,10 +163,74 @@ def parse_args(tokens: list[str]) -> tuple[str, int | None]:
     return target, days
 
 
-async def report(session: AsyncSession, target: str = "A0", days: int | None = None) -> str:
+async def report(session: AsyncSession, target: str = "", days: int | None = None) -> str:
+    if not target:
+        return await overview(session, days)
     if LESSON_ID.fullmatch(target.lower()):
         return await lesson_report(session, target.lower(), days)
     return await level_report(session, target.upper(), days)
+
+
+async def overview(session: AsyncSession, days: int | None = None) -> str:
+    """Boshlash darajasi (daraja testi natijasi) bo'yicha: nechta kishi va birinchi darslar natijasi."""
+    cur = load_curriculum()
+    since = utcnow() - timedelta(days=days) if days else None
+    real = [User.is_demo == 0] + ([User.created_at >= since] if since else [])
+
+    total = (await session.execute(select(func.count()).select_from(User).where(*real))).scalar_one()
+    latest = select(func.max(Plan.id).label("pid")).group_by(Plan.user_id).subquery()
+    plans = (
+        await session.execute(
+            select(Plan.user_id, Plan.start_lesson, Plan.level)
+            .join(latest, Plan.id == latest.c.pid)
+            .join(User, User.id == Plan.user_id)
+            .where(*real)
+        )
+    ).all()
+    start = {uid: (cur[s]["level"] if s in cur else (lvl or "A0")) for uid, s, lvl in plans}
+    passed_n = dict(
+        (
+            await session.execute(
+                select(Progress.user_id, func.count(func.distinct(Progress.lesson_id)))
+                .join(User, User.id == Progress.user_id)
+                .where(*real, Progress.passed == 1)
+                .group_by(Progress.user_id)
+            )
+        ).all()
+    )
+    tried = set(
+        (
+            await session.execute(
+                select(Progress.user_id).join(User, User.id == Progress.user_id).where(*real).distinct()
+            )
+        ).scalars().all()
+    )
+
+    everyone = max(len(plans), 1)
+    lines = [
+        f"🧭 <b>Voronka — qaysi darajadan boshlashadi</b> · {_period(days)}\n",
+        f"👤 Ro'yxatdan o'tgan (reja bor): <b>{len(plans)}</b> / {total}",
+    ]
+    for lvl in LEVELS:
+        users = [uid for uid, s in start.items() if s == lvl]
+        if not users:
+            continue
+        n = len(users)
+        one = sum(1 for uid in users if passed_n.get(uid, 0) >= 1)
+        five = sum(1 for uid in users if passed_n.get(uid, 0) >= 5)
+        failed = sum(1 for uid in users if uid in tried and not passed_n.get(uid))
+        lines += [
+            f"\n<b>{lvl}</b> dan · <b>{n}</b> kishi ({_pct(n, everyone)}%)  {_bar(n / everyone)}",
+            f"   ✅ 1+ dars {_pct(one, n)}% · 5+ dars {_pct(five, n)}% · ❌ faqat yiqilgan {_pct(failed, n)}%"
+            f" · 💤 testgacha yetmagan {_pct(n - one - failed, n)}%",
+        ]
+    lines += [
+        "",
+        "<i>✅ kamida 1 dars o'tgan (≥60%) · ❌ dars testidan o'tolmagan, boshqa dars ham yo'q · "
+        "💤 birorta dars testigacha yetmagan</i>",
+        f"🔍 Batafsil: <code>/funnel A1{' ' + str(days) if days else ''}</code> · dars ichida: <code>/funnel a1-01</code>",
+    ]
+    return "\n".join(lines)
 
 
 async def level_report(session: AsyncSession, level: str = "A0", days: int | None = None) -> str:
@@ -204,18 +274,19 @@ async def level_report(session: AsyncSession, level: str = "A0", days: int | Non
     base = max(len(here | set(furthest)), 1)
     completed = sum(1 for s in passed.values() if len(s) == len(ids))
 
-    async def exam_users(*cond) -> int:
-        return (
-            await session.execute(
-                select(func.count(func.distinct(ExamAttempt.user_id)))
-                .select_from(ExamAttempt)
-                .join(User, User.id == ExamAttempt.user_id)
-                .where(*real, ExamAttempt.kind == "level", ExamAttempt.level == level, *cond)
-            )
-        ).scalar_one()
-
-    exam_done = await exam_users(ExamAttempt.finished_at.isnot(None))
-    exam_ok = await exam_users(ExamAttempt.passed == 1)
+    # Imtihon: pastki darajalar imtihoni yuqori darajadagilarga doim ochiq (sertifikat) — ular alohida
+    exams = (
+        await session.execute(
+            select(ExamAttempt.user_id, ExamAttempt.passed, ExamAttempt.finished_at)
+            .join(User, User.id == ExamAttempt.user_id)
+            .where(*real, ExamAttempt.kind == "level", ExamAttempt.level == level)
+        )
+    ).all()
+    learners = here | set(furthest)
+    took = {uid for uid, _, done in exams if done is not None}
+    exam_done = len(took & learners)
+    exam_ok = len({uid for uid, ok, _ in exams if ok == 1} & learners)
+    exam_other = len(took - learners)
 
     head = [
         f"📉 <b>Voronka — {level}</b> · {_period(days)}\n",
@@ -242,8 +313,9 @@ async def level_report(session: AsyncSession, level: str = "A0", days: int | Non
     head += [
         f"✅ Kamida 1 dars o'tgan: <b>{len(furthest)}</b>  {_bar(len(furthest) / base, 10)} {_pct(len(furthest), base)}%",
         f"🏁 {level} ni tugatgan ({len(ids)} dars): <b>{completed}</b>  {_bar(completed / base, 10)} {_pct(completed, base)}%",
-        f"🎓 {level} imtihoni: topshirgan <b>{exam_done}</b> · o'tgan <b>{exam_ok}</b>"
-        + (f" ({_pct(exam_ok, exam_done)}%)" if exam_done else ""),
+        f"🎓 {level} imtihoni (shu darajani o'qiganlar): topshirgan <b>{exam_done}</b> · o'tgan <b>{exam_ok}</b>"
+        + (f" ({_pct(exam_ok, exam_done)}%)" if exam_done else "")
+        + (f"\n   + yuqori darajadan boshlaganlar (darssiz, sertifikat uchun): {exam_other}" if exam_other else ""),
     ]
 
     reach = [sum(1 for f in furthest.values() if f >= i) for i in range(len(ids))]
