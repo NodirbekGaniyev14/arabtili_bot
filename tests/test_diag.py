@@ -241,6 +241,11 @@ async def test_run_all_summary_and_escaping(monkeypatch):
     monkeypatch.setattr(diag, "check_disk", lambda: diag._ok("Disk"))
     monkeypatch.setattr(diag, "check_backup", lambda: diag._ok("Zaxira"))
     monkeypatch.setattr(diag, "check_webapp", lambda: [diag._ok("Webapp")])
+
+    async def notice():
+        return diag._ok("Yangilanish xabari")
+
+    monkeypatch.setattr(diag, "check_deploy_notice", notice)
     monkeypatch.setattr(diag, "check_settings", lambda: [diag._ok("Sozlama")])
     monkeypatch.setattr(diag, "check_tasks", lambda: [diag._ok("Halqa")])
     monkeypatch.setattr(diag, "check_alerts", lambda: diag._ok("Ogoh"))

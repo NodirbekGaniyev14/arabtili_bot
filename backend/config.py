@@ -100,6 +100,10 @@ class Settings(BaseSettings):
     # Sinov/preview: haqiqiy Gemini o'rniga soxta suhbatdosh (kalitsiz UI sinovi)
     live_fake: bool = False
 
+    # «🔄 Bot yangilandi» xabari har nechta deploydan bittasida (0 = hech qachon). 2026-10-05 egasi: har deployda
+    # yuborilgani uchun o'quvchilar botni bloklayapti — 10 tadan bittasi.
+    deploy_notify_every: int = 10
+
     @field_validator("tutor_vip_model", "writing_model")
     @classmethod
     def _upgrade_legacy_model(cls, v: str, info: ValidationInfo) -> str:

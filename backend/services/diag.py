@@ -251,6 +251,22 @@ def check_webapp() -> list[str]:
     return out
 
 
+async def check_deploy_notice() -> str:
+    """«Bot yangilandi» xabari har N-deployda — keyingisi qachon (egasi 2026-10-05)."""
+    from db.session import SessionLocal
+    from services import deploy_notify
+
+    try:
+        async with SessionLocal() as session:
+            count, every = await deploy_notify.notice_status(session)
+    except Exception as e:  # noqa: BLE001
+        return _warn(f"Yangilanish xabari: holatni o'qib bo'lmadi ({e!r})")
+    if every <= 0:
+        return _ok("Yangilanish xabari: o'chiq (DEPLOY_NOTIFY_EVERY=0)")
+    return _ok(f"Yangilanish xabari: har {every} deployda bir marta · oxirgisidan beri {count} ta deploy, "
+               f"keyingisi {max(every - count, 1)}-deployda")
+
+
 def check_settings() -> list[str]:
     out: list[str] = []
     out.append(_ok(f"Admin: ADMIN_ID={settings.admin_id}") if settings.admin_id else _bad("ADMIN_ID bo'sh — ogohlantirish va cheklar kelmaydi"))
@@ -467,6 +483,7 @@ async def run_all() -> str:
         "",
         "<b>Ilova va bot</b>",
         *check_webapp(),
+        await check_deploy_notice(),
         *check_settings(),
         *check_tasks(),
         check_alerts(),

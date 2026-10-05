@@ -1,5 +1,8 @@
-"""Deploy xabari — kod versiyasi (git commit) o'zgarganda foydalanuvchilarga
-'bot yangilandi' xabarini bir marta yuboradi."""
+"""Deploy xabari — kod versiyasi (git commit) o'zgarganda foydalanuvchilarga 'bot yangilandi' xabari.
+
+2026-10-05 egasi: har deployda kelgan bu xabar sabab ko'p o'quvchi botni bloklayapti — endi har
+`DEPLOY_NOTIFY_EVERY` (standart 10) deploydan bittasida yuboriladi. Versiya va deploy vaqti har deployda yoziladi
+(/javoblar «deploydan beri», ?v= kesh), hisoblagich — Meta «deploy_notice_count»."""
 
 import asyncio
 import subprocess
@@ -21,6 +24,7 @@ from db.session import SessionLocal
 
 VERSION_KEY = "deploy_version"
 DEPLOY_AT_KEY = "deploy_at"  # oxirgi deploy vaqti (UTC, ISO) — admin /javoblar «deploydan beri»
+COUNT_KEY = "deploy_notice_count"  # oxirgi «Bot yangilandi» xabaridan beri nechta deploy bo'ldi
 
 UPDATE_TEXT = (
     "🔄 <b>Bot yangilandi!</b>\n\n"
@@ -95,6 +99,24 @@ async def last_deploy_at(session) -> datetime | None:
         return None
 
 
+async def _set(session, key: str, value: str) -> None:
+    row = await session.get(Meta, key)
+    if row is None:
+        session.add(Meta(key=key, value=value))
+    else:
+        row.value = value
+
+
+async def notice_status(session) -> tuple[int, int]:
+    """(oxirgi xabardan beri deploylar, har nechtada yuboriladi) — /tekshir uchun."""
+    row = await session.get(Meta, COUNT_KEY)
+    try:
+        count = int(row.value) if row and row.value else 0
+    except ValueError:
+        count = 0
+    return count, settings.deploy_notify_every
+
+
 async def notify_if_updated(bot: Bot) -> None:
     version = current_version()
     if not version:
@@ -108,27 +130,31 @@ async def notify_if_updated(bot: Bot) -> None:
         if row is not None and row.value == version:
             return  # o'zgarish yo'q — xabar yubormaymiz
 
-        # Birinchi ishga tushish yoki versiya o'zgardi → xabar yuboramiz
-        ids = [
-            tg_id
-            for tg_id, off in (
-                await session.execute(select(User.tg_id, User.notify_off).where(User.is_demo == 0))
-            ).all()
-            if notify_prefs.enabled_raw(off, "news")
-        ]
-
-        if row is None:
-            session.add(Meta(key=VERSION_KEY, value=version))
-        else:
-            row.value = version
-            session.add(row)
-        stamp = await session.get(Meta, DEPLOY_AT_KEY)
-        now = utcnow().isoformat(timespec="seconds")
-        if stamp is None:
-            session.add(Meta(key=DEPLOY_AT_KEY, value=now))
-        else:
-            stamp.value = now
+        # Versiya o'zgardi: versiya va vaqt har doim yoziladi, xabar esa har N-deployda bir marta.
+        # Birinchi ishga tushish (yangi baza) — deploy emas, xabar yo'q.
+        count, every = await notice_status(session)
+        if row is not None:
+            count += 1
+        send = row is not None and every > 0 and count >= every
+        await _set(session, COUNT_KEY, "0" if send else str(count))
+        await _set(session, VERSION_KEY, version)
+        await _set(session, DEPLOY_AT_KEY, utcnow().isoformat(timespec="seconds"))
+        ids = (
+            [
+                tg_id
+                for tg_id, off in (
+                    await session.execute(select(User.tg_id, User.notify_off).where(User.is_demo == 0))
+                ).all()
+                if notify_prefs.enabled_raw(off, "news")
+            ]
+            if send
+            else []
+        )
         await session.commit()
+
+    if not send:
+        print(f"deploy {version}: «Bot yangilandi» xabari yuborilmadi ({count}/{every})")
+        return
 
     kb = None
     if settings.webapp_url.startswith("https://"):
