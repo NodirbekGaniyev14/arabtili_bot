@@ -1,4 +1,4 @@
-"""Oylik reyting sovrini (top-5) va davr yakuni idempotentligi."""
+"""Oylik reyting sovrini (top-3) va davr yakuni idempotentligi."""
 
 from datetime import timedelta
 
@@ -90,8 +90,8 @@ def test_month_key_never_collides_with_week_key():
 # ── Oylik rollover ──
 
 
-async def test_monthly_rollover_awards_top5(session_factory, monkeypatch):
-    """O'tgan oyda 6 kishi XP yig'sa — top-5 sovrin oladi, 6-chi olmaydi."""
+async def test_monthly_rollover_awards_top3(session_factory, monkeypatch):
+    """O'tgan oyda 6 kishi XP yig'sa — top-3 sovrin oladi (7/5/5 kun VIP), 4-chi olmaydi."""
     import db.session as dbs
 
     monkeypatch.setattr(dbs, "SessionLocal", session_factory)
@@ -105,13 +105,14 @@ async def test_monthly_rollover_awards_top5(session_factory, monkeypatch):
     bot = FakeBot()
     await wk._monthly_rollover(bot)
 
-    assert len(bot.photos) == 5  # top-5
+    assert len(bot.photos) == 3  # top-3
+    assert "7 kun VIP" in bot.photos[0][1] and "5 kun VIP" in bot.photos[2][1]
 
     async with session_factory() as s:
         awards = (await s.execute(__import__("sqlalchemy").select(WeeklyAward))).scalars().all()
-        assert len(awards) == 5
+        assert len(awards) == 3
         assert all(a.period == "month" for a in awards)
-        assert {a.rank for a in awards} == {1, 2, 3, 4, 5}
+        assert {a.rank: a.vip_days for a in awards} == {1: 7, 2: 5, 3: 5}
 
     # Ikkinchi marta — takror sovrin yo'q
     bot2 = FakeBot()
@@ -157,7 +158,7 @@ async def test_monthly_and_weekly_keys_coexist(session_factory, monkeypatch):
 
 
 async def test_weekly_rollover_grants_vip_prize(session_factory, monkeypatch):
-    """Haftalik top-3: 1-o'rin 7 kun VIP, 2–3-o'rin 3 kun; +1 muzlatkich (≤2); 4-o'rin — hech narsa."""
+    """Haftalik top-3: 1-o'rin 5 kun VIP, 2–3-o'rin 3 kun; +1 muzlatkich (≤2); 4-o'rin — hech narsa."""
     import db.session as dbs
     from sqlalchemy import select
 
@@ -186,14 +187,17 @@ async def test_weekly_rollover_grants_vip_prize(session_factory, monkeypatch):
     async with session_factory() as s:
         users = {u.name: u for u in (await s.execute(select(User))).scalars().all()}
         awards = {a.rank: a for a in (await s.execute(select(WeeklyAward))).scalars().all()}
-    assert billing.vip_days_left(users["W0"]) == 7 and awards[1].vip_days == 7
+    assert billing.vip_days_left(users["W0"]) == 5 and awards[1].vip_days == 5
     assert billing.vip_days_left(users["W1"]) == 8 and awards[2].vip_days == 3, "5 + 3 kun"
     assert billing.vip_days_left(users["W2"]) == 3 and awards[3].vip_days == 3
     assert not billing.is_vip(users["W3"])
     assert users["W0"].streak_freezes == 2 and users["W1"].streak_freezes == 2, "≤ MAX_FREEZES"
     assert users["W2"].streak_freezes == 1
-    assert "7 kun VIP" in caps[users["W0"].tg_id] and "3 kun VIP" in caps[users["W2"].tg_id]
-    assert wk.prize_days("month", 1) == 14 and wk.prize_days("month", 5) == 3 and wk.prize_days("week", 4) == 0
+    assert "5 kun VIP" in caps[users["W0"].tg_id] and "3 kun VIP" in caps[users["W2"].tg_id]
+    # 2026-10-05 egasi: hafta 5/3/3, oy 7/5/5; 4-o'rindan pastga VIP yo'q
+    assert [wk.prize_days("week", r) for r in (1, 2, 3, 4)] == [5, 3, 3, 0]
+    assert [wk.prize_days("month", r) for r in (1, 2, 3, 4, 5)] == [7, 5, 5, 0, 0]
+    assert wk.MONTHLY_TOP == 3 and wk.WEEKLY_TOP == 3
 
 
 async def test_leaderboard_marks_vip(session, make_user):
@@ -244,7 +248,7 @@ async def test_weekly_rollover_announces_to_everyone(session_factory, monkeypatc
     assert set(by) == {users[n].tg_id for n in ("W0", "W1", "W2", "W3")}
     t, kb = by[users["W0"].tg_id]
     lrm = chr(0x200E)  # K27.5: ism oxirida LRM (arabcha ism yonidagi raqam joyida qolsin)
-    assert "Haftalik reyting yakunlandi" in t and f"🥇 <b>W0{lrm}</b> — 400 XP · 🎁 7 kun VIP" in t and f"🥉 <b>W2{lrm}</b>" in t
+    assert "Haftalik reyting yakunlandi" in t and f"🥇 <b>W0{lrm}</b> — 400 XP · 🎁 5 kun VIP" in t and f"🥉 <b>W2{lrm}</b>" in t
     assert "Siz 1-o'rindasiz" in t and kb.inline_keyboard[0][0].web_app.url.endswith("#rating")
     assert "Siz: <b>4-o'rin</b>, 100 XP (5 ishtirokchi)" in by[users["W3"].tg_id][0]
     assert noplan.tg_id not in by and users["Old"].tg_id not in by
@@ -257,4 +261,4 @@ async def test_weekly_rollover_announces_to_everyone(session_factory, monkeypatc
 
 def test_announcement_text_no_participation():
     t = wk.announcement_text("month", "avgust 2026", [(1, "Ali", 900, 1)], None, 12)
-    assert "Oylik reyting yakunlandi" in t and "🎁 14 kun VIP" in t and "siz hali yo'q edingiz" in t and "top-5" in t
+    assert "Oylik reyting yakunlandi" in t and "🎁 7 kun VIP" in t and "siz hali yo'q edingiz" in t and "top-3" in t

@@ -238,7 +238,7 @@ export default function Rating() {
             <div className="rounded-2xl bg-gold-soft/60 border border-gold/30 px-4 py-3 text-center">
               <p className="text-sm font-extrabold">🏆 Haftalik sovrin</p>
               <p className="mt-0.5 text-xs font-semibold text-ink-soft leading-relaxed">
-                Dushanba tongida hafta yakunlanadi — <b>1-o'rin: 7 kun VIP</b>, <b>2–3-o'rin: 3 kun VIP</b>
+                Dushanba tongida hafta yakunlanadi — <b>1-o'rin: 5 kun VIP</b>, <b>2–3-o'rin: 3 kun VIP</b>
                 (AI ustoz, mock, speaking) + 🧊 streak muzlatkichi + sertifikat botga keladi.
               </p>
             </div>
@@ -248,8 +248,8 @@ export default function Rating() {
             <div className="rounded-2xl bg-gold-soft/60 border border-gold/30 px-4 py-3 text-center">
               <p className="text-sm font-extrabold">🏆 Oylik sovrin</p>
               <p className="mt-0.5 text-xs font-semibold text-ink-soft leading-relaxed">
-                Oy boshida o'tgan oy yakunlanadi — <b>1-o'rin: 14 kun VIP</b>, <b>2–3: 7 kun</b>,{" "}
-                <b>4–5: 3 kun</b> + 🧊 muzlatkich + sertifikat.
+                Oy boshida o'tgan oy yakunlanadi — <b>1-o'rin: 7 kun VIP</b>, <b>2–3-o'rin: 5 kun VIP</b>
+                + 🧊 muzlatkich + sertifikat.
               </p>
             </div>
           )}

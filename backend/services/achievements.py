@@ -61,7 +61,7 @@ BADGES: list[dict] = [
     {"id": "weekly_podium", "icon": "🏆", "title": "Sovrindor", "desc": "Haftalik reytingda top-3 ga kirdingiz", "check": lambda m: 1 <= m["best_weekly_rank"] <= 3},
     {"id": "league_gold", "icon": "🥇", "title": "Oltin liga", "desc": "Bir haftada Oltin ligaga yetdingiz (300+ XP)", "check": lambda m: m["league_rank_idx"] >= 2},
     {"id": "league_emerald", "icon": "💎", "title": "Zumrad liga", "desc": "Bir haftada Zumrad ligaga yetdingiz (600+ XP)", "check": lambda m: m["league_rank_idx"] >= 3},
-    {"id": "monthly_podium", "icon": "🏆", "title": "Oy sovrindori", "desc": "Oylik reytingda top-5 ga kirdingiz", "check": lambda m: 1 <= m["best_monthly_rank"] <= 5},
+    {"id": "monthly_podium", "icon": "🏆", "title": "Oy sovrindori", "desc": "Oylik reytingda top-3 ga kirdingiz", "check": lambda m: 1 <= m["best_monthly_rank"] <= 5},
 
     # ── Speaking: AI ustoz, kunlik savol, mock (K17–K20) ──
     {"id": "speak_first", "icon": "🎙", "title": "Birinchi suhbat", "desc": "AI ustoz bilan birinchi suhbatni yakunladingiz", "check": lambda m: m["chat_sessions"] >= 1},

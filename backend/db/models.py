@@ -280,7 +280,7 @@ class ClientError(Base):
 
 
 class WeeklyAward(Base):
-    """Reyting sovrini: haftalik top-3 yoki oylik top-5.
+    """Reyting sovrini: haftalik yoki oylik top-3 (oylik 2026-10 gacha top-5 edi).
 
     Bir davr uchun bir marta beriladi. `week_start` — davr kaliti:
     haftalik uchun dushanba sanasi "YYYY-MM-DD", oylik uchun "YYYY-MM".
@@ -297,7 +297,7 @@ class WeeklyAward(Base):
     # Sovrin sifatida berilgan VIP kunlari (0 = faqat sertifikat)
     vip_days: Mapped[int] = mapped_column(Integer, default=0)
     period: Mapped[str] = mapped_column(String(8), default="week")  # week | month
-    rank: Mapped[int] = mapped_column(Integer)  # haftada 1-3, oyda 1-5
+    rank: Mapped[int] = mapped_column(Integer)  # 1-3 (eski oylik yozuvlarda 1-5)
     weekly_xp: Mapped[int] = mapped_column(Integer, default=0)
     cert_id: Mapped[str] = mapped_column(String(24), default="")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)

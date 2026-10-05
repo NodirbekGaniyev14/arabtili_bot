@@ -202,7 +202,7 @@ async def issue_rank_certificate(
     period_label: str,
     period: str = "week",
 ) -> Certificate:
-    """Reyting sovrini (haftalik top-3 / oylik top-5) sertifikatini yaratadi."""
+    """Reyting sovrini (haftalik / oylik top-3) sertifikatini yaratadi."""
     prefix = "W" if period == "week" else "M"
     cert_id = new_cert_id(f"{prefix}{rank}")
     issued = datetime.now(timezone.utc).replace(tzinfo=None)

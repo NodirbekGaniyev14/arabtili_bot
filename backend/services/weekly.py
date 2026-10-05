@@ -1,8 +1,8 @@
-"""Reyting yakuni: haftalik (dushanba, top-3) + oylik (1-sana, top-5).
+"""Reyting yakuni: haftalik (dushanba, top-3) + oylik (1-sana, top-3).
 
 FastAPI lifespan'da fon vazifasi sifatida ishlaydi:
 - har dushanba ~09:00 (Toshkent) o'tgan hafta yakunlanadi — top-3 ga sovrin;
-- har oy 1-sanasi ~09:00 o'tgan oy yakunlanadi — top-5 ga sovrin;
+- har oy 1-sanasi ~09:00 o'tgan oy yakunlanadi — top-3 ga sovrin;
 - har 20 daqiqada o'rinlar qayta hisoblanadi; kimdir tushib ketgan bo'lsa
   unga xabar yuboriladi (bir foydalanuvchiga 6 soatda bir martadan ko'p emas).
 
@@ -31,7 +31,7 @@ from services.names import show
 from services.stats import TASHKENT_OFFSET
 
 # G'oliblar e'loni: davr yakunida HAMMAGA (rejasi bor, 90 kun ichida faol) bitta xabar —
-# top-3/5, sovrin va o'zining o'rni. Bloklaganlar/o'lik hisoblar chetlab o'tiladi.
+# top-3, sovrin va o'zining o'rni. Bloklaganlar/o'lik hisoblar chetlab o'tiladi.
 ANNOUNCE_ACTIVE_DAYS = 90
 ANNOUNCE_PAUSE = 0.05
 
@@ -44,13 +44,14 @@ MONTHLY_KEY = "monthly_rollover_done"
 
 WEEKLY_TOP = 3
 WEEKLY_MIN = 3
-MONTHLY_TOP = 5
+MONTHLY_TOP = 3  # 2026-10-05 egasi: oylik ham top-3 (ilgari top-5)
 MONTHLY_MIN = 5  # oylik sovrin uchun kamida 5 ishtirokchi
 
 RANK_ICON = {1: "🥇", 2: "🥈", 3: "🥉", 4: "🎗", 5: "🎗"}
 # Sovrin: VIP kunlari (AI ustoz) — o'rin bo'yicha; + 1 streak muzlatkichi (ko'pi bilan 2).
 # Bizga xarajati deyarli nol, motivatsiya kuchli; VIP faol bo'lsa muddat oxiriga qo'shiladi.
-VIP_PRIZE = {"week": {1: 7, 2: 3, 3: 3}, "month": {1: 14, 2: 7, 3: 7, 4: 3, 5: 3}}
+# 2026-10-05 egasi: hafta 5/3/3 kun, oy 7/5/5 kun (ilgari hafta 7/3/3, oy 14/7/7/3/3).
+VIP_PRIZE = {"week": {1: 5, 2: 3, 3: 3}, "month": {1: 7, 2: 5, 3: 5}}
 
 
 def prize_days(period: str, rank: int) -> int:
@@ -233,8 +234,7 @@ def announcement_text(period: str, label: str, winners: list, my: tuple | None, 
     else:
         lines.append(f"Bu davrda {participants} kishi qatnashdi — siz hali yo'q edingiz.")
     nxt = "Yangi hafta boshlandi" if period == "week" else "Yangi oy boshlandi"
-    top = "top-3" if period == "week" else "top-5"
-    lines.append(f"{nxt} — bugun 1 dars, va {top} sizniki bo'lishi mumkin: sovrin VIP kunlar + sertifikat 🚀")
+    lines.append(f"{nxt} — bugun 1 dars, va top-3 sizniki bo'lishi mumkin: sovrin VIP kunlar + sertifikat 🚀")
     return "\n".join(lines)
 
 
@@ -290,7 +290,7 @@ async def _rollover(bot: Bot) -> None:
 
 
 async def _monthly_rollover(bot: Bot) -> None:
-    """Oylik yakun — o'tgan oy top-5, keyin hammaga e'lon."""
+    """Oylik yakun — o'tgan oy top-3, keyin hammaga e'lon."""
     prev = _prev_month_start(_month_start_utc())
     winners = await _award_period(
         bot,
