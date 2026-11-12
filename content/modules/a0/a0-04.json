@@ -169,10 +169,11 @@
   },
   {
    "type": "dictation",
-   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
+   "q_uz": "Eshiting: harf nomi aytiladi — shu harfning o'zini klaviaturadan bosing.",
    "q_ar": "",
    "options": [],
    "answer": "ي",
+   "accept": ["يَاء"],
    "explain_uz": "«Yo» — pastga cho'zilgan kosacha, PASTDA 2 nuqta — «y».",
    "audio": "a0/harf_ya.mp3",
    "root": "",

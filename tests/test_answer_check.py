@@ -252,7 +252,7 @@ def test_report_second_part():
         ("a2-01", "كَتَبَتْ"): [("كتب", "«ـت» yetishmayapti"), ("قرات", None)],
         ("a2-27", "نَجَاح"): [("بجاح", "«ب» emas, «ن»"), ("موفقيت", None)],
         ("a2-15", "تَعَاوُن"): [("تعوان", "o'rni almashgan"), ("تعاو", "«ـن» yetishmayapti")],
-        ("a2-09", "هَؤُلَاءِ"): [("هؤلء", "Oxiri boshqa")],
+        ("a2-09", "هَؤُلَاءِ"): [("هؤلء", "Cho'ziq unli tushib qolgan: «aa» «ا»")],
         ("a0-26", "بِنْت"): [("بنة", "ta marbuta"), ("بإنت", "Qisqa unli"), ("بإنة", None)],
         ("a2-29", "لَيْتَ"): [("كان", None)],
         ("a2-03", "men ichdim"): [("sen ichdim", None), ("u ayol ichdi", None)],
@@ -359,3 +359,51 @@ def test_report_k31_answers():
     assert "«ـت» ortiqcha" in bad[6]["note"], "izoh qo'shimcha javobga (اِتَّصَلَ) nisbatan ham beriladi"
     assert "«ـت» yetishmayapti" in bad[7]["note"] and "men" in bad[7]["note"]
     assert "«ال» ortiqcha" in bad[8]["note"]
+
+
+def test_report_k32_2_answers():
+    """/javoblar (05.10 deploydan beri, 3447 ta): izoh so'zlari («ayol kishi», «ko'plikda»), tushgan unli
+    («yozdm»), «-ish-» ko'pligi, yubordi ≈ yo'lladi qabul; haqiqiy xatolar rad, lekin aniq izoh bilan."""
+    ok = [
+        lat("sen (ayol) yozding", "sen yozding ayol kishi"),
+        lat("ular o'rganadilar", "ular o'rganadilar ko'plikda"),
+        lat("ular o'rganadilar", "ular talim olishadi", accept=["ular ta'lim oladilar"]),
+        lat("ular yozdilar", "ular yozishdi"),
+        lat("ular o'qiydilar", "ular o'qishadi"),
+        lat("men yozdim", "men yozdm"),
+        lat("xat yubordi", "xat yoʻlladi", accept=["xat jo'natdi", "xat yo'lladi"]),  # «yo'lladi» -adi bilan tugaydi
+        lat("biz sovg'alarni yubordik", "biz sovgʻalarni yoʻlladik"),  # yubor ≈ yo'lla
+        lat("biz sovg'alarni yubordik", "sovg'alarni jo'natdik"),
+        ar("يُعَلِّمُ", "يدرس", mode="fill", accept=["يُدَرِّسُ"]),
+        ar("ء", "همزة", accept=["هَمْزَة"]),
+    ]
+    wrong = [
+        lat("sen (ayol) yozding", "u ayol yozdi"),  # كَتَبَتْ — boshqa shaxs
+        lat("sen (ayol) yozding", "u bir qiz bola yozdi"),
+        lat("men yozdim", "yozdi"),  # shaxs boshqa
+        lat("u yozadi", "u yozdi"),  # zamon boshqa: «yozdi» — unli tushgan imlo emas
+        lat("xat yubordi", "xat yo'lladim"),  # shaxs boshqa
+        lat("ular o'rganadilar", "ular o'rgatishadi"),  # o'rganmoq ≠ o'rgatmoq
+        lat("u yozadi", "u yozishadi"),  # «-ish-» faqat ko'plikda
+        ar("ء", "ه"),  # diktant: audio «hamza» deydi
+        ar("جَمِيل", "جملن", mode="translate", accept=["حَسَن", "جَمِيلَة"]),
+        ar("قَدِيمٌ", "قدم", mode="fill"),
+        ar("سُؤَال", "سول", mode="translate"),
+        ar("اِسْتَيْقَظْتُ", "استىقظ", mode="fill"),
+        ar("يُعَلِّمُ", "يتعلم", mode="fill", accept=["يُدَرِّسُ"]),
+        ar("قَدِيمٌ", "قديمن", mode="fill"),
+        ar("يَكْتُبُ", "يكتبن", mode="fill"),  # fe'l: ن — qo'shimcha, tanvin emas
+    ]
+    res = run(ok + wrong)
+    assert all(r["ok"] for r in res[: len(ok)]), res[: len(ok)]
+    bad = res[len(ok) :]
+    assert not any(r["ok"] for r in bad), bad
+    notes = [r.get("note") or "" for r in bad]
+    assert "hamza" in notes[7] and "«ء»" in notes[7]
+    assert "Tanvin" in notes[8] and "«ي»" in notes[8], notes[8]
+    assert "Cho'ziq unli" in notes[9] and "«ي»" in notes[9]
+    assert "Cho'ziq unli" in notes[10] and "«ا»" in notes[10]
+    assert "«ـت» yetishmayapti" in notes[11]
+    assert "«ت» harfi ortiqcha" in notes[12]
+    assert notes[13].startswith("Tanvin")
+    assert "Tanvin" not in notes[14]

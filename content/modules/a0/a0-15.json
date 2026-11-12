@@ -67,7 +67,7 @@
   {"type": "mcq", "q_uz": "Eshiting: bu qaysi harfning nomi?", "q_ar": "", "options": ["ق", "ف", "ت", "ن"], "answer": "ق", "explain_uz": "«Qof» — tepada 2 nuqta, «q» tovushi.", "audio": "a0/harf_qaf.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "ب va ن ning farqi nimada?", "q_ar": "", "options": ["nuqta joyi: ب-pastda, ن-tepada", "nuqta soni", "tana shakli", "farq yo'q"], "answer": "nuqta joyi: ب-pastda, ن-tepada", "explain_uz": "Ikkalasida 1 nuqta, farq faqat joyida.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "3 nuqtali harflar qaysi juftlik?", "q_ar": "", "options": ["ث va ش", "ت va ق", "ب va ن", "ي va ز"], "answer": "ث va ش", "explain_uz": "ث (kosacha, 3 tepada) va ش (taroq, 3 tepada).", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "dictation", "q_uz": "Eshiting va shu harfni klaviaturadan bosing.", "q_ar": "", "options": [], "answer": "ش", "explain_uz": "«Shin» — 3 nuqtali taroq.", "audio": "a0/harf_shin.mp3", "root": "", "pattern": "", "words": []}
+  {"type": "dictation", "q_uz": "Eshiting: harf nomi aytiladi — shu harfning o'zini klaviaturadan bosing.", "q_ar": "", "options": [], "answer": "ش", "accept": ["شِين"], "explain_uz": "«Shin» — 3 nuqtali taroq.", "audio": "a0/harf_shin.mp3", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [
   {"type": "word", "front": "ب", "back": "bo — pastda 1 nuqta", "deck": "msa"},

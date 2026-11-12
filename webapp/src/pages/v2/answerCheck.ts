@@ -129,7 +129,26 @@ const endLabels = (...ends: string[]) => {
   return known.length ? ` · ${known.join("; ")}` : "";
 };
 
+/** Diktantda audio harf NOMINI aytadi: «hamza» h bilan boshlanadi — o'quvchi ه bosadi (/javoblar a0-14, 11/13). */
+const NAME_FIRST: Record<string, [string, string]> = {
+  ء: ["ه", "hamza"],
+  ة: ["ت", "tā' marbūṭa"],
+  ى: ["ا", "alif maqsūra"],
+};
+const LONG_VOWEL: Record<string, string> = { ا: "«aa»", و: "«uu»", ي: "«ii»" };
+const TANVIN_N = "Tanvin (-un, -an, -in) «ن» harfi bilan yozilmaydi — u harakat (ـٌ ـً ـٍ)";
+
 const arHint = (a: string, v: string): string | undefined => {
+  if (NAME_FIRST[a]?.[0] === v)
+    return `Audio harf nomini aytadi («${NAME_FIRST[a][1]}»), harfning o'zi esa — «${a}»; «${v}» — boshqa harf`;
+  // «جَمِيلٌ» eshitib «جملن» yozadi: tanvin «n» tovushi harf deb o'ylanadi (/javoblar a1-01).
+  // Fe'lda (يكتبن) oxiridagi ن — qo'shimcha, shuning uchun shaxs prefiksli qisqa so'zlarga izoh berilmaydi.
+  if (v.length >= 3 && v.endsWith("ن") && !a.endsWith("ن") && !(PERSON_PREFIX.includes(a[0]) && a.length <= 5)) {
+    const rest = v.slice(0, -1);
+    if (rest === a) return TANVIN_N;
+    const inner = longVowelHint(a, rest);
+    if (inner) return `${TANVIN_N}. ${inner}`;
+  }
   // «البابُ ____» → «القديم»: kesim (xabar) noaniq bo'ladi — «ال» ortiqcha (/javoblar a1-01)
   const yy = (s: string) => s.replace(/ى/g, "ي");
   if (!a.startsWith("ال") && v.startsWith("ال") && yy(v.slice(2)) === yy(a))
@@ -160,12 +179,34 @@ const arHint = (a: string, v: string): string | undefined => {
     return `Oxirida «ـ${v.slice(a.length)}» ortiqcha${endLabels(v.slice(a.length))}`;
   if (v.length >= 2 && a.length > v.length && a.length - v.length <= 2 && a.endsWith(v))
     return `Boshida «${a.slice(0, a.length - v.length)}ـ» yetishmayapti`;
+  // So'z o'rtasida bitta harf tushgan («جمل» ↔ جميل, «قدم» ↔ قديم) yoki ortiqcha («يتعلم» ↔ يعلم)
+  const lv = longVowelHint(a, v);
+  if (lv) return lv;
+  if (a.length >= 3 && v.length === a.length + 1) {
+    for (let k = 1; k < v.length - 1; k++) if (v.slice(0, k) + v.slice(k + 1) === a) return `«${v[k]}» harfi ortiqcha`;
+  }
   let i = 0;
   while (i < a.length && i < v.length && a[i] === v[i]) i++;
   if (i >= 3 && i < a.length && i < v.length && a.length - i <= 3 && v.length - i <= 3)
     return `Oxiri boshqa: «ـ${a.slice(i)}» kerak (siz «ـ${v.slice(i)}» yozdingiz)${endLabels(a.slice(i), v.slice(i))}`;
   return undefined;
 };
+
+/** So'z o'rtasidagi bitta harf tushgan: cho'ziq unli (ا و ي) bo'lsa — alohida tushuntiriladi. */
+function longVowelHint(a: string, v: string): string | undefined {
+  if (a.length < 3 || a.length !== v.length + 1) return undefined;
+  for (let k = 1; k < a.length - 1; k++) {
+    if (a.slice(0, k) + a.slice(k + 1) !== v) continue;
+    if (VERB_END[a.slice(k)]) return undefined; // «كتبا» ↔ كتبوا — qo'shimcha farqi, pastdagi qoida tushuntiradi
+    return LONG_VOWEL[a[k]]
+      ? `Cho'ziq unli tushib qolgan: ${LONG_VOWEL[a[k]]} «${a[k]}» harfi bilan yoziladi`
+      : `«${a[k]}» harfi tushib qolgan`;
+  }
+  return undefined;
+}
+
+/** Izoh uchun: ى→ي va hamza o'rni bir xil ko'rinishga («استىقظ» ↔ استيقظت, «سول» ↔ سؤال). */
+const hintFold = (s: string) => HAMZA.apply(s.replace(/ى/g, "ي"));
 
 /** Ekran klaviaturasida shadda yo'q — o'quvchi qo'sh undoshni ikki marta yozadi: «تعللم» = تَعَلُّم. */
 const SHADDA = String.fromCharCode(0x0651);
@@ -214,8 +255,13 @@ export const arOk = (answer: string, value: string, opts: CheckOpts = {}): Verdi
     const dbl = normAr(doubleShadda(raw));
     if (dbl !== normAr(raw) && arLoose(dbl, v, rules)) return { ok: true, exact: false, note: SHADDA_NOTE };
   }
-  // Izoh: avval namunaga, bo'lmasa qo'shimcha javobga nisbatan («اتصلت» ↔ اِتَّصَلَ)
-  return { ok: false, note: [main, ...alts].map((x) => arHint(x, v)).find(Boolean) };
+  // Izoh: avval namunaga, bo'lmasa qo'shimcha javobga nisbatan («اتصلت» ↔ اِتَّصَلَ);
+  // topilmasa — ى/ي va hamza farqini e'tiborsiz qoldirib («استىقظ», «سول»)
+  const targets = [main, ...alts];
+  const note =
+    targets.map((x) => arHint(x, v)).find(Boolean) ??
+    targets.map((x) => arHint(hintFold(x), hintFold(v))).find(Boolean);
+  return { ok: false, note };
 };
 
 /* ── O'zbekcha (lotin) ── */
@@ -344,7 +390,13 @@ const normIkki = (w: string): string => {
   return "ikkov" + rest;
 };
 /** Fe'l o'zagi muqobillari: kutilgan → qabul qilinadigan (ذَهَبَ = bordi/ketdi, قَالَ = dedi/aytdi). */
-const STEM_ALT: Record<string, string[]> = { bor: ["ket"], de: ["ayt"], ayt: ["de"] };
+const STEM_ALT: Record<string, string[]> = {
+  bor: ["ket"],
+  de: ["ayt"],
+  ayt: ["de"],
+  yubor: ["jonat", "yolla"], // أَرْسَلَ = yubordi / jo'natdi / yo'lladi
+  jonat: ["yubor", "yolla"],
+};
 /** «sen» shakli o'rniga «siz» (hurmat) — qabul; teskarisi (ko'plik o'rniga birlik) — yo'q. */
 const POLITE: Record<string, string> = { sen: "siz", ng: "ngiz", san: "siz", sizlar: "siz" };
 const PRES: Record<string, string> = { di: "ti", dilar: "tilar" }; // hozirgi zamon shaxslari: man san ti miz siz tilar
@@ -366,12 +418,18 @@ const verbCanon = (w: string): string => {
   return w;
 };
 
+/** Izoh so'zlari, javobning o'zi emas: «sen yozding, muannas jins» (#a2-02), «ular o'rganadilar ko'plikda». */
+const NOTE_WORDS = new Set(["jins", "koplikda", "birlikda"]);
+const GENDER = new Set(["ayol", "erkak"]);
+
 const canonTokens = (s: string): string[] => {
   const t = s
     .replace(/\([^)]*\)/g, " ")
     .split(/\s+/)
-    .filter((w) => w && w !== "jins") // «sen yozding, muannas jins» (#a2-02) — «jins» (gender) izoh so'zi, javob emas
-    .map((w) => verbCanon(normIkki(SYNONYMS[w] ?? w).replace(/x/g, "h")));
+    .filter((w) => w && !NOTE_WORDS.has(w))
+    .map((w) => normIkki(SYNONYMS[w] ?? w))
+    .filter((w, i, all) => !(w === "kishi" && GENDER.has(all[i - 1]))) // «sen yozding ayol kishi» = sen (ayol)
+    .map((w) => verbCanon(w.replace(/x/g, "h")));
   // «ular» bo'lsa 3-shaxs birlik fe'l ko'plikka tenglashadi (moslashuv ixtiyoriy)
   return t.includes("ular")
     ? t.map((w) => (w.endsWith("|otg|") ? w + "lar" : w.endsWith("|hoz|ti") ? w + "lar" : w))
@@ -409,10 +467,14 @@ const stemOk = (e: string, g: string): boolean => {
   return (STEM_ALT[e0] ?? []).includes(g0) || (e0.length >= 4 && typoClose(e0, g0));
 };
 
+/** «ular o'rganishadi» = o'rganadilar: ko'plikda «-(i)sh-» birgalik nisbati so'zlashuvda 3-shaxs ko'pligi. */
+const ishPlural = (es: string, gs: string, ep: string): boolean =>
+  (ep === "tilar" || ep === "lar") && (gs === es + "ish" || (/[aeiou]$/.test(es) && gs === es + "sh"));
+
 const verbClose = (e: string, g: string): boolean => {
   const [es, et, ep] = e.split("|");
   const [gs, gt, gp] = g.split("|");
-  return et === gt && stemOk(es, gs) && (ep === gp || POLITE[ep] === gp);
+  return et === gt && (stemOk(es, gs) || ishPlural(es, gs, ep)) && (ep === gp || POLITE[ep] === gp);
 };
 
 /** Kelishik qo'shimchasi almashgan («qayerga» ≠ «qayerda», «akamga» ≠ «akamni») — ma'no farqi, imlo xatosi emas. */
@@ -452,6 +514,14 @@ const softTypo = (e: string, g: string): boolean => {
   if (e === g || e.length !== g.length || e.length < 5) return false;
   const diff = [...e].map((ch, i) => (ch !== g[i] ? i : -1)).filter((i) => i >= 0);
   return diff.length === 1 && SOFT_SUBS.has(e[diff[0]] + g[diff[0]]);
+};
+
+/** So'z o'rtasidagi bitta unli tushib qolgan («men yozdm» = yozdim, /javoblar a2-01). O'quvchi so'zi
+ *  o'zi fe'l shakli bo'lsa (yozdi ← yozadi: zamon boshqa) — imlo xatosi emas, kechirilmaydi. */
+const vowelDrop = (e: string, g: string): boolean => {
+  if (e.length < 5 || g.length !== e.length - 1 || verbCanon(g) !== g) return false;
+  for (let k = 1; k < e.length - 1; k++) if ("aeiou".includes(e[k]) && e.slice(0, k) + e.slice(k + 1) === g) return true;
+  return false;
 };
 
 const seqClose = (a: string[], b: string[]) => a.length === b.length && a.every((w, i) => wordClose(w, b[i]));
@@ -499,7 +569,7 @@ const latMatch = (answer: string, typed: string, opts: CheckOpts): Verdict => {
     const words = v.split(" ");
     const fixed = nv
       .split(" ")
-      .map((g) => words.find((w) => softTypo(w, g)) ?? g)
+      .map((g) => words.find((w) => softTypo(w, g) || vowelDrop(w, g)) ?? g)
       .join(" ");
     if (fixed !== nv && tokensMatch(canonTokens(v), canonTokens(fixed))) return { ok: true, exact: false };
   }

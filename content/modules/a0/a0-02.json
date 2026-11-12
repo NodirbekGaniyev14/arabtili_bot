@@ -163,10 +163,11 @@
   },
   {
    "type": "dictation",
-   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
+   "q_uz": "Eshiting: harf nomi aytiladi — shu harfning o'zini klaviaturadan bosing.",
    "q_ar": "",
    "options": [],
    "answer": "ب",
+   "accept": ["بَاء"],
    "explain_uz": "«Bo» — kosacha, PASTDA 1 nuqta — «b».",
    "audio": "a0/harf_ba.mp3",
    "root": "",

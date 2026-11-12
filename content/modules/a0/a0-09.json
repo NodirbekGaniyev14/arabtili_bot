@@ -166,10 +166,11 @@
   },
   {
    "type": "dictation",
-   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
+   "q_uz": "Eshiting: harf nomi aytiladi — shu harfning o'zini klaviaturadan bosing.",
    "q_ar": "",
    "options": [],
    "answer": "ض",
+   "accept": ["ضَاد"],
    "explain_uz": "«Dod» — qorin, TEPADA 1 nuqta — QALIN «d».",
    "audio": "a0/harf_dad.mp3",
    "root": "",

@@ -165,10 +165,11 @@
   },
   {
    "type": "dictation",
-   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
+   "q_uz": "Eshiting: harf nomi aytiladi — shu harfning o'zini klaviaturadan bosing.",
    "q_ar": "",
    "options": [],
    "answer": "ذ",
+   "accept": ["ذَال"],
    "explain_uz": "«Zol (tishlararo)» — do'ppi, TEPADA 1 nuqta — tishlararo «z» (inglizcha this).",
    "audio": "a0/harf_dhal.mp3",
    "root": "",

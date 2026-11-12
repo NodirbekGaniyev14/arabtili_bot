@@ -165,10 +165,11 @@
   },
   {
    "type": "dictation",
-   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
+   "q_uz": "Eshiting: harf nomi aytiladi — shu harfning o'zini klaviaturadan bosing.",
    "q_ar": "",
    "options": [],
    "answer": "ز",
+   "accept": ["زَاي"],
    "explain_uz": "«Zoy» — o'roq, TEPADA 1 nuqta — «z».",
    "audio": "a0/harf_zay.mp3",
    "root": "",

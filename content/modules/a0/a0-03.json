@@ -151,10 +151,11 @@
   },
   {
    "type": "dictation",
-   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
+   "q_uz": "Eshiting: harf nomi aytiladi — shu harfning o'zini klaviaturadan bosing.",
    "q_ar": "",
    "options": [],
    "answer": "ث",
+   "accept": ["ثَاء"],
    "explain_uz": "«So (tishlararo)» — kosacha, TEPADA 3 nuqta — tishlararo «s» (inglizcha think).",
    "audio": "a0/harf_tha.mp3",
    "root": "",

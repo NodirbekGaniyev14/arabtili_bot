@@ -166,10 +166,11 @@
   },
   {
    "type": "dictation",
-   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
+   "q_uz": "Eshiting: harf nomi aytiladi — shu harfning o'zini klaviaturadan bosing.",
    "q_ar": "",
    "options": [],
    "answer": "ش",
+   "accept": ["شِين"],
    "explain_uz": "«Shin» — taroq, TEPADA 3 nuqta — «sh».",
    "audio": "a0/harf_shin.mp3",
    "root": "",

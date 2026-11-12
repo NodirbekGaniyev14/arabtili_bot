@@ -166,10 +166,11 @@
   },
   {
    "type": "dictation",
-   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
+   "q_uz": "Eshiting: harf nomi aytiladi — shu harfning o'zini klaviaturadan bosing.",
    "q_ar": "",
    "options": [],
    "answer": "ظ",
+   "accept": ["ظَاء"],
    "explain_uz": "«Zo (qalin)» — qorin + tayoq, TEPADA 1 nuqta — QALIN «z».",
    "audio": "a0/harf_zah.mp3",
    "root": "",

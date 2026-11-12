@@ -66,7 +66,7 @@
   {"type": "mcq", "q_uz": "Eshiting: bu qaysi harfning nomi?", "q_ar": "", "options": ["ل", "م", "ا", "د"], "answer": "ل", "explain_uz": "«Lom» — uzun ilmoq.", "audio": "a0/harf_lam.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "ا va ل ni qanday ajratamiz?", "q_ar": "", "options": ["ا tik va yolg'iz, ل da pastda egilgan ilmoq", "ا da nuqta bor", "ل ulanmaydi", "farq yo'q"], "answer": "ا tik va yolg'iz, ل da pastda egilgan ilmoq", "explain_uz": "ل ning pastki qismi egilgan, ا tik turadi.", "audio": "", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "Taroq shaklidagi nuqtasiz harf qaysi?", "q_ar": "", "options": ["س", "ص", "م", "و"], "answer": "س", "explain_uz": "س (sin) — uch tishli taroq, nuqtasiz.", "audio": "", "root": "", "pattern": "", "words": []},
-  {"type": "dictation", "q_uz": "Eshiting va shu harfni klaviaturadan bosing.", "q_ar": "", "options": [], "answer": "م", "explain_uz": "«Mim» — yumaloq bosh, pastga dum.", "audio": "a0/harf_mim.mp3", "root": "", "pattern": "", "words": []},
+  {"type": "dictation", "q_uz": "Eshiting: harf nomi aytiladi — shu harfning o'zini klaviaturadan bosing.", "q_ar": "", "options": [], "answer": "م", "accept": ["مِيم"], "explain_uz": "«Mim» — yumaloq bosh, pastga dum.", "audio": "a0/harf_mim.mp3", "root": "", "pattern": "", "words": []},
   {"type": "mcq", "q_uz": "و ni ر dan qanday ajratamiz?", "q_ar": "", "options": ["و da tepada halqa bor", "ر da nuqta bor", "و ulanadi", "farq yo'q"], "answer": "و da tepada halqa bor", "explain_uz": "و — halqa + quyruq; ر — faqat o'roq.", "audio": "", "root": "", "pattern": "", "words": []}
  ],
  "srs_cards": [

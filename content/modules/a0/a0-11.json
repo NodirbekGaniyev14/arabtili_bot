@@ -166,10 +166,11 @@
   },
   {
    "type": "dictation",
-   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
+   "q_uz": "Eshiting: harf nomi aytiladi — shu harfning o'zini klaviaturadan bosing.",
    "q_ar": "",
    "options": [],
    "answer": "غ",
+   "accept": ["غَيْن"],
    "explain_uz": "«G'ayn» — ayn + TEPADA 1 nuqta — o'zbekcha «g'».",
    "audio": "a0/harf_ghayn.mp3",
    "root": "",

@@ -151,10 +151,11 @@
   },
   {
    "type": "dictation",
-   "q_uz": "Eshiting va shu harfni klaviaturadan bosing.",
+   "q_uz": "Eshiting: harf nomi aytiladi — shu harfning o'zini klaviaturadan bosing.",
    "q_ar": "",
    "options": [],
    "answer": "ق",
+   "accept": ["قَاف"],
    "explain_uz": "«Qof» — halqa + kosacha, TEPADA 2 nuqta — o'zbekcha «q».",
    "audio": "a0/harf_qaf.mp3",
    "root": "",
