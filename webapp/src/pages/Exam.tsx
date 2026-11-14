@@ -8,7 +8,7 @@ import {
   type ExamResult,
 } from "../lib/api";
 import { playAudio } from "../lib/audio";
-import { QuizRunner } from "./v2/exercises";
+import ExamQuiz from "./ExamQuiz";
 import MashaAllah from "../components/MashaAllah";
 
 const tg = () => window.Telegram?.WebApp;
@@ -39,13 +39,13 @@ export default function Exam({ onClose }: { onClose: () => void }) {
   const [deadline, setDeadline] = useState<number | null>(null);
   const [leftSec, setLeftSec] = useState(0);
 
-  const scores = useRef({
-    reading: 0,
-    listening: 0,
-    writing: 0,
-    speakingDone: 0,
-    passage: 0,
+  /** K33: tanlangan javoblar — ballni server hisoblaydi (mijozda to'g'ri javob yo'q) */
+  const answers = useRef({
+    reading: [] as string[],
+    listening: [] as string[],
+    passages: [] as string[][],
   });
+  const speakingDone = useRef(0);
   const writingTexts = useRef<string[]>([]);
   const submitted = useRef(false);
 
@@ -96,32 +96,30 @@ export default function Exam({ onClose }: { onClose: () => void }) {
   const finish = async () => {
     if (!exam || submitted.current) return;
     submitted.current = true;
-    const sp = exam.speaking.length
-      ? Math.round((100 * scores.current.speakingDone) / exam.speaking.length)
-      : 100;
-    const wr = exam.writing.length
-      ? Math.round(
-          (100 *
-            writingTexts.current.filter((t) => (t || "").trim().length >= 3)
-              .length) /
-            exam.writing.length
-        )
-      : 100;
+    // Bo'sh joylar (o'tkazib yuborilgan / vaqt tugagan savollar) "" bilan to'ldiriladi
+    const fill = (arr: string[], n: number) => Array.from({ length: n }, (_, i) => arr[i] ?? "");
     try {
       const r = await api.submitExam({
         attempt_id: exam.attempt_id,
-        reading_correct: scores.current.reading,
-        listening_correct: scores.current.listening,
-        writing_score: wr,
-        speaking_score: sp,
-        passage_correct: scores.current.passage,
+        reading: fill(answers.current.reading, exam.reading.length),
+        listening: fill(answers.current.listening, exam.listening.length),
+        passages: exam.passages.map((p, i) =>
+          fill(answers.current.passages[i] ?? [], p.questions.length)
+        ),
+        writing: fill(writingTexts.current, exam.writing.length),
+        speaking_done: speakingDone.current,
         holder_name: holderName,
       });
       setResult(r);
       setStage({ k: "result" });
       tg()?.HapticFeedback?.notificationOccurred(r.passed ? "success" : "error");
-    } catch {
-      setError("Topshirishda xatolik");
+    } catch (err) {
+      submitted.current = false; // qayta urinib ko'rish mumkin (tarmoq uzilgan bo'lsa)
+      setError(
+        String(err).includes("426")
+          ? "Ilova yangilangan — Telegram'ni yopib qayta oching va imtihonni boshidan boshlang."
+          : "Topshirishda xatolik — internetni tekshirib qayta urinib ko'ring"
+      );
     }
   };
 
@@ -327,17 +325,17 @@ export default function Exam({ onClose }: { onClose: () => void }) {
         {/* O'QISH / TINGLASH — QuizRunner */}
         {(stage.k === "reading" || stage.k === "listening") && exam && (
           <div className="pt-4">
-            <QuizRunner
+            <ExamQuiz
               key={stage.k}
               items={stage.k === "reading" ? exam.reading : exam.listening}
               label={SECTION_TITLES[stage.k]}
-              context={`exam:${stage.k}`}
-              onFinish={(correct) => {
+              onAnswer={(i, given) => {
+                answers.current[stage.k as "reading" | "listening"][i] = given;
+              }}
+              onFinish={() => {
                 if (stage.k === "reading") {
-                  scores.current.reading = correct;
                   setStage({ k: "listening" });
                 } else {
-                  scores.current.listening = correct;
                   if (exam.writing.length) setStage({ k: "writing", i: 0 });
                   else afterWriting(exam);
                 }
@@ -396,12 +394,15 @@ export default function Exam({ onClose }: { onClose: () => void }) {
               Matnni o'qing va quyidagi savollarga javob bering:
             </p>
             <div className="mt-2">
-              <QuizRunner
+              <ExamQuiz
                 key={`p${stage.i}`}
                 items={exam.passages[stage.i].questions}
                 label="SAVOL"
-                onFinish={(correct) => {
-                  scores.current.passage += correct;
+                onAnswer={(q, given) => {
+                  const p = (answers.current.passages[stage.i] ??= []);
+                  p[q] = given;
+                }}
+                onFinish={() => {
                   if (stage.i + 1 < exam.passages.length)
                     setStage({ k: "passage", i: stage.i + 1 });
                   else finish();
@@ -438,7 +439,7 @@ export default function Exam({ onClose }: { onClose: () => void }) {
               </button>
               <button
                 onClick={() => {
-                  scores.current.speakingDone += 1;
+                  speakingDone.current += 1;
                   if (stage.i + 1 < exam.speaking.length)
                     setStage({ k: "speaking", i: stage.i + 1 });
                   else finish();

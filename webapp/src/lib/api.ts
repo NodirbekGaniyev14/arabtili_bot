@@ -1007,20 +1007,29 @@ export interface ExamSpeaking {
   audio: string;
 }
 
+/** Imtihon savoli (K33): to'g'ri javob va izoh YO'Q — baholash serverda. Variantsiz = diktant. */
+export interface ExamQuestion {
+  type: string;
+  q_uz: string;
+  q_ar: string;
+  audio: string;
+  options: string[];
+}
+
 /** A2 va yuqorida gapirish o'rniga: matn + tagidagi savollar */
 export interface ExamPassage {
   id: string;
   title_uz: string;
   text_ar: string;
-  questions: MicroTestItem[];
+  questions: ExamQuestion[];
 }
 
 export interface ExamData {
   attempt_id: number;
   level: string;
   minutes: number;
-  reading: MicroTestItem[];
-  listening: MicroTestItem[];
+  reading: ExamQuestion[];
+  listening: ExamQuestion[];
   writing: ExamWriting[];
   speaking: ExamSpeaking[];
   passages: ExamPassage[];
@@ -1260,16 +1269,18 @@ export const api = {
     request<{ certificates: MyCertificate[] }>("/api/my-certificates"),
   startExam: (level = "") =>
     request<ExamData>(
-      `/api/exam/start${level ? `?level=${encodeURIComponent(level)}` : ""}`,
+      // v=2: javobsiz savollar, ball serverda (K33)
+      `/api/exam/start?v=2${level ? `&level=${encodeURIComponent(level)}` : ""}`,
       { method: "POST", body: "{}" }
     ),
+  /** K33: tanlangan javoblar (savollar tartibida, "" = javobsiz) — ballni server hisoblaydi */
   submitExam: (payload: {
     attempt_id: number;
-    reading_correct: number;
-    listening_correct: number;
-    writing_score: number;
-    speaking_score: number;
-    passage_correct: number;
+    reading: string[];
+    listening: string[];
+    passages: string[][];
+    writing: string[];
+    speaking_done: number;
     holder_name: string;
   }) =>
     request<ExamResult>("/api/exam/submit", {

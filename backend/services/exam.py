@@ -3,6 +3,7 @@
 
 import json
 import random
+import re
 from datetime import datetime, timedelta, timezone
 
 from sqlalchemy import select
@@ -220,6 +221,135 @@ def build_exam(level: str, seen: set[str] | None = None) -> dict | None:
 def passage_questions(exam: dict) -> int:
     """Matn bo'limidagi savollar soni."""
     return sum(len(p.get("questions", [])) for p in exam.get("passages") or [])
+
+
+# K33 — ballni SERVER hisoblaydi.
+#
+# Avval mijoz `reading_correct`, `listening_correct`, `writing_score`… raqamlarini o'zi yuborardi va
+# `/api/exam/start` javobida har savolning `answer` i ham kelardi: tarmoq so'rovini yuborishga qodir odam
+# 100/100 va sertifikat olardi. Endi:
+#   - mijozga savollar javobsiz beriladi (`public_exam`: `answer`, `explain_uz`, `option_notes`, `accept`,
+#     `root` yo'q; variantlar server tomonda aralashtiriladi — pooldagi birinchi variant har doim to'g'ri edi);
+#   - mijoz faqat TANLAGAN javoblarini yuboradi, to'g'rilikni `grade_answers` hisoblaydi.
+# Yozish va gapirish bo'limlari avvalgidek ishtirok uchun: yozish — matn kiritilgan (≥3 belgi), gapirish —
+# «Aytdim» bosilgan soni (ovoz yozib olinmaydi, shuning uchun tekshirib bo'lmaydi).
+
+# match_root savollarida variantlar poolda yo'q — mijoz o'zi yasardi (o'zak + 3 ta chalg'ituvchi)
+FALLBACK_ROOTS = ["ك ت ب", "د ر س", "ع ل م", "س ف ر", "ن ظ ر", "ق ب ل", "ح ك م"]
+WRITING_MIN_CHARS = 3
+
+
+def _public_item(item: dict, rnd: random.Random) -> dict:
+    out = {k: item.get(k) or "" for k in ("type", "q_uz", "q_ar", "audio")}
+    options = list(item.get("options") or [])
+    if not options and item.get("type") == "match_root":
+        distractors = [r for r in FALLBACK_ROOTS if r not in (item.get("root"), item["answer"])]
+        options = [item["answer"], *rnd.sample(distractors, min(3, len(distractors)))]
+    rnd.shuffle(options)
+    out["options"] = options
+    return out
+
+
+def public_exam(exam: dict, rnd: random.Random | None = None) -> dict:
+    """Mijozga beriladigan imtihon: to'g'ri javob va izohlarsiz (to'liq nusxa `ExamAttempt.questions_json` da)."""
+    rnd = rnd or random.Random()
+    return {
+        "level": exam["level"],
+        "minutes": exam["minutes"],
+        "reading": [_public_item(i, rnd) for i in exam.get("reading") or []],
+        "listening": [_public_item(i, rnd) for i in exam.get("listening") or []],
+        "writing": [{"task_uz": w.get("task_uz", "")} for w in exam.get("writing") or []],
+        "speaking": [{"q_ar": s.get("q_ar", ""), "audio": s.get("audio", "")} for s in exam.get("speaking") or []],
+        "passages": [
+            {
+                "id": p.get("id", ""),
+                "title_uz": p.get("title_uz", ""),
+                "text_ar": p.get("text_ar", ""),
+                "questions": [_public_item(q, rnd) for q in p.get("questions") or []],
+            }
+            for p in exam.get("passages") or []
+        ],
+    }
+
+
+# ── Arabcha diktant tekshiruvi — webapp/src/pages/v2/answerCheck.ts `arOk` (mode "strict") nusxasi ──
+# tests/test_exam_server_grade.py ikkalasini node orqali solishtiradi: biri o'zgarsa test yiqiladi.
+
+_HARAKAT = "ً-ْٰ"
+_SHADDA = "ّ"
+_LETTER_MARKS = re.compile(f"([ء-ي])([{_HARAKAT}]*)")
+
+
+def norm_ar(s: str) -> str:
+    s = re.sub(f"[{_HARAKAT}]", "", s)
+    s = s.replace("ـ", "")  # tatvil
+    s = re.sub("[أإآٱ]", "ا", s)
+    s = s.replace("ک", "ك").replace("ی", "ي")  # fors ک ی
+    s = re.sub(r"[.,،؟!·:؛—–\s]+", " ", s)
+    return s.strip()
+
+
+def _fold(s: str) -> str:
+    """ى/ي va ة/ه — klaviaturada eng ko'p adashadigan juftliklar (diktantda ham kechiriladi)."""
+    return s.replace("ى", "ي").replace("ة", "ه")
+
+
+def _double_shadda(s: str) -> str:
+    """Ekran klaviaturasida shadda yo'q: «تعللم» = تَعَلُّم."""
+    return _LETTER_MARKS.sub(lambda m: (m.group(1) * 2 if _SHADDA in m.group(2) else m.group(1)) + m.group(2), s)
+
+
+def ar_dictation_ok(answer: str, typed: str, accept: list[str] | None = None) -> bool:
+    v = norm_ar(typed or "")
+    if not v:
+        return False
+    targets = [answer, *(accept or [])]
+    forms = {_fold(norm_ar(t)) for t in targets} | {_fold(norm_ar(_double_shadda(t))) for t in targets}
+    return _fold(v) in forms
+
+
+def check_item(item: dict, given: str) -> bool:
+    """Bitta savol: variantli — tanlangan matn javobga aynan teng; diktant (variantsiz) — arabcha yozuv."""
+    given = (given or "").strip()
+    if not given:
+        return False
+    if item.get("options") or item.get("type") == "match_root":
+        return given == item["answer"]
+    if item.get("type") == "dictation":
+        return ar_dictation_ok(item["answer"], given, item.get("accept"))
+    return False
+
+
+def _count(items: list[dict], given: list[str] | None) -> int:
+    given = list(given or [])
+    return sum(check_item(it, given[i]) for i, it in enumerate(items) if i < len(given))
+
+
+def grade_answers(
+    exam: dict,
+    reading: list[str] | None,
+    listening: list[str] | None,
+    passages: list[list[str]] | None,
+    writing: list[str] | None,
+    speaking_done: int,
+) -> dict:
+    """Mijoz javoblaridan `grade()` kutadigan sonlar: to'g'ri javoblar va yozish/gapirish ballari."""
+    passage_correct = 0
+    given_p = list(passages or [])
+    for i, p in enumerate(exam.get("passages") or []):
+        passage_correct += _count(p.get("questions") or [], given_p[i] if i < len(given_p) else [])
+
+    n_w = len(exam.get("writing") or [])
+    texts = list(writing or [])[:n_w]
+    written = sum(len((t or "").strip()) >= WRITING_MIN_CHARS for t in texts)
+    n_s = len(exam.get("speaking") or [])
+    return {
+        "reading_correct": _count(exam.get("reading") or [], reading),
+        "listening_correct": _count(exam.get("listening") or [], listening),
+        "passage_correct": passage_correct,
+        "writing_score": round(100 * written / n_w) if n_w else 100,
+        "speaking_score": round(100 * min(max(0, speaking_done), n_s) / n_s) if n_s else 100,
+    }
 
 
 async def start_attempt(

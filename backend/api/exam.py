@@ -3,15 +3,17 @@
 import html
 import json
 import re
+from typing import Annotated
 
 from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import FileResponse, HTMLResponse
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, StringConstraints
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from db.models import Certificate, ExamAttempt, Plan, Progress, User, XpLog
 from db.session import get_session
+from services import answer_log
 from services import challenge as challenge_svc
 from services import checkpoint as checkpoint_svc
 from services import exam as exam_svc
@@ -95,12 +97,22 @@ async def exam_info(
     }
 
 
+STALE_CLIENT = (
+    "Ilova yangilangan — Telegram'ni yopib qayta oching, so'ng imtihonni boshidan boshlang"
+)
+
+
 @router.post("/api/exam/start")
 async def exam_start(
     level: str = "",
+    v: int = 1,
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
+    # K33: v=2 — javobsiz savollar, ball serverda. Eski (keshlangan) mijoz javobni o'zi tekshiradi va ball
+    # raqamini yuboradi — u endi ishlamaydi; jim noto'g'ri natija o'rniga aniq xabar.
+    if v < 2:
+        raise HTTPException(status_code=426, detail=STALE_CLIENT)
     user_level = await _user_level(session, user.id)
     level = (level or user_level).upper()
     if level not in exam_svc.LEVEL_ORDER:
@@ -134,17 +146,25 @@ async def exam_start(
     seen = await exam_svc.seen_questions(session, user.id, level)
     exam = exam_svc.build_exam(level, seen)
     attempt = await exam_svc.start_attempt(session, user.id, level, exam)
-    return {"attempt_id": attempt.id, **exam}
+    # To'liq nusxa (javoblar bilan) faqat bazada; mijozga — javobsiz
+    return {"attempt_id": attempt.id, **exam_svc.public_exam(exam)}
+
+
+Answer = Annotated[str, StringConstraints(max_length=300)]
+WrittenText = Annotated[str, StringConstraints(max_length=4000)]
 
 
 class SubmitBody(BaseModel):
+    """K33: mijoz BALL emas, TANLAGAN javoblarni yuboradi — savollar tartibida; "" = javob berilmagan."""
+
     attempt_id: int
-    reading_correct: int = Field(ge=0)
-    listening_correct: int = Field(ge=0)
-    writing_score: int = Field(ge=0, le=100)
-    speaking_score: int = Field(default=0, ge=0, le=100)
-    # A2+ da gapirish o'rniga matn o'qish bo'limi
-    passage_correct: int = Field(default=0, ge=0)
+    reading: list[Answer] | None = Field(default=None, max_length=100)
+    listening: list[Answer] | None = Field(default=None, max_length=100)
+    # A2+: matn bo'limi — har matn uchun o'z javoblar ro'yxati
+    passages: list[list[Answer]] | None = Field(default=None, max_length=30)
+    writing: list[WrittenText] | None = Field(default=None, max_length=30)
+    # A0/A1: «✓ Aytdim» bosilgan soni (ovoz yozilmaydi)
+    speaking_done: int = Field(default=0, ge=0, le=100)
     holder_name: str = Field(default="", max_length=100)
 
 
@@ -167,15 +187,31 @@ async def exam_submit(
         raise HTTPException(status_code=404, detail="Urinish topilmadi")
     if attempt.finished_at is not None:
         raise HTTPException(status_code=409, detail="Bu urinish yakunlangan")
+    if body.reading is None or body.listening is None:
+        # Eski mijoz (ball raqamlarini yuboradi) — urinish YAKUNLANMAYDI: o'quvchi qayta boshlay oladi, 24 soat qulfsiz
+        raise HTTPException(status_code=426, detail=STALE_CLIENT)
 
+    exam = json.loads(attempt.questions_json)
+    counts = exam_svc.grade_answers(
+        exam, body.reading, body.listening, body.passages, body.writing, body.speaking_done
+    )
     result = exam_svc.grade(
         attempt,
-        body.reading_correct,
-        body.listening_correct,
-        body.writing_score,
-        body.speaking_score,
-        body.passage_correct,
+        counts["reading_correct"],
+        counts["listening_correct"],
+        counts["writing_score"],
+        counts["speaking_score"],
+        counts["passage_correct"],
     )
+
+    # Rad etilgan diktant javoblari admin /javoblar ga tushadi (avval QuizRunner mijoz tomonda yozardi)
+    given = list(body.listening)
+    for i, item in enumerate(exam.get("listening") or []):
+        if item.get("type") == "dictation" and i < len(given) and not exam_svc.check_item(item, given[i]):
+            await answer_log.record(
+                session, user.id, "exam:listening", "dictation",
+                item.get("q_uz", ""), item["answer"], given[i],
+            )
 
     attempt.finished_at = exam_svc._now()
     attempt.score_reading = result["reading"]
