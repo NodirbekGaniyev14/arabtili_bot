@@ -2,12 +2,14 @@
  *
  * Savollar o'sha darajada O'TILGAN darslardan yig'iladi. O'tish 80%.
  * Yiqilsa darslar QULFLANMAYDI — natija ko'rsatiladi, xato so'zlar takrorga qaytadi.
+ * K33: savollar javobsiz keladi, ballni server hisoblaydi; xatolar natija ekranida to'g'ri javob bilan chiqadi.
  */
 
-import { useEffect, useState } from "react";
-import { api, type CheckpointData, type CheckpointResult } from "../lib/api";
-import { QuizRunner } from "./v2/exercises";
+import { useEffect, useRef, useState } from "react";
+import { api, type CheckpointResult, type MiniExamData } from "../lib/api";
+import BlindQuiz from "./BlindQuiz";
 import MashaAllah from "../components/MashaAllah";
+import ReviewList from "../components/ReviewList";
 
 export default function Checkpoint({
   percent,
@@ -16,26 +18,29 @@ export default function Checkpoint({
   percent: number;
   onClose: () => void;
 }) {
-  const [data, setData] = useState<CheckpointData | null>(null);
+  const [data, setData] = useState<MiniExamData | null>(null);
   const [result, setResult] = useState<CheckpointResult | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const answers = useRef<string[]>([]);
 
   useEffect(() => {
     api
       .startCheckpoint(percent)
       .then(setData)
-      .catch(() => setError("Mini-imtihonni boshlab bo'lmadi"));
+      .catch((err) =>
+        setError(
+          String(err).includes("426")
+            ? "Ilova yangilangan — Telegram'ni yopib qayta oching."
+            : "Mini-imtihonni boshlab bo'lmadi"
+        )
+      );
   }, [percent]);
 
-  const finish = (correct: number, total: number, wrong: string[]) => {
+  const finish = () => {
     if (!data) return;
+    const answered = Array.from({ length: data.items.length }, (_, i) => answers.current[i] ?? "");
     api
-      .submitCheckpoint({
-        attempt_id: data.attempt_id,
-        correct,
-        total,
-        wrong_words: wrong,
-      })
+      .submitCheckpoint({ attempt_id: data.attempt_id, answers: answered })
       .then(setResult)
       .catch(() => setError("Natijani yuborib bo'lmadi"));
   };
@@ -72,23 +77,25 @@ export default function Checkpoint({
           </div>
         )}
 
-        {data && !result && (
+        {data && !result && !error && (
           <div className="pt-2">
             <p className="mb-3 text-xs text-ink-soft font-semibold">
               {data.level} darajasining {data.lessons_covered} ta o'tilgan darsi
-              bo'yicha · o'tish {data.pass_score}%
+              bo'yicha · o'tish {data.pass_score}% · natija oxirida ko'rsatiladi
             </p>
-            <QuizRunner
+            <BlindQuiz
               items={data.items}
               label={`MINI-IMTIHON ${percent}%`}
-              context={`cp${percent}`}
+              onAnswer={(i, given) => {
+                answers.current[i] = given;
+              }}
               onFinish={finish}
             />
           </div>
         )}
 
         {result && (
-          <div className="min-h-[60vh] flex flex-col items-center justify-center gap-3 text-center">
+          <div className="pt-8 flex flex-col items-center gap-3 text-center">
             <div className="text-6xl">{result.passed ? "🎉" : "📚"}</div>
             <h1 className="text-2xl font-extrabold">
               {result.passed ? "O'tdingiz!" : "Yana bir bor takrorlang"}
@@ -118,6 +125,11 @@ export default function Checkpoint({
                 +{result.xp_earned} XP
               </p>
             )}
+            {result.passed && result.xp_already_claimed && (
+              <p className="text-xs text-ink-soft font-semibold">
+                Bu mini-imtihon uchun XP avval olingan.
+              </p>
+            )}
 
             <p className="text-xs text-ink-soft font-semibold px-8">
               {result.passed
@@ -126,6 +138,8 @@ export default function Checkpoint({
                   "davom etishingiz mumkin. Xato so'zlar takrorga qaytarildi — " +
                   "takrorlab, keyin yana urinib ko'ring."}
             </p>
+
+            <ReviewList items={result.review ?? []} context={`cp${percent}`} />
 
             <button
               onClick={onClose}

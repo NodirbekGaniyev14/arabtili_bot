@@ -111,7 +111,7 @@ def test_check_item_options_exact_match():
 
 
 def test_check_item_unknown_shape_is_wrong():
-    assert not ex.check_item({"type": "fill_blank", "answer": "x"}, "x")
+    assert not ex.check_item({"type": "shadowing", "answer": "x"}, "x")
 
 
 def test_check_item_dictation():

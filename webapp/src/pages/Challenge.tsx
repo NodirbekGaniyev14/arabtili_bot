@@ -4,35 +4,36 @@
  * XP beriladi (o'sha hafta uchun).
  */
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { api, type ChallengeData, type ChallengeResult } from "../lib/api";
-import { QuizRunner } from "./v2/exercises";
+import BlindQuiz from "./BlindQuiz";
+import ReviewList from "../components/ReviewList";
 
 export default function Challenge({ onClose }: { onClose: () => void }) {
   const [data, setData] = useState<ChallengeData | null>(null);
   const [result, setResult] = useState<ChallengeResult | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const answers = useRef<string[]>([]);
 
   useEffect(() => {
     api
       .startChallenge()
       .then(setData)
-      .catch(() =>
+      .catch((err) =>
         setError(
-          "Chellenj uchun avval kamida bitta darsni tugating — savollar shu darslardan tuziladi."
+          String(err).includes("426")
+            ? "Ilova yangilangan — Telegram'ni yopib qayta oching."
+            : "Chellenj uchun avval kamida bitta darsni tugating — savollar shu darslardan tuziladi."
         )
       );
   }, []);
 
-  const finish = (correct: number, total: number, wrong: string[]) => {
+  // K33: savollar javobsiz keladi, ballni server hisoblaydi
+  const finish = () => {
     if (!data) return;
+    const answered = Array.from({ length: data.items.length }, (_, i) => answers.current[i] ?? "");
     api
-      .submitChallenge({
-        attempt_id: data.attempt_id,
-        correct,
-        total,
-        wrong_words: wrong,
-      })
+      .submitChallenge({ attempt_id: data.attempt_id, answers: answered })
       .then(setResult)
       .catch(() => setError("Natijani yuborib bo'lmadi"));
   };
@@ -69,23 +70,25 @@ export default function Challenge({ onClose }: { onClose: () => void }) {
           </div>
         )}
 
-        {data && !result && (
+        {data && !result && !error && (
           <div className="pt-2">
             <p className="mb-3 text-xs text-ink-soft font-semibold">
               {data.week_label} haftasi · {data.lessons_pool} ta o'tilgan darsdan ·{" "}
               {data.pass_score}% da +{data.xp_reward} XP
             </p>
-            <QuizRunner
+            <BlindQuiz
               items={data.items}
               label="HAFTALIK CHELLENJ"
-              context="challenge"
+              onAnswer={(i, given) => {
+                answers.current[i] = given;
+              }}
               onFinish={finish}
             />
           </div>
         )}
 
         {result && (
-          <div className="min-h-[60vh] flex flex-col items-center justify-center gap-3 text-center">
+          <div className="pt-8 flex flex-col items-center gap-3 text-center">
             <div className="text-6xl">{result.passed ? "🔥" : "💪"}</div>
             <h1 className="text-2xl font-extrabold">
               {result.passed ? "Chellenj bajarildi!" : "Bu safar bo'lmadi"}
@@ -125,6 +128,8 @@ export default function Challenge({ onClose }: { onClose: () => void }) {
                 ? "Keyingi dushanba yangi savollar bilan qaytadi!"
                 : "Xato so'zlar takrorga qaytarildi. Yana urinib ko'ring — urinishlar cheklanmagan."}
             </p>
+
+            <ReviewList items={result.review ?? []} context="challenge" />
 
             <button
               onClick={onClose}

@@ -662,7 +662,7 @@ export interface ChallengeData {
   attempt_id: number;
   week: number;
   week_label: string;
-  items: MicroTestItem[];
+  items: QuizQuestion[];
   pass_score: number;
   xp_reward: number;
   lessons_pool: number;
@@ -677,6 +677,7 @@ export interface ChallengeResult {
   xp_earned: number;
   xp_already_claimed: boolean;
   srs_reset: number;
+  review: ReviewItem[];
 }
 
 export interface AchievementsData {
@@ -976,6 +977,16 @@ export interface CheckpointData {
   pass_score: number;
 }
 
+/** Mini-imtihon (K33): savollar javobsiz */
+export interface MiniExamData {
+  attempt_id: number;
+  level: string;
+  percent: number;
+  lessons_covered: number;
+  items: QuizQuestion[];
+  pass_score: number;
+}
+
 export interface CheckpointResult {
   score: number;
   passed: boolean;
@@ -984,8 +995,11 @@ export interface CheckpointResult {
   level: string;
   percent: number;
   xp_earned: number;
+  /** O'tdi, lekin bu mini-imtihon uchun XP avval olingan */
+  xp_already_claimed?: boolean;
   srs_reset: number;
   locked: boolean;
+  review: ReviewItem[];
 }
 
 export interface MyCertificate {
@@ -1007,13 +1021,39 @@ export interface ExamSpeaking {
   audio: string;
 }
 
-/** Imtihon savoli (K33): to'g'ri javob va izoh YO'Q — baholash serverda. Variantsiz = diktant. */
-export interface ExamQuestion {
+/** Javob turi (K33): variant tanlash / arabcha yozish / lotincha yozish / harakat qo'yish / so'z tartibi */
+export type QuizInput = "options" | "ar" | "lat" | "harakat" | "order";
+
+/** Imtihon, mini-imtihon va chellenj savoli (K33): to'g'ri javob va izoh YO'Q — baholash serverda. */
+export interface QuizQuestion {
   type: string;
   q_uz: string;
   q_ar: string;
   audio: string;
+  /** Eski server (faqat imtihon) yubormaydi: variant bor — "options", yo'q — arabcha diktant */
+  input?: QuizInput;
   options: string[];
+  /** harakat: harflar (harakatsiz) */
+  base?: string;
+  /** order_words: aralash so'zlar */
+  words?: string[];
+  /** build_word: o'zak va vazn — savolning o'zi */
+  root?: string;
+  pattern?: string;
+}
+export type ExamQuestion = QuizQuestion;
+
+/** Natija ekrani: xato javoblar — javob qulflangach to'g'ri javob bilan ko'rsatiladi */
+export interface ReviewItem {
+  index: number;
+  type: string;
+  q_uz: string;
+  q_ar: string;
+  options: string[];
+  audio: string;
+  answer: string;
+  explain_uz: string;
+  given: string;
 }
 
 /** A2 va yuqorida gapirish o'rniga: matn + tagidagi savollar */
@@ -1180,14 +1220,11 @@ export const api = {
       body: JSON.stringify({ results }),
     }),
   getChallengeInfo: () => request<ChallengeInfo>("/api/challenge/info"),
+  // v=2: javobsiz savollar, ball serverda (K33)
   startChallenge: () =>
-    request<ChallengeData>("/api/challenge/start", { method: "POST", body: "{}" }),
-  submitChallenge: (payload: {
-    attempt_id: number;
-    correct: number;
-    total: number;
-    wrong_words: string[];
-  }) =>
+    request<ChallengeData>("/api/challenge/start?v=2", { method: "POST", body: "{}" }),
+  /** K33: javoblar savollar tartibida ("" = javobsiz) — ballni server hisoblaydi */
+  submitChallenge: (payload: { attempt_id: number; answers: string[] }) =>
     request<ChallengeResult>("/api/challenge/submit", {
       method: "POST",
       body: JSON.stringify(payload),
@@ -1288,17 +1325,14 @@ export const api = {
       body: JSON.stringify(payload),
     }),
   getCheckpointInfo: () => request<CheckpointInfo>("/api/checkpoint/info"),
+  // v=2: javobsiz savollar, ball serverda (K33)
   startCheckpoint: (percent: number) =>
-    request<CheckpointData>(`/api/checkpoint/start?percent=${percent}`, {
+    request<MiniExamData>(`/api/checkpoint/start?percent=${percent}&v=2`, {
       method: "POST",
       body: "{}",
     }),
-  submitCheckpoint: (payload: {
-    attempt_id: number;
-    correct: number;
-    total: number;
-    wrong_words: string[];
-  }) =>
+  /** K33: javoblar savollar tartibida ("" = javobsiz) — ballni server hisoblaydi */
+  submitCheckpoint: (payload: { attempt_id: number; answers: string[] }) =>
     request<CheckpointResult>("/api/checkpoint/submit", {
       method: "POST",
       body: JSON.stringify(payload),

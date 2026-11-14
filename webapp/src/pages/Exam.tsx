@@ -8,7 +8,7 @@ import {
   type ExamResult,
 } from "../lib/api";
 import { playAudio } from "../lib/audio";
-import ExamQuiz from "./ExamQuiz";
+import BlindQuiz from "./BlindQuiz";
 import MashaAllah from "../components/MashaAllah";
 
 const tg = () => window.Telegram?.WebApp;
@@ -325,10 +325,11 @@ export default function Exam({ onClose }: { onClose: () => void }) {
         {/* O'QISH / TINGLASH — QuizRunner */}
         {(stage.k === "reading" || stage.k === "listening") && exam && (
           <div className="pt-4">
-            <ExamQuiz
+            <BlindQuiz
               key={stage.k}
               items={stage.k === "reading" ? exam.reading : exam.listening}
               label={SECTION_TITLES[stage.k]}
+              autoplayAudio={stage.k === "listening"}
               onAnswer={(i, given) => {
                 answers.current[stage.k as "reading" | "listening"][i] = given;
               }}
@@ -394,7 +395,7 @@ export default function Exam({ onClose }: { onClose: () => void }) {
               Matnni o'qing va quyidagi savollarga javob bering:
             </p>
             <div className="mt-2">
-              <ExamQuiz
+              <BlindQuiz
                 key={`p${stage.i}`}
                 items={exam.passages[stage.i].questions}
                 label="SAVOL"

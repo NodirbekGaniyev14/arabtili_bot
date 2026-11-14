@@ -3,7 +3,6 @@
 
 import json
 import random
-import re
 from datetime import datetime, timedelta, timezone
 
 from sqlalchemy import select
@@ -11,6 +10,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import BASE_DIR
 from db.models import ExamAttempt, Progress
+from services import answer_check, blind_quiz
 from services.curriculum import load_curriculum, written_lesson_ids
 from services.qbank import pick_fresh, qhash
 
@@ -234,20 +234,17 @@ def passage_questions(exam: dict) -> int:
 # Yozish va gapirish bo'limlari avvalgidek ishtirok uchun: yozish — matn kiritilgan (≥3 belgi), gapirish —
 # «Aytdim» bosilgan soni (ovoz yozib olinmaydi, shuning uchun tekshirib bo'lmaydi).
 
-# match_root savollarida variantlar poolda yo'q — mijoz o'zi yasardi (o'zak + 3 ta chalg'ituvchi)
-FALLBACK_ROOTS = ["ك ت ب", "د ر س", "ع ل م", "س ف ر", "ن ظ ر", "ق ب ل", "ح ك م"]
 WRITING_MIN_CHARS = 3
 
+# Savol ko'rinishi va baholash — services/blind_quiz.py (mini-imtihon va chellenj bilan umumiy);
+# yozma javob qoidalari — services/answer_check.py (answerCheck.ts nusxasi)
+FALLBACK_ROOTS = blind_quiz.FALLBACK_ROOTS
+norm_ar = answer_check.norm_ar
+check_item = blind_quiz.check_item
 
-def _public_item(item: dict, rnd: random.Random) -> dict:
-    out = {k: item.get(k) or "" for k in ("type", "q_uz", "q_ar", "audio")}
-    options = list(item.get("options") or [])
-    if not options and item.get("type") == "match_root":
-        distractors = [r for r in FALLBACK_ROOTS if r not in (item.get("root"), item["answer"])]
-        options = [item["answer"], *rnd.sample(distractors, min(3, len(distractors)))]
-    rnd.shuffle(options)
-    out["options"] = options
-    return out
+
+def ar_dictation_ok(answer: str, typed: str, accept: list[str] | None = None) -> bool:
+    return answer_check.ar_ok(answer, typed, accept=accept, mode="strict")
 
 
 def public_exam(exam: dict, rnd: random.Random | None = None) -> dict:
@@ -256,8 +253,8 @@ def public_exam(exam: dict, rnd: random.Random | None = None) -> dict:
     return {
         "level": exam["level"],
         "minutes": exam["minutes"],
-        "reading": [_public_item(i, rnd) for i in exam.get("reading") or []],
-        "listening": [_public_item(i, rnd) for i in exam.get("listening") or []],
+        "reading": blind_quiz.public_items(exam.get("reading") or [], rnd),
+        "listening": blind_quiz.public_items(exam.get("listening") or [], rnd),
         "writing": [{"task_uz": w.get("task_uz", "")} for w in exam.get("writing") or []],
         "speaking": [{"q_ar": s.get("q_ar", ""), "audio": s.get("audio", "")} for s in exam.get("speaking") or []],
         "passages": [
@@ -265,59 +262,11 @@ def public_exam(exam: dict, rnd: random.Random | None = None) -> dict:
                 "id": p.get("id", ""),
                 "title_uz": p.get("title_uz", ""),
                 "text_ar": p.get("text_ar", ""),
-                "questions": [_public_item(q, rnd) for q in p.get("questions") or []],
+                "questions": blind_quiz.public_items(p.get("questions") or [], rnd),
             }
             for p in exam.get("passages") or []
         ],
     }
-
-
-# ── Arabcha diktant tekshiruvi — webapp/src/pages/v2/answerCheck.ts `arOk` (mode "strict") nusxasi ──
-# tests/test_exam_server_grade.py ikkalasini node orqali solishtiradi: biri o'zgarsa test yiqiladi.
-
-_HARAKAT = "ً-ْٰ"
-_SHADDA = "ّ"
-_LETTER_MARKS = re.compile(f"([ء-ي])([{_HARAKAT}]*)")
-
-
-def norm_ar(s: str) -> str:
-    s = re.sub(f"[{_HARAKAT}]", "", s)
-    s = s.replace("ـ", "")  # tatvil
-    s = re.sub("[أإآٱ]", "ا", s)
-    s = s.replace("ک", "ك").replace("ی", "ي")  # fors ک ی
-    s = re.sub(r"[.,،؟!·:؛—–\s]+", " ", s)
-    return s.strip()
-
-
-def _fold(s: str) -> str:
-    """ى/ي va ة/ه — klaviaturada eng ko'p adashadigan juftliklar (diktantda ham kechiriladi)."""
-    return s.replace("ى", "ي").replace("ة", "ه")
-
-
-def _double_shadda(s: str) -> str:
-    """Ekran klaviaturasida shadda yo'q: «تعللم» = تَعَلُّم."""
-    return _LETTER_MARKS.sub(lambda m: (m.group(1) * 2 if _SHADDA in m.group(2) else m.group(1)) + m.group(2), s)
-
-
-def ar_dictation_ok(answer: str, typed: str, accept: list[str] | None = None) -> bool:
-    v = norm_ar(typed or "")
-    if not v:
-        return False
-    targets = [answer, *(accept or [])]
-    forms = {_fold(norm_ar(t)) for t in targets} | {_fold(norm_ar(_double_shadda(t))) for t in targets}
-    return _fold(v) in forms
-
-
-def check_item(item: dict, given: str) -> bool:
-    """Bitta savol: variantli — tanlangan matn javobga aynan teng; diktant (variantsiz) — arabcha yozuv."""
-    given = (given or "").strip()
-    if not given:
-        return False
-    if item.get("options") or item.get("type") == "match_root":
-        return given == item["answer"]
-    if item.get("type") == "dictation":
-        return ar_dictation_ok(item["answer"], given, item.get("accept"))
-    return False
 
 
 def _count(items: list[dict], given: list[str] | None) -> int:

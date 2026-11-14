@@ -13,7 +13,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from db.models import Certificate, ExamAttempt, Plan, Progress, User, XpLog
 from db.session import get_session
-from services import answer_log
+from services import answer_log, blind_quiz
 from services import challenge as challenge_svc
 from services import checkpoint as checkpoint_svc
 from services import exam as exam_svc
@@ -376,9 +376,12 @@ async def checkpoint_info(
 @router.post("/api/checkpoint/start")
 async def checkpoint_start(
     percent: int,
+    v: int = 1,
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
+    if v < 2:  # K33: javobsiz savollar, ball serverda — eski keshlangan mijoz ishlamaydi
+        raise HTTPException(status_code=426, detail=STALE_CLIENT)
     level = await _user_level(session, user.id)
     cp = next(
         (c for c in checkpoint_svc.checkpoints_for(level) if c["percent"] == percent),
@@ -430,14 +433,31 @@ async def checkpoint_start(
     session.add(attempt)
     await session.commit()
     await session.refresh(attempt)
-    return {"attempt_id": attempt.id, **mini}
+    # To'liq nusxa (javoblar bilan) faqat bazada; mijozga — javobsiz
+    return {
+        "attempt_id": attempt.id,
+        "level": mini["level"],
+        "percent": mini["percent"],
+        "lessons_covered": mini["lessons_covered"],
+        "pass_score": mini["pass_score"],
+        "items": blind_quiz.public_items(mini["items"]),
+    }
 
 
 class CheckpointSubmit(BaseModel):
+    """K33: mijoz BALL emas, o'quvchi javoblarini yuboradi — savollar tartibida; "" = javob berilmagan."""
+
     attempt_id: int
-    correct: int = Field(ge=0)
-    total: int = Field(ge=1)
-    wrong_words: list[str] = Field(default_factory=list)
+    answers: list[Answer] | None = Field(default=None, max_length=60)
+
+
+async def _log_rejected(session: AsyncSession, user_id: int, context: str, graded: blind_quiz.GradeResult) -> None:
+    """Rad etilgan yozma javoblar admin /javoblar ga tushadi (avval QuizRunner mijoz tomonda yozardi)."""
+    for item, given in graded.rejected:
+        await answer_log.record(
+            session, user_id, context, item.get("type", ""), item.get("q_uz") or item.get("q_ar") or "",
+            item["answer"], given,
+        )
 
 
 @router.post("/api/checkpoint/submit")
@@ -459,15 +479,37 @@ async def checkpoint_submit(
         raise HTTPException(status_code=404, detail="Urinish topilmadi")
     if attempt.finished_at is not None:
         raise HTTPException(status_code=409, detail="Bu urinish yakunlangan")
+    if body.answers is None:
+        # Eski mijoz (correct/total yuboradi) — urinish YAKUNLANMAYDI, o'quvchi qayta boshlay oladi
+        raise HTTPException(status_code=426, detail=STALE_CLIENT)
 
-    result = checkpoint_svc.grade(body.correct, body.total)
+    items = json.loads(attempt.questions_json).get("items") or []
+    graded = blind_quiz.grade_items(items, body.answers)
+    result = checkpoint_svc.grade(graded.correct, graded.total)
+    await _log_rejected(session, user.id, f"cp{attempt.checkpoint}", graded)
+
+    # XP — har (daraja, mini-imtihon) uchun BIR marta (avval har o'tishda berilardi: qayta-qayta topshirib «ekish» mumkin edi)
+    already_paid = (
+        await session.execute(
+            select(ExamAttempt.id)
+            .where(
+                ExamAttempt.user_id == user.id,
+                ExamAttempt.level == attempt.level,
+                ExamAttempt.kind == "mini",
+                ExamAttempt.checkpoint == attempt.checkpoint,
+                ExamAttempt.passed == 1,
+                ExamAttempt.id != attempt.id,
+            )
+            .limit(1)
+        )
+    ).scalar_one_or_none() is not None
 
     attempt.finished_at = exam_svc._now()
     attempt.total_score = result["score"]
     attempt.passed = 1 if result["passed"] else 0
     session.add(attempt)
 
-    xp = MINI_PASS_XP if result["passed"] else 0
+    xp = MINI_PASS_XP if (result["passed"] and not already_paid) else 0
     if xp:
         session.add(
             XpLog(
@@ -481,15 +523,17 @@ async def checkpoint_submit(
     # Xato so'zlar takrorga qaytadi (qulf yo'q — faqat mustahkamlash)
     from services.srs import reset_words
 
-    reset_n = await reset_words(session, user.id, body.wrong_words)
+    reset_n = await reset_words(session, user.id, graded.wrong_words)
 
     return {
         **result,
         "level": attempt.level,
         "percent": attempt.checkpoint,
         "xp_earned": xp,
+        "xp_already_claimed": result["passed"] and already_paid,
         "srs_reset": reset_n,
         "locked": False,
+        "review": graded.review,
     }
 
 
@@ -550,9 +594,12 @@ async def challenge_info(
 
 @router.post("/api/challenge/start")
 async def challenge_start(
+    v: int = 1,
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
+    if v < 2:  # K33: javobsiz savollar, ball serverda — eski keshlangan mijoz ishlamaydi
+        raise HTTPException(status_code=426, detail=STALE_CLIENT)
     lessons = await _done_lessons(session, user.id)
     data = challenge_svc.build_challenge(lessons, user.id)
     if not data:
@@ -571,14 +618,20 @@ async def challenge_start(
     session.add(attempt)
     await session.commit()
     await session.refresh(attempt)
-    return {"attempt_id": attempt.id, **data}
+    return {
+        "attempt_id": attempt.id,
+        "week": data["week"],
+        "week_label": data["week_label"],
+        "pass_score": data["pass_score"],
+        "xp_reward": data["xp_reward"],
+        "lessons_pool": data["lessons_pool"],
+        "items": blind_quiz.public_items(data["items"]),
+    }
 
 
 class ChallengeSubmit(BaseModel):
     attempt_id: int
-    correct: int = Field(ge=0)
-    total: int = Field(ge=1)
-    wrong_words: list[str] = Field(default_factory=list)
+    answers: list[Answer] | None = Field(default=None, max_length=60)
 
 
 @router.post("/api/challenge/submit")
@@ -600,6 +653,8 @@ async def challenge_submit(
         raise HTTPException(status_code=404, detail="Urinish topilmadi")
     if attempt.finished_at is not None:
         raise HTTPException(status_code=409, detail="Bu urinish yakunlangan")
+    if body.answers is None:
+        raise HTTPException(status_code=426, detail=STALE_CLIENT)
 
     # XP shu hafta uchun allaqachon berilganmi?
     already_paid = (
@@ -614,7 +669,10 @@ async def challenge_submit(
         )
     ).scalar_one_or_none() is not None
 
-    result = challenge_svc.grade(body.correct, body.total)
+    items = json.loads(attempt.questions_json).get("items") or []
+    graded = blind_quiz.grade_items(items, body.answers)
+    result = challenge_svc.grade(graded.correct, graded.total)
+    await _log_rejected(session, user.id, "challenge", graded)
 
     attempt.finished_at = exam_svc._now()
     attempt.total_score = result["score"]
@@ -634,7 +692,7 @@ async def challenge_submit(
 
     from services.srs import reset_words
 
-    reset_n = await reset_words(session, user.id, body.wrong_words)
+    reset_n = await reset_words(session, user.id, graded.wrong_words)
 
     return {
         **result,
@@ -642,6 +700,7 @@ async def challenge_submit(
         "xp_earned": xp,
         "xp_already_claimed": already_paid,
         "srs_reset": reset_n,
+        "review": graded.review,
     }
 
 
