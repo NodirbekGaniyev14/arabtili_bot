@@ -56,6 +56,7 @@ async def _setup_commands(bot: Bot):
                 BotCommand(command="ratings", description="⭐ Dars baholari va fikrlar"),
                 BotCommand(command="users", description="👥 Oxirgi foydalanuvchilar"),
                 BotCommand(command="user", description="👤 Foydalanuvchi ma'lumoti"),
+                BotCommand(command="qaytarish", description="↩️ Qaytish kampaniyasi (jim o'quvchilar)"),
                 BotCommand(command="broadcast", description="📤 Hammaga xabar"),
                 BotCommand(command="sorov", description="📋 So'rovnoma: hammadan fikr (test — ko'rish)"),
                 BotCommand(command="fikrlar", description="📋 So'rov javoblari"),

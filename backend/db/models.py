@@ -689,3 +689,28 @@ class LessonVisit(Base):
     max_phase: Mapped[str] = mapped_column(String(16), default="hook")
     opened_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
     updated_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
+
+
+class ComebackOffer(Base):
+    """Qaytish kampaniyasi (K34, services/comeback.py): jim o'quvchiga bir martalik xabar — o'zi o'rgangan so'zdan
+    1 savollik inline viktorina; 7 kun ichida 1 dars o'tsa sovg'a (streak tiklanadi + XP). Admin: /qaytarish."""
+
+    __tablename__ = "comeback_offers"
+    __table_args__ = (UniqueConstraint("user_id", "campaign", name="uq_comeback_user_campaign"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    campaign: Mapped[str] = mapped_column(String(16), index=True)  # «2026-11-14»
+    status: Mapped[str] = mapped_column(String(8), default="sent")  # sent | failed (bloklagan)
+    sent_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+    idle_days: Mapped[int] = mapped_column(Integer, default=0)
+    last_active: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)  # kampaniyagacha oxirgi faollik
+    prior_streak: Mapped[int] = mapped_column(Integer, default=0)  # uzilgan streak (tiklanadigani)
+    quiz_ar: Mapped[str] = mapped_column(String(128), default="")
+    quiz_answer: Mapped[str] = mapped_column(String(256), default="")
+    options_json: Mapped[str] = mapped_column(Text, default="[]")
+    answered: Mapped[int] = mapped_column(Integer, default=0)  # 0 — yo'q, 1 — to'g'ri, 2 — xato
+    answered_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    claimed_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)  # dars o'tdi — sovg'a berildi
+    xp: Mapped[int] = mapped_column(Integer, default=0)
+    restored: Mapped[int] = mapped_column(Integer, default=0)  # sovg'adan keyingi streak

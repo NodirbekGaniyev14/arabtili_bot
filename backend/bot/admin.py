@@ -409,6 +409,39 @@ async def cmd_fikrlar(message: Message):
         await message.answer(text[i:i + 3900], parse_mode="HTML")
 
 
+@router.message(Command("qaytarish", "comeback"))
+async def cmd_comeback(message: Message, bot: Bot):
+    """K34 qaytish kampaniyasi: `/qaytarish` — kim tushadi + namuna; `yubor` — yuborish; `natija` — natija."""
+    if not _is_admin(message):
+        return
+    from services import comeback
+
+    arg = ((message.text or "").split(maxsplit=1) + [""])[1].strip().lower()
+    async with SessionLocal() as session:
+        if arg in ("natija", "result"):
+            await message.answer(await comeback.results_text(session), parse_mode="HTML")
+            return
+        if arg in ("yubor", "send"):
+            from db.models import utcnow
+
+            if not comeback.in_send_hours(utcnow()):
+                await message.answer(
+                    f"⏰ Faqat kunduzi {comeback.SEND_FROM}:00–{comeback.SEND_TO}:00 (Toshkent) — kechasi xabar bloklashga undaydi."
+                )
+                return
+            n = len((await comeback.audience(session))["users"])
+            if not n:
+                await message.answer("Hozir mos o'quvchi yo'q.")
+                return
+            started = comeback.start_background(bot, message.chat.id)
+            await message.answer(
+                f"🚀 Boshlandi: {n} kishiga yuborilmoqda. Tugagach hisobot keladi." if started else "Yuborish allaqachon ketyapti."
+            )
+            return
+        await comeback.sample_for_admin(session, bot, message.chat.id)
+        await message.answer(await comeback.preview_text(session), parse_mode="HTML")
+
+
 @router.message(Command("broadcast"))
 async def cmd_broadcast(message: Message, bot: Bot):
     if not _is_admin(message):

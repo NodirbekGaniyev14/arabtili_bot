@@ -145,9 +145,14 @@ async def process(session: AsyncSession, bot, now: datetime | None = None) -> di
     if not _due_hour(now):
         return out
     sent = 0
+    from services import comeback
+
+    offered = await comeback.recent_offer_users(session, now)  # K34: qaytish taklifi olgan — alohida yozmaymiz
     for user, days, activity in await candidates(session, now):
         if sent >= MAX_PER_RUN:
             break
+        if user.id in offered:
+            continue
         # Qaytib faol bo'lgan — bosqich nolga
         last_stage = user.winback_stage or 0
         if user.winback_at and activity > user.winback_at:
@@ -235,6 +240,10 @@ async def loop(bot) -> None:
                 if _due_hour(utcnow()):
                     await process(session, bot)
                 await daily_summary(session, bot)
+                # K34: qaytish taklifidan keyin dars o'tganlarga sovg'a (streak + XP)
+                from services import comeback
+
+                await comeback.claim_due(session, bot)
         except asyncio.CancelledError:
             raise
         except Exception as e:

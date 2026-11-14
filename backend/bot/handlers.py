@@ -263,3 +263,36 @@ async def survey_voice(message: Message, bot: Bot):
             return
         _, xp = await survey.record(session, bot, user, text[:2000], kind="voice")
     await message.answer(survey.THANKS + (f" +{xp} XP" if xp else ""))
+
+
+# ─────────────────── Qaytish kampaniyasi viktorinasi (K34, services/comeback.py) ───────────────────
+
+
+@router.callback_query(F.data.startswith("cbk:"))
+async def comeback_answer(cb: CallbackQuery):
+    """«Bitta savol — esingizdami?» — javob shu xabarning o'zida: natija, kartalar, sovg'a sharti, dars tugmasi."""
+    from services import comeback
+
+    _, offer, idx = (cb.data or "cbk::").split(":", 2)
+    if offer == "demo":  # admin namunasi — bazaga yozilmaydi
+        ok = idx == "1"
+        await cb.answer("✅ To'g'ri!" if ok else "❌ Xato")
+        if cb.message is not None:
+            await cb.message.edit_text(
+                ("✅ <b>To'g'ri!</b>" if ok else "❌ <b>Xato.</b>") + " <i>(namuna — o'quvchi shu yerda natija, "
+                "kutayotgan kartalar soni va navbatdagi darsni ko'radi)</i>\n\n" + comeback.gift_line(5),
+                parse_mode="HTML",
+                reply_markup=comeback._open_kb(),
+            )
+        return
+    if not offer.isdigit() or not idx.isdigit():
+        await cb.answer()
+        return
+    async with SessionLocal() as session:
+        text, toast = await comeback.answer(session, int(offer), cb.from_user.id, int(idx))
+    await cb.answer(toast)
+    if text and cb.message is not None:
+        try:
+            await cb.message.edit_text(text, parse_mode="HTML", reply_markup=comeback._open_kb())
+        except Exception as e:  # noqa: BLE001 — xabar juda eski / o'zgarmagan
+            log.info("qaytish javobi tahrirlanmadi: %r", e)
