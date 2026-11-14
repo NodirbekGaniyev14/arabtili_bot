@@ -114,7 +114,7 @@ async def test_submit_awards_xp_and_seeds_review(session, make_user):
     assert res["score"] == 75
     assert res["passed"] is True
     assert res["added_to_review"] == 3
-    assert res["xp_earned"] == 25  # 15 to'g'ri + 10 o'tgani uchun
+    assert res["xp_earned"] == 0  # K33.2: mijoz raqamiga XP berilmaydi
 
     words = (
         await session.execute(select(UserWord).where(UserWord.user_id == user.id))
@@ -124,7 +124,7 @@ async def test_submit_awards_xp_and_seeds_review(session, make_user):
     logs = (
         await session.execute(select(XpLog).where(XpLog.user_id == user.id))
     ).scalars().all()
-    assert logs[0].source == "vocab_quiz:A2"
+    assert logs == []
 
 
 @pytest.mark.asyncio
@@ -138,7 +138,7 @@ async def test_failed_quiz_gets_no_bonus(session, make_user):
         session,
     )
     assert res["passed"] is False
-    assert res["xp_earned"] == 5
+    assert res["xp_earned"] == 0
 
 
 @pytest.mark.asyncio

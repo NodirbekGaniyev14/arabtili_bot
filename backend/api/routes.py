@@ -574,11 +574,19 @@ async def reset_plan(
 
 @router.get("/practice/weak")
 async def practice_weak(
+    v: int = 1,
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
-    """Zaif so'zlar testi — eng ko'p adashilgan/kechikkan kartalardan mcq."""
+    """Zaif so'zlar testi — eng ko'p adashilgan/kechikkan kartalardan mcq.
+
+    K33.2: v=2 — savollar javobsiz, ball serverda (services/quiz_run.py)."""
     import random as _random
+
+    from services import blind_quiz, quiz_run
+
+    if v < 2:
+        raise HTTPException(status_code=426, detail="Ilova yangilangan — Telegram'ni yopib qayta oching")
 
     rows = (
         await session.execute(
@@ -614,13 +622,19 @@ async def practice_weak(
             }
         )
     _random.shuffle(items)
-    return {"items": items}
+    items = [i for i in items if blind_quiz.supported(i)]
+    try:
+        run = await quiz_run.create_run(session, user.id, "weak", "", items)
+    except quiz_run.TooManyRuns:
+        raise HTTPException(status_code=429, detail="Juda ko'p urinish — bir necha daqiqa kutib, qayta urinib ko'ring")
+    return {
+        "items": blind_quiz.public_items(quiz_run.items_of(run)),
+        "run": {"id": run.id, "passage_offset": 0},
+    }
 
 
 class WeakCompleteBody(BaseModel):
-    correct: int = Field(ge=0, le=10_000)
-    total: int = Field(ge=1, le=10_000)
-    wrong_words: list[str] = Field(default_factory=list, max_length=60)
+    run_id: int | None = None
 
 
 WEAK_MAX_ITEMS = 10  # /practice/weak shuncha savol beradi
@@ -633,15 +647,20 @@ async def practice_weak_complete(
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
-    from services import xp_guard
+    from services import quiz_run, xp_guard
     from services.srs import reset_words
 
-    correct, _total = xp_guard.clamp(body.correct, body.total, WEAK_MAX_ITEMS)
-    xp = await xp_guard.capped(session, user.id, "practice:weak", max(1, correct), WEAK_XP_DAILY_CAP)
+    if body.run_id is None:  # eski mijoz: correct/total yuboradi
+        raise HTTPException(status_code=426, detail="Ilova yangilangan — Telegram'ni yopib qayta oching")
+    run = await quiz_run.get_run(session, user.id, body.run_id, "weak")
+    if run is None:
+        raise HTTPException(status_code=409, detail="Urinish topilmadi yoki allaqachon yakunlangan")
+    graded = await quiz_run.finish(session, run)  # K33.2: ball qulflangan javoblardan
+    xp = await xp_guard.capped(session, user.id, "practice:weak", max(1, graded["correct"]), WEAK_XP_DAILY_CAP)
     session.add(XpLog(user_id=user.id, amount=xp, source="practice:weak"))
     await session.commit()
-    await reset_words(session, user.id, body.wrong_words)
-    return {"xp_earned": xp}
+    await reset_words(session, user.id, graded["wrong_words"])
+    return {"xp_earned": xp, "correct": graded["correct"], "total": graded["total"]}
 
 
 class FeedbackBody(BaseModel):
@@ -1114,13 +1133,9 @@ async def vocab_quiz_submit(
 
     correct, total = xp_guard.clamp(body.correct, body.total, MAX_COUNT) if body.total else (0, 0)
     result = score(correct, total)
-    xp = max(1, correct) + (10 if result["passed"] else 0)
-    xp = await xp_guard.capped(session, user.id, "vocab_quiz:", xp, VOCAB_QUIZ_XP_DAILY_CAP)
-    level = "".join(ch for ch in body.level.upper() if ch.isalnum()) or "all"
-    session.add(
-        XpLog(user_id=user.id, amount=xp, source=f"vocab_quiz:{level}")
-    )
-    await session.commit()
+    # K33.2: bu eski endpoint natijani mijozdan oladi va hech bir ekran uni ishlatmaydi (lug'at sessiyasi —
+    # api/lugat.py, serverda baholanadi) — soxta raqamga XP berish yo'li ochiq qolmasin: XP yo'q.
+    xp = 0
 
     added = await _learn_words(session, user.id, body.wrong_words)
     return {**result, "xp_earned": xp, "added_to_review": added}

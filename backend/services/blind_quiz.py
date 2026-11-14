@@ -34,7 +34,9 @@ FALLBACK_PATTERNS = [
     "فَاعِل", "مَفْعُول", "مَفْعَل", "فِعَال", "تَفْعِيل", "مُفَعِّل", "مُفَاعِل", "اِسْتِفْعَال", "فَعِيل", "فُعُول",
 ]
 
-INPUT_KINDS = ("options", "ar", "lat", "harakat", "order")
+INPUT_KINDS = ("options", "ar", "lat", "harakat", "order", "self")
+#: «self» — shadowing («Aytdim»): ovoz yozilmaydi, tekshirib bo'lmaydi; mijoz shu qiymatni yuboradi
+SELF_DONE = "done"
 
 
 def apply_pattern(pattern: str, root: str) -> str:
@@ -79,20 +81,28 @@ def input_kind(item: dict) -> str:
         return "harakat"
     if t == "order_words":
         return "order"
+    if t == "shadowing":
+        return "self"
     return ""
 
 
 def supported(item: dict) -> bool:
-    return bool(input_kind(item)) and bool(str(item.get("answer", "")).strip())
+    kind = input_kind(item)
+    return bool(kind) and (kind == "self" or bool(str(item.get("answer", "")).strip()))
 
 
-def _options_for(item: dict, rnd: random.Random) -> list[str]:
+def _options_for(item: dict, rnd: random.Random, root_pool: list[str] | None = None) -> list[str]:
     answer = item["answer"]
     options = list(dict.fromkeys(item.get("options") or []))
     if not options:
         if item.get("type") == "match_root":
-            pool = [r for r in FALLBACK_ROOTS if r not in (item.get("root"), answer)]
-            options = [answer, *rnd.sample(pool, min(3, len(pool)))]
+            # avval darsning o'z o'zaklari (mijoz ham shunday qilardi), yetmasa umumiy ro'yxatdan
+            skip = (item.get("root"), answer)
+            own = [r for r in dict.fromkeys(root_pool or []) if r not in skip]
+            rest = [r for r in FALLBACK_ROOTS if r not in skip and r not in own]
+            rnd.shuffle(own)
+            rnd.shuffle(rest)
+            options = [answer, *(own + rest)[:3]]
         elif item.get("type") == "build_word":
             options = [answer, *build_word_distractors(item.get("root", ""), answer)]
     if answer not in options:
@@ -101,7 +111,7 @@ def _options_for(item: dict, rnd: random.Random) -> list[str]:
     return options
 
 
-def public_item(item: dict, rnd: random.Random | None = None) -> dict:
+def public_item(item: dict, rnd: random.Random | None = None, root_pool: list[str] | None = None) -> dict:
     """Mijozga beriladigan savol: to'g'ri javob, izoh va `accept` YO'Q."""
     rnd = rnd or random.Random()
     kind = input_kind(item)
@@ -114,7 +124,7 @@ def public_item(item: dict, rnd: random.Random | None = None) -> dict:
         "options": [],
     }
     if kind == "options":
-        out["options"] = _options_for(item, rnd)
+        out["options"] = _options_for(item, rnd, root_pool)
     elif kind == "harakat":
         out["base"] = "".join(base for base, _ in split_harakat(item["answer"]))
     elif kind == "order":
@@ -128,9 +138,9 @@ def public_item(item: dict, rnd: random.Random | None = None) -> dict:
     return out
 
 
-def public_items(items: list[dict], rnd: random.Random | None = None) -> list[dict]:
+def public_items(items: list[dict], rnd: random.Random | None = None, root_pool: list[str] | None = None) -> list[dict]:
     rnd = rnd or random.Random()
-    return [public_item(i, rnd) for i in items]
+    return [public_item(i, rnd, root_pool) for i in items]
 
 
 def _blank_src(item: dict) -> str:
@@ -146,6 +156,8 @@ def check_item(item: dict, given: str) -> bool:
     if not given:
         return False
     kind = input_kind(item)
+    if kind == "self":
+        return given == SELF_DONE
     ans = item["answer"]
     accept = list(item.get("accept") or [])
     prompt = item.get("q_uz") or ""
@@ -204,7 +216,7 @@ def grade_items(items: list[dict], answers: list[str] | None) -> GradeResult:
                 "q_ar": item.get("q_ar") or "",
                 "options": list(item.get("options") or []),
                 "audio": item.get("audio") or "",
-                "answer": item["answer"],
+                "answer": item.get("answer", ""),
                 "explain_uz": item.get("explain_uz") or "",
                 "given": (g or "")[:300],
             }

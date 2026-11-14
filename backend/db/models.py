@@ -491,6 +491,25 @@ class AnswerLog(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
 
 
+class QuizRun(Base):
+    """Dars testi / nazorat testi / zaif so'zlar urinishi (K33.2, services/quiz_run.py).
+
+    Savollar (to'g'ri javoblari bilan) FAQAT shu yerda; mijozga javobsiz beriladi. Har savolga javob alohida
+    yuboriladi, QULFLANADI (qayta o'zgartirib bo'lmaydi) va shundan keyingina to'g'ri javob ko'rsatiladi.
+    Ball (XP, dars o'tilishi) mijoz raqamidan emas, shu yerdagi qulflangan javoblardan hisoblanadi."""
+
+    __tablename__ = "quiz_runs"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    kind: Mapped[str] = mapped_column(String(8))  # lesson | lcp (dars nazorati) | weak
+    ref: Mapped[str] = mapped_column(String(64), default="")  # dars ID'si
+    items_json: Mapped[str] = mapped_column(Text, default="[]")
+    answers_json: Mapped[str] = mapped_column(Text, default="{}")  # {"0": {"g": javob, "ok": 1}, …}
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow, index=True)
+    finished_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+
+
 class Battle(Base):
     """Oktagon jangi (K25, services/battle.py): 1v1, 10 savol × 10 s. p2_id bo'sh — bot bilan
     (bot_name). winner: 1 | 2 | 0 durang. status: done | forfeit (kimdir chiqib ketdi)."""

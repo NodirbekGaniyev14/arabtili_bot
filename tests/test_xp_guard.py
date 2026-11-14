@@ -13,6 +13,8 @@ from sqlalchemy import func, select
 from db.models import UserWord, XpLog
 from services import xp_guard
 
+from play_helpers import answer_run, play_lesson
+
 
 def test_clamp():
     assert xp_guard.clamp(10**6, 10**6, 14) == (14, 14)
@@ -54,66 +56,88 @@ async def _xp(session, user_id, prefix=""):
 
 
 @pytest.mark.asyncio
-async def test_lesson_complete_is_bounded(client, session, make_user):
+async def test_lesson_complete_is_bounded(client, session, make_user, monkeypatch):
+    from api import v2
+
     c, state = client
     state["user"] = u = await make_user("Hacker")
-    r = await c.post("/api/v2/lessons/a1-01/complete", json={"correct": 10_000, "total": 10_000})
-    assert r.status_code == 200, r.text
-    d = r.json()
-    assert d["perfect"] and d["score"] == 100
-    assert d["xp_earned"] <= 10 + 2 * 14 + 5, "savollar soniga qisilgan (mikro-test ≤ 10 + o'qish ≤ 4)"
-    too_big = await c.post("/api/v2/lessons/a1-01/complete", json={"correct": 10**6, "total": 10**6})
-    assert too_big.status_code == 422
-    assert (await c.post("/api/v2/lessons/zz-99/complete", json={"correct": 1, "total": 1})).status_code == 404
+    # K33.2: ball mijoz raqamidan emas — eski usul (correct/total) rad etiladi, javobsiz urinish yiqiladi
+    old = await c.post("/api/v2/lessons/a1-01/complete", json={"correct": 10_000, "total": 10_000})
+    assert old.status_code == 426
+    run_id = (await c.get("/api/v2/lessons/a1-01?v=2")).json()["run"]["id"]
+    d = (await c.post("/api/v2/lessons/a1-01/complete", json={"run_id": run_id, "correct": 99, "total": 99})).json()
+    assert d["correct"] == 0 and not d["passed"] and d["xp_earned"] == v2.FAIL_XP
+    assert (await c.post("/api/v2/lessons/zz-99/complete", json={"run_id": run_id})).status_code == 404
+    # tugatilgan urinishni qayta yuborib bo'lmaydi
+    assert (await c.post("/api/v2/lessons/a1-01/complete", json={"run_id": run_id})).status_code == 409
 
-    # Kunlik chegara: takror-takror yuborish XP'ni 600 dan oshirmaydi (progress baribir yoziladi)
-    for _ in range(40):
-        await c.post("/api/v2/lessons/a1-01/complete", json={"correct": 14, "total": 14})
-    assert await _xp(session, u.id, "lesson:") <= 600
+    # Kunlik chegara: takror-takror o'ynash XP'ni chegaradan oshirmaydi (progress baribir yoziladi)
+    monkeypatch.setattr(v2, "LESSON_XP_DAILY_CAP", 60)
+    for _ in range(8):
+        await play_lesson(c, session, "a1-01")
+    assert await _xp(session, u.id, "lesson:") <= 60
 
 
 @pytest.mark.asyncio
 async def test_honest_lesson_xp_unchanged(client, session, make_user):
     c, state = client
     state["user"] = await make_user("Halol")
-    d = (await c.post("/api/v2/lessons/a0-01/complete", json={"correct": 7, "total": 7})).json()
-    assert d["xp_earned"] == 10 + 2 * 7 + 5 and d["first_time"]
-    d = (await c.post("/api/v2/lessons/a0-01/complete", json={"correct": 6, "total": 7})).json()
-    assert d["xp_earned"] == 5 + 6, "takror — oldingidek"
+    d = await play_lesson(c, session, "a0-01")
+    n = d["total"]
+    assert n >= 6 and d["correct"] == n and d["perfect"]
+    assert d["xp_earned"] == 10 + 2 * n + 5 and d["first_time"]
+    d = await play_lesson(c, session, "a0-01", n_correct=n - 1)
+    assert d["xp_earned"] == 5 + (n - 1), "takror — oldingidek"
 
 
 @pytest.mark.asyncio
 async def test_checkpoint_xp_once_a_day(client, session, make_user):
     c, state = client
     state["user"] = u = await make_user("Cp")
-    r = await c.post("/api/v2/checkpoint/a0-05/complete", json={"correct": 10**4, "total": 10**4})
-    assert r.status_code == 200, r.text
-    assert r.json()["xp_earned"] == 15 + 15, "15 savolga qisilgan"
-    r = await c.post("/api/v2/checkpoint/a0-05/complete", json={"correct": 15, "total": 15})
-    assert r.json()["xp_earned"] == 0 and await _xp(session, u.id, "checkpoint:") == 30
+    assert (await c.post("/api/v2/checkpoint/a0-05/complete", json={"correct": 15, "total": 15})).status_code == 426
+    assert (await c.get("/api/v2/checkpoint/a0-05")).status_code == 426
+    xps = []
+    for _ in range(2):
+        q = (await c.get("/api/v2/checkpoint/a0-05?v=2")).json()
+        await answer_run(c, session, q["run"]["id"])
+        r = await c.post("/api/v2/checkpoint/a0-05/complete", json={"run_id": q["run"]["id"]})
+        assert r.status_code == 200, r.text
+        assert r.json()["passed"]
+        xps.append(r.json()["xp_earned"])
+    assert xps == [15 + len(q["questions"]), 0], "XP kuniga bir marta"
+    assert await _xp(session, u.id, "checkpoint:") == xps[0]
 
 
 @pytest.mark.asyncio
-async def test_weak_practice_and_vocab_quiz_bounded(client, session, make_user):
+async def test_weak_practice_bounded(client, session, make_user):
     c, state = client
     state["user"] = u = await make_user("Weak")
-    d = (await c.post("/api/practice/weak/complete", json={"correct": 10_000, "total": 10_000})).json()
-    assert d["xp_earned"] == 10
-    for _ in range(10):
-        await c.post("/api/practice/weak/complete", json={"correct": 10, "total": 10})
-    assert await _xp(session, u.id, "practice:weak") == 50
+    for i, (ar, uz) in enumerate([("بَيْت", "uy"), ("كِتَاب", "kitob"), ("قَلَم", "qalam"), ("بَاب", "eshik"), ("مَاء", "suv")]):
+        session.add(UserWord(user_id=u.id, ar=ar, uz=uz, kind="word", card_type="word", due_date="2000-01-01", lapses=i))
+    await session.commit()
 
+    assert (await c.post("/api/practice/weak/complete", json={"correct": 10_000, "total": 10_000})).status_code == 426
+    assert (await c.get("/api/practice/weak")).status_code == 426
+    total_xp = 0
+    for _ in range(10):  # xalqaro chegara: kuniga 50 XP
+        w = (await c.get("/api/practice/weak?v=2")).json()
+        await answer_run(c, session, w["run"]["id"])
+        d = (await c.post("/api/practice/weak/complete", json={"run_id": w["run"]["id"]})).json()
+        assert d["correct"] == d["total"] == len(w["items"])
+        total_xp += d["xp_earned"]
+    assert total_xp == 50 == await _xp(session, u.id, "practice:weak")
+
+
+@pytest.mark.asyncio
+async def test_legacy_vocab_quiz_gives_no_xp(client, session, make_user):
+    """Eski /vocab/quiz/submit natijani mijozdan oladi va hech bir ekran ishlatmaydi — soxta raqamga XP yo'q."""
+    c, state = client
+    state["user"] = u = await make_user("Lugat")
     d = (await c.post("/api/vocab/quiz/submit", json={"level": "A1", "correct": 10_000, "total": 10_000})).json()
-    assert d["xp_earned"] == 40 + 10 and d["passed"]
+    assert d["xp_earned"] == 0
     r = await c.post("/api/vocab/quiz/submit", json={"level": "A1';--", "correct": 5, "total": 0})
     assert r.status_code == 422, "daraja maydoni qisqa"
-    d = (await c.post("/api/vocab/quiz/submit", json={"level": "A1'", "correct": 5, "total": 0})).json()
-    assert d["xp_earned"] >= 0
-    for _ in range(5):
-        await c.post("/api/vocab/quiz/submit", json={"level": "A1", "correct": 40, "total": 40})
-    assert await _xp(session, u.id, "vocab_quiz:") == 100
-    sources = (await session.execute(select(XpLog.source).where(XpLog.source.like("vocab_quiz:%")))).scalars().all()
-    assert all(s in ("vocab_quiz:A1", "vocab_quiz:all") for s in sources), sources
+    assert await _xp(session, u.id, "vocab_quiz:") == 0
 
 
 @pytest.mark.asyncio

@@ -22,7 +22,7 @@ import ReportIssue, { rememberWrong } from "../../components/ReportIssue";
 const tg = () => window.Telegram?.WebApp;
 /** K27.6 (#F125): javob paneli ekran pastini yopadi va savol ostidagi «Xatolik bormi?» ko'rinmay qoladi —
  *  o'quvchi «Davom etish»ni bosib, xabarni KEYINGI savoldan yuborardi. QuizRunner havolani panel ichiga beradi. */
-const FeedbackReport = createContext<ReactNode>(null);
+export const FeedbackReport = createContext<ReactNode>(null);
 /* ── harakat mashqi (#F74): so'z harflari tayyor, o'quvchi faqat harakat qo'yadi (mantiq — exerciseLogic.ts) ── */
 
 export function HarakatEx({
@@ -171,7 +171,7 @@ export function HarakatEx({
 
 /* ── Umumiy feedback paneli ── */
 
-function Feedback({
+export function Feedback({
   correct,
   correctAnswer,
   explain,

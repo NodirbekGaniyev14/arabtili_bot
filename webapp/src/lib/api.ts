@@ -796,6 +796,25 @@ export interface MicroTestItem {
 }
 
 /** A2+ darslardagi bosqichma-bosqich o'qish matni (content/reading/*.json). */
+/** Dars/nazorat/zaif so'zlar urinishi (K33.2): savollar serverda, javoblar qulflanadi */
+export interface RunInfo {
+  id: number;
+  /** Urinishdagi savollar tartibida o'qish matni savollari qaysi indeksdan boshlanadi */
+  passage_offset: number;
+}
+
+/** Savolga javob qulflangach server ochadigan ma'lumot */
+export interface RunAnswerResult {
+  index: number;
+  ok: boolean;
+  given: string;
+  answer: string;
+  accept: string[];
+  explain_uz: string;
+  /** Xato variant izohi («u aslida qaysi so'z») */
+  note: string;
+}
+
 export interface ReadingPassage {
   stage: number;
   stages_total: number;
@@ -807,7 +826,7 @@ export interface ReadingPassage {
   audio: string;
   text_ar: string;
   glossary: { ar: string; uz: string }[];
-  questions: MicroTestItem[];
+  questions: QuizQuestion[];
 }
 
 export interface LessonV2Data {
@@ -825,7 +844,9 @@ export interface LessonV2Data {
   vocabulary: V2VocabItem[];
   hejazi: V2HejaziItem[];
   skills: V2Skills;
-  micro_test: MicroTestItem[];
+  micro_test: QuizQuestion[];
+  /** K33.2: shu urinish — javoblar serverda qulflanadi, dars natijasi shundan hisoblanadi */
+  run: RunInfo;
   // Mikro-test urinishga qarab yig'iladi (qayta topshirishda boshqa savollar)
   test_attempt: number;
   pass_score: number;
@@ -867,6 +888,8 @@ export interface CompleteV2Response {
   xp_earned: number;
   perfect: boolean;
   score: number;
+  correct: number;
+  total: number;
   passed: boolean;
   pass_score: number;
   first_time: boolean;
@@ -880,7 +903,8 @@ export interface CompleteV2Response {
 export interface CheckpointData {
   lesson_ids: string[];
   pass_percent: number;
-  questions: MicroTestItem[];
+  run: RunInfo;
+  questions: QuizQuestion[];
 }
 
 export interface ProfileData {
@@ -968,15 +992,6 @@ export interface CheckpointInfo {
   due: number | null;
 }
 
-export interface CheckpointData {
-  attempt_id: number;
-  level: string;
-  percent: number;
-  lessons_covered: number;
-  items: MicroTestItem[];
-  pass_score: number;
-}
-
 /** Mini-imtihon (K33): savollar javobsiz */
 export interface MiniExamData {
   attempt_id: number;
@@ -1021,8 +1036,8 @@ export interface ExamSpeaking {
   audio: string;
 }
 
-/** Javob turi (K33): variant tanlash / arabcha yozish / lotincha yozish / harakat qo'yish / so'z tartibi */
-export type QuizInput = "options" | "ar" | "lat" | "harakat" | "order";
+/** Javob turi (K33): variant / arabcha yozish / lotincha yozish / harakat / so'z tartibi / «Aytdim» (shadowing) */
+export type QuizInput = "options" | "ar" | "lat" | "harakat" | "order" | "self";
 
 /** Imtihon, mini-imtihon va chellenj savoli (K33): to'g'ri javob va izoh YO'Q — baholash serverda. */
 export interface QuizQuestion {
@@ -1252,25 +1267,22 @@ export const api = {
       method: "POST",
       body: JSON.stringify({ root }),
     }),
-  getLessonV2: (id: string) => request<LessonV2Data>(`/api/v2/lessons/${id}`),
-  completeLessonV2: (
-    id: string,
-    correct: number,
-    total: number,
-    wrongWords: string[]
-  ) =>
+  // K33.2: v=2 — savollar javobsiz; har javob serverda qulflanadi (runAnswer), ball shundan hisoblanadi
+  getLessonV2: (id: string) => request<LessonV2Data>(`/api/v2/lessons/${id}?v=2`),
+  completeLessonV2: (id: string, runId: number) =>
     request<CompleteV2Response>(`/api/v2/lessons/${id}/complete`, {
       method: "POST",
-      body: JSON.stringify({ correct, total, wrong_words: wrongWords }),
+      body: JSON.stringify({ run_id: runId }),
+    }),
+  /** Savolga javobni QULFLAYDI va to'g'ri javobni ochadi */
+  runAnswer: (runId: number, index: number, given: string) =>
+    request<RunAnswerResult>(`/api/v2/run/${runId}/answer`, {
+      method: "POST",
+      body: JSON.stringify({ index, given }),
     }),
   getCheckpoint: (lessonId: string) =>
-    request<CheckpointData>(`/api/v2/checkpoint/${lessonId}`),
-  completeCheckpoint: (
-    lessonId: string,
-    correct: number,
-    total: number,
-    wrongWords: string[]
-  ) =>
+    request<CheckpointData>(`/api/v2/checkpoint/${lessonId}?v=2`),
+  completeCheckpoint: (lessonId: string, runId: number) =>
     request<{
       score: number;
       passed: boolean;
@@ -1278,7 +1290,7 @@ export const api = {
       srs_reset: number;
     }>(`/api/v2/checkpoint/${lessonId}/complete`, {
       method: "POST",
-      body: JSON.stringify({ correct, total, wrong_words: wrongWords }),
+      body: JSON.stringify({ run_id: runId }),
     }),
   evalWriting: (lessonId: string, text: string) =>
     request<LessonWritingResult>("/api/v2/eval/writing", {
@@ -1338,11 +1350,11 @@ export const api = {
       body: JSON.stringify(payload),
     }),
   getWeakPractice: () =>
-    request<{ items: MicroTestItem[]; reason?: string }>("/api/practice/weak"),
-  completeWeakPractice: (correct: number, total: number, wrongWords: string[]) =>
-    request<{ xp_earned: number }>("/api/practice/weak/complete", {
+    request<{ items: QuizQuestion[]; run?: RunInfo; reason?: string }>("/api/practice/weak?v=2"),
+  completeWeakPractice: (runId: number) =>
+    request<{ xp_earned: number; correct: number; total: number }>("/api/practice/weak/complete", {
       method: "POST",
-      body: JSON.stringify({ correct, total, wrong_words: wrongWords }),
+      body: JSON.stringify({ run_id: runId }),
     }),
   resetPlan: () =>
     request<{ ok: boolean }>("/api/settings/reset-plan", {

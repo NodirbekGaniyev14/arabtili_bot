@@ -14,7 +14,7 @@ import {
 import { playAudio } from "../../lib/audio";
 import MashaAllah from "../../components/MashaAllah";
 import ArabicText, { buildLookup, stripHarakat, type RevealInfo } from "./ArabicText";
-import { QuizRunner } from "./exercises";
+import RunQuiz from "./RunQuiz";
 import LessonSpeak from "./LessonSpeak";
 import LessonWrite from "./LessonWrite";
 
@@ -46,18 +46,9 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish, onNext }: 
   const [lesson, setLesson] = useState<LessonV2Data | null>(null);
   const [phase, setPhase] = useState<Phase>({ k: "hook" });
   const [error, setError] = useState(false);
-  const [testResult, setTestResult] = useState<{
-    correct: number;
-    total: number;
-    wrong: string[];
-  } | null>(null);
+  // K33.2: ball serverda — mikro-test tugadi (javoblar serverda qulflangan); o'qish matni savollari ham shu urinishda
+  const [testDone, setTestDone] = useState(false);
   const [reward, setReward] = useState<CompleteV2Response | null>(null);
-  // O'qish matni savollari — dars natijasiga qo'shiladi
-  const [passageResult, setPassageResult] = useState<{
-    correct: number;
-    total: number;
-    wrong: string[];
-  } | null>(null);
   const [cp, setCp] = useState<CheckpointData | null>(null);
   const [cpResult, setCpResult] = useState<{
     score: number;
@@ -133,10 +124,10 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish, onNext }: 
 
   // Natija: serverga yuborish
   useEffect(() => {
-    if (phase.k !== "result" || !lesson || !testResult || submitted.current) return;
+    if (phase.k !== "result" || !lesson || !testDone || submitted.current) return;
     submitted.current = true;
     api
-      .completeLessonV2(lesson.id, testResult.correct, testResult.total, testResult.wrong)
+      .completeLessonV2(lesson.id, lesson.run.id)
       .then(setReward)
       .catch(() => setError(true));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -145,8 +136,7 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish, onNext }: 
   /** Yiqilgandan keyin qayta urinish: savollar serverdan YANGI variantda keladi. */
   const retry = (from: "test" | "hook") => {
     submitted.current = false;
-    setTestResult(null);
-    setPassageResult(null);
+    setTestDone(false);
     setReward(null);
     setCp(null);
     setCpResult(null);
@@ -384,10 +374,9 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish, onNext }: 
           passage={lesson.passage}
           lookup={lookup}
           onProgress={setSubProgress}
-          onDone={(correct, total, wrong) => {
-            setPassageResult({ correct, total, wrong });
-            next();
-          }}
+          runId={lesson.run.id}
+          offset={lesson.run.passage_offset}
+          onDone={next}
         />
       )}
 
@@ -398,20 +387,15 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish, onNext }: 
             O'tish uchun {lesson.pass_score ?? 60}% kerak
             {lesson.test_attempt > 0 && " · yangi savollar"}
           </div>
-          <QuizRunner
+          <RunQuiz
             key={`test-${lesson.test_attempt}`}
+            runId={lesson.run.id}
             items={lesson.micro_test}
-            rootPool={lesson.roots.map((r) => r.root)}
             label="MIKRO-TEST"
             context={lessonId}
             onProgress={setSubProgress}
-            onFinish={(correct, total, wrong) => {
-              // O'qish savollari ham yakuniy natijaga qo'shiladi
-              setTestResult({
-                correct: correct + (passageResult?.correct ?? 0),
-                total: total + (passageResult?.total ?? 0),
-                wrong: [...wrong, ...(passageResult?.wrong ?? [])],
-              });
+            onFinish={() => {
+              setTestDone(true);
               setPhase({ k: "result" });
             }}
           />
@@ -429,10 +413,9 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish, onNext }: 
                 ? "Mukammal!"
                 : "Dars tugadi!"}
           </h1>
-          {testResult && (
+          {reward && (
             <p className="text-ink-soft font-semibold">
-              {testResult.correct}/{testResult.total} to'g'ri
-              {reward && ` · ${reward.score}%`}
+              {reward.correct}/{reward.total} to'g'ri · {reward.score}%
             </p>
           )}
           {reward?.passed && <MashaAllah score={reward.score} />}
@@ -571,14 +554,14 @@ export default function LessonPlayerV2({ lessonId, onClose, onFinish, onNext }: 
       {/* ── NAZORAT TESTI ── */}
       {phase.k === "cp" && cp && (
         <div className="pt-4">
-          <QuizRunner
+          <RunQuiz
+            runId={cp.run.id}
             items={cp.questions}
-            rootPool={lesson.roots.map((r) => r.root)}
             label="NAZORAT TESTI"
             context={`${lessonId}:cp`}
-            onFinish={(correct, total, wrong) => {
+            onFinish={() => {
               api
-                .completeCheckpoint(lesson.id, correct, total, wrong)
+                .completeCheckpoint(lesson.id, cp.run.id)
                 .then((r) => {
                   setCpResult(r);
                   setPhase({ k: "cpresult" });
@@ -630,12 +613,17 @@ const HARAKAT_LABEL: Record<string, string> = {
 function PassagePhase({
   passage,
   lookup,
+  runId,
+  offset,
   onDone,
   onProgress,
 }: {
   passage: ReadingPassage;
   lookup: Map<string, RevealInfo>;
-  onDone: (correct: number, total: number, wrong: string[]) => void;
+  /** K33.2: savollar dars urinishining davomi — javoblar shu urinishda qulflanadi */
+  runId: number;
+  offset: number;
+  onDone: () => void;
   onProgress?: (frac: number) => void;
 }) {
   const [step, setStep] = useState<"read" | "quiz">("read");
@@ -718,7 +706,9 @@ function PassagePhase({
         {showText ? "Matnni yashirish" : "Matnni ko'rish"}
       </button>
       {showText && <div className="mb-4 text-[20px]">{textPanel}</div>}
-      <QuizRunner
+      <RunQuiz
+        runId={runId}
+        offset={offset}
         items={passage.questions}
         label="O'QISH"
         onProgress={onProgress}

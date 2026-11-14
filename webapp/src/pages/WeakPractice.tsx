@@ -1,11 +1,12 @@
 /** Maxsus test — zaif so'zlaringiz (eng ko'p adashilganlar) bo'yicha tez mashq. */
 
 import { useEffect, useState } from "react";
-import { api, type MicroTestItem } from "../lib/api";
-import { QuizRunner } from "./v2/exercises";
+import { api, type QuizQuestion, type RunInfo } from "../lib/api";
+import RunQuiz from "./v2/RunQuiz";
 
 export default function WeakPractice({ onClose }: { onClose: () => void }) {
-  const [items, setItems] = useState<MicroTestItem[] | null>(null);
+  const [items, setItems] = useState<QuizQuestion[] | null>(null);
+  const [run, setRun] = useState<RunInfo | null>(null);
   const [empty, setEmpty] = useState(false);
   const [result, setResult] = useState<{ correct: number; total: number; xp: number } | null>(null);
 
@@ -13,8 +14,11 @@ export default function WeakPractice({ onClose }: { onClose: () => void }) {
     api
       .getWeakPractice()
       .then((r) => {
-        if (!r.items.length) setEmpty(true);
-        else setItems(r.items);
+        if (!r.items.length || !r.run) setEmpty(true);
+        else {
+          setItems(r.items);
+          setRun(r.run);
+        }
       })
       .catch(() => setEmpty(true));
   }, []);
@@ -43,16 +47,18 @@ export default function WeakPractice({ onClose }: { onClose: () => void }) {
           </div>
         )}
 
-        {items && !result && (
+        {items && run && !result && (
           <div className="pt-2">
-            <QuizRunner
+            <RunQuiz
+              runId={run.id}
               items={items}
               label="ZAIF SO'ZLAR TESTI"
-              onFinish={(correct, total, wrong) => {
+              context="weak"
+              onFinish={() => {
                 api
-                  .completeWeakPractice(correct, total, wrong)
-                  .then((r) => setResult({ correct, total, xp: r.xp_earned }))
-                  .catch(() => setResult({ correct, total, xp: 0 }));
+                  .completeWeakPractice(run.id)
+                  .then((r) => setResult({ correct: r.correct, total: r.total, xp: r.xp_earned }))
+                  .catch(() => setResult({ correct: 0, total: items.length, xp: 0 }));
               }}
             />
           </div>

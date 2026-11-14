@@ -3,6 +3,8 @@
 
 from datetime import datetime, timedelta
 
+from play_helpers import play_lesson
+
 import httpx
 import pytest
 
@@ -216,20 +218,19 @@ async def test_first_lesson_pays_referral(client, session, make_user):
     state["user"] = new
 
     # O'tmagan dars — mukofot yo'q
-    r = await c.post("/api/v2/lessons/a0-01/complete", json={"correct": 1, "total": 7})
-    assert r.status_code == 200 and r.json()["referral_bonus"] is None
+    d = await play_lesson(c, session, "a0-01", n_correct=1)
+    assert not d["passed"] and d["referral_bonus"] is None
     assert not billing.is_vip(new)
 
-    r = await c.post("/api/v2/lessons/a0-01/complete", json={"correct": 7, "total": 7})
-    assert r.status_code == 200, r.text
-    assert r.json()["referral_bonus"] == {"days": 3, "referrer_paid": True}
+    d = await play_lesson(c, session, "a0-01")
+    assert d["referral_bonus"] == {"days": 3, "referrer_paid": True}
     await session.refresh(ref)
     assert billing.is_vip(new) and billing.is_vip(ref)
     assert len(bot.sent) == 2
 
     # Ikkinchi dars — yana yo'q
-    r = await c.post("/api/v2/lessons/a0-02/complete", json={"correct": 7, "total": 7})
-    assert r.json()["referral_bonus"] is None and len(bot.sent) == 2
+    d = await play_lesson(c, session, "a0-02")
+    assert d["referral_bonus"] is None and len(bot.sent) == 2
 
     prof = (await c.get("/api/profile")).json()
     assert prof["referral"]["link"].endswith(f"ref{new.tg_id}") and prof["referral"]["invited"] == 0

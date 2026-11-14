@@ -32,6 +32,7 @@ from db.models import (
     utcnow,
 )
 from db.session import get_session
+from services import blind_quiz, quiz_run
 from services.achievements import check_and_award
 from services.curriculum import (
     load_curriculum,
@@ -53,12 +54,21 @@ FAIL_XP = 5  # yiqilgan urinish uchun ham ozgina XP (streak uzilmasin)
 LESSON_XP_DAILY_CAP = 600  # K28: darslardan kunlik XP chegarasi (xp_guard) — faqat skriptni to'xtatadi
 
 
+STALE_CLIENT = "Ilova yangilangan — Telegram'ni yopib qayta oching"
+TOO_MANY_RUNS = "Juda ko'p urinish — bir necha daqiqa kutib, qayta urinib ko'ring"
+
+
 @router.get("/lessons/{lesson_id}")
 async def lesson_v2(
     lesson_id: str,
+    v: int = 1,
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
+    # K33.2: v=2 — savollar javobsiz, ball serverda (quiz_run). Eski keshlangan mijoz javobni o'zi tekshirib
+    # raqam yuboradi — u endi ishlamaydi; jim noto'g'ri natija o'rniga aniq xabar.
+    if v < 2:
+        raise HTTPException(status_code=426, detail=STALE_CLIENT)
     meta = load_curriculum().get(lesson_id)
     data = load_lesson_v2(lesson_id)
     if not meta or not data:
@@ -76,9 +86,26 @@ async def lesson_v2(
         await session.rollback()
         print(f"lesson_visits xatosi ({lesson_id}): {e!r}")
 
-    # Mikro-test urinishga qarab yig'iladi — qayta topshirganda boshqa savollar
+    # Mikro-test urinishga qarab yig'iladi — qayta topshirganda boshqa savollar. Javob berilib tugatilmagan
+    # urinishlar ham hisobga olinadi: o'sha urinishda ochilgan javoblar keyingisida ish bermasin.
     attempts = await lesson_attempt_count(session, user.id, lesson_id)
-    test = build_test(lesson_id, attempts)
+    variant = attempts + await quiz_run.abandoned_count(session, user.id, "lesson", lesson_id)
+    test = build_test(lesson_id, variant)
+
+    # Server savollarni (javobi bilan) saqlaydi, mijozga javobsiz beradi. O'qish matni savollari (A2+) ham
+    # shu urinishda: dars natijasi ikkalasidan hisoblanadi.
+    passage = passage_for(lesson_id)
+    micro = [i for i in test["items"] if blind_quiz.supported(i)]
+    passage_qs = [i for i in ((passage or {}).get("questions") or []) if blind_quiz.supported(i)]
+    try:
+        run = await quiz_run.create_run(
+            session, user.id, "lesson", lesson_id, micro + passage_qs, extra={"n_micro": len(micro)}
+        )
+    except quiz_run.TooManyRuns:
+        raise HTTPException(status_code=429, detail=TOO_MANY_RUNS)
+    run_items = quiz_run.items_of(run)  # qayta ishlatilgan urinishda — saqlangan savollar
+    n_micro = int(quiz_run.extra_of(run).get("n_micro", len(micro)))
+    root_pool = [r["root"] for r in data.get("roots") or [] if r.get("root")]
 
     # 🗣 GAPIRISH: server baholaydigan ro'yxat (harf darsida + takror harflar) — indekslar mos bo'lsin
     from services import lesson_skills
@@ -92,7 +119,8 @@ async def lesson_v2(
     return {
         **data,
         "skills": skills,
-        "micro_test": test["items"],
+        "micro_test": blind_quiz.public_items(run_items[:n_micro], root_pool=root_pool),
+        "run": {"id": run.id, "passage_offset": n_micro},
         "test_attempt": test["attempt"],
         "pass_score": PASS_SCORE,
         "attempts_made": attempts,
@@ -100,7 +128,11 @@ async def lesson_v2(
         "voice": stt.available(),
         "ai": bool(settings.anthropic_api_key),
         # A2+ darslarda bosqichma-bosqich o'qish matni (services/reading.py)
-        "passage": passage_for(lesson_id),
+        "passage": (
+            {**passage, "questions": blind_quiz.public_items(run_items[n_micro:], root_pool=root_pool)}
+            if passage
+            else None
+        ),
         "meta": {
             "title_uz": meta["title_uz"],
             "level": meta["level"],
@@ -133,10 +165,32 @@ async def lesson_phase(
     return {"ok": True}
 
 
-class CompleteV2Body(BaseModel):
-    correct: int = Field(ge=0, le=10_000)
-    total: int = Field(ge=1, le=10_000)
-    wrong_words: list[str] = Field(default_factory=list, max_length=60)
+class RunCompleteBody(BaseModel):
+    """K33.2: mijoz BALL emas, urinish (`run_id`) ni yuboradi — ball qulflangan javoblardan hisoblanadi."""
+
+    run_id: int | None = None
+
+
+class RunAnswerBody(BaseModel):
+    index: int = Field(ge=0, le=500)
+    given: str = Field(default="", max_length=300)
+
+
+@router.post("/run/{run_id}/answer")
+async def run_answer(
+    run_id: int,
+    body: RunAnswerBody,
+    user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    """Savolga javobni QULFLAYDI va to'g'ri javobni ochadi (dars testi, nazorat, zaif so'zlar)."""
+    run = await quiz_run.get_run(session, user.id, run_id)
+    if run is None:
+        raise HTTPException(status_code=404, detail="Urinish topilmadi yoki yakunlangan")
+    res = await quiz_run.lock_answer(session, run, body.index, body.given)
+    if res is None:
+        raise HTTPException(status_code=422, detail="Bunday savol yo'q")
+    return res
 
 
 def _checkpoint_lessons(lesson_id: str) -> list[str]:
@@ -156,24 +210,28 @@ def _checkpoint_lessons(lesson_id: str) -> list[str]:
 @router.post("/lessons/{lesson_id}/complete")
 async def complete_v2(
     lesson_id: str,
-    body: CompleteV2Body,
+    body: RunCompleteBody,
     request: Request,
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
     from services import xp_guard
-    from services.lesson_test import MAX_QUESTIONS
 
     data = load_lesson_v2(lesson_id)
     if not data or lesson_id not in load_curriculum():
         raise HTTPException(status_code=404, detail="Dars topilmadi")
+    if body.run_id is None:
+        raise HTTPException(status_code=426, detail=STALE_CLIENT)  # eski mijoz: correct/total yuboradi
 
-    # K28 pentest: natija savollar soniga qisiladi (mikro-test ≤ 10 + o'qish matni savollari) — ilgari
-    # {"correct": 10**6, "total": 10**6} million XP berardi va haftalik VIP sovrinini «sotib olardi»
-    passage = passage_for(lesson_id) or {}
-    correct, total = xp_guard.clamp(body.correct, body.total, MAX_QUESTIONS + len(passage.get("questions") or []))
-    perfect = correct == total
-    score = round(100 * correct / total)
+    # K33.2: ball mijoz raqamidan emas, serverda qulflangan javoblardan (javobsiz savol = xato)
+    run = await quiz_run.get_run(session, user.id, body.run_id, "lesson", lesson_id)
+    if run is None:
+        raise HTTPException(status_code=409, detail="Urinish topilmadi yoki allaqachon yakunlangan")
+    graded = await quiz_run.finish(session, run)
+    correct, total = graded["correct"], graded["total"]
+    wrong_words = graded["wrong_words"]
+    perfect = total > 0 and correct == total
+    score = round(100 * correct / total) if total else 0
     passed = score >= PASS_SCORE  # spec §11 — 60% dan past bo'lsa dars o'tilmaydi
 
     done_before = await completed_lesson_ids(session, user.id)
@@ -207,7 +265,7 @@ async def complete_v2(
 
     # SRS: yangi kartalar + xato so'zlar reset (spec §11)
     added = await seed_from_srs_cards(session, user.id, data.get("srs_cards", []))
-    await reset_words(session, user.id, body.wrong_words)
+    await reset_words(session, user.id, wrong_words)
 
     plan = (
         await session.execute(
@@ -223,11 +281,13 @@ async def complete_v2(
         "xp_earned": xp,
         "perfect": perfect,
         "score": score,
+        "correct": correct,
+        "total": total,
         "passed": passed,
         "pass_score": PASS_SCORE,
         "first_time": first_time,
         "srs_added": added,
-        "srs_reset": len(body.wrong_words),
+        "srs_reset": len(wrong_words),
         "stats": stats,
         "new_badges": new_badges,
         "referral_bonus": referral_bonus,
@@ -273,33 +333,45 @@ async def rate_lesson(
 @router.get("/checkpoint/{lesson_id}")
 async def checkpoint_questions(
     lesson_id: str,
+    v: int = 1,
     user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
 ):
+    if v < 2:
+        raise HTTPException(status_code=426, detail=STALE_CLIENT)
     ids = _checkpoint_lessons(lesson_id)
     if len(ids) < 2:
         raise HTTPException(status_code=404, detail="Nazorat testi mavjud emas")
 
     pool: list[dict] = []
+    roots: list[str] = []
     for lid in ids:
         data = load_lesson_v2(lid)
         if not data:
             continue
+        roots += [r["root"] for r in data.get("roots") or [] if r.get("root")]
         for item in data.get("micro_test", []):
-            pool.append(item)
+            if blind_quiz.supported(item):
+                pool.append(item)
 
     random.shuffle(pool)
     questions = pool[:CHECKPOINT_QUESTIONS]
+    try:
+        run = await quiz_run.create_run(session, user.id, "lcp", lesson_id, questions)
+    except quiz_run.TooManyRuns:
+        raise HTTPException(status_code=429, detail=TOO_MANY_RUNS)
     return {
         "lesson_ids": ids,
         "pass_percent": CHECKPOINT_PASS,
-        "questions": questions,
+        "run": {"id": run.id, "passage_offset": 0},
+        "questions": blind_quiz.public_items(quiz_run.items_of(run), root_pool=list(dict.fromkeys(roots))),
     }
 
 
 @router.post("/checkpoint/{lesson_id}/complete")
 async def checkpoint_complete(
     lesson_id: str,
-    body: CompleteV2Body,
+    body: RunCompleteBody,
     user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ):
@@ -307,10 +379,16 @@ async def checkpoint_complete(
 
     if not _checkpoint_lessons(lesson_id):
         raise HTTPException(status_code=404, detail="Nazorat testi mavjud emas")
+    if body.run_id is None:
+        raise HTTPException(status_code=426, detail=STALE_CLIENT)
+    run = await quiz_run.get_run(session, user.id, body.run_id, "lcp", lesson_id)
+    if run is None:
+        raise HTTPException(status_code=409, detail="Urinish topilmadi yoki allaqachon yakunlangan")
 
-    # K28 pentest: savollar soniga qisiladi; XP shu nazorat uchun kuniga bir marta (takror — faqat mashq)
-    correct, total = xp_guard.clamp(body.correct, body.total, CHECKPOINT_QUESTIONS)
-    score = round(100 * correct / total)
+    # K33.2: ball qulflangan javoblardan; XP shu nazorat uchun kuniga bir marta (takror — faqat mashq)
+    graded = await quiz_run.finish(session, run)
+    correct, total = graded["correct"], graded["total"]
+    score = round(100 * correct / total) if total else 0
     passed = score >= CHECKPOINT_PASS
 
     xp = 15 + correct if passed else 5
@@ -320,13 +398,13 @@ async def checkpoint_complete(
         XpLog(user_id=user.id, amount=xp, source=f"checkpoint:{lesson_id}")
     )
     await session.commit()
-    await reset_words(session, user.id, body.wrong_words)
+    await reset_words(session, user.id, graded["wrong_words"])
 
     return {
         "score": score,
         "passed": passed,
         "xp_earned": xp,
-        "srs_reset": len(body.wrong_words),
+        "srs_reset": len(graded["wrong_words"]),
     }
 
 

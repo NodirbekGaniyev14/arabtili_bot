@@ -148,7 +148,7 @@ def test_order_words_ignores_harakat():
 
 
 def test_unknown_type_is_never_correct():
-    it = {"type": "shadowing", "answer": "x"}
+    it = {"type": "mystery", "answer": "x"}
     assert not bq.supported(it) and not bq.check_item(it, "x")
 
 
@@ -179,3 +179,46 @@ def test_grade_items_extra_answers_ignored_and_none_is_all_wrong():
     assert bq.grade_items(items, ["a", "a", "a", "a"]).correct == 2
     assert bq.grade_items(items, None).correct == 0
     assert bq.grade_items([], []).total == 0
+
+
+# ── K33.2: dars testi ──
+
+
+def test_shadowing_is_a_self_check_item():
+    it = {"type": "shadowing", "q_uz": "takrorlang", "q_ar": "سَلام", "audio": "a.mp3", "answer": ""}
+    assert bq.supported(it) and bq.input_kind(it) == "self"
+    pub = bq.public_item(it)
+    assert pub["input"] == "self" and pub["q_ar"] == "سَلام" and pub["audio"] == "a.mp3"
+    assert bq.check_item(it, bq.SELF_DONE) and not bq.check_item(it, "") and not bq.check_item(it, "x")
+
+
+def test_match_root_prefers_the_lessons_own_roots():
+    it = {"type": "match_root", "q_uz": "o'zak", "q_ar": "مَكْتَب", "answer": "ك ت ب", "root": "ك ت ب"}
+    pool = ["ط ل ب", "و ل د", "ع م ل"]
+    for seed in range(5):
+        opts = bq.public_item(it, random.Random(seed), root_pool=pool)["options"]
+        assert sorted(opts) == sorted(["ك ت ب", *pool]), opts
+
+
+def test_every_lesson_test_and_passage_item_is_servable():
+    """Dars testi (har urinish variantida) va o'qish matni savollari: hech biri `supported` filtrida tushib qolmaydi,
+    o'zining javobi to'g'ri hisoblanadi, mijozga javobsiz beriladi."""
+    from services.curriculum import load_curriculum, written_lesson_ids
+    from services.lesson_test import build_test
+    from services.reading import passage_for
+
+    rnd = random.Random(2)
+    lessons = [l for l in sorted(written_lesson_ids()) if load_curriculum()[l]["type"] == "lesson"]
+    assert len(lessons) > 200
+    for lid in lessons[::3]:  # har uchinchi dars (to'liq bank — sekin); passage'li darslar ham kiradi
+        items = []
+        for variant in (0, 1):
+            items += build_test(lid, variant)["items"]
+        items += (passage_for(lid) or {}).get("questions") or []
+        for it in items:
+            assert bq.supported(it), (lid, it.get("type"), it.get("answer"))
+            pub = bq.public_item(it, rnd)
+            assert not SECRET & set(pub), (lid, pub)
+            if pub["input"] == "options":
+                assert it["answer"] in pub["options"] and len(pub["options"]) >= 2, (lid, it)
+            assert bq.check_item(it, bq.SELF_DONE if pub["input"] == "self" else it["answer"]), (lid, it["type"], it["answer"])

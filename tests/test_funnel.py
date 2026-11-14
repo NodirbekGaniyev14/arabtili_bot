@@ -168,7 +168,7 @@ async def test_lesson_api_records_open_and_phase(client, session):
     c, state = client
     state["user"] = await _learner(session, "Api")
     await session.commit()
-    assert (await c.get("/api/v2/lessons/a0-01")).status_code == 200
+    assert (await c.get("/api/v2/lessons/a0-01?v=2")).status_code == 200
     assert (await c.post("/api/v2/lessons/a0-01/phase", json={"idx": 4, "phase": "vocab"})).json() == {"ok": True}
     assert (await c.post("/api/v2/lessons/a0-01/phase", json={"idx": 4, "phase": "<script>"})).status_code == 400
     assert (await c.post("/api/v2/lessons/zz-99/phase", json={"idx": 1, "phase": "hook"})).status_code == 404

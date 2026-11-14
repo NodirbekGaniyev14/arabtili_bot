@@ -140,7 +140,7 @@ async def test_speak_api(client, session, make_user, monkeypatch):
         return heard["text"]
 
     monkeypatch.setattr(stt, "transcribe", fake_transcribe)
-    lesson = (await c.get("/api/v2/lessons/a1-01")).json()
+    lesson = (await c.get("/api/v2/lessons/a1-01?v=2")).json()
     assert lesson["voice"] is True
     files = {"file": ("speech.webm", b"x" * 3000, "audio/webm")}
     r = await c.post("/api/v2/lessons/a1-01/speak", data={"idx": "0"}, files=files)
