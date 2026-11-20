@@ -768,6 +768,8 @@ async def tutor_report(session: AsyncSession) -> str:
         f"• Bugun: <b>{lv['today']['sessions']}</b> suhbat · {lv['today']['minutes']} daq · "
         f"{lv['today']['users']} o'quvchi · <b>{_usd(lv['today']['cost'])}</b>\n"
         f"• 7 kun: {lv['week']['sessions']} · {lv['week']['minutes']} daq · {_usd(lv['week']['cost'])}\n"
+        f"• Tahlil (7 kun): {lv['review']['reviewed']}/{lv['week']['sessions']} · qisqa (&lt;2 javob): {lv['review']['short']}"
+        f" (o'quvchi so'zi yozilmagan: {lv['review']['silent']}) · AI xato: {lv['review']['failed']}\n"
         f"• Limit: {caps} · ogohlantirish: ${settings.live_daily_budget_usd:g}/kun\n\n"
     )
 

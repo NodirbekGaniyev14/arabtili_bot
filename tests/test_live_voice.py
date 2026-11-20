@@ -628,3 +628,17 @@ def test_live_fix_advice_mentions_declined_card_and_credits():
     assert "«Fix»" in diag.LIVE_BILLING_FIX and "Buy credits" in diag.LIVE_BILLING_FIX
     assert diag.REASON_FIX["BILLING_DISABLED"] == diag.LIVE_BILLING_FIX
     assert "How you pay" in alerts.KINDS["live_auth"] and "{detail}" in alerts.KINDS["live_auth"]
+
+
+@pytest.mark.asyncio
+async def test_report_shows_review_health(session, make_user):
+    """2026-11-20: 7 kunda 25 jonli suhbat, Anthropic chaqiruvi 0 — /ustoz tahlil ishlayaptimi ko'rsatadi."""
+    u = await make_user("Ali")
+    await session.commit()
+    for turns, review in ((0, ""), (1, '{"summary_uz": "qisqa"}'), (4, '{"summary_uz": "Tahlil hozircha tayyorlanmadi"}'), (5, '{"summary_uz": "ok"}')):
+        res = lv.RelayResult(reason="user", seconds=60, user_turns=turns, transcript=[])
+        row = await lv.save(session, u, "erkin", "A1", res)
+        row.reviewed, row.review = (1 if review else 0), review
+    await session.commit()
+    rep = await lv.report(session)
+    assert rep["review"] == {"reviewed": 3, "short": 2, "failed": 1, "silent": 1}

@@ -33,7 +33,7 @@ from dataclasses import dataclass, field
 from datetime import timedelta
 
 from pydantic import BaseModel, Field
-from sqlalchemy import func, select
+from sqlalchemy import case, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from config import settings
@@ -672,6 +672,19 @@ async def report(session: AsyncSession) -> dict:
             )
         ).one()
         out[key] = {"sessions": int(n or 0), "minutes": round((secs or 0) / 60, 1), "cost": float(cost or 0), "users": int(users or 0)}
+    # 2026-11-20: 7 kunda 25 suhbat, lekin Anthropic chaqiruvi 0 — tahlil (Claude) ishlayaptimi, ko'rinsin
+    week = LiveSession.created_at >= utcnow() - timedelta(days=7)
+    reviewed, short, failed, no_user_text = (
+        await session.execute(
+            select(
+                func.coalesce(func.sum(case((LiveSession.reviewed == 1, 1), else_=0)), 0),
+                func.coalesce(func.sum(case((LiveSession.user_turns < 2, 1), else_=0)), 0),
+                func.coalesce(func.sum(case((LiveSession.review.like("%tayyorlanmadi%"), 1), else_=0)), 0),
+                func.coalesce(func.sum(case((LiveSession.user_turns == 0, 1), else_=0)), 0),
+            ).where(week)
+        )
+    ).one()
+    out["review"] = {"reviewed": int(reviewed), "short": int(short), "failed": int(failed), "silent": int(no_user_text)}
     return out
 
 
