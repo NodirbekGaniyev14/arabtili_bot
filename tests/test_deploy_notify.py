@@ -1,10 +1,12 @@
 """«🔄 Bot yangilandi» xabari — har deployda emas, har DEPLOY_NOTIFY_EVERY (10) deployda bir marta (egasi 2026-10-05:
 har deploydagi xabar sabab o'quvchilar botni bloklayapti)."""
 
+from datetime import timedelta
+
 import pytest
 
 from config import settings
-from db.models import Meta, User
+from db.models import Meta, User, XpLog, utcnow
 from services import deploy_notify as dn
 
 
@@ -30,8 +32,14 @@ def users(session_factory, monkeypatch):
 
     async def make():
         async with session_factory() as s:
-            s.add_all([User(tg_id=101, name="A"), User(tg_id=102, name="B", notify_off="news"),
-                       User(tg_id=103, name="Demo", is_demo=1)])
+            users = [User(tg_id=101, name="A"), User(tg_id=102, name="B", notify_off="news"),
+                     User(tg_id=103, name="Demo", is_demo=1), User(tg_id=104, name="Eski"), User(tg_id=105, name="Jim")]
+            s.add_all(users)
+            await s.flush()
+            # 30 kun ichida faol: A, B, Demo; Eski — 45 kun oldin; Jim — hech qachon XP olmagan
+            for u in users[:3]:
+                s.add(XpLog(user_id=u.id, amount=10, source="lesson:a0-01", created_at=utcnow() - timedelta(days=3)))
+            s.add(XpLog(user_id=users[3].id, amount=10, source="lesson:a0-01", created_at=utcnow() - timedelta(days=45)))
             await s.commit()
 
     return make
@@ -45,7 +53,7 @@ async def test_update_message_only_every_tenth_deploy(users, session_factory, mo
         assert await _deploy(monkeypatch, f"v{i:03d}") == [], f"{i}-deploy — xabar yo'q"
     assert await _deploy(monkeypatch, "v009") == [], "versiya o'zgarmagan restart — hisoblanmaydi"
     sent = await _deploy(monkeypatch, "v010")
-    assert [chat for chat, _ in sent] == [101], "10-deploy: faqat «yangiliklar» yoqilgan haqiqiy o'quvchiga"
+    assert [chat for chat, _ in sent] == [101], "10-deploy: faqat 30 kunda faol, «yangiliklar» yoqilgan haqiqiy o'quvchiga"
     assert "Bot yangilandi" in sent[0][1]
     assert await _deploy(monkeypatch, "v011") == [], "hisoblagich qaytadan boshlanadi"
     async with session_factory() as s:
@@ -72,6 +80,6 @@ async def test_diag_shows_next_update_message(users, session_factory, monkeypatc
     for v in ("a", "b", "c", "d"):  # birinchisi — yangi baza, keyin 3 ta deploy
         await _deploy(monkeypatch, v)
     line = await diag.check_deploy_notice()
-    assert line.startswith("✅") and "har 10 deployda" in line and "beri 3 ta deploy" in line and "keyingisi 7-deployda" in line
+    assert line.startswith("✅") and "har 10 deployda bir marta, 30 kunda faollarga" in line and "beri 3 ta deploy" in line and "keyingisi 7-deployda" in line
     monkeypatch.setattr(settings, "deploy_notify_every", 0)
     assert "o'chiq" in await diag.check_deploy_notice()

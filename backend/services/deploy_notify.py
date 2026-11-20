@@ -6,7 +6,7 @@
 
 import asyncio
 import subprocess
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 from aiogram import Bot
@@ -19,12 +19,14 @@ from sqlalchemy import select
 
 from config import BASE_DIR, settings
 from services import notify_prefs
-from db.models import Meta, User, utcnow
+from db.models import Meta, User, XpLog, utcnow
 from db.session import SessionLocal
 
 VERSION_KEY = "deploy_version"
 DEPLOY_AT_KEY = "deploy_at"  # oxirgi deploy vaqti (UTC, ISO) — admin /javoblar «deploydan beri»
 COUNT_KEY = "deploy_notice_count"  # oxirgi «Bot yangilandi» xabaridan beri nechta deploy bo'ldi
+# Faqat shu kunlar ichida faol bo'lganlarga (XP olgan) — oylab kirmaganlar botni bloklashga moyil (egasi 2026-11-20)
+ACTIVE_DAYS = 30
 
 UPDATE_TEXT = (
     "🔄 <b>Bot yangilandi!</b>\n\n"
@@ -139,11 +141,14 @@ async def notify_if_updated(bot: Bot) -> None:
         await _set(session, COUNT_KEY, "0" if send else str(count))
         await _set(session, VERSION_KEY, version)
         await _set(session, DEPLOY_AT_KEY, utcnow().isoformat(timespec="seconds"))
+        active = select(XpLog.user_id).where(XpLog.created_at >= utcnow() - timedelta(days=ACTIVE_DAYS))
         ids = (
             [
                 tg_id
                 for tg_id, off in (
-                    await session.execute(select(User.tg_id, User.notify_off).where(User.is_demo == 0))
+                    await session.execute(
+                        select(User.tg_id, User.notify_off).where(User.is_demo == 0, User.id.in_(active))
+                    )
                 ).all()
                 if notify_prefs.enabled_raw(off, "news")
             ]

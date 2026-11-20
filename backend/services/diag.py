@@ -263,8 +263,8 @@ async def check_deploy_notice() -> str:
         return _warn(f"Yangilanish xabari: holatni o'qib bo'lmadi ({e!r})")
     if every <= 0:
         return _ok("Yangilanish xabari: o'chiq (DEPLOY_NOTIFY_EVERY=0)")
-    return _ok(f"Yangilanish xabari: har {every} deployda bir marta · oxirgisidan beri {count} ta deploy, "
-               f"keyingisi {max(every - count, 1)}-deployda")
+    return _ok(f"Yangilanish xabari: har {every} deployda bir marta, {deploy_notify.ACTIVE_DAYS} kunda faollarga · "
+               f"oxirgisidan beri {count} ta deploy, keyingisi {max(every - count, 1)}-deployda")
 
 
 def check_settings() -> list[str]:
