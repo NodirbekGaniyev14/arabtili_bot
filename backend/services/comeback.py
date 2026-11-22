@@ -233,31 +233,78 @@ async def make_offer(session: AsyncSession, user: User, days: int, last: datetim
     return offer
 
 
+BLOCKED_HINTS = ("blocked", "deactivated", "chat not found", "user is deactivated", "kicked")
+
+
+async def _deliver(bot, user: User, offer: ComebackOffer) -> str:
+    """Taklif xabari. Qaytaradi: "sent" | "blocked" (botni bloklagan / hisob o'chirilgan) | "failed" (boshqa xato).
+    2026-11-22: birinchi kampaniyada 1053 dan 363 tasi «yetmadi» — hammasi «bloklagan» deb sanalgan edi; Telegram
+    tezlik cheklovi (429) ham shunga tushardi. Endi 429 da kutib qayta uriniladi va sabab ajratiladi."""
+    quiz = {"ar": offer.quiz_ar, "letter": _is_letter(offer.quiz_ar)}
+    kb = _quiz_kb(offer.id, json.loads(offer.options_json))
+    for attempt in range(2):
+        try:
+            await bot.send_message(user.tg_id, offer_text(user, offer.idle_days, quiz), parse_mode="HTML", reply_markup=kb)
+            return "sent"
+        except Exception as e:  # noqa: BLE001
+            wait = getattr(e, "retry_after", None)
+            if wait is not None and attempt == 0:
+                await asyncio.sleep(min(float(wait), 60) + 1)
+                continue
+            text = str(e).lower()
+            log.info("qaytish taklifi yetmadi (%s): %r", user.tg_id, e)
+            if type(e).__name__ == "TelegramForbiddenError" or any(h in text for h in BLOCKED_HINTS):
+                return "blocked"
+            return "failed"
+    return "failed"
+
+
 async def send_campaign(session: AsyncSession, bot, now: datetime | None = None) -> dict:
-    """Hamma mos o'quvchiga taklif. Qaytaradi: {"campaign", "sent", "failed"}."""
+    """Hamma mos o'quvchiga taklif. Qaytaradi: {"campaign", "sent", "blocked", "failed"}."""
     now = now or utcnow()
     campaign = (now + TASHKENT_OFFSET).date().isoformat()
-    out = {"campaign": campaign, "sent": 0, "failed": 0}
+    out = {"campaign": campaign, "sent": 0, "blocked": 0, "failed": 0}
     for user, days, last in (await audience(session, now))["users"]:
         offer = await make_offer(session, user, days, last, campaign, now)
-        quiz = {"ar": offer.quiz_ar, "letter": _is_letter(offer.quiz_ar)}
-        try:
-            await bot.send_message(
-                user.tg_id, offer_text(user, days, quiz), parse_mode="HTML",
-                reply_markup=_quiz_kb(offer.id, json.loads(offer.options_json)),
-            )
-            out["sent"] += 1
-        except Exception as e:  # botni bloklagan / chat o'chirilgan
-            offer.status = "failed"
-            out["failed"] += 1
-            log.info("qaytish taklifi yetmadi (%s): %r", user.tg_id, e)
+        status = await _deliver(bot, user, offer)
+        offer.status = status
+        out[status] += 1
         await session.commit()
         await asyncio.sleep(SEND_PAUSE)
     return out
 
 
-def start_background(bot, admin_chat: int) -> bool:
-    """`/qaytarish yubor` — fonda yuboradi, tugagach adminga hisobot. Ikkinchi marta bir vaqtda ishga tushmaydi."""
+async def retry_failed(session: AsyncSession, bot, now: datetime | None = None) -> dict:
+    """Oxirgi kampaniyada yetmagan (failed) takliflarni qayta yuboradi. Bloklaganlarga xabar baribir yetmaydi —
+    ularga hech narsa ko'rinmaydi, faqat holati «blocked» bo'lib aniqlanadi. Yetganlarda sovg'a muddati shu paytdan."""
+    now = now or utcnow()
+    campaign = (
+        await session.execute(select(func.max(ComebackOffer.campaign)))
+    ).scalar()
+    out = {"campaign": campaign or "—", "sent": 0, "blocked": 0, "failed": 0}
+    if not campaign:
+        return out
+    offers = (
+        await session.execute(
+            select(ComebackOffer).where(ComebackOffer.campaign == campaign, ComebackOffer.status == "failed")
+        )
+    ).scalars().all()
+    for offer in offers:
+        user = await session.get(User, offer.user_id)
+        if user is None:
+            continue
+        status = await _deliver(bot, user, offer)
+        offer.status = status
+        if status == "sent":
+            offer.sent_at = now
+        out[status] += 1
+        await session.commit()
+        await asyncio.sleep(SEND_PAUSE)
+    return out
+
+
+def start_background(bot, admin_chat: int, retry: bool = False) -> bool:
+    """`/qaytarish yubor` (yoki `qayta`) — fonda yuboradi, tugagach adminga hisobot. Bir vaqtda bittasi."""
     task = _running.get("send")
     if task and not task.done():
         return False
@@ -267,11 +314,11 @@ def start_background(bot, admin_chat: int) -> bool:
 
         try:
             async with SessionLocal() as session:
-                res = await send_campaign(session, bot)
+                res = await (retry_failed(session, bot) if retry else send_campaign(session, bot))
             await bot.send_message(
                 admin_chat,
-                f"↩️ Qaytish kampaniyasi ({res['campaign']}): yuborildi {res['sent']}, yetmadi (bloklagan) {res['failed']}.\n"
-                "Natija: /qaytarish natija",
+                f"↩️ Qaytish kampaniyasi ({res['campaign']}){' — qayta' if retry else ''}: yetdi {res['sent']}, "
+                f"bloklagan {res['blocked']}, boshqa xato {res['failed']}.\nNatija: /qaytarish natija",
             )
         except Exception as e:  # noqa: BLE001
             log.warning("qaytish kampaniyasi xatosi: %r", e)
@@ -425,6 +472,7 @@ async def results_text(session: AsyncSession) -> str:
             select(
                 ComebackOffer.campaign,
                 func.count(),
+                func.sum(case((ComebackOffer.status.in_(("failed", "blocked")), 1), else_=0)),
                 func.sum(case((ComebackOffer.status == "failed", 1), else_=0)),
                 func.sum(case((ComebackOffer.answered > 0, 1), else_=0)),
                 func.sum(case((ComebackOffer.answered == 1, 1), else_=0)),
@@ -438,11 +486,12 @@ async def results_text(session: AsyncSession) -> str:
     if not rows:
         return "↩️ Qaytish kampaniyasi hali yuborilmagan. Ko'rish: /qaytarish"
     lines = ["↩️ <b>Qaytish kampaniyalari</b>\n"]
-    for camp, n, failed, answered, right, claimed in rows:
-        sent = n - (failed or 0)
+    for camp, n, missed, other, answered, right, claimed in rows:
+        sent = n - (missed or 0)
         pct = lambda x: f"{round(100 * (x or 0) / sent)}%" if sent else "—"  # noqa: E731
+        retry = f" (shundan aniqlanmagan xato {other} — <code>/qaytarish qayta</code>)" if other else ""
         lines.append(
-            f"<b>{camp}</b>: yetdi {sent} · bloklagan {failed or 0}\n"
+            f"<b>{camp}</b>: yetdi {sent} · yetmadi {missed or 0}{retry}\n"
             f"   🧩 javob berdi {answered or 0} ({pct(answered)}, to'g'ri {right or 0}) · "
             f"📚 qaytib dars o'tdi {claimed or 0} ({pct(claimed)})"
         )

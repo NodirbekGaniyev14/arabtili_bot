@@ -421,6 +421,18 @@ async def cmd_comeback(message: Message, bot: Bot):
         if arg in ("natija", "result"):
             await message.answer(await comeback.results_text(session), parse_mode="HTML")
             return
+        if arg in ("qayta", "retry"):
+            from db.models import utcnow
+
+            if not comeback.in_send_hours(utcnow()):
+                await message.answer(f"⏰ Faqat kunduzi {comeback.SEND_FROM}:00–{comeback.SEND_TO}:00 (Toshkent).")
+                return
+            started = comeback.start_background(bot, message.chat.id, retry=True)
+            await message.answer(
+                "🔁 Yetmagan takliflar qayta yuborilmoqda — bloklaganlarga baribir yetmaydi, faqat aniqlanadi. Tugagach hisobot."
+                if started else "Yuborish allaqachon ketyapti."
+            )
+            return
         if arg in ("yubor", "send"):
             from db.models import utcnow
 

@@ -78,7 +78,7 @@ async def test_send_answer_and_blocked(session):
     b = await _learner(session, "Bek", 20)
     bot = FakeBot(blocked={b.tg_id})
     res = await cb.send_campaign(session, bot, NOON)
-    assert (res["sent"], res["failed"]) == (1, 1)
+    assert (res["sent"], res["blocked"], res["failed"]) == (1, 1, 0)
     chat, text, kb = bot.sent[0]
     assert chat == a.tg_id and "10 kundan beri" in text and "esingizdami" in text
     offer = (await session.execute(ComebackOffer.__table__.select().where(ComebackOffer.user_id == a.id))).one()
@@ -86,7 +86,7 @@ async def test_send_answer_and_blocked(session):
     buttons = [row[0] for row in kb.inline_keyboard]
     assert [x.text for x in buttons] == json.loads(offer.options_json)
     failed = (await session.execute(ComebackOffer.__table__.select().where(ComebackOffer.user_id == b.id))).one()
-    assert failed.status == "failed", "bloklagan — qayta urinilmaydi"
+    assert failed.status == "blocked", "bloklagan — alohida sanaladi"
 
     # Boshqa odam bosa olmaydi; to'g'ri javob — natija + sovg'a sharti
     right = json.loads(offer.options_json).index(offer.quiz_answer)
@@ -199,3 +199,49 @@ async def test_admin_command_preview_results_and_night_guard(session, session_fa
     m = FakeMessage(1, "/qaytarish")  # admin emas
     await adm.cmd_comeback(m, bot)
     assert m.answers == []
+
+
+class FlakyBot(FakeBot):
+    """Telegram tezlik cheklovi (429) — retry_after bilan; ikkinchi urinishda yetadi."""
+
+    def __init__(self, flood=(), broken=(), **kw):
+        super().__init__(**kw)
+        self.flood, self.broken = set(flood), set(broken)
+
+    async def send_message(self, chat_id, text, **kw):
+        if chat_id in self.flood:
+            self.flood.discard(chat_id)
+            err = RuntimeError("Too Many Requests: retry after 1")
+            err.retry_after = 0
+            raise err
+        if chat_id in self.broken:
+            raise RuntimeError("Internal Server Error")
+        await super().send_message(chat_id, text, **kw)
+
+
+@pytest.mark.asyncio
+async def test_flood_wait_is_retried_and_failures_split(session, monkeypatch):
+    """2026-11-22: 1053 dan 363 «bloklagan» — 429 ham shunga tushardi. Endi kutib qayta uriniladi, sabab ajratiladi."""
+    monkeypatch.setattr(cb.asyncio, "sleep", _fast_sleep)
+    a = await _learner(session, "Ali", 10)
+    b = await _learner(session, "Bek", 11)
+    c = await _learner(session, "Gul", 12)
+    bot = FlakyBot(flood={a.tg_id}, broken={c.tg_id}, blocked={b.tg_id})
+    res = await cb.send_campaign(session, bot, NOON)
+    assert (res["sent"], res["blocked"], res["failed"]) == (1, 1, 1)
+    assert [chat for chat, _, _ in bot.sent] == [a.tg_id], "429 — kutib qayta yuborildi"
+    text = await cb.results_text(session)
+    assert "yetdi 1 · yetmadi 2 (shundan aniqlanmagan xato 1 — <code>/qaytarish qayta</code>)" in text
+
+    # Qayta: faqat «failed»; bloklaganga tegilmaydi; yetsa — sovg'a muddati shu paytdan
+    bot2 = FakeBot()
+    later = NOON + timedelta(hours=3)
+    res = await cb.retry_failed(session, bot2, later)
+    assert res == {"campaign": res["campaign"], "sent": 1, "blocked": 0, "failed": 0}
+    assert [chat for chat, _, _ in bot2.sent] == [c.tg_id]
+    offer = (await session.execute(ComebackOffer.__table__.select().where(ComebackOffer.user_id == c.id))).one()
+    assert offer.status == "sent" and offer.sent_at == later
+
+
+async def _fast_sleep(_):
+    return None
