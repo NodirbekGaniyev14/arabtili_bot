@@ -691,6 +691,29 @@ def _trim_history(history: list[dict]) -> list[dict]:
     return merged
 
 
+def _utcnow():
+    from datetime import datetime, timezone
+
+    return datetime.now(timezone.utc).replace(tzinfo=None)
+
+
+def ai_state() -> str:
+    """/ustoz: «✅» | oxirgi chaqiruv xato bo'lsa — sababi va yo'l (keyin muvaffaqiyatli chaqiruv bo'lmagan)."""
+    if not settings.anthropic_api_key:
+        return "❌ ANTHROPIC_API_KEY bo'sh"
+    err_at, ok_at = STATUS["error_at"], STATUS["ok_at"]
+    if err_at is None or (ok_at is not None and ok_at > err_at):
+        return "✅"
+    from datetime import timedelta
+
+    when = (err_at + timedelta(hours=5)).strftime("%d.%m %H:%M")
+    if STATUS["error"] == "credit":
+        return f"❌ KREDIT TUGAGAN ({when}) — console.anthropic.com → Billing → kredit qo'shing"
+    if STATUS["error"] == "auth":
+        return f"❌ kalit rad etildi ({when}) — console.anthropic.com → API Keys → .env"
+    return f"⚠️ oxirgi chaqiruv xato «{STATUS['error']}» ({when})"
+
+
 class TutorUnavailable(Exception):
     """AI javob bera olmadi (kalit/kredit/tarmoq) — API 503 qaytaradi,
     turn hisobga olinmaydi, o'quvchi tushunarli xabar ko'radi.
@@ -705,6 +728,9 @@ class TutorUnavailable(Exception):
 
 
 _BUSY = "Ustoz hozircha band (server sozlanmoqda). Birozdan keyin qayta kiring."
+# /ustoz uchun oxirgi chaqiruv holati (jarayon xotirasi). 2026-11-25: /ustoz «Anthropic ✅» faqat kalit borligini
+# ko'rsatardi — kredit tugaganda ham (30 kun 0 chaqiruv, jonli suhbat tahlili 22 dan 20 tasi xato).
+STATUS: dict = {"ok_at": None, "error": "", "error_at": None}
 
 
 def classify(e: Exception) -> tuple[str, str]:
@@ -801,6 +827,7 @@ async def _call(system: list[dict], msgs: list[dict], schema, model: str | None 
                 return await _call(system, msgs, schema, settings.tutor_model, max_tokens)
             log.warning("AI ustoz xatosi: %r", e2)
             kind, msg = classify(e2)
+            STATUS.update(error=kind, error_at=_utcnow())
             raise TutorUnavailable(msg, kind) from e2
 
     if out is None:
@@ -808,6 +835,7 @@ async def _call(system: list[dict], msgs: list[dict], schema, model: str | None 
 
     usage = ai_usage.usage_of(resp)
     usage["model"] = model
+    STATUS["ok_at"] = _utcnow()
     return out, usage
 
 

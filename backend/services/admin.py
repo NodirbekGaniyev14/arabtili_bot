@@ -718,7 +718,9 @@ async def tutor_report(session: AsyncSession) -> str:
     )
 
     # ── Kalitlar va ogohlantirishlar ──
-    ai_ok = "✅" if settings.anthropic_api_key else "❌ ANTHROPIC_API_KEY bo'sh"
+    from services.tutor import ai_state
+
+    ai_ok = ai_state()
     if not settings.stt_api_key:
         stt_state = "❌ STT_API_KEY bo'sh (mikrofon o'chiq)"
     elif stt.last_error == "auth":

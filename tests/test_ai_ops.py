@@ -475,3 +475,21 @@ async def test_turn_success_records_usage(api_client, session, make_user):
     assert (row.tokens_in, row.tokens_out, row.cache_read) == (320, 180, 4400)
     assert (await session.execute(select(TutorTurn))).scalar_one().mode == "chat"
     assert bot.sent == []
+
+
+def test_ustoz_anthropic_state_reflects_last_call(monkeypatch):
+    """2026-11-25: /ustoz «Anthropic ✅» faqat kalit borligini ko'rsatardi — kredit tugaganda ham."""
+    from datetime import datetime
+
+    from config import settings
+    from services import tutor
+
+    monkeypatch.setattr(settings, "anthropic_api_key", "sk-ant-x")
+    monkeypatch.setattr(tutor, "STATUS", {"ok_at": None, "error": "", "error_at": None})
+    assert tutor.ai_state() == "✅"
+    tutor.STATUS.update(error="credit", error_at=datetime(2026, 11, 25, 7, 43))
+    assert tutor.ai_state().startswith("❌ KREDIT TUGAGAN (25.11 12:43)")
+    tutor.STATUS["ok_at"] = datetime(2026, 11, 25, 8, 0)  # to'ldirilgach muvaffaqiyatli chaqiruv
+    assert tutor.ai_state() == "✅"
+    monkeypatch.setattr(settings, "anthropic_api_key", "")
+    assert "bo'sh" in tutor.ai_state()
