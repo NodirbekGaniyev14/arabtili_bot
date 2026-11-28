@@ -409,6 +409,39 @@ async def cmd_fikrlar(message: Message):
         await message.answer(text[i:i + 3900], parse_mode="HTML")
 
 
+VIP_KEEP_TG = 6519846998  # 2026-11-28 egasi: VIP faqat shu foydalanuvchida, 30 kun
+VIP_KEEP_DAYS = 30
+
+
+@router.message(Command("vip_tozalash"))
+async def cmd_vip_reset(message: Message):
+    """`/vip_tozalash` — kimdan VIP olinadi (ko'rish); `/vip_tozalash tasdiq` — bajarish (zaxira JSON bilan)."""
+    if not _is_admin(message):
+        return
+    from services import billing
+
+    apply = ((message.text or "").split(maxsplit=1) + [""])[1].strip().lower() == "tasdiq"
+    async with SessionLocal() as session:
+        res = await billing.reset_vip(session, VIP_KEEP_TG, VIP_KEEP_DAYS, apply=apply)
+    remove, keep = res["remove"], res["keep"]
+    paid = [u for u, p in remove if p]
+    keep_line = (
+        f"✅ Qoladi: <b>{esc(keep.name or '—')}</b> (<code>{VIP_KEEP_TG}</code>) — {VIP_KEEP_DAYS} kun"
+        if keep is not None
+        else f"⚠️ <code>{VIP_KEEP_TG}</code> bazada topilmadi — botga /start bosgandan keyin qayta yuboring"
+    )
+    head = "🧹 <b>VIP olib tashlandi</b>" if apply else "🧹 <b>VIP tozalash — ko'rish</b>"
+    lines = [head, "", f"{'Olindi' if apply else 'Olinadi'}: <b>{len(remove)}</b> kishi"]
+    if paid:
+        lines.append(f"⚠️ Ulardan {len(paid)} tasi oxirgi 100 kunda TO'LAGAN: " + ", ".join(esc(u.name or str(u.tg_id)) for u in paid[:10]))
+    lines += [keep_line, ""]
+    if apply:
+        lines.append(f"Zaxira (qaytarish uchun): <code>{esc(res['backup'] or '')}</code>")
+    else:
+        lines.append("Bajarish: <code>/vip_tozalash tasdiq</code> · o'quvchilarga xabar yuborilmaydi")
+    await message.answer("\n".join(lines), parse_mode="HTML")
+
+
 @router.message(Command("qaytarish", "comeback"))
 async def cmd_comeback(message: Message, bot: Bot):
     """K34 qaytish kampaniyasi: `/qaytarish` — kim tushadi + namuna; `yubor` — yuborish; `natija` — natija."""

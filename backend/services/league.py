@@ -217,6 +217,30 @@ async def _levels_by_user(session: AsyncSession, user_ids: list[int]) -> dict[in
     return {uid: lvl for uid, lvl, _ in rows}  # keyingi yozuv oldingisini bosadi
 
 
+async def _champions(session: AsyncSession) -> dict[int, str]:
+    """user_id → belgi: o'tgan hafta top-3 (🥇🥈🥉) va o'tgan oy top-3 (👑) — 2026-11-28 dan VIP sovrin o'rniga."""
+    from sqlalchemy import and_, or_
+
+    from db.models import WeeklyAward
+    from services.weekly import badge, champion_keys
+
+    week_key, month_key = champion_keys()
+    rows = (
+        await session.execute(
+            select(WeeklyAward.user_id, WeeklyAward.period, WeeklyAward.rank).where(
+                or_(
+                    and_(WeeklyAward.period == "week", WeeklyAward.week_start == week_key),
+                    and_(WeeklyAward.period == "month", WeeklyAward.week_start == month_key),
+                )
+            )
+        )
+    ).all()
+    out: dict[int, str] = {}
+    for uid, period, rank in sorted(rows, key=lambda r: r[1] != "week"):  # hafta medali oldin
+        out[uid] = out.get(uid, "") + badge(period, rank)
+    return out
+
+
 async def leaderboard(
     session: AsyncSession, me_id: int, period: str = "week"
 ) -> dict:
@@ -227,6 +251,7 @@ async def leaderboard(
     ids = [r.id for r in ranked] + [me_id]
     levels = await _levels_by_user(session, ids)
     streaks = await _streaks_by_user(session, ids)
+    champs = await _champions(session)
 
     # Hamma bitta umumiy ro'yxatda — liga bo'yicha bo'linish yo'q
     now = datetime.now(timezone.utc).replace(tzinfo=None)
@@ -247,6 +272,8 @@ async def leaderboard(
                 "is_demo": False,
                 # 👑 — VIP obuna faol (hamma ko'radi: ijtimoiy isbot)
                 "vip": bool(r.vip_until and r.vip_until > now),
+                # 🥇🥈🥉 / 👑 — o'tgan hafta / oy chempioni (reyting sovrini)
+                "champ": champs.get(r.id, ""),
             }
         )
 
@@ -262,6 +289,7 @@ async def leaderboard(
                 "streak": streaks.get(me_id, 0),
                 "is_me": True,
                 "is_demo": False,
+                "champ": champs.get(me_id, ""),
             }
         )
 

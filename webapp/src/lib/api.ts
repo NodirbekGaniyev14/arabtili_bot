@@ -314,6 +314,8 @@ export interface LeaderboardEntry {
   is_demo: boolean;
   /** VIP obuna faol — reytingda 👑 belgisi (hamma ko'radi) */
   vip?: boolean;
+  /** «Chempion» belgisi: o'tgan hafta top-3 (🥇🥈🥉) / o'tgan oy top-3 (👑) — reyting sovrini */
+  champ?: string;
 }
 
 export type LeaderPeriod = "week" | "month" | "all";

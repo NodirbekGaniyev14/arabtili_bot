@@ -48,21 +48,33 @@ MONTHLY_TOP = 3  # 2026-10-05 egasi: oylik ham top-3 (ilgari top-5)
 MONTHLY_MIN = 5  # oylik sovrin uchun kamida 5 ishtirokchi
 
 RANK_ICON = {1: "🥇", 2: "🥈", 3: "🥉", 4: "🎗", 5: "🎗"}
-# Sovrin: VIP kunlari (AI ustoz) — o'rin bo'yicha; + 1 streak muzlatkichi (ko'pi bilan 2).
-# Bizga xarajati deyarli nol, motivatsiya kuchli; VIP faol bo'lsa muddat oxiriga qo'shiladi.
-# 2026-10-05 egasi: hafta 5/3/3 kun, oy 7/5/5 kun (ilgari hafta 7/3/3, oy 14/7/7/3/3).
-VIP_PRIZE = {"week": {1: 5, 2: 3, 3: 3}, "month": {1: 7, 2: 5, 3: 5}}
+# Sovrin (2026-11-28 egasi: reytingda VIP BERILMAYDI — VIP faqat to'lov bilan): «Chempion» belgisi — keyingi hafta
+# (oylikda — keyingi oy) reyting ro'yxatlarida ismi yonida 🥇/🥈/🥉 (oylik — 👑) + 🧊 streak muzlatkichi + sertifikat.
+# Belgi alohida saqlanmaydi: league.leaderboard o'tgan davr WeeklyAward yozuvlaridan oladi (champion_keys).
+MONTH_BADGE = "👑"
 
 
-def prize_days(period: str, rank: int) -> int:
-    return VIP_PRIZE.get(period, {}).get(rank, 0)
+def badge(period: str, rank: int) -> str:
+    if not 1 <= rank <= 3:
+        return ""
+    return RANK_ICON[rank] if period == "week" else MONTH_BADGE
 
 
 def prize_text(period: str, rank: int) -> str:
-    days = prize_days(period, rank)
-    if not days:
+    b = badge(period, rank)
+    if not b:
         return ""
-    return f"\n\n🎁 Sovrin: <b>{days} kun VIP</b> (AI ustoz, mock, speaking) + 🧊 streak muzlatkichi."
+    span = "hafta" if period == "week" else "oy"
+    return (
+        f"\n\n🎁 Sovrin: <b>{b} «Chempion» belgisi</b> — keyingi {span} davomida reytingda ismingiz yonida turadi "
+        "+ 🧊 streak muzlatkichi."
+    )
+
+
+def champion_keys() -> tuple[str, str]:
+    """(o'tgan hafta kaliti, o'tgan oy kaliti) — hozir reytingda ko'rinadigan chempion belgilari davri."""
+    prev_week = _week_start_utc() - timedelta(days=7)
+    return (prev_week + TASHKENT_OFFSET).strftime("%Y-%m-%d"), _month_key(_prev_month_start(_month_start_utc()))
 
 
 UZ_MONTHS = [
@@ -154,13 +166,10 @@ async def _award_period(
                 print(f"{period} sertifikat xatosi (user={user_id}): {e!r}")
                 continue
 
-            # Sovrin: VIP kunlari + streak muzlatkichi
-            days = prize_days(period, rank)
-            if days:
-                from services import billing
+            # Sovrin: «Chempion» belgisi (WeeklyAward'dan reytingda ko'rinadi) + streak muzlatkichi; VIP yo'q
+            if badge(period, rank):
                 from services.stats import MAX_FREEZES
 
-                billing.grant(user, days)
                 user.streak_freezes = min((user.streak_freezes or 0) + 1, MAX_FREEZES)
                 session.add(user)
             session.add(
@@ -171,7 +180,7 @@ async def _award_period(
                     rank=rank,
                     weekly_xp=xp,
                     cert_id=cert.cert_id,
-                    vip_days=days,
+                    vip_days=0,
                 )
             )
             await session.commit()
@@ -222,8 +231,7 @@ def announcement_text(period: str, label: str, winners: list, my: tuple | None, 
     head = "🏆 <b>Haftalik reyting yakunlandi</b>" if period == "week" else "🏆 <b>Oylik reyting yakunlandi</b>"
     lines = [f"{head} · {label}", ""]
     for _uid, name, xp, rank in winners:
-        prize = prize_days(period, rank)
-        lines.append(f"{RANK_ICON.get(rank, '🏅')} <b>{show(name)}</b> — {xp} XP" + (f" · 🎁 {prize} kun VIP" if prize else ""))
+        lines.append(f"{RANK_ICON.get(rank, '🏅')} <b>{show(name)}</b> — {xp} XP")
     lines.append("")
     if my:
         rank, xp = my
@@ -234,7 +242,7 @@ def announcement_text(period: str, label: str, winners: list, my: tuple | None, 
     else:
         lines.append(f"Bu davrda {participants} kishi qatnashdi — siz hali yo'q edingiz.")
     nxt = "Yangi hafta boshlandi" if period == "week" else "Yangi oy boshlandi"
-    lines.append(f"{nxt} — bugun 1 dars, va top-3 sizniki bo'lishi mumkin: sovrin VIP kunlar + sertifikat 🚀")
+    lines.append(f"{nxt} — bugun 1 dars, va top-3 sizniki bo'lishi mumkin: «Chempion» belgisi + sertifikat 🚀")
     return "\n".join(lines)
 
 

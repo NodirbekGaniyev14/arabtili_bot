@@ -84,6 +84,52 @@ def grant(user: User, days: int) -> datetime:
     return user.vip_until
 
 
+async def reset_vip(session, keep_tg: int, keep_days: int, now=None, apply: bool = False) -> dict:
+    """2026-11-28 egasi: VIP hammadan olinadi, faqat `keep_tg` da `keep_days` kun (bugundan) qoladi.
+    apply=False — faqat ko'rish. Qaytaradi: {"remove": [(user, to'lagan)], "keep": user|None, "backup": yo'l|None}.
+    O'chirishdan oldin data/vip_backup_*.json ga eski muddatlar yoziladi (qaytarish uchun)."""
+    import json
+
+    from sqlalchemy import select
+
+    from db.models import PaymentRequest
+
+    now = now or utcnow()
+    vips = (await session.execute(select(User).where(User.vip_until > now))).scalars().all()
+    paid = set(
+        (
+            await session.execute(
+                select(PaymentRequest.user_id).where(
+                    PaymentRequest.status == "approved", PaymentRequest.created_at >= now - timedelta(days=100)
+                )
+            )
+        ).scalars().all()
+    )
+    keep = (await session.execute(select(User).where(User.tg_id == keep_tg))).scalar_one_or_none()
+    remove = [(u, u.id in paid) for u in vips if u.tg_id != keep_tg]
+    out = {"remove": remove, "keep": keep, "backup": None}
+    if not apply:
+        return out
+    path = Path(settings.db_path).parent if settings.db_path else BASE_DIR / "data"
+    path = path / f"vip_backup_{(now + timedelta(hours=5)):%Y%m%d_%H%M}.json"
+    path.write_text(
+        json.dumps(
+            [{"id": u.id, "tg_id": u.tg_id, "name": u.name, "vip_until": u.vip_until.isoformat(), "paid": p} for u, p in remove]
+            + ([{"id": keep.id, "tg_id": keep.tg_id, "name": keep.name, "vip_until": keep.vip_until.isoformat() if keep.vip_until else None, "kept": True}] if keep else []),
+            ensure_ascii=False,
+            indent=1,
+        ),
+        encoding="utf-8",
+    )
+    for u, _ in remove:
+        u.vip_until = None
+    if keep is not None:
+        keep.vip_until = now + timedelta(days=keep_days)
+    await session.commit()
+    out["backup"] = str(path)
+    return out
+
+
 # ── Narxlar va chegirma ──
 
 

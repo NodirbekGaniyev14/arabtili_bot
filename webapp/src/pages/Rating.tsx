@@ -53,6 +53,21 @@ function VipBadge({ small = false }: { small?: boolean }) {
   );
 }
 
+/** «Chempion» belgisi — o'tgan hafta/oy top-3 (reyting sovrini, 2026-11-28 dan VIP o'rniga) */
+function ChampBadge({ champ, small = false }: { champ: string; small?: boolean }) {
+  return (
+    <span
+      className={`inline-flex items-center rounded-full bg-emerald-deep/10 border border-emerald-deep/30 font-extrabold text-emerald-dark align-middle ${
+        small ? "ml-1 px-1 text-[8px] leading-4" : "ml-1.5 px-1.5 py-0.5 text-[9px] leading-none"
+      }`}
+      title="O'tgan hafta / oy chempioni"
+    >
+      {champ}
+      {!small && " chempion"}
+    </span>
+  );
+}
+
 /** Top-3 poydevor: 1-o'rin o'rtada baland */
 function Podium({ top }: { top: LeaderboardEntry[] }) {
   const byRank = (r: number) => top.find((e) => e.rank === r);
@@ -80,6 +95,7 @@ function Podium({ top }: { top: LeaderboardEntry[] }) {
               </div>
               <div className="mt-1.5 text-xs font-extrabold truncate max-w-full px-1">
                 {s.entry.name.split(" ")[0]}
+                {s.entry.champ && <ChampBadge champ={s.entry.champ} small />}
                 {s.entry.vip && <VipBadge small />}
               </div>
               <div className="text-[10px] font-bold text-ink-soft/70">
@@ -209,6 +225,7 @@ export default function Rating() {
                   <div className="flex-1 min-w-0">
                     <div className="font-bold truncate">
                       {e.name}
+                      {e.champ && <ChampBadge champ={e.champ} />}
                       {e.vip && <VipBadge />}
                       {e.is_me && (
                         <span className="ml-1.5 text-xs text-emerald-deep font-extrabold">
@@ -238,8 +255,8 @@ export default function Rating() {
             <div className="rounded-2xl bg-gold-soft/60 border border-gold/30 px-4 py-3 text-center">
               <p className="text-sm font-extrabold">🏆 Haftalik sovrin</p>
               <p className="mt-0.5 text-xs font-semibold text-ink-soft leading-relaxed">
-                Dushanba tongida hafta yakunlanadi — <b>1-o'rin: 5 kun VIP</b>, <b>2–3-o'rin: 3 kun VIP</b>
-                (AI ustoz, mock, speaking) + 🧊 streak muzlatkichi + sertifikat botga keladi.
+                Dushanba tongida hafta yakunlanadi — top-3 ga <b>«Chempion» belgisi</b> (🥇🥈🥉 butun keyingi hafta
+                ismingiz yonida) + 🧊 streak muzlatkichi + sertifikat botga keladi.
               </p>
             </div>
           )}
@@ -248,7 +265,7 @@ export default function Rating() {
             <div className="rounded-2xl bg-gold-soft/60 border border-gold/30 px-4 py-3 text-center">
               <p className="text-sm font-extrabold">🏆 Oylik sovrin</p>
               <p className="mt-0.5 text-xs font-semibold text-ink-soft leading-relaxed">
-                Oy boshida o'tgan oy yakunlanadi — <b>1-o'rin: 7 kun VIP</b>, <b>2–3-o'rin: 5 kun VIP</b>
+                Oy boshida o'tgan oy yakunlanadi — top-3 ga <b>👑 «Oy chempioni» belgisi</b> (butun keyingi oy)
                 + 🧊 muzlatkich + sertifikat.
               </p>
             </div>
